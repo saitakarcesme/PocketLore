@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "environment": "AOSP API 35 x86_64 emulator; not physical hardware",
+  "serial": "emulator-5560",
+  "apk_sha256": "0045f4dc90e5c8d6dfdc8992021a866651f8e2621df62357023d1416c1bda7e9",
+  "apk_bytes": 104894723,
+  "checks": [
+    "install and launch",
+    "pack loaded",
+    "comparison evidence retrieved",
+    "source provenance dialog",
+    "unsupported-query abstention",
+    "no INTERNET permission"
+  ],
+  "network_state": {
+    "wifi_on": "0",
+    "mobile_data": "0"
+  },
+  "physical_device_acceptance": false
+}

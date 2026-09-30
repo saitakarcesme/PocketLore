@@ -1,0 +1,4 @@
+Initial retrieval UI smoke failed: AssertionError: Source inspection button not found.
+The existing script swipes from y=2080, outside the new test AVD's 1920-pixel display.
+This was an unmodified legacy smoke script on the first unstripped APK, with the
+new generation panel above the source buttons. Preserve this run as failed.

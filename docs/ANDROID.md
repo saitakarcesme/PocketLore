@@ -35,3 +35,15 @@ The rig built the APK with Gradle 8.13 / AGP 8.9.2 using the installed toolchain
 The UI's elapsed value measures only passage retrieval on the current execution environment. Emulator timing and memory are development diagnostics, never phone inference latency or a 12 GB hardware acceptance result. Broader coverage, inference, synthesis, travel/POI, pack import, larger indexes, model installation, physical hardware and clean offline release installation remain open.
 
 Repeat the emulator smoke flow with `python3 tools/android-smoke.py --serial emulator-5560 --evidence /path/to/private/evidence`. The script only accepts emulator serials; it disables their Wi-Fi and mobile data and checks the installed package has no INTERNET permission.
+
+
+## Task 010 native runtime update
+
+The APK now also packages a pinned CPU llama.cpp JNI runtime for ARM64 and
+x86_64. Optional local GGUF import and an unverified source-excerpt draft panel
+are implemented. Before building, provision the pinned source with
+`bash tools/runtime/fetch.sh`; add `--model` only for the integration smoke model.
+See [runtime reproduction](RUNTIME.md) and [measured native evidence](evidence/native-runtime.md).
+The earlier extractive-slice results above do not imply model answer quality or
+final native UI acceptance. The final emulator rerun is currently blocked by
+missing `/dev/kvm` access after the supervised restart.

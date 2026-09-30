@@ -8,7 +8,7 @@ Knowledge-pack and native-runtime notices will be added alongside their implemen
 
 Starter knowledge pack: U.S. Geological Survey Water Science School textual material. Source URLs, paragraph selectors and SHA-256 pins are in android/knowledge-sources.json. USGS-authored federal text is public domain in the United States, subject to the agency's noted third-party exceptions; no images or third-party credited material are included. Downloaded text and APKs are excluded from Git. The acquisition script verifies pinned paragraph content. See https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits.
 
-llama.cpp is the proposed native runtime under MIT, pinned in docs/RUNTIME.md; it is not bundled into the initial extractive APK. Its license must accompany any later distributed native build.
+The original extractive APK had no native inference. Task 010 now packages the pinned llama.cpp CPU runtime and its MIT license; see the notices below.
 
 Native runtime (task 010): llama.cpp and ggml, MIT, immutable commit
 bb4caa7540188872173c44d161602d9271386413 (b10566), from

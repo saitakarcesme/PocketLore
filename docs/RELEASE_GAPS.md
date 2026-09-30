@@ -4,8 +4,8 @@ This list distinguishes achievable rig work from actual external dependencies. I
 
 | Gap | Next evidence | Dependency |
 | --- | --- | --- |
-| Native inference in Android | Pinned runtime, model hash, real load/generation/cancellation tests | Rig implementation |
-| Supported generated research | Useful explanations/comparisons/synthesis, claim-source review, abstention | Runtime and broader source packs |
+| Native inference in Android | CPU ARM64/x86_64 builds and 23 real emulator JNI checks recorded; rerun latest Java lifecycle changes and finish import/restart UI checks | Resumed sandbox lacks `/dev/kvm`; see [native evidence](evidence/native-runtime.md) |
+| Supported generated research | Smoke model repeats source answers and omits citations; useful explanations/comparisons/synthesis, claim-source review and abstention remain unvalidated | Better model/prompt integration, validation and broader source packs |
 | Knowledge coverage | Reproducible licensed packs, age/coverage/import manifests | Data acquisition and indexing on rig |
 | Retrieval quality | Frozen development query results, coverage and failure analysis | Packs and evaluation harness |
 | Travel and tools | Locality/diet constraints, deterministic calculation, stale-data handling | Licensed travel pack and implementation |

@@ -18,7 +18,8 @@ import java.util.concurrent.Executors;
 final class NativePanel {
     static final int PICK_MODEL = 410;
     private final Activity activity;
-    private final ExecutorService worker = Executors.newSingleThreadExecutor();
+    // Serialize file promotion and cleanup across Activity recreation.
+    private static final ExecutorService worker = Executors.newSingleThreadExecutor();
     private final Button model, generate, cancel;
     private final TextView state, output;
     private volatile boolean stopped, cancelled;
@@ -29,7 +30,7 @@ final class NativePanel {
     NativePanel(Activity activity, LinearLayout layout) {
         this.activity = activity;
         state = new TextView(activity);
-        state.setText("Experimental local generation · Import a local GGUF (up to 512 MiB). Small models may give incorrect answers. Inspect sources below.");
+        state.setText("Experimental local generation · Import a local GGUF (up to 512 MiB). Small models may give incorrect answers. Inspect the retrieved sources.");
         layout.addView(state);
         model = new Button(activity); model.setText("Import local GGUF"); layout.addView(model);
         generate = new Button(activity); generate.setText("Draft from evidence"); generate.setEnabled(false); layout.addView(generate);
@@ -39,6 +40,8 @@ final class NativePanel {
             .addCategory(Intent.CATEGORY_OPENABLE).setType("*/*").putExtra(Intent.EXTRA_LOCAL_ONLY, true), PICK_MODEL));
         cancel.setOnClickListener(v -> { cancelled = true; long id = session; if (id != 0) NativeRuntime.cancel(id); });
         generate.setOnClickListener(v -> draft());
+        // Only the serial import worker writes this app-owned staging path.
+        worker.execute(() -> new File(activity.getFilesDir(), "model.partial").delete());
         File saved = new File(activity.getFilesDir(), "model.gguf");
         if (saved.isFile()) {
             setBusy(true); state.setText("Loading saved local model…");
@@ -126,6 +129,6 @@ final class NativePanel {
         stopped = true; cancelled = true;
         long id = session; if (id != 0) NativeRuntime.close(id);
         // Queue cleanup after any loader has published its newly created session.
-        worker.execute(this::release); worker.shutdown();
+        worker.execute(this::release);
     }
 }

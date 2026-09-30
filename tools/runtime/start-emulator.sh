@@ -5,6 +5,7 @@ root=$(cd "$(dirname "$0")/../.." && pwd)
 toolchain=${POCKETLORE_TOOLCHAIN:-/home/isa/Android/atlas-toolchain}
 serial_port=${POCKETLORE_EMULATOR_PORT:-5560}
 export ANDROID_HOME="$toolchain/sdk"
+export ANDROID_USER_HOME="$root/downloads/runtime/android-user"
 export ANDROID_AVD_HOME="$root/downloads/runtime/android-user/avd"
 avd="$root/downloads/runtime/android-user/pocketlore_runtime_api35.avd"
 if "$ANDROID_HOME/platform-tools/adb" devices | grep -q "emulator-$serial_port[[:space:]]"; then
