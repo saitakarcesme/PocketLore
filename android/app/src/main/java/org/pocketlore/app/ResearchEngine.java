@@ -14,7 +14,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-/** Small transparent BM25 retriever. Scores rank passages; they are not confidence. */
+/** Immutable inverted BM25 index. Ranking expansion never establishes answer support. */
 public final class ResearchEngine {
     public static final class Passage {
         public final String id, title, url, sourceDate, license, text;
@@ -33,7 +33,12 @@ public final class ResearchEngine {
         public final List<Hit> hits;
         public final Set<String> missingTerms;
         public final String answer;
+        public final int candidatesScored;
         Result(List<Hit> hits, Set<String> missingTerms, String answer) {
+            this(hits, missingTerms, answer, 0);
+        }
+        Result(List<Hit> hits, Set<String> missingTerms, String answer, int candidatesScored) {
+            this.candidatesScored = candidatesScored;
             this.hits = Collections.unmodifiableList(hits);
             this.missingTerms = Collections.unmodifiableSet(missingTerms);
             this.answer = answer;
@@ -45,8 +50,68 @@ public final class ResearchEngine {
         "what", "when", "where", "which", "why", "with", "would", "explain", "compare",
         "between", "versus", "than", "about", "me", "please", "both"));
     private final List<Passage> passages = new ArrayList<>();
-    private final Map<String, Integer> documentFrequency = new HashMap<>();
-    private final double averageLength;
+    // Exact vocabulary remains separate: expansion must not weaken the answer abstention gate.
+    private final Set<String> vocabulary = new HashSet<>();
+    private static final class Posting {
+        final int passage; final double contribution;
+        Posting(int passage, double contribution) { this.passage=passage; this.contribution=contribution; }
+    }
+    private final Map<String, List<Posting>> index = new HashMap<>();
+    private static final Set<String> RANK_STOP = new HashSet<>(Arrays.asList(
+        "should", "could", "would", "get", "gets", "got", "make", "makes", "made", "me", "my", "we", "our", "your", "you", "their", "they", "them"));
+    // Small, explicit ranking hints, not equivalences for evidence coverage or factual claims.
+    private static final Map<String, List<String>> EXPANSIONS = expansions();
+    private static Map<String, List<String>> expansions() {
+        Map<String, List<String>> result=new HashMap<>();
+        for(String group : Arrays.asList("dark night illumination", "crack fracture", "underground groundwater", "ultraviolet uv")) {
+            List<String> words=new ArrayList<>();for(String word:group.split(" "))words.add(stem(word));
+            for(String word:words)result.put(word,Collections.unmodifiableList(words));
+        }
+        return Collections.unmodifiableMap(result);
+    }
+    // Deliberately limited English inflection folding; original passage text/IDs are untouched.
+    private static String stem(String word) {
+        if(word.length()>4 && word.endsWith("ies"))return word.substring(0,word.length()-3)+"y";
+        if(word.length()>3 && word.endsWith("s") && !word.endsWith("ss") && !word.endsWith("us") && !word.endsWith("is"))word=word.substring(0,word.length()-1);
+        if(word.length()>5 && word.endsWith("ing"))word=word.substring(0,word.length()-3);
+        else if(word.length()>4 && word.endsWith("ed"))word=word.substring(0,word.length()-2);
+        if(word.length()>3 && word.endsWith("e") && !word.endsWith("ee"))word=word.substring(0,word.length()-1);
+        int n=word.length();
+        if(n>3 && word.charAt(n-1)==word.charAt(n-2) && "bdfgmnprt".indexOf(word.charAt(n-1))>=0)word=word.substring(0,n-1);
+        return word;
+    }
+    private static List<String> rankTerms(String text) {
+        List<String> result=new ArrayList<>();
+        for(String term:tokenize(text))if(!RANK_STOP.contains(term))result.add(stem(term));
+        return result;
+    }
+    private void buildIndex() {
+        Map<String, Map<Integer, Double>> frequencies=new HashMap<>();
+        double[] lengths=new double[passages.size()];double total=0;
+        for(int i=0;i<passages.size();i++) {
+            Passage passage=passages.get(i);
+            for(String term:rankTerms(passage.text)) {
+                Map<Integer,Double> posting=frequencies.computeIfAbsent(term,k->new HashMap<>());
+                posting.put(i,posting.getOrDefault(i,0.0)+1);lengths[i]++;
+            }
+            // A document-wide title is useful context, but must not swamp the actual passage.
+            for(String term:rankTerms(passage.title)) {
+                Map<Integer,Double> posting=frequencies.computeIfAbsent(term,k->new HashMap<>());
+                posting.put(i,posting.getOrDefault(i,0.0)+0.3);lengths[i]+=0.3;
+            }
+            total+=lengths[i];
+        }
+        double average=Math.max(total/passages.size(),1);
+        for(Map.Entry<String,Map<Integer,Double>> term:frequencies.entrySet()) {
+            double idf=Math.log(1+(passages.size()-term.getValue().size()+0.5)/(term.getValue().size()+0.5));
+            List<Posting> postings=new ArrayList<>();
+            for(Map.Entry<Integer,Double> item:term.getValue().entrySet()) {
+                int doc=item.getKey();double tf=item.getValue();
+                postings.add(new Posting(doc,idf*tf*2.2/(tf+1.2*(0.25+0.75*lengths[doc]/average))));
+            }
+            postings.sort(Comparator.comparingInt(p->p.passage));index.put(term.getKey(),Collections.unmodifiableList(postings));
+        }
+    }
 
     public ResearchEngine(Reader reader) throws IOException {
         Set<String> ids = new HashSet<>();
@@ -59,12 +124,11 @@ public final class ResearchEngine {
                 for (String field : row) if (field.trim().isEmpty()) throw new IOException("Empty knowledge pack field");
                 Passage passage = new Passage(row);
                 passages.add(passage);
-                for (String term : new HashSet<>(passage.terms))
-                    documentFrequency.put(term, documentFrequency.getOrDefault(term, 0) + 1);
+                vocabulary.addAll(passage.terms);
             }
         }
         if (passages.isEmpty()) throw new IOException("Knowledge pack is empty");
-        averageLength = passages.stream().mapToInt(p -> p.terms.size()).average().orElse(1);
+        buildIndex();
     }
 
     static List<String> tokenize(String text) {
@@ -79,19 +143,19 @@ public final class ResearchEngine {
     public Result research(String question) {
         Set<String> terms = new HashSet<>(tokenize(question));
         Set<String> missing = new java.util.TreeSet<>(terms);
-        missing.removeAll(documentFrequency.keySet());
-        List<Hit> hits = new ArrayList<>();
-        for (Passage passage : passages) {
-            double score = 0;
-            for (String term : terms) {
-                int frequency = Collections.frequency(passage.terms, term);
-                if (frequency == 0) continue;
-                int df = documentFrequency.get(term);
-                double idf = Math.log(1 + (passages.size() - df + 0.5) / (df + 0.5));
-                score += idf * frequency * 2.2 / (frequency + 1.2 * (0.25 + 0.75 * passage.terms.size() / averageLength));
-            }
-            if (score > 0) hits.add(new Hit(passage, score));
+        missing.removeAll(vocabulary);
+        // Sorted query keys make floating point accumulation and ties deterministic.
+        Map<String,Double> query=new java.util.TreeMap<>();
+        for(String term:rankTerms(question))query.put(term,1.0);
+        for(String term:new ArrayList<>(query.keySet()))
+            for(String expansion:EXPANSIONS.getOrDefault(term,Collections.emptyList()))query.putIfAbsent(expansion,0.7);
+        Map<Integer,Double> scores=new HashMap<>();
+        for(Map.Entry<String,Double> term:query.entrySet()) {
+            for(Posting posting:index.getOrDefault(term.getKey(),Collections.emptyList()))
+                scores.merge(posting.passage,term.getValue()*posting.contribution,Double::sum);
         }
+        List<Hit> hits = new ArrayList<>();
+        for(Map.Entry<Integer,Double> score:scores.entrySet())hits.add(new Hit(passages.get(score.getKey()),score.getValue()));
         hits.sort(Comparator.comparingDouble((Hit h) -> h.score).reversed().thenComparing(h -> h.passage.id));
         if (hits.size() > 4) hits = new ArrayList<>(hits.subList(0, 4));
         StringBuilder answer = new StringBuilder();
@@ -103,6 +167,6 @@ public final class ResearchEngine {
             if (!missing.isEmpty()) answer.append("Query terms absent from the pack: ").append(String.join(", ", missing)).append(". The evidence may not cover the full question.\n");
             answer.append("Comparison and synthesis require checking these passages yourself in this build.");
         }
-        return new Result(hits, missing, answer.toString());
+        return new Result(hits, missing, answer.toString(), scores.size());
     }
 }

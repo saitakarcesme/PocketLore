@@ -37,10 +37,13 @@ public final class RetrievalHarness {
         for(int i=0;i<queries.size();i++) {
             ResearchEngine.Result r=first.get(i);List<String> hits=new ArrayList<>();
             for(ResearchEngine.Hit h:r.hits)hits.add("{\"id\":"+quote(h.passage.id)+",\"score\":"+h.score+"}");
+            int candidatesScored=engine.size();
+            try { candidatesScored=ResearchEngine.Result.class.getField("candidatesScored").getInt(r); }
+            catch(NoSuchFieldException baseline) { /* Frozen baseline scans every passage. */ }
             Set<String> uncovered=EvidencePrompt.uncovered(queries.get(i),r);
             boolean blocked=r.hits.isEmpty() || !r.missingTerms.isEmpty() || !uncovered.isEmpty();
             output.add("{\"query\":"+quote(queries.get(i))+",\"hits\":["+String.join(",",hits)+"],\"missing_terms\":"+strings(r.missingTerms)+
-                ",\"excerpt_uncovered\":"+strings(uncovered)+",\"lexical_generation_blocked\":"+blocked+",\"first_sweep_ms\":"+firstMs.get(i)+",\"warm_ms\":"+samples.get(i)+"}");
+                ",\"excerpt_uncovered\":"+strings(uncovered)+",\"lexical_generation_blocked\":"+blocked+",\"candidates_scored\":"+candidatesScored+",\"first_sweep_ms\":"+firstMs.get(i)+",\"warm_ms\":"+samples.get(i)+"}");
         }
         System.out.println("{\"environment\":\"LLMRig host JVM; not Android or physical device\",\"java\":"+quote(System.getProperty("java.version"))+
             ",\"passages\":"+engine.size()+",\"index_ms\":"+indexMs+",\"cases\":["+String.join(",",output)+"]}");
