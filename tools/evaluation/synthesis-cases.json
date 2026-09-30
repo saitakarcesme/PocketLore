@@ -1,0 +1,44 @@
+{
+  "status": "frozen before synthesis tuning",
+  "created_utc": "2026-09-30T23:31:46.700779+00:00",
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "cases": [
+    {
+      "id": "comparison",
+      "question": "Compare evaporation and condensation.",
+      "review_sources": [
+        "evaporation-398183fefbcbafbf",
+        "evaporation-dd7620163089bbe8"
+      ]
+    },
+    {
+      "id": "explanation",
+      "question": "Why does evaporation remove heat?",
+      "review_sources": [
+        "evaporation-460a70d340b737c3"
+      ]
+    },
+    {
+      "id": "synthesis",
+      "question": "Compare groundwater recharge and surface runoff.",
+      "review_sources": [
+        "groundwater-abbc88d938b327f2",
+        "runoff-7228ab4f73d613f5"
+      ]
+    },
+    {
+      "id": "conditions",
+      "question": "Compare deep and shallow aquifer recharge times.",
+      "review_sources": [
+        "infiltration-6bdab6adeed3d925"
+      ]
+    },
+    {
+      "id": "absent",
+      "question": "Does evaporation cure diabetes?",
+      "review_sources": []
+    }
+  ],
+  "limitations": "Builder-authored development cases, no private holdout. Review sources are guides, not exhaustive relevance judgments. Actual outputs must be reviewed."
+}
