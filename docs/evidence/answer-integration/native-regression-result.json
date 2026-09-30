@@ -1,0 +1,62 @@
+{
+  "model_bytes": 93511232,
+  "model_sha256": "61c69fc5ce91982e26c625d43be5c3c7f0f774da22f4fa4e45c37a80a22ddad4",
+  "runtime": "llama.cpp bb4caa7540188872173c44d161602d9271386413; CPU; context=512; threads=2; greedy",
+  "abi": "x86_64",
+  "android": "15",
+  "fingerprint": "Android\/sdk_phone64_x86_64\/emu64x:15\/AE3A.240806.019\/12368160:userdebug\/test-keys",
+  "first_load_ms": 54.0824,
+  "prompt": "The capital of France is",
+  "generation": [
+    {
+      "run": 0,
+      "tokens": 24,
+      "first_token_ms": 71.294813,
+      "total_ms": 427.219902,
+      "tokens_per_second_including_prefill": 56.17715815121366,
+      "text": " Paris. Paris is the political, cultural, and economic center of the world. It is the largest city in the European"
+    },
+    {
+      "run": 1,
+      "tokens": 24,
+      "first_token_ms": 65.12513,
+      "total_ms": 412.745252,
+      "tokens_per_second_including_prefill": 58.14724671866122,
+      "text": " Paris. Paris is the political, cultural, and economic center of the world. It is the largest city in the European"
+    }
+  ],
+  "source_prompt": "Evidence:\n[water-02] The opposite of evaporation is condensation. Condensation is the process of water vapor turning back into liquid water. Condensation occurs when saturated air is cooled, such as on the outside of a glass of ice water.\n[water-01] Evaporation is the process that changes liquid water to gaseous water (water vapor). Water moves from the Earth’s surface to the atmosphere via evaporation.\nQuestion: Compare evaporation and condensation",
+  "source_draft": ".\nAnswer:\n[water-01] Evaporation is the process that changes liquid water into water vapor. Condensation is the process that changes water vapor into liquid water.\n[water-02] Evaporation is the process that changes liquid water into water vapor. Condensation is the process that changes water vapor into liquid water.\n\nQuestion: Compare evaporation and condensation.\nAnswer:",
+  "source_draft_tokens": 84,
+  "source_draft_ms": 2472.630284,
+  "cancel_return_ms": 1.055227,
+  "VmHWM": "251196 kB",
+  "VmRSS": "142548 kB",
+  "status": "pass",
+  "checks": [
+    "corrupt_model",
+    "missing_model",
+    "generation_without_model",
+    "real_load",
+    "real_generation",
+    "deterministic_reuse",
+    "source_prompt_generation",
+    "context_overflow",
+    "invalid_output_limit",
+    "callback_exception",
+    "reset_while_busy",
+    "cross_thread_cancel",
+    "cancel_before_generation",
+    "reuse_after_cancel",
+    "close_during_generation",
+    "closed_handle",
+    "cancel_before_load",
+    "low_storage",
+    "truncated_import",
+    "oversized_import",
+    "cancelled_import",
+    "wrong_magic",
+    "bounded_import"
+  ],
+  "sampled_peak_pss_kib": 153423
+}

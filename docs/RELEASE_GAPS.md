@@ -4,8 +4,8 @@ This list distinguishes achievable rig work from actual external dependencies. I
 
 | Gap | Next evidence | Dependency |
 | --- | --- | --- |
-| Native inference in Android | CPU ARM64/x86_64 builds and 23 real emulator JNI checks recorded; rerun latest Java lifecycle changes and finish import/restart UI checks | Resumed sandbox lacks `/dev/kvm`; see [native evidence](evidence/native-runtime.md) |
-| Supported generated research | Smoke model repeats source answers and omits citations; useful explanations/comparisons/synthesis, claim-source review and abstention remain unvalidated | Better model/prompt integration, validation and broader source packs |
+| Native inference in Android | CPU ARM64/x86_64 builds, 23 JNI behavior checks and real SAF import/restart/recreation checks recorded; ARM64 execution and physical acceptance remain open | Existing supervised emulator restored through adb; no current KVM blocker. See [answer evidence](evidence/answer-integration.md) |
+| Supported generated research | Main answer flow now generates a cited answer, rejects uncited drafts into labeled fallback, and abstains on missing coverage. The development comparison is incomplete; citation integrity is not semantic support or useful-research acceptance | Better model/answer quality, semantic source review, frozen quality evaluation and broader packs |
 | Knowledge coverage | Reproducible licensed packs, age/coverage/import manifests | Data acquisition and indexing on rig |
 | Retrieval quality | Frozen development query results, coverage and failure analysis | Packs and evaluation harness |
 | Travel and tools | Locality/diet constraints, deterministic calculation, stale-data handling | Licensed travel pack and implementation |

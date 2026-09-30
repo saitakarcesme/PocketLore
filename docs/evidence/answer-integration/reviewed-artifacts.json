@@ -1,0 +1,32 @@
+[
+  {
+    "path": "android/app/build/outputs/apk/debug/app-debug.apk",
+    "bytes": 17785580,
+    "sha256": "7776cc4be0d44f1368ca2bc592b6b30ffdb0824046b48a7aa2d99dd350e8e627"
+  },
+  {
+    "path": "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+    "bytes": 76598,
+    "sha256": "dfeea173cefbbbdbbfb152dc60a60a591ea59e76be4ea5118d0398acb6847f6a"
+  },
+  {
+    "path": "android/app/build/generated/nativeLibs/arm64-v8a/libpocketlore.so",
+    "bytes": 5587208,
+    "sha256": "6ae28215cd5dd58e6b07c7c35a544122b6cc323625841f79d06cadf5d4122a8e"
+  },
+  {
+    "path": "android/app/build/generated/nativeLibs/x86_64/libpocketlore.so",
+    "bytes": 6066008,
+    "sha256": "ca2c6e60ed38d5c447cf53cd0efd6c424f18ce53c255202f7c5bac79d14d86ae"
+  },
+  {
+    "path": "downloads/answers/model/qwen2.5-0.5b-instruct-q4_k_m.gguf",
+    "bytes": 491400032,
+    "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+  },
+  {
+    "path": "tools/answers/development-cases.json",
+    "bytes": 1079,
+    "sha256": "1209c55fea82f39ebe2d22004b3b6cff259e55442d6f255a7dd9b884ee94ae75"
+  }
+]
