@@ -1,0 +1,28 @@
+/usr/lib/python3.14/zipfile/__init__.py:1730: UserWarning: Duplicate name: 'manifest.json'
+  return self._open_to_write(zinfo, force_zip64=force_zip64)
+/home/isa/Projects/PocketLore/downloads/packs/verify-20261001T010434/valid.plpack: 1 file pushed, 0 skipped. 234.5 MB/s (159831 bytes in 0.001s)
+/home/isa/Projects/PocketLore/downloads/packs/verify-20261001T010434/bitflip.plpack: 1 file pushed, 0 skipped. 435.4 MB/s (37526 bytes in 0.000s)
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/packs/ui_smoke.py", line 43, in <module>
+    launch();pick('pocketlore-reference.plpack');wait('186 passages');expected=hashlib.sha256(a.pack.read_bytes()).hexdigest();assert installed_hash()==expected
+             ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/packs/ui_smoke.py", line 32, in pick
+    t=wait('Import knowledge pack');n=find(t,'Import knowledge pack')
+  File "/home/isa/Projects/PocketLore/tools/packs/ui_smoke.py", line 28, in wait
+    raise AssertionError('UI text absent: '+fragment)
+AssertionError: UI text absent: Import knowledge pack
+
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/packs/verify_pack.py", line 78, in <module>
+    (out/'summary.json').write_text(json.dumps(evidence,indent=2)+'\n');print(json.dumps(evidence,indent=2));print(out)
+                        ^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/packs/verify_pack.py", line 75, in main
+    assert b'INSTRUMENTATION_CODE: -1' in result and b'"passed": true' in result,result.decode()
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/packs/verify_pack.py", line 19, in run
+    result.check_returncode()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/subprocess.py", line 509, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+                             self.stderr)
+subprocess.CalledProcessError: Command '['python3', '/home/isa/Projects/PocketLore/tools/packs/ui_smoke.py', '--adb', '/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb', '--serial', 'emulator-5560', '--pack', '/home/isa/Projects/PocketLore/downloads/packs/verify-20261001T010434/valid.plpack', '--bad', '/home/isa/Projects/PocketLore/downloads/packs/verify-20261001T010434/bitflip.plpack', '--out', '/home/isa/Projects/PocketLore/downloads/packs/verify-20261001T010434/ui']' returned non-zero exit status 1.

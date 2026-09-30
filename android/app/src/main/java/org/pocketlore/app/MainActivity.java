@@ -25,7 +25,10 @@ public final class MainActivity extends Activity {
     private EditText question;
     private TextView answer, status;
     private LinearLayout sourceList;
-    private Button search;
+    private Button search, importPack;
+    private TextView packStatus;
+    private boolean importing;
+    private static final int PICK_PACK = 411;
     private final ExecutorService worker = Executors.newSingleThreadExecutor();
     private boolean destroyed;
 
@@ -52,27 +55,37 @@ public final class MainActivity extends Activity {
             return insets;
         });
         TextView title = text("PocketLore", 32); title.setTextColor(Color.rgb(22, 67, 45)); layout.addView(title);
-        layout.addView(text("Offline research • starter library", 16));
-        layout.addView(text("Water science pack · Source-backed passages\nInspect passages or import an optional local model", 14));
+        layout.addView(text("Offline research • local library", 16));
+        layout.addView(text("Source-backed passages · Import a knowledge pack or local model", 14));
+        packStatus = text("Bundled water-science starter pack", 14); layout.addView(packStatus);
+        importPack = new Button(this); importPack.setText("Import knowledge pack"); layout.addView(importPack);
+        importPack.setOnClickListener(v -> {
+            android.content.Intent intent = new android.content.Intent(android.content.Intent.ACTION_OPEN_DOCUMENT);
+            intent.addCategory(android.content.Intent.CATEGORY_OPENABLE); intent.setType("*/*");
+            startActivityForResult(intent, PICK_PACK);
+        });
         question = new EditText(this);
-        question.setHint("Ask about evaporation or groundwater");
+        question.setHint("Ask about an installed source");
         question.setMinLines(2); question.setMaxLines(5); question.setTextSize(18);
         question.setContentDescription("Research question"); layout.addView(question);
         search = new Button(this); search.setText("Answer offline"); layout.addView(search);
         LinearLayout actions = new LinearLayout(this); actions.setOrientation(LinearLayout.VERTICAL); layout.addView(actions);
         status = text("Loading installed knowledge pack…", 14); status.setContentDescription("Answer status"); layout.addView(status);
-        answer = text("Ask a question to inspect evidence stored on this device. This starter pack covers only water science; it does not provide current travel or medical advice.", 17);
+        answer = text("Ask a question to inspect evidence stored on this device. The bundled starter covers water science. Imported packs are dated references, not current travel or medical advice.", 17);
         answer.setTextIsSelectable(true); answer.setContentDescription("Offline answer"); layout.addView(answer);
         sourceList = new LinearLayout(this); sourceList.setOrientation(LinearLayout.VERTICAL); layout.addView(sourceList);
         nativePanel = new NativePanel(this, layout, actions, answer, status, busy -> {
-            search.setEnabled(engine != null && !busy); question.setEnabled(!busy);
+            search.setEnabled(engine != null && !busy && !importing); question.setEnabled(!busy && !importing); importPack.setEnabled(!busy && !importing);
         });
         search.setEnabled(false);
         search.setOnClickListener(v -> runSearch());
         worker.execute(() -> {
             try {
-                ResearchEngine loaded = new ResearchEngine(new InputStreamReader(getAssets().open("water-science.tsv"), StandardCharsets.UTF_8));
+                java.io.File installed = new java.io.File(getFilesDir(), "knowledge.plpack");
+                KnowledgePack pack = installed.exists() ? KnowledgePack.load(installed) : null;
+                ResearchEngine loaded = pack != null ? pack.engine : new ResearchEngine(new InputStreamReader(getAssets().open("water-science.tsv"), StandardCharsets.UTF_8));
                 runOnUiThread(() -> { if (destroyed) return; engine = loaded; search.setEnabled(!nativePanel.isBusy());
+                    if (pack != null) packStatus.setText(pack.id + " · " + pack.engine.size() + " passages\n" + pack.warning + "\nSHA-256: " + pack.sha256);
                     status.setText(engine.size() + " passages installed · No network permission");
                     if (state != null) question.setText(state.getString("question", ""));
                 });
@@ -82,7 +95,7 @@ public final class MainActivity extends Activity {
         });
     }
     private void runSearch() {
-        if (nativePanel.isBusy()) return;
+        if (nativePanel.isBusy() || importing || engine == null) return;
         String query = question.getText().toString().trim();
         if (query.isEmpty()) { question.setError("Enter a research question"); return; }
         ((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(question.getWindowToken(), 0);
@@ -112,9 +125,9 @@ public final class MainActivity extends Activity {
     boolean modelReady() { return nativePanel.hasModel() && !nativePanel.isBusy(); }
     private void inspect(ResearchEngine.Hit hit) {
         ResearchEngine.Passage p = hit.passage;
-        TextView detail = text(p.text + "\n\nSource: U.S. Geological Survey, Water Science School\n" + p.url
-            + "\n\nRetrieved: " + p.sourceDate + "\nRights: " + p.license
-            + "\n\nPack text is a verbatim USGS paragraph with whitespace normalized. Source URLs are provenance labels; the app does not open them."
+        TextView detail = text(p.text + "\n\nSource document: " + p.title + "\n" + p.url
+            + "\n\nSource date / retrieval: " + p.sourceDate + "\nRights: " + p.license
+            + (p.id.startsWith("water-") ? "\n\nPack text is a verbatim USGS paragraph with whitespace normalized." : "\n\nPack text is selected source text with whitespace normalized.") + " Source URLs are provenance labels; the app does not open them."
             + String.format(Locale.ROOT, "\n\nBM25 rank score: %.3f (not confidence)", hit.score), 16);
         detail.setTextIsSelectable(true); detail.setPadding(dp(20), dp(10), dp(20), dp(10));
         ScrollView scroll = new ScrollView(this); scroll.addView(detail);
@@ -128,6 +141,25 @@ public final class MainActivity extends Activity {
     @Override protected void onSaveInstanceState(Bundle state) { super.onSaveInstanceState(state); state.putString("question", question.getText().toString()); }
     @Override protected void onActivityResult(int request, int result, android.content.Intent data) {
         super.onActivityResult(request, result, data);
+        if (request == PICK_PACK && result == RESULT_OK && data != null && data.getData() != null) {
+            android.net.Uri uri = data.getData();
+            importing = true; search.setEnabled(false); question.setEnabled(false); importPack.setEnabled(false);
+            packStatus.setText("Validating knowledge pack…");
+            worker.execute(() -> {
+                try (java.io.InputStream in = getContentResolver().openInputStream(uri)) {
+                    KnowledgePack pack = KnowledgePack.install(in, getFilesDir());
+                    runOnUiThread(() -> { if (destroyed) return; engine = pack.engine;
+                        answer.setText("Pack imported. Ask a question to inspect its sources."); sourceList.removeAllViews();
+                        packStatus.setText(pack.id + " · " + engine.size() + " passages\n" + pack.warning + "\nSHA-256: " + pack.sha256);
+                    });
+                } catch (Exception error) {
+                    runOnUiThread(() -> { if (!destroyed) packStatus.setText("Pack rejected; previous library retained. " + error.getMessage()); });
+                } finally {
+                    runOnUiThread(() -> { if (destroyed) return; importing = false; question.setEnabled(!nativePanel.isBusy());
+                        search.setEnabled(engine != null && !nativePanel.isBusy()); importPack.setEnabled(!nativePanel.isBusy()); });
+                }
+            });
+        }
         if (request == NativePanel.PICK_MODEL && result == RESULT_OK && data != null) nativePanel.selected(data.getData());
     }
     @Override protected void onDestroy() { destroyed = true; if (nativePanel != null) nativePanel.destroy(); worker.shutdownNow(); super.onDestroy(); }

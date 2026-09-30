@@ -96,7 +96,7 @@ public final class ResearchEngine {
         if (hits.size() > 4) hits = new ArrayList<>(hits.subList(0, 4));
         StringBuilder answer = new StringBuilder();
         if (hits.isEmpty()) {
-            answer.append("No supporting passage in this installed pack. Try a water-cycle question or install a broader pack in a future version. No answer has been inferred.");
+            answer.append("No supporting passage in this installed pack. Try another question or import a broader knowledge pack. No answer has been inferred.");
         } else {
             answer.append("Relevant evidence\nThese are retrieved pack passages, not a generated explanation or a verified answer.\n\n");
             for (Hit hit : hits) answer.append('[').append(hit.passage.id).append("] ").append(hit.passage.text).append("\n\n");

@@ -1,0 +1,15 @@
+/usr/lib/python3.14/zipfile/__init__.py:1730: UserWarning: Duplicate name: 'manifest.json'
+  return self._open_to_write(zinfo, force_zip64=force_zip64)
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/packs/verify_pack.py", line 72, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/packs/verify_pack.py", line 67, in main
+    run(adb+['shell','run-as','org.pocketlore.app','sh','-c',f'cat > files/pack-tests/{path.name}'],input=path.read_bytes())
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/packs/verify_pack.py", line 16, in run
+    result=subprocess.run(list(map(str,args)),check=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,**kw)
+  File "/usr/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb', '-s', 'emulator-5560', 'shell', 'run-as', 'org.pocketlore.app', 'sh', '-c', 'cat > files/pack-tests/valid.plpack']' returned non-zero exit status 1.
