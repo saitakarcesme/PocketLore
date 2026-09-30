@@ -28,12 +28,14 @@ public final class AnswerEngineCheck {
         String cited="Evaporation changes liquid water to vapor [water-01]. Condensation changes water vapor to liquid [water-02].";
         var good=AnswerEngine.answer("Compare evaporation and condensation",evidence,(p,n,s)->{s.onToken(cited.getBytes(StandardCharsets.UTF_8));return 24;},t->{},()->false);
         check(good.kind==AnswerEngine.Kind.GENERATED && good.citedIds.equals(Set.of("water-01","water-02")),"Valid citation route failed");
+        var lateCancel=AnswerEngine.discardAfterCancel(good);
+        check(lateCancel.kind==AnswerEngine.Kind.CANCELLED && lateCancel.citedIds.isEmpty() && !lateCancel.text.contains(cited),"Late UI cancel published completed draft");
         var error=AnswerEngine.answer("Compare evaporation and condensation",evidence,(p,n,s)->{throw new IllegalStateException("decode failure");},t->{},()->false);
         check(error.kind==AnswerEngine.Kind.FALLBACK && error.reason.contains("decode failure"),"Runtime failure route failed");
         var cancelled=AnswerEngine.answer("Compare evaporation and condensation",evidence,forbidden,t->{},()->true);
         check(cancelled.kind==AnswerEngine.Kind.CANCELLED && !cancelled.invokedModel,"Precancel route failed");
         var stopped=AnswerEngine.answer("Compare evaporation and condensation",evidence,(p,n,s)->{s.onToken(cited.getBytes(StandardCharsets.UTF_8));return -1;},t->{},()->false);
         check(stopped.kind==AnswerEngine.Kind.CANCELLED && !stopped.text.contains(cited),"Partial cancelled answer published");
-        System.out.println("PASS: 12 answer routing, citation integrity, fallback and cancellation checks (synthetic generator; not model quality)");
+        System.out.println("PASS: 13 answer routing, citation integrity, fallback and cancellation checks (synthetic generator; not model quality)");
     }
 }

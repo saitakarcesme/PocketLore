@@ -45,5 +45,23 @@ are implemented. Before building, provision the pinned source with
 `bash tools/runtime/fetch.sh`; add `--model` only for the integration smoke model.
 See [runtime reproduction](RUNTIME.md) and [measured native evidence](evidence/native-runtime.md).
 The earlier extractive-slice results above do not imply model answer quality or
-final native UI acceptance. The final emulator rerun is currently blocked by
-missing `/dev/kvm` access after the supervised restart.
+final native UI acceptance. That task's historical rerun was blocked by hidden `/dev/kvm`; the coordinator later
+restored the existing emulator through adb without changing the builder sandbox.
+
+
+## Task 020 answer flow
+
+The main action is now **Answer offline**. It retrieves evidence, abstains on
+missing term coverage, and invokes the imported local model when appropriate.
+Generated answers show their model-emitted source IDs; source buttons open the
+verbatim passage, URL, acquisition date and rights without opening the network.
+Citation or runtime failure displays **Extractive fallback — not a generated
+answer**. Cancel discards the partial draft; a new question clears previous output.
+
+The current behavioral acceptance command is `bash tools/android-smoke.sh`, after
+`bash tools/answers/fetch-model.sh` provisions the separately pinned integration
+model. Reuse the existing `emulator-5560`; do not restart a launcher inside the
+managed builder sandbox. The older `tools/android-smoke.py` captures the former
+extractive-only UI and is historical, not the current answer acceptance test.
+See [answer integration evidence](evidence/answer-integration.md) for measured
+results, preserved failures and the narrow limits of the citation checks.

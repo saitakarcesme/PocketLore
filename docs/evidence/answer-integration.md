@@ -39,3 +39,13 @@ selected the background Downloads breadcrumb instead of the open drawer item.
 Those failed runs remain in ignored `downloads/answers/smoke-20260930T222713-2`
 and `downloads/answers/smoke-20260930T222814-2`. Explicit runner selection and drawer
 selection are implemented. Native import/restart/source-dialog checks have passed.
+
+The system-role change passed the production Activity suite and the full acceptance
+script for APK `522de75783f6bd1d798aa47de0f30ce656e8ba9ab91a8b6ec247366c9d53b372`.
+One source-cited condensation answer was generated; the groundwater draft correctly
+became fallback. Its comparison remains incomplete and is not research acceptance.
+A subsequent code review found and fixed a late-cancel UI publication race. A
+regression guard now discards a completed result if cancellation arrives before
+its UI callback. Empty-draft detection also uses the API-28-compatible trim/empty
+check rather than the newer String.isBlank API. Final rerun is pending at this
+checkpoint. Earlier successful traces and failed experiments remain preserved.

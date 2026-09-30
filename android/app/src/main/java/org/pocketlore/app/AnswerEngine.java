@@ -25,6 +25,10 @@ public final class AnswerEngine {
             this.tokens=tokens; firstTokenMs=first; totalMs=total;
         }
     }
+    static Outcome discardAfterCancel(Outcome outcome) {
+        return new Outcome(Kind.CANCELLED,"Cancelled. Partial draft discarded.",outcome.rawDraft,"Cancelled",outcome.prompt,
+            Collections.emptySet(),outcome.invokedModel,outcome.tokens,outcome.firstTokenMs,outcome.totalMs);
+    }
     private static final Pattern BRACKET = Pattern.compile("\\[([^\\[\\]]+)\\]");
     public static Outcome answer(String question, ResearchEngine.Result evidence, Generator generator,
                                  Consumer<String> progress, BooleanSupplier cancelled) {
@@ -67,7 +71,7 @@ public final class AnswerEngine {
             citations(draft),true,count,firstMs,(System.nanoTime()-start)/1e6);
     }
     static String citationFailure(String draft, Set<String> allowed) {
-        if (draft.isBlank()) return "The model returned an empty answer.";
+        if (draft.trim().isEmpty()) return "The model returned an empty answer.";
         Set<String> citations=citations(draft);
         if (citations.isEmpty()) return "The model omitted source citations.";
         if (!allowed.containsAll(citations)) return "The model cited a source outside the supplied evidence.";

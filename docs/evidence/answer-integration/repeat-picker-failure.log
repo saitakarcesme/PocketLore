@@ -1,0 +1,16 @@
+/home/isa/Projects/PocketLore/downloads/runtime/SmolLM2-135M-Instruct-Q3_K_M.gguf: OK
+PASS: 12 answer routing, citation integrity, fallback and cancellation checks (synthetic generator; not model quality)
+PASS: 8 retrieval, abstention, corruption and citation contract checks
+Performing Streamed Install
+Success
+Performing Streamed Install
+Success
+/home/isa/Projects/PocketLore/downloads/runtime/SmolLM2-135M-Instruct-Q3_K_M.gguf: 1 file pushed, 0 skipped. 743.5 MB/s (93511232 bytes in 0.120s)
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/answers/ui-smoke.py", line 50, in <module>
+    tap(scroll_to('pocketlore-runtime-smoke.gguf'))
+        ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/answers/ui-smoke.py", line 30, in scroll_to
+    raise AssertionError('UI control not found: '+label)
+AssertionError: UI control not found: pocketlore-runtime-smoke.gguf
+smoke_exit=1 evidence=/home/isa/Projects/PocketLore/downloads/answers/smoke-20260930T222814-2

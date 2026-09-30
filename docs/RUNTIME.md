@@ -3,7 +3,9 @@
 PocketLore now builds a CPU-only JNI runtime into the Android APK. The existing
 retrieval and source-inspection slice remains available without a model. A local
 GGUF can be imported through Android's Storage Access Framework, then used to
-produce an explicitly unverified draft from up to two retrieved source excerpts.
+answer through the main Answer offline action using up to two retrieved source excerpts.
+Task 020 distinguishes generated answers, unverified partial drafts, extractive
+fallback, abstention and cancellation; see [answer evidence](evidence/answer-integration.md).
 No INTERNET permission, remote endpoint, GPU backend, or Play Services dependency
 is introduced. The rig's model services are not used by the app or these checks.
 
@@ -48,9 +50,8 @@ bash tools/runtime/fetch.sh --model
 # Also provision the existing water-science pack per docs/ANDROID.md if absent.
 bash tools/android-build.sh
 bash tools/android-check.sh
-# Only when no test emulator is running; foreground, isolated task AVD.
-bash tools/runtime/start-emulator.sh
-# In another shell, after sys.boot_completed is 1:
+# On the managed rig, reuse the coordinator-supervised emulator-5560.
+# After adb shell getprop sys.boot_completed is 1:
 bash tools/runtime/verify-native.sh
 ```
 
@@ -94,10 +95,13 @@ Java callback exceptions. Close is idempotent. No global model setting is change
 
 Each request uses a fresh 512-token context, a 512-token batch / 128-token
 microbatch, two CPU threads, zero GPU layers and greedy sampling. Output is capped
-at 256 tokens; the UI requests 96. Context overflow throws rather than truncating
+at 256 tokens; the integrated answer flow requests at most 128. Context overflow throws rather than truncating
 tokenized input silently. JNI streams byte arrays; Java accumulates UTF-8 before
-display. Prompts are plain completion text with special-token parsing disabled;
-model chat templates are not applied in this first integration.
+display. The raw `generate` API retains plain-completion behavior. The integrated
+answer flow uses `generateChat`: separate system instructions and user evidence
+are formatted with the loaded model's supported chat template. Special-token
+parsing is enabled only for that formatted chat. Unsupported templates and context
+overflow become labeled fallback; embedded chat-control markers are rejected.
 
 Imports require a known size of 4 bytes to 512 MiB, available space for the copy
 plus a 32 MiB reserve, a bounded streaming copy with SHA-256, a GGUF header, and a
@@ -110,18 +114,58 @@ network permission. URI provider behavior is outside this app's implementation.
 Activity recreation cancels old work; one process-wide serial worker prevents
 staging-file races and cleans abandoned staging on next activity creation.
 
+## Answer integration model and behavior
+
+Task 020 separately pins the official Qwen/Qwen2.5-0.5B-Instruct-GGUF repository,
+revision `9217f5db79a29953eb74d5343926648285ec7e67`, Q4_K_M file
+`qwen2.5-0.5b-instruct-q4_k_m.gguf`, 491,400,032 bytes, SHA-256
+`74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db`.
+The publisher is the Qwen team; the original Apache-2.0 license and attribution
+are packaged under `assets/licenses/qwen2.5-Apache-2.0.txt` and
+`answer-model-notice.txt`. Weights remain unbundled and ignored. Conversion was
+provided by the publisher and not independently reproduced; fetching this exact
+GGUF is pinned. See `tools/answers/model.env`.
+
+```bash
+bash tools/answers/fetch-model.sh  # Online provisioning, outside research
+bash tools/android-build.sh
+bash tools/android-smoke.sh       # Offline behavior checks on existing emulator
+```
+
+`tools/android-smoke.sh` requires real model output and at least one cited generated
+answer on the frozen public cases. It also exercises a citation-rejected fallback,
+unsupported abstention, cancellation, activity recreation, SAF import, hash
+verification, saved-model reload and source inspection. Test artifacts live in
+unique ignored `downloads/answers/smoke-*` directories. It does not download a model
+or start an emulator. The instrumentation APK is selected explicitly using the
+`pocketloreTestRunner` Gradle property; the default remains the native smoke runner.
+
+Before generation, the answer controller refuses questions whose terms are absent
+from the pack or the selected excerpts. This is a conservative lexical check,
+not proof that a question is answerable. After generation it checks source IDs
+against the excerpts, requires a citation in each sentence/line with prose, and
+rejects empty, citation-only or output-capped drafts. It accepts cited IDs at the
+start or end of a sentence; model output is not rewritten to fabricate citations.
+Runtime failures or citation failures yield explicitly labeled retrieved passages;
+unsupported requests abstain, and cancellation discards partial output. These are
+integrity safeguards, not entailment or factual-correctness verification.
+
 ## Evidence and remaining limits
 
-See [task evidence](evidence/native-runtime.md). Earlier exact artifacts passed
-real x86_64 emulator load/generation and 23 behavior checks; ARM64 has compilation
-only. A later supervised restart removed `/dev/kvm` access, blocking the final
-emulator rerun and full import UI validation. The latest APK still builds, and
-its native library hashes are unchanged; that does not validate the changed Java
-lifecycle behavior. No physical Android or GrapheneOS acceptance is claimed.
+[Task 010 evidence](evidence/native-runtime.md) is a frozen historical record,
+including its real emulator results and restart-time missing-KVM failure. The
+coordinator subsequently restored the existing AVD through a supervised service;
+`adb` access works without exposing KVM to the builder sandbox. That historical
+failure is no longer a current hardware blocker. No services or sandbox policies
+were changed by the builder. [Task 020 evidence](evidence/answer-integration.md)
+records the resumed validation and the current answer-flow results.
 
-The smoke model produced repetitive uncited source drafts and an unsupported
-claim in a simple completion. Integration is not useful-research acceptance.
-Claim/source validation, chat templates, better models and frozen quality testing
-remain future tasks. True cold-cache latency, first useful content, p50/p95,
-thermal behavior, arbitrary-GGUF memory bounds and whole-install physical-device
-accounting are unmeasured. The 12 GB / 50 GB gates remain open.
+The 135M smoke model and a user-only Qwen prompt failed citation checks; those
+outputs remain preserved. Separating trusted system instructions produced a
+cited, limited condensation answer, while an incompletely cited groundwater draft
+fell back to passages. This is not useful-research acceptance or a model quality
+benchmark. The development cases are public and were used during implementation;
+no private holdout was read or tuned on. Physical Android/GrapheneOS, ARM64
+execution, cold-cache latency, first useful content, p50/p95, thermal behavior,
+arbitrary-GGUF memory bounds and complete installed-storage accounting remain
+unmeasured. The 12 GB / 50 GB release gates remain open.

@@ -123,15 +123,17 @@ final class NativePanel {
                 }), () -> cancelled || stopped);
             activity.runOnUiThread(() -> {
                 if (stopped || epoch != answerEpoch) return;
-                outcome = result; output.setText(result.text);
+                // A click can arrive after native completion but before this UI callback.
+                AnswerEngine.Outcome visible = cancelled ? AnswerEngine.discardAfterCancel(result) : result;
+                outcome = visible; output.setText(visible.text);
                 String label;
-                switch (result.kind) {
+                switch (visible.kind) {
                     case GENERATED: label = "Generated locally · Citation IDs checked; inspect factual support"; break;
-                    case FALLBACK: label = "Extractive fallback · " + result.reason; break;
-                    case ABSTAINED: label = "Abstained · " + result.reason; break;
+                    case FALLBACK: label = "Extractive fallback · " + visible.reason; break;
+                    case ABSTAINED: label = "Abstained · " + visible.reason; break;
                     default: label = "Cancelled · Partial draft discarded";
                 }
-                answerStatus.setText(label + String.format(java.util.Locale.ROOT, " · %.0f ms", result.totalMs));
+                answerStatus.setText(label + String.format(java.util.Locale.ROOT, " · %.0f ms", visible.totalMs));
                 setBusy(false);
             });
         });
