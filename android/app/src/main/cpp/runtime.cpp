@@ -38,7 +38,7 @@ std::string bytes(JNIEnv *env, jbyteArray value) {
 }
 }
 extern "C" JNIEXPORT jstring JNICALL Java_org_pocketlore_app_NativeRuntime_identity(JNIEnv *env, jclass) {
-    return env->NewStringUTF("llama.cpp " POCKETLORE_REVISION "; CPU; context=512; threads=2; greedy");
+    return env->NewStringUTF("llama.cpp " POCKETLORE_REVISION "; CPU; context=2048; threads=2; greedy");
 }
 extern "C" JNIEXPORT jlong JNICALL Java_org_pocketlore_app_NativeRuntime_create(JNIEnv *env, jclass) {
     try {
@@ -69,16 +69,9 @@ extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_load(JNI
         }
     } catch (const std::exception &e) { fail(env, e); }
 }
-static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobject sink, bool chat, jbyteArray system = nullptr) {
-    try {
-        auto s = get(id);
-        std::lock_guard<std::mutex> lock(s->operation);
-        if (!s->model) throw std::runtime_error("No model loaded");
-        if (limit < 1 || limit > 256 || !sink) throw std::runtime_error("Invalid generation arguments");
-        if (s->cancelled) return -1;
-        auto text = bytes(env, prompt);
-        if (text.size() > 32768) throw std::runtime_error("Prompt exceeds byte limit");
-        if (chat) {
+static std::string chatText(JNIEnv *env, const std::shared_ptr<Session>& s, jbyteArray system, jbyteArray prompt) {
+    auto text=bytes(env,prompt);
+    if(text.size()>32768)throw std::runtime_error("Prompt exceeds byte limit");
             if (text.find('\0') != std::string::npos || text.find("<|") != std::string::npos || text.find("[INST]") != std::string::npos)
                 throw std::runtime_error("Unsupported prompt control marker");
             const char *tmpl = llama_model_chat_template(s->model, nullptr);
@@ -93,15 +86,34 @@ static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobje
             if (llama_chat_apply_template(tmpl, messages, 2, true, formatted.data(), size) != size)
                 throw std::runtime_error("Chat formatting failed");
             text.assign(formatted.data(), size);
-        }
+    return text;
+}
+extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_countChatTokens(JNIEnv *env,jclass,jlong id,jbyteArray system,jbyteArray prompt) {
+    try {
+        auto s=get(id);std::lock_guard<std::mutex> lock(s->operation);
+        if(!s->model)throw std::runtime_error("No model loaded");
+        auto text=chatText(env,s,system,prompt);
+        return -llama_tokenize(llama_model_get_vocab(s->model),text.data(),text.size(),nullptr,0,true,true);
+    } catch(const std::exception& e){fail(env,e);return 0;}
+}
+static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobject sink, bool chat, jbyteArray system = nullptr) {
+    try {
+        auto s = get(id);
+        std::lock_guard<std::mutex> lock(s->operation);
+        if (!s->model) throw std::runtime_error("No model loaded");
+        if (limit < 1 || limit > 256 || !sink) throw std::runtime_error("Invalid generation arguments");
+        if (s->cancelled) return -1;
+        auto text = bytes(env, prompt);
+        if (text.size() > 32768) throw std::runtime_error("Prompt exceeds byte limit");
+        if (chat) text=chatText(env,s,system,prompt);
         const auto *vocab = llama_model_get_vocab(s->model);
         int count = -llama_tokenize(vocab, text.data(), text.size(), nullptr, 0, true, chat);
-        if (count <= 0 || count + limit > 512) throw std::runtime_error("Prompt and output exceed 512-token context");
+        if (count <= 0 || count + limit > 2048) throw std::runtime_error("Prompt and output exceed 2048-token context");
         std::vector<llama_token> tokens(count);
         if (llama_tokenize(vocab, text.data(), text.size(), tokens.data(), count, true, chat) != count)
             throw std::runtime_error("Tokenization failed");
         auto params = llama_context_default_params();
-        params.n_ctx = 512; params.n_batch = 512; params.n_ubatch = 128;
+        params.n_ctx = 2048; params.n_batch = 2048; params.n_ubatch = 128;
         params.n_threads = 2; params.n_threads_batch = 2;
         params.abort_callback = aborted; params.abort_callback_data = s.get();
         using Context = std::unique_ptr<llama_context, decltype(&llama_free)>;

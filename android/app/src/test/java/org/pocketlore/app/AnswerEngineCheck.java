@@ -22,7 +22,7 @@ public final class AnswerEngineCheck {
             check(bad.kind==AnswerEngine.Kind.FALLBACK && bad.invokedModel,"Invalid citations published: "+draft);
             check(bad.rawDraft.equals(draft),"Rejected raw draft lost");
         }
-        ResearchEngine clipped=new ResearchEngine(new StringReader("clip-01\tTitle\thttps://example.invalid\t2026-10-01\tTest fixture\t"+"water ".repeat(80)+"groundwater.\n"));
+        ResearchEngine clipped=new ResearchEngine(new StringReader("clip-01\tTitle\thttps://example.invalid\t2026-10-01\tTest fixture\t"+"water ".repeat(180)+"groundwater.\n"));
         var uncovered=AnswerEngine.answer("What is groundwater?",clipped.research("What is groundwater?"),forbidden,t->{},()->false);
         check(uncovered.kind==AnswerEngine.Kind.ABSTAINED && !uncovered.invokedModel,"Evidence outside supplied excerpt used");
         String cited="Evaporation changes liquid water to vapor [water-01]. Condensation changes water vapor to liquid [water-02].";
