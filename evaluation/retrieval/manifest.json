@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "cases_sha256": "045270377a2cc1792cef27842147a770404eb3da32123aa9a702378a6313130c",
+  "case_count": 30,
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "baseline_commit": "9c85536946138e4d805b99ec3f9cbdfe836a49e0",
+  "baseline_source_sha256": "525d3d46b17ab6dcd761c73d6bea9aed9df212fd9d3a9cf0b56e2640136c7cd5",
+  "pilot_development_sha256": "e38606819afb63aae14dbfc174515a288a56dd554d963074dd41940a77b5d35f",
+  "metrics": [
+    "required-group coverage@4 (alternative IDs per group)",
+    "MRR@4 for present cases",
+    "explicit distractor hits@4",
+    "absent cases with generation blocked by existing lexical/excerpt coverage",
+    "warm query p50/p95, first sweep timings, index elapsed time"
+  ],
+  "acceptance_policy": {
+    "minimum_group_coverage": 0.8,
+    "minimum_mrr": 0.65,
+    "no_regression_vs_baseline_group_coverage": true,
+    "minimum_absent_blocked": 1.0,
+    "requires_retrieval_improvement_or_equal_quality_with_less_scanning": true
+  },
+  "limits": "Development-only tuning; non-exhaustive relevance labels, tiny corpus and host timings cannot establish unseen quality or phone acceptance."
+}

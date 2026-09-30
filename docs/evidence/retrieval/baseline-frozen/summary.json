@@ -1,0 +1,112 @@
+{
+  "environment": "LLMRig host JVM; not Android or physical device",
+  "cases_sha256": "045270377a2cc1792cef27842147a770404eb3da32123aa9a702378a6313130c",
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "source_hashes": {
+    "baseline_ResearchEngine.java": "525d3d46b17ab6dcd761c73d6bea9aed9df212fd9d3a9cf0b56e2640136c7cd5",
+    "baseline_EvidencePrompt.java": "8391e702cbe9bbaa51edffdab3223c556f363be297e49d5bb8ceb0e85bb0ec06"
+  },
+  "reports": {
+    "baseline": [
+      {
+        "group_coverage_at_4": 0.9,
+        "mrr_at_4": 0.875,
+        "explicit_distractor_hits": 1,
+        "absent_generation_blocked_rate": 1,
+        "present_lexical_generation_blocked": 17,
+        "index_ms": 31.150302,
+        "warm_p50_ms": 0.124461,
+        "warm_p95_ms": 0.438805,
+        "failures": [
+          {
+            "id": "science-bedrock",
+            "group_coverage": 0.0,
+            "retrieved": [
+              "infiltration-f889502a8ee1ae86",
+              "infiltration-d320b3ca7bc9b01a",
+              "groundwater-20ea6a15204f536c",
+              "groundwater-99f9ec1384e20035"
+            ]
+          },
+          {
+            "id": "practical-dark",
+            "group_coverage": 0.0,
+            "retrieved": [
+              "yellowstone-c7bbe1c4dfb76f39",
+              "yosemite-11ee00452ee89c2d",
+              "declaration-d4a5fe17e8a5f0b4",
+              "essentials-59d02ca0df497a7a"
+            ]
+          }
+        ]
+      },
+      {
+        "group_coverage_at_4": 0.9,
+        "mrr_at_4": 0.875,
+        "explicit_distractor_hits": 1,
+        "absent_generation_blocked_rate": 1,
+        "present_lexical_generation_blocked": 17,
+        "index_ms": 30.590319,
+        "warm_p50_ms": 0.120589,
+        "warm_p95_ms": 0.421166,
+        "failures": [
+          {
+            "id": "science-bedrock",
+            "group_coverage": 0.0,
+            "retrieved": [
+              "infiltration-f889502a8ee1ae86",
+              "infiltration-d320b3ca7bc9b01a",
+              "groundwater-20ea6a15204f536c",
+              "groundwater-99f9ec1384e20035"
+            ]
+          },
+          {
+            "id": "practical-dark",
+            "group_coverage": 0.0,
+            "retrieved": [
+              "yellowstone-c7bbe1c4dfb76f39",
+              "yosemite-11ee00452ee89c2d",
+              "declaration-d4a5fe17e8a5f0b4",
+              "essentials-59d02ca0df497a7a"
+            ]
+          }
+        ]
+      },
+      {
+        "group_coverage_at_4": 0.9,
+        "mrr_at_4": 0.875,
+        "explicit_distractor_hits": 1,
+        "absent_generation_blocked_rate": 1,
+        "present_lexical_generation_blocked": 17,
+        "index_ms": 31.225019,
+        "warm_p50_ms": 0.122056,
+        "warm_p95_ms": 0.439841,
+        "failures": [
+          {
+            "id": "science-bedrock",
+            "group_coverage": 0.0,
+            "retrieved": [
+              "infiltration-f889502a8ee1ae86",
+              "infiltration-d320b3ca7bc9b01a",
+              "groundwater-20ea6a15204f536c",
+              "groundwater-99f9ec1384e20035"
+            ]
+          },
+          {
+            "id": "practical-dark",
+            "group_coverage": 0.0,
+            "retrieved": [
+              "yellowstone-c7bbe1c4dfb76f39",
+              "yosemite-11ee00452ee89c2d",
+              "declaration-d4a5fe17e8a5f0b4",
+              "essentials-59d02ca0df497a7a"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "wall_seconds": 2.202093365998735,
+  "pilot": "Eight unchanged public pilot questions recorded raw after the 30 scored cases; no holdout opened",
+  "status": "BASELINE_ONLY"
+}
