@@ -13,3 +13,41 @@ The private full research and planning translations retain 5,740 and 2,879 words
 Deployment records live privately in state/coordinator-followup.json. The intended deployment uses a commit-pinned private runtime copy and exact active-session resumption. Main integration is a separate queued task after the active task reaches a safe boundary. No physical Android or GrapheneOS acceptance is implied.
 
 The initial maintenance runtime was deployed from commit `8f045216782c8cf3c77a6e5230638cd0fe61d5e4`. The native task resumed with the same session, and its preserved dirty file hash matched after restart. Bootstrap and maintenance notifications reached the canonical continuity chat. The workspace-write sandbox hid KVM, so a separate PocketLore emulator service restored the existing AVD through adb without weakening that sandbox. Exact live status and delivery receipts remain in the private follow-up record.
+
+## Safe-boundary integration — task 005
+
+On October 1, 2026, the builder inspected a clean working tree on the existing
+`checkpoint/005-integrate-coordinator-compliance` branch, based on application
+checkpoint `f596b1a`. Neither requested maintenance commit was already present
+by ancestry or equivalent patch. Both were cherry-picked in the requested order,
+without conflicts or application edits:
+
+| Reviewed source commit | Integrated checkpoint commit |
+| --- | --- |
+| `8f045216782c8cf3c77a6e5230638cd0fe61d5e4` | `1d1be4b` |
+| `7c36334041a4ebcd8af48062d754520e260ec410` | `c1c3b7f` |
+
+The two changes remain separate commits. No branch switch, reset, push, service
+restart, live runner-state change or main advancement was performed. The builder
+did not inspect private context or deployment receipts.
+
+Validation on LLMRig:
+
+```text
+python3 -m unittest discover -s tools/orchestration -p 'test_*.py'
+Ran 11 tests in 0.042s
+OK
+```
+
+A Git comparison against `f596b1a` confirmed no changes to `android`,
+`tools/runtime`, `THIRD_PARTY_NOTICES`, `FINDINGS.md`, native evidence, or the
+Android/runtime/release-gap documents. The unchanged application tree identities
+are `android`: `fa32e69c597f96f2965f0a7917cc354ec8b8690c` and `tools/runtime`:
+`7beace349fc435c3f10195ab3d46a018d9c000ea`.
+
+These regression tests exercise temporary test state and mocked external process
+interactions. They do not revalidate live deployment, continuity delivery, systemd
+crash recovery, emulator readiness, application inference, or physical hardware.
+The deployment and supervision statements above are preserved from the reviewed
+maintenance commits, not newly verified against private live state by this task.
+Native validation remains a separate task; no old emulator launcher was restarted.
