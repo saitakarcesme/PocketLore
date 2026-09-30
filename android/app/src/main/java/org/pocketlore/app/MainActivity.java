@@ -62,8 +62,8 @@ public final class MainActivity extends Activity {
         status = text("Loading installed knowledge pack…", 14); layout.addView(status);
         answer = text("Ask a question to inspect evidence stored on this device. This starter pack covers only water science; it does not provide current travel or medical advice.", 17);
         answer.setTextIsSelectable(true); layout.addView(answer);
-        nativePanel = new NativePanel(this, layout);
         sourceList = new LinearLayout(this); sourceList.setOrientation(LinearLayout.VERTICAL); layout.addView(sourceList);
+        nativePanel = new NativePanel(this, layout);
         search.setEnabled(false);
         search.setOnClickListener(v -> runSearch());
         worker.execute(() -> {

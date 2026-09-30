@@ -17,4 +17,5 @@ for abi in arm64-v8a x86_64; do
   "$toolchain/cmake-3.22.1/bin/cmake" --build "$build" --target pocketlore --parallel "${POCKETLORE_BUILD_JOBS:-4}"
   mkdir -p "$root/android/app/build/generated/nativeLibs/$abi"
   cp "$build/libpocketlore.so" "$root/android/app/build/generated/nativeLibs/$abi/"
+  "$toolchain/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip" --strip-unneeded "$root/android/app/build/generated/nativeLibs/$abi/libpocketlore.so"
 done
