@@ -20,26 +20,24 @@ final class NativePanel {
     private final Activity activity;
     // Serialize file promotion and cleanup across Activity recreation.
     private static final ExecutorService worker = Executors.newSingleThreadExecutor();
-    private final Button model, generate, cancel;
-    private final TextView state, output;
+    private final Button model, cancel;
+    private final TextView state, output, answerStatus;
+    private final java.util.function.Consumer<Boolean> busyChanged;
+    private volatile AnswerEngine.Outcome outcome;
+    private long answerEpoch;
     private volatile boolean stopped, cancelled;
     private volatile long session;
     private boolean busy;
-    private ResearchEngine.Result evidence;
-    private String question;
-    NativePanel(Activity activity, LinearLayout layout) {
-        this.activity = activity;
+    NativePanel(Activity activity, LinearLayout layout, LinearLayout actions, TextView output, TextView answerStatus, java.util.function.Consumer<Boolean> busyChanged) {
+        this.activity = activity; this.output = output; this.answerStatus = answerStatus; this.busyChanged = busyChanged;
         state = new TextView(activity);
         state.setText("Experimental local generation · Import a local GGUF (up to 512 MiB). Small models may give incorrect answers. Inspect the retrieved sources.");
         layout.addView(state);
-        model = new Button(activity); model.setText("Import local GGUF"); layout.addView(model);
-        generate = new Button(activity); generate.setText("Draft from evidence"); generate.setEnabled(false); layout.addView(generate);
-        cancel = new Button(activity); cancel.setText("Cancel inference or import"); cancel.setEnabled(false); layout.addView(cancel);
-        output = new TextView(activity); output.setTextIsSelectable(true); layout.addView(output);
+        model = new Button(activity); model.setText("Import local GGUF"); model.setContentDescription("Import local model"); layout.addView(model);
+        cancel = new Button(activity); cancel.setText("Cancel inference or import"); cancel.setEnabled(false); cancel.setContentDescription("Cancel current operation"); actions.addView(cancel);
         model.setOnClickListener(v -> activity.startActivityForResult(new Intent(Intent.ACTION_OPEN_DOCUMENT)
             .addCategory(Intent.CATEGORY_OPENABLE).setType("*/*").putExtra(Intent.EXTRA_LOCAL_ONLY, true), PICK_MODEL));
-        cancel.setOnClickListener(v -> { cancelled = true; long id = session; if (id != 0) NativeRuntime.cancel(id); });
-        generate.setOnClickListener(v -> draft());
+        cancel.setOnClickListener(v -> cancel());
         // Only the serial import worker writes this app-owned staging path.
         worker.execute(() -> new File(activity.getFilesDir(), "model.partial").delete());
         File saved = new File(activity.getFilesDir(), "model.gguf");
@@ -56,9 +54,17 @@ final class NativePanel {
             });
         }
     }
-    void evidence(String query, ResearchEngine.Result result) {
-        question = query; evidence = result;
-        generate.setEnabled(!busy && session != 0 && !result.hits.isEmpty());
+    AnswerEngine.Outcome outcome() { return outcome; }
+    boolean isBusy() { return busy; }
+    boolean hasModel() { return session != 0; }
+    void clearAnswer() { ++answerEpoch; outcome = null; output.setText(""); }
+    void cancel() {
+        cancelled = true;
+        long id = session;
+        if (id != 0) {
+            try { NativeRuntime.cancel(id); }
+            catch (IllegalStateException closed) { /* A concurrent failed load can release the handle. */ }
+        }
     }
     void selected(Uri uri) {
         if (uri == null || busy || stopped) return;
@@ -98,29 +104,40 @@ final class NativePanel {
             finally { stage.delete(); done(); }
         });
     }
-    private void draft() {
-        if (busy || session == 0 || evidence == null || evidence.hits.isEmpty()) return;
-        final byte[] input = EvidencePrompt.build(question, evidence).getBytes(StandardCharsets.UTF_8);
+    void answer(String question, ResearchEngine.Result evidence) {
+        if (busy || stopped) return;
+        final long epoch = ++answerEpoch;
         final long id = session;
-        NativeRuntime.reset(id); cancelled = false; setBusy(true);
-        output.setText("Unverified draft — check every claim against the sources.\n");
-        state.setText("Generating locally…");
+        if (id != 0) NativeRuntime.reset(id);
+        cancelled = false; outcome = null; setBusy(true);
+        output.setText("Preparing an offline answer…"); answerStatus.setText("Checking retrieved evidence…");
         worker.execute(() -> {
-            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-            try {
-                int count = NativeRuntime.generate(id, input, 96, piece -> {
-                    bytes.write(piece, 0, piece.length);
-                    String text = new String(bytes.toByteArray(), StandardCharsets.UTF_8);
-                    activity.runOnUiThread(() -> { if (!stopped) output.setText("Unverified draft — check every claim against the sources.\n" + text); });
-                });
-                showState(count < 0 ? "Generation cancelled" : "Draft finished · " + count + " tokens · Source support has not been verified");
-            } catch (Exception e) { showState("Generation failed: " + e.getMessage()); }
-            finally { done(); }
+            AnswerEngine.Outcome result = AnswerEngine.answer(question, evidence,
+                id == 0 ? null : (prompt, limit, sink) -> NativeRuntime.generateChat(id, prompt, limit, sink),
+                text -> activity.runOnUiThread(() -> {
+                    if (!stopped && !cancelled && epoch == answerEpoch) {
+                        answerStatus.setText("Generating locally · Citation checks pending");
+                        output.setText("Unverified partial draft\n" + text);
+                    }
+                }), () -> cancelled || stopped);
+            activity.runOnUiThread(() -> {
+                if (stopped || epoch != answerEpoch) return;
+                outcome = result; output.setText(result.text);
+                String label;
+                switch (result.kind) {
+                    case GENERATED: label = "Generated locally · Citation IDs checked; inspect factual support"; break;
+                    case FALLBACK: label = "Extractive fallback · " + result.reason; break;
+                    case ABSTAINED: label = "Abstained · " + result.reason; break;
+                    default: label = "Cancelled · Partial draft discarded";
+                }
+                answerStatus.setText(label + String.format(java.util.Locale.ROOT, " · %.0f ms", result.totalMs));
+                setBusy(false);
+            });
         });
     }
     private void setBusy(boolean value) {
         busy = value; model.setEnabled(!value); cancel.setEnabled(value);
-        generate.setEnabled(!value && session != 0 && evidence != null && !evidence.hits.isEmpty());
+        busyChanged.accept(value);
     }
     private void showState(String text) { activity.runOnUiThread(() -> { if (!stopped) state.setText(text); }); }
     private void done() { activity.runOnUiThread(() -> { if (!stopped) setBusy(false); }); }

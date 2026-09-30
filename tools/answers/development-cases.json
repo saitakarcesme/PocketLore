@@ -1,0 +1,12 @@
+{
+  "id": "answer-integration-development-v1",
+  "purpose": "Frozen public integration cases, not a private holdout or a research benchmark",
+  "model_sha256": "61c69fc5ce91982e26c625d43be5c3c7f0f774da22f4fa4e45c37a80a22ddad4",
+  "cases": [
+    {"id": "comparison", "question": "Compare evaporation and condensation", "expect": "real model invocation; generated answer only if citation checks pass, otherwise labeled evidence fallback"},
+    {"id": "definition", "question": "What is groundwater?", "expect": "real model invocation with inspectable source IDs"},
+    {"id": "unsupported", "question": "quasar supernova", "expect": "abstention without model invocation"},
+    {"id": "partial", "question": "Does evaporation cure diabetes?", "expect": "abstention without model invocation because query terms lack evidence"}
+  ],
+  "lifecycle_checks": ["no-model fallback", "local SAF import", "saved model reload after process restart", "cancel real generation", "new question removes stale answer", "activity recreation cancels in-flight work", "inspect cited source offline"]
+}

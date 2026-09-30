@@ -13,6 +13,8 @@ public final class NativeRuntime {
     public static native long create();
     public static native void load(long session, byte[] localPath);
     public static native int generate(long session, byte[] prompt, int maxTokens, Sink sink);
+    /** Applies the loaded model's supported chat template before generation. */
+    public static native int generateChat(long session, byte[] userPrompt, int maxTokens, Sink sink);
     public static native void cancel(long session);
     public static native void reset(long session);
     public static native void close(long session);

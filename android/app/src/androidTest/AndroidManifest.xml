@@ -1,0 +1,3 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <instrumentation android:name="org.pocketlore.app.AnswerSmokeInstrumentation" android:targetPackage="org.pocketlore.app" />
+</manifest>

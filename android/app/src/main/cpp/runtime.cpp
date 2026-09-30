@@ -69,7 +69,7 @@ extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_load(JNI
         }
     } catch (const std::exception &e) { fail(env, e); }
 }
-extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generate(JNIEnv *env, jclass, jlong id, jbyteArray prompt, jint limit, jobject sink) {
+static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobject sink, bool chat) {
     try {
         auto s = get(id);
         std::lock_guard<std::mutex> lock(s->operation);
@@ -78,11 +78,24 @@ extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generate
         if (s->cancelled) return -1;
         auto text = bytes(env, prompt);
         if (text.size() > 32768) throw std::runtime_error("Prompt exceeds byte limit");
+        if (chat) {
+            if (text.find('\0') != std::string::npos || text.find("<|") != std::string::npos || text.find("[INST]") != std::string::npos)
+                throw std::runtime_error("Unsupported prompt control marker");
+            const char *tmpl = llama_model_chat_template(s->model, nullptr);
+            if (!tmpl) throw std::runtime_error("Model has no supported chat template");
+            llama_chat_message messages[] = {{"user", text.c_str()}};
+            int size = llama_chat_apply_template(tmpl, messages, 1, true, nullptr, 0);
+            if (size <= 0 || size > 65536) throw std::runtime_error("Unsupported or oversized chat template");
+            std::vector<char> formatted(size);
+            if (llama_chat_apply_template(tmpl, messages, 1, true, formatted.data(), size) != size)
+                throw std::runtime_error("Chat formatting failed");
+            text.assign(formatted.data(), size);
+        }
         const auto *vocab = llama_model_get_vocab(s->model);
-        int count = -llama_tokenize(vocab, text.data(), text.size(), nullptr, 0, true, false);
+        int count = -llama_tokenize(vocab, text.data(), text.size(), nullptr, 0, true, chat);
         if (count <= 0 || count + limit > 512) throw std::runtime_error("Prompt and output exceed 512-token context");
         std::vector<llama_token> tokens(count);
-        if (llama_tokenize(vocab, text.data(), text.size(), tokens.data(), count, true, false) != count)
+        if (llama_tokenize(vocab, text.data(), text.size(), tokens.data(), count, true, chat) != count)
             throw std::runtime_error("Tokenization failed");
         auto params = llama_context_default_params();
         params.n_ctx = 512; params.n_batch = 512; params.n_ubatch = 128;
@@ -124,6 +137,12 @@ extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generate
         }
         return s->cancelled ? -1 : generated;
     } catch (const std::exception &e) { fail(env, e); return 0; }
+}
+extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generate(JNIEnv *env, jclass, jlong id, jbyteArray prompt, jint limit, jobject sink) {
+    return generate(env, id, prompt, limit, sink, false);
+}
+extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generateChat(JNIEnv *env, jclass, jlong id, jbyteArray prompt, jint limit, jobject sink) {
+    return generate(env, id, prompt, limit, sink, true);
 }
 extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_cancel(JNIEnv *env, jclass, jlong id) {
     try { get(id)->cancelled = true; } catch (const std::exception &e) { fail(env, e); }

@@ -58,18 +58,21 @@ public final class MainActivity extends Activity {
         question.setHint("Ask about evaporation or groundwater");
         question.setMinLines(2); question.setMaxLines(5); question.setTextSize(18);
         question.setContentDescription("Research question"); layout.addView(question);
-        search = new Button(this); search.setText("Find evidence"); layout.addView(search);
-        status = text("Loading installed knowledge pack…", 14); layout.addView(status);
+        search = new Button(this); search.setText("Answer offline"); layout.addView(search);
+        LinearLayout actions = new LinearLayout(this); actions.setOrientation(LinearLayout.VERTICAL); layout.addView(actions);
+        status = text("Loading installed knowledge pack…", 14); status.setContentDescription("Answer status"); layout.addView(status);
         answer = text("Ask a question to inspect evidence stored on this device. This starter pack covers only water science; it does not provide current travel or medical advice.", 17);
-        answer.setTextIsSelectable(true); layout.addView(answer);
+        answer.setTextIsSelectable(true); answer.setContentDescription("Offline answer"); layout.addView(answer);
         sourceList = new LinearLayout(this); sourceList.setOrientation(LinearLayout.VERTICAL); layout.addView(sourceList);
-        nativePanel = new NativePanel(this, layout);
+        nativePanel = new NativePanel(this, layout, actions, answer, status, busy -> {
+            search.setEnabled(engine != null && !busy); question.setEnabled(!busy);
+        });
         search.setEnabled(false);
         search.setOnClickListener(v -> runSearch());
         worker.execute(() -> {
             try {
                 ResearchEngine loaded = new ResearchEngine(new InputStreamReader(getAssets().open("water-science.tsv"), StandardCharsets.UTF_8));
-                runOnUiThread(() -> { if (destroyed) return; engine = loaded; search.setEnabled(true);
+                runOnUiThread(() -> { if (destroyed) return; engine = loaded; search.setEnabled(!nativePanel.isBusy());
                     status.setText(engine.size() + " passages installed · No network permission");
                     if (state != null) question.setText(state.getString("question", ""));
                 });
@@ -82,6 +85,7 @@ public final class MainActivity extends Activity {
         String query = question.getText().toString().trim();
         if (query.isEmpty()) { question.setError("Enter a research question"); return; }
         ((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(question.getWindowToken(), 0);
+        nativePanel.clearAnswer(); sourceList.removeAllViews();
         search.setEnabled(false); status.setText("Searching installed passages…");
         worker.execute(() -> {
             long start = System.nanoTime();
@@ -89,8 +93,7 @@ public final class MainActivity extends Activity {
             double millis = (System.nanoTime() - start) / 1_000_000.0;
             runOnUiThread(() -> {
                 if (destroyed) return;
-                answer.setText(result.answer);
-                nativePanel.evidence(query, result);
+
                 status.setText(String.format(Locale.ROOT, "%d passages retrieved · %.1f ms on this device · Offline", result.hits.size(), millis));
                 sourceList.removeAllViews();
                 for (ResearchEngine.Hit hit : result.hits) {
@@ -100,10 +103,12 @@ public final class MainActivity extends Activity {
                     source.setOnClickListener(v -> inspect(hit));
                     sourceList.addView(source);
                 }
-                search.setEnabled(true);
+                nativePanel.answer(query, result);
             });
         });
     }
+    AnswerEngine.Outcome latestAnswer() { return nativePanel.outcome(); }
+    boolean modelReady() { return nativePanel.hasModel() && !nativePanel.isBusy(); }
     private void inspect(ResearchEngine.Hit hit) {
         ResearchEngine.Passage p = hit.passage;
         TextView detail = text(p.text + "\n\nSource: U.S. Geological Survey, Water Science School\n" + p.url
