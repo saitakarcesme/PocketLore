@@ -10,7 +10,7 @@ import java.util.regex.*;
 /** Deterministic routing and citation integrity checks, not factual entailment verification. */
 public final class AnswerEngine {
     public enum Kind { GENERATED, FALLBACK, ABSTAINED, CANCELLED }
-    public interface Generator { int run(byte[] prompt, int limit, NativeRuntime.Sink sink); default int countTokens(byte[] prompt) { return -1; } default int runWithSources(byte[] prompt,int limit,NativeRuntime.Sink sink,int sources){return run(prompt,limit,sink);} }
+    public interface Generator { int run(byte[] prompt, int limit, NativeRuntime.Sink sink); default int countTokens(byte[] prompt) { return -1; } default int runWithSources(byte[] prompt,int limit,NativeRuntime.Sink sink,int sources,boolean combined){return run(prompt,limit,sink);} }
     public static final class Outcome {
         public final Kind kind;
         public final String text, rawDraft, reason, prompt;
@@ -65,7 +65,7 @@ public final class AnswerEngine {
                 if (first[0]==0) first[0]=System.nanoTime();
                 callbacks[0]++; raw.write(piece,0,piece.length);
                 if (!cancelled.getAsBoolean()) progress.accept(new String(raw.toByteArray(),StandardCharsets.UTF_8));
-            },evidence.hits.size());
+            },evidence.hits.size(),question.trim().toLowerCase(Locale.ROOT).startsWith("compare ") && evidence.hits.size()>1);
         } catch (RuntimeException error) {
             String draft=new String(raw.toByteArray(),StandardCharsets.UTF_8);
             if (cancelled.getAsBoolean()) return result(Kind.CANCELLED,"Cancelled. Partial draft discarded.",draft,"Cancelled",prompt,true,callbacks[0],elapsedFirst(first[0],start),start);
@@ -83,7 +83,7 @@ public final class AnswerEngine {
         Set<String> conflicts=EvidencePrompt.conflicts(evidence);
         if(error.isEmpty() && !conflicts.isEmpty() && (!citations(linked).containsAll(conflicts) ||
             !linked.toLowerCase(Locale.ROOT).matches("(?s).*(disagree|conflict|uncertain|unresolved|contradict).*")))
-            error="Potential source contradiction was not disclosed with both source links; draft withheld.";
+            error="Potential unresolved source disagreement: ["+String.join("] [",conflicts)+"]. The model did not disclose both sides; its draft was withheld. Inspect these sources.";
         if (error.isEmpty()) error=claimSupportFailure(linked,evidence,excerptLimit);
         if (!error.isEmpty()) return fallback(evidence,error,draft,prompt,true,count,firstMs,start);
         return new Outcome(Kind.GENERATED,linked,draft,"Claim links and lexical support checked; factual entailment still requires source inspection. Sources may differ by conditions or date.",prompt,
@@ -113,9 +113,11 @@ public final class AnswerEngine {
             for(ResearchEngine.Hit hit:evidence.hits)if(ids.contains(hit.passage.id))source.append(EvidencePrompt.excerpt(hit,limit)).append(' ');
             Set<String> words=new HashSet<>(ResearchEngine.tokenize(BRACKET.matcher(claim).replaceAll("")));words.removeAll(glue);
             Set<String> original=new HashSet<>(words);words.retainAll(ResearchEngine.tokenize(source.toString()));
-            if(original.size()>0 && words.size()/(double)original.size()<0.45)return "A claim has weak lexical support in its cited excerpts; draft withheld.";
+            if(original.size()>0 && words.size()/(double)original.size()<0.65)return "A claim has weak lexical support in its cited excerpts; draft withheld.";
             Matcher numbers=Pattern.compile("\\b[0-9]+(?:[.,][0-9]+)*\\b").matcher(BRACKET.matcher(claim).replaceAll(""));
-            while(numbers.find())if(!source.toString().contains(numbers.group()))return "A claim contains a number absent from its cited excerpts; draft withheld.";
+            Set<String> supportedNumbers=new HashSet<>();Matcher sourceNumbers=Pattern.compile("\\b[0-9]+(?:[.,][0-9]+)*\\b").matcher(source);
+            while(sourceNumbers.find())supportedNumbers.add(sourceNumbers.group().replace(",",""));
+            while(numbers.find())if(!supportedNumbers.contains(numbers.group().replace(",","")))return "A claim contains a number absent from its cited excerpts; draft withheld.";
         }
         return "";
     }

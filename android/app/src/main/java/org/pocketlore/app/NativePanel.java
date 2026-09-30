@@ -117,7 +117,7 @@ final class NativePanel {
             AnswerEngine.Outcome result = AnswerEngine.answer(question, evidence,
                 id == 0 ? null : new AnswerEngine.Generator() {
                     public int run(byte[] prompt,int limit,NativeRuntime.Sink sink) { return NativeRuntime.generateChat(id,EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt,limit,sink); }
-                    public int runWithSources(byte[] prompt,int limit,NativeRuntime.Sink sink,int sources) {return NativeRuntime.generateClaims(id,EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt,limit,sink,sources);}
+                    public int runWithSources(byte[] prompt,int limit,NativeRuntime.Sink sink,int sources,boolean combined) {return NativeRuntime.generateClaims(id,EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt,limit,sink,sources,combined);}
                     public int countTokens(byte[] prompt) { return NativeRuntime.countChatTokens(id,EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt); }
                 },
                 text -> activity.runOnUiThread(() -> {
@@ -131,16 +131,7 @@ final class NativePanel {
                 // A click can arrive after native completion but before this UI callback.
                 AnswerEngine.Outcome visible = cancelled ? AnswerEngine.discardAfterCancel(result) : result;
                 outcome = visible;
-                android.text.SpannableString linked=new android.text.SpannableString(visible.text);
-                java.util.regex.Matcher citations=java.util.regex.Pattern.compile("\\[([^\\[\\]]+)\\]").matcher(visible.text);
-                while(citations.find()) {
-                    String citation=citations.group(1);
-                    if(!visible.citedIds.contains(citation))continue;
-                    linked.setSpan(new android.text.style.ClickableSpan() {
-                        public void onClick(android.view.View view) { inspectCitation.accept(citation); }
-                    },citations.start(),citations.end(),android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                }
-                output.setText(linked);output.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
+                output.setText(linkClaims(visible,inspectCitation));output.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
                 String label;
                 switch (visible.kind) {
                     case GENERATED: label = "Generated locally · Linked claims; inspect support and source differences"; break;
@@ -152,6 +143,18 @@ final class NativePanel {
                 setBusy(false);
             });
         });
+    }
+    static android.text.SpannableString linkClaims(AnswerEngine.Outcome visible,java.util.function.Consumer<String> inspect) {
+        android.text.SpannableString linked=new android.text.SpannableString(visible.text);
+        java.util.regex.Matcher citations=java.util.regex.Pattern.compile("\\[([^\\[\\]]+)\\]").matcher(visible.text);
+        while(citations.find()) {
+            String citation=citations.group(1);
+            if(!visible.citedIds.contains(citation))continue;
+            linked.setSpan(new android.text.style.ClickableSpan() {
+                public void onClick(android.view.View view) { inspect.accept(citation); }
+            },citations.start(),citations.end(),android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+        return linked;
     }
     private void setBusy(boolean value) {
         busy = value; model.setEnabled(!value); cancel.setEnabled(value);

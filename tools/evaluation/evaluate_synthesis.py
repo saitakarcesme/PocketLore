@@ -36,23 +36,34 @@ result=run(adb+['shell','am','instrument' ,'-w','org.pocketlore.app.test/org.poc
 assert b'INSTRUMENTATION_CODE: -1' in result,result.decode()
 raw=run(adb+['exec-out','run-as','org.pocketlore.app','cat','files/synthesis-tests/results.json']);(OUT/'results.json').write_bytes(raw);report=json.loads(raw)
 checks={}
+checks['case_identity']=len(report['cases'])==len(expected['cases'])+1 and {r['id']:r['question'] for r in report['cases'] if r['id']!='conflict-fixture'}=={r['id']:r['question'] for r in expected['cases']}
+checks['model_identity']=report.get('model_sha256')==pin['sha256']
+checks['pack_identity']=report.get('pack_sha256')==expected['pack_sha256']
 for row in report['cases']:
- absent=row['id']=='absent';checks[row['id']+'_route']=row['kind']==('ABSTAINED' if absent else 'GENERATED')
+ absent=row['id']=='absent';conflict=row['id']=='conflict-fixture';checks[row['id']+'_route']=row['kind'] in (['ABSTAINED'] if absent else ['GENERATED','FALLBACK'] if conflict else ['GENERATED'])
  checks[row['id']+'_budget']=row['prompt_tokens']+row['tokens']<=2048
- if not absent:
+ if not absent and not conflict:
   ids=set(re.findall(r'\[([^\[\]]+)\]',row['text']));allowed={p['id'] for p in row['sources']}
   checks[row['id']+'_citations']=row['kind']=='GENERATED' and bool(ids) and ids<=allowed
   if row['id'] in ('comparison','synthesis'):checks[row['id']+'_multiple_sources']=row['kind']=='GENERATED' and len(ids)>=2
 # Development meaning checks are deliberately separate from citation syntax.
 # They test key relations, not whole-answer exact strings or canned responses.
 for row in report['cases']:
- text=row['text'].lower(); kind=row['kind']=='GENERATED'
+ text=re.sub(r'\[[^\]]+\]','',row['text']).lower(); kind=row['kind']=='GENERATED'
  if row['id']=='comparison':
+  checks['comparison_no_cooling_transfer']=not bool(re.search(r'evaporation occurs(?:(?!condensation)[^.])*cooled',text))
   checks['comparison_phase_directions']=kind and bool(re.search(r'evaporat[^.]*liquid[^.]*vapo[ur]',text)) and bool(re.search(r'condens[^.]*vapo[ur][^.]*liquid',text))
  elif row['id']=='explanation':checks['explanation_heat_removal']=kind and 'heat' in text and bool(re.search(r'remov|cool|los',text))
- elif row['id']=='synthesis':checks['synthesis_both_processes']=kind and bool(re.search(r'groundwater|aquifer',text)) and 'runoff' in text and bool(re.search(r'infiltrat|recharg',text))
+ elif row['id']=='synthesis':
+  checks['synthesis_no_recharge_well_transfer']=not bool(re.search(r'runoff[^.]*recharge wells',text))
+  checks['synthesis_both_processes']=kind and bool(re.search(r'groundwater|aquifer',text)) and 'runoff' in text and bool(re.search(r'infiltrat|recharg',text))
  elif row['id']=='conditions':checks['conditions_scope_qualifiers']=kind and 'deep' in text and 'shallow' in text and bool(re.search(r'centur|slow',text)) and bool(re.search(r'immediat|quick',text))
-checks['conflict_fixture_disclosure']=any(r['id']=='conflict-fixture' and r['kind']=='GENERATED' and bool(re.search(r'disagree|conflict|unresolved|contradict',r['text'],re.I)) and len(set(re.findall(r'\[([^\[\]]+)\]',r['text'])))==2 for r in report['cases'])
+checks['conflict_fixture_safe_disclosure']=any(r['id']=='conflict-fixture' and r['kind'] in ('GENERATED','FALLBACK') and bool(re.search(r'disagree|conflict|unresolved|contradict',r['text'],re.I)) and {'fixture-a','fixture-b'}<=set(re.findall(r'\[([^\[\]]+)\]',r['text'])) for r in report['cases'])
+checks['native_budget_and_cancel']=report.get('native_budget_and_cancel_checks') is True
+checks['generated_claim_links']=all(r.get('claim_links_checked',0)>0 for r in report['cases'] if r['kind']=='GENERATED')
 summary={'status' :'PASS' if all(checks.values()) else 'FAIL','checks':checks,'scope':'Real generation, context and citation structure; source entailment requires recorded claim review','apk_sha256':hashlib.sha256((ROOT/'android/app/build/outputs/apk/debug/app-debug.apk').read_bytes()).hexdigest()}
+summary['results_sha256']=hashlib.sha256(raw).hexdigest()
+summary['fixture_sha256']=hashlib.sha256(fixture.read_bytes()).hexdigest()
+summary['test_apk_sha256']=hashlib.sha256((ROOT/'android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk').read_bytes()).hexdigest()
 (OUT/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(OUT);print(json.dumps(summary,indent=2))
 raise SystemExit(0 if summary['status']=='PASS' else 1)

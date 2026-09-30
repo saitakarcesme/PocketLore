@@ -96,7 +96,7 @@ extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_countCha
         return -llama_tokenize(llama_model_get_vocab(s->model),text.data(),text.size(),nullptr,0,true,true);
     } catch(const std::exception& e){fail(env,e);return 0;}
 }
-static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobject sink, bool chat, jbyteArray system = nullptr, int sources = 0) {
+static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobject sink, bool chat, jbyteArray system = nullptr, int sources = 0, bool combined = false) {
     try {
         auto s = get(id);
         std::lock_guard<std::mutex> lock(s->operation);
@@ -123,9 +123,13 @@ static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobje
         Sampler sampler(nullptr,llama_sampler_free);
         if(sources>0) {
             if(sources>4)throw std::runtime_error("Too many synthesis sources");
-            std::string grammar=R"(root ::= claim "\n" claim
-claim ::= citation (" " citation)? " " [^\n\r\[\].]{1,220} "."
-citation ::= )";
+            std::string grammar=R"(root ::= "Insufficient evidence." | claim "\n" claim
+claim ::= references " " [^\n\r\[\].]{1,220} "."
+references ::= )";
+            if(combined) {
+                grammar+="\"";for(int i=1;i<=sources;i++){if(i>1)grammar+=" ";grammar+="[S"+std::to_string(i)+"]";}grammar+="\"\n";
+            } else grammar+="citation (\" \" citation)?\n";
+            grammar+="citation ::= ";
             for(int i=1;i<=sources;i++){if(i>1)grammar+=" | ";grammar+="\"[S"+std::to_string(i)+"]\"";}
             grammar+="\n";
             auto *constraint=llama_sampler_init_grammar(vocab,grammar.c_str(),"root");
@@ -173,9 +177,9 @@ extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generate
 extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generateChat(JNIEnv *env, jclass, jlong id, jbyteArray system, jbyteArray prompt, jint limit, jobject sink) {
     return generate(env, id, prompt, limit, sink, true, system);
 }
-extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generateClaims(JNIEnv *env,jclass,jlong id,jbyteArray system,jbyteArray prompt,jint limit,jobject sink,jint sources) {
+extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generateClaims(JNIEnv *env,jclass,jlong id,jbyteArray system,jbyteArray prompt,jint limit,jobject sink,jint sources,jboolean combined) {
     if(sources<1 || sources>4){std::runtime_error error("Invalid claim source count");fail(env,error);return 0;}
-    return generate(env,id,prompt,limit,sink,true,system,sources);
+    return generate(env,id,prompt,limit,sink,true,system,sources,combined);
 }
 extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_cancel(JNIEnv *env, jclass, jlong id) {
     try { get(id)->cancelled = true; } catch (const std::exception &e) { fail(env, e); }
