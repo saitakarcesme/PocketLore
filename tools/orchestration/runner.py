@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Single-writer, durable PocketLore task supervisor. No external Python dependencies."""
-import argparse, fcntl, hashlib, json, os, pathlib, re, select, subprocess, time
+import argparse, fcntl, hashlib, json, os, pathlib, re, select, subprocess, tempfile, time
 
 
 def atomic(path, value):
@@ -20,8 +20,11 @@ def freeze(path, data):
     if path.exists():
         if path.read_bytes() != data: raise RuntimeError(f'Immutable evidence mismatch: {path}')
         return
-    temp = path.with_suffix(path.suffix + '.tmp')
-    with temp.open('wb') as out:
+    # A crash after chmod must not poison the next attempt's temporary path.
+    # Keep abandoned files as evidence; each retry gets a fresh inode.
+    descriptor, name = tempfile.mkstemp(prefix=path.name + '.', suffix='.tmp', dir=path.parent)
+    temp = pathlib.Path(name)
+    with os.fdopen(descriptor, 'wb') as out:
         out.write(data); out.flush(); os.fsync(out.fileno())
     temp.chmod(0o444); os.replace(temp, path)
     fd = os.open(path.parent, os.O_DIRECTORY)

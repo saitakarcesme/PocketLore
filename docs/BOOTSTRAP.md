@@ -5,7 +5,7 @@ The English baseline commit `aa075238571338f79df990fe4c28ffc3d14b6bf9` was pushe
 ## Implemented engineering checks
 
 - Native Android source-inspection prototype with a generated eight-passage USGS pack; no model bundled, no INTERNET permission and no Google Play Services dependency.
-- Four runner recovery unit checks, including reuse of a completed process receipt and recovery from a completed Codex turn before receipt persistence.
+- Five runner recovery unit checks, including reuse of a completed process receipt and recovery from a completed Codex turn before receipt persistence, plus an actual child-process crash between evidence chmod and atomic replacement.
 - Actual systemd service restart with a changed supervisor PID and preserved events; a second writer was rejected by the lock.
 - Isolated supervised crash injected after command receipt and before completion event; recovery recorded exactly one command execution and one completion event.
 - Separate persisted builder, continuity and clean critic sessions. Continuity read the original visible archive and correctly retained the latest owner instructions. Explicit-ID resumption was exercised. Private roles and history are not repository assets.

@@ -34,6 +34,29 @@ class Recovery(unittest.TestCase):
             self.assertTrue(result['recovered_completed_turn'])
             self.assertEqual(task['builder_session_id'], 'explicit-test-id')
 
+    def test_freeze_recovers_after_crash_between_chmod_and_replace(self):
+        with tempfile.TemporaryDirectory() as directory:
+            target = pathlib.Path(directory) / 'evidence.log'
+            source = pathlib.Path(module.__file__).resolve()
+            program = (
+                'import importlib.util, os; '
+                f's=importlib.util.spec_from_file_location("runner", {str(source)!r}); '
+                'm=importlib.util.module_from_spec(s); s.loader.exec_module(m); '
+                'm.os.replace=lambda *args: os._exit(42); '
+                f'm.freeze({str(target)!r}, b"durable evidence")'
+            )
+            crashed = subprocess.run(['python3', '-c', program])
+            self.assertEqual(crashed.returncode, 42)
+            self.assertFalse(target.exists())
+            abandoned = list(pathlib.Path(directory).glob('*.tmp'))
+            self.assertEqual(len(abandoned), 1)
+            self.assertEqual(abandoned[0].stat().st_mode & 0o777, 0o444)
+            module.freeze(target, b'durable evidence')
+            module.freeze(target, b'durable evidence')
+            self.assertEqual(target.read_bytes(), b'durable evidence')
+            with self.assertRaises(RuntimeError):
+                module.freeze(target, b'changed evidence')
+
     def test_ingest_does_not_duplicate_or_reset_progress(self):
         with tempfile.TemporaryDirectory() as directory:
             root = pathlib.Path(directory); (root/'tasks').mkdir()
