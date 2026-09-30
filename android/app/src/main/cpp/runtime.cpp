@@ -96,7 +96,7 @@ extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_countCha
         return -llama_tokenize(llama_model_get_vocab(s->model),text.data(),text.size(),nullptr,0,true,true);
     } catch(const std::exception& e){fail(env,e);return 0;}
 }
-static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobject sink, bool chat, jbyteArray system = nullptr) {
+static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobject sink, bool chat, jbyteArray system = nullptr, int sources = 0) {
     try {
         auto s = get(id);
         std::lock_guard<std::mutex> lock(s->operation);
@@ -120,7 +120,21 @@ static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobje
         Context ctx(llama_init_from_model(s->model, params), llama_free);
         if (!ctx) throw std::runtime_error("Cannot create inference context");
         using Sampler = std::unique_ptr<llama_sampler, decltype(&llama_sampler_free)>;
-        Sampler sampler(llama_sampler_init_greedy(), llama_sampler_free);
+        Sampler sampler(nullptr,llama_sampler_free);
+        if(sources>0) {
+            if(sources>4)throw std::runtime_error("Too many synthesis sources");
+            std::string grammar=R"(root ::= claim "\n" claim
+claim ::= citation (" " citation)? " " [^\n\r\[\].]{1,220} "."
+citation ::= )";
+            for(int i=1;i<=sources;i++){if(i>1)grammar+=" | ";grammar+="\"[S"+std::to_string(i)+"]\"";}
+            grammar+="\n";
+            auto *constraint=llama_sampler_init_grammar(vocab,grammar.c_str(),"root");
+            if(!constraint)throw std::runtime_error("Cannot initialize claim grammar");
+            sampler.reset(llama_sampler_chain_init(llama_sampler_chain_default_params()));
+            if(!sampler){llama_sampler_free(constraint);throw std::runtime_error("Cannot initialize sampler chain");}
+            llama_sampler_chain_add(sampler.get(),constraint);
+            llama_sampler_chain_add(sampler.get(),llama_sampler_init_greedy());
+        } else sampler.reset(llama_sampler_init_greedy());
         if (!sampler) throw std::runtime_error("Cannot create sampler");
         jclass sinkClass = env->GetObjectClass(sink);
         jmethodID emit = env->GetMethodID(sinkClass, "onToken", "([B)V");
@@ -158,6 +172,10 @@ extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generate
 }
 extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generateChat(JNIEnv *env, jclass, jlong id, jbyteArray system, jbyteArray prompt, jint limit, jobject sink) {
     return generate(env, id, prompt, limit, sink, true, system);
+}
+extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generateClaims(JNIEnv *env,jclass,jlong id,jbyteArray system,jbyteArray prompt,jint limit,jobject sink,jint sources) {
+    if(sources<1 || sources>4){std::runtime_error error("Invalid claim source count");fail(env,error);return 0;}
+    return generate(env,id,prompt,limit,sink,true,system,sources);
 }
 extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_cancel(JNIEnv *env, jclass, jlong id) {
     try { get(id)->cancelled = true; } catch (const std::exception &e) { fail(env, e); }

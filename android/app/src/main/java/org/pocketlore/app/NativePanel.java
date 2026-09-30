@@ -32,7 +32,7 @@ final class NativePanel {
     NativePanel(Activity activity, LinearLayout layout, LinearLayout actions, TextView output, TextView answerStatus, java.util.function.Consumer<Boolean> busyChanged, java.util.function.Consumer<String> inspectCitation) {
         this.activity = activity; this.output = output; this.answerStatus = answerStatus; this.busyChanged = busyChanged; this.inspectCitation=inspectCitation;
         state = new TextView(activity);
-        state.setText("Experimental local generation · Import a local GGUF (up to 512 MiB). Small models may give incorrect answers. Inspect the retrieved sources.");
+        state.setText("Experimental local generation · Import a local GGUF (up to 2048 MiB). Small models may give incorrect answers. Inspect the retrieved sources.");
         layout.addView(state);
         model = new Button(activity); model.setText("Import local GGUF"); model.setContentDescription("Import local model"); layout.addView(model);
         cancel = new Button(activity); cancel.setText("Cancel inference or import"); cancel.setEnabled(false); cancel.setContentDescription("Cancel current operation"); actions.addView(cancel);
@@ -73,7 +73,7 @@ final class NativePanel {
         try (Cursor c = activity.getContentResolver().query(uri, new String[]{OpenableColumns.SIZE}, null, null, null)) {
             if (c != null && c.moveToFirst() && !c.isNull(0)) size = c.getLong(0);
         } catch (Exception e) { state.setText("Cannot inspect local file: " + e.getMessage()); return; }
-        if (size < 4 || size > ModelImport.MAX_BYTES) { state.setText("Choose a local GGUF with a known size, at most 512 MiB."); return; }
+        if (size < 4 || size > ModelImport.MAX_BYTES) { state.setText("Choose a local GGUF with a known size, at most 2048 MiB."); return; }
         final long bytes = size;
         new AlertDialog.Builder(activity).setTitle("Copy model to app storage?")
             .setMessage("Required additional storage: " + bytes + " bytes plus a 32 MiB reserve. The original file remains. SHA-256 is calculated during import; it is an identity, not a trust guarantee.")
@@ -117,6 +117,7 @@ final class NativePanel {
             AnswerEngine.Outcome result = AnswerEngine.answer(question, evidence,
                 id == 0 ? null : new AnswerEngine.Generator() {
                     public int run(byte[] prompt,int limit,NativeRuntime.Sink sink) { return NativeRuntime.generateChat(id,EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt,limit,sink); }
+                    public int runWithSources(byte[] prompt,int limit,NativeRuntime.Sink sink,int sources) {return NativeRuntime.generateClaims(id,EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt,limit,sink,sources);}
                     public int countTokens(byte[] prompt) { return NativeRuntime.countChatTokens(id,EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt); }
                 },
                 text -> activity.runOnUiThread(() -> {

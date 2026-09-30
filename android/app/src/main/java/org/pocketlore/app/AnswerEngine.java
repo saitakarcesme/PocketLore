@@ -10,7 +10,7 @@ import java.util.regex.*;
 /** Deterministic routing and citation integrity checks, not factual entailment verification. */
 public final class AnswerEngine {
     public enum Kind { GENERATED, FALLBACK, ABSTAINED, CANCELLED }
-    public interface Generator { int run(byte[] prompt, int limit, NativeRuntime.Sink sink); default int countTokens(byte[] prompt) { return -1; } }
+    public interface Generator { int run(byte[] prompt, int limit, NativeRuntime.Sink sink); default int countTokens(byte[] prompt) { return -1; } default int runWithSources(byte[] prompt,int limit,NativeRuntime.Sink sink,int sources){return run(prompt,limit,sink);} }
     public static final class Outcome {
         public final Kind kind;
         public final String text, rawDraft, reason, prompt;
@@ -33,6 +33,7 @@ public final class AnswerEngine {
     public static Outcome answer(String question, ResearchEngine.Result evidence, Generator generator,
                                  Consumer<String> progress, BooleanSupplier cancelled) {
         long start=System.nanoTime();
+        evidence=EvidencePrompt.select(question,evidence);
         if (cancelled.getAsBoolean()) return result(Kind.CANCELLED,"Cancelled. No answer was completed.","","Cancelled","",false,0,0,start);
         if (evidence.hits.isEmpty()) {
             String why = evidence.hits.isEmpty() ? "No supporting passage in this installed pack." :
@@ -60,11 +61,11 @@ public final class AnswerEngine {
         long[] first={0}; int[] callbacks={0};
         int count;
         try {
-            count=generator.run(prompt.getBytes(StandardCharsets.UTF_8),EvidencePrompt.OUTPUT_TOKENS,piece -> {
+            count=generator.runWithSources(prompt.getBytes(StandardCharsets.UTF_8),EvidencePrompt.OUTPUT_TOKENS,piece -> {
                 if (first[0]==0) first[0]=System.nanoTime();
                 callbacks[0]++; raw.write(piece,0,piece.length);
                 if (!cancelled.getAsBoolean()) progress.accept(new String(raw.toByteArray(),StandardCharsets.UTF_8));
-            });
+            },evidence.hits.size());
         } catch (RuntimeException error) {
             String draft=new String(raw.toByteArray(),StandardCharsets.UTF_8);
             if (cancelled.getAsBoolean()) return result(Kind.CANCELLED,"Cancelled. Partial draft discarded.",draft,"Cancelled",prompt,true,callbacks[0],elapsedFirst(first[0],start),start);
