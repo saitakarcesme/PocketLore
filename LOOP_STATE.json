@@ -1,8 +1,10 @@
 {
-  "phase": "bootstrap",
-  "status": "in_progress",
+  "phase": "first_extractive_android_slice",
+  "status": "prototype_checks_passed",
   "physical_device_acceptance": "waiting_external",
   "competitive_superiority": "unproven",
   "private_state": "/home/isa/PocketLore-control/state/runner.json",
-  "next": "runner_roles_and_first_android_slice"
+  "next": "010-native-runtime",
+  "service": "pocketlore-runner.service",
+  "evaluation": "8 development and 8 private holdout pilot cases frozen; no quality score"
 }

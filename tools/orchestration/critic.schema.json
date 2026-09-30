@@ -1,0 +1,1 @@
+{"type":"object","properties":{"decision":{"type":"string","enum":["continue","rework","unsupported"]},"reason":{"type":"string"},"visible_result":{"type":"string"}},"required":["decision","reason","visible_result"],"additionalProperties":false}

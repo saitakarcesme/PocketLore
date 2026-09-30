@@ -5,3 +5,7 @@ PocketLore source is Apache-2.0 unless identified otherwise. No rival applicatio
 Android SDK, Android NDK, OpenJDK and Gradle are external build tools governed by their respective licenses; they are not bundled in source control. Each shipped native dependency must be pinned and carry its license. Each data pack must record source URL, acquisition date, license, transformation and content hash. Model weights require separate model-license review and an exact digest. A repository license never replaces dataset or model terms.
 
 Knowledge-pack and native-runtime notices will be added alongside their implementation before distribution.
+
+Starter knowledge pack: U.S. Geological Survey Water Science School textual material. Source URLs, paragraph selectors and SHA-256 pins are in android/knowledge-sources.json. USGS-authored federal text is public domain in the United States, subject to the agency's noted third-party exceptions; no images or third-party credited material are included. Downloaded text and APKs are excluded from Git. The acquisition script verifies pinned paragraph content. See https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits.
+
+llama.cpp is the proposed native runtime under MIT, pinned in docs/RUNTIME.md; it is not bundled into the initial extractive APK. Its license must accompany any later distributed native build.

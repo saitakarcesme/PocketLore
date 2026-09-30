@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "suite_id": "pocketlore-pilot-2026-09-30",
+  "frozen_utc": "2026-09-30T21:44:54.012110+00:00",
+  "status": "frozen_before_tuning",
+  "source_type": "local_model_authored_unverified_rubric",
+  "requested_model": "qwen3.8:27b",
+  "returned_model": "qwen3.8:27b",
+  "development": {
+    "path": "evaluation/development.json",
+    "case_count": 8,
+    "sha256": "e38606819afb63aae14dbfc174515a288a56dd554d963074dd41940a77b5d35f"
+  },
+  "holdout": {
+    "visibility": "private_evaluation_custodian_only",
+    "case_count": 8,
+    "sha256": "25028aa810ab2d0fe8cb4aba8ccb5dae64377229f21017080e7c24675c177059"
+  },
+  "limitations": [
+    "LLM-authored rubrics require independent source-based verification.",
+    "No app quality, latency, phone acceptance or superiority result is implied."
+  ]
+}

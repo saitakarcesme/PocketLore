@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "suite_id": "pocketlore-pilot-2026-09-30",
+  "split": "development",
+  "status": "frozen",
+  "frozen_utc": "2026-09-30T21:44:54.012110+00:00",
+  "source_type": "local_model_authored_unverified_rubric",
+  "requested_model": "qwen3.8:27b",
+  "returned_model": "qwen3.8:27b",
+  "cases": [
+    {
+      "id": "case-03",
+      "domain": "Engineering",
+      "capability": "reasoning",
+      "question": "If a structural engineer needs to replace a steel beam with a composite material in a high-humidity environment, what factors must be considered regarding the material's long-term degradation and load-bearing capacity?",
+      "required_behaviors": [
+        "Identify the specific degradation mechanisms of composite materials in high-humidity conditions.",
+        "Reason through the impact of moisture absorption on the material's mechanical properties.",
+        "Propose a method for validating the long-term safety of the replacement material."
+      ],
+      "failure_modes": [
+        "Assuming composite materials are immune to environmental degradation.",
+        "Failing to connect moisture absorption to a reduction in load-bearing capacity."
+      ],
+      "evidence_requirements": [
+        "Sources must describe the physical effects of humidity on composite matrices.",
+        "Sources must outline standard testing protocols for long-term material performance."
+      ]
+    },
+    {
+      "id": "case-04",
+      "domain": "Civic Knowledge",
+      "capability": "explanation",
+      "question": "Explain the concept of 'checks and balances' in a federal system of government, using the relationship between the legislative and executive branches as a primary example.",
+      "required_behaviors": [
+        "Define the core principle of checks and balances.",
+        "Provide specific examples of how the legislative branch limits the executive branch.",
+        "Explain how the executive branch, in turn, limits the legislative branch."
+      ],
+      "failure_modes": [
+        "Describing the branches without explaining their mutual constraints.",
+        "Failing to provide concrete examples of power limitation."
+      ],
+      "evidence_requirements": [
+        "Sources must clearly define the separation of powers.",
+        "Sources must cite specific constitutional or legal mechanisms for inter-branch checks."
+      ]
+    },
+    {
+      "id": "case-05",
+      "domain": "Travel Planning",
+      "capability": "travel",
+      "question": "A traveler wants to visit a remote mountainous region in the Andes during the rainy season. What specific logistical challenges should they anticipate regarding transportation and accommodation, and how might these differ from visiting during the dry season?",
+      "required_behaviors": [
+        "Identify the specific transportation risks associated with rainy season travel in mountainous terrain.",
+        "Describe the impact of weather on the availability and type of accommodation.",
+        "Contrast these challenges with the conditions typically found in the dry season."
+      ],
+      "failure_modes": [
+        "Providing generic travel advice that does not account for seasonal weather impacts.",
+        "Failing to distinguish between transportation and accommodation challenges."
+      ],
+      "evidence_requirements": [
+        "Sources must detail the seasonal weather patterns in the Andes.",
+        "Sources must describe the typical infrastructure limitations in remote mountainous areas."
+      ]
+    },
+    {
+      "id": "case-10",
+      "domain": "Civic Knowledge",
+      "capability": "comparison",
+      "question": "Compare the voting rights and political representation of women in the United States and the United Kingdom, focusing on the timeline of their enfranchisement and the current state of political representation.",
+      "required_behaviors": [
+        "Identify the key dates and legislation that granted voting rights to women in both countries.",
+        "Compare the current percentage of women in legislative bodies in both countries.",
+        "Analyze the factors that have influenced the pace of political representation in each country."
+      ],
+      "failure_modes": [
+        "Failing to provide specific dates and legislation.",
+        "Ignoring the current state of political representation."
+      ],
+      "evidence_requirements": [
+        "Sources must provide specific dates and legislation for enfranchisement.",
+        "Sources must provide current statistics on political representation."
+      ]
+    },
+    {
+      "id": "case-12",
+      "domain": "Ambiguous Query",
+      "capability": "unknown",
+      "question": "What is the most effective treatment for chronic pain?",
+      "required_behaviors": [
+        "Recognize that 'chronic pain' is a broad category with many different causes and types.",
+        "Identify that the 'most effective' treatment varies significantly depending on the individual and the specific type of pain.",
+        "State that a single 'most effective' treatment cannot be identified without more specific information."
+      ],
+      "failure_modes": [
+        "Providing a single treatment as universally effective.",
+        "Failing to acknowledge the variability in chronic pain types and treatments."
+      ],
+      "evidence_requirements": [
+        "Sources must describe the variety of chronic pain conditions.",
+        "Sources must detail the different treatment options available for various types of chronic pain."
+      ]
+    },
+    {
+      "id": "case-13",
+      "domain": "Science",
+      "capability": "comparison",
+      "question": "Compare the mechanisms of action of mRNA vaccines and traditional protein subunit vaccines, focusing on how each stimulates the immune system and the potential advantages and disadvantages of each approach.",
+      "required_behaviors": [
+        "Describe the mechanism of action for mRNA vaccines.",
+        "Describe the mechanism of action for protein subunit vaccines.",
+        "Compare the advantages and disadvantages of each approach in terms of immune response and production."
+      ],
+      "failure_modes": [
+        "Failing to clearly distinguish between the two mechanisms of action.",
+        "Ignoring the advantages and disadvantages of each approach."
+      ],
+      "evidence_requirements": [
+        "Sources must detail the mechanism of action for both vaccine types.",
+        "Sources must provide a balanced comparison of their advantages and disadvantages."
+      ]
+    },
+    {
+      "id": "case-14",
+      "domain": "History",
+      "capability": "synthesis",
+      "question": "Synthesize the historical and economic factors that contributed to the rise of the British Empire in the 18th century, considering both the role of naval power and the impact of the Industrial Revolution.",
+      "required_behaviors": [
+        "Identify the key historical events that contributed to the rise of the British Empire.",
+        "Explain the role of naval power in establishing and maintaining colonial control.",
+        "Analyze the impact of the Industrial Revolution on Britain's economic and military capabilities."
+      ],
+      "failure_modes": [
+        "Failing to connect historical events to economic and military factors.",
+        "Ignoring the role of the Industrial Revolution."
+      ],
+      "evidence_requirements": [
+        "Sources must detail the key historical events of the 18th century.",
+        "Sources must explain the impact of the Industrial Revolution on Britain."
+      ]
+    },
+    {
+      "id": "case-15",
+      "domain": "Engineering",
+      "capability": "explanation",
+      "question": "Explain the concept of 'redundancy' in system design, using a critical infrastructure project like a power grid as an example, and describe how redundancy can improve reliability and resilience.",
+      "required_behaviors": [
+        "Define the concept of redundancy in system design.",
+        "Provide a specific example of redundancy in a power grid.",
+        "Explain how redundancy improves the reliability and resilience of the system."
+      ],
+      "failure_modes": [
+        "Failing to provide a specific example of redundancy.",
+        "Ignoring the impact of redundancy on reliability and resilience."
+      ],
+      "evidence_requirements": [
+        "Sources must clearly define redundancy in system design.",
+        "Sources must provide specific examples of redundancy in critical infrastructure."
+      ]
+    }
+  ]
+}

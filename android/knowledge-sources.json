@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "name": "USGS water science starter",
+  "retrieved_date": "2026-09-30",
+  "license_policy": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+  "scope": "Selected USGS-authored paragraphs only; no photographs, media, third-party figures or logos. Raw source pages and generated datasets stay outside Git.",
+  "sources": [
+    {
+      "id": "evaporation",
+      "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+      "passages": [
+        {
+          "id": "water-01",
+          "title": "Evaporation",
+          "prefix": "Evaporation is the process",
+          "sha256": "398183fefbcbafbf36b360baa06c31e8d62cb3a36bc0576f396b519fceaa7d13"
+        },
+        {
+          "id": "water-02",
+          "title": "Condensation",
+          "prefix": "The opposite of evaporation",
+          "sha256": "dd7620163089bbe861844d398e69d098796d7324bc13555140b4d40cfe974e8b"
+        },
+        {
+          "id": "water-03",
+          "title": "Evaporative cooling",
+          "prefix": "Because energy is required",
+          "sha256": "460a70d340b737c372092cd8611ec0d533fb298fd1540209eefe382b81410790"
+        }
+      ]
+    },
+    {
+      "id": "infiltration",
+      "url": "https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle",
+      "passages": [
+        {
+          "id": "water-04",
+          "title": "Infiltration and groundwater recharge",
+          "prefix": "Some water that infiltrates",
+          "sha256": "174cde4f6cfe89d631ec15ec30c40da30839a77bb8d4f36774c1c99d16463d6a"
+        },
+        {
+          "id": "water-05",
+          "title": "Unsaturated and saturated zones",
+          "prefix": "As precipitation infiltrates",
+          "sha256": "f889502a8ee1ae86d9e34e32f82e97ca306378cbd5dc577aac697a9570ef2707"
+        },
+        {
+          "id": "water-06",
+          "title": "Aquifer recharge times",
+          "prefix": "Natural refilling of deep",
+          "sha256": "6bdab6adeed3d9256b8f71926df61f2099b790d5ec9b59e493e54fffb3fbea9c"
+        }
+      ]
+    },
+    {
+      "id": "surface-runoff",
+      "url": "https://www.usgs.gov/water-science-school/science/surface-runoff-and-water-cycle",
+      "passages": [
+        {
+          "id": "water-07",
+          "title": "Surface runoff",
+          "prefix": "When rain hits saturated",
+          "sha256": "8324beef5fc22c32a0d16eec04149e8ce10499f2a43dab1022ab01bccbe35625"
+        },
+        {
+          "id": "water-08",
+          "title": "Urbanization and runoff",
+          "prefix": "As more and more people",
+          "sha256": "473fa7432111a72a3a22f250609fb783b62e5c58493b8220c19f4bf1c6014ad6"
+        }
+      ]
+    }
+  ]
+}

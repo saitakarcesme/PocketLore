@@ -1,0 +1,25 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'org.pocketlore.app'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'org.pocketlore.app'
+        minSdk 28
+        targetSdk 35
+        versionCode 1
+        versionName '0.1.0-bootstrap'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+tasks.register('verifyKnowledgePack') {
+    doLast {
+        if (!file('src/main/assets/water-science.tsv').isFile()) {
+            throw new GradleException('Missing knowledge pack: run tools/android-knowledge-pack.py with a source cache before building.')
+        }
+    }
+}
+tasks.named('preBuild').configure { dependsOn 'verifyKnowledgePack' }
