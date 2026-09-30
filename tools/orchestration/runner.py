@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Single-writer, durable PocketLore task supervisor. No external Python dependencies."""
+from protocol import invocation, valid_review, plan_repair
 import argparse, fcntl, hashlib, json, os, pathlib, re, select, subprocess, tempfile, time
 
 
@@ -82,8 +83,19 @@ class Runner:
             if completed and phase in ('builder', 'critic'):
                 result = {'returncode': 0, 'log': str(log), 'recovered_completed_turn': True}
                 atomic(receipt, result); self.save(); return result
-        if phase == 'builder' and task.get('builder_session_id'):
-            argv = [argv[0], 'exec', 'resume', '--dangerously-bypass-approvals-and-sandbox', '--json', '-o', str(folder / 'builder-result.txt'), task['builder_session_id'], '-']
+        if phase in ('builder', 'critic'):
+            config = read(self.control / 'runner/config.json', {})
+            sessions = read(self.control / 'roles/sessions.json', {})
+            session = sessions.get(phase)
+            if task.get(f'{phase}_session_id') not in (None, session):
+                raise RuntimeError('Task session differs from canonical registry; explicit migration required')
+            task[f'{phase}_session_id'] = session
+            policy = task.setdefault('invocation_policies', {}).setdefault(phase, config['role_policies'][phase])
+            schema = pathlib.Path(__file__).with_name('critic.schema.json') if phase == 'critic' else None
+            output_path = folder / ('critic-result.json' if phase == 'critic' else 'builder-result.txt')
+            argv = invocation(config['codex'], session, policy, output_path, schema, cwd=cwd)
+            task.setdefault('invocations', {})[phase] = argv
+            self.save()
         with log.open('a') as output:
             child = subprocess.Popen(argv, cwd=cwd, stdin=subprocess.PIPE if prompt else subprocess.DEVNULL, stdout=output, stderr=subprocess.STDOUT, text=True)
             task['process'] = {'pid': child.pid, 'phase': phase, 'log': str(log), 'started': time.time()}; self.save()
@@ -156,15 +168,16 @@ class Runner:
             schema = pathlib.Path(__file__).with_name('critic.schema.json')
             goals = (self.repo / 'docs/GOALS.md').read_text()
             prompt = ('You are an independent acceptance critic. You have no builder planning conversation. Inspect only the immutable evidence in this directory and the bounty goals below. '
-                      'Read evidence.json, change.patch, and relevant artifact files. Builder completion is not acceptance. Desktop tests do not prove physical Android acceptance. '
-                      'Return JSON decision continue/rework/unsupported, reason in English, and visible_result exactly one Turkish sentence of at most 35 words. '
+                      'Never read builder logs, private conversations, planning context or sibling directories. Read evidence.json, change.patch, and relevant artifact files. Builder completion is not acceptance. Desktop tests do not prove physical Android acceptance. '
+                      'Return only JSON decision continue/rework/unsupported and visible_result exactly one English sentence of at most 35 words. '
+                      'Review directory: ' + str(review) + '. '
                       'continue means this bounded task passed; it does not mean product acceptance or superiority.\nBounty goals:\n' + goals)
-            result = self.run_process(task, 'critic', [codex, 'exec', '--sandbox', 'read-only', '--skip-git-repo-check', '--json', '--output-schema', str(schema), '-o', str(folder/'critic-result.json'), '-'], review, prompt)
+            result = self.run_process(task, 'critic', [codex], review, prompt)
             try: verdict = read(folder/'critic-result.json', {})
             except ValueError: verdict = {}
-            visible = verdict.get('visible_result', '')
-            if result['returncode'] or verdict.get('decision') not in ('continue','rework','unsupported') or not visible or len(visible.split()) > 35 or '\n' in visible or len(re.findall(r'[.!?](?:\s|$)', visible)) != 1:
-                verdict = {'decision': 'unsupported', 'reason': 'Critic failed or returned invalid result'}
+            if result['returncode'] or not valid_review(verdict):
+                verdict = {'decision': 'unsupported', 'reason': 'Critic failed or returned invalid English single-sentence result',
+                           'visible_result': 'The critic output failed validation and requires a bounded repair before acceptance.'}
             if any(c['returncode'] for c in task['checks']) or task.get('builder_exit'):
                 verdict['decision'] = 'rework'; verdict['reason'] = 'Required automated checks or builder process failed. ' + verdict.get('reason','')
             task['critic_result'] = verdict; task['phase'] = 'checkpoint'; self.save()
@@ -179,22 +192,38 @@ class Runner:
             else:
                 self.git('push', 'origin', task['branch'])
                 self.git('checkout', 'main'); task['status'] = 'rework'
-                root = task.get('repair_of', task['id'])
-                failures = [t for t in self.state['tasks'].values() if t.get('repair_of',t['id']) == root and t.get('status') == 'rework']
-                count = len(failures)
-                repair = {k: task[k] for k in ('objective','scope','acceptance_checks','artifacts','dependencies')}
-                repair.update(id=f'{root}-repair-{count}', repair_of=root, dependencies=task['dependencies'], prompt='Inspect failed checkpoint ' + task['head_commit'] + '. Critic: ' + json.dumps(task['critic_result']) + ('. Three failed approaches: change implementation strategy, preserve prior evidence, and explain the new approach.' if count >= 3 else '. Repair the bounded failing task, reusing useful checkpoint changes.'))
-                if count == 3:
-                    repair['id'] = root + '-strategy-change'
-                    repair['objective'] = 'Use a materially different implementation approach to complete: ' + task['objective']
-                    repair['prompt'] += ' First record the three failed approaches and an explicit materially different design in an evidence artifact; do not repeat them.'
-                    atomic(self.control/'tasks'/f'{repair["id"]}.json', repair)
-                elif count > 3:
-                    task['status'] = 'blocked'; task['blocked_reason'] = 'Bounded repair and strategy-change attempt failed; requires a revised task or external change.'
+                repair = plan_repair(task)
+                if repair is None:
+                    task['status'] = 'blocked'
+                    task['blocked_reason'] = 'Three initial failures and one alternative strategy failed; a revised task is required.'
+                    task['block_kind'] = 'strategy_exhausted'
                 else:
                     atomic(self.control/'tasks'/f'{repair["id"]}.json', repair)
             self.event(task['id'] + ':completion', status=task['status'], head=task['head_commit'])
             task['phase'] = 'done'; self.save()
+            self.sync_completions()
+
+    def ready_tasks(self):
+        def satisfied(dependency):
+            return self.state['tasks'].get(dependency, {}).get('status') == 'accepted' or any(
+                t.get('repair_of') == dependency and t['status'] == 'accepted' for t in self.state['tasks'].values())
+        return sorted((t for t in self.state['tasks'].values() if t['status'] == 'running' or
+                       (t['status'] == 'pending' and all(satisfied(d) for d in t['dependencies']))),
+                      key=lambda t: (t['status'] != 'running', t['id']))
+
+    def sync_completions(self):
+        from continuity import publish
+        # Replay from durable completion events if a crash interrupted publication.
+        next_task = next((t['id'] for t in self.ready_tasks()), 'Review release gaps and external dependencies')
+        for event in self.state['events']:
+            if event['id'].endswith(':completion'):
+                task = self.state['tasks'].get(event['id'].rsplit(':', 1)[0])
+                if task:
+                    try:
+                        publish(self.control, event, task, self.state, next_task)
+                    except OSError as error:
+                        self.state['continuity_sync_error'] = str(error)
+                        self.save()
 
     def run(self, once=False):
         self.control.joinpath('state').mkdir(parents=True, exist_ok=True)
@@ -205,7 +234,8 @@ class Runner:
             self.event('startup:' + str(time.time_ns()), kind='startup')
             while not self.stop:
                 self.ingest()
-                ready = [t for t in self.state['tasks'].values() if t['status'] == 'running' or (t['status']=='pending' and all(self.state['tasks'].get(d,{}).get('status')=='accepted' or any(r.get('repair_of') == d and r['status']=='accepted' for r in self.state['tasks'].values()) for d in t['dependencies']))]
+                self.sync_completions()
+                ready = self.ready_tasks()
                 dispatch_enabled = read(self.control/'runner/config.json', {}).get('dispatch_enabled', False)
                 if ready and dispatch_enabled:
                     self.execute(ready[0])

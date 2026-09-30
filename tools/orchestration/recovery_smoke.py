@@ -10,6 +10,7 @@ def main():
     worker = fixture/'worker.py'
     worker.write_text('''import importlib.util, pathlib, os, sys
 root=pathlib.Path(sys.argv[1])
+sys.path.insert(0,str(pathlib.Path(sys.argv[2]).parent))
 spec=importlib.util.spec_from_file_location('runner',sys.argv[2]);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
 r=m.Runner(root,root/'work')
 t={'id':'fixture','attempt':0}

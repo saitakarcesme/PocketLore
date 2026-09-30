@@ -1,6 +1,6 @@
 # PocketLore development contract
 
-Build a useful fully offline Android research application for bounty 31. All source, filenames, comments, prompts, UI and public documents must be English. Private original conversations remain verbatim and must never enter Git. Only direct user conversations and the critic's short visible sentence may be Turkish.
+Build a useful fully offline Android research application for bounty 31. All source, filenames, comments, prompts, UI and public documents must be English. Private original conversations remain verbatim and must never enter Git. Only direct user conversations may be Turkish; all persisted critic output must be English and limited to one sentence of at most 35 words.
 
 All implementation, compilation, inference and data processing run on LLMRig. The Mac is a coordination client. Reuse installed tooling; do not change unrelated projects, services or global Codex configuration. The atlas project is read-only prior work, not a source tree to copy or automation to resume.
 

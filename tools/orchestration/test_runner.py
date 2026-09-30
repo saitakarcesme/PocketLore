@@ -1,4 +1,6 @@
 """Recovery contracts without launching inference or modifying a real repository."""
+import sys
+sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
 import importlib.util, json, pathlib, subprocess, tempfile, unittest
 spec = importlib.util.spec_from_file_location('runner', pathlib.Path(__file__).with_name('runner.py'))
 module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
@@ -39,7 +41,8 @@ class Recovery(unittest.TestCase):
             target = pathlib.Path(directory) / 'evidence.log'
             source = pathlib.Path(module.__file__).resolve()
             program = (
-                'import importlib.util, os; '
+                'import importlib.util, os, sys; '
+                f'sys.path.insert(0, {str(source.parent)!r}); '
                 f's=importlib.util.spec_from_file_location("runner", {str(source)!r}); '
                 'm=importlib.util.module_from_spec(s); s.loader.exec_module(m); '
                 'm.os.replace=lambda *args: os._exit(42); '
