@@ -1,0 +1,186 @@
+/home/isa/Projects/PocketLore/downloads/evaluation/retrieval-20260930T232453.743445Z
+{
+  "environment": "LLMRig host JVM; not Android or physical device",
+  "cases_sha256": "045270377a2cc1792cef27842147a770404eb3da32123aa9a702378a6313130c",
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "source_hashes": {
+    "baseline_ResearchEngine.java": "525d3d46b17ab6dcd761c73d6bea9aed9df212fd9d3a9cf0b56e2640136c7cd5",
+    "baseline_EvidencePrompt.java": "8391e702cbe9bbaa51edffdab3223c556f363be297e49d5bb8ceb0e85bb0ec06",
+    "candidate_ResearchEngine.java": "0ef583b829eb0e75d46c525b5153afb3489cdf26f730d2373039c70e3ce8d4c3",
+    "candidate_EvidencePrompt.java": "8391e702cbe9bbaa51edffdab3223c556f363be297e49d5bb8ceb0e85bb0ec06"
+  },
+  "reports": {
+    "baseline": [
+      {
+        "group_coverage_at_4": 0.9,
+        "group_coverage_at_2": 0.875,
+        "mrr_at_4": 0.875,
+        "explicit_distractor_hits": 1,
+        "absent_generation_blocked_rate": 1,
+        "present_lexical_generation_blocked": 17,
+        "mean_candidates_scored": 186,
+        "index_ms": 30.106831,
+        "timing_query_count": 38,
+        "warm_p50_ms": 0.126271,
+        "warm_p95_ms": 0.447837,
+        "failures": [
+          {
+            "id": "science-bedrock",
+            "group_coverage": 0.0,
+            "retrieved": [
+              "infiltration-f889502a8ee1ae86",
+              "infiltration-d320b3ca7bc9b01a",
+              "groundwater-20ea6a15204f536c",
+              "groundwater-99f9ec1384e20035"
+            ]
+          },
+          {
+            "id": "practical-dark",
+            "group_coverage": 0.0,
+            "retrieved": [
+              "yellowstone-c7bbe1c4dfb76f39",
+              "yosemite-11ee00452ee89c2d",
+              "declaration-d4a5fe17e8a5f0b4",
+              "essentials-59d02ca0df497a7a"
+            ]
+          }
+        ]
+      },
+      {
+        "group_coverage_at_4": 0.9,
+        "group_coverage_at_2": 0.875,
+        "mrr_at_4": 0.875,
+        "explicit_distractor_hits": 1,
+        "absent_generation_blocked_rate": 1,
+        "present_lexical_generation_blocked": 17,
+        "mean_candidates_scored": 186,
+        "index_ms": 31.72681,
+        "timing_query_count": 38,
+        "warm_p50_ms": 0.122754,
+        "warm_p95_ms": 0.416467,
+        "failures": [
+          {
+            "id": "science-bedrock",
+            "group_coverage": 0.0,
+            "retrieved": [
+              "infiltration-f889502a8ee1ae86",
+              "infiltration-d320b3ca7bc9b01a",
+              "groundwater-20ea6a15204f536c",
+              "groundwater-99f9ec1384e20035"
+            ]
+          },
+          {
+            "id": "practical-dark",
+            "group_coverage": 0.0,
+            "retrieved": [
+              "yellowstone-c7bbe1c4dfb76f39",
+              "yosemite-11ee00452ee89c2d",
+              "declaration-d4a5fe17e8a5f0b4",
+              "essentials-59d02ca0df497a7a"
+            ]
+          }
+        ]
+      },
+      {
+        "group_coverage_at_4": 0.9,
+        "group_coverage_at_2": 0.875,
+        "mrr_at_4": 0.875,
+        "explicit_distractor_hits": 1,
+        "absent_generation_blocked_rate": 1,
+        "present_lexical_generation_blocked": 17,
+        "mean_candidates_scored": 186,
+        "index_ms": 30.961024,
+        "timing_query_count": 38,
+        "warm_p50_ms": 0.122588,
+        "warm_p95_ms": 0.419295,
+        "failures": [
+          {
+            "id": "science-bedrock",
+            "group_coverage": 0.0,
+            "retrieved": [
+              "infiltration-f889502a8ee1ae86",
+              "infiltration-d320b3ca7bc9b01a",
+              "groundwater-20ea6a15204f536c",
+              "groundwater-99f9ec1384e20035"
+            ]
+          },
+          {
+            "id": "practical-dark",
+            "group_coverage": 0.0,
+            "retrieved": [
+              "yellowstone-c7bbe1c4dfb76f39",
+              "yosemite-11ee00452ee89c2d",
+              "declaration-d4a5fe17e8a5f0b4",
+              "essentials-59d02ca0df497a7a"
+            ]
+          }
+        ]
+      }
+    ],
+    "candidate": [
+      {
+        "group_coverage_at_4": 1.0,
+        "group_coverage_at_2": 0.975,
+        "mrr_at_4": 0.975,
+        "explicit_distractor_hits": 2,
+        "absent_generation_blocked_rate": 1,
+        "present_lexical_generation_blocked": 17,
+        "mean_candidates_scored": 21.533333333333335,
+        "index_ms": 40.480049,
+        "timing_query_count": 38,
+        "warm_p50_ms": 0.018656,
+        "warm_p95_ms": 0.061117,
+        "failures": []
+      },
+      {
+        "group_coverage_at_4": 1.0,
+        "group_coverage_at_2": 0.975,
+        "mrr_at_4": 0.975,
+        "explicit_distractor_hits": 2,
+        "absent_generation_blocked_rate": 1,
+        "present_lexical_generation_blocked": 17,
+        "mean_candidates_scored": 21.533333333333335,
+        "index_ms": 40.245481,
+        "timing_query_count": 38,
+        "warm_p50_ms": 0.019853,
+        "warm_p95_ms": 0.060075,
+        "failures": []
+      },
+      {
+        "group_coverage_at_4": 1.0,
+        "group_coverage_at_2": 0.975,
+        "mrr_at_4": 0.975,
+        "explicit_distractor_hits": 2,
+        "absent_generation_blocked_rate": 1,
+        "present_lexical_generation_blocked": 17,
+        "mean_candidates_scored": 21.533333333333335,
+        "index_ms": 40.276012,
+        "timing_query_count": 38,
+        "warm_p50_ms": 0.011612,
+        "warm_p95_ms": 0.034837,
+        "failures": []
+      }
+    ]
+  },
+  "wall_seconds": 10.500104541000837,
+  "pilot": "Eight unchanged public pilot questions recorded raw after the 30 scored cases; no holdout opened",
+  "status": "PASS",
+  "android": {
+    "environment": "Existing AOSP x86_64 emulator; not physical Android",
+    "validated_archive_and_index_ms": 157.7171,
+    "warm_p50_ms": 0.062368,
+    "warm_p95_ms": 0.155818,
+    "parity_cases": 38,
+    "apk_sha256": "df1502cd602c3a97a3eb84615c50dd3bf13de93f0f7872a7959593c65903263c",
+    "test_apk_sha256": "a0dfc21c7c0e4d6d282bbdc616a8267767f6b0844a182db60f5848aacdf38bd3"
+  },
+  "checks": {
+    "group_coverage_floor": true,
+    "mrr_floor": true,
+    "group_coverage_no_regression": true,
+    "mrr_no_regression": true,
+    "absent_evidence_blocked": true,
+    "measured_improvement": true,
+    "android_production_parity": true
+  }
+}

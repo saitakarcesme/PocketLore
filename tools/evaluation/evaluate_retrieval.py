@@ -12,7 +12,11 @@ import time
 import zipfile
 ROOT=Path(__file__).resolve().parents[2]
 def sha(b):return hashlib.sha256(b).hexdigest()
-def call(args):return subprocess.check_output(list(map(str,args)),stderr=subprocess.STDOUT,cwd=ROOT)
+def call(args):
+    try:return subprocess.check_output(list(map(str,args)),stderr=subprocess.STDOUT,cwd=ROOT)
+    except subprocess.CalledProcessError as error:
+        print(error.output.decode(errors='replace'),flush=True)
+        raise
 def percentile(values,p):
     values=sorted(values);return values[min(len(values)-1,int((len(values)-1)*p))]
 def metrics(raw,cases):
@@ -34,7 +38,7 @@ def metrics(raw,cases):
     return {'group_coverage_at_4':statistics.mean(grouped),'group_coverage_at_2':statistics.mean(grouped2),'mrr_at_4':statistics.mean(reciprocal),
         'explicit_distractor_hits':len(distractors),'absent_generation_blocked_rate':statistics.mean(absent),
         'present_lexical_generation_blocked':sum(r['lexical_generation_blocked'] for c,r in zip(cases,raw['cases']) if c['required_evidence_groups']),
-        'mean_candidates_scored':statistics.mean(r['candidates_scored'] for r in raw['cases'][:len(cases)]),'index_ms':raw['index_ms'],'warm_p50_ms':percentile(warm,.5),'warm_p95_ms':percentile(warm,.95),'failures':failures}
+        'mean_candidates_scored':statistics.mean(r['candidates_scored'] for r in raw['cases'][:len(cases)]),'index_ms':raw['index_ms'],'timing_query_count':len(raw['cases']),'warm_p50_ms':percentile(warm,.5),'warm_p95_ms':percentile(warm,.95),'failures':failures}
 def main():
     p=argparse.ArgumentParser();p.add_argument('--baseline-only',action='store_true');p.add_argument('--host-only',action='store_true',help='Diagnostic only; full acceptance requires the existing emulator');a=p.parse_args()
     start=time.monotonic();manifest=json.loads((ROOT/'evaluation/retrieval/manifest.json').read_text())
@@ -82,8 +86,19 @@ def main():
         call([javac,'-cp',out/'candidate','-d',out/'candidate',contract])
         (out/'index-contract.txt').write_bytes(call([java,'-cp',out/'candidate','org.pocketlore.app.RetrievalIndexCheck',out/'passages.tsv']))
         b=reports['baseline'][0];c=reports['candidate'][0];policy=manifest['acceptance_policy']
-        checks={'group_coverage_floor':c['group_coverage_at_4']>=policy['minimum_group_coverage'],'mrr_floor':c['mrr_at_4']>=policy['minimum_mrr'],'group_coverage_no_regression':c['group_coverage_at_4']>=b['group_coverage_at_4'],'absent_evidence_blocked':c['absent_generation_blocked_rate']>=policy['minimum_absent_blocked'],
-            'measured_improvement':c['group_coverage_at_4']>b['group_coverage_at_4'] or statistics.median(r['warm_p50_ms'] for r in reports['candidate'])<statistics.median(r['warm_p50_ms'] for r in reports['baseline'])}
+        baseline_raw=json.loads((out/'baseline-0.json').read_text())['cases']
+        candidate_raw=json.loads((out/'candidate-0.json').read_text())['cases']
+        analysis=[]
+        for case,before,after in zip(cases,baseline_raw,candidate_raw):
+            def describe(row):
+                ids=[h['id'] for h in row['hits']];groups=case['required_evidence_groups']
+                return {'ids':ids,'covered_groups':[i for i,g in enumerate(groups) if set(g)&set(ids)],
+                    'explicit_distractors':sorted(set(ids)&set(case['distractor_ids'])),
+                    'lexical_generation_blocked':row['lexical_generation_blocked'],'missing_terms':row['missing_terms'],'excerpt_uncovered':row['excerpt_uncovered']}
+            analysis.append({'id':case['id'],'tags':case['tags'],'expected_coverage':case['expected_coverage'],'baseline':describe(before),'candidate':describe(after)})
+        (out/'failure-analysis.json').write_text(json.dumps(analysis,indent=2)+'\n')
+        checks={'group_coverage_floor':c['group_coverage_at_4']>=policy['minimum_group_coverage'],'mrr_floor':c['mrr_at_4']>=policy['minimum_mrr'],'group_coverage_no_regression':c['group_coverage_at_4']>=b['group_coverage_at_4'],'mrr_no_regression':c['mrr_at_4']>=b['mrr_at_4'],'absent_evidence_blocked':c['absent_generation_blocked_rate']>=policy['minimum_absent_blocked'],
+            'measured_improvement':c['group_coverage_at_4']>b['group_coverage_at_4'] or c['mean_candidates_scored']<b['mean_candidates_scored']}
         if not a.host_only:
             adb=[tc/'sdk/platform-tools/adb','-s',os.environ.get('ANDROID_SERIAL','emulator-5560')]
             assert str(adb[2]).startswith('emulator-'),'Android measurements here are emulator-only'

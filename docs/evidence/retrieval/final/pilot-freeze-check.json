@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "development": {
+    "case_count": 8,
+    "capabilities": {
+      "reasoning": 1,
+      "explanation": 2,
+      "travel": 1,
+      "comparison": 2,
+      "unknown": 1,
+      "synthesis": 1
+    },
+    "unique_ids": true,
+    "unique_questions": true,
+    "ascii_language_guard": true
+  },
+  "holdout": "Content deliberately not inspected; public metadata checked only."
+}

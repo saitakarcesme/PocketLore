@@ -75,3 +75,13 @@ the previous library. Source inspection now uses each passage's own agency,
 dates and rights. See [pack reproduction and limits](KNOWLEDGE_PACKS.md).
 `python3 tools/packs/verify_pack.py` exercises actual emulator import, corruption
 rejection, retrieval, restart and source UI; it leaves the reference pack installed.
+
+## Task 040 retrieval index
+
+Source discovery now uses an immutable inverted index with limited English
+inflection handling and auditable ranking expansions. Passage text and citation
+IDs are unchanged; expansion does not relax the existing answer-coverage gate.
+`python3 tools/evaluation/evaluate_retrieval.py` compares the frozen production
+baseline with current code and checks real Android parity on the existing
+emulator. See [retrieval reproduction](RETRIEVAL.md) and
+[measured results and remaining failures](evidence/retrieval.md).

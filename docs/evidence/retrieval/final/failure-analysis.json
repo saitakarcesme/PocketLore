@@ -1,0 +1,1329 @@
+[
+  {
+    "id": "science-literal",
+    "tags": [
+      "literal",
+      "science"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "evaporation-dd7620163089bbe8"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": false,
+      "missing_terms": [],
+      "excerpt_uncovered": []
+    },
+    "candidate": {
+      "ids": [
+        "evaporation-dd7620163089bbe8"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": false,
+      "missing_terms": [],
+      "excerpt_uncovered": []
+    }
+  },
+  {
+    "id": "science-paraphrase",
+    "tags": [
+      "paraphrase",
+      "science"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "evaporation-460a70d340b737c3",
+        "essentials-f1c425461e39b7df",
+        "evaporation-f45501a5b6c25187",
+        "evaporation-dd1897d184b2f9f1"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": [
+        "evaporating",
+        "feel",
+        "make"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "evaporation-460a70d340b737c3",
+        "essentials-f1c425461e39b7df",
+        "evaporation-0e0576f893d0016d",
+        "evaporation-f45501a5b6c25187"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": [
+        "evaporating",
+        "feel",
+        "make"
+      ]
+    }
+  },
+  {
+    "id": "science-phase-change",
+    "tags": [
+      "paraphrase",
+      "science"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "evaporation-9d28b2eea7f9fc21",
+        "evaporation-dd7620163089bbe8",
+        "evaporation-398183fefbcbafbf",
+        "runoff-7228ab4f73d613f5"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "heating",
+        "turn"
+      ],
+      "excerpt_uncovered": [
+        "heating",
+        "turn"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "evaporation-9d28b2eea7f9fc21",
+        "evaporation-dd7620163089bbe8",
+        "evaporation-398183fefbcbafbf",
+        "evaporation-0e0576f893d0016d"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "heating",
+        "turn"
+      ],
+      "excerpt_uncovered": [
+        "heating",
+        "turn"
+      ]
+    }
+  },
+  {
+    "id": "science-inflection",
+    "tags": [
+      "inflection",
+      "science"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "infiltration-255048a860f8ca1d",
+        "infiltration-6bdab6adeed3d925",
+        "infiltration-174cde4f6cfe89d6",
+        "infiltration-d320b3ca7bc9b01a"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": [
+        "get"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "infiltration-255048a860f8ca1d",
+        "infiltration-6bdab6adeed3d925",
+        "infiltration-d320b3ca7bc9b01a",
+        "runoff-2f45755beaa7b297"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": [
+        "get"
+      ]
+    }
+  },
+  {
+    "id": "science-pumping",
+    "tags": [
+      "paraphrase",
+      "science"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "infiltration-d320b3ca7bc9b01a",
+        "bill-of-rights-16c9db7db23bf62f",
+        "yosemite-700f87fd529671b2",
+        "infiltration-255048a860f8ca1d"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "run"
+      ],
+      "excerpt_uncovered": [
+        "after",
+        "run"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "infiltration-d320b3ca7bc9b01a",
+        "bill-of-rights-16c9db7db23bf62f",
+        "evaporation-f1d11e0a0b298223",
+        "infiltration-f889502a8ee1ae86"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "run"
+      ],
+      "excerpt_uncovered": [
+        "after",
+        "run"
+      ]
+    }
+  },
+  {
+    "id": "science-urban",
+    "tags": [
+      "paraphrase",
+      "science"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "runoff-70eb0779dccbc8db",
+        "runoff-8324beef5fc22c32",
+        "infiltration-d320b3ca7bc9b01a",
+        "infiltration-8bab531c47309ba2"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "cities",
+        "paved"
+      ],
+      "excerpt_uncovered": [
+        "after",
+        "cities",
+        "faster",
+        "paved"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "runoff-473fa7432111a72a",
+        "runoff-70eb0779dccbc8db",
+        "runoff-7f39ffa207597152",
+        "infiltration-d320b3ca7bc9b01a"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [
+        "runoff-7f39ffa207597152"
+      ],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "cities",
+        "paved"
+      ],
+      "excerpt_uncovered": [
+        "after",
+        "cities",
+        "paved"
+      ]
+    }
+  },
+  {
+    "id": "science-bedrock",
+    "tags": [
+      "paraphrase",
+      "science"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "infiltration-f889502a8ee1ae86",
+        "infiltration-d320b3ca7bc9b01a",
+        "groundwater-20ea6a15204f536c",
+        "groundwater-99f9ec1384e20035"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": [
+        "rock",
+        "store"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "groundwater-20646068026ceabb",
+        "infiltration-f889502a8ee1ae86",
+        "groundwater-99f9ec1384e20035",
+        "groundwater-abbc88d938b327f2"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": [
+        "store",
+        "underground"
+      ]
+    }
+  },
+  {
+    "id": "science-two-processes",
+    "tags": [
+      "comparison",
+      "science"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "evaporation-dd7620163089bbe8",
+        "evaporation-398183fefbcbafbf",
+        "evaporation-e75277025e69713f",
+        "evaporation-35382abe65aae9a1"
+      ],
+      "covered_groups": [
+        0,
+        1
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": false,
+      "missing_terms": [],
+      "excerpt_uncovered": []
+    },
+    "candidate": {
+      "ids": [
+        "evaporation-dd7620163089bbe8",
+        "evaporation-398183fefbcbafbf",
+        "evaporation-e75277025e69713f",
+        "evaporation-35382abe65aae9a1"
+      ],
+      "covered_groups": [
+        0,
+        1
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": false,
+      "missing_terms": [],
+      "excerpt_uncovered": []
+    }
+  },
+  {
+    "id": "science-two-sources",
+    "tags": [
+      "comparison",
+      "multiple_documents"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "infiltration-255048a860f8ca1d",
+        "infiltration-6bdab6adeed3d925",
+        "runoff-cee7b48b52dc99d4",
+        "runoff-7228ab4f73d613f5"
+      ],
+      "covered_groups": [
+        0,
+        1
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": [
+        "runoff"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "infiltration-255048a860f8ca1d",
+        "infiltration-174cde4f6cfe89d6",
+        "infiltration-6bdab6adeed3d925",
+        "runoff-cee7b48b52dc99d4"
+      ],
+      "covered_groups": [
+        0,
+        1
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": [
+        "runoff"
+      ]
+    }
+  },
+  {
+    "id": "practical-dark",
+    "tags": [
+      "paraphrase",
+      "practical"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "yellowstone-c7bbe1c4dfb76f39",
+        "yosemite-11ee00452ee89c2d",
+        "declaration-d4a5fe17e8a5f0b4",
+        "essentials-59d02ca0df497a7a"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "dark"
+      ],
+      "excerpt_uncovered": [
+        "dark",
+        "see",
+        "should"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "essentials-e772a5a729be28b9",
+        "yellowstone-c7bbe1c4dfb76f39",
+        "constitution-6a8980935ead3048",
+        "yellowstone-d9ca4afab6490793"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "dark"
+      ],
+      "excerpt_uncovered": [
+        "dark",
+        "hike",
+        "see",
+        "should"
+      ]
+    }
+  },
+  {
+    "id": "practical-sun",
+    "tags": [
+      "paraphrase",
+      "practical"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "essentials-f1c425461e39b7df",
+        "runoff-2f45755beaa7b297",
+        "runoff-ebb126ec780c9b5c",
+        "evaporation-460a70d340b737c3"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "ultraviolet"
+      ],
+      "excerpt_uncovered": [
+        "ultraviolet"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "essentials-f1c425461e39b7df",
+        "essentials-e772a5a729be28b9",
+        "declaration-d4a5fe17e8a5f0b4",
+        "runoff-8234466fc3321541"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "ultraviolet"
+      ],
+      "excerpt_uncovered": [
+        "helps",
+        "ultraviolet"
+      ]
+    }
+  },
+  {
+    "id": "practical-navigation",
+    "tags": [
+      "inflection",
+      "practical"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "essentials-73b0434df1921710",
+        "declaration-2b88bbb96c854e9f",
+        "declaration-d4a5fe17e8a5f0b4",
+        "declaration-88ce69dfeb02b33b"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "backups"
+      ],
+      "excerpt_uncovered": [
+        "backups",
+        "should"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "essentials-73b0434df1921710",
+        "declaration-2b88bbb96c854e9f",
+        "essentials-59d02ca0df497a7a"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "backups"
+      ],
+      "excerpt_uncovered": [
+        "backups",
+        "should"
+      ]
+    }
+  },
+  {
+    "id": "practical-shelter",
+    "tags": [
+      "literal",
+      "practical"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "essentials-ba88dfc81102f647",
+        "yellowstone-c7bbe1c4dfb76f39",
+        "runoff-ebb126ec780c9b5c",
+        "constitution-33bcbacd0a7cc065"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": false,
+      "missing_terms": [],
+      "excerpt_uncovered": []
+    },
+    "candidate": {
+      "ids": [
+        "essentials-ba88dfc81102f647",
+        "yellowstone-c7bbe1c4dfb76f39",
+        "declaration-d4a5fe17e8a5f0b4",
+        "runoff-ebb126ec780c9b5c"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": false,
+      "missing_terms": [],
+      "excerpt_uncovered": []
+    }
+  },
+  {
+    "id": "travel-valley",
+    "tags": [
+      "literal",
+      "travel"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "yosemite-c07549b6dd9eec11",
+        "yosemite-05be844c00690dc0",
+        "yosemite-11ee00452ee89c2d",
+        "yosemite-3ba1d752b63d19bd"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [
+        "yosemite-05be844c00690dc0"
+      ],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "far"
+      ],
+      "excerpt_uncovered": [
+        "far",
+        "must"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "yosemite-c07549b6dd9eec11",
+        "yosemite-3ba1d752b63d19bd",
+        "yosemite-05be844c00690dc0",
+        "yosemite-d2f99efaf0e7d3d1"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [
+        "yosemite-05be844c00690dc0"
+      ],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "far"
+      ],
+      "excerpt_uncovered": [
+        "before",
+        "far",
+        "must"
+      ]
+    }
+  },
+  {
+    "id": "travel-tuolumne",
+    "tags": [
+      "paraphrase",
+      "travel"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "yosemite-05be844c00690dc0",
+        "declaration-76e59db92d97dcb7",
+        "constitution-0fa087dbff3f175f",
+        "yellowstone-d9ca4afab6490793"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": [
+        "other"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "yosemite-05be844c00690dc0",
+        "evaporation-b2f80c641063ddeb",
+        "evaporation-f1d11e0a0b298223",
+        "declaration-76e59db92d97dcb7"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": [
+        "other",
+        "parts"
+      ]
+    }
+  },
+  {
+    "id": "travel-rivers",
+    "tags": [
+      "paraphrase",
+      "travel"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "yellowstone-2419b62337a46c6e",
+        "groundwater-20ea6a15204f536c",
+        "yellowstone-c7bbe1c4dfb76f39",
+        "yellowstone-240e6df8a3707a67"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "crossings"
+      ],
+      "excerpt_uncovered": [
+        "crossings",
+        "river"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "yellowstone-2419b62337a46c6e",
+        "groundwater-20ea6a15204f536c",
+        "yellowstone-c7bbe1c4dfb76f39",
+        "yellowstone-240e6df8a3707a67"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "crossings"
+      ],
+      "excerpt_uncovered": [
+        "crossings",
+        "river"
+      ]
+    }
+  },
+  {
+    "id": "travel-regions",
+    "tags": [
+      "comparison",
+      "travel"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "yosemite-341ac915dc513bc0",
+        "yosemite-700f87fd529671b2",
+        "yellowstone-240e6df8a3707a67",
+        "yosemite-3ba1d752b63d19bd"
+      ],
+      "covered_groups": [
+        0,
+        1
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": [
+        "conditions"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "yosemite-341ac915dc513bc0",
+        "yosemite-700f87fd529671b2",
+        "yosemite-3ba1d752b63d19bd",
+        "yellowstone-240e6df8a3707a67"
+      ],
+      "covered_groups": [
+        0,
+        1
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": [
+        "conditions"
+      ]
+    }
+  },
+  {
+    "id": "history-bill",
+    "tags": [
+      "paraphrase",
+      "history"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "constitution-fa6b646630f47bbc",
+        "constitution-bf48a089d6e209eb",
+        "constitution-8c8a4ab194f9f71f",
+        "constitution-efeaa63f2e48a2a7"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "objects"
+      ],
+      "excerpt_uncovered": [
+        "objects"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "constitution-fa6b646630f47bbc",
+        "constitution-bf48a089d6e209eb",
+        "constitution-8c8a4ab194f9f71f",
+        "constitution-efeaa63f2e48a2a7"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "objects"
+      ],
+      "excerpt_uncovered": [
+        "objects"
+      ]
+    }
+  },
+  {
+    "id": "history-speech",
+    "tags": [
+      "inflection",
+      "history"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "bill-of-rights-69be9b199c542c56",
+        "constitution-c58ef0ac0098c5f0",
+        "yosemite-6d870ab5895892e6",
+        "declaration-de934a87d4f84ee5"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "assembly",
+        "passage",
+        "protects"
+      ],
+      "excerpt_uncovered": [
+        "assembly",
+        "historical",
+        "passage",
+        "protects"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "bill-of-rights-69be9b199c542c56",
+        "yosemite-6d870ab5895892e6",
+        "declaration-d4a5fe17e8a5f0b4",
+        "constitution-c58ef0ac0098c5f0"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "assembly",
+        "passage",
+        "protects"
+      ],
+      "excerpt_uncovered": [
+        "assembly",
+        "historical",
+        "passage",
+        "protects"
+      ]
+    }
+  },
+  {
+    "id": "history-consent",
+    "tags": [
+      "literal",
+      "history"
+    ],
+    "expected_coverage": "present",
+    "baseline": {
+      "ids": [
+        "constitution-74f8ef6841b5b15b",
+        "constitution-6324597803d68d4e",
+        "constitution-13898a72a9cc8fc1",
+        "constitution-77a9cc38e4c99a90"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "role"
+      ],
+      "excerpt_uncovered": [
+        "role"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "constitution-74f8ef6841b5b15b",
+        "constitution-6324597803d68d4e",
+        "constitution-13898a72a9cc8fc1",
+        "constitution-77a9cc38e4c99a90"
+      ],
+      "covered_groups": [
+        0
+      ],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "role"
+      ],
+      "excerpt_uncovered": [
+        "role"
+      ]
+    }
+  },
+  {
+    "id": "absent-space",
+    "tags": [
+      "absent",
+      "distractors"
+    ],
+    "expected_coverage": "absent",
+    "baseline": {
+      "ids": [
+        "evaporation-e75277025e69713f",
+        "essentials-f1c425461e39b7df",
+        "constitution-ba6a228a36c056f9",
+        "runoff-cee7b48b52dc99d4"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "gamma",
+        "quasar"
+      ],
+      "excerpt_uncovered": [
+        "gamma",
+        "quasar"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "evaporation-e75277025e69713f",
+        "essentials-f1c425461e39b7df",
+        "constitution-ba6a228a36c056f9",
+        "runoff-cee7b48b52dc99d4"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "gamma",
+        "quasar"
+      ],
+      "excerpt_uncovered": [
+        "gamma",
+        "quasar"
+      ]
+    }
+  },
+  {
+    "id": "absent-treatment",
+    "tags": [
+      "absent",
+      "distractors"
+    ],
+    "expected_coverage": "absent",
+    "baseline": {
+      "ids": [
+        "evaporation-398183fefbcbafbf",
+        "evaporation-e75277025e69713f",
+        "evaporation-dd7620163089bbe8",
+        "evaporation-35382abe65aae9a1"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "cure",
+        "diabetes"
+      ],
+      "excerpt_uncovered": [
+        "cure",
+        "diabetes"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "evaporation-398183fefbcbafbf",
+        "evaporation-e75277025e69713f",
+        "evaporation-35382abe65aae9a1",
+        "evaporation-dd7620163089bbe8"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "cure",
+        "diabetes"
+      ],
+      "excerpt_uncovered": [
+        "cure",
+        "diabetes"
+      ]
+    }
+  },
+  {
+    "id": "absent-routes",
+    "tags": [
+      "absent",
+      "staleness"
+    ],
+    "expected_coverage": "absent",
+    "baseline": {
+      "ids": [
+        "yellowstone-c7bbe1c4dfb76f39",
+        "yellowstone-240e6df8a3707a67",
+        "yellowstone-d9ca4afab6490793",
+        "evaporation-344c5c0ddf542566"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "today"
+      ],
+      "excerpt_uncovered": [
+        "closed",
+        "roads",
+        "today"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "yellowstone-c7bbe1c4dfb76f39",
+        "yellowstone-240e6df8a3707a67",
+        "yosemite-3ba1d752b63d19bd",
+        "constitution-c25e6a8b3b557f93"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "today"
+      ],
+      "excerpt_uncovered": [
+        "closed",
+        "roads",
+        "today"
+      ]
+    }
+  },
+  {
+    "id": "absent-prices",
+    "tags": [
+      "absent",
+      "staleness"
+    ],
+    "expected_coverage": "absent",
+    "baseline": {
+      "ids": [
+        "yosemite-3ba1d752b63d19bd",
+        "yosemite-c07549b6dd9eec11",
+        "yosemite-d2f99efaf0e7d3d1",
+        "evaporation-0e0576f893d0016d"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "cost",
+        "hotel",
+        "room",
+        "tonight"
+      ],
+      "excerpt_uncovered": [
+        "cost",
+        "hotel",
+        "much",
+        "room",
+        "tonight"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "yosemite-3ba1d752b63d19bd",
+        "evaporation-0e0576f893d0016d",
+        "yosemite-c07549b6dd9eec11",
+        "runoff-7228ab4f73d613f5"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "cost",
+        "hotel",
+        "room",
+        "tonight"
+      ],
+      "excerpt_uncovered": [
+        "cost",
+        "hotel",
+        "room",
+        "tonight"
+      ]
+    }
+  },
+  {
+    "id": "absent-country",
+    "tags": [
+      "absent",
+      "distractors"
+    ],
+    "expected_coverage": "absent",
+    "baseline": {
+      "ids": [
+        "yellowstone-d9ca4afab6490793",
+        "bill-of-rights-16c9db7db23bf62f",
+        "evaporation-0e0576f893d0016d",
+        "yellowstone-c7bbe1c4dfb76f39"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "legally",
+        "nepal"
+      ],
+      "excerpt_uncovered": [
+        "equipment",
+        "legally",
+        "nepal"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "yellowstone-d9ca4afab6490793",
+        "yosemite-05be844c00690dc0",
+        "yosemite-c07549b6dd9eec11",
+        "yellowstone-2419b62337a46c6e"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "legally",
+        "nepal"
+      ],
+      "excerpt_uncovered": [
+        "equipment",
+        "legally",
+        "nepal",
+        "required"
+      ]
+    }
+  },
+  {
+    "id": "absent-composition",
+    "tags": [
+      "absent",
+      "cross_document"
+    ],
+    "expected_coverage": "absent",
+    "baseline": {
+      "ids": [
+        "groundwater-abbc88d938b327f2",
+        "infiltration-255048a860f8ca1d",
+        "infiltration-6bdab6adeed3d925",
+        "constitution-efeaa63f2e48a2a7"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "control"
+      ],
+      "excerpt_uncovered": [
+        "control",
+        "senate"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "groundwater-abbc88d938b327f2",
+        "infiltration-255048a860f8ca1d",
+        "infiltration-174cde4f6cfe89d6",
+        "infiltration-6bdab6adeed3d925"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "control"
+      ],
+      "excerpt_uncovered": [
+        "control",
+        "senate"
+      ]
+    }
+  },
+  {
+    "id": "absent-physics",
+    "tags": [
+      "absent"
+    ],
+    "expected_coverage": "absent",
+    "baseline": {
+      "ids": [],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "entanglement",
+        "quantum"
+      ],
+      "excerpt_uncovered": [
+        "entanglement",
+        "quantum"
+      ]
+    },
+    "candidate": {
+      "ids": [],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "entanglement",
+        "quantum"
+      ],
+      "excerpt_uncovered": [
+        "entanglement",
+        "quantum"
+      ]
+    }
+  },
+  {
+    "id": "absent-comparison",
+    "tags": [
+      "absent",
+      "partial_coverage"
+    ],
+    "expected_coverage": "absent",
+    "baseline": {
+      "ids": [
+        "evaporation-398183fefbcbafbf",
+        "evaporation-e75277025e69713f",
+        "evaporation-dd7620163089bbe8",
+        "evaporation-35382abe65aae9a1"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "photosynthesis"
+      ],
+      "excerpt_uncovered": [
+        "photosynthesis"
+      ]
+    },
+    "candidate": {
+      "ids": [
+        "evaporation-398183fefbcbafbf",
+        "evaporation-e75277025e69713f",
+        "evaporation-35382abe65aae9a1",
+        "evaporation-dd7620163089bbe8"
+      ],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [
+        "photosynthesis"
+      ],
+      "excerpt_uncovered": [
+        "photosynthesis"
+      ]
+    }
+  },
+  {
+    "id": "absent-empty",
+    "tags": [
+      "absent",
+      "empty"
+    ],
+    "expected_coverage": "absent",
+    "baseline": {
+      "ids": [],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": []
+    },
+    "candidate": {
+      "ids": [],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": []
+    }
+  },
+  {
+    "id": "absent-stopwords",
+    "tags": [
+      "absent",
+      "empty"
+    ],
+    "expected_coverage": "absent",
+    "baseline": {
+      "ids": [],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": []
+    },
+    "candidate": {
+      "ids": [],
+      "covered_groups": [],
+      "explicit_distractors": [],
+      "lexical_generation_blocked": true,
+      "missing_terms": [],
+      "excerpt_uncovered": []
+    }
+  }
+]
