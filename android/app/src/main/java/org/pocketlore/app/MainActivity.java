@@ -21,6 +21,7 @@ import java.util.concurrent.Executors;
 
 public final class MainActivity extends Activity {
     private ResearchEngine engine;
+    private NativePanel nativePanel;
     private EditText question;
     private TextView answer, status;
     private LinearLayout sourceList;
@@ -52,7 +53,7 @@ public final class MainActivity extends Activity {
         });
         TextView title = text("PocketLore", 32); title.setTextColor(Color.rgb(22, 67, 45)); layout.addView(title);
         layout.addView(text("Offline research • starter library", 16));
-        layout.addView(text("Water science pack · Source-backed passages\nExtractive preview: no language model installed", 14));
+        layout.addView(text("Water science pack · Source-backed passages\nInspect passages or import an optional local model", 14));
         question = new EditText(this);
         question.setHint("Ask about evaporation or groundwater");
         question.setMinLines(2); question.setMaxLines(5); question.setTextSize(18);
@@ -61,6 +62,7 @@ public final class MainActivity extends Activity {
         status = text("Loading installed knowledge pack…", 14); layout.addView(status);
         answer = text("Ask a question to inspect evidence stored on this device. This starter pack covers only water science; it does not provide current travel or medical advice.", 17);
         answer.setTextIsSelectable(true); layout.addView(answer);
+        nativePanel = new NativePanel(this, layout);
         sourceList = new LinearLayout(this); sourceList.setOrientation(LinearLayout.VERTICAL); layout.addView(sourceList);
         search.setEnabled(false);
         search.setOnClickListener(v -> runSearch());
@@ -88,6 +90,7 @@ public final class MainActivity extends Activity {
             runOnUiThread(() -> {
                 if (destroyed) return;
                 answer.setText(result.answer);
+                nativePanel.evidence(query, result);
                 status.setText(String.format(Locale.ROOT, "%d passages retrieved · %.1f ms on this device · Offline", result.hits.size(), millis));
                 sourceList.removeAllViews();
                 for (ResearchEngine.Hit hit : result.hits) {
@@ -117,5 +120,9 @@ public final class MainActivity extends Activity {
     }
     private int dp(int value) { return Math.round(value * getResources().getDisplayMetrics().density); }
     @Override protected void onSaveInstanceState(Bundle state) { super.onSaveInstanceState(state); state.putString("question", question.getText().toString()); }
-    @Override protected void onDestroy() { destroyed = true; worker.shutdownNow(); super.onDestroy(); }
+    @Override protected void onActivityResult(int request, int result, android.content.Intent data) {
+        super.onActivityResult(request, result, data);
+        if (request == NativePanel.PICK_MODEL && result == RESULT_OK && data != null) nativePanel.selected(data.getData());
+    }
+    @Override protected void onDestroy() { destroyed = true; if (nativePanel != null) nativePanel.destroy(); worker.shutdownNow(); super.onDestroy(); }
 }

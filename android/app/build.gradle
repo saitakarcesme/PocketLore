@@ -6,9 +6,11 @@ android {
         applicationId 'org.pocketlore.app'
         minSdk 28
         targetSdk 35
+        testInstrumentationRunner 'org.pocketlore.app.NativeSmokeInstrumentation'
         versionCode 1
         versionName '0.1.0-bootstrap'
     }
+    sourceSets.main.jniLibs.srcDirs = ['build/generated/nativeLibs']
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
@@ -23,3 +25,9 @@ tasks.register('verifyKnowledgePack') {
     }
 }
 tasks.named('preBuild').configure { dependsOn 'verifyKnowledgePack' }
+
+tasks.register('buildPocketLoreNative', Exec) {
+    workingDir rootProject.projectDir.parentFile
+    commandLine 'bash', 'tools/runtime/build-native.sh'
+}
+tasks.named('preBuild').configure { dependsOn 'buildPocketLoreNative' }
