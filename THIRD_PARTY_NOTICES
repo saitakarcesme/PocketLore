@@ -1,0 +1,7 @@
+PocketLore third-party provenance policy
+
+PocketLore source is Apache-2.0 unless identified otherwise. No rival application source has been copied at bootstrap. The private research archive and prior atlas project are not distributed.
+
+Android SDK, Android NDK, OpenJDK and Gradle are external build tools governed by their respective licenses; they are not bundled in source control. Each shipped native dependency must be pinned and carry its license. Each data pack must record source URL, acquisition date, license, transformation and content hash. Model weights require separate model-license review and an exact digest. A repository license never replaces dataset or model terms.
+
+Knowledge-pack and native-runtime notices will be added alongside their implementation before distribution.
