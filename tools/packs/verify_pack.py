@@ -44,6 +44,7 @@ def main():
     case('decompression-limit',dict(original,**{'passages.tsv':b'x'*(16*1024*1024+1)}))
     case('bad-utf8',dict(original,**{'manifest.json':b'\xff'}))
     altered('schema',lambda d:d.update(schema=2))
+    altered('fractional-schema',lambda d:d.update(schema=1.5))
     altered('language',lambda d:d.update(language='tr'))
     altered('count',lambda d:d.update(passage_count=1))
     altered('duplicate-document',lambda d:d['documents'].append(d['documents'][0]))
@@ -74,6 +75,6 @@ def main():
     result=run(adb+['shell','am','instrument','-w','org.pocketlore.app.test/org.pocketlore.app.PackSmokeInstrumentation']);(out/'instrumentation.txt').write_bytes(result)
     assert b'INSTRUMENTATION_CODE: -1' in result and b'"passed": true' in result,result.decode()
     ui=run(['python3',ROOT/'tools/packs/ui_smoke.py','--adb',adb[0],'--serial',adb[2],'--pack',pack,'--bad',out/'bitflip.plpack','--out',out/'ui']);(out/'ui.log').write_bytes(ui)
-    evidence={'pack_sha256':sha(pack.read_bytes()),'pack_bytes':pack.stat().st_size,'documents':len(m['documents']),'passages':m['passage_count'],'apk_sha256':sha(apk.read_bytes()),'test_apk_sha256':sha(test.read_bytes()),'elapsed_seconds':time.monotonic()-start,'corruption_cases':len(rejects),'environment':'LLMRig host build and existing x86_64 emulator; not physical Android','result':'PASS'}
+    evidence={'pack_sha256':sha(pack.read_bytes()),'pack_bytes':pack.stat().st_size,'documents':len(m['documents']),'passages':m['passage_count'],'apk_sha256':sha(apk.read_bytes()),'test_apk_sha256':sha(test.read_bytes()),'elapsed_seconds':time.monotonic()-start,'corruption_cases':len(rejects),'environment':'LLMRig host build and existing x86_64 emulator; not physical Android','result':'PASS','source_acquisitions':[{'id':d['id'],'original_raw_sha256':d['raw_sha256'],'cached_raw_sha256':sha((ROOT/'downloads/packs/raw'/(d['id']+'.html')).read_bytes())} for d in m['documents']]}
     (out/'summary.json').write_text(json.dumps(evidence,indent=2)+'\n');print(json.dumps(evidence,indent=2));print(out)
 if __name__=='__main__':main()

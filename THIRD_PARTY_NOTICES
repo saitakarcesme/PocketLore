@@ -20,3 +20,25 @@ Optional integration model (not bundled): tensorblock/SmolLM2-135M-Instruct-GGUF
 revision 32db44d69cedb731dc0fc96f60e01a86c6f5919d, Q3_K_M, Apache-2.0 as declared
 by the publisher. Upstream lineage: HuggingFaceTB/SmolLM2-135M-Instruct via
 unsloth/SmolLM2-135M-Instruct. See tools/runtime/pins.env and docs/RUNTIME.md.
+
+English reference pack (task 030; separately acquired, not bundled):
+- U.S. Geological Survey, Water Science School: selected agency-authored
+  evaporation, infiltration, groundwater and surface-runoff text; public domain
+  in the United States. No third-party photographs, maps or figures.
+  https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits
+- National Archives: transcriptions of the Declaration of Independence (1776),
+  original Constitution (1787, including superseded historical provisions) and
+  Bill of Rights (1791). Original United States founding texts, public domain.
+  https://www.archives.gov/founding-docs
+- National Park Service: selected Yosemite trail-region and Yellowstone hiking
+  text and NPS Ten Essentials explanations; federal text, public domain in the
+  United States, subject to third-party exceptions. The Ten Essentials system is
+  credited by NPS to The Mountaineers, Mountaineering: The Freedom of the Hills,
+  8th edition (2010). That book and all images/media are excluded.
+  https://www.nps.gov/aboutus/disclaimer.htm
+
+Exact source URLs, dates, attribution and SHA-256 pins are recorded in
+tools/packs/sources.lock.json and in each generated pack manifest. Text is
+selected, HTML-stripped and whitespace-normalized, not generated. The pack
+has no agency endorsement and provides dated reference excerpts, not current
+travel conditions, comprehensive safety instructions or current legal advice.

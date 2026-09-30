@@ -65,3 +65,13 @@ managed builder sandbox. The older `tools/android-smoke.py` captures the former
 extractive-only UI and is historical, not the current answer acceptance test.
 See [answer integration evidence](evidence/answer-integration.md) for measured
 results, preserved failures and the narrow limits of the citation checks.
+
+## Task 030 knowledge import
+
+**Import knowledge pack** selects a local `.plpack` through Android's document
+picker. The app verifies hashes and provenance before atomically replacing the
+active library, then reloads that library after restart. Corrupt imports preserve
+the previous library. Source inspection now uses each passage's own agency,
+dates and rights. See [pack reproduction and limits](KNOWLEDGE_PACKS.md).
+`python3 tools/packs/verify_pack.py` exercises actual emulator import, corruption
+rejection, retrieval, restart and source UI; it leaves the reference pack installed.

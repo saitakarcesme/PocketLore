@@ -1,0 +1,92 @@
+INSTRUMENTATION_RESULT: report={
+  "import_ms": 174.903568,
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "passages": 186,
+  "environment": "AOSP x86_64 emulator; no physical-device result",
+  "checks": [
+    "valid_import",
+    "retrieve_evaporation",
+    "retrieve_Declaration",
+    "retrieve_NAVIGATION",
+    "retrieve_Yosemite",
+    "persisted_reload",
+    "all_corrupt_imports_rejected_and_previous_pack_preserved",
+    "staging_cleanup"
+  ],
+  "rejected": [
+    {
+      "case": "bitflip.plpack",
+      "error": "java.io.IOException: Passage payload hash mismatch"
+    },
+    {
+      "case": "truncated.plpack",
+      "error": "java.io.IOException: ZIP must end with a complete, comment-free directory"
+    },
+    {
+      "case": "directory-offset.plpack",
+      "error": "java.io.IOException: Invalid ZIP directory bounds"
+    },
+    {
+      "case": "missing-manifest.plpack",
+      "error": "java.io.IOException: Missing pack entries"
+    },
+    {
+      "case": "zip-traversal.plpack",
+      "error": "java.util.zip.ZipException: Invalid zip entry path: ..\/escaped"
+    },
+    {
+      "case": "decompression-limit.plpack",
+      "error": "java.io.IOException: Pack exceeds size limit"
+    },
+    {
+      "case": "bad-utf8.plpack",
+      "error": "java.nio.charset.MalformedInputException: Input length = 1"
+    },
+    {
+      "case": "schema.plpack",
+      "error": "java.io.IOException: Unsupported pack schema or language"
+    },
+    {
+      "case": "fractional-schema.plpack",
+      "error": "java.io.IOException: Unsupported pack schema or language"
+    },
+    {
+      "case": "language.plpack",
+      "error": "java.io.IOException: Unsupported pack schema or language"
+    },
+    {
+      "case": "count.plpack",
+      "error": "java.io.IOException: Passage count mismatch"
+    },
+    {
+      "case": "duplicate-document.plpack",
+      "error": "java.io.IOException: Invalid or duplicate document ID"
+    },
+    {
+      "case": "empty-rights.plpack",
+      "error": "java.io.IOException: Invalid metadata: license"
+    },
+    {
+      "case": "provenance.plpack",
+      "error": "java.io.IOException: Provenance does not match manifest"
+    },
+    {
+      "case": "citation.plpack",
+      "error": "java.io.IOException: Invalid stable citation ID"
+    },
+    {
+      "case": "rehashed-payload-wrong-passage.plpack",
+      "error": "java.io.IOException: Passage hash mismatch"
+    },
+    {
+      "case": "duplicate-row.plpack",
+      "error": "java.io.IOException: Unknown or duplicate citation"
+    },
+    {
+      "case": "duplicate-entry.plpack",
+      "error": "java.io.IOException: Unexpected or duplicate ZIP entry"
+    }
+  ],
+  "passed": true
+}
+INSTRUMENTATION_CODE: -1

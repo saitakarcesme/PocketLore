@@ -83,7 +83,7 @@ public final class KnowledgePack {
         }
         require(offset==end,"Unexpected ZIP directory data");
         JSONObject m=new JSONObject(utf8(files.get("manifest.json")));
-        require(m.getInt("schema")==1 && field(m,"language").equals("en"),"Unsupported pack schema or language");
+        require(m.get("schema").equals(1) && field(m,"language").equals("en"),"Unsupported pack schema or language");
         String id=field(m,"id"), warning=field(m,"warning"); field(m,"transformation");
         require(id.matches("[a-z0-9-]{1,80}"),"Invalid pack ID");
         require(hash(files.get("passages.tsv")).equals(field(m,"passages_sha256")),"Passage payload hash mismatch");
@@ -106,7 +106,7 @@ public final class KnowledgePack {
             }
         }
         String text=utf8(files.get("passages.tsv"));require(text.endsWith("\n"),"Truncated passage payload");
-        String[] rows=text.split("\n",-1);require(rows.length-1==m.getInt("passage_count") && expected.size()==rows.length-1,"Passage count mismatch");
+        String[] rows=text.split("\n",-1);require(m.get("passage_count") instanceof Integer,"Invalid passage count type");require(rows.length-1==m.getInt("passage_count") && expected.size()==rows.length-1,"Passage count mismatch");
         for(int i=0;i<rows.length-1;i++) {
             String[] r=rows[i].split("\t",-1); require(r.length==6,"Invalid passage row");String[] e=expected.remove(r[0]);require(e!=null,"Unknown or duplicate citation");
             for(int j=1;j<=4;j++) require(r[j].equals(e[j-1]),"Provenance does not match manifest");
