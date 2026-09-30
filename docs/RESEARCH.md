@@ -18,4 +18,6 @@ The separate read-only atlas attempt ended with an incomplete prototype. Its rec
 
 ## Working plan translation
 
-The latest owner decisions supersede early name suggestions: PocketLore is the product name; all project content is English; all substantive work runs on LLMRig; unattended normal development and public repository pushes are authorized. The Mac chat coordinates. A separate resumable continuity chat reads the original visible archive and current state. A clean critic receives only goals and immutable evidence and emits one Turkish sentence of at most 35 words plus a machine decision. Local models perform real useful work. Checkpoints are meaningful, not a target count.
+The latest owner decisions supersede early name suggestions: PocketLore is the product name; all project content is English; all substantive work runs on LLMRig; unattended normal development and public repository pushes are authorized. The Mac chat coordinates. A separate resumable continuity chat reads the original visible archive and current state. A clean critic receives only goals and immutable evidence and emits one English sentence of at most 35 words plus a machine decision. Local models perform real useful work. Checkpoints are meaningful, not a target count.
+
+The private working context now contains validated full English translations of the supplied research and plan (5,740 and 2,879 words respectively); this public digest is not their replacement. Original private user history is preserved. All new persisted critic output is English.
