@@ -6,7 +6,7 @@ android {
         applicationId 'org.pocketlore.app'
         minSdk 28
         targetSdk 35
-        testInstrumentationRunner 'org.pocketlore.app.NativeSmokeInstrumentation'
+        testInstrumentationRunner project.findProperty('pocketloreTestRunner') ?: 'org.pocketlore.app.NativeSmokeInstrumentation'
         versionCode 1
         versionName '0.1.0-bootstrap'
     }

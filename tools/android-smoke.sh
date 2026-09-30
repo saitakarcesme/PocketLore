@@ -3,7 +3,7 @@
 set -euo pipefail
 root=$(cd "$(dirname "$0")/.." && pwd)
 toolchain=${POCKETLORE_TOOLCHAIN:-/home/isa/Android/atlas-toolchain}
-source "$root/tools/runtime/pins.env"
+source "$root/tools/answers/model.env"
 adb="$toolchain/sdk/platform-tools/adb"
 serial=${POCKETLORE_EMULATOR_SERIAL:-emulator-5560}
 [[ "$serial" == emulator-* ]] || { echo 'Emulator serial required'; exit 1; }
@@ -13,11 +13,11 @@ exec > >(tee "$out/smoke.log") 2>&1
 trap 'code=$?; echo "smoke_exit=$code evidence=$out"' EXIT
 [[ $("$adb" -s "$serial" shell getprop sys.boot_completed | tr -d '\r') == 1 ]]
 [[ $("$adb" -s "$serial" shell getprop ro.product.cpu.abi | tr -d '\r') == x86_64 ]]
-model="$root/downloads/runtime/$MODEL_FILENAME"
+model="$root/downloads/answers/model/$MODEL_FILENAME"
 echo "$MODEL_SHA256  $model" | sha256sum --check
 bash "$root/tools/answers/check.sh"
 bash "$root/tools/android-check.sh"
-bash "$root/tools/android-build.sh" assembleDebug assembleDebugAndroidTest > "$out/build.log" 2>&1
+bash "$root/tools/android-build.sh" assembleDebug assembleDebugAndroidTest -PpocketloreTestRunner=org.pocketlore.app.AnswerSmokeInstrumentation > "$out/build.log" 2>&1
 apk="$root/android/app/build/outputs/apk/debug/app-debug.apk"
 testapk="$root/android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk"
 sha256sum "$apk" "$testapk" "$model" "$root/tools/answers/development-cases.json" > "$out/hashes.txt"
@@ -33,11 +33,12 @@ python3 "$root/tools/answers/ui-smoke.py" --adb "$adb" --serial "$serial" --mode
 "$adb" -s "$serial" shell 'run-as org.pocketlore.app sh -c "cat > files/answer-development-cases.json"' < "$root/tools/answers/development-cases.json"
 timeout 300 "$adb" -s "$serial" shell am instrument -w org.pocketlore.app.test/org.pocketlore.app.AnswerSmokeInstrumentation > "$out/instrumentation.txt"
 "$adb" -s "$serial" exec-out run-as org.pocketlore.app cat files/answer-result.json > "$out/result.json"
-python3 - "$out/result.json" "$root/tools/answers/development-cases.json" <<'PY'
+python3 - "$out/result.json" "$root/tools/answers/development-cases.json" "$MODEL_SHA256" <<'PY'
 import hashlib,json,sys
 r=json.load(open(sys.argv[1]));print(json.dumps(r,indent=2))
 assert r['status']=='pass',r.get('error')
 assert r['development_cases_sha256']==hashlib.sha256(open(sys.argv[2],'rb').read()).hexdigest()
+assert r['model_sha256']==sys.argv[3]
 assert r['generated_case_count']>=1
 expected={'saved_model_load','real_answer_flow','unsupported_abstention','partial_coverage_abstention','new_question_clears_answer','cancel_real_generation','recreation_cancels_generation','reuse_after_recreation','source_inspection_opened'}
 assert expected==set(r['checks'])

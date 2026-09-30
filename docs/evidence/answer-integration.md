@@ -23,3 +23,19 @@ Citation integrity checks do not establish semantic support for a claim.
 
 The initial build and 12 synthetic-generator routing checks pass. The real-model
 UI/Activity acceptance suite is running; no final pass is claimed yet.
+
+The first complete Activity tests passed cancellation, recreation, reuse and
+unsupported abstention, but the 135M model produced no answer passing the unchanged
+citation gate. Qwen2.5-0.5B-Instruct Q4_K_M (491,400,032 bytes, pinned separately in
+`tools/answers/model.env`) was then tested against the same frozen questions;
+it also omitted citations and produced inaccurate text under a user-only prompt.
+Both raw failures are preserved under `docs/evidence/answer-integration/`.
+The next implementation separates trusted system instructions from evidence and
+question content using the model's own chat template. Citation checks are unchanged.
+
+The first UI script also exposed two test-harness issues: the additional
+instrumentation manifest entry was not registered, and a repeat file-picker run
+selected the background Downloads breadcrumb instead of the open drawer item.
+Those failed runs remain in ignored `downloads/answers/smoke-20260930T222713-2`
+and `downloads/answers/smoke-20260930T222814-2`. Explicit runner selection and drawer
+selection are implemented. Native import/restart/source-dialog checks have passed.

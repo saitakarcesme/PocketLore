@@ -82,6 +82,7 @@ public final class MainActivity extends Activity {
         });
     }
     private void runSearch() {
+        if (nativePanel.isBusy()) return;
         String query = question.getText().toString().trim();
         if (query.isEmpty()) { question.setError("Enter a research question"); return; }
         ((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(question.getWindowToken(), 0);

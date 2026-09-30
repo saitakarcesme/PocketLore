@@ -69,7 +69,7 @@ extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_load(JNI
         }
     } catch (const std::exception &e) { fail(env, e); }
 }
-static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobject sink, bool chat) {
+static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobject sink, bool chat, jbyteArray system = nullptr) {
     try {
         auto s = get(id);
         std::lock_guard<std::mutex> lock(s->operation);
@@ -83,11 +83,14 @@ static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobje
                 throw std::runtime_error("Unsupported prompt control marker");
             const char *tmpl = llama_model_chat_template(s->model, nullptr);
             if (!tmpl) throw std::runtime_error("Model has no supported chat template");
-            llama_chat_message messages[] = {{"user", text.c_str()}};
-            int size = llama_chat_apply_template(tmpl, messages, 1, true, nullptr, 0);
+            std::string instruction = bytes(env, system);
+            if (instruction.size() > 4096 || instruction.find('\0') != std::string::npos)
+                throw std::runtime_error("Invalid system instruction");
+            llama_chat_message messages[] = {{"system", instruction.c_str()}, {"user", text.c_str()}};
+            int size = llama_chat_apply_template(tmpl, messages, 2, true, nullptr, 0);
             if (size <= 0 || size > 65536) throw std::runtime_error("Unsupported or oversized chat template");
             std::vector<char> formatted(size);
-            if (llama_chat_apply_template(tmpl, messages, 1, true, formatted.data(), size) != size)
+            if (llama_chat_apply_template(tmpl, messages, 2, true, formatted.data(), size) != size)
                 throw std::runtime_error("Chat formatting failed");
             text.assign(formatted.data(), size);
         }
@@ -141,8 +144,8 @@ static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobje
 extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generate(JNIEnv *env, jclass, jlong id, jbyteArray prompt, jint limit, jobject sink) {
     return generate(env, id, prompt, limit, sink, false);
 }
-extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generateChat(JNIEnv *env, jclass, jlong id, jbyteArray prompt, jint limit, jobject sink) {
-    return generate(env, id, prompt, limit, sink, true);
+extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generateChat(JNIEnv *env, jclass, jlong id, jbyteArray system, jbyteArray prompt, jint limit, jobject sink) {
+    return generate(env, id, prompt, limit, sink, true, system);
 }
 extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_cancel(JNIEnv *env, jclass, jlong id) {
     try { get(id)->cancelled = true; } catch (const std::exception &e) { fail(env, e); }

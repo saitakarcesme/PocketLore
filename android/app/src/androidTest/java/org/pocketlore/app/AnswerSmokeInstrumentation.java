@@ -61,7 +61,12 @@ public final class AnswerSmokeInstrumentation extends Instrumentation {
             StringBuilder digest=new StringBuilder();
             for(byte b:java.security.MessageDigest.getInstance("SHA-256").digest(bytes))digest.append(String.format(java.util.Locale.ROOT,"%02x",b&255));
             report.put("development_cases_sha256",digest.toString()).put("runtime",NativeRuntime.identity())
-                .put("environment","AOSP x86_64 emulator; not physical hardware");
+                .put("environment","AOSP x86_64 emulator; not physical hardware").put("system_prompt",EvidencePrompt.SYSTEM);
+            File model=new File(getTargetContext().getFilesDir(),"model.gguf");
+            java.security.MessageDigest modelDigest=java.security.MessageDigest.getInstance("SHA-256");
+            try(InputStream in=new FileInputStream(model)){byte[] block=new byte[65536];int size;while((size=in.read(block))!=-1)modelDigest.update(block,0,size);}
+            StringBuilder modelHash=new StringBuilder();for(byte b:modelDigest.digest())modelHash.append(String.format(java.util.Locale.ROOT,"%02x",b&255));
+            report.put("model_sha256",modelHash.toString()).put("model_bytes",model.length());
             launch(); checks.put("saved_model_load");
             JSONArray inputs=new JSONObject(new String(bytes,StandardCharsets.UTF_8)).getJSONArray("cases");
             int generated=0;

@@ -36,6 +36,8 @@ public final class AnswerEngine {
             return result(Kind.ABSTAINED,"Insufficient evidence. " + why + " No model answer was inferred.","",why,"",false,0,0,start);
         }
         if (question.length() > 350) return fallback(evidence,"Question exceeds the 350-character generation limit.","","",false,0,0,start);
+        Set<String> uncovered=EvidencePrompt.uncovered(question,evidence);
+        if (!uncovered.isEmpty()) return result(Kind.ABSTAINED,"Insufficient evidence in the selected excerpts for: " + String.join(", ",uncovered) + ". Inspect the full passages.","","Selected excerpts do not cover the question","",false,0,0,start);
         if (generator == null) return fallback(evidence,"No local model is loaded.","","",false,0,0,start);
         String prompt=EvidencePrompt.build(question,evidence);
         ByteArrayOutputStream raw=new ByteArrayOutputStream();

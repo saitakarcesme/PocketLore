@@ -27,7 +27,7 @@ final class NativePanel {
     private long answerEpoch;
     private volatile boolean stopped, cancelled;
     private volatile long session;
-    private boolean busy;
+    private boolean busy, retrieving;
     NativePanel(Activity activity, LinearLayout layout, LinearLayout actions, TextView output, TextView answerStatus, java.util.function.Consumer<Boolean> busyChanged) {
         this.activity = activity; this.output = output; this.answerStatus = answerStatus; this.busyChanged = busyChanged;
         state = new TextView(activity);
@@ -57,7 +57,7 @@ final class NativePanel {
     AnswerEngine.Outcome outcome() { return outcome; }
     boolean isBusy() { return busy; }
     boolean hasModel() { return session != 0; }
-    void clearAnswer() { ++answerEpoch; outcome = null; output.setText(""); }
+    void clearAnswer() { ++answerEpoch; outcome = null; cancelled = false; retrieving = true; output.setText(""); setBusy(true); }
     void cancel() {
         cancelled = true;
         long id = session;
@@ -105,15 +105,16 @@ final class NativePanel {
         });
     }
     void answer(String question, ResearchEngine.Result evidence) {
-        if (busy || stopped) return;
+        if (!retrieving || stopped) return;
+        retrieving = false;
         final long epoch = ++answerEpoch;
         final long id = session;
-        if (id != 0) NativeRuntime.reset(id);
-        cancelled = false; outcome = null; setBusy(true);
+        if (id != 0 && !cancelled) NativeRuntime.reset(id);
+        outcome = null; setBusy(true);
         output.setText("Preparing an offline answer…"); answerStatus.setText("Checking retrieved evidence…");
         worker.execute(() -> {
             AnswerEngine.Outcome result = AnswerEngine.answer(question, evidence,
-                id == 0 ? null : (prompt, limit, sink) -> NativeRuntime.generateChat(id, prompt, limit, sink),
+                id == 0 ? null : (prompt, limit, sink) -> NativeRuntime.generateChat(id, EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8), prompt, limit, sink),
                 text -> activity.runOnUiThread(() -> {
                     if (!stopped && !cancelled && epoch == answerEpoch) {
                         answerStatus.setText("Generating locally · Citation checks pending");
