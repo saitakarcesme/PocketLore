@@ -46,12 +46,22 @@ public final class PackLibrary {
         Set<String> saved=new HashSet<>();for(Entry e:entries)saved.add(e.hash+".plpack");
         File[] files=directory.listFiles();if(files==null)throw new IOException("Cannot list library");
         for(File f:files)if(f.getName().matches("pack-[0-9]+\\.partial|catalog-[0-9]+\\.partial") || (f.getName().matches("[0-9a-f]{64}\\.plpack")&&!saved.contains(f.getName()))) require(f.delete(),"Cannot clean abandoned library stage");
+        for(File f:files)if(f.getName().matches("[0-9a-f]{64}\\.sqlite(?:\\.partial)?")){String h=f.getName().substring(0,64);if(f.getName().endsWith(".partial")||!saved.contains(h+".plpack"))require(f.delete(),"Cannot clean abandoned broad index");}
     }
     private KnowledgePack read(File file)throws Exception {try(InputStream in=new FileInputStream(file)){return KnowledgePack.read(in,false);}}
     private Snapshot build(List<Entry> entries,KnowledgePack incoming,BooleanSupplier cancel)throws Exception {
         long bytes=0,expanded=0,manifests=0,docs=0,chars=0,tokens=0,provenanceChars=0;
+        long broadBytes=0;int broadDocs=0,broadCount=0;List<ResearchEngine> diskEngines=new ArrayList<>();
         Set<String> documents=new HashSet<>();Map<String,String[]> rows=new LinkedHashMap<>();Map<String,StringBuilder> provenance=new HashMap<>();
         for(Entry entry:entries){if(cancel.getAsBoolean()||Thread.currentThread().isInterrupted())throw new InterruptedIOException("Library operation cancelled");
+            File savedArchive=new File(directory,entry.hash+".plpack");
+            if(incoming==null||!incoming.sha256.equals(entry.hash))if(BroadPack.isBroad(savedArchive)){
+                require(++broadCount<=1&&entries.size()<=MAX_COLLECTIONS,"Only one bounded broad edition can be retained");
+                File database=new File(directory,entry.hash+".sqlite");BroadPack broad=new BroadPack(savedArchive,database,entry.hash);
+                require(database.isFile()&&database.length()==broad.manifest.getLong("db_bytes")&&BroadPack.hash(database).equals(broad.manifest.getString("db_sha256")),"Saved broad index missing or size changed; reimport required");
+                broadBytes+=savedArchive.length()+database.length();require(broadBytes<=BroadPack.MAX_ARCHIVE+BroadPack.MAX_DATABASE,"Broad storage admission exceeded");
+                if(entry.active){diskEngines.add(broad.engine());broadDocs+=broad.manifest.getInt("documents");}continue;
+            }
             KnowledgePack p=incoming!=null&&incoming.sha256.equals(entry.hash)?incoming:read(new File(directory,entry.hash+".plpack"));
             require(p.sha256.equals(entry.hash)&&p.id.equals(entry.id),"Saved collection identity mismatch");
             bytes+=p.archiveBytes;expanded+=p.expandedBytes;manifests+=p.manifestBytes;docs+=p.documentCount;
@@ -77,7 +87,8 @@ public final class PackLibrary {
         if(available<estimate+32L*1024*1024){System.gc();available=runtime.maxMemory()-(runtime.totalMemory()-runtime.freeMemory());}
         admitHeap(estimate,available);
         List<ResearchEngine.Passage> passages=new ArrayList<>();for(String key:rows.keySet())passages.add(new ResearchEngine.Passage(rows.get(key),provenance.get(key).toString()));
-        return new Snapshot(new ArrayList<>(entries),new ResearchEngine(passages),documents.size(),bytes);
+        ResearchEngine small=new ResearchEngine(passages);if(diskEngines.isEmpty())return new Snapshot(new ArrayList<>(entries),small,documents.size(),bytes);
+        diskEngines.add(small);return new Snapshot(new ArrayList<>(entries),ResearchEngine.combined(diskEngines),documents.size()+broadDocs,bytes+broadBytes);
     }
     private void commit(List<Entry> entries,BooleanSupplier cancel)throws Exception {
         JSONArray list=new JSONArray();for(Entry e:entries)list.put(new JSONObject().put("id",e.id).put("sha256",e.hash).put("active",e.active));
@@ -94,9 +105,16 @@ public final class PackLibrary {
         Snapshot next=build(es,null,()->false);commit(es,()->false);return next;
     }
     public synchronized Snapshot install(InputStream in,BooleanSupplier cancel)throws Exception {
-        List<Entry> es=entries();cleanup(es);ResourceStorage.requireSpace(KnowledgePack.LIMIT,directory.getUsableSpace());
+        List<Entry> es=entries();cleanup(es);ResourceStorage.requireSpace(BroadPack.MAX_ARCHIVE,directory.getUsableSpace());
         File stage=File.createTempFile("pack-",".partial",directory);File moved=null;boolean committed=false;
-        try{ResourceStorage.copy(in,stage,KnowledgePack.LIMIT,cancel);KnowledgePack p=read(stage);
+        try{ResourceStorage.copy(in,stage,BroadPack.MAX_ARCHIVE,cancel);
+            if(BroadPack.isBroad(stage)){
+                String hash=BroadPack.hash(stage);for(Entry e:es)if(e.hash.equals(hash))return build(es,null,cancel);
+                for(Entry e:es)require(!BroadPack.isBroad(new File(directory,e.hash+".plpack")),"Disable/remove previous broad edition before importing another; no duplicate broad indexes");
+                BroadPack broad=BroadPack.prepare(stage,directory,hash,cancel);File db=broad.database;
+                try{es.add(new Entry(hash,broad.id,true));moved=new File(directory,hash+".plpack");Files.move(stage.toPath(),moved.toPath(),StandardCopyOption.ATOMIC_MOVE);Snapshot next=build(es,null,cancel);commit(es,cancel);committed=true;return next;}finally{if(!committed)db.delete();}
+            }
+            KnowledgePack p=read(stage);
             for(Entry e:es)if(e.hash.equals(p.sha256))return build(es,null,cancel);
             es.add(new Entry(p.sha256,p.id,true));Snapshot next=build(es,p,cancel);
             if(cancel.getAsBoolean()||Thread.currentThread().isInterrupted())throw new InterruptedIOException("Pack import cancelled");
