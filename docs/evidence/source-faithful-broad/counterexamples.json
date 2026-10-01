@@ -1,0 +1,88 @@
+{
+  "protocol": "Frozen task-210 counterexamples; no retrieval tuning or new generation",
+  "cases": [
+    {
+      "id": "991",
+      "title": "Absolute value",
+      "revision": {
+        "revid": 1371476443,
+        "parentid": 1355683920,
+        "timestamp": "2026-08-26T17:47:36Z"
+      },
+      "html_sha256": "1b5b90205309a1aacae26e9df0c49089d2a01bd6f609b2a97f31972737872d51",
+      "required_source_substrings": [
+        "[TeX: {\\displaystyle |0|=0}]",
+        "absolute value of 3 is 3"
+      ],
+      "forbidden_quota_areas": [],
+      "builder_judgment": "Preserve source formulas and their numerical example, never reconstruct missing facts."
+    },
+    {
+      "id": "633",
+      "title": "Algae",
+      "revision": {
+        "revid": 1376531852,
+        "parentid": 1375978667,
+        "timestamp": "2026-09-24T18:54:17Z"
+      },
+      "html_sha256": "5d1150477de1b161f7112bfe96db2dddb375b0d6db48860c7ed6f97a58116b16",
+      "required_source_substrings": [
+        "50 metres (160 ft)"
+      ],
+      "forbidden_quota_areas": [],
+      "builder_judgment": "Retain the rendered length and both source units."
+    },
+    {
+      "id": "3546",
+      "title": "Transport in Belgium",
+      "revision": {
+        "revid": 1356752993,
+        "parentid": 1351551994,
+        "timestamp": "2026-05-29T16:40:17Z"
+      },
+      "html_sha256": "f5ae145b4c64d0a4f643e5b0503b576575fcc567feec605cb3b40935cac28ca9",
+      "required_source_substrings": [
+        "2,950 km (1,830 mi)",
+        "118,414 km (73,579 mi)",
+        "1,747 km (1,086 mi)"
+      ],
+      "forbidden_quota_areas": [],
+      "builder_judgment": "Historical infrastructure quantities must retain units, not imply live service availability."
+    },
+    {
+      "id": "4429510",
+      "title": "Futurist cooking",
+      "revision": {
+        "revid": 1375069161,
+        "parentid": 1375068823,
+        "timestamp": "2026-09-15T17:39:42Z"
+      },
+      "html_sha256": "13e4856ed07d641368c3170ff9c3af1a8c18926fc4dd63607a6c956b48dfd7fd",
+      "required_source_substrings": [
+        "Futurist movement"
+      ],
+      "forbidden_quota_areas": [
+        "practical reference"
+      ],
+      "builder_judgment": "A cultural movement is not practical cooking guidance; no quota credit."
+    },
+    {
+      "id": "4057884",
+      "title": "Louisville Museum Plaza",
+      "revision": {
+        "revid": 1344824786,
+        "parentid": 1343499220,
+        "timestamp": "2026-03-22T19:38:30Z"
+      },
+      "html_sha256": "6c614a9c2c489db26b80ef8d1e143739f930c673e591e4f02156981e016b679a",
+      "required_source_substrings": [
+        "abandoning plans to build Museum Plaza"
+      ],
+      "forbidden_quota_areas": [
+        "travel",
+        "practical reference"
+      ],
+      "builder_judgment": "Abandoned development is historical background, not an available attraction or practical guidance."
+    }
+  ]
+}
