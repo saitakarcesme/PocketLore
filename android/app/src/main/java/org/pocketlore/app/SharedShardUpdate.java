@@ -123,7 +123,7 @@ final class SharedShardUpdate {
         } finally {
             if(stage.exists())ScaleLibrary.removeTree(stage);
             if(moved&&!committed&&dest.exists())ScaleLibrary.removeTree(dest);
-            collect(library);
+            if(committed){try{collect(library);}catch(Exception ignored){/* Retry owned-object cleanup on next open. */}}else collect(library);
         }
     }
 }

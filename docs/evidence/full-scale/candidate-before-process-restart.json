@@ -2,16 +2,16 @@
   "status": "development host and Android subset; full installation blocked",
   "artifacts": {
     "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": {
-      "bytes": 298358,
-      "sha256": "ac752bc820819476277ead048bf73489d1dcee6bfb708ec097c37f96f84f2109"
+      "bytes": 289962,
+      "sha256": "6a8be00c7740096f29c66b4c93a15d482d3f48c4e77c4666edb213dac5155ba5"
     },
     "android/app/build/outputs/apk/debug/app-debug.apk": {
       "bytes": 15685650,
-      "sha256": "a0cebabd78b9246fa5e1272e4bea1587c7ca80e2785fe31f2ee73048a1719de9"
+      "sha256": "b5e0afdbcf6ee92e5022eb7ecca6276c5709274276cd48698148b09ec71e1362"
     },
     "android/app/src/androidTest/java/org/pocketlore/app/ShardUpdateInstrumentation.java": {
-      "bytes": 12612,
-      "sha256": "9d7b2fce6f68e9b0947e47e9397bdcf82a3b3429ce972eb826b9bf9674fb6753"
+      "bytes": 7246,
+      "sha256": "64c1d3ebfb2b4f84c0655aa5e310a9c13ba8f844e29d3ec37591cb687592fd41"
     },
     "android/app/src/main/java/org/pocketlore/app/ScaleActivity.java": {
       "bytes": 7275,
@@ -30,16 +30,8 @@
       "sha256": "018631a3c9931b11fb411a8e9dd3fce5fe67e57f1d18cc780c8da2920ef9f8b8"
     },
     "android/app/src/main/java/org/pocketlore/app/SharedShardUpdate.java": {
-      "bytes": 8575,
-      "sha256": "c42f3023129d8563984b5e32c5374836f3d9be1624725390118e8b361f29c5a8"
-    },
-    "docs/evidence/full-scale/budget.json": {
-      "bytes": 3852,
-      "sha256": "83a3ceecb04d56b69beea0e34fe62c2d58eb012cbf005c3fc15a36aaf330d193"
-    },
-    "docs/evidence/full-scale/deterministic-build.json": {
-      "bytes": 355,
-      "sha256": "74b73150d74d4b5b2c599bb74756c4fded51459b57a0a5ec665cd1e4aca1549f"
+      "bytes": 8461,
+      "sha256": "9f1b5bd9eaed6c60d01917a7325ec6cf486e06c9425e4a914656aac680da2191"
     },
     "docs/evidence/full-scale/host/cities.json": {
       "bytes": 548292,
@@ -61,38 +53,6 @@
       "bytes": 19188,
       "sha256": "fa1be3622cc97d1f920811db3209a9deee64a67b788bdc6d361195199b6c9d32"
     },
-    "docs/evidence/full-scale/large-android/large-base.json": {
-      "bytes": 576,
-      "sha256": "ff401d6ba18648c54ed4b560b05c68185acc8b11a8a94205e179df4535558ffe"
-    },
-    "docs/evidence/full-scale/large-android/large-base.log": {
-      "bytes": 560,
-      "sha256": "d830e8cc5f96b4ff1bf20ec30f2a0de27324a0f8fd2e5967a858e1c88af16c80"
-    },
-    "docs/evidence/full-scale/large-android/large-inspect.json": {
-      "bytes": 5944,
-      "sha256": "14b3a6ced6cf9d952c5ade1117d3b4070bb33888286df31ede4ab86e60188f37"
-    },
-    "docs/evidence/full-scale/large-android/large-inspect.log": {
-      "bytes": 5277,
-      "sha256": "db3d598eaa8ae6e5c229867bc9820eaf933a427e1746f56176dd09dc4f4084a1"
-    },
-    "docs/evidence/full-scale/large-android/large-update.json": {
-      "bytes": 603,
-      "sha256": "54330aa89d49ef59aacf0a0f23e21ee37da94056f6e627e75f2f6edf398b616d"
-    },
-    "docs/evidence/full-scale/large-android/large-update.log": {
-      "bytes": 582,
-      "sha256": "6a3bce10603868e3897b60c485130671085691054db14d5a555382e8c3faeece"
-    },
-    "docs/evidence/full-scale/places-stage-1.json": {
-      "bytes": 3124,
-      "sha256": "abe759be34fe67d09596b84bd7c0b6984ac26eacaec92ccc56eed2f1e6524918"
-    },
-    "docs/evidence/full-scale/places-stage-2.json": {
-      "bytes": 3409,
-      "sha256": "fc583ab254413d84694d447ef182eebd5574422a3cb78bfd9e403f989c6f9d7d"
-    },
     "downloads/full-scale/fixtures/base.plscale": {
       "bytes": 75083,
       "sha256": "d331be2cf5665aef169a1d6ab25b73962006501fd81ed664678e88e67404ebca"
@@ -100,10 +60,6 @@
     "downloads/full-scale/fixtures/corrupt.plscale": {
       "bytes": 65130,
       "sha256": "0e3b5b97a5c71f570e9bc073bd25c77ec6b57c1c3930fad9f8925ec1d7646f7c"
-    },
-    "downloads/full-scale/fixtures/remove-first.plscale": {
-      "bytes": 1051,
-      "sha256": "a3566aca79c43e7b94ed4191d7efb29aa4e4c5c949e1e16ceff92e3f75c830f4"
     },
     "downloads/full-scale/fixtures/update.plscale": {
       "bytes": 65130,
@@ -118,8 +74,8 @@
       "sha256": "0950241eb55b6857b7274b053efa83002c633361b38ba25ee1847da8f0043e18"
     },
     "tools/evaluation/full-scale/fixtures.py": {
-      "bytes": 3862,
-      "sha256": "d659afeb1e10a229d466f4458b82a9b48b049e72a4384aa8b1a12cf919050bfa"
+      "bytes": 3752,
+      "sha256": "a0b1cba00dbf50e06d299f2de781894ea519368a22371b0e169b8f59bbd7c506"
     },
     "tools/evaluation/full-scale/places_fixture.py": {
       "bytes": 3216,
@@ -130,12 +86,12 @@
       "sha256": "2591db4b6b28fb2d3b6c240cc2a8cd3701adabbcfa2d1b94f8d339d6a74e174c"
     },
     "tools/evaluation/verify_full_scale_inventory.py": {
-      "bytes": 6663,
-      "sha256": "ef74664c17c2eddfa75eefa1cf72971fe76a7df132602252992ae27ab9795222"
+      "bytes": 5083,
+      "sha256": "18620f9379dadd0010a487dc29a9c89787de0087698059a596dcf6d5b1da8b15"
     },
     "tools/packs/build_shared_scale.py": {
-      "bytes": 5309,
-      "sha256": "536fa4b0ccfde5a9038dcfbccd959261a4227e68ecd0cc028a85496d95ec5c61"
+      "bytes": 5040,
+      "sha256": "eede0f3bd19567fb73710161465547bb997ca7165c3cf04d2ee2c008c874b118"
     }
   }
 }
