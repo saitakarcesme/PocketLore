@@ -1,0 +1,22 @@
+{
+  "reviewer": "Builder source reading; not independent criticism or human acceptance",
+  "unit": "One exact model/case output; score diagnostic raw generation and production publication separately",
+  "raw_support": {
+    "supported": "Every substantive asserted relationship is established by supplied excerpts, with subject, scope, conditions and uncertainty preserved",
+    "unsupported": "At least one asserted relationship is wrong, unsupported or overstates source conditions",
+    "withheld": "No substantive answer asserted, such as Insufficient evidence"
+  },
+  "raw_completeness": {
+    "full": "Addresses all essential requested relations and material qualifiers in frozen expectation; absent evidence correctly withheld",
+    "partial": "Some requested content is present but material requested relations or qualifiers are missing",
+    "none": "Does not answer requested relationship, or unsupported overall response, or unnecessary abstention"
+  },
+  "raw_usefulness": {
+    "useful": "Supported, direct, intelligible answer with essential requested content, or appropriate absent-evidence refusal",
+    "limited": "Supported but incomplete answer with some relevant information",
+    "not-useful": "Wrong, irrelevant, repetitive/confusing, or unnecessary refusal"
+  },
+  "published_support": "Only GENERATED is scored as published generation. FALLBACK and ABSTAINED are withheld, even if raw diagnostic text is good; fallback remains inspectable in receipts.",
+  "selection": "Count supported full useful GENERATED answers on the 19 answerable cases. Candidate must strictly improve baseline and not increase unsupported GENERATED answers or unsafe absent-case publication. Diagnostic-only gains are not product gains.",
+  "uncertainty": "Judgments require independent source review; categories are ordinal development assessments, not statistically estimated general capability. A source-cited exact fragment can still be incomplete or irrelevant."
+}
