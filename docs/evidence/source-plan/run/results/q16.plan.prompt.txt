@@ -1,0 +1,23 @@
+Select evidence for every numbered question obligation using ONLY the supplied source-grounded fact IDs. Preserve subject, input/output direction and time/conditions; do not invent an unstated link. Output exactly one line per obligation in this format: O1|F1,F2. Select at most eight fact IDs per obligation. If the available facts cannot answer an obligation, output W|O1|reason. No prose answer, heading or explanation outside this format. A selected fact is evidence, not permission to assert a false premise.
+--- USER ---
+Available source-grounded facts (relation and ordered arguments):
+F1 | coast|barcelona|northeastern|spain
+P1.1 | Barcelona | 2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01) | Barcelona[a] is a city on the northeastern coast of Spain.
+F2 | capital|barcelona|autonomous community of catalonia
+P1.2 | Barcelona | 2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01) | It is the capital and largest city of the autonomous community of Catalonia, as well as the second-most populous municipality of Spain after Madrid.
+P1.1 | Barcelona | 2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01) | Barcelona[a] is a city on the northeastern coast of Spain.
+F3 | largest-city|barcelona|autonomous community of catalonia
+P1.2 | Barcelona | 2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01) | It is the capital and largest city of the autonomous community of Catalonia, as well as the second-most populous municipality of Spain after Madrid.
+P1.1 | Barcelona | 2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01) | Barcelona[a] is a city on the northeastern coast of Spain.
+F4 | population-rank|barcelona|second-most|spain|madrid
+P1.2 | Barcelona | 2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01) | It is the capital and largest city of the autonomous community of Catalonia, as well as the second-most populous municipality of Spain after Madrid.
+P1.1 | Barcelona | 2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01) | Barcelona[a] is a city on the northeastern coast of Spain.
+F5 | capital-event|barcelona|continue|principality of catalonia|after-joining|kingdom of aragon
+P2.2 | Barcelona | 2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01) | After joining with the Kingdom of Aragon to form the composite monarchy of the Crown of Aragon, Barcelona, which continued to be the capital of the Principality of Catalonia, became the most important city in the Crown of Aragon and its main economic and administrative centre, only to be overtaken by Valencia, wrested from Moorish control by the Catalans, shortly before the dynastic union between the Crown of Castile and the Crown of Aragon in 1516.
+F6 | capital|athens|greece
+P4.1 | Athens | 2026-09-29T09:45:00Z (article revision; rendered snapshot 2026-10-01) | Athens[a] is the capital and largest city of Greece.
+F7 | largest-city|athens|greece
+P4.1 | Athens | 2026-09-29T09:45:00Z (article revision; rendered snapshot 2026-10-01) | Athens[a] is the capital and largest city of Greece.
+
+Question obligations:
+O1: What are today’s train departure times from Athens to Barcelona?

@@ -1,0 +1,102 @@
+Frame behavioral checks: 39
+Independent binding behavioral checks: 29
+{
+  "assessment": "Builder source judgments; public development only. Withholding is not a new factual judgment. Probe expectations were frozen; wrapper conflicts do not silently change their labels.",
+  "groups": {
+    "old": {
+      "questions": 48,
+      "eligible": 5,
+      "supported_eligible": 5,
+      "complete_eligible": 5,
+      "useful_eligible": 5,
+      "withheld": 43,
+      "eligible_support_precision": 1.0,
+      "useful_question_coverage": 0.10416666666666667
+    },
+    "previous_new": {
+      "questions": 12,
+      "eligible": 1,
+      "supported_eligible": 1,
+      "complete_eligible": 1,
+      "useful_eligible": 1,
+      "withheld": 11,
+      "eligible_support_precision": 1.0,
+      "useful_question_coverage": 0.08333333333333333
+    },
+    "independent_new": {
+      "questions": 16,
+      "eligible": 1,
+      "supported_eligible": 1,
+      "complete_eligible": 1,
+      "useful_eligible": 1,
+      "withheld": 15,
+      "eligible_support_precision": 1.0,
+      "useful_question_coverage": 0.0625
+    },
+    "frame_new": {
+      "questions": 20,
+      "eligible": 1,
+      "supported_eligible": 1,
+      "complete_eligible": 1,
+      "useful_eligible": 1,
+      "withheld": 19,
+      "eligible_support_precision": 1.0,
+      "useful_question_coverage": 0.05
+    },
+    "prior_probes": {
+      "probes": 16,
+      "positive_probes": 8,
+      "eligible": 1,
+      "positive_probe_rejections": 7,
+      "negative_probe_admissions": 0
+    },
+    "new_probes": {
+      "probes": 20,
+      "positive_probes": 8,
+      "eligible": 0,
+      "positive_probe_rejections": 8,
+      "negative_probe_admissions": 0
+    }
+  }
+}
+{
+  "artifact_behavior": "PASS",
+  "builder_counts": {
+    "old_useful_eligible": 5,
+    "unsupported_eligible": 0,
+    "old_absent_withheld": 8,
+    "prior_absent_withheld": 1,
+    "new_absent_withheld": 2,
+    "new_useful_eligible": 1,
+    "eligible": 10,
+    "withheld": 133
+  },
+  "independent_review": "pending",
+  "scope": "Finite public-development grammar, not general entailment or production acceptance"
+}
+Source plan behavioral checks: 17
+QUALITY PASS on frozen public development only
+{
+  "behavior": "PASS",
+  "builder_counts": {
+    "eligible": 0,
+    "withheld": 24,
+    "unsupported": 0,
+    "useful": 0,
+    "absent_withheld": 4,
+    "plan_calls": 20,
+    "prose_calls": 9
+  },
+  "independent_review": "pending"
+}
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/source-plan/verify.py", line 54, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/source-plan/verify.py", line 52, in main
+    require(counts['unsupported']==0 and counts['absent_withheld']==4 and counts['useful']>0,'QUALITY FAIL: unsupported, absent or no complete useful generated answer')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/source-plan/verify.py", line 8, in require
+    if not v:raise AssertionError(m)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: QUALITY FAIL: unsupported, absent or no complete useful generated answer

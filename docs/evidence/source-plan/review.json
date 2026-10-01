@@ -1,0 +1,221 @@
+{
+  "reviewer": "builder; raw-stage source comparison, no independent approval",
+  "cases": {
+    "q01": {
+      "record_sha256": "ecf9b1e90bd5a5e3656708301e4b68f4dae61b159a11a40926f096a30c8b9019",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "No source frames for binary search despite explicit sorted/empty-interval evidence in the pinned passages. Neither model stage ran; extraction coverage failure, not model abstention.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q02": {
+      "record_sha256": "73f2716e00c2e7f2baa00508827d5d0bb26e92d86a90acb71590ae2ed2ac0f38",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "No source frames for array/tree ordering despite both definitions in the supplied passages. Neither model stage ran.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q03": {
+      "record_sha256": "d0449d055ba2072dd5b3ab8112091bd4ddcd3cbed66524851f96f70b688e794b",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "No source frames for insertion degeneration/self-balancing trees despite source coverage. Neither model stage ran.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q04": {
+      "record_sha256": "56d892092b9a5a8e7c02ddbbe01084e76b0568c055091f094b4ee2ab66b0b031",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Personal installed-version request is absent. Withheld by unavailable frames; does not demonstrate semantic recognition of absence.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q05": {
+      "record_sha256": "02e0506233e90c540f4b32aa12fc7ac68f66771d918193a7c9eea70cf5957d35",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Planner selects growth and unrelated pruning, missing stock/scion selection. Prose includes unrelated pruning, missing requested usual-selection condition, and wrong sentence choices; complete-plan coverage failed and prose parser withholds.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q06": {
+      "record_sha256": "855a798f2abdda0bad68ee25f42931d6a851c04af84b3db7a4993fcc2e66da44",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Planner emits nonexistent fact IDs beyond available grounds. No prose run; exact ID validation fails.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q07": {
+      "record_sha256": "7e8154fa8d0d9d18245ab392af763baeffd0ab144d59d3838186def6e922e9ef",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Planner W correctly describes its restricted fact list, but original passage contains smaller-cut/young-plant rationale. Source-to-plan extraction lost answerable evidence.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q08": {
+      "record_sha256": "ff64c86f99bf921e25cc8121fed213c34c7d1eba0ae56db693ae5701b2703e46",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Planner W correctly states no live arborist appointments. No prose run.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q09": {
+      "record_sha256": "70f1769971fe634a2ce5a23a9e86c5882a665eda4ac97e601a6e9daff8fd4fc8",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Generated overlap explanation and single-or-set versus single-comprehensive definitions are source-supported potential. The unchanged finite claim grammar rejects this paraphrase; no eligible success.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q10": {
+      "record_sha256": "105b0b384aecc796427d973b18d334c2e13f31a1d425ad995558ffe27f34b9f1",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Planner W reflects missing extraction of constitutional monarchy authority and constitutional basis, both present in original passages. No prose run.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q11": {
+      "record_sha256": "a7aef337bd45b2bcaabac1204c49fd3526b81f1de9fb321497a526d8ac178f6f",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Generated distinction is source-supported core content, but omits the actual UK multiple-acts/cases/treaties example. Finite grammar rejects it; no complete useful publication.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q12": {
+      "record_sha256": "6443af57d79bc3478f26e7f8e3d22c0401150d51a94d7f6c2e4c2cf1dff9530b",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Planner W reflects missing power-variation frames despite source examples. No prose run.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q13": {
+      "record_sha256": "050a1410cd29abf58d07c4a254af1c94a7ba5e06c346c174ef4cf1a663cbd4e0",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Generated extra claim transfers became-most-important to began-capital after Aragon union; source states continued capital role. Wrong-neighbor Athens citations and unsupported not-national-capital-of-Spain assertion also occur. Entire draft withheld.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q14": {
+      "record_sha256": "a210c78533f791b726658b512e893cda0fbaeaaf93aef6efac37913b250a2e5d",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Planner selects nonexistent F8. No prose run, so no successful chronology correction can be claimed.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q15": {
+      "record_sha256": "e7a3ac241a4bdbd6363b6765c68ece25b79c697948f1e597d971f4116719211a",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Planner selects unrelated surviving city-status frames; prose W says supplied planned evidence lacks1931/1970s timeline. Original sources contain those events, but extractor omitted them. Planning did not repair temporal coverage.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q16": {
+      "record_sha256": "f11ce1a99d9e17079883f320501acabc3180c0d800dfbcc399f3fdc6388069b7",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Planner correctly withholds absent live train schedule.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q17": {
+      "record_sha256": "3de82c9d8db29d9da1e6b57f097be55e401b25dc2238438113020fb96d576f26",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Malformed six-field/concatenated output also invents a comparison that pasteurization temperature is below fermentation temperature. Actual cited passages give no fermentation-temperature comparison. Withheld; unsupported draft preserved.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q18": {
+      "record_sha256": "6ee5a5aa19d7e78698e1c48c0658536f818bc0da3004d7e5c54a29fff81be418",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Generated contrast of industrial fermentation products versus heat treatment matches supplied product and pasteurization excerpts. It echoes the question as an imperative; unchanged grammar rejects complete draft. Supported potential, not generated-success credit.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q19": {
+      "record_sha256": "59047d7ef641595873a56ff5538eb5956bb11f9c08457724fd7e88941e5a6016",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Planner mixes source sentence label P4.1 with fact IDs. No prose run. Original passage explicitly says most spores survive, but no corresponding semantic frame was extracted.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q20": {
+      "record_sha256": "111205b7b0214ee3f10fadfba8798cca8ab4fb2c6fa748fca110a189d2a3da10",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Planner mixes P2.4 with fact IDs. No prose run; false-premise input/output correction not achieved.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q21": {
+      "record_sha256": "002b43efc27d04bcbfe0d874a0006d18e53ac7084608ea16fb7231ac06f3bb05",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Prose gives source-supported fifth root100 and approximate2.512 repeatedly. Unchanged finite grammar rejects the phrasing; no causal/physical explanation beyond the formula is supplied or credited.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q22": {
+      "record_sha256": "b8c525ee9ca71b1f33b507c1193dd01495e6679c708652422bae9cfea116e584",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Planner mixes P5.2 with fact IDs. No prose run; distance/reverse-numbering facts in original excerpts were not extracted.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q23": {
+      "record_sha256": "98622c549f0a846ea41dae685f6804c4be9e6a8a5faee84f201329df5ecfb084",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Prose omits the requested non-primary-income explanation, adds irrelevant magnitude, and changes discovering transient events into monitoring them. Full source distinguishes those activities. Entire draft withheld; not complete useful support.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    },
+    "q24": {
+      "record_sha256": "f190adcec8530e46f1cfd638eef090b6a3b1954e865dbad8958f13dae8ed940e",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "raw_stage_assessment": "Planner W correctly states current local weather is unavailable. No prose run.",
+      "route_assessment": "No published prose; withholding is not a new factual approval."
+    }
+  }
+}

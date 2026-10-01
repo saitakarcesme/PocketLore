@@ -1,0 +1,12 @@
+Select evidence for every numbered question obligation using ONLY the supplied source-grounded fact IDs. Preserve subject, input/output direction and time/conditions; do not invent an unstated link. Output exactly one line per obligation in this format: O1|F1,F2. Select at most eight fact IDs per obligation. If the available facts cannot answer an obligation, output W|O1|reason. No prose answer, heading or explanation outside this format. A selected fact is evidence, not permission to assert a false premise.
+--- USER ---
+Available source-grounded facts (relation and ordered arguments):
+F1 | industrial-product|fermentation|ethanol
+P2.4 | Fermentation | 2026-09-14T02:05:54Z (article revision; rendered snapshot 2026-10-01) | Perhaps the most commonly known use for fermentation is at an industrial level to produce commodity chemicals, such as ethanol and lactate.
+F2 | industrial-product|fermentation|lactate
+P2.4 | Fermentation | 2026-09-14T02:05:54Z (article revision; rendered snapshot 2026-10-01) | Perhaps the most commonly known use for fermentation is at an industrial level to produce commodity chemicals, such as ethanol and lactate.
+F3 | temperature|usual|pasteurization|less-than|100|212
+P4.1 | Pasteurization | 2026-07-26T23:24:26Z (article revision; rendered snapshot 2026-10-01) | In food processing, pasteurization (-isation) is a process of food preservation in which packaged foods (e.g., milk and fruit juices) are treated with mild heat, usually to less than 100 °C (212 °F), to eliminate pathogens and extend shelf life.
+
+Question obligations:
+O1: Why does pasteurization not promise complete sterilization, even though it reduces spoilage risk?
