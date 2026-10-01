@@ -1,0 +1,314 @@
+[
+  {
+    "id": "r01",
+    "case_id": "s08",
+    "original_path": "docs/evidence/scale-model-quality/runs/initial/qwen3-4b/s08.json",
+    "original_sha256": "e4d4f2c31147a4e3a40faaf579d268294ffedc7f22bee9ab7a5f0943b46b3de6",
+    "question": "Explain the role of earthworms in producing vermicompost.",
+    "claims": [
+      {
+        "obligation": 1,
+        "original_slot": "[S4] Earthworms play a crucial role in producing vermicompost by decomposing vegetable or food waste, bedding materials, and vermicast through the process of vermicomposting. The decomposition process involves the breakdown of organic matter by earthworms, which results in the creation of vermicompost. [S5] Additionally, earthworms contribute to the breakdown of organic matter by excreting vermicast, which is the end-product of the breakdown of organic matter by earthworms. [S5] The excreta from earthworms, known as vermicast, contain reduced levels of contaminants and a higher saturation of nutrients than the organic materials before vermicomposting. [S5]",
+        "claim": "Earthworms play a crucial role in producing vermicompost by decomposing vegetable or food waste, bedding materials, and vermicast through the process of vermicomposting.",
+        "paragraphs": [
+          4
+        ],
+        "subject": "Vermicompost",
+        "qualifier": "none separately asserted"
+      }
+    ],
+    "expected_support": false,
+    "purpose": "Historical claim replay with structurally valid binding; not fresh draft success"
+  },
+  {
+    "id": "r02",
+    "case_id": "s09",
+    "original_path": "docs/evidence/scale-model-quality/runs/initial/qwen3-4b/s09.json",
+    "original_sha256": "0af24fef94f3a37e4426dd05228ebc302b7d70a96ce1f979c9e4d200969962df",
+    "question": "Describe ordinary compost production; describe vermicompost production; identify their shared use.",
+    "claims": [
+      {
+        "obligation": 1,
+        "original_slot": "[S2] Compost is produced by gathering a mix of green waste (nitrogen-rich materials such as leaves, grass, and food scraps) and brown waste (woody materials rich in carbon, such as stalks, paper, and wood chips). The materials break down into humus over months through a process involving measured inputs of water, air, and carbon- and nitrogen-rich materials. Decomposition is aided by shredding plant matter, adding water, ensuring proper aeration by regularly turning the mixture in open piles or windrows, and by fungi, earthworms, and other detritivores.",
+        "claim": "Compost is produced by gathering a mix of green waste (nitrogen-rich materials such as leaves, grass, and food scraps) and brown waste (woody materials rich in carbon, such as stalks, paper, and wood chips). The materials break down into humus over months through a process involving measured inputs of water, air, and carbon- and nitrogen-rich materials. Decomposition is aided by shredding plant matter, adding water, ensuring proper aeration by regularly turning the mixture in open piles or windrows, and by fungi, earthworms, and other detritivores.",
+        "paragraphs": [
+          2
+        ],
+        "subject": "Compost",
+        "qualifier": "none separately asserted"
+      },
+      {
+        "obligation": 2,
+        "original_slot": "[S4] Vermicompost is produced by using various species of worms, usually red wigglers, white worms, and other earthworms, to decompose vegetable or food waste, bedding materials, and vermicast. This process is called vermicomposting, with the rearing of worms for this purpose being called vermiculture.",
+        "claim": "Vermicompost is produced by using various species of worms, usually red wigglers, white worms, and other earthworms, to decompose vegetable or food waste, bedding materials, and vermicast. This process is called vermicomposting, with the rearing of worms for this purpose being called vermiculture.",
+        "paragraphs": [
+          4
+        ],
+        "subject": "Vermicompost",
+        "qualifier": "none separately asserted"
+      },
+      {
+        "obligation": 3,
+        "original_slot": "[S1] Both ordinary compost and vermicompost are used as fertilizers and soil conditioners. Compost improves soil fertility in gardens, landscaping, horticulture, urban agriculture, and organic farming, while vermicompost is used in gardening and sustainable, organic farming. Both types of compost reduce dependency on commercial chemical fertilizers.",
+        "claim": "Both ordinary compost and vermicompost are used as fertilizers and soil conditioners. Compost improves soil fertility in gardens, landscaping, horticulture, urban agriculture, and organic farming, while vermicompost is used in gardening and sustainable, organic farming. Both types of compost reduce dependency on commercial chemical fertilizers.",
+        "paragraphs": [
+          1
+        ],
+        "subject": "Compost",
+        "qualifier": "none separately asserted"
+      }
+    ],
+    "expected_support": false,
+    "purpose": "Historical claim replay with structurally valid binding; not fresh draft success"
+  },
+  {
+    "id": "r03",
+    "case_id": "s22",
+    "original_path": "docs/evidence/scale-model-quality/runs/initial/qwen3-4b/s22.json",
+    "original_sha256": "c84b8d7daf3c39887abf891b6fdd8ee435a6e608f2030b9c50f449c228854b42",
+    "question": "Distinguish a codified constitution from an uncodified one; describe two ways constitutional monarchs can differ in power.",
+    "claims": [
+      {
+        "obligation": 1,
+        "original_slot": "[S2] A codified constitution is one in which the principles are written down into a single document or set of legal documents, while an uncodified constitution is one in which these principles are encompassed in a single comprehensive document. The United Kingdom is an example of an uncodified constitution, as its principles are found in numerous fundamental acts, court cases, and treaties.",
+        "claim": "A codified constitution is one in which the principles are written down into a single document or set of legal documents, while an uncodified constitution is one in which these principles are encompassed in a single comprehensive document. The United Kingdom is an example of an uncodified constitution, as its principles are found in numerous fundamental acts, court cases, and treaties.",
+        "paragraphs": [
+          2
+        ],
+        "subject": "Constitution",
+        "qualifier": "none separately asserted"
+      },
+      {
+        "obligation": 2,
+        "original_slot": "[S5] Constitutional monarchs can differ in power in that some have virtually no executive or policy-making power and are primarily symbolic heads of state, while others have meaningful formal powers such as veto power, appointment power, and the power to dissolve parliament.",
+        "claim": "Constitutional monarchs can differ in power in that some have virtually no executive or policy-making power and are primarily symbolic heads of state, while others have meaningful formal powers such as veto power, appointment power, and the power to dissolve parliament.",
+        "paragraphs": [
+          5
+        ],
+        "subject": "Constitutional monarchy",
+        "qualifier": "none separately asserted"
+      }
+    ],
+    "expected_support": false,
+    "purpose": "Historical claim replay with structurally valid binding; not fresh draft success"
+  },
+  {
+    "id": "r04",
+    "case_id": "s34",
+    "original_path": "docs/evidence/scale-model-quality/runs/initial/qwen3-4b/s34.json",
+    "original_sha256": "e4b33a3aae9b54dd9648d1b28ed90033cc1227e2524b82f4373457c4dcf30018",
+    "question": "Describe one historical role of Barcelona in the Crown of Aragon; describe one historical role of classical Athens.",
+    "claims": [
+      {
+        "obligation": 1,
+        "original_slot": "[S2] Barcelona was the most important city in the Crown of Aragon and its main economic and administrative centre. It became the capital of the Principality of Catalonia after joining with the Kingdom of Aragon to form the composite monarchy of the Crown of Aragon.",
+        "claim": "Barcelona was the most important city in the Crown of Aragon and its main economic and administrative centre. It became the capital of the Principality of Catalonia after joining with the Kingdom of Aragon to form the composite monarchy of the Crown of Aragon.",
+        "paragraphs": [
+          2
+        ],
+        "subject": "Barcelona",
+        "qualifier": "none separately asserted"
+      },
+      {
+        "obligation": 2,
+        "original_slot": "[S5] Classical Athens was one of the most powerful city-states in ancient Greece and a centre for Ancient Greek democracy, the arts, education and philosophy. It was highly influential throughout the Hellenistic world and the European continent, particularly in ancient Rome.",
+        "claim": "Classical Athens was one of the most powerful city-states in ancient Greece and a centre for Ancient Greek democracy, the arts, education and philosophy. It was highly influential throughout the Hellenistic world and the European continent, particularly in ancient Rome.",
+        "paragraphs": [
+          5
+        ],
+        "subject": "Athens",
+        "qualifier": "none separately asserted"
+      }
+    ],
+    "expected_support": false,
+    "purpose": "Historical claim replay with structurally valid binding; not fresh draft success"
+  },
+  {
+    "id": "r05",
+    "case_id": "s16",
+    "original_path": "docs/evidence/scale-model-quality/runs/buffer-v2/qwen25-7b/s16.json",
+    "original_sha256": "f89004e0b4148afe6880d0b558b0b80d34fbfb8644558b28dc850f2cdac5c06a",
+    "question": "State what must happen to vascular tissues for a graft to succeed; state a reason for pruning unwanted material.",
+    "claims": [
+      {
+        "obligation": 1,
+        "original_slot": "[S1] For a graft to succeed, the vascular tissues must grow together.",
+        "claim": "For a graft to succeed, the vascular tissues must grow together.",
+        "paragraphs": [
+          1
+        ],
+        "subject": "Grafting",
+        "qualifier": "none separately asserted"
+      },
+      {
+        "obligation": 2,
+        "original_slot": "[S5] A reason for pruning unwanted material is to limit the potential for pathogen intrusion and decay.",
+        "claim": "A reason for pruning unwanted material is to limit the potential for pathogen intrusion and decay.",
+        "paragraphs": [
+          5
+        ],
+        "subject": "Pruning",
+        "qualifier": "none separately asserted"
+      }
+    ],
+    "expected_support": false,
+    "purpose": "Historical claim replay with structurally valid binding; not fresh draft success"
+  },
+  {
+    "id": "r06",
+    "case_id": "s40",
+    "original_path": "docs/evidence/scale-model-quality/runs/buffer-v2/qwen25-7b/s40.json",
+    "original_sha256": "cdfff12b82a519d6e2c24fcfb849683a53ae3b906bbe5d89b0f4fd3f4e3e496e",
+    "question": "Name two industrial fermentation end products; state the usual temperature qualification for pasteurization.",
+    "claims": [
+      {
+        "obligation": 1,
+        "original_slot": "[S1] Ethanol and lactate are two industrial fermentation end products.",
+        "claim": "Ethanol and lactate are two industrial fermentation end products.",
+        "paragraphs": [
+          1
+        ],
+        "subject": "Fermentation",
+        "qualifier": "none separately asserted"
+      },
+      {
+        "obligation": 2,
+        "original_slot": "[S4] The usual temperature qualification for pasteurization is less than 100 \u00b0C (212 \u00b0F).",
+        "claim": "The usual temperature qualification for pasteurization is less than 100 \u00b0C (212 \u00b0F).",
+        "paragraphs": [
+          4
+        ],
+        "subject": "Pasteurization",
+        "qualifier": "none separately asserted"
+      }
+    ],
+    "expected_support": false,
+    "purpose": "Historical claim replay with structurally valid binding; not fresh draft success"
+  },
+  {
+    "id": "r07",
+    "case_id": "s43",
+    "original_path": "docs/evidence/scale-model-quality/runs/buffer-v2/qwen25-7b/s43.json",
+    "original_sha256": "78bff06473bd98af1465fdcb1e113818bc4f8f0336df7c80a52b7f06a698b6bb",
+    "question": "Explain how the sign and size of apparent magnitude relate to brightness.",
+    "claims": [
+      {
+        "obligation": 1,
+        "original_slot": "[S4] The sign and size of apparent magnitude relate to brightness in a reverse logarithmic scale. The brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
+        "claim": "The sign and size of apparent magnitude relate to brightness in a reverse logarithmic scale. The brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
+        "paragraphs": [
+          4
+        ],
+        "subject": "Apparent magnitude",
+        "qualifier": "none separately asserted"
+      }
+    ],
+    "expected_support": false,
+    "purpose": "Historical claim replay with structurally valid binding; not fresh draft success"
+  },
+  {
+    "id": "r08",
+    "case_id": "s46",
+    "original_path": "docs/evidence/scale-model-quality/runs/buffer-v2/qwen25-7b/s46.json",
+    "original_sha256": "f3a3423a85d0787d3446f0ae52d0be8c24d8d94d6a1b90c419bc2ed3e31264a3",
+    "question": "State the brightness ratio associated with a magnitude difference of one; name two types of observations amateurs can contribute.",
+    "claims": [
+      {
+        "obligation": 1,
+        "original_slot": "[S4] The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512.",
+        "claim": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512.",
+        "paragraphs": [
+          4
+        ],
+        "subject": "Apparent magnitude",
+        "qualifier": "none separately asserted"
+      },
+      {
+        "obligation": 2,
+        "original_slot": "[S1] Some amateur astronomers contribute to citizen science by monitoring variable stars, double stars, sunspots, and occultations of stars by the Moon or asteroids, as well as by discovering transient astronomical events, such as comets, galactic novae or supernovae in other galaxies. Two types of observations amateurs can contribute are monitoring variable stars and discovering transient astronomical events like comets.",
+        "claim": "Some amateur astronomers contribute to citizen science by monitoring variable stars, double stars, sunspots, and occultations of stars by the Moon or asteroids, as well as by discovering transient astronomical events, such as comets, galactic novae or supernovae in other galaxies. Two types of observations amateurs can contribute are monitoring variable stars and discovering transient astronomical events like comets.",
+        "paragraphs": [
+          1
+        ],
+        "subject": "Amateur astronomy",
+        "qualifier": "none separately asserted"
+      }
+    ],
+    "expected_support": false,
+    "purpose": "Historical claim replay with structurally valid binding; not fresh draft success"
+  },
+  {
+    "id": "r09",
+    "case_id": "s46",
+    "original_path": "docs/evidence/scale-model-quality/runs/buffer-v2/qwen15-moe/s46.json",
+    "original_sha256": "971505764ad56d97335671dfd5a80ada71f0135e746ef29418e781b1d2283bde",
+    "question": "State the brightness ratio associated with a magnitude difference of one; name two types of observations amateurs can contribute.",
+    "claims": [
+      {
+        "obligation": 1,
+        "original_slot": "A magnitude difference of 1 corresponds to the brightness ratio of the square root of 100, or about 2.512. A magnitude 2 star is 2.512 times as bright as a magnitude 3 star, 6.31 times as bright as a magnitude 4 star, and precisely 100 times as bright as a magnitude 7 star. The brightest astronomical objects have negative apparent magnitudes, such as Venus at magnitude -4.2 or Sirius at magnitude -1.46. The faintest stars visible with the naked eye on the darkest night have apparent magnitudes of about +6.5, though this varies depending on a person's eyesight, their altitude, and atmospheric conditions when viewing. The apparent magnitude of known objects can range from -26.832 for our Sun to +31.5 for objects in deep space imaged by the Hubble Space Telescope.",
+        "claim": "A magnitude difference of 1 corresponds to the brightness ratio of the square root of 100, or about 2.512.",
+        "paragraphs": [
+          5
+        ],
+        "subject": "Apparent magnitude",
+        "qualifier": "none separately asserted"
+      },
+      {
+        "obligation": 2,
+        "original_slot": "Two types of observations that amateur astronomers can contribute are variable stars and transient events, such as comets, galactic novae, or supernovae in other galaxies. Observing double stars, sunspots, and occultations of stars by the Moon or asteroids are also common.",
+        "claim": "Two types of observations that amateur astronomers can contribute are variable stars and transient events, such as comets, galactic novae, or supernovae in other galaxies.",
+        "paragraphs": [
+          1
+        ],
+        "subject": "Amateur astronomy",
+        "qualifier": "none separately asserted"
+      }
+    ],
+    "expected_support": false,
+    "purpose": "Historical claim replay with structurally valid binding; not fresh draft success"
+  },
+  {
+    "id": "r10",
+    "case_id": "s36",
+    "original_path": "docs/evidence/scale-model-quality/runs/buffer-v2/qwen15-moe/s36.json",
+    "original_sha256": "ee1390b7c8813615dba8a2f074881ed7de428a77554026133a0354e8d2950719",
+    "question": "Give today opening hours and current ticket prices for the Acropolis and a Barcelona museum.",
+    "claims": [
+      {
+        "obligation": 1,
+        "original_slot": "The Acropolis, located in Athens, Greece, is open to visitors from 8:00 AM to 5:00 PM daily. The ticket price for adults is \u20ac20, while children under 18 years old can enter for free. The museum is closed on January 1 and December 25. The ticket price for adults is \u20ac20, while children under 18 years old can enter for free. The museum is closed on January 1 and December 25. The ticket price for adults is \u20ac20, while children under 18 years old can enter for free. The museum is closed on January 1 and December 25. The ticket price for adults is \u20ac20, while children under 18 years old can enter for free. The museum is closed on January 1 and December 25. The ticket price for adults is \u20ac20, while children under 18 years old can enter for free. The museum is closed on January 1 and December 25. The ticket price for adults is \u20ac20, while children under 18 years old can enter for free. The museum is closed on January 1 and December 25. The ticket price for adults is \u20ac20, while children under 18 years old can enter for free. The museum is closed on January 1 and December 25. The ticket price for adults is \u20ac20, while children under 18 years old can enter for free. The museum is closed on January 1 and December 25. The ticket price for adults is \u20ac20, while children under 18 years old can enter for free. The museum is closed on January 1 and December 25. The ticket price for adults is \u20ac20, while children under 18 years old can enter for free. The museum is closed on January 1 and December 25. The ticket price for adults is \u20ac20, while children under 18 years old can enter for free. The museum is closed on January 1 and December 25. The ticket price for adults is \u20ac20, while children under 18 years old can enter for free. The museum is closed on January 1 and December 25. The ticket price for adults is \u20ac20, while children under 18 years old can enter for free. The museum is closed on January 1 and December 2",
+        "claim": "The Acropolis, located in Athens, Greece, is open to visitors from 8:00 AM to 5:00 PM daily. The ticket price for adults is \u20ac20, while children under 18 years old can enter for free. The museum is closed on January 1 and December 25.",
+        "paragraphs": [
+          1,
+          4
+        ],
+        "subject": "Barcelona; Athens",
+        "qualifier": "none separately asserted"
+      }
+    ],
+    "expected_support": false,
+    "purpose": "Historical claim replay with structurally valid binding; not fresh draft success"
+  },
+  {
+    "id": "r11",
+    "case_id": "s47",
+    "original_path": "docs/evidence/scale-model-quality/runs/initial/qwen3-4b/s47.json",
+    "original_sha256": "c6473570b65ac903d41692e874d5370633958af475189046955440dec8a580de",
+    "question": "A larger apparent magnitude number always means a brighter object. Is that supported?",
+    "claims": [
+      {
+        "obligation": 1,
+        "original_slot": "[S5] No, a larger apparent magnitude number does not always mean a brighter object. In fact, the scale is reverse logarithmic, meaning the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of approximately 2.512, so a higher magnitude number indicates a dimmer object.",
+        "claim": "No, a larger apparent magnitude number does not always mean a brighter object. In fact, the scale is reverse logarithmic, meaning the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of approximately 2.512, so a higher magnitude number indicates a dimmer object.",
+        "paragraphs": [
+          5
+        ],
+        "subject": "Apparent magnitude",
+        "qualifier": "none separately asserted"
+      }
+    ],
+    "expected_support": true,
+    "purpose": "Historical claim replay with structurally valid binding; not fresh draft success"
+  }
+]
