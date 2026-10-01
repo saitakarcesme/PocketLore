@@ -1,6 +1,15 @@
-PocketLore DC monument slice uses Wikidata structured entity data from Wikidata contributors, released under CC0 1.0 Universal.
+PocketLore central DC catalog, edition dc-regional-2026-10-01-v2, uses
+Wikidata structured entity data from Wikidata contributors, CC0 1.0 Universal.
 https://www.wikidata.org/wiki/Wikidata:Licensing
 https://creativecommons.org/publicdomain/zero/1.0/
-Entities: Q178114 (Washington Monument), Q213559 (Lincoln Memorial), Q326183 (Jefferson Memorial).
-Only English labels/descriptions and Earth coordinates are selected. Revision dates, exact source revisions, URLs and raw hashes accompany each record. No images or Wikipedia prose are included.
-The snapshot is not current operational travel information. No hours, routes, reservations, accessibility or live closure status are supplied.
+25 entities across four editorial categories: monuments, museums, parks/gardens
+and civic buildings. Each row includes its Wikidata ID, revision, modified date,
+retrieval date, URL, raw SHA-256 and selected coordinate statement ID/precision.
+Only English-readable labels, English descriptions and Earth coordinates are
+selected. National Gallery's English-readable label is in the mul field.
+Categories group source labels/descriptions; they do not establish amenities.
+MLK Memorial has two coordinate statements; the chosen statement and count
+are disclosed. Coordinates are not entrances or accessibility guarantees.
+No images, Wikipedia prose or synthetic factual descriptions are included.
+The snapshot is not current operational travel information. No hours, routes,
+reservations, accessibility or live closure status are supplied.

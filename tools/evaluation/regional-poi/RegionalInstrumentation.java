@@ -22,7 +22,7 @@ public final class RegionalInstrumentation extends Instrumentation {
     @Override public void onStart(){Bundle bundle=new Bundle();TravelActivity activity=null;
         try{
             dir=new File(getTargetContext().getFilesDir(),"regional-tests");dir.mkdirs();
-            JSONObject fixture=new JSONObject(Files.readString(new File(dir,"cases.json").toPath()));
+            JSONObject fixture=new JSONObject(new String(Files.readAllBytes(new File(dir,"cases.json").toPath()),StandardCharsets.UTF_8));
             byte[] raw;try(InputStream in=getTargetContext().getAssets().open("dc-monuments.tsv")){raw=in.readAllBytes();}
             long begin=System.nanoTime();TravelCatalog c=new TravelCatalog(new ByteArrayInputStream(raw));report.put("load_ms",(System.nanoTime()-begin)/1e6);
             check(c.pois.size()==25,"POI count");JSONArray sources=new JSONArray();for(TravelCatalog.Poi p:c.pois)sources.put(new JSONObject().put("id",p.id).put("name",p.name).put("description",p.description).put("lat",p.lat).put("lon",p.lon).put("category",p.category).put("revision",p.revision).put("source_hash",p.sourceHash).put("url",p.url).put("coordinate_claim",p.coordinateClaim).put("evidence",p.evidence()));
@@ -42,7 +42,10 @@ public final class RegionalInstrumentation extends Instrumentation {
             report.put("preferred_plan",new JSONObject().put("ids",ids(preferred)).put("text",c.plan("Q178114",2,3,"museum","art museum","Women")));
             rejects(()->c.nearby("Q178114",Double.NaN,3));rejects(()->c.nearby("Q178114",Double.POSITIVE_INFINITY,3));rejects(()->c.nearby("Q178114",-1,3));rejects(()->c.nearby("Q0",2,3));rejects(()->c.nearby("Q178114",2,0));rejects(()->c.nearby("Q178114",2,6));
             byte[] corrupt=raw.clone();corrupt[corrupt.length/2]^=1;rejects(()->new TravelCatalog(new ByteArrayInputStream(corrupt)));
-            report.put("rejected_controls",7);save();
+            String textPack=new String(raw,StandardCharsets.UTF_8);
+            String[] invalidRow=textPack.split("\n")[0].split("\t",-1);invalidRow[12]="Q0$invalid";
+            rejects(()->TravelCatalog.parse(String.join("\t",invalidRow)+"\n"+textPack.substring(textPack.indexOf('\n')+1)));
+            report.put("rejected_controls",8);save();
             activity=(TravelActivity)startActivitySync(new Intent(getTargetContext(),TravelActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));final TravelActivity a=activity;
             runOnMainSync(()->{
                 check(a.catalog!=null,"Activity catalog");a.category.setSelection(2);a.query.setText("natural history");a.avoid.setText("");a.search.performClick();

@@ -21,7 +21,7 @@ public final class TravelInstrumentation extends Instrumentation {
             });
             sendKeyDownUpSync(android.view.KeyEvent.KEYCODE_BACK);
             runOnMainSync(()->{
-                a.origin.setSelection(0);a.radius.setText("2");a.plan.performClick();TravelChecks.require(a.output.getText().toString().contains("Jefferson Memorial [Q326183]"),"UI plan");
+                a.query.setText("");a.origin.setSelection(0);a.radius.setText("2");a.plan.performClick();TravelChecks.require(a.output.getText().toString().contains("National Museum of African American History and Culture [Q3073495]"),"UI plan");
                 a.command.setText("convert 1 mi km");a.calculate.performClick();TravelChecks.require(a.output.getText().toString().contains("1.609344 km"),"UI calculator");
                 a.command.setText("add-days 2023-02-29 1");a.calculate.performClick();TravelChecks.require(a.output.getText().toString().startsWith("Cannot calculate:"),"UI invalid date");
                 a.query.setText("nonexistent restaurant");a.search.performClick();TravelChecks.require(a.sources.getChildCount()==0,"UI absent venue");

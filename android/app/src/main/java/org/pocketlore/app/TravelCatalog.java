@@ -30,7 +30,7 @@ public final class TravelCatalog {
             for(String field:v)if(field.isEmpty())throw new IOException("Missing provenance");
             Poi p=new Poi(v);TravelTools.coordinate(p.lat,p.lon);
             if(!ids.add(p.id) || !p.id.matches("Q[0-9]+") || p.lat<38.87 || p.lat>38.91 || p.lon< -77.06 || p.lon> -77.0 || !p.license.equals("CC0-1.0"))throw new IOException("Invalid region or identity");
-            if(!Arrays.asList("monument","museum","park-garden","civic").contains(p.category) || !p.coordinateClaim.startsWith(p.id+"$") || !p.sourceHash.matches("[0-9a-f]{64}"))throw new IOException("Invalid category or provenance");
+            if(!Arrays.asList("monument","museum","park-garden","civic").contains(p.category) || !p.coordinateClaim.toUpperCase(Locale.ROOT).startsWith(p.id+"$") || !p.sourceHash.matches("[0-9a-f]{64}"))throw new IOException("Invalid category or provenance");
             rows.add(p);
         }
         if(rows.size()!=25)throw new IOException("Expected 25 bounded POIs");return rows;

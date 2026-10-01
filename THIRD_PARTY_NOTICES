@@ -77,3 +77,16 @@ while NHGRI source dates are retained. Only HTML removal and whitespace
 normalization are applied; no synthetic factual text is included. Downloaded
 source pages and the optional pack remain ignored and are not embedded in
 the APK or repository. See docs/evidence/science-supplement.md.
+
+Regional DC expansion (task 160), edition dc-regional-2026-10-01-v2:
+25 Wikidata structured entity records under CC0 1.0 Universal; contributor
+attribution, licensing links and snapshot warnings are bundled in
+android/app/src/main/assets/licenses/travel-wikidata-notice.txt.
+Exact revisions, raw hashes, coordinates/statement IDs, source dates and
+English-readable labels/descriptions are in tools/packs/regional-sources.lock.json.
+Policies: https://www.wikidata.org/wiki/Wikidata:Licensing and
+https://creativecommons.org/publicdomain/zero/1.0/.
+Only structured text and coordinates are selected, with editorial category
+tags; no media or Wikipedia prose. No endorsement, operational accuracy or
+current availability is implied. Raw JSON remains ignored. Original task-060
+notices/evidence describe the historical three-record edition, not this one.

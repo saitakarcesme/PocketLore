@@ -4,7 +4,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 
-/** Frozen development assertions shared by host and Android. No model calls. */
+/** Development assertions shared by host and Android. No model calls. */
 public final class TravelChecks {
     static int checks;
     static void require(boolean ok,String message){checks++;if(!ok)throw new AssertionError(message);}
@@ -13,12 +13,12 @@ public final class TravelChecks {
     public static String run(byte[] raw)throws Exception {
         checks=0;long start=System.nanoTime();TravelCatalog c=new TravelCatalog(new ByteArrayInputStream(raw));double load=(System.nanoTime()-start)/1e6;
         require(c.search("LiNcOlN").size()==1 && c.search("LiNcOlN").get(0).id.equals("Q213559"),"Search match");
-        require(c.search("vegan restaurant").isEmpty(),"Invented venue");require(c.search("").size()==3,"Catalog coverage");
+        require(c.search("vegan restaurant").isEmpty(),"Invented venue");require(c.search("").size()==25,"Catalog coverage");
         for(TravelCatalog.Poi p:c.pois){require(p.evidence().contains(p.id)&&p.evidence().contains("CC0-1.0")&&p.evidence().contains(p.sourceHash)&&p.sourceHash.length()==64&&p.url.contains(p.revision),"Inspectable provenance");}
         java.util.List<TravelCatalog.Poi> list=c.nearby("Q178114",2,2);
-        require(list.size()==2 && list.get(0).id.equals("Q326183") && list.get(1).id.equals("Q213559"),"Known geographic order");
+        require(list.size()==2 && list.get(0).id.equals("Q3073495") && list.get(1).id.equals("Q1470020"),"Known geographic order");
         require(c.nearby("Q178114",0,2).isEmpty(),"Radius limit");
-        String plan=c.plan("Q178114",2,2);require(plan.contains("[Q178114]")&&plan.contains("[Q326183]")&&plan.contains("[Q213559]")&&plan.contains("Not a route")&&plan.contains("hours may be stale")&&plan.contains("Routing and walking times are unavailable"),"Planning provenance and limitations");
+        String plan=c.plan("Q178114",2,2);require(plan.contains("[Q178114]")&&plan.contains("[Q3073495]")&&plan.contains("[Q1470020]")&&plan.contains("Not a route")&&plan.contains("hours may be stale")&&plan.contains("Routing and walking times are unavailable"),"Planning provenance and limitations");
         require(Math.abs(TravelTools.convert(1,"mi","km")-1.609344)<1e-12,"Mile conversion");require(TravelTools.convert(32,"F","C")==0,"Temperature");
         rejects(()->TravelTools.convert(1,"km","C"));rejects(()->TravelTools.convert(Double.NaN,"mi","km"));rejects(()->TravelTools.convert(Double.MAX_VALUE,"mi","m"));
         require(TravelTools.addDays("2024-02-28",1).equals("2024-02-29"),"Leap day");require(TravelTools.daysBetween("2024-02-28","2024-03-01")==2,"Calendar difference");rejects(()->TravelTools.addDays("2023-02-29",1));

@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "environment": "API35 x86_64 emulator-5560; no physical device",
+  "edition": {
+    "schema": 2,
+    "edition": "dc-regional-2026-10-01-v2",
+    "region": "Central Washington, DC bounded reference catalog",
+    "bounds": [
+      38.87,
+      -77.06,
+      38.91,
+      -77.0
+    ],
+    "count": 25,
+    "categories": {
+      "monument": 8,
+      "museum": 11,
+      "park-garden": 3,
+      "civic": 3
+    },
+    "sha256": "2240dbd96698266eb27a3f892e346b2e2154c186c097f8ebf79d3f8ede086a8e",
+    "source_lock_sha256": "0d3105f89698d52746dc1edc6c777c74ddbb860c11e3beb2012867fedaaa9772",
+    "license": "CC0-1.0",
+    "license_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+    "selection": "Only English-readable labels, English descriptions and one explicitly pinned Earth coordinate statement per entity. No media or live operating data. MLK Memorial has two coordinate statements: first source statement retained, not an entrance claim. National Gallery uses its English-readable mul label. Categories are editorial groupings.",
+    "hours": "Not supplied; offline hours may be stale",
+    "routing": "Unavailable; spherical distance only"
+  },
+  "pack_bytes": 9855,
+  "artifacts": {
+    "app-debug.apk": {
+      "sha256": "3d5712aa31fe44d887adb66105c55db1a076db3545c9b66f33c9f29c5abaeee9",
+      "bytes": 11773557
+    },
+    "app-debug-androidTest.apk": {
+      "sha256": "54d94ce3bb745a9c245371d89a5a66d5754dbabcdb22d9504a70db4e7440ce30",
+      "bytes": 238674
+    }
+  },
+  "filter_cases": 12,
+  "exact_provenance_rows": 25,
+  "results_sha256": "e807fbf006550b8c5c7b48710fb64e20695279faac5edfda474b9f9c4da9bd01",
+  "fixture_sha256": "b52adce5df4f28138b6f1f33a3fe4c750c7c5933fb9a0809c3fa5065cb81a513",
+  "limitations": "Public literal filters and deterministic straight-line candidates; no inference, live availability, route or human usefulness acceptance"
+}

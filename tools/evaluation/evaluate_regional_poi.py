@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Check exact source extraction, deterministic bytes, and actual Android controls."""
-import datetime,hashlib,json,math,os,shutil,subprocess,sys
+import datetime,hashlib,json,math,os,shutil,subprocess,sys,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'tools/packs'))
 from build_travel import build,LOCK
@@ -33,7 +33,14 @@ def main():
  assert manifest==json.loads((ROOT/'android/app/src/main/assets/dc-monuments-manifest.json').read_text())
  artifacts={}
  for sub in ['debug/app-debug.apk','androidTest/debug/app-debug-androidTest.apk']:
-  apk=ROOT/'android/app/build/outputs/apk'/sub;artifacts[apk.name]={'sha256':sha(apk.read_bytes()),'bytes':apk.stat().st_size};shutil.copyfile(apk,out/apk.name);run(adb+['install','-r',apk],'install-'+apk.name+'.txt')
+  apk=ROOT/'android/app/build/outputs/apk'/sub;artifacts[apk.name]={'sha256':sha(apk.read_bytes()),'bytes':apk.stat().st_size};
+  if apk.name=='app-debug.apk':
+   with zipfile.ZipFile(apk) as z:
+    assert z.read('assets/dc-monuments.tsv')==raw
+    assert json.loads(z.read('assets/dc-monuments-manifest.json'))==manifest
+    notice=z.read('assets/licenses/travel-wikidata-notice.txt')
+    assert notice==(ROOT/'android/app/src/main/assets/licenses/travel-wikidata-notice.txt').read_bytes() and b'25 entities' in notice and b'CC0' in notice
+  shutil.copyfile(apk,out/apk.name);run(adb+['install','-r',apk],'install-'+apk.name+'.txt')
  run(adb+['shell','am','force-stop','org.pocketlore.app'],'stop.txt')
  run(adb+['shell','run-as','org.pocketlore.app','mkdir','-p','files/regional-tests'],'mkdir.txt')
  run(adb+['shell','run-as','org.pocketlore.app','sh','-c',"'cat > files/regional-tests/cases.json'"],'provision.txt',fixture.read_bytes())
@@ -58,7 +65,7 @@ def main():
   return [s['id'] for s in sorted(candidates,key=lambda s:(distance(s),s['id']))[:3]]
  for p in r['plans']:assert p['ids']==expected(p['category'])
  assert r['preferred_plan']['ids']==expected('museum','art museum','women')
- assert r['activity_plan']==r['preferred_plan']['text'] and r['activity_controls'] and r['rejected_controls']==7
+ assert r['activity_plan']==r['preferred_plan']['text'] and r['activity_controls'] and r['rejected_controls']==8
  for p in [*r['plans'],r['preferred_plan']]:
   assert all('['+id+']' in p['text'] for id in p['ids'])
   assert all(t in p['text'] for t in ['Not a route','hours may be stale','Routing and walking times are unavailable'])
