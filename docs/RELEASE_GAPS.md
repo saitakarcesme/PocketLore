@@ -1,5 +1,9 @@
 # Release gaps
 
+## Task301 repair1 dependency check
+
+The recovered task301 implementation and failures remain unchanged. [Fresh environment and required-check receipts](evidence/full-scale/repair-1/environment.json) confirm emulator-5560 still has only6,082,144KiB total userdata. The full41+GB installation/update gate cannot be repaired within this environment or by cleanup. Coordinator-approved persistent Android capacity is the exact dependency; no resize, service restart or replacement emulator is authorized by this repair. Task301 stays blocked; no duplicate work or weakened acceptance is proposed.
+
 ## Task301 current scale status
 
 [Shared-shard evidence](evidence/full-scale-inventory.md) supersedes the older installed-bulk counts: the emulator currently retains two full places shards (10,186,606 source records) with one shared city database, plus the unchanged three reviewed/reference/science editions and saved production0.5B model. Full host wiki/place inventories have been rehashed and queried; they remain distinct from installed coverage. Android still misses18/20 frozen cities with those two shards; Mexico City remains about8.5seconds. Full host20/20 is not Android or useful-answer acceptance.
