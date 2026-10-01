@@ -44,6 +44,7 @@ def bundle(name,fs,ss,previous=''):
 id1=bundle('base',files[:2]+[common],shards[:1])
 second=[dict(f,payload=False) for f in files[:2]]+files[2:]+[dict(common,payload=False)]
 id2=bundle('update',second,shards,id1)
+bundle('remove-first',[dict(f,payload=False) for f in files[2:]]+[dict(common,payload=False)],shards[1:],id2)
 # A corrupt payload changes real bytes while retaining its original expected hash.
 with zipfile.ZipFile(OUT/'update.plscale') as src,zipfile.ZipFile(OUT/'corrupt.plscale','w') as dst:
  for i,n in enumerate(src.namelist()):

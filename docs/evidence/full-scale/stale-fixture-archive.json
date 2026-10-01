@@ -1,0 +1,11 @@
+{
+  "owned_test_directories": [
+    "shard-test-1821683961550171321",
+    "shard-test-2912725705477388594",
+    "shard-test-3397500689236769115",
+    "shard-test-8408183669106838368"
+  ],
+  "archive_bytes": 140861440,
+  "sha256": "cf11e28a6dc20ecfe5c35066f7719343f0714e30f66341a74334e7f8fb607074",
+  "purpose": "Preserve failed/older instrumentation fixture directories before deleting only these task-owned copies; full shared collection and saved model untouched."
+}
