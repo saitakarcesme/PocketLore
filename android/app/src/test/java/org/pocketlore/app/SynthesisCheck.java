@@ -12,6 +12,7 @@ public final class SynthesisCheck {
     public static void main(String[] args)throws Exception {
         ResearchEngine engine=new ResearchEngine(new StringReader(row("test-a","The test lamp is active.")+row("test-b","The test lamp is not active.")));
         ResearchEngine.Result evidence=engine.research("test lamp active");
+        require(EvidencePrompt.select("Compare test lamp and active",evidence).hits.size()==2,"Context selection discarded an opposing statement");
         require(EvidencePrompt.conflicts(evidence).size()==2,"Opposite statements not disclosed");
         require(EvidencePrompt.build("test lamp active",evidence).contains("unresolved disagreement"),"Conflict absent from prompt");
         AnswerEngine.Generator silent=(p,n,s)->{s.onToken("The test lamp is active [S1].".getBytes(StandardCharsets.UTF_8));return 12;};

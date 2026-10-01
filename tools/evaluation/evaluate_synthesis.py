@@ -15,6 +15,7 @@ assert hashlib.sha256(pack.read_bytes()).hexdigest()==expected['pack_sha256']
 tc=Path(os.environ.get('POCKETLORE_TOOLCHAIN','/home/isa/Android/atlas-toolchain'));adb=[tc/'sdk/platform-tools/adb','-s',os.environ.get('ANDROID_SERIAL','emulator-5560')]
 assert str(adb[2]).startswith('emulator-')
 assert run(adb+['shell','getprop','sys.boot_completed']).strip()==b'1'
+(OUT/'environment.txt').write_bytes(run(adb+['shell','getprop','ro.build.fingerprint'])+run(adb+['shell','getprop','ro.product.cpu.abi'])+run(adb+['shell','cat','/proc/meminfo']))
 host=OUT/'host';host.mkdir()
 src=ROOT/'android/app/src/main/java/org/pocketlore/app';tests=ROOT/'android/app/src/test/java/org/pocketlore/app'
 run([tc/'jdk/bin/javac','-d',host,*[src/(n+'.java') for n in ['ResearchEngine','EvidencePrompt','AnswerEngine','NativeRuntime']],tests/'SynthesisCheck.java',tests/'AnswerEngineCheck.java'])

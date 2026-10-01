@@ -123,7 +123,7 @@ static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobje
         Sampler sampler(nullptr,llama_sampler_free);
         if(sources>0) {
             if(sources>4)throw std::runtime_error("Too many synthesis sources");
-            std::string grammar=R"(root ::= "Insufficient evidence." | claim "\n" claim
+            std::string grammar=R"(root ::= "Insufficient evidence." | claim ("\n" claim)?
 claim ::= references " " [^\n\r\[\].]{1,220} "."
 references ::= )";
             if(combined) {

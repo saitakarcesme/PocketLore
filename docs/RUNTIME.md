@@ -93,9 +93,9 @@ progress callback; decode uses the CPU abort callback and token-boundary checks.
 Contexts and greedy samplers are released on success, failure, cancellation and
 Java callback exceptions. Close is idempotent. No global model setting is changed.
 
-Each request uses a fresh 512-token context, a 512-token batch / 128-token
+Each request uses a fresh 2,048-token context, a 2,048-token batch / 128-token
 microbatch, two CPU threads, zero GPU layers and greedy sampling. Output is capped
-at 256 tokens; the integrated answer flow requests at most 128. Context overflow throws rather than truncating
+at 256 tokens; the integrated answer flow requests at most 256. Context overflow throws rather than truncating
 tokenized input silently. JNI streams byte arrays; Java accumulates UTF-8 before
 display. The raw `generate` API retains plain-completion behavior. The integrated
 answer flow uses `generateChat`: separate system instructions and user evidence
@@ -103,7 +103,7 @@ are formatted with the loaded model's supported chat template. Special-token
 parsing is enabled only for that formatted chat. Unsupported templates and context
 overflow become labeled fallback; embedded chat-control markers are rejected.
 
-Imports require a known size of 4 bytes to 512 MiB, available space for the copy
+Imports require a known size of 4 bytes to 2,048 MiB, available space for the copy
 plus a 32 MiB reserve, a bounded streaming copy with SHA-256, a GGUF header, and a
 successful native model load before atomic file promotion. The original document
 remains. A failed import preserves the prior saved file, though a native load
@@ -169,3 +169,7 @@ no private holdout was read or tuned on. Physical Android/GrapheneOS, ARM64
 execution, cold-cache latency, first useful content, p50/p95, thermal behavior,
 arbitrary-GGUF memory bounds and complete installed-storage accounting remain
 unmeasured. The 12 GB / 50 GB release gates remain open.
+
+## Synthesis development update
+
+Task 050 adds exact chat-token preflight, constrained claim decoding and an optional pinned 1.5B model. See [synthesis implementation](SYNTHESIS.md) and [actual evidence](evidence/synthesis.md). Earlier measurements above remain historical; the enlarged context and import bound do not establish arbitrary-model memory safety or phone acceptance.
