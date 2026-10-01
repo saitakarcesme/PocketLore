@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "task": "task225 PUBLIC DEVELOPMENT dataset preparation",
+  "status": "frozen_dataset_validated; partial historical task224 cross-check",
+  "created_utc": "2026-10-01T20:41:49.274504+00:00",
+  "visibility": "All artifacts are builder-visible PUBLIC DEVELOPMENT, not holdout or generalization evidence.",
+  "accepted_source_snapshot": "repo/; relevant interface and evidence hashes are in output/manifest.json",
+  "dataset": {
+    "cases": "output/cases.json",
+    "primary_questions": 24,
+    "topics": 8,
+    "controls": {
+      "paraphrase": 8,
+      "distractor": 8,
+      "false-premise": 8,
+      "absent": 8
+    },
+    "source_documents": 8,
+    "source_bytes": 160821,
+    "exact_utf16_spans": 36
+  },
+  "freeze": {
+    "path": "output/FREEZE.json",
+    "sha256": "971c51336d861b2467514c4637ca9aba4bf178de1d64b400f4f98cc7f83882fc",
+    "policy": "Core file inventory frozen before task225 implementation; source bodies, wording, spans and obligations must not be modified in place. Read-only permissions deter accidental edits; hashes establish integrity."
+  },
+  "results": {
+    "validation": "output/validation-results.json",
+    "status": "pass",
+    "source_hash_and_offset_checks": "pass",
+    "unique_questions_and_topic_counts": "pass",
+    "control_obligations": "pass",
+    "canonical_indexed_source_checks": 8,
+    "rejected_in_memory_mutations": 9,
+    "critic": "output/critic-review.txt",
+    "critic_status": "Source sufficiency and portable integrity pass; completed task224 cross-check remains partial."
+  },
+  "validation_command": "python output/validate.py --check-local --mutation-tests",
+  "portable_validation_command": "python output/validate.py --mutation-tests",
+  "scope": "Finite source-backed preparation only; no answer implementation, inference, GPU, builds, private holdout access, canonical checkout writes, pushes, main changes, service or runner mutation, global model changes, or capacity-test interference.",
+  "limitations": [
+    "Accepted repo snapshot has task223 evidence and task224 follow-up specification, but no completed task224 report or source-plan implementation; freshness relative to unseen task224 questions is not established.",
+    "Selected subjects are outside recorded old finite-frame source titles; selection is purposive and builder-visible.",
+    "Original rendered pack extraction omits material; frozen documents are retained pack bodies, not complete original Wikipedia articles.",
+    "No upstream network verification or full database hashing; selected body hashes and metadata checked against existing local records and pinned acquisition inventory.",
+    "No implementation, model invocation, build, GPU, service changes, Android capacity measurement, or private holdout access.",
+    "Artifact integrity is distinct from semantic assessment; independent critic and source review remain necessary.",
+    "The initial 100-title metadata listing was bounded but its title ordering was not indexed; subsequent source reads used indexed document IDs.",
+    "Separate critic assessment is an artifact review, not generated-answer performance.",
+    "Independent Android capacity tests were not inspected or controlled by this worker."
+  ],
+  "files": [
+    {
+      "path": "output/FREEZE.json",
+      "bytes": 2225,
+      "sha256": "971c51336d861b2467514c4637ca9aba4bf178de1d64b400f4f98cc7f83882fc"
+    },
+    {
+      "path": "output/architecture-contract.md",
+      "bytes": 7652,
+      "sha256": "d62d2af5f4cf4130c169f7a30256edb8e4624397fd16aa70504498647e112e1d"
+    },
+    {
+      "path": "output/cases.json",
+      "bytes": 84925,
+      "sha256": "6a527be85e287fe8b3d27136c7db1880ee7d4bb6eab8228533dbf7e06c661462"
+    },
+    {
+      "path": "output/critic-review.txt",
+      "bytes": 235,
+      "sha256": "6b087f8f29066c474ba670288167c3c3bc8978bb45145f9c825fe878085c9337"
+    },
+    {
+      "path": "output/manifest.json",
+      "bytes": 46420,
+      "sha256": "c0ff3dd2a96003ce8a81a211fe073e28b272500bbe64275fd67d4576c3643757"
+    },
+    {
+      "path": "output/prepare.py",
+      "bytes": 19406,
+      "sha256": "9eab8e6e05ee391eb6709b2da3fa3b978e750a88d8e99d5c442904b2cacda9b7"
+    },
+    {
+      "path": "output/provenance/selected-records.json",
+      "bytes": 108782,
+      "sha256": "28cf8a80d948e29b2fbfb3f3da422c24e06b8195e7b11652887de28c952d6fc9"
+    },
+    {
+      "path": "output/sources/1419.txt",
+      "bytes": 22101,
+      "sha256": "a67b553036f7db563dc47e473b318af50f447d34c21d0f5ce77f6d5989480e04"
+    },
+    {
+      "path": "output/sources/1566.txt",
+      "bytes": 44809,
+      "sha256": "3af67ebe236b5ce99bfa016bc359affb9b10227e5c4b6883acb8aff5f23c5060"
+    },
+    {
+      "path": "output/sources/1909.txt",
+      "bytes": 11559,
+      "sha256": "936f30b718385967c27368275572841c6c736c1f691894f6f26712aec62f1a77"
+    },
+    {
+      "path": "output/sources/1910.txt",
+      "bytes": 17633,
+      "sha256": "11a28ff3e76ddf4ee2b6f36e164feb6847817768185c722f4bd5c57cffa7f260"
+    },
+    {
+      "path": "output/sources/4456695.txt",
+      "bytes": 7555,
+      "sha256": "1b24866bd3b6219ea1ac1b83fa22e2c27a6580dfa62947bf542d255368bda6ec"
+    },
+    {
+      "path": "output/sources/586.txt",
+      "bytes": 15426,
+      "sha256": "db8f4d83e8167ae42d1787b1df322bb66a108eb18d2022cee21789651285e063"
+    },
+    {
+      "path": "output/sources/656.txt",
+      "bytes": 26917,
+      "sha256": "9196f887e105a0f5a16c165b6603d4284f2df1ea420f3bc6d4ae499a459195d9"
+    },
+    {
+      "path": "output/sources/991.txt",
+      "bytes": 14821,
+      "sha256": "b90000a34fd93ce2ca41dd9ce5c12d3fbb1771c5abb30cf368ff2e189235e024"
+    },
+    {
+      "path": "output/validate.py",
+      "bytes": 8600,
+      "sha256": "0cc479bbae4e90c7b71dee92d22df2ddf6aca8b721e2b5dba366de8ea8f606ae"
+    },
+    {
+      "path": "output/validation-results.json",
+      "bytes": 1738,
+      "sha256": "237468508e6d8613657602f38c8a353ff19bc4fdd51ddeee7327c03c310dc472"
+    }
+  ],
+  "hash_convention": "SHA256 over actual file bytes. This handoff does not contain a circular self-hash; HANDOFF.sha256 binds it externally."
+}
