@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "frozen_utc": "2026-10-01T03:51:19.855166+00:00",
+  "scope": "Builder-authored public development retrieval judgments; no unseen acceptance",
+  "source_lock_sha256": "96268ab080a3bbf05502d467c0e076b5a499e87908160b8dd9e747e4b8e80501",
+  "top_k": 4,
+  "cases": [
+    {
+      "id": "earthquakes",
+      "kind": "literal",
+      "question": "What causes an earthquake?",
+      "expected": "present",
+      "required_ids": [
+        "science-earthquakes-8702c21b891d6d23"
+      ]
+    },
+    {
+      "id": "volcanoes",
+      "kind": "paraphrase",
+      "question": "How does repeated lava eruption build volcanic terrain?",
+      "expected": "present",
+      "required_ids": [
+        "science-volcanoes-fdd579e7694cec41"
+      ]
+    },
+    {
+      "id": "magma",
+      "kind": "literal",
+      "question": "What is the difference between magma and lava?",
+      "expected": "present",
+      "required_ids": [
+        "science-magma-b214c1cb4647b3fc"
+      ]
+    },
+    {
+      "id": "dna",
+      "kind": "paraphrase",
+      "question": "How do DNA instructions become proteins?",
+      "expected": "present",
+      "required_ids": [
+        "science-dna-d32bd953c9df60a3"
+      ]
+    },
+    {
+      "id": "chromosomes",
+      "kind": "literal",
+      "question": "How do histones package DNA in chromosomes?",
+      "expected": "present",
+      "required_ids": [
+        "science-chromosomes-1c53684112e2a81e"
+      ]
+    },
+    {
+      "id": "magnetic-core",
+      "kind": "literal",
+      "question": "How does the Earth's core generate a magnetic field?",
+      "expected": "present",
+      "required_ids": [
+        "science-magnetic-core-f3a6eb6e41f10ed5"
+      ]
+    },
+    {
+      "id": "magnetic-reversals",
+      "kind": "paraphrase",
+      "question": "Has the Earth's magnetic polarity flipped in the past?",
+      "expected": "present",
+      "required_ids": [
+        "science-magnetic-reversals-1b0f8ca08f5ea836"
+      ]
+    },
+    {
+      "id": "magnetic-storms",
+      "kind": "paraphrase",
+      "question": "How long can rapid variations in the magnetic field last?",
+      "expected": "present",
+      "required_ids": [
+        "science-magnetic-storms-3b8945c553ef6dfa"
+      ]
+    },
+    {
+      "id": "absent-1",
+      "kind": "absent",
+      "question": "What time will the next earthquake strike London?",
+      "expected": "absent",
+      "required_ids": []
+    },
+    {
+      "id": "absent-2",
+      "kind": "absent",
+      "question": "Which medicine repairs chromosomes?",
+      "expected": "absent",
+      "required_ids": []
+    },
+    {
+      "id": "absent-3",
+      "kind": "absent",
+      "question": "Will a magnetic storm close my flight tomorrow?",
+      "expected": "absent",
+      "required_ids": []
+    },
+    {
+      "id": "absent-4",
+      "kind": "absent",
+      "question": "What is the temperature on Mars today?",
+      "expected": "absent",
+      "required_ids": []
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "schema": 1,
+  "edition": "science-supplement-2026-10-01-v1",
+  "documents": [
+    {
+      "id": "science-earthquakes",
+      "title": "What is an earthquake and what causes them to happen?",
+      "category": "geology",
+      "url": "https://www.usgs.gov/faqs/what-earthquake-and-what-causes-them-happen",
+      "source_date": "Publication/update date not stated for selected article; snapshot 2026-10-01",
+      "retrieved_date": "2026-10-01",
+      "language": "en",
+      "attribution": "U.S. Geological Survey",
+      "license": "Public domain in the United States; selected agency-authored text",
+      "license_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "raw_sha256": "79eb59a783fa605669df1330a379638e0a3a45b4ed2451a5b7679cfc3b405a72",
+      "cache_key": "earthquakes",
+      "selector": "p",
+      "review": "Agency article paragraphs only; related items, media, captions, navigation and third-party material excluded.",
+      "passages": [
+        "8702c21b891d6d2365dda891b8d21693c75a6c600ad7fccbd776523eeb55f0af",
+        "8175f293a0ec45369b2cd4657106b1dc430ae0d580ad5125bd1d6d345bb1b2cb",
+        "a2a4b87ce73822573130a78dc57737cb7a7321660c65594293a9ee42893f571a"
+      ]
+    },
+    {
+      "id": "science-volcanoes",
+      "title": "About Volcanoes",
+      "category": "geology",
+      "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+      "source_date": "Publication/update date not stated for selected article; snapshot 2026-10-01",
+      "retrieved_date": "2026-10-01",
+      "language": "en",
+      "attribution": "U.S. Geological Survey",
+      "license": "Public domain in the United States; selected agency-authored text",
+      "license_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "raw_sha256": "8ee456020cc13ef8386d389f4c0458acb45c84a123958273a30f044d3bbf760c",
+      "cache_key": "volcanoes",
+      "selector": "p",
+      "review": "Agency article paragraphs only; related items, media, captions, navigation and third-party material excluded.",
+      "passages": [
+        "7e17ab9821fed9efcbff9b8df59de5b3f7b4d84a05267aabe350cc4c59a219bb",
+        "fdd579e7694cec4107e243a214a882feef2371492ecf9347388885531a73c401",
+        "32d96fe23eb26081caf3ddae8883a39725928868b71710aa68241c00f7c2ef79",
+        "ac98f2017c5f7717bb261b6245103f0d1bb226ab30dfc71dd54d17e7bf0c6c7e",
+        "bc12a568b075b592751f8bd803ce8b7b141c3e475e0b67747e7870b173462114"
+      ]
+    },
+    {
+      "id": "science-magma",
+      "title": "What is the difference between magma and lava?",
+      "category": "geology",
+      "url": "https://www.usgs.gov/faqs/what-difference-between-magma-and-lava",
+      "source_date": "Publication/update date not stated for selected article; snapshot 2026-10-01",
+      "retrieved_date": "2026-10-01",
+      "language": "en",
+      "attribution": "U.S. Geological Survey",
+      "license": "Public domain in the United States; selected agency-authored text",
+      "license_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "raw_sha256": "5c292ab4a524ed1b37e978cfa3f77d047b3e0ea9b4f89e05b2a45b17db19eba3",
+      "cache_key": "magma",
+      "selector": "p",
+      "review": "Agency article paragraphs only; related items, media, captions, navigation and third-party material excluded.",
+      "passages": [
+        "b214c1cb4647b3fc44c29dbccb9c86a3de82ac1f5d0fee16c31b23f9f8732831"
+      ]
+    },
+    {
+      "id": "science-dna",
+      "title": "Deoxyribonucleic Acid (DNA) Fact Sheet",
+      "category": "genetics",
+      "url": "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+      "source_date": "2020-08-24 page updated",
+      "retrieved_date": "2026-10-01",
+      "language": "en",
+      "attribution": "National Human Genome Research Institute (NIH)",
+      "license": "Public domain in the United States; selected agency-authored text",
+      "license_url": "https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+      "raw_sha256": "1f0193db0802d6484c0a33b5fcc88ebeda65cfecf3213b32087eb04f9e2ef90e",
+      "cache_key": "dna",
+      "selector": "p",
+      "review": "Agency article paragraphs only; related items, media, captions, navigation and third-party material excluded.",
+      "passages": [
+        "0215cec38b4684c94119dbab1f5c3d258abd44d9da8d161aa4cf8ccf4ac169b7",
+        "160b4c88f7f463ae8dbc6cb8d254a8de8c4ba95ed040730b409f2a7f2ba0d9a2",
+        "d32bd953c9df60a3592b9c5514fb70aa9bb07df63cc90b19e4219e6767f1453d",
+        "d966fec35e2d499bd52c5b970639987987d05a9b6f75d5e73eab202e07d2832b"
+      ]
+    },
+    {
+      "id": "science-chromosomes",
+      "title": "Chromosomes Fact Sheet",
+      "category": "genetics",
+      "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+      "source_date": "2020-08-15 page updated",
+      "retrieved_date": "2026-10-01",
+      "language": "en",
+      "attribution": "National Human Genome Research Institute (NIH)",
+      "license": "Public domain in the United States; selected agency-authored text",
+      "license_url": "https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+      "raw_sha256": "083947cbfe1b78aa127ab7621f8b6f88ab1af6dc5c8798a93d4885ca78fa0cdd",
+      "cache_key": "chromosomes",
+      "selector": "p",
+      "review": "Agency article paragraphs only; related items, media, captions, navigation and third-party material excluded.",
+      "passages": [
+        "bd1bb41122a2e2eb4436810e2be918a5d9c19286e23a6ac07de4de11efc71478",
+        "8442295081e7aebaa9a9f5033c66021c1ff60cc7a4f19aa9e7b1c5167c5348d8",
+        "1c53684112e2a81eb93db54c8965742428acaf6183e315a5ac9ccd7bf158a636",
+        "ae26d52981dd0bd9798daef8f4bcb59718544a4cdb7d53bc8d1658c25ee8d800"
+      ]
+    },
+    {
+      "id": "science-magnetic-core",
+      "title": "How does the Earth's core generate a magnetic field?",
+      "category": "geomagnetism",
+      "url": "https://www.usgs.gov/faqs/how-does-earths-core-generate-a-magnetic-field",
+      "source_date": "Publication/update date not stated for selected article; snapshot 2026-10-01",
+      "retrieved_date": "2026-10-01",
+      "language": "en",
+      "attribution": "U.S. Geological Survey",
+      "license": "Public domain in the United States; selected agency-authored text",
+      "license_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "raw_sha256": "4d826793678df32a6cfb4334b72959f216478ea6941580f84c2bc04ac6638935",
+      "cache_key": "magnetic-core",
+      "selector": "p",
+      "review": "Agency article paragraphs only; related items, media, captions, navigation and third-party material excluded.",
+      "passages": [
+        "f3a6eb6e41f10ed5a9bc61e6f10cfdeb77ab60c8de81a12d23dc76ab8ac3df2d"
+      ]
+    },
+    {
+      "id": "science-magnetic-reversals",
+      "title": "Is it true that Earth's magnetic field occasionally reverses its polarity?",
+      "category": "geomagnetism",
+      "url": "https://www.usgs.gov/faqs/it-true-earths-magnetic-field-occasionally-reverses-its-polarity",
+      "source_date": "Publication/update date not stated for selected article; snapshot 2026-10-01",
+      "retrieved_date": "2026-10-01",
+      "language": "en",
+      "attribution": "U.S. Geological Survey",
+      "license": "Public domain in the United States; selected agency-authored text",
+      "license_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "raw_sha256": "565e0945b78fa8f96f82b47c22f50eb3b3190356a456d5beb3007d8301be288c",
+      "cache_key": "magnetic-reversals",
+      "selector": "p",
+      "review": "Agency article paragraphs only; related items, media, captions, navigation and third-party material excluded.",
+      "passages": [
+        "1b0f8ca08f5ea836a6368b5865a9483d21ddcebfc36f593a219af802da3d006c",
+        "fa7c0c5d356274930195cc78b1bcbebcb0e3dc4b85a67c4ba8ad2f531ca70d83",
+        "b147d6da540593c7acd2a4ef647459cd8a4524e849011ac86b9b0bd9f4542a78",
+        "fc2ce79fa0a73c7a64806ad3beabe15521956e73a688d22287e9ebdd631e180c"
+      ]
+    },
+    {
+      "id": "science-magnetic-storms",
+      "title": "What is a magnetic storm?",
+      "category": "geomagnetism",
+      "url": "https://www.usgs.gov/faqs/what-a-magnetic-storm",
+      "source_date": "Publication/update date not stated for selected article; snapshot 2026-10-01",
+      "retrieved_date": "2026-10-01",
+      "language": "en",
+      "attribution": "U.S. Geological Survey",
+      "license": "Public domain in the United States; selected agency-authored text",
+      "license_url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+      "raw_sha256": "d2e6c175d1e335855db6d5a8241970dbfa569a29170f05aed22535529684b1cd",
+      "cache_key": "magnetic-storms",
+      "selector": "p",
+      "review": "Agency article paragraphs only; related items, media, captions, navigation and third-party material excluded.",
+      "passages": [
+        "3b8945c553ef6dfa65dc8f9c325003092fee078f12d691dd5a31cfdc522e81ac",
+        "d3c855e5484d8b4b470f75336e2e2ba81b6be9bf9b2c74ab4764cba916f4ef99"
+      ]
+    }
+  ]
+}
