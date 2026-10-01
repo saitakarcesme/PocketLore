@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/verify_broad_reference.py", line 78, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/verify_broad_reference.py", line 14, in main
+    require((PACKDIR/'build.json').is_file(),'FAIL: source-faithful broad edition is not built; the prior 1076/26660 counts do not satisfy the critic repair')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/verify_broad_reference.py", line 7, in require
+    if not ok:raise ValueError(why)
+              ^^^^^^^^^^^^^^^^^^^^^
+ValueError: FAIL: source-faithful broad edition is not built; the prior 1076/26660 counts do not satisfy the critic repair

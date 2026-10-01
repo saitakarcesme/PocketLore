@@ -56,6 +56,7 @@ def extract(html):
    excluded.append({'sha256':hashlib.sha256(s.encode()).hexdigest(),'reason':'Quoted prose excluded; no third-party quotation license inferred'});continue
   if section in {'References','External links','Notes','Further reading','See also'}:continue
   blocks.append({'section':section,'text':s});math+=s.count('[TeX:')
+ notices=[n for n in notices if not any(o['text']!=n['text'] and o['text'] in n['text'] for o in notices)]
  return {'blocks':blocks,'references':references,'attribution_notices':list({json.dumps(x,sort_keys=True):x for x in notices}.values()),'excluded':excluded,'math_representations':math}
 if __name__=='__main__':
  root=Path(__file__).resolve().parents[4];stage=root/'downloads/broad-reference/html-v2';out=stage/'extracted';out.mkdir(exist_ok=True);db=sqlite3.connect(root/'downloads/broad-reference/v1/index.sqlite');summary=[]
