@@ -1,16 +1,25 @@
 {
-  "schema": 1,
-  "region": "Washington, DC: three National Mall and Tidal Basin monuments",
+  "schema": 2,
+  "edition": "dc-regional-2026-10-01-v2",
+  "region": "Central Washington, DC bounded reference catalog",
   "bounds": [
     38.87,
     -77.06,
-    38.9,
-    -77.02
+    38.91,
+    -77.0
   ],
-  "count": 3,
-  "sha256": "6cb245864d7b42facc8b987d7e4843f795b87912062d09a8bbddcdc034877924",
-  "source_lock_sha256": "5016fa4e06089d02cb6c4fa7f333a003f17affa377ffb9ba865209debc2610b3",
+  "count": 25,
+  "categories": {
+    "monument": 8,
+    "museum": 11,
+    "park-garden": 3,
+    "civic": 3
+  },
+  "sha256": "2240dbd96698266eb27a3f892e346b2e2154c186c097f8ebf79d3f8ede086a8e",
+  "source_lock_sha256": "0d3105f89698d52746dc1edc6c777c74ddbb860c11e3beb2012867fedaaa9772",
   "license": "CC0-1.0",
+  "license_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+  "selection": "Only English-readable labels, English descriptions and one explicitly pinned Earth coordinate statement per entity. No media or live operating data. MLK Memorial has two coordinate statements: first source statement retained, not an entrance claim. National Gallery uses its English-readable mul label. Categories are editorial groupings.",
   "hours": "Not supplied; offline hours may be stale",
   "routing": "Unavailable; spherical distance only"
 }

@@ -1,0 +1,12 @@
+/home/isa/Projects/PocketLore/downloads/regional/run-20261001T040811415510Z
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/evaluate_regional_poi.py", line 68, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/evaluate_regional_poi.py", line 31, in main
+    run(['bash',ROOT/'tools/android-build.sh','assembleDebug','assembleDebugAndroidTest','-I',ROOT/'tools/evaluation/regional-poi/source.gradle','-PpocketloreTestRunner=org.pocketlore.app.RegionalInstrumentation'],'build.log')
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/evaluate_regional_poi.py", line 12, in run
+    if p.returncode:raise RuntimeError('Command failed: '+str(out/name))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Command failed: /home/isa/Projects/PocketLore/downloads/regional/run-20261001T040811415510Z/build.log
