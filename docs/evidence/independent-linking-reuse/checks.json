@@ -1,0 +1,32 @@
+{
+  "checks": [
+    {
+      "command": [
+        "bash",
+        "tools/android-build.sh"
+      ],
+      "exit_code": 0,
+      "log": "android-build.log"
+    },
+    {
+      "command": [
+        "bash",
+        "tools/evaluation/check_independent_evidence_linking.sh"
+      ],
+      "exit_code": 1,
+      "log": "initial-check.log",
+      "reason": "Historical APK receipt mismatch; preserved"
+    },
+    {
+      "command": [
+        "bash",
+        "tools/evaluation/check_independent_evidence_linking.sh"
+      ],
+      "exit_code": 1,
+      "log": "final-check.log",
+      "reason": "Zero-unsupported quality gate fails after artifact/behavior pass"
+    }
+  ],
+  "inference_repeated": false,
+  "independent_acceptance": "pending"
+}
