@@ -165,7 +165,7 @@
       "dependencies": [
         "110-release-gap-review"
       ],
-      "objective": "Reduce unnecessary answer blocking on the existing frozen 30-case public retrieval development set while retaining absent-evidence and temporal-scope safety. Record before/after coverage; require all 10 absent cases to remain blocked and strictly fewer than 17 of 20 supported cases blocked. Exercise actual JNI on the recovered supported cases, preserve wrong outputs, and distinguish generated support from fallback without canned answers.",
+      "objective": "Reduce unnecessary answer blocking on the existing frozen 30-case public retrieval development set while retaining absent-evidence and temporal-scope safety. Record before/after coverage; require all 10 absent cases to remain blocked and strictly fewer than the newly measured 14 of 20 supported cases blocked, with an additional current pre-change baseline. Exercise actual JNI on the recovered supported cases, preserve wrong outputs, and distinguish generated support from fallback without canned answers.",
       "scope": [
         "android",
         "tools/evaluation",
@@ -366,6 +366,7 @@
     "docs/evidence/synthesis/repair-1/results.json": "7b9fb76aef16f0e73b0859a08b1f2b84ca90800f809a6f26d0b49b9495e94fd7",
     "docs/evidence/travel.md": "f2ab2fd7a7744bb6ea816d83b0ad3058998a78d471af086f7866890e5f2ea049",
     "evaluation/retrieval/development.json": "045270377a2cc1792cef27842147a770404eb3da32123aa9a702378a6313130c",
-    "docs/evidence/release-gap-review/emulator-snapshot.json": "7ca6e83542c12ebf4a9923271d43d5fcbd589bba26c0dbb0f0faa48389a249c6"
+    "docs/evidence/release-gap-review/emulator-snapshot.json": "7ca6e83542c12ebf4a9923271d43d5fcbd589bba26c0dbb0f0faa48389a249c6",
+    "docs/evidence/release-gap-review/current-answer-gate.json": "aa3f73742dc543ff8ea27817d8a8f0065c9265d96143ab33518d271297b6dea4"
   }
 }

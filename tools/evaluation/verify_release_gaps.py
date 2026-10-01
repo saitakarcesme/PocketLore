@@ -2,7 +2,7 @@
 """Recompute public evidence metrics and verify actionable gap/task coverage, with mutations."""
 from pathlib import Path
 from collections import Counter
-import copy,hashlib,json,re,sys
+import copy,hashlib,json,re,sys,subprocess,tempfile
 ROOT=Path(__file__).resolve().parents[2]
 BASE=ROOT/'docs/evidence/release-gap-review'
 QUEUE=Path('/home/isa/PocketLore-control/tasks')
@@ -25,7 +25,9 @@ def derive():
     comparison=read(ROOT/'docs/evidence/comparison/run-v1/results.json')['rows']
     times=[r['end_to_end_ms'] for r in comparison if r['system']=='pocketlore' and r['tokens']>0]
     manifest=read(ROOT/'docs/evidence/release-v3/manifest.json')
-    return {'measurement_class':'Derived public development host/emulator evidence, not new phone or quality measurements','retrieval':{'present':present,'supported_blocked':blocked,'absent':absent,'absent_blocked':absent_blocked,'explicit_distractor_hits':distractors},'comparison_routes':routes('docs/evidence/comparison/run-v1/results.json','rows',lambda r:r['system']=='pocketlore'),'synthesis_routes':routes('docs/evidence/synthesis/repair-1/results.json','cases'),'fresh_demo_routes':routes('docs/evidence/release-v3/cycle-1-loaded-result.json','cases'),'comparison_inference_ms_range':[min(times),max(times)],'candidate_apk':manifest['artifacts']['android/app/build/outputs/apk/debug/app-debug.apk']}
+    current=read(BASE/'current-answer-gate.json')['cases']
+    current_counts={label:sum(not r['reaches_model_availability'] for r in current if r['expected_coverage']==label) for label in ['present','absent']}
+    return {'current_pre_model_blocked':current_counts,'measurement_class':'Derived public development host/emulator evidence, not new phone or quality measurements','retrieval':{'present':present,'supported_blocked':blocked,'absent':absent,'absent_blocked':absent_blocked,'explicit_distractor_hits':distractors},'comparison_routes':routes('docs/evidence/comparison/run-v1/results.json','rows',lambda r:r['system']=='pocketlore'),'synthesis_routes':routes('docs/evidence/synthesis/repair-1/results.json','cases'),'fresh_demo_routes':routes('docs/evidence/release-v3/cycle-1-loaded-result.json','cases'),'comparison_inference_ms_range':[min(times),max(times)],'candidate_apk':manifest['artifacts']['android/app/build/outputs/apk/debug/app-debug.apk']}
 def validate(plan,metrics,queue=QUEUE):
     assert plan['schema']==1 and plan['release_complete'] is False
     assert {g['gate'] for g in plan['gates']}==GATES
@@ -60,6 +62,14 @@ def validate(plan,metrics,queue=QUEUE):
     assert sha(apk)==metrics['candidate_apk']['sha256'] and apk.stat().st_size==metrics['candidate_apk']['bytes']
 def main():
     plan=read(BASE/'plan.json');metrics=derive()
+    with tempfile.TemporaryDirectory() as directory:
+        output=Path(directory)/'gate.json'
+        subprocess.run([sys.executable,str(ROOT/'tools/evaluation/measure_answer_gate.py'),'--output',str(output)],check=True,stdout=subprocess.PIPE)
+        actual=read(output);recorded=read(BASE/'current-answer-gate.json')
+        assert actual['source_sha256']==recorded['source_sha256']
+        assert actual['fixture_sha256']==recorded['fixture_sha256'] and actual['pack_sha256']==recorded['pack_sha256']
+        strip_time=lambda rows:[{k:v for k,v in r.items() if k!='host_routing_ms'} for r in rows]
+        assert strip_time(actual['cases'])==strip_time(recorded['cases']), 'Current production routing drift'
     if '--record' in sys.argv:(BASE/'derived.json').write_text(json.dumps(metrics,indent=2)+'\n')
     stored=read(BASE/'derived.json');validate(plan,stored)
     for kind in ['false_completion','missing_gate','missing_task','missing_dependency','tampered_metric','missing_evidence']:
@@ -73,6 +83,6 @@ def main():
         try:validate(p,m)
         except AssertionError:pass
         else:raise AssertionError('Mutation escaped: '+kind)
-    print('PASS: recomputed public raw metrics, exact candidate identity, eight goal categories, hashed evidence, seven queued task specifications and six rejected mutations.')
+    print('PASS: executed current host pre-model routing and recomputed public raw metrics, exact candidate identity, eight goal categories, hashed evidence, seven queued task specifications and six rejected mutations.')
     print('Release work remains INCOMPLETE; validation is audit consistency, not acceptance or a semantic proof of completeness.')
 if __name__=='__main__':main()

@@ -1,0 +1,284 @@
+{
+  "scope": "LLMRig host production pre-model routing with null generator; no inference or answer-quality measurement; token-budget/model gates are not exercised",
+  "fixture_sha256": "045270377a2cc1792cef27842147a770404eb3da32123aa9a702378a6313130c",
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "source_sha256": {
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "a22bece047bf751d0d8adc71cc818550b6d6bf3f603c257f525ac7af2be5aede",
+    "android/app/src/main/java/org/pocketlore/app/EvidencePrompt.java": "e2630efa5126a29f63d5ef2195bad30137de08377476288a9ef082309d477b9e",
+    "android/app/src/main/java/org/pocketlore/app/AnswerEngine.java": "b7ce2663d5af2160fd1704f4378505ca5d80d7037b746fa74f23b065323b61c6",
+    "android/app/src/main/java/org/pocketlore/app/NativeRuntime.java": "e07fd01abd8111144ccdff8cb04917371fae000a3175da03fcb572190aeadbc3",
+    "tools/evaluation/AnswerGateAudit.java": "a2cfa2233ff50b8b8202ec775d83bb72ad3c53b3211a953054701beb0bc5caa4"
+  },
+  "cases": [
+    {
+      "id": "science-literal",
+      "question": "What is condensation?",
+      "expected_coverage": "present",
+      "kind": "FALLBACK",
+      "reason": "No local model is loaded.",
+      "reaches_model_availability": true,
+      "host_routing_ms": 7.811487
+    },
+    {
+      "id": "science-paraphrase",
+      "question": "Why does evaporating alcohol make skin feel cold?",
+      "expected_coverage": "present",
+      "kind": "FALLBACK",
+      "reason": "No local model is loaded.",
+      "reaches_model_availability": true,
+      "host_routing_ms": 1.761762
+    },
+    {
+      "id": "science-phase-change",
+      "question": "How does heating turn liquid water into steam?",
+      "expected_coverage": "present",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 2.490538
+    },
+    {
+      "id": "science-inflection",
+      "question": "How do aquifers get replenished?",
+      "expected_coverage": "present",
+      "kind": "FALLBACK",
+      "reason": "No local model is loaded.",
+      "reaches_model_availability": true,
+      "host_routing_ms": 1.015611
+    },
+    {
+      "id": "science-pumping",
+      "question": "Why can wells run dry after excessive pumping?",
+      "expected_coverage": "present",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 1.159409
+    },
+    {
+      "id": "science-urban",
+      "question": "Why do paved cities flood faster after rain?",
+      "expected_coverage": "present",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.844983
+    },
+    {
+      "id": "science-bedrock",
+      "question": "How do cracks in rock store underground water?",
+      "expected_coverage": "present",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 1.126165
+    },
+    {
+      "id": "science-two-processes",
+      "question": "Compare evaporation with condensation.",
+      "expected_coverage": "present",
+      "kind": "FALLBACK",
+      "reason": "No local model is loaded.",
+      "reaches_model_availability": true,
+      "host_routing_ms": 0.931624
+    },
+    {
+      "id": "science-two-sources",
+      "question": "Compare aquifer recharge with surface runoff.",
+      "expected_coverage": "present",
+      "kind": "FALLBACK",
+      "reason": "No local model is loaded.",
+      "reaches_model_availability": true,
+      "host_routing_ms": 1.598038
+    },
+    {
+      "id": "practical-dark",
+      "question": "What should I carry to see in the dark on a hike?",
+      "expected_coverage": "present",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.643578
+    },
+    {
+      "id": "practical-sun",
+      "question": "What helps protect skin and eyes from ultraviolet rays?",
+      "expected_coverage": "present",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.797213
+    },
+    {
+      "id": "practical-navigation",
+      "question": "What navigation backups should I bring?",
+      "expected_coverage": "present",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.717821
+    },
+    {
+      "id": "practical-shelter",
+      "question": "What lightweight shelter can protect me from severe weather?",
+      "expected_coverage": "present",
+      "kind": "FALLBACK",
+      "reason": "No local model is loaded.",
+      "reaches_model_availability": true,
+      "host_routing_ms": 0.496938
+    },
+    {
+      "id": "travel-valley",
+      "question": "How far must I hike from Yosemite Valley before camping?",
+      "expected_coverage": "present",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.494451
+    },
+    {
+      "id": "travel-tuolumne",
+      "question": "Is Tuolumne Meadows cooler than other parts of the park?",
+      "expected_coverage": "present",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.625759
+    },
+    {
+      "id": "travel-rivers",
+      "question": "Why can Yellowstone river crossings be difficult in late spring?",
+      "expected_coverage": "present",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.946911
+    },
+    {
+      "id": "travel-regions",
+      "question": "Compare summer conditions in Wawona and Hetch Hetchy.",
+      "expected_coverage": "present",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 1.164984
+    },
+    {
+      "id": "history-bill",
+      "question": "How can a bill become law after the President objects?",
+      "expected_coverage": "present",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 1.783435
+    },
+    {
+      "id": "history-speech",
+      "question": "Which historical passage protects freedom of speech and assembly?",
+      "expected_coverage": "present",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.812258
+    },
+    {
+      "id": "history-consent",
+      "question": "What role does the Senate have in treaties and appointments?",
+      "expected_coverage": "present",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.509224
+    },
+    {
+      "id": "absent-space",
+      "question": "How does a quasar produce gamma rays?",
+      "expected_coverage": "absent",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.57225
+    },
+    {
+      "id": "absent-treatment",
+      "question": "Does evaporation cure diabetes?",
+      "expected_coverage": "absent",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.540261
+    },
+    {
+      "id": "absent-routes",
+      "question": "Which Yellowstone roads are closed today?",
+      "expected_coverage": "absent",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.302546
+    },
+    {
+      "id": "absent-prices",
+      "question": "How much does a Yosemite hotel room cost tonight?",
+      "expected_coverage": "absent",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.37523
+    },
+    {
+      "id": "absent-country",
+      "question": "What equipment is legally required for hiking in Nepal?",
+      "expected_coverage": "absent",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.575577
+    },
+    {
+      "id": "absent-composition",
+      "question": "Does the Senate control groundwater recharge?",
+      "expected_coverage": "absent",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.619808
+    },
+    {
+      "id": "absent-physics",
+      "question": "Explain quantum entanglement.",
+      "expected_coverage": "absent",
+      "kind": "ABSTAINED",
+      "reason": "No supporting passage in this installed pack.",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.160971
+    },
+    {
+      "id": "absent-comparison",
+      "question": "Compare evaporation and photosynthesis.",
+      "expected_coverage": "absent",
+      "kind": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.550244
+    },
+    {
+      "id": "absent-empty",
+      "question": "",
+      "expected_coverage": "absent",
+      "kind": "ABSTAINED",
+      "reason": "No supporting passage in this installed pack.",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.031864
+    },
+    {
+      "id": "absent-stopwords",
+      "question": "What is the?",
+      "expected_coverage": "absent",
+      "kind": "ABSTAINED",
+      "reason": "No supporting passage in this installed pack.",
+      "reaches_model_availability": false,
+      "host_routing_ms": 0.02407
+    }
+  ]
+}
