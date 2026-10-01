@@ -1,0 +1,315 @@
+{
+  "mode": "scale",
+  "index": 2,
+  "pid": 5811,
+  "runtime": "llama.cpp bb4caa7540188872173c44d161602d9271386413; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads=2; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5\/256, seed=42",
+  "sampling_target_ms": 250,
+  "pack_load_ms": 203.370943,
+  "model_load_ms": 386.385105,
+  "old_index_counts": [
+    186,
+    1770,
+    6001,
+    59862
+  ],
+  "import_ms": 1530.897641,
+  "accepted": true,
+  "failure": "",
+  "fixture": {
+    "copies": 20,
+    "file": "copies-20.plpack",
+    "archive_bytes": 3059553,
+    "manifest_bytes": 562469,
+    "payload_bytes": 2496860,
+    "documents": 200,
+    "passages": 3720,
+    "sha256": "1b6eebc9c83f19b36b8ac9ad4a057f0f727c470cc56fbd872602b9d9a428a358",
+    "expected": "accept"
+  },
+  "new_index_counts": [
+    3720,
+    1770,
+    120020,
+    1197240
+  ],
+  "retrieval_ms": 1.43012,
+  "candidates_scored": 260,
+  "stage_cleanup": true,
+  "old_index_survived": true,
+  "status": "PASS",
+  "final_native": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "samples": [
+    {
+      "phase": "baseline",
+      "uptime_ms": 22209443,
+      "pss_kib": 24196,
+      "java_used_bytes": 2801472,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 89372,
+      "VmRSS_kib": 89372,
+      "VmSwap_kib": 25692,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 764391
+    },
+    {
+      "phase": "pack-load",
+      "uptime_ms": 22209508,
+      "pss_kib": 27099,
+      "java_used_bytes": 5681040,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 98076,
+      "VmRSS_kib": 98076,
+      "VmSwap_kib": 25436,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 764391
+    },
+    {
+      "phase": "model-load",
+      "uptime_ms": 22209772,
+      "pss_kib": 89847,
+      "java_used_bytes": 14270416,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 159624,
+      "VmRSS_kib": 159624,
+      "VmSwap_kib": 25180,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 764391
+    },
+    {
+      "phase": "model-load",
+      "uptime_ms": 22210033,
+      "pss_kib": 142041,
+      "java_used_bytes": 14331856,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 651040,
+      "VmRSS_kib": 651040,
+      "VmSwap_kib": 25180,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 764391
+    },
+    {
+      "phase": "before-import",
+      "uptime_ms": 22210211,
+      "pss_kib": 567416,
+      "java_used_bytes": 6139440,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 654100,
+      "VmRSS_kib": 640436,
+      "VmSwap_kib": 24668,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 159327
+    },
+    {
+      "phase": "import",
+      "uptime_ms": 22210296,
+      "pss_kib": 576969,
+      "java_used_bytes": 14806576,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 664340,
+      "VmRSS_kib": 651160,
+      "VmSwap_kib": 24540,
+      "stage_bytes": 3059553,
+      "saved_pack_bytes": 159327
+    },
+    {
+      "phase": "import",
+      "uptime_ms": 22210561,
+      "pss_kib": 625173,
+      "java_used_bytes": 36163120,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 713440,
+      "VmRSS_kib": 713440,
+      "VmSwap_kib": 24540,
+      "stage_bytes": 3059553,
+      "saved_pack_bytes": 159327
+    },
+    {
+      "phase": "import",
+      "uptime_ms": 22210824,
+      "pss_kib": 636403,
+      "java_used_bytes": 33828400,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 732324,
+      "VmRSS_kib": 711188,
+      "VmSwap_kib": 24540,
+      "stage_bytes": 3059553,
+      "saved_pack_bytes": 159327
+    },
+    {
+      "phase": "import",
+      "uptime_ms": 22211086,
+      "pss_kib": 593771,
+      "java_used_bytes": 26095152,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 732324,
+      "VmRSS_kib": 668420,
+      "VmSwap_kib": 24540,
+      "stage_bytes": 3059553,
+      "saved_pack_bytes": 159327
+    },
+    {
+      "phase": "import",
+      "uptime_ms": 22211349,
+      "pss_kib": 612771,
+      "java_used_bytes": 41614896,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 732324,
+      "VmRSS_kib": 687668,
+      "VmSwap_kib": 24540,
+      "stage_bytes": 3059553,
+      "saved_pack_bytes": 159327
+    },
+    {
+      "phase": "import",
+      "uptime_ms": 22211617,
+      "pss_kib": 639295,
+      "java_used_bytes": 58195504,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 732324,
+      "VmRSS_kib": 714832,
+      "VmSwap_kib": 24540,
+      "stage_bytes": 3059553,
+      "saved_pack_bytes": 159327
+    },
+    {
+      "phase": "old-and-new-index-retained",
+      "uptime_ms": 22211880,
+      "pss_kib": 597507,
+      "java_used_bytes": 17952304,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 732324,
+      "VmRSS_kib": 670684,
+      "VmSwap_kib": 24540,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 3059553
+    },
+    {
+      "phase": "old-and-new-index-retained",
+      "uptime_ms": 22211928,
+      "pss_kib": 597531,
+      "java_used_bytes": 18005552,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 732324,
+      "VmRSS_kib": 670684,
+      "VmSwap_kib": 24540,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 3059553
+    },
+    {
+      "phase": "new-index-only",
+      "uptime_ms": 22212103,
+      "pss_kib": 596078,
+      "java_used_bytes": 16805424,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 732324,
+      "VmRSS_kib": 669280,
+      "VmSwap_kib": 24540,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 3059553
+    }
+  ]
+}

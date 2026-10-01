@@ -18,7 +18,7 @@ public final class ScaleLatencyInstrumentation extends Instrumentation {
     private void save()throws Exception{Files.write(new File(root,mode+"-"+index+".json").toPath(),bytes(report.toString(2)));}
     private void snapshot()throws Exception{
         Debug.MemoryInfo mem=new Debug.MemoryInfo();Debug.getMemoryInfo(mem);
-        JSONObject s=new JSONObject().put("phase",phase).put("uptime_ms",SystemClock.elapsedRealtime()).put("pss_kib",mem.getTotalPss()).put("swap_pss_kib",mem.getTotalSwappedOutPss()).put("java_used_bytes",Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory()).put("java_max_bytes",Runtime.getRuntime().maxMemory()).put("native_buffers",new JSONArray(NativeRuntime.resourceState()));
+        JSONObject s=new JSONObject().put("phase",phase).put("uptime_ms",SystemClock.elapsedRealtime()).put("pss_kib",mem.getTotalPss()).put("java_used_bytes",Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory()).put("java_max_bytes",Runtime.getRuntime().maxMemory()).put("native_buffers",new JSONArray(NativeRuntime.resourceState()));
         for(String line:Files.readAllLines(Paths.get("/proc/self/status")))if(line.startsWith("VmRSS:")||line.startsWith("VmSwap:")||line.startsWith("VmHWM:")){String[] v=line.trim().split("\\s+");s.put(v[0].replace(":","")+"_kib",Long.parseLong(v[1]));}
         long stage=0,saved=0;if(install!=null){File[] fs=install.listFiles();if(fs!=null)for(File f:fs){if(f.getName().endsWith(".partial"))stage+=f.length();if(f.getName().equals("knowledge.plpack"))saved=f.length();}}
         s.put("stage_bytes",stage).put("saved_pack_bytes",saved);

@@ -1,0 +1,174 @@
+{
+  "mode": "scale",
+  "index": 5,
+  "pid": 5935,
+  "runtime": "llama.cpp bb4caa7540188872173c44d161602d9271386413; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads=2; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5\/256, seed=42",
+  "sampling_target_ms": 250,
+  "pack_load_ms": 198.233455,
+  "model_load_ms": 340.646593,
+  "old_index_counts": [
+    186,
+    1770,
+    6001,
+    59862
+  ],
+  "import_ms": 36.896374,
+  "accepted": false,
+  "failure": "java.io.IOException: Pack exceeds size limit",
+  "fixture": {
+    "copies": 75,
+    "file": "copies-75.plpack",
+    "archive_bytes": 11482144,
+    "manifest_bytes": 2113580,
+    "payload_bytes": 9368340,
+    "documents": 750,
+    "passages": 13950,
+    "sha256": "290d286229eafb28e65b77a39115f4bca40aa0f90f2755e65b2086a9f7564606",
+    "expected": "reject"
+  },
+  "stage_cleanup": true,
+  "old_index_survived": true,
+  "status": "PASS",
+  "final_native": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "samples": [
+    {
+      "phase": "baseline",
+      "uptime_ms": 22224547,
+      "pss_kib": 26022,
+      "java_used_bytes": 2801472,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 90012,
+      "VmRSS_kib": 90012,
+      "VmSwap_kib": 25564,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 11329006
+    },
+    {
+      "phase": "pack-load",
+      "uptime_ms": 22224560,
+      "pss_kib": 26382,
+      "java_used_bytes": 4517776,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 92828,
+      "VmRSS_kib": 92828,
+      "VmSwap_kib": 25436,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 11329006
+    },
+    {
+      "phase": "model-load",
+      "uptime_ms": 22224821,
+      "pss_kib": 65644,
+      "java_used_bytes": 14270416,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 136976,
+      "VmRSS_kib": 136976,
+      "VmSwap_kib": 25180,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 11329006
+    },
+    {
+      "phase": "model-load",
+      "uptime_ms": 22225082,
+      "pss_kib": 104043,
+      "java_used_bytes": 14331856,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 650832,
+      "VmRSS_kib": 650832,
+      "VmSwap_kib": 25180,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 11329006
+    },
+    {
+      "phase": "before-import",
+      "uptime_ms": 22225291,
+      "pss_kib": 575367,
+      "java_used_bytes": 14564912,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 670328,
+      "VmRSS_kib": 648120,
+      "VmSwap_kib": 24600,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 159327
+    },
+    {
+      "phase": "after-rejection",
+      "uptime_ms": 22225350,
+      "pss_kib": 575490,
+      "java_used_bytes": 14364208,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 685952,
+      "VmRSS_kib": 648460,
+      "VmSwap_kib": 24600,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 159327
+    },
+    {
+      "phase": "after-rejection",
+      "uptime_ms": 22225497,
+      "pss_kib": 575514,
+      "java_used_bytes": 14417456,
+      "java_max_bytes": 201326592,
+      "native_buffers": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "VmHWM_kib": 685952,
+      "VmRSS_kib": 648460,
+      "VmSwap_kib": 24600,
+      "stage_bytes": 0,
+      "saved_pack_bytes": 159327
+    }
+  ]
+}
