@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Verify executable guard regressions separately; here bind measurements, identities and ratings."""
 from pathlib import Path
-import hashlib,json,collections,re
+import hashlib,json,collections,re,tempfile
 R=Path(__file__).resolve().parents[3];E=R/'docs/evidence/complete-claims'
 def sha(p):
  with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def read(p):return json.loads(p.read_text())
+def check_file(p,digest):
+ assert sha(p)==digest, "Changed evidence: "+str(p)
 def validate_record(d):
  assert not d['error'],d['error']
  assert 0<d['tokens']<=256 and d['prompt_tokens']+256<=2048
@@ -22,7 +24,7 @@ protocol=read(R/'tools/evaluation/complete-claims/protocol.json');old=read(R/'to
 assert sha(R/'tools/evaluation/model-capability/protocol.json')==protocol['prior_cases_sha256']
 assert len(protocol['cases'])==8 and len(old['cases'])==24
 frozen=read(E/'integrity.json')
-for name,digest in frozen['files'].items():assert sha(R/name)==digest,'Changed or missing evidence/source: '+name
+for name,digest in frozen['files'].items():check_file(R/name,digest)
 model=R/'downloads/synthesis/model/Qwen3-1.7B-Q8_0.gguf';assert sha(model)==protocol['model_sha256']
 for name,digest in protocol['packs'].items():assert sha(R/name)==digest
 records={}
@@ -67,12 +69,14 @@ identity=read(em/'load.json')['identity'];assert 'threads=2' in identity and 'mo
 for i in m['case_ids']:validate_record(read(em/(i+'.json')))
 assert read(em/'cap-02.json')['route']=='GENERATED'
 # Regression: integrity checking must reject both missing and changed evidence, not just metadata flags.
-def check_bytes(blob,digest):
- assert blob is not None and hashlib.sha256(blob).hexdigest()==digest
 sample=E/'after/results/cap-02.json'
-for bad in [None,sample.read_bytes()+b'changed']:
- try:check_bytes(bad,sha(sample))
- except AssertionError:pass
- else:raise AssertionError('Integrity mutation accepted')
+with tempfile.TemporaryDirectory(prefix='pocketlore-claim-integrity-') as directory:
+ p=Path(directory)/'record.json';p.write_bytes(sample.read_bytes());check_file(p,sha(sample))
+ p.write_bytes(sample.read_bytes()+b'changed')
+ for missing in [False,True]:
+  if missing:p.unlink()
+  try:check_file(p,sha(sample))
+  except (AssertionError,FileNotFoundError):pass
+  else:raise AssertionError('Integrity mutation accepted')
 print('PASS 64 before/after records, pinned model/packs/source hashes, three actual emulator JNI records, five absent gates and missing/changed evidence rejection')
 print('Builder ratings reproduced; independent semantic review and physical acceptance remain open.')

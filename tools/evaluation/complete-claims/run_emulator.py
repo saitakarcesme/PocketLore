@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Run only the three frozen JNI cases in isolated app storage; no service changes."""
 from pathlib import Path
-import subprocess,json,hashlib,datetime,sys
+import subprocess,json,hashlib,datetime,sys,base64
 R=Path(__file__).resolve().parents[3]
 A=['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb','-s','emulator-5560']
 O=R/'downloads/complete-claims'/('emulator-'+datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ'));O.mkdir()
@@ -16,9 +16,15 @@ base='files/complete-claims';run(['shell','run-as','org.pocketlore.app','mkdir',
 # Refuse to overwrite prior results; recovery must inspect and preserve them.
 assert not run(['shell','run-as','org.pocketlore.app','ls',base+'/results']).strip()
 def put(data,dest):return run(['exec-in','run-as','org.pocketlore.app','sh','-c','cat > '+dest],input=data)
-inp=R/'downloads/complete-claims/after-20261001T054408Z/inputs'
-put(('\n'.join(l for l in (inp/'cases.tsv').read_text().splitlines() if l.split('\t')[0] in ids)+'\n').encode(),base+'/inputs/cases.tsv')
-for i in ids:put((inp/(i+'.tsv')).read_bytes(),base+'/inputs/'+i+'.tsv')
+cases=[]
+for fixture in ['model-capability','complete-claims']:
+ cases.extend(json.loads((R/'tools/evaluation'/fixture/'protocol.json').read_text())['cases'])
+selected=[next(c for c in cases if c['id']==i) for i in ids]
+enc=lambda s:base64.b64encode(s.encode()).decode()
+put(''.join(c['id']+'\t'+enc(c['question'])+'\n' for c in selected).encode(),base+'/inputs/cases.tsv')
+for c in selected:
+ data=''.join('\t'.join(enc(s[k]) for k in ['id','title','url','date','license','text'])+'\n' for s in c['sources'])
+ put(data.encode(),base+'/inputs/'+c['id']+'.tsv')
 model=R/'downloads/synthesis/model/Qwen3-1.7B-Q8_0.gguf';m['model_sha256']=sha(model)
 with model.open('rb') as f:subprocess.run(A+['exec-in','run-as','org.pocketlore.app','sh','-c','cat > '+base+'/model.gguf'],stdin=f,check=True)
 assert run(['shell','run-as','org.pocketlore.app','sha256sum',base+'/model.gguf']).decode().split()[0]==m['model_sha256']
