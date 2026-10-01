@@ -37,6 +37,7 @@ def main(*, diagnostic=False, build_receipt=None):
   if c['expected_route']=='absent' and not eligible:counts['absent_withheld']+=1
   if eligible:
    require(len(r['claims'])==len(v['claims']),'Unreviewed clause');counts['unsupported']+=not r['supported'];counts['useful']+=all(r[k] for k in ['supported','complete','useful'])
+   require(all(a['text']==claim['text'] for a,claim in zip(r['claims'],v['claims'])),'Claim review text drift');require(r['supported']==all(a['supported'] for a in r['claims']),'Claim support aggregation drift')
    sources={s['id']:s for s in c['sources']}
    for i,(claim,link) in enumerate(zip(v['claims'],v['links'])):
     require(v['rendered'].encode('utf-16-le')[link['start_utf16']*2:link['end_utf16']*2].decode('utf-16-le')=='['+str(i+1)+']','Typed citation range')
@@ -45,8 +46,9 @@ def main(*, diagnostic=False, build_receipt=None):
   rows.append('\t'.join([c['id'],encode(v['question']),encode(v['plan']['raw']),str(v['plan']['tokens']),encode(v['draft']['raw']),str(v['draft']['tokens']),encode(v['plan']['failure']),encode(v['draft']['failure'])]))
  require(json.loads((run/'results/closed.json').read_text())==[0,0,0,0,0],'Model not closed')
  with tempfile.TemporaryDirectory(prefix='pocketlore-plan-') as tmp:
-  t=Path(tmp);classes=t/'classes';classes.mkdir();sources=[R/p for p in manifest['sources'] if p.endswith('.java')]+[F/'ReplayLedger.java',F/'Behavior.java',R/'tools/evaluation/fact-frames/FrameBehavior.java'];subprocess.run([TC/'javac','-d',classes,*sources],check=True);controls=json.loads((F/'controls.json').read_text());controlfile=t/'controls.tsv';controlfile.write_text('\n'.join(encode(v) for v in [controls['valid']]+controls['invalid'])+'\n');subprocess.run([TC/'java','-cp',classes,'org.pocketlore.app.Behavior',controlfile],check=True)
+  t=Path(tmp);classes=t/'classes';classes.mkdir();sources=[R/p for p in manifest['sources'] if p.endswith('.java')]+[F/'ReplayLedger.java',F/'PlanReceipt.java',F/'Behavior.java',R/'tools/evaluation/fact-frames/FrameBehavior.java'];subprocess.run([TC/'javac','-d',classes,*sources],check=True);controls=json.loads((F/'controls.json').read_text());controlfile=t/'controls.tsv';controlfile.write_text('\n'.join(encode(v) for v in [controls['valid']]+controls['invalid'])+'\n');subprocess.run([TC/'java','-cp',classes,'org.pocketlore.app.Behavior',controlfile],check=True)
   rowsfile=t/'stages.tsv';rowsfile.write_text('\n'.join(rows)+'\n');subprocess.run([TC/'java','-cp',classes,'org.pocketlore.app.ReplayLedger',run/'inputs',rowsfile,t/'replay.json'],check=True)
+  subprocess.run([TC/'java','-cp',classes,'org.pocketlore.app.PlanReceipt',run/'inputs',rowsfile,t/'plans.json'],check=True);exact(t/'plans.json',sha(E/'plans.json'))
   for actual,expected in zip(json.loads((t/'replay.json').read_text()),values):
    for k in ['id','rendered','claims','failure']:require(actual[k]==expected[k],'Controller replay mismatch')
   changed=t/'changed-plan';original=run/'results/q10.json';changed.write_bytes(original.read_bytes()+b'changed');rejected(lambda:exact(changed,sha(original)));rejected(lambda:exact(t/'missing-plan',sha(original)))
