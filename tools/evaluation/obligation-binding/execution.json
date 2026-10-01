@@ -1,0 +1,18 @@
+{
+ "version": 1,
+ "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+ "model_role": "Qwen3 4B host candidate, not deployed",
+ "context_tokens": 4096,
+ "draft_tokens": 320,
+ "audit_tokens": 192,
+ "total_generated_tokens_per_question": 512,
+ "decoder": "Pinned greedy generateChat; one draft and at most one separate-context audit, no retries or seed search",
+ "architecture": "Immutable edition/passage/hash/sentence offset catalog; typed obligation, exact source-sentence references, subject, material time/condition and complete claim. Render only typed links. Independent-context same-model semantic audit of actual selected spans checks every claim and all obligations; not independent criticism or entailment proof. Fail closed on malformed, truncated, cancelled, missing, mismatched or withheld records.",
+ "evidence": "Same task220 six oracle passages; new twelve frozen cases reuse the same real sources. No production retrieval claim. Sentence spans limited to first1200characters per passage with exact UTF16 offsets and full passage SHA256; no rewritten source content.",
+ "threads": 6,
+ "processes": 1,
+ "runtime": "Reuse sealed task220 host library with 4096/512 host profile; Android limits/model.env unchanged",
+ "resource_limits": "Require at least8GiB MemAvailable at launch; sampled RSS ceiling8GiB, timeout14400seconds; no concurrent emulator or other inference launched by this task",
+ "evaluation": "All48old plus12new, real native draft and audit where structurally admissible; preserve every stage. Require >4/40 useful eligible old answers, zero unsupported eligible, eight old absent withheld. New cases reported separately. Builder source assessments never alter controller route.",
+ "historical_regressions": "Actual task220 failures also bound into syntactically valid typed records and audited, so syntax rejection alone cannot claim repaired support. These are separate replay/audit tests, not new generation successes."
+}
