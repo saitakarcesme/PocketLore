@@ -1,0 +1,30 @@
+{
+  "kind": "Builder assessment, not independent source review",
+  "results_sha256": "c0d657e71bb4e69dab68e39f6f5d601b548df96aafa9254f25a32b306c4d8ee1",
+  "answers": {
+    "q21": {
+      "supported": true,
+      "complete": false,
+      "useful": false,
+      "reason": "All three claims express the selected formula, but none explains why the fifth root is used. Repeating the equation is incomplete for the frozen explanation question.",
+      "claims": [
+        {
+          "text": "A difference of 1.0 in magnitude corresponds to a brightness ratio of the fifth root of 100, which is approximately 2.512.",
+          "supported": true,
+          "reason": "The exact cited sentence explicitly equates a one-magnitude step with the fifth root of 100 and gives about 2.512. Calculation and representation denote this same ratio; no new physical cause is established."
+        },
+        {
+          "text": "The fifth root of 100 is used to calculate the brightness ratio for a one-magnitude difference in apparent magnitude.",
+          "supported": true,
+          "reason": "The exact cited sentence explicitly equates a one-magnitude step with the fifth root of 100 and gives about 2.512. Calculation and representation denote this same ratio; no new physical cause is established."
+        },
+        {
+          "text": "The fifth root of 100 is approximately 2.512, which represents the brightness ratio for a one-magnitude difference in apparent magnitude.",
+          "supported": true,
+          "reason": "The exact cited sentence explicitly equates a one-magnitude step with the fifth root of 100 and gives about 2.512. Calculation and representation denote this same ratio; no new physical cause is established."
+        }
+      ]
+    }
+  },
+  "withheld_assessment": "Not scored as supported generated answers; unchanged failures are retained in results."
+}

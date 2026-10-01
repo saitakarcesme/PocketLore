@@ -11,9 +11,9 @@ def reject(fn):
  try:fn()
  except (AssertionError,FileNotFoundError):return
  raise AssertionError('Mutation accepted')
-def main():
+def main(*, diagnostic=False, build_receipt=None):
  for line in (E/'SHA256SUMS').read_text().splitlines():h,p=line.split('  ',1);exact(R/p,h)
- spec=importlib.util.spec_from_file_location('old_source_plan',R/'tools/evaluation/source-plan/verify.py');old=importlib.util.module_from_spec(spec);spec.loader.exec_module(old);previous=old.main(diagnostic=True,build_receipt=(E/'build.json',sha(E/'build.json')));assert previous['useful']==0,'Historical negative changed'
+ spec=importlib.util.spec_from_file_location('old_source_plan',R/'tools/evaluation/source-plan/verify.py');old=importlib.util.module_from_spec(spec);spec.loader.exec_module(old);previous=old.main(diagnostic=True,build_receipt=build_receipt or (E/'build.json',sha(E/'build.json')));assert previous['useful']==0,'Historical negative changed'
  model=D/'en_core_web_sm-3.7.1-py3-none-any.whl';pin=json.loads((E/'acquisition.json').read_text());exact(model,pin['sha256']);assert model.stat().st_size==pin['bytes']<1024**3
  installed=json.loads((E/'installed-files.json').read_text())
  for p,h in installed['files'].items():exact(R/installed['site']/p,h)
@@ -40,5 +40,6 @@ def main():
  assert counts['structural_candidates']==0,'New candidate requires source assessment before result can be frozen'
  assert counts==json.loads((E/'metrics.json').read_text())['counts']
  print(json.dumps({'behavior':'PASS','counts':counts,'independent_review':'pending','classification':'Source retention improved; actual prose compatibility still failed'},indent=2),flush=True)
+ if diagnostic:return counts
  if counts['new_useful']==0:raise AssertionError('QUALITY FAIL: no complete useful non-extractive answer')
 if __name__=='__main__':main()

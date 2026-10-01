@@ -1,3 +1,11 @@
+# Task 224 repair 2: one supported mathematical candidate, zero useful explanations
+
+The [compositional formula replay](equation-plan/README.md) preserves the frozen 24 questions and all original generation. Android build passes; historical checks, 16 new behavioral controls, artifact mutation checks and exact Java replay pass. The required quality check still **exits 1**: the sole supported candidate restates the formula but does not explain why, so there are **zero complete useful answers**. All four absent controls remain withheld. This narrow proof improvement is not a repaired useful-answer architecture or product acceptance. Builder source assessments remain separate from independent review.
+
+The previous failed reports follow unchanged.
+
+---
+
 # Task 224 repair 1: source retention improved; usefulness still fails
 
 The [repair experiment](source-plan-parser-repair.md) recovers the failed checkpoint and adds a bounded complete-sentence source adapter plus an independently trained dependency-parser prototype. Build and113 behavioral/parser controls pass. The required quality check still **fails**: zero structural candidates across127 preserved records and0/24 useful new-case answers. No4B or NLI inference was repeated; no support gate or case-specific phrase rule was added. Independent source review and mobile qualification remain open.
