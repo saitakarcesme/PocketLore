@@ -1,3 +1,11 @@
+# Task 224 strategy change: useful review drafts, unsafe publication
+
+The [obligation-ledger strategy](224-source-plan-generation-strategy-change.md) was declared and committed before one fixed 24-case host run. It replaces finite source-frame selection with complete bounded sentence evidence and an obligation coverage plan. Builder review finds four complete supported useful candidates, but seven unsupported candidates among 14 structurally valid drafts. All four absent controls withhold. These are review candidates, not approved product answers; publication remains zero.
+
+Android build, 16 new controls, historical integrity checks and exact replay pass. The required quality check **exits 1** because unsupported outputs remain. Full source assessments, raw failures, timings and memory are preserved. No further paraphrase rules, retries, old-matrix inference or production model changes were made. The earlier failed reports follow unchanged.
+
+---
+
 # Task 224 repair 2: one supported mathematical candidate, zero useful explanations
 
 The [compositional formula replay](equation-plan/README.md) preserves the frozen 24 questions and all original generation. Android build passes; historical checks, 16 new behavioral controls, artifact mutation checks and exact Java replay pass. The required quality check still **exits 1**: the sole supported candidate restates the formula but does not explain why, so there are **zero complete useful answers**. All four absent controls remain withheld. This narrow proof improvement is not a repaired useful-answer architecture or product acceptance. Builder source assessments remain separate from independent review.

@@ -38,6 +38,7 @@ def main(*, diagnostic=False, build_receipt=None):
   if eligible:
    require(len(r['claims'])==len(v['claims']),'Unreviewed clause');counts['unsupported']+=not r['supported'];counts['useful']+=all(r[k] for k in ['supported','complete','useful'])
    require(all(a['text']==claim['text'] for a,claim in zip(r['claims'],v['claims'])),'Claim review text drift');require(r['supported']==all(a['supported'] for a in r['claims']),'Claim support aggregation drift')
+   require(len(v['links'])==len(v['claims']),'Missing typed citation link')
    sources={s['id']:s for s in c['sources']}
    for i,(claim,link) in enumerate(zip(v['claims'],v['links'])):
     require(v['rendered'].encode('utf-16-le')[link['start_utf16']*2:link['end_utf16']*2].decode('utf-16-le')=='['+str(i+1)+']','Typed citation range')

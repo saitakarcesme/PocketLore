@@ -262,3 +262,16 @@ The failed experiment is not externally hardware-blocked. No duplicate task, dis
 | Mobile and release qualification | New APK is compile-only; no 4B Android execution or new memory measurement. | Separate approved selected-model admission/load/cancel/reload and integrated candidate revalidation. | Sufficient-memory approved environment, physical Android/GrapheneOS hardware, signing owner, clean reproduction and human review. |
 
 This negative checkpoint is not a completion or acceptance claim. No duplicate task or orchestration change was made.
+
+
+## Task 224 strategy change: review candidates improve, publication remains blocked
+
+[Evidence](evidence/224-source-plan-generation-strategy-change.md) records 4/24 builder-assessed complete supported useful review candidates, seven unsupported candidates, and four absent controls withheld. There is no approved publication improvement: all new prose remains pending semantic authorization. Build and behavioral/integrity checks pass; quality fails.
+
+| Gap | Evidence | Next concrete action | External dependency |
+| --- | --- | --- | --- |
+| Safe obligation planning | q14/q17 contain unsupported temporal/temperature connections already in free-text plans; q20 selects neighboring evidence. | Separate requested relation/qualifier coverage from planner assertions; establish each connection from exact available evidence before prose. No new wording/seed loop over this matrix. | None for bounded host design; independent source criticism required. |
+| Complete explanations and bounded structure | q21 still circles back to the formula; five plans truncate and one draft is malformed. | Verify explanatory relations rather than ID presence, and evaluate instruction-following separately from source support. | None for host implementation; frozen discriminating review needed. |
+| Publication and mobile integration | Experimental Java component produces review previews only; zero authorized answers, no 4B Android execution. | Qualify any safe architecture before wiring it into production; retain existing model admission and release revalidation gates. | Independent authorization design/review, approved sufficient-memory mobile environment, physical Android/GrapheneOS and human evaluation. |
+
+No orchestration or queue was modified; the absence of hardware does not explain the unresolved semantic failures.

@@ -1,0 +1,221 @@
+{
+  "q01": {
+    "supported": true,
+    "complete": true,
+    "useful": true,
+    "plan_sufficient": true,
+    "reason": "P2.3 explicitly requires sorted input; P1.3 states an empty remaining half means the target is absent. Both requested parts are covered. Inline P tokens are redundant text; the final typed link retains both sources.",
+    "claim_reasons": [
+      "Both sentences restate the two cited source conditions accurately, preserving sorted prerequisite and absent-target outcome."
+    ]
+  },
+  "q02": {
+    "supported": null,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": false,
+    "reason": "The planner selects 22 IDs and exhausts its 160-token budget mid-sentence; no prose call occurs."
+  },
+  "q03": {
+    "supported": null,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": true,
+    "reason": "Selected evidence covers insertion-order degeneracy and self-balancing bounds, but the raw draft embeds another five-field record inside the first without a valid obligation/newline. Full raw output retained; no candidate rendered."
+  },
+  "q04": {
+    "supported": null,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": false,
+    "reason": "Planner correctly says supplied algorithm excerpts contain no laptop database version. This is appropriate withholding, not a useful generated factual answer."
+  },
+  "q05": {
+    "supported": false,
+    "complete": true,
+    "useful": false,
+    "plan_sufficient": true,
+    "reason": "Requested selection and vascular tissue conditions are present, but generated explanation adds uncited nutrient/water transfer and a strong-foundation property. Neither exact selected excerpt establishes these additions.",
+    "claim_reasons": [
+      "The stock/scion selection and joining requirement are supported; the compound claim also asserts transfer of nutrients/water and a strong foundation without cited support. The whole claim is unsupported, with no tail deletion."
+    ]
+  },
+  "q06": {
+    "supported": null,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": false,
+    "reason": "Ledger exhausts 160 tokens; refers to S9 in prose without selecting it and transfers ordinary-pruning properties to the post-graft cut. No prose call."
+  },
+  "q07": {
+    "supported": true,
+    "complete": true,
+    "useful": false,
+    "plan_sufficient": true,
+    "reason": "Both requested pruning conditions are covered by P5.2/P5.3; the broad future-issues phrase is read only in the stated branch/wound context, not as a new guarantee. The rendered subject and qualifier are literal schema placeholders, so the complete candidate is not graded fully useful.",
+    "claim_reasons": [
+      "P5.2 establishes smaller wounds ease compartmentalization and limit pathogen/decay risks; P5.3 explicitly prefers formative cuts on young plants over large mature-plant removals. The second sentence links that stated preference to the same wound-management reason."
+    ]
+  },
+  "q08": {
+    "supported": null,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": false,
+    "reason": "Correctly withholds: horticultural excerpts contain no live arborist appointment availability."
+  },
+  "q09": {
+    "supported": true,
+    "complete": true,
+    "useful": true,
+    "plan_sufficient": true,
+    "reason": "The plan and three generated claims preserve single-or-set written versus single-comprehensive codified, explicitly explain overlap, and accurately use the uncodified UK example. Repetitive but answers the requested distinction.",
+    "claim_reasons": [
+      "P2.1 defines written documents; P2.2 explicitly describes the UK as uncodified and written across multiple acts/cases/treaties.",
+      "P2.1 retains the single comprehensive condition, while P2.2 illustrates why the two categories are not identical.",
+      "The subset/overlap explanation follows from the two document conditions in P2.1; the UK counterexample is confined to written but uncodified as P2.2 states."
+    ]
+  },
+  "q10": {
+    "supported": false,
+    "complete": true,
+    "useful": false,
+    "plan_sufficient": true,
+    "reason": "Main constitution versus monarch distinction is supported, but the full compound draft adds often significant limitations on personal discretion; the cited excerpts establish legal limits and shared decisions, not their frequency or significance. Literal qualifier placeholder remains.",
+    "claim_reasons": [
+      "P3.3 and P4.1 support the principles/lawmaking and bounded-authority comparison. They do not establish the often/significant degree-frequency claim. Whole compound prose remains unsupported."
+    ]
+  },
+  "q11": {
+    "supported": true,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": true,
+    "reason": "The UK is correctly identified as written across multiple materials yet uncodified, sufficient for a counterexample. However the final phrase defines principles, procedures, and by whom omits the lawmaking object and is not a complete coherent clause. The full output is not graded complete/useful.",
+    "claim_reasons": [
+      "P2.2 establishes the UK multi-document uncodified account. P3.3 is a general constitutional definition, not proof of uncodification; the answer does not claim exclusivity, but its paraphrase drops the lawmaking object. Supported main content, incomplete prose."
+    ]
+  },
+  "q12": {
+    "supported": true,
+    "complete": true,
+    "useful": true,
+    "plan_sufficient": true,
+    "reason": "Directly rejects uniform powers and explains variation using exact supplied constitutional/discretion examples. No uncited countries or powers are introduced.",
+    "claim_reasons": [
+      "P5.1/P5.2 establish variation; P6.1 provides exactly the listed higher-versus-lower discretion examples and attributes grants to constitutions, while P4.1 supplies the governing-framework context."
+    ]
+  },
+  "q13": {
+    "supported": null,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": false,
+    "reason": "The planner fills the eight-ID allowance then exhausts 160 tokens mid-explanation. No prose call; no chronology or geographic success inferred."
+  },
+  "q14": {
+    "supported": false,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": false,
+    "reason": "Planner and draft join medieval Principality history directly to 1931 as a shift from a principality to an autonomous region. The cited excerpts do not establish that regime transition or continuity. Exact source selection does not fix the temporal-role transfer.",
+    "claim_reasons": [
+      "The Crown administrative role and becoming autonomous capital in 1931 are individually stated, but the asserted direct principality-to-autonomous shift in 1931 is not. The compound answer inherits an unsupported linkage from the planning account."
+    ]
+  },
+  "q15": {
+    "supported": null,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": false,
+    "reason": "Planner selects sixteen IDs and reaches the 160-token limit; no prose run. Historical interruption rationale is preserved but not credited as a generated answer."
+  },
+  "q16": {
+    "supported": null,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": false,
+    "reason": "Correctly withholds current international train schedule; static city excerpts do not supply departure times."
+  },
+  "q17": {
+    "supported": false,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": false,
+    "reason": "The plan invents a higher-fermentation-temperature contrast and minimal nutritional/sensory changes; the draft repeats both. Its product-use summary also omits the source condition that lactate is converted to lactic acid for the listed uses.",
+    "claim_reasons": [
+      {
+        "supported": false,
+        "reason": "Production is supported, but the combined direct-use summary loses P2.5\u2019s lactate-to-lactic-acid condition for preservation; it is not approved as a fully qualified claim."
+      },
+      {
+        "supported": false,
+        "reason": "P4.1 supports usual heat below 100 C. Neither P4.1 nor P4.2 establishes negligible nutritional/sensory changes or higher typical fermentation temperatures. Unsupported compound tail retained."
+      }
+    ]
+  },
+  "q18": {
+    "supported": null,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": false,
+    "reason": "The ledger selects nine IDs and reaches its token cap; no prose generated. It also invents a false premise about similar methods that the question did not assert."
+  },
+  "q19": {
+    "supported": true,
+    "complete": true,
+    "useful": true,
+    "plan_sufficient": true,
+    "reason": "The central explanation correctly contrasts deactivation with surviving bacterial spores, directly answering why sterilization is not promised. Additional naming history is unnecessary but cited. Only is read in contrast to complete sterilization, not as a universal exhaustive taxonomy of affected agents.",
+    "claim_reasons": [
+      "P4.2 directly supports spoilage-related deactivation and most spores surviving; that is the requested reason sterilization is not guaranteed. P5.1 supports the Pasteur/wine history. No timing or temperature condition is invented."
+    ]
+  },
+  "q20": {
+    "supported": false,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": false,
+    "reason": "Wrong-neighbor binding: the actual lactate-production sentence is P2.4, but the plan/draft select P2.5 (uses) and P3.1 (generic end products). Neither cited sentence names lactate as a produced end product. The draft also strengthens the correction to not a component used in the process and byproduct, which are not established by those excerpts.",
+    "claim_reasons": [
+      "Uses of lactate and a generic 300-product statement do not establish the claimed specific production direction. Source selection omits P2.4 and the paraphrase adds categorical non-input and byproduct roles. Exact typed references remain unsafe."
+    ]
+  },
+  "q21": {
+    "supported": true,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": false,
+    "reason": "Both selected excerpts are relevant and P5.3 actually contains a five-magnitude/100-fold example, but the planning account and generated answer still only restate the fifth-root formula. They never connect five equal magnitude steps to a hundred-fold ratio, so the frozen why requirement remains unmet. Metadata uses literal field headings and an unmotivated date.",
+    "claim_reasons": [
+      "The root degree, radicand and 2.512 approximation match P5.2; P5.3 indeed contains examples. Saying a root applies because the relationship is that root is circular rather than an explanation. It is supported formula content but incomplete."
+    ]
+  },
+  "q22": {
+    "supported": false,
+    "complete": true,
+    "useful": false,
+    "plan_sufficient": true,
+    "reason": "The main distance and inverse-numbering comparison is supported. The optional last sentence weakens P6.2 to an unqualified faintest-visible-star limit of +6.5, omitting naked eye, darkest night and observer/atmospheric conditions; the source explicitly notes much fainter telescope-imaged objects. The whole compound claim must remain unapproved.",
+    "claim_reasons": [
+      "P4/P5 and P6.1 support the primary explanation and bright-object examples. P6.2 does not support an unconditional visibility threshold; material viewing qualifiers were removed in an extra factual tail."
+    ]
+  },
+  "q23": {
+    "supported": false,
+    "complete": true,
+    "useful": false,
+    "plan_sufficient": true,
+    "reason": "Contribution examples and non-primary income are supported. The extra assertion that astronomy is not their professional field is stronger than P2.1, which discusses income and only typical absence of degrees/training; neither exact cited sentence establishes an employment-field exclusion.",
+    "claim_reasons": [
+      "P1.2 supports the listed citizen-science activities and P2.1 supports non-primary income. The professional-field exclusion transfers an income/training condition into a categorical career claim and is not approved. Full tail preserved."
+    ]
+  },
+  "q24": {
+    "supported": null,
+    "complete": false,
+    "useful": false,
+    "plan_sufficient": false,
+    "reason": "Correctly withholds exact current cloud cover; the static astronomy excerpts contain no local live weather forecast."
+  }
+}

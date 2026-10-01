@@ -1,0 +1,26 @@
+{
+  "stage": "CPU host candidate, not Android",
+  "protocol_sha256": "aee80f0295d0a22a7befa889fd474010fbdd1811f37b031be182f15ff3b625f7",
+  "execution_sha256": "fe91718515d15c59b3310a3b473cd5280a89f92cc50d50f40a94199688d0ad9b",
+  "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+  "library_sha256": "38cc3d9108c865fac5c7b8744987b58bee5a3ff9b37529f919e5ce24db42dfef",
+  "sources": {
+    "android/app/src/main/java/org/pocketlore/app/BoundAnswer.java": "3ebc23e6ed3dc73f52ccf899029b0b98dce258c44e7bc717804245206c7ff709",
+    "android/app/src/main/java/org/pocketlore/app/ObligationAnswer.java": "6b9f0e61ba2a7bf5a040f2d9f3899acc682b40cf236ac3395d1bdac8f1819725",
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "f276dc506e3022e445149c6c09e2577f595b287cfc406a760fda525c46c66128",
+    "android/app/src/main/java/org/pocketlore/app/EvidencePrompt.java": "238131c012580bdd1af9c2a67fb7db410c1c4d5f2bc5235a0016eb09d493832a",
+    "android/app/src/main/java/org/pocketlore/app/AnswerEngine.java": "c03f51d31c5e1fa628450978ec6ccc9fe2491de11b6695856856c694826d2dbc",
+    "android/app/src/main/java/org/pocketlore/app/NativeRuntime.java": "ec6f59d59b07ef7f5016657e0fcba0203232ecc7359f56a9ad6c205215fb2085",
+    "android/app/src/main/java/org/pocketlore/app/EvidenceLinker.java": "190ed67e3c5dab7bcb137b8d02c5a4bab08f5f9fb67bb3cace2b3bcff5f7dd8c",
+    "android/app/src/main/java/org/pocketlore/app/SourcePlan.java": "0c4baab094bdf620d5cb7c8058ba5c79e9220f93ca79ed0b7b07dfd45d33e630",
+    "android/app/src/main/java/org/pocketlore/app/SentenceEvidence.java": "bb070b4e8593eb5b379723b595d884e5103ad7bbaab9d40f0cddab42e86367cb",
+    "android/app/src/main/java/org/pocketlore/app/ObligationLedger.java": "8c47cf0385ac36fee8d939cdce70daafa6a3fd373efa124abd06f6270d0f090a",
+    "tools/evaluation/scale-model-quality/ScaleHarness.java": "c969a8ff91f4e200e6ca674c68c0bb68e5a7d0bacfa39f5db251708175779558",
+    "tools/evaluation/obligation-binding/BindingHarness.java": "23c74dc755f68eee7c746c4ba7c416adf088a035a1aea9381e5c29e8715c7f06",
+    "tools/evaluation/obligation-plan/LedgerHarness.java": "cb2d4ba43c1d4af5f5ba85e11f3f67b37474fd4e394b9b11ee09feac4fec77c5",
+    "android/app/src/main/java/org/pocketlore/app/FactFrames.java": "45dcb15e9582143bb9a37e62fdc9a0198e01554a29a1a3a5b5ef94911ed31c2e",
+    "tools/evaluation/obligation-plan/run_new.py": "40a6d35cd1dff05f64452dd45839e2de994ac5471e2eff82b7008eda0d351586"
+  },
+  "git_revision": "0c281026e89e7ff90507e3ffe2a5be56ccb506fd",
+  "available_start": 19786940416
+}

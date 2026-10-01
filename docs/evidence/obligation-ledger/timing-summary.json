@@ -1,0 +1,25 @@
+{
+  "definition": "Nearest-rank ceil(p*n), over executed stages only; first token includes prefill; total includes prefill plus generation; not user-facing answer latency or Android measurements",
+  "stages": {
+    "plan": {
+      "first_token_ms": {
+        "p50_ms": 21403.412753,
+        "p95_ms": 36542.353704
+      },
+      "total_ms": {
+        "p50_ms": 30076.195535,
+        "p95_ms": 53037.999191
+      }
+    },
+    "draft": {
+      "first_token_ms": {
+        "p50_ms": 7257.844221,
+        "p95_ms": 13726.944326
+      },
+      "total_ms": {
+        "p50_ms": 16682.359477,
+        "p95_ms": 27394.475637
+      }
+    }
+  }
+}
