@@ -1,0 +1,26 @@
+{
+  "id": "212-broad-evidence-answer-integration",
+  "objective": "Integrate the reviewed broad edition into useful cited production-model answers. Preserve task210 retrieval regressions: exact Acid and Cooking lose to longer titles, distance-from-zero paraphrase misses, top four passages can repeat one article, and small-pack OR matches leak into invented absent retrieval. Freeze new source-faithful explanation/comparison/multi-source and absent cases before changing retrieval/context selection; retain the existing 40 cases and report improvements and regressions separately. Implement exact-title preference, bounded diverse evidence selection and source-scope-aware context on the disk-backed catalog as warranted by failures. Use the actual deployed model from tools/answers/model.env, unchanged admission limits unless separately justified; run actual Android JNI, inspect every published claim against exact edition excerpts, separate withholding/fallback from generation, verify citation spans and mixed small/broad sources, and measure combined native/index context memory. Enable generation only for reviewed source fidelity and rights, never use hashes or lexical overlap as entailment. No private holdout, model-role relabeling, service changes or publication.",
+  "dependencies": [
+    "211-source-faithful-broad-edition"
+  ],
+  "scope": [
+    "android",
+    "tools/evaluation",
+    "docs",
+    "FINDINGS.md"
+  ],
+  "acceptance_checks": [
+    [
+      "bash",
+      "tools/android-build.sh"
+    ],
+    [
+      "bash",
+      "tools/evaluation/check_broad_answers.sh"
+    ]
+  ],
+  "artifacts": [
+    "docs/evidence/broad-answer-integration.md"
+  ]
+}

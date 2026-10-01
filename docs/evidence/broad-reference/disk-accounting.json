@@ -1,0 +1,19 @@
+{
+  "apk_bytes": 11921193,
+  "pack_bytes": 46822920,
+  "index_bytes": 125472768,
+  "model_bytes": 491400032,
+  "small_pack_bytes": 190510,
+  "source_jsonl_bytes": 30250745,
+  "chunks_jsonl_bytes": 45965002,
+  "reused_download_bytes": 1738494300,
+  "all_sealed_bytes": 1866834008,
+  "installed_app_files_allocated_bytes": 762634240,
+  "cache_allocated_bytes": 8192,
+  "code_cache_allocated_bytes": 8192,
+  "broad_test_fixture_allocated_bytes": 96215040,
+  "native_entries_uncompressed": {
+    "lib/arm64-v8a/libpocketlore.so": 5597736,
+    "lib/x86_64/libpocketlore.so": 6077192
+  }
+}
