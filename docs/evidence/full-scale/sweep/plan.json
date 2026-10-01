@@ -1,0 +1,448 @@
+{
+  "kind": "Rolling complete-shard Android compatibility, not simultaneous full installation",
+  "frozen_rows": [
+    {
+      "kind": "wiki",
+      "shard": "000_00000",
+      "probe": {
+        "id": "600",
+        "title": "Andorra",
+        "source_sha256": "CB675E6663EF01B49DBCD8EB73D27A6888FE7FC745F946891CEF06F19A502B34"
+      },
+      "counts": {
+        "documents": 413151,
+        "full_articles": 82022,
+        "leads": 331129
+      }
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00001",
+      "probe": {
+        "id": "340",
+        "title": "Alain Connes",
+        "source_sha256": "8DF28724C6E43F9D9CDFD0E8BC25EB9120A8765726EAEDED3BC3D1D3209372F8"
+      },
+      "counts": {
+        "documents": 447210,
+        "full_articles": 86297,
+        "leads": 360913
+      }
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00002",
+      "probe": {
+        "id": "330",
+        "title": "Actrius",
+        "source_sha256": "7859BE8F97D90D7421CCE146314787923AF2C5C47BA4D9AF6F53F57420FE28BC"
+      },
+      "counts": {
+        "documents": 444152,
+        "full_articles": 84314,
+        "leads": 359838
+      }
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00003",
+      "probe": {
+        "id": "336",
+        "title": "Altruism",
+        "source_sha256": "EFB144B35BBDA954DBA94D2DD58D8A35A92341DE5B353BFCD96CB798B36D7E84"
+      },
+      "counts": {
+        "documents": 468168,
+        "full_articles": 89067,
+        "leads": 379101
+      }
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00004",
+      "probe": {
+        "id": "324",
+        "title": "Academy Awards",
+        "source_sha256": "BA0A035807DB8EBDA23FB9E860D9E4B8464E392517AB5F63A356895AF5AA26DB"
+      },
+      "counts": {
+        "documents": 451622,
+        "full_articles": 82153,
+        "leads": 369469
+      }
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00005",
+      "probe": {
+        "id": "649",
+        "title": "Arraignment",
+        "source_sha256": "F2004F7380A5FBE9F3AD4E8E68C5A670E40CEE0A623A79E2F4BE7942CB77F78E"
+      },
+      "counts": {
+        "documents": 456484,
+        "full_articles": 85862,
+        "leads": 370622
+      }
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00006",
+      "probe": {
+        "id": "344",
+        "title": "Allan Dwan",
+        "source_sha256": "C348F2EE87F44885D3CFC4C3F8CF1BC679B3E35D0054651B5CC0C15E1A1FCD1B"
+      },
+      "counts": {
+        "documents": 445533,
+        "full_articles": 81812,
+        "leads": 363721
+      }
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00007",
+      "probe": {
+        "id": "39",
+        "title": "Albedo",
+        "source_sha256": "92655FD7EFFC8D98E15EB7A0797496E6025F6B4632389143BC310D9852D20EE3"
+      },
+      "counts": {
+        "documents": 428379,
+        "full_articles": 82033,
+        "leads": 346346
+      }
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00008",
+      "probe": {
+        "id": "657",
+        "title": "Bitumen",
+        "source_sha256": "4F062243C5FBA3ECA398151D531901051B3BA7568CDE84A546D54DE8A44C0675"
+      },
+      "counts": {
+        "documents": 438210,
+        "full_articles": 82237,
+        "leads": 355973
+      }
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00009",
+      "probe": {
+        "id": "305",
+        "title": "Achilles",
+        "source_sha256": "C41071FC7AC3950B71B7C5B2D5BB5FB4087960F0637FD1ED6BA2C85D86E90236"
+      },
+      "counts": {
+        "documents": 407165,
+        "full_articles": 82544,
+        "leads": 324621
+      }
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00010",
+      "probe": {
+        "id": "309",
+        "title": "An American in Paris",
+        "source_sha256": "9254DE55A26C76EE2C7CF545E2F9C07BF37B121498BD2A6FC6316E7CB140B770"
+      },
+      "counts": {
+        "documents": 432334,
+        "full_articles": 81876,
+        "leads": 350458
+      }
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00011",
+      "probe": {
+        "id": "290",
+        "title": "A",
+        "source_sha256": "15A93EAAF909CE734DB3D8DF1FA0FFF22AB24325534D58C5AD5C9228480667D2"
+      },
+      "counts": {
+        "documents": 408811,
+        "full_articles": 81254,
+        "leads": 327557
+      }
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00012",
+      "probe": {
+        "id": "307",
+        "title": "Abraham Lincoln",
+        "source_sha256": "27A62D78BDA97D00E64F22D48269A4C672E1988AD25C3FDA2000BA13A54DC92C"
+      },
+      "counts": {
+        "documents": 427704,
+        "full_articles": 84272,
+        "leads": 343432
+      }
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00013",
+      "probe": {
+        "id": "12",
+        "title": "Anarchism",
+        "source_sha256": "836526A14D835B496852D70885897981AF3710E43268B5BC11837AED988CBF01"
+      },
+      "counts": {
+        "documents": 392557,
+        "full_articles": 79675,
+        "leads": 312882
+      }
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00014",
+      "probe": {
+        "id": "595",
+        "title": "Andre Agassi",
+        "source_sha256": "54745BB63FE781F3022B1DFAD24A398707EF9C6BE8E100BC4632A9BD391FDD37"
+      },
+      "counts": {
+        "documents": 437018,
+        "full_articles": 84582,
+        "leads": 352436
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-00.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": -78.722049940764,
+        "lon": -172.73434638977,
+        "id": "4f00cc42-ba51-4a40-a8e8-1cf968e1481a",
+        "source_block_sha256": "aab346e45864cfd02021723a6f30b7f2f368671dbcb08f9752c74000b1cbfdae"
+      },
+      "counts": {
+        "source_records": 5120674
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-01.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": 29.028333333333,
+        "lon": -118.29166666667,
+        "id": "9cd6f4de-e62b-419e-8d5d-b1ccb0fdba58",
+        "source_block_sha256": "2218359125ad89332dc1b612c16124d46253cd0c6660df8bef2e005ee8253420"
+      },
+      "counts": {
+        "source_records": 5065932
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-02.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": 37.69891798,
+        "lon": -123.00336535,
+        "id": "445be95b-d910-4d19-a7df-1660c81516cc",
+        "source_block_sha256": "1913a9a0a69480aee14eb22433d96ac6367b449ee6f3ed8f482ee43b51ebc8f5"
+      },
+      "counts": {
+        "source_records": 5110584
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-03.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": 34.520371,
+        "lon": -88.649086,
+        "id": "86385eb9-4637-4318-9ff4-3d44f37d9aa0",
+        "source_block_sha256": "f97b14a9e837f08c29d2ca17ba17eccdbb1679ee53cd691d91c7eb68a295c55b"
+      },
+      "counts": {
+        "source_records": 5124095
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-04.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": -75.930885432166,
+        "lon": -74.1796875,
+        "id": "e1d83545-fccf-4051-aeee-76fd9bdbe1fc",
+        "source_block_sha256": "80995ed79485264e9b8a5e2cd1d593e4a3c9c1120914042be9dff05bf6c5b7d7"
+      },
+      "counts": {
+        "source_records": 5135717
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-05.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": -16.40128313,
+        "lon": -73.22672936,
+        "id": "e25f4f37-2d18-4690-87f5-08ae49268404",
+        "source_block_sha256": "02db6bce1482aec4b6beaf5d621f4fb83d904d7735b93dc482afd1b03a604299"
+      },
+      "counts": {
+        "source_records": 5087871
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-06.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": 40.38869105903738,
+        "lon": -76.4775466434544,
+        "id": "048d3b32-1e2f-4608-be56-33515605c986",
+        "source_block_sha256": "d4305aaef70f77dc948256fe59c1307550379875f3cdce5d18deef8061151f39"
+      },
+      "counts": {
+        "source_records": 5137402
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-07.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": 40.431905,
+        "lon": -1.568185,
+        "id": "4928f3f8-5838-463f-a114-19805e032bc3",
+        "source_block_sha256": "3c25fec9e079e121bee9ca75c5d25991ca3148c1444fa6adb6d66f52899b123a"
+      },
+      "counts": {
+        "source_records": 5152063
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-08.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": 4.7605405694595,
+        "lon": 6.2906117,
+        "id": "6882d7dc-ec34-467c-98a2-243d50418245",
+        "source_block_sha256": "7f0c96e06577876609fa3ded7aa2c88df9182296b4040cafb0d7ccaf89d89d23"
+      },
+      "counts": {
+        "source_records": 5060836
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-09.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": 43.00219442,
+        "lon": 6.37323371,
+        "id": "005f9bbd-60b6-47e1-8c33-da40167e7c6b",
+        "source_block_sha256": "2a495d95400bc52700d7bf4145b6b2e71ddd89513d78542dfa20c7dedb502748"
+      },
+      "counts": {
+        "source_records": 5018256
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-10.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": 47.39997,
+        "lon": 6.35539,
+        "id": "1e68a2fd-1eed-4bcf-9551-9d6f8f6c4427",
+        "source_block_sha256": "534d632ee3306a58f6b128e97bd6a11f9bf6ff11736f4938c509deace8b03d04"
+      },
+      "counts": {
+        "source_records": 5075322
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-11.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": 51.227538,
+        "lon": 6.288085,
+        "id": "490a27f6-bf14-4fef-9aae-94fa3a832301",
+        "source_block_sha256": "eb30979257ab14e8763c30bd55822d12e51abb89f128d9245524ca0525243ba3"
+      },
+      "counts": {
+        "source_records": 5088275
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-12.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": -81.621351702837,
+        "lon": 42.1875,
+        "id": "040f7e93-5ebf-4db6-94a2-c8b697264bf8",
+        "source_block_sha256": "39b9497a3e0b58e3611be82adf13f664133a820183b96359ac839a64c0eed556"
+      },
+      "counts": {
+        "source_records": 5078337
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-13.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": -78.464422222222,
+        "lon": 106.83732777778,
+        "id": "bfd01a42-92a7-43f9-a7d3-0cc7fb3157b4",
+        "source_block_sha256": "73dbc886242ba67d9acb974fb71d6e3209577b940f220b5d503501f02e7ada0d"
+      },
+      "counts": {
+        "source_records": 5047272
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-14.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": 18.135411517108,
+        "lon": 42.36328125,
+        "id": "cbdff49d-a46e-4d3c-b6b1-88ccc7637f25",
+        "source_block_sha256": "bb090be0a6930e56134a313ed0e2703364282fe5147905dec3380bca2f4e8b03"
+      },
+      "counts": {
+        "source_records": 5058561
+      }
+    },
+    {
+      "kind": "places",
+      "shard": "compact-15.sqlite",
+      "probe": {
+        "ordinal": 1,
+        "lat": 18.129147320137,
+        "lon": 105.80273330212,
+        "id": "6cee85ea-633e-4ffc-ad9d-2a7bdabb5651",
+        "source_block_sha256": "0177314e4f1c2e5c3fedd181a485113a679ec7f401b6efa6f382b40ec5b13af1"
+      },
+      "counts": {
+        "source_records": 5094226
+      }
+    }
+  ],
+  "prior_protocol": "tools/evaluation/full-scale/protocol.json",
+  "rules": [
+    "exact expected wiki source ID/hash",
+    "actual bounded spatial lookup and source inspection",
+    "all15 wiki and16 place shards; failures retained",
+    "shared metadata-only collection between primary shards",
+    "no rights clearance or generation",
+    "no full-install/update acceptance from rolling residency"
+  ]
+}
