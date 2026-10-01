@@ -1,0 +1,6 @@
+gradle.projectsEvaluated {
+    def app = gradle.rootProject.project(':app')
+    def base = new File(app.rootProject.projectDir, '../tools/evaluation/stalled-provider')
+    app.android.sourceSets.androidTest.java.srcDirs += [new File(base, 'provider'), new File(base, 'tests')]
+    app.android.sourceSets.androidTest.manifest.srcFile(new File(base, 'AndroidManifest.xml'))
+}

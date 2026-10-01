@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "scope": "Frozen public deterministic Android document-provider transport fixtures; no factual or model evaluation",
+  "imports": ["model", "pack"],
+  "cases": ["cancel-before-open", "stall-empty", "stall-prefix", "short-read", "retry"],
+  "stall_prefix_bytes": 4,
+  "stall_observation_ms": 250,
+  "cancel_deadline_ms": 1500,
+  "short_model_bytes": "GGUF",
+  "model_staging_fixture": "GGUFtest",
+  "model_limitations": "Eight-byte transport-only staging fixture, not a loadable model; native validation is outside this test",
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "requirements": ["cancelled workers terminate before provider release", "staging removed", "saved assets unchanged", "retry on the same worker and process", "short reads rejected", "provider writer observes reader closure"]
+}
