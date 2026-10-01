@@ -38,11 +38,12 @@ def index_component(abi,out):
  elf=cmd([inv.TC/'android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-readelf','-d',library])
  return {'abi':abi,'library':record(library,'packaged-index-native'),'link':record(link,'index-link-command'),'inputs':rows,'elf_needed':re.findall(r'Shared library: \[(.*?)\]',elf),'scope':'Actual linker inputs; discarded members are not asserted to survive'}
 def main():
- p=argparse.ArgumentParser();p.add_argument('--output',type=pathlib.Path,required=True);a=p.parse_args();out=a.output.resolve();out.mkdir(parents=True,exist_ok=True)
+ p=argparse.ArgumentParser();p.add_argument('--output',type=pathlib.Path,required=True);p.add_argument('--development-release',action='store_true');a=p.parse_args();out=a.output.resolve();out.mkdir(parents=True,exist_ok=True)
  target=out/'current-audit.json'
  if target.exists():raise ValueError('Refusing to replace preserved audit')
  original={x:inv.sha(ROOT/x) for x in ['docs/evidence/release-v4/manifest.json','docs/distribution-inventory.json']}
  report=inv.capture();report['scope']='Current task300 development bytes; final task213 release freeze DEFERRED until selected model/bulk integration. Not a replacement release inventory.'
+ if a.development_release:report['scope']='Current development release-v5 inventory; no final scale/model/phone acceptance or publication'
  report['created_utc']=datetime.datetime.now(datetime.timezone.utc).isoformat();report['source_commit']=cmd(['git','rev-parse','HEAD']).strip()
  report['index_native']=[index_component(abi,out) for abi in ('arm64-v8a','x86_64')]
  report['sqlite_pin']=json.loads((ROOT/'tools/runtime/sqlite-pin.json').read_text())

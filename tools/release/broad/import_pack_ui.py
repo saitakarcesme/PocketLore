@@ -17,7 +17,7 @@ def find(t,label):
     for n in t.iter('node'):
         if n.get('text','').casefold()==label.casefold() or n.get('content-desc','')==label:
             bounds=list(map(int,re.findall(r'\d+',n.get('bounds',''))))
-            if len(bounds)==4 and bounds[3]<height-100 and bounds[1]>40:return n
+            if len(bounds)==4 and bounds[3]<height-100 and bounds[1]>40 and n.get('enabled')=='true':return n
     return None
 
 def tap(n):
@@ -26,9 +26,10 @@ def tap(n):
     assert x2>x1 and y2>y1
     adb('shell','input','tap',str((x1+x2)//2),str((y1+y2)//2))
 def scroll_to(label):
-    for _ in range(12):
+    for _ in range(40):
         t=tree('scroll');n=find(t,label)
         if n is not None:return n
+        if any(x.get('text','').casefold()==label.casefold() and x.get('enabled')=='false' for x in t.iter('node')):time.sleep(.2);continue
         dims=list(map(int,re.findall(r'\d+',adb('shell','wm','size').splitlines()[-1])))
         w,h=dims[-2:];adb('shell','input','swipe',str(w//2),str(h*4//5),str(w//2),str(h//3),'250')
     raise AssertionError('UI control not found: '+label)

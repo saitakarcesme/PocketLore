@@ -5,6 +5,8 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2];E=ROOT/'docs/evidence/release-v5';M=E/'manifest.json'
 spec=importlib.util.spec_from_file_location('legacy_release',ROOT/'tools/release/verify.py');old=importlib.util.module_from_spec(spec);spec.loader.exec_module(old)
 sha=old.sha;run=old.run
+def check_file(path,expected):
+ if not path.is_file() or sha(path)!=expected:raise ValueError('Missing/changed release artifact: '+str(path))
 NAMES=['summary.json','fresh.json','combined.json','disabled.json','enabled.json','rollback.json','model-ui/result.json','reference-ui/result.json','science-ui/result.json','broad-ui/result.json']
 def read(path):return {n:json.loads((path/n).read_text()) for n in NAMES}
 def behavior(d):
@@ -42,7 +44,7 @@ def main():
  m=json.loads(M.read_text())
  for n,s in m['artifacts'].items():assert (ROOT/n).stat().st_size==s['bytes'] and sha(ROOT/n)==s['sha256'],n
  for n,h in m['source_files'].items():assert sha(ROOT/n)==h,n
- for n,h in m['evidence'].items():assert sha(E/n)==h,n
+ for n,h in m['evidence'].items():check_file(E/n,h)
  assert old.entries(apk)==m['apk_entries'] and sha(ROOT/'docs/distribution-inventory.json')==m['distribution_inventory_sha256']
  assert run([tc/'sdk/build-tools/35.0.0/apksigner','verify','--print-certs',apk])==m['signer']
  assert 'uses-permission:' not in run([tc/'sdk/build-tools/35.0.0/aapt','dump','permissions',apk])
@@ -63,7 +65,13 @@ def main():
   for n in ('enabled.json','rollback.json'):
    f=Path(temp)/n;shutil.copyfile(E/n,f);h=sha(f)
    with f.open('r+b') as stream:v=stream.read(1);stream.seek(0);stream.write(bytes([v[0]^1]))
-   assert sha(f)!=h;f.unlink();assert not f.exists()
+   try:check_file(f,h)
+   except ValueError:pass
+   else:raise AssertionError('Changed receipt accepted')
+   f.unlink()
+   try:check_file(f,h)
+   except ValueError:pass
+   else:raise AssertionError('Missing receipt accepted')
  pack=old.module('release_pack','tools/packs/build_pack.py')
  with tempfile.TemporaryDirectory() as folder:
   a,_=pack.build(output=Path(folder)/'a.plpack');b,_=pack.build(output=Path(folder)/'b.plpack');assert a.read_bytes()==b.read_bytes()==(ROOT/'downloads/packs/english-reference.plpack').read_bytes()

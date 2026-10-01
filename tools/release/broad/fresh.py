@@ -38,8 +38,9 @@ def instrument(mode):
 apk=R/'android/app/build/outputs/apk/debug/app-debug.apk'
 fresh=json.loads((out/'fresh.json').read_text()) if args.resume else instrument('fresh')
 assert fresh['empty_model_and_catalog']
-run(['python3',F/'import_model_ui.py','--adb',adb[0],'--serial','emulator-5560','--model',assets[0],'--out',out/'model-ui','--import-only'],'model-ui.log')
-for label,p in zip(['reference','science','broad'],assets[1:]):run(['python3',F/'import_pack_ui.py','--adb',adb[0],'--serial','emulator-5560','--pack',p,'--out',out/(label+'-ui')],label+'-ui.log')
+if not (out/'model-ui/result.json').exists():run(['python3',F/'import_model_ui.py','--adb',adb[0],'--serial','emulator-5560','--model',assets[0],'--out',out/'model-ui','--import-only'],'model-ui.log')
+for label,p in zip(['reference','science','broad'],assets[1:]):
+ if not (out/(label+'-ui/result.json')).exists():run(['python3',F/'import_pack_ui.py','--adb',adb[0],'--serial','emulator-5560','--pack',p,'--out',out/(label+'-ui')],label+'-ui.log')
 combined=instrument('combined');disabled=instrument('disabled');enabled=instrument('enabled')
 radio={k:shell(['settings','get','global',k],k+'.txt').decode().strip() for k in ['airplane_mode_on','wifi_on','mobile_data']};assert radio=={'airplane_mode_on':'1','wifi_on':'0','mobile_data':'0'}
 for pkg in ['com.google.android.gms','com.android.vending']:assert not shell(['pm','list','packages',pkg],pkg+'.txt').strip()
