@@ -162,12 +162,12 @@ public final class MainActivity extends Activity {
         ResearchEngine.Passage p = hit.passage;
         TextView detail = text(p.text + "\n\nSource document: " + p.title + "\n" + p.url
             + "\n\nSource date / retrieval: " + p.sourceDate + "\nRights: " + p.license
-            + "\n\n" + p.collectionProvenance
+            + "\n\nCitation: [" + p.id + "]\n" + p.collectionProvenance
             + (p.id.startsWith("water-") ? "\n\nPack text is a verbatim USGS paragraph with whitespace normalized." : "\n\nPack text is selected source text with whitespace normalized.") + " Source URLs are provenance labels; the app does not open them."
             + String.format(Locale.ROOT, "\n\nBM25 rank score: %.3f (not confidence)", hit.score), 16);
         detail.setTextIsSelectable(true); detail.setPadding(dp(20), dp(10), dp(20), dp(10));
         ScrollView scroll = new ScrollView(this); scroll.addView(detail);
-        new AlertDialog.Builder(this).setTitle("[" + p.id + "] " + p.title).setView(scroll).setPositiveButton("Close", null).show();
+        new AlertDialog.Builder(this).setTitle(p.title).setView(scroll).setPositiveButton("Close", null).show();
     }
     private TextView text(String value, int size) {
         TextView view = new TextView(this); view.setText(value); view.setTextSize(size);
@@ -201,7 +201,7 @@ public final class MainActivity extends Activity {
     void releaseForMemoryPressure(){cancelPack=true;++libraryEpoch;if(packThread!=null)packThread.interrupt();latestEvidence=null;engine=null;catalog=null;sourceList.removeAllViews();if(nativePanel!=null)nativePanel.lowMemory();status.setText("Memory released. Tap Reload library to search your saved active collections.");updateControls();}
     boolean resourceIdle(){return !nativePanel.isBusy();}
     void reloadSavedModel(){nativePanel.reloadSaved();}
-    @Override public void onTrimMemory(int level){super.onTrimMemory(level);if(level>=android.content.ComponentCallbacks2.TRIM_MEMORY_RUNNING_LOW)releaseForMemoryPressure();}
+    @Override public void onTrimMemory(int level){super.onTrimMemory(level);if(level==android.content.ComponentCallbacks2.TRIM_MEMORY_RUNNING_LOW || level==android.content.ComponentCallbacks2.TRIM_MEMORY_RUNNING_CRITICAL || level>=android.content.ComponentCallbacks2.TRIM_MEMORY_BACKGROUND)releaseForMemoryPressure();}
     @Override public void onLowMemory(){super.onLowMemory();releaseForMemoryPressure();}
     @Override protected void onDestroy() { destroyed = true;cancelPack=true;if(packThread!=null)packThread.interrupt(); if (nativePanel != null) nativePanel.destroy(); worker.shutdownNow(); super.onDestroy(); }
 }

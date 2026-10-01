@@ -17,11 +17,11 @@ public final class LibraryInstrumentation extends Instrumentation {
     private static Object field(Object o,String n){try{java.lang.reflect.Field f=o.getClass().getDeclaredField(n);f.setAccessible(true);return f.get(o);}catch(Exception e){throw new RuntimeException(e);}}
     private void save()throws Exception{Files.write(new File(root,mode+".json").toPath(),report.toString(2).getBytes(StandardCharsets.UTF_8));}
     private static void await(java.util.function.BooleanSupplier f,String why)throws Exception{long end=System.nanoTime()+60_000_000_000L;while(!f.getAsBoolean()&&System.nanoTime()<end)Thread.sleep(30);check(f.getAsBoolean(),why);}
-    private void ready()throws Exception{await(()->!(Boolean)field(activity,"importing")&&!(Boolean)field(activity,"searching")&&activity.resourceIdle(),"Activity did not become idle");}
-    private void button(String n)throws Exception{runOnMainSync(()->((Button)field(activity,n)).performClick());getUiAutomation().waitForIdle(50,3000);}
+    private void ready()throws Exception{await(()->{final boolean[] idle={false};runOnMainSync(()->idle[0]=!(Boolean)field(activity,"importing")&&!(Boolean)field(activity,"searching")&&activity.resourceIdle());return idle[0];},"Activity did not become idle");}
+    private void button(String n)throws Exception{runOnMainSync(()->{Button b=(Button)field(activity,n);check(b.isEnabled(),"Control disabled: "+n);check(b.performClick(),"Control not clicked: "+n);});getUiAutomation().waitForIdle(50,3000);}
     private static String visible(AccessibilityNodeInfo node){if(node==null)return "";StringBuilder s=new StringBuilder();if(node.getText()!=null)s.append(node.getText()).append('\n');for(int i=0;i<node.getChildCount();i++)s.append(visible(node.getChild(i)));return s.toString();}
-    private boolean clickText(AccessibilityNodeInfo node,String text){if(node==null)return false;if(node.getText()!=null&&node.getText().toString().equals(text)){AccessibilityNodeInfo at=node;while(at!=null){if(at.isClickable())return at.performAction(AccessibilityNodeInfo.ACTION_CLICK);at=at.getParent();}}for(int i=0;i<node.getChildCount();i++)if(clickText(node.getChild(i),text))return true;return false;}
-    private void dialogClick(String text)throws Exception{getUiAutomation().waitForIdle(100,3000);check(clickText(getUiAutomation().getRootInActiveWindow(),text),"Missing dialog control: "+text);Thread.sleep(100);}
+    private boolean clickText(AccessibilityNodeInfo node,String text){if(node==null)return false;if(node.getText()!=null&&node.getText().toString().equalsIgnoreCase(text)){AccessibilityNodeInfo at=node;while(at!=null){if(at.isClickable())return at.performAction(AccessibilityNodeInfo.ACTION_CLICK);at=at.getParent();}}for(int i=0;i<node.getChildCount();i++)if(clickText(node.getChild(i),text))return true;return false;}
+    private void dialogClick(String text)throws Exception{getUiAutomation().waitForIdle(100,3000);await(()->visible(getUiAutomation().getRootInActiveWindow()).toLowerCase(Locale.ROOT).contains(text.toLowerCase(Locale.ROOT)),"Dialog did not appear: "+text);check(clickText(getUiAutomation().getRootInActiveWindow(),text),"Missing dialog control: "+text);Thread.sleep(100);}
     private PackLibrary.Snapshot current(){return (PackLibrary.Snapshot)field(activity,"catalog");}
     private JSONObject memory(String name)throws Exception{android.os.Debug.MemoryInfo m=new android.os.Debug.MemoryInfo();android.os.Debug.getMemoryInfo(m);JSONObject o=new JSONObject().put("phase",name).put("pss_kib",m.getTotalPss()).put("java_used_bytes",Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory()).put("java_max_bytes",Runtime.getRuntime().maxMemory());for(String l:Files.readAllLines(Paths.get("/proc/self/status")))if(l.startsWith("VmRSS:")||l.startsWith("VmSwap:")){String[] v=l.trim().split("\\s+");o.put(v[0].replace(":",""),Long.parseLong(v[1]));}return o;}
     private PackLibrary.Snapshot install(PackLibrary lib,String name)throws Exception{try(InputStream in=new FileInputStream(new File(root,name+".plpack"))){return lib.install(in,()->false);}}
@@ -46,12 +46,16 @@ public final class LibraryInstrumentation extends Instrumentation {
         check(new File(isolated,"pack-library").listFiles((d,n)->n.endsWith(".partial")).length==0,"Import stages remain");tests.put("staging-cleanup");save();
     }
     private void importUI(String name)throws Exception{
-        // Open the actual picker control, return the selected public fixture URI to its Activity result handler.
-        button("importPack");sendKeyDownUpSync(android.view.KeyEvent.KEYCODE_BACK);Thread.sleep(200);
-        runOnMainSync(()->activity.onActivityResult(411,Activity.RESULT_OK,new Intent().setData(android.net.Uri.fromFile(new File(root,name+".plpack")))));ready();
+        // The actual button/framework result path is exercised with a deterministic
+        // pinned fixture result. Provider browsing itself is outside this catalog test.
+        IntentFilter filter=new IntentFilter(Intent.ACTION_OPEN_DOCUMENT);filter.addCategory(Intent.CATEGORY_OPENABLE);filter.addDataType("*/*");
+        ActivityMonitor monitor=addMonitor(filter,new ActivityResult(Activity.RESULT_OK,new Intent().setData(android.net.Uri.fromFile(new File(root,name+".plpack")))),true);
+        long epoch=(Long)field(activity,"libraryEpoch");
+        try{button("importPack");await(()->(Long)field(activity,"libraryEpoch")>epoch,"Import result not delivered");ready();check(monitor.getHits()==1,"Import control did not request document picker");}
+        finally{removeMonitor(monitor);}
     }
     private void selectScience(boolean on)throws Exception{
-        button("collections");PackLibrary.Entry entry=current().entries.stream().filter(e->e.id.startsWith("science-")).findFirst().get();
+        button("collections");await(()->visible(getUiAutomation().getRootInActiveWindow()).contains("Search these collections"),"Collection dialog not visible");report.put("collection_controls",visible(getUiAutomation().getRootInActiveWindow()));screenshot("collections-dialog");PackLibrary.Entry entry=current().entries.stream().filter(e->e.id.startsWith("science-")).findFirst().get();
         if(entry.active!=on)dialogClick(entry.id.replace('-',' ')+" · edition "+entry.hash.substring(0,8));dialogClick("Apply");ready();
     }
     private JSONArray researchUI(String query)throws Exception{
@@ -60,7 +64,7 @@ public final class LibraryInstrumentation extends Instrumentation {
     private void screenshot(String name)throws Exception{android.graphics.Bitmap b=getUiAutomation().takeScreenshot();check(b!=null,"Screenshot missing");try(FileOutputStream out=new FileOutputStream(new File(root,name+".png"))){b.compress(android.graphics.Bitmap.CompressFormat.PNG,100,out);}b.recycle();}
     private void inspectUI(String query,String marker,String name)throws Exception{
         JSONArray hits=researchUI(query);JSONObject hit=hits.getJSONObject(0);check(hit.getString("provenance").contains(marker),"Wrong edition at first hit");
-        runOnMainSync(()->((Button)((LinearLayout)field(activity,"sourceList")).getChildAt(0)).performClick());getUiAutomation().waitForIdle(100,3000);String text=visible(getUiAutomation().getRootInActiveWindow());
+        runOnMainSync(()->((Button)((LinearLayout)field(activity,"sourceList")).getChildAt(0)).performClick());getUiAutomation().waitForIdle(100,3000);await(()->visible(getUiAutomation().getRootInActiveWindow()).contains(hit.optString("text")),"Source dialog not visible");String text=visible(getUiAutomation().getRootInActiveWindow());
         check(text.contains(hit.getString("text"))&&text.contains(hit.getString("rights"))&&text.contains(hit.getString("url"))&&text.contains(hit.getString("date"))&&text.contains("Source SHA-256:")&&text.contains("Edition SHA-256:")&&text.contains(marker),"Displayed provenance missing");
         report.put(name,new JSONObject().put("hits",hits).put("visible_dialog",text).put("answer",activity.latestAnswer().text).put("route",activity.latestAnswer().kind.toString()));screenshot(name);dialogClick("Close");save();
     }
@@ -68,18 +72,19 @@ public final class LibraryInstrumentation extends Instrumentation {
     @Override public void onStart(){Bundle result=new Bundle();try{
         root=new File(getTargetContext().getFilesDir(),"multi-pack-tests");root.mkdirs();report.put("mode",mode).put("pid",android.os.Process.myPid());
         if(mode.equals("exercise"))assertions();
+        getUiAutomation();
         activity=(MainActivity)startActivitySync(new Intent(getTargetContext(),MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));ready();
         // Actual unload control keeps retrieval evaluation separate from generated-answer quality.
         runOnMainSync(()->((Button)field(field(activity,"nativePanel"),"unload")).performClick());ready();
         if(mode.equals("exercise")){
-            check(current().entries.size()==1,"Expected migrated pinned reference fixture only");importUI("science");check(current().entries.size()==2&&current().engine.size()==210&&current().distinctDocuments==18,"Actual import replaces collection");
+            check(current().entries.size()==1,"Expected migrated pinned reference fixture only");report.put("memory_before_import",memory("before-import"));long importStart=System.nanoTime();importUI("science");report.put("import_ui_wall_ms",(System.nanoTime()-importStart)/1e6);check(current().entries.size()==2&&current().engine.size()==210&&current().distinctDocuments==18,"Actual import replaces collection");
             report.put("combined",current().description()).put("archive_bytes",current().archiveBytes).put("index_counts",new JSONArray(current().engine.resourceCounts())).put("memory_combined",memory("combined"));
             JSONArray both=researchUI("magma headlamps");Set<String> editions=new HashSet<>();for(int i=0;i<both.length();i++){String id=both.getJSONObject(i).getString("id");editions.add(id.substring(0,id.indexOf('_')));}check(editions.size()==2,"Cross-pack query did not retrieve both");report.put("cross_pack",both);
             inspectUI("What is the difference between magma and lava?","science-supplement","science-dialog");inspectUI("What navigation backups should I bring?","english-reference","reference-dialog");
             selectScience(false);check(current().engine.size()==186,"Disabled UI selection not applied");report.put("disabled_status",current().description());selectScience(true);
-            String catalogHash=KnowledgePack.hash(Files.readAllBytes(new File(getTargetContext().getFilesDir(),"pack-library/catalog.json").toPath()));importUI("corrupt");check(KnowledgePack.hash(Files.readAllBytes(new File(getTargetContext().getFilesDir(),"pack-library/catalog.json").toPath())).equals(catalogHash),"UI corrupt import changed catalog");report.put("ui_corrupt_status",((TextView)field(activity,"packStatus")).getText().toString());
+            String catalogHash=KnowledgePack.hash(Files.readAllBytes(new File(getTargetContext().getFilesDir(),"pack-library/catalog.json").toPath()));importUI("corrupt");check(KnowledgePack.hash(Files.readAllBytes(new File(getTargetContext().getFilesDir(),"pack-library/catalog.json").toPath())).equals(catalogHash),"UI corrupt import changed catalog");report.put("ui_corrupt_status",((TextView)field(activity,"packStatus")).getText().toString());selectScience(false);report.put("selection_before_restart",current().description());
         }else{
-            check(current().entries.size()==2&&current().engine.size()==210,"Cold restart lost active editions");report.put("restart_status",current().description());
+            check(current().entries.size()==2&&current().engine.size()==186,"Cold restart lost disabled selection");report.put("restart_status",current().description());selectScience(true);check(current().engine.size()==210,"Re-enable science failed after restart");
             report.put("memory_before_trim",memory("before-platform-trim"));save();Files.write(new File(root,"ready-memory").toPath(),new byte[]{1});
             await(()->field(activity,"engine")==null,"Platform trim did not release index");ready();report.put("memory_released",memory("after-platform-trim"));button("reloadLibrary");ready();check(current().engine.size()==210&&current().entries.size()==2,"Active reload failed");
             report.put("memory_reloaded",memory("after-active-reload")).put("reload_status",current().description());inspectUI("What is the difference between magma and lava?","science-supplement","reload-dialog");

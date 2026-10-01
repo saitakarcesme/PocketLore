@@ -56,12 +56,15 @@ def main():
   raw=run(a+['exec-out','run-as','org.pocketlore.app','cat',base+'/'+mode+'.json'],mode+'.json');r=json.loads(raw)
   assert p.returncode==0 and r['status']=='PASS' and 'INSTRUMENTATION_CODE: -1' in (out/(mode+'-instrumentation.txt')).read_text(),str(out/(mode+'.json'))
   if mode=='restart':assert trimmed
- for name in ['science-dialog','reference-dialog','reload-dialog']:run(a+['exec-out','run-as','org.pocketlore.app','cat',base+'/'+name+'.png'],name+'.png')
+ for name in ['science-dialog','reference-dialog','reload-dialog','collections-dialog']:run(a+['exec-out','run-as','org.pocketlore.app','cat',base+'/'+name+'.png'],name+'.png')
  after=run(a+['shell','run-as','org.pocketlore.app','sha256sum','files/model.gguf','files/knowledge.plpack'],'saved-after.txt');assert saved==after
  catalog=json.loads(run(a+['exec-out','run-as','org.pocketlore.app','cat','files/pack-library/catalog.json'],'final-catalog.json'));assert len(catalog['collections'])==2 and all(e['active'] for e in catalog['collections'])
  exercise=json.loads((out/'exercise.json').read_text());restart=json.loads((out/'restart.json').read_text());assert exercise['pid']!=restart['pid']
  assert len(exercise['rejections'])==5 and len(exercise['tests'])==9
  assert exercise['index_counts'][0]==210
+ assert exercise['selection_before_restart']==restart['restart_status']
+ assert all('Search these collections' in d['collection_controls'] for d in [exercise,restart])
+ assert exercise['science-dialog']['hits'][0]['id']==restart['reload-dialog']['hits'][0]['id']
  for key in ['science-dialog','reference-dialog']:
   assert exercise[key]['route']!='GENERATED','This fixture unloads model; do not claim inference'
  # Independently compare every displayed/search source with its original immutable edition.

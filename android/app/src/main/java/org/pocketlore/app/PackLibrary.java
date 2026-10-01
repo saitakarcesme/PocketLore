@@ -61,7 +61,7 @@ public final class PackLibrary {
                 // Same source snapshot, text and all displayed rights/date metadata: one indexed copy,
                 // with every active edition's provenance retained. Different versions/rights stay distinct.
                 String key=KnowledgePack.hash((p.documentKeys.get(row[0])+"\n"+String.join("\t",Arrays.copyOfRange(row,1,6))).getBytes(StandardCharsets.UTF_8));
-                String source="Collection: "+p.id+"\nEdition SHA-256: "+p.sha256+"\n"+p.provenance.get(row[0])+"\n"+p.warning;
+                String source="Collection: "+p.id+"\nEdition SHA-256: "+p.sha256+"\n"+p.provenance.get(row[0])+"\nEdition notice (may describe an older app version): "+p.warning+"\nThis app retains imported collections; Choose collections controls which are searched.";
                 provenanceChars+=source.length();require(provenanceChars<=MAX_TEXT,"Active provenance metadata limit exceeded");
                 if(rows.containsKey(key)){provenance.get(key).append("\n\nAlso retained in:\n").append(source);continue;}
                 chars+=row[5].length();tokens+=ResearchEngine.tokenize(row[1]+" "+row[5]).size();
