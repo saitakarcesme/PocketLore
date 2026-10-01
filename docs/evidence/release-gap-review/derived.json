@@ -1,0 +1,33 @@
+{
+  "measurement_class": "Derived public development host/emulator evidence, not new phone or quality measurements",
+  "retrieval": {
+    "present": 20,
+    "supported_blocked": 17,
+    "absent": 10,
+    "absent_blocked": 10,
+    "explicit_distractor_hits": 2
+  },
+  "comparison_routes": {
+    "ABSTAINED": 2,
+    "FALLBACK": 1,
+    "GENERATED": 2
+  },
+  "synthesis_routes": {
+    "ABSTAINED": 1,
+    "FALLBACK": 2,
+    "GENERATED": 3
+  },
+  "fresh_demo_routes": {
+    "ABSTAINED": 2,
+    "FALLBACK": 1,
+    "GENERATED": 1
+  },
+  "comparison_inference_ms_range": [
+    23003.092999,
+    35878.021183
+  ],
+  "candidate_apk": {
+    "bytes": 11769461,
+    "sha256": "65edeb6553d8f2efc69dd6787e2ed9c6b8dab0f979324f21efa970b8fcafe89e"
+  }
+}

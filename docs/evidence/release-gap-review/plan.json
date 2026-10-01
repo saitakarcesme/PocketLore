@@ -1,0 +1,371 @@
+{
+  "schema": 1,
+  "release_complete": false,
+  "gates": [
+    {
+      "id": "research",
+      "gate": "Useful research",
+      "status": "mixed",
+      "evidence": [
+        "docs/evidence/retrieval.md",
+        "docs/evidence/synthesis.md",
+        "docs/evidence/comparison.md"
+      ],
+      "next_action": "Reduce observed false blocking and evaluate supported generated answers; then obtain unseen independent quality review.",
+      "external_dependency": "Independent reviewer and separately operated frozen release evaluator; neither is needed for public development repair.",
+      "task_ids": [
+        "120-answerability-support"
+      ]
+    },
+    {
+      "id": "coverage",
+      "gate": "Useful research",
+      "status": "rig_work",
+      "evidence": [
+        "docs/evidence/knowledge-pack.md",
+        "docs/evidence/travel.md"
+      ],
+      "next_action": "Add bounded licensed science supplement and richer regional POIs with new frozen public tests.",
+      "external_dependency": "None for pinned public-source acquisition; source disappearance must be documented per source, not treated as a blanket blocker.",
+      "task_ids": [
+        "150-licensed-science-expansion",
+        "160-regional-poi-coverage"
+      ]
+    },
+    {
+      "id": "imports",
+      "gate": "Offline use",
+      "status": "rig_work",
+      "evidence": [
+        "docs/evidence/resources.md",
+        "docs/evidence/offline-install.md"
+      ],
+      "next_action": "Test blocked-provider cancellation and recover without losing installed assets.",
+      "external_dependency": "None; use a deterministic local test provider, not a remote provider.",
+      "task_ids": [
+        "130-stalled-provider-cancellation"
+      ]
+    },
+    {
+      "id": "native-recovery",
+      "gate": "Resource limits",
+      "status": "rig_work",
+      "evidence": [
+        "docs/evidence/resources.md",
+        "docs/evidence/native-runtime.md"
+      ],
+      "next_action": "Measure long-prefill cancellation and restart recovery; address admission/recovery failures.",
+      "external_dependency": "None for bounded emulator fixtures; diverse physical allocation/OS behavior remains a later hardware gate.",
+      "task_ids": [
+        "140-native-prefill-recovery"
+      ]
+    },
+    {
+      "id": "scale-speed",
+      "gate": "Usable speed",
+      "status": "mixed",
+      "evidence": [
+        "docs/evidence/resources.md",
+        "docs/evidence/retrieval.md"
+      ],
+      "next_action": "Measure larger-pack memory and repeated cold/warm answer latency, separating definitions and failures.",
+      "external_dependency": "Physical sustained and thermal tests need a compatible device; host/emulator scaling work does not.",
+      "task_ids": [
+        "170-pack-scale-latency"
+      ]
+    },
+    {
+      "id": "distribution",
+      "gate": "Public delivery",
+      "status": "mixed",
+      "evidence": [
+        "docs/evidence/release-preparation.md",
+        "docs/RELEASE.md"
+      ],
+      "next_action": "Complete component/license inventory and missing-notice regression before distribution decisions.",
+      "external_dependency": "Production signing/key custody requires owner approval; independent clean-machine reproduction requires a separate provisioned environment/operator.",
+      "task_ids": [
+        "180-distribution-inventory"
+      ]
+    },
+    {
+      "id": "android",
+      "gate": "Android installation",
+      "status": "external",
+      "evidence": [
+        "docs/evidence/release-preparation.md",
+        "docs/evidence/native-runtime.md"
+      ],
+      "next_action": "Install the frozen candidate on compatible ARM64 Android hardware and record real lifecycle/resource evidence.",
+      "external_dependency": "No physical Android device attached; host coordinator must provide authorized hardware access.",
+      "task_ids": []
+    },
+    {
+      "id": "grapheneos",
+      "gate": "GrapheneOS",
+      "status": "external",
+      "evidence": [
+        "docs/GOALS.md",
+        "docs/evidence/offline-install.md"
+      ],
+      "next_action": "Repeat installation and offline lifecycle on compatible GrapheneOS hardware.",
+      "external_dependency": "Compatible physical GrapheneOS device and authorized access.",
+      "task_ids": []
+    },
+    {
+      "id": "physical-resources",
+      "gate": "Resource limits",
+      "status": "external",
+      "evidence": [
+        "docs/evidence/resources.md"
+      ],
+      "next_action": "Measure real <=12 GB phone peak memory, total installed assets <=50 GB, sustained load and recovery.",
+      "external_dependency": "Compatible physical device; emulator/host values cannot substitute.",
+      "task_ids": []
+    },
+    {
+      "id": "radio",
+      "gate": "Offline use",
+      "status": "external",
+      "evidence": [
+        "docs/evidence/offline-install.md",
+        "docs/evidence/release-preparation.md"
+      ],
+      "next_action": "Confirm offline behavior and physical/network audit on the eventual release hardware.",
+      "external_dependency": "Authorized physical device/radio audit setup; emulator permission denial is already measured.",
+      "task_ids": []
+    },
+    {
+      "id": "rivals",
+      "gate": "Honest comparison",
+      "status": "external",
+      "evidence": [
+        "docs/evidence/comparison.md"
+      ],
+      "next_action": "Obtain independent blind ratings and run a named frontier/web comparison with matched protocol.",
+      "external_dependency": "Independent reviewers and an authorized named rival endpoint/configuration; do not seek or fabricate credentials.",
+      "task_ids": []
+    },
+    {
+      "id": "submission",
+      "gate": "Public delivery",
+      "status": "external",
+      "evidence": [
+        "docs/GOALS.md",
+        "docs/evidence/release-preparation.md"
+      ],
+      "next_action": "Prepare truthful physical demo and public artifacts only after review and owner publication decision.",
+      "external_dependency": "Human review, physical device recording and owner publication/submission authorization.",
+      "task_ids": []
+    }
+  ],
+  "tasks": {
+    "120-answerability-support": {
+      "id": "120-answerability-support",
+      "dependencies": [
+        "110-release-gap-review"
+      ],
+      "objective": "Reduce unnecessary answer blocking on the existing frozen 30-case public retrieval development set while retaining absent-evidence and temporal-scope safety. Record before/after coverage; require all 10 absent cases to remain blocked and strictly fewer than 17 of 20 supported cases blocked. Exercise actual JNI on the recovered supported cases, preserve wrong outputs, and distinguish generated support from fallback without canned answers.",
+      "scope": [
+        "android",
+        "tools/evaluation",
+        "docs"
+      ],
+      "acceptance_checks": [
+        [
+          "bash",
+          "tools/android-build.sh"
+        ],
+        [
+          "bash",
+          "tools/evaluation/check_answerability.sh"
+        ]
+      ],
+      "artifacts": [
+        "docs/evidence/answerability-support.md"
+      ],
+      "prompt": "Run on LLMRig; preserve failures and raw measurements. Freeze new public development fixtures before changes; never read private holdout. Reuse emulator-5560, never launch/restart services. Label host/emulator results, keep physical gates open, preserve licenses, keep downloaded assets ignored, use one inference job at a time. No orchestration/state changes, branch switching, pushing or main advancement. Implement the named new check as a behavioral regression, not a presence check; update findings and release gaps. Do not rerun prior accepted work without a discriminating new case."
+    },
+    "130-stalled-provider-cancellation": {
+      "id": "130-stalled-provider-cancellation",
+      "dependencies": [
+        "110-release-gap-review"
+      ],
+      "objective": "Add deterministic stalled and short-read Android document-provider fixtures for model and pack imports; make cancellation unblock or close the read, clean staging and preserve saved assets. Test cancelling before and during a blocked read and retrying in the same process; record cancellation latency and document platform limits without changing unrelated providers.",
+      "scope": [
+        "android",
+        "tools/evaluation",
+        "docs"
+      ],
+      "acceptance_checks": [
+        [
+          "bash",
+          "tools/android-build.sh"
+        ],
+        [
+          "bash",
+          "tools/evaluation/check_stalled_provider.sh"
+        ]
+      ],
+      "artifacts": [
+        "docs/evidence/stalled-provider-cancellation.md"
+      ],
+      "prompt": "Run on LLMRig; preserve failures and raw measurements. Freeze new public development fixtures before changes; never read private holdout. Reuse emulator-5560, never launch/restart services. Label host/emulator results, keep physical gates open, preserve licenses, keep downloaded assets ignored, use one inference job at a time. No orchestration/state changes, branch switching, pushing or main advancement. Implement the named new check as a behavioral regression, not a presence check; update findings and release gaps. Do not rerun prior accepted work without a discriminating new case."
+    },
+    "140-native-prefill-recovery": {
+      "id": "140-native-prefill-recovery",
+      "dependencies": [
+        "110-release-gap-review"
+      ],
+      "objective": "Exercise cancellation during long native prompt prefill, close during loading and process-death/restart recovery with a pinned real GGUF in isolated emulator fixtures. Implement missing recovery or pre-allocation admission checks found by these cases; preserve saved assets and record cancellation latency and failed allocations. Do not exhaust host memory or claim injected callbacks prove OS OOM safety.",
+      "scope": [
+        "android",
+        "tools/runtime",
+        "tools/evaluation",
+        "docs"
+      ],
+      "acceptance_checks": [
+        [
+          "bash",
+          "tools/android-build.sh"
+        ],
+        [
+          "bash",
+          "tools/evaluation/check_prefill_recovery.sh"
+        ]
+      ],
+      "artifacts": [
+        "docs/evidence/native-prefill-recovery.md"
+      ],
+      "prompt": "Run on LLMRig; preserve failures and raw measurements. Freeze new public development fixtures before changes; never read private holdout. Reuse emulator-5560, never launch/restart services. Label host/emulator results, keep physical gates open, preserve licenses, keep downloaded assets ignored, use one inference job at a time. No orchestration/state changes, branch switching, pushing or main advancement. Implement the named new check as a behavioral regression, not a presence check; update findings and release gaps. Do not rerun prior accepted work without a discriminating new case."
+    },
+    "150-licensed-science-expansion": {
+      "id": "150-licensed-science-expansion",
+      "dependencies": [
+        "110-release-gap-review"
+      ],
+      "objective": "Add a separately versioned licensed English science reference supplement with at least 8 real non-water-science source documents spanning at least 3 topics. Pin selected factual source blocks, dates, rights and stable IDs; exclude synthetic factual content and third-party media. Freeze 12 public literal/paraphrase/absent queries before retrieval evaluation; demonstrate import, cited inspection and corruption rejection for the new edition.",
+      "scope": [
+        "android",
+        "tools/packs",
+        "tools/evaluation",
+        "docs",
+        "THIRD_PARTY_NOTICES"
+      ],
+      "acceptance_checks": [
+        [
+          "bash",
+          "tools/android-build.sh"
+        ],
+        [
+          "bash",
+          "tools/evaluation/check_science_supplement.sh"
+        ]
+      ],
+      "artifacts": [
+        "docs/evidence/science-supplement.md"
+      ],
+      "prompt": "Run on LLMRig; preserve failures and raw measurements. Freeze new public development fixtures before changes; never read private holdout. Reuse emulator-5560, never launch/restart services. Label host/emulator results, keep physical gates open, preserve licenses, keep downloaded assets ignored, use one inference job at a time. No orchestration/state changes, branch switching, pushing or main advancement. Implement the named new check as a behavioral regression, not a presence check; update findings and release gaps. Do not rerun prior accepted work without a discriminating new case."
+    },
+    "160-regional-poi-coverage": {
+      "id": "160-regional-poi-coverage",
+      "dependencies": [
+        "110-release-gap-review"
+      ],
+      "objective": "Expand the bounded DC offline catalog from three monuments to at least 25 real licensed POIs across at least four categories, using pinned source revisions and coordinates. Add preference/category filters and evidence-linked candidate selection; freeze public tests for absent categories and conflicting preferences. Preserve stale-hours and unavailable-routing disclosures; test exact provenance, deterministic build and actual Android inspection without inventing live availability.",
+      "scope": [
+        "android",
+        "tools/packs",
+        "tools/evaluation",
+        "docs",
+        "THIRD_PARTY_NOTICES"
+      ],
+      "acceptance_checks": [
+        [
+          "bash",
+          "tools/android-build.sh"
+        ],
+        [
+          "bash",
+          "tools/evaluation/check_regional_poi.sh"
+        ]
+      ],
+      "artifacts": [
+        "docs/evidence/regional-poi-coverage.md"
+      ],
+      "prompt": "Run on LLMRig; preserve failures and raw measurements. Freeze new public development fixtures before changes; never read private holdout. Reuse emulator-5560, never launch/restart services. Label host/emulator results, keep physical gates open, preserve licenses, keep downloaded assets ignored, use one inference job at a time. No orchestration/state changes, branch switching, pushing or main advancement. Implement the named new check as a behavioral regression, not a presence check; update findings and release gaps. Do not rerun prior accepted work without a discriminating new case."
+    },
+    "170-pack-scale-latency": {
+      "id": "170-pack-scale-latency",
+      "dependencies": [
+        "110-release-gap-review"
+      ],
+      "objective": "Measure index memory and import transition costs at explicit increasing pack sizes up to the currently supported admission boundary, plus at least 10 warm and 5 process-cold real answer requests with the pinned demo model. Separate load, retrieval, first token and total time; publish raw p50/p95 definitions, PSS/RSS/swap snapshots and failures. Use licensed real passages; any duplication-only stress fixture must be labeled non-corpus and never claim broader factual coverage. Add bounded admission/recovery fixes if limits are violated; do not claim emulator thermal or phone acceptance.",
+      "scope": [
+        "android",
+        "tools/evaluation",
+        "docs"
+      ],
+      "acceptance_checks": [
+        [
+          "bash",
+          "tools/android-build.sh"
+        ],
+        [
+          "bash",
+          "tools/evaluation/check_scale_latency.sh"
+        ]
+      ],
+      "artifacts": [
+        "docs/evidence/pack-scale-latency.md"
+      ],
+      "prompt": "Run on LLMRig; preserve failures and raw measurements. Freeze new public development fixtures before changes; never read private holdout. Reuse emulator-5560, never launch/restart services. Label host/emulator results, keep physical gates open, preserve licenses, keep downloaded assets ignored, use one inference job at a time. No orchestration/state changes, branch switching, pushing or main advancement. Implement the named new check as a behavioral regression, not a presence check; update findings and release gaps. Do not rerun prior accepted work without a discriminating new case."
+    },
+    "180-distribution-inventory": {
+      "id": "180-distribution-inventory",
+      "dependencies": [
+        "110-release-gap-review"
+      ],
+      "objective": "Produce a machine-readable dependency/license inventory covering packaged native static components, model/data licenses and resolved build-tool dependencies, pinned versions and artifact hashes. Verify installed toolchain notices and identify missing redistribution terms; validate with a missing-notice or changed-artifact regression. Document remaining independent clean-machine reproduction and production-key owner decisions without generating a production key or publishing artifacts.",
+      "scope": [
+        "tools",
+        "docs",
+        "THIRD_PARTY_NOTICES"
+      ],
+      "acceptance_checks": [
+        [
+          "bash",
+          "tools/android-build.sh"
+        ],
+        [
+          "bash",
+          "tools/evaluation/check_distribution_inventory.sh"
+        ]
+      ],
+      "artifacts": [
+        "docs/evidence/distribution-inventory.md"
+      ],
+      "prompt": "Run on LLMRig; preserve failures and raw measurements. Freeze new public development fixtures before changes; never read private holdout. Reuse emulator-5560, never launch/restart services. Label host/emulator results, keep physical gates open, preserve licenses, keep downloaded assets ignored, use one inference job at a time. No orchestration/state changes, branch switching, pushing or main advancement. Implement the named new check as a behavioral regression, not a presence check; update findings and release gaps. Do not rerun prior accepted work without a discriminating new case."
+    }
+  },
+  "evidence_sha256": {
+    "docs/GOALS.md": "0eb41b764e998d85e28d0c09e5c1494e27134c568f6bcc370e10d2e20dbfd178",
+    "docs/RELEASE.md": "975c8d315dc62c86eb14f0608cb21fac60ff5080b6dc8572ca439e403274a92c",
+    "docs/evidence/comparison.md": "ccaecff57b3878d5fbaa682e48a908fa1e5bbe56508c0a56d47688550e17225d",
+    "docs/evidence/comparison/run-v1/results.json": "244a7de58ec4eba43d56c05dc4061fab6895154c151eb6c69a6c1bc821036425",
+    "docs/evidence/knowledge-pack.md": "3fec29160f37af6d24ace0e435937b1a01873458cf507bd3da6140a1b7040297",
+    "docs/evidence/native-runtime.md": "a7cd93d01f08f667e1c83afb95cc1a64e273a483ef497d4ae8e02ee157c38ff4",
+    "docs/evidence/offline-install.md": "6bcc830677efd0027f7123aec27982ea4b1f2de3ad854ee42f7bc185b89c501f",
+    "docs/evidence/release-preparation.md": "b584542a3e062db180f794aa50cf3dd036900b24a1c28e14e102bbe1d9dc779c",
+    "docs/evidence/release-v3/cycle-1-loaded-result.json": "3f699443705ef8bc696212779d1563f399405d5fd5dadae7b8d841deca72757b",
+    "docs/evidence/release-v3/manifest.json": "8332b9879fe90668ab50114052007fbe3530df07210944d379eab9daf8150fd7",
+    "docs/evidence/resources.md": "37050119f9366e3898d93e73c7950a207ddaad90ddbadcf5ae6dba372c3dfe87",
+    "docs/evidence/retrieval.md": "5feb5a84d544bf45b1d7eae23fec92b6ed42a387206ed7244245df143fa717d3",
+    "docs/evidence/retrieval/final/candidate-0.json": "fce4034067a4570c738b6ad931dc06ec37c9da40b32ce5675e7029c890314d13",
+    "docs/evidence/synthesis.md": "692bf3f2a47f86f9a2938dbf9906c09f3342a55a0e7566f151cd99700671c38d",
+    "docs/evidence/synthesis/repair-1/results.json": "7b9fb76aef16f0e73b0859a08b1f2b84ca90800f809a6f26d0b49b9495e94fd7",
+    "docs/evidence/travel.md": "f2ab2fd7a7744bb6ea816d83b0ad3058998a78d471af086f7866890e5f2ea049",
+    "evaluation/retrieval/development.json": "045270377a2cc1792cef27842147a770404eb3da32123aa9a702378a6313130c",
+    "docs/evidence/release-gap-review/emulator-snapshot.json": "7ca6e83542c12ebf4a9923271d43d5fcbd589bba26c0dbb0f0faa48389a249c6"
+  }
+}

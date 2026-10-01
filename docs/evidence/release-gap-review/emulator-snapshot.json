@@ -1,0 +1,62 @@
+{
+  "measured_utc": "2026-10-01T02:57:35.573822+00:00",
+  "scope": "Single instantaneous existing emulator snapshot; no physical device, no peak memory, no sustained workload, no model invocation",
+  "collection_wall_seconds": 0.1375882479987922,
+  "commands": {
+    "boot": {
+      "argv": [
+        "getprop",
+        "sys.boot_completed"
+      ],
+      "exit_code": 0,
+      "output": "1\n"
+    },
+    "fingerprint": {
+      "argv": [
+        "getprop",
+        "ro.build.fingerprint"
+      ],
+      "exit_code": 0,
+      "output": "Android/sdk_phone64_x86_64/emu64x:15/AE3A.240806.019/12368160:userdebug/test-keys\n"
+    },
+    "memory": {
+      "argv": [
+        "dumpsys",
+        "meminfo",
+        "org.pocketlore.app"
+      ],
+      "exit_code": 0,
+      "output": "Applications Memory Usage (in Kilobytes):\nUptime: 17135199 Realtime: 17135199\n\n** MEMINFO in pid 2587 [org.pocketlore.app] **\n                   Pss  Private  Private  SwapPss      Rss     Heap     Heap     Heap\n                 Total    Dirty    Clean    Dirty    Total     Size    Alloc     Free\n                ------   ------   ------   ------   ------   ------   ------   ------\n  Native Heap    61582    61460       48      127    62284    78308    57979    16461\n  Dalvik Heap     2728     2660       20      310     3136     6529     3265     3264\n Dalvik Other     6635     1144        4       10    12432                           \n        Stack      820      820        0        0      824                           \n       Ashmem       29        0        0        0      364                           \n    Other dev       39        8       16        0      328                           \n     .so mmap     5346      152      732       48    33280                           \n    .jar mmap     5772        0      724        0    42340                           \n    .apk mmap     4856      128     4324        0     6152                           \n    .ttf mmap      178        0        0        0      628                           \n    .dex mmap       46        0        0        0      832                           \n    .oat mmap      489        0      320        0     2020                           \n    .art mmap    10949     7988     1464      331    22068                           \n   Other mmap   477132        4   474104        1   480928                           \n      Unknown     1191     1124       32        2     1580                           \n        TOTAL   578621    75488   481788      829   669196    84837    61244    19725\n \n App Summary\n                       Pss(KB)                        Rss(KB)\n                        ------                         ------\n           Java Heap:    12112                          25204\n         Native Heap:    61460                          62284\n                Code:     6580                          96404\n               Stack:      820                            824\n            Graphics:        0                              0\n       Private Other:   476304\n              System:    21345\n             Unknown:                                  484480\n \n           TOTAL PSS:   578621            TOTAL RSS:   669196       TOTAL SWAP PSS:      829\n \n Objects\n               Views:       55         ViewRootImpl:        2\n         AppContexts:        5           Activities:        1\n              Assets:        9        AssetManagers:        0\n       Local Binders:       26        Proxy Binders:       59\n       Parcel memory:        6         Parcel count:       24\n    Death Recipients:        0             WebViews:        0\n \n SQL\n         MEMORY_USED:        0\n  PAGECACHE_OVERFLOW:        0          MALLOC_SIZE:        0\n \n"
+    },
+    "owned_disk": {
+      "argv": [
+        "run-as",
+        "org.pocketlore.app",
+        "du",
+        "-sk",
+        "files",
+        "cache",
+        "code_cache"
+      ],
+      "exit_code": 0,
+      "output": "480068\tfiles\n8\tcache\n8\tcode_cache\n"
+    },
+    "apk_path": {
+      "argv": [
+        "pm",
+        "path",
+        "org.pocketlore.app"
+      ],
+      "exit_code": 0,
+      "output": "package:/data/app/~~7WM6pdkBrkFijly0Qkfepg==/org.pocketlore.app-eAAXcv9tvNc0XKYebMsl-w==/base.apk\n"
+    },
+    "installed_apk_hash": {
+      "argv": [
+        "sha256sum",
+        "/data/app/~~7WM6pdkBrkFijly0Qkfepg==/org.pocketlore.app-eAAXcv9tvNc0XKYebMsl-w==/base.apk"
+      ],
+      "exit_code": 0,
+      "output": "65edeb6553d8f2efc69dd6787e2ed9c6b8dab0f979324f21efa970b8fcafe89e  /data/app/~~7WM6pdkBrkFijly0Qkfepg==/org.pocketlore.app-eAAXcv9tvNc0XKYebMsl-w==/base.apk\n"
+    }
+  }
+}
