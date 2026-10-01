@@ -412,6 +412,40 @@
           "assessment": "P1.1 supports northeastern Spanish coast; P1.2 supports capital/largest city of autonomous Catalonia."
         }
       ]
+    },
+    "s32": {
+      "result_sha256": "8b0e5129edb1debedacd00e9d8eaf270fc58031d3e3e67aa0accb531af84959e",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Complete supported historical explanation, falsely rejected by same-model audit for lacking the exact phrase from the question. The cited democracy/education/philosophy and often-regarded cradle/birthplace facts directly answer the question.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P5.3 supports every factual clause and preserves the often-regarded qualifier; P5.2 establishes classical historical setting. Audit demands an unnecessary literal question-word match."
+        }
+      ]
+    },
+    "s33": {
+      "result_sha256": "dd554b24d5d6dbb0ab090765aa2af385ca929ad26c604296dc952530373f9a16",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Both capital-status obligations and all extra largest/second-most/southernmost qualifiers are explicitly supported by the correct city spans.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.2 supports autonomous Catalonia capital/largest and second-most-populous Spanish municipality after Madrid."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P4.1-P4.2 support Greek capital/largest and southernmost European-mainland capital."
+        }
+      ]
     }
   }
 }

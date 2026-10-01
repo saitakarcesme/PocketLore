@@ -24,6 +24,7 @@ public final class BehaviorHarness {
   // A quotation/reference is never sufficient to render without a separately complete audit.
   reject(()->BoundAnswer.render(draft,"",0,cancel));reject(()->BoundAnswer.render(draft,"C1|UNSUPPORTED\nO1|COMPLETE\nVERDICT|FAIL",15,cancel));
   reject(()->BoundAnswer.parse("Explain",raw.replace("P1.1","P9.1"),catalog,30,cancel));
+  reject(()->BoundAnswer.parse("Explain","O1|P1.1|Magnitude|none|The formula uses |x| for absolute value.",catalog,30,cancel)); // Delimiter limitation fails closed.
   reject(()->BoundAnswer.parse("Explain",raw.replace("O1|","O2|"),catalog,30,cancel));
   reject(()->BoundAnswer.parse("Explain",raw,catalog,320,cancel));
   reject(()->BoundAnswer.parse("Explain",raw.replace("P1.1,P2.1","P1.1,P1.1"),catalog,30,cancel));
