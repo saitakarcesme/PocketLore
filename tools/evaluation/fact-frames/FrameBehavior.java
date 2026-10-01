@@ -4,7 +4,7 @@ public final class FrameBehavior {
  static int checks;static void check(boolean b){if(!b)throw new AssertionError("Frame behavior "+checks);checks++;}
  static void reject(Runnable f){try{f.run();}catch(IllegalArgumentException|IllegalStateException e){checks++;return;}throw new AssertionError("Unexpected approval");}
  static BoundAnswer.Catalog catalog(String title,String text){String a=String.join("",Collections.nCopies(64,"a"));return new BoundAnswer.Catalog(Arrays.asList(new BoundAnswer.Source(a,"test-1",a,BoundAnswer.sha(text),title,"2026-10-01","Constructed control fixture; not corpus facts",text)),new BoundAnswer.Cancel());}
- static BoundAnswer.Draft draft(BoundAnswer.Catalog c,String text){return BoundAnswer.parse("Describe the documented relation.","O1|P1.1|Context|none|"+text,c,30,new BoundAnswer.Cancel());}
+ static BoundAnswer.Draft draft(BoundAnswer.Catalog c,String text){return BoundAnswer.parse("Describe the documented relation.","O1|P1.1|"+c.sources.get(0).title+"|none|"+text,c,30,new BoundAnswer.Cancel());}
  static FactFrames.Proof bind(BoundAnswer.Catalog c,String text){return FactFrames.bind(draft(c,text),c,new BoundAnswer.Cancel());}
  public static void main(String[] args){
   // Name substitution establishes the same relation independent of article/case identity.
@@ -12,6 +12,7 @@ public final class FrameBehavior {
    BoundAnswer.Catalog c=catalog(city,city+" is the capital and largest city of Newland.");String text=city+" is the capital and largest city of Newland.";FactFrames.Proof p=bind(c,text);check(p.trace.size()==2);check(p.draft.claims.get(0).text.equals(text));check(p.draft.claims.get(0).references.get(0).text().equals(text));
    reject(()->bind(c,"Newland is the capital and largest city of "+city+"."));reject(()->bind(c,text+" All visitors receive free transport."));reject(()->bind(c,city+" is not the capital and largest city of Newland."));
   }
+  BoundAnswer.Catalog named=catalog("Arbordale","Arbordale is the capital and largest city of Newland.");reject(()->FactFrames.bind(BoundAnswer.parse("Describe the city.","O1|P1.1|Stonebay|none|Arbordale is the capital and largest city of Newland.",named,30,new BoundAnswer.Cancel()),named,new BoundAnswer.Cancel()));
   BoundAnswer.Catalog unresolved=catalog("Arbordale","It is the capital and largest city of Newland.");reject(()->bind(unresolved,"It is the capital and largest city of Newland."));
   BoundAnswer.Catalog collision=catalog("Spring","Spring is a horticultural technique whereby tissues of plants are joined so as to continue their growth together. The success of this joining requires that the vascular tissues grow together.");reject(()->bind(collision,"The success of a spr requires that the vascular tissues grow together."));
   BoundAnswer.Catalog temp=catalog("Control","In food processing, flash processing is a process of food preservation in which packaged foods (e.g., milk and fruit juices) are treated with mild heat, usually to less than 100 °C (212 °F), to eliminate pathogens and extend shelf life.");

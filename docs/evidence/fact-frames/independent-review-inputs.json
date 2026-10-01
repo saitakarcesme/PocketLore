@@ -1,0 +1,9 @@
+{
+  "instructions": "Review complete final prose including headings against attached exact spans and frozen obligations. Do not infer support from proof frames. Assess withheld drafts separately; constructed probes are not generated outputs.",
+  "outputs": "replay/results/linked.json",
+  "raw_and_sources": "replay/inputs",
+  "origins": "replay/origins.json",
+  "new_expectations": "tools/evaluation/fact-frames/fixtures.json",
+  "old_expectations": "tools/evaluation/scale-model-quality/protocol.json",
+  "limitations": "Public development, not private holdout; model host only."
+}

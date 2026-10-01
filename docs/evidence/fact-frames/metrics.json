@@ -1,0 +1,45 @@
+{
+  "counts": {
+    "old_useful_eligible": 5,
+    "unsupported_eligible": 0,
+    "old_absent_withheld": 8,
+    "prior_absent_withheld": 1,
+    "new_absent_withheld": 2,
+    "new_useful_eligible": 1,
+    "eligible": 10,
+    "withheld": 133
+  },
+  "review_role": "builder, not independent",
+  "definitions": "Nearest rank p50/p95 = sorted[ceil(n*p)-1], n20. Native first token includes prompt processing and decoding; total spans generate call. Load measured separately. Serial host CPU6threads; no Android comparison.",
+  "load_ms": 1176.416677,
+  "generation_wall_seconds": 904.2266541429999,
+  "new_tokens_sum": 1484,
+  "max_prompt_tokens": 2517,
+  "max_native_peaks": [
+    1,
+    1,
+    4242363904,
+    603979776,
+    80413184
+  ],
+  "host_memory_max_kib": {
+    "VmRSS": 4893708,
+    "VmHWM": 4893708,
+    "VmSwap": 0
+  },
+  "parser": {
+    "maximum_rss_kib": 238724,
+    "user_cpu_seconds": 2.005129,
+    "system_cpu_seconds": 0.071433,
+    "measurement": "os.wait4 usage for Java replay child only; no PSS or swap snapshot, not Android"
+  },
+  "parser_wall_seconds": 0.6635137740013306,
+  "first_token_ms": {
+    "0.5": 32673.820184,
+    "0.95": 53870.810301
+  },
+  "total_ms": {
+    "0.5": 40061.60395,
+    "0.95": 65365.064356
+  }
+}

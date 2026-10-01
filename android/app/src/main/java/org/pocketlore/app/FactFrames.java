@@ -77,7 +77,7 @@ final class FactFrames {
  static boolean rounded(double actual,String display){try{double shown=Double.parseDouble(display);int dot=display.indexOf('.');int digits=dot<0?0:display.length()-dot-1;return Double.isFinite(shown)&&Math.abs(actual-shown)<=0.5*Math.pow(10,-digits)+1e-12;}catch(NumberFormatException e){return false;}}
  static int degree(String word){switch(norm(word)){case "square":return 2;case "cube":case "third":return 3;case "fourth":return 4;case "fifth":case "5th":return 5;case "sixth":return 6;default:return -1;}}
  static List<Fact> claim(BoundAnswer.Claim claim){
-  String t=claim.text;List<Fact> facts=geography(t);if(facts!=null)return facts;facts=new ArrayList<>();Matcher m;
+  String t=claim.text;List<Fact> facts=geography(t);if(facts!=null){if(!norm(claim.subject).equals(facts.get(0).arguments.get(0)))throw new IllegalArgumentException("Geography subject metadata conflicts with complete claim");return facts;}facts=new ArrayList<>();Matcher m;
   if((m=match("(.+?) and (.+?) are two industrial (.+?) end products\\.",t))!=null){facts.add(f("industrial-product",m.group(3),m.group(1)));facts.add(f("industrial-product",m.group(3),m.group(2)));return facts;}
   if((m=match("The usual temperature qualification for (.+?) is less than ([0-9.]+) °C \\(([0-9.]+) °F\\)\\.",t))!=null){facts.add(f("temperature","usual",m.group(1),"less-than",m.group(2),m.group(3)));return facts;}
   if((m=match("The success of (?:a |an )?(.+?) requires that the (.+?) grow together\\.",t))!=null){facts.add(f("requires-growth",process(m.group(1)),m.group(2),"together"));return facts;}

@@ -1,0 +1,18 @@
+Frame behavioral checks: 39
+Independent binding behavioral checks: 29
+{
+  "artifact_behavior": "PASS",
+  "builder_counts": {
+    "old_useful_eligible": 5,
+    "unsupported_eligible": 0,
+    "old_absent_withheld": 8,
+    "prior_absent_withheld": 1,
+    "new_absent_withheld": 2,
+    "new_useful_eligible": 1,
+    "eligible": 10,
+    "withheld": 133
+  },
+  "independent_review": "pending",
+  "scope": "Finite public-development grammar, not general entailment or production acceptance"
+}
+QUALITY PASS on frozen public development only
