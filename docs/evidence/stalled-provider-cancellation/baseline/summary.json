@@ -1,0 +1,19 @@
+{
+  "status": "BASELINE_FAILURE_REPRODUCED",
+  "scope": "x86_64 emulator document-provider transport; model retry is staging only, not native validation",
+  "fixture_sha256": "1c0818856e39dea26aa41f3806087b5ffb837f6c8aa205c7bf950a81435707f5",
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "results_sha256": "a620c35ed7dd0a57a9757c4b76e235403a0cf075e5f3e0dc030e9f4c9bb4054b",
+  "artifacts": {
+    "app-debug.apk": {
+      "sha256": "2457ee6c474d1d6b8f6447ed2a698b2b491ea1f03208ab7b78ab5eec9796fd7d",
+      "bytes": 11769461
+    },
+    "app-debug-androidTest.apk": {
+      "sha256": "61041d297311d6b5a6d422273a00b7a963ce8cd086c5aa819808ff2059ee96a9",
+      "bytes": 243574
+    }
+  },
+  "max_cancel_ms": 1500.206758,
+  "actual_saved_assets_unchanged": true
+}

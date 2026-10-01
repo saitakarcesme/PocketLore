@@ -1,0 +1,103 @@
+{
+  "mode": "legacy-baseline",
+  "pid": 3626,
+  "rows": [
+    {
+      "kind": "model",
+      "case": "cancel-before-open",
+      "returned_before_release": false,
+      "cancel_ms": 1500.158746,
+      "outcome": "IOException: Cancelled",
+      "opens": 1,
+      "clean_before_release": false,
+      "saved_unchanged": true,
+      "provider_state_after_release": "released-with-reader"
+    },
+    {
+      "kind": "model",
+      "case": "stall-empty",
+      "returned_before_release": false,
+      "cancel_ms": 1500.206758,
+      "outcome": "IOException: Cancelled",
+      "opens": 1,
+      "clean_before_release": false,
+      "saved_unchanged": true,
+      "provider_state_after_release": "released-with-reader"
+    },
+    {
+      "kind": "model",
+      "case": "stall-prefix",
+      "returned_before_release": false,
+      "cancel_ms": 1500.111576,
+      "outcome": "IOException: Cancelled",
+      "opens": 1,
+      "clean_before_release": false,
+      "saved_unchanged": true,
+      "provider_state_after_release": "released-with-reader"
+    },
+    {
+      "kind": "model",
+      "case": "short-read",
+      "outcome": "IOException: Incomplete model copy",
+      "saved_unchanged": true,
+      "staging_removed": true
+    },
+    {
+      "kind": "model",
+      "case": "retry",
+      "outcome": "success",
+      "worker_thread_id": 42,
+      "saved_model_unchanged": true,
+      "staging_removed": true
+    },
+    {
+      "kind": "pack",
+      "case": "cancel-before-open",
+      "returned_before_release": true,
+      "cancel_ms": 1.757656,
+      "outcome": "InterruptedIOException: Import cancelled",
+      "opens": 1,
+      "clean_before_release": true,
+      "saved_unchanged": true,
+      "provider_state_after_release": "reader-closed"
+    },
+    {
+      "kind": "pack",
+      "case": "stall-empty",
+      "returned_before_release": false,
+      "cancel_ms": 1500.108734,
+      "outcome": "InterruptedIOException: Import cancelled",
+      "opens": 1,
+      "clean_before_release": false,
+      "saved_unchanged": true,
+      "provider_state_after_release": "reader-closed"
+    },
+    {
+      "kind": "pack",
+      "case": "stall-prefix",
+      "returned_before_release": false,
+      "cancel_ms": 1500.140415,
+      "outcome": "InterruptedIOException: Import cancelled",
+      "opens": 1,
+      "clean_before_release": false,
+      "saved_unchanged": true,
+      "provider_state_after_release": "reader-closed"
+    },
+    {
+      "kind": "pack",
+      "case": "short-read",
+      "outcome": "IOException: Missing pack entries",
+      "saved_unchanged": true,
+      "staging_removed": true
+    },
+    {
+      "kind": "pack",
+      "case": "retry",
+      "outcome": "success",
+      "worker_thread_id": 42,
+      "saved_model_unchanged": true,
+      "staging_removed": true
+    }
+  ],
+  "status": "BASELINE_FAILURE_REPRODUCED"
+}
