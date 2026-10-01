@@ -704,6 +704,21 @@
           "assessment": "P1.4 names natural equivalent only; its isolated anaphoric this process does not by itself establish the added vascular-merging description."
         }
       ]
+    },
+    "n05": {
+      "result_sha256": "eb395aac2d72f7aa6f6d6af94496050a3ec8d1879d4991ea7a2fc671b062c981",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Correct fully supported UK-based rejection of false premise, but audit confuses the premise being contradicted with the answer assertion and falsely withholds.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P2.2 explicitly establishes UK uncodified yet written acts/cases/treaties. P3.2 is extraneous. The actual claim says this contradicts the false premise, not that it endorses it."
+        }
+      ]
     }
   }
 }
