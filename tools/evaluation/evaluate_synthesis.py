@@ -56,6 +56,7 @@ for row in report['cases']:
   checks['comparison_phase_directions']=kind and bool(re.search(r'evaporat[^.]*liquid[^.]*vapo[ur]',text)) and bool(re.search(r'condens[^.]*vapo[ur][^.]*liquid',text))
  elif row['id']=='explanation':checks['explanation_heat_removal']=kind and 'heat' in text and bool(re.search(r'remov|cool|los',text))
  elif row['id']=='synthesis':
+  checks['synthesis_no_destination_transfer']=not bool(re.search(r'runoff[^.]*lakes',text)) or 'lakes' in row['prompt'].split('[S2]',1)[-1].split('Question:',1)[0].lower()
   checks['synthesis_no_recharge_well_transfer']=not bool(re.search(r'runoff[^.]*recharge wells',text))
   checks['synthesis_both_processes']=kind and bool(re.search(r'groundwater|aquifer',text)) and 'runoff' in text and bool(re.search(r'infiltrat|recharg',text))
  elif row['id']=='conditions':checks['conditions_scope_qualifiers']=kind and 'deep' in text and 'shallow' in text and bool(re.search(r'centur|slow',text)) and bool(re.search(r'immediat|quick',text))

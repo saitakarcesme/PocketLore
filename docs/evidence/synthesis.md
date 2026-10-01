@@ -23,6 +23,8 @@ The initial 0.5B model SHA-256 was `74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f
 
 - `synthesis/combined-citations`: joint labels fixed the missing-half attribution pattern, but the lexical screen rejected generic second sentences in comparison and synthesis. Explanation generated; the answerable conditions case still abstained. Overall FAIL. The next candidate permits one or two claims instead of requiring an unnecessary second sentence and explicitly permits both claims to use one source.
 
+- `synthesis/concise-claims`: one-sentence phase comparison and the explanation matched their cited excerpts. The groundwater/runoff draft transferred the destination "lakes" from the groundwater excerpt into the runoff clause; the coarse evaluator accepted that draft, but source review did not. Conditions still abstained. Overall FAIL. A specific destination-transfer regression was added, and the next prompt requests qualified qualitative comparisons when exact numbers are unavailable.
+
 Early summaries sometimes counted passage IDs in fallback text as a citation check success; their overall results were still FAIL. The current evaluator requires GENERATED before checking generated citations and verifies exact case/model/pack identities. The combined-source grammar prevents the observed missing-half attribution pattern by requiring the supplied source set on each comparison claim. This may overcite; it is not semantic proof or fine-grained provenance.
 
 ## Implemented controls and limits
@@ -32,3 +34,9 @@ See [implementation and reproduction](../SYNTHESIS.md). Native constrained decod
 The lexical support threshold and exact-number screen are conservative heuristics. They can reject a supported paraphrase and accept a false relationship assembled from source words. Broad entailment, premise checking and conflict reconciliation are not solved. The conflict signal covers identical statements with opposite explicit negation; the fictional test model failed to disclose disagreement, so the application withheld its draft and displayed a potential-conflict warning with both source IDs. This safe fallback is not a generated synthesis success.
 
 At most two sentences of 220 characters each sharply limit depth; grammar forbids internal periods, restricting decimals and abbreviations. Context selection can omit necessary evidence, and the absent-term gate still misses paraphrases. No general claim of useful research, unseen accuracy or competitive superiority follows from these development cases.
+
+## Measurement definitions
+
+`load_ms` measures native load of the already provisioned model. Per-case `first_token_ms` starts at entry to the answer controller and includes context selection, token preflight and prefill until the first token callback, often a citation label. `total_ms` includes final validation but excludes earlier pack indexing/model load. Token counts are native emitted tokens; prompt counts include the real chat template and system instructions. No first-useful-content, cold-cache, repeated p50/p95, peak RSS/PSS, thermal or battery measurement is claimed. The model is reused across cases, while each generation creates a fresh context. OS/file caches are uncontrolled.
+
+The emulator reports 2,532,896 kB MemTotal and 1,899,668 kB SwapTotal in the final environment snapshot. These virtual-machine values do not establish physical phone memory suitability. No GPU inference job was run. Assets, model copies, swap, installation peaks and all caches have not been totaled for release acceptance.
