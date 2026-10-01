@@ -249,3 +249,16 @@ No external hardware blocker explains this negative experiment. No new task or s
 | Release and physical acceptance |APK a51175910637771edef43e3b598385301b3498aadaf00c56a1a8090b25b101e7 is a build artifact only. | Existing integrated release revalidation, clean-machine reproduction, signing ownership, real compatible-device and human usefulness checks. | Clean environment/owner, physical Android/GrapheneOS hardware and reviewers. |
 
 The failed experiment is not externally hardware-blocked. No duplicate task, dispatch, service, model preference or orchestration state change was made.
+
+
+## Task 224 repair 2: supported equation is not a complete explanation
+
+[Evidence](evidence/equation-plan/README.md) records one supported candidate but zero complete useful answers on the unchanged 24-case set. Build and deterministic checks pass; the quality gate fails. All four absent controls remain withheld.
+
+| Remaining gap | Evidence | Next action | Real external dependency |
+| --- | --- | --- | --- |
+| Obligation completeness | q21 repeats the ratio formula three ways but never explains why; 23 other cases remain withheld. | Source-grounded relation plans must establish the requested explanation/comparison before prose. Validate extraction and completeness independently; do not repeat the same generator matrix or add case-specific paraphrase rules. | None for bounded host development; independent source criticism needed. |
+| General semantic compatibility | Narrow compositional mathematical operators recover one draft; other relation families remain blocked. | Develop a broadly applicable subject/relation/scope representation with unknown-tail rejection, after resolving source-plan completeness. | None for host implementation. |
+| Mobile and release qualification | New APK is compile-only; no 4B Android execution or new memory measurement. | Separate approved selected-model admission/load/cancel/reload and integrated candidate revalidation. | Sufficient-memory approved environment, physical Android/GrapheneOS hardware, signing owner, clean reproduction and human review. |
+
+This negative checkpoint is not a completion or acceptance claim. No duplicate task or orchestration change was made.

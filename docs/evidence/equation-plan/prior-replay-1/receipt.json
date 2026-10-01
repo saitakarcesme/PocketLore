@@ -1,0 +1,30 @@
+{
+  "elapsed_seconds": 0.17417832699720748,
+  "sources": {
+    "android/app/src/main/java/org/pocketlore/app/BoundAnswer.java": "3ebc23e6ed3dc73f52ccf899029b0b98dce258c44e7bc717804245206c7ff709",
+    "android/app/src/main/java/org/pocketlore/app/ObligationAnswer.java": "6b9f0e61ba2a7bf5a040f2d9f3899acc682b40cf236ac3395d1bdac8f1819725",
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "f276dc506e3022e445149c6c09e2577f595b287cfc406a760fda525c46c66128",
+    "android/app/src/main/java/org/pocketlore/app/EvidencePrompt.java": "238131c012580bdd1af9c2a67fb7db410c1c4d5f2bc5235a0016eb09d493832a",
+    "android/app/src/main/java/org/pocketlore/app/AnswerEngine.java": "c03f51d31c5e1fa628450978ec6ccc9fe2491de11b6695856856c694826d2dbc",
+    "android/app/src/main/java/org/pocketlore/app/NativeRuntime.java": "ec6f59d59b07ef7f5016657e0fcba0203232ecc7359f56a9ad6c205215fb2085",
+    "android/app/src/main/java/org/pocketlore/app/EvidenceLinker.java": "190ed67e3c5dab7bcb137b8d02c5a4bab08f5f9fb67bb3cace2b3bcff5f7dd8c",
+    "android/app/src/main/java/org/pocketlore/app/SourcePlan.java": "0c4baab094bdf620d5cb7c8058ba5c79e9220f93ca79ed0b7b07dfd45d33e630",
+    "tools/evaluation/scale-model-quality/ScaleHarness.java": "c969a8ff91f4e200e6ca674c68c0bb68e5a7d0bacfa39f5db251708175779558",
+    "tools/evaluation/obligation-binding/BindingHarness.java": "23c74dc755f68eee7c746c4ba7c416adf088a035a1aea9381e5c29e8715c7f06",
+    "tools/evaluation/source-plan/PlanHarness.java": "d5d703ff7a17616a542e352743863887a66b2b97c577fbfea4db2a33863d6904",
+    "android/app/src/main/java/org/pocketlore/app/FactFrames.java": "45dcb15e9582143bb9a37e62fdc9a0198e01554a29a1a3a5b5ef94911ed31c2e",
+    "android/app/src/main/java/org/pocketlore/app/EquationProof.java": "d6e05102eaebda21a568656c8632a60202360d164e3c0f690cd1c3b3c9d5f497",
+    "android/app/src/main/java/org/pocketlore/app/SemanticPlan.java": "0ff278c23b5ba4befd388faae68239e081b0540363562496c03cfc2a91ebad64",
+    "tools/evaluation/equation-plan/ReplayEquation.java": "af640aba579dc985e64ea8e7d5e07385297f81740b8d8362f5f477395c3f0f17",
+    "tools/evaluation/equation-plan/Behavior.java": "0f4366ee83b1f7b545af8df0e1b74521b07037ec7413d64453a93a941bf0dff4",
+    "tools/evaluation/fact-frames/FrameBehavior.java": "6dee9890fd5c97c817f39dfb8ab3d16ac8ebaea7d45b8863dc1d71bc8fa37efa",
+    "tools/evaluation/equation-plan/replay.py": "9dc6e7d08ae8dcbec2f916a1559ae7b9057d4d2070216934aa5feb9d287a7b46",
+    "tools/evaluation/equation-plan/controls.json": "284fb6da82e6e6d7bafe076bcb1fa290977a81bb73e55555fcb70e155be9cee5",
+    "tools/evaluation/equation-plan/protocol.json": "4a9d903880f86bb572970f0a5ec7626ef22d366bed3531052070a2e7d3b07b47"
+  },
+  "artifacts": {
+    "controls.tsv": "8759714c1df4142d69e893b9f9907f8c8a9679798afb1c52a408bda2c78893e8",
+    "stages.tsv": "8fe43489d180ffd907be6ad3a45cf9b0ba726f7111579d4195405afab31226ca",
+    "results.json": "c0d657e71bb4e69dab68e39f6f5d601b548df96aafa9254f25a32b306c4d8ee1"
+  }
+}
