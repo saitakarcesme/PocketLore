@@ -1,0 +1,12 @@
+/home/isa/Projects/PocketLore/downloads/scale-latency/run-20261001T042123704464Z
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/evaluate_scale_latency.py", line 62, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/evaluate_scale_latency.py", line 21, in main
+    run(['bash',ROOT/'tools/android-build.sh','assembleDebug','assembleDebugAndroidTest','-I',ROOT/'tools/evaluation/scale-latency/source.gradle','-PpocketloreTestRunner=org.pocketlore.app.ScaleLatencyInstrumentation'],'build.log')
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/evaluate_scale_latency.py", line 14, in run
+    if p.returncode:raise RuntimeError('Command failed: '+str(out/name))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Command failed: /home/isa/Projects/PocketLore/downloads/scale-latency/run-20261001T042123704464Z/build.log
