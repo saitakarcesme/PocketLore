@@ -485,6 +485,55 @@
       "fully_useful_draft": false,
       "assessment": "Correct withholding of current opening hours/ticket prices; no such operational evidence in the selected historical city excerpts.",
       "claims": []
+    },
+    "s37": {
+      "result_sha256": "25e749d5d478ead141e0c1a9b94da0cceb746651411a09cba8f0a94475389601",
+      "all_claims_supported": false,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Core redox/electron-transfer/ATP description matches fermentation context, but the final broad assertion of essentiality for organisms under anaerobic conditions is stronger than the source establishes. Also cites nonexistent P1.2, so integrity gate withholds without audit.",
+      "claims": []
+    },
+    "s38": {
+      "result_sha256": "ee11021cc2d4930f7ef111f29648dcc556861387d3c06178ee5e64f7d86dde07",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct raw explanation that most spores survive mild-heat pasteurization, with no guarantee of total elimination. P4.3 is not an available sentence label, so no bound answer survives.",
+      "claims": []
+    },
+    "s39": {
+      "result_sha256": "1a7825217bcbfc14f04bb518397a50474ee9ae1a2efd6edd24efa48e93f31bfb",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Both mechanisms and ancillary Pasteur/wine/industry/minor-change facts match full supplied source context, but nonexistent P1.2 prevents any typed answer. No publication credit despite useful raw content.",
+      "claims": []
+    },
+    "s40": {
+      "result_sha256": "1540ac7eb0c4a66fe5f961a33504f08e32b56a2693429584b1a5f5e96edb25c7",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Both obligations correctly supported; industrial products now cite actual P2.4 rather than the old neighboring fermentation definition. Usual temperature qualification is retained.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P2.4 directly names industrial ethanol/lactate; P1.1 adds relevant mechanism context."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P4.1 directly gives usually less than100C/212F; P4.2 adds survivorship context without new claims."
+        }
+      ]
     }
   }
 }
