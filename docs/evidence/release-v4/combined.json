@@ -1,0 +1,53 @@
+{
+  "pid": 13175,
+  "mode": "combined",
+  "answer": {
+    "question": "What is magma?",
+    "route": "GENERATED",
+    "raw": "[S1] Scientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface.",
+    "text": "[pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-magma-b214c1cb4647b3fc] Scientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface.",
+    "prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1]\nDate: Publication\/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nScientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface.\n\n[S2]\nDate: Publication\/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nMolten rock below the surface of the Earth that rises in volcanic vents is known as magma, but after it erupts from a volcano it is called lava. Magma is made of molten rock, crystals, and dissolved gas—imagine an unopened bottle of soda with grains of sand inside. The molten rock is made of the chemicals oxygen, silicon, aluminum, iron, magnesium, calcium, sodium, potassium, titanium, and manganese. After cooling, liquid magma may form crystals of various minerals until it becomes completely solid and forms an igneous or magmatic rock.\n\nQuestion: What is magma?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+    "tokens": 30,
+    "first_token_ms": 21346.846039,
+    "total_ms": 24487.777493
+  },
+  "collections": 2,
+  "passages": 186,
+  "documents": 10,
+  "saved_model_bytes": 491400032,
+  "status": "PASS",
+  "dialogs": [
+    {
+      "file": "combined-0.png",
+      "citation": "p567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea_essentials-e772a5a729be28b9",
+      "disabled_science": false,
+      "visible": "NPS Ten Essentials\nILLUMINATION – Flashlight and headlamp Lighting is important in the outdoors at night, and can help you find your way out or signal for help. Items include flashlights, and headlamps. Headlamps are the recommended light source because they are hands-free. Be sure to pack extra batteries.\n\nSource document: NPS Ten Essentials\nhttps:\/\/www.nps.gov\/articles\/10essentials.htm\n\nSource date \/ retrieval: 2026-05-28 page updated; retrieved 2026-09-30\nRights: National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https:\/\/www.nps.gov\/aboutus\/disclaimer.htm\n\nCitation: [p567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea_essentials-e772a5a729be28b9]\nCollection: english-reference-2026-10-01\nEdition SHA-256: 567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea\nOriginal citation: essentials-e772a5a729be28b9\nSource document ID: essentials\nSource SHA-256: 74b32dc8c78552ccbd2603fd548ed6490d967f568cae8cc4403b17085e313073\nPassage SHA-256: e772a5a729be28b9e8df7b2d0c57eab04d2140e467b08db4caa3ad59d972379f\nEdition notice (may describe an older app version): Dated reference excerpts, not current conditions or complete safety guidance. Verify travel conditions before departure.\nThis app retains imported collections; Choose collections controls which are searched.\n\nPack text is selected source text with whitespace normalized. Source URLs are provenance labels; the app does not open them.\n\nBM25 rank score: 13.030 (not confidence)\nCLOSE\n",
+      "route": "FALLBACK",
+      "invoked": false
+    },
+    {
+      "file": "combined-1.png",
+      "citation": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-magma-b214c1cb4647b3fc",
+      "disabled_science": false,
+      "visible": "What is the difference between magma and lava?\nScientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface.\n\nSource document: What is the difference between magma and lava?\nhttps:\/\/www.usgs.gov\/faqs\/what-difference-between-magma-and-lava\n\nSource date \/ retrieval: Publication\/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nRights: U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https:\/\/www.usgs.gov\/information-policies-and-instructions\/copyrights-and-credits\n\nCitation: [pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-magma-b214c1cb4647b3fc]\nCollection: science-supplement-2026-10-01-v1\nEdition SHA-256: c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274\nOriginal citation: science-magma-b214c1cb4647b3fc\nSource document ID: science-magma\nSource SHA-256: 5c292ab4a524ed1b37e978cfa3f77d047b3e0ea9b4f89e05b2a45b17db19eba3\nPassage SHA-256: b214c1cb4647b3fc44c29dbccb9c86a3de82ac1f5d0fee16c31b23f9f8732831\nEdition notice (may describe an older app version): Dated introductory science excerpts, not current forecasts or medical advice. This separate edition replaces the active pack; it does not merge libraries.\nThis app retains imported collections; Choose collections controls which are searched.\n\nPack text is selected source text with whitespace normalized. Source URLs are provenance labels; the app does not open them.\n\nBM25 rank score: 10.137 (not confidence)\nCLOSE\n",
+      "route": "FALLBACK",
+      "invoked": false
+    },
+    {
+      "file": "combined-2.png",
+      "citation": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-volcanoes-32d96fe23eb26081",
+      "disabled_science": false,
+      "visible": "About Volcanoes\nMolten rock below the surface of the Earth that rises in volcanic vents is known as magma, but after it erupts from a volcano it is called lava. Magma is made of molten rock, crystals, and dissolved gas—imagine an unopened bottle of soda with grains of sand inside. The molten rock is made of the chemicals oxygen, silicon, aluminum, iron, magnesium, calcium, sodium, potassium, titanium, and manganese. After cooling, liquid magma may form crystals of various minerals until it becomes completely solid and forms an igneous or magmatic rock.\n\nSource document: About Volcanoes\nhttps:\/\/www.usgs.gov\/programs\/VHP\/about-volcanoes\n\nSource date \/ retrieval: Publication\/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nRights: U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https:\/\/www.usgs.gov\/information-policies-and-instructions\/copyrights-and-credits\n\nCitation: [pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-volcanoes-32d96fe23eb26081]\nCollection: science-supplement-2026-10-01-v1\nEdition SHA-256: c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274\nOriginal citation: science-volcanoes-32d96fe23eb26081\nSource document ID: science-volcanoes\nSource SHA-256: 8ee456020cc13ef8386d389f4c0458acb45c84a123958273a30f044d3bbf760c\nPassage SHA-256: 32d96fe23eb26081caf3ddae8883a39725928868b71710aa68241c00f7c2ef79\nEdition notice (may describe an older app version): Dated introductory science excerpts, not current forecasts or medical advice. This separate edition replaces the active pack; it does not merge libraries.\nThis app retains imported collections; Choose collections controls which are searched.\n\nPack text is selected source text with whitespace normalized. Source URLs are provenance labels; the app does not open them.\n\nBM25 rank score: 7.820 (not confidence)\nCLOSE\n",
+      "route": "FALLBACK",
+      "invoked": false
+    },
+    {
+      "file": "combined-3.png",
+      "citation": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-volcanoes-fdd579e7694cec41",
+      "disabled_science": false,
+      "visible": "About Volcanoes\nMany mountains form by folding, faulting, uplift, and erosion of the Earth's crust. Volcanic terrain, however, is built by the slow accumulation of erupted lava. The vent may be visible as a small bowl shaped depression at the summit of a cone or shield-shaped mountain. Through a series of cracks within and beneath the volcano, the vent connects to one or more linked storage areas of molten or partially molten rock (magma). This connection to fresh magma allows the volcano to erupt over and over again in the same location. In this way, the volcano grows ever larger, until it is no longer stable. Pieces of the volcano collapse as rock falls or as landslides.\n\nSource document: About Volcanoes\nhttps:\/\/www.usgs.gov\/programs\/VHP\/about-volcanoes\n\nSource date \/ retrieval: Publication\/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nRights: U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https:\/\/www.usgs.gov\/information-policies-and-instructions\/copyrights-and-credits\n\nCitation: [pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-volcanoes-fdd579e7694cec41]\nCollection: science-supplement-2026-10-01-v1\nEdition SHA-256: c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274\nOriginal citation: science-volcanoes-fdd579e7694cec41\nSource document ID: science-volcanoes\nSource SHA-256: 8ee456020cc13ef8386d389f4c0458acb45c84a123958273a30f044d3bbf760c\nPassage SHA-256: fdd579e7694cec4107e243a214a882feef2371492ecf9347388885531a73c401\nEdition notice (may describe an older app version): Dated introductory science excerpts, not current forecasts or medical advice. This separate edition replaces the active pack; it does not merge libraries.\nThis app retains imported collections; Choose collections controls which are searched.\n\nPack text is selected source text with whitespace normalized. Source URLs are provenance labels; the app does not open them.\n\nBM25 rank score: 6.332 (not confidence)\nCLOSE\n",
+      "route": "FALLBACK",
+      "invoked": false
+    }
+  ]
+}

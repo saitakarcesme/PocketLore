@@ -1,0 +1,292 @@
+{
+  "schema": 2,
+  "candidate": "Development debug, not accepted or published",
+  "source_commit": "ee4e3a7330b5bd36aa4b3c97bd01b358d9220bbd",
+  "demo_run": "run-20261001T071547515600Z",
+  "artifacts": {
+    "android/app/build/outputs/apk/debug/app-debug.apk": {
+      "bytes": 11921193,
+      "sha256": "934147a471c948ea77de51d89663759a2925351c382f5412287535017e67a1f5"
+    },
+    "downloads/answers/model/qwen2.5-0.5b-instruct-q4_k_m.gguf": {
+      "bytes": 491400032,
+      "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+    },
+    "downloads/packs/english-reference.plpack": {
+      "bytes": 159327,
+      "sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea"
+    },
+    "downloads/science/science-supplement-2026-10-01-v1.plpack": {
+      "bytes": 31183,
+      "sha256": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274"
+    }
+  },
+  "apk_entries": {
+    "AndroidManifest.xml": {
+      "bytes": 2384,
+      "sha256": "cc6f2c96d8ffb7d998b8d912f88889740e894a26813addac5a59754996c1ee69"
+    },
+    "META-INF/ANDROIDD.RSA": {
+      "bytes": 1223,
+      "sha256": "2a1d8e4f47e49a6bf607962fc73232b1762b10b36dd98d7c9fd65b62f09ba61a"
+    },
+    "META-INF/ANDROIDD.SF": {
+      "bytes": 2284,
+      "sha256": "ff28d1ed73400a943d9e5057ac2352adba9e7f8e6ce2c838025502d557afcf74"
+    },
+    "META-INF/MANIFEST.MF": {
+      "bytes": 2157,
+      "sha256": "9624e57fc4943b88747239205387ea450c1fde4e193f3575f3c735f28da93e00"
+    },
+    "META-INF/com/android/build/gradle/app-metadata.properties": {
+      "bytes": 56,
+      "sha256": "8202f7c2e4c63802e60a377cafd767bca48370716b97cda90a91c8ab96cef941"
+    },
+    "assets/dc-monuments-manifest.json": {
+      "bytes": 1029,
+      "sha256": "56856c60ada031a65911dcd2f26d89bbb23f4ac1fc6b69d06bbff11ffb60d5fa"
+    },
+    "assets/dc-monuments.tsv": {
+      "bytes": 9855,
+      "sha256": "2240dbd96698266eb27a3f892e346b2e2154c186c097f8ebf79d3f8ede086a8e"
+    },
+    "assets/licenses/answer-model-notice.txt": {
+      "bytes": 567,
+      "sha256": "9d79291db5e14170605e50f436ae99f10ce9e7389ab6184e66d5c78a34c4d374"
+    },
+    "assets/licenses/llama.cpp.txt": {
+      "bytes": 1078,
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+    },
+    "assets/licenses/ndk-r27c-sysroot-NOTICE.txt": {
+      "bytes": 501406,
+      "sha256": "d5f5557f82bc42ce657d0513ba9a7d0c55e64eb99d4998994d92f2b5c2b1fb3c"
+    },
+    "assets/licenses/ndk-r27c-toolchain-NOTICE.txt": {
+      "bytes": 806124,
+      "sha256": "cbe3237be53c0a819f8df6aac5358fdee848eee3b6571b4e2ca20767ebd7465e"
+    },
+    "assets/licenses/qwen2.5-Apache-2.0.txt": {
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    "assets/licenses/smoke-model-Apache-2.0.txt": {
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "assets/licenses/synthesis-model-Apache-2.0.txt": {
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    "assets/licenses/synthesis-model-notice.txt": {
+      "bytes": 681,
+      "sha256": "c4e92009450a020a87f15bfcf896f7bcb7006312f01e0c82f65d495908336dd1"
+    },
+    "assets/licenses/synthesis-qwen3-Apache-2.0.txt": {
+      "bytes": 11544,
+      "sha256": "5de36594c10839788a8c589443a8ef9d8b8d17c65a1b5807206ae037fc36c6bd"
+    },
+    "assets/licenses/synthesis-qwen3-notice.txt": {
+      "bytes": 486,
+      "sha256": "23c8c78dbde2e46aeb736a4fe764cf5157275548033edc82577049f9b6f09c52"
+    },
+    "assets/licenses/travel-wikidata-notice.txt": {
+      "bytes": 1087,
+      "sha256": "0ceb3cdba284583b407112bc7deca6af201cdfd3c230ba70d1c557cc6dc23e53"
+    },
+    "assets/water-science.tsv": {
+      "bytes": 5380,
+      "sha256": "a39d54b412f469086bd1ee96425245e36f446ac1a77b0b5730c60e5603084492"
+    },
+    "classes.dex": {
+      "bytes": 129128,
+      "sha256": "1e34b17a4c2ec459555f74d7ffda1a36a78f66de393ff041735bc49ed3f7e553"
+    },
+    "lib/arm64-v8a/libpocketlore.so": {
+      "bytes": 5597736,
+      "sha256": "c96d261ff54d05b43473da9ebecf9d849dbe4c366d2aa7ee296752f6ec1685c8"
+    },
+    "lib/x86_64/libpocketlore.so": {
+      "bytes": 6077192,
+      "sha256": "28ce62513468da1b4c766751f296409e5ce124ff04e51a28d665c95d0f4babcc"
+    },
+    "resources.arsc": {
+      "bytes": 40,
+      "sha256": "1fa3cb291285348ec1b33c85e7317d989467707f4791c4e5302f2d312d1e18c8"
+    }
+  },
+  "signer": "Signer #1 certificate DN: CN=Android Debug, O=Android, C=US\nSigner #1 certificate SHA-256 digest: 283b9d4b43c98e005181f85b13fd923664f856e7a6ca2d65a34444a1b7401fad\nSigner #1 certificate SHA-1 digest: d93f39da3c1522d4ec910d450e7e62cfe048e293\nSigner #1 certificate MD5 digest: 27d5d8937ebeee5e3cf410f14fb804ea\n",
+  "source_files": {
+    "android/.gitignore": "f0d90fe6dd188cfa5cbac987949cfa3893a2c1ac3cf6dbfcb837e0e2abb698b1",
+    "android/app/build.gradle": "469825f99e581a87b803e43528eeee528a1401b59f5c6356a8fb40e2c727b6a8",
+    "android/app/src/androidTest/java/org/pocketlore/app/AnswerSmokeInstrumentation.java": "54ed210c98457b017102b059191f1df06194a3d7cf6fbbe2b4b22e980a47fcd2",
+    "android/app/src/androidTest/java/org/pocketlore/app/NativeSmokeInstrumentation.java": "e8331ad7656b94bc432778af17021d0e3d4b91bc2e2b3a0f585511c41043e34b",
+    "android/app/src/androidTest/java/org/pocketlore/app/OfflineInstrumentation.java": "562246c3cf5d25d38534a1bf2fb26c6dddf8d7a50616850a144e490deb13c477",
+    "android/app/src/androidTest/java/org/pocketlore/app/PackSmokeInstrumentation.java": "592f404d1f64cdff42ecbca8138efbdae3a77edcb784860e59af886f617e4bcc",
+    "android/app/src/androidTest/java/org/pocketlore/app/ResourceInstrumentation.java": "c2fe181ce79747170fa6f71e1915019f72fcf62b3817eb4d09d374188cc1494c",
+    "android/app/src/androidTest/java/org/pocketlore/app/RetrievalSmokeInstrumentation.java": "95c2c82ceaf16661f8b510fecd38ebaa77c46cd3b8fbd2c68fe90dd250ef177d",
+    "android/app/src/androidTest/java/org/pocketlore/app/SynthesisInstrumentation.java": "2c87e2fecfff36d697f74ff2f7fbfda3af63f8b3dc09a57032969a24b46f2a20",
+    "android/app/src/androidTest/java/org/pocketlore/app/TravelChecks.java": "15afe11c705619c7f7861052a636b9ab5dcdc77564e8988715f581740608b35e",
+    "android/app/src/androidTest/java/org/pocketlore/app/TravelInstrumentation.java": "b31ddc39f0206544e34bce1faa6c8b3ecc575e2337fc0462abee7bc3474baa55",
+    "android/app/src/main/AndroidManifest.xml": "481202082692010a038dd517e6737a87f5f816a59b4f89f8854279cdba8fcfca",
+    "android/app/src/main/assets/.gitignore": "cfa3bde05125bfe338ef10b62a4e8a9d29e1bfe9dac55b2e72102d1c41910827",
+    "android/app/src/main/assets/dc-monuments-manifest.json": "56856c60ada031a65911dcd2f26d89bbb23f4ac1fc6b69d06bbff11ffb60d5fa",
+    "android/app/src/main/assets/licenses/answer-model-notice.txt": "9d79291db5e14170605e50f436ae99f10ce9e7389ab6184e66d5c78a34c4d374",
+    "android/app/src/main/assets/licenses/llama.cpp.txt": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+    "android/app/src/main/assets/licenses/qwen2.5-Apache-2.0.txt": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+    "android/app/src/main/assets/licenses/smoke-model-Apache-2.0.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "android/app/src/main/assets/licenses/synthesis-model-Apache-2.0.txt": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+    "android/app/src/main/assets/licenses/synthesis-model-notice.txt": "c4e92009450a020a87f15bfcf896f7bcb7006312f01e0c82f65d495908336dd1",
+    "android/app/src/main/assets/licenses/synthesis-qwen3-Apache-2.0.txt": "5de36594c10839788a8c589443a8ef9d8b8d17c65a1b5807206ae037fc36c6bd",
+    "android/app/src/main/assets/licenses/synthesis-qwen3-notice.txt": "23c8c78dbde2e46aeb736a4fe764cf5157275548033edc82577049f9b6f09c52",
+    "android/app/src/main/assets/licenses/travel-wikidata-notice.txt": "0ceb3cdba284583b407112bc7deca6af201cdfd3c230ba70d1c557cc6dc23e53",
+    "android/app/src/main/cpp/CMakeLists.txt": "a72e52f97e8bcc71d71c94965d74970c8a19a7897c2b92cc72db39d6caf8af3e",
+    "android/app/src/main/cpp/resource_budget.h": "5ce8a67c302117c617d4d1e9c1bf4c0e7e9269316e70380f1296126d872f9cc8",
+    "android/app/src/main/cpp/runtime.cpp": "ff89c5c857fa18ce9168db67abe91a1e1ca4851bf4196014aeb92ee7f8856e42",
+    "android/app/src/main/java/org/pocketlore/app/AnswerEngine.java": "8609b96313f79cc35f68e12e969912e271c97b22011454673bf8cf5824e7118f",
+    "android/app/src/main/java/org/pocketlore/app/DocumentInput.java": "b2f472f8bbba519ae5fdf9a631613bff7d3849a4dcb65c26ac90d39bd879f93f",
+    "android/app/src/main/java/org/pocketlore/app/EvidencePrompt.java": "34a565be83cc6ac78fda9ea9ce3fe9431cc6342ffcd300c7f5045c8b78211b51",
+    "android/app/src/main/java/org/pocketlore/app/KnowledgePack.java": "b5d63c64775845e2de17b6a628f816cbc3b9806100eb88aecaf96584a1df5906",
+    "android/app/src/main/java/org/pocketlore/app/MainActivity.java": "bb67bc6b6187afa2d37bfa3ce87a407bd8733d43f8513cacd8a87e2e424937bd",
+    "android/app/src/main/java/org/pocketlore/app/ModelImport.java": "4d2e69782c0dc89839e53fad332f7258916f07cb1b61b309c26feea21bf183ad",
+    "android/app/src/main/java/org/pocketlore/app/NativePanel.java": "339c67dd88c6ea68e91cdadbcfeb593362b590627f4869b884993db696f29a3f",
+    "android/app/src/main/java/org/pocketlore/app/NativeRuntime.java": "ec6f59d59b07ef7f5016657e0fcba0203232ecc7359f56a9ad6c205215fb2085",
+    "android/app/src/main/java/org/pocketlore/app/PackLibrary.java": "16bb1979836f8085ad643d6d3611beef9c720bd6fec8b3dbc0ceb9c11c68fb29",
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "26bb390467886f267c7164babc1d01665e3b4fa516550ab0830115ded292ec7b",
+    "android/app/src/main/java/org/pocketlore/app/ResourceStorage.java": "75d783b83c667b367b88bac634cf6a499e5d4a031d0c5eb9991164586a5ef265",
+    "android/app/src/main/java/org/pocketlore/app/TravelActivity.java": "cc4eb6cc61704b12dc58f58c6c18ee0d7dc28fa09abd52030f8ade5be69f3d2f",
+    "android/app/src/main/java/org/pocketlore/app/TravelCatalog.java": "e7eabf25f753f0371a45c6a76149624729c8911be42d242c0643db0416c49b2e",
+    "android/app/src/main/java/org/pocketlore/app/TravelCommands.java": "a5b5adb2e086465bfeba489b5bedd81ae22dce160990080af063033068d73ff1",
+    "android/app/src/main/java/org/pocketlore/app/TravelTools.java": "523a9dfbafdcd94f1ef897fd28792d9330fd43cb3190c0f03d3fae32e7e51a15",
+    "android/app/src/test/java/org/pocketlore/app/AnswerEngineCheck.java": "96aa3635f55f7be3ced5ca69276e9751ad978afcd1e280e722df425c96653761",
+    "android/app/src/test/java/org/pocketlore/app/ResearchEngineCheck.java": "0f7e8b39669a17ea02d65a841e610dd18728e9ca801100f334cbe155101cea2a",
+    "android/app/src/test/java/org/pocketlore/app/RetrievalIndexCheck.java": "3c8c4c55bf4c50cac0ef75d48fc33b28b107eedf069233221fea284cb185dd54",
+    "android/app/src/test/java/org/pocketlore/app/SynthesisCheck.java": "bd3e84e02f93133f4e327100671bfb2981f9a446e058d45e2454e5931e286bd4",
+    "android/app/src/test/java/org/pocketlore/app/TemporalScopeCheck.java": "4f6c8d92fefb1da94042ab6d74f5de825a1906534400c85c5d7cb563f4c84eb5",
+    "android/build.gradle": "048ecfefe09971849fc8c9326de9d0e8af7e50e371aed980e2e1617124bb969f",
+    "android/gradle.properties": "19f172c25c4cdabbea0d32804ebc91ccf312e37ca7bd4ba76ca9fc24406f1063",
+    "android/knowledge-sources.json": "f786b4f019deeb33a198ca5f9585d7a6bc5b05caaf267fbdc9d2a22ce39b2c7c",
+    "android/settings.gradle": "94b571f1f197cb2a4d4226cfba232221b8dacd4e742ad9624f04263f341b56c4",
+    "tools/android-build.sh": "6c04a80085f9b5a3a2c8be1fb3e26c45b20862d22a2fc1aeaf0aa6b56996b7b6",
+    "tools/answers/check.sh": "9fbdf47c2f59f14b92f0905e7afe24a02b8e350f4750ef06af241fe5c8fc642f",
+    "tools/answers/development-cases.json": "1209c55fea82f39ebe2d22004b3b6cff259e55442d6f255a7dd9b884ee94ae75",
+    "tools/answers/fetch-model.sh": "de68ee0e35ee95728b5bc80c65bdc62e14aac5885f62f09ace94757eb9855551",
+    "tools/answers/model.env": "2d932887a64251c6561f4082739136be2a204728c8acd8fb7a1a0eff69526d97",
+    "tools/answers/ui-smoke.py": "f4e5d4ca6e1bfb4c3a95c6b5ade4c39ea1a0c6a47d0a0ac56786dacf34e45b96",
+    "tools/distribution/inventory.py": "15012fc66bc21f4a2dbff3c71376df3e646480a0984a6c899a7e75f0bf84183f",
+    "tools/distribution/native-notices.lock.json": "c58d26254c0681c1d834500453501a388e9fe6e1d63c0e5e9b38bfbebce23295",
+    "tools/distribution/regressions.json": "472b676b1f6b2e3f6fb9bef485c2bcc1b1a2c52039fbb959b106608aaee734fc",
+    "tools/distribution/resolved.gradle": "3d9dbdfdcef7e68f5692893b79520cb20b8c3dcd0489b002599c93bcf5404811",
+    "tools/distribution/verify.py": "af1f94a85dad150c3b8a00ffd4600f6a5f1097b85483f60761b1f0493aef3edb",
+    "tools/packs/build_pack.py": "d0cb979c2ad00c9f2818636a85baf1673892ee4e0b910fcd066773b29a2b9a91",
+    "tools/packs/build_science.py": "65992e51f8c49f40c972f63d621a877431b4b15e7feefd33f826f54f965c6ef3",
+    "tools/packs/build_travel.py": "17ff0e5730583b95bccc6f0f15c13a111fb25aef277f9ef57d37da92ad7d15bb",
+    "tools/packs/regional-sources.lock.json": "0d3105f89698d52746dc1edc6c777c74ddbb860c11e3beb2012867fedaaa9772",
+    "tools/packs/science-sources.lock.json": "96268ab080a3bbf05502d467c0e076b5a499e87908160b8dd9e747e4b8e80501",
+    "tools/packs/sources.lock.json": "1f7d8cf0cfcb93d419c86d97f7c9719ebc230d6592e7a95c03ef681426135638",
+    "tools/packs/travel-sources.lock.json": "5016fa4e06089d02cb6c4fa7f333a003f17affa377ffb9ba865209debc2610b3",
+    "tools/packs/ui_smoke.py": "365563c804e690478690bc07bd7173590192bf767975a10be967c2b29018537a",
+    "tools/packs/verify_pack.py": "410a8572a4a8681f614007ea2f18f5145514b085f83998ab2d3ce30f1e0a9674",
+    "tools/packs/verify_travel.py": "828b1a28c4a5d77f40fd44e490316941a313e1532e2da862b8b56a3203421432",
+    "tools/release/check_reproducibility.py": "59152796dac88325cd8a9cd3adbd52377b3bcc7dc637d5335050d245b97322a3",
+    "tools/release/debug-signing.gradle": "9d8a8e697b504eaa89985d05837c5b882de84397616d8de48181da99b3c55b4b",
+    "tools/release/finalize_apk.py": "46c9cd704a03786a498db6c31f412a441da4eba17d59a6b273ceb7e262777a4d",
+    "tools/release/multi-pack/ReleaseLibraryInstrumentation.java": "c5f156023aa8d2e59ef3aba3bc41a0abddeb18fb95449372c12ae049909d2a67",
+    "tools/release/multi-pack/fresh.py": "e11779cbeec37f2e47d60aa2fb0c49bdbb2a2f34ba394fb0ad74a6880e455317",
+    "tools/release/multi-pack/import_pack_ui.py": "c45bf6691a6e8e358cc7b02334685d14f9fddfea84e51c80bf06c2c73652cd1e",
+    "tools/release/multi-pack/protocol.json": "581b4af0d431f19b3db9c43b4093969b44b1ba8f5f6cec43951bad51daaef473",
+    "tools/release/multi-pack/source.gradle": "02f576fb064ca2799185516ede0d0a14e9b271b5a77228c5982ac2e23079525c",
+    "tools/release/verify.py": "31b7439058f1625e7cc9a63587c43f9f360bae101cfc17651b7f42bae38f5a4a",
+    "tools/runtime/build-host.sh": "fee9fe4eb074935519bf8ad647cf5ef6b3fa9a2fa70a320830614fd149ce79c4",
+    "tools/runtime/build-native.sh": "3a80b27c6d9ad1a1b3ae6681fadf40705e4e7c38701cba227084b0614e2b3a64",
+    "tools/runtime/fetch.sh": "f4089a94a767ec3b6b6bcb68829b1d37c1327766f0237c8cbc692835a48b0abe",
+    "tools/runtime/host/CMakeLists.txt": "f50e1470d06107ba8d01278ae89fc12f518b94597a8ad26cffe2b8f8e217d535",
+    "tools/runtime/pins.env": "1cb0aa2695c803496945dac1e9a3b7fadcf63e33b5b1434dbe70a284b973840a",
+    "tools/runtime/start-emulator.sh": "3c0ac04e6badfc9a81edae5590ccac496a2fb0c2951dfab62e6f315fb90e8e0c",
+    "tools/runtime/verify-native.sh": "cc8753e4cf492baadb1efc451985dd92a1d6c1109e975603f8203f61648c87d2"
+  },
+  "distribution_inventory_sha256": "1b9d3bcc3b4695c3a915861f3789ef8c4033fd9d8e1e74ec1f2fe903adff956b",
+  "evidence": {
+    "boot.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "abi.txt": "aaf631698ae5160ceb04a97681a14887fdcab47cd6e0f163c87485b3b1340b62",
+    "fingerprint.txt": "e07fd7d414c3b262449a1a48ec96db76edc31b2273ac896fc04f4f44870e7426",
+    "build.log": "c8f29620504cffbd03d3b05d160bb77e3f72f50846d06c4bee2b44489c446cdc",
+    "stop-before-backup.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backup-stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backup-receipt.json": "1bdfd5888c7284eb3c12b486a8d39548ef091c81b9f9a4cf67d468aa28646620",
+    "uninstall-org.pocketlore.app.test.txt": "7fc0023a6402c7bd7abd98bb3e580968de4833eed07d88d1cc8d70819d69c7a0",
+    "uninstall-org.pocketlore.app.txt": "7fc0023a6402c7bd7abd98bb3e580968de4833eed07d88d1cc8d70819d69c7a0",
+    "absent-package.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "install-app-debug.apk.txt": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+    "install-app-debug-androidTest.apk.txt": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+    "airplane-enable.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wifi-disable.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data-disable.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stop-fresh.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fresh-instrumentation.txt": "8ff85831cc40d638c460e5e80c434f888aed18e3d5a91ee85d131133b9a5e726",
+    "fresh.json": "2eb110133f86e9d2fee02229e6eed605af9714bd65146b4fb2c2a738d26e397b",
+    "model-ui.log": "a360c7a25f2bd9a60186854c70641edb3548622b9aeeac6fce04e51e8041b19f",
+    "reference-ui.log": "7064d411e3d92d27fe2c9ccef415ab85f2c4e4696ce7b29d09d71b98c3a787f5",
+    "science-ui.log": "de118d40f8aa4167f44d31116cc441e1db629a5d2ac5d6d5f9b66a14b2c1ab13",
+    "stop-combined.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "combined-instrumentation.txt": "8ff85831cc40d638c460e5e80c434f888aed18e3d5a91ee85d131133b9a5e726",
+    "combined.json": "0974b815e4c533c5a9871dc3cd38d1b8ff174ba04007755bd6082648b341be74",
+    "combined-combined-0.png": "a7ec1e0662e7c873314ae07bcf4dbec539f8fa9ce7e2b6a08d67f504ab2eabf4",
+    "combined-combined-1.png": "b1f1c2a2f287eee85b7ed07bbb1204d31880f0b43049d0a066bd5565788744b6",
+    "combined-combined-2.png": "31e6c936736bbf55174ce263c9af6248e0f24ef1a0f68fea275cccd61b9b9045",
+    "combined-combined-3.png": "01eafcd3b1ce73e6abcb692c77a9442b5232562033601172d243cbc8cb8b8885",
+    "stop-disabled.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "disabled-instrumentation.txt": "8ff85831cc40d638c460e5e80c434f888aed18e3d5a91ee85d131133b9a5e726",
+    "disabled.json": "f3fdef3de97cb0f45fd96a536de3bb9658b25b4db01367c6a9afca23b9b19cc1",
+    "stop-enabled.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enabled-instrumentation.txt": "8ff85831cc40d638c460e5e80c434f888aed18e3d5a91ee85d131133b9a5e726",
+    "enabled.json": "5ae71737ccf6ad19b0ea1f4b6058c9219cf2e3c2fceb9676389bf2efd6202f01",
+    "enabled-combined-0.png": "f918c3e0e1f93b04b2138212d6432b11804525e221da69b0688e60d66040e761",
+    "enabled-combined-1.png": "361a7763195f7b6cc2b5c1f904e31fb4a01d1b8b07183c18557a8fc5a796f445",
+    "enabled-combined-2.png": "09c60b9c23b3d58f9550d21de87b646e7858019504b0f10bbeef6367b19ca601",
+    "enabled-combined-3.png": "0903a26d248fbb314411bcb547f1afd77a04872684bb26087836315b6eb25883",
+    "airplane_mode_on.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "wifi_on.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "mobile_data.txt": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "com.google.android.gms.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "com.android.vending.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "permissions.txt": "4bc3f67cf145849d3191901592a6a5c266397d74a031c6df278cf9327cff87eb",
+    "runtime-dependencies.txt": "6d74983a043751f28f91cdf370affcf08d6a1137b51c1588a533cd821b06e43b",
+    "saved-model.txt": "e7cb52bb0138ddd9206fd40e5cb9e9caa6b9aebb5d6ba0359f17d01cf2b5acd1",
+    "catalog.json": "af8b4e47b29a230b4136b7a170ccb5c998ff23495f294898f976f7c2750e17bd",
+    "pack-567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea.txt": "65d819880f250ed8b911a8e37aa1f9554a702f756a70f3e574288014e4b23437",
+    "pack-c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274.txt": "69ee661c59c709dc935b0b1698b9c063e197c4f13c65870c663d5af1be3a5cc8",
+    "summary.json": "1ce4d60e472dbdc15a7db3fb4811ebc70f9f13404e0b9a806cc9baa0ae08faae",
+    "model-ui/001-scroll.xml": "b95af7703e84c6d1b50310af3c9f04c2f96794e9a3f8106d4ad1bf0a541f8d95",
+    "model-ui/002-picker.xml": "770f762b821da4a942870956e750f8b9acf38899d54ea457ca4bfd0c8416a887",
+    "model-ui/003-roots.xml": "e6646ab8d95ab5cf827183b288c4bce31a685cc14003636402c83e261cc19b44",
+    "model-ui/004-scroll.xml": "770f762b821da4a942870956e750f8b9acf38899d54ea457ca4bfd0c8416a887",
+    "model-ui/005-confirm.xml": "3648203b78ce9cc360f41d28f08967d2dddf7bf5a71b1da097cda96ceefb43a5",
+    "model-ui/import-confirmation.png": "62aa9753d9ab711af96ae38442578cef5c4bc3b7f92d1549321138b707ad5056",
+    "model-ui/006-imported.xml": "1eadc3e1d22beca1a5f4a7edefe20276b658dab1da548ec229592d212cccfd91",
+    "model-ui/007-imported.xml": "8a6114860f302e5e3e7368d04bcfd55cc400f840fbfb67805bd9fc24c5941d8a",
+    "model-ui/imported.png": "93c74fda6046620cd6619929819e7071d97b3dc6753a8ec2d53ac98ff1f4ab97",
+    "model-ui/008-scroll.xml": "a28f478fd9b24e0066e6bbc42dabba9a695781d076edc6654c650db0d19ba4e5",
+    "model-ui/009-reloaded.xml": "a28f478fd9b24e0066e6bbc42dabba9a695781d076edc6654c650db0d19ba4e5",
+    "model-ui/reloaded.png": "bd169b775f819484b387162faf928586fbf101fdffde4abf5d522aa198608b9f",
+    "model-ui/result.json": "05ea49eb17f4b007dd92dd9815b9e726e6bd66b7dc56d239a78f611559f7065d",
+    "reference-ui/001-scroll.xml": "a28f478fd9b24e0066e6bbc42dabba9a695781d076edc6654c650db0d19ba4e5",
+    "reference-ui/002-picker.xml": "83a9c588f6697f35625815c65c69abf7d464800061b45b1522f8467739019832",
+    "reference-ui/003-roots.xml": "0eef2556f8f515f67e88502497d8bc491e0bb99343e9328378357d87ccc0757d",
+    "reference-ui/004-scroll.xml": "83a9c588f6697f35625815c65c69abf7d464800061b45b1522f8467739019832",
+    "reference-ui/imported.png": "35a0a11a741b37e7032b00fbb92046d6a2ba7573965902dfc563fb2f5ab42644",
+    "reference-ui/result.json": "8620a83cdad47cbbef91dc29a8a971fbd399722e020ab270f319db3507f0550d",
+    "science-ui/001-scroll.xml": "2e947e8b62e4debe394f20e452b40e0d1e205a5e37fda70d994d712ee97caee3",
+    "science-ui/002-picker.xml": "1db908d9ebf79f340114d832cace7edce14a873317caef8bb7f248e9387687d5",
+    "science-ui/003-roots.xml": "b97ffdd1875222505835591ae1db61eeb5a04a90a36add1510930cb1046e8bac",
+    "science-ui/004-scroll.xml": "1db908d9ebf79f340114d832cace7edce14a873317caef8bb7f248e9387687d5",
+    "science-ui/imported.png": "60e4d15c2cbfd82ca87fdf8a4e4b789258cae69fdac9ff5f5066c9d17b467305",
+    "science-ui/result.json": "25b380dac42f96c17613288c433a376ef6a29242dd61a97ee9043a88c893e525"
+  },
+  "limits": [
+    "same rig/toolchain only",
+    "production signing owner decision",
+    "physical Android/GrapheneOS open",
+    "human/independent research acceptance open"
+  ]
+}

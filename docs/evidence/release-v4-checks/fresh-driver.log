@@ -1,0 +1,52 @@
+/home/isa/Projects/PocketLore/downloads/release-multi-pack/run-20261001T071547515600Z
+{
+  "schema": 2,
+  "status": "PASS",
+  "environment": "Existing AOSP x86_64 emulator; fresh offline multi-pack installation, not physical acceptance",
+  "protocol_sha256": "581b4af0d431f19b3db9c43b4093969b44b1ba8f5f6cec43951bad51daaef473",
+  "artifacts": {
+    "android/app/build/outputs/apk/debug/app-debug.apk": {
+      "bytes": 11921193,
+      "sha256": "934147a471c948ea77de51d89663759a2925351c382f5412287535017e67a1f5"
+    },
+    "downloads/answers/model/qwen2.5-0.5b-instruct-q4_k_m.gguf": {
+      "bytes": 491400032,
+      "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+    },
+    "downloads/packs/english-reference.plpack": {
+      "bytes": 159327,
+      "sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea"
+    },
+    "downloads/science/science-supplement-2026-10-01-v1.plpack": {
+      "bytes": 31183,
+      "sha256": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274"
+    }
+  },
+  "radio": {
+    "airplane_mode_on": "1",
+    "wifi_on": "0",
+    "mobile_data": "0"
+  },
+  "saved_model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "catalog": {
+    "schema": 1,
+    "collections": [
+      {
+        "id": "english-reference-2026-10-01",
+        "sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+        "active": true
+      },
+      {
+        "id": "science-supplement-2026-10-01-v1",
+        "sha256": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274",
+        "active": true
+      }
+    ]
+  },
+  "fresh_empty": true,
+  "distinct_processes": true,
+  "final_collections": 2,
+  "final_documents": 18,
+  "final_passages": 210,
+  "limitations": "One fresh install, actual SAF imports and source buttons; support assessed separately. No physical, clean-machine, production signing or natural OOM claim."
+}

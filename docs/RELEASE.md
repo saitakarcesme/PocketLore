@@ -1,64 +1,63 @@
 # Development candidate: build, install and demonstrate
 
-This is an unsigned-for-production development workflow on LLMRig. The resulting APK is signed with a project-local Android debug certificate, not a stable release key. `tools/android-build.sh` creates the standard development key once at ignored `downloads/android-debug/debug.keystore` and selects it with a scoped Gradle init script. It does not change home-directory or global signing configuration. Retain that ignored key locally to reproduce signed bytes; never commit it. A new key changes APK bytes and cannot update an installation signed by a different key. It is not accepted for bounty submission. [Candidate evidence](evidence/release-preparation.md) and the [release gaps](RELEASE_GAPS.md) identify the exact tested bytes and open gates.
+This is a development debug candidate, not an accepted product, production-signed release or bounty submission. [Task202 evidence](evidence/multi-pack-release-revalidation.md) and [release-v4 manifest](evidence/release-v4/manifest.json) identify the tested APK and both packs; [release gaps](RELEASE_GAPS.md) remain open. Historical release-v1/v2/v3 identities and failures remain preserved and must not be relabeled as this candidate.
 
-## Provision once with network access
+## Provision once, then build offline
 
-Reuse the installed toolchain at `/home/isa/Android/atlas-toolchain`, or set `POCKETLORE_TOOLCHAIN` to an equivalent layout: Temurin JDK 17, Gradle 8.13, AGP 8.9.2, SDK platform 35/build-tools 35.0.0, NDK r27c and CMake 3.22.1. Python 3 standard-library tooling is used. Compatible cached Gradle/SDK dependencies are required; a fresh machine needs initial downloads. Do not change unrelated projects or global settings.
+Use the installed LLMRig toolchain at `/home/isa/Android/atlas-toolchain`, or an equivalent layout selected by `POCKETLORE_TOOLCHAIN`: Temurin JDK 17.0.20.1+1, Gradle 8.13, AGP 8.9.2, SDK platform 35/build-tools 35.0.0, NDK r27c and CMake 3.22.1. Python 3 standard-library tooling and cached Gradle dependencies are required. Initial provisioning requires network; research/inference does not.
 
 ```sh
 bash tools/runtime/fetch.sh
 bash tools/answers/fetch-model.sh
 python3 tools/android-knowledge-pack.py --cache downloads/starter-source-cache --download
 python3 tools/packs/build_pack.py --download
+python3 tools/packs/build_science.py --download
 python3 tools/packs/build_travel.py --fetch --install
-# Only if Gradle dependencies are not yet cached:
+# If Gradle dependencies are not yet cached:
 POCKETLORE_GRADLE_ONLINE=1 bash tools/android-build.sh
 ```
 
-Runtime/model pins are immutable revisions; text blocks and travel revisions are pinned in the source locks. Upstream web pages can change or disappear: retain the original source cache to reproduce a release. Changed content must fail rather than silently refresh pins. The runtime fetch does not include model weights unless requested; the answer-model command above selects the demo's Qwen2.5-0.5B GGUF. Weights and source caches stay under ignored `downloads/` paths. See [notices](../THIRD_PARTY_NOTICES) and [pack provenance](KNOWLEDGE_PACKS.md).
-
-## Offline build and candidate verification
-
-The preserved v2 candidate failed byte reproducibility because AGP debug DEX included varying incremental class checksums. The repair uses the same pinned D8 compiler to re-emit DEX without those optional checksums, then sorts ZIP entries, fixes timestamps, aligns and signs the APK. The APK remains debuggable, and all artifact hashes remain exact: no DEX bytes are ignored by verification. `tools/release/check_reproducibility.py` executes two forced builds and requires identical complete APK hashes; it preserves logs and APKs on failure. This checks the same rig/toolchain/key, not an independent clean machine.
+Downloads must stay in ignored paths. Live pages can change: retain pinned caches; changed bytes must fail instead of silently refreshing locks. The production/demo model is Qwen2.5-0.5B-Instruct Q4_K_M (491,400,032 bytes, SHA `74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db`). Optional Qwen3 evaluation is not deployment. See [notices](../THIRD_PARTY_NOTICES) and [distribution inventory](distribution-inventory.json) for licenses, immutable revisions, native static inputs and build dependencies.
 
 ```sh
 python3 tools/android-knowledge-pack.py --cache downloads/starter-source-cache
 python3 tools/packs/build_pack.py
+python3 tools/packs/build_science.py
 bash tools/android-build.sh
 bash tools/verify-release.sh
 ```
 
-The APK is `android/app/build/outputs/apk/debug/app-debug.apk`. It supports ARM64 and x86_64, Android API 28 or later; only API 35 x86_64 emulator execution has been measured. The manifest at `docs/evidence/release-v3/manifest.json` records exact demo artifact identities, build-tool versions, native revision, packaged asset/library hashes and source-lock hashes. An independently signed APK will have different bytes; do not silently replace the frozen candidate manifest to conceal this difference.
+The final APK is `android/app/build/outputs/apk/debug/app-debug.apk`, SHA `934147a471c948ea77de51d89663759a2925351c382f5412287535017e67a1f5`, 11,921,193 bytes. API 28 minimum; CPU JNI for ARM64 and x86_64. Actual execution here is API 35 x86_64 emulator only. The manifest pins **all APK entries**, including every DEX, native library, packaged asset, manifest and signature entry, plus full signed APK and external asset hashes. It also binds the refreshed distribution inventory, build recipe source hashes, signer and actual fresh-demo records.
 
-The verifier requires the frozen demo APK/model/pack and source cache. It runs two forced builds, compares full APK hashes, rejects incremental class-checksum metadata, and checks their hashes, actual APK permissions/ABIs/license entries and Gradle runtime dependencies; rebuilds the pack twice; executes retrieval behavior tests; and validates the fresh-demo evidence with negative tests. Its default is evidence replay, not another emulator uninstall or independent quality evaluation. For the initial freeze after review of raw results, use `python3 tools/release/verify.py --freeze downloads/offline/run-TIMESTAMP`. An existing manifest cannot be overwritten by this command; explicitly version a new evidence directory and update the verifier for a later candidate. Keep previous evidence versions and preserve ignored failed runs. Never use this command to turn a failing run into a pass.
+The build uses an ignored project-local development keystore (`downloads/android-debug/debug.keystore`). Keep it locally to reproduce signed bytes; never commit or publish it. A different signing key changes bytes and cannot update an installation signed with the old key. No production key is generated. The scoped finalizer uses pinned D8 without optional incremental class-checksum metadata, normalized ZIP ordering/timestamps, alignment and signing. The verifier executes two forced builds and requires exact full APK equality; this is same-rig/toolchain/key reproduction, not a clean-machine result.
 
-## Install local artifacts
+The default release verifier is nondestructive **evidence replay**: exact artifact/source/inventory hashes, permissions and dependency/notice checks, repeated reference/science builds, host retrieval behavior, fresh-demo receipt validation and negative mutations. It does not uninstall or rerun emulator inference. Frozen manifests cannot be overwritten; a later changed candidate needs a new evidence version and actual matching demo, preserving old failures.
 
-On the existing test emulator (do not launch a second emulator):
+## Install and import locally
+
+Use the existing isolated emulator. Do not launch or restart services.
 
 ```sh
 ADB=/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb
 "$ADB" -s emulator-5560 install -r android/app/build/outputs/apk/debug/app-debug.apk
 "$ADB" -s emulator-5560 push downloads/answers/model/qwen2.5-0.5b-instruct-q4_k_m.gguf /sdcard/Download/
 "$ADB" -s emulator-5560 push downloads/packs/english-reference.plpack /sdcard/Download/
+"$ADB" -s emulator-5560 push downloads/science/science-supplement-2026-10-01-v1.plpack /sdcard/Download/
 ```
 
-For a future physical device use its explicit serial after obtaining access; the commands are instructions, not hardware acceptance. Enable airplane mode and turn Wi-Fi/mobile data off. Open PocketLore, choose **Import local GGUF**, select the model in Downloads, confirm the local copy and wait for **Local model ready**. Choose **Import knowledge pack** and select the `.plpack`; wait for 186 passages. Restart the app and confirm both reload. Keep sufficient space for original Downloads, imported copies, temporary staging and the 256 MiB reserve. See the [resource accounting](evidence/resources.md); a small model does not prove the 12 GB device budget under sustained use.
+Turn airplane mode on and Wi-Fi/mobile data off. In PocketLore, choose **Import local GGUF**, select the local model and confirm its copy size. Wait for **Local model ready**. Use **Import knowledge pack** separately for reference and science. Both remain installed; **Choose collections** selects the searched editions. Expect two active collections, 18 distinct documents and 210 passages. Disable science and Apply: 186 reference passages remain searchable. Restart and verify that selection persists; re-enable science and restart again to restore 210. Imported model and pack hashes remain unchanged across these operations.
 
-## Live offline demo, with no substituted answers
+The reference archive is 159,327 bytes, SHA `567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea`; science is 31,183 bytes, SHA `c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274`. Older pack notices describe single-pack replacement; the app explicitly labels those historical notices and retains collections. Keep space for original Downloads, app copies, import staging and the 256 MiB reserve. Combined catalog admission is bounded; individual-pack admission does not imply arbitrary combined capacity. No physical 12 GB budget claim follows.
 
-1. Show airplane mode, the installed pack and model identities. On a fresh install show the explicit no-model fallback before importing the model.
-2. Ask `Compare evaporation and condensation`. Wait for the actual output; show whether its route is generated or fallback. Do not paste or script an expected answer into the UI. Inspect a cited source and its date/rights.
-3. Ask `What is groundwater?`. If support checking withholds the draft, show the fallback label. This is a product limitation, not a successful explanation.
-4. Ask `Does evaporation cure diabetes?` to demonstrate missing-evidence abstention. It is a development safety case, not a medical evaluation.
-5. Start another question, wait for generation, then cancel. Restart/recreate the app and show that partial text is discarded and saved assets remain available.
-6. Open the travel slice, inspect a DC monument's recorded source date and coordinates, and show stale-hours/unavailable-routing disclosure. Do not claim a live route or current opening status.
+## Actual offline demo
 
-The deterministic automated fresh demo uses the bundled eight-passage starter for its inference phase, then imports the 186-passage pack and checks its source UI; manual questions after larger-pack import can produce different outputs. No fixed response is a success oracle. Preserve raw drafts, published routes and failures.
+1. Start from local saved artifacts with airplane mode shown; verify both active collections and model readiness.
+2. Ask **What is magma?** Wait for the actual output and show its route. In the fresh measured run, the production model generated the cited USGS underground/surface definition. Never substitute that text for a new run's actual answer.
+3. Inspect the science source dialog, including full edition ID, text, URL, date, rights and source/passage hashes. URLs are provenance labels, not research-time network requests.
+4. Disable science, restart the app, and check that magma/lava evidence is excluded. Re-enable it, restart, and check combined evidence again.
+5. Explain the current limitation: comparison and multi-source drafts can be incomplete, unsupported or withheld. Source buttons and formatted citations are not support/usefulness proof. The task201 cancellation/reload evidence is separate from this fresh-install demonstration.
+6. The travel slice contains 25 bounded central DC POIs. Disclose dated availability, stale hours and unavailable routing; do not promise current conditions.
 
-For a new two-cycle clean-install demonstration, run `bash tools/evaluation/check_offline.sh` on the idle existing emulator. This archives PocketLore app data, uninstalls/reinstalls only PocketLore and its test package twice, drives the real local document picker, tests corrupted imports, executes real model answers and cancellation, and leaves a fresh offline imported app. Backups and screenshots remain under `downloads/offline/run-*`; never publish app-data archives. See [offline installation details](OFFLINE_INSTALL.md). Do not run concurrent emulator tests.
+For a **new destructive project-fixture-only fresh demo**, run `python3 tools/release/multi-pack/fresh.py` on the idle existing emulator. It archives PocketLore fixture app data under ignored `downloads/release-multi-pack/`, uninstalls only PocketLore and its test package, proves empty saved assets, performs actual SAF model and two-pack imports, exercises selection persistence in distinct processes, runs real JNI twice and inspects sources. It leaves both collections enabled; app model loads on next launch. No archived user data is restored or published. This is one new fresh installation; old two-cycle/corruption/cancellation experiments remain historical evidence, not rerun claims.
 
-## Distribution and acceptance boundaries
-
-Do not distribute the local debug key, model weights without their model terms, private evaluation inputs, app-data backups or private control files. A public signed release, upgrade/key continuity, independent clean-machine reproduction, broader useful-answer review, external rival comparisons, unseen evaluation, physical Android/GrapheneOS testing, sustained resource/thermal measurements and any public demo/submission require separate work. No bounty submission is made by these scripts.
+For physical hardware, use its explicit authorized serial and a separately reviewed install workflow; no physical device is attached here. Production signing/upgrade ownership, independent clean-machine reproduction, full terms review before redistributing build tools, physical Android/GrapheneOS, sustained phone resources/thermals, independent useful-research review and human acceptance remain open. No public artifact upload, bounty submission or main advancement is performed.
