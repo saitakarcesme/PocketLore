@@ -1,0 +1,10 @@
+{
+  "id": "226-brief-obligation-availability",
+  "status": "proposed only; not dispatched",
+  "depends_on": ["225-general-source-backed-research-brief"],
+  "objective": "Represent each research-brief question part with separately inspected exact passages or explicit unavailable evidence, addressing personal/live/forecast ambiguity and unrelated passage distraction without factual paraphrase generation.",
+  "scope": ["android", "tools/evaluation", "docs", "FINDINGS.md"],
+  "artifacts": ["docs/evidence/brief-obligation-availability.md"],
+  "acceptance_checks": [["bash", "tools/android-build.sh"], ["bash", "tools/evaluation/check_brief_obligations.sh"]],
+  "constraints": ["Freeze new public paired positive/absent questions before changes", "No case/entity-specific rules or old generation", "No lexical overlap as completeness certification", "Keep independent source review separate from builder labels", "No holdout, production-model or orchestration changes"]
+}
