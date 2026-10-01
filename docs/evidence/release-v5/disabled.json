@@ -1,0 +1,15 @@
+{
+  "opening_ms": 2328,
+  "opening_pss_kib": 604476,
+  "pid": 21680,
+  "mode": "disabled",
+  "disabled_persisted": true,
+  "collections": 3,
+  "passages": 40891,
+  "documents": 1113,
+  "saved_model_bytes": 491400032,
+  "end_pss_kib": 584055,
+  "proc_status": "Name:\t.pocketlore.app\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t21680\nNgid:\t0\nPid:\t21680\nPPid:\t346\nTracerPid:\t0\nUid:\t10172\t10172\t10172\t10172\nGid:\t10172\t10172\t10172\t10172\nFDSize:\t256\nGroups:\t9997 20172 50172 \nKthread:\t0\nVmPeak:\t16840788 kB\nVmSize:\t16425140 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  706620 kB\nVmRSS:\t  674488 kB\nRssAnon:\t   98796 kB\nRssFile:\t  559308 kB\nRssShmem:\t   16384 kB\nVmData:\t 2712512 kB\nVmStk:\t    8192 kB\nVmExe:\t       8 kB\nVmLib:\t  148320 kB\nVmPTE:\t    2268 kB\nVmSwap:\t   22208 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t25\nSigQ:\t0\/9878\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080001204\nSigIgn:\t0000000000000001\nSigCgt:\t0000006e400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t0000000000000000\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\t3\nCpus_allowed_list:\t0-1\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t341\nnonvoluntary_ctxt_switches:\t429\n",
+  "status": "PASS",
+  "dialogs": []
+}

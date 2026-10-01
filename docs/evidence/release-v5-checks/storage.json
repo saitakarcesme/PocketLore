@@ -1,0 +1,21 @@
+{
+  "scope": "Post-fresh existing emulator allocation; package/files/provider copies, not full-scale phone installation",
+  "package": {
+    "exit_code": 0,
+    "stdout": "15308\t/data/app/~~04oKdFpfvwz2b7L7uIbUGA==/org.pocketlore.app-NPTz-x_z8jNp8m21CUjUtg==/base.apk\n8\t/data/app/~~04oKdFpfvwz2b7L7uIbUGA==/org.pocketlore.app-NPTz-x_z8jNp8m21CUjUtg==/lib/x86_64\n16\t/data/app/~~04oKdFpfvwz2b7L7uIbUGA==/org.pocketlore.app-NPTz-x_z8jNp8m21CUjUtg==/lib\n15332\t/data/app/~~04oKdFpfvwz2b7L7uIbUGA==/org.pocketlore.app-NPTz-x_z8jNp8m21CUjUtg==\n",
+    "stderr": ""
+  },
+  "data": {
+    "exit_code": 0,
+    "stdout": "8\tfiles/release-tests/fresh.json\n480\tfiles/release-tests/0-combined-0.png\n444\tfiles/release-tests/1-combined-1.png\n432\tfiles/release-tests/2-combined-2.png\n448\tfiles/release-tests/3-combined-0.png\n76\tfiles/release-tests/combined.json\n472\tfiles/release-tests/4-combined-1.png\n440\tfiles/release-tests/5-combined-2.png\n464\tfiles/release-tests/6-combined-3.png\n8\tfiles/release-tests/disabled.json\n76\tfiles/release-tests/enabled.json\n8\tfiles/release-tests/rollback.json\n3364\tfiles/release-tests\n8\tfiles/pack-library/catalog.json\n160\tfiles/pack-library/567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea.plpack\n36\tfiles/pack-library/c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274.plpack\n45260\tfiles/pack-library/b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012.plpack\n118560\tfiles/pack-library/b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012.sqlite\n164032\tfiles/pack-library\n479888\tfiles/model.gguf\n647292\tfiles\n8\tcache\n8\tcode_cache\n",
+    "stderr": ""
+  },
+  "filesystem": {
+    "exit_code": 0,
+    "stdout": "Filesystem       1K-blocks    Used Available Use% Mounted on\n/dev/block/dm-43   6082144 1477668   4462264  25% /data/user/0\n",
+    "stderr": ""
+  },
+  "canonical_input_bytes": 537929986,
+  "logical_apk_model_packs_index_bytes": 675000596,
+  "archive_on_rig_not_installed_bytes": 3371854336
+}

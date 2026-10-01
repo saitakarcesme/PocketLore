@@ -1,6 +1,15 @@
 # Development candidate: build, install and demonstrate
 
-> Current status: final release freeze is deferred under the approved scale replan. The latest APK differs from release-v4 and its strict release check fails. The instructions below describe historical release-v4; see [the current audit](evidence/broad-candidate-release.md) before treating them as a candidate-validation procedure.
+## Current release-v5 development candidate
+
+Use [current evidence and exact identities](evidence/broad-candidate-release.md) and `docs/evidence/release-v5/manifest.json`. The current model is pinned Qwen2.5 0.5B. Import reference, science and `downloads/broad-reference/rendered-v2/broad-reference.plpack` through **Import knowledge pack**, confirm each copy, and retain all three through **Choose collections**. Search the fixed headlamp question, open its rendered citation, then inspect science and Acid sources and the broad **License** control. Actual output, limits and resource definitions are in the evidence report.
+
+Build with `bash tools/android-build.sh`; verify with `bash tools/verify-release.sh`. A new project-fixture-only clean demonstration uses `python3 tools/release/broad/fresh.py` and the protocol under `tools/release/broad`; archive before uninstalling and never restore that archive into the fresh test. Source/model assets and backups remain ignored. The final chosen-model/full-scale release, phone/GrapheneOS, signing owner, independent reproduction and human acceptance remain open.
+
+## Historical release-v4 procedure
+
+The following older two-edition instructions and evidence remain historical; do not treat their hashes/counts as release-v5.
+
 
 This is a development debug candidate, not an accepted product, production-signed release or bounty submission. [Task202 evidence](evidence/multi-pack-release-revalidation.md) and [release-v4 manifest](evidence/release-v4/manifest.json) identify the tested APK and both packs; [release gaps](RELEASE_GAPS.md) remain open. Historical release-v1/v2/v3 identities and failures remain preserved and must not be relabeled as this candidate.
 

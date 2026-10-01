@@ -1,0 +1,9 @@
+/home/isa/Projects/PocketLore/downloads/release-broad/run-20261001T162843285541Z
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/release/broad/fresh.py", line 36, in <module>
+    run(['python3',R/'tools/answers/ui-smoke.py','--adb',adb[0],'--serial','emulator-5560','--model',assets[0],'--out',out/'model-ui','--import-only'],'model-ui.log')
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/release/broad/fresh.py", line 12, in run
+    if p.returncode and not optional:raise RuntimeError(str(out/name))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: /home/isa/Projects/PocketLore/downloads/release-broad/run-20261001T162843285541Z/model-ui.log
