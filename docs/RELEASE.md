@@ -1,6 +1,6 @@
 # Development candidate: build, install and demonstrate
 
-This is an unsigned-for-production development workflow on LLMRig. The resulting APK is signed with a local Android debug certificate, not a stable release key. It is not accepted for bounty submission. [Candidate evidence](evidence/release-preparation.md) and the [release gaps](RELEASE_GAPS.md) identify the exact tested bytes and open gates.
+This is an unsigned-for-production development workflow on LLMRig. The resulting APK is signed with a project-local Android debug certificate, not a stable release key. `tools/android-build.sh` creates the standard development key once at ignored `downloads/android-debug/debug.keystore` and selects it with a scoped Gradle init script. It does not change home-directory or global signing configuration. Retain that ignored key locally to reproduce signed bytes; never commit it. A new key changes APK bytes and cannot update an installation signed by a different key. It is not accepted for bounty submission. [Candidate evidence](evidence/release-preparation.md) and the [release gaps](RELEASE_GAPS.md) identify the exact tested bytes and open gates.
 
 ## Provision once with network access
 
@@ -27,9 +27,9 @@ bash tools/android-build.sh
 bash tools/verify-release.sh
 ```
 
-The APK is `android/app/build/outputs/apk/debug/app-debug.apk`. It supports ARM64 and x86_64, Android API 28 or later; only API 35 x86_64 emulator execution has been measured. The manifest at `docs/evidence/release/manifest.json` records exact demo artifact identities, build-tool versions, native revision, packaged asset/library hashes and source-lock hashes. An independently signed APK will have different bytes; do not silently replace the frozen candidate manifest to conceal this difference.
+The APK is `android/app/build/outputs/apk/debug/app-debug.apk`. It supports ARM64 and x86_64, Android API 28 or later; only API 35 x86_64 emulator execution has been measured. The manifest at `docs/evidence/release-v2/manifest.json` records exact demo artifact identities, build-tool versions, native revision, packaged asset/library hashes and source-lock hashes. An independently signed APK will have different bytes; do not silently replace the frozen candidate manifest to conceal this difference.
 
-The verifier requires the frozen demo APK/model/pack and source cache. It checks their hashes, actual APK permissions/ABIs/license entries and Gradle runtime dependencies; rebuilds the pack twice; executes retrieval behavior tests; and validates the fresh-demo evidence with negative tests. Its default is evidence replay, not another emulator uninstall or independent quality evaluation. To intentionally freeze a newly measured candidate after review of raw results, use `python3 tools/release/verify.py --freeze downloads/offline/run-TIMESTAMP`. Keep every previous evidence version in Git history and preserve ignored failed runs. Never use this command to turn a failing run into a pass.
+The verifier requires the frozen demo APK/model/pack and source cache. It checks their hashes, actual APK permissions/ABIs/license entries and Gradle runtime dependencies; rebuilds the pack twice; executes retrieval behavior tests; and validates the fresh-demo evidence with negative tests. Its default is evidence replay, not another emulator uninstall or independent quality evaluation. For the initial freeze after review of raw results, use `python3 tools/release/verify.py --freeze downloads/offline/run-TIMESTAMP`. An existing manifest cannot be overwritten by this command; explicitly version a new evidence directory and update the verifier for a later candidate. Keep previous evidence versions and preserve ignored failed runs. Never use this command to turn a failing run into a pass.
 
 ## Install local artifacts
 

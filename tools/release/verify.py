@@ -3,7 +3,7 @@
 import argparse,copy,hashlib,importlib.util,json,os,subprocess,tempfile,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
-EVIDENCE=ROOT/'docs/evidence/release'
+EVIDENCE=ROOT/'docs/evidence/release-v2'
 MANIFEST=EVIDENCE/'manifest.json'
 def sha(p):
     with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
@@ -14,7 +14,7 @@ def run(args):
 def check_demo(summary,loaded,fresh):
     assert summary['environment'].startswith('Existing AOSP x86_64 emulator')
     assert len(summary['checks'])==10 and summary['status']=='PASS'
-    required={'airplane_mode_on','internet_permission_denied','socket_denied_by_application_uid','real_offline_inference_0','real_offline_inference_1','unsupported_abstention_0','unsupported_abstention_1','cancel_discards_real_partial_draft','activity_recreated','recreation_discards_prior_draft','inference_after_recreation','source_dialog_opened'}
+    required={'airplane_mode_on','internet_permission_denied','socket_denied_by_application_uid','real_offline_inference_0','real_offline_inference_1','unsupported_abstention_2','unsupported_abstention_3','cancel_discards_real_partial_draft','activity_recreated','recreation_discards_prior_draft','inference_after_recreation','source_dialog_opened'}
     assert set(loaded['checks'])==required and loaded['status']=='PASS'
     assert 'EPERM' in loaded['socket_probe'] or 'EACCES' in loaded['socket_probe']
     assert loaded['cancel_ms']>=0 and loaded['elapsed_ms']>0
@@ -33,19 +33,24 @@ def main():
     tc=Path(os.environ.get('POCKETLORE_TOOLCHAIN','/home/isa/Android/atlas-toolchain'))
     apk=ROOT/'android/app/build/outputs/apk/debug/app-debug.apk'
     if args.freeze:
-        source=args.freeze.resolve();EVIDENCE.mkdir(parents=True,exist_ok=True)
-        names=['summary.json','cycle-1-loaded-result.json','cycle-1-fresh-result.json','cycle-2-fresh-result.json','permissions.txt','runtime-dependencies.txt','fingerprint.txt','abi.txt']
-        for name in names:(EVIDENCE/name).write_bytes((source/name).read_bytes())
+        source=args.freeze.resolve()
+        if MANIFEST.exists():raise ValueError('Candidate manifest already frozen; preserve it and version a new evidence directory explicitly')
+        check_demo(json.loads((source/'summary.json').read_text()),json.loads((source/'cycle-1-loaded-result.json').read_text()),[json.loads((source/f'cycle-{i}-fresh-result.json').read_text()) for i in [1,2]])
+        EVIDENCE.mkdir(parents=True,exist_ok=True)
+        names=['summary.json','cycle-1-loaded-result.json','cycle-1-fresh-result.json','cycle-2-fresh-result.json','permissions.txt','runtime-dependencies.txt','fingerprint.txt','abi.txt','cycle-1-model-ui/result.json','cycle-1-model-ui/source-dialog.png','cycle-1-pack-ui/result.json','cycle-2-model-ui/result.json','cycle-2-pack-ui/result.json']
+        for name in names:
+            target=EVIDENCE/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((source/name).read_bytes())
         # No app-data tar, model weights, private logs or control state are archived in Git.
         artifacts=[apk,ROOT/'downloads/answers/model/qwen2.5-0.5b-instruct-q4_k_m.gguf',ROOT/'downloads/packs/english-reference.plpack']
-        manifest={'schema':1,'candidate':'development debug; not accepted release','demo_run':source.name,'source_commit':run(['git','rev-parse','HEAD']).strip(),'build_tools':{'jdk':'Temurin 17.0.20.1+1','gradle':'8.13','android_gradle_plugin':'8.9.2','sdk':'35','build_tools':'35.0.0','ndk':'r27c','cmake':'3.22.1'},'runtime':{'llama_cpp_revision':'bb4caa7540188872173c44d161602d9271386413','license':'MIT','backends':['CPU'],'abis':['arm64-v8a','x86_64'],'java_runtime_dependencies':[], 'static_support':['NDK libc++ and compiler runtime; toolchain licenses apply'], 'ndk_notice_sha256':sha(tc/'android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/NOTICE')},'artifacts':{str(p.relative_to(ROOT)):{'bytes':p.stat().st_size,'sha256':sha(p)} for p in artifacts},'apk_entries':{},'evidence':{n:sha(EVIDENCE/n) for n in names},'source_locks':{str(p.relative_to(ROOT)):sha(p) for p in [ROOT/'tools/runtime/pins.env',ROOT/'tools/answers/model.env',ROOT/'tools/packs/sources.lock.json',ROOT/'tools/packs/travel-sources.lock.json',ROOT/'android/knowledge-sources.json']}}
+        manifest={'schema':1,'candidate':'development debug; not accepted release','demo_run':source.name,'source_commit':run(['git','rev-parse','HEAD']).strip(),'signer':run([tc/'sdk/build-tools/35.0.0/apksigner','verify','--print-certs',apk]),'source_files':{name:sha(ROOT/name) for name in run(['git','ls-files','android','tools/runtime','tools/answers','tools/packs','tools/android-build.sh','tools/release']).splitlines() if (ROOT/name).is_file()},'build_tools':{'jdk':'Temurin 17.0.20.1+1','gradle':'8.13','android_gradle_plugin':'8.9.2','sdk':'35','build_tools':'35.0.0','ndk':'r27c','cmake':'3.22.1'},'runtime':{'llama_cpp_revision':'bb4caa7540188872173c44d161602d9271386413','license':'MIT','backends':['CPU'],'abis':['arm64-v8a','x86_64'],'java_runtime_dependencies':[], 'static_support':['NDK libc++ and compiler runtime; toolchain licenses apply'], 'ndk_notice_sha256':sha(tc/'android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/NOTICE')},'artifacts':{str(p.relative_to(ROOT)):{'bytes':p.stat().st_size,'sha256':sha(p)} for p in artifacts},'apk_entries':{},'evidence':{n:sha(EVIDENCE/n) for n in names},'source_locks':{str(p.relative_to(ROOT)):sha(p) for p in [ROOT/'tools/runtime/pins.env',ROOT/'tools/answers/model.env',ROOT/'tools/packs/sources.lock.json',ROOT/'tools/packs/travel-sources.lock.json',ROOT/'android/knowledge-sources.json']}}
         with zipfile.ZipFile(apk) as z:
             manifest['apk_entries']={n:{'bytes':len(z.read(n)),'sha256':hashlib.sha256(z.read(n)).hexdigest()} for n in z.namelist() if n.startswith(('assets/','lib/'))}
         MANIFEST.write_text(json.dumps(manifest,indent=2)+'\n')
     m=json.loads(MANIFEST.read_text())
     for name,identity in m['artifacts'].items():
         p=ROOT/name;assert p.stat().st_size==identity['bytes'] and sha(p)==identity['sha256'],name
-    for name,h in m['source_locks'].items():assert sha(ROOT/name)==h,name
+    for name,h in {**m['source_locks'],**m['source_files']}.items():assert sha(ROOT/name)==h,name
+    assert run([tc/'sdk/build-tools/35.0.0/apksigner','verify','--print-certs',apk])==m['signer']
     for name,h in m['evidence'].items():assert sha(EVIDENCE/name)==h,name
     with zipfile.ZipFile(apk) as z:
         actual={n:{'bytes':len(z.read(n)),'sha256':hashlib.sha256(z.read(n)).hexdigest()} for n in z.namelist() if n.startswith(('assets/','lib/'))}
@@ -56,6 +61,10 @@ def main():
     deps=run(['bash','tools/android-build.sh',':app:dependencies','--configuration','debugRuntimeClasspath']);assert 'No dependencies' in deps
     summary=json.loads((EVIDENCE/'summary.json').read_text());loaded=json.loads((EVIDENCE/'cycle-1-loaded-result.json').read_text());fresh=[json.loads((EVIDENCE/f'cycle-{i}-fresh-result.json').read_text()) for i in [1,2]]
     check_demo(summary,loaded,fresh)
+    for cycle in [1,2]:
+        model_ui=json.loads((EVIDENCE/f'cycle-{cycle}-model-ui/result.json').read_text());pack_ui=json.loads((EVIDENCE/f'cycle-{cycle}-pack-ui/result.json').read_text())
+        assert model_ui['status']=='pass' and len(model_ui['checks'])==4 and model_ui['model_sha256']==summary['artifacts']['qwen2.5-0.5b-instruct-q4_k_m.gguf']['sha256']
+        assert pack_ui['result']=='PASS' and len(pack_ui['checks'])==4 and pack_ui['pack_sha256']==summary['artifacts']['english-reference.plpack']['sha256']
     assert summary['artifacts'][apk.name]==m['artifacts'][str(apk.relative_to(ROOT))]
     for name in ['qwen2.5-0.5b-instruct-q4_k_m.gguf','english-reference.plpack']:
         assert summary['artifacts'][name]==next(v for p,v in m['artifacts'].items() if Path(p).name==name)

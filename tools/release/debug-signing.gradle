@@ -1,0 +1,6 @@
+// Development-only project-local key. Never a production signing identity.
+gradle.beforeProject { project ->
+    project.plugins.withId('com.android.application') {
+        project.android.signingConfigs.debug.storeFile = new File(project.rootProject.projectDir, '../downloads/android-debug/debug.keystore')
+    }
+}

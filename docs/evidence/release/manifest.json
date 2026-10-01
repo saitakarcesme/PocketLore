@@ -1,0 +1,125 @@
+{
+  "schema": 1,
+  "candidate": "development debug; not accepted release",
+  "demo_run": "run-20261001T021631Z",
+  "source_commit": "1928f607b889ef29b7ac99277e07916f9f16fa2c",
+  "build_tools": {
+    "jdk": "Temurin 17.0.20.1+1",
+    "gradle": "8.13",
+    "android_gradle_plugin": "8.9.2",
+    "sdk": "35",
+    "build_tools": "35.0.0",
+    "ndk": "r27c",
+    "cmake": "3.22.1"
+  },
+  "runtime": {
+    "llama_cpp_revision": "bb4caa7540188872173c44d161602d9271386413",
+    "license": "MIT",
+    "backends": [
+      "CPU"
+    ],
+    "abis": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "java_runtime_dependencies": [],
+    "static_support": [
+      "NDK libc++ and compiler runtime; toolchain licenses apply"
+    ],
+    "ndk_notice_sha256": "f96f763beb66a7ba7a667647fc64c0226ace875e590c831fdd9579ec1c1d91e1"
+  },
+  "artifacts": {
+    "android/app/build/outputs/apk/debug/app-debug.apk": {
+      "bytes": 17794384,
+      "sha256": "27f9d7824be8b843db7b7238c39c56893005c09f808267cf72e765c87fe0789b"
+    },
+    "downloads/answers/model/qwen2.5-0.5b-instruct-q4_k_m.gguf": {
+      "bytes": 491400032,
+      "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+    },
+    "downloads/packs/english-reference.plpack": {
+      "bytes": 159327,
+      "sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea"
+    }
+  },
+  "apk_entries": {
+    "assets/licenses/llama.cpp.txt": {
+      "bytes": 1078,
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+    },
+    "assets/licenses/smoke-model-Apache-2.0.txt": {
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "assets/water-science.tsv": {
+      "bytes": 5380,
+      "sha256": "a39d54b412f469086bd1ee96425245e36f446ac1a77b0b5730c60e5603084492"
+    },
+    "assets/licenses/answer-model-notice.txt": {
+      "bytes": 567,
+      "sha256": "9d79291db5e14170605e50f436ae99f10ce9e7389ab6184e66d5c78a34c4d374"
+    },
+    "assets/licenses/qwen2.5-Apache-2.0.txt": {
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    "assets/licenses/synthesis-model-Apache-2.0.txt": {
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    "assets/licenses/synthesis-model-notice.txt": {
+      "bytes": 681,
+      "sha256": "c4e92009450a020a87f15bfcf896f7bcb7006312f01e0c82f65d495908336dd1"
+    },
+    "assets/licenses/synthesis-qwen3-Apache-2.0.txt": {
+      "bytes": 11544,
+      "sha256": "5de36594c10839788a8c589443a8ef9d8b8d17c65a1b5807206ae037fc36c6bd"
+    },
+    "assets/licenses/synthesis-qwen3-notice.txt": {
+      "bytes": 486,
+      "sha256": "23c8c78dbde2e46aeb736a4fe764cf5157275548033edc82577049f9b6f09c52"
+    },
+    "assets/dc-monuments-manifest.json": {
+      "bytes": 476,
+      "sha256": "dab4b680420c3bbacdfd61f17483016e421a452e468ab31695321453f1b54a60"
+    },
+    "assets/dc-monuments.tsv": {
+      "bytes": 909,
+      "sha256": "6cb245864d7b42facc8b987d7e4843f795b87912062d09a8bbddcdc034877924"
+    },
+    "assets/licenses/travel-wikidata-notice.txt": {
+      "bytes": 665,
+      "sha256": "9fe4a0a077cd1ed4a6743c7ae9c7779666be6c348297a5b679a76f03ff755c70"
+    },
+    "lib/arm64-v8a/libpocketlore.so": {
+      "bytes": 5594632,
+      "sha256": "7b4f93a27ebb039fc0e20ebf1584647887cc2e6f205fab375020a4d5e2264607"
+    },
+    "lib/x86_64/libpocketlore.so": {
+      "bytes": 6074216,
+      "sha256": "e8daa8b88affff3cdcfb186ee00d4e97f07fef47a959b0296acb00133f6b7656"
+    }
+  },
+  "evidence": {
+    "summary.json": "beedddc7339a700b161c7b350408a0508c9ccf77f33809c27f8409cc3238affa",
+    "cycle-1-loaded-result.json": "fbdcb0b61ad84a052268da9dfafb776ef7894b17dd977bfca2367946c03b4ee6",
+    "cycle-1-fresh-result.json": "737fee635d9e493f63a9461905be44dfdefaf2464fc9fda6be9ab2224cd2c15f",
+    "cycle-2-fresh-result.json": "a1014e42c29d1e86f99975576d7017acbbcaea1a16fa59e8f5b5ad94041626a5",
+    "permissions.txt": "4bc3f67cf145849d3191901592a6a5c266397d74a031c6df278cf9327cff87eb",
+    "runtime-dependencies.txt": "eab81c900e5bf6220b85ee1826766fca7695c8d9acee5cbe333b6c063756b1e4",
+    "fingerprint.txt": "e07fd7d414c3b262449a1a48ec96db76edc31b2273ac896fc04f4f44870e7426",
+    "abi.txt": "aaf631698ae5160ceb04a97681a14887fdcab47cd6e0f163c87485b3b1340b62",
+    "cycle-1-model-ui/result.json": "478dcae85daf88321bec2eb6c03f8adc974223bfcd00a4777f2ef4c995780fba",
+    "cycle-1-model-ui/source-dialog.png": "93c2d8f53f781dbc90675cb804e49667b0039ad80dd78dbdf4f06a4025d20cd7",
+    "cycle-1-pack-ui/result.json": "2cb1f64da744d49cba3d51647627f0fa2a184f68edf73103cb87f5ba66a9fa44",
+    "cycle-2-model-ui/result.json": "478dcae85daf88321bec2eb6c03f8adc974223bfcd00a4777f2ef4c995780fba",
+    "cycle-2-pack-ui/result.json": "2cb1f64da744d49cba3d51647627f0fa2a184f68edf73103cb87f5ba66a9fa44"
+  },
+  "source_locks": {
+    "tools/runtime/pins.env": "1cb0aa2695c803496945dac1e9a3b7fadcf63e33b5b1434dbe70a284b973840a",
+    "tools/answers/model.env": "2d932887a64251c6561f4082739136be2a204728c8acd8fb7a1a0eff69526d97",
+    "tools/packs/sources.lock.json": "1f7d8cf0cfcb93d419c86d97f7c9719ebc230d6592e7a95c03ef681426135638",
+    "tools/packs/travel-sources.lock.json": "5016fa4e06089d02cb6c4fa7f333a003f17affa377ffb9ba865209debc2610b3",
+    "android/knowledge-sources.json": "f786b4f019deeb33a198ca5f9585d7a6bc5b05caaf267fbdc9d2a22ce39b2c7c"
+  }
+}
