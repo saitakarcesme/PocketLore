@@ -43,10 +43,11 @@ def main():
    remote='files/scale-library/'+receipt['manifest_sha256']+'/'+f['path']
    got=subprocess.check_output(ADB+['shell','run-as','org.pocketlore.app','sha256sum',remote],text=True).split()[0]
    require(got==f['sha256'],'Installed asset changed: '+remote)
- behavior(E/'final-run-3')
+ behavior(E/'final-run-5')
+ require(json.loads((E/'final-run-5/run.json').read_text())['packages']['org.pocketlore.app']==seal['artifacts']['android/app/build/outputs/apk/debug/app-debug.apk']['sha256'],'Sealed execution APK mismatch')
  # Real copied artifacts, not injected boolean successes. Original evidence/weights stay intact.
  with tempfile.TemporaryDirectory(prefix='pocketlore-scale-integrity-') as d:
-  for relative in ('docs/evidence/scale-integration/final-run-3/native.json','downloads/answers/model/qwen2.5-0.5b-instruct-q4_k_m.gguf'):
+  for relative in ('docs/evidence/scale-integration/final-run-5/native.json','downloads/answers/model/qwen2.5-0.5b-instruct-q4_k_m.gguf'):
    spec=seal['artifacts'][relative];copy=pathlib.Path(d)/pathlib.Path(relative).name;shutil.copyfile(ROOT/relative,copy);checked(copy,spec)
    with copy.open('r+b') as f:f.seek(copy.stat().st_size//2);v=f.read(1);f.seek(-1,1);f.write(bytes([v[0]^1]))
    try:checked(copy,spec)

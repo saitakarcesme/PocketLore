@@ -1,0 +1,60 @@
+[
+  {
+    "id": "301-scale-inventory-and-shard-updates",
+    "dependencies": [
+      "300-scale-product-integration"
+    ],
+    "objective": "Validate all sealed wiki/place shards through bounded shared Android collections and make atomic shard updates fit the joint storage budget without duplicating the full edition.",
+    "scope": [
+      "android",
+      "tools/packs",
+      "tools/evaluation",
+      "docs",
+      "FINDINGS.md"
+    ],
+    "acceptance_checks": [
+      [
+        "bash",
+        "tools/android-build.sh"
+      ],
+      [
+        "python3",
+        "tools/evaluation/verify_full_scale_inventory.py"
+      ]
+    ],
+    "artifacts": [
+      "docs/evidence/full-scale-inventory.md"
+    ],
+    "prompt": "Reuse task300 exact sealed assets and hashes; no downloads of unchanged bytes. Current app installs first wiki shard (413151 articles) and first places shard (5120674 source UUIDs), not full inventory. Implement shared content-addressed shard admission/update and rollback with measured old+new+temporary peak, maintaining 45GB target and50GB hard cap. City/alias files must not duplicate per shard. Exercise cross-shard rank diversity, exact/redirect resolution and positive city/category/spatial coverage using frozen public cases, including current 19/20 empty-city outcomes and Mexico City8-second query. Preserve failures and unknown hours/diets. Full installation needs a coordinator-approved environment with sufficient storage; do not restart or resize services. Complete host/interface work independently first. Keep all unreviewed rights browse-only and production model unchanged. No holdout, model tuning, publication, main advancement or service changes."
+  },
+  {
+    "id": "302-scale-reviewed-source-answer-adapter",
+    "dependencies": [
+      "300-scale-product-integration",
+      "224-source-plan-generation-strategy-change"
+    ],
+    "objective": "Connect rights-reviewed, source-faithful bulk spans to the supported answer controller without treating dataset license labels or retrieval as semantic clearance.",
+    "scope": [
+      "android",
+      "tools/evaluation",
+      "tools/packs",
+      "docs",
+      "THIRD_PARTY_NOTICES",
+      "FINDINGS.md"
+    ],
+    "acceptance_checks": [
+      [
+        "bash",
+        "tools/android-build.sh"
+      ],
+      [
+        "python3",
+        "tools/evaluation/verify_scale_answer_adapter.py"
+      ]
+    ],
+    "artifacts": [
+      "docs/evidence/scale-answer-adapter.md"
+    ],
+    "prompt": "Task300 bulk wiki and places remain browse-only. Reuse sealed source records; create explicit per-source rights/fidelity review dispositions and preserve exceptions, article revisions/contributor history, raw formula/unit context and source offsets. Use the accepted task221-dependent support architecture and the existing224 outcome; do not repeat historical inference or tune seeds/thresholds. Freeze new cross-shard public questions before changing context selection. Feed only independently reviewed spans through typed obligation/source links and inspect every published claim. Retain unrelated-title/OR-match, formula, temporal, condition and absent controls. Keep baselineJNI coexistence separate from bulk generated usefulness. Selected4B remains host-only until a separate approved sufficient-memory Android qualification. No model-role relabeling, holdout access, fine-tuning, service changes, publishing or main advancement. Negative results remain open, not quote-based success."
+  }
+]

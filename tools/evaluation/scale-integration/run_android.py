@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """Run named on-device behaviors serially; archive inputs separately before project-fixture removal."""
-import argparse,json,pathlib,subprocess,time
+import argparse,json,pathlib,subprocess,time,datetime
 p=argparse.ArgumentParser();p.add_argument('modes',nargs='+',choices=['inspect','negative','native','ui']);p.add_argument('--output',required=True);a=p.parse_args()
 out=pathlib.Path(a.output);out.mkdir(parents=True,exist_ok=True)
 adb=['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb','-s','emulator-5560']
+identity={"started_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(),"modes":a.modes,"packages":{}}
+for package in ('org.pocketlore.app','org.pocketlore.app.test'):
+ path=subprocess.check_output(adb+['shell','pm','path',package],text=True).strip().removeprefix('package:')
+ identity['packages'][package]=subprocess.check_output(adb+['shell','sha256sum',path],text=True).split()[0]
+(out/'run.json').write_text(json.dumps(identity,indent=2)+'\n')
 for mode in a.modes:
  dest=out/(mode+'.json')
  if dest.exists():raise SystemExit('Refusing to replace evidence: '+str(dest))
