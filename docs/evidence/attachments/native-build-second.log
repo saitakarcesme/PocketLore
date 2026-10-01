@@ -1,0 +1,134 @@
+CMAKE_BUILD_TYPE = Release
+-- 
+-- General configuration for Leptonica 
+-- --------------------------------------------------------
+-- Build type: Release
+-- Compiler: Clang
+-- C compiler options:
+   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security 
+-- Linker options: -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  
+  
+-- Install directory: /home/isa/Projects/PocketLore/downloads/attachments/install-arm64-v8a
+-- 
+-- Build with sw [SW_BUILD]: OFF
+-- Build utility programs [BUILD_PROG]: OFF
+-- Used ZLIB library: 
+-- Used PNG library:  
+-- Used JPEG library: 
+-- Used OpenJPEG library: 
+-- Used TIFF library: 
+-- Used GIF library:  
+-- Used WebP library: 
+-- --------------------------------------------------------
+-- 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/isa/Projects/PocketLore/downloads/attachments/lept-arm64-v8a
+-- Configuring tesseract version 5.5.3...
+-- IPO / LTO not supported: <Change Dir: /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin
+
+Run Build Command(s):/usr/bin/make -f Makefile && /home/isa/Android/atlas-toolchain/cmake-3.22.1/bin/cmake -S/home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/src -B/home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin --check-build-system CMakeFiles/Makefile.cmake 0
+/home/isa/Android/atlas-toolchain/cmake-3.22.1/bin/cmake -E cmake_progress_start /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin//CMakeFiles/progress.marks
+/usr/bin/make  -f CMakeFiles/Makefile2 all
+make[1]: Entering directory '/home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin'
+/usr/bin/make  -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/depend
+make[2]: Entering directory '/home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin'
+cd /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin && /home/isa/Android/atlas-toolchain/cmake-3.22.1/bin/cmake -E cmake_depends "Unix Makefiles" /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/src /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/src /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir/DependInfo.cmake
+make[2]: Leaving directory '/home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin'
+/usr/bin/make  -f CMakeFiles/foo.dir/build.make CMakeFiles/foo.dir/build
+make[2]: Entering directory '/home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin'
+[ 25%] Building CXX object CMakeFiles/foo.dir/foo.cpp.o
+/home/isa/Android/atlas-toolchain/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi21 --sysroot=/home/isa/Android/atlas-toolchain/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -flto=thin -fPIC -MD -MT CMakeFiles/foo.dir/foo.cpp.o -MF CMakeFiles/foo.dir/foo.cpp.o.d -o CMakeFiles/foo.dir/foo.cpp.o -c /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/src/foo.cpp
+[ 50%] Linking CXX static library libfoo.a
+/home/isa/Android/atlas-toolchain/cmake-3.22.1/bin/cmake -P CMakeFiles/foo.dir/cmake_clean_target.cmake
+/home/isa/Android/atlas-toolchain/cmake-3.22.1/bin/cmake -E cmake_link_script CMakeFiles/foo.dir/link.txt --verbose=1
+"/home/isa/Android/atlas-toolchain/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar" cr libfoo.a CMakeFiles/foo.dir/foo.cpp.o
+"/home/isa/Android/atlas-toolchain/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ranlib" libfoo.a
+make[2]: Leaving directory '/home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin'
+[ 50%] Built target foo
+/usr/bin/make  -f CMakeFiles/boo.dir/build.make CMakeFiles/boo.dir/depend
+make[2]: Entering directory '/home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin'
+cd /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin && /home/isa/Android/atlas-toolchain/cmake-3.22.1/bin/cmake -E cmake_depends "Unix Makefiles" /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/src /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/src /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir/DependInfo.cmake
+make[2]: Leaving directory '/home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin'
+/usr/bin/make  -f CMakeFiles/boo.dir/build.make CMakeFiles/boo.dir/build
+make[2]: Entering directory '/home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin'
+[ 75%] Building CXX object CMakeFiles/boo.dir/main.cpp.o
+/home/isa/Android/atlas-toolchain/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi21 --sysroot=/home/isa/Android/atlas-toolchain/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -flto=thin -fPIE -MD -MT CMakeFiles/boo.dir/main.cpp.o -MF CMakeFiles/boo.dir/main.cpp.o.d -o CMakeFiles/boo.dir/main.cpp.o -c /home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/src/main.cpp
+[100%] Linking CXX executable boo
+/home/isa/Android/atlas-toolchain/cmake-3.22.1/bin/cmake -E cmake_link_script CMakeFiles/boo.dir/link.txt --verbose=1
+/home/isa/Android/atlas-toolchain/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=armv7-none-linux-androideabi21 --sysroot=/home/isa/Android/atlas-toolchain/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -flto=thin -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments   -fuse-ld=gold CMakeFiles/boo.dir/main.cpp.o -o boo  libfoo.a -latomic -lm 
+/usr/bin/ld.gold: error: /home/isa/Android/atlas-toolchain/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../lib/LLVMgold.so: could not load plugin library: /home/isa/Android/atlas-toolchain/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/../lib/LLVMgold.so: cannot open shared object file: No such file or directory
+/usr/bin/ld.gold: fatal error: /home/isa/Android/atlas-toolchain/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/crtbegin_dynamic.o: unsupported ELF machine number 40
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+make[2]: *** [CMakeFiles/boo.dir/build.make:101: boo] Error 1
+make[2]: Leaving directory '/home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin'
+make[1]: *** [CMakeFiles/Makefile2:114: CMakeFiles/boo.dir/all] Error 2
+make[1]: Leaving directory '/home/isa/Projects/PocketLore/downloads/attachments/native-arm64-v8a/tesseract/CMakeFiles/_CMakeLTOTest-CXX/bin'
+make: *** [Makefile:94: all] Error 2
+
+>
+-- CMAKE_SYSTEM_PROCESSOR=<aarch64>
+-- LTO build is not supported on arm/RBPi.
+-- Could NOT find Leptonica (missing: Leptonica_DIR)
+-- Checking for module 'lept>=1.74'
+--   Found lept, version 1.87.0
+-- Found leptonica version: 1.87.0
+-- Testing TIFF support in Leptonica is available with CMake >= 3.25 (you have 3.22.1-g37088a8))
+-- TIFF support disabled.
+-- LibArchive support disabled.
+-- CURL support disabled.
+ScrollView debugging disabled.
+-- 
+-- General configuration for Tesseract 5.5.3
+-- --------------------------------------------------------
+-- Build type: Release 64 bits
+-- Compiler: Clang
+-- Compiler version: 18.0.3
+-- Used standard: C++20
+-- CXX compiler options: -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -Wno-unused-command-line-argument
+-- Compile definitions = CMAKE_BUILD;HAVE_CONFIG_H
+-- Linker options: -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments   
+-- Install directory: /usr/local
+-- HAVE_AVX: FALSE
+-- HAVE_AVX2: FALSE
+-- HAVE_AVX512F: FALSE
+-- HAVE_FMA: FALSE
+-- HAVE_SSE4_1: FALSE
+-- MARCH_NATIVE_OPT: OFF
+-- HAVE_NEON: TRUE
+-- Link-time optimization: FALSE
+-- --------------------------------------------------------
+-- Build with openmp support [OPENMP_BUILD]: OFF
+-- Build with libarchive support [HAVE_LIBARCHIVE]: OFF
+-- Build with libcurl support [HAVE_LIBCURL]: OFF
+-- Enable float for LSTM [FAST_FLOAT]: ON
+-- Enable optimization for host CPU (could break HW compatibility) [ENABLE_NATIVE]: OFF
+-- Disable disable graphics (ScrollView) [GRAPHICS_DISABLED]: ON
+-- Disable the legacy OCR engine [DISABLED_LEGACY_ENGINE]: ON
+-- Build training tools [BUILD_TRAINING_TOOLS]: OFF
+-- Build tests [BUILD_TESTS]: OFF
+-- Use system ICU Library [USE_SYSTEM_ICU]: OFF
+-- Install tesseract configs [INSTALL_CONFIGS]: ON
+-- --------------------------------------------------------
+-- Modern build optimizations:
+-- Unity build [ENABLE_UNITY_BUILD]: OFF
+-- Precompiled headers [ENABLE_PRECOMPILED_HEADERS]: OFF
+-- ccache [ENABLE_CCACHE]: OFF
+-- Ninja job pools [ENABLE_NINJA_POOL]: Disabled (not using Ninja)
+-- --------------------------------------------------------
+-- 
+-- Setting GGML_NATIVE_DEFAULT to OFF
+-- Warning: ccache not found - consider installing it for faster compilation or disable this warning with GGML_CCACHE=OFF
+-- CMAKE_SYSTEM_PROCESSOR: aarch64
+-- GGML_SYSTEM_ARCH: ARM
+-- Including CPU backend
+-- ARM detected
+-- Adding CPU backend variant ggml-cpu:  
+-- Configuring done
+CMake Error in /home/isa/Projects/PocketLore/downloads/attachments/tesseract/CMakeLists.txt:
+  export called with target "libtesseract" which requires target
+  "pocket_ndk_cpufeatures" that is not in any export set.
+
+
+-- Generating done
+CMake Generate step failed.  Build files cannot be regenerated correctly.

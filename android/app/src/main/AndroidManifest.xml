@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <application android:allowBackup="false" android:label="PocketLore" android:supportsRtl="true" android:theme="@android:style/Theme.Material.Light.NoActionBar">
+        <activity android:name=".AttachmentsActivity" android:exported="false" />
         <activity android:name=".PersonalDocumentsActivity" android:exported="false" />
         <activity android:name=".ScaleActivity" android:exported="false" />
         <activity android:name=".TravelActivity" android:exported="false" />

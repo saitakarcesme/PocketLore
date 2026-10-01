@@ -226,3 +226,16 @@ in the APK. Complete installed tool license texts and hashes are preserved in
  docs/evidence/documents/test-tool-licenses/ and test-tool-licenses.json.
 No competitor implementation or branding was copied; supplied static competitor
 research was used only to identify missing capability requirements.
+
+Task340 optional local recognition: Tesseract5.5.3 (Apache-2.0), Leptonica1.85.0
+(BSD-style), whisper.cpp1.7.6 and its ggml component (MIT) are compiled locally
+from exact source revisions in tools/attachments/sources.json. Installed NDK r27c
+cpu-features compatibility source is used; no rival application code is copied.
+Complete upstream notices are packaged in assets/licenses/attachments.
+Optional English tessdata_fast (Apache-2.0) and ggml-tiny.en Whisper weights (MIT)
+have immutable URLs, sizes and SHA256 pins in tools/attachments/models.json.
+Neither weight is bundled or automatically downloaded by the app. No speech/OCR
+cloud provider, core GMS library or multilingual accuracy claim is introduced.
+Recognition is fallible personal input, not image reasoning or factual evidence.
+The upstream JFK test recording remains ignored fixture data; its hash/source are
+recorded separately, and it is not bundled or claimed as microphone capture.

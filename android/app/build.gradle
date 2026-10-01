@@ -45,3 +45,10 @@ tasks.register('buildPocketLoreIndex', Exec) {
     commandLine 'bash', 'tools/runtime/build-index.sh'
 }
 tasks.named('preBuild').configure { dependsOn 'buildPocketLoreIndex' }
+
+// Offline optional recognition engines; weights are installed separately by the user.
+tasks.register('buildAttachments', Exec) {
+    workingDir rootProject.projectDir.parentFile
+    commandLine 'bash', 'tools/attachments/build.sh'
+}
+tasks.named('preBuild').configure { dependsOn 'buildAttachments' }

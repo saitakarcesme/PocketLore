@@ -76,6 +76,7 @@ public final class MainActivity extends Activity {
             intent.addCategory(android.content.Intent.CATEGORY_OPENABLE); intent.setType("*/*"); intent.putExtra(android.content.Intent.EXTRA_LOCAL_ONLY,true);
             startActivityForResult(intent, PICK_PACK);
         });
+        Button attachments=new Button(this);attachments.setText("Photo text and speech input");layout.addView(attachments);attachments.setOnClickListener(v->{if(!importing&&!searching&&!nativePanel.isBusy())startActivityForResult(new android.content.Intent(this,AttachmentsActivity.class),340);});
         Button personalDocuments=new Button(this);personalDocuments.setText("Personal documents and collection export");layout.addView(personalDocuments);personalDocuments.setOnClickListener(v->{if(!importing&&!searching&&!nativePanel.isBusy())startActivityForResult(new android.content.Intent(this,PersonalDocumentsActivity.class),330);});
         collections=new Button(this);collections.setText("Choose collections");layout.addView(collections);collections.setOnClickListener(v->chooseCollections());
         removeCollection=new Button(this);removeCollection.setText("Remove a collection");layout.addView(removeCollection);removeCollection.setOnClickListener(v->removeCollection());
@@ -239,6 +240,7 @@ public final class MainActivity extends Activity {
     @Override protected void onSaveInstanceState(Bundle state) { super.onSaveInstanceState(state); state.putString("question", question.getText().toString()); }
     @Override protected void onActivityResult(int request, int result, android.content.Intent data) {
         super.onActivityResult(request, result, data);
+        if(request==340&&result==RESULT_OK&&data!=null){question.setText(data.getStringExtra("recognized_text"));status.setText("Recognized input requires review; it is not source evidence.\n"+data.getStringExtra("recognition_receipt"));return;}
         if(request==330){loadLibrary();return;}
         if (request == PICK_PACK && result == RESULT_OK && data != null && data.getData() != null) {
             android.net.Uri uri = data.getData();

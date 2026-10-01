@@ -1,0 +1,23 @@
+{
+  "tesseract": {
+    "repository": "tesseract-ocr/tesseract",
+    "revision": "db0ec62f81b0737fbbe184d8fea40af5738f8eef",
+    "url": "https://codeload.github.com/tesseract-ocr/tesseract/tar.gz/db0ec62f81b0737fbbe184d8fea40af5738f8eef",
+    "bytes": 1918077,
+    "sha256": "21dbaff9867d937c156d0b898e90b726aa339129cfebd7e1365cd5fee5046d67"
+  },
+  "leptonica": {
+    "repository": "DanBloomberg/leptonica",
+    "revision": "63aef18d98432b8582a1565e241f7bd2ee9cc8d9",
+    "url": "https://codeload.github.com/DanBloomberg/leptonica/tar.gz/63aef18d98432b8582a1565e241f7bd2ee9cc8d9",
+    "bytes": 13691830,
+    "sha256": "beb4804d5cc9d274986e22b01a9c7e1ad4858d8487bfe9215728eb5e906f07dc"
+  },
+  "whisper": {
+    "repository": "ggml-org/whisper.cpp",
+    "revision": "a8d002cfd879315632a579e73f0148d06959de36",
+    "url": "https://codeload.github.com/ggml-org/whisper.cpp/tar.gz/a8d002cfd879315632a579e73f0148d06959de36",
+    "bytes": 7309272,
+    "sha256": "7b17da903114ed45d82f48c030e3be6a5a8a279f884b2f733706dbb4e832fb6b"
+  }
+}
