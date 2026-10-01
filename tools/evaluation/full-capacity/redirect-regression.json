@@ -1,0 +1,10 @@
+{
+  "reason": "Actual full Android inspection ignored aliases because the sealed mapping uses .parquet shard names while Android stripped only .sqlite; these are existing task301 frozen queries and source expectations, not new relevance tuning.",
+  "cases": [
+    {"query": "USA", "title": "United States", "shard": "000_00010", "id": "3434750"},
+    {"query": "NYC", "title": "New York City", "shard": "000_00000", "id": "645042"},
+    {"query": "UK", "title": "United Kingdom", "shard": "000_00014", "id": "31717"}
+  ],
+  "checks": ["normalize only recognized terminal .parquet or .sqlite extensions", "exact target identity precedes unrelated FTS hits", "read exact source and provenance from installed object", "all 31 shards remain installed", "unreviewed rights still deny generation"],
+  "prior_failure": "docs/evidence/full-capacity/run/full-inspection/result.json"
+}

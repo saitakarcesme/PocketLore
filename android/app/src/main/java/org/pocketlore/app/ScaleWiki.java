@@ -14,7 +14,7 @@ final class ScaleWiki {
    String aliasPath=ScaleLibrary.resolve(e.directory,e.manifest.getString("aliases")).getPath();
    JSONArray redirects=NativeIndex.rows(aliasPath,"SELECT s.name,a.target FROM aliases a JOIN shard_names s ON s.id=a.shard WHERE a.alias=? ORDER BY a.target LIMIT 12",new String[]{question.trim().replace('_',' ').toLowerCase(Locale.ROOT)},12,cancel);
    Set<String> installed=new HashSet<>();for(int i=0;i<shards.length();i++)installed.add(shards.getString(i));
-   for(int i=0;i<redirects.length();i++){JSONArray row=redirects.getJSONArray(i);String targetShard=row.getString(0).replaceFirst("\\.sqlite$", "");if(installed.contains(targetShard)){Hit h=byId(e,targetShard,row.getString(1),cancel);if(seen.add(h.identity()))hits.add(h);}}
+   for(int i=0;i<redirects.length();i++){JSONArray row=redirects.getJSONArray(i);String targetShard=aliasShardName(row.getString(0));if(installed.contains(targetShard)){Hit h=byId(e,targetShard,row.getString(1),cancel);if(seen.add(h.identity()))hits.add(h);}}
   }
   List<List<Hit>> rankedShards=new ArrayList<>();
   if(!expr.isEmpty())for(int i=0;i<shards.length();i++){ScaleLibrary.cancelled(cancel);String shard=shards.getString(i),path=database(e,shard).getPath();JSONArray ranked=NativeIndex.rows(path,"SELECT rowid FROM search WHERE search MATCH ? ORDER BY bm25(search,5.0,1.0) LIMIT 12",new String[]{expr},12,cancel);List<Hit> local=new ArrayList<>();for(int n=0;n<ranked.length();n++)local.add(byId(e,shard,ranked.getJSONArray(n).getString(0),cancel));rankedShards.add(local);}
@@ -23,6 +23,8 @@ final class ScaleWiki {
   // Exact titles first; distinct article identities. This is not the host global-IDF ranking.
   return hits.subList(0,Math.min(12,hits.size()));
  }
+ // Sealed aliases retain acquisition filenames; installed shard directories omit that extension.
+ static String aliasShardName(String name){return name.replaceFirst("\\.(?:sqlite|parquet)$", "");}
  static Hit byId(ScaleLibrary.Entry e,String shard,String id,BooleanSupplier cancel)throws Exception{JSONArray a=NativeIndex.rows(database(e,shard).getPath(),"SELECT "+COLS+" FROM articles WHERE id=?",new String[]{id},1,cancel);ScaleLibrary.check(a.length()==1,"Unknown article");return new Hit(e,shard,a.getJSONArray(0));}
  static final class Read {String text,wikitextScope;long rawBlockBytes,recordBytes,temporaryBytes;boolean previewTruncated;}
  static Read read(Hit h,File cache,BooleanSupplier cancel)throws Exception{

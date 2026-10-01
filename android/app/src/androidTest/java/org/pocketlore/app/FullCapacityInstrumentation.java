@@ -44,6 +44,16 @@ public final class FullCapacityInstrumentation extends Instrumentation {
                 r.put("elapsed_ms",(System.nanoTime()-start)/1e6).put("read_bytes",read[0]).put("files_before",before).put("files_after",SharedShardUpdate.uniqueBytes(files)).put("precommit_files_bytes",lib.lastPhysicalPeak).put("admission_bytes",lib.lastAdmissionPeak).put("new_bytes_written",lib.lastTemporaryPeak);
                 if(!mode.equals("import")){check(rejected&&hash(catalog).equals(prior),"Rollback catalog changed");check(before==SharedShardUpdate.uniqueBytes(files),"Rollback leaked staging");r.put("rollback",true);}
                 check(priorModel.equals(hash(new File(files,"model.gguf"))),"Saved model changed");
+             }else if(mode.equals("redirect")){
+                check(ScaleWiki.aliasShardName("000_00000.parquet").equals("000_00000")&&ScaleWiki.aliasShardName("000_00000.sqlite").equals("000_00000")&&ScaleWiki.aliasShardName("000_00000").equals("000_00000")&&ScaleWiki.aliasShardName("000_00000.parquet.extra").equals("000_00000.parquet.extra"),"Terminal shard extension normalization");
+                ScaleLibrary lib=new ScaleLibrary(files);ScaleLibrary.Entry wiki=null;int shards=0;
+                for(ScaleLibrary.Entry e:lib.entries()){shards+=e.manifest.getJSONArray("shards").length();if(e.kind().equals("wiki"))wiki=e;}
+                check(shards==31&&wiki!=null,"Full retained catalog required");JSONArray cases=read(new File(files,"capacity-redirect.json")).getJSONArray("cases"),out=new JSONArray();
+                for(int i=0;i<cases.length();i++){
+                    JSONObject c=cases.getJSONObject(i);long t=System.nanoTime();List<ScaleWiki.Hit> hits=ScaleWiki.search(wiki,c.getString("query"),()->false);check(!hits.isEmpty(),"Missing redirect");ScaleWiki.Hit h=hits.get(0);
+                    check(h.id.equals(c.getString("id"))&&h.shard.equals(c.getString("shard"))&&h.title.equals(c.getString("title"))&&!h.mayGenerate(),"Redirect source binding mismatch");ScaleWiki.Read read=ScaleWiki.read(h,getTargetContext().getCacheDir(),()->false);
+                    out.put(new JSONObject().put("query",c.getString("query")).put("title",h.title).put("id",h.id).put("shard",h.shard).put("source",ScaleWiki.detail(h,read)).put("ms",(System.nanoTime()-t)/1e6));
+                }r.put("queries",out).put("simultaneous_shards",shards);
             }else if(mode.equals("reconcile")){
                 ScaleLibrary lib=new ScaleLibrary(files);JSONObject expected=read(new File(files,"capacity-reconcile.json"));String id=hash(new File(files,"capacity-reconcile.json"));ScaleLibrary.Entry found=null;
                 for(ScaleLibrary.Entry e:lib.entries())if(e.id.equals(id))found=e;

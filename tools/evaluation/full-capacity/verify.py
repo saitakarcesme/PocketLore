@@ -19,8 +19,10 @@ def behavior(run):
  rs=results(run);env=load(run/'environment.json');require(env['serial']=='emulator-5562' and env['api'].strip()=='35' and env['abi'].strip()=='x86_64','Wrong emulator')
  runtime=load(run/'runtime.json');apk=runtime['apk']['bytes'];test=runtime['test_apk']['bytes']
  package=load(BASE/'package-storage-after.json');code_bytes=max(package['allocated_code_bytes'],load(BASE/'package-storage-before.json')['allocated_code_bytes'])
- require(package['rows'][0]['apk_sha256']==runtime['apk']['sha256'],'Installed APK identity drift')
- require(package['rows'][1]['apk_sha256']==load(run/'runtime-sampler-repair.json')['test_apk']['sha256'],'Installed instrumentation identity drift')
+ require(package['app_allocated_bytes']+code_bytes<50_000_000_000,'Final installed allocation over hard cap')
+ current=load(run/'runtime-redirect-repair.json')
+ require(package['rows'][0]['apk_sha256']==current['apk']['sha256'],'Installed APK identity drift')
+ require(package['rows'][1]['apk_sha256']==current['test_apk']['sha256'],'Installed instrumentation identity drift')
  for label,r in rs.items():require(r['status']=='PASS' and r['model_sha256']==MODEL_SHA,label+' failed or model changed')
  for kind,n in [('wiki',15),('places',16)]:
   for i in range(n):
@@ -54,17 +56,24 @@ def behavior(run):
   require(peak+provider+134217728<50_000_000_000,'Conservative provider-copy budget exceeds hard cap')
  # Rehash results represent the complete inventory, including auxiliary residency.
  sealed=load(run/'host-inventory.json');required={f['sha256']:f['bytes'] for f in sealed}
+ for manifest in ['wiki-14-input','places-15-input']:
+  for f in load(run/manifest/'manifest.json')['files']:required[f['sha256']]=f['bytes']
  for label in ['full-hashes','restored-hashes']:
   got={f['sha256']:f['bytes'] for f in rs[label]['objects']}
   require(all(got.get(h)==n for h,n in required.items()),'Missing/corrupt simultaneous sealed asset')
  require(load(run/'complete.json')['whole_inventory_resident'],'Run incomplete')
+ repaired=rs['redirect-repair'];cases=load(ROOT/'tools/evaluation/full-capacity/redirect-regression.json')['cases']
+ require(repaired['simultaneous_shards']==31 and len(repaired['queries'])==len(cases),'Final reader not measured against complete catalog')
+ for got,want in zip(repaired['queries'],cases):
+  require(all(got[k]==want[k] for k in ['query','title','id','shard']) and got['source'],'Final redirect source identity mismatch')
+ require(all(x['unchanged'] for x in current['import_code_equivalence']),'Final candidate changed measured import code')
  retained=load(BASE/'seed-assets.json');after=load(BASE/'seed-assets-after.json')
  require(len(retained['actual'])==5 and retained['actual']==retained['expected']==after['actual']==after['expected'],'Saved model/reviewed assets changed')
  require(retained['actual']['model.gguf']==MODEL_SHA,'Wrong production model')
  disk_samples=[json.loads(line) for p in [*run.glob('*/disk-samples.jsonl'),*(BASE/'failures').rglob('disk-samples.jsonl')] for line in p.read_text().splitlines()]
  data_peak=max(int(x['df_k'].splitlines()[-1].split()[2])*1024 for x in disk_samples)
  require(data_peak<50_000_000_000,'Whole-emulator userdata high-water exceeds hard cap')
- return {'status':'PASS','whole_emulator_userdata_peak_bytes':data_peak,'primary_shards':31,'sealed_asset_bytes':sum(f['bytes'] for f in sealed),'max_measured_update_bytes_including_allocated_code_and_test':max(peaks),'target_met':max(peaks)<=45_000_000_000,'cities_positive':[sum(q['count']>0 for q in rs[label]['cities']) for label in ['full-inspection','replacement-inspection','restored-inspection']],'limits':'Emulator capacity/reader validation only; no phone, rights clearance or model quality acceptance.'}
+ return {'status':'PASS','whole_emulator_userdata_peak_bytes':data_peak,'primary_shards':31,'sealed_asset_bytes':sum(f['bytes'] for f in sealed),'installed_bulk_objects_including_notices':len(required),'installed_bulk_bytes_including_notices':sum(required.values()),'max_measured_update_bytes_including_allocated_code_and_test':max(peaks),'target_met':max(peaks)<=45_000_000_000,'cities_positive':[sum(q['count']>0 for q in rs[label]['cities']) for label in ['full-inspection','replacement-inspection','restored-inspection']],'limits':'Emulator capacity/reader validation only; no phone, rights clearance or model quality acceptance.'}
 def verify():
  receipt=load(BASE/'receipt.json')
  for f in receipt['files']:integrity(ROOT/f['path'],f['sha256'])
