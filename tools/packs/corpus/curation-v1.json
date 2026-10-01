@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "description": "Conservative final pass over the frozen version-4 candidate population; do not refill quotas, change area assignment, or add factual content.",
+  "stop_heading_pattern": "(?im)^\\s*(?:See also|References|Notes and references|Footnotes|Bibliography|Further reading|External links|Cited sources)\\s*$",
+  "exclude_document_ids": {
+    "9823717": "Mathematical t-norm construction is not practical construction reference.",
+    "5981170": "Trade-union history is not practical reference.",
+    "4071138": "Manufacturer profile is not practical reference.",
+    "5398628": "Hospitality ritual is outside this practical-reference scope.",
+    "7116211": "Nutrition assistance policy is outside this practical-reference scope.",
+    "11670337": "Artwork with agriculture in its title is not practical reference."
+  }
+}
