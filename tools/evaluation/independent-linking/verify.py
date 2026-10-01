@@ -45,6 +45,16 @@ def main():
  score=E/'scoring';receipt(score,'score-receipt.json');manifest=json.loads((score/'manifest.json').read_text())
  for p,h in manifest['sources'].items():exact(R/p,h)
  for p,h in manifest['inputs'].items():exact(score/p,h)
+ origins=json.loads((score/'origins.json').read_text());exact(score/'origins.json',manifest['origins_sha256'])
+ for row in (score/'inputs/drafts.tsv').read_text().splitlines():
+  fields=row.split('\t');id=fields[0];origin=origins[id];path=R/origin['path'];exact(path,origin['sha256'])
+  raw=base64.b64decode(fields[2]).decode()
+  if origin['type']=='actual generated draft':
+   source_result=json.loads(path.read_text());require(raw==source_result['draft']['raw'] and int(fields[3])==source_result['draft']['tokens'] and base64.b64decode(fields[1]).decode()==source_result['question'],'Regenerated or changed old/new draft')
+  elif origin['type'].startswith('historical'):
+   source_result=json.loads(path.read_text());require(raw.strip()==source_result['wrapped_raw'].strip(),'Changed historical claim')
+  else:
+   fixture=next(c for c in fixtures['cases'] if c['id']==origin['case']);require(raw=='@PROBE' and base64.b64decode(fields[5]).decode()==fixture['constructed_probe'] and base64.b64decode(fields[4]).decode()==fixture['probe_source']['passage'],'Changed paired probe')
  exact(score/'prepared/pairs.json',manifest['pairs_sha256']);runtime=json.loads((score/'runtime.json').read_text());require(runtime['providers']==['CPUExecutionProvider'] and runtime['packages']=={'onnxruntime':'1.24.1','tokenizers':'0.22.1','numpy':'2.3.3'},'Runtime identity')
  pairs=json.loads((score/'prepared/pairs.json').read_text());scores=[json.loads(x) for x in (score/'scores.jsonl').read_text().splitlines()];require(len(pairs)==len(scores) and len({x['key'] for x in scores})==len(scores),'Incomplete scores')
  tsv=[]
