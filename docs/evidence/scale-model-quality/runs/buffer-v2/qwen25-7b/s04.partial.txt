@@ -1,0 +1,3 @@
+O1: [S2] Binary search runs in logarithmic time in the worst case, making [TeX: {\displaystyle O(\log n)}] comparisons, where [TeX: {\displaystyle n}] is the number of elements in the array.
+
+O2: [S5] The performance of a binary search tree is dependent on the order of insertion of the nodes into the tree since arbitrary insertions may lead to degeneracy; in the worst case, the complexity of insert, delete, and search operations degrades to that of a singly linked list: [TeX: {\displaystyle O(n)}].

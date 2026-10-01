@@ -1,0 +1,19 @@
+O1: Binary search tree
+
+Insertion order can significantly affect the performance of a binary search tree. The order of insertion determines the height of the tree, which in turn affects the time complexity of operations. For example, if the nodes are inserted in a balanced manner, the tree will have a height of log n, resulting in linear time complexity for operations. However, if the insertion is done in an unbalanced manner, the tree can degenerate, leading to a height of n, which requires linear time for operations.
+
+O2: Binary search tree
+
+The performance of a binary search tree is dependent on the order of insertion of the nodes into the tree. If the nodes are inserted in a balanced manner, the tree will have a height of log n, resulting in linear time complexity for operations. However, if the insertion is done in an unbalanced manner, the tree can degenerate, leading to a height of n, which requires linear time for operations.
+
+O3: Binary search tree
+
+The complexity analysis of a binary search tree shows that the insert, delete, and search operations take on average [TeX: {\displaystyle \Theta (\log n)}] time for [TeX: {\displaystyle n}] nodes. However, in the worst case, the tree can degenerate to the same time as a singly linked list, which requires [TeX: {\displaystyle O(n)}] time. To address the boundless increase of the tree height with arbitrary insertions and deletions, self-balancing variants of BSTs are introduced to bound the worst lookup complexity to that of the binary logarithm.
+
+O4: Binary search tree
+
+The complexity analysis of a binary search tree shows that the insert, delete, and search operations take on average [TeX: {\displaystyle \Theta (\log n)}] time for [TeX: {\displaystyle n}] nodes. However, in the worst case, the tree can degenerate to the same time as a singly linked list, which requires [TeX: {\displaystyle O(n)}] time. To address the boundless increase of the tree height with arbitrary insertions and deletions, self-balancing variants of BSTs are introduced to bound the worst lookup complexity to that of the binary logarithm.
+
+O5: Binary search tree
+
+The complexity analysis of a binary search tree shows that the insert, delete, and search operations take on average [TeX: {\displaystyle \Theta (\log n)}] time for [TeX: {\displaystyle n}] nodes. However, in the

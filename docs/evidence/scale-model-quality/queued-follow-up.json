@@ -1,0 +1,26 @@
+{
+  "id": "221-obligation-source-binding",
+  "objective": "Implement an evidence-bound answer representation for the task-220 selected Qwen3 4B Q4_K_M host candidate (SHA 7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5). Bind each question obligation and complete generated claim to exact edition-aware passage/sentence spans, subject and material time/condition qualifiers; render citations from typed references so formulas and article footnotes cannot become source IDs. Exact quoted spans and lexical overlap alone must not certify paraphrase entailment. Preserve and exercise the actual task-220 wrong-neighbor citations, compost/vermicast input-output transfer, pruning-condition transfer, codification confusion, Barcelona temporal qualifiers, false premises, formula-root interpretation and eight absent controls. Freeze at least twelve new public discriminating cases before changes. Use one declared material architecture and fixed decoding configuration, not wording/seed search; retain the 4096-token host context and 512 total generated-token budget per question, recording every stage and failure. Evaluate all 48 task-220 cases and the new cases with real local inference, inspecting every claim against its actual cited excerpts. Require strictly more than the measured four of forty fully supported complete useful screen-eligible answers, zero unsupported screen-eligible answers and all eight absent controls withheld; keep raw draft potential separate from usable answers and report negative results honestly. Implement shared Android-compatible controller/renderer behavior and namespace/corruption/cancellation regressions. Do not change tools/answers/model.env or Android admission limits, relabel the 4B host candidate as deployed, claim selected-model Android execution from baseline JNI or captured-draft playback, substitute extractive fallback for generated success, restart services, inspect private holdout or publish. Selected-model Android admission, load/cancel/reload and resource qualification remain a separate measured integration gate requiring an approved environment with enough RAM. Preserve task-220 immutable evidence and queue any exact remaining product step rather than endlessly repeating these cases.",
+  "scope": [
+    "android",
+    "tools/evaluation",
+    "docs",
+    "FINDINGS.md"
+  ],
+  "dependencies": [
+    "220-scale-model-quality"
+  ],
+  "acceptance_checks": [
+    [
+      "bash",
+      "tools/android-build.sh"
+    ],
+    [
+      "bash",
+      "tools/evaluation/check_obligation_binding.sh"
+    ]
+  ],
+  "artifacts": [
+    "docs/evidence/obligation-source-binding.md"
+  ]
+}

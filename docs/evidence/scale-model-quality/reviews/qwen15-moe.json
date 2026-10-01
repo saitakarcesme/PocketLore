@@ -265,6 +265,126 @@
       "obligations_complete": true,
       "fully_useful_draft": false,
       "assessment": "Both capital statuses and additional geographic/historical/economic details are supported, but no citations and an unsolicited third obligation prevent a usable linked response."
+    },
+    "s34": {
+      "result_sha256": "35a4171964f2d34d942f95d20e15f86718c3c179e328091c30410eb5144ad905",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Moves the Crown-of-Aragon role into nineteenth/twentieth-century industrialization and substitutes modern Barcelona/Athens facts for the requested historical roles; no citations."
+    },
+    "s35": {
+      "result_sha256": "98c5646d8298b0471a2ff66ef7c3afb174955a971c4f038e0a300c8d194b4147",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Falsely names Barcelona the capital and largest city of Spain while citing S1, which names Catalonia and says Spain has a larger municipality, Madrid."
+    },
+    "s36": {
+      "result_sha256": "ee1390b7c8813615dba8a2f074881ed7de428a77554026133a0354e8d2950719",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Fabricates current Acropolis hours, ticket prices, age rules and closure dates absent from every supplied excerpt, then repeats them to the token limit."
+    },
+    "s37": {
+      "result_sha256": "68d5bb5082a58c0f15d188c3e63d4ad5f10f6d0bef65d0eaac2fe88794c6d900",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct redox/ATP mechanism and additional fermentation facts are in S1/S2/S3, but no source citations."
+    },
+    "s38": {
+      "result_sha256": "6f4696d7d1acddd05286c89cb9ae19845f9481abbf87ad80fa2022c99d347aa0",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Gives the correct most-spores-survive explanation but adds that pasteurization only deactivates vegetative bacteria, excluding destruction, other microorganisms and enzymes actually described by S4; no citations."
+    },
+    "s39": {
+      "result_sha256": "3b5b7fa2c1cd00cb1651f8c663868506f2f1bf403288b1cc00e6cf9bd80025dc",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Both fermentation and heat/inactivation preservation mechanisms are present and supported, but all content is in O1, O2 is absent as a labeled slot, and no source citations are supplied."
+    },
+    "s40": {
+      "result_sha256": "32ce19f2889774c9aa091e6ea1ff0747e7a41609d6c2f831e0caa85c5bcd75b5",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct ethanol/lactate and usual sub-100-degree qualification plus supported nonthermal-process detail, but no citations and an extra obligation slot."
+    },
+    "s41": {
+      "result_sha256": "08fbe96f01499d21fdfb530afa2684d1e43c3b1bdc944e9154ba2449a0f2a35a",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Explicitly claims total bacterial-spore destruction is supported despite quoting most-spores-survive; adds unsupported microorganism/spore relationships and misattributes history to S4."
+    },
+    "s42": {
+      "result_sha256": "68275f3bc5571f2f33d53ad41532f0083999ae884c9844c04b4183db3244f487",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Correctly withholds the bottle-specific count, but inaccurately says the sources only discuss pasteurization, ignoring the three fermentation excerpts; not a fully source-faithful response."
+    },
+    "s43": {
+      "result_sha256": "ed7a77974d8aaed0a2bfa954db8d7348aa3b0cd096fd59cabaf022972d06d234",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Reverses the magnitude/brightness relation by saying brighter objects have higher magnitude, despite also reproducing correct negative-magnitude examples; no citations."
+    },
+    "s44": {
+      "result_sha256": "6fc0d2001de0f79a3059d99d17338be95c52077ead7432e5a7ed5ea585e062f0",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "The requested monitoring/discovery explanation is supported elsewhere, but cites income/training S2 instead of S1; added negative-magnitude examples also use wrong paragraph labels and the response truncates."
+    },
+    "s45": {
+      "result_sha256": "a99c49c9ab6c6e2f3f834ee30b1815baf21712eb21bb49846449546897d2ec4e",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Repeats apparent-magnitude material without answering amateur astronomy, and the token boundary truncates the Sirius value to an unsupported number; no citations."
+    },
+    "s46": {
+      "result_sha256": "971505764ad56d97335671dfd5a80ada71f0135e746ef29418e781b1d2283bde",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Calls the fifth root of 100 a square root while retaining 2.512, an internally inconsistent formula interpretation; observing examples are supported but uncited."
+    },
+    "s47": {
+      "result_sha256": "edabff20afdea9cfea92ed8aebfb607ff5650002f037e4e6fe6ee3176831637e",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Endorses higher-magnitude/brighter before contradicting itself, and gives the magnitude-2 versus magnitude-4 ratio as 2.512 instead of the supplied 6.31; no citations."
+    },
+    "s48": {
+      "result_sha256": "7bba83164ddb990038f71baa6fbcd5a5f68d84db729ad2cddc417172a1a690de",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Correctly withholds current unidentified-star brightness, but inaccurately says the sources only discuss apparent magnitude despite three amateur-astronomy excerpts; not fully source-faithful."
     }
   }
 }

@@ -1,0 +1,373 @@
+{
+  "definitions": {
+    "percentile": "Nearest rank: sorted values[ceil(p*n)-1], no interpolation; 48 cases/model, not repeated identical requests.",
+    "first_token_ms": "From generateChat entry, includes prompt prefill and context creation, excludes preceding model load/token count.",
+    "total_ms": "Same start through generation and incremental output writes; no retrieval in this oracle screen.",
+    "load_ms": "Native create/load, separate from lazy context/repacking/prefill. Preflight SHA reads can warm the OS page cache; not disk-cold latency. One model handle per process, fresh context for each question.",
+    "native_peaks": "Maximum callback-observed native buffers: leases, contexts, model, KV, compute bytes. Not OS PSS or isolated allocation peaks; accounting is active-context scoped, so zero after context release does not mean the resident model handle uses zero RAM.",
+    "rss_swap": "Process /proc status sampled once per second; possible missed transients.",
+    "published": "None: this architecture is experimental and not wired to production. Screen candidates require source review."
+  },
+  "models": {
+    "baseline": {
+      "load_ms": 451.505022,
+      "elapsed_s": 523.2240403859978,
+      "model_file_bytes": 491400032,
+      "first_token_ms": {
+        "n": 48,
+        "p50": 7303.54989,
+        "p95": 11235.409313,
+        "min": 4446.307779,
+        "max": 11948.192347
+      },
+      "total_ms": {
+        "n": 48,
+        "p50": 9880.737395,
+        "p95": 18869.838014,
+        "min": 4995.506764,
+        "max": 20636.756638
+      },
+      "prompt_tokens": {
+        "n": 48,
+        "p50": 1201,
+        "p95": 1646,
+        "min": 1055,
+        "max": 1671
+      },
+      "output_tokens": {
+        "n": 48,
+        "p50": 68,
+        "p95": 512,
+        "min": 10,
+        "max": 512
+      },
+      "native_peak_bytes": [
+        514869760,
+        50331648,
+        78709248
+      ],
+      "rss_peak_bytes": 760254464,
+      "swap_peak_bytes": 0,
+      "kinds": {
+        "literal": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 1,
+          "unsupported_fact_draft": 2,
+          "citation_support_failure": 6,
+          "incomplete": 6
+        },
+        "explanation": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 0,
+          "unsupported_fact_draft": 5,
+          "citation_support_failure": 7,
+          "incomplete": 7
+        },
+        "comparison": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 0,
+          "unsupported_fact_draft": 2,
+          "citation_support_failure": 8,
+          "incomplete": 4
+        },
+        "multi-part": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 0,
+          "unsupported_fact_draft": 3,
+          "citation_support_failure": 8,
+          "incomplete": 6
+        },
+        "false-premise": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 0,
+          "unsupported_fact_draft": 4,
+          "citation_support_failure": 7,
+          "incomplete": 8
+        },
+        "absence": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 4,
+          "unsupported_fact_draft": 2,
+          "citation_support_failure": 4,
+          "incomplete": 4
+        }
+      }
+    },
+    "qwen3-4b": {
+      "load_ms": 1638.098695,
+      "elapsed_s": 1808.8792378859944,
+      "model_file_bytes": 2497280256,
+      "first_token_ms": {
+        "n": 48,
+        "p50": 29033.820078,
+        "p95": 41015.805903,
+        "min": 14979.784238,
+        "max": 51535.927602
+      },
+      "total_ms": {
+        "n": 48,
+        "p50": 36898.205847,
+        "p95": 67745.956858,
+        "min": 19080.84298,
+        "max": 78467.577916
+      },
+      "prompt_tokens": {
+        "n": 48,
+        "p50": 1205,
+        "p95": 1650,
+        "min": 1059,
+        "max": 1675
+      },
+      "output_tokens": {
+        "n": 48,
+        "p50": 62,
+        "p95": 182,
+        "min": 26,
+        "max": 273
+      },
+      "native_peak_bytes": [
+        4242363904,
+        603979776,
+        80413184
+      ],
+      "rss_peak_bytes": 4976906240,
+      "swap_peak_bytes": 436133888,
+      "kinds": {
+        "literal": {
+          "n": 8,
+          "candidate": 1,
+          "useful_draft": 7,
+          "unsupported_fact_draft": 0,
+          "citation_support_failure": 1,
+          "incomplete": 0
+        },
+        "explanation": {
+          "n": 8,
+          "candidate": 2,
+          "useful_draft": 5,
+          "unsupported_fact_draft": 1,
+          "citation_support_failure": 2,
+          "incomplete": 1
+        },
+        "comparison": {
+          "n": 8,
+          "candidate": 1,
+          "useful_draft": 6,
+          "unsupported_fact_draft": 1,
+          "citation_support_failure": 2,
+          "incomplete": 0
+        },
+        "multi-part": {
+          "n": 8,
+          "candidate": 1,
+          "useful_draft": 2,
+          "unsupported_fact_draft": 3,
+          "citation_support_failure": 5,
+          "incomplete": 2
+        },
+        "false-premise": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 6,
+          "unsupported_fact_draft": 0,
+          "citation_support_failure": 0,
+          "incomplete": 2
+        },
+        "absence": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 8,
+          "unsupported_fact_draft": 0,
+          "citation_support_failure": 0,
+          "incomplete": 0
+        }
+      }
+    },
+    "qwen25-7b": {
+      "load_ms": 6930.635139,
+      "elapsed_s": 2432.796537875998,
+      "model_file_bytes": 4683074240,
+      "first_token_ms": {
+        "n": 48,
+        "p50": 34245.017369,
+        "p95": 58462.476567,
+        "min": 25805.804232,
+        "max": 66470.960485
+      },
+      "total_ms": {
+        "n": 48,
+        "p50": 46749.8188,
+        "p95": 80129.753701,
+        "min": 32094.814944,
+        "max": 106481.990897
+      },
+      "prompt_tokens": {
+        "n": 48,
+        "p50": 1201,
+        "p95": 1646,
+        "min": 1055,
+        "max": 1671
+      },
+      "output_tokens": {
+        "n": 48,
+        "p50": 59,
+        "p95": 183,
+        "min": 29,
+        "max": 305
+      },
+      "native_peak_bytes": [
+        7798468608,
+        234881024,
+        81527296
+      ],
+      "rss_peak_bytes": 8180408320,
+      "swap_peak_bytes": 43065344,
+      "kinds": {
+        "literal": {
+          "n": 8,
+          "candidate": 3,
+          "useful_draft": 6,
+          "unsupported_fact_draft": 0,
+          "citation_support_failure": 2,
+          "incomplete": 1
+        },
+        "explanation": {
+          "n": 8,
+          "candidate": 1,
+          "useful_draft": 7,
+          "unsupported_fact_draft": 0,
+          "citation_support_failure": 0,
+          "incomplete": 1
+        },
+        "comparison": {
+          "n": 8,
+          "candidate": 2,
+          "useful_draft": 5,
+          "unsupported_fact_draft": 1,
+          "citation_support_failure": 3,
+          "incomplete": 1
+        },
+        "multi-part": {
+          "n": 8,
+          "candidate": 1,
+          "useful_draft": 1,
+          "unsupported_fact_draft": 3,
+          "citation_support_failure": 7,
+          "incomplete": 2
+        },
+        "false-premise": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 5,
+          "unsupported_fact_draft": 0,
+          "citation_support_failure": 3,
+          "incomplete": 0
+        },
+        "absence": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 8,
+          "unsupported_fact_draft": 0,
+          "citation_support_failure": 0,
+          "incomplete": 0
+        }
+      }
+    },
+    "qwen15-moe": {
+      "load_ms": 14696.758948,
+      "elapsed_s": 1514.447894015997,
+      "model_file_bytes": 5890164032,
+      "first_token_ms": {
+        "n": 48,
+        "p50": 15778.73261,
+        "p95": 23677.006083,
+        "min": 12198.251859,
+        "max": 29192.888243
+      },
+      "total_ms": {
+        "n": 48,
+        "p50": 31154.840996,
+        "p95": 47040.467713,
+        "min": 15463.748221,
+        "max": 54262.835599
+      },
+      "prompt_tokens": {
+        "n": 48,
+        "p50": 1201,
+        "p95": 1646,
+        "min": 1055,
+        "max": 1671
+      },
+      "output_tokens": {
+        "n": 48,
+        "p50": 234,
+        "p95": 512,
+        "min": 10,
+        "max": 512
+      },
+      "native_peak_bytes": [
+        8219912192,
+        805306368,
+        86244864
+      ],
+      "rss_peak_bytes": 8972570624,
+      "swap_peak_bytes": 39878656,
+      "kinds": {
+        "literal": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 0,
+          "unsupported_fact_draft": 5,
+          "citation_support_failure": 8,
+          "incomplete": 2
+        },
+        "explanation": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 0,
+          "unsupported_fact_draft": 5,
+          "citation_support_failure": 8,
+          "incomplete": 3
+        },
+        "comparison": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 0,
+          "unsupported_fact_draft": 3,
+          "citation_support_failure": 8,
+          "incomplete": 2
+        },
+        "multi-part": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 0,
+          "unsupported_fact_draft": 6,
+          "citation_support_failure": 8,
+          "incomplete": 6
+        },
+        "false-premise": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 0,
+          "unsupported_fact_draft": 6,
+          "citation_support_failure": 7,
+          "incomplete": 8
+        },
+        "absence": {
+          "n": 8,
+          "candidate": 0,
+          "useful_draft": 2,
+          "unsupported_fact_draft": 5,
+          "citation_support_failure": 6,
+          "incomplete": 4
+        }
+      }
+    }
+  }
+}

@@ -37,19 +37,23 @@ def main():
   for path,h in manifest['source_hashes'].items():
    archived=subprocess.check_output(['git','show',revision+':'+path],cwd=R)
    require(hashlib.sha256(archived).hexdigest()==h,'Compiled source identity changed: '+path)
-   if path.endswith('.java'):hashed(R/path,h)
+   if path.endswith('.java') or (stage=='buffer-v2' and path.endswith(('.cpp','.h'))):hashed(R/path,h)
  for name in ['qwen25-7b','qwen15-moe']:
   failed=E/'runs/initial'/name;receipt=json.loads((failed/'receipt.json').read_text());run_artifacts(failed,receipt)
   for c in cases:
    v=json.loads((failed/(c['id']+'.json')).read_text())
    require(v['tokens']==0 and not v['raw'] and 'Runtime buffers exceed' in v['failure'],'Historical allocation failure overwritten')
+ inventory=json.loads((E/'build-inventory.json').read_text())
+ for path,asset in inventory['assets'].items():
+  require((R/path).stat().st_size==asset['bytes'],'Build/edition size changed');hashed(R/path,asset['sha256'])
  selection=json.loads((E/'selection.json').read_text());require(selection['deployment']=='unchanged production 0.5B','Optional model relabeled as deployed')
  require(set(selection['runs'])=={'baseline','qwen3-4b','qwen25-7b','qwen15-moe'},'Incomplete model matrix')
- prompts={};replay=[];counts={}
+ prompts={};replay=[];counts={};model_bytes={}
  for name,loc in selection['runs'].items():
   d=R/loc;receipt=json.loads((d/'receipt.json').read_text());pin=receipt['pin'];model(R/receipt['path'],pin)
   pins={'baseline':R/'tools/evaluation/model-capability/baseline.json','qwen3-4b':R/'tools/evaluation/model-capability/qwen3-4b.json','qwen25-7b':F/'qwen25-7b.json','qwen15-moe':F/'qwen15-moe.json'}
   require(pin==json.loads(pins[name].read_text()),'Pinned model differs from run')
+  model_bytes[name]=pin['bytes']
   require(receipt['id']==name and receipt['exit_code']==0 and not receipt['timeout'],'Failed/incomplete quality run')
   require(len(pin['revision'])==40,'Mutable model revision');hashed(R/receipt['license'],receipt['license_sha256'])
   run_artifacts(d,receipt)
@@ -93,5 +97,11 @@ def main():
   with changed.open('wb') as f:f.truncate(baseline['bytes'])
   reject(lambda:model(changed,baseline))
  require(counts==selection['measured_counts'],'Reported selection counts do not match raw reviews')
+ eligible=[name for name in counts if counts[name]['unsupported_candidates']==0]
+ winner=sorted(eligible,key=lambda name:(-counts[name]['useful_drafts_supported_population'],model_bytes[name]))[0]
+ require(selection['candidate_for_next_integration']==winner,'Selection differs from declared support/completeness and size ranking')
+ follow=json.loads((E/'queued-follow-up.json').read_text());receipt=json.loads((E/'queue-receipt.json').read_text())
+ require(follow['id']==receipt['task'] and follow['dependencies']==['220-scale-model-quality'],'Follow-up identity/dependency drift')
+ hashed(E/'queued-follow-up.json',receipt['sha256'])
  print(json.dumps({'status':'PASS','scope':'Host artifacts, exact sources and controller behavior; builder support judgments require independent review','counts':counts,'corruption_rejections':4},indent=2))
 if __name__=='__main__':main()

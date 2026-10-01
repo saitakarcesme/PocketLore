@@ -1,0 +1,67 @@
+{
+  "deployment": "unchanged production 0.5B",
+  "candidate_for_next_integration": "qwen3-4b",
+  "decision": "Host-screen candidate only; not Android-qualified or deployed",
+  "architecture_decision": "Retain bounded obligation planning, but replace ambiguous free-text citation serialization and unbound claim-to-source association; no production-ready supported architecture demonstrated.",
+  "review_status": "Builder assessments only; independent source criticism and human acceptance pending",
+  "reason": "4B has the highest fully supported complete useful draft count, no observed unsupported screen candidate, and the smallest alternative artifact/native footprint. Only four of forty supported cases also pass the current controller, so do not promote it on draft potential alone.",
+  "runs": {
+    "baseline": "docs/evidence/scale-model-quality/runs/initial/baseline",
+    "qwen3-4b": "docs/evidence/scale-model-quality/runs/initial/qwen3-4b",
+    "qwen25-7b": "docs/evidence/scale-model-quality/runs/buffer-v2/qwen25-7b",
+    "qwen15-moe": "docs/evidence/scale-model-quality/runs/buffer-v2/qwen15-moe"
+  },
+  "measured_counts": {
+    "baseline": {
+      "candidate": 0,
+      "withheld": 48,
+      "useful_drafts_supported_population": 1,
+      "useful_abstentions": 4,
+      "unsupported_candidates": 0,
+      "fully_useful_screen_candidates": 0,
+      "absent_screen_candidates": 0
+    },
+    "qwen3-4b": {
+      "candidate": 5,
+      "withheld": 43,
+      "useful_drafts_supported_population": 26,
+      "useful_abstentions": 8,
+      "unsupported_candidates": 0,
+      "fully_useful_screen_candidates": 4,
+      "absent_screen_candidates": 0
+    },
+    "qwen25-7b": {
+      "candidate": 7,
+      "withheld": 41,
+      "useful_drafts_supported_population": 24,
+      "useful_abstentions": 8,
+      "unsupported_candidates": 1,
+      "fully_useful_screen_candidates": 5,
+      "absent_screen_candidates": 0
+    },
+    "qwen15-moe": {
+      "candidate": 0,
+      "withheld": 48,
+      "useful_drafts_supported_population": 0,
+      "useful_abstentions": 2,
+      "unsupported_candidates": 0,
+      "fully_useful_screen_candidates": 0,
+      "absent_screen_candidates": 0
+    }
+  },
+  "limits": [
+    "Oracle evidence, not end-to-end retrieval",
+    "One fixed greedy run per question/model; no seed or prompt search",
+    "No candidate Android inference or admission change",
+    "Timing includes shared-host concurrency and measured swap; not phone performance",
+    "Only sixteen source documents across eight topic pairs; no encyclopedic or competitive claim"
+  ],
+  "follow_up": {
+    "task": "221-obligation-source-binding",
+    "path": "/home/isa/PocketLore-control/tasks/221-obligation-source-binding.json",
+    "public_spec": "docs/evidence/scale-model-quality/queued-follow-up.json",
+    "sha256": "a2fb1acb8c775d54f522914b6cca88e6164117ac9c12cf1640acadfecade7e1c",
+    "created_utc": "2026-10-01T10:58:48.436329+00:00",
+    "scope": "Task specification only; dependency on 220; no runner state, service, dispatch or branch change"
+  }
+}

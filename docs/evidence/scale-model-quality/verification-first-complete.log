@@ -1,0 +1,45 @@
+PASS three compiled profiles, exact-boundary acceptance and nine over-budget rejections; no OS OOM claim
+PASS actual-draft controller replay and bounded obligation regressions: 192
+{
+  "status": "PASS",
+  "scope": "Host artifacts, exact sources and controller behavior; builder support judgments require independent review",
+  "counts": {
+    "baseline": {
+      "candidate": 0,
+      "withheld": 48,
+      "useful_drafts_supported_population": 1,
+      "useful_abstentions": 4,
+      "unsupported_candidates": 0,
+      "fully_useful_screen_candidates": 0,
+      "absent_screen_candidates": 0
+    },
+    "qwen3-4b": {
+      "candidate": 5,
+      "withheld": 43,
+      "useful_drafts_supported_population": 26,
+      "useful_abstentions": 8,
+      "unsupported_candidates": 0,
+      "fully_useful_screen_candidates": 4,
+      "absent_screen_candidates": 0
+    },
+    "qwen25-7b": {
+      "candidate": 7,
+      "withheld": 41,
+      "useful_drafts_supported_population": 24,
+      "useful_abstentions": 8,
+      "unsupported_candidates": 1,
+      "fully_useful_screen_candidates": 5,
+      "absent_screen_candidates": 0
+    },
+    "qwen15-moe": {
+      "candidate": 0,
+      "withheld": 48,
+      "useful_drafts_supported_population": 0,
+      "useful_abstentions": 2,
+      "unsupported_candidates": 0,
+      "fully_useful_screen_candidates": 0,
+      "absent_screen_candidates": 0
+    }
+  },
+  "corruption_rejections": 4
+}
