@@ -1,0 +1,2 @@
+INSTRUMENTATION_RESULT: failure=java.lang.NullPointerException: Attempt to read from field 'java.util.List org.pocketlore.app.PackLibrary$Snapshot.entries' on a null object reference in method 'void org.pocketlore.app.LibraryInstrumentation.onStart()'
+INSTRUMENTATION_CODE: 1

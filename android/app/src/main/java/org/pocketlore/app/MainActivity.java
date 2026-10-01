@@ -102,11 +102,11 @@ public final class MainActivity extends Activity {
         collections.setEnabled(ready&&catalog!=null&&!catalog.entries.isEmpty());reloadLibrary.setEnabled(ready);
     }
     private void showLibrary(PackLibrary.Snapshot next){
-        catalog=next;engine=next.engine;latestEvidence=null;nativePanel.clearAnswer();sourceList.removeAllViews();
+        catalog=next;engine=next.engine;latestEvidence=null;nativePanel.clearEvidence();sourceList.removeAllViews();
         packStatus.setText(next.description());status.setText("Active collections ready · No network permission");updateControls();
     }
     private void loadLibrary(){
-        if(importing||nativePanel.isBusy()||searching)return;
+        if(importing||searching)return;
         importing=true;cancelPack=false;long epoch=++libraryEpoch;updateControls();status.setText("Loading active collections…");
         packWorker.execute(()->{packThread=Thread.currentThread();try{
             PackLibrary.Snapshot next=library.loadMigrating(new java.io.File(getFilesDir(),"knowledge.plpack"));

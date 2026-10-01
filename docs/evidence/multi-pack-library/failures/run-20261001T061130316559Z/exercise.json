@@ -1,0 +1,39 @@
+{
+  "mode": "exercise",
+  "pid": 8057,
+  "tests": [
+    "two-real-editions",
+    "idempotent-import",
+    "duplicate-document-provenance",
+    "disabled-pack",
+    "all-disabled",
+    "eight-admission-boundaries",
+    "staging-cleanup"
+  ],
+  "rejections": [
+    {
+      "case": "conflicting-id",
+      "failure": "java.io.IOException: Passage payload hash mismatch"
+    },
+    {
+      "case": "corrupt",
+      "failure": "java.io.IOException: Missing pack entries"
+    },
+    {
+      "case": "cancel-before",
+      "failure": "java.io.InterruptedIOException: Import cancelled",
+      "latency_ms": 0.456901
+    },
+    {
+      "case": "cancel-during",
+      "failure": "java.io.InterruptedIOException: Import cancelled",
+      "latency_ms": 0.579175
+    },
+    {
+      "case": "combined-admission",
+      "failure": "java.io.IOException: Combined collection storage limit exceeded"
+    }
+  ],
+  "status": "FAIL",
+  "failure": "java.lang.NullPointerException: Attempt to read from field 'java.util.List org.pocketlore.app.PackLibrary$Snapshot.entries' on a null object reference in method 'void org.pocketlore.app.LibraryInstrumentation.onStart()'"
+}

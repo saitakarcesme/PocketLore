@@ -1,0 +1,17 @@
+/home/isa/Projects/PocketLore/downloads/multi-pack-library/run-20261001T061244443753Z
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/verify_multi_pack_library.py", line 81, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/verify_multi_pack_library.py", line 32, in main
+    raw=run(a+['exec-out','run-as','org.pocketlore.app','cat','files/pack-library/catalog.json'],'prior-catalog.json');catalog=json.loads(raw)
+                                                                                                                               ~~~~~~~~~~^^^^^
+  File "/usr/lib/python3.14/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.14/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/json/decoder.py", line 363, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

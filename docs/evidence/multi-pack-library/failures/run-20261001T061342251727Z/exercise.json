@@ -1,0 +1,11 @@
+{
+  "mode": "exercise",
+  "pid": 8240,
+  "tests": [
+    "two-real-editions",
+    "idempotent-import",
+    "duplicate-document-provenance"
+  ],
+  "status": "FAIL",
+  "failure": "java.io.IOException: Not enough Java heap to rebuild the active index; retained catalog unchanged"
+}

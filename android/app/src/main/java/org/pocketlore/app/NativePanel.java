@@ -66,6 +66,7 @@ final class NativePanel {
     AnswerEngine.Outcome outcome() { return outcome; }
     boolean isBusy() { return busy; }
     boolean hasModel() { return session != 0; }
+    void clearEvidence() { ++answerEpoch; outcome=null; retrieving=false; output.setText(""); }
     void clearAnswer() { ++answerEpoch; outcome = null; cancelled = false; retrieving = true; output.setText(""); setBusy(true); }
     void cancel() {
         cancelled = true;

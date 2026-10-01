@@ -32,6 +32,9 @@ public final class PackLibrary {
         require(archives<=MAX_ARCHIVES&&expanded<=MAX_EXPANDED&&manifests<=MAX_MANIFESTS&&documents<=MAX_DOCUMENTS&&count<=MAX_COLLECTIONS,"Combined collection storage limit exceeded");
         require(passages<=MAX_PASSAGES&&text<=MAX_TEXT&&tokens<=MAX_TOKENS,"Active collection index limit exceeded; disable collections before adding more");
     }
+    static void admitHeap(long estimate,long available)throws IOException {
+        require(estimate>=0&&available>=estimate+32L*1024*1024,"Not enough Java heap to rebuild the active index; retained catalog unchanged (estimate="+estimate+", available="+available+")");
+    }
     private List<Entry> entries()throws Exception {
         List<Entry> result=new ArrayList<>();if(!catalog.exists())return result;
         require(catalog.length()<=65536,"Catalog too large");JSONObject root=new JSONObject(new String(Files.readAllBytes(catalog.toPath()),StandardCharsets.UTF_8));
@@ -46,7 +49,7 @@ public final class PackLibrary {
     }
     private KnowledgePack read(File file)throws Exception {try(InputStream in=new FileInputStream(file)){return KnowledgePack.read(in,false);}}
     private Snapshot build(List<Entry> entries,KnowledgePack incoming,BooleanSupplier cancel)throws Exception {
-        long bytes=0,expanded=0,manifests=0,docs=0,chars=0,tokens=0;
+        long bytes=0,expanded=0,manifests=0,docs=0,chars=0,tokens=0,provenanceChars=0;
         Set<String> documents=new HashSet<>();Map<String,String[]> rows=new LinkedHashMap<>();Map<String,StringBuilder> provenance=new HashMap<>();
         for(Entry entry:entries){if(cancel.getAsBoolean()||Thread.currentThread().isInterrupted())throw new InterruptedIOException("Library operation cancelled");
             KnowledgePack p=incoming!=null&&incoming.sha256.equals(entry.hash)?incoming:read(new File(directory,entry.hash+".plpack"));
@@ -59,6 +62,7 @@ public final class PackLibrary {
                 // with every active edition's provenance retained. Different versions/rights stay distinct.
                 String key=KnowledgePack.hash((p.documentKeys.get(row[0])+"\n"+String.join("\t",Arrays.copyOfRange(row,1,6))).getBytes(StandardCharsets.UTF_8));
                 String source="Collection: "+p.id+"\nEdition SHA-256: "+p.sha256+"\n"+p.provenance.get(row[0])+"\n"+p.warning;
+                provenanceChars+=source.length();require(provenanceChars<=MAX_TEXT,"Active provenance metadata limit exceeded");
                 if(rows.containsKey(key)){provenance.get(key).append("\n\nAlso retained in:\n").append(source);continue;}
                 chars+=row[5].length();tokens+=ResearchEngine.tokenize(row[1]+" "+row[5]).size();
                 admit(bytes,expanded,manifests,docs,entries.size(),rows.size()+1,chars,tokens);
@@ -66,6 +70,12 @@ public final class PackLibrary {
             }
         }
         // No per-pack index exists here; admission completes before the one combined index allocation.
+        long estimate=16L*1024*1024+tokens*256+chars*4+provenanceChars*4+rows.size()*2048L;
+        Runtime runtime=Runtime.getRuntime();long available=runtime.maxMemory()-(runtime.totalMemory()-runtime.freeMemory());
+        // One collection request prevents short-lived validation garbage from masquerading
+        // as live index memory. Admission still fails if the reserve is unavailable.
+        if(available<estimate+32L*1024*1024){System.gc();available=runtime.maxMemory()-(runtime.totalMemory()-runtime.freeMemory());}
+        admitHeap(estimate,available);
         List<ResearchEngine.Passage> passages=new ArrayList<>();for(String key:rows.keySet())passages.add(new ResearchEngine.Passage(rows.get(key),provenance.get(key).toString()));
         return new Snapshot(new ArrayList<>(entries),new ResearchEngine(passages),documents.size(),bytes);
     }
