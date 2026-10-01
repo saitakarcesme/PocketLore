@@ -31,3 +31,10 @@ tasks.register('buildPocketLoreNative', Exec) {
     commandLine 'bash', 'tools/runtime/build-native.sh'
 }
 tasks.named('preBuild').configure { dependsOn 'buildPocketLoreNative' }
+
+// Offline source verification and reproducible generation; fetch is an explicit setup step.
+tasks.register('buildTravelPack', Exec) {
+    workingDir rootProject.projectDir.parentFile
+    commandLine 'python3', 'tools/packs/build_travel.py', '--install'
+}
+tasks.named('preBuild').configure { dependsOn 'buildTravelPack' }
