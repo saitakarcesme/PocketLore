@@ -1,0 +1,2 @@
+O1|P1.3,P2.3|binary search|must be sorted|If the search ends with the remaining half being empty, the target is not in the array. The array must be sorted first to be able to apply binary search.  
+O2|P4.1,P5.2|binary search tree|structure|In a binary search tree, each internal node's key is greater than all keys in the respective node's left subtree and less than the ones in its right subtree. The basic operations include: search, traversal, insert and delete.

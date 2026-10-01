@@ -1,0 +1,38 @@
+{
+  "literal": {
+    "cases": 8,
+    "eligible": 6,
+    "fully_useful_eligible": 5,
+    "unsupported_eligible": 1
+  },
+  "explanation": {
+    "cases": 8,
+    "eligible": 4,
+    "fully_useful_eligible": 1,
+    "unsupported_eligible": 2
+  },
+  "comparison": {
+    "cases": 8,
+    "eligible": 2,
+    "fully_useful_eligible": 2,
+    "unsupported_eligible": 0
+  },
+  "multi-part": {
+    "cases": 8,
+    "eligible": 8,
+    "fully_useful_eligible": 4,
+    "unsupported_eligible": 4
+  },
+  "false-premise": {
+    "cases": 8,
+    "eligible": 0,
+    "fully_useful_eligible": 0,
+    "unsupported_eligible": 0
+  },
+  "absence": {
+    "cases": 8,
+    "eligible": 0,
+    "fully_useful_eligible": 0,
+    "unsupported_eligible": 0
+  }
+}

@@ -72,10 +72,16 @@ def main():
    if absent and not eligible:counts['new_absent_withheld']+=1
    if not absent and useful and eligible:counts['new_useful_eligible']+=1
   rows.append('\t'.join([c['id'],enc(c['question']),enc(v['draft']['raw']),str(v['draft']['tokens']),enc(v['audit']['raw']),str(v['audit']['tokens']),enc(v['failure']),enc(v['rendered'])]))
+ history_review=json.loads((E/'history-review.json').read_text())
+ require(len(history_review['cases'])==11 and history_review['reviewer'].startswith('builder'),'Historical review incomplete')
+ follow=json.loads((E/'proposed-follow-up.json').read_text());queue=json.loads((E/'queue-receipt.json').read_text())
+ exact(E/'proposed-follow-up.json',queue['sha256'])
+ require(follow['id']==queue['task'] and follow['dependencies']==['221-obligation-source-binding'],'Queued follow-up drift')
  for h in json.loads((F/'history.json').read_text()):
+  exact(history/'results'/(h['id']+'.json'),history_review['cases'][h['id']]['result_sha256'])
   exact(R/h['original_path'],h['original_sha256'])
   v=json.loads((history/'results'/(h['id']+'.json')).read_text());require(v['claims'] and v['audit']['tokens']>0,'Historical test rejected only syntax or missing native audit')
- cancel=json.loads((history/'results/cancellation.json').read_text());require(cancel['callback_count']==1 and 0<=cancel['cancel_latency_ms']<=2000 and cancel['retry_tokens']>0 and cancel['after_cancel']==[1,0,0,0,0] and cancel['after_retry']==[1,0,0,0,0],'Cancellation/retry failed')
+ cancel=json.loads((history/'results/cancellation.json').read_text());require(cancel['callback_count']==1 and cancel['cancel_tokens']==-1 and not cancel['cancel_error'] and 0<=cancel['cancel_latency_ms']<=2000 and cancel['retry_tokens']>0 and cancel['after_cancel']==[1,0,0,0,0] and cancel['after_retry']==[1,0,0,0,0],'Cancellation/retry failed')
  require(json.loads((history/'results/closed.json').read_text())==[0,0,0,0,0],'Native model handle not closed')
  with tempfile.TemporaryDirectory(prefix='pocketlore-binding-check-') as tmp:
   t=Path(tmp);inputs=t/'inputs';shutil.copytree(run/'inputs',inputs);(inputs/'replay.tsv').write_text('\n'.join(rows)+'\n');classes=t/'classes';classes.mkdir();sources=[R/p for p in manifest['sources'] if p.endswith('.java')]+[F/'BehaviorHarness.java']

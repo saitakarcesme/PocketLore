@@ -26,6 +26,36 @@
       "result_sha256": "35858c61bcae831cf86afee9b598fca5611faabd99e4180626756ffab17b2ac7",
       "route": "SCREEN_ELIGIBLE",
       "assessment": "Approves the historical transfer of smaller-wound pathogen protection into the general reason for pruning unwanted material. The real source condition remains unmet."
+    },
+    "r06": {
+      "result_sha256": "e27a869149da104a1c4dc35e39c24ef642be9d09b5bd891511063c45471647c4",
+      "route": "SCREEN_ELIGIBLE",
+      "assessment": "Approves industrial ethanol/lactate claim despite references containing only the neighboring fermentation mechanism paragraph, not the product paragraph."
+    },
+    "r07": {
+      "result_sha256": "2574eba55691bcfecc2046d602609d019622ee29fb8cbb6968e2028054579222",
+      "route": "WITHHELD",
+      "assessment": "Correctly rejects wrong-neighbor magnitude references: audit explicitly notes definition-only source does not establish inverse scale or numeric ratios."
+    },
+    "r08": {
+      "result_sha256": "8ade20c36a52764e5454a4c6e0f2ef951bdb093e4fa8a84ef1807233b21eb010",
+      "route": "SCREEN_ELIGIBLE",
+      "assessment": "Approves another wrong-neighbor magnitude ratio claim when combined with a supported amateur-observation obligation; this differs from the correct r07 rejection and demonstrates unreliable multi-claim judgment."
+    },
+    "r09": {
+      "result_sha256": "7e37103ea0338d13b64fe255ab3b68841307134cad2bf4a2c29ffdef8ce9cb1c",
+      "route": "SCREEN_ELIGIBLE",
+      "assessment": "Approves the actual historical square-root-of100 claim despite selected TeX showing fifth root and about2.512. Numerical/lexical agreement does not establish formula entailment."
+    },
+    "r10": {
+      "result_sha256": "04a48e26a4f4e341f7b12ae9d4d39398b463f1f92072965b39a7587c948e8de7",
+      "route": "WITHHELD",
+      "assessment": "Correctly rejects fabricated Acropolis opening hours/prices/closure details absent from the dated general city source."
+    },
+    "r11": {
+      "result_sha256": "258d8da9ba6ffcbd254d5d2eb358dd9924b53f74bfbecdb219c37725a01058fd",
+      "route": "WITHHELD",
+      "assessment": "Falsely rejects a supported inverse-scale correction by confusing the quoted false premise with the answer negating it; the audit reason even acknowledges the corrected claim is supported."
     }
   }
 }
