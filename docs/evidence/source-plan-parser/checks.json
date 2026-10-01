@@ -1,0 +1,9 @@
+{
+  "build_exit_code": 0,
+  "check_exit_code": 1,
+  "prior_behavioral_checks": 85,
+  "sentence_behavioral_checks": 12,
+  "parser_controls": 16,
+  "quality": "FAIL: no useful non-extractive generated answer",
+  "inference": "279unique dependency parses; no4B or NLI calls"
+}

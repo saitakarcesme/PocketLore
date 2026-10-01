@@ -1,3 +1,11 @@
+# Task 224 repair 1: source retention improved; usefulness still fails
+
+The [repair experiment](source-plan-parser-repair.md) recovers the failed checkpoint and adds a bounded complete-sentence source adapter plus an independently trained dependency-parser prototype. Build and113 behavioral/parser controls pass. The required quality check still **fails**: zero structural candidates across127 preserved records and0/24 useful new-case answers. No4B or NLI inference was repeated; no support gate or case-specific phrase rule was added. Independent source review and mobile qualification remain open.
+
+The broader source adapter now retains14–24 admitted sentences per new case, including answerable material previously omitted by finite frames. Whole syntactic structure matching still fails to recognize supported prose, so it is not promoted as an answer architecture. Historical raw failures, parser setup failure, licenses, pins and resources are preserved. The original negative report follows unchanged.
+
+---
+
 # Source-grounded plan before prose: negative task 224 result
 
 The fixed experiment produced **zero complete useful eligible answers out of24 new public questions**. All four absent controls withheld; no unsupported answer was published because no answer was published. Positive-output precision is undefined, not100%. `bash tools/android-build.sh` passes. `bash tools/evaluation/check_source_plan_generation.sh` passes artifact checks,85 behavioral tests and exact saved-output replay, then **exits1 at the quality gate** because usefulness is zero. No product acceptance, deployment or model suitability is claimed.

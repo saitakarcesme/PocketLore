@@ -1,0 +1,9 @@
+WARNING: The directory '/home/isa/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Collecting click==8.1.8
+  Downloading click-8.1.8-py3-none-any.whl.metadata (2.3 kB)
+Downloading click-8.1.8-py3-none-any.whl (98 kB)
+Installing collected packages: click
+Successfully installed click-8.1.8
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: python3.12 -m pip install --upgrade pip
