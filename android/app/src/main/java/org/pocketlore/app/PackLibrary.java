@@ -12,6 +12,17 @@ import org.json.*;
  * which is removed only within this library's owned directory on the next operation.
  */
 public final class PackLibrary {
+    // All Activity instances share one transaction boundary, including cleanup and export.
+    private static final java.util.concurrent.locks.ReentrantLock TRANSACTIONS=new java.util.concurrent.locks.ReentrantLock();
+    private interface Transaction<T>{T run()throws Exception;}
+    private static <T>T locked(Transaction<T> action)throws Exception{TRANSACTIONS.lockInterruptibly();try{return action.run();}finally{TRANSACTIONS.unlock();}}
+    public Snapshot load()throws Exception{return locked(()->loadLocked());}
+    public Snapshot select(Set<String> active)throws Exception{return locked(()->selectLocked(active));}
+    public Snapshot install(InputStream in,BooleanSupplier cancel)throws Exception{return locked(()->installLocked(in,cancel));}
+    public Snapshot install(InputStream in,BooleanSupplier cancel,long expected)throws Exception{return locked(()->installLocked(in,cancel,expected));}
+    public Snapshot remove(String hash)throws Exception{return locked(()->removeLocked(hash));}
+    public void exportCollection(String hash,OutputStream out,BooleanSupplier cancel)throws Exception{locked(()->{exportCollectionLocked(hash,out,cancel);return null;});}
+    public Snapshot loadMigrating(File legacy)throws Exception{return locked(()->loadMigratingLocked(legacy));}
     public static final int MAX_COLLECTIONS=8, MAX_DOCUMENTS=1000, MAX_PASSAGES=5000;
     public static final long MAX_ARCHIVES=16L*1024*1024,MAX_EXPANDED=16L*1024*1024,
         MAX_MANIFESTS=2L*1024*1024,MAX_TEXT=1000000,MAX_TOKENS=200000;
@@ -99,15 +110,15 @@ public final class PackLibrary {
             Files.move(stage.toPath(),catalog.toPath(),StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);
         }finally{stage.delete();}
     }
-    public synchronized Snapshot load()throws Exception {List<Entry> es=entries();cleanup(es);return build(es,null,()->false);}
-    public synchronized Snapshot select(Set<String> active)throws Exception {
+    private Snapshot loadLocked()throws Exception {List<Entry> es=entries();cleanup(es);return build(es,null,()->false);}
+    private Snapshot selectLocked(Set<String> active)throws Exception {
         List<Entry> old=entries(),es=new ArrayList<>();Set<String> known=new HashSet<>();for(Entry e:old){known.add(e.hash);es.add(new Entry(e.hash,e.id,active.contains(e.hash)));}require(known.containsAll(active),"Unknown active collection");
         Snapshot next=build(es,null,()->false);commit(es,()->false);return next;
     }
-    public synchronized Snapshot install(InputStream in,BooleanSupplier cancel)throws Exception {
+    private Snapshot installLocked(InputStream in,BooleanSupplier cancel)throws Exception {
         return install(in,cancel,-1);
     }
-    public synchronized Snapshot install(InputStream in,BooleanSupplier cancel,long expected)throws Exception {
+    private Snapshot installLocked(InputStream in,BooleanSupplier cancel,long expected)throws Exception {
         require(expected==-1 || expected>0&&expected<=BroadPack.MAX_ARCHIVE,"Invalid declared archive size");
         List<Entry> es=entries();cleanup(es);ResourceStorage.requireSpace(expected<0?BroadPack.MAX_ARCHIVE:expected,directory.getUsableSpace());
         File stage=File.createTempFile("pack-",".partial",directory);File moved=null;boolean committed=false;
@@ -128,7 +139,7 @@ public final class PackLibrary {
         }finally{stage.delete();if(!committed&&moved!=null)moved.delete();}
     }
     /** Commit the retained catalog before deleting owned bytes; an interrupted cleanup is retried on load. */
-    public synchronized Snapshot remove(String hash)throws Exception {
+    private Snapshot removeLocked(String hash)throws Exception {
         List<Entry> es=entries();
         require(es.removeIf(e->e.hash.equals(hash)),"Unknown collection edition");
         Snapshot next=build(es,null,()->false);
@@ -138,7 +149,7 @@ public final class PackLibrary {
         return next;
     }
     /** Exact portable archive; no provenance or ownership assertion is rewritten. */
-    public synchronized void exportCollection(String hash,OutputStream out,BooleanSupplier cancel)throws Exception {
+    private void exportCollectionLocked(String hash,OutputStream out,BooleanSupplier cancel)throws Exception {
         Entry found=null;for(Entry e:entries())if(e.hash.equals(hash))found=e;
         require(found!=null,"Unknown collection");File archive=new File(directory,hash+".plpack");
         require(!BroadPack.isBroad(archive),"Bulk edition export is not supported by this bounded document workflow");
@@ -146,7 +157,7 @@ public final class PackLibrary {
         try(InputStream in=new FileInputStream(archive)){byte[] buffer=new byte[8192];int n;while((n=in.read(buffer))!=-1){PersonalText.check(cancel);out.write(buffer,0,n);}PersonalText.check(cancel);out.flush();}
     }
     /** Legacy source is retained, never deleted or rewritten. Catalog commit is idempotent. */
-    public synchronized Snapshot loadMigrating(File legacy)throws Exception {
+    private Snapshot loadMigratingLocked(File legacy)throws Exception {
         if(!catalog.exists()&&legacy.exists())try(InputStream in=new FileInputStream(legacy)){return install(in,()->false);}
         return load();
     }

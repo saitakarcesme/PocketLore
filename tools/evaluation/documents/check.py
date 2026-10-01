@@ -1,5 +1,5 @@
 """Live Android behavior checks. Every run gets an immutable separate output directory."""
-import hashlib,json,os,subprocess,time,tempfile
+import hashlib,json,os,subprocess,time,tempfile,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[3]
 ADB=Path('/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb')
@@ -32,6 +32,11 @@ def main():
     identities={}
     for relative in ['debug/app-debug.apk','androidTest/debug/app-debug-androidTest.apk']:
         p=ROOT/'android/app/build/outputs/apk'/relative;identities[p.name]={'sha256':sha(p),'bytes':p.stat().st_size};run(adb+['install','-r',p],'install-'+p.name+'.txt')
+    apk=ROOT/'android/app/build/outputs/apk/debug/app-debug.apk'
+    permissions=run(['/home/isa/Android/atlas-toolchain/sdk/build-tools/35.0.0/aapt','dump','permissions',apk],'permissions.txt')
+    assert b'android.permission.INTERNET' not in permissions
+    with zipfile.ZipFile(apk) as z:
+        assert not any(b'com/google/android/gms' in z.read(n) for n in z.namelist() if n.endswith('.dex'))
     # Only task-owned fixtures; no app reset, service restart or unrelated asset deletion.
     run(adb+['shell','run-as','org.pocketlore.app','mkdir','-p','files/documents-input'],'mkdir.txt')
     run(adb+['shell','run-as','org.pocketlore.app.test','mkdir','-p','files'],'mkdir-provider.txt')
@@ -50,7 +55,7 @@ def main():
     (out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n')
     assert b'DOCUMENTS_PASS' in instrument and report['status']=='PASS',f'{out}: {report.get("error",instrument.decode())}'
     assert before==after,'Saved model or existing catalog changed'
-    required={'quoted_csv_exact_multiline_record','json_pointer_exact_values','real_pdf_text_page_location','five_searchable_documents','disabled_sources_excluded_after_catalog_reopen','portable_export_exact_bytes','portable_reimport_identity_and_search','cancel_before_read','cancel_during_copy','cancel_library_transaction','cancel_export','input_limit_rejected','ninth_collection_rejected','actual_source_dialog_offsets_owner_exact_text','actual_provider_export_hash','provider_cancel_under_1500ms','live_catalog_restored_exactly'}
+    required={'quoted_csv_exact_multiline_record','json_pointer_exact_values','real_pdf_text_page_location','five_searchable_documents','disabled_sources_excluded_after_catalog_reopen','portable_export_exact_bytes','portable_reimport_identity_and_search','cancel_before_read','cancel_during_copy','cancel_library_transaction','cancel_export','input_limit_rejected','ninth_collection_rejected','actual_source_dialog_offsets_owner_exact_text','actual_provider_export_hash','provider_cancel_under_1500ms','live_catalog_restored_exactly','forged_pdf_text_with_recomputed_hashes_rejected','concurrent_cleanup_preserves_committed_archive','waiting_transaction_interruptible','blocked_export_cancelled','pending_export_and_owner_survive_recreation'}
     assert required.issubset(report['checks'])
     for name in ['source-dialog.txt','source-dialog.png']:
         run(adb+['exec-out','run-as','org.pocketlore.app','cat','files/'+directory+'/'+name],name)

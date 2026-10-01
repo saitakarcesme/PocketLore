@@ -1,0 +1,740 @@
+{
+  "environment": "API35 x86_64 emulator; no phone or generated-answer qualification",
+  "api": 35,
+  "fingerprint": "Android\/sdk_phone64_x86_64\/emu64x:15\/AE3A.240806.019\/12368160:userdebug\/test-keys",
+  "identities": {
+    "notes.txt": {
+      "archive_sha256": "94c7eb27e13d9b6601f2c6ff47d289e8cc16371809c0c9e8c5c01041957e648c",
+      "archive_bytes": 956,
+      "original_sha256": "f23d9ffa8123bab9a6aa173b56869a6a06f59b636f708b2619245a53a0514418",
+      "passages": 1
+    },
+    "notes.md": {
+      "archive_sha256": "6e77f85e18046967886bcddceff02e24ddae1c10c09bd6190d7ae9adf4facac8",
+      "archive_bytes": 955,
+      "original_sha256": "1dec1ffaf764993505712df0589b97874f0c14cd2eeae3c0d5ad8ed61874f3b8",
+      "passages": 1
+    },
+    "quoted.csv": {
+      "archive_sha256": "64d9ded836bee524f251255a8f2bd1287fd8951e3ad12d223cfb2778b14a9184",
+      "archive_bytes": 1174,
+      "original_sha256": "971246abce0dd9a291c3c5d89c796260a0d5a089c51807604e57e4bae2e361b8",
+      "passages": 3
+    },
+    "nested.json": {
+      "archive_sha256": "355f538137c9775d33a0a0d1c3daee67c6c9fa27c1569a41b7b7de8cde9eebc2",
+      "archive_bytes": 1207,
+      "original_sha256": "f0b8f8879b8e0f7f6542bda83bf6d7111a9a1b3bc0b156f5e0edfe4dbae2d651",
+      "passages": 4
+    },
+    "text.pdf": {
+      "archive_sha256": "d97f13ff09ddc20538a67842a2f24f200aa8a7e9fdec174043ca6b6cdd59040d",
+      "archive_bytes": 1821,
+      "original_sha256": "93db970e47c489d00be50342b4745ba3858d8e7b16c89e312b3b0394cd2878ab",
+      "passages": 1
+    }
+  },
+  "corrupt_original.bin_rejected": "java.io.IOException: Personal document integrity failure",
+  "corrupt_text.txt_rejected": "java.io.IOException: Personal document integrity failure",
+  "truncated_directory_rejected": "java.util.zip.ZipException: zip END header not found",
+  "cancel_before_read": "java.io.InterruptedIOException: Document operation cancelled",
+  "cancel_during_copy": "java.io.InterruptedIOException: Document operation cancelled",
+  "cancel_library_transaction": "java.io.InterruptedIOException: Import cancelled",
+  "cancel_export": "java.io.InterruptedIOException: Document operation cancelled",
+  "reject_empty.pdf": "java.io.IOException: PDF has no extractable text; empty or scanned\/image-only PDFs need external OCR (not provided)",
+  "reject_scanned.pdf": "java.io.IOException: PDF has no extractable text; empty or scanned\/image-only PDFs need external OCR (not provided)",
+  "reject_password.pdf": "java.io.IOException: Password-protected PDF cannot be imported; provide an unlocked local copy",
+  "malformed_csv_36": "java.io.IOException: Unclosed quoted CSV field",
+  "malformed_csv_37": "java.io.IOException: CSV rows have inconsistent field counts",
+  "malformed_csv_38": "java.io.IOException: Quote inside unquoted CSV field",
+  "malformed_json_39": "java.io.IOException: Invalid JSON punctuation",
+  "malformed_json_40": "java.io.IOException: Duplicate JSON key",
+  "malformed_json_41": "java.io.IOException: Invalid JSON value",
+  "malformed_json_42": "java.io.IOException: Invalid JSON Unicode surrogate",
+  "malformed_json_43": "java.io.IOException: Invalid JSON Unicode escape",
+  "malformed_json_44": "java.io.IOException: JSON nesting exceeds32",
+  "invalid_utf8_rejected": "java.nio.charset.MalformedInputException: Input length = 1",
+  "input_limit_rejected": "java.io.IOException: Document exceeds size limit",
+  "ninth_collection_rejected": "java.io.IOException: Combined collection storage limit exceeded",
+  "forged_pdf_text_with_recomputed_hashes_rejected": "java.io.IOException: Stored PDF text differs from local extraction; original retained by sender",
+  "export_cancel_ms": 0.523245,
+  "provider_cancel_ms": 117.675557,
+  "peak_fixture_disk_sampled_bytes": 388602,
+  "final_fixture_disk_bytes": 388602,
+  "timings": [
+    {
+      "operation": "extract_install_notes.txt",
+      "ms": 45.281939,
+      "stored_archive_bytes": 956
+    },
+    {
+      "operation": "extract_install_notes.md",
+      "ms": 47.743305,
+      "stored_archive_bytes": 1911
+    },
+    {
+      "operation": "extract_install_quoted.csv",
+      "ms": 64.906514,
+      "stored_archive_bytes": 3085
+    },
+    {
+      "operation": "extract_install_nested.json",
+      "ms": 51.196165,
+      "stored_archive_bytes": 4292
+    },
+    {
+      "operation": "extract_install_text.pdf",
+      "ms": 65.162881,
+      "stored_archive_bytes": 6113
+    }
+  ],
+  "memory": [
+    {
+      "elapsed_ms": 87829522,
+      "pss_kib": 25510,
+      "java_bytes": 3327392,
+      "native_bytes": 5699984
+    },
+    {
+      "elapsed_ms": 87829628,
+      "pss_kib": 29221,
+      "java_bytes": 5155424,
+      "native_bytes": 6181904
+    },
+    {
+      "elapsed_ms": 87829692,
+      "pss_kib": 32618,
+      "java_bytes": 7028544,
+      "native_bytes": 6682000
+    },
+    {
+      "elapsed_ms": 87829755,
+      "pss_kib": 46114,
+      "java_bytes": 8649808,
+      "native_bytes": 7266896
+    },
+    {
+      "elapsed_ms": 87829817,
+      "pss_kib": 49709,
+      "java_bytes": 13532240,
+      "native_bytes": 8752928
+    },
+    {
+      "elapsed_ms": 87829883,
+      "pss_kib": 63731,
+      "java_bytes": 26172496,
+      "native_bytes": 10589648
+    },
+    {
+      "elapsed_ms": 87829954,
+      "pss_kib": 69982,
+      "java_bytes": 32267344,
+      "native_bytes": 12452160
+    },
+    {
+      "elapsed_ms": 87830020,
+      "pss_kib": 74770,
+      "java_bytes": 34731040,
+      "native_bytes": 13279152
+    },
+    {
+      "elapsed_ms": 87830086,
+      "pss_kib": 74786,
+      "java_bytes": 34871328,
+      "native_bytes": 13301872
+    },
+    {
+      "elapsed_ms": 87830148,
+      "pss_kib": 74475,
+      "java_bytes": 35437888,
+      "native_bytes": 13496992
+    },
+    {
+      "elapsed_ms": 87830211,
+      "pss_kib": 73631,
+      "java_bytes": 36523328,
+      "native_bytes": 13501248
+    },
+    {
+      "elapsed_ms": 87830274,
+      "pss_kib": 73604,
+      "java_bytes": 36523328,
+      "native_bytes": 13501248
+    },
+    {
+      "elapsed_ms": 87830345,
+      "pss_kib": 79634,
+      "java_bytes": 39144768,
+      "native_bytes": 17388864
+    },
+    {
+      "elapsed_ms": 87830409,
+      "pss_kib": 87462,
+      "java_bytes": 47549760,
+      "native_bytes": 19060768
+    },
+    {
+      "elapsed_ms": 87830472,
+      "pss_kib": 97133,
+      "java_bytes": 53677376,
+      "native_bytes": 20789552
+    },
+    {
+      "elapsed_ms": 87830535,
+      "pss_kib": 97145,
+      "java_bytes": 53677376,
+      "native_bytes": 20789552
+    },
+    {
+      "elapsed_ms": 87830597,
+      "pss_kib": 97165,
+      "java_bytes": 53710144,
+      "native_bytes": 20789552
+    },
+    {
+      "elapsed_ms": 87830659,
+      "pss_kib": 97177,
+      "java_bytes": 53710144,
+      "native_bytes": 20789552
+    },
+    {
+      "elapsed_ms": 87830730,
+      "pss_kib": 97197,
+      "java_bytes": 55217472,
+      "native_bytes": 21754976
+    },
+    {
+      "elapsed_ms": 87830829,
+      "pss_kib": 106958,
+      "java_bytes": 58569232,
+      "native_bytes": 23919520
+    },
+    {
+      "elapsed_ms": 87830966,
+      "pss_kib": 118267,
+      "java_bytes": 59063312,
+      "native_bytes": 34764448
+    },
+    {
+      "elapsed_ms": 87831066,
+      "pss_kib": 117409,
+      "java_bytes": 59063312,
+      "native_bytes": 34933024
+    },
+    {
+      "elapsed_ms": 87831173,
+      "pss_kib": 117558,
+      "java_bytes": 59096080,
+      "native_bytes": 34936416
+    },
+    {
+      "elapsed_ms": 87831242,
+      "pss_kib": 120107,
+      "java_bytes": 59096080,
+      "native_bytes": 34907488
+    },
+    {
+      "elapsed_ms": 87831317,
+      "pss_kib": 120299,
+      "java_bytes": 59161616,
+      "native_bytes": 35021040
+    },
+    {
+      "elapsed_ms": 87831406,
+      "pss_kib": 120872,
+      "java_bytes": 59260560,
+      "native_bytes": 35140848
+    },
+    {
+      "elapsed_ms": 87831486,
+      "pss_kib": 72398,
+      "java_bytes": 4414928,
+      "native_bytes": 34237296
+    },
+    {
+      "elapsed_ms": 87831563,
+      "pss_kib": 72793,
+      "java_bytes": 4414928,
+      "native_bytes": 34322400
+    },
+    {
+      "elapsed_ms": 87831651,
+      "pss_kib": 71145,
+      "java_bytes": 6804528,
+      "native_bytes": 18131904
+    },
+    {
+      "elapsed_ms": 87831721,
+      "pss_kib": 76974,
+      "java_bytes": 4981232,
+      "native_bytes": 22109616
+    },
+    {
+      "elapsed_ms": 87831795,
+      "pss_kib": 76582,
+      "java_bytes": 10158576,
+      "native_bytes": 18412832
+    },
+    {
+      "elapsed_ms": 87831876,
+      "pss_kib": 77527,
+      "java_bytes": 4293104,
+      "native_bytes": 19022912
+    },
+    {
+      "elapsed_ms": 87831949,
+      "pss_kib": 75615,
+      "java_bytes": 6001136,
+      "native_bytes": 17718576
+    },
+    {
+      "elapsed_ms": 87832016,
+      "pss_kib": 76079,
+      "java_bytes": 6033904,
+      "native_bytes": 17714400
+    },
+    {
+      "elapsed_ms": 87832079,
+      "pss_kib": 76693,
+      "java_bytes": 6033904,
+      "native_bytes": 17705200
+    },
+    {
+      "elapsed_ms": 87832142,
+      "pss_kib": 76725,
+      "java_bytes": 6066672,
+      "native_bytes": 17705248
+    },
+    {
+      "elapsed_ms": 87832205,
+      "pss_kib": 76737,
+      "java_bytes": 6066672,
+      "native_bytes": 17705200
+    },
+    {
+      "elapsed_ms": 87832269,
+      "pss_kib": 86809,
+      "java_bytes": 6042096,
+      "native_bytes": 18078592
+    },
+    {
+      "elapsed_ms": 87832337,
+      "pss_kib": 70173,
+      "java_bytes": 8487408,
+      "native_bytes": 18224096
+    },
+    {
+      "elapsed_ms": 87832411,
+      "pss_kib": 69169,
+      "java_bytes": 7492080,
+      "native_bytes": 18041568
+    },
+    {
+      "elapsed_ms": 87832484,
+      "pss_kib": 63037,
+      "java_bytes": 6226416,
+      "native_bytes": 18601072
+    },
+    {
+      "elapsed_ms": 87832565,
+      "pss_kib": 65657,
+      "java_bytes": 8040944,
+      "native_bytes": 18924272
+    },
+    {
+      "elapsed_ms": 87832646,
+      "pss_kib": 65673,
+      "java_bytes": 8073712,
+      "native_bytes": 18923936
+    },
+    {
+      "elapsed_ms": 87832728,
+      "pss_kib": 65689,
+      "java_bytes": 8073712,
+      "native_bytes": 18924272
+    },
+    {
+      "elapsed_ms": 87832798,
+      "pss_kib": 65705,
+      "java_bytes": 8106480,
+      "native_bytes": 18923488
+    },
+    {
+      "elapsed_ms": 87832895,
+      "pss_kib": 64236,
+      "java_bytes": 4030704,
+      "native_bytes": 17770960
+    },
+    {
+      "elapsed_ms": 87832982,
+      "pss_kib": 57923,
+      "java_bytes": 4096336,
+      "native_bytes": 17786512
+    },
+    {
+      "elapsed_ms": 87833113,
+      "pss_kib": 70586,
+      "java_bytes": 7013216,
+      "native_bytes": 29589056
+    },
+    {
+      "elapsed_ms": 87833264,
+      "pss_kib": 79006,
+      "java_bytes": 7308128,
+      "native_bytes": 31998352
+    },
+    {
+      "elapsed_ms": 87833361,
+      "pss_kib": 86070,
+      "java_bytes": 5266608,
+      "native_bytes": 36466640
+    },
+    {
+      "elapsed_ms": 87833433,
+      "pss_kib": 101247,
+      "java_bytes": 10640560,
+      "native_bytes": 50356496
+    },
+    {
+      "elapsed_ms": 87833528,
+      "pss_kib": 114307,
+      "java_bytes": 8834880,
+      "native_bytes": 64660800
+    },
+    {
+      "elapsed_ms": 87833605,
+      "pss_kib": 120507,
+      "java_bytes": 5102368,
+      "native_bytes": 66882736
+    },
+    {
+      "elapsed_ms": 87833696,
+      "pss_kib": 116791,
+      "java_bytes": 5102368,
+      "native_bytes": 43435184
+    },
+    {
+      "elapsed_ms": 87833772,
+      "pss_kib": 116819,
+      "java_bytes": 5135136,
+      "native_bytes": 30240032
+    },
+    {
+      "elapsed_ms": 87833850,
+      "pss_kib": 121627,
+      "java_bytes": 7692064,
+      "native_bytes": 59677264
+    },
+    {
+      "elapsed_ms": 87833924,
+      "pss_kib": 122159,
+      "java_bytes": 6159424,
+      "native_bytes": 66891248
+    },
+    {
+      "elapsed_ms": 87833991,
+      "pss_kib": 592775,
+      "java_bytes": 6261824,
+      "native_bytes": 58240400
+    },
+    {
+      "elapsed_ms": 87834057,
+      "pss_kib": 592791,
+      "java_bytes": 6294592,
+      "native_bytes": 58240400
+    },
+    {
+      "elapsed_ms": 87834123,
+      "pss_kib": 592807,
+      "java_bytes": 6294592,
+      "native_bytes": 58240400
+    },
+    {
+      "elapsed_ms": 87834188,
+      "pss_kib": 592823,
+      "java_bytes": 6327360,
+      "native_bytes": 58240400
+    },
+    {
+      "elapsed_ms": 87834253,
+      "pss_kib": 592839,
+      "java_bytes": 6327360,
+      "native_bytes": 58240400
+    },
+    {
+      "elapsed_ms": 87834319,
+      "pss_kib": 592855,
+      "java_bytes": 6360128,
+      "native_bytes": 58240400
+    },
+    {
+      "elapsed_ms": 87834383,
+      "pss_kib": 592871,
+      "java_bytes": 6360128,
+      "native_bytes": 58240400
+    },
+    {
+      "elapsed_ms": 87834447,
+      "pss_kib": 592916,
+      "java_bytes": 6392896,
+      "native_bytes": 58240256
+    },
+    {
+      "elapsed_ms": 87834512,
+      "pss_kib": 592932,
+      "java_bytes": 6392896,
+      "native_bytes": 58240256
+    },
+    {
+      "elapsed_ms": 87834576,
+      "pss_kib": 592948,
+      "java_bytes": 6425664,
+      "native_bytes": 58240256
+    },
+    {
+      "elapsed_ms": 87834663,
+      "pss_kib": 592964,
+      "java_bytes": 6425664,
+      "native_bytes": 58241040
+    },
+    {
+      "elapsed_ms": 87834743,
+      "pss_kib": 592968,
+      "java_bytes": 6458432,
+      "native_bytes": 58241040
+    },
+    {
+      "elapsed_ms": 87834820,
+      "pss_kib": 592984,
+      "java_bytes": 6458432,
+      "native_bytes": 58241600
+    },
+    {
+      "elapsed_ms": 87834892,
+      "pss_kib": 593000,
+      "java_bytes": 6491200,
+      "native_bytes": 58240256
+    },
+    {
+      "elapsed_ms": 87834957,
+      "pss_kib": 593016,
+      "java_bytes": 6491200,
+      "native_bytes": 58240304
+    },
+    {
+      "elapsed_ms": 87835023,
+      "pss_kib": 593032,
+      "java_bytes": 6523968,
+      "native_bytes": 58240256
+    },
+    {
+      "elapsed_ms": 87835092,
+      "pss_kib": 593048,
+      "java_bytes": 6523968,
+      "native_bytes": 58240256
+    },
+    {
+      "elapsed_ms": 87835162,
+      "pss_kib": 593063,
+      "java_bytes": 6556736,
+      "native_bytes": 58240304
+    },
+    {
+      "elapsed_ms": 87835237,
+      "pss_kib": 593079,
+      "java_bytes": 6556736,
+      "native_bytes": 58240304
+    },
+    {
+      "elapsed_ms": 87835329,
+      "pss_kib": 592675,
+      "java_bytes": 6721168,
+      "native_bytes": 58535952
+    },
+    {
+      "elapsed_ms": 87835508,
+      "pss_kib": 629847,
+      "java_bytes": 5497952,
+      "native_bytes": 217895200
+    },
+    {
+      "elapsed_ms": 87835786,
+      "pss_kib": 617983,
+      "java_bytes": 6136928,
+      "native_bytes": 228656928
+    },
+    {
+      "elapsed_ms": 87836000,
+      "pss_kib": 631107,
+      "java_bytes": 7418880,
+      "native_bytes": 229047056
+    },
+    {
+      "elapsed_ms": 87836316,
+      "pss_kib": 634436,
+      "java_bytes": 13169664,
+      "native_bytes": 233251776
+    },
+    {
+      "elapsed_ms": 87836496,
+      "pss_kib": 645778,
+      "java_bytes": 22574176,
+      "native_bytes": 234797264
+    },
+    {
+      "elapsed_ms": 87836608,
+      "pss_kib": 630966,
+      "java_bytes": 6177856,
+      "native_bytes": 62876528
+    },
+    {
+      "elapsed_ms": 87836672,
+      "pss_kib": 119694,
+      "java_bytes": 6210624,
+      "native_bytes": 32165776
+    },
+    {
+      "elapsed_ms": 87836738,
+      "pss_kib": 117818,
+      "java_bytes": 6243392,
+      "native_bytes": 32165248
+    },
+    {
+      "elapsed_ms": 87836802,
+      "pss_kib": 117838,
+      "java_bytes": 6243392,
+      "native_bytes": 32165248
+    },
+    {
+      "elapsed_ms": 87836872,
+      "pss_kib": 121606,
+      "java_bytes": 13042752,
+      "native_bytes": 35062928
+    },
+    {
+      "elapsed_ms": 87836936,
+      "pss_kib": 82014,
+      "java_bytes": 10748704,
+      "native_bytes": 26274432
+    },
+    {
+      "elapsed_ms": 87836998,
+      "pss_kib": 83346,
+      "java_bytes": 12538656,
+      "native_bytes": 22539008
+    },
+    {
+      "elapsed_ms": 87837070,
+      "pss_kib": 80566,
+      "java_bytes": 7667216,
+      "native_bytes": 22748640
+    },
+    {
+      "elapsed_ms": 87837133,
+      "pss_kib": 80582,
+      "java_bytes": 7667216,
+      "native_bytes": 22748640
+    },
+    {
+      "elapsed_ms": 87837203,
+      "pss_kib": 80598,
+      "java_bytes": 7699984,
+      "native_bytes": 22748640
+    },
+    {
+      "elapsed_ms": 87837274,
+      "pss_kib": 80618,
+      "java_bytes": 7699984,
+      "native_bytes": 22748640
+    },
+    {
+      "elapsed_ms": 87837339,
+      "pss_kib": 81118,
+      "java_bytes": 5870832,
+      "native_bytes": 25529328
+    },
+    {
+      "elapsed_ms": 87837345,
+      "pss_kib": 79758,
+      "java_bytes": 5903600,
+      "native_bytes": 20964416
+    }
+  ],
+  "checks": [
+    "indexed_notes.txt",
+    "provenance_notes.txt_df23d9ffa8123bab9-0-65",
+    "indexed_notes.md",
+    "provenance_notes.md_d1dec1ffaf7649935-0-73",
+    "indexed_quoted.csv",
+    "provenance_quoted.csv_d971246abce0dd9a2-0-22",
+    "provenance_quoted.csv_d971246abce0dd9a2-24-77",
+    "provenance_quoted.csv_d971246abce0dd9a2-79-93",
+    "quoted_csv_exact_multiline_record",
+    "indexed_nested.json",
+    "provenance_nested.json_df0b8f8879b8e0f7f-20-32",
+    "provenance_nested.json_df0b8f8879b8e0f7f-41-42",
+    "provenance_nested.json_df0b8f8879b8e0f7f-55-67",
+    "provenance_nested.json_df0b8f8879b8e0f7f-76-80",
+    "json_pointer_exact_values",
+    "indexed_text.pdf",
+    "provenance_text.pdf_d93db970e47c489d0-0-48",
+    "real_pdf_text_page_location",
+    "five_searchable_documents",
+    "json_retrieval",
+    "pdf_retrieval",
+    "disabled_sources_excluded_after_catalog_reopen",
+    "portable_export_exact_bytes",
+    "portable_reimport_identity_and_search",
+    "corrupt_original.bin_rejected",
+    "corrupt_text.txt_rejected",
+    "truncated_directory_rejected",
+    "cancel_before_read",
+    "cancel_during_copy",
+    "cancel_library_transaction",
+    "cancel_export",
+    "failed_imports_catalog_unchanged",
+    "isolated_model_sentinel_unchanged",
+    "reject_empty.pdf",
+    "reject_scanned.pdf",
+    "reject_password.pdf",
+    "malformed_csv_36",
+    "malformed_csv_37",
+    "malformed_csv_38",
+    "malformed_json_39",
+    "malformed_json_40",
+    "malformed_json_41",
+    "malformed_json_42",
+    "malformed_json_43",
+    "malformed_json_44",
+    "invalid_utf8_rejected",
+    "input_limit_rejected",
+    "ninth_collection_rejected",
+    "delete_removes_owned_archive",
+    "no_import_staging_left",
+    "forged_pdf_text_with_recomputed_hashes_rejected",
+    "transaction_copy_started",
+    "second_library_waits_for_transaction",
+    "waiting_transaction_interruptible",
+    "concurrent_import_load_complete",
+    "concurrent_cleanup_preserves_committed_archive",
+    "export_pipe_opened",
+    "export_pipe_write_blocked",
+    "blocked_export_cancelled",
+    "provider_read_blocked",
+    "cancel_button_unblocks_provider_read",
+    "provider_cancel_under_1500ms",
+    "same_activity_import_retry",
+    "actual_activity_import_success",
+    "actual_catalog_entry_added",
+    "activity_recreated",
+    "pending_export_and_owner_survive_recreation",
+    "actual_activity_export_finished",
+    "actual_provider_export_hash",
+    "main_library_loaded",
+    "main_search_finished",
+    "source_dialog_accessibility_ready",
+    "actual_source_dialog_offsets_owner_exact_text",
+    "live_catalog_restored_exactly"
+  ],
+  "status": "PASS"
+}

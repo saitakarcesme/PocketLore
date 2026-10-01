@@ -1,0 +1,10 @@
+{
+  "environment": "API35 x86_64 emulator; no phone or generated-answer qualification",
+  "api": 35,
+  "fingerprint": "Android\/sdk_phone64_x86_64\/emu64x:15\/AE3A.240806.019\/12368160:userdebug\/test-keys",
+  "status": "FAIL",
+  "error": "java.io.IOException: Manifest size invalid\n\tat org.pocketlore.app.BroadPack.metadata(BroadPack.java:18)\n\tat org.pocketlore.app.BroadPack.isBroad(BroadPack.java:21)\n\tat org.pocketlore.app.PackLibrary.install(PackLibrary.java:116)\n\tat org.pocketlore.app.DocumentsInstrumentation.onStart(DocumentsInstrumentation.java:22)\n\tat android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)\n",
+  "checks": [
+    "indexed_notes.txt"
+  ]
+}
