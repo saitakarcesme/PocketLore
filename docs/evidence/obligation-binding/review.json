@@ -358,6 +358,60 @@
       "fully_useful_draft": false,
       "assessment": "Geographic descriptions and visible area/rank statements match full source context, but draft truncates mid-area statement at320tokens. It also assigns overly broad/wrong paragraph labels rather than bounding each fact; no useful bound answer.",
       "claims": []
+    },
+    "s28": {
+      "result_sha256": "b426688ac1e55610ac697774444b1b078f78cc053d59233bc6793b7d91a68057",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Both requested area/climate and bordering-country obligations are directly supported. Snapshot date in metadata is not rendered as a new live observation; no current-availability claim.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P2.1 supports179sqkm and P2.3 arid xeric climate."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P4.1 supports France north/Spain south. Other selected history spans are unnecessary but do not supply false assertions."
+        }
+      ]
+    },
+    "s29": {
+      "result_sha256": "5da082fb163e087c8ecf35c33ad305f4c787ab4e7cacafaa17f5fdf9d2e0b103",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct raw rejection distinguishes landlocked European Andorra from Caribbean Aruba. W classification suppresses the useful correction and has no typed support.",
+      "claims": []
+    },
+    "s30": {
+      "result_sha256": "93b1d9f743c8b70d436ec6ee5d51658f163f24c0223bbbed76da9e4de2cb3065",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct live border-wait withholding; available geography/history/population/language/tourism paragraphs do not establish current traffic.",
+      "claims": []
+    },
+    "s31": {
+      "result_sha256": "6c76c33dcaed0d52ef59e14692da3053b9cd7c58ac8fbce4ad00e3230c3644be",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Concise complete Barcelona capital/location answer, with correct exact sentence bindings.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.1 supports northeastern Spanish coast; P1.2 supports capital/largest city of autonomous Catalonia."
+        }
+      ]
     }
   }
 }
