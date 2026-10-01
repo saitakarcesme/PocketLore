@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "routes": {
+    "reference": "ABSTAINED",
+    "science": "GENERATED",
+    "cross-pack": "FALLBACK",
+    "disabled-science": "ABSTAINED",
+    "absent": "ABSTAINED",
+    "duplicate": "ABSTAINED",
+    "cancel-prefill": "CANCELLED",
+    "after-cancel": "GENERATED",
+    "after-reload": "ABSTAINED",
+    "literal-magma": "GENERATED",
+    "literal-chromosomes": "FALLBACK"
+  },
+  "invoked_requests": 9,
+  "generated_citation_dialogs": 3,
+  "cancel_click_to_idle_ms": 106.506249,
+  "peak_pss_kib": 684231,
+  "peak_rss_kib": 771412,
+  "peak_swap_kib": 23900,
+  "peak_java_used_bytes": 26737536,
+  "native_buffer_peak_bytes": 589327360,
+  "limitations": "Behavior/integrity checks only; source-support/completeness/usefulness must be reviewed separately; no phone or OS OOM acceptance."
+}

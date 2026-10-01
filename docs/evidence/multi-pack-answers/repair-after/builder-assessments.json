@@ -1,0 +1,137 @@
+{
+  "classification": "Builder source review, independent criticism pending; model output is not acceptance. No entailment inference from structural checks.",
+  "rows": [
+    {
+      "case": "reference",
+      "route": "ABSTAINED",
+      "raw": "Insufficient evidence.",
+      "source_support_builder": null,
+      "fully_supported_complete_useful_generated": false,
+      "builder_note": "Model abstains despite available hands-free evidence. Operational repetition; no useful generated answer.",
+      "prompt_tokens": 450,
+      "output_tokens": 5,
+      "first_token_ms": 23194.360048,
+      "total_ms": 23662.295448
+    },
+    {
+      "case": "science",
+      "route": "GENERATED",
+      "raw": "[S1] [S2] Magma and lava are both types of molten rock that can be erupted from the Earth's surface.",
+      "source_support_builder": "uncertain wording; not certified",
+      "fully_supported_complete_useful_generated": false,
+      "builder_note": "Published sentence says both are types of molten rock that can erupt. Cited S1 describes magma erupting as lava; S2 defines underground versus surface. Broad shared molten-rock/eruption relation has evidence, but types wording does not establish the actual difference. Incomplete comparison; not certified fully supported or useful. Repetition is not independent quality evidence.",
+      "prompt_tokens": 498,
+      "output_tokens": 29,
+      "first_token_ms": 25470.226563,
+      "total_ms": 28562.635394
+    },
+    {
+      "case": "cross-pack",
+      "route": "FALLBACK",
+      "raw": "[S1] Headlamps are recommended because they are hands-free, allowing users to focus on their destination without the need for physical movement.",
+      "source_support_builder": "unsupported",
+      "fully_supported_complete_useful_generated": false,
+      "builder_note": "Invents focusing on destination without physical movement beyond hands-free source; omits geology. Withheld.",
+      "prompt_tokens": 367,
+      "output_tokens": 29,
+      "first_token_ms": 18676.113139,
+      "total_ms": 21844.922737
+    },
+    {
+      "case": "disabled-science",
+      "route": "ABSTAINED",
+      "raw": "",
+      "source_support_builder": null,
+      "fully_supported_complete_useful_generated": false,
+      "builder_note": "Correct pre-generation abstention for unavailable active evidence; no invocation.",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "first_token_ms": 0,
+      "total_ms": 0.137192
+    },
+    {
+      "case": "absent",
+      "route": "ABSTAINED",
+      "raw": "",
+      "source_support_builder": null,
+      "fully_supported_complete_useful_generated": false,
+      "builder_note": "Correct pre-generation abstention for unavailable active evidence; no invocation.",
+      "prompt_tokens": 0,
+      "output_tokens": 0,
+      "first_token_ms": 0,
+      "total_ms": 1.713621
+    },
+    {
+      "case": "duplicate",
+      "route": "ABSTAINED",
+      "raw": "Insufficient evidence.",
+      "source_support_builder": null,
+      "fully_supported_complete_useful_generated": false,
+      "builder_note": "Model abstains despite available hands-free evidence. Operational repetition; no useful generated answer.",
+      "prompt_tokens": 450,
+      "output_tokens": 5,
+      "first_token_ms": 22929.862504,
+      "total_ms": 23395.525114
+    },
+    {
+      "case": "cancel-prefill",
+      "route": "CANCELLED",
+      "raw": "",
+      "source_support_builder": null,
+      "fully_supported_complete_useful_generated": false,
+      "builder_note": "Real prefill cancelled with no published draft.",
+      "prompt_tokens": 450,
+      "output_tokens": 0,
+      "first_token_ms": 0,
+      "total_ms": 55.355333
+    },
+    {
+      "case": "after-cancel",
+      "route": "GENERATED",
+      "raw": "[S1] [S2] Magma and lava are both types of molten rock that can be erupted from the Earth's surface.",
+      "source_support_builder": "uncertain wording; not certified",
+      "fully_supported_complete_useful_generated": false,
+      "builder_note": "Published sentence says both are types of molten rock that can erupt. Cited S1 describes magma erupting as lava; S2 defines underground versus surface. Broad shared molten-rock/eruption relation has evidence, but types wording does not establish the actual difference. Incomplete comparison; not certified fully supported or useful. Repetition is not independent quality evidence.",
+      "prompt_tokens": 498,
+      "output_tokens": 29,
+      "first_token_ms": 25323.764538,
+      "total_ms": 28422.544857
+    },
+    {
+      "case": "after-reload",
+      "route": "ABSTAINED",
+      "raw": "Insufficient evidence.",
+      "source_support_builder": null,
+      "fully_supported_complete_useful_generated": false,
+      "builder_note": "Model abstains despite available hands-free evidence. Operational repetition; no useful generated answer.",
+      "prompt_tokens": 450,
+      "output_tokens": 5,
+      "first_token_ms": 22981.867969,
+      "total_ms": 23454.832774
+    },
+    {
+      "case": "literal-magma",
+      "route": "GENERATED",
+      "raw": "[S1] Scientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface.",
+      "source_support_builder": "supported",
+      "fully_supported_complete_useful_generated": true,
+      "builder_note": "Real generated sentence exactly matches cited S1 definition: magma molten rock underground, lava breaks through surface. Fully answers the literal question, but is not synthesis and repeats source wording.",
+      "prompt_tokens": 422,
+      "output_tokens": 30,
+      "first_token_ms": 21766.599977,
+      "total_ms": 25029.08273
+    },
+    {
+      "case": "literal-chromosomes",
+      "route": "FALLBACK",
+      "raw": "[S1] Chromosomes are made of protein and a single molecule of deoxyribonucleic acid (DNA).",
+      "source_support_builder": "unsupported citation",
+      "fully_supported_complete_useful_generated": false,
+      "builder_note": "Protein/single DNA molecule appears in S2, while draft cites S1 etymology. Fact is in pack but not cited excerpt; withheld.",
+      "prompt_tokens": 370,
+      "output_tokens": 25,
+      "first_token_ms": 18901.168703,
+      "total_ms": 21563.259195
+    }
+  ]
+}

@@ -1,3 +1,55 @@
+# Task 201 repair 1 — actual generated citation navigation
+
+**Both required checks now pass on LLMRig/emulator-5560. Answer usefulness remains open.** The failed checkpoint `151ffcf81afccfc6061b0ccd13dad99097c6e49f` and its complete negative matrix are preserved below; recovery cherry-picked its four commits onto the existing repair branch without switching branches or resetting application work.
+
+Two literal citation-link cases were frozen at `1bd9c39`: “What is magma?” and “What are chromosomes made of?”, with pinned source excerpts and unchanged production model. They supplement rather than replace the original eight cases. The first repaired-harness run still failed: magma echoed a question-shaped source title, leaving a following sentence uncited; chromosomes echoed date/URL metadata instead of a factual answer. [Every before-run draft and receipt](multi-pack-answers/repair-before/results.json) remains preserved. There was no seed search or third set of questions.
+
+The bounded product repair, declared before execution at `5657100`, separates model-facing factual evidence from navigational metadata. `EvidencePrompt.build` now supplies source labels, original source dates and verbatim excerpts; titles/URLs remain intact in the actual source dialogs and catalog provenance. Model pin, generation grammar, decoding, context/admission limits and all support/temporal guards are unchanged. This is not post-generation cleanup or a fallback promoted to GENERATED. Titles can convey useful scope, so broader historical/title-dependent behavior needs later evaluation; dates and excerpt qualifiers remain supplied. This narrow result is not a general quality improvement claim.
+
+## Actual repair results
+
+One before/after matrix used exactly the same eleven requests (original eight, cancellation, two frozen literal cases), original pack hashes and active catalog. The after-run has **three GENERATED, five ABSTAINED, two FALLBACK and one CANCELLED**; nine requests invoked JNI, including cancellation. [Raw results](multi-pack-answers/repair-after/results.json), [receipt](multi-pack-answers/repair-after/receipt.json), [summary](multi-pack-answers/repair-after/summary.json) and [separate builder assessments](multi-pack-answers/repair-after/builder-assessments.json) retain all prompts, drafts, actual selected excerpts, source IDs, routes, tokens, timing and memory samples.
+
+| Case | After route | Builder source review |
+| --- | --- | --- |
+| reference / duplicate / after-reload | ABSTAINED | Model declines despite available hands-free evidence; duplicate prompt and raw answer remain identical. |
+| science / after-cancel | GENERATED | Says magma and lava are molten rock that can erupt. Omits underground versus surface; “types” wording is not certified as fully supported. Incomplete comparison; no useful-comparison credit. |
+| cross-pack | FALLBACK | Still invents a destination-focus/physical-movement benefit and omits geology; correctly withheld. |
+| disabled-science / absent | ABSTAINED | No model invocation; disabled science excluded and cat chromosome count unavailable. |
+| cancel-prefill | CANCELLED | Actual native prefill observed; no publication. |
+| literal-magma | GENERATED | Exact cited definition of magma underground and lava breaking through the surface; supported and complete for this literal question. |
+| literal-chromosomes | FALLBACK | Correct material fact appears in S2, but draft cites S1 etymology; correctly withheld. |
+
+The literal magma raw JNI output is:
+
+> [S1] Scientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface.
+
+S1 is the exact frozen USGS excerpt. This is actual production model generation, with 30 output tokens and 21,766.600 ms first-token / 25,029.083 ms controller-total time; it repeats source wording and does **not** establish explanation or multi-source synthesis quality. Only this one literal request receives builder fully-supported/complete/useful credit. The comparison wording remains uncertain and incomplete; no claim of zero unsupported publication or broad safety improvement is made. Independent source review is pending.
+
+The real answer TextView's ClickableSpan was invoked for science, after-cancel and literal-magma. Three actual dialogs matched full edition-qualified citation, passage, URL, date, rights and collection/source/passage hashes. [Literal magma screenshot](multi-pack-answers/repair-after/literal-magma-citation.png) was visually inspected by the builder and shows the generated answer behind its correct source dialog. Unlike the original supplemental source buttons, this directly exercises generated citation navigation; no synthetic outcome or alternate source-button path satisfies the gate.
+
+## Recovery and limits
+
+Both active packs still provide 18 distinct documents / 210 passages / 2052 vocabulary terms / 6922 postings / 69,818 indexed text characters. Original two-active catalog, saved model and legacy reference bytes are restored unchanged; temporary duplicate aliases do not inflate the index. The production/demo model remains Qwen2.5 0.5B Q4_K_M SHA `74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db`, not optional Qwen3. Exact active pack hashes remain those in the original protocol and report below.
+
+After-run prefill cancel click-to-idle is **106.506249 ms**; startup-to-ready **1422.371024 ms**, explicit reload-to-ready **441.019101 ms**. The largest prompt is 498 tokens, plus the fixed 256 output budget, within 2048; largest actual output is 30. Native contexts release after each request, and model lease reaches zero on unload then one after reload. No allocation failure observed. These are single emulator observations with warm OS caches, not phone or isolated load benchmarks.
+
+Sampled process peaks: **684,231 KiB PSS**, **771,412 KiB RSS**, **23,900 KiB VmSwap**, **26,737,536 Java used bytes**. Native buffer maximum remains **589,327,360 bytes** (model 485,452,288 + KV 25,165,824 + compute 78,709,248). Samples include combined index, model, Activity and instrumentation; they do not isolate index costs or prove natural OOM safety. No host RAM is relabeled as phone RAM.
+
+## Checks, identity and remaining work
+
+- `bash tools/android-build.sh`: **exit 0**, [standalone log](multi-pack-answers/repair-after/android-build.log).
+- `bash tools/evaluation/check_multi_pack_answers.sh`: **exit 0**, [actual JNI log](multi-pack-answers/repair-after/check.log). The generated-span gate remains mandatory. Original failed runs are retained separately.
+- Existing CompleteClaimCheck and TemporalScopeCheck: **exit 0**, [log](multi-pack-answers/repair-after/guard-regressions.log): eleven unsupported historical drafts remain withheld, fourteen malformed/absent regressions and complete-clause boundaries pass, and the rejected temporal transfer remains withheld. These are controller replays, not new generated quality evidence.
+
+The new APK is 11,921,193 bytes, SHA-256 **`934147a471c948ea77de51d89663759a2925351c382f5412287535017e67a1f5`**. Task202 must revalidate this changed identity and model-facing context in its release/offline checks; old release receipts do not cover it. No model asset, attribution or admission limit changed. Broad answer coverage, citation support, multi-part completeness, title-derived scope, independent review, physical/GrapheneOS and human acceptance remain open. No services, runner/state, private holdout/context, task dispatch, branch switch, push or main advancement occurred.
+
+---
+
+## Preserved original task 201 failure report (historical)
+
+The following section describes the original pre-repair APK and negative run, not the latest check status.
+
 # Production JNI against the multi-pack catalog — task 201
 
 **Negative result; behavioral acceptance check fails.** The current production model published no generated answer on this frozen matrix, leaving actual generated citation-span navigation unexercised. This is neither product acceptance nor proof that fallback retrieval is useful synthesis. All compilation and inference ran on LLMRig; actual JNI ran serially on the existing x86_64 Android emulator-5560, offline. No physical or GrapheneOS device was tested.

@@ -76,8 +76,10 @@ final class EvidencePrompt {
         int number=0;
         for(ResearchEngine.Hit hit:evidence.hits) {
             ResearchEngine.Passage p=hit.passage;number++;
-            text.append("[S").append(number).append("] ").append(p.title).append("\nDate: ").append(p.sourceDate)
-                .append("\nSource: ").append(p.url).append("\n").append(excerpt(hit,limit)).append("\n\n");
+            // Titles can themselves be questions, and URLs are not factual evidence.
+            // Keep both in the inspectable source dialog, outside generated prose context.
+            text.append("[S").append(number).append("]\nDate: ").append(p.sourceDate)
+                .append("\n").append(excerpt(hit,limit)).append("\n\n");
         }
         text.append("Question: ").append(question);
         java.util.regex.Matcher comparison=java.util.regex.Pattern.compile("(?i)^compare\\s+(.+?)\\s+(?:and|with|versus)\\s+(.+?)[.?!]?$").matcher(question.trim());
