@@ -1,3 +1,11 @@
+# Task 221 repair 1: independent linking still fails support safety
+
+The materially different independent-evidence-linking strategy is implemented and measured in [the repair report](independent-evidence-linking.md). All old drafts and raw failures are preserved; only sixteen newly frozen questions received generation. The pinned independent classifier retains **8/40** useful old answers, below the previous twelve, and still admits unsupported role, definition, time and formula claims. All nine absent controls remain withheld. Build and 29 behavioral/integrity checks pass, but the required quality command exits 1. The zero-unsupported gate remains unmet; production and Android admission are unchanged. Task 223 records the next source-first constraint experiment without repeating old generation.
+
+The original failed experiment report follows unchanged as historical evidence; its12/40 and prior APK identities are not the current repair result.
+
+---
+
 # Obligation/source binding: negative architecture result
 
 Task 221 builder evidence, not independent acceptance. The fixed experiment increases fully supported, complete, useful screen-eligible answers on the old supported population from **4/40 to 12/40**, but also increases unsupported eligible answers from **zero to 7**. Therefore the required quality gate **fails**. The Android build passes; `bash tools/evaluation/check_obligation_binding.sh` must return a failure for this result. No controller or selected-model promotion is justified.

@@ -100,6 +100,7 @@ def main():
    else:changed.write_bytes(p.read_bytes()+b'changed')
    rejected(lambda:exact(changed,h));rejected(lambda:exact(t/('missing-'+name),h))
  build=json.loads((E/'build.json').read_text());exact(R/build['apk'],build['sha256']);require(build['exit_code']==0,'Android build failure')
+ follow=json.loads((E/'proposed-follow-up.json').read_text());queue=json.loads((E/'queue-receipt.json').read_text());exact(E/'proposed-follow-up.json',queue['sha256']);require(follow['id']==queue['task'] and follow['dependencies']==queue['dependency']==['222-independent-evidence-linking'],'Follow-up receipt drift')
  require(counts==json.loads((E/'metrics.json').read_text())['counts'],'Derived counts drift');print(json.dumps({'artifact_behavior':'PASS','builder_assessed_counts':counts,'independent_review':'pending'},indent=2),flush=True)
  failures=[]
  if counts['old_useful_eligible']<=4:failures.append('Useful old answers did not exceed4/40')
