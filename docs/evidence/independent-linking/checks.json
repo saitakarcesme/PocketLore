@@ -1,0 +1,21 @@
+{
+  "android_build": {
+    "command": [
+      "bash",
+      "tools/android-build.sh"
+    ],
+    "exit_code": 0,
+    "log": "android-build.log"
+  },
+  "quality": {
+    "command": [
+      "bash",
+      "tools/evaluation/check_obligation_binding.sh"
+    ],
+    "exit_code": 1,
+    "log": "verification-first.log",
+    "artifact_and_behavior": "PASS",
+    "quality": "FAIL: unsupported eligible prose and constructed unsupported probe admitted"
+  },
+  "not_acceptance": true
+}

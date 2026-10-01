@@ -1,0 +1,878 @@
+[
+  {
+    "id": "s07",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Compost is made from a mixture of plant and food waste, manure, and other organic materials, and it is used as a plant fertilizer to improve soil's physical, chemical, and biological properties.",
+        "pair_key": "6cab60f10efb1b75ad5cb643c5d718458221ee46bc6241c982cb3d343f2250a1",
+        "key": "6cab60f10efb1b75ad5cb643c5d718458221ee46bc6241c982cb3d343f2250a1",
+        "tokens": 91,
+        "logits": [
+          -3.2551028728485107,
+          4.525199890136719,
+          -1.5315104722976685
+        ],
+        "probabilities": [
+          0.00041673545425970754,
+          0.9972476180145963,
+          0.002335646531144111
+        ],
+        "failure": "",
+        "elapsed_s": 0.0274394240041147
+      }
+    ]
+  },
+  {
+    "id": "s10",
+    "builder_supported": false,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Compost requires green waste (nitrogen-rich materials such as leaves, grass, and food scraps) and brown waste (woody materials rich in carbon, such as stalks, paper, and wood chips) for the composting process.",
+        "pair_key": "6587ed878eae329546e90bcf83d991d5901e08f4aa0096d0bd9937f894b8e47f",
+        "key": "6587ed878eae329546e90bcf83d991d5901e08f4aa0096d0bd9937f894b8e47f",
+        "tokens": 133,
+        "logits": [
+          -2.2999157905578613,
+          3.22697114944458,
+          -0.8969606161117554
+        ],
+        "probabilities": [
+          0.003899739355749922,
+          0.9802392348293739,
+          0.015861025814876122
+        ],
+        "failure": "",
+        "elapsed_s": 0.042473371999221854
+      },
+      {
+        "claim": "Vermicast is the end-product of the breakdown of organic matter by earthworms, and it is a nutrient-rich organic fertilizer and soil conditioner that contains water-soluble nutrients and has been shown to have reduced levels of contaminants compared to the original organic materials.",
+        "pair_key": "0e9353e07ec6b9adb403b761b38a9fc9c9bf7d6ef92cc78e86b4adc82f770a60",
+        "key": "0e9353e07ec6b9adb403b761b38a9fc9c9bf7d6ef92cc78e86b4adc82f770a60",
+        "tokens": 265,
+        "logits": [
+          -3.5958361625671387,
+          4.327960968017578,
+          -0.6309146881103516
+        ],
+        "probabilities": [
+          0.00035937187105866296,
+          0.9926712646309688,
+          0.006969363497972529
+        ],
+        "failure": "",
+        "elapsed_s": 0.08753647800040198
+      }
+    ]
+  },
+  {
+    "id": "s13",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "The scion is the upper part of the combined plant, typically joined to the rootstock at the soil line, and the rootstock is the lower part, which provides the roots. In top-work grafting, the scion is joined far above the soil line, leaving an understock consisting of the lower part of the trunk and the root system.",
+        "pair_key": "1c934ee6d6b93486517e23a121583e258a71c1b487ec1dd4466d1dd963f790de",
+        "key": "1c934ee6d6b93486517e23a121583e258a71c1b487ec1dd4466d1dd963f790de",
+        "tokens": 183,
+        "logits": [
+          -2.55912709236145,
+          3.499325752258301,
+          -1.0262738466262817
+        ],
+        "probabilities": [
+          0.002307632530971701,
+          0.9870048617822956,
+          0.010687505686732811
+        ],
+        "failure": "",
+        "elapsed_s": 0.05468989200016949
+      }
+    ]
+  },
+  {
+    "id": "s16",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "The success of a graft requires that the vascular tissues grow together.",
+        "pair_key": "37293192b89ca7606bd3fcc271ec41a946cf5d81843e436dcb09fd12145c271a",
+        "key": "37293192b89ca7606bd3fcc271ec41a946cf5d81843e436dcb09fd12145c271a",
+        "tokens": 35,
+        "logits": [
+          -3.3235840797424316,
+          3.5805530548095703,
+          -0.40698158740997314
+        ],
+        "probabilities": [
+          0.0009843810296239974,
+          0.980825832371515,
+          0.018189786598861068
+        ],
+        "failure": "",
+        "elapsed_s": 0.01178302399785025
+      },
+      {
+        "claim": "The reason for pruning unwanted plant material is to remove diseased, damaged, dead, non-productive, structurally unsound, or otherwise unwanted plant material from crop and landscape plants.",
+        "pair_key": "1b5eeafa7003a981248572f7a5d6f9c3a8a1f4db27eb50b6adaba2a94a9c1847",
+        "key": "1b5eeafa7003a981248572f7a5d6f9c3a8a1f4db27eb50b6adaba2a94a9c1847",
+        "tokens": 74,
+        "logits": [
+          -2.5891170501708984,
+          3.7657358646392822,
+          -1.3992072343826294
+        ],
+        "probabilities": [
+          0.0017254334805525177,
+          0.9926034380202498,
+          0.005671128499197618
+        ],
+        "failure": "",
+        "elapsed_s": 0.020557615003781393
+      }
+    ]
+  },
+  {
+    "id": "s19",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "A codified constitution is one in which the principles of a polity's governance are encompassed in a single comprehensive document, whereas a written constitution is when these principles are written down into a single document or set of legal documents. The distinction lies in whether the principles are contained within a single comprehensive document or across multiple documents.",
+        "pair_key": "f2fdf8803c268253ccb1f7066adaa2917496da8b79e175bac92cc8936ff2e914",
+        "key": "f2fdf8803c268253ccb1f7066adaa2917496da8b79e175bac92cc8936ff2e914",
+        "tokens": 157,
+        "logits": [
+          -2.227750301361084,
+          3.161970376968384,
+          -1.06266450881958
+        ],
+        "probabilities": [
+          0.004477310614866047,
+          0.9811675453182629,
+          0.014355144066871071
+        ],
+        "failure": "",
+        "elapsed_s": 0.04064951399777783
+      }
+    ]
+  },
+  {
+    "id": "s22",
+    "builder_supported": false,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "A codified constitution is a constitution that is written down into a single document or set of legal documents, whereas an uncodified constitution is not encompassed in a single comprehensive document and is instead composed of multiple sources such as fundamental acts, court cases, and treaties.",
+        "pair_key": "1ad6746f8194ac9a9ba463dee525154e1e3ca073d805716317fe99818fd77d5a",
+        "key": "1ad6746f8194ac9a9ba463dee525154e1e3ca073d805716317fe99818fd77d5a",
+        "tokens": 194,
+        "logits": [
+          -2.398665428161621,
+          3.4179863929748535,
+          -1.1751253604888916
+        ],
+        "probabilities": [
+          0.002939059505338943,
+          0.9870704898451679,
+          0.009990450649493238
+        ],
+        "failure": "",
+        "elapsed_s": 0.04862379399855854
+      },
+      {
+        "claim": "Constitutional monarchs can differ in power in that some have virtually no executive or policy-making power and are primarily symbolic heads of state, while others have meaningful formal powers such as veto power, appointment power, and the power to dissolve parliament.",
+        "pair_key": "adbd2a4c2a3ecfb41649ea0056bad4050d218a8118b4a515f4715d4347895d3b",
+        "key": "adbd2a4c2a3ecfb41649ea0056bad4050d218a8118b4a515f4715d4347895d3b",
+        "tokens": 143,
+        "logits": [
+          -3.614777088165283,
+          4.304553031921387,
+          -0.9026280641555786
+        ],
+        "probabilities": [
+          0.0003615342176200646,
+          0.9941931789305217,
+          0.005445286851858126
+        ],
+        "failure": "",
+        "elapsed_s": 0.040628426999319345
+      }
+    ]
+  },
+  {
+    "id": "s31",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Barcelona is the capital and largest city of the autonomous community of Catalonia and is located on the northeastern coast of Spain.",
+        "pair_key": "b7177eda8f811640dbc0f2e22f9d564d353b16cd54817e1d40bd7461a7ca8d94",
+        "key": "b7177eda8f811640dbc0f2e22f9d564d353b16cd54817e1d40bd7461a7ca8d94",
+        "tokens": 74,
+        "logits": [
+          -3.834817409515381,
+          4.464152812957764,
+          -0.7369602918624878
+        ],
+        "probabilities": [
+          0.0002473483473146455,
+          0.9942737782588594,
+          0.005478873393825808
+        ],
+        "failure": "",
+        "elapsed_s": 0.022776268000598066
+      }
+    ]
+  },
+  {
+    "id": "s33",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Barcelona is the capital and largest city of the autonomous community of Catalonia, as well as the second-most populous municipality of Spain after Madrid.",
+        "pair_key": "6b5fc1f95e08a5fab21b1d0ad02f592c4c82104a9e4ba0b60a89b40ccd939c40",
+        "key": "6b5fc1f95e08a5fab21b1d0ad02f592c4c82104a9e4ba0b60a89b40ccd939c40",
+        "tokens": 79,
+        "logits": [
+          -3.4639668464660645,
+          4.131232738494873,
+          -0.7885959148406982
+        ],
+        "probabilities": [
+          0.0004989660311620559,
+          0.992257177889513,
+          0.007243856079324951
+        ],
+        "failure": "",
+        "elapsed_s": 0.028269365000596736
+      },
+      {
+        "claim": "Athens is the capital and largest city of Greece, and it is the southernmost capital on the European mainland.",
+        "pair_key": "cde3337a4151506db67929c3a9069a9423790d45d9210e0ea91faa5a7cc8ca39",
+        "key": "cde3337a4151506db67929c3a9069a9423790d45d9210e0ea91faa5a7cc8ca39",
+        "tokens": 71,
+        "logits": [
+          -3.700212001800537,
+          4.372311592102051,
+          -0.8585779666900635
+        ],
+        "probabilities": [
+          0.0003102387510933826,
+          0.9943711037482886,
+          0.0053186575006179595
+        ],
+        "failure": "",
+        "elapsed_s": 0.0213080089961295
+      }
+    ]
+  },
+  {
+    "id": "s40",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Ethanol and lactate are two industrial fermentation end products.",
+        "pair_key": "573589ab714a0a25416730fb2e7708bcf84afdc01a187e9ae25fbd390ddd814d",
+        "key": "573589ab714a0a25416730fb2e7708bcf84afdc01a187e9ae25fbd390ddd814d",
+        "tokens": 159,
+        "logits": [
+          -3.9757392406463623,
+          3.700901746749878,
+          0.2848801612854004
+        ],
+        "probabilities": [
+          0.0004485884363061159,
+          0.9677671906991636,
+          0.031784220864530324
+        ],
+        "failure": "",
+        "elapsed_s": 0.04462209100165637
+      },
+      {
+        "claim": "The usual temperature qualification for pasteurization is less than 100 \u00b0C (212 \u00b0F).",
+        "pair_key": "793497b5219155011a52be67ec988256a2673cc25231048e166809aa1faaf917",
+        "key": "793497b5219155011a52be67ec988256a2673cc25231048e166809aa1faaf917",
+        "tokens": 126,
+        "logits": [
+          -3.485215187072754,
+          4.57423210144043,
+          -1.312199592590332
+        ],
+        "probabilities": [
+          0.0003151267924705201,
+          0.9969165677381048,
+          0.0027683054694246853
+        ],
+        "failure": "",
+        "elapsed_s": 0.034381734003545716
+      }
+    ]
+  },
+  {
+    "id": "s46",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "A difference of 1.0 in magnitude corresponds to the brightness ratio of 2.512.",
+        "pair_key": "a8a160a73f0a9ad5e0c7c823785f40172826d20e3bd9538417c78c62bafc03d9",
+        "key": "a8a160a73f0a9ad5e0c7c823785f40172826d20e3bd9538417c78c62bafc03d9",
+        "tokens": 158,
+        "logits": [
+          -2.7023558616638184,
+          3.6722395420074463,
+          -1.1035892963409424
+        ],
+        "probabilities": [
+          0.0016872086747401261,
+          0.9899662932643222,
+          0.008346498060937726
+        ],
+        "failure": "",
+        "elapsed_s": 0.04214460300136125
+      },
+      {
+        "claim": "Some amateurs contribute to citizen science by monitoring variable stars and double stars.",
+        "pair_key": "27a21a8a3ac0c321e2dd1e1b8c49f79ecd81a6e49a96d55013e23dd6f2154688",
+        "key": "27a21a8a3ac0c321e2dd1e1b8c49f79ecd81a6e49a96d55013e23dd6f2154688",
+        "tokens": 108,
+        "logits": [
+          -3.1042230129241943,
+          4.165811061859131,
+          -1.1054809093475342
+        ],
+        "probabilities": [
+          0.0006920514979509887,
+          0.9942007695047823,
+          0.005107178997266718
+        ],
+        "failure": "",
+        "elapsed_s": 0.02963560799980769
+      }
+    ]
+  },
+  {
+    "id": "n02",
+    "builder_supported": false,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Compost and vermicompost both improve soil fertility by providing nutrients to crops as fertilizer and acting as soil conditioners.",
+        "pair_key": "8858798eaab2f10b2a9f616f82685ae3adb319f795fa3bcd5e84ccd325040c55",
+        "key": "8858798eaab2f10b2a9f616f82685ae3adb319f795fa3bcd5e84ccd325040c55",
+        "tokens": 165,
+        "logits": [
+          -3.357767343521118,
+          4.29240083694458,
+          -1.1271073818206787
+        ],
+        "probabilities": [
+          0.00047364073003069117,
+          0.9951186559551957,
+          0.004407703314773677
+        ],
+        "failure": "",
+        "elapsed_s": 0.0360400209974614
+      },
+      {
+        "claim": "P6.1 specifically mentions that vermicompost contains water-soluble nutrients which may be extracted as vermiwash.",
+        "pair_key": "4de80d5bf9eb3df5b63d0ccedb06ee8bc88a35afa378e2fc752f83a946da4708",
+        "key": "4de80d5bf9eb3df5b63d0ccedb06ee8bc88a35afa378e2fc752f83a946da4708",
+        "tokens": 114,
+        "logits": [
+          -2.3081271648406982,
+          2.9810004234313965,
+          -0.528303861618042
+        ],
+        "probabilities": [
+          0.004875687699907289,
+          0.9662172925262787,
+          0.028907019773814026
+        ],
+        "failure": "",
+        "elapsed_s": 0.025966241999412887
+      }
+    ]
+  },
+  {
+    "id": "n05",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "The United Kingdom's constitution is an example of an uncodified constitution, which is not contained in a single document but is instead composed of multiple sources including fundamental acts, court cases, and treaties, thus contradicting the claim that an uncodified constitution cannot contain written legal documents.",
+        "pair_key": "bf9f88ffaecfa72dc588f06fbcc921a4f12e2bc33fcb2abde90b932ac3c01784",
+        "key": "bf9f88ffaecfa72dc588f06fbcc921a4f12e2bc33fcb2abde90b932ac3c01784",
+        "tokens": 128,
+        "logits": [
+          -3.639702558517456,
+          3.2879788875579834,
+          0.21609549224376678
+        ],
+        "probabilities": [
+          0.0009359857436650217,
+          0.9548234099426781,
+          0.04424060431365683
+        ],
+        "failure": "",
+        "elapsed_s": 0.028472245001466945
+      }
+    ]
+  },
+  {
+    "id": "n07",
+    "builder_supported": false,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Barcelona became the capital of the Principality of Catalonia after joining with the Kingdom of Aragon to form the composite monarchy of the Crown of Aragon.",
+        "pair_key": "b0179742fc277a399cff953b5fa29bc33e3c5d7865599210cf09b2c45e84c313",
+        "key": "b0179742fc277a399cff953b5fa29bc33e3c5d7865599210cf09b2c45e84c313",
+        "tokens": 122,
+        "logits": [
+          -3.5336642265319824,
+          4.617586135864258,
+          -1.3922162055969238
+        ],
+        "probabilities": [
+          0.00028758572874374995,
+          0.9972645553208886,
+          0.0024478589503676706
+        ],
+        "failure": "",
+        "elapsed_s": 0.027571244005230255
+      }
+    ]
+  },
+  {
+    "id": "n09",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Ethanol and lactate are industrial fermentation products used in the production of alcoholic beverages and food preservation, respectively.",
+        "pair_key": "3243eeb5ee0544f55baf4d9f60b911f11da8a3fd93a306283cc4ec40e13323e7",
+        "key": "3243eeb5ee0544f55baf4d9f60b911f11da8a3fd93a306283cc4ec40e13323e7",
+        "tokens": 185,
+        "logits": [
+          -3.7147397994995117,
+          4.0132012367248535,
+          -0.3576267659664154
+        ],
+        "probabilities": [
+          0.00043466395756730817,
+          0.9870877867138135,
+          0.012477549328619171
+        ],
+        "failure": "",
+        "elapsed_s": 0.04890909799723886
+      },
+      {
+        "claim": "Pasteurization does not guarantee the destruction of all bacterial spores because most bacterial spores survive the mild heat used in the pasteurization process.",
+        "pair_key": "7c4af3f3bceff705981b30447ac41b618dca199f96038193b81d136249b9c2ba",
+        "key": "7c4af3f3bceff705981b30447ac41b618dca199f96038193b81d136249b9c2ba",
+        "tokens": 133,
+        "logits": [
+          -4.033332824707031,
+          3.994654655456543,
+          -0.16390112042427063
+        ],
+        "probabilities": [
+          0.00032108077359796196,
+          0.9842942863212131,
+          0.01538463290518892
+        ],
+        "failure": "",
+        "elapsed_s": 0.029679954997845925
+      }
+    ]
+  },
+  {
+    "id": "n10",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "The brightness ratio for a one-magnitude difference is the fifth root of 100, which is approximately 2.512.",
+        "pair_key": "8a740b2939de0d4aca01f8a176de6ca2024c5a3d1b747b29ba98a75bfcd67d24",
+        "key": "8a740b2939de0d4aca01f8a176de6ca2024c5a3d1b747b29ba98a75bfcd67d24",
+        "tokens": 75,
+        "logits": [
+          -3.816971778869629,
+          4.558260440826416,
+          -0.9778109788894653
+        ],
+        "probabilities": [
+          0.00022954854444641375,
+          0.9958448481385002,
+          0.003925603317053459
+        ],
+        "failure": "",
+        "elapsed_s": 0.018993709003552794
+      }
+    ]
+  },
+  {
+    "id": "l05",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "The constitution of the United Kingdom is an example of an uncodified constitution that is written in numerous fundamental acts of a legislature, court cases, and treaties.",
+        "pair_key": "543b89a8d095176989b87f9d3977fe6be5ab5e01eeae9793369afe868dcb2d82",
+        "key": "543b89a8d095176989b87f9d3977fe6be5ab5e01eeae9793369afe868dcb2d82",
+        "tokens": 78,
+        "logits": [
+          -3.501051425933838,
+          4.452687740325928,
+          -1.230982780456543
+        ],
+        "probabilities": [
+          0.0003500325032321944,
+          0.9962616300139695,
+          0.003388337482798318
+        ],
+        "failure": "",
+        "elapsed_s": 0.019322298001497984
+      }
+    ]
+  },
+  {
+    "id": "l07",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "After joining with the Kingdom of Aragon to form the composite monarchy of the Crown of Aragon, Barcelona, which continued to be the capital of the Principality of Catalonia, became the most important city in the Crown of Aragon and its main economic and administrative centre.",
+        "pair_key": "7d848b3697f767f72c7425525428b5e60539aefedb01d0c736f7b853658d047a",
+        "key": "7d848b3697f767f72c7425525428b5e60539aefedb01d0c736f7b853658d047a",
+        "tokens": 190,
+        "logits": [
+          -2.296708106994629,
+          2.8776190280914307,
+          -0.6765750646591187
+        ],
+        "probabilities": [
+          0.005472511510222674,
+          0.9668707142931103,
+          0.027656774196667074
+        ],
+        "failure": "",
+        "elapsed_s": 0.04155826100031845
+      }
+    ]
+  },
+  {
+    "id": "l08",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "After joining with the Kingdom of Aragon to form the composite monarchy of the Crown of Aragon, Barcelona, which continued to be the capital of the Principality of Catalonia, became the most important city in the Crown of Aragon and its main economic and administrative centre, only to be overtaken by Valencia, wrested from Moorish control by the Catalans, shortly before the dynastic union between the Crown of Castile and the Crown of Aragon in 1516.",
+        "pair_key": "bb2b31ae1906cad472ebdde9cd9aa686992c3ddf04622a22aa440de40f669562",
+        "key": "bb2b31ae1906cad472ebdde9cd9aa686992c3ddf04622a22aa440de40f669562",
+        "tokens": 181,
+        "logits": [
+          -2.986935615539551,
+          3.64565372467041,
+          -0.7312682867050171
+        ],
+        "probabilities": [
+          0.0012987219604796592,
+          0.9863093164633704,
+          0.012391961576149921
+        ],
+        "failure": "",
+        "elapsed_s": 0.040383250001468696
+      }
+    ]
+  },
+  {
+    "id": "l09",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Athens was a centre for Ancient Greek philosophy and education.",
+        "pair_key": "9bedf8b3a32f5254664e940e794320acb02f70e1cba0f30ab67d1d5632309388",
+        "key": "9bedf8b3a32f5254664e940e794320acb02f70e1cba0f30ab67d1d5632309388",
+        "tokens": 96,
+        "logits": [
+          -2.865577220916748,
+          3.4012718200683594,
+          -0.39560556411743164
+        ],
+        "probabilities": [
+          0.0018530978891418168,
+          0.9762393717439104,
+          0.02190753036694787
+        ],
+        "failure": "",
+        "elapsed_s": 0.023048151000693906
+      }
+    ]
+  },
+  {
+    "id": "l11",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "A single magnitude step in brightness is expressed by the root and approximate ratio of 5th root of 100, or about 2.512.",
+        "pair_key": "b1ee861eee62e904d71a0d35b56c7e30aa86e13ca65638745b0c8e57350683fb",
+        "key": "b1ee861eee62e904d71a0d35b56c7e30aa86e13ca65638745b0c8e57350683fb",
+        "tokens": 155,
+        "logits": [
+          -2.2984156608581543,
+          3.254167318344116,
+          -1.0466829538345337
+        ],
+        "probabilities": [
+          0.0038109865030172972,
+          0.9828642957538497,
+          0.013324717743133154
+        ],
+        "failure": "",
+        "elapsed_s": 0.034221927999169566
+      }
+    ]
+  },
+  {
+    "id": "r01",
+    "builder_supported": false,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Earthworms play a crucial role in producing vermicompost by decomposing vegetable or food waste, bedding materials, and vermicast through the process of vermicomposting.",
+        "pair_key": "90c752db42ccb7932654a235ee66ad0ce72a55f04a15c3289a1a6da89629f5ce",
+        "key": "90c752db42ccb7932654a235ee66ad0ce72a55f04a15c3289a1a6da89629f5ce",
+        "tokens": 122,
+        "logits": [
+          -3.9055240154266357,
+          3.5681471824645996,
+          0.3115261495113373
+        ],
+        "probabilities": [
+          0.0005464800027935571,
+          0.9623840914517368,
+          0.037069428545469595
+        ],
+        "failure": "",
+        "elapsed_s": 0.027271774000837468
+      }
+    ]
+  },
+  {
+    "id": "r06",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Ethanol and lactate are two industrial fermentation end products.",
+        "pair_key": "16c5d9c4f51cd073fbec44e5b0102bc5c9018446dcc843e4c3c3bedb3330a454",
+        "key": "16c5d9c4f51cd073fbec44e5b0102bc5c9018446dcc843e4c3c3bedb3330a454",
+        "tokens": 173,
+        "logits": [
+          -2.923863410949707,
+          3.074164867401123,
+          -0.16425485908985138
+        ],
+        "probabilities": [
+          0.0023842006429671964,
+          0.9599605466050307,
+          0.03765525275200206
+        ],
+        "failure": "",
+        "elapsed_s": 0.04719227999885334
+      },
+      {
+        "claim": "The usual temperature qualification for pasteurization is less than 100 \u00b0C (212 \u00b0F).",
+        "pair_key": "793497b5219155011a52be67ec988256a2673cc25231048e166809aa1faaf917",
+        "key": "793497b5219155011a52be67ec988256a2673cc25231048e166809aa1faaf917",
+        "tokens": 126,
+        "logits": [
+          -3.485215187072754,
+          4.57423210144043,
+          -1.312199592590332
+        ],
+        "probabilities": [
+          0.0003151267924705201,
+          0.9969165677381048,
+          0.0027683054694246853
+        ],
+        "failure": "",
+        "elapsed_s": 0.034381734003545716
+      }
+    ]
+  },
+  {
+    "id": "r09",
+    "builder_supported": false,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "A magnitude difference of 1 corresponds to the brightness ratio of the square root of 100, or about 2.512.",
+        "pair_key": "88bfcae74f13b2560742b3a2809f742b1e40c74f9ce092ed5dbe856c28924c7a",
+        "key": "88bfcae74f13b2560742b3a2809f742b1e40c74f9ce092ed5dbe856c28924c7a",
+        "tokens": 151,
+        "logits": [
+          -1.8394737243652344,
+          3.1233344078063965,
+          -1.4246611595153809
+        ],
+        "probabilities": [
+          0.006872433379427568,
+          0.9827221051254431,
+          0.010405461495129378
+        ],
+        "failure": "",
+        "elapsed_s": 0.04880784799752291
+      },
+      {
+        "claim": "Two types of observations that amateur astronomers can contribute are variable stars and transient events, such as comets, galactic novae, or supernovae in other galaxies.",
+        "pair_key": "f06552d51de1c10d28b79414c4af2ef017d1afa21735402ce10553e331a8e1b6",
+        "key": "f06552d51de1c10d28b79414c4af2ef017d1afa21735402ce10553e331a8e1b6",
+        "tokens": 159,
+        "logits": [
+          -2.9001924991607666,
+          3.992518901824951,
+          -1.3183224201202393
+        ],
+        "probabilities": [
+          0.00100915020786726,
+          0.9940822993264234,
+          0.004908550465709168
+        ],
+        "failure": "",
+        "elapsed_s": 0.052824115999101195
+      }
+    ]
+  },
+  {
+    "id": "p01",
+    "builder_supported": false,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Vermicast is the material left by earthworms after they break down organic matter.",
+        "pair_key": "4429905de35761b93b6d9d734a1b51ab687acffdf97b8ad06b72c2001d8e46a1",
+        "key": "4429905de35761b93b6d9d734a1b51ab687acffdf97b8ad06b72c2001d8e46a1",
+        "tokens": 106,
+        "logits": [
+          -2.200998544692993,
+          3.3288915157318115,
+          -1.1928386688232422
+        ],
+        "probabilities": [
+          0.003908437116117289,
+          0.98538028220242,
+          0.010711280681462751
+        ],
+        "failure": "",
+        "elapsed_s": 0.034097267998731695
+      }
+    ]
+  },
+  {
+    "id": "p03",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Smaller cuts are generally easier for a woody plant to compartmentalize, limiting potential decay and pathogen intrusion.",
+        "pair_key": "6141cd0819595e039153d3b06f2be560d870a409267385cade7aa170d77ad324",
+        "key": "6141cd0819595e039153d3b06f2be560d870a409267385cade7aa170d77ad324",
+        "tokens": 123,
+        "logits": [
+          -2.5348286628723145,
+          3.3691327571868896,
+          -0.7926304340362549
+        ],
+        "probabilities": [
+          0.002679555084387601,
+          0.9820205035467753,
+          0.015299941368836919
+        ],
+        "failure": "",
+        "elapsed_s": 0.029439695994369686
+      }
+    ]
+  },
+  {
+    "id": "p07",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Barcelona continued as capital of the Principality of Catalonia after joining Aragon.",
+        "pair_key": "65bef4c2cfca9f723bd032acc52463ee2666fe12da10d3a1369f69a6f97e3f50",
+        "key": "65bef4c2cfca9f723bd032acc52463ee2666fe12da10d3a1369f69a6f97e3f50",
+        "tokens": 186,
+        "logits": [
+          -2.999363899230957,
+          4.505368232727051,
+          -1.8164942264556885
+        ],
+        "probabilities": [
+          0.0005491843120974971,
+          0.9976584282376323,
+          0.0017923874502701817
+        ],
+        "failure": "",
+        "elapsed_s": 0.051527449999412056
+      }
+    ]
+  },
+  {
+    "id": "p08",
+    "builder_supported": false,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "Barcelona first became capital of the Principality of Catalonia after joining Aragon.",
+        "pair_key": "f749fce4d85e34fac362d780cd45c56d2a20ca961ff60a02ed4db2a44d0940f5",
+        "key": "f749fce4d85e34fac362d780cd45c56d2a20ca961ff60a02ed4db2a44d0940f5",
+        "tokens": 186,
+        "logits": [
+          -2.121814250946045,
+          3.8242743015289307,
+          -1.9120622873306274
+        ],
+        "probabilities": [
+          0.0026008572661726384,
+          0.9941913179434186,
+          0.0032078247904087378
+        ],
+        "failure": "",
+        "elapsed_s": 0.051500430003216024
+      }
+    ]
+  },
+  {
+    "id": "p11",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "One magnitude corresponds to the fifth root of 100, approximately 2.512.",
+        "pair_key": "95b0ec35d65ef82bbcbdc21c23049e650d61b269d2d3c67342b75c7800422040",
+        "key": "95b0ec35d65ef82bbcbdc21c23049e650d61b269d2d3c67342b75c7800422040",
+        "tokens": 143,
+        "logits": [
+          -3.0353410243988037,
+          4.027785301208496,
+          -1.180586338043213
+        ],
+        "probabilities": [
+          0.000850715270012018,
+          0.9937131031599732,
+          0.005436181570014916
+        ],
+        "failure": "",
+        "elapsed_s": 0.03968412500398699
+      }
+    ]
+  },
+  {
+    "id": "p13",
+    "builder_supported": true,
+    "selected_complete_claim_scores": [
+      {
+        "claim": "About +6.5 is a naked-eye limit on the darkest night, varying with eyesight, altitude and atmospheric conditions.",
+        "pair_key": "9c489dc92b80eca87dc2cf83425570bc71dccb126d90e496fb4119c5158fcf47",
+        "key": "9c489dc92b80eca87dc2cf83425570bc71dccb126d90e496fb4119c5158fcf47",
+        "tokens": 147,
+        "logits": [
+          -2.876605987548828,
+          3.5419154167175293,
+          -0.7411549091339111
+        ],
+        "probabilities": [
+          0.0016062791772528647,
+          0.9848032141159272,
+          0.013590506706819891
+        ],
+        "failure": "",
+        "elapsed_s": 0.04010306800046237
+      }
+    ]
+  }
+]
