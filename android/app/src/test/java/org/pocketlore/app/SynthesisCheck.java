@@ -31,6 +31,9 @@ public final class SynthesisCheck {
         colors=EvidencePrompt.select("Compare alpha lamp and beta lamp",colors);
         require(!AnswerEngine.comparisonSupportFailure("Compare alpha lamp and beta lamp","Alpha lamp emits blue light [color-a] [color-b].",colors,900).isEmpty(),"Cross-subject property transfer accepted");
         require(AnswerEngine.comparisonSupportFailure("Compare alpha lamp and beta lamp","Alpha lamp emits red light [color-a].\nBeta lamp emits blue light [color-b].",colors,900).isEmpty(),"Supported comparison withheld");
+        ResearchEngine.Result inflections=new ResearchEngine(new StringReader(row("word-form","Alpha device moves and activates."))).research("Alpha device");
+        require(AnswerEngine.claimSupportFailure("Alpha device movement and activation [word-form].",inflections,900).isEmpty(),"Supported nominal forms rejected");
+        require(!AnswerEngine.claimSupportFailure("Alpha device teleports beyond galaxies [word-form].",inflections,900).isEmpty(),"Unrelated words accepted");
         System.out.println("PASS: fictional conflict controls, both-source links, raw preservation, unsupported numbers, token overflow and cancellation");
     }
 }

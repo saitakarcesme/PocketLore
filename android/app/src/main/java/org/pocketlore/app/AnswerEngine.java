@@ -65,7 +65,7 @@ public final class AnswerEngine {
                 if (first[0]==0) first[0]=System.nanoTime();
                 callbacks[0]++; raw.write(piece,0,piece.length);
                 if (!cancelled.getAsBoolean()) progress.accept(new String(raw.toByteArray(),StandardCharsets.UTF_8));
-            },evidence.hits.size(),question.trim().toLowerCase(Locale.ROOT).startsWith("compare ") && evidence.hits.size()>1);
+            },evidence.hits.size(),question.trim().toLowerCase(Locale.ROOT).startsWith("compare "));
         } catch (RuntimeException error) {
             String draft=new String(raw.toByteArray(),StandardCharsets.UTF_8);
             if (cancelled.getAsBoolean()) return result(Kind.CANCELLED,"Cancelled. Partial draft discarded.",draft,"Cancelled",prompt,true,callbacks[0],elapsedFirst(first[0],start),start);
@@ -113,7 +113,7 @@ public final class AnswerEngine {
             StringBuilder source=new StringBuilder();
             for(ResearchEngine.Hit hit:evidence.hits)if(ids.contains(hit.passage.id))source.append(EvidencePrompt.excerpt(hit,limit)).append(' ');
             Set<String> words=new HashSet<>(ResearchEngine.tokenize(BRACKET.matcher(claim).replaceAll("")));words.removeAll(glue);
-            Set<String> original=new HashSet<>(words);words.retainAll(ResearchEngine.tokenize(source.toString()));
+            Set<String> original=supportTerms(words);words=new HashSet<>(original);words.retainAll(supportTerms(ResearchEngine.tokenize(source.toString())));
             if(original.size()>0 && words.size()/(double)original.size()<0.65)return "A claim has weak lexical support in its cited excerpts; draft withheld.";
             Matcher numbers=Pattern.compile("\\b[0-9]+(?:[.,][0-9]+)*\\b").matcher(BRACKET.matcher(claim).replaceAll(""));
             Set<String> supportedNumbers=new HashSet<>();Matcher sourceNumbers=Pattern.compile("\\b[0-9]+(?:[.,][0-9]+)*\\b").matcher(source);
@@ -121,6 +121,21 @@ public final class AnswerEngine {
             while(numbers.find())if(!supportedNumbers.contains(numbers.group().replace(",","")))return "A claim contains a number absent from its cited excerpts; draft withheld.";
         }
         return "";
+    }
+    private static Set<String> supportTerms(Collection<String> words) {
+        Set<String> result=new HashSet<>();
+        for(String original:words) {
+            String word=original;
+            if(word.length()>6 && word.endsWith("ation"))word=word.substring(0,word.length()-5)+"ate";
+            else if(word.length()>6 && word.endsWith("ment"))word=word.substring(0,word.length()-4);
+            if(word.length()>4 && word.endsWith("ies"))word=word.substring(0,word.length()-3)+"y";
+            else if(word.length()>3 && word.endsWith("s") && !word.endsWith("ss") && !word.endsWith("is") && !word.endsWith("us"))word=word.substring(0,word.length()-1);
+            if(word.length()>5 && word.endsWith("ing"))word=word.substring(0,word.length()-3);
+            else if(word.length()>4 && word.endsWith("ed"))word=word.substring(0,word.length()-2);
+            if(word.length()>3 && word.endsWith("e") && !word.endsWith("ee"))word=word.substring(0,word.length()-1);
+            result.add(word);
+        }
+        return result;
     }
     /** Narrow cross-subject leakage screen; conservative, not semantic entailment. */
     static String comparisonSupportFailure(String question,String draft,ResearchEngine.Result evidence,int limit) {

@@ -27,6 +27,10 @@ The initial 0.5B model SHA-256 was `74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f
 
 - `synthesis/qualified-prompt`: the qualitative-comparison instruction produced a deep-aquifer claim but omitted shallow aquifers. The model still transferred the destination "lakes" to runoff. Overall FAIL. The next candidate requests one comparison line per subject and adds a conservative cross-subject lexical leakage screen.
 
+- `synthesis/clause-screen`: the revised draft avoided the destination transfer, but exact-word support rejected "infiltration" against "infiltrates". The conditions case again abstained. Overall FAIL. The next candidate retains the threshold, adds limited word-form normalization, and places a subject-by-subject comparison outline at the end of the prompt. The outline contains only question subjects, not factual answers.
+
+- `synthesis/optional-comparison-stop`: after adding nominal word forms and a question-only subject outline, the model stopped after describing evaporation. Its partial output, APK hash, build and instrumentation interruption are preserved. The builder deliberately stopped this isolated test app after observing the incomplete comparison; remaining cases were not evaluated. The next native grammar requires two claims for comparisons, while retaining the explicit abstention branch.
+
 Early summaries sometimes counted passage IDs in fallback text as a citation check success; their overall results were still FAIL. The current evaluator requires GENERATED before checking generated citations and verifies exact case/model/pack identities. The combined-source grammar prevents the observed missing-half attribution pattern by requiring the supplied source set on each comparison claim. This may overcite; it is not semantic proof or fine-grained provenance.
 
 ## Implemented controls and limits

@@ -71,7 +71,11 @@ final class EvidencePrompt {
             text.append("[S").append(number).append("] ").append(p.title).append("\nDate: ").append(p.sourceDate)
                 .append("\nSource: ").append(p.url).append("\n").append(excerpt(hit,limit)).append("\n\n");
         }
-        return text.append("Question: ").append(question).append("\nReturn one or two lines, each starting with its source labels followed by one factual sentence. Answer:").toString();
+        text.append("Question: ").append(question);
+        java.util.regex.Matcher comparison=java.util.regex.Pattern.compile("(?i)^compare\\s+(.+?)\\s+(?:and|with|versus)\\s+(.+?)[.?!]?$").matcher(question.trim());
+        if(comparison.matches())text.append("\nAnswer both subjects using the requested property. First line: ").append(comparison.group(1)).append(". Second line: ").append(comparison.group(2)).append(". Keep the source conditions and uncertainty; one source can support both lines.");
+        else text.append("\nUse one or two lines, adding a second only for supported detail.");
+        return text.append("\nStart each line with source labels and then one factual sentence. Answer:").toString();
     }
     // Narrow, auditable contradiction signal: same normalized statement with opposite negation.
     // Other conflicts require source inspection; numeric/date differences alone are not contradictions.
