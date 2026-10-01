@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/independent-linking/prepare.py", line 17, in <module>
+    id=c['id'];path=(newrun if id.startswith('l') else E/'run')/'results'/(id+'.json');v=json.loads(path.read_text());rows.append('\t'.join([id,enc(c['question']),enc(v['draft']['raw']),str(v['draft']['tokens'])]));sources(id,c);origins[id]={'path':str(path.relative_to(R)),'sha256':sha(path),'type':'actual generated draft'}
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 490, in relative_to
+    raise ValueError(f"{str(self)!r} is not in the subpath of {str(other)!r}")
+ValueError: 'downloads/independent-linking/run-20261001T125143Z/results/l01.json' is not in the subpath of '/home/isa/Projects/PocketLore'

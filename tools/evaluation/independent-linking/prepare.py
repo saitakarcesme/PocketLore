@@ -9,7 +9,7 @@ def compile_to(classes):
  sources=[R/'android/app/src/main/java/org/pocketlore/app'/(n+'.java') for n in ['BoundAnswer','EvidenceLinker','ObligationAnswer','ResearchEngine','EvidencePrompt','AnswerEngine','NativeRuntime']]+[R/'tools/evaluation/scale-model-quality/ScaleHarness.java',R/'tools/evaluation/obligation-binding/BindingHarness.java',F/'LinkHarness.java']
  classes.mkdir(parents=True,exist_ok=True);subprocess.run([TC/'jdk/bin/javac','-d',classes,*sources],check=True);return sources
 if __name__=='__main__':
- newrun=Path(sys.argv[1]);out=Path(sys.argv[2]);out.mkdir(parents=True,exist_ok=False);inputs=out/'inputs';inputs.mkdir();assert json.loads((newrun/'receipt.json').read_text())['exit_code']==0
+ newrun=Path(sys.argv[1]).resolve();out=Path(sys.argv[2]).resolve();out.mkdir(parents=True,exist_ok=False);inputs=out/'inputs';inputs.mkdir();assert json.loads((newrun/'receipt.json').read_text())['exit_code']==0
  new=json.loads((F/'fixtures.json').read_text());old=json.loads((R/'tools/evaluation/scale-model-quality/protocol.json').read_text());extension=json.loads((R/'tools/evaluation/obligation-binding/new-cases.json').read_text());cases=old['cases']+extension['cases']+new['cases'];by={c['id']:c for c in cases};rows=[];origins={}
  def sources(id,c):
   (inputs/(id+'.tsv')).write_text(''.join('\t'.join(enc(s[k] if k!='edition' else new['edition']) for k in ['edition','id','source_sha256','sha256','title','date','license','text'])+'\n' for s in c['sources']))
