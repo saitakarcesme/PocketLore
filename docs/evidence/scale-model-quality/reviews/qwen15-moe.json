@@ -1,0 +1,110 @@
+{
+  "reviewer": "builder; independent source review separate",
+  "criterion": "Full draft usefulness requires supported facts, all question obligations, relevant inspectable citations and complete usable prose. Source labels at an obligation paragraph may support its subsequent sentences only when the same cited excerpt actually establishes every claim; machine per-sentence gate is reported separately. No extractive fallback counts.",
+  "cases": {
+    "s01": {
+      "result_sha256": "89d4ae3b3b91bf3ab980bfcafb20b1709fccbad672bd5f83914b3942eace1e54",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "O1 explains middle comparison and half elimination, but later unsolicited slots assert that sorting requires the same time as linear search, which the excerpts do not establish; no source labels and repeated extra obligations."
+    },
+    "s02": {
+      "result_sha256": "bd0d3ac4fc721b66a83da0435de68c1f216d8fdd830f9b102fd5734e16da712b",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Calls operations linear time when describing a balanced logarithmic-height tree, conflating linear-in-height with linear-in-node-count; repeats slots until truncation and provides no citations."
+    },
+    "s03": {
+      "result_sha256": "b4fdc14042aafd856bf2eea82db64095b3ab9bfc288a3d328f4baa130507f310",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Sorted-array and subtree ordering descriptions are supported, but no citations and repeated tautological extra obligations run to the token boundary; not a complete usable response."
+    },
+    "s04": {
+      "result_sha256": "15cc765443ccbbfa071e5c6be61820afc19724adc157041d93ffe322de9631f1",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Both logarithmic binary search and linear worst-case unbalanced BST complexity are supplied with supported source details, but there are no source citations and O2 unnecessarily repeats the algorithm description."
+    },
+    "s05": {
+      "result_sha256": "d9630d736bdb5f67bcdfa7102207d7d9e973cadaf8a2e9a8e37e42c8c3d6605b",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Explicitly endorses the false unsorted-array premise despite S2 requiring sorting; conflates algorithm/tree descriptions and repeats extra slots until truncation without citations."
+    },
+    "s06": {
+      "result_sha256": "57992ba8fb7f96db5e74784438ab4d1413e56cf1922eb2a7fb9f302446749046",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Fabricates a measured laptop nanosecond latency by substituting asymptotic O(log n); absent measurement is not withheld by the model, though the controller rejects the draft."
+    },
+    "s07": {
+      "result_sha256": "b2427127437e0014b1a3d25b3fa37d6f12559dc022b8be25bee80d779b1ea9d8",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Ingredients and uses are supported by the compost excerpts, but the uncited answer repeats source facts until the 512-token boundary and ends mid-clause; no usable cited answer."
+    },
+    "s08": {
+      "result_sha256": "79093c6a27cdf61d12e0d97c27cb4e6bf0a6b509c605697050fe1ec981fef6b5",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Explains worm decomposition, but transfers shredding/aeration and beneficial-organism properties from ordinary compost paragraphs to vermicompost without establishing that scope; repeats unrelated compost facts to the token limit and has no citations."
+    },
+    "s09": {
+      "result_sha256": "79e624edd35ebfd94b9a1567a1c9e4c1dff75c41e3d11e820de23e996ab3840f",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Adds composting in anaerobic conditions improved by shredding/water and bins, which are not established by the supplied passages; repeats only O1 to the token limit, omitting vermicompost and the shared-use obligations."
+    },
+    "s10": {
+      "result_sha256": "4e869885e7b5465af42c9b5f53eff2fd9d5f1ed8be144e64932fbd5cf630039d",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Omits brown inputs and conflates vermicast with the vermicompost mixture and its fertilizer properties; invents extra obligation slots and ends mid-word without citations."
+    },
+    "s11": {
+      "result_sha256": "59d04dc4c0ae8dbe2f39054dacd34a6bf98fd9a6e580684b38f867a82a831755",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Initially rejects worm avoidance but then defines vermiculture as composting and denies a separate process, contrary to S4 distinguishing worm rearing from vermicomposting; cited text does not support those definitions."
+    },
+    "s12": {
+      "result_sha256": "391f88fb23cd7b34dafd80b7964fc2cfeaa38e08da0d487b87f054df6a017f49",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Clearly withholds unavailable current local compost stock; useful abstention only."
+    },
+    "s13": {
+      "result_sha256": "403459c650b7ed04f08039296d5426dc8f4510ffad039fff123158e8837b155b",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct upper/lower identification is followed by unsupported reciprocal grafting of rootstock onto scion and scion stem, then uncited repetition to the token limit."
+    }
+  }
+}
