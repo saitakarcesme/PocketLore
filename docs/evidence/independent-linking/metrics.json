@@ -1,0 +1,159 @@
+{
+  "counts": {
+    "old_useful_eligible": 8,
+    "new_useful_eligible": 5,
+    "unsupported_eligible": 8,
+    "old_absent_withheld": 8,
+    "new_absent_withheld": 1,
+    "eligible": 29,
+    "withheld": 74,
+    "historical_unsupported_eligible": 2,
+    "probe_false_approvals": 1,
+    "probe_false_rejections": 3
+  },
+  "populations": {
+    "s": {
+      "n": 48,
+      "eligible": 10,
+      "supported_eligible": 8,
+      "useful_eligible": 8,
+      "unsupported_eligible": 2,
+      "eligible_ids": [
+        "s07",
+        "s10",
+        "s13",
+        "s16",
+        "s19",
+        "s22",
+        "s31",
+        "s33",
+        "s40",
+        "s46"
+      ],
+      "unsupported_ids": [
+        "s10",
+        "s22"
+      ]
+    },
+    "n": {
+      "n": 12,
+      "eligible": 5,
+      "supported_eligible": 3,
+      "useful_eligible": 3,
+      "unsupported_eligible": 2,
+      "eligible_ids": [
+        "n02",
+        "n05",
+        "n07",
+        "n09",
+        "n10"
+      ],
+      "unsupported_ids": [
+        "n02",
+        "n07"
+      ]
+    },
+    "l": {
+      "n": 16,
+      "eligible": 5,
+      "supported_eligible": 5,
+      "useful_eligible": 5,
+      "unsupported_eligible": 0,
+      "eligible_ids": [
+        "l05",
+        "l07",
+        "l08",
+        "l09",
+        "l11"
+      ],
+      "unsupported_ids": []
+    },
+    "r": {
+      "n": 11,
+      "eligible": 3,
+      "supported_eligible": 1,
+      "useful_eligible": 1,
+      "unsupported_eligible": 2,
+      "eligible_ids": [
+        "r01",
+        "r06",
+        "r09"
+      ],
+      "unsupported_ids": [
+        "r01",
+        "r09"
+      ]
+    },
+    "p": {
+      "n": 16,
+      "eligible": 6,
+      "supported_eligible": 4,
+      "useful_eligible": 4,
+      "unsupported_eligible": 2,
+      "eligible_ids": [
+        "p01",
+        "p03",
+        "p07",
+        "p08",
+        "p11",
+        "p13"
+      ],
+      "unsupported_ids": [
+        "p01",
+        "p08"
+      ]
+    }
+  },
+  "reviewer": "builder, independent source review pending",
+  "timing_definition": "Nearest-rank ceil(p*n)-1 on distinct requests/pairs, not repeated cold-phone latency; all CPU host, no mixed-backend comparison",
+  "new_generation_ms": {
+    "first_token": {
+      "n": 16,
+      "p50": 31026.131968,
+      "p95": 59033.587296,
+      "max": 59033.587296
+    },
+    "draft_total": {
+      "n": 16,
+      "p50": 40894.006348,
+      "p95": 72980.126121,
+      "max": 72980.126121
+    },
+    "draft_plus_self_audit": {
+      "n": 16,
+      "p50": 53025.1224,
+      "p95": 95803.93102,
+      "max": 95803.93102
+    }
+  },
+  "classifier_pair_seconds": {
+    "n": 994,
+    "p50": 0.04272576099901926,
+    "p95": 0.0745577499983483,
+    "max": 0.1635636919963872
+  },
+  "classifier_pairs": 994,
+  "classifier_rejected_oversize": 0,
+  "classifier_failed_pairs": 0,
+  "generation_memory_bytes": {
+    "VmRSS": 4999811072,
+    "VmHWM": 4999811072,
+    "VmSwap": 33280000
+  },
+  "classifier_memory_bytes": {
+    "VmRSS": 884727808,
+    "VmHWM": 1030778880,
+    "VmSwap": 0
+  },
+  "classifier_run_seconds": 45.88011187699885,
+  "new_generation_seconds": 895.2326623620029,
+  "new_generation_max_prompt_tokens": 2516,
+  "new_generation_max_total_tokens": 255,
+  "native_peaks": [
+    1,
+    1,
+    4242363904,
+    603979776,
+    80413184
+  ]
+}

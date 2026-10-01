@@ -1,0 +1,20 @@
+{
+  "stage": "CPU host candidate, not Android",
+  "protocol_sha256": "183b2c90b71df69ef8f3feb969bbc1a939c14186354461683d6d04fbdc0affbc",
+  "execution_sha256": "3472e4a58d707760a5d67176e8b264b8ba60b5fc88f90822d0bde34e4bfc0fc1",
+  "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+  "library_sha256": "38cc3d9108c865fac5c7b8744987b58bee5a3ff9b37529f919e5ce24db42dfef",
+  "sources": {
+    "android/app/src/main/java/org/pocketlore/app/BoundAnswer.java": "3ebc23e6ed3dc73f52ccf899029b0b98dce258c44e7bc717804245206c7ff709",
+    "android/app/src/main/java/org/pocketlore/app/ObligationAnswer.java": "6b9f0e61ba2a7bf5a040f2d9f3899acc682b40cf236ac3395d1bdac8f1819725",
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "f276dc506e3022e445149c6c09e2577f595b287cfc406a760fda525c46c66128",
+    "android/app/src/main/java/org/pocketlore/app/EvidencePrompt.java": "238131c012580bdd1af9c2a67fb7db410c1c4d5f2bc5235a0016eb09d493832a",
+    "android/app/src/main/java/org/pocketlore/app/AnswerEngine.java": "c03f51d31c5e1fa628450978ec6ccc9fe2491de11b6695856856c694826d2dbc",
+    "android/app/src/main/java/org/pocketlore/app/NativeRuntime.java": "ec6f59d59b07ef7f5016657e0fcba0203232ecc7359f56a9ad6c205215fb2085",
+    "tools/evaluation/scale-model-quality/ScaleHarness.java": "c969a8ff91f4e200e6ca674c68c0bb68e5a7d0bacfa39f5db251708175779558",
+    "tools/evaluation/obligation-binding/BindingHarness.java": "23c74dc755f68eee7c746c4ba7c416adf088a035a1aea9381e5c29e8715c7f06",
+    "tools/evaluation/independent-linking/run_new.py": "97846994185d347614a6fb7fb9636365fbf0809f2841bd52cb65086b5990c49e"
+  },
+  "git_revision": "66355bcb86053fb23bdf4ebe74a51cb60ba4232b",
+  "available_start": 13545508864
+}

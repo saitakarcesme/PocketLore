@@ -3,7 +3,7 @@ import java.util.*;
 public final class LinkBehavior {
  static int checks;static void check(boolean b){checks++;if(!b)throw new AssertionError("Behavior "+checks);}
  static void rejects(Runnable r){try{r.run();}catch(IllegalArgumentException|IllegalStateException e){checks++;return;}throw new AssertionError("Expected rejection");}
- public static void main(String[] args){
+ public static void main(String[] args)throws Exception{
   String e=String.join("",Collections.nCopies(64,"a")),h=String.join("",Collections.nCopies(64,"b"));String text="Athens was a centre of philosophy. Formula [5] is ordinary text.";
   BoundAnswer.Source s=new BoundAnswer.Source(e,"article-1",h,BoundAnswer.sha(text),"Athens","2026-10-01","Test fixture; not factual corpus",text);BoundAnswer.Cancel cancel=new BoundAnswer.Cancel();BoundAnswer.Catalog catalog=new BoundAnswer.Catalog(Arrays.asList(s),cancel);
   BoundAnswer.Draft d=BoundAnswer.parse("Describe Athens.","O1|P1.1|Athens|none|It was a centre of philosophy. Formula [5] is ordinary text.",catalog,12,cancel);
@@ -21,6 +21,14 @@ public final class LinkBehavior {
   cancel.cancel();rejects(()->EvidenceLinker.bind(d,catalog,scores,cancel));rejects(()->EvidenceLinker.render(bound,cancel));rejects(()->EvidenceLinker.candidates(d.claims.get(0),catalog,cancel));
   // Retry is a separate transaction; no shared cancelled state or asset mutation.
   check(EvidenceLinker.render(bound,new BoundAnswer.Cancel()).text.equals(rendered.text));
+  if(args.length>0){
+   java.nio.file.Path inputs=java.nio.file.Path.of(args[0]);for(String row:java.nio.file.Files.readAllLines(inputs.resolve("drafts.tsv")))if(row.startsWith("n08\t")){
+    String[] f=row.split("\t");BoundAnswer.Cancel transaction=new BoundAnswer.Cancel();BoundAnswer.Catalog actual=BindingHarness.catalog(inputs,"n08",transaction);BoundAnswer.Draft draft=BoundAnswer.parse(ScaleHarness.decode(f[1]),ScaleHarness.decode(f[2]),actual,Integer.parseInt(f[3]),transaction);
+    BoundAnswer.Rendered preview=EvidenceLinker.render(draft,transaction);check(preview.text.contains("Subject: Athens\nIt was a centre"));check(preview.links.size()==draft.claims.size());
+    for(int i=0;i<preview.links.size();i++){BoundAnswer.Link l=preview.links.get(i);check(preview.text.substring(l.start,l.end).equals("["+(i+1)+"]"));}
+    // Renderer preview only; this does not override the real n08 score withholding.
+   }
+  }
   System.out.println("Independent binding behavioral checks: "+checks);
  }
 }
