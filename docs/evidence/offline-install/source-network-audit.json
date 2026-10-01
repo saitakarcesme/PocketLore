@@ -1,0 +1,6 @@
+{
+  "scope": "Application Java sources, not test instrumentation or provenance URLs; supplemental to APK permission enforcement",
+  "patterns": "java\\.net\\.(?:Socket|URL|HttpURLConnection)|okhttp|retrofit|com\\.google\\.android\\.gms|com\\.google\\.firebase|android\\.webkit\\.WebView",
+  "hits": [],
+  "native_configuration": "CPU-only pinned llama.cpp build; servers/tools/examples/common/OpenSSL/RPC/CUDA/Vulkan disabled in checked CMakeLists.txt"
+}
