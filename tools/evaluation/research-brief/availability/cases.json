@@ -1,0 +1,14 @@
+[
+ {"id":"a01","question":"Can you report my latest genetic screening findings?","scope":"personal","expectation":"No private record exists in the supplied public editions; no quotes."},
+ {"id":"a02","question":"Show our test outcome from last week.","scope":"personal","expectation":"Possessive result request requires private evidence; no quotes."},
+ {"id":"a03","question":"Is the park accepting visitors right now?","scope":"current","expectation":"No live status source; no quotes."},
+ {"id":"a04","question":"Give the latest alert for magnetic activity.","scope":"current","expectation":"Dated reference is not an alert feed; no quotes."},
+ {"id":"a05","question":"At what hour will the next volcanic eruption begin?","scope":"predictive","expectation":"Future event request cannot be answered by general mechanisms; no quotes."},
+ {"id":"a06","question":"Predict the date of the next polarity reversal.","scope":"predictive","expectation":"No dated event forecast; no quotes."},
+ {"id":"a07","question":"Why should I carry a physical map as backup?","scope":"reference","expectation":"First-person advice is not a request for a private result; retain navigation paragraph."},
+ {"id":"a08","question":"How do chromosomes package DNA around histones?","scope":"reference","expectation":"Retain packaging passage without distant magnetic distractors."},
+ {"id":"a09","question":"What conditions allow core convection to sustain a magnetic field?","scope":"reference","expectation":"Retain energy requirement and feedback; do not shorten condition."},
+ {"id":"a10","question":"Compare magma with lava; then give the current eruption alert.","scope":"current","expectation":"Explicit whole-request withholding; disclose general parts also withheld, no silent partial completion."},
+ {"id":"a11","question":"Why can plate friction release energy in waves rather than encode DNA?","scope":"reference","expectation":"Constructed cross-topic false-premise/distractor control; do not infer causal relation between retrieved paragraphs."},
+ {"id":"a12","question":"How will DNA strands pair during cell division?","scope":"reference","expectation":"Generic prospective mechanism, not a dated forecast; preserve pairing explanation."}
+]
