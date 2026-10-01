@@ -12,7 +12,7 @@ public final class StalledDocumentsProvider extends DocumentsProvider {
     private volatile String state="idle";
     private volatile int opens;
     @Override public boolean onCreate(){
-        for(String kind:new String[]{"model","pack"})for(String mode:new String[]{"stall-empty","stall-prefix","short","retry"})
+        for(String kind:new String[]{"model","pack"})for(String mode:new String[]{"stall-empty","stall-prefix","short","retry","real"})
             getContext().grantUriPermission("org.pocketlore.app",DocumentsContract.buildDocumentUri("org.pocketlore.fixture.documents",kind+"-"+mode),android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION);
         return true;
     }
@@ -29,6 +29,7 @@ public final class StalledDocumentsProvider extends DocumentsProvider {
     }
     @Override public ParcelFileDescriptor openDocument(String id,String mode,CancellationSignal signal)throws FileNotFoundException {
         opens++;if(signal!=null)signal.throwIfCanceled();
+        if(id.equals("model-real"))return ParcelFileDescriptor.open(new File(getContext().getFilesDir(),"model.gguf"),ParcelFileDescriptor.MODE_READ_ONLY);
         try {
             ParcelFileDescriptor[] pipe=ParcelFileDescriptor.createPipe();CountDownLatch gate=release;
             new Thread(()->{

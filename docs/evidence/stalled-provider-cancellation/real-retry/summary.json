@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "x86_64 emulator provider cancellation, transport controls and same-Activity real model/pack retry; no physical acceptance",
+  "fixture_sha256": "1c0818856e39dea26aa41f3806087b5ffb837f6c8aa205c7bf950a81435707f5",
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "results_sha256": "e9506a40f81b4fcc6f56d1433e1c041dd54dec83e052a3611b69fa2e9c24fe04",
+  "artifacts": {
+    "app-debug.apk": {
+      "sha256": "cb5c11602f88a63e31e87a44b11a06310f01a1090f7f4c3ea925b879db66e751",
+      "bytes": 11769461
+    },
+    "app-debug-androidTest.apk": {
+      "sha256": "1974c14aa5b7a164a4198cebe983988b5e5f8708fb2a301b42684385566e778b",
+      "bytes": 252538
+    }
+  },
+  "max_cancel_ms": 48.530296,
+  "actual_saved_assets_unchanged": true
+}

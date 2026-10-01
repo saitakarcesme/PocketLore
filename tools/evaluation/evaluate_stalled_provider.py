@@ -28,6 +28,20 @@ def main():
     for package,directory in [('org.pocketlore.app','files/stalled-provider-tests'),('org.pocketlore.app.test','files')]:
         run(adb+['shell','run-as',package,'mkdir','-p',directory],package+'-mkdir.txt')
         run(adb+['shell','run-as',package,'sh','-c',"'cat > "+directory+"/reference.plpack'"],package+'-pack.txt',pack.read_bytes())
+    if not legacy:
+        extra=ROOT/'tools/evaluation/stalled-provider/activity-retry.json'
+        assert sha(extra)=='d22480f1d7bc1db7679667f1336ba26b9bf3de5b577d80172579ad2314f1005c'
+        extra_spec=json.loads(extra.read_text());assert before.decode().split()[0]==extra_spec['model_sha256']
+        # Stream the existing pinned app asset to the isolated provider; no model bytes enter Git or stdout.
+        with (out/'provision-real-model.txt').open('wb') as log:
+            source=subprocess.Popen(adb+['exec-out','run-as','org.pocketlore.app','cat','files/model.gguf'],stdout=subprocess.PIPE,stderr=log)
+            try:
+                dest=subprocess.run(adb+['shell','run-as','org.pocketlore.app.test','sh','-c',"'cat > files/model.gguf'"],stdin=source.stdout,stdout=log,stderr=log,timeout=120)
+                source.stdout.close();assert source.wait(timeout=10)==0 and dest.returncode==0
+            finally:
+                if source.poll() is None:source.kill();source.wait()
+        digest=run(adb+['shell','run-as','org.pocketlore.app.test','sha256sum','files/model.gguf'],'provider-model-hash.txt').decode().split()[0]
+        assert digest==extra_spec['model_sha256']
     run(adb+['shell','run-as','org.pocketlore.app','rm','-f','files/stalled-provider-tests/results.json'],'clear-old-result.txt')
     log=run(adb+['shell','am','instrument','-w','-e','legacy',str(legacy).lower(),'org.pocketlore.app.test/org.pocketlore.app.StalledProviderInstrumentation'],'instrumentation.txt')
     if b'INSTRUMENTATION_CODE: -1' not in log:
@@ -43,9 +57,9 @@ def main():
         assert all(r['returned_before_release'] and r['clean_before_release'] and r['saved_unchanged'] and r['cancel_ms']<spec['cancel_deadline_ms'] for r in cancels)
         assert all(r['opens']==0 if r['case']=='cancel-before-open' else r['provider_state_after_release']=='reader-closed' for r in cancels)
     if not legacy:
-        assert [(r['kind'],r['case']) for r in report['activity']]==[('model','stall-prefix-button-cancel'),('pack','stall-prefix-button-cancel'),('pack','same-activity-retry')]
+        assert [(r['kind'],r['case']) for r in report['activity']]==[('model','stall-prefix-button-cancel'),('pack','stall-prefix-button-cancel'),('model','same-activity-real-retry'),('pack','same-activity-retry')]
         assert all(r['cancel_to_idle_ms']<1500 and r['staging_removed'] and r['reader_closed'] for r in report['activity'][:2])
     assert len({r['worker_thread_id'] for r in report['rows'] if r['case']=='retry'})==1
-    summary={'status':report['status'],'scope':'x86_64 emulator document-provider transport; model retry is staging only, not native validation','fixture_sha256':sha(fixture),'pack_sha256':sha(pack),'results_sha256':sha(out/'results.json'),'artifacts':identities,'max_cancel_ms':max(r['cancel_ms'] for r in cancels),'actual_saved_assets_unchanged':before==after}
+    summary={'status':report['status'],'scope':'x86_64 emulator provider cancellation, transport controls and same-Activity real model/pack retry; no physical acceptance','fixture_sha256':sha(fixture),'pack_sha256':sha(pack),'results_sha256':sha(out/'results.json'),'artifacts':identities,'max_cancel_ms':max(r['cancel_ms'] for r in cancels),'actual_saved_assets_unchanged':before==after}
     (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary,indent=2))
 if __name__=='__main__':main()

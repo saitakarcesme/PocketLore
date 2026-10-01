@@ -65,6 +65,13 @@ public final class StalledProviderInstrumentation extends Instrumentation {
             provider("release");waitFor(()->"reader-closed".equals(provider("status").getString("state")),"Activity did not close reader");
             ui.put(new JSONObject().put("kind",kind).put("case","stall-prefix-button-cancel").put("cancel_to_idle_ms",latency).put("staging_removed",true).put("reader_closed",true));save(report);
         }
+        long retryStart=System.nanoTime();
+        runOnMainSync(()->{try{java.lang.reflect.Method m=NativePanel.class.getDeclaredMethod("importModel",Uri.class,long.class);m.setAccessible(true);m.invoke(panel,DocumentsContract.buildDocumentUri("org.pocketlore.fixture.documents","model-real"),491400032L);}catch(Exception e){throw new RuntimeException(e);}});
+        long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(45);while(panel.isBusy()&&System.nanoTime()<deadline)Thread.sleep(10);
+        require(!panel.isBusy()&&panel.hasModel(),"real model retry did not load");
+        android.widget.TextView modelStatus=(android.widget.TextView)field(panel,"state");
+        require(modelStatus.getText().toString().contains("Local model ready · SHA-256 74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"),"real model was not imported: "+modelStatus.getText());
+        ui.put(new JSONObject().put("kind","model").put("case","same-activity-real-retry").put("import_validate_promote_ms",(System.nanoTime()-retryStart)/1e6).put("status",modelStatus.getText().toString()));save(report);
         provider("reset");runOnMainSync(()->activity.onActivityResult(411,android.app.Activity.RESULT_OK,new android.content.Intent().setData(DocumentsContract.buildDocumentUri("org.pocketlore.fixture.documents","pack-retry"))));
         waitFor(()->{try{return !(Boolean)field(activity,"importing");}catch(Exception e){throw new RuntimeException(e);}},"Activity pack retry did not finish");
         android.widget.TextView status=(android.widget.TextView)field(activity,"packStatus");
