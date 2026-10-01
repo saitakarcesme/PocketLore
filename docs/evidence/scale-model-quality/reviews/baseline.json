@@ -289,6 +289,102 @@
       "obligations_complete": false,
       "fully_useful_draft": false,
       "assessment": "Only citation lists; no factual live-data invention but no meaningful absence explanation or answer."
+    },
+    "s37": {
+      "result_sha256": "f44bf5a36596ff8467cdc34e9a2539176fa03190c1b6b8ef3d7a7f16cb39777a",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correct complete redox-to-ATP statement with the establishing S1 citation after the sentence; machine requires citation placement and withholds it."
+    },
+    "s38": {
+      "result_sha256": "b15ba41fc7e160101a243aaa9bbc8fa439509b35ea5ac23f4dc27b2b2fd0e173",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Infers surviving vegetative bacteria from the Pasteur history, then contradicts the explicit spore-survival evidence with insufficient-evidence claims; unrelated fermentation text does not explain spores."
+    },
+    "s39": {
+      "result_sha256": "50b74801c05f4441adc1de505934e7b5e448e467a6db3e8467582170228437d5",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Mechanisms and purposes are factually supported, but literal complete-answer boilerplate remains and the final dairy-industry claim is in S5 rather than the cited S4; not a fully linked clean answer."
+    },
+    "s40": {
+      "result_sha256": "d58882d4386d93d3edc39e62e711f2f9fec05647dbad1ec7d68f3638e6158f9f",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Calls glucose an industrial fermentation end product where the excerpt names ethanol and lactate; temperature is correct but citation is detached and points to S5 instead of S4."
+    },
+    "s41": {
+      "result_sha256": "d817926c770c8dd7b15a65df3469e182709a72edf04fc24a69f8580cbe228960",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Mutually contradictory slots endorse and reject total spore destruction; S3 fermentation does not support that claim."
+    },
+    "s42": {
+      "result_sha256": "ceecd12db3a624a7dd09fd334d7ad176a2633c9c59b895c734c02b44c6e60c7a",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly withholds the absent bottle-specific microbial count; awkward prose but clear useful abstention, not a supported factual answer."
+    },
+    "s43": {
+      "result_sha256": "fc028aad3728a585d23fb36354b807a0ceb0e28aba16d136b9e38bf7fcbe9111",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Copied brightness facts are supported elsewhere, but S4/S1 do not establish the ratio and inverse scale, and the answer omits the negative-sign qualification requested."
+    },
+    "s44": {
+      "result_sha256": "0a867d26d0ff4ed667353a10f2a09042a3c4f633a0d934118117da26db67254f",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Complete supported citizen-science monitoring and discovery explanation from amateur-astronomy S1, but no citation is generated."
+    },
+    "s45": {
+      "result_sha256": "07fadcb1458abfbd34f492353dbfc914b7f8657654a6f30deeb9711410ecf64c",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Both descriptions are supported by S1/S3/S4, but no citations and an extra O3 violate the requested linked answer shape."
+    },
+    "s46": {
+      "result_sha256": "b00684459e714bbe0aa9d215cfea12b794fd87698291c9ac3e09696a092e5f89",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Ratio is correct but attributed to wrong excerpts; O2 supplies citation labels instead of naming observation types, and repeats prompt reading-order text."
+    },
+    "s47": {
+      "result_sha256": "33d41a3d274ff029ab91d82d54bcbd988f6b356dfa2d6b78dacdd38f8b562b96",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Repeats the false-premise question and prompt until the token limit without answering or correcting it; no substantive supported response."
+    },
+    "s48": {
+      "result_sha256": "0a16786a312ebad14544a6a80c35b1899f93bcbd6c8d1dba8aec32e2f5c112bc",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly withholds unidentified current-star brightness; useful absence handling, not a factual supported answer."
     }
   }
 }

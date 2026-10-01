@@ -81,6 +81,198 @@
       "obligations_complete": true,
       "fully_useful_draft": false,
       "assessment": "Correct green/brown inputs and vermicast definition/synonyms, but O2 cites S4 instead of the S5 paragraph that establishes those details; exact claim-source linkage is wrong."
+    },
+    "s11": {
+      "result_sha256": "65705e2b6e20766b64adde2228d8000d1e5a754efa475a3e1d469738cad1419b",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly corrects the worm-free premise using the vermicomposting definition in S4; subsequent sentence has paragraph support but machine requires sentence citation."
+    },
+    "s12": {
+      "result_sha256": "fe884c079abc22d0194aa778a589ad688375c479a51b1e4aa35f97c7d328fc64",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly withholds live local stock; useful absence handling, not a factual supported answer."
+    },
+    "s13": {
+      "result_sha256": "1a747af4eaadc24b6003deedae9b2ba5e8e0be32c09dffeae261d83cc4e6c621",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correct scion upper/rootstock lower roles with exact S1 support; screen candidate."
+    },
+    "s14": {
+      "result_sha256": "6d55f7576ebf642ad3295d08a2133e82279688d9cbaad917267683d386c7a9a9",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explains wound compartmentalization and pathogen/decay risk with the exact smaller-cut qualification from S5; source-supported paragraph, machine citation-placement withholding."
+    },
+    "s15": {
+      "result_sha256": "3ca5939ff7ab15a46b1820e0be97ec89a39524cab466903dd8a87525c2e40cbf",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Both joining and removal mechanisms plus their added details are established by S1 and S4 respectively; paragraph citations, machine withholds."
+    },
+    "s16": {
+      "result_sha256": "c58c5351b34df2cfaaf972ce0c2b5e5e7e23d8a13867826258844803865bf372",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Transfers the benefit of making small cuts to the reason for removing unwanted material generally; S5 discusses wound risk caused by cutting, not a general reason to prune unwanted material."
+    },
+    "s17": {
+      "result_sha256": "f39939912242676e624373348a604ce90829a4bbea6679c0a139f4df17f88156",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly rejects the premise and states required vascular union with S1 support; inosculation paraphrase remains within that source definition."
+    },
+    "s18": {
+      "result_sha256": "3951b20949380f74bcd76a8ef7ee5cfb6ecbfabb9e2cf788540631fbb94ba02f",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly withholds future local nursery price; useful abstention only."
+    },
+    "s19": {
+      "result_sha256": "ba722d34fdcf043cb131b2c2a390785f8236dc7cc60ac1aff72488744f1b1ef9",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly distinguishes one comprehensive codification from written law across documents, using the UK example established in S2."
+    },
+    "s20": {
+      "result_sha256": "617be70f869a2cfe713e9a8130cf90d3cae04eeabd1f63eeb338f1961a7f5401",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly contrasts symbolic heads with formal veto/appointment/dissolution powers from S5; machine withholds paragraph citation placement."
+    },
+    "s21": {
+      "result_sha256": "b10df91e69ef0cdb4395d562858847bdd0634a880f1662bd9fbc5f3a60e89d1f",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "S1 establishes constitutional legal/governance basis; S4 establishes legal limits on the monarch, including symbol-of-unity detail."
+    },
+    "s22": {
+      "result_sha256": "c84b8d7daf3c39887abf891b6fdd8ee435a6e608f2030b9c50f449c228854b42",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Reverses the codified/uncodified comprehensive-document distinction despite correctly describing variable monarch powers."
+    },
+    "s23": {
+      "result_sha256": "43110cbd039680de9f0042f0f4386e0575bd08182baa9b0bf0e4f54ada7061a3",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Rejects universal lack of policy power and names formal-power counterexamples established by S5."
+    },
+    "s24": {
+      "result_sha256": "79eb5c3c220b9aac0ad9e613a8d9e218bd05f064f4e6bff63351e44d5c164a6c",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly withholds the absent private current court decision; useful abstention only."
+    },
+    "s25": {
+      "result_sha256": "eb1fd666f20a2f67de6839c5251fd51d5da872c8e76b364e558c6c78a746fa6e",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Exact Aruba distance/direction and constituent-country relationship established by S1."
+    },
+    "s26": {
+      "result_sha256": "88f454a036cc7c1b5b46dbf5a65619877748f9da5ee66596ce7e0c82b3a07fbf",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct geographic correction, but sixth-smallest/largest-microstate additions come from S5 while only S4 is cited."
+    },
+    "s27": {
+      "result_sha256": "5f37dbbea4920ed6a6e994140615dcd0e0aba57fb2a461368ea69ad20f35024d",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Both locations/settings factually supported, but Aruba distances require S1 rather than cited S2; Andorra capital elevation requires S5 rather than cited S4."
+    },
+    "s28": {
+      "result_sha256": "c476b8325a4ca39292f613fc5ddb3e14f680c99620d3007a4a75ea7867fcc3b3",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Exact area and dry landscape from S2, and France/Spain borders from S4; screen candidate."
+    },
+    "s29": {
+      "result_sha256": "c1861dfff77c9b5e40cfd894cc116b83e07d5838ce6d5260447ae653c1a54453",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Provides the correct landlocked-Europe correction but frames contradictory evidence as insufficient rather than clearly rejecting the stated description; leaves the requested support judgment ambiguous."
+    },
+    "s30": {
+      "result_sha256": "7ccba8fb2891a9c705e259c011dc6aad0e0ba0d929828c1bd82ad18e6d2591e9",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly withholds live border waiting time; useful abstention only."
+    },
+    "s31": {
+      "result_sha256": "01dd9b51f557645825544905afa7641fb3134a973ed3cba2f86e48b291d87db0",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Complete regional-capital and coastal setting answer established by S1; machine false withholding remains separate."
+    },
+    "s32": {
+      "result_sha256": "b730dfd630b51eb2f63b7215cacf9e37ced955ba9969d00b053301cf85ed1de8",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explains democracy/learning importance through the exact classical influence and institutions in S5."
+    },
+    "s33": {
+      "result_sha256": "f824df81d5b80aed34c8c78f2853b7fad1c33ac6da21d4eee907e2555f38bacc",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correct separate Catalonia and Greece capital statuses with exact S1/S4 support; screen candidate."
+    },
+    "s34": {
+      "result_sha256": "e4b33a3aae9b54dd9648d1b28ed90033cc1227e2524b82f4373457c4dcf30018",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Both requested historical roles are supplied, but changes continued-to-be Catalonia capital into became-capital after joining Aragon, an unsupported temporal change."
     }
   }
 }
