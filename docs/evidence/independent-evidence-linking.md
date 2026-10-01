@@ -1,0 +1,17 @@
+# Independent evidence linking — task 221 repair
+
+Status: implementation and frozen execution in progress; no quality or product acceptance.
+
+The failed checkpoint `15a742f7680dbd1ecdb1adf8414cb687d4306cb3` was recovered onto the current repair branch without changing its sealed task 220/221 artifacts. The coordinator's task 222 specification is the repair strategy. The old 60 questions are not regenerated; all original drafts, same-model audits and eleven historical generated-claim regressions are replay inputs.
+
+Sixteen new paired public development questions and constructed claim probes were frozen in `2f04b00` before implementation and inference. These cover gardening, civics, history and astronomy, including subject, input/output, condition, time, negation, false-premise, formula/number and compound-tail failures. Constructed claims are labeled regression fixtures, never corpus facts. No private holdout is read.
+
+The independent verifier is `cross-encoder/nli-deberta-v3-small`, revision `fa2804872c3b4bd748f38c0185cc85775361e735`, original FP32 ONNX artifact SHA256 `59fd8dd78926e15907ab419303179e4196bdedd710e888773e2f0143fe430897` (568,032,787 bytes). Its pinned model card declares Apache-2.0 and training on SNLI/MultiNLI; the full license and model card are retained. ONNX Runtime runs locally on the CPU with six intra-operation threads and one inter-operation thread. This is an independently trained discriminative classifier, not an independent human reviewer and not proof of entailment.
+
+The fixed thresholds are entailment >=0.95 and contradiction <=0.02 for both the whole generated claim and every sentence. More than 512 input tokens fails closed without truncation. Selected citations are tried first, then each of at most six available passage candidates in source order; every candidate consists only of exact catalog spans. No fact is rewritten or unsupported tail removed. Every candidate input, raw logit, probability, token count, duration and failure will be retained. Visible question/subject headings precede unchanged generated prose so hidden metadata does not silently resolve an antecedent.
+
+New generation uses the same Qwen3 4B host candidate, SHA256 `7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5`, unchanged template and greedy CPU six-thread configuration, 4096 context,320 draft tokens and192 same-model audit tokens (comparison only). The controller uses independent scores, not that self-audit, for experimental eligibility. No extractive fallback is a generated success.
+
+The first environment attempt failed because ONNX Runtime1.23.2 had no Python3.14 wheel on the installed package index. Version1.24.1 was declared before classifier inference, preserving the original protocol and failed installation log. A test-call argument-order compile error was also preserved and fixed before the successful25-check behavioral run. These do not change questions, model pins or quality thresholds.
+
+Production remains Qwen2.5 0.5B. Neither the4B model nor this classifier is deployed into the Android answer flow; Android admission remains2GiB/2048context/256generation. The new shared Java controller and renderer are Android-compatible code compiled in the APK, but host replay is not selected-model Android execution. Selected4B admission/load/cancel/reload/resource qualification, verifier mobile runtime and resources, physical Android/GrapheneOS, independent source review and human acceptance remain open.
