@@ -1,0 +1,157 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :app
+Unable to initialize metrics, ensure /home/isa/.android is writable, details: /home/isa/.android/analytics.settings (Read-only file system)
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+
+> Task :app:buildPocketLoreIndex
+Pinned SQLite source verified
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/isa/Projects/PocketLore/downloads/sqlite/build-arm64-v8a
+Consolidate compiler generated dependencies of target pocketlore_index
+[100%] Built target pocketlore_index
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/isa/Projects/PocketLore/downloads/sqlite/build-x86_64
+Consolidate compiler generated dependencies of target pocketlore_index
+[100%] Built target pocketlore_index
+
+> Task :app:buildPocketLoreNative
+-- llama.cpp version: 0.2.0-dev
+CMAKE_BUILD_TYPE=Release
+-- Setting GGML_NATIVE_DEFAULT to OFF
+-- Warning: ccache not found - consider installing it for faster compilation or disable this warning with GGML_CCACHE=OFF
+-- CMAKE_SYSTEM_PROCESSOR: aarch64
+-- GGML_SYSTEM_ARCH: ARM
+-- Including CPU backend
+-- ARM detected
+-- Checking for ARM features using flags:
+--   -march=armv8-a
+-- Adding CPU backend variant ggml-cpu: -march=armv8-a 
+-- ggml version: 0.21.0
+-- ggml commit:  bb4caa754
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/isa/Projects/PocketLore/android/native-build/build/arm64-v8a
+Consolidate compiler generated dependencies of target ggml-base
+[  5%] Built target ggml-base
+Consolidate compiler generated dependencies of target ggml-cpu
+[ 12%] Built target ggml-cpu
+Consolidate compiler generated dependencies of target ggml
+[ 13%] Built target ggml
+Consolidate compiler generated dependencies of target llama
+[ 98%] Built target llama
+Consolidate compiler generated dependencies of target pocketlore
+[100%] Built target pocketlore
+-- llama.cpp version: 0.2.0-dev
+CMAKE_BUILD_TYPE=Release
+-- Setting GGML_NATIVE_DEFAULT to OFF
+-- Warning: ccache not found - consider installing it for faster compilation or disable this warning with GGML_CCACHE=OFF
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- GGML_SYSTEM_ARCH: x86
+-- Including CPU backend
+-- x86 detected
+-- Adding CPU backend variant ggml-cpu:  
+-- ggml version: 0.21.0
+-- ggml commit:  bb4caa754
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/isa/Projects/PocketLore/android/native-build/build/x86_64
+Consolidate compiler generated dependencies of target ggml-base
+[  5%] Built target ggml-base
+Consolidate compiler generated dependencies of target ggml-cpu
+[ 12%] Built target ggml-cpu
+Consolidate compiler generated dependencies of target ggml
+[ 13%] Built target ggml
+Consolidate compiler generated dependencies of target llama
+[ 98%] Built target llama
+Consolidate compiler generated dependencies of target pocketlore
+[100%] Built target pocketlore
+
+> Task :app:buildTravelPack
+{
+  "schema": 2,
+  "edition": "dc-regional-2026-10-01-v2",
+  "region": "Central Washington, DC bounded reference catalog",
+  "bounds": [
+    38.87,
+    -77.06,
+    38.91,
+    -77.0
+  ],
+  "count": 25,
+  "categories": {
+    "monument": 8,
+    "museum": 11,
+    "park-garden": 3,
+    "civic": 3
+  },
+  "sha256": "2240dbd96698266eb27a3f892e346b2e2154c186c097f8ebf79d3f8ede086a8e",
+  "source_lock_sha256": "0d3105f89698d52746dc1edc6c777c74ddbb860c11e3beb2012867fedaaa9772",
+  "license": "CC0-1.0",
+  "license_url": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+  "selection": "Only English-readable labels, English descriptions and one explicitly pinned Earth coordinate statement per entity. No media or live operating data. MLK Memorial has two coordinate statements: first source statement retained, not an entrance claim. National Gallery uses its English-readable mul label. Categories are editorial groupings.",
+  "hours": "Not supplied; offline hours may be stale",
+  "routing": "Unavailable; spherical distance only"
+}
+
+> Task :app:verifyKnowledgePack
+> Task :app:preBuild
+> Task :app:preDebugBuild
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+
+> Task :app:compileDebugJavaWithJavac
+Note: /home/isa/Projects/PocketLore/android/app/src/main/java/org/pocketlore/app/MainActivity.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:compressDebugAssets UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:dexBuilderDebug
+> Task :app:mergeDebugGlobalSynthetics UP-TO-DATE
+> Task :app:processDebugJavaRes NO-SOURCE
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :app:mergeDebugNativeLibs UP-TO-DATE
+> Task :app:stripDebugDebugSymbols UP-TO-DATE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :app:mergeProjectDexDebug
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleDebug
+
+[Incubating] Problems report is available at: file:///home/isa/Projects/PocketLore/android/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 8s
+38 actionable tasks: 8 executed, 30 up-to-date
+Final debug APK SHA-256: f072dd65970fc686b716fe27e8d9d8d203b310261ca8309339f4282e88bc1b3f

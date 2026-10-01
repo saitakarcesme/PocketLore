@@ -36,7 +36,7 @@ final class SharedShardUpdate {
     }
     static long admit(long retained, long newBytes, long metadata, long usable) throws Exception {
         long incoming = Math.addExact(newBytes, metadata);
-        long peak = Math.addExact(retained, Math.addExact(incoming, 128L*1024*1024));
+        long peak = Math.addExact(retained, Math.addExact(Math.addExact(incoming,newBytes), 128L*1024*1024));
         ScaleLibrary.check(peak <= ScaleLibrary.HARD, "Joint hard storage limit");
         ResourceStorage.requireSpace(incoming, usable);
         return peak;
@@ -77,7 +77,7 @@ final class SharedShardUpdate {
         File stage=Files.createTempDirectory(library.root.toPath(),"pending-").toFile();
         String id=ScaleLibrary.hex(MessageDigest.getInstance("SHA-256").digest(raw));
         File dest=new File(library.root,id);boolean moved=false,committed=false;
-        library.lastTemporaryPeak=raw.length;
+        library.lastTemporaryPeak=raw.length;library.lastPhysicalPeak=uniqueBytes(library.root.getParentFile());
         try {
             ScaleLibrary.write(new File(stage,"manifest.json"),raw);
             long copied=raw.length;byte[] buffer=new byte[65536];
@@ -108,6 +108,7 @@ final class SharedShardUpdate {
                     else Files.move(target.toPath(),object.toPath(),StandardCopyOption.ATOMIC_MOVE);
                 }
             }
+            library.lastPhysicalPeak=Math.max(library.lastPhysicalPeak,uniqueBytes(library.root.getParentFile()));
             ScaleLibrary.check(zip.getNextEntry()==null,"Unlisted delta content");
             ScaleLibrary.verifySchema(stage,manifest,cancel);ScaleLibrary.cancelled(cancel);
             ScaleLibrary.check(!dest.exists(),"Uncatalogued delta destination");
