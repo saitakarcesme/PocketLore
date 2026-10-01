@@ -446,6 +446,45 @@
           "assessment": "P4.1-P4.2 support Greek capital/largest and southernmost European-mainland capital."
         }
       ]
+    },
+    "s34": {
+      "result_sha256": "fb1919aa786b07084b5f1060f64d9a2eb7e3b351c24f17aa11af1f45c690fe11",
+      "all_claims_supported": false,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Barcelona temporal/role transfer survives typed qualifiers and source audit: becoming County capital is incorrectly placed after joining Aragon. This also fails the requested supported Crown-of-Aragon role.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P2.1 states County capital in Middle Ages; P2.2 says Principality capital continued after joining and city became main economic/administrative centre. Draft incorrectly binds the County-capital event to after joining."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P5.3 directly supports classical Athens democracy/arts/education/philosophy and Hellenistic/European influence."
+        }
+      ]
+    },
+    "s35": {
+      "result_sha256": "6c4303a0ad910d61d6a12528654682e874d9e6bcb0974c12c26dba9de859c936",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct raw false-premise correction distinguishes Spanish Barcelona from Athens, capital of Greece; W routing prevents a typed cited answer.",
+      "claims": []
+    },
+    "s36": {
+      "result_sha256": "6fc204caae9ef18170b2536392431d1b2671c82ecfb6c97b11dda8843acdda54",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct withholding of current opening hours/ticket prices; no such operational evidence in the selected historical city excerpts.",
+      "claims": []
     }
   }
 }
