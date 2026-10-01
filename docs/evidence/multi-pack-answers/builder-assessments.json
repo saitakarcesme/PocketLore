@@ -1,0 +1,95 @@
+{
+  "classification": "Builder source assessments; independent source review pending. Not automated entailment scores. Repeated recovery requests are not independent questions.",
+  "cases": [
+    {
+      "case": "reference",
+      "route": "FALLBACK",
+      "model_invoked": true,
+      "raw_complete_English_clause": true,
+      "raw_fully_supported_by_actual_citations": false,
+      "raw_complete_requested_answer": false,
+      "published_generated_fully_supported_complete_useful": false,
+      "builder_note": "Unsupported source attribution: the cited Constitution excerpt contains no headlamp advice. The hands-free fact appears only in uncited NPS S1; do not transfer it to S2."
+    },
+    {
+      "case": "science",
+      "route": "FALLBACK",
+      "model_invoked": true,
+      "raw_complete_English_clause": true,
+      "raw_fully_supported_by_actual_citations": false,
+      "raw_complete_requested_answer": false,
+      "published_generated_fully_supported_complete_useful": false,
+      "builder_note": "Incomplete comparison: omits underground versus surface, the actual distinguishing property. Different types of molten rock is not established by terminology/location definitions; builder does not certify this wording as supported."
+    },
+    {
+      "case": "cross-pack",
+      "route": "FALLBACK",
+      "model_invoked": true,
+      "raw_complete_English_clause": true,
+      "raw_fully_supported_by_actual_citations": false,
+      "raw_complete_requested_answer": false,
+      "published_generated_fully_supported_complete_useful": false,
+      "builder_note": "NPS supports hands-free only, not freedom from physical movement or the added focus-on-tasks benefit. Omits the entire requested magma/lava explanation."
+    },
+    {
+      "case": "disabled-science",
+      "route": "ABSTAINED",
+      "model_invoked": false,
+      "raw_complete_English_clause": false,
+      "raw_fully_supported_by_actual_citations": null,
+      "raw_complete_requested_answer": null,
+      "published_generated_fully_supported_complete_useful": false,
+      "builder_note": "Science excluded and no model invoked; safe withholding for missing active evidence."
+    },
+    {
+      "case": "absent",
+      "route": "ABSTAINED",
+      "model_invoked": false,
+      "raw_complete_English_clause": false,
+      "raw_fully_supported_by_actual_citations": null,
+      "raw_complete_requested_answer": null,
+      "published_generated_fully_supported_complete_useful": false,
+      "builder_note": "Retrieved chromosomes text supplies no cat chromosome count; safe withholding."
+    },
+    {
+      "case": "duplicate",
+      "route": "FALLBACK",
+      "model_invoked": true,
+      "raw_complete_English_clause": true,
+      "raw_fully_supported_by_actual_citations": false,
+      "raw_complete_requested_answer": false,
+      "published_generated_fully_supported_complete_useful": false,
+      "builder_note": "Same wrong-source draft as reference, identical prompt and raw bytes; not an independent quality success."
+    },
+    {
+      "case": "cancel-prefill",
+      "route": "CANCELLED",
+      "model_invoked": true,
+      "raw_complete_English_clause": false,
+      "raw_fully_supported_by_actual_citations": null,
+      "raw_complete_requested_answer": null,
+      "published_generated_fully_supported_complete_useful": false,
+      "builder_note": "No published draft; cancelled during observed native prefill before any output."
+    },
+    {
+      "case": "after-cancel",
+      "route": "FALLBACK",
+      "model_invoked": true,
+      "raw_complete_English_clause": true,
+      "raw_fully_supported_by_actual_citations": false,
+      "raw_complete_requested_answer": false,
+      "published_generated_fully_supported_complete_useful": false,
+      "builder_note": "Same incomplete and unestablished types wording as science; recovery establishes operation, not answer quality."
+    },
+    {
+      "case": "after-reload",
+      "route": "FALLBACK",
+      "model_invoked": true,
+      "raw_complete_English_clause": true,
+      "raw_fully_supported_by_actual_citations": false,
+      "raw_complete_requested_answer": false,
+      "published_generated_fully_supported_complete_useful": false,
+      "builder_note": "Same unsupported Constitution attribution as reference; reload establishes operation, not answer quality."
+    }
+  ]
+}
