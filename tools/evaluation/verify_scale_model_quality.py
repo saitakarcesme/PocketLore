@@ -16,6 +16,7 @@ def run_artifacts(d,receipt):
 def main():
  subprocess.run([sys.executable,str(F/'check_profiles.py')],check=True)
  protocol=json.loads((F/'protocol.json').read_text());hashed(F/'protocol.json',(F/'protocol.sha256').read_text().strip())
+ require('MODEL_SHA256=74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db' in (R/'tools/answers/model.env').read_text(),'Production baseline changed without a qualified integration')
  cases=protocol['cases'];require(len(cases)>=48 and len({c['topic'] for c in cases})>=8,'Frozen case breadth missing')
  require({c['kind'] for c in cases}>={'literal','explanation','comparison','multi-part','false-premise','absence'},'Case shapes missing')
  # Exact source bytes and rights, independently from retrieval or model judgments.

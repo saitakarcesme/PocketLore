@@ -281,6 +281,110 @@
       "obligations_complete": true,
       "fully_useful_draft": true,
       "assessment": "Explicitly rejects the Barcelona/Greece premise, links Barcelona to Catalonia/Spain with S1 and the actual Greek capital Athens with S4; complete supported correction."
+    },
+    "s36": {
+      "result_sha256": "077215254b948779dbe33deda1700a26d6d0d18b576db939faf5cd30773b5db4",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly withholds unprovided current opening hours and ticket prices; useful abstention only."
+    },
+    "s37": {
+      "result_sha256": "c6a4691e90f458a2303b0a6684f096e728754d04f9a1156b11d75c29956ca38c",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Complete redox/ATP and electron-transfer explanation established by S1; machine citation placement is separate from paragraph support."
+    },
+    "s38": {
+      "result_sha256": "d8a6532db6e7cd3b1befa7743d98b62275ec6a7f18f77c9178f3dc4eddd1e979",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Preserves the exact most-spores-survive qualification from S4, directly explaining why universal elimination is incorrect."
+    },
+    "s39": {
+      "result_sha256": "73b66d687b8c0cc3ace86e6f9018b8c3048ad25548fb7c91e4caba36bdd89b9e",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Both mechanisms, heat qualification, preservation purpose and spore-survival limit are fully established by S1/S4 respectively."
+    },
+    "s40": {
+      "result_sha256": "cdfff12b82a519d6e2c24fcfb849683a53ae3b906bbe5d89b0f4fd3f4e3e496e",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct product names and temperature, but ethanol/lactate are named in S2 rather than cited S1; pasteurization citation S4 is correct."
+    },
+    "s41": {
+      "result_sha256": "0f9053962aa1e4d77c3134abcc054507cb925703f54fe4d4f1613d547721939c",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly rejects universal spore destruction using the exact most-spores-survive qualification in S4; complete paragraph-supported correction."
+    },
+    "s42": {
+      "result_sha256": "5aff1af95483ff3a00f1930de28bbb5353a0bbd1399ecfd64ad40eb66f0ef0ab",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly withholds the unprovided bottle-specific microbial count; useful abstention only."
+    },
+    "s43": {
+      "result_sha256": "78bff06473bd98af1465fdcb1e113818bc4f8f0336df7c80a52b7f06a698b6bb",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Reverse-scale and ratio facts come from S5 rather than cited S4, and the requested negative-sign explanation is omitted. Copied TeX brackets also fail citation parsing."
+    },
+    "s44": {
+      "result_sha256": "9d7b2b8b5644fcc9d1f4297eb02834a6d29be73ddda60de0da5cb6404d5ba08b",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Complete monitoring/discovery contribution explanation established by S1; copied article footnote markers cause machine rejection but do not change the supported substantive claims. This is draft capability only."
+    },
+    "s45": {
+      "result_sha256": "b1c56b2172ed2ae06da112dd723830e1935cb214773eed771e11060129b7462f",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Both brightness dependencies and amateur observing/citizen-science activities are established by their exact S4/S1 paragraphs."
+    },
+    "s46": {
+      "result_sha256": "f3a3423a85d0787d3446f0ae52d0be8c24d8d94d6a1b90c419bc2ed3e31264a3",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Ratio and observing examples are factual and complete, but the magnitude ratio is established by S5 rather than cited S4; astronomy S1 correctly supports the observing examples."
+    },
+    "s47": {
+      "result_sha256": "1b7865acf817fe49ced54d22e283c2bc998be0b892d8303c041dcd547a917150",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly corrects the inverted magnitude/brightness relation with exact S5 support; copied formula brackets cause machine rejection but the substantive answer is complete and supported."
+    },
+    "s48": {
+      "result_sha256": "979428d31bed5429e6e8dfe5acfbd5b1d33124f2d5b7f324a1a16b4fe79eed8f",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly withholds absent current unidentified-star brightness; useful abstention only."
     }
   }
 }
