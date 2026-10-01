@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "frozen_utc": "2026-10-01T04:18:35.437383+00:00",
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "questions": [
+    "What helps protect skin and eyes from ultraviolet rays?",
+    "What navigation backups should I bring?"
+  ],
+  "warm_requests": 10,
+  "warmup_requests": 1,
+  "process_cold_requests": 5,
+  "sampling_target_ms": 250,
+  "fixtures": [
+    {
+      "copies": 1,
+      "file": "copies-1.plpack",
+      "archive_bytes": 153367,
+      "manifest_bytes": 28393,
+      "payload_bytes": 124750,
+      "documents": 10,
+      "passages": 186,
+      "sha256": "34fe70878a349c9f620dd90c70ee0a0df68814028981b87183b49630e43a86f4",
+      "expected": "accept"
+    },
+    {
+      "copies": 5,
+      "file": "copies-5.plpack",
+      "archive_bytes": 764391,
+      "manifest_bytes": 140417,
+      "payload_bytes": 623750,
+      "documents": 50,
+      "passages": 930,
+      "sha256": "cc40876e82012db5f9a08c6d466746961c83c9012471d2911bcbea5893422cc0",
+      "expected": "accept"
+    },
+    {
+      "copies": 20,
+      "file": "copies-20.plpack",
+      "archive_bytes": 3059553,
+      "manifest_bytes": 562469,
+      "payload_bytes": 2496860,
+      "documents": 200,
+      "passages": 3720,
+      "sha256": "1b6eebc9c83f19b36b8ac9ad4a057f0f727c470cc56fbd872602b9d9a428a358",
+      "expected": "accept"
+    },
+    {
+      "copies": 50,
+      "file": "copies-50.plpack",
+      "archive_bytes": 7653693,
+      "manifest_bytes": 1408529,
+      "payload_bytes": 6244940,
+      "documents": 500,
+      "passages": 9300,
+      "sha256": "b99841138cb4493c2f0af70b2fc32fe97705e181c6906e131182f9172a535a06",
+      "expected": "accept"
+    },
+    {
+      "copies": 74,
+      "file": "copies-74.plpack",
+      "archive_bytes": 11329006,
+      "manifest_bytes": 2085378,
+      "payload_bytes": 9243404,
+      "documents": 740,
+      "passages": 13764,
+      "sha256": "e21cbdf3f0a819215a114859b9ca2a04a89e62fee58e63cb59efea04258d2fab",
+      "expected": "accept"
+    },
+    {
+      "copies": 75,
+      "file": "copies-75.plpack",
+      "archive_bytes": 11482144,
+      "manifest_bytes": 2113580,
+      "payload_bytes": 9368340,
+      "documents": 750,
+      "passages": 13950,
+      "sha256": "290d286229eafb28e65b77a39115f4bca40aa0f90f2755e65b2086a9f7564606",
+      "expected": "reject"
+    }
+  ],
+  "definitions": {
+    "warm": "One priming real answer excluded from warm percentiles, then 10 requests in the same process and loaded model session. Native contexts are recreated per request; no retained KV cache claim.",
+    "cold": "Five distinct freshly force-stopped/restarted app processes, each loads saved pack/model and answers once; filesystem and OS caches are not flushed.",
+    "percentile": "Nearest rank sorted value at ceil(p*N)-1; no interpolation; groups separated.",
+    "total": "From retrieval start through AnswerEngine return; load reported separately. Cold ready-to-result also includes pack/model loading after instrumentation onStart, not Android launch overhead.",
+    "first_token": "First callback latency from AnswerEngine entry; request first token adds measured retrieval time. Unverified draft token, not first useful content.",
+    "memory": "Android Debug PSS plus /proc/self/status RSS/swap and Java used heap snapshots; sampled maxima, not allocator peaks; steady index deltas are process deltas after requested GC, not exclusive object size.",
+    "scale": "Increasing duplication-only stress packs, baseline old 186-passage index and real resident model held during isolated install. Source copies and stage coexist; no added factual coverage.",
+    "boundary": "Largest whole-source replication before any current import limit, plus next rejected replication. Other independent caps reported without pretending every cap is independently reachable."
+  }
+}
