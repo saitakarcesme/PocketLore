@@ -133,3 +133,23 @@ are measured host candidates, not selected phone releases or endorsements.
 The public evaluation quotes only attributed, licensed real passages from
 the existing reference/science packs; fixture expectations are review
 criteria and never factual corpus content or model answers.
+
+Corrected task-190 greater-capacity host candidates (no weights redistributed):
+Qwen team / Alibaba Cloud, Qwen3-4B-GGUF, Q4_K_M, Apache-2.0,
+revision bc640142c66e1fdd12af0bd68f40445458f3869b.
+SHA-256: 7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5.
+https://huggingface.co/Qwen/Qwen3-4B-GGUF/tree/bc640142c66e1fdd12af0bd68f40445458f3869b
+Upstream Qwen3-4B revision 1cfa9a7208912126459214e8b04321603b3df60c.
+Full upstream license: tools/evaluation/model-capability/licenses/qwen3-4b-LICENSE.txt.
+
+Microsoft, Phi-3.5-mini-instruct, revision
+2fe192450127e6a83f7441aef6e3ca586c338b77, MIT License.
+Community quantization by bartowski, Q4_K_M, GGUF repository revision
+6d70da17e749a471ccb62ade694486011a75cda3.
+SHA-256: e4165e3a71af97f1b4820da61079826d8752a2088e313af0c7d346796c38eff5.
+https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF/tree/6d70da17e749a471ccb62ade694486011a75cda3
+Full upstream license: tools/evaluation/model-capability/licenses/phi35-mini-LICENSE.txt.
+Exact artifact sizes, upstream license URLs and immutable pins are recorded
+in the adjacent candidate JSON files. Quantizations are not independently
+reproduced. Neither larger candidate is admitted as a phone release by this
+host-only experiment; current Android model admission remains 2 GiB.

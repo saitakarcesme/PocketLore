@@ -6,7 +6,7 @@ from builder_notes import NOTES
 R=Path(__file__).resolve().parents[3];E=R/'docs/evidence/model-capability'
 def main():
  spec=json.loads((R/'tools/evaluation/model-capability/protocol.json').read_text());reviews=[];summary={}
- for model in spec['execution']['models']:
+ for model in [e['id'] for e in json.loads((R/'tools/evaluation/model-capability/execution-v2.json').read_text())['models']]:
   rows=[]
   for c in spec['cases']:
    p=E/'run'/model/(c['id']+'.json');r=json.loads(p.read_text());support,complete,useful,note=NOTES[model][int(c['id'][-2:])]

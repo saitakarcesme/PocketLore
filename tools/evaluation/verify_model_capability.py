@@ -9,11 +9,16 @@ def require(test,message):
  if not test:raise ValueError(message)
 def validate(out,overrides=None):
  overrides=overrides or {}
- spec=json.loads((F/'protocol.json').read_text());manifest=json.loads((out/'manifest.json').read_text())
+ spec=json.loads((F/'protocol.json').read_text());execution=json.loads((F/'execution-v2.json').read_text());manifest=json.loads((out/'manifest.json').read_text())
  require(sha(F/'protocol.json')==manifest['protocol_sha256'],'protocol hash changed')
  require(len(spec['cases'])>=24 and len({c['topic'] for c in spec['cases']})>=4,'insufficient fixture breadth')
  require(set(c['type'] for c in spec['cases'])>={'comparison','explanation','multisource','qualifier','absent','contradiction'},'missing case type')
- require([r['model'] for r in manifest['receipts']]==spec['execution']['models'],'model set/order changed')
+ require(manifest['execution_sha256']==sha(F/'execution-v2.json'),'execution changed')
+ require([r['model'] for r in manifest['receipts']]==[m['id'] for m in execution['models']],'model set/order changed')
+ require(execution['baseline']=='qwen3-1.7b','wrong current baseline')
+ require(all(m['capacity_billion']>1.7 for m in execution['models'][1:]),'alternatives are not greater capacity')
+ require(manifest['host_threads_per_process']==6 and manifest['max_concurrency'] in [1,2],'host policy changed')
+ require(manifest['max_concurrency']==1 or manifest['admission_mem_available_bytes']>=12*1024**3,'parallel admission violated')
  require(sha(R/manifest['library_path'])==manifest['library_sha256'],'native library changed')
  for p,h in manifest['source_hashes'].items():require(sha(R/p)==h,'production/harness source changed: '+p)
  import zipfile,csv,io
@@ -27,15 +32,16 @@ def validate(out,overrides=None):
  prompts={};routes={};model_hashes=set()
  for receipt in manifest['receipts']:
   name=receipt['model'];pin=receipt['pin'];p=overrides.get(name,R/receipt['path'])
-  pin_file={'baseline':'baseline.json','qwen25-1.5b':'qwen25.json','qwen3-1.7b':'qwen3.json'}[name]
+  pin_file=next(m['pin'] for m in execution['models'] if m['id']==name)
   require(pin==json.loads((F/pin_file).read_text()),'model pin changed')
   require(p.stat().st_size==pin['bytes']<=4*1024**3,'model size changed: '+name)
   require(sha(p)==pin['sha256'],'model hash changed: '+name);model_hashes.add(pin['sha256'])
-  require(len(pin['revision'])==40 and pin['license']=='Apache-2.0','unpinned model rights')
+  require(len(pin['revision'])==40 and pin['license'].lower() in ['apache-2.0','mit'],'unpinned model rights')
   require(sha(R/receipt['license_path'])==receipt['license_sha256'],'license changed')
   require(receipt['exit_code']==0,'failed model process: '+name)
   for p,h in receipt['artifact_hashes'].items():require(sha(out/p)==h,'run artifact changed: '+p)
   load=json.loads((out/name/'load.json').read_text());require(load['load_ms']>0 and 'bb4caa7540188872173c44d161602d9271386413' in load['identity'],'no measured pinned runtime load')
+  require('threads=6' in load['identity'] and 'HOST SCREEN' in load['identity'],'wrong host runtime')
   require(len(list((out/name).glob('cap-*.json')))==24,'incomplete run')
   counts={}
   for c in spec['cases']:
@@ -53,6 +59,8 @@ def validate(out,overrides=None):
 
 def main():
  out=E/'run'
+ import subprocess
+ subprocess.run([sys.executable,str(F/'check_host_policy.py')],check=True)
  routes=validate(out)
  # Sealed fixture and result set. Hash manifests are frozen at checkpoint; this
  # detects accidental drift, not a hostile editor rewriting Git and all hashes.
@@ -70,14 +78,14 @@ def main():
     require(expected in str(e),'unexpected regression failure: '+str(e));regression.append(label);return
    raise ValueError('mutation accepted: '+label)
   copy=tmp/'run';shutil.copytree(out,copy)
-  victim=copy/'baseline/cap-01.json';original=victim.read_bytes();victim.unlink()
+  victim=copy/'qwen3-1.7b/cap-01.json';original=victim.read_bytes();victim.unlink()
   rejected('missing run record',lambda:validate(copy),'cap-01.json')
   victim.write_bytes(original+b' ')
   rejected('changed run record',lambda:validate(copy),'run artifact changed')
-  rejected('missing model',lambda:validate(out,{'baseline':tmp/'missing.gguf'}),'missing.gguf')
+  rejected('missing model',lambda:validate(out,{'qwen3-1.7b':tmp/'missing.gguf'}),'missing.gguf')
   # Same-length sparse file tests actual SHA comparison, not only file presence/size.
   corrupt=tmp/'changed.gguf'
-  with corrupt.open('wb') as f:f.truncate(491400032)
-  rejected('changed model bytes',lambda:validate(out,{'baseline':corrupt}),'model hash changed')
+  with corrupt.open('wb') as f:f.truncate(1834426016)
+  rejected('changed model bytes',lambda:validate(out,{'qwen3-1.7b':corrupt}),'model hash changed')
  print(json.dumps({'status':'PASS','scope':'72 real host outputs, exact evidence/model identity and tamper rejection; builder ratings are not independent entailment or acceptance','routes':routes,'mutation_rejections':regression},indent=2))
 if __name__=='__main__':main()
