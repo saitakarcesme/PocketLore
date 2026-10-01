@@ -14,7 +14,25 @@ import java.util.concurrent.*;
 abstract class NotebookActivity extends Activity {
     static final int EXPORT_DOCUMENT=702;
     static final ExecutorService IO=Executors.newSingleThreadExecutor();
+    // Provider calls never occupy the notebook database/source executor. No queued or
+    // unbounded replacement threads if a provider blocks inside openFileDescriptor.
+    private static final ThreadPoolExecutor EXPORT_IO=new ThreadPoolExecutor(1,1,0L,TimeUnit.MILLISECONDS,new SynchronousQueue<>());
+    static final class ExportJob {final java.util.concurrent.atomic.AtomicBoolean cancelled=new java.util.concurrent.atomic.AtomicBoolean();}
+    volatile ExportJob exportJob;
+    android.widget.Button cancelExport;
     TextView operation;
+    void cancelExport(){ExportJob job=exportJob;if(job!=null){job.cancelled.set(true);message("Cancelling export… A partial destination may remain; saved records are unchanged.");}}
+    private void exportControl(boolean visible){
+        if(operation==null||!(operation.getParent() instanceof android.view.ViewGroup))return;
+        android.view.ViewGroup parent=(android.view.ViewGroup)operation.getParent();
+        if(cancelExport==null||cancelExport.getParent()!=parent){
+            cancelExport=new android.widget.Button(this);cancelExport.setText("Cancel export");cancelExport.setMinHeight(ReaderUi.dp(this,48));
+            cancelExport.setOnClickListener(v->cancelExport());parent.addView(cancelExport,parent.indexOfChild(operation)+1);
+        }
+        cancelExport.setVisibility(visible?android.view.View.VISIBLE:android.view.View.GONE);
+    }
+    @Override protected void onDestroy(){ExportJob job=exportJob;if(job!=null)job.cancelled.set(true);super.onDestroy();}
+
     String pendingExport;
     void message(String s){if(operation!=null){operation.setVisibility(android.view.View.VISIBLE);operation.setText(s);operation.post(()->operation.requestRectangleOnScreen(new android.graphics.Rect(0,0,operation.getWidth(),operation.getHeight()),false));}}
     @Override public void onCreate(Bundle state){super.onCreate(state);if(state!=null)pendingExport=state.getString("export");}
@@ -42,6 +60,20 @@ abstract class NotebookActivity extends Activity {
     @Override protected void onActivityResult(int request,int result,Intent data){super.onActivityResult(request,result,data);if(request!=EXPORT_DOCUMENT)return;
         if(result!=RESULT_OK||data==null||data.getData()==null){message("Export cancelled. Saved records are unchanged.");pendingExport=null;return;}
         String name=pendingExport;pendingExport=null;Uri uri=data.getData();if(name==null||!name.matches("notebook-[a-f0-9-]+\\.md")){message("Export expired. Prepare the notebook again.");return;}
-        message("Writing document…");work(()->{try(InputStream in=new FileInputStream(new File(new File(getCacheDir(),"notebook-exports"),name));OutputStream out=getContentResolver().openOutputStream(uri,"wt")){if(out==null)throw new IOException("Document provider returned no output");byte[] bytes=new byte[16384];int n;while((n=in.read(bytes))!=-1)out.write(bytes,0,n);out.flush();}runOnUiThread(()->message("Notebook exported. Source metadata and notes are included."));});
+        writeDocument(new File(new File(getCacheDir(),"notebook-exports"),name),uri);
+    }
+    void writeDocument(File source,Uri uri){
+        if(exportJob!=null){message("An export is still stopping. Saved records remain available.");return;}
+        ExportJob job=new ExportJob();exportJob=job;message("Writing document…");exportControl(true);
+        try{EXPORT_IO.execute(()->{
+            String outcome;
+            try(InputStream in=new FileInputStream(source);OutputStream out=DocumentOutput.open(getContentResolver(),uri,job.cancelled::get)){
+                byte[] bytes=new byte[16384];int n;while((n=in.read(bytes))!=-1){PersonalText.check(job.cancelled::get);out.write(bytes,0,n);}
+                PersonalText.check(job.cancelled::get);out.flush();
+                outcome="Notebook exported. Source metadata and notes are included.";
+            }catch(Exception e){outcome=job.cancelled.get()?"Export cancelled. A partial destination may remain; saved records are unchanged.":"Export failed: "+e.getMessage()+". A partial destination may remain; saved records are unchanged.";}
+            final String result=outcome;
+            runOnUiThread(()->{if(exportJob==job){exportJob=null;if(!isDestroyed()){exportControl(false);message(result);}}});
+        });}catch(RejectedExecutionException e){exportJob=null;exportControl(false);message("Another export is still stopping. Try again after the document provider responds; saved records remain available.");}
     }
 }

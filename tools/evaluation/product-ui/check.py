@@ -29,7 +29,7 @@ def main():
    for name in names:
     if name.endswith(('.png','.txt','.md')):run(ADB+['exec-out','run-as',PKG,'cat','files/product-ui-'+mode+'/'+name],label+'/'+name)
    assert report['status']=='PASS',(out,report.get('error'));assert report['activity_font_scale']==float(scale)
-   assert {'Research test invoked no model','Source identity retained','Notebook survives new database connection','Export retains source, date and note','Share provider rejects writes','Draft restored without relabeling previous answer','Unavailable brief contains no source quotation','Accepted attachment route opens'}.issubset(report['checks'])
+   assert {'Research test invoked no model','Source identity retained','Notebook survives new database connection','Export retains source, date and note','Share provider rejects writes','Draft restored without relabeling previous answer','Unavailable brief contains no source quotation','Accepted attachment route opens','Real provider pipe remains blocked during export','Source opening and note persistence survive blocked destination','Cancelled export closes provider writer descriptor','Retry destination matches exact source bytes','Activity destruction closes blocked writer'}.issubset(report['checks'])
    reports.append({'mode':label,'sha256':sha(out/('report-'+label+'.json')),'checks':len(report['checks'])})
   run(ADB+['shell','am','force-stop',PKG],'cold-stop.txt');mode='restart-'+stamp
   run(ADB+['shell','am','instrument','-w','-e','mode',mode,PKG+'.test/'+PKG+'.ProductUiInstrumentation'],'cold-runtime.txt');cold=json.loads(run(ADB+['exec-out','run-as',PKG,'cat','files/product-ui-'+mode+'/report.json'],'cold-report.json'));assert cold['status']=='PASS'
