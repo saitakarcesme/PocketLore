@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "wiki-02",
+  "manifest": "d5c51bde5fde4992eeabed49efc76d6fea60bc5e9ee67d1489d0ec1bf40ae9a6",
+  "pid": 23393,
+  "kind": "wiki",
+  "shards": [
+    "000_00002"
+  ],
+  "metadata_only": false,
+  "import_ms": 5737.076904,
+  "owned_before": 404029692,
+  "owned_after": 1848756332,
+  "observed_precommit": 1848725567,
+  "new_bytes_written": 1444695875,
+  "usable_bytes": 386367488,
+  "source_identity": "d5c51bde5fde4992eeabed49efc76d6fea60bc5e9ee67d1489d0ec1bf40ae9a6:000_00002:330:1295766707:7859BE8F97D90D7421CCE146314787923AF2C5C47BA4D9AF6F53F57420FE28BC",
+  "source_sha256": "7859BE8F97D90D7421CCE146314787923AF2C5C47BA4D9AF6F53F57420FE28BC",
+  "source_preview": "# Actrius\nActresses (Catalan: Actrius) is a 1997 Catalan language Spanish drama film produced and directed by Ventura Pons and based on the award-winning stage play E.R. by Josep Maria Benet i Jornet. The film has no male actors, with all roles played by females. The film was produced in 1996.\n",
+  "documents": 444152,
+  "query_and_inspect_ms": 9.750615,
+  "pss_kib": 31116
+}

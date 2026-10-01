@@ -1,0 +1,92 @@
+{
+  "aliases": "redirect-aliases.sqlite",
+  "collection_key": "rolling-wiki",
+  "documents": 432334,
+  "files": [
+    {
+      "bytes": 22240,
+      "path": "CC-BY-SA-3.0.txt",
+      "payload": false,
+      "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f"
+    },
+    {
+      "bytes": 20138,
+      "path": "CC-BY-SA-4.0.txt",
+      "payload": false,
+      "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+    },
+    {
+      "bytes": 7048,
+      "path": "CC0-1.0.txt",
+      "payload": false,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "bytes": 3362,
+      "path": "NOTICE.txt",
+      "payload": false,
+      "sha256": "9230104a82a2be2b9f58cf774011d4e6cc5dd3c64b5e6e74a23b8dd2aa01fd18"
+    },
+    {
+      "bytes": 16982,
+      "path": "provenance.json",
+      "payload": false,
+      "sha256": "4bf267188415f053be26379030d0d6698bf09a392a02e9bbc6286879200a4e66"
+    },
+    {
+      "bytes": 1583,
+      "path": "redirect-aliases.json",
+      "payload": false,
+      "sha256": "8a28c043058ba1d9a95e4fed5f8a85233bb749b9dcb39ab930a3c43785056e40"
+    },
+    {
+      "bytes": 403890176,
+      "path": "redirect-aliases.sqlite",
+      "payload": false,
+      "sha256": "a691091bc7892155a4e6381d322070076dd6a6064b7a2a23be99e95898b76a12"
+    },
+    {
+      "bytes": 535,
+      "path": "summary.json",
+      "payload": false,
+      "sha256": "bf047deaa8fead0336026658fe92b7b905b09be46f68c0782123afea43f3fe26"
+    },
+    {
+      "bytes": 739790849,
+      "path": "000_00010/articles.blocks",
+      "payload": true,
+      "sha256": "0a1be163387c68e60c7b0d0db36a77c8cf530e20c597d4234e573b2ca783153e"
+    },
+    {
+      "bytes": 672587776,
+      "path": "000_00010/catalog.sqlite",
+      "payload": true,
+      "sha256": "633861d60dc3633e02192768b6f264d064e89418a4af4159967dab48a3fd331b"
+    },
+    {
+      "bytes": 1214,
+      "path": "000_00010/measurement.json",
+      "payload": true,
+      "sha256": "93de146bdf7e75af508588df34eeda3aa9ce64cb80aa5505cec39f4563436e94"
+    }
+  ],
+  "full_articles": 81876,
+  "generation_allowed": false,
+  "installed_bytes": 1816341903,
+  "kind": "wiki",
+  "label": "Rolling compatibility sweep; not full installation",
+  "leads": 350458,
+  "metadata_only": false,
+  "probe": {
+    "id": "309",
+    "source_sha256": "9254DE55A26C76EE2C7CF545E2F9C07BF37B121498BD2A6FC6316E7CB140B770",
+    "title": "An American in Paris"
+  },
+  "replaces": "ad846739a5ad1d92c7ca2b1ba813c3d5a243fa3c97c2d9ec886c63c3b35d8141",
+  "rights_status": "unreviewed_source_specific_terms; browse_only",
+  "shards": [
+    "000_00010"
+  ],
+  "source_inventory_sha256": "5160f3a8fa683065707aaa70ccaa87ad475cd32d87561cc70e3a977332835df5",
+  "version": 2
+}

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "label": "wiki-08-retire",
+  "manifest": "34beb1d0f4e4c82cd8cbc78a161e799aa8004a2c5f16f85fc0cbf3e44be7fab7",
+  "pid": 23935,
+  "kind": "wiki",
+  "shards": [],
+  "metadata_only": true,
+  "import_ms": 1096.54278,
+  "owned_before": 1834157497,
+  "owned_after": 404259068,
+  "observed_precommit": 1834159500,
+  "new_bytes_written": 2003,
+  "usable_bytes": 1830883328,
+  "pss_kib": 30678
+}

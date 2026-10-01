@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "places-03",
+  "manifest": "f34377a4390511f69164b1e5528e208e71c1937dfa53325ade490993963d3eb5",
+  "pid": 24797,
+  "kind": "places",
+  "shards": [
+    "compact-03.sqlite"
+  ],
+  "metadata_only": false,
+  "import_ms": 4050.907277,
+  "owned_before": 121014596,
+  "owned_after": 1245301501,
+  "observed_precommit": 1245271751,
+  "new_bytes_written": 1124257155,
+  "usable_bytes": 989818880,
+  "nearby_count": 1,
+  "source_identity": "f34377a4390511f69164b1e5528e208e71c1937dfa53325ade490993963d3eb5:compact-03.sqlite:86385eb9-4637-4318-9ff4-3d44f37d9aa0:1",
+  "source": "Westside Baptist Church\nchristian_place_of_worship\nStraight-line distance: 0.000 km\nCurrent hours and diet suitability: unknown. Routing unavailable.\nSnapshot status is not live availability.\nEdition\/source identity: f34377a4390511f69164b1e5528e208e71c1937dfa53325ade490993963d3eb5:compact-03.sqlite:86385eb9-4637-4318-9ff4-3d44f37d9aa0:1\nSource release: \"2026-09-23.1\"\nSource provenance and attribution (unaltered retained fields):\n{\"id\":\"86385eb9-4637-4318-9ff4-3d44f37d9aa0\",\"confidence\":0.9882882237434387,\"websites\":null,\"emails\":null,\"socials\":[\"https:\\\/\\\/www.facebook.com\\\/1587794581273799\"],\"phones\":null,\"brand\":{\"wikidata\":null,\"names\":{\"primary\":null,\"common\":null,\"rules\":null}},\"addresses\":[{\"freeform\":\"925 Ripley Rd\",\"locality\":\"Baldwyn\",\"postcode\":\"38824-1016\",\"region\":\"MS\",\"country\":\"US\"}],\"names\":{\"primary\":\"Westside Baptist Church\",\"common\":null,\"rules\":null},\"sources\":[{\"property\":\"\",\"dataset\":\"meta\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":\"1587794581273799\",\"update_time\":\"2026-09-14T00:00:00.000Z\",\"confidence\":0.9882882237434387,\"between\":null,\"provider\":\"meta\",\"resource\":\"meta\",\"version\":\"2026-09-14\"},{\"property\":\"\\\/properties\\\/confidence\",\"dataset\":\"Overture\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":null,\"update_time\":\"2026-09-17T22:52:12Z\",\"confidence\":null,\"between\":null,\"provider\":\"overture\",\"resource\":\"confidence_calculation\",\"version\":\"2026-09-17\"},{\"property\":\"\\\/properties\\\/operating_status\",\"dataset\":\"Overture-signals\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":\"7d2627c4-e165-42cf-aeb8-3d2896ed6b01\",\"update_time\":\"2026-09-14T15:43:16Z\",\"confidence\":1,\"between\":null,\"provider\":\"overture\",\"resource\":\"operating_status_signal\",\"version\":\"2026-09-14\"}],\"operating_status\":\"open\",\"basic_category\":\"christian_place_of_worship\",\"taxonomy\":{\"primary\":\"christian_place_of_worship\",\"hierarchy\":[\"cultural_and_historic\",\"place_of_worship\",\"christian_place_of_worship\"],\"alternates\":null},\"version\":3,\"bbox\":{\"xmin\":-88.64909362792969,\"xmax\":-88.64908599853516,\"ymin\":34.52037048339844,\"ymax\":34.5203742980957}}\nGeoNames city lookup: CC BY 4.0; city proximity is not municipal containment.\nSource-specific terms are retained in collection notices; no generated answer clearance.",
+  "source_records": 5124095,
+  "query_and_inspect_ms": 298.319495,
+  "pss_kib": 54079
+}

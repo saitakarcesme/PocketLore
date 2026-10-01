@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "places-11",
+  "manifest": "b5f6abf570a6836c3a2fb11f1a4e2a25ae283f7a67317f4645492692a78ad245",
+  "pid": 25456,
+  "kind": "places",
+  "shards": [
+    "compact-11.sqlite"
+  ],
+  "metadata_only": false,
+  "import_ms": 3634.659791,
+  "owned_before": 121276740,
+  "owned_after": 1116482298,
+  "observed_precommit": 1116452548,
+  "new_bytes_written": 995175808,
+  "usable_bytes": 1118638080,
+  "nearby_count": 3,
+  "source_identity": "b5f6abf570a6836c3a2fb11f1a4e2a25ae283f7a67317f4645492692a78ad245:compact-11.sqlite:490a27f6-bf14-4fef-9aae-94fa3a832301:1",
+  "source": "Tierheilpraxis\nveterinarian\nStraight-line distance: 0.000 km\nCurrent hours and diet suitability: unknown. Routing unavailable.\nSnapshot status is not live availability.\nEdition\/source identity: b5f6abf570a6836c3a2fb11f1a4e2a25ae283f7a67317f4645492692a78ad245:compact-11.sqlite:490a27f6-bf14-4fef-9aae-94fa3a832301:1\nSource release: \"2026-09-23.1\"\nSource provenance and attribution (unaltered retained fields):\n{\"id\":\"490a27f6-bf14-4fef-9aae-94fa3a832301\",\"confidence\":0.996836200095115,\"websites\":[\"http:\\\/\\\/www.tierheilpraxis-thissen.de\\\/\"],\"emails\":null,\"socials\":null,\"phones\":[\"+492163577873\"],\"brand\":null,\"addresses\":[{\"freeform\":\"Birgen 32\",\"locality\":\"Schwalmtal\",\"postcode\":\"41366\",\"region\":\"NW\",\"country\":\"DE\"}],\"names\":{\"primary\":\"Tierheilpraxis\",\"common\":null,\"rules\":null},\"sources\":[{\"property\":\"\",\"dataset\":\"BrightQuery\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":\"33597365268\",\"update_time\":\"2026-09-17T20:01:51.007Z\",\"confidence\":0.9097222089767456,\"between\":null,\"provider\":\"brightquery\",\"resource\":\"brightquery\",\"version\":\"2026-09-08\"},{\"property\":\"\\\/properties\\\/confidence\",\"dataset\":\"Overture\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":null,\"update_time\":\"2026-09-17T22:52:12Z\",\"confidence\":null,\"between\":null,\"provider\":\"overture\",\"resource\":\"confidence_calculation\",\"version\":\"2026-09-17\"}],\"operating_status\":\"open\",\"basic_category\":\"animal_or_pet_service\",\"taxonomy\":{\"primary\":\"veterinarian\",\"hierarchy\":[\"lifestyle_services\",\"animal_or_pet_service\",\"veterinary_care\",\"veterinarian\"],\"alternates\":null},\"version\":6,\"bbox\":{\"xmin\":6.288084983825684,\"xmax\":6.2880859375,\"ymin\":51.22753143310547,\"ymax\":51.2275390625}}\nGeoNames city lookup: CC BY 4.0; city proximity is not municipal containment.\nSource-specific terms are retained in collection notices; no generated answer clearance.",
+  "source_records": 5088275,
+  "query_and_inspect_ms": 365.175921,
+  "pss_kib": 53865
+}

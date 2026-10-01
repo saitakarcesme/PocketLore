@@ -1,0 +1,92 @@
+{
+  "aliases": "redirect-aliases.sqlite",
+  "collection_key": "rolling-wiki",
+  "documents": 444152,
+  "files": [
+    {
+      "bytes": 22240,
+      "path": "CC-BY-SA-3.0.txt",
+      "payload": false,
+      "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f"
+    },
+    {
+      "bytes": 20138,
+      "path": "CC-BY-SA-4.0.txt",
+      "payload": false,
+      "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+    },
+    {
+      "bytes": 7048,
+      "path": "CC0-1.0.txt",
+      "payload": false,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "bytes": 3362,
+      "path": "NOTICE.txt",
+      "payload": false,
+      "sha256": "9230104a82a2be2b9f58cf774011d4e6cc5dd3c64b5e6e74a23b8dd2aa01fd18"
+    },
+    {
+      "bytes": 16982,
+      "path": "provenance.json",
+      "payload": false,
+      "sha256": "4bf267188415f053be26379030d0d6698bf09a392a02e9bbc6286879200a4e66"
+    },
+    {
+      "bytes": 1583,
+      "path": "redirect-aliases.json",
+      "payload": false,
+      "sha256": "8a28c043058ba1d9a95e4fed5f8a85233bb749b9dcb39ab930a3c43785056e40"
+    },
+    {
+      "bytes": 403890176,
+      "path": "redirect-aliases.sqlite",
+      "payload": false,
+      "sha256": "a691091bc7892155a4e6381d322070076dd6a6064b7a2a23be99e95898b76a12"
+    },
+    {
+      "bytes": 535,
+      "path": "summary.json",
+      "payload": false,
+      "sha256": "bf047deaa8fead0336026658fe92b7b905b09be46f68c0782123afea43f3fe26"
+    },
+    {
+      "bytes": 759119865,
+      "path": "000_00002/articles.blocks",
+      "payload": true,
+      "sha256": "fac4ef3267e1205f67913893d05731735b2b92fc14504543c59bb07de68e7722"
+    },
+    {
+      "bytes": 685572096,
+      "path": "000_00002/catalog.sqlite",
+      "payload": true,
+      "sha256": "771b18c7ce918d40cf03c6949d68e9232b77d8b8a48c5b407809911c57e76e17"
+    },
+    {
+      "bytes": 1170,
+      "path": "000_00002/measurement.json",
+      "payload": true,
+      "sha256": "f5d4e29f818133370f5c50c48287ba652a26849570efaf6f646896a05ec70cdf"
+    }
+  ],
+  "full_articles": 84314,
+  "generation_allowed": false,
+  "installed_bytes": 1848655195,
+  "kind": "wiki",
+  "label": "Rolling compatibility sweep; not full installation",
+  "leads": 359838,
+  "metadata_only": false,
+  "probe": {
+    "id": "330",
+    "source_sha256": "7859BE8F97D90D7421CCE146314787923AF2C5C47BA4D9AF6F53F57420FE28BC",
+    "title": "Actrius"
+  },
+  "replaces": "d0cb744c3c2e18b09c7e3df7b2a2194aa0e3025caddc7389068fe892e7b1cfff",
+  "rights_status": "unreviewed_source_specific_terms; browse_only",
+  "shards": [
+    "000_00002"
+  ],
+  "source_inventory_sha256": "5160f3a8fa683065707aaa70ccaa87ad475cd32d87561cc70e3a977332835df5",
+  "version": 2
+}

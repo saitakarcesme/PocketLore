@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "places-13",
+  "manifest": "b2cec4eba85f212375e38f6e3788f8950cf1d777b4e272d4e8e63b0d0d150acf",
+  "pid": 25619,
+  "kind": "places",
+  "shards": [
+    "compact-13.sqlite"
+  ],
+  "metadata_only": false,
+  "import_ms": 3666.142503,
+  "owned_before": 121342276,
+  "owned_after": 1132227337,
+  "observed_precommit": 1132197587,
+  "new_bytes_written": 1010855311,
+  "usable_bytes": 1102893056,
+  "nearby_count": 1,
+  "source_identity": "b2cec4eba85f212375e38f6e3788f8950cf1d777b4e272d4e8e63b0d0d150acf:compact-13.sqlite:bfd01a42-92a7-43f9-a7d3-0cc7fb3157b4:1",
+  "source": "Vostok İstasyonu\nhistoric_site\nStraight-line distance: 0.000 km\nCurrent hours and diet suitability: unknown. Routing unavailable.\nSnapshot status is not live availability.\nEdition\/source identity: b2cec4eba85f212375e38f6e3788f8950cf1d777b4e272d4e8e63b0d0d150acf:compact-13.sqlite:bfd01a42-92a7-43f9-a7d3-0cc7fb3157b4:1\nSource release: \"2026-09-23.1\"\nSource provenance and attribution (unaltered retained fields):\n{\"id\":\"bfd01a42-92a7-43f9-a7d3-0cc7fb3157b4\",\"confidence\":0.8060638308525085,\"websites\":null,\"emails\":null,\"socials\":[\"https:\\\/\\\/www.facebook.com\\\/470635469714691\"],\"phones\":null,\"brand\":{\"wikidata\":null,\"names\":{\"primary\":null,\"common\":null,\"rules\":null}},\"addresses\":[{\"freeform\":null,\"locality\":\"Vostok Station\",\"postcode\":null,\"region\":null,\"country\":\"AQ\"}],\"names\":{\"primary\":\"Vostok İstasyonu\",\"common\":null,\"rules\":null},\"sources\":[{\"property\":\"\",\"dataset\":\"meta\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":\"470635469714691\",\"update_time\":\"2026-09-14T00:00:00.000Z\",\"confidence\":0.8060638308525085,\"between\":null,\"provider\":\"meta\",\"resource\":\"meta\",\"version\":\"2026-09-14\"},{\"property\":\"\\\/properties\\\/confidence\",\"dataset\":\"Overture\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":null,\"update_time\":\"2026-09-17T22:52:12Z\",\"confidence\":null,\"between\":null,\"provider\":\"overture\",\"resource\":\"confidence_calculation\",\"version\":\"2026-09-17\"}],\"operating_status\":null,\"basic_category\":\"historic_site\",\"taxonomy\":{\"primary\":\"historic_site\",\"hierarchy\":[\"cultural_and_historic\",\"historic_site\"],\"alternates\":null},\"version\":9,\"bbox\":{\"xmin\":106.83732604980469,\"xmax\":106.83734130859375,\"ymin\":-78.46442413330078,\"ymax\":-78.46441650390625}}\nGeoNames city lookup: CC BY 4.0; city proximity is not municipal containment.\nSource-specific terms are retained in collection notices; no generated answer clearance.",
+  "source_records": 5047272,
+  "query_and_inspect_ms": 293.101179,
+  "pss_kib": 52604
+}

@@ -1,5 +1,7 @@
 # Task301: shared shards and full-inventory validation
 
+Latest strategy-change result: all31 complete primary shards now have actual rolling Android compatibility evidence, with shared metadata retained between shards. This is not simultaneous full installation. [Strategy, raw evidence and limitations](301-scale-inventory-and-shard-updates-strategy-change.md) supersede the earlier unexecuted-shard status. Current APK is43894babe475f2719f3b2a732755b16860f88bee781fb86b5e99c850cbdb30ee; the build and rolling-sweep checker pass, while the required full-inventory verifier still exits1 for insufficient persistent capacity.
+
 Status: **independent rig work measured; full Android installation remains blocked**. The required Android build passes. The required inventory verifier passes its host, integrity and Android subset/update checks, then deliberately exits 1 because the full inventory and full-scale update peak have not been measured on an approved Android environment. This is not release or product acceptance.
 
 The final APK is `a0cebabd78b9246fa5e1272e4bea1587c7ca80e2785fe31f2ee73048a1719de9`. The large-shard measurements used the prior `b5e0afdbcf6ee92e5022eb7ecca6276c5709274276cd48698148b09ec71e1362` app, before the post-commit cleanup-error guard; final fresh subset/restart checks exercise the final app. Historical identities are preserved.

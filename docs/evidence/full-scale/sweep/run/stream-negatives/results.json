@@ -1,0 +1,22 @@
+[
+  {
+    "case": "truncated-payload",
+    "expected": "reject and retain empty owned catalog",
+    "status": "PASS",
+    "input_bytes": 37541,
+    "input_sha256": "1542009db3962d3bdcbdb349542f3d9072868ba861c2f0a8661bb0126468da0e",
+    "writer_exit": 0,
+    "ms": 58.6077629995998,
+    "remaining_files": ""
+  },
+  {
+    "case": "unmarked-empty-shards",
+    "expected": "reject and retain empty owned catalog",
+    "status": "PASS",
+    "input_bytes": 75095,
+    "input_sha256": "540bfcf60643f41b0da986f35f4680a07d1c3a369853eae2bbd2998f43aac39c",
+    "writer_exit": 0,
+    "ms": 53.75973001355305,
+    "remaining_files": ""
+  }
+]

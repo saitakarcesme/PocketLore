@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "wiki-05",
+  "manifest": "04fa629cebfb63a5e0dc8c2e09181662257dfe0b62fee77189de6d33a3d7bc5e",
+  "pid": 23644,
+  "kind": "wiki",
+  "shards": [
+    "000_00005"
+  ],
+  "metadata_only": false,
+  "import_ms": 5899.537689,
+  "owned_before": 404127996,
+  "owned_after": 1857749798,
+  "observed_precommit": 1857719033,
+  "new_bytes_written": 1453591037,
+  "usable_bytes": 377376768,
+  "source_identity": "04fa629cebfb63a5e0dc8c2e09181662257dfe0b62fee77189de6d33a3d7bc5e:000_00005:649:1301457611:F2004F7380A5FBE9F3AD4E8E68C5A670E40CEE0A623A79E2F4BE7942CB77F78E",
+  "source_sha256": "F2004F7380A5FBE9F3AD4E8E68C5A670E40CEE0A623A79E2F4BE7942CB77F78E",
+  "source_preview": "# Arraignment\nArraignment is a formal reading of a criminal charging document in the presence of the defendant, to inform them of the criminal charges against them. In response to arraignment, in some jurisdictions, the accused is expected to enter a plea; in other jurisdictions, no plea is required. Acceptable pleas vary among jurisdictions, but they generally include guilty, not guilty, and the peremptory pleas (pleas in bar) setting out reasons why a trial cannot proceed. Pleas of nolo contendere ('no contest') and the Alford plea are allowed in some circumstances.\n\n## By country\n\n### Australia\nIn the Australian legal system, arraignment is the first stage in a criminal trial. The indictment is read to the defendant, who is asked to plead guilty or not guilty. Arraignment procedures vary somewhat among jurisdictions. In New South Wales, the arraignment takes place before the judge only. In South Australian practice, the jury hears the arraignment. In Queensland the indictment is read to the defendant by the judge's associate prior to the empanelling of the jury.\n\n### Canada\nIn British Columbia, arraignment takes place in one of the first few court appearances by the defendant or their lawyer. The defendant is asked whether they plead guilty or not guilty to each charge.\n\n### France\nIn France, the general rule is that one cannot remain in police custody for more than 24 hours from the time of their arrest. However, police custody can last another 24 hours in specific circumstances, especially if the offence is punishable by at least one year's imprisonment, or if the investigation is deemed to require the extra time, and can last up to 96 hours in certain cases involving terrorism, drug trafficking, or organised crime. The police need to have the consent of the prosecutor, the procureur. In the vast majority of cases, the prosecutor will consent.\n\n### Germany\nIn Germany, if one has been arrested and taken into custody by the police, one must be brought before a ju",
+  "documents": 456484,
+  "query_and_inspect_ms": 17.022506,
+  "pss_kib": 31535
+}

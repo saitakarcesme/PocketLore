@@ -1,0 +1,10 @@
+{
+  "filesystem": "/dev/block/dm-43",
+  "total_bytes": 6228115456,
+  "available_bytes": 2235158528,
+  "installed_lower_bound_bytes": 41628740516,
+  "prerequisite_met": false,
+  "meaning": "Capacity prerequisite only; installed hashes, update peak and runtime checks remain required",
+  "raw_df": "Filesystem       1K-blocks    Used Available Use% Mounted on\n/dev/block/dm-43   6082144 3757160   2182772  64% /data/user/0\n",
+  "subsets_rerun": false
+}

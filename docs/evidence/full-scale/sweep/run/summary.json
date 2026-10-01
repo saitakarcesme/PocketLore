@@ -1,0 +1,163 @@
+{
+  "platform": "emulator-5560; rolling full-shard compatibility, NOT simultaneous full installation",
+  "seconds": 484.53392243800045,
+  "outcomes": [
+    {
+      "label": "wiki-00",
+      "shard": "000_00000",
+      "status": "PASS"
+    },
+    {
+      "label": "wiki-01",
+      "shard": "000_00001",
+      "status": "PASS"
+    },
+    {
+      "label": "wiki-02",
+      "shard": "000_00002",
+      "status": "PASS"
+    },
+    {
+      "label": "wiki-03",
+      "shard": "000_00003",
+      "status": "PASS"
+    },
+    {
+      "label": "wiki-04",
+      "shard": "000_00004",
+      "status": "PASS"
+    },
+    {
+      "label": "wiki-05",
+      "shard": "000_00005",
+      "status": "PASS"
+    },
+    {
+      "label": "wiki-06",
+      "shard": "000_00006",
+      "status": "PASS"
+    },
+    {
+      "label": "wiki-07",
+      "shard": "000_00007",
+      "status": "PASS"
+    },
+    {
+      "label": "wiki-08",
+      "shard": "000_00008",
+      "status": "PASS"
+    },
+    {
+      "label": "wiki-09",
+      "shard": "000_00009",
+      "status": "PASS"
+    },
+    {
+      "label": "wiki-10",
+      "shard": "000_00010",
+      "status": "PASS"
+    },
+    {
+      "label": "wiki-11",
+      "shard": "000_00011",
+      "status": "PASS"
+    },
+    {
+      "label": "wiki-12",
+      "shard": "000_00012",
+      "status": "PASS"
+    },
+    {
+      "label": "wiki-13",
+      "shard": "000_00013",
+      "status": "PASS"
+    },
+    {
+      "label": "wiki-14",
+      "shard": "000_00014",
+      "status": "PASS"
+    },
+    {
+      "label": "places-00",
+      "shard": "compact-00.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-01",
+      "shard": "compact-01.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-02",
+      "shard": "compact-02.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-03",
+      "shard": "compact-03.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-04",
+      "shard": "compact-04.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-05",
+      "shard": "compact-05.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-06",
+      "shard": "compact-06.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-07",
+      "shard": "compact-07.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-08",
+      "shard": "compact-08.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-09",
+      "shard": "compact-09.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-10",
+      "shard": "compact-10.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-11",
+      "shard": "compact-11.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-12",
+      "shard": "compact-12.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-13",
+      "shard": "compact-13.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-14",
+      "shard": "compact-14.sqlite",
+      "status": "PASS"
+    },
+    {
+      "label": "places-15",
+      "shard": "compact-15.sqlite",
+      "status": "PASS"
+    }
+  ],
+  "all_pass": true,
+  "retained_hashes_unchanged": true
+}
