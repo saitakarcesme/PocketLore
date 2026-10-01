@@ -8,3 +8,5 @@ bulk05	withheld_pending_source_review	published_claims=0
 bulk06	withheld_unavailable	published_claims=0
 bulk07	withheld_unavailable	published_claims=0
 bulk08	withheld_pending_source_review	published_claims=0
+7 actual artifact/review promotion regressions pass; 8 real Android denials verified
+FAIL: OBJECTIVE OPEN: zero independently rights/fidelity-cleared bulk spans; no bulk generated claims were published or independently validated
