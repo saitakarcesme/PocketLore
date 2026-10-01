@@ -643,6 +643,67 @@
           "assessment": "P5.1 supports earthworm excreta/end-product; P4.1 describes a created mixture containing vermicast, not that worms eat it. Final input list contradicts the draft first sentence."
         }
       ]
+    },
+    "n02": {
+      "result_sha256": "651c64d4ee7c088b2fa38dbd2d80a690510f259ab1f2980e10006d84cd27b37e",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Shared soil-use facts are supported in the full context, but C1 cites vermicompost definition rather than the sentence establishing its fertilizer/conditioner use. Correct C2 citation does not retroactively repair C1 binding.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.4 supports compost use; P4.1 only defines vermicompost production and lacks asserted use/properties. Needed P6.1 is not among C1 references."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P6.1 directly supports vermicompost water-soluble nutrients and vermiwash."
+        }
+      ]
+    },
+    "n03": {
+      "result_sha256": "cc73a28e78dee253d960e43ecff03c1b8c23e210ed5694a236ee02996d61da12",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly restricts wound-compartmentalization reasoning to smaller-cut preference and distinguishes removal criteria such as diseased/nonproductive/unsound material; no transfer of that condition into every pruning purpose.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P5.2 gives smaller-cut wound/pathogen relation; P5.1 lists separate material-selection criteria. The answer states the scope limitation rather than inventing a universal benefit."
+        }
+      ]
+    },
+    "n04": {
+      "result_sha256": "c9fe25e8255ad5794367742117002998421c4d815aa13e9c64c61a2f6e968ad9",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "All requested roles/tissue requirement are present, but selection details cite the wrong source paragraph and a standalone inosculation span lacks the asserted vascular mechanism. Audit labels everything supported yet repeats O2 verdicts, so format gate safely withholds; relaxing it would expose binding errors.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Upper/lower/joining facts supported by P1.1-P1.2; stems/leaves/flowers/fruits versus root selection is in P2.1, not cited P1.6."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P1.3-P1.4 jointly establish vascular joining requirement and natural equivalent name."
+        },
+        {
+          "claim_index": 3,
+          "assessment": "P1.3 directly establishes the required joining."
+        },
+        {
+          "claim_index": 4,
+          "assessment": "P1.4 names natural equivalent only; its isolated anaphoric this process does not by itself establish the added vascular-merging description."
+        }
+      ]
     }
   }
 }
