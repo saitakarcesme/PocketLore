@@ -1,0 +1,101 @@
+{
+  "scope": "Constructed syntax controls only, not factual corpus or generated answers; support expectations distinct from conservative algorithm admission",
+  "cases": [
+    {
+      "id": "active_passive",
+      "source": "The pilot opened the gate.",
+      "claim": "The gate was opened by the pilot.",
+      "supported": true
+    },
+    {
+      "id": "wrong_agent",
+      "source": "The pilot opened the gate.",
+      "claim": "The gate was opened by the sailor.",
+      "supported": false
+    },
+    {
+      "id": "role_reverse",
+      "source": "The pilot followed the sailor.",
+      "claim": "The sailor followed the pilot.",
+      "supported": false
+    },
+    {
+      "id": "condition_drop",
+      "source": "If rain falls, the pilot closes the gate.",
+      "claim": "The pilot closes the gate.",
+      "supported": true
+    },
+    {
+      "id": "condition_transfer",
+      "source": "If rain falls, the pilot closes the gate.",
+      "claim": "If snow falls, the pilot closes the gate.",
+      "supported": false
+    },
+    {
+      "id": "negation",
+      "source": "The pilot did not close the gate.",
+      "claim": "The pilot closed the gate.",
+      "supported": false
+    },
+    {
+      "id": "quantifier",
+      "source": "Some pilots opened gates.",
+      "claim": "All pilots opened gates.",
+      "supported": false
+    },
+    {
+      "id": "tense",
+      "source": "The pilot opened the gate.",
+      "claim": "The pilot opens the gate.",
+      "supported": false
+    },
+    {
+      "id": "numeric",
+      "source": "The gate weighs 40 kilograms.",
+      "claim": "The gate weighs 400 kilograms.",
+      "supported": false
+    },
+    {
+      "id": "root",
+      "source": "The fifth root of 100 is approximately 2.512.",
+      "claim": "The square root of 100 is approximately 2.512.",
+      "supported": false
+    },
+    {
+      "id": "tail",
+      "source": "The pilot opened the gate.",
+      "claim": "The pilot opened the gate. Every ticket was free.",
+      "supported": false
+    },
+    {
+      "id": "pronoun",
+      "source": "It is the capital of Newland.",
+      "claim": "It is the capital of Newland.",
+      "supported": false
+    },
+    {
+      "id": "name_substitution",
+      "source": "The sailor repaired the vessel.",
+      "claim": "The vessel was repaired by the sailor.",
+      "supported": true
+    },
+    {
+      "id": "continued_begin",
+      "source": "The city continued as the capital after union.",
+      "claim": "The city became the capital after union.",
+      "supported": false
+    },
+    {
+      "id": "negated_correction",
+      "source": "The gate was not opened by the pilot.",
+      "claim": "The pilot did not open the gate.",
+      "supported": true
+    },
+    {
+      "id": "product_input",
+      "source": "Worms produce castings.",
+      "claim": "Worms consume castings.",
+      "supported": false
+    }
+  ]
+}
