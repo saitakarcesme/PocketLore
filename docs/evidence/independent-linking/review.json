@@ -1,0 +1,1680 @@
+{
+  "reviewer": "builder; independent source criticism pending",
+  "criterion": "Every eligible factual clause against its final selected exact spans and rendered subject/obligation context; no inference from identity, scores or lexical overlap alone. All withheld routes separate from support.",
+  "cases": {
+    "s01": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "f00a347a4b799cc834ff3b98f953522b573bbdb85cbd554f570628db5b77f500",
+        "all_claims_supported": true,
+        "all_cited_spans_support": true,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": true,
+        "assessment": "Complete middle-comparison and repeated half-elimination description; exact selected sentences establish both. It does not restate sorted prerequisite, but answers the requested narrowing mechanism as in task220 rubric.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "P1.1 establishes middle comparison and sorted context; P1.2 establishes elimination, repetition and found endpoint."
+          }
+        ]
+      },
+      "record_sha256": "cfaff29bd90d221da8a03fd050eedcf4fab748ed2c87b7780124d41165eb4d59"
+    },
+    "s02": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "fff1ed0874a68e40431c7105938350be008d3359fc691d5bac23ade6ddd20130",
+        "all_claims_supported": true,
+        "all_cited_spans_support": true,
+        "obligations_complete": false,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Same incomplete explanation identified in task220: degeneracy is named without explaining shape or performance consequence. Model audit incorrectly marks completeness.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "Exact P5.1 supports stated dependence/degeneracy/variants; does not itself explain how shape/search work changes."
+          }
+        ]
+      },
+      "record_sha256": "d513677998f071bd12dc873efedfcb4b9df6896fa943f59539d0c0e3406e4537"
+    },
+    "s03": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "b3b7df832f6ee1de5bae60a898bfcc761854de36fb79b64864d6d07cc56faf16",
+        "all_claims_supported": true,
+        "all_cited_spans_support": true,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": true,
+        "assessment": "Both requested ordering obligations answered; extra endpoint/operation facts are also exactly cited.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "P1.3 supports absent endpoint; P2.3 sorted-array prerequisite."
+          },
+          {
+            "claim_index": 2,
+            "assessment": "P4.1 supports left/right key ordering; P5.2 lists operations."
+          }
+        ]
+      },
+      "record_sha256": "d4818c2a8aedea82f5f5c3f20ad20fa2a1fc59513e75c01fa3aad29cfe5b46ed"
+    },
+    "s04": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "7707082af1aa6f70fd38e8f29a15e9bd9d8e661b745f20bc29d7142940d8ddc4",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Facts correct in full supplied evidence, but logarithmic worst-case claim cites only first-paragraph middle/elimination sentences, not P2.1. Same-model audit falsely certifies source support.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "P1.1-P1.3 do not establish logarithmic complexity; they support only the procedural and empty-range clause."
+          },
+          {
+            "claim_index": 2,
+            "assessment": "P4.2 supports height cost; P5.1 degeneracy and guaranteed variants; P6.2 singly linked-list O(n) worst case."
+          }
+        ]
+      },
+      "record_sha256": "e8328dd97480321418df277efdf5968c2fe3ab8185c745c3f4d67ba84f725f97"
+    },
+    "s05": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "67b67cee1b8f3dbbe5211776e23dcb12012a3c7afc304382111dfef073ea3615",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Raw prose correctly rejects false premise and names exact P2.3, but uses W rather than a typed claim; no bound citations or generated publication credit.",
+        "claims": []
+      },
+      "record_sha256": "175d272988de2206d642c5b0c631ac7c5dfcd150aef47cbff2a7e87e2c0bd483"
+    },
+    "s06": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "a57bb61471df5e42213507d3032204d4537b5b39aa187b17084d2578859062e7",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Appropriate absence withholding; no measured laptop latency in evidence. No typed supported answer is produced.",
+        "claims": []
+      },
+      "record_sha256": "a10b262173ed080fde3823503a8d9ab5e134017959d24745831fff56ed646752"
+    },
+    "s07": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.1-P1.2 establish named compost inputs and fertilizer/soil improvement use; unchanged exact bindings."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "cda3093d0bc4e0a21ec9f9793a13d6058aa7c86431fd943f676a35d0cc8fb592"
+    },
+    "s08": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "c116a48889639924d95abedde4cb4834ef2c904e9d970e0eb915b3e600de6afd",
+        "all_claims_supported": false,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Same role-transfer failure survives both stages: draft makes vermicast an input broken down, then conflates vermicast with vermicompost fertilizer/conditioner use. Audit approves unsupported prose.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "P4.1 creates a mixture containing vermicast, not breakdown of vermicast as input; P5.1 identifies excreta as output. P6.1 fertilizer/conditioner applies to vermicompost, not unqualified vermicast."
+          }
+        ]
+      },
+      "record_sha256": "42107fbe40bce39bf90153bf3b71b7d81f0b8e3783bdf3030ac74f2097011b7d"
+    },
+    "s09": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "7323aaa9e25b28e640387e0293414efbe0ab451a889e12edd18ec2bd5939fc02",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": false,
+        "fully_useful_draft": false,
+        "assessment": "Draft reaches320tokens mid-clause in O2 and never reaches shared-use O3. Visible completed compost facts and vermicompost definition match context, but no parsed binding/complete useful response survives. Correctly withheld as truncation.",
+        "claims": [],
+        "raw_clause_review": "O1 ingredients/use/green-brown/aeration/chemical-conversion facts match source context, but its P2.1-P2.3 references omit later aerobic-conversion sentence. O2 definition matches P4.1; vermiculture clause truncates. O3 absent."
+      },
+      "record_sha256": "42c6a21cf4c03d30a22d6e5ba64ef221bc03873ccc5876ed23b5de9b8db9a689"
+    },
+    "s10": {
+      "supported": false,
+      "complete": false,
+      "useful": false,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "C1 cites only vermicompost definition P4, which does not establish green/brown compost inputs. No uncited P2 rescue."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "C2 transfers vermicompost water-soluble nutrients/fertilizer/soil-conditioner properties to vermicast, despite separately bound exact P5 end-product definition. Full compound claim is unsupported."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "b78d97916d1eae01c89ae0bde4b3bf9369267087ea12f3ccb1fadc5832533fdc"
+    },
+    "s11": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "5519c87d65bf00ba452720dba975046c1420d080bad5efa3d212de70d58b3395",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Correct raw false-premise rejection: worms are explicit in sources. W record discards the correction instead of producing typed inspectable evidence; no eligible success.",
+        "claims": []
+      },
+      "record_sha256": "8656137d8306813c99b0b1b56ef4031aeaabc12c54490071602b8b8e1362618f"
+    },
+    "s12": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "7e61a7fa1578a4204ba06f6a4123fcd13ea0c3041d185933e6aa20fa7200094e",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Correct absent-inventory withholding, no invented shop stock; no generated supported answer.",
+        "claims": []
+      },
+      "record_sha256": "bc5f5860b2e375cd89d3559094229b13af3ff5b3c7ac03dc71b07990f728d97e"
+    },
+    "s13": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.2 identifies upper scion/lower rootstock and P1.6 supports soil-line and top-work qualifications, trunk/root-system understock. All requested identification and extra details supported."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "df0fc7d64541f9ccbbd604a7a373057bc6223c3c0540cedee29fcaf428bc9177"
+    },
+    "s14": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "e1beef918220880ef7d710bcdf1e837199e66c4423600692c447a65a4158987b",
+        "all_claims_supported": true,
+        "all_cited_spans_support": true,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": true,
+        "assessment": "Preserves the smaller-cut causal condition and general preference; helping prevent disease is a qualified paraphrase of limiting pathogen intrusion, not a guarantee of prevention.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "P5.2 directly gives smaller-branch wound compartmentalization and resulting lower pathogen/decay potential."
+          }
+        ]
+      },
+      "record_sha256": "5db6223dd45606a1eb3a75ac598c2d8164bc22d1f4d68e8601bbd92b95f35ea2"
+    },
+    "s15": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "6dc78dcef05932aee1da87afa5c16c3f0be3aba4f8b70ba0d2efe6ab8c4a50d1",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": false,
+        "fully_useful_draft": false,
+        "assessment": "Verbose source-faithful grafting/pruning prose reaches320tokens mid-sentence; incomplete self-pruning clause and no admissible typed draft. Correctly withheld, no success credit.",
+        "claims": [],
+        "raw_clause_review": "O1 plant-tissue joining, roles, vascular requirement, inosculation, propagation and soil/top-work qualifiers match P1. O2 removal targets, young-versus-mature preference and energy-related self-pruning match P4-P6, but final clause truncates."
+      },
+      "record_sha256": "13cf02a0119480c5af65eb754957a452e0f476883e16d4d99498f298957ed813"
+    },
+    "s16": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.3 exactly supports vascular tissues growing together."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P5.1 establishes targeted removal of diseased/damaged/dead/unwanted material; preserved prior interpretation of requested reason, not a new support upgrade."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "bb6879ca322a604086e4d347b775420520617a24fc37f00caa668acff84b863e"
+    },
+    "s17": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "3afe32cd0056708d90423a6e4ae3db0adffc9361cf2acdb05f9e1d27aaf6c12f",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Correct raw false-premise explanation cites P1.3 but uses W, so the bound-answer route withholds it. This is lost useful draft potential, not a publication success.",
+        "claims": []
+      },
+      "record_sha256": "b739e5d6a0a2c24f7fc7312b8b92d6ae5b64817acc49b76397e4817d38a8dfa7"
+    },
+    "s18": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "b3d63f086dc0d9a3daf54d5b55e24c314da2992f2082f41d82535b2225ea80be",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Appropriate withholding of live/local nursery price comparison; no source establishes specific trees or prices.",
+        "claims": []
+      },
+      "record_sha256": "8eccd9ecced030c6d4094908422c410c44af865f9ca2bcb66aede6af113c0f2b"
+    },
+    "s19": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P2.1-P2.2 support the comprehensive single-document versus written single/set distinction and examples. Final prose does not conflate merely written with codified."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "f767b721173cbb7c3ef99e869fdf53b5a5902fc3fba2f719069c6fce158e2540"
+    },
+    "s20": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "67fd21d6037617c2f107eab887320ace8707c14f8de858105d37458e98a9cc70",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Raw answer correctly explains varying monarch powers, but W classification suppresses a supported answer and supplies no typed references. Lost useful content potential.",
+        "claims": []
+      },
+      "record_sha256": "8b45c088a54a5887e5ebe735a6e92b963d5cbbc956f30362d1727362f3207833"
+    },
+    "s21": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "bef1a073007bc71fcdd55f022883edfd08b4fc8ea6c145ac9a7e850c377beced",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": false,
+        "fully_useful_draft": false,
+        "assessment": "Draft copies constitution/monarchy descriptions then truncates mid-country list at320tokens. Requested comparison is not delivered as complete bounded prose. Raw references also include unavailable P1.2; no source-binding success.",
+        "claims": []
+      },
+      "record_sha256": "06c22358354fa2bd50562a46047f64c3f7278e67bc88d2939facd42a7e6d6edb"
+    },
+    "s22": {
+      "supported": false,
+      "complete": false,
+      "useful": false,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "C1 defines codified using the merely-written single-document-or-set wording, contradicting the distinct single comprehensive criterion in P2.1."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P5.1-P5.2 support variation in symbolic versus meaningful formal monarch powers. Correct second obligation does not rescue C1."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "7ebe8f2ec742f3df9c75aeae02c8f17797f94eadc96372eb07a2a631b9507c53"
+    },
+    "s23": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "7724011e474edfaac850d0006f7056bfe3e4640eb58aa4cea9e77b3d71b90794",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Raw correction properly rejects universal powerless-monarch premise using meaningful formal/discretionary powers. W classification loses this supported correction; no bound citation publication.",
+        "claims": []
+      },
+      "record_sha256": "1e29c996be77bfe906476f3444803d97a070810696e2bd9f19e8de48d222386e"
+    },
+    "s24": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "7c2eac290762ccff4b519da0dc1fd570acd1accc7a1a042dde3a4cd9dda407dd",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Appropriate absence withholding of a pending current court decision.",
+        "claims": []
+      },
+      "record_sha256": "bc90499878718caa2ec06ff4996207d29dc5245e7b08042cc708b8a17a17a698"
+    },
+    "s25": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "d880c5a39a182800aa6e16fef1fc496c1b216546fa4027d1397d32a9f94d0022",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Both requested geographic and constitutional facts are correct in source context, but P1.2 is not an available bounded sentence label. Integrity gate withholds; raw content potential is not inspectable answer success.",
+        "claims": []
+      },
+      "record_sha256": "0de352acd9362733d465b9dcc04d575acead133e403b52c56519b7769289023a"
+    },
+    "s26": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "c6da8f6e04ddcfe36674b247a1c8ee926df4022162ce4051a9f9f1c71d76d653",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Requested landlocked European explanation is correct, but extra sixth-smallest claim is outside all selected P4.1-P4.5 spans; same-model audit wrongly approves entire claim.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "P4.1 establishes landlocked European location and borders; P4.2-P4.5 contain history, rulers and capital, not European size rank. Size-rank fact is elsewhere in supplied context."
+          }
+        ]
+      },
+      "record_sha256": "ea70e5890ac424eab87657626591ba7089e30abc844283106720c50c7da1e0ba"
+    },
+    "s27": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "ffc5aca1067b39ef732319f982c28710a343aa9f45e5bec53bcd6d6dcd4e8760",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": false,
+        "fully_useful_draft": false,
+        "assessment": "Geographic descriptions and visible area/rank statements match full source context, but draft truncates mid-area statement at320tokens. It also assigns overly broad/wrong paragraph labels rather than bounding each fact; no useful bound answer.",
+        "claims": []
+      },
+      "record_sha256": "891234eaf6d9f097d63f541f937b6f8e40a2c1738cea9315087864282d2460f9"
+    },
+    "s28": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "b426688ac1e55610ac697774444b1b078f78cc053d59233bc6793b7d91a68057",
+        "all_claims_supported": true,
+        "all_cited_spans_support": true,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": true,
+        "assessment": "Both requested area/climate and bordering-country obligations are directly supported. Snapshot date in metadata is not rendered as a new live observation; no current-availability claim.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "P2.1 supports179sqkm and P2.3 arid xeric climate."
+          },
+          {
+            "claim_index": 2,
+            "assessment": "P4.1 supports France north/Spain south. Other selected history spans are unnecessary but do not supply false assertions."
+          }
+        ]
+      },
+      "record_sha256": "dc55912b8382e172515e6e8c2cd41c9e7628af0c739bb7e491c5b181ea1adc70"
+    },
+    "s29": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "5da082fb163e087c8ecf35c33ad305f4c787ab4e7cacafaa17f5fdf9d2e0b103",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Correct raw rejection distinguishes landlocked European Andorra from Caribbean Aruba. W classification suppresses the useful correction and has no typed support.",
+        "claims": []
+      },
+      "record_sha256": "51ffa3574e39e4d96c0f28d4fe74c29034c4a159750c7c0f802260730bc18683"
+    },
+    "s30": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "93b1d9f743c8b70d436ec6ee5d51658f163f24c0223bbbed76da9e4de2cb3065",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Correct live border-wait withholding; available geography/history/population/language/tourism paragraphs do not establish current traffic.",
+        "claims": []
+      },
+      "record_sha256": "a9bef7de9e99576dfdce50e221824ca970e93d867b56ce094a5c377563a619eb"
+    },
+    "s31": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.1-P1.2 establish northeastern Spanish coast and Catalonia capital/largest city."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "6b7cc84e7bcb5924c2bf31c439075c071a990ff2d009e479179b1d53405f5506"
+    },
+    "s32": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "8b0e5129edb1debedacd00e9d8eaf270fc58031d3e3e67aa0accb531af84959e",
+        "all_claims_supported": true,
+        "all_cited_spans_support": true,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": true,
+        "assessment": "Complete supported historical explanation, falsely rejected by same-model audit for lacking the exact phrase from the question. The cited democracy/education/philosophy and often-regarded cradle/birthplace facts directly answer the question.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "P5.3 supports every factual clause and preserves the often-regarded qualifier; P5.2 establishes classical historical setting. Audit demands an unnecessary literal question-word match."
+          }
+        ]
+      },
+      "record_sha256": "014d128d346687c8c3ca51796776f99af197ec39e44368eeba8dce35cec94c8b"
+    },
+    "s33": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.2 supports all Barcelona capital/largest/second-most-populous claims."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P4.1-P4.2 support Greece capital/largest and southernmost mainland-European capital. Visible subject headings preserve distinction."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "803f06e289a9a8c88b23a5da3db0d3bbf77ca102d5751a953f22b4e2a53bf1e4"
+    },
+    "s34": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "fb1919aa786b07084b5f1060f64d9a2eb7e3b351c24f17aa11af1f45c690fe11",
+        "all_claims_supported": false,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Barcelona temporal/role transfer survives typed qualifiers and source audit: becoming County capital is incorrectly placed after joining Aragon. This also fails the requested supported Crown-of-Aragon role.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "P2.1 states County capital in Middle Ages; P2.2 says Principality capital continued after joining and city became main economic/administrative centre. Draft incorrectly binds the County-capital event to after joining."
+          },
+          {
+            "claim_index": 2,
+            "assessment": "P5.3 directly supports classical Athens democracy/arts/education/philosophy and Hellenistic/European influence."
+          }
+        ]
+      },
+      "record_sha256": "f8169973f710ef45cf6a008b77d77dbd9aa4827c7b377e0d35d5d2ba1058830a"
+    },
+    "s35": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "6c4303a0ad910d61d6a12528654682e874d9e6bcb0974c12c26dba9de859c936",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Correct raw false-premise correction distinguishes Spanish Barcelona from Athens, capital of Greece; W routing prevents a typed cited answer.",
+        "claims": []
+      },
+      "record_sha256": "400ccc1bb4bbcb4868d3b8de32f86082a3b58dac0df20a377a030f3a06f179a9"
+    },
+    "s36": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "6fc204caae9ef18170b2536392431d1b2671c82ecfb6c97b11dda8843acdda54",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Correct withholding of current opening hours/ticket prices; no such operational evidence in the selected historical city excerpts.",
+        "claims": []
+      },
+      "record_sha256": "93aa5a5072d468e77d17f0f6eeef6e77e1c123357dcca7920c088cd5d5a8da29"
+    },
+    "s37": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "25e749d5d478ead141e0c1a9b94da0cceb746651411a09cba8f0a94475389601",
+        "all_claims_supported": false,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Core redox/electron-transfer/ATP description matches fermentation context, but the final broad assertion of essentiality for organisms under anaerobic conditions is stronger than the source establishes. Also cites nonexistent P1.2, so integrity gate withholds without audit.",
+        "claims": []
+      },
+      "record_sha256": "ed0d718a3c196194d5a8ac7511e20f3b9d3721dd37698f225922b8eb51fcfd1c"
+    },
+    "s38": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "ee11021cc2d4930f7ef111f29648dcc556861387d3c06178ee5e64f7d86dde07",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Correct raw explanation that most spores survive mild-heat pasteurization, with no guarantee of total elimination. P4.3 is not an available sentence label, so no bound answer survives.",
+        "claims": []
+      },
+      "record_sha256": "82af22f01c3411fa19fe2af76197639db41b2db59176293e3c9e0031b4153110"
+    },
+    "s39": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "1a7825217bcbfc14f04bb518397a50474ee9ae1a2efd6edd24efa48e93f31bfb",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Both mechanisms and ancillary Pasteur/wine/industry/minor-change facts match full supplied source context, but nonexistent P1.2 prevents any typed answer. No publication credit despite useful raw content.",
+        "claims": []
+      },
+      "record_sha256": "869f8bca407ec7fbf57ed7d84551bc124357010ea78cb8e44f8c2419571077bb"
+    },
+    "s40": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P2.4 supports ethanol/lactate products; extra P1 citation is unnecessary but no false clause is introduced."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P4.1 exactly supports usual less-than100C/212F; source qualifier usual retained."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "86d7e3f08b80900a67f85e53678ef3f6a6c92eb1d24d3c773781f04f303909d1"
+    },
+    "s41": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "da30fee4a8dc44ee58811373b76b1851f360ebd10549216b7cca94c746017492",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Raw correction accurately quotes P4.2 that most spores survive, rejecting the false universal claim. W routing prevents a typed supported answer.",
+        "claims": []
+      },
+      "record_sha256": "302222456a19e79200e9ccf38c9724189a2663b4d85085acb0c506ab5a43507a"
+    },
+    "s42": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "1dcefd7b7c0aea2dd978a087a326c97b09e66c28bc29a9d8e4995a1e26540876",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Correct absence withholding of an actual present milk-bottle microbial measurement; does not claim external/live knowledge.",
+        "claims": []
+      },
+      "record_sha256": "d8de760359f9fb69dbeec2ad9c6d8b5a0d17a366a6f314944896926a0c8f384f"
+    },
+    "s43": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "09bb53d93f9f20867289014f892577ac9289f761578c8b0753b2fa209c480c94",
+        "all_claims_supported": false,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Core sign/size/ratio obligations and numeric examples are correct, but extra naked-eye threshold broadens darkest-night context to a dark night and omits explicit eyesight/altitude/atmospheric dependence. Conservatively rated a material-condition support failure, separately exposed for independent reassessment.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "P5.1-P5.3 support inverse scale and2.512 ratio/examples; P6.1 supports negative magnitudes/Venus/Sirius; P6.2 supports Sun value but conditions the naked-eye threshold on darkest night and observer/atmospheric variation omitted from the draft."
+          }
+        ]
+      },
+      "record_sha256": "e6cffbcd49f6a1cc2af35d9fde918c8662a26683ee58c29bb256dd9350924c11"
+    },
+    "s44": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "e5c6c3cb5ee10528e61c39b762a8f664fb897b6dfa08d7612d25d4b5b179d203",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": false,
+        "fully_useful_draft": false,
+        "assessment": "Source-faithful amateur-observation examples repeat as inline O1 records until320tokens and stop mid-clause. The repetition/truncation is not a complete usable explanation or typed answer.",
+        "claims": []
+      },
+      "record_sha256": "cf0fcdfe23a7ed810b8543ff30f38caccb6c1b8cb1a00a38684a7e186f215708"
+    },
+    "s45": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "c8995158460a788ddec318889313c46870fb98a39fa51540b0cfb7f99abf730a",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": false,
+        "fully_useful_draft": false,
+        "assessment": "Source-faithful magnitude definition and amateur practices become a verbose repeated-source description, ending mid-clause at320tokens. Invalid/overlarge reference lists are also visible, but the primary bound failure is truncation; no complete answer.",
+        "claims": []
+      },
+      "record_sha256": "dbbf473417260575404b4ba9fc1af397dd9ae0f8785d997779ee3e51c528e448"
+    },
+    "s46": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P5.2 supports the rounded2.512 brightness ratio. Irrelevant additional P1.2 does not remove the correctly attached numeric source; no exactness beyond ordinary displayed rounding claimed."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P1.2 supports monitoring variable stars and double stars; some amateur qualification retained."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "f9f73946536e10a86801bde9513efa5bc299c61efe08ad43bcc992d80387e544"
+    },
+    "s47": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "bc5c3a4d2bb56c29b2c91218c02f9e618eca56a8f821a597a35ae136192ec883",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Correct raw inverse-scale false-premise correction and approximate ratio; W record prevents typed supported answer delivery.",
+        "claims": []
+      },
+      "record_sha256": "1c10976d5b066b71ba6841736fc6f173d4d449f959cff242cdd53aaca2ebd91d"
+    },
+    "s48": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "0e8f4f90bc74c5ee5a99289aaf7a2a274b97ef6f767514af4fe7e9da54675d28",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Correct withholding of a real-time measurement of an unidentified star; distinguishes known examples from the absent observation.",
+        "claims": []
+      },
+      "record_sha256": "d6774559f035cae620e3e8c52775dfef1ab790c4edd85c389d9b0db2363a5245"
+    },
+    "n01": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "367eb95619d455ee4b235d7aa83b3f44b62e902a3f38ca1833c4a3667cd7b24d",
+        "all_claims_supported": false,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Explicit input/output discriminator still produces a self-contradiction: first says vermicast is not eaten, then includes it among material eaten. Source establishes output, not that asserted input role; audit approves all.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "P5.1 supports earthworm excreta/end-product; P4.1 describes a created mixture containing vermicast, not that worms eat it. Final input list contradicts the draft first sentence."
+          }
+        ]
+      },
+      "record_sha256": "453fcbb2e0c086501ef75f263bce7087c2f6d177ef13d10e69af25e003a0580a"
+    },
+    "n02": {
+      "supported": false,
+      "complete": false,
+      "useful": false,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "C1 shared soil-conditioning assertion cites compost P1.4 and vermicompost definition P4.1, which lacks vermicompost use. Correct unselected P6 cannot rescue C1."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "Rebinding worsened C2: rendered prose names P6.1, but final typed reference is P4.1-P4.2 and contains no water-soluble-nutrient assertion. A prose source label is not a typed citation."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "7cdca371bb2f22fe4d5eb45489e7fe019c8efc9423db5fe8039457be7d0e533b"
+    },
+    "n03": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "cc73a28e78dee253d960e43ecff03c1b8c23e210ed5694a236ee02996d61da12",
+        "all_claims_supported": true,
+        "all_cited_spans_support": true,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": true,
+        "assessment": "Correctly restricts wound-compartmentalization reasoning to smaller-cut preference and distinguishes removal criteria such as diseased/nonproductive/unsound material; no transfer of that condition into every pruning purpose.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "P5.2 gives smaller-cut wound/pathogen relation; P5.1 lists separate material-selection criteria. The answer states the scope limitation rather than inventing a universal benefit."
+          }
+        ]
+      },
+      "record_sha256": "7224b72715ac0988c0b651fb4a5f3aa8826784ad06697424b96b756a3161424c"
+    },
+    "n04": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "c9fe25e8255ad5794367742117002998421c4d815aa13e9c64c61a2f6e968ad9",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "All requested roles/tissue requirement are present, but selection details cite the wrong source paragraph and a standalone inosculation span lacks the asserted vascular mechanism. Audit labels everything supported yet repeats O2 verdicts, so format gate safely withholds; relaxing it would expose binding errors.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "Upper/lower/joining facts supported by P1.1-P1.2; stems/leaves/flowers/fruits versus root selection is in P2.1, not cited P1.6."
+          },
+          {
+            "claim_index": 2,
+            "assessment": "P1.3-P1.4 jointly establish vascular joining requirement and natural equivalent name."
+          },
+          {
+            "claim_index": 3,
+            "assessment": "P1.3 directly establishes the required joining."
+          },
+          {
+            "claim_index": 4,
+            "assessment": "P1.4 names natural equivalent only; its isolated anaphoric this process does not by itself establish the added vascular-merging description."
+          }
+        ]
+      },
+      "record_sha256": "33fcf17ec142eda9371aade051daf6b2f58adca86016e1fb06dd22e2c99ba9f1"
+    },
+    "n05": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P2.2 directly contradicts the false premise with UK acts/cases/treaties and uncodified status. Extra P3.2 unnecessary. Negation is in the supported correction, not an asserted false premise. Recovered from old self-audit false rejection."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "86dab40b35632bff9161236dba147c5fd71a1efa1e11cc6b494e7548c0751b40"
+    },
+    "n06": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "74e4f8202bfe909f6bcdf94d7d0e0c63914533dab738c8ebbdb0051e43cdf1a1",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Raw answer correctly explains both non-guarantees: some constitutional monarchies are not democratic and powers range from significant to minimal. W classification withholds a supported correction instead of binding citations.",
+        "claims": []
+      },
+      "record_sha256": "5a4dd34a0af660bce43a756b21ee38ae745488a501bc3e58810c2e3bd9c8c98c"
+    },
+    "n07": {
+      "supported": false,
+      "complete": false,
+      "useful": false,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Exact P2.2 says continued as capital; claim says became after joining. Question explicitly asks first-becoming versus continuity, so temporal transfer is material."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "265109ac0f792ca615605adf7ccb21c935ccee9dc1c7c01a2f7cecbafee9f75d"
+    },
+    "n08": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "31605be5421f1b99ee6eb6d99c2495fb281102fbfdaa1a33ce65b799b3ba6b46",
+        "all_claims_supported": false,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Typed metadata identifies Athens correctly, but renderer hides subject/obligation context: following Barcelona, the next rendered sentence starts It and can attribute Greek democracy to Barcelona. No self-contained supported final answer despite source-faithful text under the hidden metadata.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "Barcelona tradition-qualified Phoenician/Carthaginian origin is directly supported by P2.1."
+          },
+          {
+            "claim_index": 2,
+            "assessment": "P5.3 is about classical Athens; source and model record rely on antecedent/context. Rendered answer omits the Athens subject, leaving It after a Barcelona assertion."
+          }
+        ],
+        "typed_content_supported": true,
+        "rendered_binding_failure": "The only explicit Athens subject lives in a hidden metadata field; the final answer loses it."
+      },
+      "record_sha256": "5458886b28cd5139c064813ec10a3231bd2d3a5f313f710dc0f0aa4e73c7fa7c"
+    },
+    "n09": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Rebound full P2 includes industrial products inP2.4 and ethanol beverages/lactate food-preservation use inP2.5. Broad use summary does not assert direct unconverted action; source specifies conversion to lactic acid, retained in inspection. Independent review may require that qualifier in prose."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "Rebound P4.1-P4.2 support mild heat and survival of most spores; the whole explanation now has the needed heat and survival clauses together."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "24338acc5a1b11c3796b2c96bb668f60005a92a37f05a851fdd39cc9d5031514"
+    },
+    "n10": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Exact P5.2 fifth-root TeX and about2.512 establish complete correct interpretation. Formula brackets remain prose, not citation IDs."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "970d6a1eb792abf645cc6a33bf7ed0b746bf3bf5b5eedef66bf586cee0462164"
+    },
+    "n11": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "0f0b6cacaf39a941d2d6a6b6a0a04a38ead1330fb4441c4d78e28ee8ded202d9",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": true,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Both brightness facts are correct in full context, but both claims cite amateur-astronomy sentences rather than magnitude evidence; one subject field is also wrong. Audit labels claims supported yet obligations incomplete, so withholding occurs for the wrong stated reason.",
+        "claims": [
+          {
+            "claim_index": 1,
+            "assessment": "P1.1-P1.2 do not establish2.512/inverse scale; needed P5.1/P5.3."
+          },
+          {
+            "claim_index": 2,
+            "assessment": "P1.1-P1.2 do not establish negative magnitudes or Venus/Sirius values; needed P6.1."
+          }
+        ]
+      },
+      "record_sha256": "414ce863e6938650b4e58b48deb8db2b51b899ac1d95d97013010837a58611af"
+    },
+    "n12": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_raw_review": {
+        "result_sha256": "e5ab6359cf2c8feff32e349d026c549ab1fe62f8fdb9f1e00fad567a0c4ff618",
+        "all_claims_supported": true,
+        "all_cited_spans_support": false,
+        "obligations_complete": false,
+        "complete_prose": true,
+        "fully_useful_draft": false,
+        "assessment": "Correct withholding: unidentified museum, accessible entrance and live queue data are absent from the dated general city evidence. No fabricated availability.",
+        "claims": []
+      },
+      "record_sha256": "2b186302d039c66495811fd12b6f383d9f7832d245f17570b623759d2eb037fc"
+    },
+    "l01": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "new_raw_review": {
+        "whole_context_supported": false,
+        "complete_content": false,
+        "assessment": "Transfers compost mixture properties and vermicompost fertilizer/soil-conditioner properties to vermicast. No available span supports all asserted subject-property bindings; whole claim must not be rescued by its true end-product clause."
+      },
+      "record_sha256": "dbb41b4ad09e60b4ee40f8f4a76f7609913f9a79e612097ca97758750a79d4c5"
+    },
+    "l02": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "new_raw_review": {
+        "whole_context_supported": true,
+        "complete_content": true,
+        "assessment": "Raw W text correctly distinguishes end-product from input, but controller withholds it. No generated success credited."
+      },
+      "record_sha256": "442ae6f21d61a28ba53e6f29e4df615023f10d635166787a83b8c26a00d5f2b3"
+    },
+    "l03": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "new_raw_review": {
+        "whole_context_supported": true,
+        "complete_content": true,
+        "assessment": "Complete smaller-cut explanation preserves woody-plant condition and pathogen/decay consequence. Subject/qualifier fields contain template placeholders; prose itself is specific."
+      },
+      "record_sha256": "13148f08fb7afca6c8c07ed94cf9619e9c9a3086a9adc573a1578db9c402bb70"
+    },
+    "l04": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "new_raw_review": {
+        "whole_context_supported": true,
+        "complete_content": true,
+        "assessment": "Raw W text supplies the supported smaller-versus-larger correction but remains withheld."
+      },
+      "record_sha256": "400254a92d12db50473cf4ebffa9e3fcccd44ec5fa1a85bab353364a22e47836"
+    },
+    "l05": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Exact P2.2 supports named UK example of written yet uncodified constitution; directly answers the question."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "c09912180b80fbfde05ed9bd7c851b19539e61ddf1a04ca0ceeca3f8d88e54a9"
+    },
+    "l06": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "new_raw_review": {
+        "whole_context_supported": false,
+        "complete_content": false,
+        "assessment": "W opening incorrectly says no definitive answer despite the counterexample it then quotes and explains. Correct later content is not credited as a published useful answer."
+      },
+      "record_sha256": "b6231610065652e42e285e8ff0d4a1b11e3d34d3d11c393802d7e3c8f3d5e3d9"
+    },
+    "l07": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P2.2 directly supports continued capital role and transition to most-important/economic/administrative centre. Claim describes a past transition, not indefinite primacy; omission of later Valencia event does not contradict this bounded question."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "8031dc0e6ba0af6a92a237269907e8852a7e09fb4a45bc307fc8d00f49422bad"
+    },
+    "l08": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Exact P2.2 supports continued capital role, not first-becoming, and every extra historical qualifier including Valencia and1516. Complete albeit verbose."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "d5d6acf62e56ac017b040bf14d75c5dbe5f57571c547bfe2df833582e77ff067"
+    },
+    "l09": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Athens article identity and P5.3 establish the Ancient Greek philosophy/education roles. Explicit Athens subject and prose avoid ambiguous antecedent."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "a27241e33b59c2622e1d8c96b417d8613fd5e14d69ff4f720c2438b2c0598400"
+    },
+    "l10": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "new_raw_review": {
+        "whole_context_supported": true,
+        "complete_content": true,
+        "assessment": "Raw W correctly denies support for Barcelona philosophy from the Athens excerpt; no generated success credited."
+      },
+      "record_sha256": "e0acbf7191e3e7e1ee77804cc30ad049be6f9bde725b1f4cb46ed705d4993f79"
+    },
+    "l11": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Successfully rebound from Amateur astronomy to Apparent magnitude P5.1-P5.3. P5.2 states fifth-root100 and about2.512, supporting unchanged correct generated interpretation."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "6077db60d729c9b4747a22304e7fcdbf854c601247f68b2840840d986497e2ce"
+    },
+    "l12": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "new_raw_review": {
+        "whole_context_supported": false,
+        "complete_content": false,
+        "assessment": "Explicit square-root-of-100 conclusion contradicts its own fifth-root TeX and the source. Retain complete text; do not silently drop the wrong concluding clause."
+      },
+      "record_sha256": "8a39238cc909dab993104370cfe5ed1b3defa29767b93acb642937d0c0258411"
+    },
+    "l13": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "new_raw_review": {
+        "whole_context_supported": true,
+        "complete_content": true,
+        "assessment": "Complete viewing conditions and eyesight/altitude/atmosphere qualifiers are correct in Apparent magnitude, but cited amateur-light-pollution passage is wrong. Subject metadata light pollution is not the actual source title."
+      },
+      "record_sha256": "56fe504d613c041239f34111d46ae35a729d8b849e01ca70cfb8e49e1d08c4da"
+    },
+    "l14": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "new_raw_review": {
+        "whole_context_supported": true,
+        "complete_content": true,
+        "assessment": "Raw W correctly rejects a universal fixed naked-eye limit, preserving all named viewing qualifiers; no generated success credited."
+      },
+      "record_sha256": "89ba0f971e952db3eea0398cf680a716a027a1de99741342e3c70a96901815f5"
+    },
+    "l15": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "new_raw_review": {
+        "whole_context_supported": false,
+        "complete_content": false,
+        "assessment": "Transfers compost mixture organisms/nutrients to vermicast and again calls vermicast an input decomposed by worms. References explanation does not cure wrong subject/input-output bindings. Same-model audit approved this raw draft."
+      },
+      "record_sha256": "dc4b420e7bcee2b317e0c4fbcf2d274f46a4d40be29d75840b1da2419e989743"
+    },
+    "l16": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "new_raw_review": {
+        "whole_context_supported": true,
+        "complete_content": true,
+        "assessment": "Raw W correctly distinguishes earthworm excreta/end-product from unprocessed input. It remains withheld, not a useful eligible generated answer."
+      },
+      "record_sha256": "74a9e9ac7149c490eec30cfac98ac75b7e527a3d5cd68c489425d04105d3bf5a"
+    },
+    "r01": {
+      "supported": false,
+      "complete": false,
+      "useful": false,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Vermicompost definition describes producing a mixture containing vermicast; it does not make vermicast an input decomposed by earthworms. Historical role transfer remains eligible."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "b5ddbb6faa47927193619bd702585578af409d14d72d59a85469725fef59bbee"
+    },
+    "r02": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_history_review": {
+        "result_sha256": "c23fa398d341497dc275618d57ae94107e51a698926703b4972be09dd8d1ccd3",
+        "route": "SCREEN_ELIGIBLE",
+        "assessment": "Unsupported input role and shared-property transfer across three obligations are all approved; structure does not repair semantic support."
+      },
+      "record_sha256": "c510f00a8d0c1d8e987c76929449f72825ba111e64925a3dcfd864d36bf28245"
+    },
+    "r03": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_history_review": {
+        "result_sha256": "894cbe1337adbc2d7706f3429ebe3f0a75ddeee79a2741b16268e8f3dbc0cbf8",
+        "route": "WITHHELD",
+        "assessment": "C1 is marked UNSUPPORTED but final VERDICT is PASS. Controller correctly withholds the inconsistent audit; C1 is indeed the codification reversal."
+      },
+      "record_sha256": "76c3c1572ef92e2ad46cc77409c0ef75cdb2ece20784ca33b5e53e6afbfd56d3"
+    },
+    "r04": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_history_review": {
+        "result_sha256": "78a037424a7e77d2411f08d8e1b6ddd901e6d6b8dd46af066d3b35f45ddb41dc",
+        "route": "WITHHELD",
+        "assessment": "Withheld, but audit reason misses continued-versus-became. It inaccurately paraphrases source as became capital and rejects the historical main-centre description for not mentioning later Valencia displacement; that is not the actual failing claim."
+      },
+      "record_sha256": "2b8aec1a5e2c51d393b237c346c1c6d9d5981edd568544f8716647efacfc0883"
+    },
+    "r05": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_history_review": {
+        "result_sha256": "35858c61bcae831cf86afee9b598fca5611faabd99e4180626756ffab17b2ac7",
+        "route": "SCREEN_ELIGIBLE",
+        "assessment": "Approves the historical transfer of smaller-wound pathogen protection into the general reason for pruning unwanted material. The real source condition remains unmet."
+      },
+      "record_sha256": "2734d7b2de9df944347c9ab6eb5154ff72b4ec3d28174a23cc48f740343709e7"
+    },
+    "r06": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Historical wrong-neighbor binding repaired to Fermentation P2 including ethanol/lactate inP2.4."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "Pasteurization P4.1 supports usual less-than100C/212F. Historical replay is not fresh generated-answer success."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "ed20a78f2f1a8eedf0cb0fc79ac05b307649eaf3ede616784081a0b80d7bc222"
+    },
+    "r07": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_history_review": {
+        "result_sha256": "2574eba55691bcfecc2046d602609d019622ee29fb8cbb6968e2028054579222",
+        "route": "WITHHELD",
+        "assessment": "Correctly rejects wrong-neighbor magnitude references: audit explicitly notes definition-only source does not establish inverse scale or numeric ratios."
+      },
+      "record_sha256": "c60a4369ec6c7e83fd5fb6e0453c316639be2d4a175450a03a6fafc4ee27312b"
+    },
+    "r08": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_history_review": {
+        "result_sha256": "8ade20c36a52764e5454a4c6e0f2ef951bdb093e4fa8a84ef1807233b21eb010",
+        "route": "SCREEN_ELIGIBLE",
+        "assessment": "Approves another wrong-neighbor magnitude ratio claim when combined with a supported amateur-observation obligation; this differs from the correct r07 rejection and demonstrates unreliable multi-claim judgment."
+      },
+      "record_sha256": "d7f406c34fc57c27b3f9823d1f40cb63f8632102d2b4b871ed4210e34f530b7d"
+    },
+    "r09": {
+      "supported": false,
+      "complete": false,
+      "useful": false,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Fifth-root TeX in P5.2 contradicts square-root prose. Correct approximate2.512 text does not rescue wrong root interpretation."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P1.2 supports variable-star and transient-event examples. Correct second obligation does not rescue numeric contradiction."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "b37f4d412db5e16561bd5683d9487f1fe1397756bda449648270ee78e17e45b3"
+    },
+    "r10": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_history_review": {
+        "result_sha256": "04a48e26a4f4e341f7b12ae9d4d39398b463f1f92072965b39a7587c948e8de7",
+        "route": "WITHHELD",
+        "assessment": "Correctly rejects fabricated Acropolis opening hours/prices/closure details absent from the dated general city source."
+      },
+      "record_sha256": "e7c3f182ed11db1bcbcf639791aa3af9a58a834bf04682fd14358bc26fac497e"
+    },
+    "r11": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Withheld by structural parsing or fixed independent score; no final claim rendered. This is not proof the raw draft is factually wrong.",
+      "preserved_history_review": {
+        "result_sha256": "258d8da9ba6ffcbd254d5d2eb358dd9924b53f74bfbecdb219c37725a01058fd",
+        "route": "WITHHELD",
+        "assessment": "Falsely rejects a supported inverse-scale correction by confusing the quoted false premise with the answer negating it; the audit reason even acknowledges the corrected claim is supported."
+      },
+      "record_sha256": "8bc2d4eb3c0573caff7f9e4bd6e9edf81d1e06c6c2fa35c16c693ad6654844fc"
+    },
+    "p01": {
+      "supported": false,
+      "complete": false,
+      "useful": false,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Constructed probe is true against its frozen Vermicast definition, but classifier rejected that binding and rebound to P4 definition of a mixture containing vermicast. Selected P4 does not establish that vermicast is earthworm output. Positive probe became unsupported through rebinding."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "a4ae5be0dddc3044353f3c77596ecaf1c03a197909dc44e76a66c60a838d9b66"
+    },
+    "p02": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Constructed probe withheld; expected judgment remains in frozen fixtures and false rejection is counted separately.",
+      "record_sha256": "70f13208455dddaca9fd2a689ee0f61c88bd1864449451f42b71e398285d1b83"
+    },
+    "p03": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P5.2 establishes general smaller-cut condition, woody plants and compartmentalization limiting pathogen/decay."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "a2a90b4782eb9f0c92d4cf44831855d1b3751d822f27809c86fdcf30cc456286"
+    },
+    "p04": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Constructed probe withheld; expected judgment remains in frozen fixtures and false rejection is counted separately.",
+      "record_sha256": "f71deb4bc3f38d3fa73f41606145cb0d57fc8b49392ba38227133f1854b3e473"
+    },
+    "p05": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Constructed probe withheld; expected judgment remains in frozen fixtures and false rejection is counted separately.",
+      "record_sha256": "efff2cee0682eca3d289599d1aa50558fd39550a4e920dd3b642fd009edb9d96"
+    },
+    "p06": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Constructed probe withheld; expected judgment remains in frozen fixtures and false rejection is counted separately.",
+      "record_sha256": "3926f3b2abb7e0e32bacf2074c9f76503e50100fbec149149ff01a377032c3bd"
+    },
+    "p07": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P2.2 explicitly says continued as Principality capital after joining Aragon."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "f795f554e783bd4bc562f258c991c867da700002ea120e216d2bf24e78e7ce9c"
+    },
+    "p08": {
+      "supported": false,
+      "complete": false,
+      "useful": false,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Counterfactual first became after joining contradicts continued inP2.2. No date or neighboring event supports the claimed transition."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "c224d2f5a2049471d36498667263d9f677f51418123ecc1ac717fd42f4e7e3bc"
+    },
+    "p09": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Constructed probe withheld; expected judgment remains in frozen fixtures and false rejection is counted separately.",
+      "record_sha256": "37cc2684037b0c5c5474e84b91be36aa48f5fe9c75927ad6f4dbb6fb62d4d017"
+    },
+    "p10": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Constructed probe withheld; expected judgment remains in frozen fixtures and false rejection is counted separately.",
+      "record_sha256": "00d121bb839b0a1f472407d9679e48e081d657d3271a89cc2a81b8ff6d83ffc0"
+    },
+    "p11": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P5.2 supports fifth-root100 and approximate2.512."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "6d5c132cc3449162d317fab65f0a1667134a6d90534ecbed40291608d2859a38"
+    },
+    "p12": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Constructed probe withheld; expected judgment remains in frozen fixtures and false rejection is counted separately.",
+      "record_sha256": "9427b985a8730e2ed1725e15521b0933a2e6a216d5a9ea093807b35785dbbff8"
+    },
+    "p13": {
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P6.2 includes darkest night, approximate+6.5, eyesight, altitude and atmospheric conditions, all retained."
+        }
+      ],
+      "assessment": "Builder inspected unchanged full prose, visible subject/obligation context and exact final selected edition spans. Scores and lexical overlap do not establish this judgment.",
+      "record_sha256": "36a03ed0ace780649f45178e8e6eab6257260754d262df3d95f58e5b0da15220"
+    },
+    "p14": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Constructed probe withheld; expected judgment remains in frozen fixtures and false rejection is counted separately.",
+      "record_sha256": "f67c0b8eaf25de38ab9f5dc67e0be80030b11b2fe22b6fa27a69e794f22ad04b"
+    },
+    "p15": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Constructed probe withheld; expected judgment remains in frozen fixtures and false rejection is counted separately.",
+      "record_sha256": "8dffcb6011294675eb77dd5a8a64ddf9bd108a1a1dde428a2c053c0f305f74fd"
+    },
+    "p16": {
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "assessment": "Constructed probe withheld; expected judgment remains in frozen fixtures and false rejection is counted separately.",
+      "record_sha256": "9392a36d4099466b84a67b9e4d6b6e144796adb433c0ce1af69b7f495724d6de"
+    }
+  }
+}

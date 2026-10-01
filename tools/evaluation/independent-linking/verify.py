@@ -91,7 +91,7 @@ def main():
    if eligible and not c['expected_probe_supported']:counts['probe_false_approvals']+=1
    if not eligible and c['expected_probe_supported']:counts['probe_false_rejections']+=1
  with tempfile.TemporaryDirectory(prefix='pocketlore-independent-check-') as tmp:
-  t=Path(tmp);classes=t/'classes';classes.mkdir();sources=[R/p for p in manifest['sources'] if p.endswith('.java')]+[F/'LinkBehavior.java'];subprocess.run([TC/'jdk/bin/javac','-d',classes,*sources],check=True);subprocess.run([TC/'jdk/bin/java','-cp',classes,'org.pocketlore.app.LinkBehavior'],check=True)
+  t=Path(tmp);classes=t/'classes';classes.mkdir();sources=[R/p for p in manifest['sources'] if p.endswith('.java')]+[F/'LinkBehavior.java'];subprocess.run([TC/'jdk/bin/javac','-d',classes,*sources],check=True);subprocess.run([TC/'jdk/bin/java','-cp',classes,'org.pocketlore.app.LinkBehavior',score/'inputs'],check=True)
   subprocess.run([TC/'jdk/bin/java','-cp',classes,'org.pocketlore.app.LinkHarness',score/'inputs',t/'replay',score/'scores.tsv'],check=True);exact(t/'replay/linked.json',sha(score/'final/linked.json'));exact(t/'replay/pairs.json',sha(score/'prepared/pairs.json'))
   for name,p,h in [('run',score/'scores.jsonl',sha(score/'scores.jsonl')),('verifier',model,pin['sha256'])]:
    changed=t/name
