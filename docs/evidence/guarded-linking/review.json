@@ -1,0 +1,993 @@
+{
+  "reviewer": "builder; final visible prose and exact attached source spans rechecked; not independent approval",
+  "cases": {
+    "s01": {
+      "record_sha256": "e28f8d45d1ba4f178f5c7da533f74914e2555a28fd5f8dd3e5b801140c7a699c",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s02": {
+      "record_sha256": "8d5319df70f368b08a660e4bf96932cd41db4f01b154ab2e3ef02f4fa02b11cd",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s03": {
+      "record_sha256": "aed9163fa128c301a055adb55217101864c325e878f5031e2b3f7677c92410a4",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s04": {
+      "record_sha256": "ff8485a2423a2fe08964e13907c44cb0e0f964177f739f73467e3587ba8958a9",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s05": {
+      "record_sha256": "5c88e48fb94056b2976261bd836712bf85ba245841b10ebb44139bbc10c85759",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s06": {
+      "record_sha256": "7442a09f715c2869da3dfab97695b74b4eaaa2c21811647ed5033fa105d0c8be",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s07": {
+      "record_sha256": "f9f9cafde2e463cd0afe2bc0e10b2c0fb93978f38f1a4d260292feb8c1209aaa",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s08": {
+      "record_sha256": "d38c10b1b4dd822b74885f2989e1dac158d3fe71c73f4c62ae21cf72dc2c76e8",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s09": {
+      "record_sha256": "bbc967d650a5ea453a30e3d8565cae8289ecbc0d6568a56928ed4b97844511d5",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Empty or truncated draft",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s10": {
+      "record_sha256": "92018a68a5f10aac4e26aa6bd42a1c0e85a26361da9b2cc982ae2634435c47d0",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s11": {
+      "record_sha256": "e4b19c98874c229a4f752076a34d3b8a8edc746b45ce3d9c3c558fecca735c9a",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s12": {
+      "record_sha256": "448d62ae7721127d7d861bb23988458eb50ea0958ae512bf81166738b5a009d4",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s13": {
+      "record_sha256": "573b4be8d9f22e99926b27045d8624dcef10f9455e59bc25b82ca51444db374d",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s14": {
+      "record_sha256": "4929bbecf4653b565660621b037b3a43c1e8fd5aeb2fc26cafd1028254b67006",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s15": {
+      "record_sha256": "eb2ec30e00d0579d2a90ea56ed866656496df207681cdf9048afd76587f48aaf",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Empty or truncated draft",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s16": {
+      "record_sha256": "6bf1a0491763545f2dc0760eef2841f1790319ee81af397d4d32529f3ed5048e",
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Grafting definition anchors this joining; the cited success sentence requires vascular tissues to grow together. Complete first obligation."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "Pruning definition anchors practice; the removal list explicitly includes diseased/damaged/unwanted plant material. Answers the requested reason through the removal purpose without transferring the graft condition."
+        }
+      ],
+      "withheld_reason": "",
+      "assessment_scope": "published claims"
+    },
+    "s17": {
+      "record_sha256": "6fef07b3c63b3271300b20622ec123ea8e2bcb93a095470fada18357f11e5cff",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s18": {
+      "record_sha256": "c62d7131606d2192e1fe9c15559b699512a596aa97ebe3bde83c72e879ff48eb",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s19": {
+      "record_sha256": "ba180ed0aa5ab42b289e5df8aaefc3c1caf3dc7bb42f54caa853c3e48245e5f9",
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "The single cited sentence distinguishes written single-or-set documents from a single comprehensive codified document. Both definitions are present in generated prose; the final comparison is read with that explicit single-or-set definition, not as a claim that all written constitutions have multiple documents."
+        }
+      ],
+      "withheld_reason": "",
+      "assessment_scope": "published claims"
+    },
+    "s20": {
+      "record_sha256": "303fc7f136a3b1f9e2605d903494b05a34181bb55e4a3df107dac5baf1648407",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s21": {
+      "record_sha256": "9b3458753914334fef63fcd2dcb749049c82e5a94c9c43a84cd5627493e51730",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Empty or truncated draft",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s22": {
+      "record_sha256": "639b8f8b0e8463be29aee3206dfe5c536e5f913f88d626e88ef78a8b3ab33d20",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s23": {
+      "record_sha256": "15ff9c85c521717c580da7a269893837ab5fc7f7ff47a7d2ae918f5b8e16dccb",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s24": {
+      "record_sha256": "4218d825edffb744fe1254d643042bb18d28fcc117cf74eb5a80a008ac7033ad",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s25": {
+      "record_sha256": "6e4bbac38fd14ce347a674851195d1888ccccfe5ffeb712f0a494e0bfee49e23",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or duplicate sentence reference",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s26": {
+      "record_sha256": "65695265d36eed955199a96f87c472b04897b5c028b9e52738f6d168d50f1dac",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s27": {
+      "record_sha256": "90bfb73c3ae5f65b51ac9fc3fcdd1ff128505b1a7f07b263d529f95da7bfc7d1",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Empty or truncated draft",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s28": {
+      "record_sha256": "da478fa9c9b0c10872fa1ac975b8919e1ae194e04934478a233389d28387c2a8",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s29": {
+      "record_sha256": "9ea818ae02b7851a1a4016e24b84314851ce4b17e666645fc5ac894dec998279",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s30": {
+      "record_sha256": "4935a69820c9944dc846f54f9100b70835fd87d9aa502d94d77a1a0c63114302",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s31": {
+      "record_sha256": "f2cd23e8e1b0272a855f1b1a9be34b8afd84170e06ca24366c36e6b2123267f7",
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Barcelona coastal sentence supplies explicit subject and northeastern Spain location; the following It sentence supplies Catalonia capital/largest status. Both exact spans are attached. No chronology is asserted."
+        }
+      ],
+      "withheld_reason": "",
+      "assessment_scope": "published claims"
+    },
+    "s32": {
+      "record_sha256": "0efaa9ef381429bb716e83018882dac3327020fc824cc9d8ecfffe04022a2332",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s33": {
+      "record_sha256": "0968585a0db3e65ac679b008145d34a54b00294494516217dea4462e97279708",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "No source frame for capital-extreme|athens|southernmost|european mainland",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s34": {
+      "record_sha256": "436d0b9fed9affaf10f31cda7d75c94373c71744c2e0c0f1dc0f2440c4276d21",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s35": {
+      "record_sha256": "7b9e3e1ad4993820a5955b47b08a2b5f36e7aa672f559dd7dbe9e7057bfb2d2f",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s36": {
+      "record_sha256": "31ef90a2db16c7b06c80a5995ce5a41247adf80ebf4e6c64dab16ddfc74278ec",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s37": {
+      "record_sha256": "647da526be1bdaf5a1c58f5d49b2407e8fb6bd1586d904aa33f59a4158a51864",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or duplicate sentence reference",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s38": {
+      "record_sha256": "bf96fb278276bb0351aadd33c62232714aaceed4cac3855125678184e5ce1d1a",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or duplicate sentence reference",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s39": {
+      "record_sha256": "cffd5e64ba1f091c3f223041ecbe7f0d1f136cb237cd67b4a69716d96b24792e",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or duplicate sentence reference",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s40": {
+      "record_sha256": "e7d4dca325f59619e4803bf5ea11d0d69a2ee06c5fedc1281a0d50395e6f37d9",
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Industrial-use sentence explicitly lists ethanol and lactate as products."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "Pasteurization definition explicitly says usually less than 100 C (212 F); usual and strict inequality remain."
+        }
+      ],
+      "withheld_reason": "",
+      "assessment_scope": "published claims"
+    },
+    "s41": {
+      "record_sha256": "bc0750c0fb04a6ab8e5c8c765e00086f0cd620fd93f7c6c3d2f865a4c950fc52",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s42": {
+      "record_sha256": "9f27fae888701306b4b1bb5e50de12871186bd5f6c14343b756b0633e24f8922",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s43": {
+      "record_sha256": "8dcd4514837250131d78e7aa6540524e54fb92ab2995ad0bd13161d3329ce7d3",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s44": {
+      "record_sha256": "e21c9051fc5affb5b87bd5c5fbf82e3478c23075629f173093929339707276f9",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Empty or truncated draft",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s45": {
+      "record_sha256": "8d7561be26c3f87406748ddeb90198cc020074dc7732b4b1ef36d3e180fe5a33",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Empty or truncated draft",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s46": {
+      "record_sha256": "295131f51286205c1b0262b450a918e7cf835f2b5019788f38aa15a841713f6e",
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "The cited fifth-root-of-100 formula yields 2.511886..., rounded to the displayed 2.512. Ordinary finite-display precision, not an assertion of exact real-number equality; no wrong-root prose."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "Some amateur astronomers and both variable/double-star monitoring occur in the exact cited sentence; visible amateur astronomy subject resolves amateurs."
+        }
+      ],
+      "withheld_reason": "",
+      "assessment_scope": "published claims"
+    },
+    "s47": {
+      "record_sha256": "a592a3afdaf9dfdd52d0b6ea6705333809c9e2ac99a11f9a9662db9bfdd00940",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "s48": {
+      "record_sha256": "f7c9336f9126237466c2458988aad65e135f9fae935003afad24a36d4c03d019",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "n01": {
+      "record_sha256": "e727bd0054b6249f6acd444f070110074867f439cd48c554008f17ad461c0cc0",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "n02": {
+      "record_sha256": "5eaa96513804dbfd24c3c58dce1946d1d504ef6aa2b1432b7788d2141ca3ccb8",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "n03": {
+      "record_sha256": "58c11ca66087c3a7721990ca576c75feacb460fb110d6818f08cf6aafc4729a5",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "n04": {
+      "record_sha256": "778612270904c81750d493b4ac66da1d526626ed847a4ca948e85436870b7127",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "n05": {
+      "record_sha256": "85a2219f200d42ba738593dd2f58edd49659750af597619377d8677c8c5bb68e",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "n06": {
+      "record_sha256": "1dce3208e45fc34fd439a6303ae48fdc0c70daee3e8a7a2d7b25ec3529eab5a2",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "n07": {
+      "record_sha256": "397a7004415d542849fa0422f92404a98d9167de9ccb11a08f0a447fe85f988b",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "No source frame for capital-event|barcelona|begin|principality of catalonia|after-joining|kingdom of aragon to form the composite monarchy of the crown of aragon",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "n08": {
+      "record_sha256": "90bb872e4716943979d01fd7bd6170e5164d0a48eeddb6085f9a5f2bc3308de3",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "n09": {
+      "record_sha256": "dfaf7fe7b67618653655454076e1336242f76cf34f62c6fa5056824fb480834b",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "n10": {
+      "record_sha256": "fb367dcc4d1976a0aaf20a020801f2fe02e1c5e702919bfd705d4a0ee01b62fa",
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Exact TeX degree five and radicand100 support fifth root, and about2.512 is explicitly approximate. No article footnote is treated as a source ID."
+        }
+      ],
+      "withheld_reason": "",
+      "assessment_scope": "published claims"
+    },
+    "n11": {
+      "record_sha256": "dd577f1dfe9ea4b783c76efa0a7fc70d0b9aab2fdcdd467c04dfee8add65ca29",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "n12": {
+      "record_sha256": "75076b671c196b90f2efc6bfe353bb842a66dbda327ca948a08857710a0f7482",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l01": {
+      "record_sha256": "2398feafbc465b9c2c236e5d0bb29567c36b3d9d34b82d00bcf26ff15f2ee56f",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l02": {
+      "record_sha256": "a5afdecece8d2cbaac3bd07af5e5a71b337f8c161b1034ae011151796088f531",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l03": {
+      "record_sha256": "994e07ac449a9b3a15dc0e9e6a327e7860703ba1463be19ef76e88650ac5c737",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l04": {
+      "record_sha256": "29805a5f57706b04e8835cf8447c57b3928cf22732cb901fccfdade720b48e09",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l05": {
+      "record_sha256": "a2769e6c7f3bd06af10c31908340862a97df39956ea35bd904cf2c70ed305478",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l06": {
+      "record_sha256": "7e375b591040010daa6560777b37f1459d69e19529d489efa19d49269cf42123",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l07": {
+      "record_sha256": "343227ff29448de1151adf766bc39b05bcb67e781846882da8648642fddf322a",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l08": {
+      "record_sha256": "b9a7ea0ed158a8650724c5b9735a277d7367dc61a467051dfa6bbabbc3e2899f",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l09": {
+      "record_sha256": "fad5055fb382c20a4c0f40e763941e15400bbcbf463b7169ebb33fdc7d89bab9",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l10": {
+      "record_sha256": "88db125736c3340afe20ea89dd9784c37e9fbdb55e9beac26cdc41a4e3d9c681",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l11": {
+      "record_sha256": "ff00ca5f097c0ffae1248f79d2020e99286bdae4d690f2e37d7d6194a5693ebf",
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Exact formula and approximate decimal support the complete generated root statement; rebinding now selects the formula sentence. Awkward English but a complete intelligible clause."
+        }
+      ],
+      "withheld_reason": "",
+      "assessment_scope": "published claims"
+    },
+    "l12": {
+      "record_sha256": "9902a5c2aea4d44bd69910edc7c60661bae8cd4529f1179e055d9ab69e5500cc",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l13": {
+      "record_sha256": "e6696719f26d2875fd34b072ab1bdc9eb3562385e13d1af482fc10b009225a1e",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l14": {
+      "record_sha256": "9ab4c993a6de6a9e5e90ce2bba045778e350245afe05e732e11ebafa3dfea407",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l15": {
+      "record_sha256": "afbdcbd5723c1a6b43010560299c656ae2a29ee46c3d053c6641edd9ce1817fb",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "l16": {
+      "record_sha256": "bb8dd003fc7448ef3cc81c09583a347efe927e1ea4fa59134ccd6c663bc8cf4d",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Model withheld an obligation",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "r01": {
+      "record_sha256": "24cb122d0cf4d4e5f1ae2ef30fbe9f7996073bf8e5a421704d0209f964916a6f",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "r02": {
+      "record_sha256": "9d37c9d4439f6e4d3814cec95819d296a276e0c1b7d851a6b13cf9495780f03b",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "r03": {
+      "record_sha256": "03b37a2e04d02afb4d31a3a105696ac872da15ec7d6e07b80246263c48c973d2",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "r04": {
+      "record_sha256": "3b5544c8f21fc63881f587d63ad3e5564213e767dde952437f590411deab53ae",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "r05": {
+      "record_sha256": "71476646916dc65dae6d72fce2f098ed4d168eb653ceb224fa1ebc30c63c34e1",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "r06": {
+      "record_sha256": "e0790adbe0fb0058c5600167a120b7f4d168e45a15489fe1825b73515f1d9356",
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Industrial-use sentence explicitly lists ethanol and lactate as products."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "Pasteurization definition explicitly says usually less than 100 C (212 F); usual and strict inequality remain."
+        }
+      ],
+      "withheld_reason": "",
+      "assessment_scope": "published claims"
+    },
+    "r07": {
+      "record_sha256": "2409a41047b1137dbb74318ed6d7f267d4d41a47314d993d52ebe9667cdb9ce3",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "r08": {
+      "record_sha256": "0d57e7594389bca72ce1275a67ca9af8fbd922911c457f34fb5c9a3be3b7b008",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "r09": {
+      "record_sha256": "f5236c38b54562ea92e5595f2cc103b0ef60fc8510edb451ceb488cf6a78a196",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "r10": {
+      "record_sha256": "76961ed23d0be64868a8d62b37e57dba0954be9598d16f6eaa2a00db2087362f",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "r11": {
+      "record_sha256": "e1e431bdfaf4472bd48bd8396128c58783365cf39ec2239536ae9f756b33233a",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p01": {
+      "record_sha256": "f8a45c057ea13430ff939e5028996b1c44c9b55839cc11d3a4ae33015e5e44ad",
+      "supported": true,
+      "complete": true,
+      "useful": true,
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "The exact cited Vermicast definition says end-product of organic-matter breakdown by earthworms. Article-topic heading Vermicompost does not replace the explicit Vermicast subject. Constructed probe only, never counted as generated success."
+        }
+      ],
+      "withheld_reason": "",
+      "assessment_scope": "published claims"
+    },
+    "p02": {
+      "record_sha256": "fd7c8a4b264a123226eb4fe6b5c5a6acd32bf239f1ff00ba8b8d9710106c14e5",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p03": {
+      "record_sha256": "4fe859d6971b95e47d49ced2d0684e807df94f86da4a7b536e3f96d53e8a4f9d",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p04": {
+      "record_sha256": "598d1ed9eb21d74ee10a6c6436e39e4df80c9d71493f36f9730c3c7ad91814a8",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p05": {
+      "record_sha256": "d3b7439bfe97fb46b07a6212e99cf0e9e47782f109259e0c7ed36e585a81489c",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p06": {
+      "record_sha256": "e450cba604a2f9b11e4fc8d4d7f36a14b8a0a02014000582f2777e56184c7eeb",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p07": {
+      "record_sha256": "044d6dfdc9666dd9a2a9c4ae67c392aac5f25852138d77c0f9e5c911adb46ce8",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "No source frame for capital-event|barcelona|continue|principality of catalonia|after-joining|aragon",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p08": {
+      "record_sha256": "c76d4d9cb428330fe3e1667d91a4be6d4cc0b9bceab7a7b023c4d84a99be6a78",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "No source frame for capital-event|barcelona|begin|principality of catalonia|after-joining|aragon",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p09": {
+      "record_sha256": "d837e762807e0c8f98638a33e1a39e65930c757197916da52fc8fc72c71c4f09",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p10": {
+      "record_sha256": "3917a63d97beb10b9d5933fea200a3e05f2118429228bc8e661d7e41ec663288",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p11": {
+      "record_sha256": "2719ff0923ed07a2de8eb68f3ea16bd7b70c40c705f5eef584822ad0913a9833",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p12": {
+      "record_sha256": "7c3e42ba391b396432f4c4ec299af4ba159679a7fcc2937d7f863e38b59397eb",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p13": {
+      "record_sha256": "8b0d67b9e7684c7a9d57222acc584f40d3f736db04f5567e189d596dbc745151",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Unknown or incompletely parsed factual clause; no partial publication",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p14": {
+      "record_sha256": "847daa17fa6545ab4af7f9700ff7511706226e700a821ecef92134f1dafde6d0",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p15": {
+      "record_sha256": "d2bac82d79d926a104d0c55a7971aec9b830dceb2d3a92b3378c9f30592995e1",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    },
+    "p16": {
+      "record_sha256": "ef4b0db7d3a07616bb68f8afe6813dfa804f45395b7cac646b262db0db8ce27d",
+      "supported": null,
+      "complete": false,
+      "useful": false,
+      "claims": [],
+      "withheld_reason": "Independent evidence score withheld a complete claim",
+      "assessment_scope": "No published prose; withholding is not factual approval"
+    }
+  }
+}

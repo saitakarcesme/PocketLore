@@ -1,0 +1,11 @@
+{
+  "outputs": "docs/evidence/guarded-linking/replay/results/linked.json",
+  "original_prose_and_exact_sources": "docs/evidence/independent-linking/scoring/inputs",
+  "scores": "docs/evidence/independent-linking/scoring/scores.jsonl",
+  "expectations": [
+    "tools/evaluation/scale-model-quality/protocol.json",
+    "tools/evaluation/obligation-binding/new-cases.json",
+    "tools/evaluation/independent-linking/fixtures.json"
+  ],
+  "instructions": "Inspect all visible complete claims and headings against final exact citations. Classifier-selected references remain separate. Do not infer entailment from scores, frames or hashes; distinguish generated questions, historical wrappers and constructed probes. This is retrospective public development, not held-out evaluation."
+}

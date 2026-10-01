@@ -1,0 +1,35 @@
+Independent binding behavioral checks: 29
+Pairs: 994
+{
+  "artifact_behavior": "PASS",
+  "builder_assessed_counts": {
+    "old_useful_eligible": 8,
+    "new_useful_eligible": 5,
+    "unsupported_eligible": 8,
+    "old_absent_withheld": 8,
+    "new_absent_withheld": 1,
+    "eligible": 29,
+    "withheld": 74,
+    "historical_unsupported_eligible": 2,
+    "probe_false_approvals": 1,
+    "probe_false_rejections": 3
+  },
+  "independent_review": "pending"
+}
+Frame behavioral checks: 39
+Guarded composition behavioral checks: 9
+HISTORICAL QUALITY: Unsupported eligible prose remains; Constructed unsupported probe admitted
+{
+  "guarded_behavior": "PASS",
+  "builder_counts": {
+    "eligible": 9,
+    "withheld": 94,
+    "old_useful": 5,
+    "unsupported": 0,
+    "absent_withheld": 9,
+    "new_useful": 1
+  },
+  "independent_review": "pending",
+  "scope": "Retrospective finite public regression; classifier alone remains failing"
+}
+GUARDED QUALITY PASS on preserved public development; not general entailment or deployment

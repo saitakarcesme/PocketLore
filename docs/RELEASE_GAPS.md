@@ -206,3 +206,14 @@ The [reused experiment](evidence/independent-evidence-linking.md) passes current
 | Independent classifier support safety |994 fixed scores retain role/time/formula and wrong-binding approvals; zero unsupported gate fails. | Keep classifier approval out of production; preserve its negative outputs as regressions. Reuse completed source-frame223 strategy, then already queued224 source-grounded obligation planning. No duplicate matrix or task. | None for bounded host development; independent source review required. |
 | Useful complete answers | Finite-parser repair2 retains5/40 old and1/20 new useful outputs, despite stricter safety. | Existing224 addresses correct blocked paraphrases and avoidable W before prose; no threshold or case-specific grammar loop. | None for host experiment. |
 | Mobile and release qualification | Fresh APK7a17268f00b01946690fb3545f665ac28bbfeefb85596fb17655e6cc91d896d9 compiles shared code only;4B/verifier not deployed. | Retain separate selected-model JNI/admission/resource and integrated release identity gates. | Approved sufficient-memory environment, physical Android/GrapheneOS, signing owner, clean reproduction and human reviewers as already documented. |
+
+## Task 222 repair 1: semantic veto fixes the bounded composed gate
+
+[Measured composition](evidence/guarded-independent-linking.md) passes the required build/check:5/40 old useful answers, zero unsupported eligible across103 records and nine absent withheld under builder source review. Independent review is pending; classifier-only failure remains unchanged.
+
+| Gap | Evidence | Next action | External dependency |
+| --- | --- | --- | --- |
+| Useful broad answers | New useful coverage drops5/16 to1/16; finite parser rejects supported paraphrases and corrections. | Reuse already queued224 source-grounded obligation planning. Do not repeat classifier inference or task223. | None for host development; independent source review required. |
+| General support verification | Finite corpus-informed rules on known development records; no generalization or mobile verifier proof. | Preserve all old failures and typed final bindings in224; assess complete prose against sources independently. | Independent reviewers; approved mobile environment for later integration. |
+| Selected-model Android and candidate identity | New APK2d04838f2bf676b474e355d93e5228b775acc4d444a17f8eee1542b6bd51b1db compiles experimental code only. Production remains0.5B, limits unchanged. | Separate selected4B/verifier admission/load/cancel/reload and combined native/index memory, then existing release revalidation. | Sufficient-memory approved emulator/device, clean reproduction, signing owner; no service changes. |
+| Physical/human acceptance | Host score replay and shared Java tests only. | Actual compatible Android/GrapheneOS use and human usefulness assessment. | Hardware/operator and human reviewers. |

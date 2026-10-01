@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "eligible": 9,
+    "withheld": 94,
+    "old_useful": 5,
+    "unsupported": 0,
+    "absent_withheld": 9,
+    "new_useful": 1
+  },
+  "review_role": "builder",
+  "replay_elapsed_seconds": 0.3141746570036048,
+  "new_generation_or_scoring": false,
+  "resource_limit": "Java replay -Xmx256m; no new PSS/RSS or native measurement, reuse historical stage measurements without summing as co-resident safety."
+}

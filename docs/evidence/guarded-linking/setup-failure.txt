@@ -1,0 +1,1 @@
+The first verifier-adapter edit stopped with StopIteration before writing a file: this resumed checkpoint contained repair2 but not task222 reuse commit231c686. Recovered231c686 by cherry-pick, preserving its failed evidence, then applied the adapter. No inference or evidence was repeated or replaced.

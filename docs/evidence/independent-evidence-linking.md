@@ -1,3 +1,11 @@
+# Task 222 repair 1: composed support gate passes on preserved development records
+
+The [guarded repair report](guarded-independent-linking.md) implements an actual two-stage controller: unchanged independent classifier admission followed by a complete-claim semantic veto and exact source-proof binding. Both required checks pass. Builder review finds **5/40** useful supported old answers, **zero unsupported eligible outputs** across103 records and all **nine absent controls withheld**. Only **1/16** new generated answers remains useful. No inference was repeated. Classifier-only accuracy remains unchanged and failing; the safety gain comes from the narrow semantic guard. This is retrospective public development, not independent acceptance, general entailment or selected-model Android execution.
+
+The failed231c686 checkpoint and reports below remain historical evidence. The new check explicitly validates and reports their failures before enforcing the composed controller's final gate. Production and Android admission are unchanged; existing224 remains the next concrete useful-answer task.
+
+---
+
 # Task 222: recovered independent-linking experiment reused
 
 The exact requested strategy was already implemented and measured during task221 repair1, preserved at `2623197415ccdd0cee8bb139500f1e7a48e2c75a` and recovered into the current checkout. Task222 reuses its immutable **60 old drafts, 11 historical wrappers, 16 new generated cases, 16 constructed probes and 994 independent classifier scores**. No old or new inference, classifier run, prompt/seed search, threshold change or fixture change was performed for this task. These are public development regressions, not held-out generalization.
