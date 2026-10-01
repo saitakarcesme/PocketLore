@@ -16,6 +16,7 @@ extern "C" JNIEXPORT jbyteArray JNICALL Java_org_pocketlore_app_NativeIndex_quer
   if(maxRows<1||maxRows>256||!cancel)throw std::runtime_error("Query admission");
   auto method=e->GetMethodID(e->FindClass("java/util/function/BooleanSupplier"),"getAsBoolean","()Z");Progress p{e,cancel,method,std::chrono::steady_clock::now()};if(progress(&p))throw std::runtime_error("Query cancelled");
   auto file=utf(e,path),query=utf(e,sql);if(query.size()>65536)throw std::runtime_error("SQL bound");
+  sqlite3_hard_heap_limit64(64LL*1024*1024);
   if(sqlite3_open_v2(file.c_str(),&db,SQLITE_OPEN_READONLY|SQLITE_OPEN_NOMUTEX,nullptr)!=SQLITE_OK)throw std::runtime_error("Read-only index open failed");
   sqlite3_limit(db,SQLITE_LIMIT_LENGTH,1048576);sqlite3_limit(db,SQLITE_LIMIT_COLUMN,32);sqlite3_db_config(db,SQLITE_DBCONFIG_TRUSTED_SCHEMA,0,nullptr);sqlite3_exec(db,"PRAGMA cache_size=-4096;PRAGMA mmap_size=0;PRAGMA temp_store=MEMORY;PRAGMA query_only=ON",nullptr,nullptr,nullptr);sqlite3_progress_handler(db,1000,progress,&p);
   const char*tail=nullptr;if(sqlite3_prepare_v2(db,query.c_str(),-1,&statement,&tail)!=SQLITE_OK)throw std::runtime_error(sqlite3_errmsg(db));

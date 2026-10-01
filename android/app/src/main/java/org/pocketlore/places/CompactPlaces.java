@@ -29,7 +29,7 @@ public final class CompactPlaces implements AutoCloseable {
     public CompactPlaces(String path,java.util.function.BooleanSupplier cancel) {
         this.cancel=cancel;deadline=System.nanoTime()+20_000_000_000L;
         db=SQLiteDatabase.openDatabase(path,null,SQLiteDatabase.OPEN_READONLY);
-        db.execSQL("PRAGMA cache_size=-4096");db.execSQL("PRAGMA mmap_size=0");
+        db.execSQL("PRAGMA cache_size=-4096");try(Cursor pragma=db.rawQuery("PRAGMA mmap_size=0",null)){pragma.moveToFirst();}
         try(Cursor c=db.rawQuery("SELECT value FROM metadata WHERE key='schema_version'",null)) {
             if(!c.moveToFirst()||!"2".equals(c.getString(0))){db.close();throw new IllegalArgumentException("Unsupported compact schema");}
         }

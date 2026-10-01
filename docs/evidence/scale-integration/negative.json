@@ -1,0 +1,42 @@
+{
+  "environment": "Android x86_64 emulator-5560; not physical hardware",
+  "before": {
+    "pss_kib": 25167,
+    "private_dirty_kib": 14556,
+    "java_used_bytes": 2830256,
+    "native_heap_bytes": 5555600
+  },
+  "sqlite_identity": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+  "checks": [
+    {
+      "case": "corrupt",
+      "error": "java.io.IOException: Bulk file hash\/length mismatch",
+      "ms": 11
+    },
+    {
+      "case": "cancel-before",
+      "error": "java.io.InterruptedIOException: Bulk operation cancelled",
+      "ms": 0
+    },
+    {
+      "case": "cancel-during",
+      "error": "java.io.InterruptedIOException: Bulk operation cancelled",
+      "ms": 8
+    },
+    {
+      "case": "over-budget",
+      "error": "java.io.IOException: File admission",
+      "ms": 6
+    }
+  ],
+  "saved_model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "retained_collections": 2,
+  "after": {
+    "pss_kib": 30320,
+    "private_dirty_kib": 16132,
+    "java_used_bytes": 5788320,
+    "native_heap_bytes": 6549568
+  },
+  "elapsed_ms": 2172,
+  "status": "PASS"
+}
