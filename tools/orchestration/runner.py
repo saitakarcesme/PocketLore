@@ -38,6 +38,23 @@ def read(path, default):
     except FileNotFoundError: return default
 
 
+def codex_events(path):
+    """Read recognized object events without altering the retained output stream."""
+    for line in pathlib.Path(path).read_text(errors='replace').splitlines():
+        try:
+            item = json.loads(line)
+        except ValueError:
+            continue
+        if not isinstance(item, dict):
+            continue
+        event_type = item.get('type')
+        if event_type == 'thread.started':
+            if isinstance(item.get('thread_id'), str) and item['thread_id']:
+                yield item
+        elif event_type == 'turn.completed':
+            yield item
+
+
 class Runner:
     def __init__(self, control, repo):
         self.control, self.repo = pathlib.Path(control), pathlib.Path(repo)
@@ -72,14 +89,11 @@ class Runner:
         if 'returncode' in previous: return previous
         log = folder / f'{phase}-{task["attempt"]}.jsonl'
         # If a previous process died, retain its real session ID before resuming it.
-        if log.exists():
+        if phase in ('builder', 'critic') and log.exists():
             completed = False
-            for line in log.read_text(errors='replace').splitlines():
-                try:
-                    item = json.loads(line)
-                    if item.get('type') == 'thread.started': task[f'{phase}_session_id'] = item['thread_id']
-                    if item.get('type') == 'turn.completed': completed = True
-                except (ValueError, KeyError): pass
+            for item in codex_events(log):
+                if item['type'] == 'thread.started': task[f'{phase}_session_id'] = item['thread_id']
+                if item['type'] == 'turn.completed': completed = True
             if completed and phase in ('builder', 'critic'):
                 result = {'returncode': 0, 'log': str(log), 'recovered_completed_turn': True}
                 atomic(receipt, result); self.save(); return result
@@ -105,11 +119,9 @@ class Runner:
             code = child.wait()
         result = {'returncode': code, 'log': str(log), 'finished': time.time()}
         atomic(receipt, result)
-        for line in log.read_text(errors='replace').splitlines():
-            try:
-                item = json.loads(line)
-                if item.get('type') == 'thread.started': task[f'{phase}_session_id'] = item['thread_id']
-            except (ValueError, KeyError): pass
+        if phase in ('builder', 'critic'):
+            for item in codex_events(log):
+                if item['type'] == 'thread.started': task[f'{phase}_session_id'] = item['thread_id']
         task.pop('process', None); self.save(); return result
 
     def execute(self, task):

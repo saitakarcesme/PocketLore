@@ -41,3 +41,5 @@
 - The existing 18-case corrupt-pack and SAF lifecycle regression also passes after import changes. Exact APK/model/pack hashes, disk accounting, raw inaccurate/truncated resource-workload output, timing and limitations are preserved in `docs/evidence/resources.md`. Allocation-time OOM, actual OS kill recovery, maximum-pack memory, provider blocking and physical/sustained acceptance remain open.
 
 - The resource test-APK byte-reproduction check failed after switching instrumentation runners; the app APK matched. Failure hashes are preserved, and the final 25-check audit archives and verifies exact measured APKs immediately. Native session admission now stays held through model destruction, closing a reviewed release race.
+
+- Supervisor maintenance isolates role-event parsing from validation stdout: numeric, list, null, malformed and plain-text output remains unchanged evidence. Only recognized object events can restore role sessions or completed turns. Sixteen orchestration tests pass, including real subprocess output and successful receipt reuse without duplicate execution; this is rig orchestration evidence, not application or physical-device acceptance.
