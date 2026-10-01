@@ -117,7 +117,7 @@ public final class ResearchEngine {
         if(n>3 && word.charAt(n-1)==word.charAt(n-2) && "bdfgmnprt".indexOf(word.charAt(n-1))>=0)word=word.substring(0,n-1);
         return word;
     }
-    private static List<String> rankTerms(String text) {
+    static List<String> rankTerms(String text) {
         List<String> result=new ArrayList<>();
         for(String term:tokenize(text))if(!RANK_STOP.contains(term))result.add(stem(term));
         return result;

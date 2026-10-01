@@ -26,7 +26,9 @@ public final class ResearchBrief {
         public final List<Quote> quotes;
         public final int omitted;
         public final boolean generated=false, completenessVerified=false;
-        Brief(String text,List<Quote> quotes,int omitted){this.text=text;this.quotes=Collections.unmodifiableList(quotes);this.omitted=omitted;}
+        public final EvidenceAvailability.Scope availability;
+        Brief(String text,List<Quote> quotes,int omitted){this(text,quotes,omitted,EvidenceAvailability.Scope.REFERENCE);}
+        Brief(String text,List<Quote> quotes,int omitted,EvidenceAvailability.Scope scope){this.text=text;this.quotes=Collections.unmodifiableList(quotes);this.omitted=omitted;this.availability=scope;}
     }
     static String hash(String text){try{
         byte[] digest=MessageDigest.getInstance("SHA-256").digest(text.getBytes(StandardCharsets.UTF_8));StringBuilder out=new StringBuilder();for(byte b:digest)out.append(String.format(java.util.Locale.ROOT,"%02x",b&255));return out.toString();
@@ -41,12 +43,18 @@ public final class ResearchBrief {
     public static Brief create(String question,ResearchEngine.Result evidence,BooleanSupplier stop){
         cancelled(stop);
         if(question==null||question.trim().isEmpty()||question.length()>2048)throw new IllegalArgumentException("Question must contain 1–2048 UTF-16 units");
+        EvidenceAvailability.Scope scope=EvidenceAvailability.scope(question);
+        if(scope!=EvidenceAvailability.Scope.REFERENCE){cancelled(stop);return new Brief(
+            "Evidence unavailable · no answer inferred\n"+EvidenceAvailability.reason(scope)+
+            "\nNo quotations selected. If your request also includes a general reference question, ask that part separately; it has not been answered here.\nYour question (not a source assertion):\n"+question,
+            new ArrayList<>(),0,scope);}
+        double leading=0;for(ResearchEngine.Hit hit:evidence.hits)leading=Math.max(leading,hit.score);
         StringBuilder out=new StringBuilder("Source-backed research brief · exact quotations\nNot a generated answer. Relevance and complete coverage are unverified.\n\nYour question (not a source assertion):\n").append(question).append("\n\n");
         List<Quote> quotes=new ArrayList<>();Set<String> ids=new HashSet<>();int units=0,omitted=0;
         for(ResearchEngine.Hit hit:evidence.hits){
             cancelled(stop);ResearchEngine.Passage p=hit.passage;
             if(!ids.add(p.id))throw new IllegalArgumentException("Duplicate citation namespace");
-            if(!metadata(p)||p.text.trim().isEmpty()||p.collectionProvenance.contains("Generation disabled:")||quotes.size()==MAX_QUOTES||p.text.length()>MAX_TEXT_UNITS-units){omitted++;continue;}
+            if(!EvidenceAvailability.relevant(question,hit,leading)||!metadata(p)||p.text.trim().isEmpty()||p.collectionProvenance.contains("Generation disabled:")||quotes.size()==MAX_QUOTES||p.text.length()>MAX_TEXT_UNITS-units){omitted++;continue;}
             // Entire passage only: never trim a qualifying tail or splice subject-free sentences.
             out.append("Source article: ").append(p.title).append("\nDate / snapshot: ").append(p.sourceDate).append("\nRights: ").append(p.license).append("\n").append(p.collectionProvenance).append("\nSource URL: ").append(p.url).append("\nQuote [").append(p.id).append("]:\n“");
             int start=out.length();out.append(p.text);int end=out.length();out.append("”\nPassage SHA-256: ").append(hash(p.text)).append("\n\n");quotes.add(new Quote(p,start,end));units+=p.text.length();
@@ -54,7 +62,7 @@ public final class ResearchBrief {
         cancelled(stop);
         out.append("Coverage unresolved: these passages may address only part of your question. No comparison, causal connection, false premise, prediction or current status has been inferred. Inspect the full quoted conditions and dates.\n");
         if(quotes.isEmpty())out.append("No admissible source passage selected. No answer inferred.\n");
-        if(omitted>0)out.append("Omitted passages: ").append(omitted).append(" (size, missing metadata or unresolved source review). No shortened replacement was inserted.\n");
+        if(omitted>0)out.append("Omitted passages: ").append(omitted).append(" (relevance, size, missing metadata or unresolved source review). No shortened replacement was inserted.\n");
         return new Brief(out.toString(),quotes,omitted);
     }
 }

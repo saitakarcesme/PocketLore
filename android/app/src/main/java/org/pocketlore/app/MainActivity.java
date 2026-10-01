@@ -205,7 +205,7 @@ public final class MainActivity extends Activity {
                     }},quote.displayStart,quote.displayEnd,android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 }
                 answer.setText(rendered);answer.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
-                status.setText(brief.quotes.size()+" source quotations · coverage unverified · no generated answer");
+                status.setText(brief.availability==EvidenceAvailability.Scope.REFERENCE ? brief.quotes.size()+" source quotations · coverage unverified · no generated answer" : EvidenceAvailability.reason(brief.availability));
             });
         }catch(Exception e){runOnUiThread(()->{if(!destroyed)status.setText("Research brief unavailable: "+e.getMessage());});}
         finally{runOnUiThread(()->{if(!destroyed){searching=false;if(cancelBrief)status.setText("Research brief cancelled; no partial result");updateControls();}});}});
