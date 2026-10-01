@@ -1,0 +1,8 @@
+{
+  "mode": "import",
+  "pid": 13634,
+  "saved_model_before": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "import_ms": 933.654321,
+  "status": "FAIL",
+  "failure": "java.lang.AssertionError: Broad import did not retain small editions: Pack rejected; previous library retained. unknown error (code 0 SQLITE_OK): Queries can be performed using SQLiteDatabase query or rawQuery methods only."
+}

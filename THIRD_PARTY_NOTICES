@@ -153,3 +153,25 @@ Exact artifact sizes, upstream license URLs and immutable pins are recorded
 in the adjacent candidate JSON files. Quantizations are not independently
 reproduced. Neither larger candidate is admitted as a phone release by this
 host-only experiment; current Android model admission remains 2 GiB.
+
+Broad reference evaluation edition (task 210)
+--------------------------------------------
+Optional local Wikipedia-derived text is from wikimedia/wikipedia dataset
+20231101.en at immutable revision b04c8d1ceb2f5cd4588862100d08de323dccfbaa.
+It is not public-domain content. The edition records CC BY-SA 4.0, each article's
+Wikipedia-contributor attribution, article/history links, exact extracted source
+and passage hashes, dataset/shard pins, and upstream/PocketLore modifications.
+The original CC BY-SA 4.0 English legal code is supplied inside the optional pack
+and viewable offline from its source dialog. Adapted text retains attribution,
+license/change notices and share-alike obligations; code licensing is separate.
+
+The extracted dataset's card declares CC BY-SA 3.0/GFDL, while the preserved
+Wikimedia terms applicable to the 2023 snapshot specify CC BY-SA 4.0. This
+provenance discrepancy is documented, not erased or treated as CC0. No media is
+included. Per-article revision timestamps/contributor snapshots are unavailable.
+Extraction may have dropped formulas, units or source-specific third-party
+attribution. This evaluation edition is NOT cleared for redistribution; metadata
+and hash validation do not cure missing attribution. Retain the historical date,
+extraction warnings and source-specific review gate before publishing any pack.
+See docs/evidence/broad-reference.md and its acquisition receipts for exact pins,
+rights basis, limits and remaining content remediation. Bulk text is not in Git.

@@ -1,0 +1,8 @@
+{
+  "mode": "import",
+  "pid": 13832,
+  "saved_model_before": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "import_ms": 1066.919871,
+  "status": "FAIL",
+  "failure": "java.lang.AssertionError: Broad import did not retain small editions: Pack rejected; previous library retained. SQLite integrity failure: unable to validate the inverted index for FTS4 table main.search: attempt to write a readonly database"
+}

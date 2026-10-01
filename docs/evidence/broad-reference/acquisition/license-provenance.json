@@ -1,0 +1,42 @@
+{
+  "dataset": "https://huggingface.co/datasets/wikimedia/wikipedia",
+  "dataset_revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa",
+  "snapshot": "20231101.en",
+  "selection_sha256": "5f74123a50d26c0af2822577945d11fdecd3ff002e8885b3746461f07b0bdd9b",
+  "source_jsonl_sha256": "8e33e513d28cebc411252315e8b3de71b6b45537e4e85ab6ac672ecbb4c44a10",
+  "chunk_jsonl_sha256": "9aaa7e56e246d45869bdd985ca60332f94d125cc4a5f77273809aa9b6b92d97b",
+  "license": "CC-BY-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "primary_sources": {
+    "wikimedia-terms.html": {
+      "url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+      "sha256": "6dfec92aa9fb50816ba8ac71cd8cc4140b1247681624d72bfcab3a3cf23ab42d"
+    },
+    "wikimedia-dumps-legal.html": {
+      "url": "https://dumps.wikimedia.org/legal.html",
+      "sha256": "104242365285791c1d60d61b2ec8eac34e5c4b6a74ae5fdca9996a52f9cd3714"
+    },
+    "cc-by-sa-4.0.html": {
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en",
+      "sha256": "170b3685f24d098f590c92867787e7be3a86260aed1b96bf4a7594f72a9116be"
+    }
+  },
+  "license_resolution": "Wikimedia Terms of Use section 7, effective June 7, 2023, and dump licensing specify CC BY-SA 4.0; the November 2023 extracted dataset card declares CC BY-SA 3.0/GFDL and that discrepancy is preserved, not treated as CC0 or a waiver.",
+  "dataset_card_sha256": "a0f2055ac612f924721e9981fa2a49a18adec1c67cc8026f6c97d12f17211b21",
+  "attribution_method": "Article title, Wikipedia contributors, article URL and contributor-history URL on each source and chunk; section 7 permits attribution via article URLs.",
+  "redistribution_obligations": [
+    "Retain attribution and source/history links",
+    "Retain CC BY-SA 4.0 license URL and supply staged license text for offline access",
+    "Indicate upstream extraction and PocketLore excerpting modifications",
+    "Share adapted text under CC BY-SA 4.0 or a compatible license",
+    "Do not apply additional restrictions",
+    "Preserve any source-specific imported-content notices; review exceptions before distribution"
+  ],
+  "unknowns": [
+    "No per-article revision IDs, timestamps or contributor lists are supplied by this upstream extract",
+    "History links are live attribution references, not frozen contributor records",
+    "Plain-text extraction may omit third-party attribution or exception notices; marker rejection is not exhaustive copyright clearance"
+  ],
+  "modifications": "Full upstream extracted text retained; nonoverlapping verbatim chunks with character offsets and UTF-8 hashes; no synthetic factual passages.",
+  "scope": "Private corpus staging only; model-answer, product, physical-device and bounty acceptance are not established."
+}

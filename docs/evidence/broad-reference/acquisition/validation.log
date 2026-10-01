@@ -1,0 +1,57 @@
+test_back_matter (test_validation.CorruptionTests.test_back_matter) ... ok
+test_chunk_attribution_loss (test_validation.CorruptionTests.test_chunk_attribution_loss) ... ok
+test_corrupt_offset (test_validation.CorruptionTests.test_corrupt_offset) ... ok
+test_corrupt_source (test_validation.CorruptionTests.test_corrupt_source) ... ok
+test_corrupt_text (test_validation.CorruptionTests.test_corrupt_text) ... ok
+test_curated_topic (test_validation.CorruptionTests.test_curated_topic) ... ok
+test_duplicate_chunk (test_validation.CorruptionTests.test_duplicate_chunk) ... ok
+test_duplicate_document (test_validation.CorruptionTests.test_duplicate_document) ... ok
+test_false_history (test_validation.CorruptionTests.test_false_history) ... ok
+test_invented_revision (test_validation.CorruptionTests.test_invented_revision) ... ok
+test_license_downgrade (test_validation.CorruptionTests.test_license_downgrade) ... ok
+test_missing_attribution (test_validation.CorruptionTests.test_missing_attribution) ... ok
+test_missing_rights (test_validation.CorruptionTests.test_missing_rights) ... ok
+test_unlicensed_dataset (test_validation.CorruptionTests.test_unlicensed_dataset) ... ok
+test_valid_real_subset (test_validation.CorruptionTests.test_valid_real_subset) ... ok
+test_wrong_topic (test_validation.CorruptionTests.test_wrong_topic) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 2.167s
+
+OK
+{
+  "documents": 1076,
+  "chunks": 26660,
+  "area_documents": {
+    "geography": 147,
+    "science": 148,
+    "computing": 143,
+    "practical reference": 80,
+    "history": 143,
+    "mathematics": 135,
+    "travel": 137,
+    "civics": 143
+  },
+  "area_chunks": {
+    "geography": 6068,
+    "science": 3826,
+    "computing": 2911,
+    "practical reference": 1682,
+    "history": 4486,
+    "mathematics": 2265,
+    "travel": 2521,
+    "civics": 2901
+  },
+  "all_source_texts_match_pinned_upstream": true,
+  "minimum_passages_per_document": 10,
+  "duplicate_documents": 0,
+  "duplicate_chunks": 0,
+  "corrupt_chunks": 0,
+  "missing_rights": 0,
+  "target_met": true,
+  "seconds": 17.16132356900198,
+  "host_peak_rss_kib": 785856,
+  "mutation_tests": 16,
+  "mutation_success": true,
+  "snapshot_writes": false
+}

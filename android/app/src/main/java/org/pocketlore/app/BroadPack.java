@@ -28,7 +28,7 @@ final class BroadPack {
  }
  static void require(boolean b,String why)throws IOException{if(!b)throw new IOException(why);}
  static void cancelled(BooleanSupplier c)throws IOException{if(c.getAsBoolean()||Thread.currentThread().isInterrupted())throw new InterruptedIOException("Broad import cancelled");}
- SQLiteDatabase open(){SQLiteDatabase db=SQLiteDatabase.openDatabase(database.getPath(),null,SQLiteDatabase.OPEN_READONLY|SQLiteDatabase.NO_LOCALIZED_COLLATORS);db.execSQL("PRAGMA cache_size=-2048");db.execSQL("PRAGMA mmap_size=0");return db;}
+ SQLiteDatabase open(){SQLiteDatabase db=SQLiteDatabase.openDatabase(database.getPath(),null,SQLiteDatabase.OPEN_READONLY|SQLiteDatabase.NO_LOCALIZED_COLLATORS);try(Cursor c=db.rawQuery("PRAGMA cache_size=-2048",null)){c.moveToFirst();}try(Cursor c=db.rawQuery("PRAGMA mmap_size=0",null)){c.moveToFirst();}return db;}
  static BroadPack prepare(File archive,File directory,String hash,BooleanSupplier cancel)throws Exception{
   File db=new File(directory,hash+".sqlite"),stage=new File(directory,hash+".sqlite.partial");BroadPack pack=new BroadPack(archive,db,hash);
   licenseBytes(archive);
@@ -38,12 +38,15 @@ final class BroadPack {
     try(InputStream in=z.getInputStream(entry)){ResourceStorage.copy(in,stage,MAX_DATABASE,cancel);}
    }
    require(stage.length()==pack.manifest.getLong("db_bytes")&&hash(stage).equals(pack.manifest.getString("db_sha256")),"Index SHA-256 mismatch");
-   new BroadPack(archive,stage,hash).validate(cancel);cancelled(cancel);Files.move(stage.toPath(),db.toPath(),StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);return pack;
+   new BroadPack(archive,stage,hash).validate(cancel);require(hash(stage).equals(pack.manifest.getString("db_sha256")),"Validation changed index bytes");cancelled(cancel);Files.move(stage.toPath(),db.toPath(),StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);return pack;
   }finally{stage.delete();}
  }
  void validate(BooleanSupplier cancel)throws Exception{
-  try(SQLiteDatabase db=open()){
-   try(Cursor c=db.rawQuery("PRAGMA integrity_check",null)){require(c.moveToFirst()&&c.getString(0).equals("ok"),"SQLite integrity failure");}
+  // SQLite FTS4 integrity validation issues a virtual-table write command even
+  // when checking only. Use the private import stage, then verify unchanged bytes.
+  try(SQLiteDatabase db=SQLiteDatabase.openDatabase(database.getPath(),null,SQLiteDatabase.OPEN_READWRITE|SQLiteDatabase.NO_LOCALIZED_COLLATORS)){
+   try(Cursor c=db.rawQuery("SELECT sql FROM sqlite_master WHERE name='search'",null)){require(c.moveToFirst()&&c.getString(0).equals("CREATE VIRTUAL TABLE search USING fts4(title,body,tokenize=porter)"),"Unsupported search schema");}
+   try(Cursor c=db.rawQuery("PRAGMA integrity_check",null)){require(c.moveToFirst(),"No SQLite integrity result");require(c.getString(0).equals("ok"),"SQLite integrity failure: "+c.getString(0));}
    require(db.getVersion()==210,"Unexpected index version");JSONArray expected=manifest.getJSONArray("schema");int i=0;
    try(Cursor c=db.rawQuery("SELECT name,sql FROM sqlite_master WHERE sql IS NOT NULL ORDER BY name",null)){while(c.moveToNext()){require(i<expected.length()&&c.getString(0).equals(expected.getJSONArray(i).getString(0))&&c.getString(1).equals(expected.getJSONArray(i).getString(1)),"Index schema mismatch");i++;}}require(i==expected.length(),"Missing index schema");
    try(Cursor c=db.rawQuery("SELECT max(length(body)) FROM documents",null)){require(c.moveToFirst()&&c.getLong(0)<=1000000,"Document row memory admission");}
