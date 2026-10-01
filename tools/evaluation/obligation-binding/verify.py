@@ -20,6 +20,9 @@ def main():
  spec=json.loads((F/'execution.json').read_text());require((spec['context_tokens'],spec['draft_tokens'],spec['audit_tokens'])==(4096,320,192),'Budget drift')
  model=R/'downloads/model-capability/models/Qwen3-4B-Q4_K_M.gguf';exact(model,spec['model_sha256']);require(model.stat().st_size==2497280256,'Model identity size')
  require('74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db' in (R/'tools/answers/model.env').read_text(),'Production model changed')
+ for path in ['tools/answers/model.env','android/app/src/main/cpp/runtime.cpp','android/app/src/main/cpp/resource_budget.h']:
+  frozen=subprocess.check_output(['git','show','4d51817:'+path],cwd=R)
+  exact(R/path,hashlib.sha256(frozen).hexdigest())
  for line in (E/'SHA256SUMS').read_text().splitlines():h,p=line.split('  ',1);exact(R/p,h)
  run=E/'run';history=E/'history';sealed(run);sealed(history)
  manifest=json.loads((run/'manifest.json').read_text());exact(F/'execution.json',manifest['execution_sha256']);exact(F/'new-cases.json',manifest['protocol_sha256']);exact(R/'downloads/scale-model-quality/host-build/libpocketlore.so',manifest['library_sha256'])
