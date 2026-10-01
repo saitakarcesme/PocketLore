@@ -1,0 +1,179 @@
+{
+  "kind": "host conservative arithmetic, not full installed measurement",
+  "sealed_inventory_bytes": 40950364902,
+  "release_v5_measured_app_files_baseline": 662689964,
+  "apk_bytes": 15685650,
+  "installed_upper_estimate": 41628740516,
+  "largest_shard": {
+    "kind": "wiki",
+    "shard": "000_00003",
+    "bytes": 1516530506
+  },
+  "single_shard_same_size_update_with_provider_copy_and_128MiB_reserve": 44797067832,
+  "target": 45000000000,
+  "hard": 50000000000,
+  "all_shards": [
+    {
+      "kind": "wiki",
+      "shard": "000_00000",
+      "bytes": 1424097682
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00001",
+      "bytes": 1461531928
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00002",
+      "bytes": 1444693131
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00003",
+      "bytes": 1516530506
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00004",
+      "bytes": 1448682576
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00005",
+      "bytes": 1453588289
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00006",
+      "bytes": 1408494247
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00007",
+      "bytes": 1416182291
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00008",
+      "bytes": 1429897688
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00009",
+      "bytes": 1403915781
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00010",
+      "bytes": 1412379839
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00011",
+      "bytes": 1406465592
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00012",
+      "bytes": 1430198662
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00013",
+      "bytes": 1357498510
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00014",
+      "bytes": 1435313764
+    },
+    {
+      "kind": "places",
+      "shard": "compact-00.sqlite",
+      "bytes": 1051631616
+    },
+    {
+      "kind": "places",
+      "shard": "compact-01.sqlite",
+      "bytes": 1090920448
+    },
+    {
+      "kind": "places",
+      "shard": "compact-02.sqlite",
+      "bytes": 1116266496
+    },
+    {
+      "kind": "places",
+      "shard": "compact-03.sqlite",
+      "bytes": 1124253696
+    },
+    {
+      "kind": "places",
+      "shard": "compact-04.sqlite",
+      "bytes": 1049038848
+    },
+    {
+      "kind": "places",
+      "shard": "compact-05.sqlite",
+      "bytes": 1060511744
+    },
+    {
+      "kind": "places",
+      "shard": "compact-06.sqlite",
+      "bytes": 1100140544
+    },
+    {
+      "kind": "places",
+      "shard": "compact-07.sqlite",
+      "bytes": 1099370496
+    },
+    {
+      "kind": "places",
+      "shard": "compact-08.sqlite",
+      "bytes": 1026146304
+    },
+    {
+      "kind": "places",
+      "shard": "compact-09.sqlite",
+      "bytes": 982323200
+    },
+    {
+      "kind": "places",
+      "shard": "compact-10.sqlite",
+      "bytes": 998559744
+    },
+    {
+      "kind": "places",
+      "shard": "compact-11.sqlite",
+      "bytes": 995172352
+    },
+    {
+      "kind": "places",
+      "shard": "compact-12.sqlite",
+      "bytes": 1031241728
+    },
+    {
+      "kind": "places",
+      "shard": "compact-13.sqlite",
+      "bytes": 1010851840
+    },
+    {
+      "kind": "places",
+      "shard": "compact-14.sqlite",
+      "bytes": 1048158208
+    },
+    {
+      "kind": "places",
+      "shard": "compact-15.sqlite",
+      "bytes": 1033113600
+    }
+  ],
+  "assumptions": [
+    "Baseline retains production 0.5B and small packs; no optional4B deployment",
+    "One shard of unchanged or smaller size replaced at a time",
+    "Provider retains at most one incoming delta, not a full-edition archive",
+    "No unknown provider cache, filesystem amplification or full-machine overhead measured",
+    "Auxiliary host assets included conservatively although not all have Android reader interfaces"
+  ]
+}
