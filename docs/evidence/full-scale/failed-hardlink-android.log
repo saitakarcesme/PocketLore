@@ -1,0 +1,7 @@
+INSTRUMENTATION_RESULT: failure=java.nio.file.AccessDeniedException: /data/user/0/org.pocketlore.app/files/shard-test-3397500689236769115/retained-link -> /data/user/0/org.pocketlore.app/files/shard-test-3397500689236769115/scale-library/850a3257834a42dfcb51a3b3c14a15985fbaf7ed793a794a5124ae2b0fbc93be/NOTICE.txt
+	at sun.nio.fs.UnixFileSystemProvider.createLink(UnixFileSystemProvider.java:496)
+	at java.nio.file.Files.createLink(Files.java:1086)
+	at org.pocketlore.app.ShardUpdateInstrumentation.onStart(ShardUpdateInstrumentation.java:24)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+
+INSTRUMENTATION_CODE: 1
