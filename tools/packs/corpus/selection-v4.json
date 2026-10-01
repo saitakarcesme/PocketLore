@@ -1,0 +1,64 @@
+{
+  "version": 4,
+  "dataset": "wikimedia/wikipedia",
+  "revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa",
+  "config": "20231101.en",
+  "documents_per_area": 150,
+  "minimum_chunks": 10,
+  "chunk_words": 160,
+  "minimum_chunk_words": 80,
+  "classification": "Count distinct regex matches in title (weight 3) and first 600 text characters (weight 1); highest score wins; ties use area order; require score >= 2. One area per document. Select in pinned shard order.",
+  "deduplication": "Reject repeated page ID, canonical URL, or SHA256 of NFKC/casefold/whitespace-normalized entire text. Globally reject chunks with repeated normalized text hash. Exact source text and contiguous chunk offsets are retained. No overlapping chunks.",
+  "exclusions": "Reject List of, Index of, Outline of, disambiguation titles; reject explicit imported-text, fair-use, and additional-license markers pending manual rights review; retain original complete extracted text for accepted records. Version 3 also rejects entertainment/sports markers in title or first 400 text characters, date/year chronology titles, and requires practical-reference title terms while rejecting institutional/legal/abstract titles.",
+  "rights_markers": [
+    "incorporates text",
+    "text is available under",
+    "used with permission",
+    "fair use",
+    "all rights reserved",
+    "creativecommons.org/licenses",
+    "public domain material",
+    "public-domain text"
+  ],
+  "areas": {
+    "mathematics": "algebra|geometry|mathematical|mathematics|theorem|topology|calculus|equation|polynomial|probability|statistical|arithmetic|integer|prime number|vector space|differential",
+    "computing": "computer|computing|software|programming|algorithm|operating system|database|internet|cryptography|compiler|linux|unix|microprocessor|data structure|protocol|byte",
+    "civics": "constitution|constitutional|parliament|legislature|legislation|democracy|democratic|citizenship|human rights|civil rights|election|electoral|judiciary|supreme court|federalism|municipal|political system|governance|civil law",
+    "practical reference": "agriculture|agricultural|horticulture|gardening|irrigation|nutrition|cooking|food preservation|sewing|carpentry|plumbing|first aid|fire safety|sanitation|water purification|compost|fertilizer|construction|building material|welding|soldering|crop|beekeeping|forestry|aquaculture|recycling|ventilation|refrigeration|fermentation|bread|flour|textile|woodworking|tool",
+    "travel": "tourism|tourist|travel|airport|airline|national park|railway station|railroad|railway|public transport|rapid transit|metro system|tram|hiking|backpacking|mountaineering|hotel|resort|ferry|passport|visa|world heritage|museum",
+    "history": "history|historical|ancient|medieval|archaeology|archaeological|empire|dynasty|civilization|renaissance|revolution|battle|world war|colonial|antiquity|bronze age|iron age",
+    "geography": "geography|geographic|geographical|continent|country|island|archipelago|peninsula|river|mountain|ocean|climate|province|capital city|territory|desert|glacier|lake|region|city|town",
+    "science": "science|scientific|physics|chemistry|biology|astronomy|geology|ecology|organism|species|molecule|atomic|quantum|electron|enzyme|protein|bacterium|bacteria|evolution|thermodynamics|electromagnetic|planet|star|cell|mineral|chemical|mammal|bird|plant"
+  },
+  "shards": [
+    {
+      "path": "20231101.en/train-00000-of-00041.parquet",
+      "sha256": "382e7f6f09e488b24793a7f7cfc659879d5a22da2cf2efec6491665f0c019677",
+      "bytes": 420296449
+    },
+    {
+      "path": "20231101.en/train-00001-of-00041.parquet",
+      "sha256": "6cd57a5825312ca966313d4a1b614690b5c4fb53cee9b124bc0e999977eb36cf",
+      "bytes": 351448367
+    },
+    {
+      "path": "20231101.en/train-00002-of-00041.parquet",
+      "sha256": "b18674f163d4f106e43396fd58412a79b80a418c72bb728c20af439e7ca4d5b7",
+      "bytes": 329024669
+    },
+    {
+      "path": "20231101.en/train-00003-of-00041.parquet",
+      "sha256": "0b8a6f452f5ef59d0986a067f70110feb16d7c1d281ba2db0b3df32933618fcc",
+      "bytes": 330779424
+    },
+    {
+      "path": "20231101.en/train-00004-of-00041.parquet",
+      "sha256": "1424300f113c13ee022b7929185fa4f7e20c6195ba563d728e8a3dc47c8e9aba",
+      "bytes": 306945391
+    }
+  ],
+  "content_exclusion_pattern": "\\b(?:novel|novelist|fictional|fiction|film|television|sitcom|comic|comics|video game|song|album|football|baseball|basketball|wrestler|actor|actress|singer)\\b",
+  "date_title_pattern": "^(?:(?:January|February|March|April|May|June|July|August|September|October|November|December) [0-9]+|[0-9]{4} in .+)$",
+  "practical_title_required": true,
+  "practical_exclusion_pattern": "\\b(?:university|institute|institution|company|society|association|department|service|board|magazine|center|centre|squadron|union|tribunal|diocese|novel|social construction|academics|foundation|fair)\\b| v\\. "
+}

@@ -1,0 +1,110 @@
+{
+  "status": "staging_target_met",
+  "dataset": "https://huggingface.co/datasets/wikimedia/wikipedia",
+  "dataset_revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa",
+  "snapshot": "20231101.en",
+  "license": "CC-BY-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "primary_rights_sources": {
+    "wikimedia-terms.html": {
+      "url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+      "sha256": "6dfec92aa9fb50816ba8ac71cd8cc4140b1247681624d72bfcab3a3cf23ab42d"
+    },
+    "wikimedia-dumps-legal.html": {
+      "url": "https://dumps.wikimedia.org/legal.html",
+      "sha256": "104242365285791c1d60d61b2ec8eac34e5c4b6a74ae5fdca9996a52f9cd3714"
+    },
+    "cc-by-sa-4.0.html": {
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en",
+      "sha256": "170b3685f24d098f590c92867787e7be3a86260aed1b96bf4a7594f72a9116be"
+    }
+  },
+  "shards": [
+    {
+      "path": "20231101.en/train-00000-of-00041.parquet",
+      "sha256": "382e7f6f09e488b24793a7f7cfc659879d5a22da2cf2efec6491665f0c019677",
+      "bytes": 420296449
+    },
+    {
+      "path": "20231101.en/train-00001-of-00041.parquet",
+      "sha256": "6cd57a5825312ca966313d4a1b614690b5c4fb53cee9b124bc0e999977eb36cf",
+      "bytes": 351448367
+    },
+    {
+      "path": "20231101.en/train-00002-of-00041.parquet",
+      "sha256": "b18674f163d4f106e43396fd58412a79b80a418c72bb728c20af439e7ca4d5b7",
+      "bytes": 329024669
+    },
+    {
+      "path": "20231101.en/train-00003-of-00041.parquet",
+      "sha256": "0b8a6f452f5ef59d0986a067f70110feb16d7c1d281ba2db0b3df32933618fcc",
+      "bytes": 330779424
+    },
+    {
+      "path": "20231101.en/train-00004-of-00041.parquet",
+      "sha256": "1424300f113c13ee022b7929185fa4f7e20c6195ba563d728e8a3dc47c8e9aba",
+      "bytes": 306945391
+    }
+  ],
+  "selection_sha256": "5f74123a50d26c0af2822577945d11fdecd3ff002e8885b3746461f07b0bdd9b",
+  "artifact_inventory_sha256": "849b9b065940b2dc7019c306eac1805fa43fc09c9d9eb396e0d7740a9e9e8810",
+  "records": {
+    "sources.jsonl": {
+      "sha256": "8e33e513d28cebc411252315e8b3de71b6b45537e4e85ab6ac672ecbb4c44a10",
+      "bytes": 30250745
+    },
+    "chunks.jsonl": {
+      "sha256": "9aaa7e56e246d45869bdd985ca60332f94d125cc4a5f77273809aa9b6b92d97b",
+      "bytes": 45965002
+    },
+    "license-provenance.json": {
+      "sha256": "3b01b43f8243f09c013f1eaa8552a84e5735abd4d6cd9c73ff2b91dc56cb703c",
+      "bytes": 2773
+    },
+    "receipts.jsonl": {
+      "sha256": "1e9352c1bee75b2aad1295489e1a44f54c055c699b0fa18cd7505cdeac5bb3a9",
+      "bytes": 4738
+    }
+  },
+  "validation": {
+    "documents": 1076,
+    "chunks": 26660,
+    "area_documents": {
+      "geography": 147,
+      "science": 148,
+      "computing": 143,
+      "practical reference": 80,
+      "history": 143,
+      "mathematics": 135,
+      "travel": 137,
+      "civics": 143
+    },
+    "area_chunks": {
+      "geography": 6068,
+      "science": 3826,
+      "computing": 2911,
+      "practical reference": 1682,
+      "history": 4486,
+      "mathematics": 2265,
+      "travel": 2521,
+      "civics": 2901
+    },
+    "all_source_texts_match_pinned_upstream": true,
+    "minimum_passages_per_document": 10,
+    "duplicate_documents": 0,
+    "duplicate_chunks": 0,
+    "corrupt_chunks": 0,
+    "missing_rights": 0,
+    "target_met": true,
+    "elapsed_seconds": 13.780698866998137,
+    "peak_rss_kib": 787472
+  },
+  "mutation_tests": {
+    "tests_run": 16,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "success": true
+  },
+  "scope": "Corpus staging only; no model-answer, human, device, or bounty acceptance."
+}
