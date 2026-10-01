@@ -89,6 +89,46 @@
       "fully_useful_draft": false,
       "assessment": "Appropriate absence withholding; no measured laptop latency in evidence. No typed supported answer is produced.",
       "claims": []
+    },
+    "s07": {
+      "result_sha256": "6cd2c01ddd0f5c5af45d51d5a4eefc0fda3b866b7034096c7438bfe3a0b0f50a",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Actual claim answers ingredients/use with exact P1.1-P1.2. Metadata copied the format placeholder, a representation limitation; it does not add a factual claim or conceal a condition here.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.2 ingredient sources and P1.1 fertilizer/soil properties support the complete claim."
+        }
+      ]
+    },
+    "s08": {
+      "result_sha256": "c116a48889639924d95abedde4cb4834ef2c904e9d970e0eb915b3e600de6afd",
+      "all_claims_supported": false,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Same role-transfer failure survives both stages: draft makes vermicast an input broken down, then conflates vermicast with vermicompost fertilizer/conditioner use. Audit approves unsupported prose.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P4.1 creates a mixture containing vermicast, not breakdown of vermicast as input; P5.1 identifies excreta as output. P6.1 fertilizer/conditioner applies to vermicompost, not unqualified vermicast."
+        }
+      ]
+    },
+    "s09": {
+      "result_sha256": "7323aaa9e25b28e640387e0293414efbe0ab451a889e12edd18ec2bd5939fc02",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": false,
+      "fully_useful_draft": false,
+      "assessment": "Draft reaches320tokens mid-clause in O2 and never reaches shared-use O3. Visible completed compost facts and vermicompost definition match context, but no parsed binding/complete useful response survives. Correctly withheld as truncation.",
+      "claims": []
     }
   }
 }
