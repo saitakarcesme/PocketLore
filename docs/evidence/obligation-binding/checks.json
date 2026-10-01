@@ -1,0 +1,21 @@
+{
+  "android_build": {
+    "command": [
+      "bash",
+      "tools/android-build.sh"
+    ],
+    "exit_code": 0,
+    "log": "android-build-final.log"
+  },
+  "obligation_binding": {
+    "command": [
+      "bash",
+      "tools/evaluation/check_obligation_binding.sh"
+    ],
+    "exit_code": 1,
+    "artifact_behavior": "PASS",
+    "quality": "FAIL: unsupported eligible answers and six admitted historical regressions",
+    "log": "verification-final.log"
+  },
+  "limitation": "Builder source assessments require independent criticism; failing quality is not acceptance."
+}

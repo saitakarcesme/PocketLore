@@ -1,0 +1,26 @@
+PASS typed-reference behavior checks=148, actual draft replays=60; no semantic or Android execution claim
+{
+  "artifact_behavior": "PASS",
+  "counts": {
+    "old_useful_eligible": 12,
+    "old_supported_drafts": 13,
+    "new_useful_eligible": 2,
+    "unsupported_eligible": 12,
+    "old_absent_withheld": 8,
+    "new_absent_withheld": 1,
+    "eligible": 27,
+    "withheld": 33
+  },
+  "builder_assessment_not_independent_review": true
+}
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/obligation-binding/verify.py", line 103, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/obligation-binding/verify.py", line 102, in main
+    require(not failures,'QUALITY FAIL: '+'; '.join(failures));print('PASS fixed source-binding behavioral and builder quality gates; independent criticism pending')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/obligation-binding/verify.py", line 8, in require
+    if not x:raise AssertionError(m)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: QUALITY FAIL: Unsupported screen-eligible answers remain; Historical unsupported claim admitted: r01; Historical unsupported claim admitted: r02; Historical unsupported claim admitted: r05; Historical unsupported claim admitted: r06; Historical unsupported claim admitted: r08; Historical unsupported claim admitted: r09
