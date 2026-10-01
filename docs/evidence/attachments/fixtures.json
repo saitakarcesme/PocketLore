@@ -1,0 +1,61 @@
+{
+  "scope": "Public development; text/tilted fixtures are generated signs, not real camera photos; speech is pinned upstream JFK sample, not microphone capture",
+  "speech_source": "https://github.com/ggml-org/whisper.cpp/blob/a8d002cfd879315632a579e73f0148d06959de36/samples/jfk.wav",
+  "expectations": {
+    "text.png": [
+      "OFFLINE LIBRARY",
+      "Review every word"
+    ],
+    "tilted.png": [
+      "OFFLINE LIBRARY"
+    ],
+    "blank.png": "empty",
+    "speech.wav": [
+      "country",
+      "ask"
+    ],
+    "silence.wav": "empty",
+    "noise.wav": "record actual result; never submit automatically",
+    "invalid.png": "reject",
+    "oversized.png": "reject",
+    "invalid.wav": "reject"
+  },
+  "files": {
+    "blank.png": {
+      "sha256": "f0707cb4f4725bee699908b1c74988e3f521a5d4c9527eb14755078b1c645616",
+      "bytes": 1887
+    },
+    "invalid.png": {
+      "sha256": "5464533c9647b67eb320c40ccc5959537c09102ae75388f6a7675b433e745c9d",
+      "bytes": 12
+    },
+    "invalid.wav": {
+      "sha256": "63969f8cf564dc24786de787bb57e4f9e5f8fd2f468d785a1b6f80326917d5f5",
+      "bytes": 9
+    },
+    "noise.wav": {
+      "sha256": "476286010bdfdc3e5e25ee2731bf780490f5cdd4dfc1d8a5631f7fce439d4e0b",
+      "bytes": 64044
+    },
+    "oversized.png": {
+      "sha256": "b02100bdab08076fc6efbf9e87f153006def804ba25d4987aea5557f020a9159",
+      "bytes": 17590
+    },
+    "silence.wav": {
+      "sha256": "20eaebffe1816e0ffa6f7f854f5ef4ea80d5349faaf0ce1fec1b713e7fde58fa",
+      "bytes": 64044
+    },
+    "speech.wav": {
+      "sha256": "59dfb9a4acb36fe2a2affc14bacbee2920ff435cb13cc314a08c13f66ba7860e",
+      "bytes": 352078
+    },
+    "text.png": {
+      "sha256": "df98ad742221aae3aecc2f2bfd46cb772158abbddcb9386dce93fd40a81bab53",
+      "bytes": 13411
+    },
+    "tilted.png": {
+      "sha256": "20d452f7629fb67c0bfaba049482a7312ae3aa21cadb5e2359a98d85e026dd9f",
+      "bytes": 28754
+    }
+  }
+}

@@ -1,0 +1,18 @@
+Consolidate compiler generated dependencies of target ggml-base
+[  5%] Built target ggml-base
+Consolidate compiler generated dependencies of target ggml-cpu
+[ 13%] Built target ggml-cpu
+Consolidate compiler generated dependencies of target ggml
+[ 14%] Built target ggml
+Consolidate compiler generated dependencies of target whisper
+[ 16%] Built target whisper
+Consolidate compiler generated dependencies of target libtesseract
+[ 98%] Built target libtesseract
+[ 98%] Building CXX object CMakeFiles/pocketlore_attachments.dir/attachments.cpp.o
+[100%] Linking CXX shared library libpocketlore_attachments.so
+ld.lld: error: unable to find library -lleptonica
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+make[3]: *** [CMakeFiles/pocketlore_attachments.dir/build.make:103: libpocketlore_attachments.so] Error 1
+make[2]: *** [CMakeFiles/Makefile2:194: CMakeFiles/pocketlore_attachments.dir/all] Error 2
+make[1]: *** [CMakeFiles/Makefile2:201: CMakeFiles/pocketlore_attachments.dir/rule] Error 2
+make: *** [Makefile:169: pocketlore_attachments] Error 2

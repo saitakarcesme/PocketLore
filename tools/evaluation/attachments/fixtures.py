@@ -3,7 +3,7 @@ from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
 import json,hashlib,random,wave,struct,shutil
 root=Path(__file__).resolve().parents[3];out=root/'downloads/attachments/fixtures';out.mkdir(exist_ok=True)
-font=ImageFont.truetype('/usr/share/fonts/TTF/DejaVuSans.ttf',48)
+font=ImageFont.truetype('/usr/share/fonts/liberation/LiberationSans-Regular.ttf',48)
 image=Image.new('RGB',(1000,400),'white');d=ImageDraw.Draw(image);d.text((40,90),'OFFLINE LIBRARY',font=font,fill='black');d.text((40,175),'Review every word.',font=font,fill='black');image.save(out/'text.png');image.rotate(2,resample=Image.Resampling.BICUBIC,fillcolor='white').save(out/'tilted.png');Image.new('RGB',(800,400),'white').save(out/'blank.png');Image.new('RGB',(2100,2100),'white').save(out/'oversized.png');(out/'invalid.png').write_bytes(b'not an image')
 shutil.copyfile(root/'downloads/attachments/whisper/samples/jfk.wav',out/'speech.wav')
 random.seed(340)

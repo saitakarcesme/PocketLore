@@ -10,6 +10,8 @@ foreach(flag GRAPHICS_DISABLED DISABLED_LEGACY_ENGINE DISABLE_CURL DISABLE_ARCHI
  set(${flag} ON CACHE BOOL "" FORCE)
 endforeach()
 set(CpuFeaturesNdkCompat_DIR "${CMAKE_CURRENT_SOURCE_DIR}/cmake/CpuFeaturesNdkCompat")
+add_library(leptonica STATIC IMPORTED GLOBAL)
+set_target_properties(leptonica PROPERTIES IMPORTED_LOCATION "${ATTACHMENT_SOURCE}/install-${ANDROID_ABI}/lib/libleptonica.a")
 add_subdirectory("${ATTACHMENT_SOURCE}/tesseract" tesseract)
 add_subdirectory("${ATTACHMENT_SOURCE}/whisper" whisper)
 add_library(pocketlore_attachments SHARED attachments.cpp)

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 root=$(cd "$(dirname "$0")/../.." && pwd)
+python3 "$root/tools/attachments/prepare.py"
 toolchain=${POCKETLORE_TOOLCHAIN:-/home/isa/Android/atlas-toolchain}
 cmake="$toolchain/cmake-3.22.1/bin/cmake"
 for abi in arm64-v8a x86_64; do
