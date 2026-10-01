@@ -1,6 +1,6 @@
 # Synthesis development evidence — task 050
 
-Status: validation in progress on the LLMRig AOSP x86_64 emulator. This is builder development evidence, not independent acceptance or physical Android/GrapheneOS evidence. Private holdout was not opened. No runner, service, global model preference or branch was changed by this task; no push was made.
+Status: both named checks PASS on 2026-10-01; bounded development behavior is validated on the LLMRig AOSP x86_64 emulator. Broader research-quality acceptance remains open. This is builder development evidence, not independent acceptance or physical Android/GrapheneOS evidence. Private holdout was not opened. No runner, service, global model preference or branch was changed by this task; no push was made.
 
 ## Artifacts and method
 
@@ -8,7 +8,7 @@ Questions and source review anchors were frozen in commit `2e47d39`, before synt
 
 The real English pack contains 186 passages from 10 attributed documents; its SHA-256 is `567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea`. Prompts include excerpts, dates and source URLs; raw reports retain retrieved passages as well as the actual selected prompt. The source dates may describe archived content and do not establish present conditions.
 
-The runtime remains llama.cpp b10566 commit `bb4caa7540188872173c44d161602d9271386413`, CPU-only, two threads, fresh context per request, greedy sampling. Task 050 builds both ARM64 and x86_64; only x86_64 executes here. Context is 2,048 tokens, output reserve 256, batch 2,048 and microbatch 128. The native tokenizer counts the model's complete chat template. Native code independently rejects prompt plus output overflow.
+The runtime remains llama.cpp b10566 commit `bb4caa7540188872173c44d161602d9271386413`, CPU-only, two threads and a fresh context per request. Earlier trials use greedy sampling; the final Qwen3 claim sampler is specified below. Task 050 builds both ARM64 and x86_64; only x86_64 executes here. Context is 2,048 tokens, output reserve 256, batch 2,048 and microbatch 128. The native tokenizer counts the model's complete chat template. Native code independently rejects prompt plus output overflow.
 
 The earlier optional candidate was upstream `Qwen/Qwen2.5-1.5B-Instruct-GGUF`, revision `91cad51170dc346986eccefdc2dd33a9da36ead9`, `qwen2.5-1.5b-instruct-q4_k_m.gguf`, 1,117,320,736 bytes, SHA-256 `6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e`. Its Apache-2.0 license and attribution are bundled; the explicit reproducible downloader and pin are under `tools/evaluation`. Weights stay ignored. The evaluator overrides only the model hash in a run-local copy of the frozen fixture. It uses `files/synthesis-tests/model.gguf`, preserving the app's original saved 0.5B model. The larger import bound is implemented but new-model SAF import/restart was not exercised in this task.
 
@@ -62,3 +62,51 @@ The later candidate is [Qwen3-1.7B-GGUF](https://huggingface.co/Qwen/Qwen3-1.7B-
 The pinned llama.cpp legacy formatter emits plain ChatML. For the `qwen3` architecture only, the adapter validates the expected assistant suffix and template capability and appends the upstream non-thinking prefix `<think>\n\n</think>\n\n`. This follows the `enable_thinking=false` branch inspected at upstream base-model revision `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e`. Both native budgeting and generation share this exact formatting path. No reasoning text is generated or substituted for answer content. This is a local per-model adapter, not a global model preference change. The larger Q8 artifact increases resource pressure; its suitability for phones is unmeasured.
 
 Qwen3 claim decoding subsequently uses temperature 0.7, top-k 20, top-p 0.8 and presence penalty 1.5, following the [publisher guidance](https://huggingface.co/Qwen/Qwen3-1.7B-GGUF#best-practices). The local penalty window is 256 generated tokens and the seed is fixed at 42 before observing this candidate's outputs; no seed search is performed. Other model architectures retain greedy decoding. The constrained output budget is intentionally much smaller than the publisher's general recommendation and remains a limitation.
+
+## Final checks and artifact identity
+
+- `bash tools/android-build.sh`: PASS, standalone offline build, 5 seconds; ARM64 and x86_64 libraries are packaged. Gradle reports deprecation warnings for a future Gradle 9 upgrade; this check uses the existing 8.13 toolchain.
+- `bash tools/evaluation/check_synthesis.sh`: PASS, real model/JNI execution on existing `emulator-5560`. Four factual development cases generate; the absent case abstains without generation. The fictional conflict draft becomes explicitly labeled fallback, not a generated-success case.
+- Host controls pass, including conflict withholding, raw citation mapping, unsupported numbers, context overflow, cancellation, cross-subject leakage and word forms. Fourteen earlier answer routing/citation/cancellation regressions also pass; these host fixtures are not model-quality evidence.
+- Android instrumentation independently rejects native context overflow before output, checks native pre-cancellation, and invokes 11 actual generated citation spans, verifying their exact source-ID callbacks. This task does not repeat physical taps, new-model SAF import/restart, in-flight cancellation latency, or actual source-dialog usability with the larger model.
+
+[Raw final outputs and prompts](synthesis/final/results.json), [behavioral summary](synthesis/final/summary.json), [standalone build](synthesis/final/standalone-build.log), and [exact artifact identities](synthesis/final/artifact-identities.json) are frozen. The final rerun produced byte-identical raw drafts to the preserved phase-check failure run; timing fields differ. This demonstrates repeatability for this configuration, not robustness across seeds or unseen questions.
+
+Implementation/evaluator source commit: `3ac4122f6b54ff2f2aa46e33899b8606a078c6c3`. Final APK SHA-256: `b726fe8c6364a4a42e6526802d00de5af1427b3e804d3e7ec95eed4e05ce2676`. Test APK SHA-256: `7c61415ec9c92844b5c68248610f277513edc1d0eada1571506b7b33d233fc92`. Raw final result SHA-256: `8e68cc1bce95ee7521c62f2f391f9e1e8c8cc37acb4a02618e0ef9924e63c711`.
+
+Native library SHA-256 values:
+
+- `lib/arm64-v8a/libpocketlore.so`: `47878f01fe41b989ebc952c3dc21d11c2753d09e6a9b5b994e75ee4e471d53c5`
+- `lib/x86_64/libpocketlore.so`: `35ff53c5a71792e9a35ab4f08e37fa490d1d166412d6fef03df5d9f289d95815`
+
+## Final emulator timings
+
+Model load: **816.963 ms**. These are individual warm/uncontrolled-cache development measurements, not phone latency or a p50/p95 study.
+
+| Case | Route | Prompt / emitted tokens | First token ms | Total ms | Citation callbacks |
+| --- | --- | --- | ---: | ---: | ---: |
+| comparison | GENERATED | 440 / 42 | 20322.698 | 25895.203 | 4 |
+| explanation | GENERATED | 459 / 20 | 20127.691 | 23021.911 | 1 |
+| synthesis | GENERATED | 597 / 79 | 26228.480 | 37041.422 | 4 |
+| conditions | GENERATED | 399 / 74 | 17449.423 | 26621.226 | 2 |
+| absent | ABSTAINED | 0 / 0 | 0.000 | 3.107 | 0 |
+| conflict-fixture | FALLBACK | 287 / 9 | 13011.924 | 14164.709 | 0 |
+
+A [single memory snapshot](synthesis/final/memory-snapshot.txt), taken during the preceding repeat with this same APK, reports Android TOTAL PSS 2,129,461 kB, TOTAL RSS 1,919,164 kB and TOTAL SWAP PSS 226,354 kB. These are the platform-reported aggregates, not a measured peak. Swapping and the emulator's small memory configuration affect interpretation. The saved app model still has its original 0.5B hash, as [verified separately](synthesis/final/saved-app-model-sha256.txt).
+
+## Builder claim-to-source review of final output
+
+| Case | Actual generated claims and cited support | Review and limitation |
+| --- | --- | --- |
+| Phase comparison | Liquid-to-vapor evaporation, then condensation as its opposite; linked to `evaporation-398183fefbcbafbf` and `evaporation-dd7620163089bbe8` | Both statements are directly in their excerpts. The reverse direction is inferable rather than restated. Both labels on both claims overcite; this is a brief comparison, not deep reasoning. |
+| Heat explanation | Heat removal requires energy to separate water molecules; linked to `evaporation-460a70d340b737c3` | Matches the cited causal explanation. One concise generated claim, with heavy source wording reuse. |
+| Groundwater/runoff synthesis | Infiltration toward saturated rock versus runoff factors and the approximate one-third portion; linked to `groundwater-abbc88d938b327f2` and `runoff-cee7b48b52dc99d4` | Core pathways, factors and portion are sourced. The phrase about moving slowly until saturation compresses adjacent source statements: the excerpt states slow movement in the groundwater system, so the exact temporal attachment needs independent review. This is limited synthesis, not certified clause-by-clause entailment. |
+| Conditional recharge | Deep aquifers refill slowly; a shallow aquifer in substantial precipitation, such as coastal south Georgia, **may** refill almost immediately; linked to `infiltration-6bdab6adeed3d925` | Both clauses are directly supported and retain the shallow example's location, precipitation and uncertainty. The answer does not invent a universal numeric recharge time. |
+| Absent evidence | No model draft; missing cure/diabetes coverage is disclosed | Correct bounded abstention for this pack/case; not general premise or medical-safety validation. |
+| Fictional conflict control | Model states active and not active without resolving the conflict | Application withholds that draft, names both source IDs and explicitly discloses potential unresolved disagreement. This is safe fallback, not successful model conflict reasoning or factual corpus evidence. |
+
+The automatic PASS covers the named behavioral and bounded meaning checks, not all semantic implications in the review above. The model-generated text remains short and close to source wording. General multi-source reasoning, implicit contradictions, counterfactuals, long answers, source uncertainty preservation across arbitrary inputs, blind human review, physical Android/GrapheneOS and release resource limits remain open. No external dependency prevented the rig checks; the remaining quality limitations are engineering/evaluation gaps, not a hardware-blocker claim.
+
+All preserved artifact files are listed in [SHA256SUMS](synthesis/SHA256SUMS). Model weights, APKs and bulk source assets remain in ignored paths rather than Git.
+
+Final APKs are also retained in the ignored run directory recorded in `artifact-identities.json`. Earlier trial raw outputs, prompts, check failures and APK hashes are retained; earlier trial APK binaries were not separately archived, so no bit-for-bit replay of every intermediate APK is claimed.
