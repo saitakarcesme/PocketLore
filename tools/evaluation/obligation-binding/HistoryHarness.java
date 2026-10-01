@@ -17,6 +17,6 @@ public final class HistoryHarness {
    NativeRuntime.reset(session);java.io.ByteArrayOutputStream retry=new java.io.ByteArrayOutputStream();int retryTokens=NativeRuntime.generateChat(session,BindingHarness.b("Follow the request."),BindingHarness.b("Reply READY."),8,piece->retry.write(piece,0,piece.length));long[] afterRetry=NativeRuntime.resourceState();
    Files.writeString(out.resolve("cancellation.json"),"{\"stage\":\"Separate native callback cancellation and same-handle retry fixture; no quality credit\",\"callback_count\":"+callback[0]+",\"cancel_tokens\":"+cancelledTokens+",\"cancel_error\":"+BindingHarness.q(cancelError)+",\"cancel_latency_ms\":"+cancelMs+",\"after_cancel\":"+Arrays.toString(afterCancel)+",\"retry_tokens\":"+retryTokens+",\"retry_raw\":"+BindingHarness.q(retry.toString(java.nio.charset.StandardCharsets.UTF_8))+",\"after_retry\":"+Arrays.toString(afterRetry)+"}\n",StandardOpenOption.CREATE_NEW);
    if(cancelledAt[0]==0||retryTokens<=0)throw new AssertionError("Native cancellation/retry not exercised");
-  }finally{NativeRuntime.close(session);}
+  }finally{NativeRuntime.close(session);Files.writeString(out.resolve("closed.json"),Arrays.toString(NativeRuntime.resourceState()),StandardOpenOption.CREATE_NEW);}
  }
 }
