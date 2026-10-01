@@ -241,6 +241,46 @@
       "obligations_complete": true,
       "fully_useful_draft": true,
       "assessment": "Explicitly withholds unprovided live border waiting time; useful abstention only."
+    },
+    "s31": {
+      "result_sha256": "3146e70230cea7da380783c714dca15da44e05de423ef13b7ac27e96e464dc80",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Complete Catalonia regional-capital and northeastern-Spain coastal location answer with exact S1 support; screen candidate."
+    },
+    "s32": {
+      "result_sha256": "c1102c993d7534ce82587ee199f25e3ec77a4f9493401e0000d9efb7bcf954b5",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "The historical democracy/learning explanation and additional Athena-name qualification are exactly established by S5; complete paragraph-supported answer."
+    },
+    "s33": {
+      "result_sha256": "00949a14d98a76b915ee0297cafd6bb7fe3fe6baf0958e9a2ef81430f8fb4d5d",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Both regional Barcelona and national Athens capital statuses, including the extra Spanish population rank, are exactly established by S1/S4; screen candidate."
+    },
+    "s34": {
+      "result_sha256": "6604e3501cb4fcd331d260693a6f1d738f383e7f722f33fbcff5e4ae138483db",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "The historical roles are supplied, but according-to-tradition is moved from the article founding story to later County/Crown political roles; S2 does not attach that epistemic qualification to those roles. Athens facts are supported."
+    },
+    "s35": {
+      "result_sha256": "cc1313301fab2c89b71b2e953fc7ae375a3828040f307ce4ab2ddef6f70f63d0",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly rejects the Barcelona/Greece premise, links Barcelona to Catalonia/Spain with S1 and the actual Greek capital Athens with S4; complete supported correction."
     }
   }
 }

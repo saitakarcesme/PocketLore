@@ -54,7 +54,7 @@ def main():
   run_artifacts(d,receipt)
   load=json.loads((d/'load.json').read_text());require('bb4caa7540188872173c44d161602d9271386413' in load['identity'] and 'threads=6' in load['identity'],'Runtime identity differs')
   review=json.loads((E/'reviews'/f'{name}.json').read_text());require(set(review['cases'])=={c['id'] for c in cases},'Missing clause/source reviews: '+name)
-  counts[name]={'candidate':0,'withheld':0,'useful_drafts_supported_population':0,'useful_abstentions':0,'unsupported_candidates':0}
+  counts[name]={'candidate':0,'withheld':0,'useful_drafts_supported_population':0,'useful_abstentions':0,'unsupported_candidates':0,'fully_useful_screen_candidates':0,'absent_screen_candidates':0}
   for c in cases:
    p=d/(c['id']+'.json');v=json.loads(p.read_text());a=review['cases'][c['id']];hashed(p,a['result_sha256'])
    require(v['question']==c['question'] and v['id']==c['id'],'Question changed')
@@ -70,6 +70,8 @@ def main():
     require(a['all_facts_supported'] and a['cited_claims_supported'] and a['obligations_complete'],'Useful score contradicts support review')
     counts[name]['useful_abstentions' if c['kind']=='absence' else 'useful_drafts_supported_population']+=1
    if candidate and not a['cited_claims_supported']:counts[name]['unsupported_candidates']+=1
+   if candidate and a['fully_useful_draft'] and c['kind']!='absence':counts[name]['fully_useful_screen_candidates']+=1
+   if candidate and c['kind']=='absence':counts[name]['absent_screen_candidates']+=1
    replay.append((c,v))
  # Actual Java gate replay, preserving both false withholding and unsupported candidates.
  with tempfile.TemporaryDirectory(prefix='pocketlore-scale-check-') as tmp:
