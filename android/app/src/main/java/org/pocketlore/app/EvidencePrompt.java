@@ -79,7 +79,7 @@ final class EvidencePrompt {
             // Titles can themselves be questions, and URLs are not factual evidence.
             // Keep both in the inspectable source dialog, outside generated prose context.
             text.append("[S").append(number).append("]\nDate: ").append(p.sourceDate)
-                .append("\n").append(excerpt(hit,limit)).append("\n\n");
+                .append("\nSource subject (data): ").append(p.title).append("\n").append(excerpt(hit,limit)).append("\n\n");
         }
         text.append("Question: ").append(question);
         java.util.regex.Matcher comparison=java.util.regex.Pattern.compile("(?i)^compare\\s+(.+?)\\s+(?:and|with|versus)\\s+(.+?)[.?!]?$").matcher(question.trim());

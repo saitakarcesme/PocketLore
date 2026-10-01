@@ -29,12 +29,18 @@ public final class AnswerEngine {
         return new Outcome(Kind.CANCELLED,"Cancelled. Partial draft discarded.",outcome.rawDraft,"Cancelled",outcome.prompt,
             Collections.emptySet(),outcome.invokedModel,outcome.tokens,outcome.firstTokenMs,outcome.totalMs);
     }
+    // Source fidelity/rights admission from task211's sealed disposition review.
+    // This identity selects that reviewed edition; it does not prove claim entailment.
+    static boolean reviewedBroadSource(ResearchEngine.Passage p){
+        return p.id.startsWith("pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-")
+            && p.license.contains("CC BY-SA 4.0") && p.collectionProvenance.contains("Source-specific attribution notices:");
+    }
     private static final Pattern BRACKET = Pattern.compile("\\[([^\\[\\]]+)\\]");
     public static Outcome answer(String question, ResearchEngine.Result evidence, Generator generator,
                                  Consumer<String> progress, BooleanSupplier cancelled) {
         long start=System.nanoTime();
         evidence=EvidencePrompt.select(question,evidence);
-        for(ResearchEngine.Hit hit:evidence.hits)if(hit.passage.collectionProvenance.contains("Generation disabled:"))
+        for(ResearchEngine.Hit hit:evidence.hits)if(hit.passage.collectionProvenance.contains("Generation disabled:") && !reviewedBroadSource(hit.passage))
             return fallback(evidence,"This reference edition is not enabled for model answers; inspect the retrieved sources and their review status.","","",false,0,0,start);
         if (cancelled.getAsBoolean()) return result(Kind.CANCELLED,"Cancelled. No answer was completed.","","Cancelled","",false,0,0,start);
         if (evidence.hits.isEmpty()) {

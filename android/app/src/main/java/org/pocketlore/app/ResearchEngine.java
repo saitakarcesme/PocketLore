@@ -21,10 +21,34 @@ public final class ResearchEngine {
     ResearchEngine(DiskProvider provider){disk=provider;}
     static ResearchEngine combined(List<ResearchEngine> engines){return new ResearchEngine(new DiskProvider(){
         public int size(){int total=0;for(ResearchEngine e:engines)total+=e.size();return total;}
-        public Result research(String q){List<Hit> hits=new ArrayList<>();int candidates=0;for(ResearchEngine e:engines){Result r=e.research(q);for(Hit h:r.hits){Set<String> title=new HashSet<>(tokenize(h.passage.title)),body=new HashSet<>(tokenize(h.passage.text));double score=0;for(String t:new HashSet<>(tokenize(q))){if(title.contains(t))score+=5;if(body.contains(t))score+=1;}hits.add(new Hit(h.passage,score));}candidates+=r.candidatesScored;}
-            hits.sort(Comparator.comparingDouble((Hit h)->h.score).reversed().thenComparing(h->h.passage.id));if(hits.size()>4)hits=new ArrayList<>(hits.subList(0,4));
-            return new Result(hits,Collections.emptySet(),hits.isEmpty()?"No supporting passage in active collections.":"Retrieved sources only; inspect their dates, scope and rights. No generated answer inferred.",candidates);}
+        public Result research(String q){List<Hit> hits=new ArrayList<>();int candidates=0;for(ResearchEngine e:engines){Result r=e.research(q);for(Hit h:r.hits)hits.add(new Hit(h.passage,rankScore(q,h.passage)+h.score*0.01));candidates+=r.candidatesScored;}
+            // Missing query vocabulary is a conservative retrieval veto, never entailment.
+            Set<String> missing=new HashSet<>(rankTerms(q)),present=new HashSet<>();
+            for(Hit h:hits)present.addAll(rankTerms(h.passage.title+" "+h.passage.text));missing.removeAll(present);
+            if(!missing.isEmpty())hits.clear();
+            hits=diverse(hits);
+            return new Result(hits,missing,hits.isEmpty()?"No supporting passage in active collections.":"Retrieved sources only; inspect their dates, scope and rights. No generated answer inferred.",candidates);}
+
     });}
+
+    /** Shared bounded ranking; exact titles outrank longer titles containing the same words. */
+    static double rankScore(String q,Passage p){
+        Set<String> query=new HashSet<>(rankTerms(q)),title=new HashSet<>(rankTerms(p.title)),body=new HashSet<>(rankTerms(p.text));
+        double score=0;for(String t:query){if(title.contains(t))score+=5;if(body.contains(t))score+=1;}
+        if(!title.isEmpty()&&query.equals(title))score+=100;
+        else if(!title.isEmpty()&&query.containsAll(title))score+=15;
+        Set<String> overlap=new HashSet<>(title);overlap.retainAll(query);score+=overlap.size()/(double)Math.max(1,title.size());
+        Set<String> opening=new HashSet<>(rankTerms(p.text.split("[.!?]",2)[0]));for(String t:query)if(opening.contains(t))score+=2;
+        return score;
+    }
+    /** First select distinct documents, then at most one additional passage per document. */
+    static List<Hit> diverse(List<Hit> input){
+        input.sort(Comparator.comparingDouble((Hit h)->h.score).reversed().thenComparing(h->h.passage.id));
+        List<Hit> out=new ArrayList<>();Set<String> docs=new HashSet<>();
+        for(Hit h:input)if(docs.add(h.passage.url)){out.add(h);if(out.size()==4)return out;}
+        for(String url:docs)for(Hit h:input)if(h.passage.url.equals(url)&&!out.contains(h)){out.add(h);break;}
+        return new ArrayList<>(out.subList(0,Math.min(4,out.size())));
+    }
 
     public static final class Passage {
         public final String id, title, url, sourceDate, license, text;

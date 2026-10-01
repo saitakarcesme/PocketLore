@@ -65,18 +65,26 @@ final class BroadPack {
    List<String> terms=new ArrayList<>(new LinkedHashSet<>(ResearchEngine.tokenize(question)));if(terms.size()>24)terms=terms.subList(0,24);List<ResearchEngine.Hit> hits=new ArrayList<>();int candidates=0;
    if(!terms.isEmpty())try(SQLiteDatabase db=open()){
     StringBuilder match=new StringBuilder();for(String t:terms){if(match.length()>0)match.append(" AND ");match.append('"').append(t).append('"');}
-    Set<String> seen=new HashSet<>();StringBuilder titleMatch=new StringBuilder();for(String t:terms){if(titleMatch.length()>0)titleMatch.append(" AND ");titleMatch.append("title:").append(t);}
-    for(String expression:new String[]{titleMatch.toString(),match.toString()}){
-    if(candidates>=64)break;
-    try(Cursor c=db.rawQuery("SELECT p.citation,p.body,p.sha,d.title,d.url,d.date,d.rights,d.provenance FROM search JOIN passages p ON p.pid=search.docid JOIN documents d ON d.id=p.document WHERE search MATCH ? ORDER BY search.docid LIMIT 64",new String[]{expression})){
-     while(c.moveToNext()&&candidates<64){if(!seen.add(c.getString(0)))continue;candidates++;String title=c.getString(3),text=c.getString(1);double score=0;Set<String> titleTerms=new HashSet<>(ResearchEngine.tokenize(title)),bodyTerms=new HashSet<>(ResearchEngine.tokenize(text));for(String t:terms){if(titleTerms.contains(t))score+=5;if(bodyTerms.contains(t))score+=1;}
-      String provenance="Collection: "+id+"\nEdition SHA-256: "+hash+"\n"+c.getString(7)+"\nPassage SHA-256: "+c.getString(2)+"\n"+manifest.optString("warning");
-      String[] row={"p"+hash+"_"+c.getString(0),title,c.getString(4),c.getString(5),c.getString(6),text};hits.add(new ResearchEngine.Hit(new ResearchEngine.Passage(row,provenance),score));
+    Set<String> seen=new HashSet<>();List<String> expressions=new ArrayList<>();
+    java.util.regex.Matcher comparison=java.util.regex.Pattern.compile("(?i)^compare\\s+(.+?)\\s+(?:and|with|versus)\\s+(.+?)[.?!]?$").matcher(question.trim());
+    if(comparison.matches())for(int part=1;part<=2;part++){
+        StringBuilder title=new StringBuilder();for(String t:ResearchEngine.tokenize(comparison.group(part))){if(title.length()>0)title.append(" AND ");title.append("title:").append(t);}if(title.length()>0)expressions.add(title.toString());
+    }
+    StringBuilder titleMatch=new StringBuilder();for(String t:terms){if(titleMatch.length()>0)titleMatch.append(" AND ");titleMatch.append("title:").append(t);}
+    expressions.add(titleMatch.toString());expressions.add(match.toString());
+    for(String expression:expressions){
+     if(candidates>=64)break;Map<String,Integer> perDocument=new HashMap<>();int accepted=0;
+     // Bounded scans prioritize introductory passages, rather than whichever article has most rows.
+     try(Cursor c=db.rawQuery("SELECT p.citation,p.body,p.sha,d.title,d.url,d.date,d.rights,d.provenance,p.start FROM search JOIN passages p ON p.pid=search.docid JOIN documents d ON d.id=p.document WHERE search MATCH ? ORDER BY CASE WHEN lower(d.title)=? THEN 0 ELSE 1 END, CASE WHEN p.start=0 THEN 0 ELSE 1 END,length(d.title),p.pid LIMIT 64",new String[]{expression,question.trim().toLowerCase(Locale.ROOT)})){
+      while(c.moveToNext()&&candidates<64&&accepted<16){String title=c.getString(3),text=c.getString(1),url=c.getString(4);if(perDocument.getOrDefault(url,0)>=4||!seen.add(c.getString(0)))continue;perDocument.put(url,perDocument.getOrDefault(url,0)+1);candidates++;accepted++;
+       String provenance="Collection: "+id+"\nEdition SHA-256: "+hash+"\n"+c.getString(7)+"\nPassage SHA-256: "+c.getString(2)+"\n"+manifest.optString("warning");
+       String[] row={"p"+hash+"_"+c.getString(0),title,url,c.getString(5),c.getString(6),text};ResearchEngine.Passage p=new ResearchEngine.Passage(row,provenance);
+       hits.add(new ResearchEngine.Hit(p,ResearchEngine.rankScore(question,p)+(c.getInt(8)==0?4:0)));
+      }
      }
     }
-    }
    }catch(Exception e){throw new IllegalStateException("Cannot query saved broad index",e);}
-   hits.sort(Comparator.comparingDouble((ResearchEngine.Hit h)->h.score).reversed().thenComparing(h->h.passage.id));if(hits.size()>4)hits=new ArrayList<>(hits.subList(0,4));
+   hits=ResearchEngine.diverse(hits);
    return new ResearchEngine.Result(hits,Collections.emptySet(),hits.isEmpty()?"No matching evidence in the historical edition.":manifest.optString("warning")+" Inspect dated source passages; no generated answer inferred.",candidates);
   }
  });}
