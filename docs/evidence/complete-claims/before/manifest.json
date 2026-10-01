@@ -1,0 +1,59 @@
+{
+  "stage": "before",
+  "environment": "LLMRig CPU native ISA host, six threads; not Android",
+  "model_sha256": "061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a",
+  "library_sha256": "2af1eb5011a3cf3fa58af7c074cc8b14126bf0d67efd2d65bdb804de1cfbe67f",
+  "protocol_sha256": "72741ead2a2711930269bb47d472d66c76fce5ea2729b5cdbe1752c97109b9a6",
+  "sources": {
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "a22bece047bf751d0d8adc71cc818550b6d6bf3f603c257f525ac7af2be5aede",
+    "android/app/src/main/java/org/pocketlore/app/EvidencePrompt.java": "24b3c4a97fc5ee0db724e33344fe10f5b451675c40972eee1e3f209c9f265cf1",
+    "android/app/src/main/java/org/pocketlore/app/AnswerEngine.java": "b7ce2663d5af2160fd1704f4378505ca5d80d7037b746fa74f23b065323b61c6",
+    "android/app/src/main/java/org/pocketlore/app/NativeRuntime.java": "ec6f59d59b07ef7f5016657e0fcba0203232ecc7359f56a9ad6c205215fb2085",
+    "tools/evaluation/model-capability/CapabilityHarness.java": "428fd12db98d870eaa38802289920c4b5c7111229cbc48fb34c76ef4703f3102",
+    "android/app/src/main/cpp/runtime.cpp": "a97f1d521e23033fb9524b3d82f0c06a66231a0278d91987c828d6b83faf1df1"
+  },
+  "case_ids": [
+    "new-01",
+    "new-02",
+    "new-03",
+    "new-04",
+    "new-05",
+    "new-06",
+    "new-07",
+    "new-08"
+  ],
+  "command": [
+    "/home/isa/Android/atlas-toolchain/jdk/bin/java",
+    "-Xmx512m",
+    "-Djava.library.path=/home/isa/Projects/PocketLore/downloads/model-capability/host-v2-build",
+    "-cp",
+    "/home/isa/Projects/PocketLore/downloads/complete-claims/before-20261001T054140Z/classes",
+    "org.pocketlore.app.CapabilityHarness",
+    "/home/isa/Projects/PocketLore/downloads/complete-claims/before-20261001T054140Z/inputs",
+    "/home/isa/Projects/PocketLore/downloads/synthesis/model/Qwen3-1.7B-Q8_0.gguf",
+    "/home/isa/Projects/PocketLore/downloads/complete-claims/before-20261001T054140Z/results"
+  ],
+  "started_utc": "2026-10-01T05:41:42.864575+00:00",
+  "exit_code": 0,
+  "ended_utc": "2026-10-01T05:42:27.018579+00:00",
+  "artifacts": {
+    "results/load.json": "48f4cb3fc0661c336285b11c0229c2f59540a990080f9a32beb0d9d1642a7610",
+    "results/active-case.txt": "177291bd38270c0e38964019a5092f38b688c556d94b6204a6a487f83a09d010",
+    "results/new-01.partial.txt": "d8d005181daeeeb122d47fe1e32f1f7e031b2d20876e3b025225d2d7c96f8596",
+    "results/new-01.json": "83a9c3a309ba95f8d9940fcfa69ef49df56023191ac1dbeae090a0cec37e7e9d",
+    "results/new-02.partial.txt": "b15e560234114f03e751ba71b2e09829e8f5bbd77c4b88c2dabaf24c114a7ee3",
+    "results/new-02.json": "643c3dab32906a8116a9170da15c94cc83640449a199f382e9a8ea7fcaf9efb3",
+    "results/new-03.partial.txt": "24aaf074eadf04a45173f346ef60750bef4f754800b48296c685e0c4734eb3ef",
+    "results/new-03.json": "3d9520d5eb151cfb9c9f31ce569e85138757eef1a06a78c4003c99e5be03f223",
+    "results/new-04.partial.txt": "3d2f853b3ec26dd59faac59046d38183dacfed53046f20ed3add0dd6b79db2ef",
+    "results/new-04.json": "adc354078a2990e0c3ae003ddcf6a89dba82f87a1dc8146a821f7479f7e82d40",
+    "results/new-05.partial.txt": "6be87a5a1bb3018a748ba8e98087551864a42275f0c3d0e40f6e58aa91f4ca9f",
+    "results/new-05.json": "f03d441643e7c94197fa656c4ceefd239363dcf9a43daf94152323ce5a277579",
+    "results/new-06.partial.txt": "3585bc7a4ee287a889814ba0ed36689a00064037f3e500a1a7be020c916f386f",
+    "results/new-06.json": "d8f51cd192d054787e7d9155065b8f52b0893398435f5aeb8f9837f8952d8f8a",
+    "results/new-07.partial.txt": "9ec8bd45019fbed4b85ab247568ac99cf6f3e3e1274d1ca4c9082ef0139643ae",
+    "results/new-07.json": "c5ff87a4ab327919749671c3fae71b1b1708796a164406853df1eb34b663c00d",
+    "results/new-08.partial.txt": "8aa616efcc7e54708c15977fb8d79a64c674638a6c9ef8fbc8b0db88a4bd428f",
+    "results/new-08.json": "6907e8ad9d831a0896ddcbece545b59a710b15384b095810b6ef986ae6d59e9d"
+  }
+}

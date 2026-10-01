@@ -1,0 +1,44 @@
+{
+  "before_prior24": {
+    "routes": {
+      "FALLBACK": 2,
+      "ABSTAINED": 20,
+      "GENERATED": 2
+    },
+    "answerable": 19,
+    "fully_useful_supported_published": 2,
+    "unsupported_published": 0,
+    "absent_withheld": 5
+  },
+  "before_new8": {
+    "routes": {
+      "GENERATED": 5,
+      "ABSTAINED": 3
+    },
+    "answerable": 8,
+    "fully_useful_supported_published": 1,
+    "unsupported_published": 0,
+    "absent_withheld": 0
+  },
+  "after_prior24": {
+    "routes": {
+      "GENERATED": 4,
+      "ABSTAINED": 20
+    },
+    "answerable": 19,
+    "fully_useful_supported_published": 3,
+    "unsupported_published": 0,
+    "absent_withheld": 5
+  },
+  "after_new8": {
+    "routes": {
+      "GENERATED": 3,
+      "FALLBACK": 2,
+      "ABSTAINED": 3
+    },
+    "answerable": 8,
+    "fully_useful_supported_published": 0,
+    "unsupported_published": 0,
+    "absent_withheld": 0
+  }
+}

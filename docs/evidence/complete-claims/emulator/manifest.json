@@ -1,0 +1,23 @@
+{
+  "environment": "Existing emulator-5560, x86_64 CPU JNI; not physical hardware",
+  "case_ids": [
+    "cap-02",
+    "cap-05",
+    "new-01"
+  ],
+  "started_utc": "2026-10-01T05:52:04.065350+00:00",
+  "app_sha256": "9663b5ffd49b5d7a7b090f0b3363cb55ee1a22327b65abae6b314d1c74ddae1e",
+  "test_sha256": "e53aa8c70abca6d33215cd95d94ea254d843eedbcc020966f7ec1de39364d4e7",
+  "model_sha256": "061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a",
+  "exit_code": 0,
+  "ended_utc": "2026-10-01T05:53:20.040857+00:00",
+  "artifacts": {
+    "app-install.txt": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+    "test-install.txt": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+    "instrumentation.txt": "5d4637d25560c4e1d8a27747f442672623c0577cfa8d3119edf32ff4ad6f8231",
+    "load.json": "5e4b6c71fc1b3c7b0a303c2826cf19dcf0600b5df84c6abd775ef75543e43751",
+    "cap-02.json": "6eaa81eedc075e4132ff23b334f0fb527d6bcd66cb573c5a7a605f16235197db",
+    "cap-05.json": "769e14a711194726dc3e55fb7f81f6a5073e5f51d7a9a5a2d3fc394e7524fca0",
+    "new-01.json": "e4b189759d0594e5c62cf50056e4188f0398fdbe086d56bce7aaf2764268ecce"
+  }
+}

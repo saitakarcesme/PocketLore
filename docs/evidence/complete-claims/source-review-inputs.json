@@ -1,0 +1,1525 @@
+{
+  "classification": "Inputs for independent source review; no independent verdict supplied by builder",
+  "rows": [
+    {
+      "stage": "before",
+      "case": "new-01",
+      "question": "Explain how DNA instructions are used to make proteins.",
+      "expectation": "Enzymes transcribe DNA information into mRNA; mRNA information is translated into amino-acid order for proteins; preserve both steps.",
+      "sources": [
+        {
+          "id": "science-dna-d32bd953c9df60a3",
+          "title": "Deoxyribonucleic Acid (DNA) Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+          "date": "2020-08-24 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "DNA's instructions are used to make proteins in a two-step process. First, enzymes read the information in a DNA molecule and transcribe it into an intermediary molecule called messenger ribonucleic acid, or mRNA. Next, the information contained in the mRNA molecule is translated into the \"language\" of amino acids, which are the building blocks of proteins. This language tells the cell's protein-making machinery the precise order in which to link the amino acids to produce a specific protein. This is a major task because there are 20 types of amino acids, which can be placed in many different orders to form a wide variety of proteins."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Deoxyribonucleic Acid (DNA) Fact Sheet\nDate: 2020-08-24 page updated; retrieved 2026-10-01\nSource: https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet\nDNA's instructions are used to make proteins in a two-step process. First, enzymes read the information in a DNA molecule and transcribe it into an intermediary molecule called messenger ribonucleic acid, or mRNA. Next, the information contained in the mRNA molecule is translated into the \"language\" of amino acids, which are the building blocks of proteins. This language tells the cell's protein-making machinery the precise order in which to link the amino acids to produce a specific protein. This is a major task because there are 20 types of amino acids, which can be placed in many different orders to form a wide variety of proteins.\n\nQuestion: Explain how DNA instructions are used to make proteins.\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-dna-d32bd953c9df60a3] DNA's instructions are used to make proteins in a two-step process.",
+      "published_text": "[science-dna-d32bd953c9df60a3] DNA's instructions are used to make proteins in a two-step process.",
+      "route": "GENERATED",
+      "record_sha256": "83a9c3a309ba95f8d9940fcfa69ef49df56023191ac1dbeae090a0cec37e7e9d"
+    },
+    {
+      "stage": "before",
+      "case": "new-02",
+      "question": "Compare genes and DNA sequences outside genes.",
+      "expectation": "Genes encode protein instructions and comprise about one percent; outside sequences regulate when/how/how much protein is made, not useless DNA.",
+      "sources": [
+        {
+          "id": "science-dna-160b4c88f7f463ae",
+          "title": "Deoxyribonucleic Acid (DNA) Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+          "date": "2020-08-24 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "DNA contains the instructions needed for an organism to develop, survive and reproduce. To carry out these functions, DNA sequences must be converted into messages that can be used to produce proteins, which are the complex molecules that do most of the work in our bodies. Each DNA sequence that contains instructions to make a protein is known as a gene. The size of a gene may vary greatly, ranging from about 1,000 bases to 1 million bases in humans. Genes only make up about 1 percent of the DNA sequence. DNA sequences outside this 1 percent are involved in regulating when, how and how much of a protein is made."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Deoxyribonucleic Acid (DNA) Fact Sheet\nDate: 2020-08-24 page updated; retrieved 2026-10-01\nSource: https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet\nDNA contains the instructions needed for an organism to develop, survive and reproduce. To carry out these functions, DNA sequences must be converted into messages that can be used to produce proteins, which are the complex molecules that do most of the work in our bodies. Each DNA sequence that contains instructions to make a protein is known as a gene. The size of a gene may vary greatly, ranging from about 1,000 bases to 1 million bases in humans. Genes only make up about 1 percent of the DNA sequence. DNA sequences outside this 1 percent are involved in regulating when, how and how much of a protein is made.\n\nQuestion: Compare genes and DNA sequences outside genes.\nAnswer both subjects using the requested property. First line: genes. Second line: DNA sequences outside genes. Keep the source conditions and uncertainty; one source can support both lines.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-dna-160b4c88f7f463ae] genes: Genes are sequences of DNA that contain instructions to make proteins.\n[science-dna-160b4c88f7f463ae] DNA sequences outside genes: DNA sequences outside genes are involved in regulating when, how, and how much of a protein is made.",
+      "published_text": "[science-dna-160b4c88f7f463ae] genes: Genes are sequences of DNA that contain instructions to make proteins.\n[science-dna-160b4c88f7f463ae] DNA sequences outside genes: DNA sequences outside genes are involved in regulating when, how, and how much of a protein is made.",
+      "route": "GENERATED",
+      "record_sha256": "643c3dab32906a8116a9170da15c94cc83640449a199f382e9a8ea7fcaf9efb3"
+    },
+    {
+      "stage": "before",
+      "case": "new-03",
+      "question": "Why can a volcano erupt over and over in the same location?",
+      "expectation": "Vent connects through cracks to magma storage; connection to fresh magma enables repeated eruption; not perpetual guaranteed eruption.",
+      "sources": [
+        {
+          "id": "science-volcanoes-fdd579e7694cec41",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Many mountains form by folding, faulting, uplift, and erosion of the Earth's crust. Volcanic terrain, however, is built by the slow accumulation of erupted lava. The vent may be visible as a small bowl shaped depression at the summit of a cone or shield-shaped mountain. Through a series of cracks within and beneath the volcano, the vent connects to one or more linked storage areas of molten or partially molten rock (magma). This connection to fresh magma allows the volcano to erupt over and over again in the same location. In this way, the volcano grows ever larger, until it is no longer stable. Pieces of the volcano collapse as rock falls or as landslides."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] About Volcanoes\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/programs/VHP/about-volcanoes\nMany mountains form by folding, faulting, uplift, and erosion of the Earth's crust. Volcanic terrain, however, is built by the slow accumulation of erupted lava. The vent may be visible as a small bowl shaped depression at the summit of a cone or shield-shaped mountain. Through a series of cracks within and beneath the volcano, the vent connects to one or more linked storage areas of molten or partially molten rock (magma). This connection to fresh magma allows the volcano to erupt over and over again in the same location. In this way, the volcano grows ever larger, until it is no longer stable. Pieces of the volcano collapse as rock falls or as landslides.\n\nQuestion: Why can a volcano erupt over and over in the same location?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-volcanoes-fdd579e7694cec41] A volcano can erupt over and over in the same location because the vent connects to one or more linked storage areas of molten or partially molten rock (magma), allowing the volcano to erupt repeatedly.",
+      "published_text": "[science-volcanoes-fdd579e7694cec41] A volcano can erupt over and over in the same location because the vent connects to one or more linked storage areas of molten or partially molten rock (magma), allowing the volcano to erupt repeatedly.",
+      "route": "GENERATED",
+      "record_sha256": "3d9520d5eb151cfb9c9f31ce569e85138757eef1a06a78c4003c99e5be03f223"
+    },
+    {
+      "stage": "before",
+      "case": "new-04",
+      "question": "When can a coronal mass ejection cause a truly large magnetic storm?",
+      "expectation": "When Earth/Sun field lines directly connect at emission; can, not every ejection inevitably.",
+      "sources": [
+        {
+          "id": "science-magnetic-storms-d3c855e5484d8b4b",
+          "title": "What is a magnetic storm?",
+          "url": "https://www.usgs.gov/faqs/what-a-magnetic-storm",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Sometimes the Sun emits a coronal mass ejection at a time when the magnetic field lines of the Earth and Sun are directly connected. When these events occur, we can experience a truly large magnetic storm."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] What is a magnetic storm?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/what-a-magnetic-storm\nSometimes the Sun emits a coronal mass ejection at a time when the magnetic field lines of the Earth and Sun are directly connected. When these events occur, we can experience a truly large magnetic storm.\n\nQuestion: When can a coronal mass ejection cause a truly large magnetic storm?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-magnetic-storms-d3c855e5484d8b4b] A coronal mass ejection can cause a truly large magnetic storm when the Sun emits one at a time when the magnetic field lines of the Earth and Sun are directly connected.",
+      "published_text": "Insufficient evidence in the selected excerpts for: cause. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "adc354078a2990e0c3ae003ddcf6a89dba82f87a1dc8146a821f7479f7e82d40"
+    },
+    {
+      "stage": "before",
+      "case": "new-05",
+      "question": "Compare Hetch Hetchy and Wawona in late summer.",
+      "expectation": "Hetch Hetchy can be arid/hot in summer; Wawona trails hot/dry in late summer; retain each place and season; no live status.",
+      "sources": [
+        {
+          "id": "yosemite-341ac915dc513bc0",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "The immediate area around the reservoir is a no-camping zone, but hiking over six miles will lead to wonderful cascade waterfalls or peaceful lakes. Hetch Hetchy tends to be busiest in the spring and fall because of its low-elevation destinations and warm temperatures. In the summer, it can be very arid and hot."
+        },
+        {
+          "id": "yosemite-700f87fd529671b2",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "At the southern end of the park, Wawona is a quiet, forested area with trails that lead to waterfalls, lakes, and stunning granite features. In late summer, trails become hot and dry."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\nFor this comparison, each claim draws on the combined source set. Cite every supplied label on each line; do not transfer properties between the subjects.\n[S1] Yosemite trail regions\nDate: 2025-07-17 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yose/planyourvisit/trails.htm\nThe immediate area around the reservoir is a no-camping zone, but hiking over six miles will lead to wonderful cascade waterfalls or peaceful lakes. Hetch Hetchy tends to be busiest in the spring and fall because of its low-elevation destinations and warm temperatures. In the summer, it can be very arid and hot.\n\n[S2] Yosemite trail regions\nDate: 2025-07-17 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yose/planyourvisit/trails.htm\nAt the southern end of the park, Wawona is a quiet, forested area with trails that lead to waterfalls, lakes, and stunning granite features. In late summer, trails become hot and dry.\n\nQuestion: Compare Hetch Hetchy and Wawona in late summer.\nAnswer both subjects using the requested property. First line: Hetch Hetchy. Second line: Wawona in late summer. Keep the source conditions and uncertainty; one source can support both lines.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[yosemite-341ac915dc513bc0] [yosemite-700f87fd529671b2] Hetch Hetchy in late summer can be very arid and hot.\n[yosemite-341ac915dc513bc0] [yosemite-700f87fd529671b2] Wawona in late summer trails become hot and dry.",
+      "published_text": "[yosemite-341ac915dc513bc0] [yosemite-700f87fd529671b2] Hetch Hetchy in late summer can be very arid and hot.\n[yosemite-341ac915dc513bc0] [yosemite-700f87fd529671b2] Wawona in late summer trails become hot and dry.",
+      "route": "GENERATED",
+      "record_sha256": "f03d441643e7c94197fa656c4ceefd239363dcf9a43daf94152323ce5a277579"
+    },
+    {
+      "stage": "before",
+      "case": "new-06",
+      "question": "How do first-aid supplies and a repair kit prepare for emergencies?",
+      "expectation": "First-aid kit tailored to medical needs, expiration checks/personal medications; repair tools for equipment specific to trip; do not turn tools into medical treatment.",
+      "sources": [
+        {
+          "id": "essentials-b68c0099fce7653f",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "FIRST-AID SUPPLIES \u2013 First Aid Kit Prepare for emergencies by packing first-aid supplies. Start with a pre-made kit and modify it to fit your trip and your medical needs. Check the expiration date on all items and replace them as needed. Include any personal medications you regularly take. Consider including an emergency guide in case you are faced with an unfamiliar medical emergency."
+        },
+        {
+          "id": "essentials-59d02ca0df497a7a",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "REPAIR KIT AND TOOLS \u2013 Duct tape, knife, multi-tool, and scissors Carry a basic repair kit with you to help repair equipment. Include items like duct tape, knife, and scissors. Pack a multi-tool, a small tool that includes a knife, screwdriver, can opener, etc. A trowel and toilet paper may also be important. Bring any tools specific to your trip and your activity."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] NPS Ten Essentials\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/articles/10essentials.htm\nFIRST-AID SUPPLIES \u2013 First Aid Kit Prepare for emergencies by packing first-aid supplies. Start with a pre-made kit and modify it to fit your trip and your medical needs. Check the expiration date on all items and replace them as needed. Include any personal medications you regularly take. Consider including an emergency guide in case you are faced with an unfamiliar medical emergency.\n\n[S2] NPS Ten Essentials\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/articles/10essentials.htm\nREPAIR KIT AND TOOLS \u2013 Duct tape, knife, multi-tool, and scissors Carry a basic repair kit with you to help repair equipment. Include items like duct tape, knife, and scissors. Pack a multi-tool, a small tool that includes a knife, screwdriver, can opener, etc. A trowel and toilet paper may also be important. Bring any tools specific to your trip and your activity.\n\nQuestion: How do first-aid supplies and a repair kit prepare for emergencies?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[essentials-b68c0099fce7653f] First-aid supplies prepare for emergencies by packing first-aid supplies.\n[essentials-59d02ca0df497a7a] Repair kit and tools prepare for emergencies by carrying a basic repair kit with you.",
+      "published_text": "[essentials-b68c0099fce7653f] First-aid supplies prepare for emergencies by packing first-aid supplies.\n[essentials-59d02ca0df497a7a] Repair kit and tools prepare for emergencies by carrying a basic repair kit with you.",
+      "route": "GENERATED",
+      "record_sha256": "d8f51cd192d054787e7d9155065b8f52b0893398435f5aeb8f9837f8952d8f8a"
+    },
+    {
+      "stage": "before",
+      "case": "new-07",
+      "question": "What protections apply when private property is taken for public use?",
+      "expectation": "Just compensation required by historical excerpt; do not invent current procedures or amounts.",
+      "sources": [
+        {
+          "id": "bill-of-rights-1fd7554a5bbaa295",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Bill of Rights (1791 historical text)\nDate: 1791-12-15 ratification; retrieved 2026-09-30\nSource: https://www.archives.gov/founding-docs/bill-of-rights-transcript\nNo person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation.\n\nQuestion: What protections apply when private property is taken for public use?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[bill-of-rights-1fd7554a5bbaa295] Private property may be taken for public use, but it must be done with just compensation.",
+      "published_text": "Insufficient evidence in the selected excerpts for: apply, protections. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "c5ff87a4ab327919749671c3fae71b1b1708796a164406853df1eb34b663c00d"
+    },
+    {
+      "stage": "before",
+      "case": "new-08",
+      "question": "How do volcanic vents and wind affect where ash falls?",
+      "expectation": "Vents emit tephra; ash is tiny tephra transported by wind far away, smallest particles may circle globe before falling; preserve may and size distinction.",
+      "sources": [
+        {
+          "id": "science-volcanoes-7e17ab9821fed9ef",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Volcanoes are openings, or vents where lava, tephra (small rocks), and steam erupt onto the Earth's surface. Volcanic eruptions can last days, months, or even years."
+        },
+        {
+          "id": "science-volcanoes-bc12a568b075b592",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Magma can be erupted in a variety of ways. Sometimes molten rock simply pours from the vent as fluid lava flows. It can also shoot violently into the air as dense clouds of rock shards (tephra) and gas. Larger fragments fall back around the vent, and clouds of tephra may move down the slope of the volcano under the force of gravity. Ash, tiny pieces of tephra the thickness of a strand of hair, may be carried by the wind only to fall to the ground many miles away. The smallest ash particles may be erupted miles into the sky and carried many times around the world by winds high in the atmosphere before they fall to the ground."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] About Volcanoes\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/programs/VHP/about-volcanoes\nVolcanoes are openings, or vents where lava, tephra (small rocks), and steam erupt onto the Earth's surface. Volcanic eruptions can last days, months, or even years.\n\n[S2] About Volcanoes\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/programs/VHP/about-volcanoes\nMagma can be erupted in a variety of ways. Sometimes molten rock simply pours from the vent as fluid lava flows. It can also shoot violently into the air as dense clouds of rock shards (tephra) and gas. Larger fragments fall back around the vent, and clouds of tephra may move down the slope of the volcano under the force of gravity. Ash, tiny pieces of tephra the thickness of a strand of hair, may be carried by the wind only to fall to the ground many miles away. The smallest ash particles may be erupted miles into the sky and carried many times around the world by winds high in the atmosphere before they fall to the ground.\n\nQuestion: How do volcanic vents and wind affect where ash falls?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-volcanoes-7e17ab9821fed9ef] Volcanoes are openings, or vents, where lava, tephra, and steam erupt onto the Earth's surface.\n[science-volcanoes-bc12a568b075b592] Magma can be erupted in a variety of ways.",
+      "published_text": "Insufficient evidence in the selected excerpts for: affect. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "6907e8ad9d831a0896ddcbece545b59a710b15384b095810b6ef986ae6d59e9d"
+    },
+    {
+      "stage": "after",
+      "case": "cap-01",
+      "question": "Why does stress at a fault cause earthquake shaking?",
+      "expectation": "Stress overcomes friction; sudden slip releases energy waves through the crust causing shaking.",
+      "sources": [
+        {
+          "id": "science-earthquakes-8702c21b891d6d23",
+          "title": "What is an earthquake and what causes them to happen?",
+          "url": "https://www.usgs.gov/faqs/what-earthquake-and-what-causes-them-happen",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "An earthquake is caused by a sudden slip on a fault. The tectonic plates are always slowly moving, but they get stuck at their edges due to friction. When the stress on the edge overcomes the friction, there is an earthquake that releases energy in waves that travel through the earth's crust and cause the shaking that we feel."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] What is an earthquake and what causes them to happen?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/what-earthquake-and-what-causes-them-happen\nAn earthquake is caused by a sudden slip on a fault. The tectonic plates are always slowly moving, but they get stuck at their edges due to friction. When the stress on the edge overcomes the friction, there is an earthquake that releases energy in waves that travel through the earth's crust and cause the shaking that we feel.\n\nQuestion: Why does stress at a fault cause earthquake shaking?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-earthquakes-8702c21b891d6d23] Stress at a fault causes earthquake shaking because the tectonic plates are always slowly moving, but they get stuck at their edges due to friction.",
+      "published_text": "[science-earthquakes-8702c21b891d6d23] Stress at a fault causes earthquake shaking because the tectonic plates are always slowly moving, but they get stuck at their edges due to friction.",
+      "route": "GENERATED",
+      "record_sha256": "6d6a9eb4e6ca8af367f23017ff2f7cc958eeeadb5cc41b8a1837ceef780b5437"
+    },
+    {
+      "stage": "after",
+      "case": "cap-02",
+      "question": "Compare magma and lava.",
+      "expectation": "Molten rock underground is magma; after breaking through the surface it is lava.",
+      "sources": [
+        {
+          "id": "science-magma-b214c1cb4647b3fc",
+          "title": "What is the difference between magma and lava?",
+          "url": "https://www.usgs.gov/faqs/what-difference-between-magma-and-lava",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Scientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] What is the difference between magma and lava?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/what-difference-between-magma-and-lava\nScientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface.\n\nQuestion: Compare magma and lava.\nCover both subjects using the requested property. One sentence may compare both; do not add a second merely to fill a format.\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-magma-b214c1cb4647b3fc] Magma is molten rock that is underground, while lava is molten rock that breaks through the Earth's surface.",
+      "published_text": "[science-magma-b214c1cb4647b3fc] Magma is molten rock that is underground, while lava is molten rock that breaks through the Earth's surface.",
+      "route": "GENERATED",
+      "record_sha256": "a9aa474f52121c46fb0066622a809f46e2c403b056bba6d2b782deebcaf4d0d7"
+    },
+    {
+      "stage": "after",
+      "case": "cap-03",
+      "question": "How can magma rise and build volcanic terrain?",
+      "expectation": "Buoyancy and gas pressure drive magma upward; accumulation of erupted lava builds volcanic terrain; eruption is conditional.",
+      "sources": [
+        {
+          "id": "science-volcanoes-ac98f2017c5f7717",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Originating many tens of miles beneath the ground, magma is lighter than surrounding solid rock. It is driven towards Earth's surface by buoyancy, it is lighter than the surrounding rock, and by pressure from gas within it. Magma forces its way upward and may ultimately break though weak areas in the Earth's crust. If so, an eruption begins."
+        },
+        {
+          "id": "science-volcanoes-fdd579e7694cec41",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Many mountains form by folding, faulting, uplift, and erosion of the Earth's crust. Volcanic terrain, however, is built by the slow accumulation of erupted lava. The vent may be visible as a small bowl shaped depression at the summit of a cone or shield-shaped mountain. Through a series of cracks within and beneath the volcano, the vent connects to one or more linked storage areas of molten or partially molten rock (magma). This connection to fresh magma allows the volcano to erupt over and over again in the same location. In this way, the volcano grows ever larger, until it is no longer stable. Pieces of the volcano collapse as rock falls or as landslides."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] About Volcanoes\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/programs/VHP/about-volcanoes\nOriginating many tens of miles beneath the ground, magma is lighter than surrounding solid rock. It is driven towards Earth's surface by buoyancy, it is lighter than the surrounding rock, and by pressure from gas within it. Magma forces its way upward and may ultimately break though weak areas in the Earth's crust. If so, an eruption begins.\n\n[S2] About Volcanoes\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/programs/VHP/about-volcanoes\nMany mountains form by folding, faulting, uplift, and erosion of the Earth's crust. Volcanic terrain, however, is built by the slow accumulation of erupted lava. The vent may be visible as a small bowl shaped depression at the summit of a cone or shield-shaped mountain. Through a series of cracks within and beneath the volcano, the vent connects to one or more linked storage areas of molten or partially molten rock (magma). This connection to fresh magma allows the volcano to erupt over and over again in the same location. In this way, the volcano grows ever larger, until it is no longer stable. Pieces of the volcano collapse as rock falls or as landslides.\n\nQuestion: How can magma rise and build volcanic terrain?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-volcanoes-ac98f2017c5f7717] Magma is lighter than surrounding solid rock and is driven towards Earth's surface by buoyancy and pressure from gas within it.\n[science-volcanoes-fdd579e7694cec41] Magma forces its way upward and may ultimately break through weak areas in the Earth's crust.\n[science-volcanoes-fdd579e7694cec41] This allows the volcano to erupt over and over again in the same location, building volcanic terrain through the slow accumulation of erupted lava.",
+      "published_text": "Insufficient evidence in the selected excerpts for: build, rise. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "3e0ec94dbef534aae31a26729384470a4e5da64e54038c2d19dc9dc78fbc56dc"
+    },
+    {
+      "stage": "after",
+      "case": "cap-04",
+      "question": "All parts of the San Andreas Fault creep constantly, so strain cannot build up for centuries. Is that supported?",
+      "expectation": "Reject premise: some parts creep; other parts can accumulate strain for hundreds of years.",
+      "sources": [
+        {
+          "id": "science-earthquakes-a2a4b87ce7382257",
+          "title": "What is an earthquake and what causes them to happen?",
+          "url": "https://www.usgs.gov/faqs/what-earthquake-and-what-causes-them-happen",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "The Pacific Plate grinds northwestward past the North American Plate at a rate of about two inches per year. Parts of the San Andreas Fault system adapt to this movement by constant \"creep\" resulting in many tiny shocks and a few moderate earth tremors. In other areas where creep is NOT constant, strain can build up for hundreds of years, producing great earthquakes when it finally releases."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] What is an earthquake and what causes them to happen?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/what-earthquake-and-what-causes-them-happen\nThe Pacific Plate grinds northwestward past the North American Plate at a rate of about two inches per year. Parts of the San Andreas Fault system adapt to this movement by constant \"creep\" resulting in many tiny shocks and a few moderate earth tremors. In other areas where creep is NOT constant, strain can build up for hundreds of years, producing great earthquakes when it finally releases.\n\nQuestion: All parts of the San Andreas Fault creep constantly, so strain cannot build up for centuries. Is that supported?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-earthquakes-a2a4b87ce7382257] The Pacific Plate grinds northwestward past the North American Plate at a rate of about two inches per year.",
+      "published_text": "Insufficient evidence in the selected excerpts for: all, cannot, centuries, constantly, so, supported, that. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "a686c913c822ba7f852bde65bf3b357162cfd0e18515df60d1329fbbb4d86327"
+    },
+    {
+      "stage": "after",
+      "case": "cap-05",
+      "question": "Why is DNA wrapped around histones?",
+      "expectation": "Packaging allows long DNA to fit inside cells.",
+      "sources": [
+        {
+          "id": "science-chromosomes-1c53684112e2a81e",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "date": "2020-08-15 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "The unique structure of chromosomes keeps DNA tightly wrapped around spool-like proteins, called histones. Without such packaging, DNA molecules would be too long to fit inside cells. For example, if all of the DNA molecules in a single human cell were unwound from their histones and placed end-to-end, they would stretch 6 feet."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Chromosomes Fact Sheet\nDate: 2020-08-15 page updated; retrieved 2026-10-01\nSource: https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet\nThe unique structure of chromosomes keeps DNA tightly wrapped around spool-like proteins, called histones. Without such packaging, DNA molecules would be too long to fit inside cells. For example, if all of the DNA molecules in a single human cell were unwound from their histones and placed end-to-end, they would stretch 6 feet.\n\nQuestion: Why is DNA wrapped around histones?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-chromosomes-1c53684112e2a81e] DNA is wrapped around histones to keep it tightly packed and fit within cells.",
+      "published_text": "[science-chromosomes-1c53684112e2a81e] DNA is wrapped around histones to keep it tightly packed and fit within cells.",
+      "route": "GENERATED",
+      "record_sha256": "26bc083e8fe70d936ba0ca471ad2d02bea5058e9804af12db35e23bca27c4e6a"
+    },
+    {
+      "stage": "after",
+      "case": "cap-06",
+      "question": "How do DNA instructions and chromosomes contribute to inheritance?",
+      "expectation": "DNA carries biological instructions passed to offspring; chromosomes consist of protein and one DNA molecule. Avoid unsupported inheritance mechanisms.",
+      "sources": [
+        {
+          "id": "science-dna-0215cec38b4684c9",
+          "title": "Deoxyribonucleic Acid (DNA) Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+          "date": "2020-08-24 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique. DNA, along with the instructions it contains, is passed from adult organisms to their offspring during reproduction."
+        },
+        {
+          "id": "science-chromosomes-bd1bb41122a2e2eb",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "date": "2020-08-15 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "Chromosomes are thread-like structures located inside the nucleus of animal and plant cells. Each chromosome is made of protein and a single molecule of deoxyribonucleic acid (DNA). Passed from parents to offspring, DNA contains the specific instructions that make each type of living creature unique."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Deoxyribonucleic Acid (DNA) Fact Sheet\nDate: 2020-08-24 page updated; retrieved 2026-10-01\nSource: https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet\nDeoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique. DNA, along with the instructions it contains, is passed from adult organisms to their offspring during reproduction.\n\n[S2] Chromosomes Fact Sheet\nDate: 2020-08-15 page updated; retrieved 2026-10-01\nSource: https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet\nChromosomes are thread-like structures located inside the nucleus of animal and plant cells. Each chromosome is made of protein and a single molecule of deoxyribonucleic acid (DNA). Passed from parents to offspring, DNA contains the specific instructions that make each type of living creature unique.\n\nQuestion: How do DNA instructions and chromosomes contribute to inheritance?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-dna-0215cec38b4684c9] DNA is a molecule that contains the biological instructions that make each species unique.",
+      "published_text": "Insufficient evidence in the selected excerpts for: contribute, inheritance. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "fc70ef4d8d459568a2520fc56d1fe231a40af72e48f44a6de43e21106aeffa16"
+    },
+    {
+      "stage": "after",
+      "case": "cap-07",
+      "question": "Does chromosome copying always distribute DNA accurately?",
+      "expectation": "Vast majority of cell divisions copy and distribute accurately, but rare mistakes occur; not always.",
+      "sources": [
+        {
+          "id": "science-chromosomes-ae26d52981dd0bd9",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "date": "2020-08-15 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "For an organism to grow and function properly, cells must constantly divide to produce new cells to replace old, worn-out cells. During cell division, it is essential that DNA remains intact and evenly distributed among cells. Chromosomes are a key part of the process that ensures DNA is accurately copied and distributed in the vast majority of cell divisions. Still, mistakes do occur on rare occasions."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Chromosomes Fact Sheet\nDate: 2020-08-15 page updated; retrieved 2026-10-01\nSource: https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet\nFor an organism to grow and function properly, cells must constantly divide to produce new cells to replace old, worn-out cells. During cell division, it is essential that DNA remains intact and evenly distributed among cells. Chromosomes are a key part of the process that ensures DNA is accurately copied and distributed in the vast majority of cell divisions. Still, mistakes do occur on rare occasions.\n\nQuestion: Does chromosome copying always distribute DNA accurately?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-chromosomes-ae26d52981dd0bd9] Chromosomes Fact Sheet states that \"Still, mistakes do occur on rare occasions\" and \"it is essential that DNA remains intact and evenly distributed among cells.",
+      "published_text": "Insufficient evidence in the selected excerpts for: always, copying, distribute. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "3bdabbae92b95a92ad80782d4fa86aa9a985c7b9ef7c5f2c2c5245f4e08dc198"
+    },
+    {
+      "stage": "after",
+      "case": "cap-08",
+      "question": "How many chromosomes does a domestic cat have?",
+      "expectation": "Withhold the number: no cat chromosome count in evidence.",
+      "sources": [
+        {
+          "id": "science-chromosomes-bd1bb41122a2e2eb",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "date": "2020-08-15 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "Chromosomes are thread-like structures located inside the nucleus of animal and plant cells. Each chromosome is made of protein and a single molecule of deoxyribonucleic acid (DNA). Passed from parents to offspring, DNA contains the specific instructions that make each type of living creature unique."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Chromosomes Fact Sheet\nDate: 2020-08-15 page updated; retrieved 2026-10-01\nSource: https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet\nChromosomes are thread-like structures located inside the nucleus of animal and plant cells. Each chromosome is made of protein and a single molecule of deoxyribonucleic acid (DNA). Passed from parents to offspring, DNA contains the specific instructions that make each type of living creature unique.\n\nQuestion: How many chromosomes does a domestic cat have?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-chromosomes-bd1bb41122a2e2eb] Domestic cats have 42 chromosomes.",
+      "published_text": "Insufficient evidence in the selected excerpts for: cat, domestic, have, many. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "f6dc6cc6ea854eb85109879dd891bc94e6870b064327d077ffeddc1e2bbbb86c"
+    },
+    {
+      "stage": "after",
+      "case": "cap-09",
+      "question": "What sustains the magnetic field generated in the outer core?",
+      "expectation": "Conducting iron motion induces currents and magnetic field feedback, sustained while sufficient convection energy exists.",
+      "sources": [
+        {
+          "id": "science-magnetic-core-f3a6eb6e41f10ed5",
+          "title": "How does the Earth's core generate a magnetic field?",
+          "url": "https://www.usgs.gov/faqs/how-does-earths-core-generate-a-magnetic-field",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "The Earth's outer core is in a state of turbulent convection as the result of radioactive heating and chemical differentiation. This sets up a process that is a bit like a naturally occurring electrical generator, where the convective kinetic energy is converted to electrical and magnetic energy. Basically, the motion of the electrically conducting iron in the presence of the Earth's magnetic field induces electric currents. Those electric currents generate their own magnetic field, and as the result of this internal feedback, the process is self-sustaining so long as there is an energy source sufficient to maintain convection."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] How does the Earth's core generate a magnetic field?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/how-does-earths-core-generate-a-magnetic-field\nThe Earth's outer core is in a state of turbulent convection as the result of radioactive heating and chemical differentiation. This sets up a process that is a bit like a naturally occurring electrical generator, where the convective kinetic energy is converted to electrical and magnetic energy. Basically, the motion of the electrically conducting iron in the presence of the Earth's magnetic field induces electric currents. Those electric currents generate their own magnetic field, and as the result of this internal feedback, the process is self-sustaining so long as there is an energy source sufficient to maintain convection.\n\nQuestion: What sustains the magnetic field generated in the outer core?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-magnetic-core-f3a6eb6e41f10ed5] The Earth's outer core generates a magnetic field through the movement of electrically conducting iron in a process similar to an electrical generator.",
+      "published_text": "Insufficient evidence in the selected excerpts for: generated, sustains. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "9423d65216c6ff69a4ebb8b2f2b061710784309fe958ffe7a728b8092dffec3a"
+    },
+    {
+      "stage": "after",
+      "case": "cap-10",
+      "question": "Compare magnetic storms and magnetic reversals.",
+      "expectation": "Storms are rapid field variation lasting hours to days; reversals take hundreds to thousands of years, with one possible one-year research exception.",
+      "sources": [
+        {
+          "id": "science-magnetic-storms-3b8945c553ef6dfa",
+          "title": "What is a magnetic storm?",
+          "url": "https://www.usgs.gov/faqs/what-a-magnetic-storm",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "A magnetic storm is a period of rapid magnetic field variation. It can last from hours to days."
+        },
+        {
+          "id": "science-magnetic-reversals-fc2ce79fa0a73c7a",
+          "title": "Is it true that Earth's magnetic field occasionally reverses its polarity?",
+          "url": "https://www.usgs.gov/faqs/it-true-earths-magnetic-field-occasionally-reverses-its-polarity",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Reversals are not instantaneous; they happen over a period of hundreds to thousands of years, though recent research indicates that at least one reversal could have taken place over a period of one year."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] What is a magnetic storm?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/what-a-magnetic-storm\nA magnetic storm is a period of rapid magnetic field variation. It can last from hours to days.\n\nQuestion: Compare magnetic storms and magnetic reversals.\nCover both subjects using the requested property. One sentence may compare both; do not add a second merely to fill a format.\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-magnetic-storms-3b8945c553ef6dfa] A magnetic storm is a period of rapid magnetic field variation that can last from hours to days.",
+      "published_text": "Insufficient evidence in the selected excerpts for: reversals. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "061ddbe4acf405fef04bfbdfbce39f70117a1991a34bcf8655c7c38f7741f33a"
+    },
+    {
+      "stage": "after",
+      "case": "cap-11",
+      "question": "Do magnetic reversals occur on a regular schedule every 780,000 years?",
+      "expectation": "No apparent periodicity; 780,000 years is time since last reversal, not a repeat interval.",
+      "sources": [
+        {
+          "id": "science-magnetic-reversals-b147d6da540593c7",
+          "title": "Is it true that Earth's magnetic field occasionally reverses its polarity?",
+          "url": "https://www.usgs.gov/faqs/it-true-earths-magnetic-field-occasionally-reverses-its-polarity",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "These reversals are random with no apparent periodicity to their occurrence. They can happen as often as every 10 thousand years or so and as infrequently as every 50 million years or more. The last reversal was about 780,000 years ago."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Is it true that Earth's magnetic field occasionally reverses its polarity?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/it-true-earths-magnetic-field-occasionally-reverses-its-polarity\nThese reversals are random with no apparent periodicity to their occurrence. They can happen as often as every 10 thousand years or so and as infrequently as every 50 million years or more. The last reversal was about 780,000 years ago.\n\nQuestion: Do magnetic reversals occur on a regular schedule every 780,000 years?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-magnetic-reversals-b147d6da540593c7] Is it true that Earth's magnetic field occasionally reverses its polarity? Yes.",
+      "published_text": "Insufficient evidence in the selected excerpts for: magnetic, occur, regular, schedule. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "f735760dcac1b1930cc0923afde84054cd5b5483e2d250d9e5e5d0199d736b52"
+    },
+    {
+      "stage": "after",
+      "case": "cap-12",
+      "question": "What is the exact date of the next magnetic reversal?",
+      "expectation": "No exact prediction is supported; random with no apparent periodicity.",
+      "sources": [
+        {
+          "id": "science-magnetic-reversals-b147d6da540593c7",
+          "title": "Is it true that Earth's magnetic field occasionally reverses its polarity?",
+          "url": "https://www.usgs.gov/faqs/it-true-earths-magnetic-field-occasionally-reverses-its-polarity",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "These reversals are random with no apparent periodicity to their occurrence. They can happen as often as every 10 thousand years or so and as infrequently as every 50 million years or more. The last reversal was about 780,000 years ago."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Is it true that Earth's magnetic field occasionally reverses its polarity?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/it-true-earths-magnetic-field-occasionally-reverses-its-polarity\nThese reversals are random with no apparent periodicity to their occurrence. They can happen as often as every 10 thousand years or so and as infrequently as every 50 million years or more. The last reversal was about 780,000 years ago.\n\nQuestion: What is the exact date of the next magnetic reversal?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-magnetic-reversals-b147d6da540593c7] The exact date of the next magnetic reversal is not known.",
+      "published_text": "Insufficient evidence in the selected excerpts for: date, exact, magnetic, next. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "72b559132bf7a642d7718ba54e8dff88a764f9b9f276373fbb0886d07e608e83"
+    },
+    {
+      "stage": "after",
+      "case": "cap-13",
+      "question": "Compare the rights concerning searches and criminal trials in these excerpts.",
+      "expectation": "Searches: protection against unreasonable searches and warrant probable cause/specificity; trials: speedy public impartial jury plus defense rights. Keep subjects separate.",
+      "sources": [
+        {
+          "id": "bill-of-rights-07aa05c65aa81cf6",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized."
+        },
+        {
+          "id": "bill-of-rights-508bbde59eed242f",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "In all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial, by an impartial jury of the State and district wherein the crime shall have been committed, which district shall have been previously ascertained by law, and to be informed of the nature and cause of the accusation; to be confronted with the witnesses against him; to have compulsory process for obtaining witnesses in his favor, and to have the Assistance of Counsel for his defence."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\nFor this comparison, each claim draws on the combined source set. Cite every supplied label on each line; do not transfer properties between the subjects.\n[S1] Bill of Rights (1791 historical text)\nDate: 1791-12-15 ratification; retrieved 2026-09-30\nSource: https://www.archives.gov/founding-docs/bill-of-rights-transcript\nThe right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.\n\n[S2] Bill of Rights (1791 historical text)\nDate: 1791-12-15 ratification; retrieved 2026-09-30\nSource: https://www.archives.gov/founding-docs/bill-of-rights-transcript\nIn all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial, by an impartial jury of the State and district wherein the crime shall have been committed, which district shall have been previously ascertained by law, and to be informed of the nature and cause of the accusation; to be confronted with the witnesses against him; to have compulsory process for obtaining witnesses in his favor, and to have the Assistance of Counsel for his defence.\n\nQuestion: Compare the rights concerning searches and criminal trials in these excerpts.\nCover both subjects using the requested property. One sentence may compare both; do not add a second merely to fill a format.\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[bill-of-rights-07aa05c65aa81cf6] [bill-of-rights-508bbde59eed242f] The right of the people to be secure in their persons, houses, papers, and effects against unreasonable searches and seizures is mentioned in the first excerpt, while the right to a speedy and public trial in criminal prosecutions is mentioned in the second excerpt.",
+      "published_text": "Insufficient evidence in the selected excerpts for: concerning, excerpts, these. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "e58952898c0f3e2c48d058e1db679edc9329c267ae58859111024227a8e42c6b"
+    },
+    {
+      "stage": "after",
+      "case": "cap-14",
+      "question": "Under what conditions may soldiers be quartered in a house?",
+      "expectation": "In peace requires owner consent; in war in manner prescribed by law. Do not omit wartime qualification.",
+      "sources": [
+        {
+          "id": "bill-of-rights-97052f38c6cce93d",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Bill of Rights (1791 historical text)\nDate: 1791-12-15 ratification; retrieved 2026-09-30\nSource: https://www.archives.gov/founding-docs/bill-of-rights-transcript\nNo Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law.\n\nQuestion: Under what conditions may soldiers be quartered in a house?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[bill-of-rights-97052f38c6cce93d] No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law.",
+      "published_text": "Insufficient evidence in the selected excerpts for: conditions, may, under. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "cea7faf634ede0a60ec9447541688dc7aefb13b69ff54395b2783162ac832eea"
+    },
+    {
+      "stage": "after",
+      "case": "cap-15",
+      "question": "Does listing certain rights deny other rights retained by the people?",
+      "expectation": "No; enumeration must not be construed to deny or disparage other retained rights.",
+      "sources": [
+        {
+          "id": "bill-of-rights-4b65cd9bd56fb0a4",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "The enumeration in the Constitution, of certain rights, shall not be construed to deny or disparage others retained by the people."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Bill of Rights (1791 historical text)\nDate: 1791-12-15 ratification; retrieved 2026-09-30\nSource: https://www.archives.gov/founding-docs/bill-of-rights-transcript\nThe enumeration in the Constitution, of certain rights, shall not be construed to deny or disparage others retained by the people.\n\nQuestion: Does listing certain rights deny other rights retained by the people?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[bill-of-rights-4b65cd9bd56fb0a4] The enumeration in the Constitution, of certain rights, shall not be construed to deny or disparage others retained by the people.",
+      "published_text": "Insufficient evidence in the selected excerpts for: listing. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "f20cd048fb4b4bbbbba76870f59f6dfef85ebed5bf19c82226261a0c2b2c1370"
+    },
+    {
+      "stage": "after",
+      "case": "cap-16",
+      "question": "What prison sentence applies today to an unreasonable search?",
+      "expectation": "No current criminal penalty in supplied historical text; withhold.",
+      "sources": [
+        {
+          "id": "bill-of-rights-07aa05c65aa81cf6",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Bill of Rights (1791 historical text)\nDate: 1791-12-15 ratification; retrieved 2026-09-30\nSource: https://www.archives.gov/founding-docs/bill-of-rights-transcript\nThe right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.\n\nQuestion: What prison sentence applies today to an unreasonable search?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[bill-of-rights-07aa05c65aa81cf6] The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.",
+      "published_text": "Insufficient evidence in the selected excerpts for: applies, prison, search, sentence, today. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "d1b4ab487ab9457b2f6661600b6b0ec754049dc0848e7a23ea6a573c0f90f3eb"
+    },
+    {
+      "stage": "after",
+      "case": "cap-17",
+      "question": "Why are headlamps recommended for lighting at night?",
+      "expectation": "Hands-free lighting; can find way out or signal for help; extra batteries useful.",
+      "sources": [
+        {
+          "id": "essentials-e772a5a729be28b9",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "ILLUMINATION \u2013 Flashlight and headlamp Lighting is important in the outdoors at night, and can help you find your way out or signal for help. Items include flashlights, and headlamps. Headlamps are the recommended light source because they are hands-free. Be sure to pack extra batteries."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] NPS Ten Essentials\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/articles/10essentials.htm\nILLUMINATION \u2013 Flashlight and headlamp Lighting is important in the outdoors at night, and can help you find your way out or signal for help. Items include flashlights, and headlamps. Headlamps are the recommended light source because they are hands-free. Be sure to pack extra batteries.\n\nQuestion: Why are headlamps recommended for lighting at night?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[essentials-e772a5a729be28b9] Headlamps are recommended for lighting at night because they are hands-free.",
+      "published_text": "[essentials-e772a5a729be28b9] Headlamps are recommended for lighting at night because they are hands-free.",
+      "route": "GENERATED",
+      "record_sha256": "3fa4de9da3a14053aff3ff44f4e1b66ccf6bc8ac477497871d0e9447a4c82a8c"
+    },
+    {
+      "stage": "after",
+      "case": "cap-18",
+      "question": "How do extra food and emergency shelter help if trip plans change?",
+      "expectation": "Extra day food helps unexpected changes and maintains energy; shelter protects from severe weather/exposure. No guarantee of survival.",
+      "sources": [
+        {
+          "id": "essentials-18b025cdc46d1cb2",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "NUTRITION - Extra Food Be prepared for the possibility of changes to your trip plans. Pack an extra day's supply of food, preferably no-cook items that have good nutritional value to keep your energy high like salty and easy to digest snacks (e.g. trail mix, nuts, and granola bars). Having extra food can make a big difference for yourself or others if an unexpected situation occurs."
+        },
+        {
+          "id": "essentials-ba88dfc81102f647",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "EMERGENCY SHELTER \u2013 Tent, space blanket, tarp, or bivy Shelter is one of the most important elements during an emergency survival situation. It can protect you from severe weather conditions and exposure to the elements. A tent, tarp, bivy sack, or emergency space blanket are all lightweight options for emergency shelter."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] NPS Ten Essentials\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/articles/10essentials.htm\nNUTRITION - Extra Food Be prepared for the possibility of changes to your trip plans. Pack an extra day's supply of food, preferably no-cook items that have good nutritional value to keep your energy high like salty and easy to digest snacks (e.g. trail mix, nuts, and granola bars). Having extra food can make a big difference for yourself or others if an unexpected situation occurs.\n\n[S2] NPS Ten Essentials\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/articles/10essentials.htm\nEMERGENCY SHELTER \u2013 Tent, space blanket, tarp, or bivy Shelter is one of the most important elements during an emergency survival situation. It can protect you from severe weather conditions and exposure to the elements. A tent, tarp, bivy sack, or emergency space blanket are all lightweight options for emergency shelter.\n\nQuestion: How do extra food and emergency shelter help if trip plans change?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[essentials-18b025cdc46d1cb2] NUTRITION - Extra Food Be prepared for the possibility of changes to your trip plans.",
+      "published_text": "Insufficient evidence in the selected excerpts for: help. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "05d764442a35ed8c42c2efdd0b1cb1c2d7afb61541238b2289bcf51f09182dfe"
+    },
+    {
+      "stage": "after",
+      "case": "cap-19",
+      "question": "What should determine the extra clothing packed for sudden weather changes?",
+      "expectation": "Most extreme conditions one could encounter; examples raincoat/jacket/hat/gloves; bright clothing helps visibility for rescue.",
+      "sources": [
+        {
+          "id": "essentials-9a8d716345fb3949",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "EXTRA CLOTHING \u2013 Jacket, hat, gloves, rain shell, and other layers Prepare for sudden changes in weather conditions. Pack an extra layer of clothing that reflects the most extreme conditions you could encounter. This may include a raincoat, jacket, hat, or gloves. Use bright clothing to make yourself easier to see in case Search and Rescue needs to look for you."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] NPS Ten Essentials\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/articles/10essentials.htm\nEXTRA CLOTHING \u2013 Jacket, hat, gloves, rain shell, and other layers Prepare for sudden changes in weather conditions. Pack an extra layer of clothing that reflects the most extreme conditions you could encounter. This may include a raincoat, jacket, hat, or gloves. Use bright clothing to make yourself easier to see in case Search and Rescue needs to look for you.\n\nQuestion: What should determine the extra clothing packed for sudden weather changes?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[essentials-9a8d716345fb3949] The extra clothing packed for sudden weather changes should be determined by the most extreme conditions you could encounter.",
+      "published_text": "Insufficient evidence in the selected excerpts for: determine, packed. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "105ac01645933a59f127bdc4904eb291cbf21d601fe0997045d2b4355c57bae7"
+    },
+    {
+      "stage": "after",
+      "case": "cap-20",
+      "question": "Which brand of headlamp has the longest battery life?",
+      "expectation": "No brands or comparative battery durations supplied; withhold.",
+      "sources": [
+        {
+          "id": "essentials-e772a5a729be28b9",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "ILLUMINATION \u2013 Flashlight and headlamp Lighting is important in the outdoors at night, and can help you find your way out or signal for help. Items include flashlights, and headlamps. Headlamps are the recommended light source because they are hands-free. Be sure to pack extra batteries."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] NPS Ten Essentials\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/articles/10essentials.htm\nILLUMINATION \u2013 Flashlight and headlamp Lighting is important in the outdoors at night, and can help you find your way out or signal for help. Items include flashlights, and headlamps. Headlamps are the recommended light source because they are hands-free. Be sure to pack extra batteries.\n\nQuestion: Which brand of headlamp has the longest battery life?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[essentials-e772a5a729be28b9] Headlamps are the recommended light source because they are hands-free.",
+      "published_text": "Insufficient evidence in the selected excerpts for: battery, brand, has, life, longest. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "530cd8caef34cf8098e5d7bfb3baa11131cd904894d8f3c428bb8e2ec46e6683"
+    },
+    {
+      "stage": "after",
+      "case": "cap-21",
+      "question": "Compare camping access from Yosemite Valley and Tuolumne Meadows.",
+      "expectation": "Both at least four miles before camping; Valley minimum 2500-foot gain and mostly no-camping zone; Tuolumne cooler high country. Do not transfer gain to Tuolumne.",
+      "sources": [
+        {
+          "id": "yosemite-c07549b6dd9eec11",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "Most of Yosemite Valley falls within a no-camping zone, so while there are trailheads starting from Yosemite Valley, they all require a hike of at least four miles and a minimum elevation gain of 2,500 feet. Most trails lead to rewarding views from the north or south rim of the Valley, but water can be limited in late summer. This region is the most popular, and most crowded, portion of the park."
+        },
+        {
+          "id": "yosemite-05be844c00690dc0",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "Trails leaving from Tuolumne Meadows require backpackers to hike at least four miles before camping. This mountainous high country has an abundance of peaks, lakes, creeks, rivers, and waterfalls, but temperatures will be significantly cooler than elsewhere in the park. This region is very popular with backpackers during summer, and is correspondingly busy."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\nFor this comparison, each claim draws on the combined source set. Cite every supplied label on each line; do not transfer properties between the subjects.\n[S1] Yosemite trail regions\nDate: 2025-07-17 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yose/planyourvisit/trails.htm\nMost of Yosemite Valley falls within a no-camping zone, so while there are trailheads starting from Yosemite Valley, they all require a hike of at least four miles and a minimum elevation gain of 2,500 feet. Most trails lead to rewarding views from the north or south rim of the Valley, but water can be limited in late summer. This region is the most popular, and most crowded, portion of the park.\n\n[S2] Yosemite trail regions\nDate: 2025-07-17 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yose/planyourvisit/trails.htm\nTrails leaving from Tuolumne Meadows require backpackers to hike at least four miles before camping. This mountainous high country has an abundance of peaks, lakes, creeks, rivers, and waterfalls, but temperatures will be significantly cooler than elsewhere in the park. This region is very popular with backpackers during summer, and is correspondingly busy.\n\nQuestion: Compare camping access from Yosemite Valley and Tuolumne Meadows.\nCover both subjects using the requested property. One sentence may compare both; do not add a second merely to fill a format.\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[yosemite-c07549b6dd9eec11] [yosemite-05be844c00690dc0] Yosemite Valley requires a hike of at least four miles and a minimum elevation gain of 2,500 feet to access camping, while Tuolumne Meadows requires a hike of at least four miles before camping.",
+      "published_text": "Insufficient evidence in the selected excerpts for: access. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "ab3a2437d13ec26c98490949f5c3532e8240d9e518e54bd5da52ed9d2575151a"
+    },
+    {
+      "stage": "after",
+      "case": "cap-22",
+      "question": "How do snow and river crossings affect planning a Yellowstone hike?",
+      "expectation": "Snow persists late May/early June, some passes late July; late spring rivers cold/deep/swift; map lacks current status and current conditions need checking. No live assessment.",
+      "sources": [
+        {
+          "id": "yellowstone-2419b62337a46c6e",
+          "title": "Yellowstone hiking",
+          "url": "https://www.nps.gov/yell/planyourvisit/hiking.htm",
+          "date": "2025-04-18 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "When planning a hike, remember that many of Yellowstone\u2019s trails are more than 7,000 feet above sea level. Most areas retain snow until late May or early June, and some (especially mountain passes) are snow-covered until late July. Also, many routes require fording rivers that can be 25 feet wide, 3 to 6 feet deep, extremely cold, and swiftly running during our late spring runoff. It\u2019s hard to tell from a map whether a stream will be a raging torrent or merely a swollen creek. Check our Backcountry Conditions Page for the most up-to-date information on park trails."
+        },
+        {
+          "id": "yellowstone-240e6df8a3707a67",
+          "title": "Yellowstone hiking",
+          "url": "https://www.nps.gov/yell/planyourvisit/hiking.htm",
+          "date": "2025-04-18 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "The map below does not show the current status and conditions of Yellowstone trails. Check our Backcountry Conditions Page or ask locally for the most up-to-date information on park trails."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Yellowstone hiking\nDate: 2025-04-18 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yell/planyourvisit/hiking.htm\nWhen planning a hike, remember that many of Yellowstone\u2019s trails are more than 7,000 feet above sea level. Most areas retain snow until late May or early June, and some (especially mountain passes) are snow-covered until late July. Also, many routes require fording rivers that can be 25 feet wide, 3 to 6 feet deep, extremely cold, and swiftly running during our late spring runoff. It\u2019s hard to tell from a map whether a stream will be a raging torrent or merely a swollen creek. Check our Backcountry Conditions Page for the most up-to-date information on park trails.\n\n[S2] Yellowstone hiking\nDate: 2025-04-18 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yell/planyourvisit/hiking.htm\nThe map below does not show the current status and conditions of Yellowstone trails. Check our Backcountry Conditions Page or ask locally for the most up-to-date information on park trails.\n\nQuestion: How do snow and river crossings affect planning a Yellowstone hike?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[yellowstone-2419b62337a46c6e] Snow and river crossings affect planning a Yellowstone hike by requiring careful consideration of trail elevation and snow duration.",
+      "published_text": "Insufficient evidence in the selected excerpts for: affect, crossings. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "dd04637207a2eb8bdf63f8e772ea8689d2301ba2b439668f588392252c20f756"
+    },
+    {
+      "stage": "after",
+      "case": "cap-23",
+      "question": "Will Yosemite rangers plan my wilderness trip for me?",
+      "expectation": "No; general guidance only, traveler plans based on interests/timeframe/abilities.",
+      "sources": [
+        {
+          "id": "yosemite-6d870ab5895892e6",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "While park rangers can provide general guidance, they will not plan a wilderness trip for you; you must plan your own trip. The Yosemite Wilderness has over 750 miles of trail to explore with a great range of elevation, ecological zones, and solitude. This backpacking trip, be it your first or fortieth, is a uniquely protected opportunity to provide maximum freedom to roam in wilderness. So, in planning a trip, it is important to find the right experience for your interests, timeframe, and abilities. A good planning process will enhance your understanding of the park and your safety."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Yosemite trail regions\nDate: 2025-07-17 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yose/planyourvisit/trails.htm\nWhile park rangers can provide general guidance, they will not plan a wilderness trip for you; you must plan your own trip. The Yosemite Wilderness has over 750 miles of trail to explore with a great range of elevation, ecological zones, and solitude. This backpacking trip, be it your first or fortieth, is a uniquely protected opportunity to provide maximum freedom to roam in wilderness. So, in planning a trip, it is important to find the right experience for your interests, timeframe, and abilities. A good planning process will enhance your understanding of the park and your safety.\n\nQuestion: Will Yosemite rangers plan my wilderness trip for me?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[yosemite-6d870ab5895892e6] Yosemite trail regions   Yosemite rangers will not plan your wilderness trip for you.",
+      "published_text": "Insufficient evidence in the selected excerpts for: my. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "5ec92bda1ceab6a92e0af6b5d3ad5f76f3c9ea128387855c31b6cfb1b93198ee"
+    },
+    {
+      "stage": "after",
+      "case": "cap-24",
+      "question": "Is the Yellowstone trail I want open and safe today?",
+      "expectation": "No live trail status or safety guarantee. Supplied precautions do not establish current availability.",
+      "sources": [
+        {
+          "id": "yellowstone-240e6df8a3707a67",
+          "title": "Yellowstone hiking",
+          "url": "https://www.nps.gov/yell/planyourvisit/hiking.htm",
+          "date": "2025-04-18 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "The map below does not show the current status and conditions of Yellowstone trails. Check our Backcountry Conditions Page or ask locally for the most up-to-date information on park trails."
+        },
+        {
+          "id": "yellowstone-c7bbe1c4dfb76f39",
+          "title": "Yellowstone hiking",
+          "url": "https://www.nps.gov/yell/planyourvisit/hiking.htm",
+          "date": "2025-04-18 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "Stay safe in Yellowstone\u2019s backcountry! Carry bear spray, store food properly, check weather, and be prepared for changing conditions."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Yellowstone hiking\nDate: 2025-04-18 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yell/planyourvisit/hiking.htm\nThe map below does not show the current status and conditions of Yellowstone trails. Check our Backcountry Conditions Page or ask locally for the most up-to-date information on park trails.\n\n[S2] Yellowstone hiking\nDate: 2025-04-18 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yell/planyourvisit/hiking.htm\nStay safe in Yellowstone\u2019s backcountry! Carry bear spray, store food properly, check weather, and be prepared for changing conditions.\n\nQuestion: Is the Yellowstone trail I want open and safe today?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[yellowstone-240e6df8a3707a67] Yellowstone hiking Date: 2025-04-18 page updated; retrieved 2026-09-30 Source: https://www,nps,gov,yell,planyourvisit,hiking,htm The map below does not show the current status and conditions of Yellowstone trails.\n[yellowstone-c7bbe1c4dfb76f39] Yellowstone hiking Date: 2025-04-18 page updated; retrieved 2026-09-30 Source: https://www,nps,gov,yell,planyourvisit,hiking,htm Stay safe in Yellowstone\u2019s backcountry! Carry bear spray, store food properly, check weather, and be prepared for changing conditions.",
+      "published_text": "Insufficient evidence in the selected excerpts for: open, today, want. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "15f071445897410b42ad5f4c2261606b9c17c0ff90bc238131806799caf27d9a"
+    },
+    {
+      "stage": "after",
+      "case": "new-01",
+      "question": "Explain how DNA instructions are used to make proteins.",
+      "expectation": "Enzymes transcribe DNA information into mRNA; mRNA information is translated into amino-acid order for proteins; preserve both steps.",
+      "sources": [
+        {
+          "id": "science-dna-d32bd953c9df60a3",
+          "title": "Deoxyribonucleic Acid (DNA) Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+          "date": "2020-08-24 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "DNA's instructions are used to make proteins in a two-step process. First, enzymes read the information in a DNA molecule and transcribe it into an intermediary molecule called messenger ribonucleic acid, or mRNA. Next, the information contained in the mRNA molecule is translated into the \"language\" of amino acids, which are the building blocks of proteins. This language tells the cell's protein-making machinery the precise order in which to link the amino acids to produce a specific protein. This is a major task because there are 20 types of amino acids, which can be placed in many different orders to form a wide variety of proteins."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Deoxyribonucleic Acid (DNA) Fact Sheet\nDate: 2020-08-24 page updated; retrieved 2026-10-01\nSource: https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet\nDNA's instructions are used to make proteins in a two-step process. First, enzymes read the information in a DNA molecule and transcribe it into an intermediary molecule called messenger ribonucleic acid, or mRNA. Next, the information contained in the mRNA molecule is translated into the \"language\" of amino acids, which are the building blocks of proteins. This language tells the cell's protein-making machinery the precise order in which to link the amino acids to produce a specific protein. This is a major task because there are 20 types of amino acids, which can be placed in many different orders to form a wide variety of proteins.\n\nQuestion: Explain how DNA instructions are used to make proteins.\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-dna-d32bd953c9df60a3] DNA's instructions are used to make proteins in a two-step process.",
+      "published_text": "[science-dna-d32bd953c9df60a3] DNA's instructions are used to make proteins in a two-step process.",
+      "route": "GENERATED",
+      "record_sha256": "59971b43308ad8a3c769b9a9c903a959f253f6eb1f4ce8f91d8b688c320dc457"
+    },
+    {
+      "stage": "after",
+      "case": "new-02",
+      "question": "Compare genes and DNA sequences outside genes.",
+      "expectation": "Genes encode protein instructions and comprise about one percent; outside sequences regulate when/how/how much protein is made, not useless DNA.",
+      "sources": [
+        {
+          "id": "science-dna-160b4c88f7f463ae",
+          "title": "Deoxyribonucleic Acid (DNA) Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+          "date": "2020-08-24 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "DNA contains the instructions needed for an organism to develop, survive and reproduce. To carry out these functions, DNA sequences must be converted into messages that can be used to produce proteins, which are the complex molecules that do most of the work in our bodies. Each DNA sequence that contains instructions to make a protein is known as a gene. The size of a gene may vary greatly, ranging from about 1,000 bases to 1 million bases in humans. Genes only make up about 1 percent of the DNA sequence. DNA sequences outside this 1 percent are involved in regulating when, how and how much of a protein is made."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Deoxyribonucleic Acid (DNA) Fact Sheet\nDate: 2020-08-24 page updated; retrieved 2026-10-01\nSource: https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet\nDNA contains the instructions needed for an organism to develop, survive and reproduce. To carry out these functions, DNA sequences must be converted into messages that can be used to produce proteins, which are the complex molecules that do most of the work in our bodies. Each DNA sequence that contains instructions to make a protein is known as a gene. The size of a gene may vary greatly, ranging from about 1,000 bases to 1 million bases in humans. Genes only make up about 1 percent of the DNA sequence. DNA sequences outside this 1 percent are involved in regulating when, how and how much of a protein is made.\n\nQuestion: Compare genes and DNA sequences outside genes.\nCover both subjects using the requested property. One sentence may compare both; do not add a second merely to fill a format.\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-dna-160b4c88f7f463ae] Genes are specific DNA sequences that code for proteins, while DNA sequences outside genes are involved in regulating protein production.",
+      "published_text": "Extractive fallback \u2014 not a generated answer.\nClaim ending lacks a complete source-supported word; draft withheld.\n\nPinned oracle evidence for host capability measurement",
+      "route": "FALLBACK",
+      "record_sha256": "b9ee988e58abd644d5d24d4ccf8904df7afc78b3d3552a8ac018811418bab41c"
+    },
+    {
+      "stage": "after",
+      "case": "new-03",
+      "question": "Why can a volcano erupt over and over in the same location?",
+      "expectation": "Vent connects through cracks to magma storage; connection to fresh magma enables repeated eruption; not perpetual guaranteed eruption.",
+      "sources": [
+        {
+          "id": "science-volcanoes-fdd579e7694cec41",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Many mountains form by folding, faulting, uplift, and erosion of the Earth's crust. Volcanic terrain, however, is built by the slow accumulation of erupted lava. The vent may be visible as a small bowl shaped depression at the summit of a cone or shield-shaped mountain. Through a series of cracks within and beneath the volcano, the vent connects to one or more linked storage areas of molten or partially molten rock (magma). This connection to fresh magma allows the volcano to erupt over and over again in the same location. In this way, the volcano grows ever larger, until it is no longer stable. Pieces of the volcano collapse as rock falls or as landslides."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] About Volcanoes\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/programs/VHP/about-volcanoes\nMany mountains form by folding, faulting, uplift, and erosion of the Earth's crust. Volcanic terrain, however, is built by the slow accumulation of erupted lava. The vent may be visible as a small bowl shaped depression at the summit of a cone or shield-shaped mountain. Through a series of cracks within and beneath the volcano, the vent connects to one or more linked storage areas of molten or partially molten rock (magma). This connection to fresh magma allows the volcano to erupt over and over again in the same location. In this way, the volcano grows ever larger, until it is no longer stable. Pieces of the volcano collapse as rock falls or as landslides.\n\nQuestion: Why can a volcano erupt over and over in the same location?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-volcanoes-fdd579e7694cec41] A volcano can erupt over and over in the same location because the vent connects to one or more linked storage areas of molten or partially molten rock (magma).",
+      "published_text": "[science-volcanoes-fdd579e7694cec41] A volcano can erupt over and over in the same location because the vent connects to one or more linked storage areas of molten or partially molten rock (magma).",
+      "route": "GENERATED",
+      "record_sha256": "69831b37af628efb670749cd55383c879a7b0fed57eacf7ea9b8eb0446ab09ab"
+    },
+    {
+      "stage": "after",
+      "case": "new-04",
+      "question": "When can a coronal mass ejection cause a truly large magnetic storm?",
+      "expectation": "When Earth/Sun field lines directly connect at emission; can, not every ejection inevitably.",
+      "sources": [
+        {
+          "id": "science-magnetic-storms-d3c855e5484d8b4b",
+          "title": "What is a magnetic storm?",
+          "url": "https://www.usgs.gov/faqs/what-a-magnetic-storm",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Sometimes the Sun emits a coronal mass ejection at a time when the magnetic field lines of the Earth and Sun are directly connected. When these events occur, we can experience a truly large magnetic storm."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] What is a magnetic storm?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/what-a-magnetic-storm\nSometimes the Sun emits a coronal mass ejection at a time when the magnetic field lines of the Earth and Sun are directly connected. When these events occur, we can experience a truly large magnetic storm.\n\nQuestion: When can a coronal mass ejection cause a truly large magnetic storm?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-magnetic-storms-d3c855e5484d8b4b] A coronal mass ejection can cause a truly large magnetic storm when the Sun emits one at a time when the magnetic field lines of the Earth and Sun are directly connected.",
+      "published_text": "Insufficient evidence in the selected excerpts for: cause. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "ec3dc3d08d47635d601eb0bc3c3f2bbd7f3a2171bcd9b96310a32be07f382bcd"
+    },
+    {
+      "stage": "after",
+      "case": "new-05",
+      "question": "Compare Hetch Hetchy and Wawona in late summer.",
+      "expectation": "Hetch Hetchy can be arid/hot in summer; Wawona trails hot/dry in late summer; retain each place and season; no live status.",
+      "sources": [
+        {
+          "id": "yosemite-341ac915dc513bc0",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "The immediate area around the reservoir is a no-camping zone, but hiking over six miles will lead to wonderful cascade waterfalls or peaceful lakes. Hetch Hetchy tends to be busiest in the spring and fall because of its low-elevation destinations and warm temperatures. In the summer, it can be very arid and hot."
+        },
+        {
+          "id": "yosemite-700f87fd529671b2",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "At the southern end of the park, Wawona is a quiet, forested area with trails that lead to waterfalls, lakes, and stunning granite features. In late summer, trails become hot and dry."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\nFor this comparison, each claim draws on the combined source set. Cite every supplied label on each line; do not transfer properties between the subjects.\n[S1] Yosemite trail regions\nDate: 2025-07-17 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yose/planyourvisit/trails.htm\nThe immediate area around the reservoir is a no-camping zone, but hiking over six miles will lead to wonderful cascade waterfalls or peaceful lakes. Hetch Hetchy tends to be busiest in the spring and fall because of its low-elevation destinations and warm temperatures. In the summer, it can be very arid and hot.\n\n[S2] Yosemite trail regions\nDate: 2025-07-17 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yose/planyourvisit/trails.htm\nAt the southern end of the park, Wawona is a quiet, forested area with trails that lead to waterfalls, lakes, and stunning granite features. In late summer, trails become hot and dry.\n\nQuestion: Compare Hetch Hetchy and Wawona in late summer.\nCover both subjects using the requested property. One sentence may compare both; do not add a second merely to fill a format.\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[yosemite-341ac915dc513bc0] [yosemite-700f87fd529671b2] Hetch Hetchy tends to be busiest in the spring and fall because of its low-elevation destinations and warm temperatures.",
+      "published_text": "[yosemite-341ac915dc513bc0] [yosemite-700f87fd529671b2] Hetch Hetchy tends to be busiest in the spring and fall because of its low-elevation destinations and warm temperatures.",
+      "route": "GENERATED",
+      "record_sha256": "36dfb9df4d78feef9925b035a88b517192dd8dc2e17565c8c70619d94ba81d1a"
+    },
+    {
+      "stage": "after",
+      "case": "new-06",
+      "question": "How do first-aid supplies and a repair kit prepare for emergencies?",
+      "expectation": "First-aid kit tailored to medical needs, expiration checks/personal medications; repair tools for equipment specific to trip; do not turn tools into medical treatment.",
+      "sources": [
+        {
+          "id": "essentials-b68c0099fce7653f",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "FIRST-AID SUPPLIES \u2013 First Aid Kit Prepare for emergencies by packing first-aid supplies. Start with a pre-made kit and modify it to fit your trip and your medical needs. Check the expiration date on all items and replace them as needed. Include any personal medications you regularly take. Consider including an emergency guide in case you are faced with an unfamiliar medical emergency."
+        },
+        {
+          "id": "essentials-59d02ca0df497a7a",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "REPAIR KIT AND TOOLS \u2013 Duct tape, knife, multi-tool, and scissors Carry a basic repair kit with you to help repair equipment. Include items like duct tape, knife, and scissors. Pack a multi-tool, a small tool that includes a knife, screwdriver, can opener, etc. A trowel and toilet paper may also be important. Bring any tools specific to your trip and your activity."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] NPS Ten Essentials\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/articles/10essentials.htm\nFIRST-AID SUPPLIES \u2013 First Aid Kit Prepare for emergencies by packing first-aid supplies. Start with a pre-made kit and modify it to fit your trip and your medical needs. Check the expiration date on all items and replace them as needed. Include any personal medications you regularly take. Consider including an emergency guide in case you are faced with an unfamiliar medical emergency.\n\n[S2] NPS Ten Essentials\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/articles/10essentials.htm\nREPAIR KIT AND TOOLS \u2013 Duct tape, knife, multi-tool, and scissors Carry a basic repair kit with you to help repair equipment. Include items like duct tape, knife, and scissors. Pack a multi-tool, a small tool that includes a knife, screwdriver, can opener, etc. A trowel and toilet paper may also be important. Bring any tools specific to your trip and your activity.\n\nQuestion: How do first-aid supplies and a repair kit prepare for emergencies?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[essentials-b68c0099fce7653f] First-aid supplies prepare for emergencies by providing necessary medical resources.",
+      "published_text": "Extractive fallback \u2014 not a generated answer.\nClaim ending lacks a complete source-supported word; draft withheld.\n\nPinned oracle evidence for host capability measurement",
+      "route": "FALLBACK",
+      "record_sha256": "1b3b02191e74ed1c8dec0f942af24c3da54a78b80b7dbb0ef6ba1454763e51c1"
+    },
+    {
+      "stage": "after",
+      "case": "new-07",
+      "question": "What protections apply when private property is taken for public use?",
+      "expectation": "Just compensation required by historical excerpt; do not invent current procedures or amounts.",
+      "sources": [
+        {
+          "id": "bill-of-rights-1fd7554a5bbaa295",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Bill of Rights (1791 historical text)\nDate: 1791-12-15 ratification; retrieved 2026-09-30\nSource: https://www.archives.gov/founding-docs/bill-of-rights-transcript\nNo person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation.\n\nQuestion: What protections apply when private property is taken for public use?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[bill-of-rights-1fd7554a5bbaa295] Private property shall not be taken for public use without just compensation.",
+      "published_text": "Insufficient evidence in the selected excerpts for: apply, protections. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "d5f7d0aaa0702951a25a11058ca24758c43ac29cb430d263e68b1c43a48f6cb5"
+    },
+    {
+      "stage": "after",
+      "case": "new-08",
+      "question": "How do volcanic vents and wind affect where ash falls?",
+      "expectation": "Vents emit tephra; ash is tiny tephra transported by wind far away, smallest particles may circle globe before falling; preserve may and size distinction.",
+      "sources": [
+        {
+          "id": "science-volcanoes-7e17ab9821fed9ef",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Volcanoes are openings, or vents where lava, tephra (small rocks), and steam erupt onto the Earth's surface. Volcanic eruptions can last days, months, or even years."
+        },
+        {
+          "id": "science-volcanoes-bc12a568b075b592",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Magma can be erupted in a variety of ways. Sometimes molten rock simply pours from the vent as fluid lava flows. It can also shoot violently into the air as dense clouds of rock shards (tephra) and gas. Larger fragments fall back around the vent, and clouds of tephra may move down the slope of the volcano under the force of gravity. Ash, tiny pieces of tephra the thickness of a strand of hair, may be carried by the wind only to fall to the ground many miles away. The smallest ash particles may be erupted miles into the sky and carried many times around the world by winds high in the atmosphere before they fall to the ground."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] About Volcanoes\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/programs/VHP/about-volcanoes\nVolcanoes are openings, or vents where lava, tephra (small rocks), and steam erupt onto the Earth's surface. Volcanic eruptions can last days, months, or even years.\n\n[S2] About Volcanoes\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/programs/VHP/about-volcanoes\nMagma can be erupted in a variety of ways. Sometimes molten rock simply pours from the vent as fluid lava flows. It can also shoot violently into the air as dense clouds of rock shards (tephra) and gas. Larger fragments fall back around the vent, and clouds of tephra may move down the slope of the volcano under the force of gravity. Ash, tiny pieces of tephra the thickness of a strand of hair, may be carried by the wind only to fall to the ground many miles away. The smallest ash particles may be erupted miles into the sky and carried many times around the world by winds high in the atmosphere before they fall to the ground.\n\nQuestion: How do volcanic vents and wind affect where ash falls?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+      "resolved_raw": "[science-volcanoes-7e17ab9821fed9ef] Volcanoes are openings, or vents, where lava, tephra, and steam erupt onto the Earth's surface.\n[science-volcanoes-bc12a568b075b592] Magma can be erupted in a variety of ways, including as fluid lava flows, dense clouds of rock shards (tephra), and gas.\n[science-volcanoes-bc12a568b075b592] Larger fragments fall back around the vent, and clouds of tephra may move down the slope of the volcano under the force of gravity.\n[science-volcanoes-bc12a568b075b592] Ash, tiny pieces of tephra the thickness of a strand of hair, may be carried by the wind only to fall to the ground many miles away.",
+      "published_text": "Insufficient evidence in the selected excerpts for: affect. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "3d61c5466f427ae6fa362b645c0516291755cc383465e738f1917261895dc031"
+    },
+    {
+      "stage": "before",
+      "case": "cap-01",
+      "question": "Why does stress at a fault cause earthquake shaking?",
+      "expectation": "Stress overcomes friction; sudden slip releases energy waves through the crust causing shaking.",
+      "sources": [
+        {
+          "id": "science-earthquakes-8702c21b891d6d23",
+          "title": "What is an earthquake and what causes them to happen?",
+          "url": "https://www.usgs.gov/faqs/what-earthquake-and-what-causes-them-happen",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "An earthquake is caused by a sudden slip on a fault. The tectonic plates are always slowly moving, but they get stuck at their edges due to friction. When the stress on the edge overcomes the friction, there is an earthquake that releases energy in waves that travel through the earth's crust and cause the shaking that we feel."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] What is an earthquake and what causes them to happen?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/what-earthquake-and-what-causes-them-happen\nAn earthquake is caused by a sudden slip on a fault. The tectonic plates are always slowly moving, but they get stuck at their edges due to friction. When the stress on the edge overcomes the friction, there is an earthquake that releases energy in waves that travel through the earth's crust and cause the shaking that we feel.\n\nQuestion: Why does stress at a fault cause earthquake shaking?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-earthquakes-8702c21b891d6d23] Stress at a fault causes earthquake shaking because the stress builds up over time due to the slow movement of tectonic plates.",
+      "published_text": "Extractive fallback \u2014 not a generated answer.\nA claim has weak lexical support in its cited excerpts; draft withheld.\n\nPinned oracle evidence for host capability measurement",
+      "route": "FALLBACK",
+      "record_sha256": "1c4f925889bc56831001d0612568e1a5baf7b63ff4ff1cbd45dfa596945141c8"
+    },
+    {
+      "stage": "before",
+      "case": "cap-02",
+      "question": "Compare magma and lava.",
+      "expectation": "Molten rock underground is magma; after breaking through the surface it is lava.",
+      "sources": [
+        {
+          "id": "science-magma-b214c1cb4647b3fc",
+          "title": "What is the difference between magma and lava?",
+          "url": "https://www.usgs.gov/faqs/what-difference-between-magma-and-lava",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Scientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] What is the difference between magma and lava?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/what-difference-between-magma-and-lava\nScientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface.\n\nQuestion: Compare magma and lava.\nAnswer both subjects using the requested property. First line: magma. Second line: lava. Keep the source conditions and uncertainty; one source can support both lines.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-magma-b214c1cb4647b3fc] Magma is molten rock that is underground and lava is molten rock that breaks through the Earth's surface.\n[science-magma-b214c1cb4647b3fc] Both magma and lava are part of the Earth's crustal processes and can be found in different environments.",
+      "published_text": "Extractive fallback \u2014 not a generated answer.\nA claim has weak lexical support in its cited excerpts; draft withheld.\n\nPinned oracle evidence for host capability measurement",
+      "route": "FALLBACK",
+      "record_sha256": "fbe57373744c056df2d6bf9f1f7f593a476cbc5c6e029b035229cee992e4e9f8"
+    },
+    {
+      "stage": "before",
+      "case": "cap-03",
+      "question": "How can magma rise and build volcanic terrain?",
+      "expectation": "Buoyancy and gas pressure drive magma upward; accumulation of erupted lava builds volcanic terrain; eruption is conditional.",
+      "sources": [
+        {
+          "id": "science-volcanoes-ac98f2017c5f7717",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Originating many tens of miles beneath the ground, magma is lighter than surrounding solid rock. It is driven towards Earth's surface by buoyancy, it is lighter than the surrounding rock, and by pressure from gas within it. Magma forces its way upward and may ultimately break though weak areas in the Earth's crust. If so, an eruption begins."
+        },
+        {
+          "id": "science-volcanoes-fdd579e7694cec41",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Many mountains form by folding, faulting, uplift, and erosion of the Earth's crust. Volcanic terrain, however, is built by the slow accumulation of erupted lava. The vent may be visible as a small bowl shaped depression at the summit of a cone or shield-shaped mountain. Through a series of cracks within and beneath the volcano, the vent connects to one or more linked storage areas of molten or partially molten rock (magma). This connection to fresh magma allows the volcano to erupt over and over again in the same location. In this way, the volcano grows ever larger, until it is no longer stable. Pieces of the volcano collapse as rock falls or as landslides."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] About Volcanoes\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/programs/VHP/about-volcanoes\nOriginating many tens of miles beneath the ground, magma is lighter than surrounding solid rock. It is driven towards Earth's surface by buoyancy, it is lighter than the surrounding rock, and by pressure from gas within it. Magma forces its way upward and may ultimately break though weak areas in the Earth's crust. If so, an eruption begins.\n\n[S2] About Volcanoes\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/programs/VHP/about-volcanoes\nMany mountains form by folding, faulting, uplift, and erosion of the Earth's crust. Volcanic terrain, however, is built by the slow accumulation of erupted lava. The vent may be visible as a small bowl shaped depression at the summit of a cone or shield-shaped mountain. Through a series of cracks within and beneath the volcano, the vent connects to one or more linked storage areas of molten or partially molten rock (magma). This connection to fresh magma allows the volcano to erupt over and over again in the same location. In this way, the volcano grows ever larger, until it is no longer stable. Pieces of the volcano collapse as rock falls or as landslides.\n\nQuestion: How can magma rise and build volcanic terrain?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-volcanoes-ac98f2017c5f7717] Magma rises because it is lighter than surrounding solid rock and is driven by buoyancy and pressure from gas within it.",
+      "published_text": "Insufficient evidence in the selected excerpts for: build, rise. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "6f3deb4e37a2478df925af2958a20177a163d6efdc47b3e0c32d6618f5f2f016"
+    },
+    {
+      "stage": "before",
+      "case": "cap-04",
+      "question": "All parts of the San Andreas Fault creep constantly, so strain cannot build up for centuries. Is that supported?",
+      "expectation": "Reject premise: some parts creep; other parts can accumulate strain for hundreds of years.",
+      "sources": [
+        {
+          "id": "science-earthquakes-a2a4b87ce7382257",
+          "title": "What is an earthquake and what causes them to happen?",
+          "url": "https://www.usgs.gov/faqs/what-earthquake-and-what-causes-them-happen",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "The Pacific Plate grinds northwestward past the North American Plate at a rate of about two inches per year. Parts of the San Andreas Fault system adapt to this movement by constant \"creep\" resulting in many tiny shocks and a few moderate earth tremors. In other areas where creep is NOT constant, strain can build up for hundreds of years, producing great earthquakes when it finally releases."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] What is an earthquake and what causes them to happen?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/what-earthquake-and-what-causes-them-happen\nThe Pacific Plate grinds northwestward past the North American Plate at a rate of about two inches per year. Parts of the San Andreas Fault system adapt to this movement by constant \"creep\" resulting in many tiny shocks and a few moderate earth tremors. In other areas where creep is NOT constant, strain can build up for hundreds of years, producing great earthquakes when it finally releases.\n\nQuestion: All parts of the San Andreas Fault creep constantly, so strain cannot build up for centuries. Is that supported?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-earthquakes-a2a4b87ce7382257] All parts of the San Andreas Fault creep constantly, so strain cannot build up for centuries.",
+      "published_text": "Insufficient evidence in the selected excerpts for: all, cannot, centuries, constantly, so, supported, that. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "ffec6b026313d2534bb4289b0e18467631c53df637c60acd7bf0f2afef27daef"
+    },
+    {
+      "stage": "before",
+      "case": "cap-05",
+      "question": "Why is DNA wrapped around histones?",
+      "expectation": "Packaging allows long DNA to fit inside cells.",
+      "sources": [
+        {
+          "id": "science-chromosomes-1c53684112e2a81e",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "date": "2020-08-15 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "The unique structure of chromosomes keeps DNA tightly wrapped around spool-like proteins, called histones. Without such packaging, DNA molecules would be too long to fit inside cells. For example, if all of the DNA molecules in a single human cell were unwound from their histones and placed end-to-end, they would stretch 6 feet."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Chromosomes Fact Sheet\nDate: 2020-08-15 page updated; retrieved 2026-10-01\nSource: https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet\nThe unique structure of chromosomes keeps DNA tightly wrapped around spool-like proteins, called histones. Without such packaging, DNA molecules would be too long to fit inside cells. For example, if all of the DNA molecules in a single human cell were unwound from their histones and placed end-to-end, they would stretch 6 feet.\n\nQuestion: Why is DNA wrapped around histones?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-chromosomes-1c53684112e2a81e] DNA is wrapped around histones to compactly fit within cells.",
+      "published_text": "[science-chromosomes-1c53684112e2a81e] DNA is wrapped around histones to compactly fit within cells.",
+      "route": "GENERATED",
+      "record_sha256": "b3083be0e57926b43963682e2ec4233a7e58354d06ece5fa897a54718b06f5d9"
+    },
+    {
+      "stage": "before",
+      "case": "cap-06",
+      "question": "How do DNA instructions and chromosomes contribute to inheritance?",
+      "expectation": "DNA carries biological instructions passed to offspring; chromosomes consist of protein and one DNA molecule. Avoid unsupported inheritance mechanisms.",
+      "sources": [
+        {
+          "id": "science-dna-0215cec38b4684c9",
+          "title": "Deoxyribonucleic Acid (DNA) Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+          "date": "2020-08-24 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique. DNA, along with the instructions it contains, is passed from adult organisms to their offspring during reproduction."
+        },
+        {
+          "id": "science-chromosomes-bd1bb41122a2e2eb",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "date": "2020-08-15 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "Chromosomes are thread-like structures located inside the nucleus of animal and plant cells. Each chromosome is made of protein and a single molecule of deoxyribonucleic acid (DNA). Passed from parents to offspring, DNA contains the specific instructions that make each type of living creature unique."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Deoxyribonucleic Acid (DNA) Fact Sheet\nDate: 2020-08-24 page updated; retrieved 2026-10-01\nSource: https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet\nDeoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique. DNA, along with the instructions it contains, is passed from adult organisms to their offspring during reproduction.\n\n[S2] Chromosomes Fact Sheet\nDate: 2020-08-15 page updated; retrieved 2026-10-01\nSource: https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet\nChromosomes are thread-like structures located inside the nucleus of animal and plant cells. Each chromosome is made of protein and a single molecule of deoxyribonucleic acid (DNA). Passed from parents to offspring, DNA contains the specific instructions that make each type of living creature unique.\n\nQuestion: How do DNA instructions and chromosomes contribute to inheritance?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-dna-0215cec38b4684c9] DNA is a molecule that contains the biological instructions that make each species unique.",
+      "published_text": "Insufficient evidence in the selected excerpts for: contribute, inheritance. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "949c6171b3cd2dc8e75ecbca4be8d503dcb1713405f72d2bd9bef5765580b2bd"
+    },
+    {
+      "stage": "before",
+      "case": "cap-07",
+      "question": "Does chromosome copying always distribute DNA accurately?",
+      "expectation": "Vast majority of cell divisions copy and distribute accurately, but rare mistakes occur; not always.",
+      "sources": [
+        {
+          "id": "science-chromosomes-ae26d52981dd0bd9",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "date": "2020-08-15 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "For an organism to grow and function properly, cells must constantly divide to produce new cells to replace old, worn-out cells. During cell division, it is essential that DNA remains intact and evenly distributed among cells. Chromosomes are a key part of the process that ensures DNA is accurately copied and distributed in the vast majority of cell divisions. Still, mistakes do occur on rare occasions."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Chromosomes Fact Sheet\nDate: 2020-08-15 page updated; retrieved 2026-10-01\nSource: https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet\nFor an organism to grow and function properly, cells must constantly divide to produce new cells to replace old, worn-out cells. During cell division, it is essential that DNA remains intact and evenly distributed among cells. Chromosomes are a key part of the process that ensures DNA is accurately copied and distributed in the vast majority of cell divisions. Still, mistakes do occur on rare occasions.\n\nQuestion: Does chromosome copying always distribute DNA accurately?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-chromosomes-ae26d52981dd0bd9] Chromosomes Fact Sheet states that \"mistakes do occur on rare occasions\" during chromosome copying, indicating that DNA distribution is not always accurate.",
+      "published_text": "Insufficient evidence in the selected excerpts for: always, copying, distribute. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "bc2b46795543e23b21ea5d857b43da2a88b4cf325e5980d2b778ac9d08ca2679"
+    },
+    {
+      "stage": "before",
+      "case": "cap-08",
+      "question": "How many chromosomes does a domestic cat have?",
+      "expectation": "Withhold the number: no cat chromosome count in evidence.",
+      "sources": [
+        {
+          "id": "science-chromosomes-bd1bb41122a2e2eb",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "date": "2020-08-15 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "Chromosomes are thread-like structures located inside the nucleus of animal and plant cells. Each chromosome is made of protein and a single molecule of deoxyribonucleic acid (DNA). Passed from parents to offspring, DNA contains the specific instructions that make each type of living creature unique."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Chromosomes Fact Sheet\nDate: 2020-08-15 page updated; retrieved 2026-10-01\nSource: https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet\nChromosomes are thread-like structures located inside the nucleus of animal and plant cells. Each chromosome is made of protein and a single molecule of deoxyribonucleic acid (DNA). Passed from parents to offspring, DNA contains the specific instructions that make each type of living creature unique.\n\nQuestion: How many chromosomes does a domestic cat have?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-chromosomes-bd1bb41122a2e2eb] Domestic cats have 42 chromosomes.",
+      "published_text": "Insufficient evidence in the selected excerpts for: cat, domestic, have, many. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "f26e47aa695a9c8f7ef78fb527162204ef7f94705ed3319fb5602c85874958f0"
+    },
+    {
+      "stage": "before",
+      "case": "cap-09",
+      "question": "What sustains the magnetic field generated in the outer core?",
+      "expectation": "Conducting iron motion induces currents and magnetic field feedback, sustained while sufficient convection energy exists.",
+      "sources": [
+        {
+          "id": "science-magnetic-core-f3a6eb6e41f10ed5",
+          "title": "How does the Earth's core generate a magnetic field?",
+          "url": "https://www.usgs.gov/faqs/how-does-earths-core-generate-a-magnetic-field",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "The Earth's outer core is in a state of turbulent convection as the result of radioactive heating and chemical differentiation. This sets up a process that is a bit like a naturally occurring electrical generator, where the convective kinetic energy is converted to electrical and magnetic energy. Basically, the motion of the electrically conducting iron in the presence of the Earth's magnetic field induces electric currents. Those electric currents generate their own magnetic field, and as the result of this internal feedback, the process is self-sustaining so long as there is an energy source sufficient to maintain convection."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] How does the Earth's core generate a magnetic field?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/how-does-earths-core-generate-a-magnetic-field\nThe Earth's outer core is in a state of turbulent convection as the result of radioactive heating and chemical differentiation. This sets up a process that is a bit like a naturally occurring electrical generator, where the convective kinetic energy is converted to electrical and magnetic energy. Basically, the motion of the electrically conducting iron in the presence of the Earth's magnetic field induces electric currents. Those electric currents generate their own magnetic field, and as the result of this internal feedback, the process is self-sustaining so long as there is an energy source sufficient to maintain convection.\n\nQuestion: What sustains the magnetic field generated in the outer core?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-magnetic-core-f3a6eb6e41f10ed5] The magnetic field generated in the outer core is sustained by the convection of the electrically conducting iron in the outer core.",
+      "published_text": "Insufficient evidence in the selected excerpts for: generated, sustains. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "b7c247410d9e536e0bdd56226edf7cff358239e8e101111b6dde5adcc859ba21"
+    },
+    {
+      "stage": "before",
+      "case": "cap-10",
+      "question": "Compare magnetic storms and magnetic reversals.",
+      "expectation": "Storms are rapid field variation lasting hours to days; reversals take hundreds to thousands of years, with one possible one-year research exception.",
+      "sources": [
+        {
+          "id": "science-magnetic-storms-3b8945c553ef6dfa",
+          "title": "What is a magnetic storm?",
+          "url": "https://www.usgs.gov/faqs/what-a-magnetic-storm",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "A magnetic storm is a period of rapid magnetic field variation. It can last from hours to days."
+        },
+        {
+          "id": "science-magnetic-reversals-fc2ce79fa0a73c7a",
+          "title": "Is it true that Earth's magnetic field occasionally reverses its polarity?",
+          "url": "https://www.usgs.gov/faqs/it-true-earths-magnetic-field-occasionally-reverses-its-polarity",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Reversals are not instantaneous; they happen over a period of hundreds to thousands of years, though recent research indicates that at least one reversal could have taken place over a period of one year."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] What is a magnetic storm?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/what-a-magnetic-storm\nA magnetic storm is a period of rapid magnetic field variation. It can last from hours to days.\n\nQuestion: Compare magnetic storms and magnetic reversals.\nAnswer both subjects using the requested property. First line: magnetic storms. Second line: magnetic reversals. Keep the source conditions and uncertainty; one source can support both lines.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-magnetic-storms-3b8945c553ef6dfa] Magnetic storms are periods of rapid magnetic field variation that can last from hours to days.\n[science-magnetic-storms-3b8945c553ef6dfa] Magnetic reversals are changes in the direction of Earth's magnetic field, which occur over millions of years and are not typically associated with short-term variations.",
+      "published_text": "Insufficient evidence in the selected excerpts for: reversals. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "a1e5febf07228f352adc2a21b5f98da8e1f0c175d1ca6d64a4d5906201b2a950"
+    },
+    {
+      "stage": "before",
+      "case": "cap-11",
+      "question": "Do magnetic reversals occur on a regular schedule every 780,000 years?",
+      "expectation": "No apparent periodicity; 780,000 years is time since last reversal, not a repeat interval.",
+      "sources": [
+        {
+          "id": "science-magnetic-reversals-b147d6da540593c7",
+          "title": "Is it true that Earth's magnetic field occasionally reverses its polarity?",
+          "url": "https://www.usgs.gov/faqs/it-true-earths-magnetic-field-occasionally-reverses-its-polarity",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "These reversals are random with no apparent periodicity to their occurrence. They can happen as often as every 10 thousand years or so and as infrequently as every 50 million years or more. The last reversal was about 780,000 years ago."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Is it true that Earth's magnetic field occasionally reverses its polarity?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/it-true-earths-magnetic-field-occasionally-reverses-its-polarity\nThese reversals are random with no apparent periodicity to their occurrence. They can happen as often as every 10 thousand years or so and as infrequently as every 50 million years or more. The last reversal was about 780,000 years ago.\n\nQuestion: Do magnetic reversals occur on a regular schedule every 780,000 years?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-magnetic-reversals-b147d6da540593c7] Yes, magnetic reversals occur on a regular schedule every 780,000 years.",
+      "published_text": "Insufficient evidence in the selected excerpts for: magnetic, occur, regular, schedule. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "c6a24f145b6ddc4b2a4be22edd845abae548d3d70248b27eb2b1877514bf329a"
+    },
+    {
+      "stage": "before",
+      "case": "cap-12",
+      "question": "What is the exact date of the next magnetic reversal?",
+      "expectation": "No exact prediction is supported; random with no apparent periodicity.",
+      "sources": [
+        {
+          "id": "science-magnetic-reversals-b147d6da540593c7",
+          "title": "Is it true that Earth's magnetic field occasionally reverses its polarity?",
+          "url": "https://www.usgs.gov/faqs/it-true-earths-magnetic-field-occasionally-reverses-its-polarity",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "These reversals are random with no apparent periodicity to their occurrence. They can happen as often as every 10 thousand years or so and as infrequently as every 50 million years or more. The last reversal was about 780,000 years ago."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Is it true that Earth's magnetic field occasionally reverses its polarity?\nDate: Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nSource: https://www.usgs.gov/faqs/it-true-earths-magnetic-field-occasionally-reverses-its-polarity\nThese reversals are random with no apparent periodicity to their occurrence. They can happen as often as every 10 thousand years or so and as infrequently as every 50 million years or more. The last reversal was about 780,000 years ago.\n\nQuestion: What is the exact date of the next magnetic reversal?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[science-magnetic-reversals-b147d6da540593c7] The exact date of the next magnetic reversal is not known with certainty.",
+      "published_text": "Insufficient evidence in the selected excerpts for: date, exact, magnetic, next. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "5129542189f53e79202d781e9e9a4a55bd2d54357cbd7a901341b1f5d0f3d9a9"
+    },
+    {
+      "stage": "before",
+      "case": "cap-13",
+      "question": "Compare the rights concerning searches and criminal trials in these excerpts.",
+      "expectation": "Searches: protection against unreasonable searches and warrant probable cause/specificity; trials: speedy public impartial jury plus defense rights. Keep subjects separate.",
+      "sources": [
+        {
+          "id": "bill-of-rights-07aa05c65aa81cf6",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized."
+        },
+        {
+          "id": "bill-of-rights-508bbde59eed242f",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "In all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial, by an impartial jury of the State and district wherein the crime shall have been committed, which district shall have been previously ascertained by law, and to be informed of the nature and cause of the accusation; to be confronted with the witnesses against him; to have compulsory process for obtaining witnesses in his favor, and to have the Assistance of Counsel for his defence."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\nFor this comparison, each claim draws on the combined source set. Cite every supplied label on each line; do not transfer properties between the subjects.\n[S1] Bill of Rights (1791 historical text)\nDate: 1791-12-15 ratification; retrieved 2026-09-30\nSource: https://www.archives.gov/founding-docs/bill-of-rights-transcript\nThe right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.\n\n[S2] Bill of Rights (1791 historical text)\nDate: 1791-12-15 ratification; retrieved 2026-09-30\nSource: https://www.archives.gov/founding-docs/bill-of-rights-transcript\nIn all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial, by an impartial jury of the State and district wherein the crime shall have been committed, which district shall have been previously ascertained by law, and to be informed of the nature and cause of the accusation; to be confronted with the witnesses against him; to have compulsory process for obtaining witnesses in his favor, and to have the Assistance of Counsel for his defence.\n\nQuestion: Compare the rights concerning searches and criminal trials in these excerpts.\nAnswer both subjects using the requested property. First line: the rights concerning searches. Second line: criminal trials in these excerpts. Keep the source conditions and uncertainty; one source can support both lines.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[bill-of-rights-07aa05c65aa81cf6] [bill-of-rights-508bbde59eed242f] The rights concerning searches: The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon.\n[bill-of-rights-07aa05c65aa81cf6] [bill-of-rights-508bbde59eed242f] criminal trials: In all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial, by an impartial jury of the State and district wherein the crime shall have been committed, which district 17.",
+      "published_text": "Insufficient evidence in the selected excerpts for: concerning, excerpts, these. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "e2134d18ea73a33d05a0a95791e70f1fbb57cced6a7ed5249a1016001898279f"
+    },
+    {
+      "stage": "before",
+      "case": "cap-14",
+      "question": "Under what conditions may soldiers be quartered in a house?",
+      "expectation": "In peace requires owner consent; in war in manner prescribed by law. Do not omit wartime qualification.",
+      "sources": [
+        {
+          "id": "bill-of-rights-97052f38c6cce93d",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Bill of Rights (1791 historical text)\nDate: 1791-12-15 ratification; retrieved 2026-09-30\nSource: https://www.archives.gov/founding-docs/bill-of-rights-transcript\nNo Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law.\n\nQuestion: Under what conditions may soldiers be quartered in a house?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[bill-of-rights-97052f38c6cce93d] No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law.",
+      "published_text": "Insufficient evidence in the selected excerpts for: conditions, may, under. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "09fedf486dc9c3c744d422054c3cfc3566ec3f4526484a5328ecc7521efd29c4"
+    },
+    {
+      "stage": "before",
+      "case": "cap-15",
+      "question": "Does listing certain rights deny other rights retained by the people?",
+      "expectation": "No; enumeration must not be construed to deny or disparage other retained rights.",
+      "sources": [
+        {
+          "id": "bill-of-rights-4b65cd9bd56fb0a4",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "The enumeration in the Constitution, of certain rights, shall not be construed to deny or disparage others retained by the people."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Bill of Rights (1791 historical text)\nDate: 1791-12-15 ratification; retrieved 2026-09-30\nSource: https://www.archives.gov/founding-docs/bill-of-rights-transcript\nThe enumeration in the Constitution, of certain rights, shall not be construed to deny or disparage others retained by the people.\n\nQuestion: Does listing certain rights deny other rights retained by the people?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[bill-of-rights-4b65cd9bd56fb0a4] The enumeration in the Constitution, of certain rights, shall not be construed to deny or disparage others retained by the people.",
+      "published_text": "Insufficient evidence in the selected excerpts for: listing. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "c42dadcd60a8fbe3f44d9163526e60e6b4418c7cc229f415dd16b1c3dec37135"
+    },
+    {
+      "stage": "before",
+      "case": "cap-16",
+      "question": "What prison sentence applies today to an unreasonable search?",
+      "expectation": "No current criminal penalty in supplied historical text; withhold.",
+      "sources": [
+        {
+          "id": "bill-of-rights-07aa05c65aa81cf6",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Bill of Rights (1791 historical text)\nDate: 1791-12-15 ratification; retrieved 2026-09-30\nSource: https://www.archives.gov/founding-docs/bill-of-rights-transcript\nThe right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.\n\nQuestion: What prison sentence applies today to an unreasonable search?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[bill-of-rights-07aa05c65aa81cf6] The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by O,.",
+      "published_text": "Insufficient evidence in the selected excerpts for: applies, prison, search, sentence, today. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "12bd0804aec7120e9922b9081d7c4ba013b050c8c0ab495ba450710711c649fb"
+    },
+    {
+      "stage": "before",
+      "case": "cap-17",
+      "question": "Why are headlamps recommended for lighting at night?",
+      "expectation": "Hands-free lighting; can find way out or signal for help; extra batteries useful.",
+      "sources": [
+        {
+          "id": "essentials-e772a5a729be28b9",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "ILLUMINATION \u2013 Flashlight and headlamp Lighting is important in the outdoors at night, and can help you find your way out or signal for help. Items include flashlights, and headlamps. Headlamps are the recommended light source because they are hands-free. Be sure to pack extra batteries."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] NPS Ten Essentials\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/articles/10essentials.htm\nILLUMINATION \u2013 Flashlight and headlamp Lighting is important in the outdoors at night, and can help you find your way out or signal for help. Items include flashlights, and headlamps. Headlamps are the recommended light source because they are hands-free. Be sure to pack extra batteries.\n\nQuestion: Why are headlamps recommended for lighting at night?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[essentials-e772a5a729be28b9] Headlamps are recommended for lighting at night because they are hands-free.",
+      "published_text": "[essentials-e772a5a729be28b9] Headlamps are recommended for lighting at night because they are hands-free.",
+      "route": "GENERATED",
+      "record_sha256": "230d94aa21a39a7607e85fd5d12ff9a093582c3dd6ac6871188bbc2838af0684"
+    },
+    {
+      "stage": "before",
+      "case": "cap-18",
+      "question": "How do extra food and emergency shelter help if trip plans change?",
+      "expectation": "Extra day food helps unexpected changes and maintains energy; shelter protects from severe weather/exposure. No guarantee of survival.",
+      "sources": [
+        {
+          "id": "essentials-18b025cdc46d1cb2",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "NUTRITION - Extra Food Be prepared for the possibility of changes to your trip plans. Pack an extra day's supply of food, preferably no-cook items that have good nutritional value to keep your energy high like salty and easy to digest snacks (e.g. trail mix, nuts, and granola bars). Having extra food can make a big difference for yourself or others if an unexpected situation occurs."
+        },
+        {
+          "id": "essentials-ba88dfc81102f647",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "EMERGENCY SHELTER \u2013 Tent, space blanket, tarp, or bivy Shelter is one of the most important elements during an emergency survival situation. It can protect you from severe weather conditions and exposure to the elements. A tent, tarp, bivy sack, or emergency space blanket are all lightweight options for emergency shelter."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] NPS Ten Essentials\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/articles/10essentials.htm\nNUTRITION - Extra Food Be prepared for the possibility of changes to your trip plans. Pack an extra day's supply of food, preferably no-cook items that have good nutritional value to keep your energy high like salty and easy to digest snacks (e.g. trail mix, nuts, and granola bars). Having extra food can make a big difference for yourself or others if an unexpected situation occurs.\n\n[S2] NPS Ten Essentials\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/articles/10essentials.htm\nEMERGENCY SHELTER \u2013 Tent, space blanket, tarp, or bivy Shelter is one of the most important elements during an emergency survival situation. It can protect you from severe weather conditions and exposure to the elements. A tent, tarp, bivy sack, or emergency space blanket are all lightweight options for emergency shelter.\n\nQuestion: How do extra food and emergency shelter help if trip plans change?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[essentials-18b025cdc46d1cb2] NUTRITION - Extra Food can make a big difference for yourself or others if an unexpected situation occurs.",
+      "published_text": "Insufficient evidence in the selected excerpts for: help. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "c04861a93e681bed741c35a6b956ac9b466bfb99467b580c8b16dedf1f52b674"
+    },
+    {
+      "stage": "before",
+      "case": "cap-19",
+      "question": "What should determine the extra clothing packed for sudden weather changes?",
+      "expectation": "Most extreme conditions one could encounter; examples raincoat/jacket/hat/gloves; bright clothing helps visibility for rescue.",
+      "sources": [
+        {
+          "id": "essentials-9a8d716345fb3949",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "EXTRA CLOTHING \u2013 Jacket, hat, gloves, rain shell, and other layers Prepare for sudden changes in weather conditions. Pack an extra layer of clothing that reflects the most extreme conditions you could encounter. This may include a raincoat, jacket, hat, or gloves. Use bright clothing to make yourself easier to see in case Search and Rescue needs to look for you."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] NPS Ten Essentials\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/articles/10essentials.htm\nEXTRA CLOTHING \u2013 Jacket, hat, gloves, rain shell, and other layers Prepare for sudden changes in weather conditions. Pack an extra layer of clothing that reflects the most extreme conditions you could encounter. This may include a raincoat, jacket, hat, or gloves. Use bright clothing to make yourself easier to see in case Search and Rescue needs to look for you.\n\nQuestion: What should determine the extra clothing packed for sudden weather changes?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[essentials-9a8d716345fb3949] The extra clothing packed for sudden weather changes should reflect the most extreme conditions you could encounter.",
+      "published_text": "Insufficient evidence in the selected excerpts for: determine, packed. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "4d1ba0daa9e66d2d50f795c236f01730b6cfcf46178e495a6b8118e83a0e74ee"
+    },
+    {
+      "stage": "before",
+      "case": "cap-20",
+      "question": "Which brand of headlamp has the longest battery life?",
+      "expectation": "No brands or comparative battery durations supplied; withhold.",
+      "sources": [
+        {
+          "id": "essentials-e772a5a729be28b9",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "ILLUMINATION \u2013 Flashlight and headlamp Lighting is important in the outdoors at night, and can help you find your way out or signal for help. Items include flashlights, and headlamps. Headlamps are the recommended light source because they are hands-free. Be sure to pack extra batteries."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] NPS Ten Essentials\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/articles/10essentials.htm\nILLUMINATION \u2013 Flashlight and headlamp Lighting is important in the outdoors at night, and can help you find your way out or signal for help. Items include flashlights, and headlamps. Headlamps are the recommended light source because they are hands-free. Be sure to pack extra batteries.\n\nQuestion: Which brand of headlamp has the longest battery life?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[essentials-e772a5a729be28b9] Headlamps are the recommended light source because they are hands-free.",
+      "published_text": "Insufficient evidence in the selected excerpts for: battery, brand, has, life, longest. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "60544b9d849562ecaa4b875543be81140e49452e512ba6d2a90f48df40c541eb"
+    },
+    {
+      "stage": "before",
+      "case": "cap-21",
+      "question": "Compare camping access from Yosemite Valley and Tuolumne Meadows.",
+      "expectation": "Both at least four miles before camping; Valley minimum 2500-foot gain and mostly no-camping zone; Tuolumne cooler high country. Do not transfer gain to Tuolumne.",
+      "sources": [
+        {
+          "id": "yosemite-c07549b6dd9eec11",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "Most of Yosemite Valley falls within a no-camping zone, so while there are trailheads starting from Yosemite Valley, they all require a hike of at least four miles and a minimum elevation gain of 2,500 feet. Most trails lead to rewarding views from the north or south rim of the Valley, but water can be limited in late summer. This region is the most popular, and most crowded, portion of the park."
+        },
+        {
+          "id": "yosemite-05be844c00690dc0",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "Trails leaving from Tuolumne Meadows require backpackers to hike at least four miles before camping. This mountainous high country has an abundance of peaks, lakes, creeks, rivers, and waterfalls, but temperatures will be significantly cooler than elsewhere in the park. This region is very popular with backpackers during summer, and is correspondingly busy."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\nFor this comparison, each claim draws on the combined source set. Cite every supplied label on each line; do not transfer properties between the subjects.\n[S1] Yosemite trail regions\nDate: 2025-07-17 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yose/planyourvisit/trails.htm\nMost of Yosemite Valley falls within a no-camping zone, so while there are trailheads starting from Yosemite Valley, they all require a hike of at least four miles and a minimum elevation gain of 2,500 feet. Most trails lead to rewarding views from the north or south rim of the Valley, but water can be limited in late summer. This region is the most popular, and most crowded, portion of the park.\n\n[S2] Yosemite trail regions\nDate: 2025-07-17 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yose/planyourvisit/trails.htm\nTrails leaving from Tuolumne Meadows require backpackers to hike at least four miles before camping. This mountainous high country has an abundance of peaks, lakes, creeks, rivers, and waterfalls, but temperatures will be significantly cooler than elsewhere in the park. This region is very popular with backpackers during summer, and is correspondingly busy.\n\nQuestion: Compare camping access from Yosemite Valley and Tuolumne Meadows.\nAnswer both subjects using the requested property. First line: camping access from Yosemite Valley. Second line: Tuolumne Meadows. Keep the source conditions and uncertainty; one source can support both lines.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[yosemite-c07549b6dd9eec11] [yosemite-05be844c00690dc0] Camping access from Yosemite Valley: Most of Yosemite Valley falls within a no-camping zone, so while there are trailheads starting from Yosemite Valley, they all require a hike of at least four miles and a minimum eleva.\n[yosemite-c07549b6dd9eec11] [yosemite-05be844c00690dc0] Camping access from Tuolumne Meadows: Trails leaving from Tuolumne Meadows require backpackers to hike at least four miles before camping.",
+      "published_text": "Insufficient evidence in the selected excerpts for: access. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "ba2a479e7858b98175bea335fd763fd1235bc41e7d0eea65b3b684f9babd8cde"
+    },
+    {
+      "stage": "before",
+      "case": "cap-22",
+      "question": "How do snow and river crossings affect planning a Yellowstone hike?",
+      "expectation": "Snow persists late May/early June, some passes late July; late spring rivers cold/deep/swift; map lacks current status and current conditions need checking. No live assessment.",
+      "sources": [
+        {
+          "id": "yellowstone-2419b62337a46c6e",
+          "title": "Yellowstone hiking",
+          "url": "https://www.nps.gov/yell/planyourvisit/hiking.htm",
+          "date": "2025-04-18 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "When planning a hike, remember that many of Yellowstone\u2019s trails are more than 7,000 feet above sea level. Most areas retain snow until late May or early June, and some (especially mountain passes) are snow-covered until late July. Also, many routes require fording rivers that can be 25 feet wide, 3 to 6 feet deep, extremely cold, and swiftly running during our late spring runoff. It\u2019s hard to tell from a map whether a stream will be a raging torrent or merely a swollen creek. Check our Backcountry Conditions Page for the most up-to-date information on park trails."
+        },
+        {
+          "id": "yellowstone-240e6df8a3707a67",
+          "title": "Yellowstone hiking",
+          "url": "https://www.nps.gov/yell/planyourvisit/hiking.htm",
+          "date": "2025-04-18 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "The map below does not show the current status and conditions of Yellowstone trails. Check our Backcountry Conditions Page or ask locally for the most up-to-date information on park trails."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Yellowstone hiking\nDate: 2025-04-18 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yell/planyourvisit/hiking.htm\nWhen planning a hike, remember that many of Yellowstone\u2019s trails are more than 7,000 feet above sea level. Most areas retain snow until late May or early June, and some (especially mountain passes) are snow-covered until late July. Also, many routes require fording rivers that can be 25 feet wide, 3 to 6 feet deep, extremely cold, and swiftly running during our late spring runoff. It\u2019s hard to tell from a map whether a stream will be a raging torrent or merely a swollen creek. Check our Backcountry Conditions Page for the most up-to-date information on park trails.\n\n[S2] Yellowstone hiking\nDate: 2025-04-18 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yell/planyourvisit/hiking.htm\nThe map below does not show the current status and conditions of Yellowstone trails. Check our Backcountry Conditions Page or ask locally for the most up-to-date information on park trails.\n\nQuestion: How do snow and river crossings affect planning a Yellowstone hike?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[yellowstone-2419b62337a46c6e] Snow and river crossings affect planning a Yellowstone hike by requiring careful consideration of trail elevation, snow duration, and river conditions.",
+      "published_text": "Insufficient evidence in the selected excerpts for: affect, crossings. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "eca179ae95868826d6c0adee50491bb74576ee4718ec9df644585d6658e36788"
+    },
+    {
+      "stage": "before",
+      "case": "cap-23",
+      "question": "Will Yosemite rangers plan my wilderness trip for me?",
+      "expectation": "No; general guidance only, traveler plans based on interests/timeframe/abilities.",
+      "sources": [
+        {
+          "id": "yosemite-6d870ab5895892e6",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "While park rangers can provide general guidance, they will not plan a wilderness trip for you; you must plan your own trip. The Yosemite Wilderness has over 750 miles of trail to explore with a great range of elevation, ecological zones, and solitude. This backpacking trip, be it your first or fortieth, is a uniquely protected opportunity to provide maximum freedom to roam in wilderness. So, in planning a trip, it is important to find the right experience for your interests, timeframe, and abilities. A good planning process will enhance your understanding of the park and your safety."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Yosemite trail regions\nDate: 2025-07-17 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yose/planyourvisit/trails.htm\nWhile park rangers can provide general guidance, they will not plan a wilderness trip for you; you must plan your own trip. The Yosemite Wilderness has over 750 miles of trail to explore with a great range of elevation, ecological zones, and solitude. This backpacking trip, be it your first or fortieth, is a uniquely protected opportunity to provide maximum freedom to roam in wilderness. So, in planning a trip, it is important to find the right experience for your interests, timeframe, and abilities. A good planning process will enhance your understanding of the park and your safety.\n\nQuestion: Will Yosemite rangers plan my wilderness trip for me?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[yosemite-6d870ab5895892e6] Yosemite rangers will not plan your wilderness trip for you.",
+      "published_text": "Insufficient evidence in the selected excerpts for: my. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "24a7a9b1f59450b90b757b1cfbd30aabfa55d7823aeeddafb57acc065369f3ec"
+    },
+    {
+      "stage": "before",
+      "case": "cap-24",
+      "question": "Is the Yellowstone trail I want open and safe today?",
+      "expectation": "No live trail status or safety guarantee. Supplied precautions do not establish current availability.",
+      "sources": [
+        {
+          "id": "yellowstone-240e6df8a3707a67",
+          "title": "Yellowstone hiking",
+          "url": "https://www.nps.gov/yell/planyourvisit/hiking.htm",
+          "date": "2025-04-18 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "The map below does not show the current status and conditions of Yellowstone trails. Check our Backcountry Conditions Page or ask locally for the most up-to-date information on park trails."
+        },
+        {
+          "id": "yellowstone-c7bbe1c4dfb76f39",
+          "title": "Yellowstone hiking",
+          "url": "https://www.nps.gov/yell/planyourvisit/hiking.htm",
+          "date": "2025-04-18 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "Stay safe in Yellowstone\u2019s backcountry! Carry bear spray, store food properly, check weather, and be prepared for changing conditions."
+        }
+      ],
+      "actual_prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1] Yellowstone hiking\nDate: 2025-04-18 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yell/planyourvisit/hiking.htm\nThe map below does not show the current status and conditions of Yellowstone trails. Check our Backcountry Conditions Page or ask locally for the most up-to-date information on park trails.\n\n[S2] Yellowstone hiking\nDate: 2025-04-18 page updated; retrieved 2026-09-30\nSource: https://www.nps.gov/yell/planyourvisit/hiking.htm\nStay safe in Yellowstone\u2019s backcountry! Carry bear spray, store food properly, check weather, and be prepared for changing conditions.\n\nQuestion: Is the Yellowstone trail I want open and safe today?\nUse one or two lines, adding a second only for supported detail.\nStart each line with source labels and then one factual sentence. Answer:",
+      "resolved_raw": "[yellowstone-240e6df8a3707a67] The map below does not show the current status and conditions of Yellowstone trails.\n[yellowstone-c7bbe1c4dfb76f39] Stay safe in Yellowstone\u2019s backcountry! Carry bear spray, store food properly, check weather, and be prepared for changing conditions.",
+      "published_text": "Insufficient evidence in the selected excerpts for: open, today, want. Inspect the full passages.",
+      "route": "ABSTAINED",
+      "record_sha256": "3de326e4e2a9055d566157229749c39ccd11d7acda4195028ce15d5426eca93a"
+    }
+  ]
+}
