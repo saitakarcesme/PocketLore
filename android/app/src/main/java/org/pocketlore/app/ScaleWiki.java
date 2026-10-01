@@ -35,5 +35,18 @@ final class ScaleWiki {
    SourceTextSlice.read(record,result,h.sourceHash,cancel);return result;
   }finally{inflater.end();java.nio.file.Files.deleteIfExists(record.toPath());}
  }
+ static ScaleAnswerAdapter.Snapshot answerSnapshot(Hit h,Read r)throws Exception {
+  ScaleLibrary.check(!r.previewTruncated,"A preview cannot supply full-document answer offsets");
+  String rights="Wikipedia contributors; CC BY-SA 4.0 dataset terms; source status: "+h.rights;
+  String history="https://en.wikipedia.org/w/index.php?curid="+h.id+"&action=history";
+  // The verified JSON record hash binds the exact retained formula/unit supplement and range map.
+  return new ScaleAnswerAdapter.Snapshot(new String[]{h.edition.manifest.getString("source_inventory_sha256"),h.shard,h.id,h.revision,h.recordHash,h.sourceHash,h.title,h.url,history,h.date,rights,"Unresolved source-specific exceptions; see retained source ranges",h.recordHash,r.wikitextScope},r.text);
+ }
+ static String answerReview(Hit h,Read r,ScaleAnswerAdapter.Ledger ledger)throws Exception {
+  ScaleAnswerAdapter.Snapshot snapshot=answerSnapshot(h,r);ScaleAnswerAdapter.Review review=ledger.get(snapshot);
+  if(review==null||!review.independentlyCleared)return "Answer evidence unavailable: independent source-specific rights and fidelity review is pending. No generated answer or research-brief approval is inferred.";
+  ScaleAnswerAdapter.admit(snapshot,review.start,review.end,ledger,()->false);
+  return "Exact reviewed span is available to the typed obligation controller; independent claim support and completeness are still required before publication.";
+ }
  static String detail(Hit h,Read r){return h.title+" ("+h.tier+")\n"+r.text+(r.previewTruncated?"\n[Preview limited to 64,000 characters; full retained source remains in the collection.]":"")+"\n\nArticle revision: "+h.revision+"\nSource date: "+h.date+"\n"+h.url+"\nHistory: https://en.wikipedia.org/w/index.php?title="+android.net.Uri.encode(h.title)+"&action=history\nWikipedia contributors; CC BY-SA 4.0 dataset terms. Source-specific rights: "+h.rights+"\nRetained wikitext scope: "+r.wikitextScope+"\nCitation identity: "+h.identity()+"\nSource row: "+h.sourceRow+"\nText SHA-256: "+h.sourceHash+"\nThis source is not cleared for generated answers. Leads are not full articles.";}
 }
