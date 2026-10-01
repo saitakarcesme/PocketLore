@@ -1,0 +1,719 @@
+{
+  "seal": {
+    "sealed_at": 1790895072.2550707,
+    "base": "15c48b43999cb57599c58477668fc73a03748276",
+    "sealed_commit": "3f16c33b831c47b9a43aaf20fa21f55add3c18c6",
+    "repo": "/home/isa/PocketLore-control/scale-workers/ui/repo",
+    "git_directory": "/home/isa/PocketLore-control/scale-workers/ui/checkpoint.git",
+    "source_files": [
+      {
+        "file": "DIRECTION-2.md",
+        "sha256": "916e4252471be1e6deb4045a9a595dddf6b84905250e2563e4e6b749a6895785"
+      },
+      {
+        "file": "android/app/src/androidTest/java/org/pocketlore/app/RedesignUiInstrumentation.java",
+        "sha256": "2cd239fe633873b56d970e3cff056af42dd683b9d6dd19d99156458e8083c881"
+      },
+      {
+        "file": "android/app/src/androidTest/java/org/pocketlore/app/RefinedUiInstrumentation.java",
+        "sha256": "a342a4eb4e846f18c0dca2298f14d8bbfda18915c9880421130f65302e1eb0b8"
+      },
+      {
+        "file": "android/app/src/main/AndroidManifest.xml",
+        "sha256": "67c04b052c30a9a61f218dd445af19a5a79b25db808831dc569dbca1e10bec28"
+      },
+      {
+        "file": "android/app/src/main/cpp/CMakeLists.txt",
+        "sha256": "e8ddb24cdb9c9c714629ccb8b1ce90bcd46024a0383f60199aa643105d1bf12f"
+      },
+      {
+        "file": "android/app/src/main/java/org/pocketlore/app/MainActivity.java",
+        "sha256": "e1bdf1af67170965d89a9852d7ba2b919b88a556059116a9e4da42ada222431f"
+      },
+      {
+        "file": "android/app/src/main/java/org/pocketlore/app/NotebookActivity.java",
+        "sha256": "fde998e06782b80648cf6e1f0bf0c382a751f32654c9373bd63abfac894c4350"
+      },
+      {
+        "file": "android/app/src/main/java/org/pocketlore/app/NotebookExportProvider.java",
+        "sha256": "5ce2d75991fefba821e297d2a14c3d776fabbd9cd3149929cf561605a9475e4d"
+      },
+      {
+        "file": "android/app/src/main/java/org/pocketlore/app/NotebookStore.java",
+        "sha256": "42aa4d7d587a69fa57e265e5bdc31b11e56cff0500c014d2fb0f5f2424780499"
+      },
+      {
+        "file": "android/app/src/main/java/org/pocketlore/app/ReaderUi.java",
+        "sha256": "1115b86d763b639a7346e14cc53e2807240d601e3120384ae4916e772b972bd1"
+      },
+      {
+        "file": "android/app/src/main/java/org/pocketlore/app/SavedActivity.java",
+        "sha256": "f46b7c320e992bde6a4a0e8d1a5af8f5e5457b12ee1ed9abd35728454ea7ac6e"
+      },
+      {
+        "file": "android/app/src/main/java/org/pocketlore/app/ScaleActivity.java",
+        "sha256": "522c2f447d59134b8c2240f8cb22866dab573076dd4f2c6eeddcd1cd24d80747"
+      },
+      {
+        "file": "android/app/src/main/java/org/pocketlore/app/SourceReaderActivity.java",
+        "sha256": "ec1dfabeeff184f3ea241c29e955986b0a0d5550cd750abc574e9297a83c888a"
+      },
+      {
+        "file": "android/app/src/main/res/values/styles.xml",
+        "sha256": "808dbff5f19eea9e7731461f36c3c26bd9133359216a6b7b7ecbf8debeb4056d"
+      },
+      {
+        "file": "android/index-native/CMakeLists.txt",
+        "sha256": "76d2309b2bddc7b79c5032cda98e3ffcc2b301243b646a72e439ea10072d3264"
+      },
+      {
+        "file": "docs/UI-CAPABILITY-GAPS.md",
+        "sha256": "da36570eb4b824292a9df14e3e9a0b2f1fb00affff965cff9707244fbd3ae3d6"
+      },
+      {
+        "file": "docs/UI-DIRECTION.md",
+        "sha256": "53b956b727f70ac89e3eb3646409485caa2a54cd51eff7706f2ca832f5574c20"
+      },
+      {
+        "file": "docs/UI-REDESIGN-VERIFICATION.md",
+        "sha256": "3adaf7c80841a2cd67b08ee68f656ffd10afebe74b59e4de0803084ea33a3f3f"
+      },
+      {
+        "file": "docs/UI-VERIFICATION.md",
+        "sha256": "f7e286116fe731128345ad58f7ef6031600a381ed555ef1762a0d7f752cca455"
+      },
+      {
+        "file": "tools/evaluation/check_ui_scope.py",
+        "sha256": "01cb0c65773bfe2a8c8dc57e7277eb0fb6414aabc101117e8b873f35bfa760b5"
+      },
+      {
+        "file": "tools/evaluation/verify_16kb_artifacts.py",
+        "sha256": "25391f0220f0303075f6c7cfdfa29e033b0d953f9041f76f08c572a3e60b84a4"
+      }
+    ],
+    "handoff_sha256": "323d8a2d2faa684409ff38bb1b55ec6ce76d40a4e5d2de6ae94e0acb9204c24a",
+    "patch_sha256": "6e95cf5b007cd92625dcefb91368f381f7f07e045753271fa2c78d21471de781",
+    "apk_sha256": "8ecfcd4d89f7dd503a29f96556d0812fe816704c2f47df85426a0732d3e6b70a",
+    "verified_artifact_references": 114,
+    "independent_criticism": {
+      "status": "Independent skeptic found no integration-blocking artifact inconsistency; not physical/human acceptance",
+      "critic_file": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/critic-final.txt",
+      "critic_sha256": "daf74eddb30cbfd0ddfa813b9d0d23cddd1b185b89bf7cc2eb703e200fdab8dc",
+      "reviewed_handoff": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/HANDOFF-redesign.review.json",
+      "reviewed_handoff_sha256": "5c14e401b30929ace0fba99f60cf8955dd5b2d18c4e7b28b9b6c9a5c3803a0cc",
+      "review_freeze": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/review-freeze.json",
+      "statement": "Frozen hashes, repaired runtime reports, screenshots, SAF receipts, native alignment, and installed APK identity are consistent, with no integration-blocking inconsistency found; canonical integration, physical-device, TalkBack, and human acceptance remain open."
+    },
+    "status": "Exact reviewed candidate source sealed; canonical integration and product acceptance pending.",
+    "canonical_worktree_modified": false,
+    "product_main_advanced": false
+  },
+  "verified_references": [
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/HANDOFF-redesign.json",
+      "sha256": "323d8a2d2faa684409ff38bb1b55ec6ce76d40a4e5d2de6ae94e0acb9204c24a",
+      "bytes": 23581
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/handoff.patch",
+      "sha256": "6e95cf5b007cd92625dcefb91368f381f7f07e045753271fa2c78d21471de781",
+      "bytes": 173192
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/MANIFEST-redesign.json",
+      "sha256": "796f514bf4603ca306031ec8107afaf638b115728ceb0329e2be5615ae3ad145",
+      "bytes": 19203
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/pocketlore-redesign.apk",
+      "sha256": "8ecfcd4d89f7dd503a29f96556d0812fe816704c2f47df85426a0732d3e6b70a",
+      "bytes": 15722514
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/critic-final.txt",
+      "sha256": "daf74eddb30cbfd0ddfa813b9d0d23cddd1b185b89bf7cc2eb703e200fdab8dc",
+      "bytes": 263
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/handoff.patch",
+      "sha256": "6e95cf5b007cd92625dcefb91368f381f7f07e045753271fa2c78d21471de781",
+      "bytes": 173192
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/build-restoration-final.log",
+      "sha256": "ce738cd17a6bcde0ffc12ccfd640ec03dfbf072f96516b1e6ee38c15b3372979",
+      "bytes": 5135
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/scope-delivery.json",
+      "sha256": "0046e785d853bbdcc821929bde363558aa6b6d6dfa9bd5d13c653f5301eb7f20",
+      "bytes": 1028
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/native-inputs.json",
+      "sha256": "e1c20f5cbe284139a73adcc6778a706a9f0b7595a16977306199d1e9a75c435f",
+      "bytes": 996
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/native-source-identity.json",
+      "sha256": "8408de4c9ca2b5cf74d7a44d3efceb8d432844d4bae35af93b12f86b65e4bec1",
+      "bytes": 2122
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/native-delivery.json",
+      "sha256": "3ec5a1433bd1da38e5f0e7e7af3f196bf93dedd33827de1b0a195f538468a24a",
+      "bytes": 3412
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/package-delivery.txt",
+      "sha256": "ee1111099f9ad26742efd74ce9b159f482d3b199c227ef63c041400590b44796",
+      "bytes": 4932
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/page-size.txt",
+      "sha256": "33f50728129313570f6b953c08b559d9cb5f673e981e647cee4dc10d6cd48e99",
+      "bytes": 6
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/viewport.txt",
+      "sha256": "f2426cadb295de205f1be4c6620677ac32837a7aa62245b5b1a4f7f8f41d284b",
+      "bytes": 47
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/signing-delivery.txt",
+      "sha256": "6cd162f160703c3717fd30e3c858ad7129c02b03be3e76cff3f20c48b784d56a",
+      "bytes": 307
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/cold-roundtrip.json",
+      "sha256": "b3b1a321147e7cde3d03fec90ff39dc059ae8f0fd1c0e748ce7867e46b60143d",
+      "bytes": 450
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/saf-output-verification.json",
+      "sha256": "bb2b1a863baf4bd3f60d15f539ea7476a0c0403462de4fc5268378bfa11e4ce8",
+      "bytes": 548
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/competitor-research.json",
+      "sha256": "e078607af69c0dd03235fb344e8586a0c44c47da37948232782ba6f8c2516133",
+      "bytes": 1241
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/report.json",
+      "sha256": "c5505dd864bb9d5e8c851dfcf0357604a53c2d07d3b955031c426955f94798db",
+      "bytes": 4767
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/report.json",
+      "sha256": "10b7b5d5d2f4b0f978b6fec36977f687d9d08b918c7d871a4b375e8729ae0b1b",
+      "bytes": 4765
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/before.png",
+      "sha256": "91ec277edcf3e8126feba7137016f1d8e7dfdbc29bee4239682b9a99fe61693b",
+      "bytes": 211253
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/after.png",
+      "sha256": "b522c8ab2c33ea8de2fc4e814431771213dd31ae1c80deb822ee06ba7e14f4c8",
+      "bytes": 216346
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/cold-saved.png",
+      "sha256": "9d77c037883505ce0de238f18768c1629c0dcf3df3ce37b5e42118ac7d859268",
+      "bytes": 211914
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/cold-source.png",
+      "sha256": "e3086efddcc4e0c1e0314668687c2b9e83ca787853c5cf03d4eca30d29682428",
+      "bytes": 358996
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/cold-keyboard.png",
+      "sha256": "363171e6972864b1d3945db443ea3def232a6793b758698556981840c9d73288",
+      "bytes": 228228
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/comparison.png",
+      "sha256": "43b758dd27d1f8f23e9a0f8f6909210a499e152a42ebb2d716b83997128c3a3a",
+      "bytes": 239411
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/export-cancelled.png",
+      "sha256": "0e4dca0a9ed3ead8389c625858569a10e8e52344e0217d5f496bbb7e0b225c9e",
+      "bytes": 328520
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/export-complete.png",
+      "sha256": "5bb9f73b8b449a995320a018b429c05b9c06aafaab8d5f2ec351cc6a6481348d",
+      "bytes": 317343
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/export-document-picker.png",
+      "sha256": "2e0c1511c5758110001040b47d3c9383d2aef3a0bf2426c64505aa1e40417532",
+      "bytes": 94527
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/library-results.png",
+      "sha256": "d828768950e904836bf9bee8d0a9d15687729d715ddb29de74ac07bf593440d7",
+      "bytes": 155012
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/library.png",
+      "sha256": "d8b264b57cee43514ad39de2074c7481ae64398f1e3a79f77452f62f79700fbf",
+      "bytes": 177949
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/places-empty.png",
+      "sha256": "4258fca112e40cbc6024960e0927b72146c19efe31ed3e17f56decb7d993acba",
+      "bytes": 192185
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/places.png",
+      "sha256": "fa61448d31b3f8d424baffe0df398cf22d7d5649c26ba22faa327d7669b32cd0",
+      "bytes": 185518
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/research-edit-restored.png",
+      "sha256": "492b098af65f6d3bc2ca455624305f3338415c7e7a9c432670e7c10487567966",
+      "bytes": 197911
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/research-keyboard.png",
+      "sha256": "2b3950d00c18ca2f584a0e2303e8e9d2bfbed57c635df1782b69d53e56ff2f45",
+      "bytes": 217730
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/research-restored.png",
+      "sha256": "c8df306f8ae86e612aaf4a861479d52fdb7a4f7ce4ce8405a1eadd166899b72d",
+      "bytes": 265589
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/research-result.png",
+      "sha256": "a12b2e31f9608828288612c030d69e7d025439728058b28f9d78ea720f5e07ee",
+      "bytes": 271464
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/research.png",
+      "sha256": "e38bb59f1f46c964b10daf41264273702890b98fd33acb47d990ee661801a6af",
+      "bytes": 195452
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/saved.png",
+      "sha256": "a9e00da68f9ec0db2daf7aadd5336620cbfe30272ce3c4d5304adbb9719165a0",
+      "bytes": 193975
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/share-chooser.png",
+      "sha256": "1666d54e3f1ef97e8af2c193105534f09ffcd872e6775db8b39314e15085b460",
+      "bytes": 242194
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/source-dark.png",
+      "sha256": "62ddec6da6b73bfcc39330d25a333d8ad7e70adfa5e7beba13ba84b7177f9b86",
+      "bytes": 292543
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/source-paper-large.png",
+      "sha256": "0a9a4df0f69e1627d556e8cdd93365c881d04401a0ee9cab3c5240c5e535965c",
+      "bytes": 288757
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/source-unavailable.png",
+      "sha256": "71e23105507c7a62966b612d8389257afdde91fe7ba84ae98906e4f0e639e622",
+      "bytes": 48746
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/comparison.png",
+      "sha256": "ed29444accc431f0bcb1d5d53939b7e57dda6708052ef56d9b16a3c179bd2b78",
+      "bytes": 236975
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/export-cancelled.png",
+      "sha256": "d69cc3bc203dedc4ad366a9eb23e31de806a5d2e55dfe1a2abfc568d9aa8d7e8",
+      "bytes": 268954
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/export-complete.png",
+      "sha256": "49de976727a48dd49796b452bd6c7ffbfcc067a59ec0b5bd1df8c6adca285726",
+      "bytes": 261230
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/export-document-picker.png",
+      "sha256": "97462cad22221cb4576d64cde706152c7ef6d4274b66ae93cdfa6e21ae8816d5",
+      "bytes": 111870
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/library-results.png",
+      "sha256": "deb93041b4a3071e64bd7372871616345ebf31ca7274b2fe3e21dcdaceb8022a",
+      "bytes": 207351
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/library.png",
+      "sha256": "1654679c804e106263c9def112678a6d8f620a8da922081e3e4c93e93c211c21",
+      "bytes": 197202
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/places-empty.png",
+      "sha256": "a088b38539c2462c422572b162253daa67532ad611f952062172aaef5b9044fd",
+      "bytes": 215288
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/places.png",
+      "sha256": "c936419a399015e1bd93d507dd6085d178c238a1043dd1096c2da0db85b835b2",
+      "bytes": 217896
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/research-edit-restored.png",
+      "sha256": "74f8a5c2cb893d0be0f2a71f4fc24e037f98176f14f2af3cb1069eb39c797f3b",
+      "bytes": 206425
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/research-keyboard.png",
+      "sha256": "b6563be050308691a8c7677569bd5ae4b8afb28d151ca436b538b61f056af255",
+      "bytes": 274087
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/research-restored.png",
+      "sha256": "c3e91ad3f1417c54de463c9f9a88eb817fbba1651b4aa9fccd022e0f2147fa9b",
+      "bytes": 217324
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/research-result.png",
+      "sha256": "0e3de2b68295eaf7cda0f8d5ca299871caac8d2e16b67a1d7f2538b618f07011",
+      "bytes": 219309
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/research.png",
+      "sha256": "19d4d4044d907f9ec8916772189fac7eafc0677ef1aa36e9e2a2120be98fa973",
+      "bytes": 209186
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/saved.png",
+      "sha256": "ca5602cc38e6cf3b96bdebaacccb7e0d202af3fadea16c13637ba2bdc4bac1cc",
+      "bytes": 223487
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/share-chooser.png",
+      "sha256": "dd77ea29cc3bf2b0c03f9753036770968ad71afd4178683a9e55b97a8d381270",
+      "bytes": 219043
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/source-dark.png",
+      "sha256": "ea18be7c4b869562c5a0d44868f16fd7e29b6b31644b91aa9cc5e303f5dd08cc",
+      "bytes": 245760
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/source-paper-large.png",
+      "sha256": "1a27d21c7bde6661f988131a6552f986fd3329ffccf0eaa55892c4c57b25ed4d",
+      "bytes": 242794
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/source-unavailable.png",
+      "sha256": "36dcb6d026de16a1636e235b5ede1bc40edecf1a76f86a8e797479f2b65ad311",
+      "bytes": 76589
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/pocketlore-redesign.apk",
+      "sha256": "8ecfcd4d89f7dd503a29f96556d0812fe816704c2f47df85426a0732d3e6b70a",
+      "bytes": 15722514
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/handoff.patch",
+      "sha256": "6e95cf5b007cd92625dcefb91368f381f7f07e045753271fa2c78d21471de781",
+      "bytes": 173192
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/MANIFEST-redesign.json",
+      "sha256": "796f514bf4603ca306031ec8107afaf638b115728ceb0329e2be5615ae3ad145",
+      "bytes": 19203
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/repo/android/app/build/outputs/apk/debug/app-debug.apk",
+      "sha256": "8ecfcd4d89f7dd503a29f96556d0812fe816704c2f47df85426a0732d3e6b70a",
+      "bytes": 15722514
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/pocketlore-redesign.apk",
+      "sha256": "8ecfcd4d89f7dd503a29f96556d0812fe816704c2f47df85426a0732d3e6b70a",
+      "bytes": 15722514
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/build-restoration-final.log",
+      "sha256": "ce738cd17a6bcde0ffc12ccfd640ec03dfbf072f96516b1e6ee38c15b3372979",
+      "bytes": 5135
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/native-delivery.json",
+      "sha256": "3ec5a1433bd1da38e5f0e7e7af3f196bf93dedd33827de1b0a195f538468a24a",
+      "bytes": 3412
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/report.json",
+      "sha256": "c5505dd864bb9d5e8c851dfcf0357604a53c2d07d3b955031c426955f94798db",
+      "bytes": 4767
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/report.json",
+      "sha256": "10b7b5d5d2f4b0f978b6fec36977f687d9d08b918c7d871a4b375e8729ae0b1b",
+      "bytes": 4765
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/cold-roundtrip.json",
+      "sha256": "b3b1a321147e7cde3d03fec90ff39dc059ae8f0fd1c0e748ce7867e46b60143d",
+      "bytes": 450
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/before.png",
+      "sha256": "91ec277edcf3e8126feba7137016f1d8e7dfdbc29bee4239682b9a99fe61693b",
+      "bytes": 211253
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/after.png",
+      "sha256": "b522c8ab2c33ea8de2fc4e814431771213dd31ae1c80deb822ee06ba7e14f4c8",
+      "bytes": 216346
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/cold-saved.png",
+      "sha256": "9d77c037883505ce0de238f18768c1629c0dcf3df3ce37b5e42118ac7d859268",
+      "bytes": 211914
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/cold-source.png",
+      "sha256": "e3086efddcc4e0c1e0314668687c2b9e83ca787853c5cf03d4eca30d29682428",
+      "bytes": 358996
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/cold-keyboard.png",
+      "sha256": "363171e6972864b1d3945db443ea3def232a6793b758698556981840c9d73288",
+      "bytes": 228228
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/comparison.png",
+      "sha256": "43b758dd27d1f8f23e9a0f8f6909210a499e152a42ebb2d716b83997128c3a3a",
+      "bytes": 239411
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/export-cancelled.png",
+      "sha256": "0e4dca0a9ed3ead8389c625858569a10e8e52344e0217d5f496bbb7e0b225c9e",
+      "bytes": 328520
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/export-complete.png",
+      "sha256": "5bb9f73b8b449a995320a018b429c05b9c06aafaab8d5f2ec351cc6a6481348d",
+      "bytes": 317343
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/export-document-picker.png",
+      "sha256": "2e0c1511c5758110001040b47d3c9383d2aef3a0bf2426c64505aa1e40417532",
+      "bytes": 94527
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/library-results.png",
+      "sha256": "d828768950e904836bf9bee8d0a9d15687729d715ddb29de74ac07bf593440d7",
+      "bytes": 155012
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/library.png",
+      "sha256": "d8b264b57cee43514ad39de2074c7481ae64398f1e3a79f77452f62f79700fbf",
+      "bytes": 177949
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/places-empty.png",
+      "sha256": "4258fca112e40cbc6024960e0927b72146c19efe31ed3e17f56decb7d993acba",
+      "bytes": 192185
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/places.png",
+      "sha256": "fa61448d31b3f8d424baffe0df398cf22d7d5649c26ba22faa327d7669b32cd0",
+      "bytes": 185518
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/research-edit-restored.png",
+      "sha256": "492b098af65f6d3bc2ca455624305f3338415c7e7a9c432670e7c10487567966",
+      "bytes": 197911
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/research-keyboard.png",
+      "sha256": "2b3950d00c18ca2f584a0e2303e8e9d2bfbed57c635df1782b69d53e56ff2f45",
+      "bytes": 217730
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/research-restored.png",
+      "sha256": "c8df306f8ae86e612aaf4a861479d52fdb7a4f7ce4ce8405a1eadd166899b72d",
+      "bytes": 265589
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/research-result.png",
+      "sha256": "a12b2e31f9608828288612c030d69e7d025439728058b28f9d78ea720f5e07ee",
+      "bytes": 271464
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/research.png",
+      "sha256": "e38bb59f1f46c964b10daf41264273702890b98fd33acb47d990ee661801a6af",
+      "bytes": 195452
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/saved.png",
+      "sha256": "a9e00da68f9ec0db2daf7aadd5336620cbfe30272ce3c4d5304adbb9719165a0",
+      "bytes": 193975
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/share-chooser.png",
+      "sha256": "1666d54e3f1ef97e8af2c193105534f09ffcd872e6775db8b39314e15085b460",
+      "bytes": 242194
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/source-dark.png",
+      "sha256": "62ddec6da6b73bfcc39330d25a333d8ad7e70adfa5e7beba13ba84b7177f9b86",
+      "bytes": 292543
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/source-paper-large.png",
+      "sha256": "0a9a4df0f69e1627d556e8cdd93365c881d04401a0ee9cab3c5240c5e535965c",
+      "bytes": 288757
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-default/source-unavailable.png",
+      "sha256": "71e23105507c7a62966b612d8389257afdde91fe7ba84ae98906e4f0e639e622",
+      "bytes": 48746
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/comparison.png",
+      "sha256": "ed29444accc431f0bcb1d5d53939b7e57dda6708052ef56d9b16a3c179bd2b78",
+      "bytes": 236975
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/export-cancelled.png",
+      "sha256": "d69cc3bc203dedc4ad366a9eb23e31de806a5d2e55dfe1a2abfc568d9aa8d7e8",
+      "bytes": 268954
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/export-complete.png",
+      "sha256": "49de976727a48dd49796b452bd6c7ffbfcc067a59ec0b5bd1df8c6adca285726",
+      "bytes": 261230
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/export-document-picker.png",
+      "sha256": "97462cad22221cb4576d64cde706152c7ef6d4274b66ae93cdfa6e21ae8816d5",
+      "bytes": 111870
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/library-results.png",
+      "sha256": "deb93041b4a3071e64bd7372871616345ebf31ca7274b2fe3e21dcdaceb8022a",
+      "bytes": 207351
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/library.png",
+      "sha256": "1654679c804e106263c9def112678a6d8f620a8da922081e3e4c93e93c211c21",
+      "bytes": 197202
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/places-empty.png",
+      "sha256": "a088b38539c2462c422572b162253daa67532ad611f952062172aaef5b9044fd",
+      "bytes": 215288
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/places.png",
+      "sha256": "c936419a399015e1bd93d507dd6085d178c238a1043dd1096c2da0db85b835b2",
+      "bytes": 217896
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/research-edit-restored.png",
+      "sha256": "74f8a5c2cb893d0be0f2a71f4fc24e037f98176f14f2af3cb1069eb39c797f3b",
+      "bytes": 206425
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/research-keyboard.png",
+      "sha256": "b6563be050308691a8c7677569bd5ae4b8afb28d151ca436b538b61f056af255",
+      "bytes": 274087
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/research-restored.png",
+      "sha256": "c3e91ad3f1417c54de463c9f9a88eb817fbba1651b4aa9fccd022e0f2147fa9b",
+      "bytes": 217324
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/research-result.png",
+      "sha256": "0e3de2b68295eaf7cda0f8d5ca299871caac8d2e16b67a1d7f2538b618f07011",
+      "bytes": 219309
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/research.png",
+      "sha256": "19d4d4044d907f9ec8916772189fac7eafc0677ef1aa36e9e2a2120be98fa973",
+      "bytes": 209186
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/saved.png",
+      "sha256": "ca5602cc38e6cf3b96bdebaacccb7e0d202af3fadea16c13637ba2bdc4bac1cc",
+      "bytes": 223487
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/share-chooser.png",
+      "sha256": "dd77ea29cc3bf2b0c03f9753036770968ad71afd4178683a9e55b97a8d381270",
+      "bytes": 219043
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/source-dark.png",
+      "sha256": "ea18be7c4b869562c5a0d44868f16fd7e29b6b31644b91aa9cc5e303f5dd08cc",
+      "bytes": 245760
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/source-paper-large.png",
+      "sha256": "1a27d21c7bde6661f988131a6552f986fd3329ffccf0eaa55892c4c57b25ed4d",
+      "bytes": 242794
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/release-large/source-unavailable.png",
+      "sha256": "36dcb6d026de16a1636e235b5ede1bc40edecf1a76f86a8e797479f2b65ad311",
+      "bytes": 76589
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/stage1.patch",
+      "sha256": "83c104678026e4813d97e7939cbbd6b1d22810503e015f556a9563449cffece6",
+      "bytes": 141354
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/stage2.patch",
+      "sha256": "fbf1b598440c62f193dc01d9f8bd19aaddb60dbe5ef3f2d0d870470cfc1f6582",
+      "bytes": 158284
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/stage3.patch",
+      "sha256": "a4fffb657d271cf876ba8f275eb09436ef40caef961328b85d5f6162a90b7eb0",
+      "bytes": 160779
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/stage4.patch",
+      "sha256": "651d01f7b3e634b15ce90b502604702164be14abfaafb225d5d73ca7ea504f8a",
+      "bytes": 168606
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/delivery.patch",
+      "sha256": "a868561cca57e2efc504b05832c2d2ccaca46cc95d0504ef51f65ec148eb41e1",
+      "bytes": 171926
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/restoration-fix.patch",
+      "sha256": "541c1237a95cbb0a49a4538ba9e61ecaf6ecafc7f4dbfeb5fd7fe8dc055ca83d",
+      "bytes": 172595
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/ui/evidence-redesign/gallery.html",
+      "sha256": "d94a4d2c39000d4fd3de0e0ef5dd9b5007f462e9dfcf176cd28e6103d21ab458",
+      "bytes": 8032
+    }
+  ],
+  "manifest_top_keys": [
+    "created_utc",
+    "source_files",
+    "patch",
+    "checks",
+    "runtime",
+    "screenshots",
+    "apk"
+  ],
+  "parent_verified": "15c48b43999cb57599c58477668fc73a03748276",
+  "limitation": "Supplied review is candidate-only, not canonical acceptance"
+}
