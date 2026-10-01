@@ -1,5 +1,7 @@
 # Development candidate: build, install and demonstrate
 
+> Current status: final release freeze is deferred under the approved scale replan. The latest APK differs from release-v4 and its strict release check fails. The instructions below describe historical release-v4; see [the current audit](evidence/broad-candidate-release.md) before treating them as a candidate-validation procedure.
+
 This is a development debug candidate, not an accepted product, production-signed release or bounty submission. [Task202 evidence](evidence/multi-pack-release-revalidation.md) and [release-v4 manifest](evidence/release-v4/manifest.json) identify the tested APK and both packs; [release gaps](RELEASE_GAPS.md) remain open. Historical release-v1/v2/v3 identities and failures remain preserved and must not be relabeled as this candidate.
 
 ## Provision once, then build offline

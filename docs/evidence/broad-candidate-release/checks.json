@@ -1,0 +1,75 @@
+{
+  "scope": "Non-release current-byte audit; final freeze deferred by scale replan",
+  "checks": [
+    {
+      "argv": [
+        "bash",
+        "tools/android-build.sh"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "bash",
+        "tools/verify-release.sh"
+      ],
+      "exit_code": 1,
+      "reason": "Current APK differs from preserved release-v4 identity after two reproducible builds"
+    },
+    {
+      "argv": [
+        "python3",
+        "tools/release/audit_current.py",
+        "--output",
+        "docs/evidence/broad-candidate-release"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "files": {
+    "docs/evidence/broad-candidate-release/build.log": {
+      "bytes": 7210,
+      "sha256": "5273448fbe06332c2d63b6a51b46de860cec7f72ff254edd01d6f68c9e64829b"
+    },
+    "docs/evidence/broad-candidate-release/release-check.log": {
+      "bytes": 745,
+      "sha256": "65d80180a554549e345924f4d7ff822af554a74145bf34a3e290926ba0c6ba6d"
+    },
+    "docs/evidence/broad-candidate-release/dependency-resolution.log": {
+      "bytes": 699,
+      "sha256": "a0f58844ae85341c43679614a902eed790037cf5e8ecb7f57f80385398a0f1e2"
+    },
+    "docs/evidence/broad-candidate-release/dependency-resolution-2.log": {
+      "bytes": 1159,
+      "sha256": "413c5311ab96c8042b87bd5ec162cea324eebd32a3d1737b570478e9a0d2429e"
+    },
+    "docs/evidence/broad-candidate-release/audit.log": {
+      "bytes": 135,
+      "sha256": "0d1ec551e95b7038f2f221de05e383fbe7531144d1b3efbeab3b16e8684260d7"
+    },
+    "docs/evidence/broad-candidate-release/index-link-arm64-v8a.txt": {
+      "bytes": 2259,
+      "sha256": "9789236bd1df7472659a4059cf769bf2bd12faf6ed89d2ddac2d68f38f81d4cd"
+    },
+    "docs/evidence/broad-candidate-release/index-link-x86_64.txt": {
+      "bytes": 2191,
+      "sha256": "e2eea380406048c211fd815927909b11ccb8b4efa5239f3ee5b2eeb5a24a88c7"
+    },
+    "docs/evidence/broad-candidate-release/current-audit.json": {
+      "bytes": 532720,
+      "sha256": "5d5276c2bfd3997f5b869e01c1f472ca6b09d2c3259a4d0da4f6e0f1fe369db7"
+    },
+    "docs/evidence/broad-candidate-release/forced-build-result.json": {
+      "bytes": 286,
+      "sha256": "65122f4bfac50df546a714511a04fbc819714f25221c0cd464102d0303276056"
+    },
+    "docs/evidence/broad-candidate-release/forced-a.log": {
+      "bytes": 6802,
+      "sha256": "b0b492b9523799daf838c2021f051dfddcea66d3e12cf8f6630da5adc8a2bba4"
+    },
+    "docs/evidence/broad-candidate-release/forced-b.log": {
+      "bytes": 6802,
+      "sha256": "f5ac1538234bf39f738c41ec18c628361403471c4be3c2678b5c91d4c9b236a3"
+    }
+  }
+}
