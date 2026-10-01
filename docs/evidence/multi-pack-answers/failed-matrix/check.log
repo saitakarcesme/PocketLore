@@ -1,0 +1,9 @@
+/home/isa/Projects/PocketLore/downloads/multi-pack-answers/run-20261001T064046900406Z
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/multi-pack-answers/run.py", line 68, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/multi-pack-answers/run.py", line 47, in main
+    assert r.get('status')=='PASS' and b'INSTRUMENTATION_CODE: -1' in log,str(out/'results.json')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: /home/isa/Projects/PocketLore/downloads/multi-pack-answers/run-20261001T064046900406Z/results.json
