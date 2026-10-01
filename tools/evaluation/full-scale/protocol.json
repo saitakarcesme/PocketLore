@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "population": "public development; no held-out inference",
+  "wiki_queries": [
+    "Acid",
+    "Cooking",
+    "Absolute value",
+    "Algae",
+    "Transport in Belgium",
+    "Binary search",
+    "Constitution",
+    "Athens"
+  ],
+  "cities": [
+    "Auckland",
+    "Berlin",
+    "Buenos Aires",
+    "Cairo",
+    "Cape Town",
+    "Istanbul",
+    "Lagos",
+    "London",
+    "Los Angeles",
+    "Mexico City",
+    "Mumbai",
+    "Nairobi",
+    "New York",
+    "Paris",
+    "Sao Paulo",
+    "Seoul",
+    "Singapore",
+    "Sydney",
+    "Tokyo",
+    "Toronto"
+  ],
+  "absent_controls": [
+    "exact cloud cover here at midnight tonight",
+    "restaurants guaranteed open right now",
+    "guaranteed current vegan status from missing tags",
+    "pocketlore nonexistent category 300"
+  ],
+  "redirects": [
+    "USA",
+    "NYC",
+    "UK"
+  ],
+  "radius_km": 1,
+  "category": "restaurant",
+  "checks": [
+    "all sealed file hashes and actual SQLite counts",
+    "exact and redirect before round-robin ranks",
+    "shared city/alias files once per collection",
+    "delta unchanged inode reuse",
+    "corrupt and cancelled update preserves old catalog",
+    "restart before/after atomic commit",
+    "missing base and oversized admission reject",
+    "peak counts old plus new plus metadata, no full edition copy"
+  ],
+  "budget": {
+    "target": 45000000000,
+    "hard": 50000000000,
+    "runtime_reserve": 134217728,
+    "free_reserve": 268435456
+  },
+  "limits": "Full Android installation requires approved sufficient storage; host inventory and query counts are not installed coverage. Unreviewed rights remain browse-only. Production model unchanged."
+}
