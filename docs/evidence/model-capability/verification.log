@@ -1,0 +1,28 @@
+{"status": "PASS", "behavior": "3 GiB model buffers rejected by default and Android; accepted only by explicit non-Android host screen"}
+{
+  "status": "PASS",
+  "scope": "72 real host outputs, exact evidence/model identity and tamper rejection; builder ratings are not independent entailment or acceptance",
+  "routes": {
+    "qwen3-1.7b": {
+      "FALLBACK": 2,
+      "ABSTAINED": 20,
+      "GENERATED": 2
+    },
+    "qwen3-4b": {
+      "GENERATED": 3,
+      "ABSTAINED": 20,
+      "FALLBACK": 1
+    },
+    "phi35-mini": {
+      "GENERATED": 2,
+      "FALLBACK": 2,
+      "ABSTAINED": 20
+    }
+  },
+  "mutation_rejections": [
+    "missing run record",
+    "changed run record",
+    "missing model",
+    "changed model bytes"
+  ]
+}
