@@ -1,0 +1,6 @@
+{
+  "reason": "Python 3.14.7 has no onnxruntime1.23.2 wheel on installed package index; initial installation failed before verifier inference. Preserve install.log.",
+  "runtime": "onnxruntime1.24.1, tokenizers0.22.1, numpy2.3.3; CPUExecutionProvider only",
+  "score_input": "Every premise has each exact source span prefixed with its source title; each complete claim and its BreakIterator sentence segments have the visible Subject heading prefixed. No claim text or qualifiers rewritten. Full compound claim must pass as well as every sentence.",
+  "unchanged": "Model revision/bytes, fixed thresholds, no truncation, candidates, cases, generation budgets and quality gates remain unchanged. Declared before independent classifier inference."
+}
