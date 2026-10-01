@@ -1,0 +1,124 @@
+{
+  "mode": "repaired",
+  "pid": 3822,
+  "rows": [
+    {
+      "kind": "model",
+      "case": "cancel-before-open",
+      "returned_before_release": true,
+      "cancel_ms": 3.849343,
+      "outcome": "InterruptedIOException: Import cancelled",
+      "opens": 0,
+      "clean_before_release": true,
+      "saved_unchanged": true,
+      "provider_state_after_release": "idle"
+    },
+    {
+      "kind": "model",
+      "case": "stall-empty",
+      "returned_before_release": true,
+      "cancel_ms": 46.058649,
+      "outcome": "InterruptedIOException: Import cancelled",
+      "opens": 1,
+      "clean_before_release": true,
+      "saved_unchanged": true,
+      "provider_state_after_release": "reader-closed"
+    },
+    {
+      "kind": "model",
+      "case": "stall-prefix",
+      "returned_before_release": true,
+      "cancel_ms": 45.108938,
+      "outcome": "InterruptedIOException: Import cancelled",
+      "opens": 1,
+      "clean_before_release": true,
+      "saved_unchanged": true,
+      "provider_state_after_release": "reader-closed"
+    },
+    {
+      "kind": "model",
+      "case": "short-read",
+      "outcome": "IOException: Incomplete model copy",
+      "saved_unchanged": true,
+      "staging_removed": true
+    },
+    {
+      "kind": "model",
+      "case": "retry",
+      "outcome": "success",
+      "worker_thread_id": 41,
+      "saved_model_unchanged": true,
+      "staging_removed": true
+    },
+    {
+      "kind": "pack",
+      "case": "cancel-before-open",
+      "returned_before_release": true,
+      "cancel_ms": 0.048123,
+      "outcome": "InterruptedIOException: Import cancelled",
+      "opens": 0,
+      "clean_before_release": true,
+      "saved_unchanged": true,
+      "provider_state_after_release": "idle"
+    },
+    {
+      "kind": "pack",
+      "case": "stall-empty",
+      "returned_before_release": true,
+      "cancel_ms": 45.911633,
+      "outcome": "InterruptedIOException: Import cancelled",
+      "opens": 1,
+      "clean_before_release": true,
+      "saved_unchanged": true,
+      "provider_state_after_release": "reader-closed"
+    },
+    {
+      "kind": "pack",
+      "case": "stall-prefix",
+      "returned_before_release": true,
+      "cancel_ms": 46.770432,
+      "outcome": "InterruptedIOException: Import cancelled",
+      "opens": 1,
+      "clean_before_release": true,
+      "saved_unchanged": true,
+      "provider_state_after_release": "reader-closed"
+    },
+    {
+      "kind": "pack",
+      "case": "short-read",
+      "outcome": "IOException: Missing pack entries",
+      "saved_unchanged": true,
+      "staging_removed": true
+    },
+    {
+      "kind": "pack",
+      "case": "retry",
+      "outcome": "success",
+      "worker_thread_id": 41,
+      "saved_model_unchanged": true,
+      "staging_removed": true
+    }
+  ],
+  "activity": [
+    {
+      "kind": "model",
+      "case": "stall-prefix-button-cancel",
+      "cancel_to_idle_ms": 21.221758,
+      "staging_removed": true,
+      "reader_closed": true
+    },
+    {
+      "kind": "pack",
+      "case": "stall-prefix-button-cancel",
+      "cancel_to_idle_ms": 50.883734,
+      "staging_removed": true,
+      "reader_closed": true
+    },
+    {
+      "kind": "pack",
+      "case": "same-activity-retry",
+      "status": "english-reference-2026-10-01 · 186 passages\nDated reference excerpts, not current conditions or complete safety guidance. Verify travel conditions before departure.\nSHA-256: 567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea"
+    }
+  ],
+  "status": "PASS"
+}

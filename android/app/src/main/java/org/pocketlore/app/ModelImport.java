@@ -17,7 +17,10 @@ public final class ModelImport {
         byte[] buffer = new byte[65536];
         try (FileOutputStream output = new FileOutputStream(stage)) {
             int count;
-            while ((count = input.read(buffer)) != -1) {
+            while (true) {
+                if (cancelled.getAsBoolean() || Thread.currentThread().isInterrupted()) throw new InterruptedIOException("Cancelled");
+                count = input.read(buffer);
+                if(count == -1)break;
                 if (cancelled.getAsBoolean()) throw new IOException("Cancelled");
                 total += count;
                 if (total > expected) throw new IOException("Model exceeds declared size");

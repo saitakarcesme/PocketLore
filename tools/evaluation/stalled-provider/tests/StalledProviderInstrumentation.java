@@ -18,6 +18,7 @@ public final class StalledProviderInstrumentation extends Instrumentation {
     private final ExecutorService worker=Executors.newSingleThreadExecutor();
     private final AtomicReference<Thread> importing=new AtomicReference<>();
     private File dir,output;
+    private MainActivity activity;
     private static String hash(File f)throws Exception{return KnowledgePack.hash(Files.readAllBytes(f.toPath()));}
     private Bundle provider(String method){return getContext().getContentResolver().call(Uri.parse("content://org.pocketlore.fixture.documents"),method,null,null);}
     private static void require(boolean b,String message){if(!b)throw new AssertionError(message);}
@@ -39,6 +40,42 @@ public final class StalledProviderInstrumentation extends Instrumentation {
     private boolean stagesGone(){File[] fs=dir.listFiles((d,n)->n.endsWith(".partial"));return fs!=null&&fs.length==0;}
     private long staged(){long n=0;for(File f:dir.listFiles())if(f.getName().endsWith(".partial"))n+=f.length();return n;}
     private void save(JSONObject report)throws Exception{Files.write(output.toPath(),report.toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));}
+    private static Object field(Object owner,String name)throws Exception{java.lang.reflect.Field f=owner.getClass().getDeclaredField(name);f.setAccessible(true);return f.get(owner);}
+    private void checkActivity(JSONObject report)throws Exception {
+        activity=(MainActivity)startActivitySync(new android.content.Intent(getTargetContext(),MainActivity.class).addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK));
+        waitFor(activity::modelReady,"saved model did not load for Activity control");
+        NativePanel panel=(NativePanel)field(activity,"nativePanel");
+        JSONArray ui=new JSONArray();report.put("activity",ui);save(report);
+        for(String kind:new String[]{"model","pack"}) {
+            provider("reset");Uri uri=DocumentsContract.buildDocumentUri("org.pocketlore.fixture.documents",kind+"-stall-prefix");
+            runOnMainSync(()->{try{
+                if(kind.equals("model")){java.lang.reflect.Method m=NativePanel.class.getDeclaredMethod("importModel",Uri.class,long.class);m.setAccessible(true);m.invoke(panel,uri,8L);}
+                else activity.onActivityResult(411,android.app.Activity.RESULT_OK,new android.content.Intent().setData(uri));
+            }catch(Exception e){throw new RuntimeException(e);}});
+            waitFor(()->"stalled".equals(provider("status").getString("state")),"Activity import did not reach provider");
+            Thread.sleep(250);long start=System.nanoTime();
+            runOnMainSync(()->{
+                android.view.View root=activity.getWindow().getDecorView();
+                String label=kind.equals("model")?"Cancel inference or import":"Cancel pack import";
+                android.widget.Button button=findButton(root,label);require(button!=null&&button.performClick(),"Cancel button unavailable");
+            });
+            waitFor(()->{try{return kind.equals("model")?!panel.isBusy():!(Boolean)field(activity,"importing");}catch(Exception e){throw new RuntimeException(e);}},"Activity import did not return idle");
+            double latency=(System.nanoTime()-start)/1e6;require(latency<1500,"Activity cancel exceeded deadline");
+            File root=getTargetContext().getFilesDir();require(!new File(root,"model.partial").exists()&&root.listFiles((d,n)->n.matches("pack-[0-9]+\\.partial")).length==0,"Activity left stage");
+            provider("release");waitFor(()->"reader-closed".equals(provider("status").getString("state")),"Activity did not close reader");
+            ui.put(new JSONObject().put("kind",kind).put("case","stall-prefix-button-cancel").put("cancel_to_idle_ms",latency).put("staging_removed",true).put("reader_closed",true));save(report);
+        }
+        provider("reset");runOnMainSync(()->activity.onActivityResult(411,android.app.Activity.RESULT_OK,new android.content.Intent().setData(DocumentsContract.buildDocumentUri("org.pocketlore.fixture.documents","pack-retry"))));
+        waitFor(()->{try{return !(Boolean)field(activity,"importing");}catch(Exception e){throw new RuntimeException(e);}},"Activity pack retry did not finish");
+        android.widget.TextView status=(android.widget.TextView)field(activity,"packStatus");
+        require(status.getText().toString().contains("SHA-256:"),"Activity retry not successful: "+status.getText());
+        ui.put(new JSONObject().put("kind","pack").put("case","same-activity-retry").put("status",status.getText().toString()));save(report);
+    }
+    private static android.widget.Button findButton(android.view.View view,String text){
+        if(view instanceof android.widget.Button&&((android.widget.Button)view).getText().toString().equals(text))return (android.widget.Button)view;
+        if(view instanceof android.view.ViewGroup){android.view.ViewGroup group=(android.view.ViewGroup)view;for(int i=0;i<group.getChildCount();i++){android.widget.Button b=findButton(group.getChildAt(i),text);if(b!=null)return b;}}
+        return null;
+    }
     @Override public void onCreate(Bundle args){super.onCreate(args);legacy="true".equals(args.getString("legacy"));start();}
     @Override public void onStart(){Bundle result=new Bundle();JSONObject report=new JSONObject();
         try {
@@ -85,8 +122,9 @@ public final class StalledProviderInstrumentation extends Instrumentation {
                 long id=worker.submit(()->Thread.currentThread().getId()).get();if(threadId<0)threadId=id;require(threadId==id,"worker was replaced");
                 rows.put(new JSONObject().put("kind",kind).put("case","retry").put("outcome",retry).put("worker_thread_id",id).put("saved_model_unchanged",true).put("staging_removed",true));save(report);
             }
+            if(!legacy)checkActivity(report);
             report.put("status",legacy?"BASELINE_FAILURE_REPRODUCED":"PASS");save(report);finish(-1,result);
         }catch(Throwable e){try{report.put("status","FAIL").put("failure",e.toString());save(report);}catch(Exception ignored){}result.putString("failure",e.toString());finish(1,result);}
-        finally{provider("release");worker.shutdownNow();}
+        finally{provider("release");worker.shutdownNow();if(activity!=null)runOnMainSync(activity::finish);}
     }
 }

@@ -154,7 +154,7 @@ public final class MainActivity extends Activity {
             packStatus.setText("Validating knowledge pack…");
             packWorker.execute(() -> {
                 packThread=Thread.currentThread();
-                try (java.io.InputStream in = getContentResolver().openInputStream(uri)) {
+                try (java.io.InputStream in = DocumentInput.open(getContentResolver(),uri,()->cancelPack || destroyed)) {
                     KnowledgePack pack = KnowledgePack.install(in, getFilesDir(),()->cancelPack || destroyed);
                     runOnUiThread(() -> { if (destroyed) return; engine = pack.engine;
                         answer.setText("Pack imported. Ask a question to inspect its sources."); sourceList.removeAllViews();

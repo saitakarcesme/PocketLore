@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "x86_64 emulator document-provider transport; model retry is staging only, not native validation",
+  "fixture_sha256": "1c0818856e39dea26aa41f3806087b5ffb837f6c8aa205c7bf950a81435707f5",
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "results_sha256": "0bd94082ee4fdf2287c58e284a12eca9451574788bc27d6d7187c0b852b68ed7",
+  "artifacts": {
+    "app-debug.apk": {
+      "sha256": "cb5c11602f88a63e31e87a44b11a06310f01a1090f7f4c3ea925b879db66e751",
+      "bytes": 11769461
+    },
+    "app-debug-androidTest.apk": {
+      "sha256": "2b3066bbb49823cbfd556136e04e7bfbbb5405b4554db516139acc9db7283dda",
+      "bytes": 251222
+    }
+  },
+  "max_cancel_ms": 46.770432,
+  "actual_saved_assets_unchanged": true
+}

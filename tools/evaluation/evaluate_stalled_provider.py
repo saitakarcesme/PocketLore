@@ -42,6 +42,9 @@ def main():
     else:
         assert all(r['returned_before_release'] and r['clean_before_release'] and r['saved_unchanged'] and r['cancel_ms']<spec['cancel_deadline_ms'] for r in cancels)
         assert all(r['opens']==0 if r['case']=='cancel-before-open' else r['provider_state_after_release']=='reader-closed' for r in cancels)
+    if not legacy:
+        assert [(r['kind'],r['case']) for r in report['activity']]==[('model','stall-prefix-button-cancel'),('pack','stall-prefix-button-cancel'),('pack','same-activity-retry')]
+        assert all(r['cancel_to_idle_ms']<1500 and r['staging_removed'] and r['reader_closed'] for r in report['activity'][:2])
     assert len({r['worker_thread_id'] for r in report['rows'] if r['case']=='retry'})==1
     summary={'status':report['status'],'scope':'x86_64 emulator document-provider transport; model retry is staging only, not native validation','fixture_sha256':sha(fixture),'pack_sha256':sha(pack),'results_sha256':sha(out/'results.json'),'artifacts':identities,'max_cancel_ms':max(r['cancel_ms'] for r in cancels),'actual_saved_assets_unchanged':before==after}
     (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary,indent=2))

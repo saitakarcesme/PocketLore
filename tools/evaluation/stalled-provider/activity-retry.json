@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "scope": "Additional same-Activity retry using the existing pinned real model after stalled cancellation; no tuning or generated-answer test",
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "model_bytes": 491400032,
+  "transport": "Read-only regular descriptor from the isolated test provider",
+  "requirements": ["cancel a model pipe import using the actual button", "retry full real model import in the same Activity", "JNI validates before promotion", "saved model hash unchanged", "saved pack hash unchanged"]
+}

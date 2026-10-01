@@ -1,0 +1,7 @@
+{
+  "mode": "legacy-baseline",
+  "pid": 3433,
+  "rows": [],
+  "status": "FAIL",
+  "failure": "java.lang.SecurityException: Permission Denial: opening provider org.pocketlore.app.StalledDocumentsProvider from ProcessRecord{9484a06 3433:org.pocketlore.app\/u0a168} (pid=3433, uid=10168) requires that you obtain access using ACTION_OPEN_DOCUMENT or related APIs"
+}

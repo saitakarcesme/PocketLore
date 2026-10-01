@@ -96,7 +96,7 @@ final class NativePanel {
             try {
                 if (stopped) return;
                 String hash;
-                try (InputStream in = activity.getContentResolver().openInputStream(uri)) {
+                try (InputStream in = DocumentInput.open(activity.getContentResolver(),uri,()->cancelled || stopped)) {
                     if (in == null) throw new IOException("Cannot open model");
                     hash = ModelImport.copy(in, stage, size, activity.getFilesDir().getUsableSpace(), () -> cancelled || stopped);
                 }
