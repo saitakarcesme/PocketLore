@@ -6,5 +6,6 @@
   "fidelity": "Extract genuine paragraph blocks from rendered article body, retaining explicit math/TeX and numeric unit text. Preserve references and source attribution notices. Exclude media and non-free quoted blocks; document every exclusion. Never infer missing factual text.",
   "semantic": "Review at least 50 actual title/lead/section-bearing documents per area and record source-specific reasons; keyword counts and biography counts alone are insufficient.",
   "queries": "Keep all original 40 questions and expected article IDs unchanged; pin new supporting excerpts after extraction and before any retrieval changes. Preserve old edition runs separately.",
-  "quality": "No generated answer or full rights clearance may be inferred from counts, hashes or retrieval. A remaining unmet gate must fail the objective check."
+  "quality": "No generated answer or full rights clearance may be inferred from counts, hashes or retrieval. A remaining unmet gate must fail the objective check.",
+  "pacing_revision": "After per-title API requests returned 429, stop and preserve failures. Batch at most 50 revision IDs per API request with 3-second API spacing; serial HTML spacing 0.5 seconds plus response time. Any further 429 stops the whole acquisition and records headers; no parallel requests or endpoint/proxy rotation."
 }
