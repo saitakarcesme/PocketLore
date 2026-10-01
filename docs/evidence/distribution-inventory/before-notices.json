@@ -1,0 +1,18 @@
+{
+  "apk_sha256": "ee1d884d40a3b510c680ee8c9b97e470a22f75f953a7330e59503b45c8ab74cd",
+  "license_entries": [
+    "assets/licenses/answer-model-notice.txt",
+    "assets/licenses/llama.cpp.txt",
+    "assets/licenses/qwen2.5-Apache-2.0.txt",
+    "assets/licenses/smoke-model-Apache-2.0.txt",
+    "assets/licenses/synthesis-model-Apache-2.0.txt",
+    "assets/licenses/synthesis-model-notice.txt",
+    "assets/licenses/synthesis-qwen3-Apache-2.0.txt",
+    "assets/licenses/synthesis-qwen3-notice.txt",
+    "assets/licenses/travel-wikidata-notice.txt"
+  ],
+  "missing_ndk_notice_entries": [
+    "assets/licenses/ndk-r27c-toolchain-NOTICE.txt",
+    "assets/licenses/ndk-r27c-sysroot-NOTICE.txt"
+  ]
+}

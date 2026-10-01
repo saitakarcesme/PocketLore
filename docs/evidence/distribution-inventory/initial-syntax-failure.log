@@ -1,0 +1,4 @@
+  File "tools/distribution/inventory.py", line 64
+    project=p.is_relative_to(ROOT);license='MIT' if 'llama/' in str(p.relative_to(build)) if project else False else 'LicenseRef-NDK-aggregate'
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: expected 'else' after 'if' expression

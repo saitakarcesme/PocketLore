@@ -90,3 +90,23 @@ Only structured text and coordinates are selected, with editorial category
 tags; no media or Wikipedia prose. No endorsement, operational accuracy or
 current availability is implied. Raw JSON remains ignored. Original task-060
 notices/evidence describe the historical three-record edition, not this one.
+
+Distribution inventory (task 180)
+--------------------------------
+The current debug APK additionally packages the complete unmodified installed
+NDK r27c NOTICE.toolchain and sysroot NOTICE under assets/licenses as
+ndk-r27c-toolchain-NOTICE.txt and ndk-r27c-sysroot-NOTICE.txt. Exact hashes:
+tools/distribution/native-notices.lock.json. These aggregate texts preserve
+LLVM exceptions, legacy and component terms; they also cover unlinked NDK
+material and must not be interpreted as an inventory of shipped code.
+
+Actual static link inputs include llama/ggml MIT code and NDK compiler
+builtins, atomic support, libc++, libc++abi, unwind and CRT objects.
+Section garbage collection may discard archive members. Platform libc,
+libm and libdl remain Android system dependencies, not bundled copies.
+See docs/distribution-inventory.json for immutable revisions, artifact
+hashes, POM declarations, installed notices, optional model/data provenance
+and explicit unresolved redistribution scope. Build tools are not shipped
+wholesale. A declared license or a verified hash is not distribution
+clearance; independent reproduction and production signing/publication
+remain separate owner/release gates.

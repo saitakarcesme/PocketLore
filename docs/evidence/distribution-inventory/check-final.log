@@ -1,0 +1,134 @@
+/home/isa/Projects/PocketLore/downloads/distribution/verify-20261001T044920391417Z
+{
+  "status": "PASS",
+  "distribution_ready": false,
+  "verified_unique_files": 933,
+  "resolved_build_artifacts": 123,
+  "native_link_inputs": {
+    "arm64-v8a": 13,
+    "x86_64": 13
+  },
+  "inventory_sha256": "0e4c41e6b33014571ed4a78777676617ab709dda4376352beaf109ed6e01891d",
+  "apk_sha256": "8d6aef5b9ab8898c6b5c9668236b67752cc17d61e53030620811d1367aef9f64",
+  "regressions": [
+    {
+      "case": "missing-notice",
+      "rejected": true,
+      "reason": "Missing artifact/notice: PROJECT/android/app/src/main/assets/licenses/llama.cpp.txt"
+    },
+    {
+      "case": "changed-native-artifact",
+      "rejected": true,
+      "reason": "Artifact hash mismatch: PROJECT/android/app/build/generated/nativeLibs/arm64-v8a/libpocketlore.so"
+    },
+    {
+      "case": "changed-build-artifact",
+      "rejected": true,
+      "reason": "Artifact hash mismatch: TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/androidx.databinding/databinding-common/8.9.2/2be3530b78477835e69dce953b17adc1dbc5c6fa/databinding-common-8.9.2.jar"
+    },
+    {
+      "case": "missing-component",
+      "rejected": true,
+      "reason": "Native component coverage mismatch"
+    },
+    {
+      "case": "false-distribution-ready",
+      "rejected": true,
+      "reason": "Unsupported distribution-ready claim"
+    }
+  ],
+  "limits": [
+    {
+      "id": "build-tool-full-notice-review",
+      "status": "open for redistribution of tools only",
+      "components_without_embedded_plain_notice": [
+        "com.android.tools.build.jetifier:jetifier-core:1.0.0-beta10",
+        "com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta10",
+        "com.android.tools.build:transform-api:2.0.0-deprecated-use-gradle-api",
+        "com.android.tools.utp:android-test-plugin-host-logcat-proto:31.9.2",
+        "com.android:signflinger:8.9.2",
+        "com.android:zipflinger:8.9.2",
+        "com.google.android:annotations:4.1.1.4",
+        "com.google.api.grpc:proto-google-common-protos:2.17.0",
+        "com.google.auto.value:auto-value-annotations:1.6.2",
+        "com.google.code.findbugs:jsr305:3.0.2",
+        "com.google.code.gson:gson:2.10.1",
+        "com.google.crypto.tink:tink:1.7.0",
+        "com.google.dagger:dagger:2.28.3",
+        "com.google.errorprone:error_prone_annotations:2.18.0",
+        "com.google.flatbuffers:flatbuffers-java:1.12.0",
+        "com.google.guava:failureaccess:1.0.1",
+        "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+        "com.google.j2objc:j2objc-annotations:2.8",
+        "com.google.jimfs:jimfs:1.1",
+        "com.google.protobuf:protobuf-java-util:3.22.3",
+        "com.google.protobuf:protobuf-java:3.24.4",
+        "com.google.testing.platform:core-proto:0.0.9-alpha03",
+        "com.googlecode.juniversalchardet:juniversalchardet:1.0.3",
+        "com.squareup:javapoet:1.10.0",
+        "com.squareup:javawriter:2.5.0",
+        "io.grpc:grpc-api:1.57.2",
+        "io.grpc:grpc-context:1.57.2",
+        "io.grpc:grpc-core:1.57.2",
+        "io.grpc:grpc-netty:1.57.2",
+        "io.grpc:grpc-protobuf-lite:1.57.2",
+        "io.grpc:grpc-protobuf:1.57.2",
+        "io.grpc:grpc-stub:1.57.2",
+        "io.netty:netty-buffer:4.1.93.Final",
+        "io.netty:netty-codec-http2:4.1.93.Final",
+        "io.netty:netty-codec-http:4.1.93.Final",
+        "io.netty:netty-codec-socks:4.1.93.Final",
+        "io.netty:netty-codec:4.1.93.Final",
+        "io.netty:netty-common:4.1.93.Final",
+        "io.netty:netty-handler-proxy:4.1.93.Final",
+        "io.netty:netty-handler:4.1.93.Final",
+        "io.netty:netty-resolver:4.1.93.Final",
+        "io.netty:netty-transport-native-unix-common:4.1.93.Final",
+        "io.netty:netty-transport:4.1.93.Final",
+        "io.perfmark:perfmark-api:0.26.0",
+        "javax.inject:javax.inject:1",
+        "net.sf.jopt-simple:jopt-simple:4.9",
+        "net.sf.kxml:kxml2:2.3.0",
+        "org.bitbucket.b_c:jose4j:0.9.5",
+        "org.bouncycastle:bcpkix-jdk18on:1.79",
+        "org.bouncycastle:bcprov-jdk18on:1.79",
+        "org.bouncycastle:bcutil-jdk18on:1.79",
+        "org.codehaus.mojo:animal-sniffer-annotations:1.23",
+        "org.jetbrains.kotlin:kotlin-reflect:2.1.0",
+        "org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.1.0",
+        "org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.0",
+        "org.jetbrains.kotlin:kotlin-stdlib:2.1.0",
+        "org.jetbrains:annotations:23.0.0",
+        "org.ow2.asm:asm-analysis:9.7",
+        "org.ow2.asm:asm-commons:9.7",
+        "org.ow2.asm:asm-tree:9.7",
+        "org.ow2.asm:asm-util:9.7",
+        "org.ow2.asm:asm:9.7",
+        "org.slf4j:slf4j-api:1.7.30",
+        "org.tensorflow:tensorflow-lite-metadata:0.2.0"
+      ],
+      "next": "POM declarations are recorded; a missing embedded notice is not a finding that no license exists. Collect/review full component notices if distributing these build-only jars; they are not APK dependencies."
+    },
+    {
+      "id": "build-dependency-license-declarations",
+      "components": [],
+      "status": "locally declared",
+      "next": "Resolve remaining parent POM or upstream terms before redistributing build-tool artifacts; do not infer permission from hashes."
+    },
+    {
+      "id": "toolchain-redistribution",
+      "status": "open",
+      "next": "Installed aggregate notices are inventoried, but SDK terms and per-component alternatives must be reviewed for any toolchain bundle; no such bundle is authorized or produced."
+    },
+    {
+      "id": "independent-reproduction",
+      "status": "external",
+      "next": "Separate provisioned machine/operator must reproduce the candidate; same-rig capture is not independent."
+    },
+    {
+      "id": "production-signing",
+      "status": "owner decision",
+      "next": "Owner selects key custody, signing and publication policy; no production key generated or read."
+    }
+  ]
+}

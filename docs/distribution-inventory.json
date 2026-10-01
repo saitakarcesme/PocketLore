@@ -11,6 +11,12 @@
   "native": [
     {
       "abi": "arm64-v8a",
+      "packaged_library": {
+        "path": "PROJECT/android/app/build/generated/nativeLibs/arm64-v8a/libpocketlore.so",
+        "bytes": 5597016,
+        "sha256": "ce2f2c78219a29e4959ff721af1c86b6ae357c106515a9e3a167e0f6ac80b25d",
+        "role": "packaged-native-library"
+      },
       "llama_revision": "bb4caa7540188872173c44d161602d9271386413",
       "link_command": {
         "path": "PROJECT/android/native-build/build/arm64-v8a/CMakeFiles/pocketlore.dir/link.txt",
@@ -133,6 +139,12 @@
     },
     {
       "abi": "x86_64",
+      "packaged_library": {
+        "path": "PROJECT/android/app/build/generated/nativeLibs/x86_64/libpocketlore.so",
+        "bytes": 6076440,
+        "sha256": "6fbaef5768db43ca8f554c44b49dfbf6ee4cd21d04ccafeb86728a63c8b59fe5",
+        "role": "packaged-native-library"
+      },
       "llama_revision": "bb4caa7540188872173c44d161602d9271386413",
       "link_command": {
         "path": "PROJECT/android/native-build/build/x86_64/CMakeFiles/pocketlore.dir/link.txt",
@@ -269,6 +281,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/androidx.databinding/databinding-common/8.9.2/24262ec080d2ab3c77e401ba815b13272b2ab235/databinding-common-8.9.2.pom"
         }
       ],
@@ -303,6 +316,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/androidx.databinding/databinding-compiler-common/8.9.2/dc73540912243df50c8ed8d998e64fce78a3b410/databinding-compiler-common-8.9.2.pom"
         }
       ],
@@ -337,6 +351,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.databinding/baseLibrary/8.9.2/818cda377586325fc76fc2a96069c2ac9706fa20/baseLibrary-8.9.2.pom"
         }
       ],
@@ -371,6 +386,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.analytics-library/crash/31.9.2/6dd8e047261d916da9bac5aff8678f002d5cfbd6/crash-31.9.2.pom"
         }
       ],
@@ -405,6 +421,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.analytics-library/protos/31.9.2/50637b851745adbd6f2eeb653dc62b47dad37ada/protos-31.9.2.pom"
         }
       ],
@@ -439,6 +456,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.analytics-library/shared/31.9.2/8448539df7a73c7130aa9dc1f9e1728c29d4c0df/shared-31.9.2.pom"
         }
       ],
@@ -473,6 +491,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.analytics-library/tracker/31.9.2/82e689fb4165543dac51ae7336f2b8aab207b02e/tracker-31.9.2.pom"
         }
       ],
@@ -507,6 +526,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build.jetifier/jetifier-core/1.0.0-beta10/a05601d691cb5b3175469dad16d7b507e122161f/jetifier-core-1.0.0-beta10.pom"
         }
       ],
@@ -535,6 +555,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build.jetifier/jetifier-processor/1.0.0-beta10/ef909fba0e8e31b04e88b96ac2a01b46c395c9f/jetifier-processor-1.0.0-beta10.pom"
         }
       ],
@@ -563,6 +584,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build/aapt2-proto/8.9.2-12782657/1a71585702e7582fcb2dd99a232fc616d96c7aa5/aapt2-proto-8.9.2-12782657.pom"
         }
       ],
@@ -597,6 +619,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build/aaptcompiler/8.9.2/8aeac600c3a7d8a715904f7f30ad17043c98d1c8/aaptcompiler-8.9.2.pom"
         }
       ],
@@ -631,6 +654,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build/apksig/8.9.2/870b5b9ec22abb78abf3ccf4d9438146381bf2e7/apksig-8.9.2.pom"
         }
       ],
@@ -665,6 +689,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build/apkzlib/8.9.2/2362da3767c4f01fd24648fef26715b715657dfd/apkzlib-8.9.2.pom"
         }
       ],
@@ -699,6 +724,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build/builder-model/8.9.2/62a0e525ff8e8583406c5c89d5ed5bda87c449ca/builder-model-8.9.2.pom"
         }
       ],
@@ -733,6 +759,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build/builder-test-api/8.9.2/4c5002969e3b589c13c595793737821dcd0a6077/builder-test-api-8.9.2.pom"
         }
       ],
@@ -767,6 +794,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build/builder/8.9.2/7eda1ec82901bd6524d3d0b83ca06b851ddbad1/builder-8.9.2.pom"
         }
       ],
@@ -806,6 +834,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build/bundletool/1.17.2/2c77f7d1a078e098d9da4d7c47835c50d4d1cb1c/bundletool-1.17.2.pom"
         }
       ],
@@ -845,6 +874,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build/gradle-api/8.9.2/20a754aefe8d7b19397777c56dc1af5bb428a0b9/gradle-api-8.9.2.pom"
         }
       ],
@@ -879,6 +909,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build/gradle-settings-api/8.9.2/1715d3bfd12eee32060938603b4d3840eb9af83f/gradle-settings-api-8.9.2.pom"
         }
       ],
@@ -913,6 +944,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build/gradle/8.9.2/15ed63000601e9cfdcf974f27cc91e1f840084e1/gradle-8.9.2.pom"
         }
       ],
@@ -947,6 +979,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build/manifest-merger/31.9.2/2f88edffcb4fc7298df488cddd1cd42baf619d49/manifest-merger-31.9.2.pom"
         }
       ],
@@ -981,6 +1014,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.build/transform-api/2.0.0-deprecated-use-gradle-api/7d636f89a401a7603740ef05ac87f5a1e2811efe/transform-api-2.0.0-deprecated-use-gradle-api.pom"
         }
       ],
@@ -1009,6 +1043,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/31.9.2/ae0d5fd1becc0b4fd0ff7583c83fd5a5ba6c8acb/ddmlib-31.9.2.pom"
         }
       ],
@@ -1043,6 +1078,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.layoutlib/layoutlib-api/31.9.2/6393a27b6b6ae11243a4710bb0f90cf9e9020128/layoutlib-api-31.9.2.pom"
         }
       ],
@@ -1077,6 +1113,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.lint/lint-model/31.9.2/238f9608f692df012397e2ce1c2fc3dbffc0bb4a/lint-model-31.9.2.pom"
         }
       ],
@@ -1111,6 +1148,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.lint/lint-typedef-remover/31.9.2/aa259ff006f5800213c09d929134963524fb9c0e/lint-typedef-remover-31.9.2.pom"
         }
       ],
@@ -1145,6 +1183,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.utp/android-device-provider-ddmlib-proto/31.9.2/87051efd9ac5141fac3f1b4a001c393b15c2644e/android-device-provider-ddmlib-proto-31.9.2.pom"
         }
       ],
@@ -1179,6 +1218,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.utp/android-device-provider-gradle-proto/31.9.2/2893e52867d072160a8f6e213b30870831044641/android-device-provider-gradle-proto-31.9.2.pom"
         }
       ],
@@ -1213,6 +1253,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.utp/android-device-provider-profile-proto/31.9.2/4b05f09808e6229faae224783253a57162c89e9a/android-device-provider-profile-proto-31.9.2.pom"
         }
       ],
@@ -1247,6 +1288,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.utp/android-test-plugin-host-additional-test-output-proto/31.9.2/44c1dd7feb20b84085a34840af53a27e3cbb01fd/android-test-plugin-host-additional-test-output-proto-31.9.2.pom"
         }
       ],
@@ -1281,6 +1323,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.utp/android-test-plugin-host-apk-installer-proto/31.9.2/656b7ca69fbbaaec5f6f8a688b4b0e081648b145/android-test-plugin-host-apk-installer-proto-31.9.2.pom"
         }
       ],
@@ -1315,6 +1358,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.utp/android-test-plugin-host-coverage-proto/31.9.2/307f17e7caad55b97112c7f63d59ebde380d581f/android-test-plugin-host-coverage-proto-31.9.2.pom"
         }
       ],
@@ -1349,6 +1393,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.utp/android-test-plugin-host-emulator-control-proto/31.9.2/d9d0c539f7da5852db47fbdafcf40a865083eca6/android-test-plugin-host-emulator-control-proto-31.9.2.pom"
         }
       ],
@@ -1383,6 +1428,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.utp/android-test-plugin-host-logcat-proto/31.9.2/f2e7513e0c5bfe83552fdbdf839e90ca08230e3a/android-test-plugin-host-logcat-proto-31.9.2.pom"
         }
       ],
@@ -1411,6 +1457,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.utp/android-test-plugin-host-retention-proto/31.9.2/471b9c4660321b38f90e310cf20fa717f322e20d/android-test-plugin-host-retention-proto-31.9.2.pom"
         }
       ],
@@ -1445,6 +1492,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools.utp/android-test-plugin-result-listener-gradle-proto/31.9.2/a09efd8cbe3dd55f63baec402d74ae36c896d463/android-test-plugin-result-listener-gradle-proto-31.9.2.pom"
         }
       ],
@@ -1479,6 +1527,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools/annotations/31.9.2/6684afb51a973939d5f57cef218dba5b7e43192f/annotations-31.9.2.pom"
         }
       ],
@@ -1513,6 +1562,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools/common/31.9.2/3756829b1994905aad926569be934c72bacae92/common-31.9.2.pom"
         }
       ],
@@ -1547,6 +1597,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools/dvlib/31.9.2/b2c93e28cbb68e8c923d4546b632ee8885fed388/dvlib-31.9.2.pom"
         }
       ],
@@ -1581,6 +1632,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools/repository/31.9.2/fcbb70f10622c8081101e691b5c89e3d7beb4bbd/repository-31.9.2.pom"
         }
       ],
@@ -1597,11 +1649,6 @@
           "entry": "NOTICE",
           "sha256": "6250d3bbdd0432a6eb17ab019d47ec435fde45029acb4259bdde600fb302ae1f",
           "bytes": 10690
-        },
-        {
-          "entry": "com/android/repository/api/License.class",
-          "sha256": "a120e8d3c69270e40dd5cff6b9ef3e77d7c0b5021c811a0a358c6cfe6e81cd7b",
-          "bytes": 6065
         }
       ],
       "terms_status": "declared; not a redistribution clearance"
@@ -1620,6 +1667,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools/sdk-common/31.9.2/eed6d018cccaf367d496a1b52839adf86b4f72fe/sdk-common-31.9.2.pom"
         }
       ],
@@ -1654,6 +1702,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android.tools/sdklib/31.9.2/be237560f56a1839bb70cae5be3169cce0a6c864/sdklib-31.9.2.pom"
         }
       ],
@@ -1688,6 +1737,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android/signflinger/8.9.2/4b187b584f6af8d655334c4923d4ea2e3ab98c8c/signflinger-8.9.2.pom"
         }
       ],
@@ -1716,6 +1766,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.android/zipflinger/8.9.2/b569ad00631217cebbca1b659aa5d7c21085d5eb/zipflinger-8.9.2.pom"
         }
       ],
@@ -1744,6 +1795,7 @@
         {
           "name": "Apache 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0",
+          "comments": "\n\t\t\t\tWhile the EULA for the Android SDK restricts distribution of those binaries, the source code \n\t\t\t\tis licensed under Apache 2.0 which allows compiling binaries from source and then distributing\n\t\t\t\tthose versions. \n\t\t\t",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.android/annotations/4.1.1.4/c5a23d7076f3c7fd4b8f39b59ff02b1e164edc28/annotations-4.1.1.4.pom"
         }
       ],
@@ -1772,6 +1824,7 @@
         {
           "name": "Apache-2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-common-protos/2.17.0/d6acd1cd2d6e49b52f414af6427744700e551cb3/proto-google-common-protos-2.17.0.pom"
         }
       ],
@@ -1800,6 +1853,7 @@
         {
           "name": "Apache 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.auto/auto-parent/6/f29db646babbca0049636b6724613035bbcedff/auto-parent-6.pom"
         }
       ],
@@ -1840,6 +1894,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/8d93cdf4d84d7e1de736df607945c6df0730a10f/jsr305-3.0.2.pom"
         }
       ],
@@ -1868,6 +1923,7 @@
         {
           "name": "Apache-2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.code.gson/gson/2.10.1/ce159faf33c1e665e1f3a785a5d678a2b20151bc/gson-2.10.1.pom"
         }
       ],
@@ -1896,6 +1952,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.crypto.tink/tink/1.7.0/a8cba5b72a24f8adbd86d4e3172c01337ed0d4e0/tink-1.7.0.pom"
         }
       ],
@@ -1924,6 +1981,7 @@
         {
           "name": "Apache 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.dagger/dagger/2.28.3/6a11b6b6db0c740dbd150e11f54c6f219fdc2891/dagger-2.28.3.pom"
         }
       ],
@@ -1952,6 +2010,7 @@
         {
           "name": "Apache 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.18.0/6d7bbfd3d7567e4c18e981a675ecda707e8a2db1/error_prone_annotations-2.18.0.pom"
         }
       ],
@@ -1980,6 +2039,7 @@
         {
           "name": "Apache License V2.0",
           "url": "https://raw.githubusercontent.com/google/flatbuffers/master/LICENSE.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.flatbuffers/flatbuffers-java/1.12.0/f93bdcc0b38ffbec623e6610e0cddacae758cb54/flatbuffers-java-1.12.0.pom"
         }
       ],
@@ -2008,6 +2068,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.guava/guava-parent/26.0-android/a2c0df489614352b7e8e503e274bd1dee5c42a64/guava-parent-26.0-android.pom"
         }
       ],
@@ -2042,6 +2103,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.guava/guava-parent/32.0.1-jre/88c9e60e238868208ca8e375a475a23142e52ac6/guava-parent-32.0.1-jre.pom"
         }
       ],
@@ -2082,6 +2144,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.guava/guava-parent/26.0-android/a2c0df489614352b7e8e503e274bd1dee5c42a64/guava-parent-26.0-android.pom"
         }
       ],
@@ -2116,6 +2179,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/2.8/c8daacea97066c6826844e2175ec89857e598122/j2objc-annotations-2.8.pom"
         }
       ],
@@ -2144,6 +2208,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.jimfs/jimfs-parent/1.1/2283f99a6aa73205190a20cfd35078e9f7d6cec9/jimfs-parent-1.1.pom"
         }
       ],
@@ -2178,6 +2243,7 @@
         {
           "name": "BSD-3-Clause",
           "url": "https://opensource.org/licenses/BSD-3-Clause",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.protobuf/protobuf-parent/3.22.3/1f6695a7969d66bb1714209a99828c6c9cd98100/protobuf-parent-3.22.3.pom"
         }
       ],
@@ -2212,6 +2278,7 @@
         {
           "name": "BSD-3-Clause",
           "url": "https://opensource.org/licenses/BSD-3-Clause",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.protobuf/protobuf-parent/3.24.4/aa35558192f2b7ed4aee2eb04a26e62f3cb6a7a8/protobuf-parent-3.24.4.pom"
         }
       ],
@@ -2246,6 +2313,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.google.testing.platform/core-proto/0.0.9-alpha03/448611beede716f25d5e26a7378400c5b60dd5bc/core-proto-0.0.9-alpha03.pom"
         }
       ],
@@ -2274,6 +2342,7 @@
         {
           "name": "Mozilla Public License 1.1 (MPL 1.1)",
           "url": "http://www.mozilla.org/MPL/MPL-1.1.html",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.googlecode.juniversalchardet/juniversalchardet/1.0.3/be6da8320adedafc712d645ddaaad00357b55408/juniversalchardet-1.0.3.pom"
         }
       ],
@@ -2302,6 +2371,7 @@
         {
           "name": "Apache 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.squareup/javapoet/1.10.0/111612d623e9d2047798f13324fcb29966f080e3/javapoet-1.10.0.pom"
         }
       ],
@@ -2330,6 +2400,7 @@
         {
           "name": "Apache 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.squareup/javawriter/2.5.0/d932f2476f65ecd95dcd6fd8c568b3f466f6a482/javawriter-2.5.0.pom"
         }
       ],
@@ -2358,6 +2429,7 @@
         {
           "name": "CDDL/GPLv2+CE",
           "url": "https://github.com/javaee/activation/blob/master/LICENSE.txt",
+          "comments": "CDDL or GPL version 2 plus the Classpath Exception",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.sun.activation/all/1.2.0/9b1023e38195ea19d1a0ac79192d486da1904f97/all-1.2.0.pom"
         }
       ],
@@ -2398,6 +2470,7 @@
         {
           "name": "Eclipse Distribution License - v 1.0",
           "url": "http://www.eclipse.org/org/documents/edl-v10.php",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.sun.istack/istack-commons/3.0.8/3835dae3b9e529039b70bce883a1c7438713c295/istack-commons-3.0.8.pom"
         }
       ],
@@ -2443,11 +2516,13 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "http://www.opensource.org/licenses/apache2.0.php",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.sun.xml.fastinfoset/fastinfoset-project/1.2.16/86113f7ee9a5d995429bf75294b57b31f0a17d29/fastinfoset-project-1.2.16.pom"
         },
         {
           "name": "Eclipse Distribution License - v 1.0",
           "url": "http://www.eclipse.org/org/documents/edl-v10.php",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.sun.xml.fastinfoset/fastinfoset-project/1.2.16/86113f7ee9a5d995429bf75294b57b31f0a17d29/fastinfoset-project-1.2.16.pom"
         }
       ],
@@ -2493,6 +2568,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.apache/apache/18/bd408bbea3840f2c7f914b29403e39a90f84fd5f/apache-18.pom"
         }
       ],
@@ -2544,6 +2620,7 @@
         {
           "name": "Apache-2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.apache/apache/31/9009cbdad2b69835f2df9265794c8ab50cf4dce1/apache-31.pom"
         }
       ],
@@ -2595,6 +2672,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.apache/apache/13/15aff1faaec4963617f07dbe8e603f0adabc3a12/apache-13.pom"
         }
       ],
@@ -2646,6 +2724,7 @@
         {
           "name": "Apache 2.0",
           "url": "https://opensource.org/licenses/Apache-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.grpc/grpc-api/1.57.2/bde05a26578ab33dbc5228035508557aaa2f5504/grpc-api-1.57.2.pom"
         }
       ],
@@ -2674,6 +2753,7 @@
         {
           "name": "Apache 2.0",
           "url": "https://opensource.org/licenses/Apache-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.grpc/grpc-context/1.57.2/4e522b38e6b6079bd744e1e1ba5c0ca5c5a4aa42/grpc-context-1.57.2.pom"
         }
       ],
@@ -2702,6 +2782,7 @@
         {
           "name": "Apache 2.0",
           "url": "https://opensource.org/licenses/Apache-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.grpc/grpc-core/1.57.2/3e866113a899f5fc33b6f3a7c46ae72d23052ecc/grpc-core-1.57.2.pom"
         }
       ],
@@ -2730,6 +2811,7 @@
         {
           "name": "Apache 2.0",
           "url": "https://opensource.org/licenses/Apache-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.grpc/grpc-netty/1.57.2/57967bbd9211bf42a3e0dc85f1c7ba56d18610a6/grpc-netty-1.57.2.pom"
         }
       ],
@@ -2758,6 +2840,7 @@
         {
           "name": "Apache 2.0",
           "url": "https://opensource.org/licenses/Apache-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.grpc/grpc-protobuf-lite/1.57.2/cf36832ffbe596e8bc5de069bf06f305a9d4240e/grpc-protobuf-lite-1.57.2.pom"
         }
       ],
@@ -2786,6 +2869,7 @@
         {
           "name": "Apache 2.0",
           "url": "https://opensource.org/licenses/Apache-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.grpc/grpc-protobuf/1.57.2/707329312ed924a085945a8c26bae353c7a5aea9/grpc-protobuf-1.57.2.pom"
         }
       ],
@@ -2814,6 +2898,7 @@
         {
           "name": "Apache 2.0",
           "url": "https://opensource.org/licenses/Apache-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.grpc/grpc-stub/1.57.2/6c039a786bf24da18aee86c936cc0bcddfbc24bc/grpc-stub-1.57.2.pom"
         }
       ],
@@ -2842,6 +2927,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.netty/netty-parent/4.1.93.Final/87bceff7410ea432c5b156b47001672898b98b42/netty-parent-4.1.93.Final.pom"
         }
       ],
@@ -2876,6 +2962,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.netty/netty-parent/4.1.93.Final/87bceff7410ea432c5b156b47001672898b98b42/netty-parent-4.1.93.Final.pom"
         }
       ],
@@ -2910,6 +2997,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.netty/netty-parent/4.1.93.Final/87bceff7410ea432c5b156b47001672898b98b42/netty-parent-4.1.93.Final.pom"
         }
       ],
@@ -2944,6 +3032,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.netty/netty-parent/4.1.93.Final/87bceff7410ea432c5b156b47001672898b98b42/netty-parent-4.1.93.Final.pom"
         }
       ],
@@ -2978,6 +3067,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.netty/netty-parent/4.1.93.Final/87bceff7410ea432c5b156b47001672898b98b42/netty-parent-4.1.93.Final.pom"
         }
       ],
@@ -3012,6 +3102,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.netty/netty-parent/4.1.93.Final/87bceff7410ea432c5b156b47001672898b98b42/netty-parent-4.1.93.Final.pom"
         }
       ],
@@ -3046,6 +3137,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.netty/netty-parent/4.1.93.Final/87bceff7410ea432c5b156b47001672898b98b42/netty-parent-4.1.93.Final.pom"
         }
       ],
@@ -3080,6 +3172,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.netty/netty-parent/4.1.93.Final/87bceff7410ea432c5b156b47001672898b98b42/netty-parent-4.1.93.Final.pom"
         }
       ],
@@ -3114,6 +3207,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.netty/netty-parent/4.1.93.Final/87bceff7410ea432c5b156b47001672898b98b42/netty-parent-4.1.93.Final.pom"
         }
       ],
@@ -3148,6 +3242,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.netty/netty-parent/4.1.93.Final/87bceff7410ea432c5b156b47001672898b98b42/netty-parent-4.1.93.Final.pom"
         }
       ],
@@ -3182,6 +3277,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.netty/netty-parent/4.1.93.Final/87bceff7410ea432c5b156b47001672898b98b42/netty-parent-4.1.93.Final.pom"
         }
       ],
@@ -3216,6 +3312,7 @@
         {
           "name": "Apache 2.0",
           "url": "https://opensource.org/licenses/Apache-2.0",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/io.perfmark/perfmark-api/0.26.0/9a44b3ed71075f2b06d387464f62d1e50a3c31ba/perfmark-api-0.26.0.pom"
         }
       ],
@@ -3244,6 +3341,7 @@
         {
           "name": "EDL 1.0",
           "url": "http://www.eclipse.org/org/documents/edl-v10.php",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.sun.activation/all/1.2.1/efca912f55f71e63ab2eb82552519b66dd123f98/all-1.2.1.pom"
         }
       ],
@@ -3289,6 +3387,7 @@
         {
           "name": "Eclipse Distribution License - v 1.0",
           "url": "http://www.eclipse.org/org/documents/edl-v10.php",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api-parent/2.3.2/7be72e8345e33f747d5d813e313abd8df25f259e/jakarta.xml.bind-api-parent-2.3.2.pom"
         }
       ],
@@ -3334,6 +3433,7 @@
         {
           "name": "CDDL + GPLv2 with classpath exception",
           "url": "https://github.com/javaee/javax.annotation/blob/master/LICENSE",
+          "comments": "A business-friendly OSS license",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.3.2/302fe96ef206b17f82893083b51b479541fa25ab/javax.annotation-api-1.3.2.pom"
         }
       ],
@@ -3364,7 +3464,14 @@
         "sha256": "91c77044a50c481636c32d916fd89c9118a72195390452c81065080f957de7ff",
         "role": "build-only-dependency"
       },
-      "declared_licenses": [],
+      "declared_licenses": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
+          "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/javax.inject/javax.inject/1/b8e00a8a0deb0ebef447570e37ff8146ccd92cbe/javax.inject-1.pom"
+        }
+      ],
       "pom_chain": [
         {
           "path": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/javax.inject/javax.inject/1/b8e00a8a0deb0ebef447570e37ff8146ccd92cbe/javax.inject-1.pom",
@@ -3374,7 +3481,7 @@
         }
       ],
       "embedded_notices": [],
-      "terms_status": "missing local POM license declaration"
+      "terms_status": "declared; not a redistribution clearance"
     },
     {
       "coordinate": "net.java.dev.jna:jna-platform:5.6.0",
@@ -3390,11 +3497,13 @@
         {
           "name": "LGPL, version 2.1",
           "url": "http://www.gnu.org/licenses/licenses.html",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/net.java.dev.jna/jna-platform/5.6.0/f86d5b088d311a7dee895e06cb2a08ccada7cbde/jna-platform-5.6.0.pom"
         },
         {
           "name": "Apache License v2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/net.java.dev.jna/jna-platform/5.6.0/f86d5b088d311a7dee895e06cb2a08ccada7cbde/jna-platform-5.6.0.pom"
         }
       ],
@@ -3429,11 +3538,13 @@
         {
           "name": "LGPL, version 2.1",
           "url": "http://www.gnu.org/licenses/licenses.html",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.6.0/e542808a6326ec0302c0b09011cb4363e1ece380/jna-5.6.0.pom"
         },
         {
           "name": "Apache License v2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.6.0/e542808a6326ec0302c0b09011cb4363e1ece380/jna-5.6.0.pom"
         }
       ],
@@ -3468,6 +3579,7 @@
         {
           "name": "The MIT License",
           "url": "http://www.opensource.org/licenses/mit-license.php",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/net.sf.jopt-simple/jopt-simple/4.9/ea3cd0a93e4e8adc1cdadd544c9168bc5aa985a8/jopt-simple-4.9.pom"
         }
       ],
@@ -3492,7 +3604,20 @@
         "sha256": "f264dd9f79a1fde10ce5ecc53221eff24be4c9331c830b7d52f2f08a7b633de2",
         "role": "build-only-dependency"
       },
-      "declared_licenses": [],
+      "declared_licenses": [
+        {
+          "name": "BSD style",
+          "url": "http://kxml.cvs.sourceforge.net/viewvc/kxml/kxml2/license.txt?view=markup",
+          "comments": "The license applies to the kXML2 classes (all classes below the org.kxml2 package).",
+          "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/net.sf.kxml/kxml2/2.3.0/8efa75f9cdc57687076b2125b1a098e6f42e737d/kxml2-2.3.0.pom"
+        },
+        {
+          "name": "Public Domain",
+          "url": "http://creativecommons.org/licenses/publicdomain",
+          "comments": "The license applies to the XmlPull API (all classes directly in the org.xmlpull.v1 package)",
+          "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/net.sf.kxml/kxml2/2.3.0/8efa75f9cdc57687076b2125b1a098e6f42e737d/kxml2-2.3.0.pom"
+        }
+      ],
       "pom_chain": [
         {
           "path": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/net.sf.kxml/kxml2/2.3.0/8efa75f9cdc57687076b2125b1a098e6f42e737d/kxml2-2.3.0.pom",
@@ -3502,7 +3627,7 @@
         }
       ],
       "embedded_notices": [],
-      "terms_status": "missing local POM license declaration"
+      "terms_status": "declared; not a redistribution clearance"
     },
     {
       "coordinate": "org.apache.commons:commons-compress:1.21",
@@ -3518,6 +3643,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.apache/apache/23/404949e96725e63a10a6d8f9d9b521948d170d5/apache-23.pom"
         }
       ],
@@ -3569,6 +3695,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcomponents-client/4.5.14/e36b5c26d9012cce0ba214e06462596585475217/httpcomponents-client-4.5.14.pom"
         }
       ],
@@ -3614,6 +3741,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcomponents-core/4.4.16/e0cbfde0384168cdd90e2633c1f101416d799090/httpcomponents-core-4.4.16.pom"
         }
       ],
@@ -3659,6 +3787,7 @@
         {
           "name": "Apache License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcomponents-client/4.5.6/135a0a91d1ad2909b08196580ef2c363932bb87e/httpcomponents-client-4.5.6.pom"
         }
       ],
@@ -3704,6 +3833,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.bitbucket.b_c/jose4j/0.9.5/dfea5de0f47c10dbfafb02d5d28edd8b44a45907/jose4j-0.9.5.pom"
         }
       ],
@@ -3728,7 +3858,14 @@
         "sha256": "3639a24ddf9ba4b7eba0659b44770e91eba816421888e571f285aadefe532cd6",
         "role": "build-only-dependency"
       },
-      "declared_licenses": [],
+      "declared_licenses": [
+        {
+          "name": "Bouncy Castle Licence",
+          "url": "https://www.bouncycastle.org/licence.html",
+          "comments": "",
+          "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk18on/1.79/783d463a7227fea427268e34fb60d98475c64f19/bcpkix-jdk18on-1.79.pom"
+        }
+      ],
       "pom_chain": [
         {
           "path": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk18on/1.79/783d463a7227fea427268e34fb60d98475c64f19/bcpkix-jdk18on-1.79.pom",
@@ -3738,7 +3875,7 @@
         }
       ],
       "embedded_notices": [],
-      "terms_status": "missing local POM license declaration"
+      "terms_status": "declared; not a redistribution clearance"
     },
     {
       "coordinate": "org.bouncycastle:bcprov-jdk18on:1.79",
@@ -3750,7 +3887,14 @@
         "sha256": "0d81ecc3124536b539bce9aa3fe9621b7f84c9cee371b635a5b31c78b79ab1da",
         "role": "build-only-dependency"
       },
-      "declared_licenses": [],
+      "declared_licenses": [
+        {
+          "name": "Bouncy Castle Licence",
+          "url": "https://www.bouncycastle.org/licence.html",
+          "comments": "",
+          "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk18on/1.79/460bea0d2ddd8860efd4e7c3c7d8add1d749e940/bcprov-jdk18on-1.79.pom"
+        }
+      ],
       "pom_chain": [
         {
           "path": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk18on/1.79/460bea0d2ddd8860efd4e7c3c7d8add1d749e940/bcprov-jdk18on-1.79.pom",
@@ -3759,14 +3903,8 @@
           "role": "resolved-pom"
         }
       ],
-      "embedded_notices": [
-        {
-          "entry": "org/bouncycastle/LICENSE.class",
-          "sha256": "f9e6b01128a66b9887432db0397034793bcb1667770990c27fd4fd04ffc0c12a",
-          "bytes": 2001
-        }
-      ],
-      "terms_status": "missing local POM license declaration"
+      "embedded_notices": [],
+      "terms_status": "declared; not a redistribution clearance"
     },
     {
       "coordinate": "org.bouncycastle:bcutil-jdk18on:1.79",
@@ -3778,7 +3916,14 @@
         "sha256": "c70b88ada58938cbc2f005d40329054078bcfa1149e6ffc03e9242eb6ab21836",
         "role": "build-only-dependency"
       },
-      "declared_licenses": [],
+      "declared_licenses": [
+        {
+          "name": "Bouncy Castle Licence",
+          "url": "https://www.bouncycastle.org/licence.html",
+          "comments": "",
+          "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.bouncycastle/bcutil-jdk18on/1.79/fcfc0f7305fbf2a4a1a1207887e8e1d230e9210d/bcutil-jdk18on-1.79.pom"
+        }
+      ],
       "pom_chain": [
         {
           "path": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.bouncycastle/bcutil-jdk18on/1.79/fcfc0f7305fbf2a4a1a1207887e8e1d230e9210d/bcutil-jdk18on-1.79.pom",
@@ -3788,7 +3933,7 @@
         }
       ],
       "embedded_notices": [],
-      "terms_status": "missing local POM license declaration"
+      "terms_status": "declared; not a redistribution clearance"
     },
     {
       "coordinate": "org.checkerframework:checker-qual:3.33.0",
@@ -3804,6 +3949,7 @@
         {
           "name": "The MIT License",
           "url": "http://opensource.org/licenses/MIT",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.33.0/6d43e2eacef053cffd73da56734e9a8a138b52be/checker-qual-3.33.0.pom"
         }
       ],
@@ -3838,6 +3984,7 @@
         {
           "name": "MIT license",
           "url": "https://spdx.org/licenses/MIT.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-parent/1.23/1b4cb41a44448b41c20c9c2de022a0ad40bf195c/animal-sniffer-parent-1.23.pom"
         }
       ],
@@ -3872,6 +4019,7 @@
         {
           "name": "Eclipse Distribution License - v 1.0",
           "url": "http://www.eclipse.org/org/documents/edl-v10.php",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.sun.xml.bind.mvn/jaxb-parent/2.3.2/5d96ada92105844d8a2eedfb63bf782a712cc0a/jaxb-parent-2.3.2.pom"
         }
       ],
@@ -3923,6 +4071,7 @@
         {
           "name": "Eclipse Distribution License - v 1.0",
           "url": "http://www.eclipse.org/org/documents/edl-v10.php",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/com.sun.xml.bind.mvn/jaxb-parent/2.3.2/5d96ada92105844d8a2eedfb63bf782a712cc0a/jaxb-parent-2.3.2.pom"
         }
       ],
@@ -3970,7 +4119,14 @@
         "sha256": "1345f11ba606d15603d6740551a8c21947c0215640770ec67271fe78bea97cf5",
         "role": "build-only-dependency"
       },
-      "declared_licenses": [],
+      "declared_licenses": [
+        {
+          "name": "Similar to Apache License but with the acknowledgment clause removed",
+          "url": "https://raw.github.com/hunterhacker/jdom/master/LICENSE.txt",
+          "comments": "\n\t\t\t\n/*-- \n\n Copyright (C) 2000-2012 Jason Hunter & Brett McLaughlin.\n All rights reserved.\n \n Redistribution and use in source and binary forms, with or without\n modification, are permitted provided that the following conditions\n are met:\n \n 1. Redistributions of source code must retain the above copyright\n    notice, this list of conditions, and the following disclaimer.\n \n 2. Redistributions in binary form must reproduce the above copyright\n    notice, this list of conditions, and the disclaimer that follows \n    these conditions in the documentation and/or other materials \n    provided with the distribution.\n\n 3. The name \"JDOM\" must not be used to endorse or promote products\n    derived from this software without prior written permission.  For\n    written permission, please contact <request_AT_jdom_DOT_org>.\n \n 4. Products derived from this software may not be called \"JDOM\", nor\n    may \"JDOM\" appear in their name, without prior written permission\n    from the JDOM Project Management <request_AT_jdom_DOT_org>.\n \n In addition, we request (but do not require) that you include in the \n end-user documentation provided with the redistribution and/or in the \n software itself an acknowledgement equivalent to the following:\n     \"This product includes software developed by the\n      JDOM Project (http://www.jdom.org/).\"\n Alternatively, the acknowledgment may be graphical using the logos \n available at http://www.jdom.org/images/logos.\n\n THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED\n WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\n OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\n DISCLAIMED.  IN NO EVENT SHALL THE JDOM AUTHORS OR THE PROJECT\n CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF\n USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\n ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\n OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\n OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGE.\n\n This software consists of voluntary contributions made by many \n individuals on behalf of the JDOM Project and was originally \n created by Jason Hunter <jhunter_AT_jdom_DOT_org> and\n Brett McLaughlin <brett_AT_jdom_DOT_org>.  For more information\n on the JDOM Project, please see <http://www.jdom.org/>. \n\n */\n\n\n\n\t\t\t",
+          "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.jdom/jdom2/2.0.6/11e250d112bc9f2a0e1a595a5f6ecd2802af2691/jdom2-2.0.6.pom"
+        }
+      ],
       "pom_chain": [
         {
           "path": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.jdom/jdom2/2.0.6/11e250d112bc9f2a0e1a595a5f6ecd2802af2691/jdom2-2.0.6.pom",
@@ -3986,7 +4142,7 @@
           "bytes": 2558
         }
       ],
-      "terms_status": "missing local POM license declaration"
+      "terms_status": "declared; not a redistribution clearance"
     },
     {
       "coordinate": "org.jetbrains.kotlin:kotlin-reflect:2.1.0",
@@ -4002,6 +4158,7 @@
         {
           "name": "The Apache License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/2.1.0/6c72cb76dbf12249eec091d5a7d6ea27a27fcc87/kotlin-reflect-2.1.0.pom"
         }
       ],
@@ -4030,6 +4187,7 @@
         {
           "name": "The Apache License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/2.1.0/47da336a736181dfcf3d178b9673848139fda4ff/kotlin-stdlib-jdk7-2.1.0.pom"
         }
       ],
@@ -4058,6 +4216,7 @@
         {
           "name": "The Apache License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/2.1.0/4e1ccbf4ec2e99a191384342f2f69374bff08085/kotlin-stdlib-jdk8-2.1.0.pom"
         }
       ],
@@ -4086,6 +4245,7 @@
         {
           "name": "The Apache License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/2.1.0/b7c581edbfc43221bf7a18ea76cc482111bba949/kotlin-stdlib-2.1.0.pom"
         }
       ],
@@ -4114,6 +4274,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.jetbrains/annotations/23.0.0/deb853be3c9e05ed99fbbf83e49d349d08a6d10e/annotations-23.0.0.pom"
         }
       ],
@@ -4142,6 +4303,7 @@
         {
           "name": "Eclipse Distribution License - v 1.0",
           "url": "http://www.eclipse.org/org/documents/edl-v10.php",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.jvnet.staxex/stax-ex/1.8.1/93132b1ebaf1c419ad3d2216924af39c68f43b51/stax-ex-1.8.1.pom"
         }
       ],
@@ -4181,6 +4343,7 @@
         {
           "name": "BSD-3-Clause",
           "url": "https://asm.ow2.io/license.html",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/9.7/e5c12f11d0ca92ac0e6b116086cce4ba1c1dd8db/asm-analysis-9.7.pom"
         }
       ],
@@ -4209,6 +4372,7 @@
         {
           "name": "BSD-3-Clause",
           "url": "https://asm.ow2.io/license.html",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.7/c3096037f951d9ccbc7b236a5d70376b101582f/asm-commons-9.7.pom"
         }
       ],
@@ -4237,6 +4401,7 @@
         {
           "name": "BSD-3-Clause",
           "url": "https://asm.ow2.io/license.html",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/9.7/a7c160e10239da3d67e35828c792392fbb101b6/asm-tree-9.7.pom"
         }
       ],
@@ -4265,6 +4430,7 @@
         {
           "name": "BSD-3-Clause",
           "url": "https://asm.ow2.io/license.html",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.ow2.asm/asm-util/9.7/8a916037a76d789d3202a2b8c153f93c9dca981d/asm-util-9.7.pom"
         }
       ],
@@ -4293,6 +4459,7 @@
         {
           "name": "BSD-3-Clause",
           "url": "https://asm.ow2.io/license.html",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.ow2.asm/asm/9.7/e2568079bd69f0fdf35fe2d9e7cd9b16db8eff94/asm-9.7.pom"
         }
       ],
@@ -4321,6 +4488,7 @@
         {
           "name": "MIT License",
           "url": "http://www.opensource.org/licenses/mit-license.php",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.slf4j/slf4j-parent/1.7.30/d3cf0e0cdb58d3c6f8a08c21e55894422fd725b9/slf4j-parent-1.7.30.pom"
         }
       ],
@@ -4355,6 +4523,7 @@
         {
           "name": "The Apache Software License, Version 2.0",
           "url": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "comments": "",
           "declared_in": "TOOLCHAIN/gradle-user/caches/modules-2/files-2.1/org.tensorflow/tensorflow-lite-metadata/0.2.0/3d4eeba9903312a3ddf95937897f99db183be6c8/tensorflow-lite-metadata-0.2.0.pom"
         }
       ],
@@ -5869,7 +6038,10 @@
           "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726",
           "role": "installed-tool-or-notice"
         }
-      ]
+      ],
+      "version_metadata": {
+        "TOOLCHAIN/jdk/release": "IMPLEMENTOR=\"Eclipse Adoptium\"\nIMPLEMENTOR_VERSION=\"Temurin-17.0.20.1+1\"\nJAVA_RUNTIME_VERSION=\"17.0.20.1+1\"\nJAVA_VERSION=\"17.0.20.1\"\nJAVA_VERSION_DATE=\"2026-08-18\"\nLIBC=\"gnu\"\nMODULES=\"java.base java.compiler java.datatransfer java.xml java.prefs java.desktop java.instrument java.logging java.management java.security.sasl java.naming java.rmi java.management.rmi java.net.http java.scripting java.security.jgss java.transaction.xa java.sql java.sql.rowset java.xml.crypto java.se java.smartcardio jdk.accessibility jdk.internal.jvmstat jdk.attach jdk.charsets jdk.compiler jdk.crypto.ec jdk.crypto.cryptoki jdk.dynalink jdk.internal.ed jdk.editpad jdk.hotspot.agent jdk.httpserver jdk.incubator.foreign jdk.incubator.vector jdk.internal.le jdk.internal.opt jdk.internal.vm.ci jdk.internal.vm.compiler jdk.internal.vm.compiler.management jdk.jartool jdk.javadoc jdk.jcmd jdk.management jdk.management.agent jdk.jconsole jdk.jdeps jdk.jdwp.agent jdk.jdi jdk.jfr jdk.jlink jdk.jpackage jdk.jshell jdk.jsobject jdk.jstatd jdk.localedata jdk.management.jfr jdk.naming.dns jdk.naming.rmi jdk.net jdk.nio.mapmode jdk.random jdk.sctp jdk.security.auth jdk.security.jgss jdk.unsupported jdk.unsupported.desktop jdk.xml.dom jdk.zipfs\"\nOS_ARCH=\"x86_64\"\nOS_NAME=\"Linux\"\nSOURCE=\".:git:79597447bd94\"\nBUILD_SOURCE=\"git:e6ba7dec3d07654074559310376a3ae89da5f4ac\"\nBUILD_SOURCE_REPO=\"https://github.com/adoptium/temurin-build.git\"\nSOURCE_REPO=\"https://github.com/adoptium/jdk17u.git\"\nFULL_VERSION=\"17.0.20.1+1\"\nSEMANTIC_VERSION=\"17.0.20.1+1\"\nBUILD_INFO=\"OS: Linux Version: 6.8.0-1064-azure\"\nJVM_VARIANT=\"Hotspot\"\nJVM_VERSION=\"17.0.20.1+1\"\nIMAGE_TYPE=\"JDK\"\n"
+      }
     },
     {
       "name": "Gradle 8.13",
@@ -7729,7 +7901,8 @@
           "sha256": "a840968176645684bb01aed376e067ab39614885f9eee44abe35a5f20ebe7fad",
           "role": "installed-tool-or-notice"
         }
-      ]
+      ],
+      "version_metadata": {}
     },
     {
       "name": "NDK r27c",
@@ -7765,7 +7938,10 @@
           "sha256": "d5f5557f82bc42ce657d0513ba9a7d0c55e64eb99d4998994d92f2b5c2b1fb3c",
           "role": "installed-tool-or-notice"
         }
-      ]
+      ],
+      "version_metadata": {
+        "TOOLCHAIN/android-ndk-r27c/source.properties": "Pkg.Desc = Android NDK\nPkg.Revision = 27.2.12479018\nPkg.BaseRevision = 27.2.12479018\nPkg.ReleaseName = r27c\n"
+      }
     },
     {
       "name": "CMake 3.22.1",
@@ -7825,7 +8001,8 @@
           "sha256": "c32913b33252e71190af2066f08115c69bc9fddadf3bf29296e20c835389841c",
           "role": "installed-tool-or-notice"
         }
-      ]
+      ],
+      "version_metadata": {}
     },
     {
       "name": "sdk/build-tools/35.0.0",
@@ -7873,7 +8050,10 @@
           "sha256": "a205d94a45c8522ca1b571dcbe190df145c818f0a29dfb366e4dd78eef4f56a7",
           "role": "installed-tool-or-notice"
         }
-      ]
+      ],
+      "version_metadata": {
+        "TOOLCHAIN/sdk/build-tools/35.0.0/source.properties": "Pkg.UserSrc=false\nPkg.Revision=35.0.0\n#Pkg.Revision=35.0.0 rc4\n"
+      }
     },
     {
       "name": "sdk/platforms/android-35",
@@ -7915,7 +8095,10 @@
           "sha256": "d313bbe75b085bed367b1b3dcc142995c930a2c25930bb017325d6e5f0f19572",
           "role": "installed-tool-or-notice"
         }
-      ]
+      ],
+      "version_metadata": {
+        "TOOLCHAIN/sdk/platforms/android-35/source.properties": "Pkg.Desc=Android SDK Platform 15\nPkg.UserSrc=false\nPlatform.Version=15\nPlatform.CodeName=\nPkg.Revision=2\nAndroidVersion.ApiLevel=35\nAndroidVersion.ExtensionLevel=13\nAndroidVersion.IsBaseSdk=true\nLayoutlib.Api=15\nLayoutlib.Revision=1\nPlatform.MinToolsRev=22\n"
+      }
     },
     {
       "name": "sdk/platform-tools",
@@ -7945,7 +8128,10 @@
           "sha256": "2dccd788c0234d8cf7f7457377e57f57527a86a629c6ed54feb8af0f549dac38",
           "role": "installed-tool-or-notice"
         }
-      ]
+      ],
+      "version_metadata": {
+        "TOOLCHAIN/sdk/platform-tools/source.properties": "Pkg.UserSrc=false\nPkg.Revision=37.0.1\n"
+      }
     },
     {
       "name": "sdk/cmdline-tools/latest",
@@ -7969,7 +8155,10 @@
           "sha256": "166bcdfe54f73296b09e5e6aa6d96b9a752b78b418c56e9f3f3a13c15fac74e5",
           "role": "installed-tool-or-notice"
         }
-      ]
+      ],
+      "version_metadata": {
+        "TOOLCHAIN/sdk/cmdline-tools/latest/source.properties": "Pkg.Revision=22.0\nPkg.Path=cmdline-tools;22.0\nPkg.Desc=Android SDK Command-line Tools\n"
+      }
     },
     {
       "name": "sdk/emulator",
@@ -8011,7 +8200,10 @@
           "sha256": "ee589ca350515c29dc3bad30dd5ebe8efb11d1a50c17c8815125d3c4bd12a3a8",
           "role": "installed-tool-or-notice"
         }
-      ]
+      ],
+      "version_metadata": {
+        "TOOLCHAIN/sdk/emulator/source.properties": "Pkg.UserSrc=false\nPkg.Revision=37.1.11\nPkg.Path=emulator\nPkg.Desc=Android Emulator\nPkg.BuildId=15917651"
+      }
     },
     {
       "name": "sdk/system-images/android-35/default/x86_64",
@@ -8035,7 +8227,10 @@
           "sha256": "98d57aac1a56bdff21e948a44332774d7f2127dc28fa413a85ad96bfb81cb7cb",
           "role": "installed-tool-or-notice"
         }
-      ]
+      ],
+      "version_metadata": {
+        "TOOLCHAIN/sdk/system-images/android-35/default/x86_64/source.properties": "Pkg.Desc=Android SDK System Image\nPkg.UserSrc=false\nPkg.Revision=2\nPkg.Dependencies=emulator#29.1.11\nAndroidVersion.ApiLevel=35\nAndroidVersion.ExtensionLevel=13\nAndroidVersion.IsBaseSdk=true\nSystemImage.Abi=x86_64\nSystemImage.GpuSupport=true\nSystemImage.TagId=default\nSystemImage.TagDisplay=Default Android System Image\n"
+      }
     }
   ],
   "models": [
@@ -8055,7 +8250,9 @@
         "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
         "role": "model-license"
       },
-      "limitation": "Publisher quantization; not independently reproduced"
+      "limitation": "Publisher quantization; not independently reproduced",
+      "source_repository": "https://huggingface.co/tensorblock/SmolLM2-135M-Instruct-GGUF",
+      "pinned_url": "https://huggingface.co/tensorblock/SmolLM2-135M-Instruct-GGUF/resolve/32db44d69cedb731dc0fc96f60e01a86c6f5919d/SmolLM2-135M-Instruct-Q3_K_M.gguf"
     },
     {
       "name": "Qwen2.5-0.5B",
@@ -8073,7 +8270,9 @@
         "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
         "role": "model-license"
       },
-      "limitation": "Publisher quantization; not independently reproduced"
+      "limitation": "Publisher quantization; not independently reproduced",
+      "source_repository": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+      "pinned_url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/9217f5db79a29953eb74d5343926648285ec7e67/qwen2.5-0.5b-instruct-q4_k_m.gguf"
     },
     {
       "name": "Qwen2.5-1.5B",
@@ -8091,7 +8290,9 @@
         "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
         "role": "model-license"
       },
-      "limitation": "Publisher quantization; not independently reproduced"
+      "limitation": "Publisher quantization; not independently reproduced",
+      "source_repository": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF",
+      "pinned_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf"
     },
     {
       "name": "Qwen3-1.7B",
@@ -8109,7 +8310,9 @@
         "sha256": "5de36594c10839788a8c589443a8ef9d8b8d17c65a1b5807206ae037fc36c6bd",
         "role": "model-license"
       },
-      "limitation": "Publisher quantization; not independently reproduced"
+      "limitation": "Publisher quantization; not independently reproduced",
+      "source_repository": "https://huggingface.co/Qwen/Qwen3-1.7B-GGUF",
+      "pinned_url": "https://huggingface.co/Qwen/Qwen3-1.7B-GGUF/resolve/90862c4b9d2787eaed51d12237eafdfe7c5f6077/Qwen3-1.7B-Q8_0.gguf"
     }
   ],
   "data": [
@@ -10369,16 +10572,80 @@
   ],
   "gaps": [
     {
-      "id": "build-dependency-license-declarations",
-      "components": [
+      "id": "build-tool-full-notice-review",
+      "status": "open for redistribution of tools only",
+      "components_without_embedded_plain_notice": [
+        "com.android.tools.build.jetifier:jetifier-core:1.0.0-beta10",
+        "com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta10",
+        "com.android.tools.build:transform-api:2.0.0-deprecated-use-gradle-api",
+        "com.android.tools.utp:android-test-plugin-host-logcat-proto:31.9.2",
+        "com.android:signflinger:8.9.2",
+        "com.android:zipflinger:8.9.2",
+        "com.google.android:annotations:4.1.1.4",
+        "com.google.api.grpc:proto-google-common-protos:2.17.0",
+        "com.google.auto.value:auto-value-annotations:1.6.2",
+        "com.google.code.findbugs:jsr305:3.0.2",
+        "com.google.code.gson:gson:2.10.1",
+        "com.google.crypto.tink:tink:1.7.0",
+        "com.google.dagger:dagger:2.28.3",
+        "com.google.errorprone:error_prone_annotations:2.18.0",
+        "com.google.flatbuffers:flatbuffers-java:1.12.0",
+        "com.google.guava:failureaccess:1.0.1",
+        "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+        "com.google.j2objc:j2objc-annotations:2.8",
+        "com.google.jimfs:jimfs:1.1",
+        "com.google.protobuf:protobuf-java-util:3.22.3",
+        "com.google.protobuf:protobuf-java:3.24.4",
+        "com.google.testing.platform:core-proto:0.0.9-alpha03",
+        "com.googlecode.juniversalchardet:juniversalchardet:1.0.3",
+        "com.squareup:javapoet:1.10.0",
+        "com.squareup:javawriter:2.5.0",
+        "io.grpc:grpc-api:1.57.2",
+        "io.grpc:grpc-context:1.57.2",
+        "io.grpc:grpc-core:1.57.2",
+        "io.grpc:grpc-netty:1.57.2",
+        "io.grpc:grpc-protobuf-lite:1.57.2",
+        "io.grpc:grpc-protobuf:1.57.2",
+        "io.grpc:grpc-stub:1.57.2",
+        "io.netty:netty-buffer:4.1.93.Final",
+        "io.netty:netty-codec-http2:4.1.93.Final",
+        "io.netty:netty-codec-http:4.1.93.Final",
+        "io.netty:netty-codec-socks:4.1.93.Final",
+        "io.netty:netty-codec:4.1.93.Final",
+        "io.netty:netty-common:4.1.93.Final",
+        "io.netty:netty-handler-proxy:4.1.93.Final",
+        "io.netty:netty-handler:4.1.93.Final",
+        "io.netty:netty-resolver:4.1.93.Final",
+        "io.netty:netty-transport-native-unix-common:4.1.93.Final",
+        "io.netty:netty-transport:4.1.93.Final",
+        "io.perfmark:perfmark-api:0.26.0",
         "javax.inject:javax.inject:1",
+        "net.sf.jopt-simple:jopt-simple:4.9",
         "net.sf.kxml:kxml2:2.3.0",
+        "org.bitbucket.b_c:jose4j:0.9.5",
         "org.bouncycastle:bcpkix-jdk18on:1.79",
         "org.bouncycastle:bcprov-jdk18on:1.79",
         "org.bouncycastle:bcutil-jdk18on:1.79",
-        "org.jdom:jdom2:2.0.6"
+        "org.codehaus.mojo:animal-sniffer-annotations:1.23",
+        "org.jetbrains.kotlin:kotlin-reflect:2.1.0",
+        "org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.1.0",
+        "org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.1.0",
+        "org.jetbrains.kotlin:kotlin-stdlib:2.1.0",
+        "org.jetbrains:annotations:23.0.0",
+        "org.ow2.asm:asm-analysis:9.7",
+        "org.ow2.asm:asm-commons:9.7",
+        "org.ow2.asm:asm-tree:9.7",
+        "org.ow2.asm:asm-util:9.7",
+        "org.ow2.asm:asm:9.7",
+        "org.slf4j:slf4j-api:1.7.30",
+        "org.tensorflow:tensorflow-lite-metadata:0.2.0"
       ],
-      "status": "open",
+      "next": "POM declarations are recorded; a missing embedded notice is not a finding that no license exists. Collect/review full component notices if distributing these build-only jars; they are not APK dependencies."
+    },
+    {
+      "id": "build-dependency-license-declarations",
+      "components": [],
+      "status": "locally declared",
       "next": "Resolve remaining parent POM or upstream terms before redistributing build-tool artifacts; do not infer permission from hashes."
     },
     {
@@ -10477,6 +10744,91 @@
       "entry": "lib/x86_64/libpocketlore.so",
       "sha256": "6fbaef5768db43ca8f554c44b49dfbf6ee4cd21d04ccafeb86728a63c8b59fe5",
       "bytes": 6076440
+    }
+  ],
+  "host_build_utilities": [
+    {
+      "name": "python3",
+      "version": "Python 3.14.7",
+      "artifact": {
+        "path": "HOST/usr/bin/python3",
+        "bytes": 14424,
+        "sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+        "role": "host-build-utility"
+      },
+      "license_status": "Host OS license/dependency closure not audited; not bundled."
+    },
+    {
+      "name": "make",
+      "version": "GNU Make 4.4.1",
+      "artifact": {
+        "path": "HOST/usr/bin/make",
+        "bytes": 282480,
+        "sha256": "9018663161af324a74326c035cfd05408cba13a26c1f6b801cf5f3195f2bee40",
+        "role": "host-build-utility"
+      },
+      "license_status": "Host OS license/dependency closure not audited; not bundled."
+    },
+    {
+      "name": "bash",
+      "version": "GNU bash, version 5.3.15(1)-release (x86_64-pc-linux-gnu)",
+      "artifact": {
+        "path": "HOST/usr/bin/bash",
+        "bytes": 1195144,
+        "sha256": "575e03ac834b739349a4484de481abcd06a6f7193cefc795260a32a1943f20a5",
+        "role": "host-build-utility"
+      },
+      "license_status": "Host OS license/dependency closure not audited; not bundled."
+    }
+  ],
+  "build_recipe": [
+    {
+      "path": "PROJECT/tools/android-build.sh",
+      "bytes": 1409,
+      "sha256": "6c04a80085f9b5a3a2c8be1fb3e26c45b20862d22a2fc1aeaf0aa6b56996b7b6",
+      "role": "build-recipe"
+    },
+    {
+      "path": "PROJECT/tools/runtime/build-native.sh",
+      "bytes": 1349,
+      "sha256": "3a80b27c6d9ad1a1b3ae6681fadf40705e4e7c38701cba227084b0614e2b3a64",
+      "role": "build-recipe"
+    },
+    {
+      "path": "PROJECT/tools/runtime/pins.env",
+      "bytes": 316,
+      "sha256": "1cb0aa2695c803496945dac1e9a3b7fadcf63e33b5b1434dbe70a284b973840a",
+      "role": "build-recipe"
+    },
+    {
+      "path": "PROJECT/tools/release/finalize_apk.py",
+      "bytes": 3669,
+      "sha256": "46c9cd704a03786a498db6c31f412a441da4eba17d59a6b273ceb7e262777a4d",
+      "role": "build-recipe"
+    },
+    {
+      "path": "PROJECT/tools/distribution/native-notices.lock.json",
+      "bytes": 507,
+      "sha256": "c58d26254c0681c1d834500453501a388e9fe6e1d63c0e5e9b38bfbebce23295",
+      "role": "build-recipe"
+    },
+    {
+      "path": "PROJECT/android/build.gradle",
+      "bytes": 69,
+      "sha256": "048ecfefe09971849fc8c9326de9d0e8af7e50e371aed980e2e1617124bb969f",
+      "role": "build-recipe"
+    },
+    {
+      "path": "PROJECT/android/app/build.gradle",
+      "bytes": 1500,
+      "sha256": "469825f99e581a87b803e43528eeee528a1401b59f5c6356a8fb40e2c727b6a8",
+      "role": "build-recipe"
+    },
+    {
+      "path": "PROJECT/android/app/src/main/cpp/CMakeLists.txt",
+      "bytes": 989,
+      "sha256": "a72e52f97e8bcc71d71c94965d74970c8a19a7897c2b92cc72db39d6caf8af3e",
+      "role": "build-recipe"
     }
   ],
   "required_notices": [
