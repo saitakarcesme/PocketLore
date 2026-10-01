@@ -1,0 +1,30 @@
+{
+  "scope": "Fresh offline current APK with reference, science and reviewed broad; generated citation navigation and rollback; development freeze only, full scale/model gates remain open",
+  "serial": "emulator-5560",
+  "steps": [
+    "Archive only current project fixture app data without restoring",
+    "Fresh install and empty assertion",
+    "Real SAF model/reference/science/reviewed broad imports",
+    "Generate fixed headlamp question and click actual rendered citation span",
+    "Inspect reference/science/broad source dialogs and broad license",
+    "Disable broad through UI, restart, restore selection and restart",
+    "Corrupt/cancelled/duplicate import rollback with model hashes and staging measurements",
+    "Record installed/index/cache/model/APK and process memory"
+  ],
+  "questions": [
+    "Why are headlamps recommended for lighting at night?",
+    "magma lava",
+    "Acid"
+  ],
+  "expected": {
+    "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+    "reference_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+    "science_sha256": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274",
+    "collections": 3,
+    "documents": 1113,
+    "passages": 40891,
+    "disabled_passages": 210,
+    "broad_sha256": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012"
+  },
+  "limits": "No model change, broad generated quality or selected4B claim; no physical or generalization proof."
+}
