@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Unexpected approval
+	at org.pocketlore.app.FrameBehavior.reject(FrameBehavior.java:5)
+	at org.pocketlore.app.FrameBehavior.main(FrameBehavior.java:16)

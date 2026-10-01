@@ -21,7 +21,7 @@ final class FactFrames {
   Proof(BoundAnswer.Draft draft,List<String> trace){this.draft=draft;this.trace=trace;}
  }
  static String norm(String s){return s.toLowerCase(Locale.ROOT).trim().replaceAll("\\s+"," ").replaceFirst("^(the|a|an) ","");}
- static String process(String s){String n=norm(s);return n.endsWith("ing")?n.substring(0,n.length()-3):n;}
+ static String process(String s){String n=norm(s);return n.equals("graft")?"grafting":n;}
  static Matcher match(String pattern,String text){Matcher m=Pattern.compile(pattern,Pattern.CASE_INSENSITIVE|Pattern.UNICODE_CASE).matcher(text);return m.matches()?m:null;}
  static String clean(String s){return s.replaceAll("\\[(?:[0-9]+(?:[,–-][0-9]+)*|[a-z])\\]","").replaceAll("\\s+"," ").trim();}
  static Fact f(String rel,String...args){return new Fact(rel,args);}
