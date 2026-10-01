@@ -16,6 +16,16 @@ import java.util.Set;
 
 /** Immutable inverted BM25 index. Ranking expansion never establishes answer support. */
 public final class ResearchEngine {
+    interface DiskProvider { Result research(String question); int size(); }
+    private DiskProvider disk;
+    ResearchEngine(DiskProvider provider){disk=provider;}
+    static ResearchEngine combined(List<ResearchEngine> engines){return new ResearchEngine(new DiskProvider(){
+        public int size(){int total=0;for(ResearchEngine e:engines)total+=e.size();return total;}
+        public Result research(String q){List<Hit> hits=new ArrayList<>();int candidates=0;for(ResearchEngine e:engines){Result r=e.research(q);hits.addAll(r.hits);candidates+=r.candidatesScored;}
+            hits.sort(Comparator.comparingDouble((Hit h)->h.score).reversed().thenComparing(h->h.passage.id));if(hits.size()>4)hits=new ArrayList<>(hits.subList(0,4));
+            return new Result(hits,Collections.emptySet(),hits.isEmpty()?"No supporting passage in active collections.":"Retrieved sources only; inspect their dates, scope and rights. No generated answer inferred.",candidates);}
+    });}
+
     public static final class Passage {
         public final String id, title, url, sourceDate, license, text;
         public final String collectionProvenance;
@@ -149,10 +159,11 @@ public final class ResearchEngine {
         return words;
     }
 
-    public int size() { return passages.size(); }
+    public int size() { return disk==null?passages.size():disk.size(); }
     /** Counts describe logical index payload, not JVM object allocation or serialized storage. */
-    public long[] resourceCounts(){long postings=0,characters=0;for(List<Posting> list:index.values())postings+=list.size();for(Passage p:passages)characters+=p.text.length();return new long[]{passages.size(),index.size(),postings,characters};}
+    public long[] resourceCounts(){if(disk!=null)return new long[]{disk.size(),-1,-1,-1};long postings=0,characters=0;for(List<Posting> list:index.values())postings+=list.size();for(Passage p:passages)characters+=p.text.length();return new long[]{passages.size(),index.size(),postings,characters};}
     public Result research(String question) {
+        if(disk!=null)return disk.research(question);
         Set<String> terms = new HashSet<>(tokenize(question));
         Set<String> missing = new java.util.TreeSet<>(terms);
         missing.removeAll(vocabulary);

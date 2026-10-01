@@ -34,6 +34,8 @@ public final class AnswerEngine {
                                  Consumer<String> progress, BooleanSupplier cancelled) {
         long start=System.nanoTime();
         evidence=EvidencePrompt.select(question,evidence);
+        for(ResearchEngine.Hit hit:evidence.hits)if(hit.passage.collectionProvenance.contains("Generation disabled:"))
+            return fallback(evidence,"Historical broad-reference extraction needs source-quality review; generation disabled for these excerpts.","","",false,0,0,start);
         if (cancelled.getAsBoolean()) return result(Kind.CANCELLED,"Cancelled. No answer was completed.","","Cancelled","",false,0,0,start);
         if (evidence.hits.isEmpty()) {
             String why = evidence.hits.isEmpty() ? "No supporting passage in this installed pack." :

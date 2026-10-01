@@ -167,7 +167,11 @@ public final class MainActivity extends Activity {
             + String.format(Locale.ROOT, "\n\nBM25 rank score: %.3f (not confidence)", hit.score), 16);
         detail.setTextIsSelectable(true); detail.setPadding(dp(20), dp(10), dp(20), dp(10));
         ScrollView scroll = new ScrollView(this); scroll.addView(detail);
-        new AlertDialog.Builder(this).setTitle(p.title).setView(scroll).setPositiveButton("Close", null).show();
+        AlertDialog.Builder dialog=new AlertDialog.Builder(this).setTitle(p.title).setView(scroll).setPositiveButton("Close", null);
+        if(p.id.matches("p[0-9a-f]{64}_wiki-.*"))dialog.setNeutralButton("License",(d,w)->{
+            try{TextView license=text(BroadPack.licenseText(getFilesDir(),p.id),14);ScrollView view=new ScrollView(this);view.addView(license);new AlertDialog.Builder(this).setTitle("CC BY-SA 4.0 · offline license").setView(view).setPositiveButton("Close",null).show();}
+            catch(Exception e){new AlertDialog.Builder(this).setMessage("Cannot read saved license: "+e.getMessage()).setPositiveButton("Close",null).show();}
+        });dialog.show();
     }
     private TextView text(String value, int size) {
         TextView view = new TextView(this); view.setText(value); view.setTextSize(size);
