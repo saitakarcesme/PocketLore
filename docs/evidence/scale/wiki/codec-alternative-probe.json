@@ -1,0 +1,59 @@
+[
+  {
+    "block_id": 100,
+    "raw_bytes": 303865,
+    "zlib6_bytes": 85977,
+    "alternatives": [
+      {
+        "codec": "bz2",
+        "bytes": 75532,
+        "compress_seconds": 0.028325920000497717,
+        "decompress_seconds": 0.015213831000437494
+      },
+      {
+        "codec": "xz",
+        "bytes": 71368,
+        "compress_seconds": 0.09674004100088496,
+        "decompress_seconds": 0.006453081994550303
+      }
+    ]
+  },
+  {
+    "block_id": 700,
+    "raw_bytes": 131198,
+    "zlib6_bytes": 43264,
+    "alternatives": [
+      {
+        "codec": "bz2",
+        "bytes": 38129,
+        "compress_seconds": 0.012924485999974422,
+        "decompress_seconds": 0.0037055939974379726
+      },
+      {
+        "codec": "xz",
+        "bytes": 37716,
+        "compress_seconds": 0.05251149900141172,
+        "decompress_seconds": 0.0038184590011951514
+      }
+    ]
+  },
+  {
+    "block_id": 1200,
+    "raw_bytes": 248140,
+    "zlib6_bytes": 80905,
+    "alternatives": [
+      {
+        "codec": "bz2",
+        "bytes": 68896,
+        "compress_seconds": 0.03837199099507416,
+        "decompress_seconds": 0.012852539999585133
+      },
+      {
+        "codec": "xz",
+        "bytes": 68832,
+        "compress_seconds": 0.10759189799864544,
+        "decompress_seconds": 0.0029270110026118346
+      }
+    ]
+  }
+]

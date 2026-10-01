@@ -1,0 +1,18 @@
+{
+  "checkpoint": "shared_fragment_first_shard_and_aliases",
+  "date_utc": "2026-10-01T10:57:55.883673+00:00",
+  "source_rows": 421456,
+  "canonical_articles": 413151,
+  "full": 128525,
+  "lead": 284626,
+  "shard_bytes": 1849971790,
+  "aliases": 10100398,
+  "alias_bytes": 587452416,
+  "extrapolation_bytes": 29685864321,
+  "budget_bytes": 22000000000,
+  "verdict": "Oversized extrapolation; preserved. Testing lean source supplements before full dispatch.",
+  "artifacts": [
+    "/home/isa/PocketLore-control/scale-workers/wiki/edition-v4/000_00000",
+    "/home/isa/PocketLore-control/scale-workers/wiki/edition-v4/redirect-aliases.sqlite"
+  ]
+}

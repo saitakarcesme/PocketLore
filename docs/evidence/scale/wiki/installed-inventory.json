@@ -1,0 +1,432 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-01T14:22:30.600079+00:00",
+  "edition": "edition-v7",
+  "platform": "LLMRig Linux staging only",
+  "files": [
+    {
+      "path": "000_00000/articles.blocks",
+      "bytes": 748666069,
+      "sha256": "7d254e4fa1d0ddc4a13f71cd6c9263b48af6746060cff1b548d0795be6586e21"
+    },
+    {
+      "path": "000_00000/catalog.sqlite",
+      "bytes": 675430400,
+      "sha256": "1cb8bc54ad2b489c498aad22d937ce539be66f220acc5eac66243c3a410a2bcb"
+    },
+    {
+      "path": "000_00000/measurement.json",
+      "bytes": 1213,
+      "sha256": "9f44a9999cdcc916d27c199bb83673ebaaaf2fae35a954cb1c343d51828ab3f0"
+    },
+    {
+      "path": "000_00001/articles.blocks",
+      "bytes": 765431898,
+      "sha256": "253d29c40fced6d3978ee733ff3ef1a730b839e77c16a2324d40a4f144f5d234"
+    },
+    {
+      "path": "000_00001/catalog.sqlite",
+      "bytes": 696098816,
+      "sha256": "fbcb5d6728d65e53201198349e71e5c6547b623495b56d211bafb466c8210772"
+    },
+    {
+      "path": "000_00001/measurement.json",
+      "bytes": 1214,
+      "sha256": "a4d2bb9201a2c2a7f66b3b3ae636d0d2223ded215cbbc4b5f8daea9350b9762c"
+    },
+    {
+      "path": "000_00002/articles.blocks",
+      "bytes": 759119865,
+      "sha256": "fac4ef3267e1205f67913893d05731735b2b92fc14504543c59bb07de68e7722"
+    },
+    {
+      "path": "000_00002/catalog.sqlite",
+      "bytes": 685572096,
+      "sha256": "771b18c7ce918d40cf03c6949d68e9232b77d8b8a48c5b407809911c57e76e17"
+    },
+    {
+      "path": "000_00002/measurement.json",
+      "bytes": 1170,
+      "sha256": "f5d4e29f818133370f5c50c48287ba652a26849570efaf6f646896a05ec70cdf"
+    },
+    {
+      "path": "000_00003/articles.blocks",
+      "bytes": 790509196,
+      "sha256": "2e8ef1177b4de44742733a3f39b7e7ee9ab1434e769109ed5e44bf7e3d284cce"
+    },
+    {
+      "path": "000_00003/catalog.sqlite",
+      "bytes": 726020096,
+      "sha256": "cb3bdfe072a3fde6baf7d29b5e143ae70d2c2597d35031fadae4d63e8581b7d1"
+    },
+    {
+      "path": "000_00003/measurement.json",
+      "bytes": 1214,
+      "sha256": "f522080d2355647d3cd283e32ac6a59e7a6a32a088ec3f1c3895d38950b10e7f"
+    },
+    {
+      "path": "000_00004/articles.blocks",
+      "bytes": 763838354,
+      "sha256": "da5dafa6ac650abac094f6733ab867e098b0ddf8fbc46d5123e867bbba8656c6"
+    },
+    {
+      "path": "000_00004/catalog.sqlite",
+      "bytes": 684843008,
+      "sha256": "c8885a5dc46dff1b45246910aaa4fca746e567fccfa05d9d003495dba90c49c9"
+    },
+    {
+      "path": "000_00004/measurement.json",
+      "bytes": 1214,
+      "sha256": "356df7c56decbe6301a8fa485f20dd6eac335ceb402c866f6b7194e94913cc25"
+    },
+    {
+      "path": "000_00005/articles.blocks",
+      "bytes": 759974531,
+      "sha256": "60f4e4dfaa116e0c5439219dfa0c42896dbdfb357d0510216551501f3c1fc8c6"
+    },
+    {
+      "path": "000_00005/catalog.sqlite",
+      "bytes": 693612544,
+      "sha256": "dd99f7bfe062858e7a959d4bade984748ed804801b9ffb7a1a7ebd9c74bd43ed"
+    },
+    {
+      "path": "000_00005/measurement.json",
+      "bytes": 1214,
+      "sha256": "898c35dab9df6a2f96b3b48500837b132206df9e4561c02011ae1ac70c358220"
+    },
+    {
+      "path": "000_00006/articles.blocks",
+      "bytes": 735139306,
+      "sha256": "28a18fe570b54426d7fc05f719ea48d31fcc1353bfd8673175500c67930b64a0"
+    },
+    {
+      "path": "000_00006/catalog.sqlite",
+      "bytes": 673353728,
+      "sha256": "4acfa764c0d38abf0562c29a8224e5b2d36fcd6d773d1f16885a94c5fdcb448e"
+    },
+    {
+      "path": "000_00006/measurement.json",
+      "bytes": 1213,
+      "sha256": "c1ad0ef98e81c3a61fde128b31d2e5406e26eba9f24724bfbbab218d488190f5"
+    },
+    {
+      "path": "000_00007/articles.blocks",
+      "bytes": 741016917,
+      "sha256": "bac9a90d09d32f947b04d0ca8510cedbc46f378e2e03414463329e2b1e5ed53a"
+    },
+    {
+      "path": "000_00007/catalog.sqlite",
+      "bytes": 675164160,
+      "sha256": "3815ffaad6406390401222753a348d43f8d703bb60c066dc18203078f6325605"
+    },
+    {
+      "path": "000_00007/measurement.json",
+      "bytes": 1214,
+      "sha256": "af191da5dc0a2e55998198d97e912918e1585cc572b94c6cacc850e8a1c1c286"
+    },
+    {
+      "path": "000_00008/articles.blocks",
+      "bytes": 751742235,
+      "sha256": "e7343ab54984bc46e2d8286ad1008a462ab24facc63849537539b40ba5fa3b87"
+    },
+    {
+      "path": "000_00008/catalog.sqlite",
+      "bytes": 678154240,
+      "sha256": "c763609151f84d600d843cce27c6d19631e33fb08285fe3adab6609263f4ed97"
+    },
+    {
+      "path": "000_00008/measurement.json",
+      "bytes": 1213,
+      "sha256": "d61086110b8a4ec9e0d934822808ed45e63225363891da93a4ca9114051694cd"
+    },
+    {
+      "path": "000_00009/articles.blocks",
+      "bytes": 739912007,
+      "sha256": "d282eab109b6e7a993f70a22b6ac2f52f8e860a4045e788516a04707c0c69937"
+    },
+    {
+      "path": "000_00009/catalog.sqlite",
+      "bytes": 664002560,
+      "sha256": "4e1ef6457f0a30846b5bd3dd9368c01c8dbd3299c1e32626a69e466223dfe612"
+    },
+    {
+      "path": "000_00009/measurement.json",
+      "bytes": 1214,
+      "sha256": "0985d121415e11154e3c9d30913e85fbcf8b59372617144c8dad0b561c37e587"
+    },
+    {
+      "path": "000_00010/articles.blocks",
+      "bytes": 739790849,
+      "sha256": "0a1be163387c68e60c7b0d0db36a77c8cf530e20c597d4234e573b2ca783153e"
+    },
+    {
+      "path": "000_00010/catalog.sqlite",
+      "bytes": 672587776,
+      "sha256": "633861d60dc3633e02192768b6f264d064e89418a4af4159967dab48a3fd331b"
+    },
+    {
+      "path": "000_00010/measurement.json",
+      "bytes": 1214,
+      "sha256": "93de146bdf7e75af508588df34eeda3aa9ce64cb80aa5505cec39f4563436e94"
+    },
+    {
+      "path": "000_00011/articles.blocks",
+      "bytes": 738427258,
+      "sha256": "c3cdf374e32c977a32c2890fbda9a6e33220d5c3e5bb37492b7d7dcf68e127d2"
+    },
+    {
+      "path": "000_00011/catalog.sqlite",
+      "bytes": 668037120,
+      "sha256": "f0db070bd860169e980eefbce8592d7e0045fb5a5acf4c8cb6b75a3b343b0ce5"
+    },
+    {
+      "path": "000_00011/measurement.json",
+      "bytes": 1214,
+      "sha256": "499f98b0df3baa95b4c5cde344e83a1796013590099c1771997fcdc087b017c8"
+    },
+    {
+      "path": "000_00012/articles.blocks",
+      "bytes": 747914441,
+      "sha256": "ac85fa7398aa0d2e0b9267276fb9d39b363173c4fe67e715d6b4e6d24b8c8d60"
+    },
+    {
+      "path": "000_00012/catalog.sqlite",
+      "bytes": 682283008,
+      "sha256": "f742f647cbb18a0bb52cd8654fcb352fc1218072a13a601db4b5fb627703b4c0"
+    },
+    {
+      "path": "000_00012/measurement.json",
+      "bytes": 1213,
+      "sha256": "070ef55e74e26c2ee99af355608253b7f64c7d654b40bf793b0c7ef75bb4caeb"
+    },
+    {
+      "path": "000_00013/articles.blocks",
+      "bytes": 716075985,
+      "sha256": "df373c081c047cddd87f16c9647929dc274278e0b4e84341b8a2c7824159bc09"
+    },
+    {
+      "path": "000_00013/catalog.sqlite",
+      "bytes": 641421312,
+      "sha256": "8f04745e220987683c9f0cc27ba8a4c55efadd740254f76ad5559f20467fcd36"
+    },
+    {
+      "path": "000_00013/measurement.json",
+      "bytes": 1213,
+      "sha256": "95f0f3959b5d1ee3a0bd7998cedbf56793fde559bd0c89ac8c5aed88b88b0d7c"
+    },
+    {
+      "path": "000_00014/articles.blocks",
+      "bytes": 746705319,
+      "sha256": "a1ff740546fd37c7c55f9e20e30a5999ba550ee498ab5750d41953ad474fce8c"
+    },
+    {
+      "path": "000_00014/catalog.sqlite",
+      "bytes": 688607232,
+      "sha256": "dceb878444b2a507796d1ee60bc793c278861bebdb51673e76b68c9e2d9b9d45"
+    },
+    {
+      "path": "000_00014/measurement.json",
+      "bytes": 1213,
+      "sha256": "d141ed2fde3e01c0fbed6a94863f6cf0def4d263c11e979add4deaac694ace15"
+    },
+    {
+      "path": "CC-BY-SA-3.0.txt",
+      "bytes": 22240,
+      "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f"
+    },
+    {
+      "path": "CC-BY-SA-4.0.txt",
+      "bytes": 20138,
+      "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+    },
+    {
+      "path": "CC0-1.0.txt",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "path": "NOTICE.txt",
+      "bytes": 3362,
+      "sha256": "9230104a82a2be2b9f58cf774011d4e6cc5dd3c64b5e6e74a23b8dd2aa01fd18"
+    },
+    {
+      "path": "provenance.json",
+      "bytes": 16982,
+      "sha256": "4bf267188415f053be26379030d0d6698bf09a392a02e9bbc6286879200a4e66"
+    },
+    {
+      "path": "redirect-aliases.json",
+      "bytes": 1583,
+      "sha256": "8a28c043058ba1d9a95e4fed5f8a85233bb749b9dcb39ab930a3c43785056e40"
+    },
+    {
+      "path": "redirect-aliases.sqlite",
+      "bytes": 403890176,
+      "sha256": "a691091bc7892155a4e6381d322070076dd6a6064b7a2a23be99e95898b76a12"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 535,
+      "sha256": "bf047deaa8fead0336026658fe92b7b905b09be46f68c0782123afea43f3fe26"
+    }
+  ],
+  "installed_payload_bytes": 21853432550,
+  "inventory_self_bytes": 18579,
+  "installed_total_bytes": 21853451129,
+  "budget_decimal_bytes": 22000000000,
+  "budget_passed": true,
+  "acquired_sources": [
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00000.parquet",
+      "bytes": 2510037970,
+      "sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00000.parquet.receipt.json",
+      "receipt_sha256": "e5ebbc7638ede23ff1305784f7a37e412d4b761eaf6e33d8b452d27d9bca6c2c",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00001.parquet",
+      "bytes": 2559070630,
+      "sha256": "eb29c5b3d23010c17f225a9a6370049afa90b168f3d70744e5e015729455cb55",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00001.parquet.receipt.json",
+      "receipt_sha256": "000734421718607c9b684a8e760b40e20889a38de014ce011225928207342e6c",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00002.parquet",
+      "bytes": 2538629269,
+      "sha256": "b98a10ff8a3f21291e4174564a5cbe186eab66fcca9c53c0920d182f718c5b9a",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00002.parquet.receipt.json",
+      "receipt_sha256": "e887fbb4c2a06d84f9ba7f74e7ee6b3e59198f3b19701d0610d747e562070d91",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00003.parquet",
+      "bytes": 2650496988,
+      "sha256": "b8a6177f9c2135ab5182a95f33ada8a14d251eeaa052b006ab0f19fd2f24fd2d",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00003.parquet.receipt.json",
+      "receipt_sha256": "208a0743226922edbb3368a71863fd675587e78cd1d5afe9e127785b78e842d0",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00004.parquet",
+      "bytes": 2534066622,
+      "sha256": "4540721a38ac4ff620b5c4bb44fa3050d5883518c8823204371c0709890e5d78",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00004.parquet.receipt.json",
+      "receipt_sha256": "99f1e5959448e4f7839f43d646c78787f18e7e960ad25aec67eee2f50b39cecc",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00005.parquet",
+      "bytes": 2518529521,
+      "sha256": "c25bb40b79ada5cd74377d1b95dcc3276e31a9959caebd8259f0506cc1a7f95f",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00005.parquet.receipt.json",
+      "receipt_sha256": "737ec2833733e74bbdb053dcbd583e3c2365c47eb3c75b25f62989eb543e72cb",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00006.parquet",
+      "bytes": 2491036654,
+      "sha256": "dc10ef0d900f4b87148a1595fe9895866f960ac2affc94684a04e048813198a7",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00006.parquet.receipt.json",
+      "receipt_sha256": "74f7feff5406f3cb920ed649c77f25e479c85de3da31afa79725b034bb68fdb8",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00007.parquet",
+      "bytes": 2496387295,
+      "sha256": "8f8d47d44c23b79008d97715ec78c1f1c5d3627856182a87cde054e35196aec5",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00007.parquet.receipt.json",
+      "receipt_sha256": "39d3890b64a1c963d24da12a34626b171caa518aff9dda28a46e1edb860f9e41",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00008.parquet",
+      "bytes": 2468521574,
+      "sha256": "5d4698f29648c267f32de6721ac7b36ea007b6b413dddfb36fd87ab7f64af201",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00008.parquet.receipt.json",
+      "receipt_sha256": "51a66ffbb76ef080265501a911a4226b88cff34346d32a283a9ecd72d41dd47a",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00009.parquet",
+      "bytes": 2473260614,
+      "sha256": "c065b591184aae5eb053786afdc7f20c9d6ccc3a955147db8849cc9bc4ec7e52",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00009.parquet.receipt.json",
+      "receipt_sha256": "c246ce019712ed3c26fdf0b009800cd76f4ba019eedfb5c89d64471f8f9be8de",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00010.parquet",
+      "bytes": 2505256688,
+      "sha256": "2bc2a319352e26f6d8aac5d5c25799fc16949f762a6a5c1ec6fba66389d428ab",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00010.parquet.receipt.json",
+      "receipt_sha256": "7bbd14cd0089bb0a900254d1d0cff69f52d5a43abc6bf14cd8ac8326a5583d30",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00011.parquet",
+      "bytes": 2498000006,
+      "sha256": "c64481777c4ad518969680bdb3f27e8b1c9e782fa831709ee5fc30beb3aa622d",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00011.parquet.receipt.json",
+      "receipt_sha256": "e57694d074e38b49bff1da81bfc197c1a4bf49cbc50a25bc000e0d3fe90ac732",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00012.parquet",
+      "bytes": 2523664632,
+      "sha256": "2e5ca443dadb167aea3ebb4cc681b5755e33516e41dfa8c0423ef5e7a225c6de",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00012.parquet.receipt.json",
+      "receipt_sha256": "704febfa16c91aacbba700ae3b6479b93c0df837c04319ced8542117fc013a79",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00013.parquet",
+      "bytes": 2417467623,
+      "sha256": "ce5d84bf8048edd55a1d91ae30d04a5c0336bc84f2926b63b4ecfe32d314e381",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00013.parquet.receipt.json",
+      "receipt_sha256": "8fae52406087c1e58dad91a5182025a4eece087d8cd43096cb3b1d1b89e699c4",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00014.parquet",
+      "bytes": 2538032319,
+      "sha256": "0a175e0d593c4a07afde8aacf5b8c86e70e958a31cd80a8f0e43e84397ddab42",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00014.parquet.receipt.json",
+      "receipt_sha256": "066d9ee03fd2c2aa6f153be3bd3deeb3b4c9b1b619df83723eec6fb604a83ad8",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/enwiki-20260901-pages-articles-multistream-index.txt.bz2",
+      "bytes": 284375992,
+      "sha256": "5f56546800508741898edd3210e98afd053d575c1e954ccc547843c574617674",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/enwiki-20260901-pages-articles-multistream-index.txt.bz2.receipt.json",
+      "receipt_sha256": "03823e0f4d8c38fd99868857fa7e41036ce6f0f273fb597173b96018724a6768",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/enwiki-20260901-redirect.sql.gz",
+      "bytes": 186961576,
+      "sha256": "aca5b66b28d53757f4ad20ce839fe98790b0d36d4dba11e3a1d4489009b9fd6d",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/enwiki-20260901-redirect.sql.gz.receipt.json",
+      "receipt_sha256": "b8730cf3e896ba37e65bf9ee5e3f0ac5f15bf03dd81f711285d5eb1893c58b15",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/pageviews-neuml.sqlite",
+      "bytes": 1575235584,
+      "sha256": "409c4d1643171d050d77c9ea03416d77dac3a538ff8a78f59e3344df9bb49dc1",
+      "receipt": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/pageviews-neuml.sqlite.receipt.json",
+      "receipt_sha256": "19b25b2023a047b548fde0fdc37e78686c9c973726f363f68c62bc7d3666d121",
+      "verification": "SHA-256 at acquisition; size rechecked at sealing; original receipt bound"
+    }
+  ],
+  "source_dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+  "source_contract": "docs/evidence/scale/wiki/ANDROID_READER_SCHEMA.md",
+  "seconds_hashing": 24.71810793199984,
+  "limits": [
+    "Inventory is integrity metadata, not publisher authentication",
+    "No Android, human, distribution-rights or rival acceptance",
+    "Input hashes reference preserved acquisition checks; installed files freshly hashed"
+  ]
+}

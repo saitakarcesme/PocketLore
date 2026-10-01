@@ -1,0 +1,56 @@
+PocketLore encyclopedia staging edition
+
+Source: FineWiki, Guilherme Penedo / Hugging Face, 2025.
+Dataset: https://huggingface.co/datasets/HuggingFaceFW/finewiki
+Pinned dataset revision: 8bd13e72e6a002407649b3e898535f42ceb1aeb9
+Original articles: Wikipedia contributors; each record preserves its title,
+canonical URL, article revision, article timestamp and original wikitext hash.
+History: https://en.wikipedia.org/w/index.php?title=TITLE&action=history
+Revision: https://en.wikipedia.org/w/index.php?oldid=REVISION
+
+FineWiki identifies its processed release as an adaptation licensed under
+Creative Commons Attribution-ShareAlike 4.0 International:
+https://creativecommons.org/licenses/by-sa/4.0/
+https://creativecommons.org/licenses/by-sa/4.0/legalcode.en
+Wikipedia text may also be available under GFDL as described by the source;
+no blanket GFDL claim is made for every embedded work in this processed edition.
+
+Changes: FineWiki extracted structured text from Wikimedia Enterprise HTML.
+PocketLore compresses text and original wikitext, builds a lexical index,
+and selects an explicitly labeled lead for lower-priority articles.
+Original wikitext is preserved in the pinned source archive. The installed
+supplement is labeled: complete original wikitext, exact template/math-context/
+notice ranges, or archive-only with its original hash. Ranges can contain
+unexpanded attribution templates. Recognized notices remain inspectable;
+unrecognized notices and source-specific rights are not claimed cleared. No editorial verification,
+complete rights clearance, currentness or Android acceptance is claimed.
+This is an evaluation-only staging edition, not distribution-ready content.
+
+Underlying Wikimedia Analytics datasets are identified as CC0:
+https://dumps.wikimedia.org/other/pageviews/readme.html
+The incomplete direct monthly download is not used. Unobserved pageviews
+are unknown, not measured zero.
+
+Pageview ranking source used by the tiered editions:
+NeuML/wikipedia-20250620, revision b5559579fdfbd52faef3c2d68372161b6c06c790,
+pageviews.sqlite SHA-256
+409c4d1643171d050d77c9ea03416d77dac3a538ff8a78f59e3344df9bb49dc1.
+https://huggingface.co/datasets/neuml/wikipedia-20250620
+Its card identifies precomputed Wikimedia bulk pageview totals but does not
+establish their aggregation interval. The card lists CC BY-SA 3.0 and GFDL for
+that dataset, without a separate license declaration for this database.
+Underlying Wikimedia Analytics statistics are identified as CC0; the secondary
+database's specific rights remain unreviewed. Credit NeuML and Wikimedia.
+
+Redirect metadata: Wikimedia English Wikipedia dump dated 2026-09-01.
+https://dumps.wikimedia.org/enwiki/20260901/
+Source titles and target links are credited to Wikipedia contributors under
+Wikipedia's applicable terms. This newer alias snapshot does not update the
+article text, and matching it cannot prove alias freshness for the 2025 text.
+
+The lean supplement policy omits recognized ordinary citation and infobox
+boilerplate from installed wikitext, while retaining structured infobox fields,
+unknown templates, recognized notice prose, math context and unit templates.
+Exact source ranges and hashes identify retained fragments. Ambiguous markup
+and unresolved source math retain whole wikitext. This policy has unknown
+notice-detection false negatives and is not rights clearance.

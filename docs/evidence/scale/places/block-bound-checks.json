@@ -1,0 +1,105 @@
+{
+  "shards": [
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-00.sqlite",
+      "blocks": 2501,
+      "records": 5120674,
+      "max_stored_compressed_bytes": 443407
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-01.sqlite",
+      "blocks": 2474,
+      "records": 5065932,
+      "max_stored_compressed_bytes": 450091
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-02.sqlite",
+      "blocks": 2496,
+      "records": 5110584,
+      "max_stored_compressed_bytes": 445224
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-03.sqlite",
+      "blocks": 2502,
+      "records": 5124095,
+      "max_stored_compressed_bytes": 446430
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-04.sqlite",
+      "blocks": 2508,
+      "records": 5135717,
+      "max_stored_compressed_bytes": 405679
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-05.sqlite",
+      "blocks": 2485,
+      "records": 5087871,
+      "max_stored_compressed_bytes": 441627
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-06.sqlite",
+      "blocks": 2509,
+      "records": 5137402,
+      "max_stored_compressed_bytes": 446110
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-07.sqlite",
+      "blocks": 2516,
+      "records": 5152063,
+      "max_stored_compressed_bytes": 427017
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-08.sqlite",
+      "blocks": 2472,
+      "records": 5060836,
+      "max_stored_compressed_bytes": 432634
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-09.sqlite",
+      "blocks": 2451,
+      "records": 5018256,
+      "max_stored_compressed_bytes": 416782
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-10.sqlite",
+      "blocks": 2479,
+      "records": 5075322,
+      "max_stored_compressed_bytes": 415371
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-11.sqlite",
+      "blocks": 2485,
+      "records": 5088275,
+      "max_stored_compressed_bytes": 413700
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-12.sqlite",
+      "blocks": 2480,
+      "records": 5078337,
+      "max_stored_compressed_bytes": 456196
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-13.sqlite",
+      "blocks": 2465,
+      "records": 5047272,
+      "max_stored_compressed_bytes": 417356
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-14.sqlite",
+      "blocks": 2471,
+      "records": 5058561,
+      "max_stored_compressed_bytes": 432068
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-15.sqlite",
+      "blocks": 2488,
+      "records": 5094226,
+      "max_stored_compressed_bytes": 427913
+    }
+  ],
+  "passed": true,
+  "maximum_stored_compressed_bytes": 456196,
+  "compressed_reader_bound_bytes": 1048576,
+  "inflated_bound": "builder recursively enforces 32 MiB and records actual maxima; query reader verifies bounded inflation and SHA-256",
+  "android_runtime_acceptance": false
+}

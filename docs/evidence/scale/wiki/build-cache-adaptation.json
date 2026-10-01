@@ -1,0 +1,14 @@
+{
+  "date_utc": "2026-10-01T11:52:43.084213+00:00",
+  "change": "Future shard processes use 768 MiB SQLite page cache instead of 256 MiB",
+  "reason": "Observed long build wall times as bodies/indexes grow; a larger cache is a bounded IO-pressure experiment, not an established cause or speedup claim",
+  "mem_available_kib_at_decision": 11734628,
+  "mem_total_kib": 32638484,
+  "threads": "Still two CPU worker processes, affinity 6/12, zero SQLite auxiliary workers",
+  "batch": "Unchanged 64 rows and <=2 GiB Arrow output batches; process RSS is separately measured",
+  "semantics": "No source selection, tier, text, supplement, codec, FTS token policy or reader change",
+  "running_shards": "000_00000 and 000_00001 keep their already-loaded producer and 256 MiB cache; completed assets are not changed",
+  "old_builder_sha256": "7ab42cab80659e8f70d0e96da4054b1072bcaccf292aceef4324db51090732a5",
+  "new_builder_sha256": "b85e96a2d1c289b4c0f4dad072ea821e83a1e2b5bc23db155f9cdadfd5bbdcca",
+  "provenance": "Each shard captures producer source hashes at process start. Initial dispatcher commit describes the parent; actual child source hashes distinguish this resource-only change."
+}

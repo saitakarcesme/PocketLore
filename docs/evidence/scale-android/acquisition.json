@@ -1,0 +1,178 @@
+{
+  "acquired_on": "2026-10-01",
+  "environment": "llmrig host; no device",
+  "date_note": "Source locks preserve original retrieval dates; current download date is separately recorded here. USGS page revision date remains unknown.",
+  "rights": "USGS selected authored paragraphs: U.S. public domain per existing lock; Wikidata structured records CC0-1.0; llama.cpp MIT, pinned LICENSE retained. No third-party media acquired.",
+  "counts": {
+    "water_passages": 8,
+    "travel_places": 25,
+    "full_bulk_shards": 0
+  },
+  "files": [
+    {
+      "path": "android/app/src/main/assets/dc-monuments.tsv",
+      "bytes": 9855,
+      "sha256": "2240dbd96698266eb27a3f892e346b2e2154c186c097f8ebf79d3f8ede086a8e"
+    },
+    {
+      "path": "android/app/src/main/assets/water-science.tsv",
+      "bytes": 5380,
+      "sha256": "a39d54b412f469086bd1ee96425245e36f446ac1a77b0b5730c60e5603084492"
+    },
+    {
+      "path": "android/knowledge-sources.json",
+      "bytes": 2711,
+      "sha256": "f786b4f019deeb33a198ca5f9585d7a6bc5b05caaf267fbdc9d2a22ce39b2c7c"
+    },
+    {
+      "path": "downloads/regional/raw/Q1075126.json",
+      "bytes": 65609,
+      "sha256": "5ab39d36692b217983a5e0e12023896472a8a2a6f60c5204338f07dc5b6cafef"
+    },
+    {
+      "path": "downloads/regional/raw/Q1470020.json",
+      "bytes": 40991,
+      "sha256": "e152dff46f93dd81c13e3ab76d69b8ffda790882464f07c2994781ee8b8eae10"
+    },
+    {
+      "path": "downloads/regional/raw/Q148554.json",
+      "bytes": 189293,
+      "sha256": "05f00400ef92405de4d83dbb8be4ea11656d420f0cad65c6fbdb383dbd101ff9"
+    },
+    {
+      "path": "downloads/regional/raw/Q148584.json",
+      "bytes": 120253,
+      "sha256": "80544b34c9e580801409c44358ca400e1da63b9f37bf6c9fb70574ffc229d482"
+    },
+    {
+      "path": "downloads/regional/raw/Q1579670.json",
+      "bytes": 127219,
+      "sha256": "ea7fad33173d6db8d65b6955919557fb4cc533d556db6a4f30145b3468fe21ea"
+    },
+    {
+      "path": "downloads/regional/raw/Q1620553.json",
+      "bytes": 71336,
+      "sha256": "6056c92444a56ef4446b8e3c3698e0e196c223c15c76b127918a16d811bb5f93"
+    },
+    {
+      "path": "downloads/regional/raw/Q178114.json",
+      "bytes": 204109,
+      "sha256": "91257f9d70d87e8630ecfb34dbbe2a47ba4e4c9dc4f62c5b9b9f46473513886c"
+    },
+    {
+      "path": "downloads/regional/raw/Q1848855.json",
+      "bytes": 108860,
+      "sha256": "9897762ad4014face558e9c1143cc7f1ea77bc492bb409ff642c33dc063fc5bc"
+    },
+    {
+      "path": "downloads/regional/raw/Q1967614.json",
+      "bytes": 67960,
+      "sha256": "d79043c27573f002e42d32e35da6314c0e8e7ac94f5a47e0066e20bd948c18a8"
+    },
+    {
+      "path": "downloads/regional/raw/Q213559.json",
+      "bytes": 107974,
+      "sha256": "102b5d712dcb98b9db60f4b7a5ec36639d838ba6f2eea558d4d12a30989a91b4"
+    },
+    {
+      "path": "downloads/regional/raw/Q214867.json",
+      "bytes": 301571,
+      "sha256": "0637143495d9723e07857650db4a24cec0f3afb0b1372c5802634689eaca37ca"
+    },
+    {
+      "path": "downloads/regional/raw/Q3073495.json",
+      "bytes": 123137,
+      "sha256": "086767ce56a68527a8384fcca8531c3f2fb89babc57bfb3c18559e5790e0745f"
+    },
+    {
+      "path": "downloads/regional/raw/Q326183.json",
+      "bytes": 55464,
+      "sha256": "36c3f227dec692fa05046b65e89a15e0434c05701e16ef9720b28952f3173abf"
+    },
+    {
+      "path": "downloads/regional/raw/Q35525.json",
+      "bytes": 313975,
+      "sha256": "9e71f207889e1cacbca7ad3dc4f5649ccb0b3ea616bda7cc84cbc84ab495d6c9"
+    },
+    {
+      "path": "downloads/regional/raw/Q3798323.json",
+      "bytes": 13159,
+      "sha256": "8568c5e23a0ee3e8e04816bba4c2e3bcb3308a9bae966441dfbd956dda7ae5d5"
+    },
+    {
+      "path": "downloads/regional/raw/Q465811.json",
+      "bytes": 124623,
+      "sha256": "1e5a74e877cb13ee1ea5cd4f34971011fb7890a8a73c0501c0700026dd37760b"
+    },
+    {
+      "path": "downloads/regional/raw/Q536802.json",
+      "bytes": 31034,
+      "sha256": "8a89b14d5f4cec47a42cd3c488374135c264b02188a79debb964f7e9c9dc0d35"
+    },
+    {
+      "path": "downloads/regional/raw/Q54109.json",
+      "bytes": 207416,
+      "sha256": "02cd901a0554908a66c05fbee64085711d7be0fdde42216fef95212a542bb6ec"
+    },
+    {
+      "path": "downloads/regional/raw/Q592198.json",
+      "bytes": 37783,
+      "sha256": "740220b5a7e9ddeedc3eaa631fc2066a68b71232e563e7d75162834859f05a0e"
+    },
+    {
+      "path": "downloads/regional/raw/Q624008.json",
+      "bytes": 144980,
+      "sha256": "358350ea8d27fea107e70c1167fd20c5af46c609d2721052c13a6ee37bbba22c"
+    },
+    {
+      "path": "downloads/regional/raw/Q6471523.json",
+      "bytes": 53760,
+      "sha256": "0f66be50651a9497514f1b99f460bcc8586b972b3157529334222fb1d4c27c73"
+    },
+    {
+      "path": "downloads/regional/raw/Q708847.json",
+      "bytes": 38411,
+      "sha256": "70b4309bf492e86c582db3ed49a6fadd757072b505e8e45e8cc5231618aaae30"
+    },
+    {
+      "path": "downloads/regional/raw/Q713628.json",
+      "bytes": 62927,
+      "sha256": "308686adebcc48b52aca2c64865280bb10b748effacafc46e797e4c452d70eb4"
+    },
+    {
+      "path": "downloads/regional/raw/Q752669.json",
+      "bytes": 116698,
+      "sha256": "cb0b90b155a2c750b1a5ff67a71de6f5c6bba1bc88ea0bdea553601c9b27d9c5"
+    },
+    {
+      "path": "downloads/regional/raw/Q861608.json",
+      "bytes": 122621,
+      "sha256": "c7d31c3ca8ba1797898c6ebb6612f9d7d592326ca9b7cce01bdc53f4de124c65"
+    },
+    {
+      "path": "downloads/source-cache/evaporation.html",
+      "bytes": 240721,
+      "sha256": "f7107db0142db766d2cfead7b903f7ac7ba03f6812194bb188daa0db71cb10c6"
+    },
+    {
+      "path": "downloads/source-cache/infiltration.html",
+      "bytes": 117677,
+      "sha256": "016d747cbc9dc9fb7eee9b4d88bf039b881ff7baaaec76bf6dc3f93f8e48a598"
+    },
+    {
+      "path": "downloads/source-cache/surface-runoff.html",
+      "bytes": 262008,
+      "sha256": "61d3fc3c8a960daa415c7a182b8e5a30340e34bc09e0120a1458888ce8337a2d"
+    },
+    {
+      "path": "tools/packs/regional-sources.lock.json",
+      "bytes": 22327,
+      "sha256": "0d3105f89698d52746dc1edc6c777c74ddbb860c11e3beb2012867fedaaa9772"
+    },
+    {
+      "path": "tools/runtime/pins.env",
+      "bytes": 316,
+      "sha256": "1cb0aa2695c803496945dac1e9a3b7fadcf63e33b5b1434dbe70a284b973840a"
+    }
+  ]
+}

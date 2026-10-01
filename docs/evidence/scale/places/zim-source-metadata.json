@@ -1,0 +1,49 @@
+{
+  "path": "/home/isa/Data/atlas/raw/data-002-v1/wikivoyage_en_all_nopic_2026-09.zim",
+  "bytes": 272495142,
+  "sha256": "4305c50550f065d83e70f75fd1d2016a694f5d67aa1e0ef00fdf6bb74fc092ac",
+  "sha256_basis": "previous complete-source hash from travel build report",
+  "metadata": {
+    "Name": "wikivoyage_en_all",
+    "Date": "2026-09-13",
+    "Creator": "Wikivoyage",
+    "Publisher": "openZIM",
+    "Source": "en.wikivoyage.org",
+    "License": null,
+    "Language": "eng",
+    "Title": "Wikivoyage"
+  },
+  "cache_usage": "read-only original cache; not overwritten",
+  "upstream_revision": "archive hash and internal date; unspecified upstream contributor history remains unknown",
+  "cached_acquisition_receipt": {
+    "path": "wikivoyage_en_all_nopic_2026-09.zim",
+    "url": "https://download.kiwix.org/zim/wikivoyage/wikivoyage_en_all_nopic_2026-09.zim",
+    "resolved_url": "https://ftp.nluug.nl/pub/kiwix/zim/wikivoyage/wikivoyage_en_all_nopic_2026-09.zim",
+    "retrieved_at": "2026-09-28T23:51:23Z",
+    "last_modified": "Fri, 18 Sep 2026 10:32:01 GMT",
+    "project": "wikivoyage",
+    "topic": "travel",
+    "bytes": 272495142,
+    "sha256": "4305c50550f065d83e70f75fd1d2016a694f5d67aa1e0ef00fdf6bb74fc092ac",
+    "uuid": "c5181ff1-fa01-053c-cf3c-9c4c66259687",
+    "metadata": {
+      "Counter": "application/javascript=4;image/png=6;image/svg+xml=126;text/css=31;text/html=39180;text/javascript=31",
+      "Creator": "Wikivoyage",
+      "Date": "2026-09-13",
+      "Description": "The collaborative travel guide",
+      "Flavour": "nopic",
+      "Language": "eng",
+      "Name": "wikivoyage_en_all",
+      "Publisher": "openZIM",
+      "Scraper": "mwoffliner 2.0.0",
+      "Source": "en.wikivoyage.org",
+      "Tags": "wikivoyage;_category:wikivoyage;_pictures:no;_videos:no;_details:yes;_ftindex:yes",
+      "Title": "Wikivoyage"
+    }
+  },
+  "cached_manifest": {
+    "path": "/home/isa/Data/atlas/raw/data-002-v1/manifest.json",
+    "sha256": "ffc81c10aec78bb64d92b1d515df24f570e2082d6f4b173399ccec3b204c9ede"
+  },
+  "inspected_utc": "2026-10-01T12:18:58Z"
+}

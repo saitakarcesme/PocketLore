@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "created_utc": "2026-10-01T11:29:49.731608+00:00",
+  "policy": "Supplemental development slice frozen after initial reader implementation but before its first full-corpus evaluation; no subsequent query/ranking tuning is planned. Original 80 probes remain unchanged and reported separately. Deterministic lowest stored view counts in canonical first shard, ties page ID descending. Stored view proxy period is unknown; this is not proof of actual current popularity. Source snippets were inspected before authoring the eight lead paraphrases.",
+  "queries": [
+    {
+      "id": "t001",
+      "category": "stored_view_tail",
+      "query": "Russia in Global Affairs",
+      "expected_titles": [
+        "Russia in Global Affairs"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80800742,
+        "title": "Russia in Global Affairs",
+        "views": 1,
+        "source_row": 309092,
+        "revision": 1306974076,
+        "date": "2025-08-20T19:47:31Z",
+        "url": "https://en.wikipedia.org/wiki/Russia_in_Global_Affairs",
+        "lead_excerpt": "# Russia in Global Affairs\nRussia in Global Affairs (\u0420\u043e\u0441\u0441\u0438\u044f \u0432 \u0433\u043b\u043e\u0431\u0430\u043b\u044c\u043d\u043e\u0439 \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0435) is a Russian scholarly and political science journal dedicated to issues of Russian foreign policy and globalization. It has been published by the Foundation for World Politics Research since November 2002, with the informational support of the American journal Foreign Affairs. It is funded by Russian sources. It is part of the \"Russia and Globalization\" project of the Russian non-governmental public association, the Council on Foreign and Defense Policy (SVOP). The journal is published 6 times a year, with each issue containing 18 articles.\nThe journal publishes analytical materials from both Russian and foreign specialists in international relations, and it also reprints articles from Foreign Affairs and o",
+        "source_text_sha256": "69b3ad69b17c15a4ce25348f605860c37867f874f18a243b36bae35f0e837a55"
+      }
+    },
+    {
+      "id": "t002",
+      "category": "stored_view_tail",
+      "query": "Guy-Patrick Sainderichin",
+      "expected_titles": [
+        "Guy-Patrick Sainderichin"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80793387,
+        "title": "Guy-Patrick Sainderichin",
+        "views": 1,
+        "source_row": 310708,
+        "revision": 1306976663,
+        "date": "2025-08-20T20:08:01Z",
+        "url": "https://en.wikipedia.org/wiki/Guy-Patrick_Sainderichin",
+        "lead_excerpt": "# Guy-Patrick Sainderichin\nGuy-Patrick Sainderichin (9 July 1950 \u2013 18 August 2025) was a French screenwriter and actor.\n",
+        "source_text_sha256": "b0bb20c53145df5362fdd2db562c75f3422ff0f2ceea3b73dd07911cc7e58100"
+      }
+    },
+    {
+      "id": "t003",
+      "category": "stored_view_tail",
+      "query": "1955 Cork Junior Hurling Championship",
+      "expected_titles": [
+        "1955 Cork Junior Hurling Championship"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80772181,
+        "title": "1955 Cork Junior Hurling Championship",
+        "views": 1,
+        "source_row": 297207,
+        "revision": 1306468646,
+        "date": "2025-08-17T22:36:07Z",
+        "url": "https://en.wikipedia.org/wiki/1955_Cork_Junior_Hurling_Championship",
+        "lead_excerpt": "# 1955 Cork Junior Hurling Championship\nThe 1955 Cork Junior Hurling Championship was the 58th staging of the Cork Junior Hurling Championship since its establishment by the Cork County Board in 1895.\nBallyhea were awarded the title, after their final opponents, Aghabullogue, were suspended from the championship for fielding an illegal team against Castlelyons. It was Ballyhea's second championship title overall and a first championship title in 25 years.\n",
+        "source_text_sha256": "213bebde767781c9ae4818abeb855b91efc53883dcc917af672da0a79f2f106b"
+      }
+    },
+    {
+      "id": "t004",
+      "category": "stored_view_tail",
+      "query": "Arthur J. Gronna",
+      "expected_titles": [
+        "Arthur J. Gronna"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80762076,
+        "title": "Arthur J. Gronna",
+        "views": 1,
+        "source_row": 306038,
+        "revision": 1306667931,
+        "date": "2025-08-19T01:39:27Z",
+        "url": "https://en.wikipedia.org/wiki/Arthur_J._Gronna",
+        "lead_excerpt": "# Arthur J. Gronna\nArthur J. Gronna (July 19, 1897 \u2013 January 19, 1965) was an American politician who served as the North Dakota Attorney General from 1932 to 1933.  His father Asle Gronna served in the United States Senate and United States House of Representatives, while his brother, James D. Gronna, was the North Dakota Secretary of State.\n",
+        "source_text_sha256": "054d0c3c2a95f0bd4c5b937c5e3689ea098d45091795f874232df31360c924e2"
+      }
+    },
+    {
+      "id": "t005",
+      "category": "stored_view_tail",
+      "query": "Olle Engkvist",
+      "expected_titles": [
+        "Olle Engkvist"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80739797,
+        "title": "Olle Engkvist",
+        "views": 1,
+        "source_row": 285672,
+        "revision": 1305997056,
+        "date": "2025-08-15T09:09:49Z",
+        "url": "https://en.wikipedia.org/wiki/Olle_Engkvist",
+        "lead_excerpt": "# Olle Engkvist\nOlle Engkvist, full name Olof Theodor Engkvist, (31 May 1889 - 22 February 1969) was a prominent Swedish building contractor and architect, and founder of the company by the same name.\n",
+        "source_text_sha256": "07746622e36ebdf80aeb0d64d39a190ee2a1ac3298b40fa57c42bd9e0173c563"
+      }
+    },
+    {
+      "id": "t006",
+      "category": "stored_view_tail",
+      "query": "Puneet Vashist",
+      "expected_titles": [
+        "Puneet Vashist"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80722026,
+        "title": "Puneet Vashist",
+        "views": 1,
+        "source_row": 279775,
+        "revision": 1305611534,
+        "date": "2025-08-13T02:50:34Z",
+        "url": "https://en.wikipedia.org/wiki/Puneet_Vashist",
+        "lead_excerpt": "# Puneet Vashist\nPuneet Vashist is an Indian actor who appears in Hindi-language films and television series.\n",
+        "source_text_sha256": "6181177c953a1d7e8687b360d34a91362b447dc1d8a46096c1cab665742527d9"
+      }
+    },
+    {
+      "id": "t007",
+      "category": "stored_view_tail",
+      "query": "Flag of the Caribbean Community",
+      "expected_titles": [
+        "Flag of the Caribbean Community"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80716261,
+        "title": "Flag of the Caribbean Community",
+        "views": 1,
+        "source_row": 280878,
+        "revision": 1305562982,
+        "date": "2025-08-12T20:15:55Z",
+        "url": "https://en.wikipedia.org/wiki/Flag_of_the_Caribbean_Community",
+        "lead_excerpt": "# Flag of the Caribbean Community\nThe Flag of the Caribbean Community is the official flag of the Caribbean Community, a regional intergovernmental organisation. The flag was adopted in 1983.\n",
+        "source_text_sha256": "9e4956359f12555745c02822b1837b7ae6f4e76252461011b1a0f9864d871159"
+      }
+    },
+    {
+      "id": "t008",
+      "category": "stored_view_tail",
+      "query": "Ross Harstone",
+      "expected_titles": [
+        "Ross Harstone"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80703440,
+        "title": "Ross Harstone",
+        "views": 1,
+        "source_row": 277931,
+        "revision": 1305500540,
+        "date": "2025-08-12T12:08:47Z",
+        "url": "https://en.wikipedia.org/wiki/Ross_Harstone",
+        "lead_excerpt": "# Ross Harstone\nRoss Gerald Lewis Harstone (June 11, 1885 \u2013 May 11, 1964) was a Canadian curler who is the namesake of The Brier's Ross Harstone Sportsmanship Award, which is presented to the curler who best represents the ideals of good sportsmanship, observance of the rules, exemplary conduct, and curling ability.\n",
+        "source_text_sha256": "e2008eca936821b7ee01ad42ef633f56499017f68b8cdcacba4f4c5d9d88208a"
+      }
+    },
+    {
+      "id": "t009",
+      "category": "stored_view_tail",
+      "query": "Indian filmmaker films injustice inequality",
+      "expected_titles": [
+        "Shazia Iqbal"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80652370,
+        "title": "Shazia Iqbal",
+        "views": 1,
+        "source_row": 280977,
+        "revision": 1305658171,
+        "date": "2025-08-13T10:08:20Z",
+        "url": "https://en.wikipedia.org/wiki/Shazia_Iqbal",
+        "lead_excerpt": "# Shazia Iqbal\nShazia Iqbal (born 1984, in Patna) is an Indian filmmaker, who is known for making films that question injustice or inequality.\n",
+        "source_text_sha256": "08bd79136659ad793063400c62619c4d3684865b37a2c1ed61c538705531922c"
+      }
+    },
+    {
+      "id": "t010",
+      "category": "stored_view_tail",
+      "query": "English football forward Crawley Town",
+      "expected_titles": [
+        "Louis Flower"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80633779,
+        "title": "Louis Flower",
+        "views": 1,
+        "source_row": 251647,
+        "revision": 1304377642,
+        "date": "2025-08-05T17:49:23Z",
+        "url": "https://en.wikipedia.org/wiki/Louis_Flower",
+        "lead_excerpt": "# Louis Flower\nLouis Christopher Chukwuemeka Flower (born 6 October 2004) is an English professional footballer who plays as a forward for EFL League Two club Crawley Town.\n",
+        "source_text_sha256": "0b0cee3469db6dec3635ab09aca2cb3b12ed7dde128618a2874f8f6cbaec9f2b"
+      }
+    },
+    {
+      "id": "t011",
+      "category": "stored_view_tail",
+      "query": "American swimmer mixed 4x100 freestyle relay 2025",
+      "expected_titles": [
+        "Patrick Sammon"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80617638,
+        "title": "Patrick Sammon",
+        "views": 1,
+        "source_row": 293357,
+        "revision": 1306405407,
+        "date": "2025-08-17T15:26:25Z",
+        "url": "https://en.wikipedia.org/wiki/Patrick_Sammon",
+        "lead_excerpt": "# Patrick Sammon\nPatrick Sammon (born August 6, 2003) is an American competitive swimmer. At the 2025 World Aquatics Championships, he won a gold medal in the mixed 4\u00d7100 metre freestyle relay. He currently competes at the collegiate level for Arizona State University.\n",
+        "source_text_sha256": "86d43f90994b3e3d531a9e158daaae31e5645f73b02530c1de9c11451df6fefb"
+      }
+    },
+    {
+      "id": "t012",
+      "category": "stored_view_tail",
+      "query": "German wheelchair basketball Universiade champion",
+      "expected_titles": [
+        "Lisa Bergenthal"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80586804,
+        "title": "Lisa Bergenthal",
+        "views": 1,
+        "source_row": 291101,
+        "revision": 1306363114,
+        "date": "2025-08-17T09:59:28Z",
+        "url": "https://en.wikipedia.org/wiki/Lisa_Bergenthal",
+        "lead_excerpt": "# Lisa Bergenthal\nLisa Bergenthal (born 30 November 1999) is a German wheelchair basketball player who competes at international basketball competitions. She is a Universiade champion and has competed at the 2020 and 2024 Summer Paralympics.\nBergenthal is studying science at University of Cologne.\n",
+        "source_text_sha256": "8108096b1a8896c1db6e67550ea1a543b969c3ee89e63bb41e7b1c425f66c178"
+      }
+    },
+    {
+      "id": "t013",
+      "category": "stored_view_tail",
+      "query": "Italian sabre fencer team gold 2025",
+      "expected_titles": [
+        "Matteo Neri"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80571630,
+        "title": "Matteo Neri",
+        "views": 1,
+        "source_row": 258581,
+        "revision": 1304497081,
+        "date": "2025-08-06T10:46:53Z",
+        "url": "https://en.wikipedia.org/wiki/Matteo_Neri",
+        "lead_excerpt": "# Matteo Neri\nMatteo Neri (born 5 May 1999) is an Italian right-handed sabre fencer. He won a gold medal in the men's team sabre event at the 2025 World Fencing Championships.\n",
+        "source_text_sha256": "fb6572ccc88f1581990a9fb4c2942a665c002b8449d83611a69a6e88e0521692"
+      }
+    },
+    {
+      "id": "t014",
+      "category": "stored_view_tail",
+      "query": "private nonprofit university Ankara established 2018",
+      "expected_titles": [
+        "Ankara Medipol University"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80558738,
+        "title": "Ankara Medipol University",
+        "views": 1,
+        "source_row": 260743,
+        "revision": 1304322937,
+        "date": "2025-08-05T09:51:49Z",
+        "url": "https://en.wikipedia.org/wiki/Ankara_Medipol_University",
+        "lead_excerpt": "# Ankara Medipol University\nAnkara Medipol University (Turkish: Ankara Medipol \u00dcniversitesi) is a private, non-profit university located in Ankara, Turkey. Established in 2018 by the Turkey Education, Health, Science and Research Foundation, the university started academic activities in the 2018\u20132019 academic year.\nThe university offers education in both Turkish and English and focuses on fields such as health sciences, engineering, social sciences, law, and arts.\n",
+        "source_text_sha256": "b697b001231fdadd6bdf7d7fdca1c16aab601d2538e2c2dbd3a7e6336a2a5daa"
+      }
+    },
+    {
+      "id": "t015",
+      "category": "stored_view_tail",
+      "query": "Romania government August 1965 December 1967",
+      "expected_titles": [
+        "Third Maurer cabinet"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80538727,
+        "title": "Third Maurer cabinet",
+        "views": 1,
+        "source_row": 238020,
+        "revision": 1302978329,
+        "date": "2025-07-28T12:49:25Z",
+        "url": "https://en.wikipedia.org/wiki/Third_Maurer_cabinet",
+        "lead_excerpt": "# Third Maurer cabinet\nThe third Maurer cabinet was the government of Romania from 21 August 1965 to 9 December 1967.\n",
+        "source_text_sha256": "58108dbd081f40aceb1009001767afcd6e38f7f17af998c14dd34617ded5c439"
+      }
+    },
+    {
+      "id": "t016",
+      "category": "stored_view_tail",
+      "query": "1987 Telugu drama film remake directed by Visu",
+      "expected_titles": [
+        "Srimathi Oka Bahumathi"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80528764,
+        "title": "Srimathi Oka Bahumathi",
+        "views": 1,
+        "source_row": 231984,
+        "revision": 1302865541,
+        "date": "2025-07-27T21:12:47Z",
+        "url": "https://en.wikipedia.org/wiki/Srimathi_Oka_Bahumathi",
+        "lead_excerpt": "# Srimathi Oka Bahumathi\nSrimathi Oka Bahumathi (transl.\u2009Mrs. is a gift) is a 1987 Indian Telugu-language drama film, written and directed by Visu. A remake of his Tamil-language film Thirumathi Oru Vegumathi (1987), the film stars Chandra Mohan, Naresh, Jayasudha, and Visu himself, reprising his role from the original.\n",
+        "source_text_sha256": "91f294c7732442edbc4436119a8d9033021240f9bb67eb377ed343bec7c30bf7"
+      }
+    }
+  ]
+}

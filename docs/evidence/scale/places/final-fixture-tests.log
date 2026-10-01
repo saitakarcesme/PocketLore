@@ -1,0 +1,22 @@
+test_source_and_boundaries (test_compact.CompactTests.test_source_and_boundaries) ... /home/isa/PocketLore-control/scale-workers/places/repo/tools/scale/places/compact.py:25: DeprecationWarning: fetch_record_batch() is deprecated, use to_arrow_reader() instead.
+  batches=con.execute(query,[str(src)]).fetch_record_batch(2048);max_arrow=0;max_block=0
+{"schema_version": 2, "release": "2026-09-23.1", "source_sha256": "92897ccaa23e7450922529246183a67f401563424ea885b6e4f3f24f06040b98", "source_object_url": "https://overturemaps-us-west-2.s3.amazonaws.com/release/2026-09-23.1/theme=places/type=place/fixture.parquet", "layout": ["source_ordinal", "latitude", "longitude", "NFKC_casefold_name", "original_non_geometry_record"], "block_codec": "zlib", "max_inflated_block_bytes": 33554432, "max_compressed_block_bytes": 1048576, "field_retention": "all original non-geometry fields; exact decoded WKB point retained as doubles; no confidence or region cut", "raw_records": 4, "eligible_records": 4, "blocks": 1, "rejected": 0, "max_arrow_batch_bytes": 2152, "max_actual_inflated_block_bytes": 1605, "keys_path": "/home/isa/PocketLore-control/scale-workers/places/tmphno6mpcj/compact.keys.parquet", "keys_sha256": "c8c1993f6136a7eec567bb1afdccc51f097843da970eb116384cdb7530432601", "bytes": 45056, "sha256": "e696762d6e15f438311d48acd94c42e538a519e0e33fb954f9bffb98e2a152ef", "seconds_current_attempt": 0.022389650344848633, "max_rss_KiB": 108908}
+ok
+test_source_tags_and_complete_way_bounds (test_planet.PlanetTests.test_source_tags_and_complete_way_bounds) ... {'source_sha256': '7b835dd8c07017db37deebc35800f2edead06fe936a925bc935360bcd48c0ac9', 'source': '/home/isa/PocketLore-control/scale-workers/places/tmp8z21y6_0/fixture.osm', 'snapshot_timestamp': '', 'records': 3, 'types': {'node': 1, 'relation': 1, 'way': 1}, 'located_nodes': 1, 'vegan_filled': 2, 'vegetarian_filled': 1, 'hours_filled': 1, 'all_planet_tags_processed': True, 'raw_codec': 'zlib UTF-8 JSON', 'max_raw_object_bytes': 236, 'way_relation_geometry': 'unknown; original node/member references retained for later geometry resolution', 'license': 'ODbL-1.0', 'attribution': 'OpenStreetMap contributors', 'decoder_threads': 1, 'decoder_queue': 2, 'coordinate_enrichment_complete': False, 'bytes': 36864, 'sha256': '8343f95d5b694e660d8b7996849f4ccf633163b020d6cceedb4f1e1b5bac5d00', 'seconds': 0.010642766952514648, 'max_rss_KiB': 111544}
+node batch through 2 found 2
+ok
+test_absence (test_reader.ReaderTests.test_absence) ... ok
+test_antimeridian_and_dedup (test_reader.ReaderTests.test_antimeridian_and_dedup) ... ok
+test_category_ancestor (test_reader.ReaderTests.test_category_ancestor) ... ok
+test_invalid (test_reader.ReaderTests.test_invalid) ... ok
+test_limit (test_reader.ReaderTests.test_limit) ... ok
+test_nested_listing_templates (test_reader.ReaderTests.test_nested_listing_templates) ... ok
+test_pole (test_reader.ReaderTests.test_pole) ... ok
+test_radius (test_reader.ReaderTests.test_radius) ... ok
+test_unknown_diet (test_reader.ReaderTests.test_unknown_diet) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.191s
+
+OK
+{'logical_sqlite_bytes_before_vacuum': 36864, 'storage_compaction': 'SQLite VACUUM only; no field or row pruning', 'source_sqlite_sha256': '8343f95d5b694e660d8b7996849f4ccf633163b020d6cceedb4f1e1b5bac5d00', 'planet_sha256': '7b835dd8c07017db37deebc35800f2edead06fe936a925bc935360bcd48c0ac9', 'license': 'ODbL-1.0', 'attribution': 'OpenStreetMap contributors', 'records': 3, 'located_entities': 2, 'types': {'node': 1, 'relation': 1, 'way': 1}, 'quick_check': 'ok', 'records_preserved_from_base': True, 'resolved_ways': 1, 'needed_unique_nodes': 2, 'relations': 'coordinates unknown; retained', 'source': '/home/isa/PocketLore-control/scale-workers/places/tmp8z21y6_0/base.sqlite', 'planet': '/home/isa/PocketLore-control/scale-workers/places/tmp8z21y6_0/fixture.osm', 'seconds': 0.02109503746032715, 'bytes': 36864, 'sha256': 'fa9ac6bf8ddbf1a8008a1b84714d24fb6e08bda48c841c1105ae96023eb42cac', 'id_filter_batch_max': 10000000, 'max_rss_KiB': 115788, 'decoder_threads': 1, 'decoder_queue': 2}

@@ -1,0 +1,28 @@
+{
+  "path": "/home/isa/PocketLore-control/scale-workers/places/data/planet-260921.osm.pbf",
+  "bytes": 94983340321,
+  "official_md5": "2e6db09362084e200fc5b5807fe2613d",
+  "actual_md5": "2e6db09362084e200fc5b5807fe2613d",
+  "matched": true,
+  "checksum_receipt": {
+    "url": "https://planet.openstreetmap.org/pbf/planet-260921.osm.pbf.md5",
+    "response_url": "https://osm-planet-eu-central-1.s3.dualstack.eu-central-1.amazonaws.com/planet/pbf/2026/planet-260921.osm.pbf.md5",
+    "status": 200,
+    "bytes": 56,
+    "sha256": "f91ddaba95601373ff3fcea973ef28f4338787eee9bf3aa73eb19943f57c932e",
+    "retrieved_utc": "2026-10-01T11:06:46Z",
+    "verified_against_planet": false
+  },
+  "seconds": 331.41523337364197,
+  "sha256_receipt": {
+    "url": "https://planet.openstreetmap.org/pbf/planet-260921.osm.pbf",
+    "bytes": 94983340321,
+    "sha256": "bbfc6b4cadaf86e854fcae040e1db709f837f2f1e91c527139391edf661e60ed",
+    "retrieved_utc": "2026-10-01T10:51:02Z",
+    "seconds": 4061.07337474823,
+    "source_last_modified": "2026-09-24T19:07:31Z",
+    "source_version_id": "8jjxRIcMHOnnaHS.UE8R0oiyhSJc4hLK",
+    "license": "ODbL-1.0",
+    "attribution": "OpenStreetMap contributors"
+  }
+}

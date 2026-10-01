@@ -1,0 +1,81 @@
+{
+  "source_objects": 16,
+  "raw_records": 81455423,
+  "field_fill": {
+    "id": 81455423,
+    "names.primary": 81455423,
+    "confidence": 81455423,
+    "basic_category": 78624303,
+    "taxonomy.primary": 78517770,
+    "operating_status": 19340838
+  },
+  "nonempty_list_fields": {
+    "websites": 46435336,
+    "phones": 66691382,
+    "emails": 30459031,
+    "socials": 60159061
+  },
+  "field_fill_definition": "non-null confidence; non-null and nonempty strings; source validity not inferred",
+  "provider_license_entries": [
+    {
+      "dataset": "AllThePlaces",
+      "license": "CC0-1.0",
+      "source_entries": 1809219
+    },
+    {
+      "dataset": "BrightQuery",
+      "license": "CDLA-Permissive-2.0",
+      "source_entries": 10255071
+    },
+    {
+      "dataset": "DAC",
+      "license": "CDLA-Permissive-2.0",
+      "source_entries": 148791
+    },
+    {
+      "dataset": "Foursquare",
+      "license": "Apache-2.0",
+      "source_entries": 4138835
+    },
+    {
+      "dataset": "Krick",
+      "license": "CDLA-Permissive-2.0",
+      "source_entries": 13501
+    },
+    {
+      "dataset": "Microsoft",
+      "license": "CDLA-Permissive-2.0",
+      "source_entries": 6135466
+    },
+    {
+      "dataset": "Overture",
+      "license": "CDLA-Permissive-2.0",
+      "source_entries": 81455423
+    },
+    {
+      "dataset": "Overture-signals",
+      "license": "CDLA-Permissive-2.0",
+      "source_entries": 10583924
+    },
+    {
+      "dataset": "PinMeTo",
+      "license": "CDLA-Permissive-2.0",
+      "source_entries": 167667
+    },
+    {
+      "dataset": "RenderSEO",
+      "license": "CDLA-Permissive-2.0",
+      "source_entries": 3752
+    },
+    {
+      "dataset": "meta",
+      "license": "CDLA-Permissive-2.0",
+      "source_entries": 58783121
+    }
+  ],
+  "records_with_no_sources": 0,
+  "records_with_unknown_source_license": 0,
+  "max_original_record_json_utf8_bytes": 9586,
+  "license_interpretation": "literal upstream values; unknown rights remain unknown; not distribution clearance",
+  "seconds": 707.2703237533569
+}

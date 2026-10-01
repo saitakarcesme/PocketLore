@@ -1,0 +1,18 @@
+{
+  "objective": "Build a source-auditable offline English encyclopedia from every pinned eligible FineWiki English shard",
+  "scope": ["tools/scale/wiki", "docs/evidence/scale/wiki", "FINDINGS.md", "LOOP_STATE.json", "private wiki lane"],
+  "source_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+  "source_inventory_files": 15,
+  "source_inventory_bytes": 37722458405,
+  "budget_decimal_bytes": 22000000000,
+  "priority_full_target": 2500000,
+  "priority_rule": "Descending August 2025 user pageviews summed across access types by page_id, then ascending page_id; unobserved views are unknown and sort last",
+  "lead_rule": "Entire extracted lead before first level-2 heading; if no level-2 heading, whole text; always explicitly label lead tier",
+  "math_rule": "Preserve extracted text bytes and wikitext math; never invent missing rendered formula",
+  "rights_rule": "Retain original wikitext and text notices; quarantine recognized unresolved rights markers and missing source metadata; heuristic screening is not complete legal clearance",
+  "initial_storage": "Per-article zlib blocks, SQLite contentless FTS5, on-disk metadata and aliases; no embeddings",
+  "checks": ["all source hashes and Parquet counts", "80+ frozen queries", "real math/units/attribution counterexamples", "block roundtrip", "FTS integrity", "full/lead/excluded counts", "disk/RSS/timing", "reader schema and sealed inventory"],
+  "limits": {"compute_cpus": 2, "http_concurrency": 2, "batch_max_bytes": 2147483648, "arrow_batch_rows": 64, "gpu_jobs": 0},
+  "acceptance": "LLMRig staging only; Android, independent rights and rival/human acceptance remain open",
+  "evaluation_policy": "Public builder development queries only; freeze before retrieval tuning, preserve baseline failures; no private holdout access"
+}

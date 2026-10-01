@@ -1,0 +1,16 @@
+{
+  "sample_blocks": [
+    100,
+    700,
+    1200,
+    2000
+  ],
+  "scope": "First-shard committed records only, not corpus estimate",
+  "bytes": {
+    "records": 256,
+    "raw": 865329,
+    "text": 292037,
+    "wikitext": 261923,
+    "infoboxes": 94965
+  }
+}

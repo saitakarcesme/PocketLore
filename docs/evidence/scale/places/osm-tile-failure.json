@@ -1,0 +1,24 @@
+{
+  "bounds": [
+    -90,
+    -180,
+    -60,
+    -120
+  ],
+  "query": "[out:json][timeout:180][maxsize:536870912][date:\"2026-10-01T09:33:42Z\"];(nwr(-90,-180,-60,-120)[\"diet:vegan\"];nwr(-90,-180,-60,-120)[\"diet:vegetarian\"];nwr(-90,-180,-60,-120)[\"opening_hours\"];);out center meta;",
+  "url": "https://overpass-api.de/api/interpreter",
+  "requested_snapshot": "2026-10-01T09:33:42Z",
+  "complete": false,
+  "status": 504,
+  "headers": {
+    "Date": "Thu, 01 Oct 2026 09:40:49 GMT",
+    "Server": "Apache/2.4.68 (Debian)",
+    "Vary": "Accept-Encoding",
+    "Content-Encoding": "gzip",
+    "Content-Length": "474",
+    "Connection": "close",
+    "Content-Type": "text/html; charset=utf-8"
+  },
+  "error": "504 Server Error: Gateway Timeout for url: https://overpass-api.de/api/interpreter",
+  "seconds": 8.685840606689453
+}

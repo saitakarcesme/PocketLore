@@ -1,0 +1,19 @@
+{
+  "phase": "first_complete_indexed_shard",
+  "time": "2026-10-01T10:22:32.638931+00:00",
+  "source_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+  "source_rows": 421456,
+  "full_articles": 417795,
+  "excluded_rows": 3661,
+  "artifact_root": "/home/isa/PocketLore-control/scale-workers/wiki/pilot-full",
+  "measured_bytes": 3332086741,
+  "naive_all_canonical_full_extrapolation_bytes": 51828190912,
+  "extrapolation_limit": "Naive row scaling of a single unoptimized, full-wikitext, first-duplicate-wins prototype; not a forecast of tiered shared-block final storage",
+  "checks": {
+    "sqlite_integrity": "ok",
+    "max_arrow_batch_bytes": 24765048,
+    "raw_source_hash": "verified LFS SHA-256"
+  },
+  "next": "Continue canonical tiered first shard and all eligible shards; validate budget and frozen probes",
+  "acceptance": "Host staging milestone only"
+}

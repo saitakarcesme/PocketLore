@@ -1,0 +1,97 @@
+{
+  "source_rows": 6614655,
+  "canonical_articles": 6498739,
+  "eligible_canonical": 6498498,
+  "full": 2000000,
+  "lead": 4498498,
+  "observed_views": 6454456,
+  "full_with_unknown_views": 0,
+  "pageview_source_rows": 41618040,
+  "pageview_unique_keys": 41618040,
+  "normalization": "Literal underscore-for-space then Unicode lower; no fuzzy match; aggregates same stored view title",
+  "aggregation_period": "unknown; precomputed database in NeuML June 2025 dataset",
+  "seconds": 294.8208488500022,
+  "peak_rss_kib": 1308036,
+  "per_shard": [
+    [
+      "000_00000.parquet",
+      413151,
+      128525
+    ],
+    [
+      "000_00001.parquet",
+      447210,
+      137209
+    ],
+    [
+      "000_00002.parquet",
+      444152,
+      136176
+    ],
+    [
+      "000_00003.parquet",
+      468168,
+      143464
+    ],
+    [
+      "000_00004.parquet",
+      451622,
+      133620
+    ],
+    [
+      "000_00005.parquet",
+      456484,
+      139780
+    ],
+    [
+      "000_00006.parquet",
+      445533,
+      133655
+    ],
+    [
+      "000_00007.parquet",
+      428379,
+      130795
+    ],
+    [
+      "000_00008.parquet",
+      438210,
+      131670
+    ],
+    [
+      "000_00009.parquet",
+      407165,
+      130645
+    ],
+    [
+      "000_00010.parquet",
+      432334,
+      131738
+    ],
+    [
+      "000_00011.parquet",
+      408811,
+      128460
+    ],
+    [
+      "000_00012.parquet",
+      427704,
+      133860
+    ],
+    [
+      "000_00013.parquet",
+      392557,
+      125804
+    ],
+    [
+      "000_00014.parquet",
+      437018,
+      134599
+    ]
+  ],
+  "sha256_sources": {
+    "census": "180e0d0a401bba1e5ce15a4a1ec5ba8f7ba3d9c83541f1839c74929c35700c7f",
+    "pageviews": "409c4d1643171d050d77c9ea03416d77dac3a538ff8a78f59e3344df9bb49dc1"
+  },
+  "sha256": "2f1e6f9171154d2b315188ed421ee6370146a31d5c1aac768d5267c2f953261e"
+}

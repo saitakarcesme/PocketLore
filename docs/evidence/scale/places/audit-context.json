@@ -1,0 +1,8 @@
+{
+  "global_audit": "global-audit.json",
+  "denominator_note": "Its user-provided unverified comparison denominator is historical; measured AndroidLM evidence in androidlm-aggregate.json, androidlm-city-coverage.json and the final androidlm-comparison.json supersedes that comparison context.",
+  "entity_definition": "distinct 128-bit exact-tuple signatures, not verified real-world identity",
+  "source_country_definition": "source address strings, not a count of countries",
+  "source_presence_definition": "nonempty upstream fields do not establish correctness",
+  "acceptance": "host builder evidence; physical hardware, application speed and answer quality remain open"
+}

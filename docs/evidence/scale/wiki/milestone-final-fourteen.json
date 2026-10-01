@@ -1,0 +1,15 @@
+{
+  "checkpoint": "fourteen_final_format_shards_complete",
+  "utc": "2026-10-01T14:01:49.404784+00:00",
+  "edition": "edition-v7",
+  "complete_shards": 14,
+  "articles": 6061480,
+  "full": 1165418,
+  "lead": 4896062,
+  "shard_bytes": 20014139775,
+  "naive_extrapolation_with_original_aliases_bytes": 22044563105,
+  "max_process_rss_kib": 2490084,
+  "max_arrow_batch_bytes": 33994202,
+  "integrity": true,
+  "acceptance": "Host staging only; final source, query and sealing checks pending"
+}

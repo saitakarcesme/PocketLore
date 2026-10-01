@@ -1,0 +1,262 @@
+{
+  "method": "Exactly the 15 pinned inventory files; Parquet footer null statistics only. Empty strings and semantic validity are separately checked by eligibility.",
+  "shards": [
+    {
+      "shard": "000_00000.parquet",
+      "pinned_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+      "rows": 421456,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00001.parquet",
+      "pinned_sha256": "eb29c5b3d23010c17f225a9a6370049afa90b168f3d70744e5e015729455cb55",
+      "rows": 454272,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00002.parquet",
+      "pinned_sha256": "b98a10ff8a3f21291e4174564a5cbe186eab66fcca9c53c0920d182f718c5b9a",
+      "rows": 451147,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00003.parquet",
+      "pinned_sha256": "b8a6177f9c2135ab5182a95f33ada8a14d251eeaa052b006ab0f19fd2f24fd2d",
+      "rows": 476094,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00004.parquet",
+      "pinned_sha256": "4540721a38ac4ff620b5c4bb44fa3050d5883518c8823204371c0709890e5d78",
+      "rows": 456912,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00005.parquet",
+      "pinned_sha256": "c25bb40b79ada5cd74377d1b95dcc3276e31a9959caebd8259f0506cc1a7f95f",
+      "rows": 461631,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00006.parquet",
+      "pinned_sha256": "dc10ef0d900f4b87148a1595fe9895866f960ac2affc94684a04e048813198a7",
+      "rows": 453206,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00007.parquet",
+      "pinned_sha256": "8f8d47d44c23b79008d97715ec78c1f1c5d3627856182a87cde054e35196aec5",
+      "rows": 436482,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00008.parquet",
+      "pinned_sha256": "5d4698f29648c267f32de6721ac7b36ea007b6b413dddfb36fd87ab7f64af201",
+      "rows": 444948,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00009.parquet",
+      "pinned_sha256": "c065b591184aae5eb053786afdc7f20c9d6ccc3a955147db8849cc9bc4ec7e52",
+      "rows": 415366,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00010.parquet",
+      "pinned_sha256": "2bc2a319352e26f6d8aac5d5c25799fc16949f762a6a5c1ec6fba66389d428ab",
+      "rows": 440976,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00011.parquet",
+      "pinned_sha256": "c64481777c4ad518969680bdb3f27e8b1c9e782fa831709ee5fc30beb3aa622d",
+      "rows": 417809,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00012.parquet",
+      "pinned_sha256": "2e5ca443dadb167aea3ebb4cc681b5755e33516e41dfa8c0423ef5e7a225c6de",
+      "rows": 436519,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00013.parquet",
+      "pinned_sha256": "ce5d84bf8048edd55a1d91ae30d04a5c0336bc84f2926b63b4ecfe32d314e381",
+      "rows": 401302,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00014.parquet",
+      "pinned_sha256": "0a175e0d593c4a07afde8aacf5b8c86e70e958a31cd80a8f0e43e84397ddab42",
+      "rows": 446535,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    }
+  ],
+  "rows": 6614655,
+  "null_totals_where_statistics_available": {
+    "page_id": 0,
+    "title": 0,
+    "url": 0,
+    "version": 0,
+    "date_modified": 0,
+    "text": 0,
+    "wikitext": 0,
+    "has_math": 0,
+    "infoboxes": 0
+  },
+  "unknown_statistics": [],
+  "preserved_failed_attempt": {
+    "artifact": "source-null-metadata-audit-failed-glob.json",
+    "reason": "Broad *.parquet glob included an additional 10-row test fixture; corrected to explicit pinned inventory, not counted as source data"
+  }
+}

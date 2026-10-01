@@ -1,0 +1,29 @@
+{
+  "logical_sqlite_bytes_before_vacuum": 3792662528,
+  "storage_compaction": "SQLite VACUUM only; no field or row pruning",
+  "source_sqlite_sha256": "74be8e6952ff4053ee0b8898b9a9c97cf54a870c0a047468465e40a5a0a60d84",
+  "planet_sha256": "bbfc6b4cadaf86e854fcae040e1db709f837f2f1e91c527139391edf661e60ed",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "records": 4870526,
+  "located_entities": 4789594,
+  "types": {
+    "node": 3796716,
+    "relation": 80932,
+    "way": 992878
+  },
+  "quick_check": "ok",
+  "records_preserved_from_base": true,
+  "resolved_ways": 992878,
+  "needed_unique_nodes": 9792909,
+  "relations": "coordinates unknown; retained",
+  "source": "/home/isa/PocketLore-control/scale-workers/places/data/osm-planet.sqlite",
+  "planet": "/home/isa/PocketLore-control/scale-workers/places/data/planet-260921.osm.pbf",
+  "seconds": 1623.775452375412,
+  "bytes": 3665588224,
+  "sha256": "3336d25ded73560d8f4226c1baa8c634305ed9372c13a3d4c1cb7eeb8f1c204f",
+  "id_filter_batch_max": 10000000,
+  "max_rss_KiB": 1969072,
+  "decoder_threads": 1,
+  "decoder_queue": 2
+}

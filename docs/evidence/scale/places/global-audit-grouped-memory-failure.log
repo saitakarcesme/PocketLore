@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/isa/PocketLore-control/scale-workers/places/repo/tools/scale/places/compact_audit.py", line 10, in <module>
+    row=(counts[0],unique('records','id'),unique('records','entity_key'),*counts[1:]);report=dict(zip(['eligible_records','global_unique_ids','global_exact_entities','category_filled','city_filled','country_filled','snapshot_status_filled'],row))
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/PocketLore-control/scale-workers/places/repo/tools/scale/places/compact_audit.py", line 9, in unique
+    return db.execute('SELECT count(*) FROM (SELECT '+column+' FROM '+view+' GROUP BY '+column+')').fetchone()[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_duckdb.OutOfMemoryException: Out of Memory Error: could not allocate block of size 256.0 KiB (953.6 MiB/953.6 MiB used)
+
+Possible solutions:
+* Reducing the number of threads (SET threads=X)
+* Disabling insertion-order preservation (SET preserve_insertion_order=false)
+* Increasing the memory limit (SET memory_limit='...GB')
+
+See also https://duckdb.org/docs/stable/guides/performance/how_to_tune_workloads

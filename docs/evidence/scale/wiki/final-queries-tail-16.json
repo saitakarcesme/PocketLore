@@ -1,0 +1,2469 @@
+{
+  "summary": {
+    "queries_sha256": "2ec7227e63566f9cd3e5ea79b54c0bc66a20e5e11e2ec74a1789d22a899035b4",
+    "platform": "LLMRig host, uncontrolled OS cache (no reset), no inference; not Android acceptance",
+    "queries": 16,
+    "supported_title_cases": 16,
+    "all_titles_at_10": 12,
+    "missing_cases": [
+      "t010",
+      "t011",
+      "t012",
+      "t013"
+    ],
+    "frozen_source_mismatch_cases": [],
+    "absence_controls": 0,
+    "absence_controls_with_hits": 0,
+    "absence_answer_abstention": "Not implemented or scored by this retrieval-only tool",
+    "source_locator_missing": [],
+    "latency_p50_ms": 946.3865409998107,
+    "latency_p95_ms": 1602.051734997076,
+    "latency_max_ms": 1906.2716639964492,
+    "open_seconds": 0.17882400499365758,
+    "total_seconds": 17.32365415499953,
+    "peak_rss_kib": 103876,
+    "max_candidates": 180,
+    "total_articles": 6498498,
+    "query_categories": [
+      "stored_view_tail"
+    ]
+  },
+  "cases": [
+    {
+      "id": "t001",
+      "category": "stored_view_tail",
+      "query": "Russia in Global Affairs",
+      "expected_titles": [
+        "Russia in Global Affairs"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80800742,
+        "title": "Russia in Global Affairs",
+        "views": 1,
+        "source_row": 309092,
+        "revision": 1306974076,
+        "date": "2025-08-20T19:47:31Z",
+        "url": "https://en.wikipedia.org/wiki/Russia_in_Global_Affairs",
+        "lead_excerpt": "# Russia in Global Affairs\nRussia in Global Affairs (\u0420\u043e\u0441\u0441\u0438\u044f \u0432 \u0433\u043b\u043e\u0431\u0430\u043b\u044c\u043d\u043e\u0439 \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0435) is a Russian scholarly and political science journal dedicated to issues of Russian foreign policy and globalization. It has been published by the Foundation for World Politics Research since November 2002, with the informational support of the American journal Foreign Affairs. It is funded by Russian sources. It is part of the \"Russia and Globalization\" project of the Russian non-governmental public association, the Council on Foreign and Defense Policy (SVOP). The journal is published 6 times a year, with each issue containing 18 articles.\nThe journal publishes analytical materials from both Russian and foreign specialists in international relations, and it also reprints articles from Foreign Affairs and o",
+        "source_text_sha256": "69b3ad69b17c15a4ce25348f605860c37867f874f18a243b36bae35f0e837a55"
+      },
+      "hits": [
+        {
+          "id": 80800742,
+          "title": "Russia in Global Affairs",
+          "tier": "lead",
+          "revision": 1306974076,
+          "url": "https://en.wikipedia.org/wiki/Russia_in_Global_Affairs",
+          "score": 145.83968178548253,
+          "shard": "000_00000"
+        },
+        {
+          "id": 24648556,
+          "title": "Yale Jackson School of Global Affairs",
+          "tier": "full",
+          "revision": 1286453807,
+          "url": "https://en.wikipedia.org/wiki/Yale_Jackson_School_of_Global_Affairs",
+          "score": 35.088252364040926,
+          "shard": "000_00011"
+        },
+        {
+          "id": 68566327,
+          "title": "Assistant Secretary of State for Global Public Affairs",
+          "tier": "lead",
+          "revision": 1300855075,
+          "url": "https://en.wikipedia.org/wiki/Assistant_Secretary_of_State_for_Global_Public_Affairs",
+          "score": 33.09083267209827,
+          "shard": "000_00008"
+        },
+        {
+          "id": 11919587,
+          "title": "United States House Foreign Affairs Subcommittee on Global Health, Global Human Rights, and International Organizations",
+          "tier": "lead",
+          "revision": 1303951033,
+          "url": "https://en.wikipedia.org/wiki/United_States_House_Foreign_Affairs_Subcommittee_on_Global_Health,_Global_Human_Rights,_and_International_Organizations",
+          "score": 32.74155191997731,
+          "shard": "000_00008"
+        },
+        {
+          "id": 55760972,
+          "title": "Minister of Internal Affairs (Russia)",
+          "tier": "full",
+          "revision": 1297193476,
+          "url": "https://en.wikipedia.org/wiki/Minister_of_Internal_Affairs_(Russia)",
+          "score": 32.725432216180614,
+          "shard": "000_00013"
+        },
+        {
+          "id": 1628108,
+          "title": "Munk School of Global Affairs",
+          "tier": "full",
+          "revision": 1302366741,
+          "url": "https://en.wikipedia.org/wiki/Munk_School_of_Global_Affairs",
+          "score": 32.63193222552246,
+          "shard": "000_00005"
+        },
+        {
+          "id": 68566313,
+          "title": "Bureau of Global Public Affairs",
+          "tier": "lead",
+          "revision": 1300856905,
+          "url": "https://en.wikipedia.org/wiki/Bureau_of_Global_Public_Affairs",
+          "score": 32.63103459396832,
+          "shard": "000_00011"
+        },
+        {
+          "id": 256258,
+          "title": "Global Affairs Canada",
+          "tier": "full",
+          "revision": 1296064110,
+          "url": "https://en.wikipedia.org/wiki/Global_Affairs_Canada",
+          "score": 32.49606237201931,
+          "shard": "000_00006"
+        },
+        {
+          "id": 5128665,
+          "title": "Chicago Council on Global Affairs",
+          "tier": "full",
+          "revision": 1306707188,
+          "url": "https://en.wikipedia.org/wiki/Chicago_Council_on_Global_Affairs",
+          "score": 32.26524761988518,
+          "shard": "000_00003"
+        },
+        {
+          "id": 4062513,
+          "title": "Under Secretary of State for Democracy and Global Affairs",
+          "tier": "lead",
+          "revision": 1283658802,
+          "url": "https://en.wikipedia.org/wiki/Under_Secretary_of_State_for_Democracy_and_Global_Affairs",
+          "score": 32.05687033507518,
+          "shard": "000_00013"
+        }
+      ],
+      "milliseconds": 930.3557259991067,
+      "candidates": 180,
+      "terms": [
+        "russia",
+        "global",
+        "affairs"
+      ],
+      "term_document_frequencies": {
+        "russia": 131013,
+        "global": 110911,
+        "affairs": 100364
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [
+        "Russia in Global Affairs"
+      ],
+      "all_titles_at_10": true,
+      "source_audit": [
+        {
+          "title": "Russia in Global Affairs",
+          "id": 80800742,
+          "revision": 1306974076,
+          "modified": "2025-08-20T19:47:31Z",
+          "url": "https://en.wikipedia.org/wiki/Russia_in_Global_Affairs",
+          "tier": "lead",
+          "text_sha256": "c53ef0818f42155c23b94d305459a95976c948b2ec4c1024f4a893ee6ef8be2e",
+          "wikitext_sha256": "2a42b89b961f1845b3898e4d25832f103474cee51c000f5d7a4644f894b6e702",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Russia in Global Affairs\nRussia in Global Affairs (\u0420\u043e\u0441\u0441\u0438\u044f \u0432 \u0433\u043b\u043e\u0431\u0430\u043b\u044c\u043d\u043e\u0439 \u043f\u043e\u043b\u0438\u0442\u0438\u043a\u0435) is a Russian scholarly and political science journal dedicated to issues of Russian foreign policy and globalization. It has been published by the Foundation for World Politics Research since November 2002, with the informational support of the American journal Foreign Affairs. It is funded by Russian sources. It is part of the \"Russia and Globalization\" project of the Russian non-governmental public association, the Council on Foreign and Defense Policy (SVOP). The journal is published 6 times a year, with each issue containing 18 articles.\nThe journal publishes analytical materials from both Russian and fore",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t002",
+      "category": "stored_view_tail",
+      "query": "Guy-Patrick Sainderichin",
+      "expected_titles": [
+        "Guy-Patrick Sainderichin"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80793387,
+        "title": "Guy-Patrick Sainderichin",
+        "views": 1,
+        "source_row": 310708,
+        "revision": 1306976663,
+        "date": "2025-08-20T20:08:01Z",
+        "url": "https://en.wikipedia.org/wiki/Guy-Patrick_Sainderichin",
+        "lead_excerpt": "# Guy-Patrick Sainderichin\nGuy-Patrick Sainderichin (9 July 1950 \u2013 18 August 2025) was a French screenwriter and actor.\n",
+        "source_text_sha256": "b0bb20c53145df5362fdd2db562c75f3422ff0f2ceea3b73dd07911cc7e58100"
+      },
+      "hits": [
+        {
+          "id": 80793387,
+          "title": "Guy-Patrick Sainderichin",
+          "tier": "lead",
+          "revision": 1306976663,
+          "url": "https://en.wikipedia.org/wiki/Guy-Patrick_Sainderichin",
+          "score": 189.97739532805684,
+          "shard": "000_00000"
+        },
+        {
+          "id": 12909142,
+          "title": "Guy N\u00e8ve",
+          "tier": "lead",
+          "revision": 1305943202,
+          "url": "https://en.wikipedia.org/wiki/Guy_N%C3%A8ve",
+          "score": 25.848671202397938,
+          "shard": "000_00010"
+        },
+        {
+          "id": 3212507,
+          "title": "The Fat Guy Strangler",
+          "tier": "full",
+          "revision": 1300928886,
+          "url": "https://en.wikipedia.org/wiki/The_Fat_Guy_Strangler",
+          "score": 25.64494366715728,
+          "shard": "000_00013"
+        },
+        {
+          "id": 24461476,
+          "title": "Guy Reid",
+          "tier": "lead",
+          "revision": 1212294338,
+          "url": "https://en.wikipedia.org/wiki/Guy_Reid",
+          "score": 25.561409003344593,
+          "shard": "000_00007"
+        },
+        {
+          "id": 46304670,
+          "title": "Guy Ward Mallon",
+          "tier": "lead",
+          "revision": 1120716047,
+          "url": "https://en.wikipedia.org/wiki/Guy_Ward_Mallon",
+          "score": 25.478835779924754,
+          "shard": "000_00000"
+        },
+        {
+          "id": 39360490,
+          "title": "Farmer Guy",
+          "tier": "lead",
+          "revision": 1290600416,
+          "url": "https://en.wikipedia.org/wiki/Farmer_Guy",
+          "score": 25.432325843101395,
+          "shard": "000_00005"
+        },
+        {
+          "id": 12891681,
+          "title": "Guy Gregson",
+          "tier": "lead",
+          "revision": 1154479605,
+          "url": "https://en.wikipedia.org/wiki/Guy_Gregson",
+          "score": 25.398622594396457,
+          "shard": "000_00006"
+        },
+        {
+          "id": 34191446,
+          "title": "Guy Sularz",
+          "tier": "lead",
+          "revision": 1266364189,
+          "url": "https://en.wikipedia.org/wiki/Guy_Sularz",
+          "score": 25.398622594396457,
+          "shard": "000_00009"
+        },
+        {
+          "id": 34840325,
+          "title": "Killer Queen (Family Guy)",
+          "tier": "full",
+          "revision": 1291641753,
+          "url": "https://en.wikipedia.org/wiki/Killer_Queen_(Family_Guy)",
+          "score": 25.208671561850366,
+          "shard": "000_00011"
+        },
+        {
+          "id": 57932567,
+          "title": "Patrick Clarkson",
+          "tier": "lead",
+          "revision": 1293657702,
+          "url": "https://en.wikipedia.org/wiki/Patrick_Clarkson",
+          "score": 25.088689978672004,
+          "shard": "000_00014"
+        }
+      ],
+      "milliseconds": 767.9051040031482,
+      "candidates": 180,
+      "terms": [
+        "guy",
+        "patrick",
+        "sainderichin"
+      ],
+      "term_document_frequencies": {
+        "guy": 57401,
+        "patrick": 76666,
+        "sainderichin": 5
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [
+        "Guy-Patrick Sainderichin"
+      ],
+      "all_titles_at_10": true,
+      "source_audit": [
+        {
+          "title": "Guy-Patrick Sainderichin",
+          "id": 80793387,
+          "revision": 1306976663,
+          "modified": "2025-08-20T20:08:01Z",
+          "url": "https://en.wikipedia.org/wiki/Guy-Patrick_Sainderichin",
+          "tier": "lead",
+          "text_sha256": "15934f6102af15a6468b8e965239c7c1683e43ecaeef76c7349140c16a80a882",
+          "wikitext_sha256": "64080eafb5c15e2a467d3bf1258a7e037a49ba36acc9138b3897d95deee24f4b",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Guy-Patrick Sainderichin\nGuy-Patrick Sainderichin (9 July 1950 \u2013 18 August 2025) was a French screenwriter and actor.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t003",
+      "category": "stored_view_tail",
+      "query": "1955 Cork Junior Hurling Championship",
+      "expected_titles": [
+        "1955 Cork Junior Hurling Championship"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80772181,
+        "title": "1955 Cork Junior Hurling Championship",
+        "views": 1,
+        "source_row": 297207,
+        "revision": 1306468646,
+        "date": "2025-08-17T22:36:07Z",
+        "url": "https://en.wikipedia.org/wiki/1955_Cork_Junior_Hurling_Championship",
+        "lead_excerpt": "# 1955 Cork Junior Hurling Championship\nThe 1955 Cork Junior Hurling Championship was the 58th staging of the Cork Junior Hurling Championship since its establishment by the Cork County Board in 1895.\nBallyhea were awarded the title, after their final opponents, Aghabullogue, were suspended from the championship for fielding an illegal team against Castlelyons. It was Ballyhea's second championship title overall and a first championship title in 25 years.\n",
+        "source_text_sha256": "213bebde767781c9ae4818abeb855b91efc53883dcc917af672da0a79f2f106b"
+      },
+      "hits": [
+        {
+          "id": 80772181,
+          "title": "1955 Cork Junior Hurling Championship",
+          "tier": "lead",
+          "revision": 1306468646,
+          "url": "https://en.wikipedia.org/wiki/1955_Cork_Junior_Hurling_Championship",
+          "score": 196.75020854209387,
+          "shard": "000_00000"
+        },
+        {
+          "id": 70534329,
+          "title": "1955 All-Ireland Junior Hurling Championship",
+          "tier": "lead",
+          "revision": 1182020818,
+          "url": "https://en.wikipedia.org/wiki/1955_All-Ireland_Junior_Hurling_Championship",
+          "score": 83.03088007351596,
+          "shard": "000_00000"
+        },
+        {
+          "id": 56199201,
+          "title": "Cork Junior B Hurling Championship",
+          "tier": "lead",
+          "revision": 1303730010,
+          "url": "https://en.wikipedia.org/wiki/Cork_Junior_B_Hurling_Championship",
+          "score": 82.73884756028339,
+          "shard": "000_00001"
+        },
+        {
+          "id": 10037619,
+          "title": "Cork Junior A Hurling Championship",
+          "tier": "lead",
+          "revision": 1306641408,
+          "url": "https://en.wikipedia.org/wiki/Cork_Junior_A_Hurling_Championship",
+          "score": 82.53504060686689,
+          "shard": "000_00008"
+        },
+        {
+          "id": 70152496,
+          "title": "Cork Premier Junior Hurling Championship",
+          "tier": "lead",
+          "revision": 1290606922,
+          "url": "https://en.wikipedia.org/wiki/Cork_Premier_Junior_Hurling_Championship",
+          "score": 82.43805200330627,
+          "shard": "000_00006"
+        },
+        {
+          "id": 55967145,
+          "title": "Mid Cork Junior A Hurling Championship",
+          "tier": "lead",
+          "revision": 1305249194,
+          "url": "https://en.wikipedia.org/wiki/Mid_Cork_Junior_A_Hurling_Championship",
+          "score": 82.33765681749236,
+          "shard": "000_00006"
+        },
+        {
+          "id": 55692135,
+          "title": "North Cork Junior A Hurling Championship",
+          "tier": "lead",
+          "revision": 1283948138,
+          "url": "https://en.wikipedia.org/wiki/North_Cork_Junior_A_Hurling_Championship",
+          "score": 81.90521355345764,
+          "shard": "000_00014"
+        },
+        {
+          "id": 55961233,
+          "title": "East Cork Junior A Hurling Championship",
+          "tier": "lead",
+          "revision": 1306921268,
+          "url": "https://en.wikipedia.org/wiki/East_Cork_Junior_A_Hurling_Championship",
+          "score": 81.89632267150763,
+          "shard": "000_00011"
+        },
+        {
+          "id": 80800134,
+          "title": "1900 Cork Junior Hurling Championship",
+          "tier": "lead",
+          "revision": 1306941293,
+          "url": "https://en.wikipedia.org/wiki/1900_Cork_Junior_Hurling_Championship",
+          "score": 81.64715300863207,
+          "shard": "000_00001"
+        },
+        {
+          "id": 80800317,
+          "title": "1906 Cork Junior Hurling Championship",
+          "tier": "lead",
+          "revision": 1306944350,
+          "url": "https://en.wikipedia.org/wiki/1906_Cork_Junior_Hurling_Championship",
+          "score": 81.64715300863207,
+          "shard": "000_00014"
+        }
+      ],
+      "milliseconds": 1131.5919820044655,
+      "candidates": 180,
+      "terms": [
+        "1955",
+        "cork",
+        "junior",
+        "hurling",
+        "championship"
+      ],
+      "term_document_frequencies": {
+        "1955": 114618,
+        "cork": 13628,
+        "junior": 106370,
+        "hurling": 8132,
+        "championship": 188962
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [
+        "1955 Cork Junior Hurling Championship"
+      ],
+      "all_titles_at_10": true,
+      "source_audit": [
+        {
+          "title": "1955 Cork Junior Hurling Championship",
+          "id": 80772181,
+          "revision": 1306468646,
+          "modified": "2025-08-17T22:36:07Z",
+          "url": "https://en.wikipedia.org/wiki/1955_Cork_Junior_Hurling_Championship",
+          "tier": "lead",
+          "text_sha256": "213bebde767781c9ae4818abeb855b91efc53883dcc917af672da0a79f2f106b",
+          "wikitext_sha256": "ec599dcc87690c966886af7f29032bd903508573f60605fb7d5e9d14d10e3527",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# 1955 Cork Junior Hurling Championship\nThe 1955 Cork Junior Hurling Championship was the 58th staging of the Cork Junior Hurling Championship since its establishment by the Cork County Board in 1895.\nBallyhea were awarded the title, after their final opponents, Aghabullogue, were suspended from the championship for fielding an illegal team against Castlelyons. It was Ballyhea's second championship title overall and a first championship title in 25 years.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t004",
+      "category": "stored_view_tail",
+      "query": "Arthur J. Gronna",
+      "expected_titles": [
+        "Arthur J. Gronna"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80762076,
+        "title": "Arthur J. Gronna",
+        "views": 1,
+        "source_row": 306038,
+        "revision": 1306667931,
+        "date": "2025-08-19T01:39:27Z",
+        "url": "https://en.wikipedia.org/wiki/Arthur_J._Gronna",
+        "lead_excerpt": "# Arthur J. Gronna\nArthur J. Gronna (July 19, 1897 \u2013 January 19, 1965) was an American politician who served as the North Dakota Attorney General from 1932 to 1933.  His father Asle Gronna served in the United States Senate and United States House of Representatives, while his brother, James D. Gronna, was the North Dakota Secretary of State.\n",
+        "source_text_sha256": "054d0c3c2a95f0bd4c5b937c5e3689ea098d45091795f874232df31360c924e2"
+      },
+      "hits": [
+        {
+          "id": 80762076,
+          "title": "Arthur J. Gronna",
+          "tier": "lead",
+          "revision": 1306667931,
+          "url": "https://en.wikipedia.org/wiki/Arthur_J._Gronna",
+          "score": 176.39430960560296,
+          "shard": "000_00000"
+        },
+        {
+          "id": 2381430,
+          "title": "Asle Gronna",
+          "tier": "full",
+          "revision": 1306676573,
+          "url": "https://en.wikipedia.org/wiki/Asle_Gronna",
+          "score": 56.23569232983594,
+          "shard": "000_00013"
+        },
+        {
+          "id": 11961541,
+          "title": "James D. Gronna",
+          "tier": "lead",
+          "revision": 1306246890,
+          "url": "https://en.wikipedia.org/wiki/James_D._Gronna",
+          "score": 46.02820799789225,
+          "shard": "000_00013"
+        },
+        {
+          "id": 50216363,
+          "title": "Arthur-J-LeBlanc Arena",
+          "tier": "lead",
+          "revision": 1270423088,
+          "url": "https://en.wikipedia.org/wiki/Arthur-J-LeBlanc_Arena",
+          "score": 30.151208725718185,
+          "shard": "000_00007"
+        },
+        {
+          "id": 3170851,
+          "title": "Arthur J. Gallagher & Co.",
+          "tier": "full",
+          "revision": 1306996017,
+          "url": "https://en.wikipedia.org/wiki/Arthur_J._Gallagher_%26_Co.",
+          "score": 30.042340755501076,
+          "shard": "000_00002"
+        },
+        {
+          "id": 55768594,
+          "title": "SS Arthur J. Tyrer",
+          "tier": "lead",
+          "revision": 1298499529,
+          "url": "https://en.wikipedia.org/wiki/SS_Arthur_J._Tyrer",
+          "score": 29.908635458475047,
+          "shard": "000_00013"
+        },
+        {
+          "id": 57841405,
+          "title": "J. Arthur Roy House",
+          "tier": "lead",
+          "revision": 1302932128,
+          "url": "https://en.wikipedia.org/wiki/J._Arthur_Roy_House",
+          "score": 29.779787744440863,
+          "shard": "000_00001"
+        },
+        {
+          "id": 60727508,
+          "title": "Gov. Arthur J. Weaver House",
+          "tier": "lead",
+          "revision": 1303112629,
+          "url": "https://en.wikipedia.org/wiki/Gov._Arthur_J._Weaver_House",
+          "score": 29.761050533067575,
+          "shard": "000_00006"
+        },
+        {
+          "id": 54967143,
+          "title": "J. Arthur Hill",
+          "tier": "lead",
+          "revision": 1255880111,
+          "url": "https://en.wikipedia.org/wiki/J._Arthur_Hill",
+          "score": 29.641612511295342,
+          "shard": "000_00011"
+        },
+        {
+          "id": 29407659,
+          "title": "Arthur J. Schmitt",
+          "tier": "lead",
+          "revision": 1219111129,
+          "url": "https://en.wikipedia.org/wiki/Arthur_J._Schmitt",
+          "score": 29.515081283580308,
+          "shard": "000_00008"
+        }
+      ],
+      "milliseconds": 899.2746540025109,
+      "candidates": 180,
+      "terms": [
+        "arthur",
+        "j",
+        "gronna"
+      ],
+      "term_document_frequencies": {
+        "arthur": 84039,
+        "j": 258162,
+        "gronna": 46
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [
+        "Arthur J. Gronna"
+      ],
+      "all_titles_at_10": true,
+      "source_audit": [
+        {
+          "title": "Arthur J. Gronna",
+          "id": 80762076,
+          "revision": 1306667931,
+          "modified": "2025-08-19T01:39:27Z",
+          "url": "https://en.wikipedia.org/wiki/Arthur_J._Gronna",
+          "tier": "lead",
+          "text_sha256": "054d0c3c2a95f0bd4c5b937c5e3689ea098d45091795f874232df31360c924e2",
+          "wikitext_sha256": "ac241ce5ddb94fd4a3cff6320d93467d19d46bdbc54473e04b5322e2fbbd015d",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Arthur J. Gronna\nArthur J. Gronna (July 19, 1897 \u2013 January 19, 1965) was an American politician who served as the North Dakota Attorney General from 1932 to 1933.  His father Asle Gronna served in the United States Senate and United States House of Representatives, while his brother, James D. Gronna, was the North Dakota Secretary of State.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t005",
+      "category": "stored_view_tail",
+      "query": "Olle Engkvist",
+      "expected_titles": [
+        "Olle Engkvist"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80739797,
+        "title": "Olle Engkvist",
+        "views": 1,
+        "source_row": 285672,
+        "revision": 1305997056,
+        "date": "2025-08-15T09:09:49Z",
+        "url": "https://en.wikipedia.org/wiki/Olle_Engkvist",
+        "lead_excerpt": "# Olle Engkvist\nOlle Engkvist, full name Olof Theodor Engkvist, (31 May 1889 - 22 February 1969) was a prominent Swedish building contractor and architect, and founder of the company by the same name.\n",
+        "source_text_sha256": "07746622e36ebdf80aeb0d64d39a190ee2a1ac3298b40fa57c42bd9e0173c563"
+      },
+      "hits": [
+        {
+          "id": 80739797,
+          "title": "Olle Engkvist",
+          "tier": "lead",
+          "revision": 1305997056,
+          "url": "https://en.wikipedia.org/wiki/Olle_Engkvist",
+          "score": 188.216368510681,
+          "shard": "000_00000"
+        },
+        {
+          "id": 72653720,
+          "title": "Greta Engkvist",
+          "tier": "lead",
+          "revision": 1305975949,
+          "url": "https://en.wikipedia.org/wiki/Greta_Engkvist",
+          "score": 52.53660796134696,
+          "shard": "000_00014"
+        },
+        {
+          "id": 42018150,
+          "title": "Yngve Engkvist",
+          "tier": "lead",
+          "revision": 1260158441,
+          "url": "https://en.wikipedia.org/wiki/Yngve_Engkvist",
+          "score": 52.18532133213601,
+          "shard": "000_00003"
+        },
+        {
+          "id": 29374295,
+          "title": "Jeju Olle Trail",
+          "tier": "full",
+          "revision": 1305284363,
+          "url": "https://en.wikipedia.org/wiki/Jeju_Olle_Trail",
+          "score": 35.982495626370785,
+          "shard": "000_00008"
+        },
+        {
+          "id": 26025690,
+          "title": "Mors lilla Olle",
+          "tier": "lead",
+          "revision": 1212940237,
+          "url": "https://en.wikipedia.org/wiki/Mors_lilla_Olle",
+          "score": 35.804520431352095,
+          "shard": "000_00003"
+        },
+        {
+          "id": 77069268,
+          "title": "Jeju Olle Walking Festival",
+          "tier": "lead",
+          "revision": 1304450469,
+          "url": "https://en.wikipedia.org/wiki/Jeju_Olle_Walking_Festival",
+          "score": 35.70767399835324,
+          "shard": "000_00004"
+        },
+        {
+          "id": 44280547,
+          "title": "S\u00e5 mycket Olle Ljungstr\u00f6m",
+          "tier": "lead",
+          "revision": 1190982601,
+          "url": "https://en.wikipedia.org/wiki/S%C3%A5_mycket_Olle_Ljungstr%C3%B6m",
+          "score": 35.675327768754904,
+          "shard": "000_00004"
+        },
+        {
+          "id": 32256791,
+          "title": "Olle af Klintberg",
+          "tier": "lead",
+          "revision": 1298132856,
+          "url": "https://en.wikipedia.org/wiki/Olle_af_Klintberg",
+          "score": 35.67484173116299,
+          "shard": "000_00010"
+        },
+        {
+          "id": 27373577,
+          "title": "Sven-Olle Olsson",
+          "tier": "lead",
+          "revision": 1305192732,
+          "url": "https://en.wikipedia.org/wiki/Sven-Olle_Olsson",
+          "score": 35.44503630989745,
+          "shard": "000_00007"
+        },
+        {
+          "id": 21101351,
+          "title": "T. William Olle",
+          "tier": "lead",
+          "revision": 1250860382,
+          "url": "https://en.wikipedia.org/wiki/T._William_Olle",
+          "score": 35.42690119134541,
+          "shard": "000_00006"
+        }
+      ],
+      "milliseconds": 457.6393520037527,
+      "candidates": 180,
+      "terms": [
+        "olle",
+        "engkvist"
+      ],
+      "term_document_frequencies": {
+        "olle": 867,
+        "engkvist": 8
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [
+        "Olle Engkvist"
+      ],
+      "all_titles_at_10": true,
+      "source_audit": [
+        {
+          "title": "Olle Engkvist",
+          "id": 80739797,
+          "revision": 1305997056,
+          "modified": "2025-08-15T09:09:49Z",
+          "url": "https://en.wikipedia.org/wiki/Olle_Engkvist",
+          "tier": "lead",
+          "text_sha256": "8e316938df596e18d16028ff641da8eca3122b8ed1d21e1380f2fb3e32ae50af",
+          "wikitext_sha256": "ea51e844faff243fff3afa4b72a26393a37ae9134796b67d49b00c836b597e1c",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Olle Engkvist\nOlle Engkvist, full name Olof Theodor Engkvist, (31 May 1889 - 22 February 1969) was a prominent Swedish building contractor and architect, and founder of the company by the same name.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t006",
+      "category": "stored_view_tail",
+      "query": "Puneet Vashist",
+      "expected_titles": [
+        "Puneet Vashist"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80722026,
+        "title": "Puneet Vashist",
+        "views": 1,
+        "source_row": 279775,
+        "revision": 1305611534,
+        "date": "2025-08-13T02:50:34Z",
+        "url": "https://en.wikipedia.org/wiki/Puneet_Vashist",
+        "lead_excerpt": "# Puneet Vashist\nPuneet Vashist is an Indian actor who appears in Hindi-language films and television series.\n",
+        "source_text_sha256": "6181177c953a1d7e8687b360d34a91362b447dc1d8a46096c1cab665742527d9"
+      },
+      "hits": [
+        {
+          "id": 80722026,
+          "title": "Puneet Vashist",
+          "tier": "lead",
+          "revision": 1305611534,
+          "url": "https://en.wikipedia.org/wiki/Puneet_Vashist",
+          "score": 183.79492976958045,
+          "shard": "000_00000"
+        },
+        {
+          "id": 59109198,
+          "title": "Prashant Vashist",
+          "tier": "lead",
+          "revision": 1283850836,
+          "url": "https://en.wikipedia.org/wiki/Prashant_Vashist",
+          "score": 46.47162038197216,
+          "shard": "000_00013"
+        },
+        {
+          "id": 6013720,
+          "title": "Vashist Muni",
+          "tier": "lead",
+          "revision": 1257428497,
+          "url": "https://en.wikipedia.org/wiki/Vashist_Muni",
+          "score": 45.17746170527157,
+          "shard": "000_00009"
+        },
+        {
+          "id": 48086313,
+          "title": "Puneet Yadav",
+          "tier": "lead",
+          "revision": 1283852000,
+          "url": "https://en.wikipedia.org/wiki/Puneet_Yadav",
+          "score": 37.0840010561969,
+          "shard": "000_00012"
+        },
+        {
+          "id": 50099412,
+          "title": "Puneet Mehra",
+          "tier": "lead",
+          "revision": 1283849056,
+          "url": "https://en.wikipedia.org/wiki/Puneet_Mehra",
+          "score": 36.98728273874093,
+          "shard": "000_00013"
+        },
+        {
+          "id": 43813742,
+          "title": "Puneet Beniwal",
+          "tier": "lead",
+          "revision": 1258897045,
+          "url": "https://en.wikipedia.org/wiki/Puneet_Beniwal",
+          "score": 36.973550616968154,
+          "shard": "000_00000"
+        },
+        {
+          "id": 60096690,
+          "title": "Puneet Malik",
+          "tier": "lead",
+          "revision": 1283849155,
+          "url": "https://en.wikipedia.org/wiki/Puneet_Malik",
+          "score": 36.90520477785377,
+          "shard": "000_00012"
+        },
+        {
+          "id": 48152174,
+          "title": "Puneet Datey",
+          "tier": "lead",
+          "revision": 1283847480,
+          "url": "https://en.wikipedia.org/wiki/Puneet_Datey",
+          "score": 36.82387594396532,
+          "shard": "000_00013"
+        },
+        {
+          "id": 53755716,
+          "title": "Puneet Sharma",
+          "tier": "lead",
+          "revision": 1303011543,
+          "url": "https://en.wikipedia.org/wiki/Puneet_Sharma",
+          "score": 36.770067853737444,
+          "shard": "000_00001"
+        },
+        {
+          "id": 56565007,
+          "title": "Puneet Kumar",
+          "tier": "lead",
+          "revision": 1283848744,
+          "url": "https://en.wikipedia.org/wiki/Puneet_Kumar",
+          "score": 36.610584394190035,
+          "shard": "000_00014"
+        }
+      ],
+      "milliseconds": 690.3844750049757,
+      "candidates": 180,
+      "terms": [
+        "puneet",
+        "vashist"
+      ],
+      "term_document_frequencies": {
+        "puneet": 466,
+        "vashist": 39
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [
+        "Puneet Vashist"
+      ],
+      "all_titles_at_10": true,
+      "source_audit": [
+        {
+          "title": "Puneet Vashist",
+          "id": 80722026,
+          "revision": 1305611534,
+          "modified": "2025-08-13T02:50:34Z",
+          "url": "https://en.wikipedia.org/wiki/Puneet_Vashist",
+          "tier": "lead",
+          "text_sha256": "8320dbc24e114e4b93e01471f844ae8df4d02449d826754e5e6aa096d86b17ee",
+          "wikitext_sha256": "df34da7473071f2ebb01f3399e58c0df8e70c1bc04a30a43e0ae530139615f22",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Puneet Vashist\nPuneet Vashist is an Indian actor who appears in Hindi-language films and television series.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t007",
+      "category": "stored_view_tail",
+      "query": "Flag of the Caribbean Community",
+      "expected_titles": [
+        "Flag of the Caribbean Community"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80716261,
+        "title": "Flag of the Caribbean Community",
+        "views": 1,
+        "source_row": 280878,
+        "revision": 1305562982,
+        "date": "2025-08-12T20:15:55Z",
+        "url": "https://en.wikipedia.org/wiki/Flag_of_the_Caribbean_Community",
+        "lead_excerpt": "# Flag of the Caribbean Community\nThe Flag of the Caribbean Community is the official flag of the Caribbean Community, a regional intergovernmental organisation. The flag was adopted in 1983.\n",
+        "source_text_sha256": "9e4956359f12555745c02822b1837b7ae6f4e76252461011b1a0f9864d871159"
+      },
+      "hits": [
+        {
+          "id": 80716261,
+          "title": "Flag of the Caribbean Community",
+          "tier": "lead",
+          "revision": 1305562982,
+          "url": "https://en.wikipedia.org/wiki/Flag_of_the_Caribbean_Community",
+          "score": 152.87738147225576,
+          "shard": "000_00000"
+        },
+        {
+          "id": 57357,
+          "title": "Caribbean Community",
+          "tier": "full",
+          "revision": 1306127079,
+          "url": "https://en.wikipedia.org/wiki/Caribbean_Community",
+          "score": 35.983828028555635,
+          "shard": "000_00003"
+        },
+        {
+          "id": 34057914,
+          "title": "Member states of the Caribbean Community",
+          "tier": "full",
+          "revision": 1289645285,
+          "url": "https://en.wikipedia.org/wiki/Member_states_of_the_Caribbean_Community",
+          "score": 33.8931672597449,
+          "shard": "000_00014"
+        },
+        {
+          "id": 3001302,
+          "title": "Secretariat of the Caribbean Community",
+          "tier": "lead",
+          "revision": 1276076770,
+          "url": "https://en.wikipedia.org/wiki/Secretariat_of_the_Caribbean_Community",
+          "score": 33.14958493929287,
+          "shard": "000_00010"
+        },
+        {
+          "id": 49944151,
+          "title": "Flag of the East African Community",
+          "tier": "full",
+          "revision": 1302335667,
+          "url": "https://en.wikipedia.org/wiki/Flag_of_the_East_African_Community",
+          "score": 32.19221261125671,
+          "shard": "000_00004"
+        },
+        {
+          "id": 16929567,
+          "title": "Flag of the European Coal and Steel Community",
+          "tier": "full",
+          "revision": 1243661290,
+          "url": "https://en.wikipedia.org/wiki/Flag_of_the_European_Coal_and_Steel_Community",
+          "score": 31.926561695052023,
+          "shard": "000_00005"
+        },
+        {
+          "id": 13667074,
+          "title": "Order of the Caribbean Community",
+          "tier": "full",
+          "revision": 1274107970,
+          "url": "https://en.wikipedia.org/wiki/Order_of_the_Caribbean_Community",
+          "score": 31.905252524399778,
+          "shard": "000_00000"
+        },
+        {
+          "id": 63083009,
+          "title": "Caribbean Community Administrative Tribunal",
+          "tier": "lead",
+          "revision": 1285911364,
+          "url": "https://en.wikipedia.org/wiki/Caribbean_Community_Administrative_Tribunal",
+          "score": 31.78301452842745,
+          "shard": "000_00009"
+        },
+        {
+          "id": 14614076,
+          "title": "Flag of the Pacific Community",
+          "tier": "lead",
+          "revision": 1223319953,
+          "url": "https://en.wikipedia.org/wiki/Flag_of_the_Pacific_Community",
+          "score": 31.605671437380526,
+          "shard": "000_00011"
+        },
+        {
+          "id": 16994992,
+          "title": "Dolphin Flag",
+          "tier": "lead",
+          "revision": 1289665192,
+          "url": "https://en.wikipedia.org/wiki/Dolphin_Flag",
+          "score": 31.58344645418675,
+          "shard": "000_00014"
+        }
+      ],
+      "milliseconds": 962.4173560005147,
+      "candidates": 180,
+      "terms": [
+        "flag",
+        "caribbean",
+        "community"
+      ],
+      "term_document_frequencies": {
+        "flag": 48107,
+        "caribbean": 33330,
+        "community": 299058
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [
+        "Flag of the Caribbean Community"
+      ],
+      "all_titles_at_10": true,
+      "source_audit": [
+        {
+          "title": "Flag of the Caribbean Community",
+          "id": 80716261,
+          "revision": 1305562982,
+          "modified": "2025-08-12T20:15:55Z",
+          "url": "https://en.wikipedia.org/wiki/Flag_of_the_Caribbean_Community",
+          "tier": "lead",
+          "text_sha256": "fcca1660562d3bdf0facaeedc36c93d68a9fb87d67013d83e5eaa1d1c79350e1",
+          "wikitext_sha256": "ce4095c33b1ec916913c004a5d0df36a4f15bea0f4f4323de1bec0f8f6a64c43",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Flag of the Caribbean Community\nThe Flag of the Caribbean Community is the official flag of the Caribbean Community, a regional intergovernmental organisation. The flag was adopted in 1983.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t008",
+      "category": "stored_view_tail",
+      "query": "Ross Harstone",
+      "expected_titles": [
+        "Ross Harstone"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "literal_title",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80703440,
+        "title": "Ross Harstone",
+        "views": 1,
+        "source_row": 277931,
+        "revision": 1305500540,
+        "date": "2025-08-12T12:08:47Z",
+        "url": "https://en.wikipedia.org/wiki/Ross_Harstone",
+        "lead_excerpt": "# Ross Harstone\nRoss Gerald Lewis Harstone (June 11, 1885 \u2013 May 11, 1964) was a Canadian curler who is the namesake of The Brier's Ross Harstone Sportsmanship Award, which is presented to the curler who best represents the ideals of good sportsmanship, observance of the rules, exemplary conduct, and curling ability.\n",
+        "source_text_sha256": "e2008eca936821b7ee01ad42ef633f56499017f68b8cdcacba4f4c5d9d88208a"
+      },
+      "hits": [
+        {
+          "id": 80703440,
+          "title": "Ross Harstone",
+          "tier": "lead",
+          "revision": 1305500540,
+          "url": "https://en.wikipedia.org/wiki/Ross_Harstone",
+          "score": 173.69107806777612,
+          "shard": "000_00000"
+        },
+        {
+          "id": 1069122,
+          "title": "Oliver Paipoonge",
+          "tier": "lead",
+          "revision": 1283752440,
+          "url": "https://en.wikipedia.org/wiki/Oliver_Paipoonge",
+          "score": 20.789066441918695,
+          "shard": "000_00013"
+        },
+        {
+          "id": 23018562,
+          "title": "Ross (name)",
+          "tier": "full",
+          "revision": 1306085805,
+          "url": "https://en.wikipedia.org/wiki/Ross_(name)",
+          "score": 20.259046996087463,
+          "shard": "000_00003"
+        },
+        {
+          "id": 27910915,
+          "title": "Chiefs of Clan Ross",
+          "tier": "lead",
+          "revision": 1267224724,
+          "url": "https://en.wikipedia.org/wiki/Chiefs_of_Clan_Ross",
+          "score": 20.146501750650422,
+          "shard": "000_00013"
+        },
+        {
+          "id": 6887596,
+          "title": "Ross (bicycle company)",
+          "tier": "full",
+          "revision": 1297485775,
+          "url": "https://en.wikipedia.org/wiki/Ross_(bicycle_company)",
+          "score": 19.997848002256646,
+          "shard": "000_00004"
+        },
+        {
+          "id": 1884999,
+          "title": "Ross (optics)",
+          "tier": "lead",
+          "revision": 1267683990,
+          "url": "https://en.wikipedia.org/wiki/Ross_(optics)",
+          "score": 19.939568218433337,
+          "shard": "000_00001"
+        },
+        {
+          "id": 2876732,
+          "title": "Ross and Macdonald",
+          "tier": "lead",
+          "revision": 1306658610,
+          "url": "https://en.wikipedia.org/wiki/Ross_and_Macdonald",
+          "score": 19.92903102025163,
+          "shard": "000_00013"
+        },
+        {
+          "id": 9183798,
+          "title": "Frank Mackenzie Ross",
+          "tier": "lead",
+          "revision": 1302356755,
+          "url": "https://en.wikipedia.org/wiki/Frank_Mackenzie_Ross",
+          "score": 19.9253773516306,
+          "shard": "000_00008"
+        },
+        {
+          "id": 75865907,
+          "title": "Logan Ross",
+          "tier": "full",
+          "revision": 1303426041,
+          "url": "https://en.wikipedia.org/wiki/Logan_Ross",
+          "score": 19.89825980465427,
+          "shard": "000_00011"
+        },
+        {
+          "id": 45069775,
+          "title": "Sherry Ross (pioneer)",
+          "tier": "lead",
+          "revision": 1212851504,
+          "url": "https://en.wikipedia.org/wiki/Sherry_Ross_(pioneer)",
+          "score": 19.893482666246555,
+          "shard": "000_00010"
+        }
+      ],
+      "milliseconds": 511.6012150028837,
+      "candidates": 180,
+      "terms": [
+        "ross",
+        "harstone"
+      ],
+      "term_document_frequencies": {
+        "ross": 50355,
+        "harstone": 6
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [
+        "Ross Harstone"
+      ],
+      "all_titles_at_10": true,
+      "source_audit": [
+        {
+          "title": "Ross Harstone",
+          "id": 80703440,
+          "revision": 1305500540,
+          "modified": "2025-08-12T12:08:47Z",
+          "url": "https://en.wikipedia.org/wiki/Ross_Harstone",
+          "tier": "lead",
+          "text_sha256": "1b3677bec195602fe0d0c591a66559739fccbded4bcaaa55c67f4d424b8cd925",
+          "wikitext_sha256": "e768f4b01a8fb400c9533f2318f2a00b8666bf5f9e836aca23e156c5c6e8a6f0",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Ross Harstone\nRoss Gerald Lewis Harstone (June 11, 1885 \u2013 May 11, 1964) was a Canadian curler who is the namesake of The Brier's Ross Harstone Sportsmanship Award, which is presented to the curler who best represents the ideals of good sportsmanship, observance of the rules, exemplary conduct, and curling ability.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t009",
+      "category": "stored_view_tail",
+      "query": "Indian filmmaker films injustice inequality",
+      "expected_titles": [
+        "Shazia Iqbal"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80652370,
+        "title": "Shazia Iqbal",
+        "views": 1,
+        "source_row": 280977,
+        "revision": 1305658171,
+        "date": "2025-08-13T10:08:20Z",
+        "url": "https://en.wikipedia.org/wiki/Shazia_Iqbal",
+        "lead_excerpt": "# Shazia Iqbal\nShazia Iqbal (born 1984, in Patna) is an Indian filmmaker, who is known for making films that question injustice or inequality.\n",
+        "source_text_sha256": "08bd79136659ad793063400c62619c4d3684865b37a2c1ed61c538705531922c"
+      },
+      "hits": [
+        {
+          "id": 80652370,
+          "title": "Shazia Iqbal",
+          "tier": "lead",
+          "revision": 1305658171,
+          "url": "https://en.wikipedia.org/wiki/Shazia_Iqbal",
+          "score": 42.39815261950236,
+          "shard": "000_00000"
+        },
+        {
+          "id": 42512711,
+          "title": "The Divide: American Injustice in the Age of the Wealth Gap",
+          "tier": "lead",
+          "revision": 1270290554,
+          "url": "https://en.wikipedia.org/wiki/The_Divide:_American_Injustice_in_the_Age_of_the_Wealth_Gap",
+          "score": 36.652793159287825,
+          "shard": "000_00002"
+        },
+        {
+          "id": 46211996,
+          "title": "Anurag Singh (filmmaker)",
+          "tier": "lead",
+          "revision": 1275595873,
+          "url": "https://en.wikipedia.org/wiki/Anurag_Singh_(filmmaker)",
+          "score": 32.246370537257846,
+          "shard": "000_00003"
+        },
+        {
+          "id": 28947980,
+          "title": "Devi Sharma (filmmaker)",
+          "tier": "lead",
+          "revision": 1252164230,
+          "url": "https://en.wikipedia.org/wiki/Devi_Sharma_(filmmaker)",
+          "score": 31.614321647059494,
+          "shard": "000_00006"
+        },
+        {
+          "id": 58532829,
+          "title": "Vibha Bakshi",
+          "tier": "lead",
+          "revision": 1304018248,
+          "url": "https://en.wikipedia.org/wiki/Vibha_Bakshi",
+          "score": 31.568875109015714,
+          "shard": "000_00011"
+        },
+        {
+          "id": 63775921,
+          "title": "Economic inequality in South Korea",
+          "tier": "full",
+          "revision": 1293978145,
+          "url": "https://en.wikipedia.org/wiki/Economic_inequality_in_South_Korea",
+          "score": 30.973834904220148,
+          "shard": "000_00001"
+        },
+        {
+          "id": 43319911,
+          "title": "Anup Singh (filmmaker)",
+          "tier": "full",
+          "revision": 1152929984,
+          "url": "https://en.wikipedia.org/wiki/Anup_Singh_(filmmaker)",
+          "score": 30.617507697127415,
+          "shard": "000_00010"
+        },
+        {
+          "id": 22799675,
+          "title": "David Kaplan (filmmaker)",
+          "tier": "lead",
+          "revision": 1225497765,
+          "url": "https://en.wikipedia.org/wiki/David_Kaplan_(filmmaker)",
+          "score": 30.336995955899145,
+          "shard": "000_00011"
+        },
+        {
+          "id": 54190579,
+          "title": "Rich-Heape Films",
+          "tier": "lead",
+          "revision": 981612884,
+          "url": "https://en.wikipedia.org/wiki/Rich-Heape_Films",
+          "score": 29.2015637489229,
+          "shard": "000_00003"
+        },
+        {
+          "id": 50937775,
+          "title": "Bhagirathi Films",
+          "tier": "lead",
+          "revision": 1279854502,
+          "url": "https://en.wikipedia.org/wiki/Bhagirathi_Films",
+          "score": 28.623788046907904,
+          "shard": "000_00008"
+        }
+      ],
+      "milliseconds": 928.8574250022066,
+      "candidates": 180,
+      "terms": [
+        "indian",
+        "filmmaker",
+        "films",
+        "injustice",
+        "inequality"
+      ],
+      "term_document_frequencies": {
+        "indian": 226325,
+        "filmmaker": 30120,
+        "films": 161443,
+        "injustice": 6940,
+        "inequality": 8994
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [
+        "Shazia Iqbal"
+      ],
+      "all_titles_at_10": true,
+      "source_audit": [
+        {
+          "title": "Shazia Iqbal",
+          "id": 80652370,
+          "revision": 1305658171,
+          "modified": "2025-08-13T10:08:20Z",
+          "url": "https://en.wikipedia.org/wiki/Shazia_Iqbal",
+          "tier": "lead",
+          "text_sha256": "bb444e3c81eff2ae9710f6fde165def7fa11215391dd0b4ea8a637c85bb279d9",
+          "wikitext_sha256": "6cf0fb6ef962c78b3f7cedd074501207a9d03a506c3b29c13baf674eadfc2eb9",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Shazia Iqbal\nShazia Iqbal (born 1984, in Patna) is an Indian filmmaker, who is known for making films that question injustice or inequality.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t010",
+      "category": "stored_view_tail",
+      "query": "English football forward Crawley Town",
+      "expected_titles": [
+        "Louis Flower"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80633779,
+        "title": "Louis Flower",
+        "views": 1,
+        "source_row": 251647,
+        "revision": 1304377642,
+        "date": "2025-08-05T17:49:23Z",
+        "url": "https://en.wikipedia.org/wiki/Louis_Flower",
+        "lead_excerpt": "# Louis Flower\nLouis Christopher Chukwuemeka Flower (born 6 October 2004) is an English professional footballer who plays as a forward for EFL League Two club Crawley Town.\n",
+        "source_text_sha256": "0b0cee3469db6dec3635ab09aca2cb3b12ed7dde128618a2874f8f6cbaec9f2b"
+      },
+      "hits": [
+        {
+          "id": 42816013,
+          "title": "2014\u201315 Crawley Town F.C. season",
+          "tier": "lead",
+          "revision": 1276788584,
+          "url": "https://en.wikipedia.org/wiki/2014%E2%80%9315_Crawley_Town_F.C._season",
+          "score": 51.4584565139545,
+          "shard": "000_00009"
+        },
+        {
+          "id": 32153684,
+          "title": "2011\u201312 Crawley Town F.C. season",
+          "tier": "lead",
+          "revision": 1159786872,
+          "url": "https://en.wikipedia.org/wiki/2011%E2%80%9312_Crawley_Town_F.C._season",
+          "score": 51.423665435558654,
+          "shard": "000_00009"
+        },
+        {
+          "id": 37157472,
+          "title": "2012\u201313 Crawley Town F.C. season",
+          "tier": "lead",
+          "revision": 1280148290,
+          "url": "https://en.wikipedia.org/wiki/2012%E2%80%9313_Crawley_Town_F.C._season",
+          "score": 51.401282241648474,
+          "shard": "000_00012"
+        },
+        {
+          "id": 40880976,
+          "title": "2013\u201314 Crawley Town F.C. season",
+          "tier": "lead",
+          "revision": 1293863989,
+          "url": "https://en.wikipedia.org/wiki/2013%E2%80%9314_Crawley_Town_F.C._season",
+          "score": 51.04230072873991,
+          "shard": "000_00002"
+        },
+        {
+          "id": 64213171,
+          "title": "2020\u201321 Crawley Town F.C. season",
+          "tier": "lead",
+          "revision": 1278351178,
+          "url": "https://en.wikipedia.org/wiki/2020%E2%80%9321_Crawley_Town_F.C._season",
+          "score": 48.817296296761235,
+          "shard": "000_00011"
+        },
+        {
+          "id": 73156898,
+          "title": "2023\u201324 Crawley Town F.C. season",
+          "tier": "lead",
+          "revision": 1301955758,
+          "url": "https://en.wikipedia.org/wiki/2023%E2%80%9324_Crawley_Town_F.C._season",
+          "score": 48.5744165774768,
+          "shard": "000_00000"
+        },
+        {
+          "id": 50756620,
+          "title": "List of Crawley Town F.C. seasons",
+          "tier": "lead",
+          "revision": 1305632259,
+          "url": "https://en.wikipedia.org/wiki/List_of_Crawley_Town_F.C._seasons",
+          "score": 48.16726340901842,
+          "shard": "000_00000"
+        },
+        {
+          "id": 648127,
+          "title": "Crawley Town F.C.",
+          "tier": "full",
+          "revision": 1306227243,
+          "url": "https://en.wikipedia.org/wiki/Crawley_Town_F.C.",
+          "score": 46.622624417592675,
+          "shard": "000_00014"
+        },
+        {
+          "id": 27909290,
+          "title": "2010\u201311 Crawley Town F.C. season",
+          "tier": "lead",
+          "revision": 1285653385,
+          "url": "https://en.wikipedia.org/wiki/2010%E2%80%9311_Crawley_Town_F.C._season",
+          "score": 46.01352430718426,
+          "shard": "000_00008"
+        },
+        {
+          "id": 33691081,
+          "title": "Crawley (surname)",
+          "tier": "lead",
+          "revision": 1267668911,
+          "url": "https://en.wikipedia.org/wiki/Crawley_(surname)",
+          "score": 41.90258298777559,
+          "shard": "000_00005"
+        }
+      ],
+      "milliseconds": 1470.1220909992117,
+      "candidates": 180,
+      "terms": [
+        "english",
+        "football",
+        "forward",
+        "crawley",
+        "town"
+      ],
+      "term_document_frequencies": {
+        "english": 429205,
+        "football": 347755,
+        "forward": 124159,
+        "crawley": 3028,
+        "town": 375079
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [],
+      "all_titles_at_10": false,
+      "source_audit": [
+        {
+          "title": "Louis Flower",
+          "id": 80633779,
+          "revision": 1304377642,
+          "modified": "2025-08-05T17:49:23Z",
+          "url": "https://en.wikipedia.org/wiki/Louis_Flower",
+          "tier": "lead",
+          "text_sha256": "c21f57e650581a17589398c066e5520060fccc912a5a91abe54df9d15bdd0ccf",
+          "wikitext_sha256": "1e963502e0dffdb376bd566066792333a72a160c3063bfd0ef0c7ede243c340d",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Louis Flower\nLouis Christopher Chukwuemeka Flower (born 6 October 2004) is an English professional footballer who plays as a forward for EFL League Two club Crawley Town.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t011",
+      "category": "stored_view_tail",
+      "query": "American swimmer mixed 4x100 freestyle relay 2025",
+      "expected_titles": [
+        "Patrick Sammon"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80617638,
+        "title": "Patrick Sammon",
+        "views": 1,
+        "source_row": 293357,
+        "revision": 1306405407,
+        "date": "2025-08-17T15:26:25Z",
+        "url": "https://en.wikipedia.org/wiki/Patrick_Sammon",
+        "lead_excerpt": "# Patrick Sammon\nPatrick Sammon (born August 6, 2003) is an American competitive swimmer. At the 2025 World Aquatics Championships, he won a gold medal in the mixed 4\u00d7100 metre freestyle relay. He currently competes at the collegiate level for Arizona State University.\n",
+        "source_text_sha256": "86d43f90994b3e3d531a9e158daaae31e5645f73b02530c1de9c11451df6fefb"
+      },
+      "hits": [
+        {
+          "id": 23576070,
+          "title": "Swimming at the 2006 Central American and Caribbean Games \u2013 Women's 4x100 metre freestyle relay",
+          "tier": "lead",
+          "revision": 1196244392,
+          "url": "https://en.wikipedia.org/wiki/Swimming_at_the_2006_Central_American_and_Caribbean_Games_%E2%80%93_Women%27s_4x100_metre_freestyle_relay",
+          "score": 81.87762503620033,
+          "shard": "000_00011"
+        },
+        {
+          "id": 23472717,
+          "title": "Swimming at the 2006 Central American and Caribbean Games \u2013 Men's 4x100 metre freestyle relay",
+          "tier": "lead",
+          "revision": 1196239435,
+          "url": "https://en.wikipedia.org/wiki/Swimming_at_the_2006_Central_American_and_Caribbean_Games_%E2%80%93_Men%27s_4x100_metre_freestyle_relay",
+          "score": 81.84441676743612,
+          "shard": "000_00006"
+        },
+        {
+          "id": 80550614,
+          "title": "Swimming at the 2025 World Aquatics Championships \u2013 Mixed 4 \u00d7 100 metre freestyle relay",
+          "tier": "lead",
+          "revision": 1306947888,
+          "url": "https://en.wikipedia.org/wiki/Swimming_at_the_2025_World_Aquatics_Championships_%E2%80%93_Mixed_4_%C3%97_100_metre_freestyle_relay",
+          "score": 72.37806444698754,
+          "shard": "000_00008"
+        },
+        {
+          "id": 43482403,
+          "title": "2014 IPC Swimming European Championships \u2013 Mixed 4 \u00d7 50 metre freestyle relay",
+          "tier": "lead",
+          "revision": 1152184220,
+          "url": "https://en.wikipedia.org/wiki/2014_IPC_Swimming_European_Championships_%E2%80%93_Mixed_4_%C3%97_50_metre_freestyle_relay",
+          "score": 67.44046427534781,
+          "shard": "000_00013"
+        },
+        {
+          "id": 61448526,
+          "title": "Swimming at the 2019 Pan American Games \u2013 Mixed 4 \u00d7 100 metre freestyle relay",
+          "tier": "lead",
+          "revision": 1259380003,
+          "url": "https://en.wikipedia.org/wiki/Swimming_at_the_2019_Pan_American_Games_%E2%80%93_Mixed_4_%C3%97_100_metre_freestyle_relay",
+          "score": 66.07252354268573,
+          "shard": "000_00006"
+        },
+        {
+          "id": 75272485,
+          "title": "Swimming at the 2023 Pan American Games \u2013 Mixed 4 \u00d7 100 metre freestyle relay",
+          "tier": "lead",
+          "revision": 1250717151,
+          "url": "https://en.wikipedia.org/wiki/Swimming_at_the_2023_Pan_American_Games_%E2%80%93_Mixed_4_%C3%97_100_metre_freestyle_relay",
+          "score": 66.07252354268573,
+          "shard": "000_00005"
+        },
+        {
+          "id": 27091443,
+          "title": "Swimming at the 2010 South American Games \u2013 Men's 4 \u00d7 100 metre freestyle relay",
+          "tier": "lead",
+          "revision": 1196454572,
+          "url": "https://en.wikipedia.org/wiki/Swimming_at_the_2010_South_American_Games_%E2%80%93_Men%27s_4_%C3%97_100_metre_freestyle_relay",
+          "score": 66.05297201736445,
+          "shard": "000_00004"
+        },
+        {
+          "id": 35755953,
+          "title": "Brian Phillips (swimmer)",
+          "tier": "lead",
+          "revision": 1300031444,
+          "url": "https://en.wikipedia.org/wiki/Brian_Phillips_(swimmer)",
+          "score": 61.878731554520144,
+          "shard": "000_00014"
+        },
+        {
+          "id": 35738307,
+          "title": "Robin Leamy (swimmer)",
+          "tier": "lead",
+          "revision": 1304804815,
+          "url": "https://en.wikipedia.org/wiki/Robin_Leamy_(swimmer)",
+          "score": 61.57541992637845,
+          "shard": "000_00008"
+        },
+        {
+          "id": 5918115,
+          "title": "Laura Nicholls (swimmer)",
+          "tier": "lead",
+          "revision": 1299933255,
+          "url": "https://en.wikipedia.org/wiki/Laura_Nicholls_(swimmer)",
+          "score": 59.485479450492136,
+          "shard": "000_00000"
+        }
+      ],
+      "milliseconds": 1602.051734997076,
+      "candidates": 180,
+      "terms": [
+        "american",
+        "swimmer",
+        "mixed",
+        "4x100",
+        "freestyle",
+        "relay",
+        "2025"
+      ],
+      "term_document_frequencies": {
+        "american": 1050383,
+        "swimmer": 23553,
+        "mixed": 133164,
+        "4x100": 670,
+        "freestyle": 20195,
+        "relay": 22171,
+        "2025": 220753
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [],
+      "all_titles_at_10": false,
+      "source_audit": [
+        {
+          "title": "Patrick Sammon",
+          "id": 80617638,
+          "revision": 1306405407,
+          "modified": "2025-08-17T15:26:25Z",
+          "url": "https://en.wikipedia.org/wiki/Patrick_Sammon",
+          "tier": "lead",
+          "text_sha256": "6f668442b05798442b02b5810187135c3e10d2aec97158972149a511be9d8ce4",
+          "wikitext_sha256": "99c6a3e067518222433eae7224f763318ad5794a98daf6f51524033773861801",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Patrick Sammon\nPatrick Sammon (born August 6, 2003) is an American competitive swimmer. At the 2025 World Aquatics Championships, he won a gold medal in the mixed 4\u00d7100 metre freestyle relay. He currently competes at the collegiate level for Arizona State University.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t012",
+      "category": "stored_view_tail",
+      "query": "German wheelchair basketball Universiade champion",
+      "expected_titles": [
+        "Lisa Bergenthal"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80586804,
+        "title": "Lisa Bergenthal",
+        "views": 1,
+        "source_row": 291101,
+        "revision": 1306363114,
+        "date": "2025-08-17T09:59:28Z",
+        "url": "https://en.wikipedia.org/wiki/Lisa_Bergenthal",
+        "lead_excerpt": "# Lisa Bergenthal\nLisa Bergenthal (born 30 November 1999) is a German wheelchair basketball player who competes at international basketball competitions. She is a Universiade champion and has competed at the 2020 and 2024 Summer Paralympics.\nBergenthal is studying science at University of Cologne.\n",
+        "source_text_sha256": "8108096b1a8896c1db6e67550ea1a543b969c3ee89e63bb41e7b1c425f66c178"
+      },
+      "hits": [
+        {
+          "id": 69704655,
+          "title": "Netherlands women's national wheelchair basketball team",
+          "tier": "lead",
+          "revision": 1284183867,
+          "url": "https://en.wikipedia.org/wiki/Netherlands_women%27s_national_wheelchair_basketball_team",
+          "score": 49.72361574931537,
+          "shard": "000_00000"
+        },
+        {
+          "id": 42405497,
+          "title": "Heike Friedrich (wheelchair basketball)",
+          "tier": "full",
+          "revision": 1295530471,
+          "url": "https://en.wikipedia.org/wiki/Heike_Friedrich_(wheelchair_basketball)",
+          "score": 47.120798858556185,
+          "shard": "000_00000"
+        },
+        {
+          "id": 39576281,
+          "title": "Basketball at the 2013 Summer Universiade",
+          "tier": "lead",
+          "revision": 1277583554,
+          "url": "https://en.wikipedia.org/wiki/Basketball_at_the_2013_Summer_Universiade",
+          "score": 44.60639258929087,
+          "shard": "000_00013"
+        },
+        {
+          "id": 46432218,
+          "title": "Basketball at the 2015 Summer Universiade",
+          "tier": "lead",
+          "revision": 1261973880,
+          "url": "https://en.wikipedia.org/wiki/Basketball_at_the_2015_Summer_Universiade",
+          "score": 44.593013545853005,
+          "shard": "000_00009"
+        },
+        {
+          "id": 32047889,
+          "title": "Basketball at the 2011 Summer Universiade",
+          "tier": "lead",
+          "revision": 1261973424,
+          "url": "https://en.wikipedia.org/wiki/Basketball_at_the_2011_Summer_Universiade",
+          "score": 44.55297762526586,
+          "shard": "000_00010"
+        },
+        {
+          "id": 36211266,
+          "title": "Basketball at the 1987 Summer Universiade",
+          "tier": "lead",
+          "revision": 1261972239,
+          "url": "https://en.wikipedia.org/wiki/Basketball_at_the_1987_Summer_Universiade",
+          "score": 44.53341903601105,
+          "shard": "000_00009"
+        },
+        {
+          "id": 36211191,
+          "title": "Basketball at the 1991 Summer Universiade",
+          "tier": "lead",
+          "revision": 1261972394,
+          "url": "https://en.wikipedia.org/wiki/Basketball_at_the_1991_Summer_Universiade",
+          "score": 44.51986646165682,
+          "shard": "000_00008"
+        },
+        {
+          "id": 36211277,
+          "title": "Basketball at the 1985 Summer Universiade",
+          "tier": "lead",
+          "revision": 1261972163,
+          "url": "https://en.wikipedia.org/wiki/Basketball_at_the_1985_Summer_Universiade",
+          "score": 44.50633199388941,
+          "shard": "000_00010"
+        },
+        {
+          "id": 36211351,
+          "title": "Basketball at the 1999 Summer Universiade",
+          "tier": "lead",
+          "revision": 1261972780,
+          "url": "https://en.wikipedia.org/wiki/Basketball_at_the_1999_Summer_Universiade",
+          "score": 44.50633199388941,
+          "shard": "000_00001"
+        },
+        {
+          "id": 36211239,
+          "title": "Basketball at the 1989 Summer Universiade",
+          "tier": "lead",
+          "revision": 1261972342,
+          "url": "https://en.wikipedia.org/wiki/Basketball_at_the_1989_Summer_Universiade",
+          "score": 44.3564986610104,
+          "shard": "000_00001"
+        }
+      ],
+      "milliseconds": 878.1615719999536,
+      "candidates": 180,
+      "terms": [
+        "german",
+        "wheelchair",
+        "basketball",
+        "universiade",
+        "champion"
+      ],
+      "term_document_frequencies": {
+        "german": 322844,
+        "wheelchair": 10039,
+        "basketball": 97492,
+        "universiade": 4911,
+        "champion": 113089
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [],
+      "all_titles_at_10": false,
+      "source_audit": [
+        {
+          "title": "Lisa Bergenthal",
+          "id": 80586804,
+          "revision": 1306363114,
+          "modified": "2025-08-17T09:59:28Z",
+          "url": "https://en.wikipedia.org/wiki/Lisa_Bergenthal",
+          "tier": "lead",
+          "text_sha256": "8108096b1a8896c1db6e67550ea1a543b969c3ee89e63bb41e7b1c425f66c178",
+          "wikitext_sha256": "30af1b5621f38ff26e517bc6790d1993f7957d32b6b2e74ad2967dc1841a6f05",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Lisa Bergenthal\nLisa Bergenthal (born 30 November 1999) is a German wheelchair basketball player who competes at international basketball competitions. She is a Universiade champion and has competed at the 2020 and 2024 Summer Paralympics.\nBergenthal is studying science at University of Cologne.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t013",
+      "category": "stored_view_tail",
+      "query": "Italian sabre fencer team gold 2025",
+      "expected_titles": [
+        "Matteo Neri"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80571630,
+        "title": "Matteo Neri",
+        "views": 1,
+        "source_row": 258581,
+        "revision": 1304497081,
+        "date": "2025-08-06T10:46:53Z",
+        "url": "https://en.wikipedia.org/wiki/Matteo_Neri",
+        "lead_excerpt": "# Matteo Neri\nMatteo Neri (born 5 May 1999) is an Italian right-handed sabre fencer. He won a gold medal in the men's team sabre event at the 2025 World Fencing Championships.\n",
+        "source_text_sha256": "fb6572ccc88f1581990a9fb4c2942a665c002b8449d83611a69a6e88e0521692"
+      },
+      "hits": [
+        {
+          "id": 28926449,
+          "title": "Roberto Ferrari (fencer)",
+          "tier": "lead",
+          "revision": 1251162523,
+          "url": "https://en.wikipedia.org/wiki/Roberto_Ferrari_(fencer)",
+          "score": 56.2247331917686,
+          "shard": "000_00014"
+        },
+        {
+          "id": 18183389,
+          "title": "Aldo Montano (fencer born 1978)",
+          "tier": "lead",
+          "revision": 1302059511,
+          "url": "https://en.wikipedia.org/wiki/Aldo_Montano_(fencer_born_1978)",
+          "score": 54.72725720189454,
+          "shard": "000_00000"
+        },
+        {
+          "id": 25689692,
+          "title": "Zolt\u00e1n Horv\u00e1th (fencer)",
+          "tier": "full",
+          "revision": 1306176381,
+          "url": "https://en.wikipedia.org/wiki/Zolt%C3%A1n_Horv%C3%A1th_(fencer)",
+          "score": 53.29140512793042,
+          "shard": "000_00003"
+        },
+        {
+          "id": 10235592,
+          "title": "Jacques Lef\u00e8vre (fencer)",
+          "tier": "lead",
+          "revision": 1229970248,
+          "url": "https://en.wikipedia.org/wiki/Jacques_Lef%C3%A8vre_(fencer)",
+          "score": 50.976434827547365,
+          "shard": "000_00012"
+        },
+        {
+          "id": 36577130,
+          "title": "Kim Jung-hwan (fencer)",
+          "tier": "full",
+          "revision": 1297273614,
+          "url": "https://en.wikipedia.org/wiki/Kim_Jung-hwan_(fencer)",
+          "score": 50.27257833566119,
+          "shard": "000_00014"
+        },
+        {
+          "id": 7332549,
+          "title": "Nicolas Lopez (fencer)",
+          "tier": "lead",
+          "revision": 1304973371,
+          "url": "https://en.wikipedia.org/wiki/Nicolas_Lopez_(fencer)",
+          "score": 50.19461473060708,
+          "shard": "000_00003"
+        },
+        {
+          "id": 30038149,
+          "title": "Robert Fraisse (fencer)",
+          "tier": "lead",
+          "revision": 1259349313,
+          "url": "https://en.wikipedia.org/wiki/Robert_Fraisse_(fencer)",
+          "score": 50.189460863943204,
+          "shard": "000_00010"
+        },
+        {
+          "id": 36609432,
+          "title": "Kim Ji-yeon (fencer)",
+          "tier": "full",
+          "revision": 1297273609,
+          "url": "https://en.wikipedia.org/wiki/Kim_Ji-yeon_(fencer)",
+          "score": 50.047690315358594,
+          "shard": "000_00002"
+        },
+        {
+          "id": 47336393,
+          "title": "Fencing at the 2015 Pan American Games \u2013 Men's team sabre",
+          "tier": "lead",
+          "revision": 1158774033,
+          "url": "https://en.wikipedia.org/wiki/Fencing_at_the_2015_Pan_American_Games_%E2%80%93_Men%27s_team_sabre",
+          "score": 49.684566438020674,
+          "shard": "000_00011"
+        },
+        {
+          "id": 33188113,
+          "title": "Fencing at the 2011 Pan American Games \u2013 Women's team sabre",
+          "tier": "lead",
+          "revision": 1157524586,
+          "url": "https://en.wikipedia.org/wiki/Fencing_at_the_2011_Pan_American_Games_%E2%80%93_Women%27s_team_sabre",
+          "score": 49.6144690601478,
+          "shard": "000_00008"
+        }
+      ],
+      "milliseconds": 1259.399675000168,
+      "candidates": 180,
+      "terms": [
+        "italian",
+        "sabre",
+        "fencer",
+        "team",
+        "gold",
+        "2025"
+      ],
+      "term_document_frequencies": {
+        "italian": 191179,
+        "sabre": 4919,
+        "fencer": 7333,
+        "team": 489541,
+        "gold": 200316,
+        "2025": 220753
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [],
+      "all_titles_at_10": false,
+      "source_audit": [
+        {
+          "title": "Matteo Neri",
+          "id": 80571630,
+          "revision": 1304497081,
+          "modified": "2025-08-06T10:46:53Z",
+          "url": "https://en.wikipedia.org/wiki/Matteo_Neri",
+          "tier": "lead",
+          "text_sha256": "22dac82ffb24d3d0ac74f281683fb045589762652db37d993b91d3013a637989",
+          "wikitext_sha256": "c68e25cc30ce0d59c95880835ee6c21c8b3765a905c75a2837a0f0785f7035e5",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Matteo Neri\nMatteo Neri (born 5 May 1999) is an Italian right-handed sabre fencer. He won a gold medal in the men's team sabre event at the 2025 World Fencing Championships.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t014",
+      "category": "stored_view_tail",
+      "query": "private nonprofit university Ankara established 2018",
+      "expected_titles": [
+        "Ankara Medipol University"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80558738,
+        "title": "Ankara Medipol University",
+        "views": 1,
+        "source_row": 260743,
+        "revision": 1304322937,
+        "date": "2025-08-05T09:51:49Z",
+        "url": "https://en.wikipedia.org/wiki/Ankara_Medipol_University",
+        "lead_excerpt": "# Ankara Medipol University\nAnkara Medipol University (Turkish: Ankara Medipol \u00dcniversitesi) is a private, non-profit university located in Ankara, Turkey. Established in 2018 by the Turkey Education, Health, Science and Research Foundation, the university started academic activities in the 2018\u20132019 academic year.\nThe university offers education in both Turkish and English and focuses on fields such as health sciences, engineering, social sciences, law, and arts.\n",
+        "source_text_sha256": "b697b001231fdadd6bdf7d7fdca1c16aab601d2538e2c2dbd3a7e6336a2a5daa"
+      },
+      "hits": [
+        {
+          "id": 80558738,
+          "title": "Ankara Medipol University",
+          "tier": "lead",
+          "revision": 1304322937,
+          "url": "https://en.wikipedia.org/wiki/Ankara_Medipol_University",
+          "score": 52.38828182640674,
+          "shard": "000_00000"
+        },
+        {
+          "id": 80558827,
+          "title": "Ankara Science University",
+          "tier": "lead",
+          "revision": 1303012262,
+          "url": "https://en.wikipedia.org/wiki/Ankara_Science_University",
+          "score": 46.23768054070566,
+          "shard": "000_00004"
+        },
+        {
+          "id": 61579554,
+          "title": "Ankara Hac\u0131 Bayram Veli University",
+          "tier": "lead",
+          "revision": 1305852928,
+          "url": "https://en.wikipedia.org/wiki/Ankara_Hac%C4%B1_Bayram_Veli_University",
+          "score": 44.33691026690015,
+          "shard": "000_00007"
+        },
+        {
+          "id": 31673471,
+          "title": "Ankara University Medical School",
+          "tier": "lead",
+          "revision": 1296314450,
+          "url": "https://en.wikipedia.org/wiki/Ankara_University_Medical_School",
+          "score": 42.1268125914062,
+          "shard": "000_00008"
+        },
+        {
+          "id": 66411242,
+          "title": "Ankara Music and Fine Arts University",
+          "tier": "lead",
+          "revision": 1215429620,
+          "url": "https://en.wikipedia.org/wiki/Ankara_Music_and_Fine_Arts_University",
+          "score": 42.11962294930387,
+          "shard": "000_00006"
+        },
+        {
+          "id": 38658221,
+          "title": "Ankara Y\u0131ld\u0131r\u0131m Beyaz\u0131t University",
+          "tier": "lead",
+          "revision": 1303566290,
+          "url": "https://en.wikipedia.org/wiki/Ankara_Y%C4%B1ld%C4%B1r%C4%B1m_Beyaz%C4%B1t_University",
+          "score": 42.09637440888204,
+          "shard": "000_00011"
+        },
+        {
+          "id": 38583679,
+          "title": "Ankara University Observatory",
+          "tier": "lead",
+          "revision": 1257099040,
+          "url": "https://en.wikipedia.org/wiki/Ankara_University_Observatory",
+          "score": 41.96261817518088,
+          "shard": "000_00006"
+        },
+        {
+          "id": 8510848,
+          "title": "Hacettepe University Ankara State Conservatory",
+          "tier": "lead",
+          "revision": 1289346068,
+          "url": "https://en.wikipedia.org/wiki/Hacettepe_University_Ankara_State_Conservatory",
+          "score": 41.674416896505164,
+          "shard": "000_00013"
+        },
+        {
+          "id": 9812610,
+          "title": "Faculty of Political Science, Ankara University",
+          "tier": "lead",
+          "revision": 1301151668,
+          "url": "https://en.wikipedia.org/wiki/Faculty_of_Political_Science,_Ankara_University",
+          "score": 41.15891185023696,
+          "shard": "000_00003"
+        },
+        {
+          "id": 1935462,
+          "title": "Ankara University",
+          "tier": "full",
+          "revision": 1302257373,
+          "url": "https://en.wikipedia.org/wiki/Ankara_University",
+          "score": 41.10223199898052,
+          "shard": "000_00004"
+        }
+      ],
+      "milliseconds": 1455.3581460058922,
+      "candidates": 180,
+      "terms": [
+        "private",
+        "nonprofit",
+        "university",
+        "ankara",
+        "established",
+        "2018"
+      ],
+      "term_document_frequencies": {
+        "private": 202590,
+        "nonprofit": 16078,
+        "university": 571689,
+        "ankara": 6346,
+        "established": 342115,
+        "2018": 419949
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [
+        "Ankara Medipol University"
+      ],
+      "all_titles_at_10": true,
+      "source_audit": [
+        {
+          "title": "Ankara Medipol University",
+          "id": 80558738,
+          "revision": 1304322937,
+          "modified": "2025-08-05T09:51:49Z",
+          "url": "https://en.wikipedia.org/wiki/Ankara_Medipol_University",
+          "tier": "lead",
+          "text_sha256": "dc8a0b0ab3f883443b72d3ef3fdeb93421b53d729edf41936bd3cfaccd5e8a60",
+          "wikitext_sha256": "1ee2aab436e97df95704fd95b54cbe1c7e4e8edf5b75e051ecebda6deaf98f77",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Ankara Medipol University\nAnkara Medipol University (Turkish: Ankara Medipol \u00dcniversitesi) is a private, non-profit university located in Ankara, Turkey. Established in 2018 by the Turkey Education, Health, Science and Research Foundation, the university started academic activities in the 2018\u20132019 academic year.\nThe university offers education in both Turkish and English and focuses on fields such as health sciences, engineering, social sciences, law, and arts.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t015",
+      "category": "stored_view_tail",
+      "query": "Romania government August 1965 December 1967",
+      "expected_titles": [
+        "Third Maurer cabinet"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80538727,
+        "title": "Third Maurer cabinet",
+        "views": 1,
+        "source_row": 238020,
+        "revision": 1302978329,
+        "date": "2025-07-28T12:49:25Z",
+        "url": "https://en.wikipedia.org/wiki/Third_Maurer_cabinet",
+        "lead_excerpt": "# Third Maurer cabinet\nThe third Maurer cabinet was the government of Romania from 21 August 1965 to 9 December 1967.\n",
+        "source_text_sha256": "58108dbd081f40aceb1009001767afcd6e38f7f17af998c14dd34617ded5c439"
+      },
+      "hits": [
+        {
+          "id": 233242,
+          "title": "List of heads of government of Romania",
+          "tier": "full",
+          "revision": 1306773870,
+          "url": "https://en.wikipedia.org/wiki/List_of_heads_of_government_of_Romania",
+          "score": 43.11809442087657,
+          "shard": "000_00002"
+        },
+        {
+          "id": 63263472,
+          "title": "Deputy Prime Minister of Romania",
+          "tier": "full",
+          "revision": 1297466261,
+          "url": "https://en.wikipedia.org/wiki/Deputy_Prime_Minister_of_Romania",
+          "score": 42.18697011287212,
+          "shard": "000_00003"
+        },
+        {
+          "id": 17086180,
+          "title": "1965 Constitution of Romania",
+          "tier": "lead",
+          "revision": 1273398366,
+          "url": "https://en.wikipedia.org/wiki/1965_Constitution_of_Romania",
+          "score": 39.444377780955236,
+          "shard": "000_00013"
+        },
+        {
+          "id": 15519854,
+          "title": "List of heads of state of Romania",
+          "tier": "full",
+          "revision": 1306772365,
+          "url": "https://en.wikipedia.org/wiki/List_of_heads_of_state_of_Romania",
+          "score": 39.43099276931257,
+          "shard": "000_00007"
+        },
+        {
+          "id": 70949216,
+          "title": "Government of Amir-Abbas Hoveyda (1965\u20131967)",
+          "tier": "lead",
+          "revision": 1302095510,
+          "url": "https://en.wikipedia.org/wiki/Government_of_Amir-Abbas_Hoveyda_(1965%E2%80%931967)",
+          "score": 37.76822150721682,
+          "shard": "000_00002"
+        },
+        {
+          "id": 25644,
+          "title": "Foreign relations of Romania",
+          "tier": "full",
+          "revision": 1304407026,
+          "url": "https://en.wikipedia.org/wiki/Foreign_relations_of_Romania",
+          "score": 37.42841386027189,
+          "shard": "000_00003"
+        },
+        {
+          "id": 71259499,
+          "title": "1965 in Romania",
+          "tier": "lead",
+          "revision": 1266569182,
+          "url": "https://en.wikipedia.org/wiki/1965_in_Romania",
+          "score": 34.23205732551061,
+          "shard": "000_00013"
+        },
+        {
+          "id": 71384071,
+          "title": "1967 in Romania",
+          "tier": "lead",
+          "revision": 1240537852,
+          "url": "https://en.wikipedia.org/wiki/1967_in_Romania",
+          "score": 34.006331409629404,
+          "shard": "000_00007"
+        },
+        {
+          "id": 21351863,
+          "title": "Lebanon\u2013Romania relations",
+          "tier": "lead",
+          "revision": 1188715083,
+          "url": "https://en.wikipedia.org/wiki/Lebanon%E2%80%93Romania_relations",
+          "score": 33.33436289733716,
+          "shard": "000_00002"
+        },
+        {
+          "id": 80538727,
+          "title": "Third Maurer cabinet",
+          "tier": "lead",
+          "revision": 1302978329,
+          "url": "https://en.wikipedia.org/wiki/Third_Maurer_cabinet",
+          "score": 33.0030427899262,
+          "shard": "000_00000"
+        }
+      ],
+      "milliseconds": 1906.2716639964492,
+      "candidates": 180,
+      "terms": [
+        "romania",
+        "government",
+        "august",
+        "1965",
+        "december",
+        "1967"
+      ],
+      "term_document_frequencies": {
+        "romania": 43655,
+        "government": 384333,
+        "august": 639768,
+        "1965": 144649,
+        "december": 625441,
+        "1967": 153299
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [
+        "Third Maurer cabinet"
+      ],
+      "all_titles_at_10": true,
+      "source_audit": [
+        {
+          "title": "Third Maurer cabinet",
+          "id": 80538727,
+          "revision": 1302978329,
+          "modified": "2025-07-28T12:49:25Z",
+          "url": "https://en.wikipedia.org/wiki/Third_Maurer_cabinet",
+          "tier": "lead",
+          "text_sha256": "5dbf83bee99c214e25320b1b23262e7e8032d7ed1715f2879843a86fa83eac81",
+          "wikitext_sha256": "0bc2ec9b4151f732363b657c20731eabad3e36a50373d451189379d9686fa08c",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Third Maurer cabinet\nThe third Maurer cabinet was the government of Romania from 21 August 1965 to 9 December 1967.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    },
+    {
+      "id": "t016",
+      "category": "stored_view_tail",
+      "query": "1987 Telugu drama film remake directed by Visu",
+      "expected_titles": [
+        "Srimathi Oka Bahumathi"
+      ],
+      "expect_answer_support": true,
+      "query_kind": "lead_paraphrase",
+      "frozen_source": {
+        "dataset_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+        "parquet_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "id": 80528764,
+        "title": "Srimathi Oka Bahumathi",
+        "views": 1,
+        "source_row": 231984,
+        "revision": 1302865541,
+        "date": "2025-07-27T21:12:47Z",
+        "url": "https://en.wikipedia.org/wiki/Srimathi_Oka_Bahumathi",
+        "lead_excerpt": "# Srimathi Oka Bahumathi\nSrimathi Oka Bahumathi (transl.\u2009Mrs. is a gift) is a 1987 Indian Telugu-language drama film, written and directed by Visu. A remake of his Tamil-language film Thirumathi Oru Vegumathi (1987), the film stars Chandra Mohan, Naresh, Jayasudha, and Visu himself, reprising his role from the original.\n",
+        "source_text_sha256": "91f294c7732442edbc4436119a8d9033021240f9bb67eb377ed343bec7c30bf7"
+      },
+      "hits": [
+        {
+          "id": 25553444,
+          "title": "Visu",
+          "tier": "full",
+          "revision": 1306522221,
+          "url": "https://en.wikipedia.org/wiki/Visu",
+          "score": 69.95950802381607,
+          "shard": "000_00007"
+        },
+        {
+          "id": 80528764,
+          "title": "Srimathi Oka Bahumathi",
+          "tier": "lead",
+          "revision": 1302865541,
+          "url": "https://en.wikipedia.org/wiki/Srimathi_Oka_Bahumathi",
+          "score": 59.49702355403822,
+          "shard": "000_00000"
+        },
+        {
+          "id": 44678149,
+          "title": "Sankar Guru (1987 film)",
+          "tier": "full",
+          "revision": 1301001772,
+          "url": "https://en.wikipedia.org/wiki/Sankar_Guru_(1987_film)",
+          "score": 48.37651706883635,
+          "shard": "000_00001"
+        },
+        {
+          "id": 43937608,
+          "title": "Pratighaat (1987 film)",
+          "tier": "full",
+          "revision": 1292598194,
+          "url": "https://en.wikipedia.org/wiki/Pratighaat_(1987_film)",
+          "score": 47.35518221675772,
+          "shard": "000_00005"
+        },
+        {
+          "id": 50914447,
+          "title": "Dharmapatni (1987 film)",
+          "tier": "lead",
+          "revision": 1302871768,
+          "url": "https://en.wikipedia.org/wiki/Dharmapatni_(1987_film)",
+          "score": 47.16705591084699,
+          "shard": "000_00014"
+        },
+        {
+          "id": 64675317,
+          "title": "Thene Manasulu (1987 film)",
+          "tier": "lead",
+          "revision": 1249782593,
+          "url": "https://en.wikipedia.org/wiki/Thene_Manasulu_(1987_film)",
+          "score": 46.39054837150006,
+          "shard": "000_00007"
+        },
+        {
+          "id": 38421676,
+          "title": "Sathyam Shivam Sundaram (1987 film)",
+          "tier": "lead",
+          "revision": 1306535045,
+          "url": "https://en.wikipedia.org/wiki/Sathyam_Shivam_Sundaram_(1987_film)",
+          "score": 45.79976233215193,
+          "shard": "000_00000"
+        },
+        {
+          "id": 25420188,
+          "title": "New Delhi (1987 film)",
+          "tier": "full",
+          "revision": 1303055559,
+          "url": "https://en.wikipedia.org/wiki/New_Delhi_(1987_film)",
+          "score": 45.101238520640614,
+          "shard": "000_00005"
+        },
+        {
+          "id": 6784990,
+          "title": "M. S. Guhan",
+          "tier": "full",
+          "revision": 1302194110,
+          "url": "https://en.wikipedia.org/wiki/M._S._Guhan",
+          "score": 44.30447197720727,
+          "shard": "000_00004"
+        },
+        {
+          "id": 63020713,
+          "title": "Kishmu",
+          "tier": "full",
+          "revision": 1306049528,
+          "url": "https://en.wikipedia.org/wiki/Kishmu",
+          "score": 43.291959469193,
+          "shard": "000_00000"
+        }
+      ],
+      "milliseconds": 1194.502863996604,
+      "candidates": 180,
+      "terms": [
+        "1987",
+        "telugu",
+        "drama",
+        "film",
+        "remake",
+        "directed",
+        "visu"
+      ],
+      "term_document_frequencies": {
+        "1987": 208488,
+        "telugu": 17111,
+        "drama": 150464,
+        "film": 474483,
+        "remake": 22344,
+        "directed": 306162,
+        "visu": 219
+      },
+      "answer_support": "not assessed by lexical retrieval",
+      "matched_titles": [
+        "Srimathi Oka Bahumathi"
+      ],
+      "all_titles_at_10": true,
+      "source_audit": [
+        {
+          "title": "Srimathi Oka Bahumathi",
+          "id": 80528764,
+          "revision": 1302865541,
+          "modified": "2025-07-27T21:12:47Z",
+          "url": "https://en.wikipedia.org/wiki/Srimathi_Oka_Bahumathi",
+          "tier": "lead",
+          "text_sha256": "1f071af6f09e246a8143c0560ff9d1a6e9494e0f434b4fea88c20cbca0cccb7d",
+          "wikitext_sha256": "969911fcc59159b4ec3586f0c3541e50c0c08b2b3bab63f1abc25b8beb6aace9",
+          "source_shard": "000_00000",
+          "lead_excerpt": "# Srimathi Oka Bahumathi\nSrimathi Oka Bahumathi (transl.\u2009Mrs. is a gift) is a 1987 Indian Telugu-language drama film, written and directed by Visu. A remake of his Tamil-language film Thirumathi Oru Vegumathi (1987), the film stars Chandra Mohan, Naresh, Jayasudha, and Visu himself, reprising his role from the original.\n",
+          "literal_source_available": true,
+          "frozen_source_match": true,
+          "claim_entailment": "unreviewed"
+        }
+      ],
+      "absence_claim": null
+    }
+  ]
+}

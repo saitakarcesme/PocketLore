@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "command": [
+        "/home/isa/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/bin/python3.12",
+        "tools/scale/wiki/seal.py",
+        "/home/isa/PocketLore-control/scale-workers/wiki",
+        "receipts/seal-contract-fixture",
+        "--require-shards",
+        "1"
+      ],
+      "exit_code": 0,
+      "stdout": "articles.blocks 13252\ncatalog.sqlite 65536\nmeasurement.json 769\n{\n  \"manifest\": \"/home/isa/PocketLore-control/scale-workers/wiki/receipts/seal-contract-fixture/installed-inventory.json\",\n  \"sha256\": \"909b4e9b9d152a1158677e56f5dae2e3b264548694f8e578b9ba76467d605e40\",\n  \"installed_bytes\": 90073,\n  \"budget_passed\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/home/isa/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/bin/python3.12",
+        "tools/scale/wiki/check_seal.py",
+        "/home/isa/PocketLore-control/scale-workers/wiki/receipts/seal-contract-fixture/installed-inventory.json",
+        "/home/isa/PocketLore-control/scale-workers/wiki/receipts/seal-contract-fixture/valid-check.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"files\": 3,\n  \"failures\": [],\n  \"installed_bytes\": 90073,\n  \"inventory_sha256\": \"909b4e9b9d152a1158677e56f5dae2e3b264548694f8e578b9ba76467d605e40\",\n  \"seconds\": 0.0002179790026275441,\n  \"checks\": \"Fresh installed-file hashes and exact byte total; no source re-extraction or device acceptance\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "negative_control": "Single byte corruption of a copied fixture block, original cache untouched",
+      "exit_code": 1,
+      "stdout": "{\n  \"passed\": false,\n  \"files\": 3,\n  \"failures\": [\n    {\n      \"path\": \"000_fixture/articles.blocks\",\n      \"failure\": \"size or hash mismatch\"\n    }\n  ],\n  \"installed_bytes\": 90073,\n  \"inventory_sha256\": \"909b4e9b9d152a1158677e56f5dae2e3b264548694f8e578b9ba76467d605e40\",\n  \"seconds\": 0.00025957400066545233,\n  \"checks\": \"Fresh installed-file hashes and exact byte total; no source re-extraction or device acceptance\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "fixture": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/seal-contract-fixture",
+  "tampered_bytes_preserved": true
+}

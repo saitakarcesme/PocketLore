@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Postcondition",
+    "revision": 1061639236,
+    "wiki_bytes": 3725,
+    "matches": [
+      {
+        "start": 1822,
+        "context": "ared by the postcondition are assured.\n\n==Eiffel example==\n\nThe following example written in [[Eiffel (programming language)|Eiffel]] sets the value of a class attribute <code>hour</code> based on a caller-provided argument <code>a_hour</code>. The postcondition follows the keyword <code>ensure</code>. In this example, the postcondition guarantees, in cases in which the precondition ho"
+      },
+      {
+        "start": 2184,
+        "context": " which the precondition holds (i.e., when <code>a_hour</code> represents a valid hour of the day), that after the execution of <code>set_hour</code>, the class attribute <code>hour</code> will have the same value as <code>a_hour</code>. The tag \"<code>hour_set:</code>\" describes this postcondition clause and serves to identify it in case of a runtime postcondition violation.\n\n<syntaxhi"
+      }
+    ]
+  },
+  {
+    "title": "Thread safety",
+    "revision": 1305138246,
+    "wiki_bytes": 9936,
+    "matches": [
+      {
+        "start": 5697,
+        "context": "ed:\n;[[Mutual exclusion]]: Access to shared data is ''serialized'' using mechanisms that ensure only one thread reads or writes to the shared data at any time. Incorporation of mutual exclusion needs to be well thought out, since improper usage can lead to side-effects like [[deadlock (computer science)|deadlock]]s, [[livelock]]s, and [[resource starvation]].\n; [[Linearizability|Atomic o"
+      }
+    ]
+  },
+  {
+    "title": "Aegea",
+    "revision": 1270392302,
+    "wiki_bytes": 1423,
+    "matches": [
+      {
+        "start": 252,
+        "context": "from \"[[Aegean Sea|Aegean]]\", the sea that was named after an [[eponym]]ous [[Aegeus]] in early levels of [[Greek mythology]]. The ''Encyclop\u00e6dia Britannica'' (1911) mentioned an '''Aegea,''' queen of the [[Amazons]], as an alternative eponym of the Aegean Sea. Legend says she commanded an army of  [[Amazon women]] warriors that traveled from Libya to Asia Minor to fight at [[Troy]"
+      }
+    ]
+  },
+  {
+    "title": "XM (file format)",
+    "revision": 1215720667,
+    "wiki_bytes": 4783,
+    "matches": [
+      {
+        "start": 2742,
+        "context": "nied the 2.08 release of FastTracker 2, as well as its latest known beta version: [https://demozoo.org/productions/99958/ 2.09b]. The file, written in 1994 and attributed to Mr.H of Triton (Fredrik Huss), bears the header \"The XM module format description for XM files version $0104.\" The contents of the file have been posted on this article's [[Talk:XM_(file_format)|Talk]] subpage for "
+      }
+    ]
+  }
+]

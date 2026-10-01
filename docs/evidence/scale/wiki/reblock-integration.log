@@ -1,0 +1,39 @@
+{"rows": 10, "total": 10, "full": 10, "lead": 0, "excluded": 0}
+{"source_sha256": "c95c0c1f6b1b941fcf7ab9c1d9c999addd6c102f34da3a310a1477cd811c9902", "source_rows": 10, "counts": {"source_rows": 10, "full": 10, "full_compressed_bytes": 19813, "full_text_bytes": 8631, "raw_payload_bytes": 47775, "compressed_payload_bytes": 19813, "retained_text_bytes": 8631, "wikitext_bytes": 28892, "wikitext_complete": 10, "math_articles": 9, "dataset_license_only_unreviewed": 10}, "seconds": 0.012479372002417222, "peak_rss_kib": 67708, "max_arrow_batch_bytes": 43146, "sqlite_integrity": "ok", "platform": "LLMRig Linux host staging, not Android", "installed_bytes": 81253, "sqlite_version": "3.53.1", "arrow_version": "25.0.1", "source_complete": true}
+{
+  "source_sha256": "c95c0c1f6b1b941fcf7ab9c1d9c999addd6c102f34da3a310a1477cd811c9902",
+  "source_rows": 10,
+  "counts": {
+    "source_rows": 10,
+    "full": 10,
+    "full_text_bytes": 8631,
+    "raw_payload_bytes": 47775,
+    "compressed_payload_bytes": 13252,
+    "retained_text_bytes": 8631,
+    "wikitext_bytes": 28892,
+    "wikitext_complete": 10,
+    "math_articles": 9,
+    "dataset_license_only_unreviewed": 10,
+    "blocks": 1,
+    "max_block_raw_bytes": 47775
+  },
+  "seconds": 0.012479372002417222,
+  "peak_rss_kib": 67708,
+  "max_arrow_batch_bytes": 43146,
+  "sqlite_integrity": "ok",
+  "platform": "LLMRig Linux host staging, not Android",
+  "installed_bytes": 78788,
+  "sqlite_version": "3.53.1",
+  "arrow_version": "25.0.1",
+  "source_complete": true,
+  "reblocking": {
+    "source": "/home/isa/PocketLore-control/scale-workers/wiki/individual-block-contract-fixture",
+    "source_installed_bytes": 81253,
+    "records_verified": 10,
+    "blocks": 1,
+    "seconds": 0.16435748300136765,
+    "peak_rss_kib": 58040,
+    "text_and_wikitext": "Byte-identical raw record payloads; no source supplement removed"
+  }
+}
+{"passed": true, "records": 10, "direct_vs_migrated_blocks_sha256": "bfff055e1ff47e88339dd25818ee5c4976ea60aefb9013742867946289820d85", "original_blocks_bytes": 19813, "shared_blocks_bytes": 13252}

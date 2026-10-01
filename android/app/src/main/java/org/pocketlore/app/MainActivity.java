@@ -23,7 +23,7 @@ public final class MainActivity extends Activity {
     private ResearchEngine engine;
     private PackLibrary library;
     private PackLibrary.Snapshot catalog;
-    private Button collections, reloadLibrary;
+    private Button collections, reloadLibrary, removeCollection;
     private boolean searching;
     private long libraryEpoch;
     private ResearchEngine.Result latestEvidence;
@@ -71,10 +71,12 @@ public final class MainActivity extends Activity {
         importPack = new Button(this); importPack.setText("Import knowledge pack"); layout.addView(importPack);
         importPack.setOnClickListener(v -> {
             android.content.Intent intent = new android.content.Intent(android.content.Intent.ACTION_OPEN_DOCUMENT);
-            intent.addCategory(android.content.Intent.CATEGORY_OPENABLE); intent.setType("*/*");
+            intent.addCategory(android.content.Intent.CATEGORY_OPENABLE); intent.setType("*/*"); intent.putExtra(android.content.Intent.EXTRA_LOCAL_ONLY,true);
             startActivityForResult(intent, PICK_PACK);
         });
         collections=new Button(this);collections.setText("Choose collections");layout.addView(collections);collections.setOnClickListener(v->chooseCollections());
+        removeCollection=new Button(this);removeCollection.setText("Remove a collection");layout.addView(removeCollection);removeCollection.setOnClickListener(v->removeCollection());
+        layout.addView(text("Setup: obtain packs and GGUF files before going offline. Imports retain the original file and need free space for a full copy plus 256 MiB. Large SQLite packs also need space for their expanded index. Unsupported pack formats are rejected. Source rights and dates must be inspected for each edition.",14));
         reloadLibrary=new Button(this);reloadLibrary.setText("Reload library");layout.addView(reloadLibrary);reloadLibrary.setOnClickListener(v->loadLibrary());
         Button cancelImport=new Button(this);cancelImport.setText("Cancel pack import");layout.addView(cancelImport);cancelImport.setOnClickListener(v->{cancelPack=true;if(packThread!=null)packThread.interrupt();});
         question = new EditText(this);
@@ -99,11 +101,11 @@ public final class MainActivity extends Activity {
     private void updateControls(){
         if(nativePanel==null)return;boolean ready=!nativePanel.isBusy()&&!importing&&!searching;
         search.setEnabled(ready&&engine!=null&&engine.size()>0);question.setEnabled(ready);importPack.setEnabled(ready);
-        collections.setEnabled(ready&&catalog!=null&&!catalog.entries.isEmpty());reloadLibrary.setEnabled(ready);
+        collections.setEnabled(ready&&catalog!=null&&!catalog.entries.isEmpty());removeCollection.setEnabled(ready&&catalog!=null&&!catalog.entries.isEmpty());reloadLibrary.setEnabled(ready);
     }
     private void showLibrary(PackLibrary.Snapshot next){
         catalog=next;engine=next.engine;latestEvidence=null;nativePanel.clearEvidence();sourceList.removeAllViews();
-        packStatus.setText(next.description());status.setText("Active collections ready · No network permission");updateControls();
+        packStatus.setText(next.description()+" · "+next.archiveBytes+" installed archive/index bytes"+(ImportRecovery.pending(getFilesDir(),"pack")?"\nPrevious import interrupted or failed. Installed editions retained; select the original file to restart verification.":""));status.setText("Active collections ready · No network permission");updateControls();
     }
     private void loadLibrary(){
         if(importing||searching)return;
@@ -128,6 +130,23 @@ public final class MainActivity extends Activity {
                 finally{packThread=null;Thread.interrupted();runOnUiThread(()->{if(!destroyed){importing=false;updateControls();}});}});
             }).show();
     }
+    private void removeCollection() {
+        if(catalog==null||importing||searching||nativePanel.isBusy())return;
+        final java.util.List<PackLibrary.Entry> entries=catalog.entries;
+        String[] labels=new String[entries.size()];for(int i=0;i<labels.length;i++)labels[i]=entries.get(i).id+" · "+entries.get(i).hash.substring(0,12);
+        new AlertDialog.Builder(this).setTitle("Remove an installed edition").setItems(labels,(dialog,index)->{
+            PackLibrary.Entry entry=entries.get(index);
+            new AlertDialog.Builder(this).setTitle("Remove "+entry.id+"?").setMessage("Edition SHA-256: "+entry.hash+"\nDeletes this app's archive and index. The original import file remains. This edition will no longer be searched.")
+                .setNegativeButton("Keep",null).setPositiveButton("Remove",(d,w)->{
+                    if(importing||searching||nativePanel.isBusy())return;
+                    importing=true;long epoch=++libraryEpoch;updateControls();
+                    packWorker.execute(()->{try{PackLibrary.Snapshot next=library.remove(entry.hash);
+                        runOnUiThread(()->{if(!destroyed&&epoch==libraryEpoch){showLibrary(next);answer.setText("Collection removed. Import or select a collection to continue.");}});
+                    }catch(Exception e){runOnUiThread(()->{if(!destroyed)status.setText("Removal failed: "+e.getMessage());});}
+                    finally{runOnUiThread(()->{if(!destroyed){importing=false;updateControls();}});}});
+                }).show();
+        }).setNegativeButton("Cancel",null).show();
+    }
     private void runSearch() {
         if (nativePanel.isBusy() || importing || engine == null) return;
         String query = question.getText().toString().trim();
@@ -138,7 +157,12 @@ public final class MainActivity extends Activity {
         final ResearchEngine selectedEngine=engine;final long epoch=libraryEpoch;
         worker.execute(() -> {
             long start = System.nanoTime();
-            ResearchEngine.Result result = selectedEngine.research(query);
+            ResearchEngine.Result result;
+            try { result = selectedEngine.research(query); }
+            catch(Exception | OutOfMemoryError error) {
+                runOnUiThread(()->{if(!destroyed){searching=false;if(epoch==libraryEpoch){nativePanel.searchFailed();status.setText("Search failed; saved sources retained. "+error.getMessage());}updateControls();}});
+                return;
+            }
             double millis = (System.nanoTime() - start) / 1_000_000.0;
             runOnUiThread(() -> {
                 searching=false;if (destroyed || epoch!=libraryEpoch){updateControls();return;}
@@ -161,7 +185,7 @@ public final class MainActivity extends Activity {
     private void inspect(ResearchEngine.Hit hit) {
         ResearchEngine.Passage p = hit.passage;
         TextView detail = text(p.text + "\n\nSource document: " + p.title + "\n" + p.url
-            + "\n\nSource date / retrieval: " + p.sourceDate + "\nRights: " + p.license
+            + "\n\nSource date / retrieval: " + known(p.sourceDate) + "\nRights: " + known(p.license)
             + "\n\nCitation: [" + p.id + "]\n" + p.collectionProvenance
             + (p.id.startsWith("water-") ? "\n\nPack text is a verbatim USGS paragraph with whitespace normalized." : "\n\nPack text is selected source text with whitespace normalized.") + " Source URLs are provenance labels; the app does not open them."
             + String.format(Locale.ROOT, "\n\nRetrieval rank score: %.3f (not confidence)", hit.score), 16);
@@ -173,6 +197,7 @@ public final class MainActivity extends Activity {
             catch(Exception e){new AlertDialog.Builder(this).setMessage("Cannot read saved license: "+e.getMessage()).setPositiveButton("Close",null).show();}
         });dialog.show();
     }
+    private static String known(String value){return value==null||value.trim().isEmpty()?"Unknown":value;}
     private TextView text(String value, int size) {
         TextView view = new TextView(this); view.setText(value); view.setTextSize(size);
         view.setTextColor(Color.rgb(30, 43, 36)); view.setPadding(0, dp(8), 0, dp(8)); return view;
@@ -183,15 +208,34 @@ public final class MainActivity extends Activity {
         super.onActivityResult(request, result, data);
         if (request == PICK_PACK && result == RESULT_OK && data != null && data.getData() != null) {
             android.net.Uri uri = data.getData();
+            long bytes=-1;
+            try(android.database.Cursor cursor=getContentResolver().query(uri,new String[]{android.provider.OpenableColumns.SIZE},null,null,null)){
+                if(cursor!=null&&cursor.moveToFirst()&&!cursor.isNull(0))bytes=cursor.getLong(0);
+            }catch(Exception error){packStatus.setText("Cannot inspect pack: "+error.getMessage());return;}
+            if(bytes<=0||bytes>BroadPack.MAX_ARCHIVE){packStatus.setText("Pack requires a known size between 1 and "+BroadPack.MAX_ARCHIVE+" bytes. Other bulk schemas need a compatible reader.");return;}
+            try{ResourceStorage.requireSpace(bytes,getFilesDir().getUsableSpace());}
+            catch(Exception error){packStatus.setText(error.getMessage());return;}
+            final long expected=bytes;
+            new AlertDialog.Builder(this).setTitle("Import local collection?").setMessage("Archive: "+bytes+" bytes. Free storage: "+getFilesDir().getUsableSpace()+" bytes. Keep at least 256 MiB free after copying; SQLite expansion is checked separately. Internal content hashes are verified; they do not authenticate the publisher. The original file remains.")
+                .setNegativeButton("Cancel",null).setPositiveButton("Import",(d,w)->importCollection(uri,expected)).show();
+        }
+        if (request == NativePanel.PICK_MODEL && result == RESULT_OK && data != null) nativePanel.selected(data.getData());
+    }
+    private void importCollection(android.net.Uri uri,long expected){
+        if(importing||searching||nativePanel.isBusy())return;
             importing = true; cancelPack=false;++libraryEpoch;updateControls();
             packStatus.setText("Validating knowledge pack…");
             packWorker.execute(() -> {
                 packThread=Thread.currentThread();
-                try (java.io.InputStream in = DocumentInput.open(getContentResolver(),uri,()->cancelPack || destroyed)) {
-                    PackLibrary.Snapshot next = library.install(in,()->cancelPack || destroyed);
+                try {
+                    ImportRecovery.begin(getFilesDir(),"pack");
+                    try (java.io.InputStream in = DocumentInput.open(getContentResolver(),uri,()->cancelPack || destroyed)) {
+                    PackLibrary.Snapshot next = library.install(in,()->cancelPack || destroyed,expected);
+                    ImportRecovery.finish(getFilesDir(),"pack");
                     runOnUiThread(() -> { if (destroyed || cancelPack) return;showLibrary(next);
                         answer.setText("Collection retained. Search all active collections or choose which to use.");
                     });
+                    }
                 } catch (Exception | OutOfMemoryError error) {
                     runOnUiThread(() -> { if (!destroyed) packStatus.setText("Pack rejected; previous library retained. " + error.getMessage()); });
                 } finally {
@@ -199,8 +243,6 @@ public final class MainActivity extends Activity {
                     runOnUiThread(() -> { if (destroyed) return; importing = false;updateControls(); });
                 }
             });
-        }
-        if (request == NativePanel.PICK_MODEL && result == RESULT_OK && data != null) nativePanel.selected(data.getData());
     }
     void releaseForMemoryPressure(){cancelPack=true;++libraryEpoch;if(packThread!=null)packThread.interrupt();latestEvidence=null;engine=null;catalog=null;sourceList.removeAllViews();if(nativePanel!=null)nativePanel.lowMemory();status.setText("Memory released. Tap Reload library to search your saved active collections.");updateControls();}
     boolean resourceIdle(){return !nativePanel.isBusy();}

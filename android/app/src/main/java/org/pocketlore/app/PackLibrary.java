@@ -105,9 +105,14 @@ public final class PackLibrary {
         Snapshot next=build(es,null,()->false);commit(es,()->false);return next;
     }
     public synchronized Snapshot install(InputStream in,BooleanSupplier cancel)throws Exception {
-        List<Entry> es=entries();cleanup(es);ResourceStorage.requireSpace(BroadPack.MAX_ARCHIVE,directory.getUsableSpace());
+        return install(in,cancel,-1);
+    }
+    public synchronized Snapshot install(InputStream in,BooleanSupplier cancel,long expected)throws Exception {
+        require(expected==-1 || expected>0&&expected<=BroadPack.MAX_ARCHIVE,"Invalid declared archive size");
+        List<Entry> es=entries();cleanup(es);ResourceStorage.requireSpace(expected<0?BroadPack.MAX_ARCHIVE:expected,directory.getUsableSpace());
         File stage=File.createTempFile("pack-",".partial",directory);File moved=null;boolean committed=false;
-        try{ResourceStorage.copy(in,stage,BroadPack.MAX_ARCHIVE,cancel);
+        try{ResourceStorage.copy(in,stage,expected<0?BroadPack.MAX_ARCHIVE:expected,cancel);
+            require(expected<0||stage.length()==expected,"Archive length differs from declared size");
             if(BroadPack.isBroad(stage)){
                 String hash=BroadPack.hash(stage);for(Entry e:es)if(e.hash.equals(hash))return build(es,null,cancel);
                 for(Entry e:es)require(!BroadPack.isBroad(new File(directory,e.hash+".plpack")),"Disable/remove previous broad edition before importing another; no duplicate broad indexes");
@@ -121,6 +126,16 @@ public final class PackLibrary {
             moved=new File(directory,p.sha256+".plpack");Files.move(stage.toPath(),moved.toPath(),StandardCopyOption.ATOMIC_MOVE);
             commit(es,cancel);committed=true;return next;
         }finally{stage.delete();if(!committed&&moved!=null)moved.delete();}
+    }
+    /** Commit the retained catalog before deleting owned bytes; an interrupted cleanup is retried on load. */
+    public synchronized Snapshot remove(String hash)throws Exception {
+        List<Entry> es=entries();
+        require(es.removeIf(e->e.hash.equals(hash)),"Unknown collection edition");
+        Snapshot next=build(es,null,()->false);
+        commit(es,()->false);
+        // Cleanup failure does not roll back an already committed removal.
+        try { cleanup(es); } catch(IOException ignored) { /* Next load retries owned cleanup. */ }
+        return next;
     }
     /** Legacy source is retained, never deleted or rewritten. Catalog commit is idempotent. */
     public synchronized Snapshot loadMigrating(File legacy)throws Exception {

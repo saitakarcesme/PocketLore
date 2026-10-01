@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "map_encoding": "JSON objects (DuckDB) or arrays of key/value pairs (Arrow preview); same source fields",
+  "release": "2026-09-23.1",
+  "source": "/home/isa/PocketLore-control/scale-workers/places/data/part-00001-947ef15d-91bf-56dd-a6a3-aad846cc7a28-c000.zstd.parquet",
+  "source_sha256": "6dbe9257b898bd94ffa1e609b1fbbafdae412d5ccaea5bb49df007d23a2405b5",
+  "preview": false,
+  "eligibility": "all named valid WKB points with UUID; no confidence or geographic cutoff",
+  "dedup": "ID uniqueness; exact NFKC casefold name + exact binary coordinates + category forms entity key; conflicting IDs retained separately",
+  "hours": null,
+  "diet": null,
+  "live_status": null,
+  "raw_rows": 5065932,
+  "unique_ids": 5065932,
+  "exact_entities": 5064557,
+  "rejected": 0,
+  "id_conflicts": 0,
+  "max_arrow_batch_bytes": 0,
+  "fill": {
+    "category": 4845625,
+    "city": 5054645,
+    "country": 5065903,
+    "snapshot_status": 3498678
+  },
+  "countries": {
+    "unknown": 29,
+    "CW": 1,
+    "HK": 6,
+    "KY": 7,
+    "MX": 264690,
+    "PR": 2,
+    "TC": 1,
+    "US": 4801196
+  },
+  "sqlite_check": "quick_check; exhaustive integrity scan not completed",
+  "resource_scope": "current process attempt; prior attempts preserved separately",
+  "max_rss_KiB": 1354444,
+  "user_cpu_seconds": 54.549754,
+  "system_cpu_seconds": 31.989421,
+  "seconds_current_attempt": 533.5074834823608,
+  "bytes": 7144534016,
+  "sha256": "78f98ba9117c1884bf2cb95cd3fe70567b94bd8fd71c296a27e858eebd1e9d8e"
+}

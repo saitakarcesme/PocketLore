@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<stdin>", line 6, in <module>
+  File "libzim/libzim.pyx", line 1149, in libzim.Archive.get_metadata
+RuntimeError: Cannot find metadata
+
+The initial metadata probe caught KeyError only; missing libzim metadata actually raises RuntimeError. The corrected probe records missing keys as unknown.

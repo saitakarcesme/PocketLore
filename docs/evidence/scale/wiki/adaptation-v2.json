@@ -1,0 +1,10 @@
+{
+  "reason": "Measured first-shard partial raw-wikitext prototype exceeded a naive 22 GB extrapolation; duplicate page IDs and a slow primary monthly download also invalidated initial assumptions.",
+  "status": "provisional adaptation, must measure complete shard and final installed bytes",
+  "full_target": 2000000,
+  "pageviews": {"dataset":"neuml/wikipedia-20250620","revision":"b5559579fdfbd52faef3c2d68372161b6c06c790","sha256":"409c4d1643171d050d77c9ea03416d77dac3a538ff8a78f59e3344df9bb49dc1","aggregation_period":"unknown","rule":"Sum exact stored title counts; match literal lowercase underscore title; missing observations remain NULL"},
+  "canonical_rule": "Highest revision ID per page ID across all pinned shards, then source shard and row ascending; highest revision per conflicting title, page ID ascending tie break; latest ineligible record does not silently fall back to older text",
+  "supplement_rule": "Full original wikitext always retained in immutable source Parquet; installed full wikitext retained for all recognized notice candidates, has_math articles, or raw math/convert/cvt/val/physconst markup; structured infobox extraction retained for every article",
+  "limits": "Notice heuristics and unknown templates do not establish complete rights clearance; distribution_ready=false; source body/math/units counterexamples must be inspected",
+  "preserve": "Initial protocol, full-wikitext pilot, monthly partial bytes, all failed attempts and raw query outcomes are preserved"
+}

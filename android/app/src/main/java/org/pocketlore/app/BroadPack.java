@@ -24,7 +24,7 @@ final class BroadPack {
   require(id.matches("[a-z0-9-]{1,80}")&&manifest.getString("format").equals("pocketlore-sqlite-v1"),"Broad edition identity");
   require(manifest.getString("license").equals("CC-BY-SA-4.0")&&!manifest.getBoolean("distribution_ready"),"Broad license/review status invalid");
   require(manifest.getInt("documents")>0&&manifest.getInt("documents")<=5000&&manifest.getInt("passages")>0&&manifest.getInt("passages")<=100000,"Broad count admission");
-  require(archive.length()<=MAX_ARCHIVE&&manifest.getLong("db_bytes")<=MAX_DATABASE,"Broad storage admission");
+  require(archive.length()<=MAX_ARCHIVE&&manifest.getLong("db_bytes")>0&&manifest.getLong("db_bytes")<=MAX_DATABASE,"Broad storage admission");
  }
  static void require(boolean b,String why)throws IOException{if(!b)throw new IOException(why);}
  static void cancelled(BooleanSupplier c)throws IOException{if(c.getAsBoolean()||Thread.currentThread().isInterrupted())throw new InterruptedIOException("Broad import cancelled");}

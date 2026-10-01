@@ -1,0 +1,31 @@
+{
+  "version": 3,
+  "date_utc": "2026-10-01T11:21:54.537761+00:00",
+  "edition": "edition-v7",
+  "full_target": 1250000,
+  "lead_target": 5248498,
+  "priority_sha256": "7e25fd8849992064c1dc9aa39f8a0d0187acf6c26eefed08a0235aa68020336b",
+  "parent_priority_sha256": "2f1e6f9171154d2b315188ed421ee6370146a31d5c1aac768d5267c2f953261e",
+  "decision": "Reduce declared full tier after measured 2M configuration exceeds provisional installed budget; keep every other eligible identity as an explicit lead",
+  "source_text_bytes": {
+    "2000000_full": 23878069343,
+    "1250000_full": 18553104556
+  },
+  "measured_first_shard_bytes": {
+    "2M_lean_zlib6": 1693108339,
+    "2M_lean_zlib6_index_omission": 1612257395
+  },
+  "measured_second_shard_bytes_2M_lean_zlib6": 1748913095,
+  "format": {
+    "schema": 3,
+    "compression": "zlib level 6, at most 64 records, 8 MiB raw target",
+    "supplement": "lean with full-wikitext fallback for empty broad notice candidates",
+    "index": "contentless positional FTS5, reader_stopwords_v1 body, unchanged titles",
+    "structured_infoboxes": "retained for every admitted record"
+  },
+  "estimate": "Approximately 21 GB including aliases, based on exact full-text byte differences and measured first-shard index/compression costs; not a measured final total",
+  "budget_bytes": 22000000000,
+  "policy": "Actual whole-edition installed inventory must pass budget; preserve oversize evidence if it does not",
+  "frozen_queries_sha256": "8da806b7d64bc58610174ec5bb9f7517e74ae84aec405748d0f22ed78f5e978c",
+  "acceptance": "Host staging only; lower full count is an explicit adaptation, not achievement of original 2\u20133M target"
+}

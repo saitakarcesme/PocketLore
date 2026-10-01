@@ -1,0 +1,152 @@
+{
+  "frozen_city_coverage": [
+    {
+      "city": "Auckland",
+      "geonames_candidates": 1,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Berlin",
+      "geonames_candidates": 20,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Buenos Aires",
+      "geonames_candidates": 32,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Cairo",
+      "geonames_candidates": 7,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Cape Town",
+      "geonames_candidates": 1,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Istanbul",
+      "geonames_candidates": 1,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Lagos",
+      "geonames_candidates": 4,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "London",
+      "geonames_candidates": 8,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Los Angeles",
+      "geonames_candidates": 17,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Mexico City",
+      "geonames_candidates": 1,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Mumbai",
+      "geonames_candidates": 1,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Nairobi",
+      "geonames_candidates": 1,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "New York",
+      "geonames_candidates": 4,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Paris",
+      "geonames_candidates": 20,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Sao Paulo",
+      "geonames_candidates": 7,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Seoul",
+      "geonames_candidates": 1,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Singapore",
+      "geonames_candidates": 1,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Sydney",
+      "geonames_candidates": 3,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Tokyo",
+      "geonames_candidates": 1,
+      "exact_travel_titles": 1
+    },
+    {
+      "city": "Toronto",
+      "geonames_candidates": 3,
+      "exact_travel_titles": 1
+    }
+  ],
+  "original_geonames_rows_checked": [
+    184745,
+    360630,
+    745044,
+    1275339,
+    1835848,
+    1850147,
+    1880252,
+    2147714,
+    2193733,
+    2332459,
+    2643743,
+    2950159,
+    2988507,
+    3369157,
+    3435910,
+    3448439,
+    3530597,
+    5128581,
+    5368361,
+    6167865
+  ],
+  "original_xml_pages_checked": [
+    1930,
+    3512,
+    4989,
+    5518,
+    5909,
+    15886,
+    20053,
+    20283,
+    22140,
+    23443,
+    23734,
+    24421,
+    26799,
+    32160,
+    32831,
+    34839,
+    36215,
+    36376,
+    136656,
+    189670
+  ],
+  "checks_passed": true,
+  "max_wikitext_bytes": 1859444,
+  "reader_wikitext_bound_bytes": 16777216,
+  "scope": "exact source rows/text/revision and literal listing containment; title absence is not destination coverage absence; no answer-quality acceptance"
+}

@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+"""Admit direct primary redirects only when target ID and title agree with the selected article."""
+import argparse,json,pathlib,resource,sqlite3,time
+from acquire import atomic
+p=argparse.ArgumentParser();p.add_argument('lane');p.add_argument('edition');p.add_argument('priority');a=p.parse_args();lane=pathlib.Path(a.lane);edition=lane/a.edition;path=edition/'redirect-aliases.sqlite'
+if path.exists():raise SystemExit('Refuse to overwrite alias edition')
+t=time.monotonic();db=sqlite3.connect(path,uri=True);db.executescript('PRAGMA cache_size=-262144; PRAGMA temp_store=FILE; PRAGMA journal_mode=DELETE; CREATE TABLE aliases(alias TEXT NOT NULL,target INTEGER NOT NULL,shard TEXT NOT NULL,fragment TEXT NOT NULL,PRIMARY KEY(alias,target,fragment)) WITHOUT ROWID;')
+db.create_function('alias_norm',1,lambda x:x.replace('_',' ').casefold(),deterministic=True);db.execute('ATTACH DATABASE ? AS stage',(f'file:{lane / "redirects-staging.sqlite"}?mode=ro',));db.execute('ATTACH DATABASE ? AS chosen',(f'file:{a.priority}?mode=ro',))
+# Source title index includes non-article namespaces. Reject their explicit canonical namespace names.
+prefixes=['Talk','User','User talk','Wikipedia','Wikipedia talk','File','File talk','MediaWiki','MediaWiki talk','Template','Template talk','Help','Help talk','Category','Category talk','Portal','Portal talk','Draft','Draft talk','Module','Module talk','TimedText','TimedText talk','Book','Book talk','Education Program','Education Program talk','Gadget','Gadget definition']
+namespace_prefixes=set(prefixes)
+db.create_function('main_title',1,lambda x: int(':' not in x or x.split(':',1)[0] not in namespace_prefixes),deterministic=True)
+db.execute('''INSERT OR IGNORE INTO aliases SELECT alias_norm(origin.title),c.id,c.shard,r.fragment FROM stage.redirects r JOIN stage.pages origin ON origin.id=r.id JOIN stage.pages target ON target.title=r.target_title JOIN chosen.priority c ON c.id=target.id AND c.title=target.title WHERE main_title(origin.title)=1''');db.commit()
+result={'snapshot':'20260901','aliases':db.execute('SELECT count(*) FROM aliases').fetchone()[0],'matched_targets':db.execute('SELECT count(DISTINCT target) FROM aliases').fetchone()[0],'raw_main_target_redirect_rows':db.execute('SELECT count(*) FROM stage.redirects').fetchone()[0],'seconds':time.monotonic()-t,'peak_rss_kib':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'integrity_check':db.execute('PRAGMA integrity_check').fetchone()[0],'limitations':'Direct redirects only. Newer snapshot than text. Namespace filtering uses explicit English names. Chains, missing source titles and ID/title mismatches excluded; no alias freshness claim.'};db.close();result['bytes']=path.stat().st_size;atomic(edition/'redirect-aliases.json',result);print(json.dumps(result,indent=2))

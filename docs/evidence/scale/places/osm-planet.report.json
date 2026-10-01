@@ -1,0 +1,28 @@
+{
+  "source_sha256": "bbfc6b4cadaf86e854fcae040e1db709f837f2f1e91c527139391edf661e60ed",
+  "source": "/home/isa/PocketLore-control/scale-workers/places/data/planet-260921.osm.pbf",
+  "snapshot_timestamp": "2026-09-21T00:00:03Z",
+  "records": 4870526,
+  "types": {
+    "node": 3796716,
+    "relation": 80932,
+    "way": 992878
+  },
+  "located_nodes": 3796716,
+  "vegan_filled": 67246,
+  "vegetarian_filled": 117162,
+  "hours_filled": 4833719,
+  "all_planet_tags_processed": true,
+  "raw_codec": "zlib UTF-8 JSON",
+  "max_raw_object_bytes": 124846,
+  "way_relation_geometry": "unknown; original node/member references retained for later geometry resolution",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "decoder_threads": 1,
+  "decoder_queue": 2,
+  "coordinate_enrichment_complete": false,
+  "bytes": 3557937152,
+  "sha256": "74be8e6952ff4053ee0b8898b9a9c97cf54a870c0a047468465e40a5a0a60d84",
+  "seconds": 1725.0361740589142,
+  "max_rss_KiB": 724764
+}

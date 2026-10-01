@@ -1,0 +1,17 @@
+{
+  "checkpoint": "four_final_format_shards_complete",
+  "utc": "2026-10-01T12:23:04.968247+00:00",
+  "edition": "edition-v7",
+  "complete_shards": 4,
+  "articles": 1772681,
+  "full": 341700,
+  "lead": 1430981,
+  "shard_bytes": 5846848436,
+  "naive_extrapolation_with_original_aliases_bytes": 22021502235,
+  "max_process_rss_kib": 2257744,
+  "max_arrow_batch_bytes": 25416627,
+  "integrity": true,
+  "dispatch": "Continues all 15 shards",
+  "budget_status": "Actual total pending; lossless alias normalization available and fixture-tested",
+  "acceptance": "Host staging only"
+}

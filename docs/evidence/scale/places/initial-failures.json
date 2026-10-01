@@ -1,0 +1,14 @@
+[
+  {
+    "action": "uv venv with default cache",
+    "error": "read-only ~/.cache/uv; resolved using private UV_CACHE_DIR"
+  },
+  {
+    "action": "git commit via provided .git",
+    "error": "read-only .git/index.lock; resolved using private checkpoints.git and explicit work-tree"
+  },
+  {
+    "action": "private git commit",
+    "error": "missing author identity; resolved using prior repository commit author in private git config"
+  }
+]

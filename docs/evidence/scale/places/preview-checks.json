@@ -1,0 +1,1073 @@
+{
+  "frozen_sha256": "1715a53894d06d4f50d377e96a9aa01e8fb396b1185f4ebe7cd030abfed8501e",
+  "queries": [
+    {
+      "query": "001",
+      "kind": "category",
+      "city": "New York",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 2.8859529993496835,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "002",
+      "kind": "distance",
+      "city": "New York",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.5678000015905127,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "003",
+      "kind": "diet",
+      "city": "New York",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.004857000021729618,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "004",
+      "kind": "absence",
+      "city": "New York",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.46392399963224307,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "005",
+      "kind": "source",
+      "city": "New York",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.42425200081197545,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "006",
+      "kind": "category",
+      "city": "Los Angeles",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.430642998253461,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "007",
+      "kind": "distance",
+      "city": "Los Angeles",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.4043770022690296,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "008",
+      "kind": "diet",
+      "city": "Los Angeles",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.010427000233903527,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "009",
+      "kind": "absence",
+      "city": "Los Angeles",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.42493700311752036,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "010",
+      "kind": "source",
+      "city": "Los Angeles",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.40222799725597724,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "011",
+      "kind": "category",
+      "city": "Mexico City",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 2.1148070009076037,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "012",
+      "kind": "distance",
+      "city": "Mexico City",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.46958900202298537,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "013",
+      "kind": "diet",
+      "city": "Mexico City",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.003788998583331704,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "014",
+      "kind": "absence",
+      "city": "Mexico City",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.44868899567518383,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "015",
+      "kind": "source",
+      "city": "Mexico City",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.33261399948969483,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "016",
+      "kind": "category",
+      "city": "Toronto",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2679719982552342,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "017",
+      "kind": "distance",
+      "city": "Toronto",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2346499968552962,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "018",
+      "kind": "diet",
+      "city": "Toronto",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.0034009935916401446,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "019",
+      "kind": "absence",
+      "city": "Toronto",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.299391002045013,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "020",
+      "kind": "source",
+      "city": "Toronto",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.3320360046927817,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "021",
+      "kind": "category",
+      "city": "London",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2850579985533841,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "022",
+      "kind": "distance",
+      "city": "London",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.25040200125658885,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "023",
+      "kind": "diet",
+      "city": "London",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.002872999175451696,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "024",
+      "kind": "absence",
+      "city": "London",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.27513299573911354,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "025",
+      "kind": "source",
+      "city": "London",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.29996700322953984,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "026",
+      "kind": "category",
+      "city": "Paris",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.28779599961126223,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "027",
+      "kind": "distance",
+      "city": "Paris",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.27561099705053493,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "028",
+      "kind": "diet",
+      "city": "Paris",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.002811000740621239,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "029",
+      "kind": "absence",
+      "city": "Paris",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.3011310036526993,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "030",
+      "kind": "source",
+      "city": "Paris",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.26800899649970233,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "031",
+      "kind": "category",
+      "city": "Berlin",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2820090012392029,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "032",
+      "kind": "distance",
+      "city": "Berlin",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.3686079944600351,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "033",
+      "kind": "diet",
+      "city": "Berlin",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.0044240005081519485,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "034",
+      "kind": "absence",
+      "city": "Berlin",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.3427839983487502,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "035",
+      "kind": "source",
+      "city": "Berlin",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.21884700254304335,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "036",
+      "kind": "category",
+      "city": "Istanbul",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.23865499679232016,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "037",
+      "kind": "distance",
+      "city": "Istanbul",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.258894004218746,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "038",
+      "kind": "diet",
+      "city": "Istanbul",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.0029389993869699538,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "039",
+      "kind": "absence",
+      "city": "Istanbul",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.23127299937186763,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "040",
+      "kind": "source",
+      "city": "Istanbul",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.21012900106143206,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "041",
+      "kind": "category",
+      "city": "Cairo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2306160022271797,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "042",
+      "kind": "distance",
+      "city": "Cairo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.26898000214714557,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "043",
+      "kind": "diet",
+      "city": "Cairo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.0033520045690238476,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "044",
+      "kind": "absence",
+      "city": "Cairo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.23275800049304962,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "045",
+      "kind": "source",
+      "city": "Cairo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2255040017189458,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "046",
+      "kind": "category",
+      "city": "Lagos",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.22760699357604608,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "047",
+      "kind": "distance",
+      "city": "Lagos",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.22304099547909573,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "048",
+      "kind": "diet",
+      "city": "Lagos",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.0021400046534836292,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "049",
+      "kind": "absence",
+      "city": "Lagos",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2198610018240288,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "050",
+      "kind": "source",
+      "city": "Lagos",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.24606600345578045,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "051",
+      "kind": "category",
+      "city": "Nairobi",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.24327299615833908,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "052",
+      "kind": "distance",
+      "city": "Nairobi",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.24165299691958353,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "053",
+      "kind": "diet",
+      "city": "Nairobi",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.002610999217722565,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "054",
+      "kind": "absence",
+      "city": "Nairobi",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.3141559936921112,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "055",
+      "kind": "source",
+      "city": "Nairobi",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.27494899404700845,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "056",
+      "kind": "category",
+      "city": "Cape Town",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.23616500402567908,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "057",
+      "kind": "distance",
+      "city": "Cape Town",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.24933399981819093,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "058",
+      "kind": "diet",
+      "city": "Cape Town",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.0027339992811903358,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "059",
+      "kind": "absence",
+      "city": "Cape Town",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.22294600057648495,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "060",
+      "kind": "source",
+      "city": "Cape Town",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2961510035675019,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "061",
+      "kind": "category",
+      "city": "Mumbai",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.31356899853562936,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "062",
+      "kind": "distance",
+      "city": "Mumbai",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.24456400569761172,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "063",
+      "kind": "diet",
+      "city": "Mumbai",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.002620996383484453,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "064",
+      "kind": "absence",
+      "city": "Mumbai",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2179039947804995,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "065",
+      "kind": "source",
+      "city": "Mumbai",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.20662900351453573,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "066",
+      "kind": "category",
+      "city": "Singapore",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.26570399495540187,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "067",
+      "kind": "distance",
+      "city": "Singapore",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2335559984203428,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "068",
+      "kind": "diet",
+      "city": "Singapore",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.0028670037863776088,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "069",
+      "kind": "absence",
+      "city": "Singapore",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2156690025003627,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "070",
+      "kind": "source",
+      "city": "Singapore",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.20149999909335747,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "071",
+      "kind": "category",
+      "city": "Tokyo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.21747699793195352,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "072",
+      "kind": "distance",
+      "city": "Tokyo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2621950043248944,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "073",
+      "kind": "diet",
+      "city": "Tokyo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.0026510024326853454,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "074",
+      "kind": "absence",
+      "city": "Tokyo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2344230015296489,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "075",
+      "kind": "source",
+      "city": "Tokyo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2038509992416948,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "076",
+      "kind": "category",
+      "city": "Seoul",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.20544399740174413,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "077",
+      "kind": "distance",
+      "city": "Seoul",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.21894800011068583,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "078",
+      "kind": "diet",
+      "city": "Seoul",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.0027710048016160727,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "079",
+      "kind": "absence",
+      "city": "Seoul",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.22304400044959038,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "080",
+      "kind": "source",
+      "city": "Seoul",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.21508699865080416,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "081",
+      "kind": "category",
+      "city": "Sydney",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2158739953301847,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "082",
+      "kind": "distance",
+      "city": "Sydney",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.20610099454643205,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "083",
+      "kind": "diet",
+      "city": "Sydney",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.0026319976313970983,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "084",
+      "kind": "absence",
+      "city": "Sydney",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.22088800324127078,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "085",
+      "kind": "source",
+      "city": "Sydney",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.23142999998526648,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "086",
+      "kind": "category",
+      "city": "Auckland",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2408720029052347,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "087",
+      "kind": "distance",
+      "city": "Auckland",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.20387199765536934,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "088",
+      "kind": "diet",
+      "city": "Auckland",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.002540997229516506,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "089",
+      "kind": "absence",
+      "city": "Auckland",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.23695499839959666,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "090",
+      "kind": "source",
+      "city": "Auckland",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.24471899814670905,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "091",
+      "kind": "category",
+      "city": "Sao Paulo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.22084000374889,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "092",
+      "kind": "distance",
+      "city": "Sao Paulo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.20140499691478908,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "093",
+      "kind": "diet",
+      "city": "Sao Paulo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.00285999703919515,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "094",
+      "kind": "absence",
+      "city": "Sao Paulo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2039540049736388,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "095",
+      "kind": "source",
+      "city": "Sao Paulo",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.23423399397870526,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "096",
+      "kind": "category",
+      "city": "Buenos Aires",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.23250999947777018,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "097",
+      "kind": "distance",
+      "city": "Buenos Aires",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.20794600277440622,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "098",
+      "kind": "diet",
+      "city": "Buenos Aires",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.0025619956431910396,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "099",
+      "kind": "absence",
+      "city": "Buenos Aires",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2149030042346567,
+      "errors": [],
+      "positive_coverage": false
+    },
+    {
+      "query": "100",
+      "kind": "source",
+      "city": "Buenos Aires",
+      "returned": 0,
+      "ids": [],
+      "milliseconds": 0.2097389951813966,
+      "errors": [],
+      "positive_coverage": false
+    }
+  ],
+  "raw_source_checks": [
+    {
+      "shard": "/home/isa/PocketLore-control/scale-workers/places/data/preview.sqlite",
+      "ordinal": 1,
+      "id": "4f00cc42-ba51-4a40-a8e8-1cf968e1481a",
+      "passed": true
+    },
+    {
+      "shard": "/home/isa/PocketLore-control/scale-workers/places/data/preview.sqlite",
+      "ordinal": 2,
+      "id": "e4cd796b-b4c6-47e1-927b-79edfc50c48c",
+      "passed": true
+    },
+    {
+      "shard": "/home/isa/PocketLore-control/scale-workers/places/data/preview.sqlite",
+      "ordinal": 3,
+      "id": "b01d6401-437f-4be8-bb25-21055d6881fa",
+      "passed": true
+    },
+    {
+      "shard": "/home/isa/PocketLore-control/scale-workers/places/data/preview.sqlite",
+      "ordinal": 4,
+      "id": "d61f38d3-a73b-44d6-ae69-1120a1518aaf",
+      "passed": true
+    },
+    {
+      "shard": "/home/isa/PocketLore-control/scale-workers/places/data/preview.sqlite",
+      "ordinal": 5,
+      "id": "cb728afd-be17-4aba-8764-e5982537a18e",
+      "passed": true
+    },
+    {
+      "shard": "/home/isa/PocketLore-control/scale-workers/places/data/preview.sqlite",
+      "ordinal": 19153,
+      "id": "34c0cba6-9f9d-4eeb-bb37-63e4fd235441",
+      "passed": true
+    },
+    {
+      "shard": "/home/isa/PocketLore-control/scale-workers/places/data/preview.sqlite",
+      "ordinal": 19152,
+      "id": "4acb8ee7-5b68-48c7-b77c-a1849ac3280b",
+      "passed": true
+    },
+    {
+      "shard": "/home/isa/PocketLore-control/scale-workers/places/data/preview.sqlite",
+      "ordinal": 19151,
+      "id": "f4ed31ee-3bc1-49e9-8a28-3005e0e22ac1",
+      "passed": true
+    },
+    {
+      "shard": "/home/isa/PocketLore-control/scale-workers/places/data/preview.sqlite",
+      "ordinal": 19150,
+      "id": "6c026c49-4a4f-44a9-b18b-2e858b4176bd",
+      "passed": true
+    },
+    {
+      "shard": "/home/isa/PocketLore-control/scale-workers/places/data/preview.sqlite",
+      "ordinal": 19149,
+      "id": "a2d0cd53-3ace-4657-8184-0da5bc86982c",
+      "passed": true
+    }
+  ],
+  "semantic_invariants_passed": true,
+  "cities_with_any_positive": [],
+  "positive_query_count": 0,
+  "coverage_acceptance": false,
+  "runtime": "LLMRig host only; no Android/GrapheneOS acceptance",
+  "unknown_diet_not_negative": true
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 2,
+  "release": "2026-09-23.1",
+  "source_sha256": "b4375a3e17ebd9e0c94bd6f785da6e4cfa249c7a1c9e7485025cd22b42f42499",
+  "source_object_url": "https://overturemaps-us-west-2.s3.amazonaws.com/release/2026-09-23.1/theme=places/type=place/part-00003-d872971a-e957-5cc9-a661-27396e8592fc-c000.zstd.parquet",
+  "layout": [
+    "source_ordinal",
+    "latitude",
+    "longitude",
+    "NFKC_casefold_name",
+    "original_non_geometry_record"
+  ],
+  "block_codec": "zlib",
+  "max_inflated_block_bytes": 33554432,
+  "max_compressed_block_bytes": 1048576,
+  "field_retention": "all original non-geometry fields; exact decoded WKB point retained as doubles; no confidence or region cut",
+  "raw_records": 5124095,
+  "eligible_records": 5124095,
+  "blocks": 2502,
+  "rejected": 0,
+  "max_arrow_batch_bytes": 3644779,
+  "max_actual_inflated_block_bytes": 3232477,
+  "keys_path": "/home/isa/PocketLore-control/scale-workers/places/data/compact-03.keys.parquet",
+  "keys_sha256": "927f1ad41da524d5fa1f8bf53fbd085e254925c70260bd12bbea22dca399d496",
+  "bytes": 1124253696,
+  "sha256": "3f40219a3a8d9ac03ae8ef6f586986874ab3ee1056069d4f1b7006c2eae0760f",
+  "seconds_current_attempt": 195.05229234695435,
+  "max_rss_KiB": 670400
+}

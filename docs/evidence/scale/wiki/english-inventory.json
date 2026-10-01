@@ -1,0 +1,187 @@
+{
+  "revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+  "url": "https://huggingface.co/api/datasets/HuggingFaceFW/finewiki/tree/8bd13e72e6a002407649b3e898535f42ceb1aeb9/data/enwiki?recursive=false&expand=false&limit=1000",
+  "acquired_utc": "2026-10-01T09:17:12.533964+00:00",
+  "files": [
+    {
+      "type": "file",
+      "oid": "78ecef3c9534f5bb44024ec39349da97324d850b",
+      "size": 2510037970,
+      "lfs": {
+        "oid": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+        "size": 2510037970,
+        "pointerSize": 135
+      },
+      "xetHash": "1c250d16389c9b34a8988b0433a425e380fe4df5c923b582bcc402d5011f10f4",
+      "path": "data/enwiki/000_00000.parquet"
+    },
+    {
+      "type": "file",
+      "oid": "a8472712b24ae6f1ffb65ec2ae22e6281f4d3224",
+      "size": 2559070630,
+      "lfs": {
+        "oid": "eb29c5b3d23010c17f225a9a6370049afa90b168f3d70744e5e015729455cb55",
+        "size": 2559070630,
+        "pointerSize": 135
+      },
+      "xetHash": "0a467a8f362502cd357302d943066c04d0f9ad1e68f0538fd3e5acee34d3a91e",
+      "path": "data/enwiki/000_00001.parquet"
+    },
+    {
+      "type": "file",
+      "oid": "03b0c305cf0d2ad0f29e5590ee56dd7c26b81120",
+      "size": 2538629269,
+      "lfs": {
+        "oid": "b98a10ff8a3f21291e4174564a5cbe186eab66fcca9c53c0920d182f718c5b9a",
+        "size": 2538629269,
+        "pointerSize": 135
+      },
+      "xetHash": "7f33cdf01f1dec2ff511ee55ef1db13bea12dc4fd47158a442e771fdf6c82c05",
+      "path": "data/enwiki/000_00002.parquet"
+    },
+    {
+      "type": "file",
+      "oid": "9933ad48ebe13411afa786755f0f00beeff9d5fa",
+      "size": 2650496988,
+      "lfs": {
+        "oid": "b8a6177f9c2135ab5182a95f33ada8a14d251eeaa052b006ab0f19fd2f24fd2d",
+        "size": 2650496988,
+        "pointerSize": 135
+      },
+      "xetHash": "1a5f221d17efaf9d3f2be12f2de9b3b433bc34d2498627e920428dc3f85b2297",
+      "path": "data/enwiki/000_00003.parquet"
+    },
+    {
+      "type": "file",
+      "oid": "b99912b7ac51a5419f587b3179e54881c8df2c15",
+      "size": 2534066622,
+      "lfs": {
+        "oid": "4540721a38ac4ff620b5c4bb44fa3050d5883518c8823204371c0709890e5d78",
+        "size": 2534066622,
+        "pointerSize": 135
+      },
+      "xetHash": "ccc114c48b6c3e311362d67e0a9f56636f5474701b04a6266ce1d2cd49f5cb7e",
+      "path": "data/enwiki/000_00004.parquet"
+    },
+    {
+      "type": "file",
+      "oid": "d9661d1d43ea6616f26bf9c1b5856089f9db5b9f",
+      "size": 2518529521,
+      "lfs": {
+        "oid": "c25bb40b79ada5cd74377d1b95dcc3276e31a9959caebd8259f0506cc1a7f95f",
+        "size": 2518529521,
+        "pointerSize": 135
+      },
+      "xetHash": "cc5d422426e0d7c87b9580aaf852a4852700a6d45eceed23d73dfc1313646f45",
+      "path": "data/enwiki/000_00005.parquet"
+    },
+    {
+      "type": "file",
+      "oid": "00f1fca5d6869999bf8e575f5c5b4291182bcf42",
+      "size": 2491036654,
+      "lfs": {
+        "oid": "dc10ef0d900f4b87148a1595fe9895866f960ac2affc94684a04e048813198a7",
+        "size": 2491036654,
+        "pointerSize": 135
+      },
+      "xetHash": "cc970672123e0e42015ccc3b79ab62be614ee9d627f067130ebedf00a561ea91",
+      "path": "data/enwiki/000_00006.parquet"
+    },
+    {
+      "type": "file",
+      "oid": "f0d8cf3a71d020f4b3962b399b077e55949f3d4a",
+      "size": 2496387295,
+      "lfs": {
+        "oid": "8f8d47d44c23b79008d97715ec78c1f1c5d3627856182a87cde054e35196aec5",
+        "size": 2496387295,
+        "pointerSize": 135
+      },
+      "xetHash": "2c0f221c954afe6d3ff9a149ad656d688426637b6db9af304033f48ca38f1034",
+      "path": "data/enwiki/000_00007.parquet"
+    },
+    {
+      "type": "file",
+      "oid": "b67e8a4d0166c88021f5bfb25f670bb94bbc7a7e",
+      "size": 2468521574,
+      "lfs": {
+        "oid": "5d4698f29648c267f32de6721ac7b36ea007b6b413dddfb36fd87ab7f64af201",
+        "size": 2468521574,
+        "pointerSize": 135
+      },
+      "xetHash": "a1dd1662a2d08eca52b8ed8e3efd27a25800cf97dff5a29f70d66de1a2bcf289",
+      "path": "data/enwiki/000_00008.parquet"
+    },
+    {
+      "type": "file",
+      "oid": "9bd08ed9d68f35430fa57600b50ef695885a7f52",
+      "size": 2473260614,
+      "lfs": {
+        "oid": "c065b591184aae5eb053786afdc7f20c9d6ccc3a955147db8849cc9bc4ec7e52",
+        "size": 2473260614,
+        "pointerSize": 135
+      },
+      "xetHash": "6739ebe84704c605f730e83da2aa575d520d10edc3a9e08bf5d8b6e44604621c",
+      "path": "data/enwiki/000_00009.parquet"
+    },
+    {
+      "type": "file",
+      "oid": "571e60e1599c260be4fd3f1cf3545843a38b9f5a",
+      "size": 2505256688,
+      "lfs": {
+        "oid": "2bc2a319352e26f6d8aac5d5c25799fc16949f762a6a5c1ec6fba66389d428ab",
+        "size": 2505256688,
+        "pointerSize": 135
+      },
+      "xetHash": "bddab73206bb05396857f7fec9a7064bfa323b6a0192e988b0cdc80f067f0b19",
+      "path": "data/enwiki/000_00010.parquet"
+    },
+    {
+      "type": "file",
+      "oid": "0775c4941248681c9fb0e29d80935c61f9e95705",
+      "size": 2498000006,
+      "lfs": {
+        "oid": "c64481777c4ad518969680bdb3f27e8b1c9e782fa831709ee5fc30beb3aa622d",
+        "size": 2498000006,
+        "pointerSize": 135
+      },
+      "xetHash": "5ac84da421dec172076dbfa9da9a4c8446688f1d6f3eee4b1fba89e837b7b685",
+      "path": "data/enwiki/000_00011.parquet"
+    },
+    {
+      "type": "file",
+      "oid": "5261144eb33fe3b276d1b41d1e8c71828a17816f",
+      "size": 2523664632,
+      "lfs": {
+        "oid": "2e5ca443dadb167aea3ebb4cc681b5755e33516e41dfa8c0423ef5e7a225c6de",
+        "size": 2523664632,
+        "pointerSize": 135
+      },
+      "xetHash": "3aa1dc84485e4242515196c705afb2ed2d3ae80d15bc967eff5f27419e87f23a",
+      "path": "data/enwiki/000_00012.parquet"
+    },
+    {
+      "type": "file",
+      "oid": "8ffd79e1c40763c2f14315cf8ab67eb6d409a2b9",
+      "size": 2417467623,
+      "lfs": {
+        "oid": "ce5d84bf8048edd55a1d91ae30d04a5c0336bc84f2926b63b4ecfe32d314e381",
+        "size": 2417467623,
+        "pointerSize": 135
+      },
+      "xetHash": "52955e8ea18d648280862744823426a6916c6f764ef5cdd98140a5e95bf5ac20",
+      "path": "data/enwiki/000_00013.parquet"
+    },
+    {
+      "type": "file",
+      "oid": "15b2c82f071453201fae067533d68409191ea5ac",
+      "size": 2538032319,
+      "lfs": {
+        "oid": "0a175e0d593c4a07afde8aacf5b8c86e70e958a31cd80a8f0e43e84397ddab42",
+        "size": 2538032319,
+        "pointerSize": 135
+      },
+      "xetHash": "8420ea85782202b44147c3d0f358705dcaac19e0b420a1a35adc896be6a03f52",
+      "path": "data/enwiki/000_00014.parquet"
+    }
+  ]
+}

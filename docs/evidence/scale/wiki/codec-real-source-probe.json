@@ -1,0 +1,42 @@
+{
+  "raw_bytes": 46074,
+  "zstd_version": "1.5.7",
+  "measurements": [
+    {
+      "codec": "zlib",
+      "level": 3,
+      "bytes": 12454,
+      "seconds": 0.0006159680051496252
+    },
+    {
+      "codec": "zlib",
+      "level": 6,
+      "bytes": 11461,
+      "seconds": 0.002717636998568196
+    },
+    {
+      "codec": "zlib",
+      "level": 9,
+      "bytes": 11416,
+      "seconds": 0.0028768470001523383
+    },
+    {
+      "codec": "zstd",
+      "level": 3,
+      "bytes": 12183,
+      "seconds": 0.0005025049977120943
+    },
+    {
+      "codec": "zstd",
+      "level": 6,
+      "bytes": 11400,
+      "seconds": 0.002264121998450719
+    },
+    {
+      "codec": "zstd",
+      "level": 9,
+      "bytes": 11248,
+      "seconds": 0.0009371679989271797
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+test_source_and_boundaries (test_compact.CompactTests.test_source_and_boundaries) ... /home/isa/PocketLore-control/scale-workers/places/repo/tools/scale/places/compact.py:25: DeprecationWarning: fetch_record_batch() is deprecated, use to_arrow_reader() instead.
+  batches=con.execute(query,[str(src)]).fetch_record_batch(2048);max_arrow=0;max_block=0
+/home/isa/PocketLore-control/scale-workers/places/repo/tools/scale/places/compact.py:74: ResourceWarning: unclosed file <_io.BufferedReader name='/home/isa/PocketLore-control/scale-workers/places/tmph_7wirma/compact.keys.parquet'>
+  report.update(keys_path=str(key_final),keys_sha256=hashlib.file_digest(key_final.open('rb'),'sha256').hexdigest(),bytes=dest.stat().st_size,sha256=hashlib.file_digest(dest.open('rb'),'sha256').hexdigest(),seconds_current_attempt=time.time()-start,max_rss_KiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss);atomic_json(dest.with_suffix('.report.json'),report);print(json.dumps(report),flush=True)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/isa/PocketLore-control/scale-workers/places/repo/tools/scale/places/compact.py:74: ResourceWarning: unclosed file <_io.BufferedReader name='/home/isa/PocketLore-control/scale-workers/places/tmph_7wirma/compact.sqlite'>
+  report.update(keys_path=str(key_final),keys_sha256=hashlib.file_digest(key_final.open('rb'),'sha256').hexdigest(),bytes=dest.stat().st_size,sha256=hashlib.file_digest(dest.open('rb'),'sha256').hexdigest(),seconds_current_attempt=time.time()-start,max_rss_KiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss);atomic_json(dest.with_suffix('.report.json'),report);print(json.dumps(report),flush=True)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+{"schema_version": 2, "release": "2026-09-23.1", "source_sha256": "50d29df2d7e0da8521163066bc8098b41b8eec9abbd5fa06ab40e737ae78ce04", "source_object_url": "https://overturemaps-us-west-2.s3.amazonaws.com/release/2026-09-23.1/theme=places/type=place/fixture.parquet", "layout": ["source_ordinal", "latitude", "longitude", "NFKC_casefold_name", "original_non_geometry_record"], "block_codec": "zlib", "max_inflated_block_bytes": 33554432, "max_compressed_block_bytes": 1048576, "field_retention": "all original non-geometry fields; exact decoded WKB point retained as doubles; no confidence or region cut", "raw_records": 3, "eligible_records": 3, "blocks": 1, "rejected": 0, "max_arrow_batch_bytes": 1617, "max_actual_inflated_block_bytes": 1204, "keys_path": "/home/isa/PocketLore-control/scale-workers/places/tmph_7wirma/compact.keys.parquet", "keys_sha256": "79a7ec253fe9234710b62f9e82191853e52ba2eb49dc3443d27477851126226a", "bytes": 45056, "sha256": "a43dc41c02cddb7ae6ab215e0efbaea687b5abdea0fc5bc0f876d57176d2ebf7", "seconds_current_attempt": 0.05858325958251953, "max_rss_KiB": 122320}
+ok
+test_source_tags_and_complete_way_bounds (test_planet.PlanetTests.test_source_tags_and_complete_way_bounds) ... /home/isa/PocketLore-control/scale-workers/places/repo/tools/scale/places/planet.py:31: ResourceWarning: unclosed file <_io.BufferedReader name='/home/isa/PocketLore-control/scale-workers/places/tmp70xmvoal/base.sqlite'>
+  assert db.execute('PRAGMA quick_check').fetchone()[0]=='ok';checkpoint=db.execute('PRAGMA wal_checkpoint(TRUNCATE)').fetchone();assert checkpoint==(0,0,0),checkpoint;db.close();stage.rename(dest);report.update(bytes=dest.stat().st_size,sha256=hashlib.file_digest(dest.open('rb'),'sha256').hexdigest(),seconds=time.time()-start,max_rss_KiB=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss);atomic_json(dest.with_suffix('.report.json'),report);print(report)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+{'source_sha256': '7b835dd8c07017db37deebc35800f2edead06fe936a925bc935360bcd48c0ac9', 'source': '/home/isa/PocketLore-control/scale-workers/places/tmp70xmvoal/fixture.osm', 'snapshot_timestamp': '', 'records': 3, 'types': {'node': 1, 'relation': 1, 'way': 1}, 'located_nodes': 1, 'vegan_filled': 2, 'vegetarian_filled': 1, 'hours_filled': 1, 'all_planet_tags_processed': True, 'raw_codec': 'zlib UTF-8 JSON', 'way_relation_geometry': 'unknown; original node/member references retained for later geometry resolution', 'license': 'ODbL-1.0', 'attribution': 'OpenStreetMap contributors', 'decoder_threads': 1, 'decoder_queue': 2, 'coordinate_enrichment_complete': False, 'bytes': 36864, 'sha256': '8343f95d5b694e660d8b7996849f4ccf633163b020d6cceedb4f1e1b5bac5d00', 'seconds': 0.01798844337463379, 'max_rss_KiB': 122508}
+node batch through 2 found 2
+/home/isa/PocketLore-control/scale-workers/places/repo/tools/scale/places/planet_geometry.py:45: ResourceWarning: unclosed file <_io.BufferedReader name='/home/isa/PocketLore-control/scale-workers/places/tmp70xmvoal/geometry.sqlite'>
+  db.commit();db.execute('PRAGMA wal_checkpoint(TRUNCATE)');db.close();aux.close();stage.rename(dest);report={'resolved_ways':count,'needed_unique_nodes':total,'relations':'coordinates unknown; retained','source':source,'planet':planet,'seconds':time.time()-start,'bytes':dest.stat().st_size,'sha256':hashlib.file_digest(dest.open('rb'),'sha256').hexdigest(),'id_filter_batch_max':10000000,'max_rss_KiB':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'decoder_threads':1,'decoder_queue':2};atomic_json(dest.with_suffix('.report.json'),report);print(report)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ERROR
+test_absence (test_reader.ReaderTests.test_absence) ... ok
+test_antimeridian_and_dedup (test_reader.ReaderTests.test_antimeridian_and_dedup) ... ok
+test_category_ancestor (test_reader.ReaderTests.test_category_ancestor) ... ok
+test_invalid (test_reader.ReaderTests.test_invalid) ... ok
+test_limit (test_reader.ReaderTests.test_limit) ... ok
+test_nested_listing_templates (test_reader.ReaderTests.test_nested_listing_templates) ... ok
+test_pole (test_reader.ReaderTests.test_pole) ... ok
+test_radius (test_reader.ReaderTests.test_radius) ... ok
+test_unknown_diet (test_reader.ReaderTests.test_unknown_diet) ... ok
+
+======================================================================
+ERROR: test_source_tags_and_complete_way_bounds (test_planet.PlanetTests.test_source_tags_and_complete_way_bounds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/isa/PocketLore-control/scale-workers/places/repo/tools/scale/places/test_planet.py", line 16, in test_source_tags_and_complete_way_bounds
+    base=root/'base.sqlite';final=root/'geometry.sqlite';build(src,base);resolve(src,base,final,root/'work.sqlite')
+                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/PocketLore-control/scale-workers/places/repo/tools/scale/places/planet_geometry.py", line 45, in resolve
+    db.commit();db.execute('PRAGMA wal_checkpoint(TRUNCATE)');db.close();aux.close();stage.rename(dest);report={'resolved_ways':count,'needed_unique_nodes':total,'relations':'coordinates unknown; retained','source':source,'planet':planet,'seconds':time.time()-start,'bytes':dest.stat().st_size,'sha256':hashlib.file_digest(dest.open('rb'),'sha256').hexdigest(),'id_filter_batch_max':10000000,'max_rss_KiB':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'decoder_threads':1,'decoder_queue':2};atomic_json(dest.with_suffix('.report.json'),report);print(report)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/PocketLore-control/scale-workers/places/repo/tools/scale/places/common.py", line 5, in atomic_json
+    p=pathlib.Path(path);t=p.with_suffix(p.suffix+'.tmp');t.write_text(json.dumps(obj,indent=2)+'\n');t.replace(p)
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/home/isa/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/home/isa/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/home/isa/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/home/isa/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/home/isa/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type PosixPath is not JSON serializable
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.576s
+
+FAILED (errors=1)

@@ -1,0 +1,16 @@
+{
+  "args": [
+    "/home/isa/PocketLore-control/scale-workers/places/venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tools/scale/places",
+    "-p",
+    "test_compact.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "seconds": 0.31114649772644043,
+  "scope": "synthetic source conflicts, antimeridian, source fidelity and corruption rejection"
+}

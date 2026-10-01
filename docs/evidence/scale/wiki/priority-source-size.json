@@ -1,0 +1,135 @@
+{
+  "priority": "/home/isa/PocketLore-control/scale-workers/wiki/priority-2000000.sqlite",
+  "ranking": "views descending, page ID ascending, same frozen canonical set",
+  "counts": {
+    "500000": {
+      "full_text_bytes": 10545892470,
+      "cutoff_views": 1804,
+      "per_shard_full_text_bytes": {
+        "000_00000.parquet": 698815840,
+        "000_00011.parquet": 725086836,
+        "000_00006.parquet": 642810256,
+        "000_00007.parquet": 738992330,
+        "000_00010.parquet": 692496057,
+        "000_00004.parquet": 737122204,
+        "000_00014.parquet": 689133311,
+        "000_00009.parquet": 714800436,
+        "000_00013.parquet": 663410375,
+        "000_00005.parquet": 638988746,
+        "000_00003.parquet": 729588580,
+        "000_00012.parquet": 748592365,
+        "000_00001.parquet": 686808390,
+        "000_00008.parquet": 724431014,
+        "000_00002.parquet": 714815730
+      }
+    },
+    "1000000": {
+      "full_text_bytes": 16338063370,
+      "cutoff_views": 704,
+      "per_shard_full_text_bytes": {
+        "000_00000.parquet": 1109289710,
+        "000_00011.parquet": 1083766635,
+        "000_00006.parquet": 1034329268,
+        "000_00007.parquet": 1101304550,
+        "000_00010.parquet": 1083408097,
+        "000_00004.parquet": 1102598047,
+        "000_00014.parquet": 1084946485,
+        "000_00009.parquet": 1101138481,
+        "000_00013.parquet": 1049554075,
+        "000_00005.parquet": 1048742532,
+        "000_00003.parquet": 1147754608,
+        "000_00012.parquet": 1117097312,
+        "000_00001.parquet": 1079682035,
+        "000_00008.parquet": 1097487799,
+        "000_00002.parquet": 1096963736
+      }
+    },
+    "1250000": {
+      "full_text_bytes": 18553104556,
+      "cutoff_views": 505,
+      "per_shard_full_text_bytes": {
+        "000_00000.parquet": 1292765169,
+        "000_00011.parquet": 1219511179,
+        "000_00006.parquet": 1180647417,
+        "000_00007.parquet": 1242618848,
+        "000_00010.parquet": 1222544457,
+        "000_00004.parquet": 1252198970,
+        "000_00014.parquet": 1225693568,
+        "000_00009.parquet": 1248196544,
+        "000_00013.parquet": 1194442521,
+        "000_00005.parquet": 1204122264,
+        "000_00003.parquet": 1315326904,
+        "000_00012.parquet": 1257407946,
+        "000_00001.parquet": 1227263698,
+        "000_00008.parquet": 1232280657,
+        "000_00002.parquet": 1238084414
+      }
+    },
+    "1500000": {
+      "full_text_bytes": 20518041152,
+      "cutoff_views": 380,
+      "per_shard_full_text_bytes": {
+        "000_00000.parquet": 1420185398,
+        "000_00011.parquet": 1356374237,
+        "000_00006.parquet": 1310752931,
+        "000_00007.parquet": 1361939023,
+        "000_00010.parquet": 1353217136,
+        "000_00004.parquet": 1382080396,
+        "000_00014.parquet": 1350533027,
+        "000_00009.parquet": 1377987435,
+        "000_00013.parquet": 1328823164,
+        "000_00005.parquet": 1337271340,
+        "000_00003.parquet": 1458168689,
+        "000_00012.parquet": 1387791844,
+        "000_00001.parquet": 1358901598,
+        "000_00008.parquet": 1362698521,
+        "000_00002.parquet": 1371316413
+      }
+    },
+    "1750000": {
+      "full_text_bytes": 22288730971,
+      "cutoff_views": 296,
+      "per_shard_full_text_bytes": {
+        "000_00000.parquet": 1554603345,
+        "000_00011.parquet": 1462024835,
+        "000_00006.parquet": 1428538470,
+        "000_00007.parquet": 1480834549,
+        "000_00010.parquet": 1460979859,
+        "000_00004.parquet": 1500854323,
+        "000_00014.parquet": 1469024876,
+        "000_00009.parquet": 1496754039,
+        "000_00013.parquet": 1441901841,
+        "000_00005.parquet": 1456110261,
+        "000_00003.parquet": 1586828888,
+        "000_00012.parquet": 1503908267,
+        "000_00001.parquet": 1477235062,
+        "000_00008.parquet": 1474876292,
+        "000_00002.parquet": 1494256064
+      }
+    },
+    "2000000": {
+      "full_text_bytes": 23878069343,
+      "cutoff_views": 236,
+      "per_shard_full_text_bytes": {
+        "000_00000.parquet": 1664404524,
+        "000_00011.parquet": 1568598538,
+        "000_00006.parquet": 1531002081,
+        "000_00007.parquet": 1575980023,
+        "000_00010.parquet": 1559667770,
+        "000_00004.parquet": 1609303263,
+        "000_00014.parquet": 1567059272,
+        "000_00009.parquet": 1625774734,
+        "000_00013.parquet": 1547600799,
+        "000_00005.parquet": 1567484208,
+        "000_00003.parquet": 1696292568,
+        "000_00012.parquet": 1605316380,
+        "000_00001.parquet": 1582935150,
+        "000_00008.parquet": 1575872996,
+        "000_00002.parquet": 1600777037
+      }
+    }
+  },
+  "seconds": 72.23653467099939,
+  "peak_rss_kib": 563800,
+  "limitations": "Exact source full-text bytes only; lead/index/supplement/compression sizes must be measured separately"
+}

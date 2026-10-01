@@ -1,0 +1,21 @@
+{
+  "checkpoint": "all_fifteen_final_shards_complete",
+  "utc": "2026-10-01T14:16:57.615379+00:00",
+  "edition": "edition-v7",
+  "source_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+  "priority_sha256": "7e25fd8849992064c1dc9aa39f8a0d0187acf6c26eefed08a0235aa68020336b",
+  "shards_complete": 15,
+  "source_rows": 6614655,
+  "full": 1250000,
+  "lead": 5248498,
+  "excluded_rows": 116157,
+  "pack_bytes_before_aliases": 21449455688,
+  "installed_budget_bytes": 22000000000,
+  "max_process_rss_kib": 3144412,
+  "max_arrow_batch_bytes": 33994202,
+  "acceptance": "Builder complete; whole-edition verification, frozen queries and final seal pending",
+  "source_fidelity_cases_passed": 67,
+  "source_counterexamples_passed": 5,
+  "rights_marker_exclusion_examples_passed": 12,
+  "child_span_wall_seconds": 10382.764949
+}

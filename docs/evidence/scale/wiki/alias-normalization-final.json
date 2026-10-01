@@ -1,0 +1,14 @@
+{
+  "schema": 2,
+  "source": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v4/redirect-aliases.sqlite",
+  "source_sha256": "a79a9e621b3a6483f70a399f7d397233b8241b46d298a0791de7b2eaeb70661d",
+  "source_bytes": 587452416,
+  "bytes": 403890176,
+  "sha256": "a691091bc7892155a4e6381d322070076dd6a6064b7a2a23be99e95898b76a12",
+  "aliases": 10100398,
+  "logical_row_mismatches": 0,
+  "sqlite_integrity": "ok",
+  "seconds": 25.01493086499977,
+  "peak_rss_kib": 377116,
+  "change": "Repeated shard filename replaced with integer reference; no alias, target, fragment or source facts removed"
+}

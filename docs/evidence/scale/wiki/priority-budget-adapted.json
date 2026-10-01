@@ -1,0 +1,92 @@
+{
+  "parent": "/home/isa/PocketLore-control/scale-workers/wiki/priority-2000000.sqlite",
+  "parent_sha256": "2f1e6f9171154d2b315188ed421ee6370146a31d5c1aac768d5267c2f953261e",
+  "canonical_identity": "Unchanged parent page IDs, titles, source rows and observed view values; checked every derived row",
+  "ranking": "views descending, page ID ascending, unknown values last",
+  "eligible_canonical": 6498498,
+  "full": 1250000,
+  "lead": 5248498,
+  "full_with_unknown_views": 0,
+  "per_shard": [
+    [
+      "000_00000.parquet",
+      413151,
+      82022
+    ],
+    [
+      "000_00001.parquet",
+      447210,
+      86297
+    ],
+    [
+      "000_00002.parquet",
+      444152,
+      84314
+    ],
+    [
+      "000_00003.parquet",
+      468168,
+      89067
+    ],
+    [
+      "000_00004.parquet",
+      451622,
+      82153
+    ],
+    [
+      "000_00005.parquet",
+      456484,
+      85862
+    ],
+    [
+      "000_00006.parquet",
+      445533,
+      81812
+    ],
+    [
+      "000_00007.parquet",
+      428379,
+      82033
+    ],
+    [
+      "000_00008.parquet",
+      438210,
+      82237
+    ],
+    [
+      "000_00009.parquet",
+      407165,
+      82544
+    ],
+    [
+      "000_00010.parquet",
+      432334,
+      81876
+    ],
+    [
+      "000_00011.parquet",
+      408811,
+      81254
+    ],
+    [
+      "000_00012.parquet",
+      427704,
+      84272
+    ],
+    [
+      "000_00013.parquet",
+      392557,
+      79675
+    ],
+    [
+      "000_00014.parquet",
+      437018,
+      84582
+    ]
+  ],
+  "integrity_check": "ok",
+  "seconds": 42.96099512100045,
+  "peak_rss_kib": 624508,
+  "reason": "Budget adaptation after complete two-million-full shard measurements; aggregation interval remains unknown",
+  "sha256": "7e25fd8849992064c1dc9aa39f8a0d0187acf6c26eefed08a0235aa68020336b"
+}

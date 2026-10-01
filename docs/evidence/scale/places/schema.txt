@@ -1,0 +1,85 @@
+id: string
+geometry: binary
+confidence: double
+websites: list<element: string>
+  child 0, element: string
+emails: list<element: string>
+  child 0, element: string
+socials: list<element: string>
+  child 0, element: string
+phones: list<element: string>
+  child 0, element: string
+brand: struct<wikidata: string, names: struct<primary: string, common: map<string, string ('common')>, rule (... 192 chars omitted)
+  child 0, wikidata: string
+  child 1, names: struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: (... 159 chars omitted)
+      child 0, primary: string
+      child 1, common: map<string, string ('common')>
+          child 0, common: struct<key: string not null, value: string> not null
+              child 0, key: string not null
+              child 1, value: string
+      child 2, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries (... 87 chars omitted)
+          child 0, element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element (... 72 chars omitted)
+              child 0, variant: string
+              child 1, language: string
+              child 2, perspectives: struct<mode: string, countries: list<element: string>>
+                  child 0, mode: string
+                  child 1, countries: list<element: string>
+                      child 0, element: string
+              child 3, value: string
+              child 4, between: list<element: double>
+                  child 0, element: double
+              child 5, side: string
+addresses: list<element: struct<freeform: string, locality: string, postcode: string, region: string, country:  (... 8 chars omitted)
+  child 0, element: struct<freeform: string, locality: string, postcode: string, region: string, country: string>
+      child 0, freeform: string
+      child 1, locality: string
+      child 2, postcode: string
+      child 3, region: string
+      child 4, country: string
+names: struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: (... 159 chars omitted)
+  child 0, primary: string
+  child 1, common: map<string, string ('common')>
+      child 0, common: struct<key: string not null, value: string> not null
+          child 0, key: string not null
+          child 1, value: string
+  child 2, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries (... 87 chars omitted)
+      child 0, element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element (... 72 chars omitted)
+          child 0, variant: string
+          child 1, language: string
+          child 2, perspectives: struct<mode: string, countries: list<element: string>>
+              child 0, mode: string
+              child 1, countries: list<element: string>
+                  child 0, element: string
+          child 3, value: string
+          child 4, between: list<element: double>
+              child 0, element: double
+          child 5, side: string
+sources: list<element: struct<property: string, dataset: string, license: string, record_id: string, update_t (... 118 chars omitted)
+  child 0, element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, c (... 103 chars omitted)
+      child 0, property: string
+      child 1, dataset: string
+      child 2, license: string
+      child 3, record_id: string
+      child 4, update_time: string
+      child 5, confidence: double
+      child 6, between: list<element: double>
+          child 0, element: double
+      child 7, provider: string
+      child 8, resource: string
+      child 9, version: string
+operating_status: string
+basic_category: string
+taxonomy: struct<primary: string, hierarchy: list<element: string>, alternates: list<element: string>>
+  child 0, primary: string
+  child 1, hierarchy: list<element: string>
+      child 0, element: string
+  child 2, alternates: list<element: string>
+      child 0, element: string
+version: int32
+bbox: struct<xmin: double, xmax: double, ymin: double, ymax: double>
+  child 0, xmin: double
+  child 1, xmax: double
+  child 2, ymin: double
+  child 3, ymax: double
+-- schema metadata --
+geo: '{"version": "1.1.0", "primary_column": "geometry", "columns": {"geo' + 274

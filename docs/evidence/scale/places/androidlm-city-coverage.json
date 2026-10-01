@@ -1,0 +1,488 @@
+{
+  "queries": [
+    {
+      "query": "001",
+      "city": "New York",
+      "kind": "category",
+      "overture_exact_source_groups": 21974,
+      "androidlm_exact_quantized_groups": 21102,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "002",
+      "city": "New York",
+      "kind": "distance",
+      "overture_exact_source_groups": 318428,
+      "androidlm_exact_quantized_groups": 63831,
+      "androidlm_category": null
+    },
+    {
+      "query": "004",
+      "city": "New York",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "006",
+      "city": "Los Angeles",
+      "kind": "category",
+      "overture_exact_source_groups": 6564,
+      "androidlm_exact_quantized_groups": 6284,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "007",
+      "city": "Los Angeles",
+      "kind": "distance",
+      "overture_exact_source_groups": 96763,
+      "androidlm_exact_quantized_groups": 18798,
+      "androidlm_category": null
+    },
+    {
+      "query": "009",
+      "city": "Los Angeles",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "011",
+      "city": "Mexico City",
+      "kind": "category",
+      "overture_exact_source_groups": 23317,
+      "androidlm_exact_quantized_groups": 21026,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "012",
+      "city": "Mexico City",
+      "kind": "distance",
+      "overture_exact_source_groups": 206093,
+      "androidlm_exact_quantized_groups": 52688,
+      "androidlm_category": null
+    },
+    {
+      "query": "014",
+      "city": "Mexico City",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "016",
+      "city": "Toronto",
+      "kind": "category",
+      "overture_exact_source_groups": 4965,
+      "androidlm_exact_quantized_groups": 4807,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "017",
+      "city": "Toronto",
+      "kind": "distance",
+      "overture_exact_source_groups": 69829,
+      "androidlm_exact_quantized_groups": 17028,
+      "androidlm_category": null
+    },
+    {
+      "query": "019",
+      "city": "Toronto",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "021",
+      "city": "London",
+      "kind": "category",
+      "overture_exact_source_groups": 15131,
+      "androidlm_exact_quantized_groups": 14755,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "022",
+      "city": "London",
+      "kind": "distance",
+      "overture_exact_source_groups": 230091,
+      "androidlm_exact_quantized_groups": 55866,
+      "androidlm_category": null
+    },
+    {
+      "query": "024",
+      "city": "London",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "026",
+      "city": "Paris",
+      "kind": "category",
+      "overture_exact_source_groups": 20396,
+      "androidlm_exact_quantized_groups": 20176,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "027",
+      "city": "Paris",
+      "kind": "distance",
+      "overture_exact_source_groups": 184787,
+      "androidlm_exact_quantized_groups": 56415,
+      "androidlm_category": null
+    },
+    {
+      "query": "029",
+      "city": "Paris",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "031",
+      "city": "Berlin",
+      "kind": "category",
+      "overture_exact_source_groups": 12175,
+      "androidlm_exact_quantized_groups": 10052,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "032",
+      "city": "Berlin",
+      "kind": "distance",
+      "overture_exact_source_groups": 209861,
+      "androidlm_exact_quantized_groups": 37040,
+      "androidlm_category": null
+    },
+    {
+      "query": "034",
+      "city": "Berlin",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "036",
+      "city": "Istanbul",
+      "kind": "category",
+      "overture_exact_source_groups": 12001,
+      "androidlm_exact_quantized_groups": 11542,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "037",
+      "city": "Istanbul",
+      "kind": "distance",
+      "overture_exact_source_groups": 175864,
+      "androidlm_exact_quantized_groups": 51261,
+      "androidlm_category": null
+    },
+    {
+      "query": "039",
+      "city": "Istanbul",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "041",
+      "city": "Cairo",
+      "kind": "category",
+      "overture_exact_source_groups": 3915,
+      "androidlm_exact_quantized_groups": 3643,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "042",
+      "city": "Cairo",
+      "kind": "distance",
+      "overture_exact_source_groups": 72776,
+      "androidlm_exact_quantized_groups": 15836,
+      "androidlm_category": null
+    },
+    {
+      "query": "044",
+      "city": "Cairo",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "046",
+      "city": "Lagos",
+      "kind": "category",
+      "overture_exact_source_groups": 552,
+      "androidlm_exact_quantized_groups": 489,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "047",
+      "city": "Lagos",
+      "kind": "distance",
+      "overture_exact_source_groups": 33338,
+      "androidlm_exact_quantized_groups": 3479,
+      "androidlm_category": null
+    },
+    {
+      "query": "049",
+      "city": "Lagos",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "051",
+      "city": "Nairobi",
+      "kind": "category",
+      "overture_exact_source_groups": 1471,
+      "androidlm_exact_quantized_groups": 1423,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "052",
+      "city": "Nairobi",
+      "kind": "distance",
+      "overture_exact_source_groups": 41574,
+      "androidlm_exact_quantized_groups": 7308,
+      "androidlm_category": null
+    },
+    {
+      "query": "054",
+      "city": "Nairobi",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "056",
+      "city": "Cape Town",
+      "kind": "category",
+      "overture_exact_source_groups": 1499,
+      "androidlm_exact_quantized_groups": 1391,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "057",
+      "city": "Cape Town",
+      "kind": "distance",
+      "overture_exact_source_groups": 26819,
+      "androidlm_exact_quantized_groups": 6277,
+      "androidlm_category": null
+    },
+    {
+      "query": "059",
+      "city": "Cape Town",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "061",
+      "city": "Mumbai",
+      "kind": "category",
+      "overture_exact_source_groups": 4816,
+      "androidlm_exact_quantized_groups": 4335,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "062",
+      "city": "Mumbai",
+      "kind": "distance",
+      "overture_exact_source_groups": 90041,
+      "androidlm_exact_quantized_groups": 20940,
+      "androidlm_category": null
+    },
+    {
+      "query": "064",
+      "city": "Mumbai",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "066",
+      "city": "Singapore",
+      "kind": "category",
+      "overture_exact_source_groups": 13702,
+      "androidlm_exact_quantized_groups": 12546,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "067",
+      "city": "Singapore",
+      "kind": "distance",
+      "overture_exact_source_groups": 108330,
+      "androidlm_exact_quantized_groups": 31643,
+      "androidlm_category": null
+    },
+    {
+      "query": "069",
+      "city": "Singapore",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "071",
+      "city": "Tokyo",
+      "kind": "category",
+      "overture_exact_source_groups": 63360,
+      "androidlm_exact_quantized_groups": 60363,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "072",
+      "city": "Tokyo",
+      "kind": "distance",
+      "overture_exact_source_groups": 278545,
+      "androidlm_exact_quantized_groups": 135131,
+      "androidlm_category": null
+    },
+    {
+      "query": "074",
+      "city": "Tokyo",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "076",
+      "city": "Seoul",
+      "kind": "category",
+      "overture_exact_source_groups": 30507,
+      "androidlm_exact_quantized_groups": 28136,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "077",
+      "city": "Seoul",
+      "kind": "distance",
+      "overture_exact_source_groups": 106252,
+      "androidlm_exact_quantized_groups": 57467,
+      "androidlm_category": null
+    },
+    {
+      "query": "079",
+      "city": "Seoul",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "081",
+      "city": "Sydney",
+      "kind": "category",
+      "overture_exact_source_groups": 6121,
+      "androidlm_exact_quantized_groups": 5936,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "082",
+      "city": "Sydney",
+      "kind": "distance",
+      "overture_exact_source_groups": 89548,
+      "androidlm_exact_quantized_groups": 20499,
+      "androidlm_category": null
+    },
+    {
+      "query": "084",
+      "city": "Sydney",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "086",
+      "city": "Auckland",
+      "kind": "category",
+      "overture_exact_source_groups": 2231,
+      "androidlm_exact_quantized_groups": 2144,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "087",
+      "city": "Auckland",
+      "kind": "distance",
+      "overture_exact_source_groups": 29593,
+      "androidlm_exact_quantized_groups": 7188,
+      "androidlm_category": null
+    },
+    {
+      "query": "089",
+      "city": "Auckland",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "091",
+      "city": "Sao Paulo",
+      "kind": "category",
+      "overture_exact_source_groups": 17085,
+      "androidlm_exact_quantized_groups": 15169,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "092",
+      "city": "Sao Paulo",
+      "kind": "distance",
+      "overture_exact_source_groups": 277907,
+      "androidlm_exact_quantized_groups": 55574,
+      "androidlm_category": null
+    },
+    {
+      "query": "094",
+      "city": "Sao Paulo",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "096",
+      "city": "Buenos Aires",
+      "kind": "category",
+      "overture_exact_source_groups": 6298,
+      "androidlm_exact_quantized_groups": 5455,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "097",
+      "city": "Buenos Aires",
+      "kind": "distance",
+      "overture_exact_source_groups": 102216,
+      "androidlm_exact_quantized_groups": 20798,
+      "androidlm_category": null
+    },
+    {
+      "query": "099",
+      "city": "Buenos Aires",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    }
+  ],
+  "frozen_sha256": "1715a53894d06d4f50d377e96a9aa01e8fb396b1185f4ebe7cd030abfed8501e",
+  "baseline_latitude_grid_rows_outside_one_cell_tolerance": 0,
+  "seconds": 130.7620918750763,
+  "scope": "independent data-only coverage queries; native coordinate precision; no application latency claim"
+}

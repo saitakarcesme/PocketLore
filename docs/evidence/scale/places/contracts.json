@@ -1,0 +1,77 @@
+{
+  "scope": "LLMRig staging only; no Android installation or rival acceptance",
+  "source_contracts": {
+    "Overture": {
+      "release": "2026-09-23.1",
+      "format": "GeoParquet 1.1; 16 official objects",
+      "object_list": "overture-objects.json",
+      "identity": "GERS UUID; original provider record IDs, property provenance, licenses and versions retained",
+      "eligibility": "all named valid point records with a UUID; no country or confidence cutoff",
+      "dedup": "distinct source IDs and exact normalized name/coordinate/category groups; near-duplicate identity remains unresolved",
+      "live_status": "unknown; operating_status is a dated source snapshot",
+      "rights": "per-source CDLA-Permissive-2.0, Apache-2.0, CC0 or unknown as recorded; distribution review pending",
+      "coordinate_accuracy": "source-provided WKB point; finite/range validity checked; real-world accuracy not independently established",
+      "audit_entity_key": "128-bit prefix of SHA-256 over normalized name, exact float hex coordinates and category; source ID set comparison is exact over UUID bytes; semantic uniqueness unknown",
+      "normalization": "Unicode NFKC, case folding, whitespace collapse; original names remain unchanged in record JSON"
+    },
+    "OpenStreetMap": {
+      "planet": "planet-260921.osm.pbf",
+      "planet_bytes": 94983340321,
+      "selection": "every node, way and relation with diet:vegan, diet:vegetarian or opening_hours",
+      "geometry": "exact source node coordinates; complete-way referenced-node bounding-box centers with explicit antimeridian wrap metadata; relation coordinates unknown and retained",
+      "identity": "object type, integer ID, version, timestamp and pinned snapshot hash",
+      "semantics": "yes/only tags qualify dietary search; absent tags are unknown; hours strings are never evaluated as live opening status",
+      "rights": "OpenStreetMap contributors, ODbL-1.0; separate database; distribution obligations remain",
+      "raw_codec": "Selected schema 2: zlib UTF-8 JSON arrays [latitude,longitude,complete original source object]; shared planet hash in snapshot/metadata; preserved row-format derivation evidence remains outside installed assets"
+    },
+    "GeoNames": {
+      "file": "cities500.zip",
+      "acquired_date": "2026-10-01",
+      "upstream_release_date": null,
+      "identity": "GeoNames integer ID plus exact downloaded SHA-256 and per-record modified date",
+      "selection": "every cities500 row and supplied aliases; not every settlement",
+      "semantics": "ambiguous aliases retain multiple cities; source localities do not imply administrative containment",
+      "rights": "GeoNames, CC-BY-4.0",
+      "provenance_location": "original row and modified date in city table; acquisition hash/date/license in accompanying immutable report and source receipt",
+      "alias_query_limit": "up to 100 candidates sorted by population, with all rows retained in the asset"
+    },
+    "Wikivoyage": {
+      "official_dump": "enwikivoyage-20260901-pages-articles.xml.bz2",
+      "format": "full pages-articles XML, all namespaces, original compressed wikitext",
+      "identity": "page ID, revision ID, timestamp, original SHA1 and pinned dump SHA-256",
+      "listings": "literal listing templates with nested-field handling, original template retained; no template execution",
+      "supplement": "full English 2026-09 Kiwix ZIM reused read-only; original compressed HTML retained; missing revision/license fields stay unknown",
+      "counts": "listing occurrences are not unique places; XML and ZIM overlap and are not added as independent coverage",
+      "rights": "Wikivoyage contributors, CC-BY-SA-4.0 with revision/history links and page-specific exceptions; no inferred media rights",
+      "retention": "official full XML database primary; ZIM-derived database optional measured staging supplement; no counts summed"
+    }
+  },
+  "reader_contract": {
+    "schema": 2,
+    "places": "16 standard SQLite shards: metadata, block, grid, category, city, rejected; 0.1-degree grid; exact WGS84 point doubles",
+    "source_details": "zlib UTF-8 JSON arrays [1-based original ordinal,latitude,longitude,normalized name,full original nongeometry record]; block SHA-256 verified",
+    "query_bounds": "0 < radius km <= 100; limit 1..100; exact Haversine; antimeridian and poles; source snapshot only",
+    "python": "compact_search.py, enrich.py, catalog.py; multi-shard exact grouping, city aliases and separate explicit-tag dietary search",
+    "android": "CompactPlaces.java per-shard radius/category/source and OsmPlaces.java explicit dietary radius/source readers; API35 compilation only; no app integration, multi-shard runtime or physical acceptance",
+    "max_compressed_block_bytes": 1048576,
+    "max_inflated_block_bytes": 33554432,
+    "admission": "verify sealed file hashes, storage and actual phone resources before read-only use",
+    "legacy": "schema1 row staging and OfflinePlaces.java retained as historical measured budget failure",
+    "group_conflicts": "compact_search.group_sources and Catalog.source_variants yield every retained exact-group variant, including conflicting fields",
+    "osm_enrichment": "Catalog.nearby attaches all exact-normalized-name candidates within 50m with unconfirmed identity labels; explicit dietary search uses separate OSM source objects",
+    "travel_source_bound_bytes": 16777216,
+    "travel": "exact title/revision lookup, full original wikitext, and bounded literal-coordinate nearby listings; no template expansion or unique-place inference",
+    "osm": "osm-compact.sqlite: metadata, snapshot, block(id,records,payload,sha256), osm(type,id,name_key,lat,lon,vegan,vegetarian,block,slot); type/id primary key; partial name/spatial and positive-diet spatial indexes; full source JSON retains tags, references and version/timestamp"
+  },
+  "limits": {
+    "compute_threads": 2,
+    "parallel_http": 2,
+    "streaming_batch_max_bytes": 2147483648,
+    "arrow_batch_rows": 2048,
+    "gpu": false,
+    "per_record_llm_calls": 0,
+    "places_provisional_budget_bytes": 4000000000,
+    "travel_specialty_provisional_aggregate_bytes": 3000000000,
+    "phone_measurements": false
+  }
+}

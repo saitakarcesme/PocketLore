@@ -1,0 +1,691 @@
+{
+  "baseline": {
+    "rows": 21132716,
+    "distinct_local_primary_ids": 21132716,
+    "exact_normalized_name_quantized_coordinate_kind_groups": 21132709,
+    "nonempty_field_counts": {
+      "name": 21132716,
+      "street": 18447150,
+      "locality": 20111364,
+      "phone": 15938071,
+      "website": 10580874,
+      "hours": 279264,
+      "cuisine": 101564,
+      "wiki": 57781,
+      "alt": 277404
+    },
+    "nonzero_diet_bitmask": 130308,
+    "kinds": 434,
+    "cities": 171075,
+    "city_names": 336746,
+    "guide_listing_rows": 132361,
+    "metadata": {
+      "attribution": "(c) OpenStreetMap contributors; Overture Maps Foundation; GeoNames; Wikivoyage",
+      "built": "2026-09-28",
+      "cell_deg": "0.05",
+      "format": "4",
+      "license": "ODbL-1.0",
+      "sources": "Overture Maps places 2026-09-23.1 (CDLA-Permissive-2.0; Foursquare records Apache-2.0; AllThePlaces CC0-1.0); OpenStreetMap diet-tagged places (ODbL 1.0); GeoNames cities1000 (CC BY 4.0); Wikivoyage listing names (voyage.db); English Wikipedia article titles and Wikimedia pageviews (wiki.db)"
+    },
+    "receipt": {
+      "url": "https://huggingface.co/datasets/rammingaway/androidlm-places/resolve/abdab1a4b08edf5bbdb09accc5ecd25aa2adbc3a/places.db",
+      "revision": "abdab1a4b08edf5bbdb09accc5ecd25aa2adbc3a",
+      "upstream_last_modified": "2026-09-29T02:05:43.000Z",
+      "bytes": 2900869120,
+      "sha256": "0323f51cb99b7b7bf9288a3558371978178f88b2f2afb372b66b6c6f469746d7",
+      "official_lfs_sha256_matched": true,
+      "retrieved_utc": "2026-10-01T11:30:36Z",
+      "seconds": 140.04893922805786,
+      "license": "ODbL-1.0; see exact dataset card",
+      "use": "comparison only; no rival source code copied or run"
+    },
+    "seconds": 82.70174217224121
+  },
+  "common_field_presence": [
+    {
+      "field": "name",
+      "overture_count": 81455423,
+      "overture_fraction": 1.0,
+      "androidlm_count": 21132716,
+      "androidlm_fraction": 1.0,
+      "interpretation": "literal nonempty presence across different retained populations; not correctness or identical source semantics"
+    },
+    {
+      "field": "source locality",
+      "overture_count": 80073391,
+      "overture_fraction": 0.9830332720756971,
+      "androidlm_count": 20111364,
+      "androidlm_fraction": 0.9516696292137745,
+      "interpretation": "literal nonempty presence across different retained populations; not correctness or identical source semantics"
+    },
+    {
+      "field": "phone presence",
+      "overture_count": 66691382,
+      "overture_fraction": 0.8187469850840993,
+      "androidlm_count": 15938071,
+      "androidlm_fraction": 0.7541894283725764,
+      "interpretation": "literal nonempty presence across different retained populations; not correctness or identical source semantics"
+    },
+    {
+      "field": "website presence",
+      "overture_count": 46435336,
+      "overture_fraction": 0.5700705280236529,
+      "androidlm_count": 10580874,
+      "androidlm_fraction": 0.500686897036803,
+      "interpretation": "literal nonempty presence across different retained populations; not correctness or identical source semantics"
+    }
+  ],
+  "pocketlore": {
+    "eligible_records": 81455423,
+    "global_unique_ids": 81455423,
+    "global_exact_entities": 81430561,
+    "category_filled": 78624303,
+    "city_filled": 80073391,
+    "country_filled": 81452164,
+    "snapshot_status_filled": 19340838,
+    "bytes": 16817700864
+  },
+  "overture_original_field_fill": {
+    "source_objects": 16,
+    "raw_records": 81455423,
+    "field_fill": {
+      "id": 81455423,
+      "names.primary": 81455423,
+      "confidence": 81455423,
+      "basic_category": 78624303,
+      "taxonomy.primary": 78517770,
+      "operating_status": 19340838
+    },
+    "nonempty_list_fields": {
+      "websites": 46435336,
+      "phones": 66691382,
+      "emails": 30459031,
+      "socials": 60159061
+    },
+    "field_fill_definition": "non-null confidence; non-null and nonempty strings; source validity not inferred",
+    "provider_license_entries": [
+      {
+        "dataset": "AllThePlaces",
+        "license": "CC0-1.0",
+        "source_entries": 1809219
+      },
+      {
+        "dataset": "BrightQuery",
+        "license": "CDLA-Permissive-2.0",
+        "source_entries": 10255071
+      },
+      {
+        "dataset": "DAC",
+        "license": "CDLA-Permissive-2.0",
+        "source_entries": 148791
+      },
+      {
+        "dataset": "Foursquare",
+        "license": "Apache-2.0",
+        "source_entries": 4138835
+      },
+      {
+        "dataset": "Krick",
+        "license": "CDLA-Permissive-2.0",
+        "source_entries": 13501
+      },
+      {
+        "dataset": "Microsoft",
+        "license": "CDLA-Permissive-2.0",
+        "source_entries": 6135466
+      },
+      {
+        "dataset": "Overture",
+        "license": "CDLA-Permissive-2.0",
+        "source_entries": 81455423
+      },
+      {
+        "dataset": "Overture-signals",
+        "license": "CDLA-Permissive-2.0",
+        "source_entries": 10583924
+      },
+      {
+        "dataset": "PinMeTo",
+        "license": "CDLA-Permissive-2.0",
+        "source_entries": 167667
+      },
+      {
+        "dataset": "RenderSEO",
+        "license": "CDLA-Permissive-2.0",
+        "source_entries": 3752
+      },
+      {
+        "dataset": "meta",
+        "license": "CDLA-Permissive-2.0",
+        "source_entries": 58783121
+      }
+    ],
+    "records_with_no_sources": 0,
+    "records_with_unknown_source_license": 0,
+    "max_original_record_json_utf8_bytes": 9586,
+    "license_interpretation": "literal upstream values; unknown rights remain unknown; not distribution clearance",
+    "seconds": 707.2703237533569
+  },
+  "osm_separate_field_fill": {
+    "source_sha256": "bbfc6b4cadaf86e854fcae040e1db709f837f2f1e91c527139391edf661e60ed",
+    "source": "/home/isa/PocketLore-control/scale-workers/places/data/planet-260921.osm.pbf",
+    "snapshot_timestamp": "2026-09-21T00:00:03Z",
+    "records": 4870526,
+    "types": {
+      "node": 3796716,
+      "relation": 80932,
+      "way": 992878
+    },
+    "located_nodes": 3796716,
+    "vegan_filled": 67246,
+    "vegetarian_filled": 117162,
+    "hours_filled": 4833719,
+    "all_planet_tags_processed": true,
+    "raw_codec": "zlib UTF-8 JSON",
+    "max_raw_object_bytes": 124846,
+    "way_relation_geometry": "unknown; original node/member references retained for later geometry resolution",
+    "license": "ODbL-1.0",
+    "attribution": "OpenStreetMap contributors",
+    "decoder_threads": 1,
+    "decoder_queue": 2,
+    "coordinate_enrichment_complete": false,
+    "bytes": 3557937152,
+    "sha256": "74be8e6952ff4053ee0b8898b9a9c97cf54a870c0a047468465e40a5a0a60d84",
+    "seconds": 1725.0361740589142,
+    "max_rss_KiB": 724764
+  },
+  "frozen_city_queries": [
+    {
+      "query": "001",
+      "city": "New York",
+      "kind": "category",
+      "overture_exact_source_groups": 21974,
+      "androidlm_exact_quantized_groups": 21102,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "002",
+      "city": "New York",
+      "kind": "distance",
+      "overture_exact_source_groups": 318428,
+      "androidlm_exact_quantized_groups": 63831,
+      "androidlm_category": null
+    },
+    {
+      "query": "004",
+      "city": "New York",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "006",
+      "city": "Los Angeles",
+      "kind": "category",
+      "overture_exact_source_groups": 6564,
+      "androidlm_exact_quantized_groups": 6284,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "007",
+      "city": "Los Angeles",
+      "kind": "distance",
+      "overture_exact_source_groups": 96763,
+      "androidlm_exact_quantized_groups": 18798,
+      "androidlm_category": null
+    },
+    {
+      "query": "009",
+      "city": "Los Angeles",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "011",
+      "city": "Mexico City",
+      "kind": "category",
+      "overture_exact_source_groups": 23317,
+      "androidlm_exact_quantized_groups": 21026,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "012",
+      "city": "Mexico City",
+      "kind": "distance",
+      "overture_exact_source_groups": 206093,
+      "androidlm_exact_quantized_groups": 52688,
+      "androidlm_category": null
+    },
+    {
+      "query": "014",
+      "city": "Mexico City",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "016",
+      "city": "Toronto",
+      "kind": "category",
+      "overture_exact_source_groups": 4965,
+      "androidlm_exact_quantized_groups": 4807,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "017",
+      "city": "Toronto",
+      "kind": "distance",
+      "overture_exact_source_groups": 69829,
+      "androidlm_exact_quantized_groups": 17028,
+      "androidlm_category": null
+    },
+    {
+      "query": "019",
+      "city": "Toronto",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "021",
+      "city": "London",
+      "kind": "category",
+      "overture_exact_source_groups": 15131,
+      "androidlm_exact_quantized_groups": 14755,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "022",
+      "city": "London",
+      "kind": "distance",
+      "overture_exact_source_groups": 230091,
+      "androidlm_exact_quantized_groups": 55866,
+      "androidlm_category": null
+    },
+    {
+      "query": "024",
+      "city": "London",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "026",
+      "city": "Paris",
+      "kind": "category",
+      "overture_exact_source_groups": 20396,
+      "androidlm_exact_quantized_groups": 20176,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "027",
+      "city": "Paris",
+      "kind": "distance",
+      "overture_exact_source_groups": 184787,
+      "androidlm_exact_quantized_groups": 56415,
+      "androidlm_category": null
+    },
+    {
+      "query": "029",
+      "city": "Paris",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "031",
+      "city": "Berlin",
+      "kind": "category",
+      "overture_exact_source_groups": 12175,
+      "androidlm_exact_quantized_groups": 10052,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "032",
+      "city": "Berlin",
+      "kind": "distance",
+      "overture_exact_source_groups": 209861,
+      "androidlm_exact_quantized_groups": 37040,
+      "androidlm_category": null
+    },
+    {
+      "query": "034",
+      "city": "Berlin",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "036",
+      "city": "Istanbul",
+      "kind": "category",
+      "overture_exact_source_groups": 12001,
+      "androidlm_exact_quantized_groups": 11542,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "037",
+      "city": "Istanbul",
+      "kind": "distance",
+      "overture_exact_source_groups": 175864,
+      "androidlm_exact_quantized_groups": 51261,
+      "androidlm_category": null
+    },
+    {
+      "query": "039",
+      "city": "Istanbul",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "041",
+      "city": "Cairo",
+      "kind": "category",
+      "overture_exact_source_groups": 3915,
+      "androidlm_exact_quantized_groups": 3643,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "042",
+      "city": "Cairo",
+      "kind": "distance",
+      "overture_exact_source_groups": 72776,
+      "androidlm_exact_quantized_groups": 15836,
+      "androidlm_category": null
+    },
+    {
+      "query": "044",
+      "city": "Cairo",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "046",
+      "city": "Lagos",
+      "kind": "category",
+      "overture_exact_source_groups": 552,
+      "androidlm_exact_quantized_groups": 489,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "047",
+      "city": "Lagos",
+      "kind": "distance",
+      "overture_exact_source_groups": 33338,
+      "androidlm_exact_quantized_groups": 3479,
+      "androidlm_category": null
+    },
+    {
+      "query": "049",
+      "city": "Lagos",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "051",
+      "city": "Nairobi",
+      "kind": "category",
+      "overture_exact_source_groups": 1471,
+      "androidlm_exact_quantized_groups": 1423,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "052",
+      "city": "Nairobi",
+      "kind": "distance",
+      "overture_exact_source_groups": 41574,
+      "androidlm_exact_quantized_groups": 7308,
+      "androidlm_category": null
+    },
+    {
+      "query": "054",
+      "city": "Nairobi",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "056",
+      "city": "Cape Town",
+      "kind": "category",
+      "overture_exact_source_groups": 1499,
+      "androidlm_exact_quantized_groups": 1391,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "057",
+      "city": "Cape Town",
+      "kind": "distance",
+      "overture_exact_source_groups": 26819,
+      "androidlm_exact_quantized_groups": 6277,
+      "androidlm_category": null
+    },
+    {
+      "query": "059",
+      "city": "Cape Town",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "061",
+      "city": "Mumbai",
+      "kind": "category",
+      "overture_exact_source_groups": 4816,
+      "androidlm_exact_quantized_groups": 4335,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "062",
+      "city": "Mumbai",
+      "kind": "distance",
+      "overture_exact_source_groups": 90041,
+      "androidlm_exact_quantized_groups": 20940,
+      "androidlm_category": null
+    },
+    {
+      "query": "064",
+      "city": "Mumbai",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "066",
+      "city": "Singapore",
+      "kind": "category",
+      "overture_exact_source_groups": 13702,
+      "androidlm_exact_quantized_groups": 12546,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "067",
+      "city": "Singapore",
+      "kind": "distance",
+      "overture_exact_source_groups": 108330,
+      "androidlm_exact_quantized_groups": 31643,
+      "androidlm_category": null
+    },
+    {
+      "query": "069",
+      "city": "Singapore",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "071",
+      "city": "Tokyo",
+      "kind": "category",
+      "overture_exact_source_groups": 63360,
+      "androidlm_exact_quantized_groups": 60363,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "072",
+      "city": "Tokyo",
+      "kind": "distance",
+      "overture_exact_source_groups": 278545,
+      "androidlm_exact_quantized_groups": 135131,
+      "androidlm_category": null
+    },
+    {
+      "query": "074",
+      "city": "Tokyo",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "076",
+      "city": "Seoul",
+      "kind": "category",
+      "overture_exact_source_groups": 30507,
+      "androidlm_exact_quantized_groups": 28136,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "077",
+      "city": "Seoul",
+      "kind": "distance",
+      "overture_exact_source_groups": 106252,
+      "androidlm_exact_quantized_groups": 57467,
+      "androidlm_category": null
+    },
+    {
+      "query": "079",
+      "city": "Seoul",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "081",
+      "city": "Sydney",
+      "kind": "category",
+      "overture_exact_source_groups": 6121,
+      "androidlm_exact_quantized_groups": 5936,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "082",
+      "city": "Sydney",
+      "kind": "distance",
+      "overture_exact_source_groups": 89548,
+      "androidlm_exact_quantized_groups": 20499,
+      "androidlm_category": null
+    },
+    {
+      "query": "084",
+      "city": "Sydney",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "086",
+      "city": "Auckland",
+      "kind": "category",
+      "overture_exact_source_groups": 2231,
+      "androidlm_exact_quantized_groups": 2144,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "087",
+      "city": "Auckland",
+      "kind": "distance",
+      "overture_exact_source_groups": 29593,
+      "androidlm_exact_quantized_groups": 7188,
+      "androidlm_category": null
+    },
+    {
+      "query": "089",
+      "city": "Auckland",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "091",
+      "city": "Sao Paulo",
+      "kind": "category",
+      "overture_exact_source_groups": 17085,
+      "androidlm_exact_quantized_groups": 15169,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "092",
+      "city": "Sao Paulo",
+      "kind": "distance",
+      "overture_exact_source_groups": 277907,
+      "androidlm_exact_quantized_groups": 55574,
+      "androidlm_category": null
+    },
+    {
+      "query": "094",
+      "city": "Sao Paulo",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    },
+    {
+      "query": "096",
+      "city": "Buenos Aires",
+      "kind": "category",
+      "overture_exact_source_groups": 6298,
+      "androidlm_exact_quantized_groups": 5455,
+      "androidlm_category": "restaurant"
+    },
+    {
+      "query": "097",
+      "city": "Buenos Aires",
+      "kind": "distance",
+      "overture_exact_source_groups": 102216,
+      "androidlm_exact_quantized_groups": 20798,
+      "androidlm_category": null
+    },
+    {
+      "query": "099",
+      "city": "Buenos Aires",
+      "kind": "absence",
+      "overture_exact_source_groups": 0,
+      "androidlm_exact_quantized_groups": 0,
+      "androidlm_category": null
+    }
+  ],
+  "source_release_both": "2026-09-23.1",
+  "comparison_semantics": [
+    "AndroidLM filters categories/confidence/status and merges spatial near matches, as documented by its pinned dataset card; this lane preserves all eligible global Overture records and separates OSM.",
+    "Local baseline row IDs are not original GERS IDs; baseline has rounded coordinates. Exact groups use each format's native precision and are not proven real-world entities.",
+    "Diet bitmask nonzero is measured literally; its bit semantics are not guessed. Explicit OSM vegan yes/only results are reported separately.",
+    "Coverage counts use exact Haversine and frozen query inputs; baseline latitude grid row formula was validated over every row with one-cell rounding tolerance.",
+    "No baseline application code was copied or executed; SQL scans are coverage measurements, not comparable application latency or answer-quality tests."
+  ],
+  "field_fill_definition": "non-null and nonempty strings; nonzero diet flags reported separately without semantic interpretation",
+  "baseline_original_record_provenance": "source-family flags and dataset meta present; original GERS/provider IDs not present in places schema",
+  "competitive_acceptance": false,
+  "seconds": 0.0010738372802734375
+}

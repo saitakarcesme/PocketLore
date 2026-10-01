@@ -1,0 +1,8 @@
+{
+  "sha256": "2ec7227e63566f9cd3e5ea79b54c0bc66a20e5e11e2ec74a1789d22a899035b4",
+  "queries": 16,
+  "source_shard": "000_00000.parquet",
+  "source_selection": "Observed stored views ascending, page ID descending, first 16 canonical records; all stored values 1",
+  "source_fidelity": "Each expectation binds original source row, revision, date, URL, original full text hash and inspected lead excerpt",
+  "limitation": "Single-shard low-count proxy slice, not random human acceptance or holdout; aggregation period unknown"
+}

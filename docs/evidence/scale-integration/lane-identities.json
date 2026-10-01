@@ -1,0 +1,38 @@
+[
+  {
+    "lane": "wiki",
+    "commit": "db58d7015b176b2f4721a9fe9a221c9593456e14",
+    "tree": "60ce0c633c004b62354639d2882f67469b2814f7",
+    "base": "9f064df6f472a56dddf15e86d12f5d2c6a14f7e1",
+    "handoff_sha256": "eda8f03112c9e6e042aea29b23762e6c78963e40f7a028f0ca314db7c48c41fc",
+    "stale_launcher_review": {
+      "decision": "rework",
+      "visible_result": "diff.patch is empty, leaving no reviewable implementation changes to substantiate the handoff\u2019s claims of complete bulk processing, source fidelity, and attribution preservation."
+    },
+    "scope": "Actual source review; staging and interfaces only, not distribution or product acceptance"
+  },
+  {
+    "lane": "places",
+    "commit": "9a04ac33488a05f61435d62f8be249fd7fe135af",
+    "tree": "649d0b9e097cdabf5bea14065913f037de655b01",
+    "base": "9f064df6f472a56dddf15e86d12f5d2c6a14f7e1",
+    "handoff_sha256": "b914e9109dfd563c6d197f703bd6c8784acca931e2c81d8797ac32e7db0a0a48",
+    "stale_launcher_review": {
+      "decision": "rework",
+      "visible_result": "The patch is empty, and the handoff reports 16.82GB against a provisional 4GB budget while leaving semantic uniqueness and comparable AndroidLM coverage and field-fill evidence unresolved."
+    },
+    "scope": "Actual source review; staging and interfaces only, not distribution or product acceptance"
+  },
+  {
+    "lane": "android",
+    "commit": "13b686c0a386921fb35d4b3d0c27f1168b6da3e0",
+    "tree": "4b82de8e3a5be66018152edf466ce72abf507901",
+    "base": "9f064df6f472a56dddf15e86d12f5d2c6a14f7e1",
+    "handoff_sha256": "538a2d1642a8dd0c5b8e9806f419963399a413e958899160650d6aa8bf47f9b4",
+    "stale_launcher_review": {
+      "decision": "rework",
+      "visible_result": "diff.patch is empty, so the handoff\u2019s build claims cannot establish implementation of the required Android flows, lazy readers, or measured model-profile admission."
+    },
+    "scope": "Actual source review; staging and interfaces only, not distribution or product acceptance"
+  }
+]

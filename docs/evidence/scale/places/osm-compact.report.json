@@ -1,0 +1,20 @@
+{
+  "schema_version": 2,
+  "snapshot_sha256": "bbfc6b4cadaf86e854fcae040e1db709f837f2f1e91c527139391edf661e60ed",
+  "source_sqlite_sha256": "3336d25ded73560d8f4226c1baa8c634305ed9372c13a3d4c1cb7eeb8f1c204f",
+  "source_sqlite": "/home/isa/PocketLore-control/scale-workers/places/data/osm-geometry.sqlite",
+  "raw_codec": "zlib JSON arrays [latitude,longitude,complete source object]",
+  "max_inflated_block_bytes": 33554432,
+  "max_compressed_block_bytes": 1048576,
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "records": 4870526,
+  "blocks": 4757,
+  "max_actual_inflated_block_bytes": 6772582,
+  "max_actual_compressed_block_bytes": 797819,
+  "bytes": 1415372800,
+  "sha256": "3db70e2f97c3614658c62ade41101679f5fd74e86d62c03d91049f583cf75932",
+  "seconds": 121.63512182235718,
+  "max_rss_KiB": 226964,
+  "field_or_row_pruning": false
+}

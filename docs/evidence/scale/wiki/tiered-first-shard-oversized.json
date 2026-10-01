@@ -1,0 +1,32 @@
+{
+  "source_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+  "source_rows": 421456,
+  "counts": {
+    "source_rows": 421456,
+    "lead": 284626,
+    "lead_compressed_bytes": 395934023,
+    "lead_text_bytes": 139213264,
+    "raw_payload_bytes": 3996428581,
+    "compressed_payload_bytes": 1342156491,
+    "retained_text_bytes": 1803617788,
+    "wikitext_bytes": 1723119135,
+    "wikitext_archive_only": 310722,
+    "math_articles": 2440,
+    "dataset_license_only_unreviewed": 355753,
+    "full": 128525,
+    "full_compressed_bytes": 946222468,
+    "full_text_bytes": 1664404524,
+    "wikitext_complete": 102429,
+    "notice_candidate_raw_preserved": 57398,
+    "excluded": 8305
+  },
+  "seconds": 1661.01096275499,
+  "peak_rss_kib": 1626176,
+  "max_arrow_batch_bytes": 24765048,
+  "sqlite_integrity": "ok",
+  "platform": "LLMRig Linux host staging, not Android",
+  "installed_bytes": 2246999755,
+  "sqlite_version": "3.53.1",
+  "arrow_version": "25.0.1",
+  "source_complete": true
+}

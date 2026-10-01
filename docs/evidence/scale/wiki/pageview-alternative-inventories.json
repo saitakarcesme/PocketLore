@@ -1,0 +1,275 @@
+{
+  "rammingaway/androidlm-corpus": {
+    "_id": "6ab1dbd06b879d7f0f9d1af0",
+    "id": "rammingaway/androidlm-corpus",
+    "author": "rammingaway",
+    "sha": "268fd1b8c447fbfdd2e1a5b921cae7e113264393",
+    "lastModified": "2026-09-25T19:24:46.000Z",
+    "private": false,
+    "gated": false,
+    "disabled": false,
+    "tags": [
+      "language:en",
+      "license:cc-by-sa-4.0",
+      "size_categories:1M<n<10M",
+      "region:us"
+    ],
+    "description": "\n\t\n\t\t\n\t\n\t\n\t\tAndroidLM offline corpus\n\t\n\nSQLite databases used by AndroidLM, an offline research\nassistant for Android. They are ordinary SQLite files (rollback-journal mode, FTS5) and can be\nopened read-only with any SQLite build that includes FTS5.\n\n\t\n\t\t\nFile\nSize\nContents\n\n\n\t\t\nwiki.db\n21.3GB\nEnglish Wikipedia from the FineWiki extraction (August 2025 HTML dump): 6.05M articles, the 1.87M most-read in full and lead sections for the rest; 38.9M passages of which 31.9M are in a BM25 full-text\u2026 See the full description on the dataset page: https://huggingface.co/datasets/rammingaway/androidlm-corpus.",
+    "downloads": 55,
+    "likes": 0,
+    "cardData": {
+      "license": "cc-by-sa-4.0",
+      "language": [
+        "en"
+      ],
+      "pretty_name": "AndroidLM offline corpus (English Wikipedia + Wikivoyage, SQLite FTS5)",
+      "size_categories": [
+        "1M<n<10M"
+      ]
+    },
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "voyage.db"
+      },
+      {
+        "rfilename": "wiki.db"
+      },
+      {
+        "rfilename": "wiki_df.db"
+      }
+    ],
+    "createdAt": "2026-09-22T01:37:20.000Z",
+    "usedStorage": 21645455360
+  },
+  "neuml/wikipedia-20250620": {
+    "_id": "6866a6f4592218017c0f2f6f",
+    "id": "NeuML/wikipedia-20250620",
+    "author": "NeuML",
+    "sha": "b5559579fdfbd52faef3c2d68372161b6c06c790",
+    "lastModified": "2025-07-03T16:23:47.000Z",
+    "private": false,
+    "gated": false,
+    "disabled": false,
+    "tags": [
+      "annotations_creators:no-annotation",
+      "language_creators:found",
+      "multilinguality:monolingual",
+      "language:en",
+      "license:cc-by-sa-3.0",
+      "license:gfdl",
+      "size_categories:1M<n<10M",
+      "format:arrow",
+      "modality:text",
+      "library:datasets",
+      "library:mlcroissant",
+      "region:us",
+      "pretraining",
+      "language modelling",
+      "wikipedia",
+      "web"
+    ],
+    "description": "\n\t\n\t\t\n\t\n\t\n\t\tDataset Card for Wikipedia English June 2025\n\t\n\nDataset created using this repo with a June 2025 Wikipedia snapshot.\nThis repo also has a precomputed pageviews database. This database has the aggregated number of views for each page in Wikipedia. This file is built using the Wikipedia Pageview complete dumps\n",
+    "downloads": 62,
+    "likes": 3,
+    "cardData": {
+      "annotations_creators": [
+        "no-annotation"
+      ],
+      "language": [
+        "en"
+      ],
+      "language_creators": [
+        "found"
+      ],
+      "license": [
+        "cc-by-sa-3.0",
+        "gfdl"
+      ],
+      "multilinguality": [
+        "monolingual"
+      ],
+      "pretty_name": "Wikipedia English June 2025",
+      "size_categories": [
+        "1M<n<10M"
+      ],
+      "source_datasets": [],
+      "tags": [
+        "pretraining",
+        "language modelling",
+        "wikipedia",
+        "web"
+      ],
+      "task_categories": [],
+      "task_ids": []
+    },
+    "siblings": [
+      {
+        "rfilename": ".gitattributes"
+      },
+      {
+        "rfilename": "README.md"
+      },
+      {
+        "rfilename": "dataset_dict.json"
+      },
+      {
+        "rfilename": "pageviews.sqlite"
+      },
+      {
+        "rfilename": "train/data-00000-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00001-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00002-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00003-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00004-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00005-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00006-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00007-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00008-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00009-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00010-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00011-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00012-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00013-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00014-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00015-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00016-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00017-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00018-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00019-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00020-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00021-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00022-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00023-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00024-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00025-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00026-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00027-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00028-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00029-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00030-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00031-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00032-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00033-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00034-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00035-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00036-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00037-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00038-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00039-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00040-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00041-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00042-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00043-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00044-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00045-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/data-00046-of-00047.arrow"
+      },
+      {
+        "rfilename": "train/dataset_info.json"
+      },
+      {
+        "rfilename": "train/state.json"
+      }
+    ],
+    "createdAt": "2025-07-03T15:51:16.000Z",
+    "usedStorage": 27826261224
+  }
+}

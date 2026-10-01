@@ -1,0 +1,6 @@
+{
+  "exit_code": 0,
+  "stdout": "{\n  \"schema\": 2,\n  \"source\": \"/home/isa/PocketLore-control/scale-workers/wiki/receipts/alias-normalization-fixture/source.sqlite\",\n  \"source_sha256\": \"2bdbd3d7d775491f8df05fd5f202e395ff8d1e439db04ca67b6bd154c88a9a8a\",\n  \"source_bytes\": 8192,\n  \"bytes\": 20480,\n  \"sha256\": \"79d1077660a18498b64c758a3d21830bfdf2bbd5878bfd93092906b62a9bda71\",\n  \"aliases\": 3,\n  \"logical_row_mismatches\": 0,\n  \"sqlite_integrity\": \"ok\",\n  \"seconds\": 0.031231753004249185,\n  \"peak_rss_kib\": 20084,\n  \"change\": \"Repeated shard filename replaced with integer reference; no alias, target, fragment or source facts removed\"\n}\n",
+  "stderr": "",
+  "scope": "Synthetic alias tuples exercising exact row reconstruction and numeric shard references, not source claims"
+}

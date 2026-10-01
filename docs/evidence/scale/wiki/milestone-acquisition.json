@@ -1,0 +1,40 @@
+{
+  "phase": "first_complete_source_shard_acquired",
+  "time": "2026-10-01T09:24:38.283046+00:00",
+  "commit": "951dcab98dede339e270cdad794d4b8576489fe6",
+  "source_revision": "8bd13e72e6a002407649b3e898535f42ceb1aeb9",
+  "completed_acquired_shards": 5,
+  "first_shard_rows": 421456,
+  "artifacts": [
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00000.parquet",
+      "bytes": 2510037970,
+      "sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00001.parquet",
+      "bytes": 2559070630,
+      "sha256": "eb29c5b3d23010c17f225a9a6370049afa90b168f3d70744e5e015729455cb55"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00002.parquet",
+      "bytes": 2538629269,
+      "sha256": "b98a10ff8a3f21291e4174564a5cbe186eab66fcca9c53c0920d182f718c5b9a"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00003.parquet",
+      "bytes": 2650496988,
+      "sha256": "b8a6177f9c2135ab5182a95f33ada8a14d251eeaa052b006ab0f19fd2f24fd2d"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00004.parquet",
+      "bytes": 2534066622,
+      "sha256": "4540721a38ac4ff620b5c4bb44fa3050d5883518c8823204371c0709890e5d78"
+    }
+  ],
+  "checks": {
+    "sha256": "verified by acquisition against inventory LFS SHA-256",
+    "parquet_first_shard": "schema and all rows scanned"
+  },
+  "limits": "Acquisition milestone only; indexed shard build running; no Android or release acceptance"
+}

@@ -1,0 +1,38 @@
+{
+  "command": [
+    "/home/isa/Android/atlas-toolchain/jdk/bin/javac",
+    "-J-XX:ActiveProcessorCount=1",
+    "-J-XX:+UseSerialGC",
+    "-J-Xint",
+    "-cp",
+    "/home/isa/Android/atlas-toolchain/sdk/platforms/android-35/android.jar",
+    "-d",
+    "/home/isa/PocketLore-control/scale-workers/places/java-classes-486ac430e176",
+    "tools/scale/places/android/CompactPlaces.java",
+    "tools/scale/places/android/OfflinePlaces.java",
+    "tools/scale/places/android/OsmPlaces.java"
+  ],
+  "exit_code": 0,
+  "seconds": 2.0056400299072266,
+  "compiler_version": "javac 17.0.20.1",
+  "sources": {
+    "tools/scale/places/android/CompactPlaces.java": "7482dad29e6b776a327e1a9bc9826bce9e9a5f99efbfbe0ede21f60446ce288a",
+    "tools/scale/places/android/OfflinePlaces.java": "dc2e52e474575c0725942e1883fd279c883de00a55e4ff0c53f27b1330797100",
+    "tools/scale/places/android/OsmPlaces.java": "e03b445b91703aa352fd184b8a84405322a211a0c4c9349f43b433520706d96e"
+  },
+  "sdk_jar": {
+    "path": "/home/isa/Android/atlas-toolchain/sdk/platforms/android-35/android.jar",
+    "sha256": "4566663c3876e022b4fa4ced8c8697c4ab1688267f090114fd92d027b32e619b"
+  },
+  "classes": {
+    "/home/isa/PocketLore-control/scale-workers/places/java-classes-486ac430e176/org/pocketlore/places/CompactPlaces$Place.class": "9a19c71786e87d2a12e6edd2f054edf468fb8fcfdce3aec04d075fdadd02dbe2",
+    "/home/isa/PocketLore-control/scale-workers/places/java-classes-486ac430e176/org/pocketlore/places/CompactPlaces.class": "60a107f80b38b77c04cc545d5577c6a5090269080f223e06488f43424790e07e",
+    "/home/isa/PocketLore-control/scale-workers/places/java-classes-486ac430e176/org/pocketlore/places/OfflinePlaces$Place.class": "debe8470e658a8797aaf2e3551460adc81dc5af7bd6756be9dbe6650738a77ee",
+    "/home/isa/PocketLore-control/scale-workers/places/java-classes-486ac430e176/org/pocketlore/places/OfflinePlaces.class": "7126b13aabba4a90ec5a5661fe0390fb03fbb90dd74deeffadf6e14ff1ff0608",
+    "/home/isa/PocketLore-control/scale-workers/places/java-classes-486ac430e176/org/pocketlore/places/OsmPlaces$Place.class": "2581a3f5eb735c0473bf8f7f4042315ba64ad9622aba6d21b04640759cf4a72b",
+    "/home/isa/PocketLore-control/scale-workers/places/java-classes-486ac430e176/org/pocketlore/places/OsmPlaces.class": "a181f806aec62fde4026e1f23a0e2809c05ad6a407d3803ce84e8e2b611194e4"
+  },
+  "host": "LLMRig",
+  "runtime_acceptance": false,
+  "shared_emulator_used": false
+}

@@ -1,0 +1,2498 @@
+{
+  "schema": 1,
+  "sealed_utc": "2026-10-01T14:04:29.811781+00:00",
+  "files": [
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/acquisition-state.json",
+      "bytes": 274,
+      "mtime_ns": 1790847141649122832,
+      "sha256": "2af4cb80388c15de6330b231334a2867850b2d53b1221aba9eae154295bc0ded",
+      "hashed_utc": "2026-10-01T14:03:30.280979+00:00",
+      "kind": "encyclopedia_acquisition_recovery_state",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00000.parquet",
+      "bytes": 2510037970,
+      "mtime_ns": 1790846313061759525,
+      "sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74",
+      "hashed_utc": "2026-10-01T14:03:32.381790+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "8770000c2b1fd62743601ea24cdebd784f943cf3fa7bbe33161521a6f5ca7c74"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00000.parquet.receipt.json",
+      "bytes": 381,
+      "mtime_ns": 1790846314421392770,
+      "sha256": "e5ebbc7638ede23ff1305784f7a37e412d4b761eaf6e33d8b452d27d9bca6c2c",
+      "hashed_utc": "2026-10-01T14:03:32.382189+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00001.parquet",
+      "bytes": 2559070630,
+      "mtime_ns": 1790846355695904797,
+      "sha256": "eb29c5b3d23010c17f225a9a6370049afa90b168f3d70744e5e015729455cb55",
+      "hashed_utc": "2026-10-01T14:03:34.404407+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "eb29c5b3d23010c17f225a9a6370049afa90b168f3d70744e5e015729455cb55"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00001.parquet.receipt.json",
+      "bytes": 381,
+      "mtime_ns": 1790846357210304334,
+      "sha256": "000734421718607c9b684a8e760b40e20889a38de014ce011225928207342e6c",
+      "hashed_utc": "2026-10-01T14:03:34.404884+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00002.parquet",
+      "bytes": 2538629269,
+      "mtime_ns": 1790846427470149474,
+      "sha256": "b98a10ff8a3f21291e4174564a5cbe186eab66fcca9c53c0920d182f718c5b9a",
+      "hashed_utc": "2026-10-01T14:03:36.400140+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "b98a10ff8a3f21291e4174564a5cbe186eab66fcca9c53c0920d182f718c5b9a"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00002.parquet.receipt.json",
+      "bytes": 381,
+      "mtime_ns": 1790846429351023619,
+      "sha256": "e887fbb4c2a06d84f9ba7f74e7ee6b3e59198f3b19701d0610d747e562070d91",
+      "hashed_utc": "2026-10-01T14:03:36.400578+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00003.parquet",
+      "bytes": 2650496988,
+      "mtime_ns": 1790846579663668697,
+      "sha256": "b8a6177f9c2135ab5182a95f33ada8a14d251eeaa052b006ab0f19fd2f24fd2d",
+      "hashed_utc": "2026-10-01T14:03:38.529934+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "b8a6177f9c2135ab5182a95f33ada8a14d251eeaa052b006ab0f19fd2f24fd2d"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00003.parquet.receipt.json",
+      "bytes": 382,
+      "mtime_ns": 1790846581365044039,
+      "sha256": "208a0743226922edbb3368a71863fd675587e78cd1d5afe9e127785b78e842d0",
+      "hashed_utc": "2026-10-01T14:03:38.530352+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00004.parquet",
+      "bytes": 2534066622,
+      "mtime_ns": 1790846636744863550,
+      "sha256": "4540721a38ac4ff620b5c4bb44fa3050d5883518c8823204371c0709890e5d78",
+      "hashed_utc": "2026-10-01T14:03:40.534061+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "4540721a38ac4ff620b5c4bb44fa3050d5883518c8823204371c0709890e5d78"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00004.parquet.receipt.json",
+      "bytes": 381,
+      "mtime_ns": 1790846638716682874,
+      "sha256": "99f1e5959448e4f7839f43d646c78787f18e7e960ad25aec67eee2f50b39cecc",
+      "hashed_utc": "2026-10-01T14:03:40.534589+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00005.parquet",
+      "bytes": 2518529521,
+      "mtime_ns": 1790846685667030594,
+      "sha256": "c25bb40b79ada5cd74377d1b95dcc3276e31a9959caebd8259f0506cc1a7f95f",
+      "hashed_utc": "2026-10-01T14:03:42.512421+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "c25bb40b79ada5cd74377d1b95dcc3276e31a9959caebd8259f0506cc1a7f95f"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00005.parquet.receipt.json",
+      "bytes": 381,
+      "mtime_ns": 1790846687451858360,
+      "sha256": "737ec2833733e74bbdb053dcbd583e3c2365c47eb3c75b25f62989eb543e72cb",
+      "hashed_utc": "2026-10-01T14:03:42.512920+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00006.parquet",
+      "bytes": 2491036654,
+      "mtime_ns": 1790846721896154320,
+      "sha256": "dc10ef0d900f4b87148a1595fe9895866f960ac2affc94684a04e048813198a7",
+      "hashed_utc": "2026-10-01T14:03:44.491431+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "dc10ef0d900f4b87148a1595fe9895866f960ac2affc94684a04e048813198a7"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00006.parquet.receipt.json",
+      "bytes": 381,
+      "mtime_ns": 1790846723940264431,
+      "sha256": "74f7feff5406f3cb920ed649c77f25e479c85de3da31afa79725b034bb68fdb8",
+      "hashed_utc": "2026-10-01T14:03:44.491953+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00007.parquet",
+      "bytes": 2496387295,
+      "mtime_ns": 1790846758285278612,
+      "sha256": "8f8d47d44c23b79008d97715ec78c1f1c5d3627856182a87cde054e35196aec5",
+      "hashed_utc": "2026-10-01T14:03:46.467587+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "8f8d47d44c23b79008d97715ec78c1f1c5d3627856182a87cde054e35196aec5"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00007.parquet.receipt.json",
+      "bytes": 381,
+      "mtime_ns": 1790846760231928472,
+      "sha256": "39d3890b64a1c963d24da12a34626b171caa518aff9dda28a46e1edb860f9e41",
+      "hashed_utc": "2026-10-01T14:03:46.468128+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00008.parquet",
+      "bytes": 2468521574,
+      "mtime_ns": 1790846793313398270,
+      "sha256": "5d4698f29648c267f32de6721ac7b36ea007b6b413dddfb36fd87ab7f64af201",
+      "hashed_utc": "2026-10-01T14:03:48.434341+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "5d4698f29648c267f32de6721ac7b36ea007b6b413dddfb36fd87ab7f64af201"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00008.parquet.receipt.json",
+      "bytes": 382,
+      "mtime_ns": 1790846795354874081,
+      "sha256": "51a66ffbb76ef080265501a911a4226b88cff34346d32a283a9ecd72d41dd47a",
+      "hashed_utc": "2026-10-01T14:03:48.434890+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00009.parquet",
+      "bytes": 2473260614,
+      "mtime_ns": 1790846844451572988,
+      "sha256": "c065b591184aae5eb053786afdc7f20c9d6ccc3a955147db8849cc9bc4ec7e52",
+      "hashed_utc": "2026-10-01T14:03:50.403986+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "c065b591184aae5eb053786afdc7f20c9d6ccc3a955147db8849cc9bc4ec7e52"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00009.parquet.receipt.json",
+      "bytes": 381,
+      "mtime_ns": 1790846846848442475,
+      "sha256": "c246ce019712ed3c26fdf0b009800cd76f4ba019eedfb5c89d64471f8f9be8de",
+      "hashed_utc": "2026-10-01T14:03:50.404577+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00010.parquet",
+      "bytes": 2505256688,
+      "mtime_ns": 1790846891112732434,
+      "sha256": "2bc2a319352e26f6d8aac5d5c25799fc16949f762a6a5c1ec6fba66389d428ab",
+      "hashed_utc": "2026-10-01T14:03:52.354872+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "2bc2a319352e26f6d8aac5d5c25799fc16949f762a6a5c1ec6fba66389d428ab"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00010.parquet.receipt.json",
+      "bytes": 379,
+      "mtime_ns": 1790846894031275187,
+      "sha256": "7bbd14cd0089bb0a900254d1d0cff69f52d5a43abc6bf14cd8ac8326a5583d30",
+      "hashed_utc": "2026-10-01T14:03:52.355416+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00011.parquet",
+      "bytes": 2498000006,
+      "mtime_ns": 1790846944023913263,
+      "sha256": "c64481777c4ad518969680bdb3f27e8b1c9e782fa831709ee5fc30beb3aa622d",
+      "hashed_utc": "2026-10-01T14:03:54.298857+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "c64481777c4ad518969680bdb3f27e8b1c9e782fa831709ee5fc30beb3aa622d"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00011.parquet.receipt.json",
+      "bytes": 381,
+      "mtime_ns": 1790846947455994792,
+      "sha256": "e57694d074e38b49bff1da81bfc197c1a4bf49cbc50a25bc000e0d3fe90ac732",
+      "hashed_utc": "2026-10-01T14:03:54.299488+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00012.parquet",
+      "bytes": 2523664632,
+      "mtime_ns": 1790847008954135203,
+      "sha256": "2e5ca443dadb167aea3ebb4cc681b5755e33516e41dfa8c0423ef5e7a225c6de",
+      "hashed_utc": "2026-10-01T14:03:56.274720+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "2e5ca443dadb167aea3ebb4cc681b5755e33516e41dfa8c0423ef5e7a225c6de"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00012.parquet.receipt.json",
+      "bytes": 381,
+      "mtime_ns": 1790847015609090569,
+      "sha256": "704febfa16c91aacbba700ae3b6479b93c0df837c04319ced8542117fc013a79",
+      "hashed_utc": "2026-10-01T14:03:56.275294+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00013.parquet",
+      "bytes": 2417467623,
+      "mtime_ns": 1790847078096371575,
+      "sha256": "ce5d84bf8048edd55a1d91ae30d04a5c0336bc84f2926b63b4ecfe32d314e381",
+      "hashed_utc": "2026-10-01T14:03:58.148284+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "ce5d84bf8048edd55a1d91ae30d04a5c0336bc84f2926b63b4ecfe32d314e381"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00013.parquet.receipt.json",
+      "bytes": 381,
+      "mtime_ns": 1790847080830075666,
+      "sha256": "8fae52406087c1e58dad91a5182025a4eece087d8cd43096cb3b1d1b89e699c4",
+      "hashed_utc": "2026-10-01T14:03:58.148876+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00014.parquet",
+      "bytes": 2538032319,
+      "mtime_ns": 1790847136884572577,
+      "sha256": "0a175e0d593c4a07afde8aacf5b8c86e70e958a31cd80a8f0e43e84397ddab42",
+      "hashed_utc": "2026-10-01T14:04:00.148209+00:00",
+      "kind": "pinned_finewiki_input",
+      "expected_sha256": "0a175e0d593c4a07afde8aacf5b8c86e70e958a31cd80a8f0e43e84397ddab42"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/000_00014.parquet.receipt.json",
+      "bytes": 381,
+      "mtime_ns": 1790847141648977937,
+      "sha256": "066d9ee03fd2c2aa6f153be3bd3deeb3b4c9b1b619df83723eec6fb604a83ad8",
+      "hashed_utc": "2026-10-01T14:04:00.148866+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/enwiki-20260901-pages-articles-multistream-index.txt.bz2",
+      "bytes": 284375992,
+      "mtime_ns": 1790847383350415470,
+      "sha256": "5f56546800508741898edd3210e98afd053d575c1e954ccc547843c574617674",
+      "hashed_utc": "2026-10-01T14:04:00.385602+00:00",
+      "kind": "pinned_auxiliary_input",
+      "expected_sha256": "5f56546800508741898edd3210e98afd053d575c1e954ccc547843c574617674"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/enwiki-20260901-pages-articles-multistream-index.txt.bz2.receipt.json",
+      "bytes": 333,
+      "mtime_ns": 1790847383671994894,
+      "sha256": "03823e0f4d8c38fd99868857fa7e41036ce6f0f273fb597173b96018724a6768",
+      "hashed_utc": "2026-10-01T14:04:00.386276+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/enwiki-20260901-redirect.sql.gz",
+      "bytes": 186961576,
+      "mtime_ns": 1790847364979352633,
+      "sha256": "aca5b66b28d53757f4ad20ce839fe98790b0d36d4dba11e3a1d4489009b9fd6d",
+      "hashed_utc": "2026-10-01T14:04:00.543452+00:00",
+      "kind": "pinned_auxiliary_input",
+      "expected_sha256": "aca5b66b28d53757f4ad20ce839fe98790b0d36d4dba11e3a1d4489009b9fd6d"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/enwiki-20260901-redirect.sql.gz.receipt.json",
+      "bytes": 308,
+      "mtime_ns": 1790847367011579549,
+      "sha256": "b8730cf3e896ba37e65bf9ee5e3f0ac5f15bf03dd81f711285d5eb1893c58b15",
+      "hashed_utc": "2026-10-01T14:04:00.544059+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/pageviews-202508-user-mirror.bz2.part",
+      "bytes": 8388608,
+      "mtime_ns": 1790846838987554318,
+      "sha256": "8a13ecd24bdf213bc70a2c8d78df72e91bca44a22f05e1842f76686a6a1b552b",
+      "hashed_utc": "2026-10-01T14:04:00.552823+00:00",
+      "kind": "incomplete_acquisition_not_used",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/pageviews-202508-user.bz2.part",
+      "bytes": 83886080,
+      "mtime_ns": 1790846696161066430,
+      "sha256": "786fa0852cc6442c7475d805d842453c5dca05004c0b3bbf9356d489cb90abb0",
+      "hashed_utc": "2026-10-01T14:04:00.625042+00:00",
+      "kind": "incomplete_acquisition_not_used",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/pageviews-neuml.sqlite",
+      "bytes": 1575235584,
+      "mtime_ns": 1790847064662325646,
+      "sha256": "409c4d1643171d050d77c9ea03416d77dac3a538ff8a78f59e3344df9bb49dc1",
+      "hashed_utc": "2026-10-01T14:04:01.961200+00:00",
+      "kind": "pinned_auxiliary_input",
+      "expected_sha256": "409c4d1643171d050d77c9ea03416d77dac3a538ff8a78f59e3344df9bb49dc1"
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/pageviews-neuml.sqlite.receipt.json",
+      "bytes": 370,
+      "mtime_ns": 1790847073636345977,
+      "sha256": "19b25b2023a047b548fde0fdc37e78686c9c973726f363f68c62bc7d3666d121",
+      "hashed_utc": "2026-10-01T14:04:01.961840+00:00",
+      "kind": "acquisition_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/pageviews-range-probe",
+      "bytes": 8388608,
+      "mtime_ns": 1790846905801196993,
+      "sha256": "823bd6370be8bb95a9e17f18e2062012101bfc4bee316d33d57bdf0c11aa5ece",
+      "hashed_utc": "2026-10-01T14:04:01.970504+00:00",
+      "kind": "preserved_acquisition_probe",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/bulk/real-source-contract-fixture.parquet",
+      "bytes": 27639,
+      "mtime_ns": 1790849838158174111,
+      "sha256": "c95c0c1f6b1b941fcf7ab9c1d9c999addd6c102f34da3a310a1477cd811c9902",
+      "hashed_utc": "2026-10-01T14:04:01.971309+00:00",
+      "kind": "derived_test_fixture_not_a_source_shard",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/census-v2.sqlite",
+      "bytes": 495747072,
+      "mtime_ns": 1790848519190757404,
+      "sha256": "180e0d0a401bba1e5ce15a4a1ec5ba8f7ba3d9c83541f1839c74929c35700c7f",
+      "hashed_utc": "2026-10-01T14:04:02.912136+00:00",
+      "kind": "preserved_staging_database",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/census-v2.sqlite-shm",
+      "bytes": 32768,
+      "mtime_ns": 1790853445910514588,
+      "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+      "hashed_utc": "2026-10-01T14:04:02.912941+00:00",
+      "kind": "preserved_database_recovery_sidecar",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/census-v2.sqlite-wal",
+      "bytes": 0,
+      "mtime_ns": 1790848565310963188,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hashed_utc": "2026-10-01T14:04:02.913476+00:00",
+      "kind": "preserved_database_recovery_sidecar",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/census.sqlite",
+      "bytes": 16384,
+      "mtime_ns": 1790847042195248838,
+      "sha256": "91b2c0c0f246b8bcb43907ea50aa46bc4029a217d872d82f51cf1e09afba426e",
+      "hashed_utc": "2026-10-01T14:04:02.914236+00:00",
+      "kind": "preserved_staging_database",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v2/000_00000/articles.blocks",
+      "bytes": 1342156491,
+      "mtime_ns": 1790850690684803887,
+      "sha256": "abf86f6895cfcbbddf5f3b73362562fcdb9c6e6f1f1b0453a69c4dc683021dbe",
+      "hashed_utc": "2026-10-01T14:04:04.543363+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v2/000_00000/catalog.sqlite",
+      "bytes": 904843264,
+      "mtime_ns": 1790850861625496148,
+      "sha256": "4026c777dddcecf33e64485455b6d4d04dcb2e90da9b5add312be3c59210a69c",
+      "hashed_utc": "2026-10-01T14:04:07.661547+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v2/000_00000/measurement.json",
+      "bytes": 1012,
+      "mtime_ns": 1790850877904520919,
+      "sha256": "87b32e6bcfd94845f97810ca25af78daf65c59bf485b85a8c4492fa11824b2bb",
+      "hashed_utc": "2026-10-01T14:04:07.662314+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v2/000_00000/orphan-1790849263703832206.blocks",
+      "bytes": 11049571,
+      "mtime_ns": 1790849263717878656,
+      "sha256": "80450c58355546cc1aa17c8a341a135e7e9be907fb25446e72365d1478052af9",
+      "hashed_utc": "2026-10-01T14:04:07.853905+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v2/000_00000/progress.json",
+      "bytes": 675,
+      "mtime_ns": 1790850690756982184,
+      "sha256": "619fd610d17165618a2a4e007cc583eba91b5e4b1199173f9ecf09cfbcaa58b9",
+      "hashed_utc": "2026-10-01T14:04:07.854609+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v4/000_00000/articles.blocks",
+      "bytes": 986989646,
+      "mtime_ns": 1790851867042492116,
+      "sha256": "fea7f1e6fc74bfa0d25736d207c49a43f0273a704ffe51df4faa68a09ba79cb6",
+      "hashed_utc": "2026-10-01T14:04:09.034832+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v4/000_00000/catalog.sqlite",
+      "bytes": 862982144,
+      "mtime_ns": 1790851910826642227,
+      "sha256": "c220dfeedb3fc2db92eedb2abd97bb645be7740abb4294bca56a43be5f254606",
+      "hashed_utc": "2026-10-01T14:04:09.984319+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v4/000_00000/measurement.json",
+      "bytes": 1490,
+      "mtime_ns": 1790851910839884020,
+      "sha256": "8ba3e517c6521cb3cedb7255d90e917175eb96fe70739279202838d8b20374e7",
+      "hashed_utc": "2026-10-01T14:04:09.985146+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v4/000_00000/progress.json",
+      "bytes": 776,
+      "mtime_ns": 1790851910840011151,
+      "sha256": "3c8b9f95bc430763301dc1fb466293fca4428010726f308495db381e8997de4a",
+      "hashed_utc": "2026-10-01T14:04:09.985744+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v4/redirect-aliases.sqlite",
+      "bytes": 587452416,
+      "mtime_ns": 1790851787028185902,
+      "sha256": "a79a9e621b3a6483f70a399f7d397233b8241b46d298a0791de7b2eaeb70661d",
+      "hashed_utc": "2026-10-01T14:04:10.380560+00:00",
+      "kind": "original_alias_database",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v5/000_00000/articles.blocks",
+      "bytes": 830138483,
+      "mtime_ns": 1790853000288678038,
+      "sha256": "fad1b28a5386df474f6aac3f79ec40752b74e7e149915635fe331c8f90429892",
+      "hashed_utc": "2026-10-01T14:04:11.366788+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v5/000_00000/catalog.sqlite",
+      "bytes": 862969856,
+      "mtime_ns": 1790853015803737526,
+      "sha256": "325ba5c06a2bdce71b77b5d79ef2c773113eb7475bffe5e8ad922c070c802040",
+      "hashed_utc": "2026-10-01T14:04:14.917391+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v5/000_00000/measurement.json",
+      "bytes": 1482,
+      "mtime_ns": 1790853015830305814,
+      "sha256": "1679820884e603fac8c668c46253c6d29d94c4e564c41e0cd50fc9b067000141",
+      "hashed_utc": "2026-10-01T14:04:14.918190+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v5/000_00000/progress.json",
+      "bytes": 813,
+      "mtime_ns": 1790853015830437299,
+      "sha256": "d4ff2c82d8add3821bd1d094e29eeff12de929d0483313cc7599cfeeef2e54d5",
+      "hashed_utc": "2026-10-01T14:04:14.918811+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v5/000_00001/articles.blocks",
+      "bytes": 853650375,
+      "mtime_ns": 1790853426838320352,
+      "sha256": "3b7171ec571bfffce50cfef4115c0ddd13fd8a9bb3575b0ecd8a049c8b34cbf2",
+      "hashed_utc": "2026-10-01T14:04:15.788428+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v5/000_00001/catalog.sqlite",
+      "bytes": 895262720,
+      "mtime_ns": 1790853500365604496,
+      "sha256": "ee6489703de69a53ab8eed3fc077cc30c3046fb152772c1ef24db61d3736a6ec",
+      "hashed_utc": "2026-10-01T14:04:16.724793+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v5/000_00001/measurement.json",
+      "bytes": 1153,
+      "mtime_ns": 1790853512038773140,
+      "sha256": "731c8536402aa4fac83e32bd0f408c644a7953401e276a5499ad4dd880afd2c0",
+      "hashed_utc": "2026-10-01T14:04:16.725591+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v5/000_00001/progress.json",
+      "bytes": 815,
+      "mtime_ns": 1790853426944578291,
+      "sha256": "c55f87b2a25d24430a88754c5d1e18ff5f541050729a36b777b303e2167fee9a",
+      "hashed_utc": "2026-10-01T14:04:16.726190+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v6/000_00000/articles.blocks",
+      "bytes": 830138483,
+      "mtime_ns": 1790853029844791384,
+      "sha256": "fad1b28a5386df474f6aac3f79ec40752b74e7e149915635fe331c8f90429892",
+      "hashed_utc": "2026-10-01T14:04:17.499852+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v6/000_00000/catalog.sqlite",
+      "bytes": 782118912,
+      "mtime_ns": 1790853411877262563,
+      "sha256": "2cb3ebd1aa94e3a0535e608b48dd17e04dfddd968ec65d1d657e66c2d0c12b52",
+      "hashed_utc": "2026-10-01T14:04:18.147192+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/edition-v6/000_00000/measurement.json",
+      "bytes": 1864,
+      "mtime_ns": 1790853416275095600,
+      "sha256": "3048e265f9abbc4d3e580794bc862cff6c3dc5e7bcc05e93ca53c4fac8abf08d",
+      "hashed_utc": "2026-10-01T14:04:18.148059+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/individual-block-contract-fixture/articles.blocks",
+      "bytes": 19813,
+      "mtime_ns": 1790850022681001263,
+      "sha256": "aa624c3c8084d3fa68c4d88a67220d557ba839243f057a9188f73a6d621235bc",
+      "hashed_utc": "2026-10-01T14:04:18.148906+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/individual-block-contract-fixture/catalog.sqlite",
+      "bytes": 61440,
+      "mtime_ns": 1790850022696001329,
+      "sha256": "5d208572e9471399fd28e32ebcacfeabc8360eb088690c79d27c1ff11e840980",
+      "hashed_utc": "2026-10-01T14:04:18.149839+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/individual-block-contract-fixture/measurement.json",
+      "bytes": 754,
+      "mtime_ns": 1790850022706161887,
+      "sha256": "5b197ab8cdf89f964f5aadf43439aa94282732484c6923b0b644e79d3a65a129",
+      "hashed_utc": "2026-10-01T14:04:18.150476+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/individual-block-contract-fixture/progress.json",
+      "bytes": 422,
+      "mtime_ns": 1790850022685628426,
+      "sha256": "aa8f4d02132aed34f793a65c3874b3b5fc78c1eac54ba59b4dd58c6292d36f43",
+      "hashed_utc": "2026-10-01T14:04:18.151130+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/pilot-full/articles.blocks",
+      "bytes": 2011179989,
+      "mtime_ns": 1790849861773282044,
+      "sha256": "31920691d284cd9f3c27ee4c9e0211ebb84ca74908785d49608a73791f79f884",
+      "hashed_utc": "2026-10-01T14:04:20.504918+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/pilot-full/catalog.sqlite",
+      "bytes": 1320906752,
+      "mtime_ns": 1790849862022283179,
+      "sha256": "6d35d4e26f4346e34af688aedfddb214f134f9e511f5ca612290e87cf5e1ea26",
+      "hashed_utc": "2026-10-01T14:04:22.481735+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/pilot-full/measurement.json",
+      "bytes": 774,
+      "mtime_ns": 1790850046324631639,
+      "sha256": "431b8a019abb76e5a8bb81c0994e35a17374504548986d66ebba186fd083fc5f",
+      "hashed_utc": "2026-10-01T14:04:22.482645+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/pilot-full/orphan-1790847519400676275.blocks",
+      "bytes": 23982725,
+      "mtime_ns": 1790847519408880885,
+      "sha256": "77fe0300347d11ad62e2fc15780f88b1b96f67523264259656e5f3e95f9c855b",
+      "hashed_utc": "2026-10-01T14:04:22.507875+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/pilot-full/orphan-1790847729434095196.blocks",
+      "bytes": 7931670,
+      "mtime_ns": 1790847729435599424,
+      "sha256": "221693d395e0129dcaec2018fce9443215b5cf7f2e56835493efc2f72174df31",
+      "hashed_utc": "2026-10-01T14:04:22.516777+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/pilot-full/orphan-1790847938033672992.blocks",
+      "bytes": 17738981,
+      "mtime_ns": 1790847938079834346,
+      "sha256": "31ad5ebe47cd4a28573e45f347c6708609a436d2162c16fc9a8e419c01c633c2",
+      "hashed_utc": "2026-10-01T14:04:22.535809+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/pilot-full/progress.json",
+      "bytes": 437,
+      "mtime_ns": 1790849862979970569,
+      "sha256": "f8eab93764899b7abfd9538773765a24619a9c7e594092346322d4dd1ae92e4d",
+      "hashed_utc": "2026-10-01T14:04:22.536656+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/priority-1250000.sqlite",
+      "bytes": 468865024,
+      "mtime_ns": 1790853640624147073,
+      "sha256": "7e25fd8849992064c1dc9aa39f8a0d0187acf6c26eefed08a0235aa68020336b",
+      "hashed_utc": "2026-10-01T14:04:22.921256+00:00",
+      "kind": "preserved_staging_database",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/priority-2000000.sqlite",
+      "bytes": 2644783104,
+      "mtime_ns": 1790848852524198357,
+      "sha256": "2f1e6f9171154d2b315188ed421ee6370146a31d5c1aac768d5267c2f953261e",
+      "hashed_utc": "2026-10-01T14:04:27.003723+00:00",
+      "kind": "preserved_staging_database",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/reblocked-contract-fixture/articles.blocks",
+      "bytes": 13252,
+      "mtime_ns": 1790850023016002734,
+      "sha256": "bfff055e1ff47e88339dd25818ee5c4976ea60aefb9013742867946289820d85",
+      "hashed_utc": "2026-10-01T14:04:27.004790+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/reblocked-contract-fixture/catalog.sqlite",
+      "bytes": 65536,
+      "mtime_ns": 1790850023046002866,
+      "sha256": "507789371e07e0c83517491ac4c415adb64c73f741f300f1cd7060e804cde5e9",
+      "hashed_utc": "2026-10-01T14:04:27.005795+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/reblocked-contract-fixture/measurement.json",
+      "bytes": 1128,
+      "mtime_ns": 1790850023049094967,
+      "sha256": "d1e0a045a0af3553221f04f5b1314b7f3b3bb4ad01775f3a2343a636b0bd1809",
+      "hashed_utc": "2026-10-01T14:04:27.006459+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/reblocked-contract-fixture/progress.json",
+      "bytes": 437,
+      "mtime_ns": 1790850023049243084,
+      "sha256": "eb28a4a8b9b753cd482a315af3d72b6904a48e98584210465242a5b8fa63da3f",
+      "hashed_utc": "2026-10-01T14:04:27.007129+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/acquisition.log",
+      "bytes": 1866,
+      "mtime_ns": 1790847141649122832,
+      "sha256": "3693ff9d74abef0f143460a6b966fd9b403834d711c33786319ce846285acaa2",
+      "hashed_utc": "2026-10-01T14:04:27.007792+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/alias-normalization-fixture/compact.sqlite",
+      "bytes": 20480,
+      "mtime_ns": 1790856148474106973,
+      "sha256": "79d1077660a18498b64c758a3d21830bfdf2bbd5878bfd93092906b62a9bda71",
+      "hashed_utc": "2026-10-01T14:04:27.008665+00:00",
+      "kind": "preserved_positive_or_negative_control_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/alias-normalization-fixture/compact.sqlite.json",
+      "bytes": 599,
+      "mtime_ns": 1790856148477266989,
+      "sha256": "d5974058d01bd29df25cc985d5d7a392c984f6d5eeea99cca31915f84a548427",
+      "hashed_utc": "2026-10-01T14:04:27.009352+00:00",
+      "kind": "preserved_positive_or_negative_control_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/alias-normalization-fixture/source.sqlite",
+      "bytes": 8192,
+      "mtime_ns": 1790856148321106336,
+      "sha256": "2bdbd3d7d775491f8df05fd5f202e395ff8d1e439db04ca67b6bd154c88a9a8a",
+      "hashed_utc": "2026-10-01T14:04:27.010174+00:00",
+      "kind": "preserved_positive_or_negative_control_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/census-v2-affinity-resume.log",
+      "bytes": 0,
+      "mtime_ns": 1790847721321571663,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hashed_utc": "2026-10-01T14:04:27.010831+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/census-v2-cache-resume.log",
+      "bytes": 1639,
+      "mtime_ns": 1790848533914823374,
+      "sha256": "394d516e593854c58988369550d8e50903acc624a1754e6259ab42c0aa7c0c83",
+      "hashed_utc": "2026-10-01T14:04:27.011487+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/census-v2.log",
+      "bytes": 308,
+      "mtime_ns": 1790847471224716054,
+      "sha256": "631ed7811a841c512697ae372543163b9edc119eabc03646e47c040c8d8896f3",
+      "hashed_utc": "2026-10-01T14:04:27.012152+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/census.log",
+      "bytes": 420,
+      "mtime_ns": 1790847039632240076,
+      "sha256": "ecd84caf8cedef69e320dc89bc3164ec1ac49935b677b77e6777a8a5dfe86ded",
+      "hashed_utc": "2026-10-01T14:04:27.012821+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/counterexample-audit.log",
+      "bytes": 65,
+      "mtime_ns": 1790850834851239254,
+      "sha256": "01a97ebb5cfa1591b97f8db7ea4e671415413da53770d2d8d7d3489d8ebd9c59",
+      "hashed_utc": "2026-10-01T14:04:27.013482+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/counterexample-source.json",
+      "bytes": 46696,
+      "mtime_ns": 1790846465107293836,
+      "sha256": "e5c38312212d9a171a7f066e900ab9abd5e2912200e5f7381406f8a542b36cc1",
+      "hashed_utc": "2026-10-01T14:04:27.014459+00:00",
+      "kind": "explicit_task_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/edition-v2-000_00000.parquet-1790848977232652970.log",
+      "bytes": 1894,
+      "mtime_ns": 1790849234231181998,
+      "sha256": "69f47c20f9ba5de3d1f0c23c62b8486953ec4c8f4fa1e2dd0765e4eff687bab8",
+      "hashed_utc": "2026-10-01T14:04:27.015168+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/edition-v2-000_00000.parquet-1790849263231988274.execution.json",
+      "bytes": 987,
+      "mtime_ns": 1790850878405563807,
+      "sha256": "348072268fe970631576d2224d419eca62fc8a7dfd0a6898d9149578440116e5",
+      "hashed_utc": "2026-10-01T14:04:27.015863+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/edition-v2-000_00000.parquet-1790849263231988274.log",
+      "bytes": 7480,
+      "mtime_ns": 1790850877922561860,
+      "sha256": "4acfd4180e3f151c1f74b0781c1ea8f3954601a8e017bde0fa51b38a7b5d6d53",
+      "hashed_utc": "2026-10-01T14:04:27.016762+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/edition-v2-first-resume.log",
+      "bytes": 1442,
+      "mtime_ns": 1790850878411834780,
+      "sha256": "195b7745b69782f1d645ebf0298e2e5a5f3aa3fb499271b3699805383b4ce706",
+      "hashed_utc": "2026-10-01T14:04:27.017494+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/edition-v2-first.log",
+      "bytes": 0,
+      "mtime_ns": 1790848975153707574,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hashed_utc": "2026-10-01T14:04:27.018193+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/edition-v4-aliases.log",
+      "bytes": 442,
+      "mtime_ns": 1790852041624099916,
+      "sha256": "64a9fd86a066771f72e00819d97330033a6c61bebaef857942a138ad4adaaef7",
+      "hashed_utc": "2026-10-01T14:04:27.018912+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/edition-v4-first-reblock.log",
+      "bytes": 1827,
+      "mtime_ns": 1790851910840642276,
+      "sha256": "ce98859d4d8b6e6e07c6429e35cc37754f17fc1fe286640e1beb66e5eb29eddc",
+      "hashed_utc": "2026-10-01T14:04:27.019632+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/edition-v5-000_00001.parquet-1790852291399046534.execution.json",
+      "bytes": 986,
+      "mtime_ns": 1790853512346482800,
+      "sha256": "8144df5c31fb2003972e06c8308f9bc4c0bfec561b1d52b500548dd3d7b41843",
+      "hashed_utc": "2026-10-01T14:04:27.020368+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/edition-v5-000_00001.parquet-1790852291399046534.log",
+      "bytes": 10179,
+      "mtime_ns": 1790853512045649653,
+      "sha256": "5a4558ffc71bad91c26ea8dbc5c0e28b6959b8702b630071140580d8f94742a8",
+      "hashed_utc": "2026-10-01T14:04:27.021481+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/edition-v5-first-reblock.log",
+      "bytes": 1819,
+      "mtime_ns": 1790853015830437299,
+      "sha256": "6d47df8cac943a3747a9fd036f540dc3860ec89b6b8d65328e739404e4f9e1cd",
+      "hashed_utc": "2026-10-01T14:04:27.022231+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/edition-v5-second-shard.log",
+      "bytes": 1572,
+      "mtime_ns": 1790853512351650836,
+      "sha256": "d6ff9800f590061b2f182f45b84e6d68cb24c23ddfcfa13901a354729a669f6c",
+      "hashed_utc": "2026-10-01T14:04:27.022981+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/edition-v6-first-reindex.log",
+      "bytes": 2201,
+      "mtime_ns": 1790853416275095600,
+      "sha256": "5992bfe32df6e16ec8fdb49aeb37ebd2e743e465d79a98858b297412da92dfc3",
+      "hashed_utc": "2026-10-01T14:04:27.023729+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/empty-candidate-real.json",
+      "bytes": 3969,
+      "mtime_ns": 1790853427674445337,
+      "sha256": "b5779360871ebb60a5a1ec3ff6ee0b3504baeb0009a27ac749626afd2dc34f67",
+      "hashed_utc": "2026-10-01T14:04:27.024489+00:00",
+      "kind": "explicit_task_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/enwiki-20260901-pages-articles-multistream-index.txt.bz2.verified.json",
+      "bytes": 298,
+      "mtime_ns": 1790847383919291729,
+      "sha256": "c29a905693c64000d1ba4b27fb83fa0bca60923d95a7501ddaf7e9c8822bf41d",
+      "hashed_utc": "2026-10-01T14:04:27.025246+00:00",
+      "kind": "primary_alias_source_verification",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/enwiki-20260901-redirect.sql.gz.verified.json",
+      "bytes": 273,
+      "mtime_ns": 1790847367137902753,
+      "sha256": "498ace38368bd5184897c4ad147ac1baf7b67975dc6a1a5d74551569a851e234",
+      "hashed_utc": "2026-10-01T14:04:27.025999+00:00",
+      "kind": "primary_alias_source_verification",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/frozen-tail-source-records.json",
+      "bytes": 10346,
+      "mtime_ns": 1790854095925748858,
+      "sha256": "e7b5a563a4bd46c9bb8c770981d45d22d8a5fba78ba7aa21f1918fc321a47263",
+      "hashed_utc": "2026-10-01T14:04:27.027022+00:00",
+      "kind": "explicit_task_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/git-storage-failure.txt",
+      "bytes": 260,
+      "mtime_ns": 1790846428093151599,
+      "sha256": "0375e28d79b4065ac10a1b838255a024db9489b2fc68f85a068db6ac6c2ad0c6",
+      "hashed_utc": "2026-10-01T14:04:27.027789+00:00",
+      "kind": "explicit_task_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/pageviews-acquisition.log",
+      "bytes": 0,
+      "mtime_ns": 1790846406343077438,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hashed_utc": "2026-10-01T14:04:27.028524+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/pageviews-mirror-acquisition.log",
+      "bytes": 0,
+      "mtime_ns": 1790846816598477822,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hashed_utc": "2026-10-01T14:04:27.029280+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/pageviews-neuml-acquisition.log",
+      "bytes": 65,
+      "mtime_ns": 1790847073636345977,
+      "sha256": "893a33fb5783691fa94ab2cd93e0bf778e24272671c918801cdca5f9a27fe2fe",
+      "hashed_utc": "2026-10-01T14:04:27.030051+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/pilot-build-affinity-resume.log",
+      "bytes": 0,
+      "mtime_ns": 1790847720151567660,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hashed_utc": "2026-10-01T14:04:27.030813+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/pilot-build-cache-resume.log",
+      "bytes": 4136,
+      "mtime_ns": 1790850046351104980,
+      "sha256": "c47c6ecc4e7fa9d3da17409bc5798a7e09cdbc38e9c028270260a0144a13d1e4",
+      "hashed_utc": "2026-10-01T14:04:27.031739+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/pilot-build-resume.log",
+      "bytes": 76,
+      "mtime_ns": 1790847631708265068,
+      "sha256": "5ce70f689f8574785203f9c0fe99874f421bd8a29c3fd120ffc1ba4b0e578665",
+      "hashed_utc": "2026-10-01T14:04:27.032637+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/pilot-build.log",
+      "bytes": 4356,
+      "mtime_ns": 1790847460541483306,
+      "sha256": "d754d66ae51cf0a950e67e502aff736983ddfd78d234f4867fb4d32c32caf99e",
+      "hashed_utc": "2026-10-01T14:04:27.033672+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/pilot-evaluation.log",
+      "bytes": 2245,
+      "mtime_ns": 1790850859985978517,
+      "sha256": "3902d4ec16940b91562ac215ee5f136761dad9df27bd97fcb99e84f68e1f1a07",
+      "hashed_utc": "2026-10-01T14:04:27.034505+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/priority-1250000.log",
+      "bytes": 1777,
+      "mtime_ns": 1790853673045465723,
+      "sha256": "0aaf568d8a152377567180c7ed1d315bd6012a4471b544884c178c5bb04b985e",
+      "hashed_utc": "2026-10-01T14:04:27.035328+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/priority-source-size.log",
+      "bytes": 4962,
+      "mtime_ns": 1790853518147507653,
+      "sha256": "d6995e91cc0bd981d62280835d15d0da09e5d70eecd80401dda541a6ac4f1a69",
+      "hashed_utc": "2026-10-01T14:04:27.036359+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/priority.log",
+      "bytes": 1829,
+      "mtime_ns": 1790848869397268944,
+      "sha256": "e4b7e6ba696de3dc8a2a09bb6ddf1c1f0bd6e87369ea72e9818f292f20b7ffd2",
+      "hashed_utc": "2026-10-01T14:04:27.037193+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/10106.json",
+      "bytes": 121740,
+      "mtime_ns": 1790848052384787268,
+      "sha256": "e42901897146fb6ab7f19ed0e7e0e388469602d25cfcb6902b16c0866abea334",
+      "hashed_utc": "2026-10-01T14:04:27.038447+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/10303.json",
+      "bytes": 25425,
+      "mtime_ns": 1790848324093071404,
+      "sha256": "5ec70795342b4627d2f703ac9c5aa319cfdbbfe4a84394e5d10288837d789990",
+      "hashed_utc": "2026-10-01T14:04:27.039547+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/140459.json",
+      "bytes": 44688,
+      "mtime_ns": 1790848077121667768,
+      "sha256": "87688fa9464d55e4a54795ca66d74ae02f95a9eba09258b72301b6033b700906",
+      "hashed_utc": "2026-10-01T14:04:27.040672+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/14539.json",
+      "bytes": 238953,
+      "mtime_ns": 1790847394661080259,
+      "sha256": "c439c636d150be91e6cfe0d6f2405fd9a929a84bdfab24594ead242e3d7b974e",
+      "hashed_utc": "2026-10-01T14:04:27.042190+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/1539814.json",
+      "bytes": 21869,
+      "mtime_ns": 1790848273070335022,
+      "sha256": "866039347affe56afdabb4e94de8069f51c46a92aea325a9257d2c96da8931a5",
+      "hashed_utc": "2026-10-01T14:04:27.043332+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/171879.json",
+      "bytes": 65648,
+      "mtime_ns": 1790847557845308714,
+      "sha256": "01d202979b9d729986c133da8a6a14f426385cc22c72a233c42cde6f23cc0611",
+      "hashed_utc": "2026-10-01T14:04:27.044578+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/17327.json",
+      "bytes": 68166,
+      "mtime_ns": 1790848313751553755,
+      "sha256": "e7ebed5eb9fd77d3717871ab3e2ff27f3a1a07f420f1e4751aec99bb8f019690",
+      "hashed_utc": "2026-10-01T14:04:27.045711+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/18976.json",
+      "bytes": 145792,
+      "mtime_ns": 1790848358562015927,
+      "sha256": "0e2014a204079257bb59542f206be009b99def410798a52c234a79086a53f706",
+      "hashed_utc": "2026-10-01T14:04:27.047032+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/19331.json",
+      "bytes": 376870,
+      "mtime_ns": 1790848492843305716,
+      "sha256": "e717a3174f19743be0ec8c1e39848f931ab4f5bc72436387ec6b0cb1ca55a839",
+      "hashed_utc": "2026-10-01T14:04:27.048657+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/19593040.json",
+      "bytes": 54330,
+      "mtime_ns": 1790847172477412615,
+      "sha256": "a2d553eb05585079c637526470f1697fe4d41f4aba6d37be282de292ee479b6e",
+      "hashed_utc": "2026-10-01T14:04:27.049793+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/19594213.json",
+      "bytes": 66972,
+      "mtime_ns": 1790848177460679747,
+      "sha256": "ffffb8380df4b589d578887a46b82389996f4ff4851b68894c8c1766bfaf03d4",
+      "hashed_utc": "2026-10-01T14:04:27.050997+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/19817681.json",
+      "bytes": 111109,
+      "mtime_ns": 1790848049508921670,
+      "sha256": "ea46222fe88546d0175def23c325131195ed3ace5093d814093a9a9e801c76f5",
+      "hashed_utc": "2026-10-01T14:04:27.052274+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/20369.json",
+      "bytes": 101362,
+      "mtime_ns": 1790848357057148708,
+      "sha256": "2948a8289e8bd0e62e50a61baeed5013b8e1379a5fdc3d190784b2b24103713e",
+      "hashed_utc": "2026-10-01T14:04:27.053512+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/20598060.json",
+      "bytes": 59463,
+      "mtime_ns": 1790848047532942634,
+      "sha256": "bb1f8342e21dc8ce58907af49161a709194e5933bd6a270d5a7816ce3cbc0ed1",
+      "hashed_utc": "2026-10-01T14:04:27.054801+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/21438242.json",
+      "bytes": 104525,
+      "mtime_ns": 1790848225706867546,
+      "sha256": "12a8652bebc130b7a3fb5e69e1943f054d6256e4509310e4c4c690e13bb37011",
+      "hashed_utc": "2026-10-01T14:04:27.056016+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/22303.json",
+      "bytes": 185933,
+      "mtime_ns": 1790847623998657416,
+      "sha256": "db941d4fe817e2b5da602c5d2b517b91637c93964346f945a5f7e8f90851d1ad",
+      "hashed_utc": "2026-10-01T14:04:27.057431+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/235589.json",
+      "bytes": 94713,
+      "mtime_ns": 1790847175595423199,
+      "sha256": "d061c890d4871066493425a189057cfb46b15743ce62023ca042a79b77a4096a",
+      "hashed_utc": "2026-10-01T14:04:27.058710+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/23619.json",
+      "bytes": 77973,
+      "mtime_ns": 1790848300911677213,
+      "sha256": "ae5f34aa6dab304eb43713597b4e6f19a2618b98a71bd52bbcb94764204bf6cc",
+      "hashed_utc": "2026-10-01T14:04:27.059922+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/238025.json",
+      "bytes": 38964,
+      "mtime_ns": 1790848179591506385,
+      "sha256": "258f3a964a8605ae60650374666756fdbfe9a94123ec1d620eb132ce47f6f9b6",
+      "hashed_utc": "2026-10-01T14:04:27.061044+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/24544.json",
+      "bytes": 167988,
+      "mtime_ns": 1790847557786847057,
+      "sha256": "946d1b665e22ffd49f832ce8ad74715792efb7a5ec60dba33ac046861b588cf9",
+      "hashed_utc": "2026-10-01T14:04:27.062399+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/24944.json",
+      "bytes": 214227,
+      "mtime_ns": 1790848048004611035,
+      "sha256": "3207feb6b9e2163f56ea0ef3101fe5f2d7a19ab7ed4baa043e116930ac0996da",
+      "hashed_utc": "2026-10-01T14:04:27.063889+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/25948.json",
+      "bytes": 33816,
+      "mtime_ns": 1790848118114825774,
+      "sha256": "d09b9218ab3df9b7c43a767e64646800e9f9c33c25a8a1b4343a7532f52e78d8",
+      "hashed_utc": "2026-10-01T14:04:27.065090+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/26513034.json",
+      "bytes": 151583,
+      "mtime_ns": 1790848363590781005,
+      "sha256": "76cf212a6ddc974bbe5055a1759db0f413ad86c7bd1979210710081269172b23",
+      "hashed_utc": "2026-10-01T14:04:27.066438+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/26751.json",
+      "bytes": 247058,
+      "mtime_ns": 1790847618114517946,
+      "sha256": "7af0290f8d2c93fa2b92dd15e4c18ad9346dfe60691213a9ebc584ddbc8da921",
+      "hashed_utc": "2026-10-01T14:04:27.067896+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/26903.json",
+      "bytes": 295692,
+      "mtime_ns": 1790848429148462758,
+      "sha256": "365323531604f7a6ec02c3dfa31ac959caae7ee855de826372035b20bcc630ae",
+      "hashed_utc": "2026-10-01T14:04:27.069486+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/27859.json",
+      "bytes": 77507,
+      "mtime_ns": 1790847213927001981,
+      "sha256": "2e12642cd698e248a5869bbc1f6a0d6d094b69d811295be2afe1ab272229af58",
+      "hashed_utc": "2026-10-01T14:04:27.070713+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/28538.json",
+      "bytes": 86580,
+      "mtime_ns": 1790848112071363781,
+      "sha256": "604a9142244471725f883e17c80eb7df46af557b06cb4aae9ce0011dd372e3d2",
+      "hashed_utc": "2026-10-01T14:04:27.072122+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/28736.json",
+      "bytes": 201749,
+      "mtime_ns": 1790848267313192531,
+      "sha256": "70cb00f3d1aac0c8bcc2fa4c1ef8f365163f1078a56305a48b998b1160025312",
+      "hashed_utc": "2026-10-01T14:04:27.073541+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/299936.json",
+      "bytes": 7257,
+      "mtime_ns": 1790848262583557286,
+      "sha256": "6bccd7248bc4174864ecdb615c137f914dd94b74b4fe22c07f6b89e157785f57",
+      "hashed_utc": "2026-10-01T14:04:27.074688+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/30718.json",
+      "bytes": 172897,
+      "mtime_ns": 1790847171827550487,
+      "sha256": "0024c44eebdace4545a57f1b524cb99d6b27d5c5d00f53b92addb4fb6b4784a3",
+      "hashed_utc": "2026-10-01T14:04:27.076167+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/32552979.json",
+      "bytes": 10577,
+      "mtime_ns": 1790847150270007708,
+      "sha256": "cb3b75ca33b48f5fbf5fbeaa9394e227f0a434cd4caea6d2acb33b97c42a1663",
+      "hashed_utc": "2026-10-01T14:04:27.077387+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/32927.json",
+      "bytes": 344900,
+      "mtime_ns": 1790848096318394060,
+      "sha256": "66751ffe0d8d69dd28bf61ed50e8508e98a86b15d3d69b8ad88d48af1fac995b",
+      "hashed_utc": "2026-10-01T14:04:27.079013+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/33306.json",
+      "bytes": 259037,
+      "mtime_ns": 1790847175726379110,
+      "sha256": "e90694952c760deadb45d6c9b2b8ee52be067d565341784d1d09f299c7ae4bc6",
+      "hashed_utc": "2026-10-01T14:04:27.080669+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/34542.json",
+      "bytes": 149370,
+      "mtime_ns": 1790848235674461936,
+      "sha256": "f57f6f5e7ed2d3ff09f1a92cf7626db4d3a4e04472b60ea971889086d47a989d",
+      "hashed_utc": "2026-10-01T14:04:27.082166+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/348454.json",
+      "bytes": 145195,
+      "mtime_ns": 1790848487970477723,
+      "sha256": "db875ba992145f81676af9ab69bec3cac3cb2ad462dd4dddf29ce9c9f5b18629",
+      "hashed_utc": "2026-10-01T14:04:27.175060+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/3546.json",
+      "bytes": 34506,
+      "mtime_ns": 1790847297561576675,
+      "sha256": "202ff3a42d7cb8e801d46ef389485c6da21782612dd6b71660822ec02d89cf39",
+      "hashed_utc": "2026-10-01T14:04:27.176651+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/36563.json",
+      "bytes": 180552,
+      "mtime_ns": 1790848127177085987,
+      "sha256": "f9b05993293f2f10811bc946a9da68a5641f6dd3dc5057e7426c932d7d5e7ac7",
+      "hashed_utc": "2026-10-01T14:04:27.178346+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/37508.json",
+      "bytes": 116943,
+      "mtime_ns": 1790848187674853370,
+      "sha256": "ee10fb5fbd6301ed50e4cb9d71386ee6c0eccfd307af647348f408a85500b428",
+      "hashed_utc": "2026-10-01T14:04:27.179875+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/38454.json",
+      "bytes": 68216,
+      "mtime_ns": 1790848226162222087,
+      "sha256": "d6969685f9e17b795862885c0a1b2e930ca6df71d05cf1abb2b163884179b846",
+      "hashed_utc": "2026-10-01T14:04:27.181407+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/38579.json",
+      "bytes": 128617,
+      "mtime_ns": 1790848231518404118,
+      "sha256": "631bc085a8076e86510ae30888cbbcb882390c2549a6389fb0de06a97ddc706b",
+      "hashed_utc": "2026-10-01T14:04:27.182953+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/41545.json",
+      "bytes": 38982,
+      "mtime_ns": 1790848144538107713,
+      "sha256": "79c901a1d6c5cf9796ffa6470b046c89ac6c579866f4564bdd4009636b63199a",
+      "hashed_utc": "2026-10-01T14:04:27.184280+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/422481.json",
+      "bytes": 139420,
+      "mtime_ns": 1790848236798170962,
+      "sha256": "6dbb6abb5986706796f5c916822bdb2becd1fde01ef03b84a153c7ff243be3b2",
+      "hashed_utc": "2026-10-01T14:04:27.185714+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/4429510.json",
+      "bytes": 32981,
+      "mtime_ns": 1790848501259872186,
+      "sha256": "3c37a019491c12485e02c84517b7ebbcb87d2cdf20a3c103d331280de913b797",
+      "hashed_utc": "2026-10-01T14:04:27.187069+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/46740.json",
+      "bytes": 24806,
+      "mtime_ns": 1790848052311531135,
+      "sha256": "f6cf5ba7f59b9ad7bd199246f4cbd4e7a835c3bf32f4a96828f51cc55fa514da",
+      "hashed_utc": "2026-10-01T14:04:27.188305+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/47521.json",
+      "bytes": 15461,
+      "mtime_ns": 1790848254917040090,
+      "sha256": "b009c010b28208bc4059678a8b74a8db3c99f999fc5af8f3e65ba75e5828b445",
+      "hashed_utc": "2026-10-01T14:04:27.189521+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/47526.json",
+      "bytes": 95050,
+      "mtime_ns": 1790848235701978467,
+      "sha256": "e651cbe31517c62d71e7e5788cb8f7ea0c670268724ca151e9043db0faeee85b",
+      "hashed_utc": "2026-10-01T14:04:27.190846+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/47717.json",
+      "bytes": 167949,
+      "mtime_ns": 1790848373046040781,
+      "sha256": "1bff4a29809d836042b0388c9089afed365586c6661cffc924153c6bf5b04ab7",
+      "hashed_utc": "2026-10-01T14:04:27.192290+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/489570.json",
+      "bytes": 89539,
+      "mtime_ns": 1790848092844990932,
+      "sha256": "5a95325d60967c966110129b626217c8cfb1b2412b9571fe9a8ae3e07cce0893",
+      "hashed_utc": "2026-10-01T14:04:27.193750+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/49090.json",
+      "bytes": 80194,
+      "mtime_ns": 1790848494537209560,
+      "sha256": "cecce0dc4cea24e1526fc7dee79645035b3c0d062976652a5985e13be830ff24",
+      "hashed_utc": "2026-10-01T14:04:27.195217+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/5042951.json",
+      "bytes": 472320,
+      "mtime_ns": 1790848423724905122,
+      "sha256": "104cfbee87b6e93ebe3d93cb138f47a5abfccee6cd5283d89180410404577645",
+      "hashed_utc": "2026-10-01T14:04:27.197255+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/5299.json",
+      "bytes": 168817,
+      "mtime_ns": 1790847206208336336,
+      "sha256": "ffc5860233a1ab11a0bd7af3a71614a5ddb77b786ea3da69704c7fea216129df",
+      "hashed_utc": "2026-10-01T14:04:27.198811+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/5355.json",
+      "bytes": 72401,
+      "mtime_ns": 1790847559995019729,
+      "sha256": "ac62e11c077bec975b4f5ca5525dd093bcf306c40806132f60c29e6941cb76a1",
+      "hashed_utc": "2026-10-01T14:04:27.200164+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/55212.json",
+      "bytes": 195888,
+      "mtime_ns": 1790847168430660435,
+      "sha256": "0ce067502bd9e98ac696123e16ca870f64877445fea8892d386b75c1bb708480",
+      "hashed_utc": "2026-10-01T14:04:27.201726+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/59217.json",
+      "bytes": 65847,
+      "mtime_ns": 1790847292201770409,
+      "sha256": "59a4c073c70668b6b84deda75ea90debb16d071e76f668b48cec411fd8f9f7a8",
+      "hashed_utc": "2026-10-01T14:04:27.203200+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/59881.json",
+      "bytes": 65333,
+      "mtime_ns": 1790847394811205795,
+      "sha256": "77057e5437ed3f686d09c82003b86022cc468f8e0e6b90559347656fb832a0a4",
+      "hashed_utc": "2026-10-01T14:04:27.204548+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/6220.json",
+      "bytes": 80100,
+      "mtime_ns": 1790848423688185486,
+      "sha256": "8129f1e293314ddbbf1356b7a109147da663e4b42c1376becff0db66f975c67a",
+      "hashed_utc": "2026-10-01T14:04:27.205922+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/656.json",
+      "bytes": 84282,
+      "mtime_ns": 1790848473651903451,
+      "sha256": "39ef406f81d64a6c44d3523e3573fd5d97e366988a131e51d1e56288b10e6b52",
+      "hashed_utc": "2026-10-01T14:04:27.207288+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/714543.json",
+      "bytes": 26759,
+      "mtime_ns": 1790848112284809346,
+      "sha256": "3c1cf6207e10fe044ff1c5bf0fafde0535dccb80db31a68c90ca11817d55da9c",
+      "hashed_utc": "2026-10-01T14:04:27.208610+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/72536.json",
+      "bytes": 70890,
+      "mtime_ns": 1790848270230052421,
+      "sha256": "c48d631018a071fa67d8d9139653383cbf01d133f08ed891181332bdfad9c095",
+      "hashed_utc": "2026-10-01T14:04:27.209977+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/7878457.json",
+      "bytes": 220660,
+      "mtime_ns": 1790848359074459139,
+      "sha256": "8bba2e4ac4173a3853d6212c6a8924f2f8dd53b58b1c82e305caa13fe125a462",
+      "hashed_utc": "2026-10-01T14:04:27.211617+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/7955.json",
+      "bytes": 234802,
+      "mtime_ns": 1790848276778540178,
+      "sha256": "d2a904763f6848ee228799635d175876da228af53a8e2703b6789c10b7fd2326",
+      "hashed_utc": "2026-10-01T14:04:27.213261+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/7959.json",
+      "bytes": 271177,
+      "mtime_ns": 1790847292510104770,
+      "sha256": "ab29f7f595ae8da16f10cf700c431d445df70cf2cdaf70896b9dfcb2ad6f35ce",
+      "hashed_utc": "2026-10-01T14:04:27.214969+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/8429.json",
+      "bytes": 64367,
+      "mtime_ns": 1790847391150968861,
+      "sha256": "c4dee57962aae6a7c281636d4a5fb35f1eb5589b7cc15605d1433645c912683c",
+      "hashed_utc": "2026-10-01T14:04:27.216346+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/89732.json",
+      "bytes": 222992,
+      "mtime_ns": 1790847403915098479,
+      "sha256": "394b0eefc0ca40b4e52de19ef1a97d149eb868d9b04ac81eac8c7b21f410fb90",
+      "hashed_utc": "2026-10-01T14:04:27.218017+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/9228.json",
+      "bytes": 289006,
+      "mtime_ns": 1790848098007292681,
+      "sha256": "ac617c7a7c540b3e20f6a2ae8a9ed7a9fb088830bd178e3999c286b6eff68135",
+      "hashed_utc": "2026-10-01T14:04:27.219804+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/9236.json",
+      "bytes": 332854,
+      "mtime_ns": 1790848037795340305,
+      "sha256": "7872dde972e6d3d1df8666d39ec87d26713210dccb36fa87b57cb1950988f0f6",
+      "hashed_utc": "2026-10-01T14:04:27.221543+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/query-sources/991.json",
+      "bytes": 50255,
+      "mtime_ns": 1790848407582397507,
+      "sha256": "491fe2245047242868950883b6c3f92d4e4964483b5f2a518a3a88e2f9898c38",
+      "hashed_utc": "2026-10-01T14:04:27.223003+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/redirect-acquisition.log",
+      "bytes": 219,
+      "mtime_ns": 1790847383919291729,
+      "sha256": "27619ec5c40ca863049849a87e0c7a2f4520b17ccc399c264980a1d6d131060f",
+      "hashed_utc": "2026-10-01T14:04:27.224187+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/redirects-staging.log",
+      "bytes": 377,
+      "mtime_ns": 1790850699416839398,
+      "sha256": "d4a0aa41c854e84f17ed92f794a55e1ed7d4311ddd0dee986aa575c8525d666d",
+      "hashed_utc": "2026-10-01T14:04:27.225329+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/seal-contract-fixture/000_fixture/articles.blocks",
+      "bytes": 13252,
+      "mtime_ns": 1790853849761617405,
+      "sha256": "8d992bf96c36842697e4575b03acbd803efab0539d91041b78b643129928d489",
+      "hashed_utc": "2026-10-01T14:04:27.226726+00:00",
+      "kind": "preserved_positive_or_negative_control_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/seal-contract-fixture/000_fixture/catalog.sqlite",
+      "bytes": 65536,
+      "mtime_ns": 1790853849572941742,
+      "sha256": "1d4e4a573d16daf4d2855d32e1e3848964097b127ebb78bd35c655c298aee3b9",
+      "hashed_utc": "2026-10-01T14:04:27.228207+00:00",
+      "kind": "preserved_positive_or_negative_control_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/seal-contract-fixture/000_fixture/measurement.json",
+      "bytes": 769,
+      "mtime_ns": 1790853849573500575,
+      "sha256": "c6ff04005dce0de5da5c2d218329e135b3a8a3b766797ed3a97963aa7427b37b",
+      "hashed_utc": "2026-10-01T14:04:27.229390+00:00",
+      "kind": "preserved_positive_or_negative_control_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/seal-contract-fixture/installed-inventory.json",
+      "bytes": 10516,
+      "mtime_ns": 1790853849672321276,
+      "sha256": "909b4e9b9d152a1158677e56f5dae2e3b264548694f8e578b9ba76467d605e40",
+      "hashed_utc": "2026-10-01T14:04:27.231101+00:00",
+      "kind": "preserved_positive_or_negative_control_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/seal-contract-fixture/tampered-check.json",
+      "bytes": 420,
+      "mtime_ns": 1790853849815287777,
+      "sha256": "96c66e78fc91e923e296c40c4442fc539d11861121b7b4eca2d340186f29d67d",
+      "hashed_utc": "2026-10-01T14:04:27.232331+00:00",
+      "kind": "preserved_positive_or_negative_control_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/seal-contract-fixture/valid-check.json",
+      "bytes": 317,
+      "mtime_ns": 1790853849749007433,
+      "sha256": "fa1d19a33651238e86579c155e9625e1b3ca73e81d48417568ca175e3a37a981",
+      "hashed_utc": "2026-10-01T14:04:27.233540+00:00",
+      "kind": "preserved_positive_or_negative_control_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-source-summary.json",
+      "bytes": 82,
+      "mtime_ns": 1790850833449477915,
+      "sha256": "cd9874a7a26bc6ebd4e816e8385f211c806105e8cd33e516aad26814bdd11ef0",
+      "hashed_utc": "2026-10-01T14:04:27.234745+00:00",
+      "kind": "explicit_task_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/10106.json",
+      "bytes": 121717,
+      "mtime_ns": 1790850831569374837,
+      "sha256": "43182790dade263b6f7f96788f6f65b47ce92c93ef8237502ca587302895eaca",
+      "hashed_utc": "2026-10-01T14:04:27.236299+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/10303.json",
+      "bytes": 25402,
+      "mtime_ns": 1790850831700643669,
+      "sha256": "71f2f1cc54d33a1127fb6ccdbce760282dec12d993a167bfad101f291135d89c",
+      "hashed_utc": "2026-10-01T14:04:27.237710+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/140459.json",
+      "bytes": 44665,
+      "mtime_ns": 1790850830772371618,
+      "sha256": "562009f85a0a37bb4f5d7bf6b351ffd714c813d25048584cecbf43dd5b85af47",
+      "hashed_utc": "2026-10-01T14:04:27.239232+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/14539.json",
+      "bytes": 238930,
+      "mtime_ns": 1790850830475989966,
+      "sha256": "5ba30424a314f6a10275511b3fcbd5c14a81904e874a41b0bc09401dc04b0748",
+      "hashed_utc": "2026-10-01T14:04:27.240959+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/1539814.json",
+      "bytes": 21846,
+      "mtime_ns": 1790850830341356636,
+      "sha256": "704f2ba5b990d039e645c84977a7e1098cbc6153612b62d57b3dbd66abfa49d7",
+      "hashed_utc": "2026-10-01T14:04:27.242374+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/171879.json",
+      "bytes": 65625,
+      "mtime_ns": 1790850829918340678,
+      "sha256": "844f887f5288d6b92a2215a982f66095c42c1164f4c009a40061c6377e6d5f2e",
+      "hashed_utc": "2026-10-01T14:04:27.243904+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/17327.json",
+      "bytes": 68143,
+      "mtime_ns": 1790850831641360217,
+      "sha256": "86481e2f14b40012001c875f1860e36dd51a88fec039bb7312d4bc9682d9e1b6",
+      "hashed_utc": "2026-10-01T14:04:27.245388+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/18976.json",
+      "bytes": 145767,
+      "mtime_ns": 1790850829799823348,
+      "sha256": "559be77da8f8964a13f557ee0772311c915665024b2cbec556948c569f2c91db",
+      "hashed_utc": "2026-10-01T14:04:27.247041+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/19331.json",
+      "bytes": 376624,
+      "mtime_ns": 1790850831015105677,
+      "sha256": "90997965a447fa7fea9f900e98ef6714b2f958b26153285c5bdd203f4cb7d2df",
+      "hashed_utc": "2026-10-01T14:04:27.248955+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/19593040.json",
+      "bytes": 54307,
+      "mtime_ns": 1790850832594259334,
+      "sha256": "a2b7926e6198de41fff4caef6d2a328ae1a973b3bdb62bfe4a1a143d8ff0b8fa",
+      "hashed_utc": "2026-10-01T14:04:27.250475+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/19594213.json",
+      "bytes": 66949,
+      "mtime_ns": 1790850833296532317,
+      "sha256": "30db0ab0142410e235f6587d64df894c8497f0e84c3f82e9e1a826893d20316b",
+      "hashed_utc": "2026-10-01T14:04:27.252026+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/19817681.json",
+      "bytes": 111086,
+      "mtime_ns": 1790850831480541989,
+      "sha256": "18c916ebc18a7989c0b0926689235128844ed0439cce53c2728945c9f1966044",
+      "hashed_utc": "2026-10-01T14:04:27.253616+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/20369.json",
+      "bytes": 101339,
+      "mtime_ns": 1790850831745375548,
+      "sha256": "d0d7a460ecd5e99e437d13dc00dcae846e4d1f01753e8d418fa39fe54ce6306c",
+      "hashed_utc": "2026-10-01T14:04:27.255353+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/20598060.json",
+      "bytes": 59440,
+      "mtime_ns": 1790850831263004674,
+      "sha256": "73cd92b9722f78e1bf4b2408d05e38199ee200067aab3f9d6f1b996cb3977825",
+      "hashed_utc": "2026-10-01T14:04:27.256992+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/21438242.json",
+      "bytes": 104502,
+      "mtime_ns": 1790850832878380123,
+      "sha256": "d2c259361f68ca17df6de7e21371a306bb62dbb823335de8d141a5b46dfc6ef9",
+      "hashed_utc": "2026-10-01T14:04:27.258575+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/22303.json",
+      "bytes": 185910,
+      "mtime_ns": 1790850830113518735,
+      "sha256": "cc18a309227c20ab9dd80974b0601855c14cd9673dccc77b3b747b672b411c00",
+      "hashed_utc": "2026-10-01T14:04:27.260421+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/235589.json",
+      "bytes": 94690,
+      "mtime_ns": 1790850832648005594,
+      "sha256": "163a054053ecdfd7cba29649c9550d972f1bda97cc276e63565e8e0762c54db3",
+      "hashed_utc": "2026-10-01T14:04:27.262114+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/23619.json",
+      "bytes": 77950,
+      "mtime_ns": 1790850831601374966,
+      "sha256": "d073466bf255b10bd1bfd99ab7970219e7baaf5f29c80b89a924cf78553e7656",
+      "hashed_utc": "2026-10-01T14:04:27.263729+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/238025.json",
+      "bytes": 38941,
+      "mtime_ns": 1790850833356118509,
+      "sha256": "96e0c9e504fb09c7c5ec23061751f36ace1e72dacf8c455aa152196c82d5c2c3",
+      "hashed_utc": "2026-10-01T14:04:27.265229+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/24544.json",
+      "bytes": 167965,
+      "mtime_ns": 1790850829889676546,
+      "sha256": "564c756afa32fa9de7173b6a3664efce77839ac21fb21c63a584f5e20695e66f",
+      "hashed_utc": "2026-10-01T14:04:27.266905+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/24944.json",
+      "bytes": 214204,
+      "mtime_ns": 1790850831426659672,
+      "sha256": "cb27e9cb1fb14b18b3820fdcec430b731174b1ec08c1ec4cbd6e2216a626b688",
+      "hashed_utc": "2026-10-01T14:04:27.268743+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/25948.json",
+      "bytes": 33793,
+      "mtime_ns": 1790850832160138801,
+      "sha256": "87a32303474aa52854947a0f2e484e69fc3350ab39814ca4c11f4a80ab60cee4",
+      "hashed_utc": "2026-10-01T14:04:27.270254+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/26513034.json",
+      "bytes": 151560,
+      "mtime_ns": 1790850831888511435,
+      "sha256": "a17843c65189557ad55164dad3f40e77163d61f1f4544ec2f009e58b802e8aae",
+      "hashed_utc": "2026-10-01T14:04:27.272060+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/26751.json",
+      "bytes": 247035,
+      "mtime_ns": 1790850830042616828,
+      "sha256": "f615090d3c6ce43c94ae5751ee413ad6860060d16c9bdb6f97ceef8d34858a7b",
+      "hashed_utc": "2026-10-01T14:04:27.273983+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/26903.json",
+      "bytes": 295669,
+      "mtime_ns": 1790850829185082322,
+      "sha256": "c3aefa2cedf22eebdf75798b10780d17f56d32c7ef2d00e2c83b15b52a1fae68",
+      "hashed_utc": "2026-10-01T14:04:27.275877+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/27859.json",
+      "bytes": 77484,
+      "mtime_ns": 1790850829653821946,
+      "sha256": "71b0429506a05d0bee649664c0643b6fd0ab210b713a97aa3124251aab7df5ba",
+      "hashed_utc": "2026-10-01T14:04:27.277478+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/28538.json",
+      "bytes": 86557,
+      "mtime_ns": 1790850832066028367,
+      "sha256": "ece6dee114d5b43a9e468b8cbaea5ff0098b49e7acf9b6791890756f907cbd9d",
+      "hashed_utc": "2026-10-01T14:04:27.279200+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/28736.json",
+      "bytes": 201726,
+      "mtime_ns": 1790850830259369546,
+      "sha256": "c175efa1142fea190a611f9a35ca464e7f46b723ea2b4f0ccd7de7a0edbd8823",
+      "hashed_utc": "2026-10-01T14:04:27.281102+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/299936.json",
+      "bytes": 7234,
+      "mtime_ns": 1790850830188629504,
+      "sha256": "b98c6c6d09c86940add639cee3eb6f8adea4ed4fd6785788c8f936e0e96e83d5",
+      "hashed_utc": "2026-10-01T14:04:27.404375+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/30718.json",
+      "bytes": 172874,
+      "mtime_ns": 1790850832448378387,
+      "sha256": "80728e442f172817c7ea0bf3a2f0437396bd1f66a6fb5ab53d0a4c2027d5b15e",
+      "hashed_utc": "2026-10-01T14:04:27.489584+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/32552979.json",
+      "bytes": 10554,
+      "mtime_ns": 1790850832353817114,
+      "sha256": "37e172688dd03e1a7775433d2f132b0d1517502f55548db5a6dd3a7463520351",
+      "hashed_utc": "2026-10-01T14:04:27.491607+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/32927.json",
+      "bytes": 344877,
+      "mtime_ns": 1790850830917355154,
+      "sha256": "51febd0481dd7fa9f6a12528382918212aec91c22c7c058ab958fe47bf4c1dd9",
+      "hashed_utc": "2026-10-01T14:04:27.494089+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/33306.json",
+      "bytes": 259014,
+      "mtime_ns": 1790850832694117464,
+      "sha256": "77870d28e8fb2324edd5d264e953127783a4a210cddfbba926ff1381632762a6",
+      "hashed_utc": "2026-10-01T14:04:27.496256+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/34542.json",
+      "bytes": 149347,
+      "mtime_ns": 1790850833052676094,
+      "sha256": "e8fb93c2377c0cc0a5f37ad04c5ddb14adc4090c3bd58b1417568b238cb23b70",
+      "hashed_utc": "2026-10-01T14:04:27.498319+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/348454.json",
+      "bytes": 145172,
+      "mtime_ns": 1790850828664572178,
+      "sha256": "2c9f88fbc2c120795e04b8dc7637819accd45520bdba14219fa07376bd27f8b1",
+      "hashed_utc": "2026-10-01T14:04:27.500291+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/3546.json",
+      "bytes": 34483,
+      "mtime_ns": 1790850829552436861,
+      "sha256": "005d1f08fe85d3b6b82abede770001cd05b779b805a7fb07a031e9bb1445ba1b",
+      "hashed_utc": "2026-10-01T14:04:27.502019+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/36563.json",
+      "bytes": 180529,
+      "mtime_ns": 1790850832234377522,
+      "sha256": "086c59c0227ec26c4e8d98c40d4d27fdbe8d6a4a72ed3984d6904307a276dcd6",
+      "hashed_utc": "2026-10-01T14:04:27.503964+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/37508.json",
+      "bytes": 116920,
+      "mtime_ns": 1790850833448948127,
+      "sha256": "5dcbf11f855e86f721dda7e03759278d9176c19e9b52678b423401637640dc3c",
+      "hashed_utc": "2026-10-01T14:04:27.505769+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/38454.json",
+      "bytes": 68193,
+      "mtime_ns": 1790850832928205305,
+      "sha256": "3762a588ccf9d89baab5eced433afb044b104e6fff5991b473f417968e6d469e",
+      "hashed_utc": "2026-10-01T14:04:27.507501+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/38579.json",
+      "bytes": 128595,
+      "mtime_ns": 1790850832815399626,
+      "sha256": "bf549575d4f270550f673937db7a11a82704bd76abe23b8c9050306c31c55be5",
+      "hashed_utc": "2026-10-01T14:04:27.509371+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/41545.json",
+      "bytes": 38959,
+      "mtime_ns": 1790850832306892538,
+      "sha256": "25b6ae3e7cc36c2e9276a3743f8655b0fc4747032a4ed27161b3774c06757e21",
+      "hashed_utc": "2026-10-01T14:04:27.511171+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/422481.json",
+      "bytes": 139397,
+      "mtime_ns": 1790850833215027735,
+      "sha256": "42f5026a4a0cb827e1f3425e78e74848c68fb6ed492a7acd36a2053458d8d6e6",
+      "hashed_utc": "2026-10-01T14:04:27.512978+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/4429510.json",
+      "bytes": 32958,
+      "mtime_ns": 1790850828817424339,
+      "sha256": "d0a75dbe24fb05fa9abd35ce693d5e693168e06f68aecc38d9a6d1c1d2e020ca",
+      "hashed_utc": "2026-10-01T14:04:27.514710+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/46740.json",
+      "bytes": 24783,
+      "mtime_ns": 1790850831561765426,
+      "sha256": "c190e359b4cd4b21539b118a5815c35082380a1629606b175ad2abdb7b747674",
+      "hashed_utc": "2026-10-01T14:04:27.516444+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/47521.json",
+      "bytes": 15438,
+      "mtime_ns": 1790850830150004614,
+      "sha256": "16e2ac15b69eec90ef429725c39b866706fa4e6d0ee1f2efea7f960ec275d218",
+      "hashed_utc": "2026-10-01T14:04:27.518099+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/47526.json",
+      "bytes": 95027,
+      "mtime_ns": 1790850833064290390,
+      "sha256": "cc63f7dfd2fb691c02775307161172fc94cec8c19d014e001fa25e7e504835c7",
+      "hashed_utc": "2026-10-01T14:04:27.519953+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/47717.json",
+      "bytes": 167926,
+      "mtime_ns": 1790850831978376489,
+      "sha256": "cc9439aaefd894304e2cf19fff121b049ce1f9972efbcce5462b1e1dc76c66de",
+      "hashed_utc": "2026-10-01T14:04:27.521995+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/489570.json",
+      "bytes": 89516,
+      "mtime_ns": 1790850830821107210,
+      "sha256": "34aafc7bf543e65c34167dfa20c75be9a7450029593a496e057ebbb8dbbf715f",
+      "hashed_utc": "2026-10-01T14:04:27.523878+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/49090.json",
+      "bytes": 80171,
+      "mtime_ns": 1790850828799538531,
+      "sha256": "54378c3c3876f1f1ef5cd8ff0c2917dab5c321abdf66fb507a31c71249cc3a84",
+      "hashed_utc": "2026-10-01T14:04:27.525826+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/5042951.json",
+      "bytes": 472297,
+      "mtime_ns": 1790850829040628077,
+      "sha256": "ea60761aece6638cf3b4f4a6a4c3e126d1ef3879b12c5cefc32b01d2206d2b7e",
+      "hashed_utc": "2026-10-01T14:04:27.528108+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/5299.json",
+      "bytes": 168794,
+      "mtime_ns": 1790850829605185339,
+      "sha256": "e3ac5614528dbf482c48102cf17adb0c5f6277e4f0cbc18dd0f9dc7df5655317",
+      "hashed_utc": "2026-10-01T14:04:27.530061+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/5355.json",
+      "bytes": 72378,
+      "mtime_ns": 1790850829972945539,
+      "sha256": "5edc15daa68262b96c22ba14d062aed59572fd2899ed829d0e24fa0430e858f3",
+      "hashed_utc": "2026-10-01T14:04:27.531815+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/55212.json",
+      "bytes": 195865,
+      "mtime_ns": 1790850832387543524,
+      "sha256": "81ac7ce5532682954caae8094a332ce97b84434294b84eb901b2495571de1aa4",
+      "hashed_utc": "2026-10-01T14:04:27.533744+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/59217.json",
+      "bytes": 65824,
+      "mtime_ns": 1790850829260316202,
+      "sha256": "7a0de318cef69b919b211e93a9a784be8aa07e742a8d294d4e522fe8253853d0",
+      "hashed_utc": "2026-10-01T14:04:27.535504+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/59881.json",
+      "bytes": 65310,
+      "mtime_ns": 1790850830504408604,
+      "sha256": "4189334bb56183c46960c190ed87e5b42dd1fd4bbedf3351dd4a15248c0785fb",
+      "hashed_utc": "2026-10-01T14:04:27.537314+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/6220.json",
+      "bytes": 80077,
+      "mtime_ns": 1790850829030350292,
+      "sha256": "2bedf1d151e73ac2445e5ebd1e8c89364d7c851c0c1b547678c6f13bf9c71293",
+      "hashed_utc": "2026-10-01T14:04:27.539277+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/656.json",
+      "bytes": 84259,
+      "mtime_ns": 1790850828575948534,
+      "sha256": "bb80178df78f123496a3e19deadf1f049226577bb9c7d28d0da119cdf7eb90b4",
+      "hashed_utc": "2026-10-01T14:04:27.541128+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/714543.json",
+      "bytes": 26736,
+      "mtime_ns": 1790850832115133508,
+      "sha256": "eee8c06057658815e628abb55e78793ea7be0e9bcf80cde5b2ed9cefb1a1d0e0",
+      "hashed_utc": "2026-10-01T14:04:27.542817+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/72536.json",
+      "bytes": 70867,
+      "mtime_ns": 1790850830304513123,
+      "sha256": "d6625537dd3038db864821b46d7e2b35342209b472fe1d68acc5c82fa423c311",
+      "hashed_utc": "2026-10-01T14:04:27.544589+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/7878457.json",
+      "bytes": 220637,
+      "mtime_ns": 1790850831794028956,
+      "sha256": "030692553b3cfd83fd7456e85223e6ea6c5ed8f00fbce7e28afa59a6593251bd",
+      "hashed_utc": "2026-10-01T14:04:27.546618+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/7955.json",
+      "bytes": 234779,
+      "mtime_ns": 1790850830393220882,
+      "sha256": "c9ad90f4ffe74887768171123f5d9ee8695a55fb8e4357da2ebc055197a64b0b",
+      "hashed_utc": "2026-10-01T14:04:27.548617+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/7959.json",
+      "bytes": 271154,
+      "mtime_ns": 1790850829362623428,
+      "sha256": "8be12235c5dc33a6826ba2ad79e8ecef1e592513a3bdc2c888b515fddab23837",
+      "hashed_utc": "2026-10-01T14:04:27.550711+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/8429.json",
+      "bytes": 64344,
+      "mtime_ns": 1790850830450615747,
+      "sha256": "015a931eb43af8daec4fd65959130a2ce3464fbfd5d7a188def9ba1d99fad49c",
+      "hashed_utc": "2026-10-01T14:04:27.552611+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/89732.json",
+      "bytes": 222969,
+      "mtime_ns": 1790850830571007439,
+      "sha256": "44194502e43fa658fd538e4d36651cd47357e3c04739e676ae70ee5c4afb6449",
+      "hashed_utc": "2026-10-01T14:04:27.554615+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/9228.json",
+      "bytes": 288983,
+      "mtime_ns": 1790850831074991907,
+      "sha256": "8a61587c4f199418e983aa205ffa7f5027f9464e320276a6d3a5c8d00644fc20",
+      "hashed_utc": "2026-10-01T14:04:27.556825+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/9236.json",
+      "bytes": 332831,
+      "mtime_ns": 1790850831136914470,
+      "sha256": "7f9bf8287fb2189c57e9f7776bc0127ff632cee0926b8af2114016e29fb3cd51",
+      "hashed_utc": "2026-10-01T14:04:27.559020+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-query-sources/991.json",
+      "bytes": 50232,
+      "mtime_ns": 1790850828875279183,
+      "sha256": "640f3e30f90d4652019f063f695be627cbab25a7929aca4024da374539dc2f1f",
+      "hashed_utc": "2026-10-01T14:04:27.561027+00:00",
+      "kind": "public_source_record_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/selected-source-extraction.log",
+      "bytes": 20,
+      "mtime_ns": 1790850833449477915,
+      "sha256": "d923852a634d8942a5bc4d23e7910818476a179e16d3aa01cf3ebabba2b0cac5",
+      "hashed_utc": "2026-10-01T14:04:27.562682+00:00",
+      "kind": "preserved_prior_execution_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/receipts/session-identity.json",
+      "bytes": 270,
+      "mtime_ns": 1790852542355640231,
+      "sha256": "a339759938819f901ca775c28c2eaaffc7f533bec661de8ccdbf84dc6089dbc0",
+      "hashed_utc": "2026-10-01T14:04:27.564257+00:00",
+      "kind": "explicit_task_receipt",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/redirects-staging.sqlite",
+      "bytes": 2298830848,
+      "mtime_ns": 1790850693779816475,
+      "sha256": "87d93564af164a8e0c59ee6bd7a9d191679ecfb2ddfecb9c573ba044549ec9c5",
+      "hashed_utc": "2026-10-01T14:04:29.793602+00:00",
+      "kind": "preserved_staging_database",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/redirects-staging.sqlite-shm",
+      "bytes": 32768,
+      "mtime_ns": 1790851217509263743,
+      "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+      "hashed_utc": "2026-10-01T14:04:29.795951+00:00",
+      "kind": "preserved_database_recovery_sidecar",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/redirects-staging.sqlite-wal",
+      "bytes": 0,
+      "mtime_ns": 1790851217507923045,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "hashed_utc": "2026-10-01T14:04:29.797352+00:00",
+      "kind": "preserved_database_recovery_sidecar",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/shared-block-contract-fixture/articles.blocks",
+      "bytes": 13252,
+      "mtime_ns": 1790849838488175624,
+      "sha256": "bfff055e1ff47e88339dd25818ee5c4976ea60aefb9013742867946289820d85",
+      "hashed_utc": "2026-10-01T14:04:29.798849+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/shared-block-contract-fixture/catalog.sqlite",
+      "bytes": 65536,
+      "mtime_ns": 1790849838498175670,
+      "sha256": "1d4e4a573d16daf4d2855d32e1e3848964097b127ebb78bd35c655c298aee3b9",
+      "hashed_utc": "2026-10-01T14:04:29.800945+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/shared-block-contract-fixture/measurement.json",
+      "bytes": 769,
+      "mtime_ns": 1790849838501174905,
+      "sha256": "c6ff04005dce0de5da5c2d218329e135b3a8a3b766797ed3a97963aa7427b37b",
+      "hashed_utc": "2026-10-01T14:04:29.802688+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/shared-block-contract-fixture/progress.json",
+      "bytes": 437,
+      "mtime_ns": 1790849838493142044,
+      "sha256": "9a0c3465c848357242792ca905271c5e8df55df168a403fc75cd4ecd2adb118f",
+      "hashed_utc": "2026-10-01T14:04:29.804417+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/stop-index-contract-fixture/articles.blocks",
+      "bytes": 13252,
+      "mtime_ns": 1790852765866782659,
+      "sha256": "bfff055e1ff47e88339dd25818ee5c4976ea60aefb9013742867946289820d85",
+      "hashed_utc": "2026-10-01T14:04:29.806332+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/stop-index-contract-fixture/catalog.sqlite",
+      "bytes": 61440,
+      "mtime_ns": 1790852765917782853,
+      "sha256": "7158fdb59ceaba4f2bd610c7206fc166f6aa8be5ed38c721d2ee566df297a16a",
+      "hashed_utc": "2026-10-01T14:04:29.808256+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    },
+    {
+      "path": "/home/isa/PocketLore-control/scale-workers/wiki/stop-index-contract-fixture/measurement.json",
+      "bytes": 1151,
+      "mtime_ns": 1790852765927269294,
+      "sha256": "336dd19a356e9a6f51f492513a8cff5fa75fb65c366f2e7d1c073aefdb8ffa75",
+      "hashed_utc": "2026-10-01T14:04:29.810130+00:00",
+      "kind": "preserved_prototype_or_fixture",
+      "expected_sha256": null
+    }
+  ],
+  "files_count": 276,
+  "bytes_hashed": 58927639335,
+  "fresh_pinned_input_hashes_passed": true,
+  "finewiki_shards": 15,
+  "finewiki_bytes": 37722458405,
+  "seconds_this_run": 59.561482946999604,
+  "scope": "Explicit public corpus inputs, own task receipts and prior prototypes only; no supervisor state, private conversations, holdout or secrets scanned",
+  "limits": "Current edition and its active logs are sealed separately after build completion; incomplete acquisition artifacts are evidence only, never ranking inputs"
+}

@@ -1,0 +1,719 @@
+{
+  "version": 1,
+  "created_utc": "2026-10-01T09:21:43.290951+00:00",
+  "policy": "Frozen builder development retrieval probes, not holdout or factual answer gold. Head/tail are intended topic strata, measured view ranks reported separately. Source support audited against pinned records without rewriting probes. Absence may retrieve related articles but cannot support the requested claim.",
+  "queries": [
+    {
+      "id": "q001",
+      "category": "head",
+      "query": "Earth",
+      "expected_titles": [
+        "Earth"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q002",
+      "category": "head",
+      "query": "Sun",
+      "expected_titles": [
+        "Sun"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q003",
+      "category": "head",
+      "query": "Moon",
+      "expected_titles": [
+        "Moon"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q004",
+      "category": "head",
+      "query": "Water",
+      "expected_titles": [
+        "Water"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q005",
+      "category": "head",
+      "query": "Oxygen",
+      "expected_titles": [
+        "Oxygen"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q006",
+      "category": "head",
+      "query": "Carbon",
+      "expected_titles": [
+        "Carbon"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q007",
+      "category": "head",
+      "query": "Photosynthesis",
+      "expected_titles": [
+        "Photosynthesis"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q008",
+      "category": "head",
+      "query": "Gravity",
+      "expected_titles": [
+        "Gravity"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q009",
+      "category": "head",
+      "query": "Evolution",
+      "expected_titles": [
+        "Evolution"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q010",
+      "category": "head",
+      "query": "Democracy",
+      "expected_titles": [
+        "Democracy"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q011",
+      "category": "head",
+      "query": "World War II",
+      "expected_titles": [
+        "World War II"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q012",
+      "category": "head",
+      "query": "Internet",
+      "expected_titles": [
+        "Internet"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q013",
+      "category": "head",
+      "query": "Computer",
+      "expected_titles": [
+        "Computer"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q014",
+      "category": "head",
+      "query": "DNA",
+      "expected_titles": [
+        "DNA"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q015",
+      "category": "head",
+      "query": "Solar System",
+      "expected_titles": [
+        "Solar System"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q016",
+      "category": "head",
+      "query": "Climate change",
+      "expected_titles": [
+        "Climate change"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q017",
+      "category": "tail",
+      "query": "10th Tank Corps",
+      "expected_titles": [
+        "10th Tank Corps"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q018",
+      "category": "tail",
+      "query": "Transport in Belgium",
+      "expected_titles": [
+        "Transport in Belgium"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q019",
+      "category": "tail",
+      "query": "Futurist cooking",
+      "expected_titles": [
+        "Futurist cooking"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q020",
+      "category": "tail",
+      "query": "Museum Plaza",
+      "expected_titles": [
+        "Museum Plaza"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q021",
+      "category": "tail",
+      "query": "Acanthostega",
+      "expected_titles": [
+        "Acanthostega"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q022",
+      "category": "tail",
+      "query": "Brachistochrone curve",
+      "expected_titles": [
+        "Brachistochrone curve"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q023",
+      "category": "tail",
+      "query": "Cahokia",
+      "expected_titles": [
+        "Cahokia"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q024",
+      "category": "tail",
+      "query": "Antikythera mechanism",
+      "expected_titles": [
+        "Antikythera mechanism"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q025",
+      "category": "tail",
+      "query": "Oklo",
+      "expected_titles": [
+        "Oklo"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q026",
+      "category": "tail",
+      "query": "Lake Nyos",
+      "expected_titles": [
+        "Lake Nyos"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q027",
+      "category": "tail",
+      "query": "Pando (tree)",
+      "expected_titles": [
+        "Pando (tree)"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q028",
+      "category": "tail",
+      "query": "Socotra",
+      "expected_titles": [
+        "Socotra"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q029",
+      "category": "tail",
+      "query": "Zhang Heng",
+      "expected_titles": [
+        "Zhang Heng"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q030",
+      "category": "tail",
+      "query": "Srinivasa Ramanujan",
+      "expected_titles": [
+        "Srinivasa Ramanujan"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q031",
+      "category": "tail",
+      "query": "Tardigrade",
+      "expected_titles": [
+        "Tardigrade"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q032",
+      "category": "tail",
+      "query": "Axolotl",
+      "expected_titles": [
+        "Axolotl"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q033",
+      "category": "paraphrase",
+      "query": "distance from zero",
+      "expected_titles": [
+        "Absolute value"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q034",
+      "category": "paraphrase",
+      "query": "plants convert sunlight into chemical energy",
+      "expected_titles": [
+        "Photosynthesis"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q035",
+      "category": "paraphrase",
+      "query": "water vapor turns into liquid",
+      "expected_titles": [
+        "Condensation"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q036",
+      "category": "paraphrase",
+      "query": "liquid water changes into vapor",
+      "expected_titles": [
+        "Evaporation"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q037",
+      "category": "paraphrase",
+      "query": "ground shakes when rocks release energy",
+      "expected_titles": [
+        "Earthquake"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q038",
+      "category": "paraphrase",
+      "query": "molten rock below the surface",
+      "expected_titles": [
+        "Magma"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q039",
+      "category": "paraphrase",
+      "query": "electric resistance voltage and current",
+      "expected_titles": [
+        "Ohm's law"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q040",
+      "category": "paraphrase",
+      "query": "hereditary information in living organisms",
+      "expected_titles": [
+        "DNA"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q041",
+      "category": "paraphrase",
+      "query": "acid donates a proton",
+      "expected_titles": [
+        "Br\u00f8nsted\u2013Lowry acid\u2013base theory"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q042",
+      "category": "paraphrase",
+      "query": "foods prepared using heat",
+      "expected_titles": [
+        "Cooking"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q043",
+      "category": "paraphrase",
+      "query": "organisms change over generations",
+      "expected_titles": [
+        "Evolution"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q044",
+      "category": "paraphrase",
+      "query": "landmass movement across geological time",
+      "expected_titles": [
+        "Plate tectonics"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q045",
+      "category": "paraphrase",
+      "query": "ocean water rises and falls periodically",
+      "expected_titles": [
+        "Tide"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q046",
+      "category": "paraphrase",
+      "query": "cell division two identical daughter cells",
+      "expected_titles": [
+        "Mitosis"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q047",
+      "category": "paraphrase",
+      "query": "light bends between different materials",
+      "expected_titles": [
+        "Refraction"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q048",
+      "category": "paraphrase",
+      "query": "heat flows without material movement",
+      "expected_titles": [
+        "Thermal conduction"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q049",
+      "category": "math_units",
+      "query": "Pythagorean theorem hypotenuse squared",
+      "expected_titles": [
+        "Pythagorean theorem"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q050",
+      "category": "math_units",
+      "query": "Speed of light metres per second",
+      "expected_titles": [
+        "Speed of light"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q051",
+      "category": "math_units",
+      "query": "Gravitational constant units",
+      "expected_titles": [
+        "Gravitational constant"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q052",
+      "category": "math_units",
+      "query": "Planck constant joule seconds",
+      "expected_titles": [
+        "Planck constant"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q053",
+      "category": "math_units",
+      "query": "Ideal gas law pressure volume temperature",
+      "expected_titles": [
+        "Ideal gas law"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q054",
+      "category": "math_units",
+      "query": "Newton second law force mass acceleration",
+      "expected_titles": [
+        "Newton's laws of motion"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q055",
+      "category": "math_units",
+      "query": "Kinetic energy one half mass velocity squared",
+      "expected_titles": [
+        "Kinetic energy"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q056",
+      "category": "math_units",
+      "query": "Quadratic formula discriminant",
+      "expected_titles": [
+        "Quadratic formula"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q057",
+      "category": "math_units",
+      "query": "Euler identity exponential pi",
+      "expected_titles": [
+        "Euler's identity"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q058",
+      "category": "math_units",
+      "query": "Mass energy equivalence c squared",
+      "expected_titles": [
+        "Mass\u2013energy equivalence"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q059",
+      "category": "math_units",
+      "query": "Celsius Kelvin temperature conversion",
+      "expected_titles": [
+        "Celsius"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q060",
+      "category": "math_units",
+      "query": "Sphere volume radius cubed",
+      "expected_titles": [
+        "Sphere"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q061",
+      "category": "math_units",
+      "query": "Circle circumference diameter pi",
+      "expected_titles": [
+        "Circle"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q062",
+      "category": "math_units",
+      "query": "Density mass volume units",
+      "expected_titles": [
+        "Density"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q063",
+      "category": "math_units",
+      "query": "Pressure pascal units",
+      "expected_titles": [
+        "Pressure"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q064",
+      "category": "math_units",
+      "query": "Avogadro constant reciprocal mole",
+      "expected_titles": [
+        "Avogadro constant"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q065",
+      "category": "multi_part",
+      "query": "evaporation condensation phase change",
+      "expected_titles": [
+        "Evaporation",
+        "Condensation"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q066",
+      "category": "multi_part",
+      "query": "Earth Moon radius",
+      "expected_titles": [
+        "Earth",
+        "Moon"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q067",
+      "category": "multi_part",
+      "query": "mitosis meiosis cell division",
+      "expected_titles": [
+        "Mitosis",
+        "Meiosis"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q068",
+      "category": "multi_part",
+      "query": "conduction convection heat transfer",
+      "expected_titles": [
+        "Thermal conduction",
+        "Convection"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q069",
+      "category": "multi_part",
+      "query": "oxygen carbon atomic number",
+      "expected_titles": [
+        "Oxygen",
+        "Carbon"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q070",
+      "category": "multi_part",
+      "query": "magma lava location",
+      "expected_titles": [
+        "Magma",
+        "Lava"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q071",
+      "category": "multi_part",
+      "query": "solar wind magnetic field",
+      "expected_titles": [
+        "Solar wind",
+        "Magnetic field"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q072",
+      "category": "multi_part",
+      "query": "acid base proton",
+      "expected_titles": [
+        "Acid",
+        "Base (chemistry)"
+      ],
+      "expect_answer_support": true
+    },
+    {
+      "id": "q073",
+      "category": "absence",
+      "query": "PocketLore secret launch code zqxv915",
+      "expected_titles": [],
+      "expect_answer_support": false
+    },
+    {
+      "id": "q074",
+      "category": "absence",
+      "query": "Museum Plaza restaurant opening hours October 2099",
+      "expected_titles": [],
+      "expect_answer_support": false
+    },
+    {
+      "id": "q075",
+      "category": "absence",
+      "query": "current weather tomorrow Socotra 2099",
+      "expected_titles": [],
+      "expect_answer_support": false
+    },
+    {
+      "id": "q076",
+      "category": "absence",
+      "query": "exact population of Mars in year 2300",
+      "expected_titles": [],
+      "expect_answer_support": false
+    },
+    {
+      "id": "q077",
+      "category": "absence",
+      "query": "unpublished password for Einstein private mailbox",
+      "expected_titles": [],
+      "expect_answer_support": false
+    },
+    {
+      "id": "q078",
+      "category": "absence",
+      "query": "florbnax energy theorem coefficient",
+      "expected_titles": [],
+      "expect_answer_support": false
+    },
+    {
+      "id": "q079",
+      "category": "absence",
+      "query": "live flight price London Tokyo next Tuesday",
+      "expected_titles": [],
+      "expect_answer_support": false
+    },
+    {
+      "id": "q080",
+      "category": "absence",
+      "query": "proven cure using imaginary element unobtainium",
+      "expected_titles": [],
+      "expect_answer_support": false
+    }
+  ]
+}

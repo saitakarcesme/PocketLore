@@ -1,0 +1,33 @@
+{
+  "task": "global-places",
+  "status": "builder_complete_ready_for_hash_seal_and_independent_criticism",
+  "overture_ids": 81455423,
+  "osm_objects": 4870526,
+  "osm_asset_bytes": 1415372800,
+  "field_or_geographic_pruning": false,
+  "distribution_ready": false,
+  "physical_acceptance": false,
+  "android_acceptance": false,
+  "updated_utc": "2026-10-01T13:15:53Z",
+  "checks": {
+    "frozen_queries": 100,
+    "frozen_cities": 20,
+    "osm_source_objects_exhaustively_equal": 4870526,
+    "diet_query_parity": 20,
+    "enrichment_queries": 20,
+    "synthetic_fixtures": 11,
+    "java_reader_compilation": 3
+  },
+  "places_budget_passed": false,
+  "primary_supplemental_bytes": 2279572113,
+  "primary_supplemental_lane_budget_passed": true,
+  "open_gates": [
+    "places storage budget",
+    "independent criticism",
+    "Android application and physical hardware acceptance",
+    "rights distribution review",
+    "relation geometry and source-family identity",
+    "whole-product and other specialty assets budgets",
+    "comparable rival application and human usefulness evaluation"
+  ]
+}

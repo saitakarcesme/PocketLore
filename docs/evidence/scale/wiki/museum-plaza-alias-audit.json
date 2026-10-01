@@ -1,0 +1,21 @@
+{
+  "frozen_query": "q020",
+  "expected_title": "Museum Plaza",
+  "strict_expectation_changed": false,
+  "actual_direct_aliases": [
+    {
+      "target": 4057884,
+      "alias_shard": "000_00014.parquet",
+      "fragment": "",
+      "canonical_record": [
+        4057884,
+        "Louisville Museum Plaza",
+        "000_00014.parquet",
+        435565,
+        195,
+        0
+      ]
+    }
+  ],
+  "interpretation": "Newer primary alias can resolve a renamed canonical source; preserve original strict title miss separately"
+}

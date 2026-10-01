@@ -1,0 +1,16 @@
+# Actual bulk source contracts
+
+The original protocol remains immutable evidence of the initial plan. Its monthly pageview assumption and 2.5-million target were superseded by measured adaptations; they must not be cited as the final data contract.
+
+| Input | Actual contract | Remaining uncertainty |
+|---|---|---|
+| FineWiki English | 15 Parquet files at `8bd13e72e6a002407649b3e898535f42ceb1aeb9`, 37,722,458,405 bytes, 6,614,655 raw rows; original text, wikitext, revision, timestamp, URL and structured infobox fields | August 2025 Enterprise extraction is not current Wikipedia; removed references/redirects cannot be reconstructed from extracted text |
+| Canonical articles | Highest revision per page ID, deterministic source-row ties, then title-conflict resolution; 6,498,498 eligible identities after exclusions | Dataset eligibility is heuristic; unresolved embedded rights can remain |
+| Priority | NeuML `wikipedia-20250620` at `b5559579fdfbd52faef3c2d68372161b6c06c790`, pageviews SHA-256 `409c4d1643171d050d77c9ea03416d77dac3a538ff8a78f59e3344df9bb49dc1`; literal lowercase underscore title match; descending views then ascending page ID | Aggregation interval unknown; secondary database's separate license not established; never label these August 2025 views |
+| Redirects | Primary Wikimedia 2026-09-01 redirect SQL and multistream title index, pinned primary SHA-1 and acquired SHA-256 receipts; direct target ID/title agreement | Newer than text; chains, absent targets and explicit non-main namespaces excluded; no freshness guarantee |
+| Frozen probes | 80 public builder development queries at commit `951dcab`, hash `8da806b7d64bc58610174ec5bb9f7517e74ae84aec405748d0f22ed78f5e978c` | Intended head/tail strata are not a proven popularity distribution; source-title recall is not generated-answer quality or a private holdout |
+| Supplemental tail probes | 16 source-bound queries at commit `39335f7`, hash `2ec7227e63566f9cd3e5ea79b54c0bc66a20e5e11e2ec74a1789d22a899035b4`; deterministic low stored-view-count records from the first canonical shard, frozen before whole-corpus query evaluation | Frozen after initial reader implementation; stored counts are not proven current popularity, and this is not a random or private holdout sample; report separately from the original 80 |
+
+FineWiki identifies its processed dataset as CC BY-SA 4.0 and credits Wikipedia contributors. Offline notices, licenses, article revision/history links, source hashes and exact retained ranges support inspection; they do not independently clear every embedded source. Recognized unresolved markers are excluded, with exact source rows and reasons preserved. Missing facts and rights remain unknown. The unsuccessful direct monthly pageviews download, failed census, interrupted builds and oversized variants remain outside Git in the private lane.
+
+AndroidLM README and BOAR KNOWLEDGE_PACKS primary documents were pinned and reviewed for pack layout and offline ingestion ideas. Their source revisions, acquired documents and licenses are in this evidence directory. No article-by-article crawling, bulk embeddings, per-record LLM inference, rival-code copying or GPU job was used. This work establishes Linux staging only, not Android or rival acceptance.

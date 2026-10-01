@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+"""Compact an unsealed generated shard; preserve the original database and measurement."""
+import argparse,fcntl,json,pathlib,resource,sqlite3,subprocess,time
+from acquire import atomic
+p=argparse.ArgumentParser();p.add_argument('pack');p.add_argument('archive');a=p.parse_args();pack=pathlib.Path(a.pack);archive=pathlib.Path(a.archive);archive.mkdir(parents=True,exist_ok=False);lock=(pack/'writer.lock').open('a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+subprocess.run(['cp','--reflink=auto',str(pack/'catalog.sqlite'),str(archive/'catalog.sqlite')],check=True);subprocess.run(['cp',str(pack/'measurement.json'),str(archive/'measurement.json')],check=True)
+t=time.monotonic();db=sqlite3.connect(pack/'catalog.sqlite');db.execute('PRAGMA cache_size=-262144');before={'bytes':(pack/'catalog.sqlite').stat().st_size,'freelist_pages':db.execute('PRAGMA freelist_count').fetchone()[0],'pages':db.execute('PRAGMA page_count').fetchone()[0]};db.execute("INSERT INTO search(search) VALUES ('optimize')");db.commit();db.execute('VACUUM');db.execute('PRAGMA wal_checkpoint(TRUNCATE)');db.execute("INSERT INTO search(search) VALUES ('integrity-check')");db.commit();db.execute('PRAGMA wal_checkpoint(TRUNCATE)');assert db.execute('PRAGMA integrity_check').fetchone()[0]=='ok';db.close()
+m=json.loads((pack/'measurement.json').read_text());m['installed_bytes']=sum((pack/x).stat().st_size for x in ['catalog.sqlite','articles.blocks']);m['compaction']={'before':before,'after_database_bytes':(pack/'catalog.sqlite').stat().st_size,'seconds':time.monotonic()-t,'peak_rss_kib':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'archive':str(archive)};atomic(pack/'measurement.json',m);print(json.dumps(m,indent=2))

@@ -1,0 +1,10 @@
+{
+  "attempt": "audit-identity-partitions-v1",
+  "stopped_by_builder": true,
+  "reason": "writer open-file limit 16 below 128 partitions caused frequent file closure and pathological tiny-file proliferation",
+  "sample_bucket": 0,
+  "sample_parquet_files": 15543,
+  "sample_bytes": 24211296,
+  "changed_approach": "keep all 128 bounded partition writers open; preserve old private directory and log; new output version v2",
+  "memory_limit_bytes": 1000000000
+}

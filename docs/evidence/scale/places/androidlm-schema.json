@@ -1,0 +1,56 @@
+{
+  "schema": [
+    {
+      "name": "meta",
+      "sql": "CREATE TABLE meta(key TEXT PRIMARY KEY, value TEXT)"
+    },
+    {
+      "name": "kinds",
+      "sql": "CREATE TABLE kinds(id INTEGER PRIMARY KEY, name TEXT NOT NULL UNIQUE, parents TEXT NOT NULL)"
+    },
+    {
+      "name": "places",
+      "sql": "CREATE TABLE places(id INTEGER PRIMARY KEY, cell INTEGER NOT NULL, lat5 INTEGER NOT NULL,\n            lon5 INTEGER NOT NULL, name TEXT NOT NULL, kind INTEGER NOT NULL, alt TEXT,\n            diet INTEGER NOT NULL, src INTEGER NOT NULL, conf INTEGER NOT NULL, chain INTEGER NOT NULL,\n            street TEXT, locality TEXT, phone TEXT, website TEXT, hours TEXT, cuisine TEXT,\n            rank INTEGER NOT NULL, fame INTEGER NOT NULL, wiki TEXT)"
+    },
+    {
+      "name": "guide",
+      "sql": "CREATE TABLE guide(place INTEGER NOT NULL, article TEXT NOT NULL, section TEXT NOT NULL,\n            tier TEXT, listing TEXT NOT NULL)"
+    },
+    {
+      "name": "cities",
+      "sql": "CREATE TABLE cities(id INTEGER PRIMARY KEY, name TEXT NOT NULL, country TEXT NOT NULL,\n            admin1 TEXT, lat REAL NOT NULL, lon REAL NOT NULL, population INTEGER NOT NULL,\n            capital INTEGER NOT NULL)"
+    },
+    {
+      "name": "city_names",
+      "sql": "CREATE TABLE city_names(key TEXT NOT NULL, city INTEGER NOT NULL, PRIMARY KEY(key, city)) WITHOUT ROWID"
+    },
+    {
+      "name": "countries",
+      "sql": "CREATE TABLE countries(code TEXT PRIMARY KEY, name TEXT NOT NULL)"
+    },
+    {
+      "name": "region_names",
+      "sql": "CREATE TABLE region_names(key TEXT NOT NULL, country TEXT NOT NULL, admin1 TEXT NOT NULL,\n            PRIMARY KEY(key, country, admin1)) WITHOUT ROWID"
+    },
+    {
+      "name": "places_cell",
+      "sql": "CREATE INDEX places_cell on places(cell)"
+    },
+    {
+      "name": "guide_place",
+      "sql": "CREATE INDEX guide_place on guide(place)"
+    },
+    {
+      "name": "cities_region",
+      "sql": "CREATE INDEX cities_region on cities(country, admin1, population)"
+    }
+  ],
+  "metadata": {
+    "attribution": "(c) OpenStreetMap contributors; Overture Maps Foundation; GeoNames; Wikivoyage",
+    "built": "2026-09-28",
+    "cell_deg": "0.05",
+    "format": "4",
+    "license": "ODbL-1.0",
+    "sources": "Overture Maps places 2026-09-23.1 (CDLA-Permissive-2.0; Foursquare records Apache-2.0; AllThePlaces CC0-1.0); OpenStreetMap diet-tagged places (ODbL 1.0); GeoNames cities1000 (CC BY 4.0); Wikivoyage listing names (voyage.db); English Wikipedia article titles and Wikimedia pageviews (wiki.db)"
+  }
+}

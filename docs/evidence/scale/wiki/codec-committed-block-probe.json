@@ -1,0 +1,68 @@
+[
+  {
+    "block_id": 100,
+    "raw_bytes": 303865,
+    "zlib6_bytes": 85977,
+    "alternatives": [
+      {
+        "level": 6,
+        "bytes": 81580,
+        "seconds": 0.008201172000553925
+      },
+      {
+        "level": 9,
+        "bytes": 80503,
+        "seconds": 0.009277208999264985
+      },
+      {
+        "level": 12,
+        "bytes": 80118,
+        "seconds": 0.009981039002013858
+      }
+    ]
+  },
+  {
+    "block_id": 700,
+    "raw_bytes": 131198,
+    "zlib6_bytes": 43264,
+    "alternatives": [
+      {
+        "level": 6,
+        "bytes": 42436,
+        "seconds": 0.002897615995607339
+      },
+      {
+        "level": 9,
+        "bytes": 41529,
+        "seconds": 0.003312729997560382
+      },
+      {
+        "level": 12,
+        "bytes": 41274,
+        "seconds": 0.010459220000484493
+      }
+    ]
+  },
+  {
+    "block_id": 1200,
+    "raw_bytes": 248140,
+    "zlib6_bytes": 80905,
+    "alternatives": [
+      {
+        "level": 6,
+        "bytes": 76722,
+        "seconds": 0.007083903001330327
+      },
+      {
+        "level": 9,
+        "bytes": 75354,
+        "seconds": 0.012314175997744314
+      },
+      {
+        "level": 12,
+        "bytes": 74582,
+        "seconds": 0.03781697800150141
+      }
+    ]
+  }
+]

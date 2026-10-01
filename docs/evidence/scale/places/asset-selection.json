@@ -1,0 +1,12 @@
+{
+  "overture": "16 compact schema-2 shards; all source IDs retained",
+  "osm_primary": "/home/isa/PocketLore-control/scale-workers/places/data/osm-compact.sqlite",
+  "osm_original_geometry_bytes": 3665588224,
+  "osm_compact_bytes": 1415372800,
+  "osm_saved_bytes": 2250215424,
+  "reason": "full source-object and coordinate equality checked; no geographic, field or row pruning",
+  "travel_primary": "/home/isa/PocketLore-control/scale-workers/places/data/wikivoyage.sqlite",
+  "travel_optional": "/home/isa/PocketLore-control/scale-workers/places/data/travel.sqlite",
+  "optional_note": "different overlapping archive retained in staging; do not add listing counts as unique places",
+  "android_acceptance": false
+}

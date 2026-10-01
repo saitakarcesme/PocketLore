@@ -1,0 +1,14 @@
+test_absence (test_reader.ReaderTests.test_absence) ... ok
+test_antimeridian_and_dedup (test_reader.ReaderTests.test_antimeridian_and_dedup) ... ok
+test_category_ancestor (test_reader.ReaderTests.test_category_ancestor) ... ok
+test_invalid (test_reader.ReaderTests.test_invalid) ... ok
+test_limit (test_reader.ReaderTests.test_limit) ... ok
+test_nested_listing_templates (test_reader.ReaderTests.test_nested_listing_templates) ... ok
+test_pole (test_reader.ReaderTests.test_pole) ... ok
+test_radius (test_reader.ReaderTests.test_radius) ... ok
+test_unknown_diet (test_reader.ReaderTests.test_unknown_diet) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.008s
+
+OK

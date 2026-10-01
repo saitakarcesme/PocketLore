@@ -1,0 +1,37 @@
+{
+  "source_sha256": "c95c0c1f6b1b941fcf7ab9c1d9c999addd6c102f34da3a310a1477cd811c9902",
+  "source_rows": 10,
+  "counts": {
+    "source_rows": 10,
+    "full": 10,
+    "full_text_bytes": 8631,
+    "raw_payload_bytes": 47775,
+    "retained_text_bytes": 8631,
+    "wikitext_bytes": 28892,
+    "wikitext_complete": 10,
+    "math_articles": 9,
+    "dataset_license_only_unreviewed": 10,
+    "compressed_payload_bytes": 13252,
+    "blocks": 1,
+    "max_block_raw_bytes": 47775
+  },
+  "seconds": 0.026201013999525458,
+  "peak_rss_kib": 76536,
+  "max_arrow_batch_bytes": 43146,
+  "sqlite_integrity": "ok",
+  "platform": "LLMRig Linux host staging, not Android",
+  "installed_bytes": 74692,
+  "sqlite_version": "3.53.1",
+  "arrow_version": "25.0.1",
+  "source_complete": true,
+  "reindexing": {
+    "source": "/home/isa/PocketLore-control/scale-workers/wiki/shared-block-contract-fixture",
+    "source_bytes": 78788,
+    "records_verified": 10,
+    "policy": "reader_stopwords_v1",
+    "payloads": "Byte-identical file copy, every decoded record hash verified",
+    "seconds": 0.06256145000224933,
+    "peak_rss_kib": 21644,
+    "sqlite_integrity": "ok"
+  }
+}

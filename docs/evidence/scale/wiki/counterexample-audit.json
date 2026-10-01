@@ -1,0 +1,240 @@
+{
+  "checks": [
+    {
+      "title": "Transport in Belgium",
+      "check": "Rendered rail distance units and source CIA attribution survive supplement screening",
+      "passed": true,
+      "source_shard": "000_00002.parquet",
+      "source_sha256": "b98a10ff8a3f21291e4174564a5cbe186eab66fcca9c53c0920d182f718c5b9a",
+      "source_row": 327502,
+      "article_revision": 1306434748,
+      "article_date": "2025-08-17T18:59:13Z",
+      "url": "https://en.wikipedia.org/wiki/Transport_in_Belgium",
+      "source_text_sha256": "8d4bcd898fa832d47f0bffc7de9de6f99f456063a1fda799dfce545b77ff716b",
+      "source_wikitext_sha256": "97fdb82723b50ea880f2fb245ceed685b35ffe006250a1c906e4436b21977ef0",
+      "evidence": {
+        "text_excerpt": "# Transport in Belgium\nTransport in Belgium is facilitated with well-developed road, air, rail and water networks. The rail network has 2,950\u00a0km (1,830\u00a0mi) of electrified tracks. There are 118,414\u00a0km (73,579\u00a0mi) of roads, among which there are 1,747\u00a0km (1,086\u00a0mi) of motorways, 13,892\u00a0km (8,632\u00a0mi) of main roads and 102,775\u00a0km (63,861\u00a0mi) of other paved roads. There is also a well-developed urban rail network in Brussels, Antwerp, Ghent and Charleroi. The ports of Antwerp and Zeebrugge are two of the biggest seaports in Europe. Brussels Airport is Belgium its biggest airport.\n\n## Railways\nRail transport in Belgium was historically managed by the National Railway Company of Belgium, known as SNCB in French and NMBS in Dutch. In 2005, the public company was split into 2 companies: Infrabel, which manages the rail network and SNCB/NMBS itself",
+        "notice_templates": [
+          "{{CIA World Factbook|year=2009}}"
+        ]
+      },
+      "eligibility": null
+    },
+    {
+      "title": "Speed of light",
+      "check": "Exact speed value and units are present in pinned text; no reconstructed value",
+      "passed": true,
+      "source_shard": "000_00010.parquet",
+      "source_sha256": "2bc2a319352e26f6d8aac5d5c25799fc16949f762a6a5c1ec6fba66389d428ab",
+      "source_row": 248947,
+      "article_revision": 1302658653,
+      "article_date": "2025-07-26T20:24:39Z",
+      "url": "https://en.wikipedia.org/wiki/Speed_of_light",
+      "source_text_sha256": "9da24b05808556adcf42a3ab1862a7692322eb99ba8469d0bbedc2d0eb5f820b",
+      "source_wikitext_sha256": "21d400df92ea0b6f8e1729e25662ea4348bdaf62a86c9512aa81117ad174fafa",
+      "evidence": {
+        "text_excerpt": "# Speed of light\nThe speed of light in vacuum, commonly denoted c, is a universal physical constant exactly equal to 299,792,458 metres per second (approximately 1\u00a0billion kilometres per hour; 700\u00a0million miles per hour). It is exact because, by international agreement, a metre is defined as the length of the path travelled by light in vacuum during a time interval of 1\u2044299792458 second. The speed of light is the same for all observers, no matter their relative velocity. It is the upper limit for the speed at which information, matter, or energy can travel through space.\nAll forms of electromagnetic radiation, including visible light, travel at the speed of light. For many practical purposes, light and other electromagnetic waves will appear to propagate instantaneously, but for long distances and sensitive measurements, their finite speed has noticeable effects. Much starlight viewed on Earth is from the distant past, allowing humans to study the history of the universe by viewing distant objects. When communicating with distant space probes, it can take hours for signals to travel. In computing, the speed of light fixes the ultimate minimum communication delay. The speed of light can be used in time of flight measurements to measure large distances to extremely high precision.\nOle R\u00f8mer first demonstrated that light does not travel instantaneously by studying the apparent mot",
+        "has_math": true
+      },
+      "eligibility": null
+    },
+    {
+      "title": "Pythagorean theorem",
+      "check": "Source equation representation is available without inventing removed math",
+      "passed": true,
+      "source_shard": "000_00012.parquet",
+      "source_sha256": "2e5ca443dadb167aea3ebb4cc681b5755e33516e41dfa8c0423ef5e7a225c6de",
+      "source_row": 245948,
+      "article_revision": 1304243321,
+      "article_date": "2025-08-04T21:40:30Z",
+      "url": "https://en.wikipedia.org/wiki/Pythagorean_theorem",
+      "source_text_sha256": "4604c02278870a30e5c8d55540c71a32e8906a67592d2bf6d91e727794a51dde",
+      "source_wikitext_sha256": "bc3132af9688566c8105af736ad464f5127a54fdfb1a20323c78b789e1ab1c52",
+      "evidence": {
+        "text_excerpt": "# Pythagorean theorem\nIn mathematics, the Pythagorean theorem or Pythagoras' theorem is a fundamental relation in Euclidean geometry between the three sides of a right triangle. It states that the area of the square whose side is the hypotenuse (the side opposite the right angle) is equal to the sum of the areas of the squares on the other two sides.\nThe theorem can be written as an equation relating the lengths of the sides a, b and the hypotenuse c, sometimes called the Pythagorean equation:\n{\\displaystyle a^{2}+b^{2}=c^{2}.}\nThe theorem is named for the Greek philosopher Pythagoras, born around 570 BC.  The theorem has been proved numerous times by many different methods \u2013 possibly the most for any mathematical theorem. The proofs are diverse, including both geometric proofs and algebraic proofs, with some dating back thousands of years.\nWhen Euclidean space is represented by a Cartesian coordinate system in analytic geometry, Euclidean distance satisfies the Pythagorean relation: the squared distance between two points equals the sum of squares of the difference in each coordinate between the points.\nThe theorem can be generalized in various ways: to higher-dimensional spaces, to spaces that are not Euclidean, to objects that are not right triangles, and to objects that are not triangles at all but n-dimensional solids.\n\n## Proofs using constructed squares\n\n### Rearrangemen",
+        "raw_math_examples": [
+          "<math>a^2 + b^2 = c^2</math>",
+          "<math>a^2 + b^2 = c^2 .</math>",
+          "<math>a + b</math>"
+        ]
+      },
+      "eligibility": null
+    },
+    {
+      "title": "Futurist cooking",
+      "check": "Cultural food movement remains an encyclopedia topic, not a practical recipe quota",
+      "passed": true,
+      "source_shard": "000_00014.parquet",
+      "source_sha256": "0a175e0d593c4a07afde8aacf5b8c86e70e958a31cd80a8f0e43e84397ddab42",
+      "source_row": 392376,
+      "article_revision": 1229988185,
+      "article_date": "2024-06-19T22:00:03Z",
+      "url": "https://en.wikipedia.org/wiki/Futurist_cooking",
+      "source_text_sha256": "9f7a7853e48f67db1697eeeab7b893309f56a57cf5f90a0b3e92effdf1819ce7",
+      "source_wikitext_sha256": "4216c771242b98558b5095fbd177fcde1b2bc69b1289a8f520462f2763dde7e1",
+      "evidence": {
+        "text_excerpt": "# Futurist cooking\nFuturist meals comprised a cuisine and style of dining advocated by some members of the Futurist movement, particularly in Italy. These meals were first proposed in Filippo Tommaso Marinetti and Luigi Colombo (Fill\u00eca)'s Manifesto of Futurist Cooking, published in Turin's Gazzetta del Popolo on December 28, 1930. In 1932, Marinetti and Fill\u00eca expanded upon these concepts in The Futurist Cookbook.\n\n## Concept\nAccording to Marinetti, he developed his concept of Futurism on October 11, 1908, while he was pondering the liberation of the Italian lyrical genius. He concluded that, for this to happen, it is necessary to change the method by going down into the streets, attacking the theaters, and by bringing \"the fist into the midst of the artistic struggle.\" Futurist cooking was directed at combining gastronomy and art, as well as the transformation of dining into a performance art. Futurism recognized that people \"think, dream and act according to what they eat and drink\" ",
+        "practical_cooking_quota_credit": false
+      },
+      "eligibility": null
+    },
+    {
+      "title": "Museum Plaza",
+      "check": "Historical project source is not presented as current operating travel service",
+      "passed": false,
+      "failure": "Not found in acquired query-source census"
+    }
+  ],
+  "passed": 4,
+  "total": 5,
+  "real_unresolved_marker_examples": [
+    {
+      "id": 29596538,
+      "title": "In the House of Stone and Light (album)",
+      "shard": "000_00000.parquet",
+      "source_row": 64141,
+      "reason": "unresolved_rights_marker:{{close paraphrasing",
+      "revision": 1283917731
+    },
+    {
+      "id": 77234599,
+      "title": "Dennis O'Doherty",
+      "shard": "000_00000.parquet",
+      "source_row": 82423,
+      "reason": "unresolved_rights_marker:{{Close paraphrasing",
+      "revision": 1286786274
+    },
+    {
+      "id": 4405138,
+      "title": "Nottingham College",
+      "shard": "000_00000.parquet",
+      "source_row": 85985,
+      "reason": "unresolved_rights_marker:{{Copyvio",
+      "revision": 1286832850
+    },
+    {
+      "id": 50825030,
+      "title": "Sensitivity analysis of an EnergyPlus model",
+      "shard": "000_00000.parquet",
+      "source_row": 189873,
+      "reason": "unresolved_rights_marker:{{Copyvio",
+      "revision": 1299890396
+    },
+    {
+      "id": 56401377,
+      "title": "Integrated Opisthorchiasis Control Program",
+      "shard": "000_00000.parquet",
+      "source_row": 214702,
+      "reason": "unresolved_rights_marker:{{OTRS pending",
+      "revision": 1301949251
+    },
+    {
+      "id": 2620374,
+      "title": "Cantonese grammar",
+      "shard": "000_00000.parquet",
+      "source_row": 250469,
+      "reason": "unresolved_rights_marker:{{close paraphrasing",
+      "revision": 1304458347
+    },
+    {
+      "id": 39612833,
+      "title": "David McGee",
+      "shard": "000_00000.parquet",
+      "source_row": 250512,
+      "reason": "unresolved_rights_marker:{{copypaste",
+      "revision": 1304496524
+    },
+    {
+      "id": 887836,
+      "title": "Human genetic enhancement",
+      "shard": "000_00000.parquet",
+      "source_row": 280166,
+      "reason": "unresolved_rights_marker:{{Close paraphrasing",
+      "revision": 1305560549
+    },
+    {
+      "id": 73982768,
+      "title": "Bill Marczak",
+      "shard": "000_00000.parquet",
+      "source_row": 292684,
+      "reason": "unresolved_rights_marker:{{Close paraphrasing",
+      "revision": 1306369063
+    },
+    {
+      "id": 241681,
+      "title": "Terence McKenna",
+      "shard": "000_00000.parquet",
+      "source_row": 307115,
+      "reason": "unresolved_rights_marker:{{copyvio",
+      "revision": 1306880924
+    },
+    {
+      "id": 241161,
+      "title": "Bristol Rovers F.C.",
+      "shard": "000_00000.parquet",
+      "source_row": 309328,
+      "reason": "unresolved_rights_marker:{{close paraphrasing",
+      "revision": 1306928732
+    },
+    {
+      "id": 3471412,
+      "title": "Manuel Rocha",
+      "shard": "000_00000.parquet",
+      "source_row": 310590,
+      "reason": "unresolved_rights_marker:{{Copyvio",
+      "revision": 1306930928
+    }
+  ],
+  "exclusion_reason_counts": [
+    [
+      "unresolved_rights_marker:{{Close paraphrasing",
+      86
+    ],
+    [
+      "unresolved_rights_marker:{{CopyPaste",
+      1
+    ],
+    [
+      "unresolved_rights_marker:{{Copypaste",
+      4
+    ],
+    [
+      "unresolved_rights_marker:{{Copyvio",
+      59
+    ],
+    [
+      "unresolved_rights_marker:{{Cv-unsure",
+      1
+    ],
+    [
+      "unresolved_rights_marker:{{Fair use",
+      1
+    ],
+    [
+      "unresolved_rights_marker:{{Non-free",
+      4
+    ],
+    [
+      "unresolved_rights_marker:{{OTRS pending",
+      1
+    ],
+    [
+      "unresolved_rights_marker:{{close paraphrasing",
+      69
+    ],
+    [
+      "unresolved_rights_marker:{{copypaste",
+      5
+    ],
+    [
+      "unresolved_rights_marker:{{copyvio",
+      48
+    ],
+    [
+      "unresolved_rights_marker:{{non-free",
+      3
+    ]
+  ],
+  "rights_limit": "Unknown notices/templates are not cleared by absence of recognized markers; independent rights review remains open. Retention of wikitext preserves inspectability, not expanded legal attribution.",
+  "query_source_record_count": 67
+}

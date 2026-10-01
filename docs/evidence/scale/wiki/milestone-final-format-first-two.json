@@ -1,0 +1,16 @@
+{
+  "checkpoint": "first_two_budget_adapted_shards_complete",
+  "utc": "2026-10-01T12:00:14.186628+00:00",
+  "edition": "edition-v7",
+  "complete_shards": 2,
+  "articles": 860361,
+  "full": 168319,
+  "lead": 692042,
+  "shard_bytes": 2885627183,
+  "naive_extrapolation_including_aliases": 22383236368,
+  "budget_bytes": 22000000000,
+  "size_status": "Close to budget; naive per-article extrapolation does not normalize exact selected text bytes; actual whole-edition size remains required",
+  "integrity": true,
+  "dispatch": "Continues all 15 pinned English shards",
+  "acceptance": "Host staging only"
+}

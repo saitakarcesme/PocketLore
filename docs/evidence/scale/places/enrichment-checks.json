@@ -1,0 +1,422 @@
+{
+  "checks": [
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 21186,
+        "ordinal": 63,
+        "revision": 5245926,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5245926"
+      },
+      "query": "005",
+      "city": "New York",
+      "overture_results": 20,
+      "with_candidates": 2,
+      "candidate_source_objects": 2,
+      "examples": [
+        {
+          "overture_id": "42c2d80e-14d9-48d0-84f4-86fe334e4739",
+          "osm_type": "node",
+          "osm_id": 2897876738,
+          "osm_version": 4,
+          "hours": "Mo-Fr 10:30-19:00; Sa 11:00-18:00; Su off",
+          "vegan": null,
+          "match_status": "candidate_exact_normalized_name_within_50m_unconfirmed"
+        },
+        {
+          "overture_id": "abd01c1c-2bc8-42b1-9f55-a2ee2a0f60d8",
+          "osm_type": "node",
+          "osm_id": 2824696355,
+          "osm_version": 9,
+          "hours": "Mo-Fr 06:00-19:30; Sa-Su 06:00-18:30",
+          "vegan": null,
+          "match_status": "candidate_exact_normalized_name_within_50m_unconfirmed"
+        }
+      ],
+      "host_ms": 7994.965580001008
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 20287,
+        "ordinal": 94,
+        "revision": 5337817,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5337817"
+      },
+      "query": "010",
+      "city": "Los Angeles",
+      "overture_results": 20,
+      "with_candidates": 3,
+      "candidate_source_objects": 3,
+      "examples": [
+        {
+          "overture_id": "fe324944-21a2-4349-bf96-cdf551d4bda0",
+          "osm_type": "node",
+          "osm_id": 1435041909,
+          "osm_version": 2,
+          "hours": "Mo-Th,Su 11:00-22:00; Fr-Sa 11:00-24:00",
+          "vegan": null,
+          "match_status": "candidate_exact_normalized_name_within_50m_unconfirmed"
+        },
+        {
+          "overture_id": "bbbd0f71-bbf7-44b9-ad8c-c57e2734c0ab",
+          "osm_type": "node",
+          "osm_id": 13410342751,
+          "osm_version": 1,
+          "hours": "09:00-22:00",
+          "vegan": null,
+          "match_status": "candidate_exact_normalized_name_within_50m_unconfirmed"
+        },
+        {
+          "overture_id": "86702da0-c645-4a4e-b70f-1770935cb8e3",
+          "osm_type": "node",
+          "osm_id": 1435041912,
+          "osm_version": 3,
+          "hours": "Su-Th 11:30-22:30; Fr-Sa 11:30-00:00",
+          "vegan": null,
+          "match_status": "candidate_exact_normalized_name_within_50m_unconfirmed"
+        }
+      ],
+      "host_ms": 4726.098915001785
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 22141,
+        "ordinal": 112,
+        "revision": 5329660,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5329660"
+      },
+      "query": "015",
+      "city": "Mexico City",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 6638.466116004565
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 36392,
+        "ordinal": 47,
+        "revision": 5241093,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5241093"
+      },
+      "query": "020",
+      "city": "Toronto",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 2718.6817190013244
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 20122,
+        "ordinal": 14,
+        "revision": 5313611,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5313611"
+      },
+      "query": "025",
+      "city": "London",
+      "overture_results": 20,
+      "with_candidates": 1,
+      "candidate_source_objects": 1,
+      "examples": [
+        {
+          "overture_id": "71c3e2cc-b4f0-41de-85c6-37e35bcbe8c8",
+          "osm_type": "way",
+          "osm_id": 172645331,
+          "osm_version": 10,
+          "hours": "Mo-Sa 10:00-19:00; Su 11:00-16:30",
+          "vegan": null,
+          "match_status": "candidate_exact_normalized_name_within_50m_unconfirmed"
+        }
+      ],
+      "host_ms": 5655.042026002775
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 26827,
+        "ordinal": 63,
+        "revision": 5339203,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5339203"
+      },
+      "query": "030",
+      "city": "Paris",
+      "overture_results": 20,
+      "with_candidates": 2,
+      "candidate_source_objects": 2,
+      "examples": [
+        {
+          "overture_id": "6d8be2ab-ad68-4b2b-837e-3981d55cdbde",
+          "osm_type": "node",
+          "osm_id": 2003145820,
+          "osm_version": 16,
+          "hours": "Mo, Su 16:30-24:00; Tu-Fr 16:30-02:00; Sa 14:30-02:00",
+          "vegan": null,
+          "match_status": "candidate_exact_normalized_name_within_50m_unconfirmed"
+        },
+        {
+          "overture_id": "232d31e4-d6a5-4e05-ae17-8e59302038a5",
+          "osm_type": "node",
+          "osm_id": 9383736451,
+          "osm_version": 7,
+          "hours": "Mo-Su 10:30-20:00",
+          "vegan": null,
+          "match_status": "candidate_exact_normalized_name_within_50m_unconfirmed"
+        }
+      ],
+      "host_ms": 4026.466044000699
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 3527,
+        "ordinal": 30,
+        "revision": 5321964,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5321964"
+      },
+      "query": "035",
+      "city": "Berlin",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 4342.895710004086
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 15895,
+        "ordinal": 5,
+        "revision": 5289299,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5289299"
+      },
+      "query": "040",
+      "city": "Istanbul",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 4314.600853998854
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 5524,
+        "ordinal": 1,
+        "revision": 5066119,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5066119"
+      },
+      "query": "045",
+      "city": "Cairo",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 2854.3954589986242
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 189804,
+        "ordinal": 20,
+        "revision": 5310427,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5310427"
+      },
+      "query": "050",
+      "city": "Lagos",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 962.8464159977739
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 23734,
+        "ordinal": 6,
+        "revision": 5324162,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5324162"
+      },
+      "query": "055",
+      "city": "Nairobi",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 930.6655160035007
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 5909,
+        "ordinal": 130,
+        "revision": 5331410,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5331410"
+      },
+      "query": "060",
+      "city": "Cape Town",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 1103.6956410025596
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 23444,
+        "ordinal": 2,
+        "revision": 5318535,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5318535"
+      },
+      "query": "065",
+      "city": "Mumbai",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 2963.6573969983147
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 162564,
+        "ordinal": 3,
+        "revision": 5331437,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5331437"
+      },
+      "query": "070",
+      "city": "Singapore",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 2644.534024002496
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 36260,
+        "ordinal": 22,
+        "revision": 5178688,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5178688"
+      },
+      "query": "075",
+      "city": "Tokyo",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 7578.016008999839
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 79060,
+        "ordinal": 83,
+        "revision": 5304406,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5304406"
+      },
+      "query": "080",
+      "city": "Seoul",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 2955.072939003003
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 201822,
+        "ordinal": 1,
+        "revision": 5321888,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5321888"
+      },
+      "query": "085",
+      "city": "Sydney",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 1980.8270139983506
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 142284,
+        "ordinal": 12,
+        "revision": 5325852,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5325852"
+      },
+      "query": "090",
+      "city": "Auckland",
+      "overture_results": 20,
+      "with_candidates": 2,
+      "candidate_source_objects": 2,
+      "examples": [
+        {
+          "overture_id": "8ea751e2-de15-45e4-87f2-5fdec9deae1d",
+          "osm_type": "node",
+          "osm_id": 4753906378,
+          "osm_version": 4,
+          "hours": "Mo-Fr 07:00-21:00; Sa 08:00-21:00; Su 08:00-20:00",
+          "vegan": null,
+          "match_status": "candidate_exact_normalized_name_within_50m_unconfirmed"
+        },
+        {
+          "overture_id": "066b309f-7ad6-47a7-94e1-431ef9bbb748",
+          "osm_type": "node",
+          "osm_id": 4753906380,
+          "osm_version": 7,
+          "hours": "Mo-Su 06:00-22:00",
+          "vegan": null,
+          "match_status": "candidate_exact_normalized_name_within_50m_unconfirmed"
+        }
+      ],
+      "host_ms": 845.1820240006782
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 31770,
+        "ordinal": 26,
+        "revision": 5339237,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5339237"
+      },
+      "query": "095",
+      "city": "Sao Paulo",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 9314.794132005773
+    },
+    {
+      "travel_listing_occurrences": 20,
+      "travel_first_source": {
+        "page": 158251,
+        "ordinal": 107,
+        "revision": 5298164,
+        "source_url": "https://en.wikivoyage.org/w/index.php?oldid=5298164"
+      },
+      "query": "100",
+      "city": "Buenos Aires",
+      "overture_results": 20,
+      "with_candidates": 0,
+      "candidate_source_objects": 0,
+      "examples": [],
+      "host_ms": 2246.684762998484
+    }
+  ],
+  "passed": true,
+  "semantics": "on-demand offline SQLite candidate join; no per-record HTTP/LLM; source families never overwritten or summed as unique places; identity remains unconfirmed",
+  "android_runtime_acceptance": false
+}

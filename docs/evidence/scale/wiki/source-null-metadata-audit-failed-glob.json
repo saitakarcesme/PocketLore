@@ -1,0 +1,258 @@
+{
+  "method": "Pinned Parquet footer null statistics only; empty strings and semantic validity are separate eligibility checks",
+  "shards": [
+    {
+      "shard": "000_00000.parquet",
+      "rows": 421456,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00001.parquet",
+      "rows": 454272,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00002.parquet",
+      "rows": 451147,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00003.parquet",
+      "rows": 476094,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00004.parquet",
+      "rows": 456912,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00005.parquet",
+      "rows": 461631,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00006.parquet",
+      "rows": 453206,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00007.parquet",
+      "rows": 436482,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00008.parquet",
+      "rows": 444948,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00009.parquet",
+      "rows": 415366,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00010.parquet",
+      "rows": 440976,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00011.parquet",
+      "rows": 417809,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00012.parquet",
+      "rows": 436519,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00013.parquet",
+      "rows": 401302,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "000_00014.parquet",
+      "rows": 446535,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    },
+    {
+      "shard": "real-source-contract-fixture.parquet",
+      "rows": 10,
+      "null_counts": {
+        "page_id": 0,
+        "title": 0,
+        "url": 0,
+        "version": 0,
+        "date_modified": 0,
+        "text": 0,
+        "wikitext": 0,
+        "has_math": 0,
+        "infoboxes": 0
+      }
+    }
+  ],
+  "rows": 6614665,
+  "null_totals_where_statistics_available": {
+    "page_id": 0,
+    "title": 0,
+    "url": 0,
+    "version": 0,
+    "date_modified": 0,
+    "text": 0,
+    "wikitext": 0,
+    "has_math": 0,
+    "infoboxes": 0
+  },
+  "unknown_statistics": []
+}

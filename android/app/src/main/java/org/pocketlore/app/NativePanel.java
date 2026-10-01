@@ -20,7 +20,7 @@ final class NativePanel {
     private final Activity activity;
     // Serialize file promotion and cleanup across Activity recreation.
     private static final ExecutorService worker = Executors.newSingleThreadExecutor();
-    private final Button model, cancel, reload, unload;
+    private final Button model, cancel, reload, unload, remove;
     private final TextView state, output, answerStatus;
     private final java.util.function.Consumer<Boolean> busyChanged;
     private final java.util.function.Consumer<String> inspectCitation;
@@ -41,6 +41,19 @@ final class NativePanel {
         cancel.setOnClickListener(v -> cancel());
         unload=new Button(activity);unload.setText("Unload model to free memory");layout.addView(unload);unload.setOnClickListener(v->lowMemory());
         reload=new Button(activity);reload.setText("Reload saved model");layout.addView(reload);reload.setOnClickListener(v->reloadSaved());
+        remove=new Button(activity);remove.setText("Remove saved model");layout.addView(remove);
+        remove.setOnClickListener(v->new AlertDialog.Builder(activity).setTitle("Remove saved model?")
+            .setMessage("Unload and delete the app's saved GGUF. The original file remains. Offline source retrieval remains available.")
+            .setNegativeButton("Keep",null).setPositiveButton("Remove",(d,w)->{
+                if(busy||stopped)return;
+                setBusy(true);worker.execute(()->{try{release();Files.deleteIfExists(new File(activity.getFilesDir(),"model.gguf").toPath());ImportRecovery.finish(activity.getFilesDir(),"model");showState("Saved model removed. Source retrieval remains available.");}
+                    catch(Exception error){showState("Model removal failed: "+error.getMessage());}finally{done();}});
+            }).show());
+        Button profile=new Button(activity);profile.setText("Model compatibility and limits");layout.addView(profile);
+        profile.setOnClickListener(v->new AlertDialog.Builder(activity).setTitle("Current bounded CPU profile")
+            .setMessage("GGUF file and native model: at most 2048 MiB. One session; 2048-token context; FP16 KV at most 768 MiB; compute buffers at most 1024 MiB; two CPU threads. Disk reserve: 256 MiB. These component caps do not prove total phone memory safety.\n\n4B, 7–8B and MoE: no measured admission profile is available. File size alone does not establish compatibility. A larger profile requires exact model hash/quantization, device and OS, context, native KV/compute peaks, Java memory, OS reserve and sustained measurements within 12 GB RAM and 50 GB installed assets. Host measurements are not phone proof.")
+            .setPositiveButton("Close",null).show());
+        if(ImportRecovery.pending(activity.getFilesDir(),"model"))state.setText("Previous model import interrupted or failed. Saved model retained; select the original file to restart verification.");
         // Only the serial import worker writes this app-owned staging path.
         worker.execute(() -> ResourceStorage.cleanupModelStage(activity.getFilesDir()));
         reloadSaved();
@@ -48,10 +61,10 @@ final class NativePanel {
     void reloadSaved() {
         if(busy || stopped || session!=0)return;
         File saved=new File(activity.getFilesDir(),"model.gguf");
-        if(!saved.isFile()){state.setText("No saved model. Import a local GGUF first.");return;}
+        if(!saved.isFile()){state.setText(ImportRecovery.pending(activity.getFilesDir(),"model")?"Previous model import interrupted or failed. Select the original GGUF to restart verification.":"No saved model. Import a local GGUF first.");return;}
         memorySuspended=false;cancelled=false;setBusy(true);state.setText("Loading saved local model…");
         worker.execute(()->{
-            try{if(stopped || memorySuspended)return;session=NativeRuntime.create();if(cancelled || stopped || memorySuspended)NativeRuntime.cancel(session);NativeRuntime.load(session,saved.getAbsolutePath().getBytes(StandardCharsets.UTF_8));if(cancelled || stopped || memorySuspended){release();return;}showState("Local model ready · "+NativeRuntime.identity());}
+            try{if(stopped || memorySuspended)return;session=NativeRuntime.create();if(cancelled || stopped || memorySuspended)NativeRuntime.cancel(session);NativeRuntime.load(session,saved.getAbsolutePath().getBytes(StandardCharsets.UTF_8));if(cancelled || stopped || memorySuspended){release();return;}showState("Local model ready · "+saved.length()+" bytes · SHA-256 "+BroadPack.hash(saved)+"\n"+NativeRuntime.identity());}
             catch(Exception | OutOfMemoryError error){release();showState("Saved model could not load; retry with a smaller model: "+error.getMessage());}
             finally{done();}
         });
@@ -67,6 +80,7 @@ final class NativePanel {
     boolean isBusy() { return busy; }
     boolean hasModel() { return session != 0; }
     void clearEvidence() { ++answerEpoch; outcome=null; retrieving=false; output.setText(""); }
+    void searchFailed() { clearEvidence(); setBusy(false); }
     void clearAnswer() { ++answerEpoch; outcome = null; cancelled = false; retrieving = true; output.setText(""); setBusy(true); }
     void cancel() {
         cancelled = true;
@@ -96,6 +110,7 @@ final class NativePanel {
             long candidate = 0;
             try {
                 if (stopped) return;
+                ImportRecovery.begin(activity.getFilesDir(),"model");
                 String hash;
                 try (InputStream in = DocumentInput.open(activity.getContentResolver(),uri,()->cancelled || stopped)) {
                     if (in == null) throw new IOException("Cannot open model");
@@ -109,6 +124,7 @@ final class NativePanel {
                 if (cancelled || stopped) throw new IOException("Cancelled");
                 Files.move(stage.toPath(), new File(activity.getFilesDir(), "model.gguf").toPath(),
                     StandardCopyOption.ATOMIC_MOVE, StandardCopyOption.REPLACE_EXISTING);
+                ImportRecovery.finish(activity.getFilesDir(),"model");
                 showState("Local model ready · SHA-256 " + hash + "\n" + NativeRuntime.identity());
             } catch (Exception | OutOfMemoryError e) { if (candidate != 0) release(); showState("Import failed: " + e.getMessage()); }
             finally { stage.delete(); done(); }
@@ -171,10 +187,10 @@ final class NativePanel {
         return linked;
     }
     private void setBusy(boolean value) {
-        busy = value; model.setEnabled(!value); cancel.setEnabled(value);reload.setEnabled(!value);unload.setEnabled(!value);
+        busy = value; model.setEnabled(!value); cancel.setEnabled(value);reload.setEnabled(!value);unload.setEnabled(!value);remove.setEnabled(!value);
         busyChanged.accept(value);
     }
-    private void showState(String text) { activity.runOnUiThread(() -> { if (!stopped) state.setText(text); }); }
+    private void showState(String text) { activity.runOnUiThread(() -> { if (!stopped) state.setText(text+(ImportRecovery.pending(activity.getFilesDir(),"model")?"\nPrevious import interrupted or failed; select the original file to restart verification.":"")); }); }
     private void done() { activity.runOnUiThread(() -> { if (!stopped) setBusy(false); }); }
     private void release() { long id = session; session = 0; if (id != 0) NativeRuntime.close(id); }
     void destroy() {

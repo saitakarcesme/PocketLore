@@ -1,0 +1,9 @@
+test_source_and_boundaries (test_compact.CompactTests.test_source_and_boundaries) ... /home/isa/PocketLore-control/scale-workers/places/repo/tools/scale/places/compact.py:25: DeprecationWarning: fetch_record_batch() is deprecated, use to_arrow_reader() instead.
+  batches=con.execute(query,[str(src)]).fetch_record_batch(2048);max_arrow=0;max_block=0
+{"schema_version": 2, "release": "2026-09-23.1", "source_sha256": "92897ccaa23e7450922529246183a67f401563424ea885b6e4f3f24f06040b98", "source_object_url": "https://overturemaps-us-west-2.s3.amazonaws.com/release/2026-09-23.1/theme=places/type=place/fixture.parquet", "layout": ["source_ordinal", "latitude", "longitude", "NFKC_casefold_name", "original_non_geometry_record"], "block_codec": "zlib", "max_inflated_block_bytes": 33554432, "max_compressed_block_bytes": 1048576, "field_retention": "all original non-geometry fields; exact decoded WKB point retained as doubles; no confidence or region cut", "raw_records": 4, "eligible_records": 4, "blocks": 1, "rejected": 0, "max_arrow_batch_bytes": 2152, "max_actual_inflated_block_bytes": 1605, "keys_path": "/home/isa/PocketLore-control/scale-workers/places/tmplhfqzkgi/compact.keys.parquet", "keys_sha256": "c8c1993f6136a7eec567bb1afdccc51f097843da970eb116384cdb7530432601", "bytes": 45056, "sha256": "e696762d6e15f438311d48acd94c42e538a519e0e33fb954f9bffb98e2a152ef", "seconds_current_attempt": 0.030081510543823242, "max_rss_KiB": 104604}
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.102s
+
+OK
