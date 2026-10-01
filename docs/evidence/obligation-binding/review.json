@@ -129,6 +129,75 @@
       "fully_useful_draft": false,
       "assessment": "Draft reaches320tokens mid-clause in O2 and never reaches shared-use O3. Visible completed compost facts and vermicompost definition match context, but no parsed binding/complete useful response survives. Correctly withheld as truncation.",
       "claims": []
+    },
+    "s10": {
+      "result_sha256": "831b95cefe4dbefe30e077b199bed3c7ca0ba3e1e529832c13784c72a8b373d3",
+      "all_claims_supported": false,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Both requested topics are addressed, but green/brown specifics cite wrong paragraph and vermicast inherits properties stated only for vermicompost; same-model audit approves both.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.1-P1.2 do not establish green/brown inputs or examples, which are in P2.1."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P5.1 supports earthworm output and lower contaminants. Water-soluble nutrients/fertilizer/soil conditioner in P6.1 refer to vermicompost, not the claim subject vermicast."
+        }
+      ]
+    },
+    "s11": {
+      "result_sha256": "5519c87d65bf00ba452720dba975046c1420d080bad5efa3d212de70d58b3395",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct raw false-premise rejection: worms are explicit in sources. W record discards the correction instead of producing typed inspectable evidence; no eligible success.",
+      "claims": []
+    },
+    "s12": {
+      "result_sha256": "7e61a7fa1578a4204ba06f6a4123fcd13ea0c3041d185933e6aa20fa7200094e",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct absent-inventory withholding, no invented shop stock; no generated supported answer.",
+      "claims": []
+    },
+    "s13": {
+      "result_sha256": "d9f9f3981328f05e8e8536d55394e6374fdc80b4ea2ce9099045f3340f7b823d",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Identifies upper scion/lower rootstock, soil-line versus top-work qualifier and root system, all within cited spans. Generic metadata placeholder remains a representation limitation.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.2 supports roles; P1.6 supports typical soil-line joining, top-work exception and understock root system."
+        }
+      ]
+    },
+    "s14": {
+      "result_sha256": "e1beef918220880ef7d710bcdf1e837199e66c4423600692c447a65a4158987b",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Preserves the smaller-cut causal condition and general preference; helping prevent disease is a qualified paraphrase of limiting pathogen intrusion, not a guarantee of prevention.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P5.2 directly gives smaller-branch wound compartmentalization and resulting lower pathogen/decay potential."
+        }
+      ]
     }
   }
 }

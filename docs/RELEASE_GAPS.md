@@ -154,3 +154,7 @@ Achievable next rig work: replace brittle vocabulary coverage with bounded evide
 | Physical and human acceptance | All new model quality/resource measurements are CPU host results, with real swap and differing concurrency. | Measure supported complete answers, sustained latency/thermal/memory and offline lifecycle on actual compatible hardware, followed by independent human evaluation. | Physical Android/GrapheneOS hardware/operator and independent users. |
 
 [Task 221's public specification](evidence/scale-model-quality/queued-follow-up.json) and [atomic queue receipt](evidence/scale-model-quality/queue-receipt.json) record the remaining independent work. No main advancement, publication or acceptance is implied by builder checks passing.
+
+## Task 221 in progress: semantic binding remains unsafe
+
+The typed source-span representation makes actual evidence inspectable and avoids formula/footnote citation parsing, but its same-model audit admits actual wrong-neighbor and subject/input-output transfer errors. The fixed 60-case experiment and syntactically valid historical replays are still running; no promotion or acceptance follows from Android compilation. Production model and Android limits remain unchanged. Finishing the measured source review and selecting a materially different support-validation step are independent rig work; selected-model Android qualification still requires a sufficiently provisioned approved environment.
