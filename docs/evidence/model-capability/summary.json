@@ -1,0 +1,78 @@
+{
+  "classification": "Builder-scored development, not acceptance",
+  "percentile_definition": "Nearest rank: sorted observations at ceil(p*n)-1; all 24 generation calls including diagnostic calls; load reported separately",
+  "models": {
+    "qwen3-1.7b": {
+      "routes": {
+        "FALLBACK": 2,
+        "ABSTAINED": 20,
+        "GENERATED": 2
+      },
+      "controller_invoked": 4,
+      "diagnostic_only": 20,
+      "raw_support_all24": {
+        "supported": 17,
+        "unsupported": 6,
+        "withheld": 1
+      },
+      "raw_complete_useful_answerable": 7,
+      "published_complete_useful_answerable": 2,
+      "unsupported_published": 0,
+      "absent_published": 0,
+      "raw_appropriate_absent_refusal": 1,
+      "first_token_ms_p50": 5228.145288,
+      "first_token_ms_p95": 7146.031232,
+      "total_ms_p50": 7316.719794,
+      "total_ms_p95": 14174.520667,
+      "load_ms": 523.237639
+    },
+    "qwen3-4b": {
+      "routes": {
+        "GENERATED": 3,
+        "ABSTAINED": 20,
+        "FALLBACK": 1
+      },
+      "controller_invoked": 4,
+      "diagnostic_only": 20,
+      "raw_support_all24": {
+        "supported": 19,
+        "withheld": 3,
+        "unsupported": 2
+      },
+      "raw_complete_useful_answerable": 7,
+      "published_complete_useful_answerable": 2,
+      "unsupported_published": 0,
+      "absent_published": 0,
+      "raw_appropriate_absent_refusal": 3,
+      "first_token_ms_p50": 8493.375856,
+      "first_token_ms_p95": 13277.672115,
+      "total_ms_p50": 11736.613828,
+      "total_ms_p95": 23756.615268,
+      "load_ms": 992.764443
+    },
+    "phi35-mini": {
+      "routes": {
+        "GENERATED": 2,
+        "FALLBACK": 2,
+        "ABSTAINED": 20
+      },
+      "controller_invoked": 4,
+      "diagnostic_only": 20,
+      "raw_support_all24": {
+        "supported": 16,
+        "withheld": 5,
+        "unsupported": 3
+      },
+      "raw_complete_useful_answerable": 6,
+      "published_complete_useful_answerable": 0,
+      "unsupported_published": 0,
+      "absent_published": 0,
+      "raw_appropriate_absent_refusal": 4,
+      "first_token_ms_p50": 8111.411921,
+      "first_token_ms_p95": 12758.668665,
+      "total_ms_p50": 13584.518494,
+      "total_ms_p95": 22030.819717,
+      "load_ms": 1315.291415
+    }
+  }
+}

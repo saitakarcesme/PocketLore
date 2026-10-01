@@ -1,0 +1,25 @@
+{
+  "id": "200-complete-claim-output",
+  "objective": "Replace the fixed 220-character forced-period claim grammar and mandatory two-claim comparison shape with a bounded complete-claim output architecture, using the current pinned Qwen3 1.7B Q8 baseline. Preserve the 2048-token context, 256-token generation budget, citations, absent-evidence gating and temporal/source-scope protections. Freeze at least eight new public explanation/comparison/multi-source cases before changes, retain task-190 malformed and unsupported outputs as regressions, and evaluate real generated prose against its actual cited excerpts. Require complete English clauses rather than forced mid-word endings or empty numbered claims; do not substitute extractive fallback for generated success. Measure before/after fully supported, complete, useful published answers on the frozen task-190 cases, with all five absent cases still withheld and no increase in unsupported publication; preserve negative results if the repair does not improve usefulness. Use the committed fast host configuration for screening and exercise a small discriminating JNI subset on existing emulator-5560 without restarting services. Do not change the selected model or Android admission limits, inspect private holdout, or make phone/acceptance claims. Record builder assessments separately from independent source review. This is an output-architecture repair, not repeated wording or seed search.",
+  "scope": [
+    "android",
+    "tools/evaluation",
+    "docs"
+  ],
+  "dependencies": [
+    "190-supported-answer-capability"
+  ],
+  "acceptance_checks": [
+    [
+      "bash",
+      "tools/android-build.sh"
+    ],
+    [
+      "bash",
+      "tools/evaluation/check_complete_claims.sh"
+    ]
+  ],
+  "artifacts": [
+    "docs/evidence/complete-claim-output.md"
+  ]
+}
