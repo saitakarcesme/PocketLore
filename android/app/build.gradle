@@ -38,3 +38,10 @@ tasks.register('buildTravelPack', Exec) {
     commandLine 'python3', 'tools/packs/build_travel.py', '--install'
 }
 tasks.named('preBuild').configure { dependsOn 'buildTravelPack' }
+
+// Separate pinned public-domain SQLite/FTS5; no runtime or platform SQLite replacement.
+tasks.register('buildPocketLoreIndex', Exec) {
+    workingDir rootProject.projectDir.parentFile
+    commandLine 'bash', 'tools/runtime/build-index.sh'
+}
+tasks.named('preBuild').configure { dependsOn 'buildPocketLoreIndex' }

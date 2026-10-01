@@ -185,3 +185,16 @@ Task 220 host model screening (not deployed Android models)
 - Qwen2.5-7B-Instruct Q4_K_M: bartowski/Qwen2.5-7B-Instruct-GGUF revision 8911e8a47f92bac19d6f5c64a2e2095bd2f7d031; base Qwen/Qwen2.5-7B-Instruct revision a09a35458c702b33eeacc393d103063234e8bc28; Apache-2.0. Exact license and pin are tools/evaluation/scale-model-quality/qwen25-7b-LICENSE and qwen25-7b.json. Quantized by the named GGUF publisher; no model training or conversion here.
 - Qwen1.5-MoE-A2.7B-Chat Q2_K: tensorblock/Qwen1.5-MoE-A2.7B-Chat-GGUF revision 2b36b746552a7c99c814ee43120f318391e608c5; base Qwen/Qwen1.5-MoE-A2.7B-Chat revision ec052fda178e241c7c443468d2fa1db6618996be. This is the custom Tongyi Qianwen LICENSE AGREEMENT, not Apache-2.0; full agreement retained at tools/evaluation/scale-model-quality/qwen15-moe-LICENSE. Required notice: Tongyi Qianwen is licensed under the Tongyi Qianwen LICENSE AGREEMENT, Copyright (c) Alibaba Cloud. All Rights Reserved. Redistribution, commercial-scale and model-improvement restrictions remain applicable. Outputs are evaluation evidence, not training material. Quantized by TensorBlock; no model training or conversion here.
 All candidate weights stay in ignored local paths; no publication or production deployment is implied. The actual production/demo baseline remains the pinned Qwen2.5 0.5B asset in tools/answers/model.env.
+
+Task 300 index engine: SQLite 3.53.4, upstream public-domain deliverable code.
+Immutable amalgamation URL, SHA-256, upstream SHA3-256 and source file hashes:
+tools/runtime/sqlite-pin.json. Runtime notice: android/app/src/main/assets/licenses/sqlite.txt.
+Compiled on LLMRig for ARM64 and x86_64 with FTS5; platform SQLite and llama.cpp remain separate.
+Official source/build and dedication: https://sqlite.org/fts5.html and https://sqlite.org/copyright.html.
+
+Task 300 bulk data integration retains tools/scale/wiki/NOTICE.txt and its complete
+license texts; exact per-document/source rights may remain unreviewed. These
+records are browse-only and are not licensed-for-generation or distribution by
+virtue of hashes. Places attribution and source-specific rights stay in original
+record JSON and accompanying notice files. Overture UUID uniqueness is not proof
+of distinct real-world places. OSM/GeoNames/Wikivoyage remain separate source families.

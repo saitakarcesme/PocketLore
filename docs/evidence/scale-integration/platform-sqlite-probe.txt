@@ -1,0 +1,5 @@
+Observed on emulator-5560, API 35, existing supervised AVD; no restart.
+INSTRUMENTATION_RESULT: fts5=android.database.sqlite.SQLiteException: no such module: fts5 (code 1 SQLITE_ERROR)
+INSTRUMENTATION_RESULT: sqlite=3.44.3
+INSTRUMENTATION_CODE: -1
+Probe APK: 2ac4a8a504557026225644c0951e847d21b137bd14aab8106935630b25e0af0b
