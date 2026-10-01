@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "classification": "Frozen public development fixtures; mutations preserve licensed real text and are not new corpus",
+  "packs": [
+    {
+      "path": "downloads/packs/english-reference.plpack",
+      "sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+      "id": "english-reference-2026-10-01",
+      "documents": 10,
+      "passages": 186
+    },
+    {
+      "path": "downloads/science/science-supplement-2026-10-01-v1.plpack",
+      "sha256": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274",
+      "id": "science-supplement-2026-10-01-v1",
+      "documents": 8,
+      "passages": 24
+    }
+  ],
+  "cases": [
+    {
+      "id": "cross-pack",
+      "queries": [
+        "What is the difference between magma and lava?",
+        "What navigation backups should I bring?",
+        "magma headlamps"
+      ],
+      "expect": "Both editions searchable separately and combined; at least one combined query has hits from both."
+    },
+    {
+      "id": "disabled",
+      "expect": "Science disabled excludes all science hits; all-disabled is explicit empty selection, never silently starter."
+    },
+    {
+      "id": "same-document",
+      "expect": "Exact same archive import is idempotent; edition-ID-only duplicate retains provenance but no duplicate passage indexing/document count."
+    },
+    {
+      "id": "conflicting-id",
+      "expect": "Same source ID with changed text and invalid digest rejects; same pack name different valid bytes are distinct edition identities."
+    },
+    {
+      "id": "corrupt-cancel",
+      "expect": "Corrupt, pre-cancel and mid-copy cancel preserve catalog, active selection and saved model bytes; no stages remain."
+    },
+    {
+      "id": "admission",
+      "expect": "Combined installed-byte/manifest/document and active passage/text/posting admission rejects before combined index construction; previous catalog intact."
+    },
+    {
+      "id": "restart",
+      "expect": "Cold process restart retains both real packs and selected editions with stable citation IDs."
+    },
+    {
+      "id": "low-memory",
+      "expect": "Actual Activity memory callback drops live combined index; explicit reload reconstructs active catalog, citations and saved assets; report PSS/heap, not OS OOM proof."
+    },
+    {
+      "id": "ui",
+      "expect": "Use actual import/select/search/source-dialog controls offline; verify collection, source hash/date/rights/text; capture visible output."
+    }
+  ],
+  "budgets": {
+    "installed_archive_bytes": 16777216,
+    "installed_expanded_bytes": 16777216,
+    "installed_manifest_bytes": 2097152,
+    "installed_documents": 1000,
+    "collections": 8,
+    "active_passages": 5000,
+    "active_text_chars": 1000000,
+    "active_token_occurrences": 200000,
+    "basis": "Conservative subset of task170 13764 passages,4429788 text chars,444074 postings,42688512-byte heap delta; old+new live indexes remain bounded, diverse vocabulary must still be measured."
+  },
+  "no_generated_quality_claim": true
+}
