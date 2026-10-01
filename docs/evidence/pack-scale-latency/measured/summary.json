@@ -1,0 +1,215 @@
+{
+  "status": "PASS",
+  "environment": "CPU API35 x86_64 emulator, not phone/thermal acceptance",
+  "artifacts": {
+    "app-debug.apk": {
+      "sha256": "ee1d884d40a3b510c680ee8c9b97e470a22f75f953a7330e59503b45c8ab74cd",
+      "bytes": 11773557
+    },
+    "app-debug-androidTest.apk": {
+      "sha256": "b63092d54a52b81f191d1cfa56c2f3773f43a076a047311daff605f48c7a3a60",
+      "bytes": 236434
+    }
+  },
+  "protocol_sha256": "1b656778fcdbb093b7be044789aef4e8a0950d092e5c1ada982065ae68aeccb5",
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "percentile_definition": "Nearest rank sorted value at ceil(p*N)-1; no interpolation; groups separated.",
+  "latency_ms": {
+    "warm": {
+      "retrieval_ms": {
+        "n": 10,
+        "p50": 0.170821,
+        "p95": 0.254412,
+        "min": 0.13945,
+        "max": 0.254412
+      },
+      "request_first_token_ms": {
+        "n": 10,
+        "p50": 21963.396322,
+        "p95": 22520.78878,
+        "min": 21860.385746,
+        "max": 22520.78878
+      },
+      "request_total_ms": {
+        "n": 10,
+        "p50": 23773.933885,
+        "p95": 24770.899875,
+        "min": 23708.047339,
+        "max": 24770.899875
+      }
+    },
+    "process_cold": {
+      "retrieval_ms": {
+        "n": 5,
+        "p50": 0.451636,
+        "p95": 0.525677,
+        "min": 0.391192,
+        "max": 0.525677
+      },
+      "request_first_token_ms": {
+        "n": 5,
+        "p50": 22077.420106,
+        "p95": 22632.726397,
+        "min": 21927.396061000003,
+        "max": 22632.726397
+      },
+      "request_total_ms": {
+        "n": 5,
+        "p50": 24766.41053,
+        "p95": 24898.422606,
+        "min": 23739.368015,
+        "max": 24898.422606
+      },
+      "model_load_ms": {
+        "n": 5,
+        "p50": 343.146381,
+        "p95": 353.961091,
+        "min": 341.20018,
+        "max": 353.961091
+      },
+      "pack_load_ms": {
+        "n": 5,
+        "p50": 195.116266,
+        "p95": 229.317346,
+        "min": 193.097904,
+        "max": 229.317346
+      },
+      "ready_to_result_ms": {
+        "n": 5,
+        "p50": 25325.891993,
+        "p95": 25449.395099,
+        "min": 24291.544344,
+        "max": 25449.395099
+      }
+    }
+  },
+  "scale": [
+    {
+      "copies": 1,
+      "passages": 186,
+      "accepted": true,
+      "import_ms": 88.933138,
+      "pss_before_kib": 564146,
+      "pss_after_kib": 565675,
+      "java_delta_bytes": 696320,
+      "sampled_peak_pss_kib": 575611,
+      "sampled_peak_rss_kib": 638672,
+      "sampled_peak_swap_kib": 25564,
+      "sampled_stage_bytes": 0
+    },
+    {
+      "copies": 5,
+      "passages": 930,
+      "accepted": true,
+      "import_ms": 397.945399,
+      "pss_before_kib": 564921,
+      "pss_after_kib": 576150,
+      "java_delta_bytes": 3096576,
+      "sampled_peak_pss_kib": 583874,
+      "sampled_peak_rss_kib": 659192,
+      "sampled_peak_swap_kib": 25692,
+      "sampled_stage_bytes": 764391
+    },
+    {
+      "copies": 20,
+      "passages": 3720,
+      "accepted": true,
+      "import_ms": 1530.897641,
+      "pss_before_kib": 567416,
+      "pss_after_kib": 597531,
+      "java_delta_bytes": 11866112,
+      "sampled_peak_pss_kib": 639295,
+      "sampled_peak_rss_kib": 714832,
+      "sampled_peak_swap_kib": 25692,
+      "sampled_stage_bytes": 3059553
+    },
+    {
+      "copies": 50,
+      "passages": 9300,
+      "accepted": true,
+      "import_ms": 3726.405871,
+      "pss_before_kib": 571556,
+      "pss_after_kib": 621278,
+      "java_delta_bytes": 29159424,
+      "sampled_peak_pss_kib": 700821,
+      "sampled_peak_rss_kib": 775648,
+      "sampled_peak_swap_kib": 25564,
+      "sampled_stage_bytes": 7653693
+    },
+    {
+      "copies": 74,
+      "passages": 13764,
+      "accepted": true,
+      "import_ms": 5511.985992,
+      "pss_before_kib": 575390,
+      "pss_after_kib": 640456,
+      "java_delta_bytes": 42688512,
+      "sampled_peak_pss_kib": 759315,
+      "sampled_peak_rss_kib": 833912,
+      "sampled_peak_swap_kib": 25564,
+      "sampled_stage_bytes": 11329006
+    },
+    {
+      "copies": 75,
+      "passages": 13950,
+      "accepted": false,
+      "import_ms": 36.896374,
+      "pss_before_kib": 575367,
+      "pss_after_kib": 575514,
+      "java_delta_bytes": -147456,
+      "sampled_peak_pss_kib": 575514,
+      "sampled_peak_rss_kib": 650832,
+      "sampled_peak_swap_kib": 25564,
+      "sampled_stage_bytes": 0
+    }
+  ],
+  "routes": {
+    "warm": [
+      "GENERATED",
+      "GENERATED",
+      "GENERATED",
+      "GENERATED",
+      "GENERATED",
+      "GENERATED",
+      "GENERATED",
+      "GENERATED",
+      "GENERATED",
+      "GENERATED"
+    ],
+    "process_cold": [
+      "GENERATED",
+      "GENERATED",
+      "GENERATED",
+      "GENERATED",
+      "GENERATED"
+    ]
+  },
+  "instrumentation_wall_ms": {
+    "scale-0": 1370.99621300149,
+    "scale-1": 1706.3832390012976,
+    "scale-2": 2913.601996999205,
+    "scale-3": 5107.0984580001095,
+    "scale-4": 6934.02691600204,
+    "scale-5": 1193.4824789968843,
+    "warm-0": 268152.8863380008,
+    "cold-0": 25733.523405000597,
+    "cold-1": 24802.55179300002,
+    "cold-2": 25848.077556001954,
+    "cold-3": 24704.267820001405,
+    "cold-4": 25781.996994999645
+  },
+  "record_sha256": {
+    "scale-0": "3de1c5ab457d76c1180613bc68db27b3aec17f12a5b348f118ae2306a187c55b",
+    "scale-1": "535885f3d017ea3161e34e10bd31d7f4360b4013c76df986353f0995109c6525",
+    "scale-2": "6ee1002472f1000acee4ee4d07cc10c5711a573aac3e05ab8a21a140498fb9c8",
+    "scale-3": "7498aa26942502d51f77e84fc33a2b4ca1074cff3474b26f5a259efba610a063",
+    "scale-4": "cf49fce6f31f34b9bb9141d66da60f941d577a8e14e55701c3287999c93c9c19",
+    "scale-5": "a0132ab04f74052692c2e50c82d053f4ce9bb724fd09a4ba743baca8427c95b2",
+    "warm-0": "82967751658bb216f3da0ef2aecb193ade7cc1e1bb709e8f1c81e9f47763b85d",
+    "cold-0": "925fea61ff2b94b37f31cdd1f88f9bb56ea073ea38b7d426787b17782a2ed6af",
+    "cold-1": "c0eb275eea4295b860a9361895b98a664cbe521539e320b868b47e9ffbe38da6",
+    "cold-2": "4a26ccea2ae00285043603b2df6686907a558fa47f6d7b6c7e73a8721e8be7e4",
+    "cold-3": "354b376027318ae158b11426150ff56a84aa0905c65d6c8a01a792016606d97f",
+    "cold-4": "acaecb55b39b6416d87d6c8b4cdd46d06763987a430b1e1bd8316a70a265e664"
+  }
+}
