@@ -1,0 +1,522 @@
+{
+  "version": 1,
+  "classification": "New public development only; oracle supplied evidence, not retrieval benchmark",
+  "cases": [
+    {
+      "id": "cap-01",
+      "topic": "geology",
+      "type": "explanation",
+      "question": "Why does stress at a fault cause earthquake shaking?",
+      "sources": [
+        {
+          "id": "science-earthquakes-8702c21b891d6d23",
+          "title": "What is an earthquake and what causes them to happen?",
+          "url": "https://www.usgs.gov/faqs/what-earthquake-and-what-causes-them-happen",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "An earthquake is caused by a sudden slip on a fault. The tectonic plates are always slowly moving, but they get stuck at their edges due to friction. When the stress on the edge overcomes the friction, there is an earthquake that releases energy in waves that travel through the earth's crust and cause the shaking that we feel."
+        }
+      ],
+      "expectation": "Stress overcomes friction; sudden slip releases energy waves through the crust causing shaking.",
+      "answerable": true
+    },
+    {
+      "id": "cap-02",
+      "topic": "geology",
+      "type": "comparison",
+      "question": "Compare magma and lava.",
+      "sources": [
+        {
+          "id": "science-magma-b214c1cb4647b3fc",
+          "title": "What is the difference between magma and lava?",
+          "url": "https://www.usgs.gov/faqs/what-difference-between-magma-and-lava",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Scientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface."
+        }
+      ],
+      "expectation": "Molten rock underground is magma; after breaking through the surface it is lava.",
+      "answerable": true
+    },
+    {
+      "id": "cap-03",
+      "topic": "geology",
+      "type": "multisource",
+      "question": "How can magma rise and build volcanic terrain?",
+      "sources": [
+        {
+          "id": "science-volcanoes-ac98f2017c5f7717",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Originating many tens of miles beneath the ground, magma is lighter than surrounding solid rock. It is driven towards Earth's surface by buoyancy, it is lighter than the surrounding rock, and by pressure from gas within it. Magma forces its way upward and may ultimately break though weak areas in the Earth's crust. If so, an eruption begins."
+        },
+        {
+          "id": "science-volcanoes-fdd579e7694cec41",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Many mountains form by folding, faulting, uplift, and erosion of the Earth's crust. Volcanic terrain, however, is built by the slow accumulation of erupted lava. The vent may be visible as a small bowl shaped depression at the summit of a cone or shield-shaped mountain. Through a series of cracks within and beneath the volcano, the vent connects to one or more linked storage areas of molten or partially molten rock (magma). This connection to fresh magma allows the volcano to erupt over and over again in the same location. In this way, the volcano grows ever larger, until it is no longer stable. Pieces of the volcano collapse as rock falls or as landslides."
+        }
+      ],
+      "expectation": "Buoyancy and gas pressure drive magma upward; accumulation of erupted lava builds volcanic terrain; eruption is conditional.",
+      "answerable": true
+    },
+    {
+      "id": "cap-04",
+      "topic": "geology",
+      "type": "contradiction",
+      "question": "All parts of the San Andreas Fault creep constantly, so strain cannot build up for centuries. Is that supported?",
+      "sources": [
+        {
+          "id": "science-earthquakes-a2a4b87ce7382257",
+          "title": "What is an earthquake and what causes them to happen?",
+          "url": "https://www.usgs.gov/faqs/what-earthquake-and-what-causes-them-happen",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "The Pacific Plate grinds northwestward past the North American Plate at a rate of about two inches per year. Parts of the San Andreas Fault system adapt to this movement by constant \"creep\" resulting in many tiny shocks and a few moderate earth tremors. In other areas where creep is NOT constant, strain can build up for hundreds of years, producing great earthquakes when it finally releases."
+        }
+      ],
+      "expectation": "Reject premise: some parts creep; other parts can accumulate strain for hundreds of years.",
+      "answerable": true
+    },
+    {
+      "id": "cap-05",
+      "topic": "genetics",
+      "type": "explanation",
+      "question": "Why is DNA wrapped around histones?",
+      "sources": [
+        {
+          "id": "science-chromosomes-1c53684112e2a81e",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "date": "2020-08-15 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "The unique structure of chromosomes keeps DNA tightly wrapped around spool-like proteins, called histones. Without such packaging, DNA molecules would be too long to fit inside cells. For example, if all of the DNA molecules in a single human cell were unwound from their histones and placed end-to-end, they would stretch 6 feet."
+        }
+      ],
+      "expectation": "Packaging allows long DNA to fit inside cells.",
+      "answerable": true
+    },
+    {
+      "id": "cap-06",
+      "topic": "genetics",
+      "type": "multisource",
+      "question": "How do DNA instructions and chromosomes contribute to inheritance?",
+      "sources": [
+        {
+          "id": "science-dna-0215cec38b4684c9",
+          "title": "Deoxyribonucleic Acid (DNA) Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+          "date": "2020-08-24 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique. DNA, along with the instructions it contains, is passed from adult organisms to their offspring during reproduction."
+        },
+        {
+          "id": "science-chromosomes-bd1bb41122a2e2eb",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "date": "2020-08-15 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "Chromosomes are thread-like structures located inside the nucleus of animal and plant cells. Each chromosome is made of protein and a single molecule of deoxyribonucleic acid (DNA). Passed from parents to offspring, DNA contains the specific instructions that make each type of living creature unique."
+        }
+      ],
+      "expectation": "DNA carries biological instructions passed to offspring; chromosomes consist of protein and one DNA molecule. Avoid unsupported inheritance mechanisms.",
+      "answerable": true
+    },
+    {
+      "id": "cap-07",
+      "topic": "genetics",
+      "type": "qualifier",
+      "question": "Does chromosome copying always distribute DNA accurately?",
+      "sources": [
+        {
+          "id": "science-chromosomes-ae26d52981dd0bd9",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "date": "2020-08-15 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "For an organism to grow and function properly, cells must constantly divide to produce new cells to replace old, worn-out cells. During cell division, it is essential that DNA remains intact and evenly distributed among cells. Chromosomes are a key part of the process that ensures DNA is accurately copied and distributed in the vast majority of cell divisions. Still, mistakes do occur on rare occasions."
+        }
+      ],
+      "expectation": "Vast majority of cell divisions copy and distribute accurately, but rare mistakes occur; not always.",
+      "answerable": true
+    },
+    {
+      "id": "cap-08",
+      "topic": "genetics",
+      "type": "absent",
+      "question": "How many chromosomes does a domestic cat have?",
+      "sources": [
+        {
+          "id": "science-chromosomes-bd1bb41122a2e2eb",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "date": "2020-08-15 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "Chromosomes are thread-like structures located inside the nucleus of animal and plant cells. Each chromosome is made of protein and a single molecule of deoxyribonucleic acid (DNA). Passed from parents to offspring, DNA contains the specific instructions that make each type of living creature unique."
+        }
+      ],
+      "expectation": "Withhold the number: no cat chromosome count in evidence.",
+      "answerable": false
+    },
+    {
+      "id": "cap-09",
+      "topic": "geomagnetism",
+      "type": "explanation",
+      "question": "What sustains the magnetic field generated in the outer core?",
+      "sources": [
+        {
+          "id": "science-magnetic-core-f3a6eb6e41f10ed5",
+          "title": "How does the Earth's core generate a magnetic field?",
+          "url": "https://www.usgs.gov/faqs/how-does-earths-core-generate-a-magnetic-field",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "The Earth's outer core is in a state of turbulent convection as the result of radioactive heating and chemical differentiation. This sets up a process that is a bit like a naturally occurring electrical generator, where the convective kinetic energy is converted to electrical and magnetic energy. Basically, the motion of the electrically conducting iron in the presence of the Earth's magnetic field induces electric currents. Those electric currents generate their own magnetic field, and as the result of this internal feedback, the process is self-sustaining so long as there is an energy source sufficient to maintain convection."
+        }
+      ],
+      "expectation": "Conducting iron motion induces currents and magnetic field feedback, sustained while sufficient convection energy exists.",
+      "answerable": true
+    },
+    {
+      "id": "cap-10",
+      "topic": "geomagnetism",
+      "type": "comparison",
+      "question": "Compare magnetic storms and magnetic reversals.",
+      "sources": [
+        {
+          "id": "science-magnetic-storms-3b8945c553ef6dfa",
+          "title": "What is a magnetic storm?",
+          "url": "https://www.usgs.gov/faqs/what-a-magnetic-storm",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "A magnetic storm is a period of rapid magnetic field variation. It can last from hours to days."
+        },
+        {
+          "id": "science-magnetic-reversals-fc2ce79fa0a73c7a",
+          "title": "Is it true that Earth's magnetic field occasionally reverses its polarity?",
+          "url": "https://www.usgs.gov/faqs/it-true-earths-magnetic-field-occasionally-reverses-its-polarity",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Reversals are not instantaneous; they happen over a period of hundreds to thousands of years, though recent research indicates that at least one reversal could have taken place over a period of one year."
+        }
+      ],
+      "expectation": "Storms are rapid field variation lasting hours to days; reversals take hundreds to thousands of years, with one possible one-year research exception.",
+      "answerable": true
+    },
+    {
+      "id": "cap-11",
+      "topic": "geomagnetism",
+      "type": "contradiction",
+      "question": "Do magnetic reversals occur on a regular schedule every 780,000 years?",
+      "sources": [
+        {
+          "id": "science-magnetic-reversals-b147d6da540593c7",
+          "title": "Is it true that Earth's magnetic field occasionally reverses its polarity?",
+          "url": "https://www.usgs.gov/faqs/it-true-earths-magnetic-field-occasionally-reverses-its-polarity",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "These reversals are random with no apparent periodicity to their occurrence. They can happen as often as every 10 thousand years or so and as infrequently as every 50 million years or more. The last reversal was about 780,000 years ago."
+        }
+      ],
+      "expectation": "No apparent periodicity; 780,000 years is time since last reversal, not a repeat interval.",
+      "answerable": true
+    },
+    {
+      "id": "cap-12",
+      "topic": "geomagnetism",
+      "type": "absent",
+      "question": "What is the exact date of the next magnetic reversal?",
+      "sources": [
+        {
+          "id": "science-magnetic-reversals-b147d6da540593c7",
+          "title": "Is it true that Earth's magnetic field occasionally reverses its polarity?",
+          "url": "https://www.usgs.gov/faqs/it-true-earths-magnetic-field-occasionally-reverses-its-polarity",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "These reversals are random with no apparent periodicity to their occurrence. They can happen as often as every 10 thousand years or so and as infrequently as every 50 million years or more. The last reversal was about 780,000 years ago."
+        }
+      ],
+      "expectation": "No exact prediction is supported; random with no apparent periodicity.",
+      "answerable": false
+    },
+    {
+      "id": "cap-13",
+      "topic": "civics",
+      "type": "comparison",
+      "question": "Compare the rights concerning searches and criminal trials in these excerpts.",
+      "sources": [
+        {
+          "id": "bill-of-rights-07aa05c65aa81cf6",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized."
+        },
+        {
+          "id": "bill-of-rights-508bbde59eed242f",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "In all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial, by an impartial jury of the State and district wherein the crime shall have been committed, which district shall have been previously ascertained by law, and to be informed of the nature and cause of the accusation; to be confronted with the witnesses against him; to have compulsory process for obtaining witnesses in his favor, and to have the Assistance of Counsel for his defence."
+        }
+      ],
+      "expectation": "Searches: protection against unreasonable searches and warrant probable cause/specificity; trials: speedy public impartial jury plus defense rights. Keep subjects separate.",
+      "answerable": true
+    },
+    {
+      "id": "cap-14",
+      "topic": "civics",
+      "type": "qualifier",
+      "question": "Under what conditions may soldiers be quartered in a house?",
+      "sources": [
+        {
+          "id": "bill-of-rights-97052f38c6cce93d",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law."
+        }
+      ],
+      "expectation": "In peace requires owner consent; in war in manner prescribed by law. Do not omit wartime qualification.",
+      "answerable": true
+    },
+    {
+      "id": "cap-15",
+      "topic": "civics",
+      "type": "contradiction",
+      "question": "Does listing certain rights deny other rights retained by the people?",
+      "sources": [
+        {
+          "id": "bill-of-rights-4b65cd9bd56fb0a4",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "The enumeration in the Constitution, of certain rights, shall not be construed to deny or disparage others retained by the people."
+        }
+      ],
+      "expectation": "No; enumeration must not be construed to deny or disparage other retained rights.",
+      "answerable": true
+    },
+    {
+      "id": "cap-16",
+      "topic": "civics",
+      "type": "absent",
+      "question": "What prison sentence applies today to an unreasonable search?",
+      "sources": [
+        {
+          "id": "bill-of-rights-07aa05c65aa81cf6",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized."
+        }
+      ],
+      "expectation": "No current criminal penalty in supplied historical text; withhold.",
+      "answerable": false
+    },
+    {
+      "id": "cap-17",
+      "topic": "outdoor",
+      "type": "explanation",
+      "question": "Why are headlamps recommended for lighting at night?",
+      "sources": [
+        {
+          "id": "essentials-e772a5a729be28b9",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "ILLUMINATION \u2013 Flashlight and headlamp Lighting is important in the outdoors at night, and can help you find your way out or signal for help. Items include flashlights, and headlamps. Headlamps are the recommended light source because they are hands-free. Be sure to pack extra batteries."
+        }
+      ],
+      "expectation": "Hands-free lighting; can find way out or signal for help; extra batteries useful.",
+      "answerable": true
+    },
+    {
+      "id": "cap-18",
+      "topic": "outdoor",
+      "type": "multisource",
+      "question": "How do extra food and emergency shelter help if trip plans change?",
+      "sources": [
+        {
+          "id": "essentials-18b025cdc46d1cb2",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "NUTRITION - Extra Food Be prepared for the possibility of changes to your trip plans. Pack an extra day's supply of food, preferably no-cook items that have good nutritional value to keep your energy high like salty and easy to digest snacks (e.g. trail mix, nuts, and granola bars). Having extra food can make a big difference for yourself or others if an unexpected situation occurs."
+        },
+        {
+          "id": "essentials-ba88dfc81102f647",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "EMERGENCY SHELTER \u2013 Tent, space blanket, tarp, or bivy Shelter is one of the most important elements during an emergency survival situation. It can protect you from severe weather conditions and exposure to the elements. A tent, tarp, bivy sack, or emergency space blanket are all lightweight options for emergency shelter."
+        }
+      ],
+      "expectation": "Extra day food helps unexpected changes and maintains energy; shelter protects from severe weather/exposure. No guarantee of survival.",
+      "answerable": true
+    },
+    {
+      "id": "cap-19",
+      "topic": "outdoor",
+      "type": "qualifier",
+      "question": "What should determine the extra clothing packed for sudden weather changes?",
+      "sources": [
+        {
+          "id": "essentials-9a8d716345fb3949",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "EXTRA CLOTHING \u2013 Jacket, hat, gloves, rain shell, and other layers Prepare for sudden changes in weather conditions. Pack an extra layer of clothing that reflects the most extreme conditions you could encounter. This may include a raincoat, jacket, hat, or gloves. Use bright clothing to make yourself easier to see in case Search and Rescue needs to look for you."
+        }
+      ],
+      "expectation": "Most extreme conditions one could encounter; examples raincoat/jacket/hat/gloves; bright clothing helps visibility for rescue.",
+      "answerable": true
+    },
+    {
+      "id": "cap-20",
+      "topic": "outdoor",
+      "type": "absent",
+      "question": "Which brand of headlamp has the longest battery life?",
+      "sources": [
+        {
+          "id": "essentials-e772a5a729be28b9",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "ILLUMINATION \u2013 Flashlight and headlamp Lighting is important in the outdoors at night, and can help you find your way out or signal for help. Items include flashlights, and headlamps. Headlamps are the recommended light source because they are hands-free. Be sure to pack extra batteries."
+        }
+      ],
+      "expectation": "No brands or comparative battery durations supplied; withhold.",
+      "answerable": false
+    },
+    {
+      "id": "cap-21",
+      "topic": "travel",
+      "type": "comparison",
+      "question": "Compare camping access from Yosemite Valley and Tuolumne Meadows.",
+      "sources": [
+        {
+          "id": "yosemite-c07549b6dd9eec11",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "Most of Yosemite Valley falls within a no-camping zone, so while there are trailheads starting from Yosemite Valley, they all require a hike of at least four miles and a minimum elevation gain of 2,500 feet. Most trails lead to rewarding views from the north or south rim of the Valley, but water can be limited in late summer. This region is the most popular, and most crowded, portion of the park."
+        },
+        {
+          "id": "yosemite-05be844c00690dc0",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "Trails leaving from Tuolumne Meadows require backpackers to hike at least four miles before camping. This mountainous high country has an abundance of peaks, lakes, creeks, rivers, and waterfalls, but temperatures will be significantly cooler than elsewhere in the park. This region is very popular with backpackers during summer, and is correspondingly busy."
+        }
+      ],
+      "expectation": "Both at least four miles before camping; Valley minimum 2500-foot gain and mostly no-camping zone; Tuolumne cooler high country. Do not transfer gain to Tuolumne.",
+      "answerable": true
+    },
+    {
+      "id": "cap-22",
+      "topic": "travel",
+      "type": "multisource",
+      "question": "How do snow and river crossings affect planning a Yellowstone hike?",
+      "sources": [
+        {
+          "id": "yellowstone-2419b62337a46c6e",
+          "title": "Yellowstone hiking",
+          "url": "https://www.nps.gov/yell/planyourvisit/hiking.htm",
+          "date": "2025-04-18 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "When planning a hike, remember that many of Yellowstone\u2019s trails are more than 7,000 feet above sea level. Most areas retain snow until late May or early June, and some (especially mountain passes) are snow-covered until late July. Also, many routes require fording rivers that can be 25 feet wide, 3 to 6 feet deep, extremely cold, and swiftly running during our late spring runoff. It\u2019s hard to tell from a map whether a stream will be a raging torrent or merely a swollen creek. Check our Backcountry Conditions Page for the most up-to-date information on park trails."
+        },
+        {
+          "id": "yellowstone-240e6df8a3707a67",
+          "title": "Yellowstone hiking",
+          "url": "https://www.nps.gov/yell/planyourvisit/hiking.htm",
+          "date": "2025-04-18 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "The map below does not show the current status and conditions of Yellowstone trails. Check our Backcountry Conditions Page or ask locally for the most up-to-date information on park trails."
+        }
+      ],
+      "expectation": "Snow persists late May/early June, some passes late July; late spring rivers cold/deep/swift; map lacks current status and current conditions need checking. No live assessment.",
+      "answerable": true
+    },
+    {
+      "id": "cap-23",
+      "topic": "travel",
+      "type": "contradiction",
+      "question": "Will Yosemite rangers plan my wilderness trip for me?",
+      "sources": [
+        {
+          "id": "yosemite-6d870ab5895892e6",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "While park rangers can provide general guidance, they will not plan a wilderness trip for you; you must plan your own trip. The Yosemite Wilderness has over 750 miles of trail to explore with a great range of elevation, ecological zones, and solitude. This backpacking trip, be it your first or fortieth, is a uniquely protected opportunity to provide maximum freedom to roam in wilderness. So, in planning a trip, it is important to find the right experience for your interests, timeframe, and abilities. A good planning process will enhance your understanding of the park and your safety."
+        }
+      ],
+      "expectation": "No; general guidance only, traveler plans based on interests/timeframe/abilities.",
+      "answerable": true
+    },
+    {
+      "id": "cap-24",
+      "topic": "travel",
+      "type": "absent",
+      "question": "Is the Yellowstone trail I want open and safe today?",
+      "sources": [
+        {
+          "id": "yellowstone-240e6df8a3707a67",
+          "title": "Yellowstone hiking",
+          "url": "https://www.nps.gov/yell/planyourvisit/hiking.htm",
+          "date": "2025-04-18 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "The map below does not show the current status and conditions of Yellowstone trails. Check our Backcountry Conditions Page or ask locally for the most up-to-date information on park trails."
+        },
+        {
+          "id": "yellowstone-c7bbe1c4dfb76f39",
+          "title": "Yellowstone hiking",
+          "url": "https://www.nps.gov/yell/planyourvisit/hiking.htm",
+          "date": "2025-04-18 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "Stay safe in Yellowstone\u2019s backcountry! Carry bear spray, store food properly, check weather, and be prepared for changing conditions."
+        }
+      ],
+      "expectation": "No live trail status or safety guarantee. Supplied precautions do not establish current availability.",
+      "answerable": false
+    }
+  ],
+  "packs": {
+    "downloads/packs/english-reference.plpack": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+    "downloads/science/science-supplement-2026-10-01-v1.plpack": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274"
+  },
+  "execution": {
+    "models": [
+      "baseline",
+      "qwen25-1.5b",
+      "qwen3-1.7b"
+    ],
+    "order": "model then case; one run per pair; no retries or seed search",
+    "context_tokens": 2048,
+    "output_tokens": 256,
+    "threads": 2,
+    "sampling": "Production: greedy Qwen2.5; Qwen3 non-thinking t=.7 top-k=20 top-p=.8 presence=1.5/256 seed=42. Not sampling-matched; same budget and production policy.",
+    "controller": "Unmodified AnswerEngine with pinned evidence; no retrieval. For controller-blocked cases run diagnostic generateClaims on same selected evidence and production template; never publish it as product output.",
+    "timeout_seconds_per_model": 1800,
+    "assessment": "Builder reads each full output against excerpts and required relations. Support: supported/unsupported/withheld; completeness: full/partial/none; usefulness: useful/limited/not-useful. No automated lexical entailment scoring.",
+    "selection": "Candidate must improve supported complete useful GENERATED count and have no increase in unsupported published answers or unsafe absent-case publication; otherwise no replacement. Raw diagnostic gains motivate separate architecture task only."
+  }
+}
