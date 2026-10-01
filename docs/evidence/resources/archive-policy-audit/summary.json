@@ -4,8 +4,8 @@
   "checks": 25,
   "artifacts": {
     "android/app/build/outputs/apk/debug/app-debug.apk": {
-      "bytes": 17794384,
-      "sha256": "27f9d7824be8b843db7b7238c39c56893005c09f808267cf72e765c87fe0789b"
+      "bytes": 17794512,
+      "sha256": "5956212585c8c503c77eca370cd3856b56eb4fab2f2ad0ee38c85e84067e94da"
     },
     "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": {
       "bytes": 130306,
@@ -22,15 +22,15 @@
       "sha256": "6cb245864d7b42facc8b987d7e4843f795b87912062d09a8bbddcdc034877924"
     },
     "lib/arm64-v8a/libpocketlore.so": {
-      "uncompressed_bytes": 5594632,
-      "compressed_bytes": 5594632,
-      "sha256": "7b4f93a27ebb039fc0e20ebf1584647887cc2e6f205fab375020a4d5e2264607"
+      "uncompressed_bytes": 5594728,
+      "compressed_bytes": 5594728,
+      "sha256": "7ce607771714ac068de040bb01bad62b62df944422539856046e91bdcde0e3c0"
     },
     "lib/x86_64/libpocketlore.so": {
-      "uncompressed_bytes": 6074216,
-      "compressed_bytes": 6074216,
-      "sha256": "e8daa8b88affff3cdcfb186ee00d4e97f07fef47a959b0296acb00133f6b7656"
+      "uncompressed_bytes": 6074344,
+      "compressed_bytes": 6074344,
+      "sha256": "cc1a062ea8adbb67cf0d796b01b0919f2a8a8cac26aa191ec43e308e61248005"
     }
   },
-  "results_sha256": "fcdf974c2fce127d4c769c51b3edd96b597b94fc516428185d249a4ba8e7ecaa"
+  "results_sha256": "36c0d07252a4fac7abc0d30953517f1cef657a428916d08daacd3f58400380d3"
 }

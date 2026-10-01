@@ -6,7 +6,7 @@ Status: both named checks passed on LLMRig on 2026-10-01. `bash tools/android-bu
 
 [Policy and reproduction](../RESOURCES.md) describe the implementation. It enforces one live native lease even during close/cancellation, one fresh 2,048-token context with FP16 K/V, 256 output tokens, and explicit post-allocation model/KV/compute admission limits. Model and pack imports require a 256 MiB free-space reserve and retain old installed files until successful atomic promotion. Pack staging is now streamed and serialized. Recognized abandoned stages are cleaned without touching unrelated files. Low-memory callbacks cancel and unload the model; explicit reload works and preserves the saved model. Pack-import cancellation is available in the UI.
 
-[Development cases](resources/development-cases.md) were frozen in `ff8d651`. [Final raw report](resources/final/results.json), [check summary](resources/final/summary.json), [standalone build](resources/build-measured.log) and [instrumentation build](resources/final/build.log) preserve measurements. The measured run is `downloads/resources/run-20261001T012939Z`. Earlier passing audits are preserved under `resources/first/` and `resources/buffer-audit/`; later iterations added native buffer, RSS/swap and installed-disk accounting. A later test-APK reproduction check failed and is preserved in `resources/apk-reproduction-failure.json`. The app APK matched; the test APK changed after switching runners. The audit now archives exact binaries at measurement time. No failed measurement was discarded or silently rerun to select a better score.
+[Development cases](resources/development-cases.md) were frozen in `ff8d651`. [Final raw report](resources/final/results.json), [check summary](resources/final/summary.json), [standalone build](resources/build-release-counter.log) and [instrumentation build](resources/final/build.log) preserve measurements. The measured run is `downloads/resources/run-20261001T013649Z`. Earlier passing audits are preserved under `resources/first/` and `resources/buffer-audit/`; later iterations added native buffer, RSS/swap and installed-disk accounting. A later test-APK reproduction check failed and is preserved in `resources/apk-reproduction-failure.json`. The app APK matched; the test APK changed after switching runners. The audit now archives exact binaries at measurement time. No failed measurement was discarded or silently rerun to select a better score.
 
 The 25 assertions cover pinned real model identity; storage refusal; mid-copy model/pack cancellation; old-file preservation; injected Java OOM cleanup; invalid pack rejection; narrow orphan cleanup; full real model staging/hash/removal; concurrent resident rejection; token overflow; actual generation; context release; close during generation with lease retention; slot recovery; Activity trim/low-memory callbacks, idle transition and explicit reload; unchanged saved model bytes. These include injected failures, not an actual exhausted-memory or full-disk experiment. Native cancellation is requested in the first token callback, not during long prompt prefill. Activity callbacks were tested with an idle loaded model; that does not establish all combinations of Activity pressure during native load, prefill or provider blocking.
 
@@ -20,31 +20,31 @@ Test model: Qwen3-1.7B-Q8_0, **1,834,426,016 bytes**, SHA-256 `061b54daade076b5d
 
 | Operation | Actual emulator measurement |
 | --- | --- |
-| Full 1.83 GB staged copy and hash | 5,088.891 ms |
+| Full 1.83 GB staged copy and hash | 4,997.452 ms |
 | Stage logical bytes | 1,834,426,016 |
 | Free-space decrease while stage existed | 1,834,434,560 bytes; includes filesystem activity/rounding |
-| Model load | 695.470 ms |
-| 32-token raw generation | 4,971.551 ms |
-| First-token close request to native return | 103.705 ms |
-| Pack verification plus index construction | 113.117 ms |
+| Model load | 890.469 ms |
+| 32-token raw generation | 4,934.753 ms |
+| First-token close request to native return | 88.410 ms |
+| Pack verification plus index construction | 110.897 ms |
 
 The Activity recovery check separately loaded the previously saved **491,400,032-byte** Qwen2.5 model, SHA-256 `74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db`. It received trim-critical and low-memory callbacks, released the native lease, and explicitly reloaded successfully. Its disk hash remained unchanged. The larger model is an isolated test asset, not a silently changed default.
 
 ## Memory: host, emulator and buffers are different measurements
 
-The [host snapshot](resources/final/host-meminfo.txt) reports **32,638,484 KiB MemTotal** and **13,720,948 KiB MemAvailable**. These are LLMRig host values, never phone measurements. The [emulator snapshot](resources/final/emulator-meminfo-before.txt) and ActivityManager report **2,593,685,504 bytes total RAM**, with **2,045,018,112 bytes available** immediately before the workload; Java maximum heap was **201,326,592 bytes**. These readings occur at different instants and have different definitions.
+The [host snapshot](resources/final/host-meminfo.txt) reports **32,638,484 KiB MemTotal** and **13,701,740 KiB MemAvailable**. These are LLMRig host values, never phone measurements. The [emulator snapshot](resources/final/emulator-meminfo-before.txt) and ActivityManager report **2,593,685,504 bytes total RAM**, with **2,043,285,504 bytes available** immediately before the workload; Java maximum heap was **201,326,592 bytes**. These readings occur at different instants and have different definitions.
 
-There are 115 process samples, with a target 100 ms delay plus measurement overhead. Actual intervals are in the raw report. Memory phases and native allocation counts are recorded per sample. Peaks are sampled unless explicitly identified as `/proc` high-water values. Debug memory, `/proc` and native counters are collected sequentially, not atomically; maxima from different series cannot be added to obtain a peak.
+There are 117 process samples, with a target 100 ms delay plus measurement overhead. Actual intervals are in the raw report. Memory phases and native allocation counts are recorded per sample. Peaks are sampled unless explicitly identified as `/proc` high-water values. Debug memory, `/proc` and native counters are collected sequentially, not atomically; maxima from different series cannot be added to obtain a peak.
 
 | Metric | Observed value | Meaning |
 | --- | --- | --- |
-| Sampled process PSS maximum | 2,093,527 KiB | Android Debug proportional accounting, not a physical-device bound |
-| Sampled process RSS maximum | 2,045,316 KiB | `/proc/self/status` resident pages; includes shared pages |
-| Process RSS high-water field | 2,055,428 KiB | Kernel VmHWM, distinct from sampled PSS |
-| Sampled VmSwap maximum | 202,368 KiB | Swapped process memory; this run did experience pressure |
-| PSS immediately after Qwen3 unload | 68,895 KiB | Native lease/context counters both zero |
-| Final PSS after Activity reload/unload | 122,940 KiB | Activity/Java/runtime overhead remains |
-| Sampled Java heap used during index phase | up to 17,125,744 bytes | Whole Java heap, not isolated retained-index size |
+| Sampled process PSS maximum | 2,091,318 KiB | Android Debug proportional accounting, not a physical-device bound |
+| Sampled process RSS maximum | 2,007,812 KiB | `/proc/self/status` resident pages; includes shared pages |
+| Process RSS high-water field | 2,062,372 KiB | Kernel VmHWM, distinct from sampled PSS |
+| Sampled VmSwap maximum | 172,908 KiB | Swapped process memory; this run did experience pressure |
+| PSS immediately after Qwen3 unload | 68,096 KiB | Native lease/context counters both zero |
+| Final PSS after Activity reload/unload | 129,398 KiB | Activity/Java/runtime overhead remains |
+| Sampled Java heap used during index phase | up to 16,978,288 bytes | Whole Java heap, not isolated retained-index size |
 | Active model buffers | 1,828,474,880 bytes | Pinned llama.cpp buffer accounting, not all native/process allocation |
 | Active context/KV buffers | 234,881,024 bytes (224 MiB) | Fixed 2,048-token Qwen3 context |
 | Active compute buffers | 79,888,896 bytes | Backend work buffers |
@@ -59,10 +59,10 @@ The index has **186 passages, 1,770 terms, 6,001 postings and 59,862 passage-tex
 
 | Component | Logical/allocated measurement |
 | --- | --- |
-| APK, including both native ABIs and bundled packs | 17,794,512 bytes logical |
+| APK, including both native ABIs and bundled packs | 17,794,384 bytes logical |
 | Installed app code tree | 17,404 KiB allocated; no separate native-library file or oat artifact observed in this tree |
-| ARM64 native library inside APK | 5,594,728 bytes; do not add again to APK total |
-| x86_64 native library inside APK | 6,074,344 bytes; do not add again to APK total |
+| ARM64 native library inside APK | 5,594,632 bytes; do not add again to APK total |
+| x86_64 native library inside APK | 6,074,216 bytes; do not add again to APK total |
 | Saved app model | 491,400,032 bytes logical; 479,892 KiB allocated |
 | Larger test model | 1,834,426,016 bytes logical; 1,791,440 KiB allocated |
 | Installed research pack | 159,327 bytes logical; 160 KiB allocated |
@@ -73,7 +73,7 @@ The index has **186 passages, 1,770 terms, 6,001 postings and 59,862 passage-tex
 | Maximum real model stage in this audit | 1,834,426,016 bytes logical, then removed |
 | Production pack-stage cap | 16 MiB, plus the prior installed pack until atomic replacement |
 
-The app-owned total includes the prior 93,511,232-byte native-smoke model, the saved 0.5B model, isolated Qwen3 model, pack corruption fixtures, raw reports and tiny sentinels. It excludes the installed APK tree and user document-provider copies. Those external originals remain after import and must be included in a user's total installation accounting; no unrelated user storage was inspected. The filesystem showed 2,789,492 KiB available before and 2,789,924 KiB after the audit; unrelated emulator filesystem activity means the difference is not a precise allocation ledger. Native memory is not disk cache; code/compiler artifacts may differ after Android optimization and across devices.
+The app-owned total includes the prior 93,511,232-byte native-smoke model, the saved 0.5B model, isolated Qwen3 model, pack corruption fixtures, raw reports and tiny sentinels. It excludes the installed APK tree and user document-provider copies. Those external originals remain after import and must be included in a user's total installation accounting; no unrelated user storage was inspected. The filesystem showed 2,789,452 KiB available before and 2,789,892 KiB after the audit; unrelated emulator filesystem activity means the difference is not a precise allocation ledger. Native memory is not disk cache; code/compiler artifacts may differ after Android optimization and across devices.
 
 ## Proposed device budgets — not acceptance
 
@@ -96,9 +96,9 @@ A conservative **11 decimal GB disk plan**, below the 50 GB ceiling, allocates 9
 
 ## Immutable artifacts and remaining work
 
-APK SHA-256: `5956212585c8c503c77eca370cd3856b56eb4fab2f2ad0ee38c85e84067e94da`.
-Resource test APK SHA-256: `c531e3ae47ab1a64aa53ec42ca97d1571f6ab9c03cbc1edfbed03e341c8d4d77`.
-Raw report SHA-256: `b4d888ae605ef8a771d70b0ac1b0ae69d951d166e27517fbf6445aebb1be7bfb`.
-[Summary](resources/final/summary.json) includes both native library hashes. An attempt to reproduce both measured APKs after the supplemental pack regression failed for the test APK. The audit now archives both exact APKs immediately; final validation of the destructor-lifetime counter is pending at this checkpoint. [SHA256SUMS](resources/SHA256SUMS) freezes evidence files.
+APK SHA-256: `27f9d7824be8b843db7b7238c39c56893005c09f808267cf72e765c87fe0789b`.
+Resource test APK SHA-256: `e8c3e7c83fcf1c4615d17a6a05b2fa943efae2e81a6e2e20e54a3604a34be868`.
+Raw report SHA-256: `fcdf974c2fce127d4c769c51b3edd96b597b94fc516428185d249a4ba8e7ecaa`.
+[Summary](resources/final/summary.json) includes both native library hashes. An attempt to reproduce both measured APKs after the supplemental pack regression failed for the test APK. The final audit archived both exact APKs immediately and their hashes were independently verified against the summary. Final native counters remain held until model destruction completes; both named checks pass with that change. Test-APK byte-reproduction across runner switches remains unresolved and is not claimed. [SHA256SUMS](resources/SHA256SUMS) freezes evidence files.
 
 Remaining gaps include real OS OOM/process-death recovery, allocation-time safety for diverse models, blocking-provider cancellation, long-prefill cancellation latency, maximum-pack retained memory, sustained/thermal behavior, clean-install footprint after platform compilation, external-original accounting and physical Android/GrapheneOS acceptance. The first resource-only raw model answer is inaccurate/truncated and remains preserved; this task establishes no new research-quality claim.
