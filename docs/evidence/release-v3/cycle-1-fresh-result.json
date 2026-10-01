@@ -1,0 +1,30 @@
+{
+  "mode": "fresh",
+  "environment": "AOSP x86_64 emulator; no physical\/GrapheneOS acceptance",
+  "runtime": "llama.cpp bb4caa7540188872173c44d161602d9271386413; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads=2; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5\/256, seed=42",
+  "socket_probe": "java.net.SocketException: socket failed: EPERM (Operation not permitted)",
+  "status": "PASS",
+  "checks": [
+    "airplane_mode_on",
+    "internet_permission_denied",
+    "socket_denied_by_application_uid",
+    "no_restored_model_or_pack",
+    "fresh_no_model_labeled_fallback",
+    "source_dialog_opened"
+  ],
+  "cases": [
+    {
+      "question": "Compare evaporation and condensation",
+      "kind": "FALLBACK",
+      "invoked_model": false,
+      "tokens": 0,
+      "raw_draft": "",
+      "text": "Extractive fallback — not a generated answer.\nNo local model is loaded.\n\nRelevant evidence\nThese are retrieved pack passages, not a generated explanation or a verified answer.\n\n[water-02] The opposite of evaporation is condensation. Condensation is the process of water vapor turning back into liquid water. Condensation occurs when saturated air is cooled, such as on the outside of a glass of ice water.\n\n[water-01] Evaporation is the process that changes liquid water to gaseous water (water vapor). Water moves from the Earth’s surface to the atmosphere via evaporation.\n\n[water-03] Because energy is required to break the bonds holding water molecules together, evaporation removes heat from the environment, leading to a net cooling. Think of when a physician wipes an alcohol pad on your arm before giving you an injection – your arm feels cold. That’s because the alcohol rapidly evaporates from the surface of your skin, and with it some heat from the surface of your arm.\n\nComparison and synthesis require checking these passages yourself in this build.",
+      "prompt": "",
+      "reason": "No local model is loaded.",
+      "total_ms": 29.917887,
+      "first_token_ms": 0
+    }
+  ],
+  "elapsed_ms": 830
+}

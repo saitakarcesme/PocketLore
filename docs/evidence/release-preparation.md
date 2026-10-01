@@ -1,10 +1,10 @@
 # Release preparation: development candidate
 
-Task 100 prepares local build/install/demo instructions and an auditable candidate inventory. **Final checks: Android build PASS; release verifier FAIL after a forced rebuild changed the frozen APK identity. Byte reproducibility remains unresolved.** This is **not an accepted release, bounty submission, superiority claim or physical-device result**. Work and measurements run on LLMRig; private holdout is untouched. No private runner/state/service configuration is modified.
+Task 100 prepares local build/install/demo instructions and an auditable candidate inventory. **Current repair status: both named acceptance checks PASS. Two forced builds reproduce the complete fresh-demo APK byte-for-byte. Historical signing and v2 DEX identity failures remain preserved below.** This is **not an accepted release, bounty submission, superiority claim or physical-device result**. Work and measurements run on LLMRig; private holdout is untouched. No private runner/state/service configuration is modified.
 
 ## Reproduction and artifacts
 
-Follow [the release guide](../RELEASE.md) for explicit online provisioning followed by offline builds, local imports and the live demo. [The current manifest](release-v2/manifest.json) records exact candidate APK/model/pack sizes and SHA-256 hashes, every packaged asset and native library, dependency/source pins and build-tool identities. It is an inventory of the tested candidate, not a complete transitive build-tool SBOM. The model is separately imported; weights are not bundled or committed. The larger reference pack contains 186 licensed passages; bundled starter and three-monument assets remain separately identified.
+Follow [the release guide](../RELEASE.md) for explicit online provisioning followed by offline builds, local imports and the live demo. [The current manifest](release-v3/manifest.json) records exact candidate APK/model/pack sizes and SHA-256 hashes, every packaged asset and native library, dependency/source pins and build-tool identities. It is an inventory of the tested candidate, not a complete transitive build-tool SBOM. The model is separately imported; weights are not bundled or committed. The larger reference pack contains 186 licensed passages; bundled starter and three-monument assets remain separately identified.
 
 The app is a local-debug-key APK, API 28 minimum, with ARM64 and x86_64 CPU JNI libraries. Only AOSP API 35 x86_64 has run here. Native llama.cpp/ggml is pinned at `bb4caa7540188872173c44d161602d9271386413`; optional backends/network features are disabled by CMake. The Java runtime classpath has no dependencies. NDK static C++/compiler support is covered by the toolchain's separate notices, whose digest is recorded; full distribution-license review remains open.
 
@@ -63,7 +63,7 @@ The first candidate passed cached normal builds and its fresh demo, but forcing 
 
 The scoped build wrapper now creates/retains a project-local development keystore under ignored `downloads/android-debug`, and a Gradle init hook selects it before Android configuration is finalized. The first hook attempt ran too late; [that failure](release-failures/signing-hook-order.log) is retained too. No global configuration, preexisting private key or service was modified. This creates a new debug signing identity, so the original candidate and evidence remain in `release/` while the current candidate receives separate `release-v2/` measurements. Stable production signing remains open.
 
-## Current candidate v2 and final check status
+## Preserved candidate v2 and its failed check status
 
 The project-local-key candidate completed a new two-cycle clean offline demonstration at `downloads/offline/run-20261001T022501Z`. Both cycles passed fresh absence/import/restart/source-inspection checks. The first also passed corrupted assets, real generation, cancellation and recreation. The final emulator retains the second fresh imported installation, airplane mode on. No model weights or app-data backups were committed.
 
@@ -85,3 +85,40 @@ A subsequent successful `bash tools/android-build.sh assembleDebug --rerun-tasks
 This is an unresolved build-tool reproducibility issue under the cached rig toolchain, not a hardware or private-coordinator blocker. A follow-up must determine deterministic DEX metadata generation and remeasure the resulting exact APK before freezing a later candidate. Normal cached builds and source/data reproducibility are not clean-build byte reproducibility. The application APK size changed between the historical 17,794,384-byte artifact and the regenerated 11,822,564-byte candidate while the recorded asset/native payload identities remained equal; the current verifier binds the exact measured artifact rather than assuming historical packaging equivalence.
 
 Evidence: [passing build log](release-v2/build.log), [forced-build log](release-v2/forced-rebuild.log), [initial pre-rebuild verification](release-v2/initial-verification.txt), [final failed identity check](release-failures/rebuilt-apk-identity.txt). Signing/read-only and hook-order failures remain preserved separately. Product, physical, independent review and distribution gates remain open.
+
+## Repair 100-release-preparation-repair-1
+
+Recovered the three scoped implementation/evidence commits ending at failed checkpoint `ef02824667e6a145cdfa19cf8925a878783aac1e` onto the current checkpoint branch without changing application code, branches, orchestration or private state. The user-supplied critic result was invalid; no acceptance is inferred from it, and no private critic/builder logs were read.
+
+Inspection of the installed AGP builder bytecode confirmed `setIncludeClassesChecksum(debuggable)` in its D8 archive builder and debug-mode checksum inclusion in the merger. The repair adds a final D8 compiler pass using the same installed compiler: D8 8.9.35, embedded in AGP builder 8.9.2, JAR SHA-256 `7dc1d36d12ee81300c5b1672aaae336d1c3cfe90a7b26b2b551389604150e53b`. The finalizer refuses a different JAR. D8 CLI `--debug --min-api 28` does not opt into incremental class checksums. This re-emits actual DEX, combines indexed DEX inputs, retains debug mode and leaves the application manifest debuggable for the emulator harness; it does not binary-patch or ignore unstable fields in the verifier.
+
+Final packaging sorts ZIP entries with fixed timestamps, retains asset/library bytes and compression, removes old signature entries, applies SDK zipalign with 16 KiB native-page alignment and signs with the existing project-local debug key. Complete signed APK hashes remain the gate. Two initial forced builds and a second finalization produced SHA-256 `65edeb6553d8f2efc69dd6787e2ed9c6b8dab0f979324f21efa970b8fcafe89e`; the non-DEX/non-signature payloads match the measured v2 artifact. See [initial reproduction](release-repair/initial-reproduction.json) and its retained build logs. No global/compiler binary configuration was changed.
+
+`tools/verify-release.sh` now executes two real forced builds on every invocation before exact frozen artifact and behavior checks. The reproduction helper preserves both APKs, logs and comparison records under ignored `downloads/release-repro/run-*`; unequal hashes or incremental class-checksum metadata fail the check. Earlier failed candidates and failures remain in `release/`, `release-v2/` and `release-failures/`; the replacement candidate receives a separate `release-v3/` manifest and fresh emulator measurement.
+
+### Fresh v3 emulator evidence
+
+Run `downloads/offline/run-20261001T023855Z` completed two fresh uninstall/install cycles on the existing AOSP API35 x86_64 emulator. Both verified no restored model/pack, real local SAF import, saved hashes and restart, corrupted-pack rejection and NPS source inspection. The first also rejected corrupt GGUF, invoked actual JNI generation, cancelled after streamed output and recreated/reloaded the Activity. Airplane mode remained on, Wi-Fi/mobile data off, Play Services absent, and application UID socket access denied with EPERM. The second fresh installation remains installed with imported assets. Original app data is archived only in the ignored run directory.
+
+| Artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| `app-debug.apk` | 11,769,461 | `65edeb6553d8f2efc69dd6787e2ed9c6b8dab0f979324f21efa970b8fcafe89e` |
+| `qwen2.5-0.5b-instruct-q4_k_m.gguf` | 491,400,032 | `74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db` |
+| `english-reference.plpack` | 159,327 | `567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea` |
+
+The signer remains the v2 project-local debug certificate (`283b9d4b43c98e005181f85b13fd923664f856e7a6ca2d65a34444a1b7401fad`). The v3 manifest records 69 application/build-source hashes and 14 packaged asset/library identities.
+
+| Exact question | Route | Tokens | AnswerEngine total ms |
+| --- | --- | ---: | ---: |
+| Compare evaporation and condensation | GENERATED | 62 | 26593.608 |
+| What is groundwater? | FALLBACK | 39 | 29331.696 |
+| quasar supernova | ABSTAINED | 0 | 0.115 |
+| Does evaporation cure diabetes? | ABSTAINED | 0 | 2.024 |
+
+Timing covers AnswerEngine after retrieval and excludes loading, imports and UI; it is one emulator pass, not phone performance. Streamed cancellation acknowledgement was 51 ms. The raw comparison remains imprecise/repetitive, and the unsupported groundwater draft is withheld. Two absent questions abstain without inference. See [verbatim raw drafts and published answers](release-v3/cycle-1-loaded-result.json) and [actual source inspection](release-v3/cycle-1-model-ui/source-dialog.png), visually inspected during this task. These outputs are real and are not template demo answers or quality acceptance.
+
+### Final repair checks and limits
+
+Both exact commands pass: `bash tools/android-build.sh` and `bash tools/verify-release.sh`. The latter independently repeats two forced builds, which both match the fresh-demo APK SHA-256 `65edeb6553d8f2efc69dd6787e2ed9c6b8dab0f979324f21efa970b8fcafe89e`; it then checks exact artifact/source/license/ABI/signer identities, permissions and dependencies, two deterministic pack builds, eight host behavior assertions, recorded real offline behavior and four rejected damaged-evidence mutations. See [final verifier output](release-v3/verification.txt), [build output](release-v3/build.log) and [two-build result](release-v3/reproduction-result.json). The verifier repeats the build tests, but replays the freshly recorded emulator evidence rather than uninstalling on every invocation.
+
+This repairs the bounded failed byte-identity gate without weakening it. It establishes repeatability on the installed rig toolchain with the retained local debug key, not universal clean-machine reproducibility, production signing, physical Android/GrapheneOS behavior or useful-answer acceptance. The stated quality, coverage, resource, rival, independent review, release-holdout and distribution gates remain open. No private holdout, runner state or service was touched; no push, main advancement or bounty submission occurred.

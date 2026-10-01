@@ -2,7 +2,7 @@
 
 PocketLore is an experimental Android application for offline research with inspectable local sources. It includes CPU llama.cpp inference, retrieval, citation-linked answers, explicit abstention and extractive fallback, local model/pack import, and a small offline travel slice.
 
-**Status: development debug candidate, not an accepted product or bounty submission.** The build passes, but the release verifier currently fails exact APK identity after a forced rebuild changed DEX metadata; byte reproducibility remains open. Real emulator runs expose incomplete answers, unnecessary abstention and withheld drafts. No physical Android or GrapheneOS device has been measured, independent quality review remains open, and no competitive advantage has been established.
+**Status: development debug candidate, not an accepted product or bounty submission.** Both build and release checks pass for the measured emulator candidate, including identical APK bytes across forced rebuilds on the rig. Independent clean-machine reproduction remains open. Real emulator runs expose incomplete answers, unnecessary abstention and withheld drafts. No physical Android or GrapheneOS device has been measured, independent quality review remains open, and no competitive advantage has been established.
 
 Start with the [build, installation and live demo guide](docs/RELEASE.md), [candidate evidence and exact artifacts](docs/evidence/release-preparation.md), and [unresolved release gates](docs/RELEASE_GAPS.md). The app has no requested permissions or core Google Play Services dependency. Models and the larger pack are acquired separately before offline use.
 

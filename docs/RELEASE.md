@@ -20,7 +20,7 @@ Runtime/model pins are immutable revisions; text blocks and travel revisions are
 
 ## Offline build and candidate verification
 
-Current evidence: normal and forced builds succeed, but the forced rebuild changes DEX checksum metadata and APK hash. The exact frozen-identity verifier therefore currently fails. This is an unresolved reproducibility gate, not permission to refresh the manifest or claim the rebuilt bytes were freshly tested. See the evidence report for both hashes.
+The preserved v2 candidate failed byte reproducibility because AGP debug DEX included varying incremental class checksums. The repair uses the same pinned D8 compiler to re-emit DEX without those optional checksums, then sorts ZIP entries, fixes timestamps, aligns and signs the APK. The APK remains debuggable, and all artifact hashes remain exact: no DEX bytes are ignored by verification. `tools/release/check_reproducibility.py` executes two forced builds and requires identical complete APK hashes; it preserves logs and APKs on failure. This checks the same rig/toolchain/key, not an independent clean machine.
 
 ```sh
 python3 tools/android-knowledge-pack.py --cache downloads/starter-source-cache
@@ -29,9 +29,9 @@ bash tools/android-build.sh
 bash tools/verify-release.sh
 ```
 
-The APK is `android/app/build/outputs/apk/debug/app-debug.apk`. It supports ARM64 and x86_64, Android API 28 or later; only API 35 x86_64 emulator execution has been measured. The manifest at `docs/evidence/release-v2/manifest.json` records exact demo artifact identities, build-tool versions, native revision, packaged asset/library hashes and source-lock hashes. An independently signed APK will have different bytes; do not silently replace the frozen candidate manifest to conceal this difference.
+The APK is `android/app/build/outputs/apk/debug/app-debug.apk`. It supports ARM64 and x86_64, Android API 28 or later; only API 35 x86_64 emulator execution has been measured. The manifest at `docs/evidence/release-v3/manifest.json` records exact demo artifact identities, build-tool versions, native revision, packaged asset/library hashes and source-lock hashes. An independently signed APK will have different bytes; do not silently replace the frozen candidate manifest to conceal this difference.
 
-The verifier requires the frozen demo APK/model/pack and source cache. It checks their hashes, actual APK permissions/ABIs/license entries and Gradle runtime dependencies; rebuilds the pack twice; executes retrieval behavior tests; and validates the fresh-demo evidence with negative tests. Its default is evidence replay, not another emulator uninstall or independent quality evaluation. For the initial freeze after review of raw results, use `python3 tools/release/verify.py --freeze downloads/offline/run-TIMESTAMP`. An existing manifest cannot be overwritten by this command; explicitly version a new evidence directory and update the verifier for a later candidate. Keep previous evidence versions and preserve ignored failed runs. Never use this command to turn a failing run into a pass.
+The verifier requires the frozen demo APK/model/pack and source cache. It runs two forced builds, compares full APK hashes, rejects incremental class-checksum metadata, and checks their hashes, actual APK permissions/ABIs/license entries and Gradle runtime dependencies; rebuilds the pack twice; executes retrieval behavior tests; and validates the fresh-demo evidence with negative tests. Its default is evidence replay, not another emulator uninstall or independent quality evaluation. For the initial freeze after review of raw results, use `python3 tools/release/verify.py --freeze downloads/offline/run-TIMESTAMP`. An existing manifest cannot be overwritten by this command; explicitly version a new evidence directory and update the verifier for a later candidate. Keep previous evidence versions and preserve ignored failed runs. Never use this command to turn a failing run into a pass.
 
 ## Install local artifacts
 
