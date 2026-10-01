@@ -23,19 +23,38 @@ def invocation(codex, session_id, policy, output, schema=None, cwd=None):
     return args + [session_id, '-']
 
 
+# Explicit suffixes keep ordinary glued sentences ("passed.another") invalid.
+# Unknown suffixes and prose abbreviations fail closed; extend with regression tests.
+_REVIEW_FILE = re.compile(
+    r'[A-Za-z0-9_/-]+(?:\.[A-Za-z0-9_-]+)*\.'
+    r'(?:dex|apk|aab|gguf|plpack|md|py|json|jsonl|java|cpp|h|sh|txt|log|so|'
+    r'gradle|xml|tsv|csv|zip|tar|gz|png|jpg|yaml|yml|toml|properties|env)',
+    re.IGNORECASE)
+_REVIEW_VERSION = re.compile(r'v?\d+(?:\.\d+)+', re.ASCII | re.IGNORECASE)
+
+
 def valid_review(verdict):
     """Conservative format/language guard, not a proof of semantic English fluency."""
+    if not isinstance(verdict, dict):
+        return False
     if verdict.get('decision') not in ('continue', 'rework', 'unsupported'):
         return False
     text = verdict.get('visible_result', '')
     if not isinstance(text, str) or not text.strip() or text != text.strip():
         return False
-    if '\n' in text or '\r' in text or len(text.split()) > 35:
+    if any(c.isspace() and c != ' ' for c in text) or len(text.split()) > 35:
         return False
-    if not re.fullmatch(r'[^.!?]+[.!?]', text):
+    if text[-1] not in '.!?':
         return False
-    # English text can use typographic punctuation, but these are Turkish letters.
-    if re.search('[\u00e7\u011f\u0131\u00f6\u015f\u00fc\u00c7\u011e\u0130\u00d6\u015e\u00dc]', text):
+    for token in text[:-1].split(' '):
+        technical = token.strip('`"\'()[]{}:,;')
+        if _REVIEW_FILE.fullmatch(technical) or _REVIEW_VERSION.fullmatch(technical):
+            continue
+        if any(mark in token for mark in '.!?'):
+            return False
+    # Keep the existing conservative English anchor heuristic, while rejecting
+    # non-ASCII alphabetic scripts rather than letting an English anchor hide them.
+    if any(c.isalpha() and not c.isascii() for c in text):
         return False
     words = set(re.findall(r'[a-z]+', text.lower()))
     return bool(words & {'a', 'an', 'the', 'is', 'are', 'was', 'were', 'and', 'but', 'with', 'without', 'requires', 'remains', 'passes', 'passed', 'failed', 'cannot', 'supports'})

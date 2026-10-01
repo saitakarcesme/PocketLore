@@ -53,6 +53,48 @@ class Protocol(unittest.TestCase):
             self.assertFalse(valid_review({**good,'visible_result':sentence}),sentence)
         self.assertTrue(valid_review({**good,'visible_result':'The ' + 'word '*33 + 'passes.'}))
 
+    def test_review_technical_dots_and_canonical_regression(self):
+        sentences = [
+            'The release verifier fails because forced rebuilding changes classes2.dex and the frozen APK hash; resolve reproducibility, freshly validate the resulting candidate, and pass the unchanged identity gate before accepting this preparation step.',
+            'The classes2.dex file and docs/RELEASE.md require review.',
+            'The runtime.cpp, app-debug.apk and source.lock.json files are unchanged.',
+            'The version 8.9.2 and decimal 0.5 are recorded.',
+            'The `classes2.dex` file is unchanged in v1.2.3.',
+            'The archive.tar.gz is available!',
+            'The checks pass — physical acceptance remains open.',
+        ]
+        self.assertEqual(len(sentences[0].split()), 32)
+        for text in sentences:
+            with self.subTest(text=text):
+                self.assertTrue(valid_review({'decision':'rework','visible_result':text}))
+
+    def test_review_rejects_real_boundaries_and_malformed_values(self):
+        for text in [
+            'The file changed. Another check failed.',
+            'The file changed.Another check failed.',
+            'The file changed.another check failed.',
+            'The file changed!Another check failed.',
+            'The file changed? Another check failed.',
+            'The file classes2.dex changed. Another check failed.',
+            'The version 1.2 passed. Another failed.',
+            'The checks... passed.', 'The checks passed!!',
+            'The file .dex is changed.', 'The version 1..2 is changed.',
+            'The checks passed.\tAnother failed.',
+            'The checks passed.\u2028Another failed.',
+            ' The check passed.', 'The check passed. ',
+            'The ' + 'classes2.dex '*34 + 'passed.',
+            'La validation reste ouverte.', '\u00d6nceki engel giderilmi\u015ftir.',
+            'The \u6d4b\u8bd5 passed.',
+        ]:
+            with self.subTest(text=text):
+                self.assertFalse(valid_review({'decision':'continue','visible_result':text}))
+        for value in [None, [], 'text', 4, True, {},
+                      {'decision':[],'visible_result':'The check passed.'},
+                      {'decision':'continue','visible_result':None},
+                      {'decision':'continue','visible_result':['The check passed.']},
+                      {'decision':'continue','visible_result':42}]:
+            with self.subTest(value=value):self.assertFalse(valid_review(value))
+
     def test_invocation_preserves_policy_without_bypass(self):
         policy={'approval_policy':'never','sandbox_mode':'workspace-write','add_dirs':['/specific/cache'],'network_access':True}
         args=invocation('codex','exact-id',policy,'out.json')
