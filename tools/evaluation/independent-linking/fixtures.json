@@ -1,0 +1,1289 @@
+{
+  "version": 1,
+  "purpose": "Public development/regression experiment; constructed probes are not corpus facts. No held-out or production acceptance.",
+  "old_checkpoint": "15a742f7680dbd1ecdb1adf8414cb687d4306cb3",
+  "old_seal_sha256": "36d442ea04d9c93b91a6a7e61c3fa93a3ac990c2406a369196db152a2a9f9081",
+  "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+  "cases": [
+    {
+      "id": "l01",
+      "topic": "gardening",
+      "kind": "input-output",
+      "question": "What does an earthworm leave behind after breaking down organic matter?",
+      "constructed_probe": "Vermicast is the material left by earthworms after they break down organic matter.",
+      "expected_probe_supported": true,
+      "expectation": "Support the probe from the pinned excerpt.",
+      "sources": [
+        {
+          "id": "wiki-5966-5c7dda9d66ad61e0",
+          "title": "Compost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1373605852",
+          "date": "2026-09-06T21:38:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Compost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "3dd3ef4a398f8de423bb3986cc9a43adb7c425b496fadcb61354b0cbcb8969fc",
+          "text": "Compost is a mixture of ingredients used as plant fertilizer and to improve soil's physical, chemical, and biological properties. It is commonly prepared by decomposing plant and food waste, recycling organic materials, and manure. The resulting mixture is rich in plant nutrients and beneficial organisms, such as bacteria, protozoa, nematodes, and fungi. Compost improves soil fertility in gardens, landscaping, horticulture, urban agriculture, and organic farming, reducing dependency on commercial chemical fertilizers.[1] The benefits of compost include providing nutrients to crops as fertilizer, acting as a soil conditioner, increasing the humus or humic acid contents of the soil, and introducing beneficial microbes that help to suppress pathogens in the soil and reduce soil-borne diseases.",
+          "sha256": "5c7dda9d66ad61e0ad84907fc3dab02774058b205cf9786328c0d4e2cf419c23"
+        },
+        {
+          "id": "wiki-5966-78260458b154170c",
+          "title": "Compost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1373605852",
+          "date": "2026-09-06T21:38:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Compost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "3dd3ef4a398f8de423bb3986cc9a43adb7c425b496fadcb61354b0cbcb8969fc",
+          "text": "At the most basic level, composting requires gathering a mix of green waste (nitrogen-rich materials such as leaves, grass, and food scraps) and brown waste (woody materials rich in carbon, such as stalks, paper, and wood chips).[1] The materials break down into humus in a process taking months.[2] Composting can be a multistep, closely monitored process with measured inputs of water, air, and carbon- and nitrogen-rich materials. The decomposition process is aided by shredding the plant matter, adding water, and ensuring proper aeration by regularly turning the mixture in a process using open piles or windrows.[1][3] Fungi, earthworms, and other detritivores further break up the organic material. Aerobic bacteria and fungi manage the chemical process by converting the inputs into heat, carbon dioxide, and ammonium ions.",
+          "sha256": "78260458b154170c5ed296519af88e00b7e56ab1b7b6ec398abe69901ec6781f"
+        },
+        {
+          "id": "wiki-5966-52571663597f7eb8",
+          "title": "Compost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1373605852",
+          "date": "2026-09-06T21:38:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Compost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "3dd3ef4a398f8de423bb3986cc9a43adb7c425b496fadcb61354b0cbcb8969fc",
+          "text": "Composting is an important part of waste management, since food and other compostable materials make up about 20% of waste in landfills, and due to anaerobic conditions, these materials take longer to biodegrade in the landfill.[4][5] Composting offers an environmentally superior alternative to using organic material for landfill because composting reduces methane emissions due to anaerobic conditions, and provides economic and environmental co-benefits.[6][7] For example, compost can also be used for land and stream reclamation, wetland construction, and landfill cover.",
+          "sha256": "52571663597f7eb897e27fdcbe0c6e0414f9539e31aa2db6fb7f3e552b0afdcf"
+        },
+        {
+          "id": "wiki-170578-ed509d5b0126f128",
+          "title": "Vermicompost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377724813",
+          "date": "2026-09-30T20:19:55Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Vermicompost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "a43a1d8104fa741f204a07337b9e0b9162c82e4ce88c402cb679347e9074c4ec",
+          "text": "Vermicompost (vermi-compost) is the product of the decomposition process using various species of worms, usually red wigglers, white worms, and other earthworms, to create a mixture of decomposing vegetable or food waste, bedding materials, and vermicast. This process is called vermicomposting, with the rearing of worms for this purpose is called vermiculture.",
+          "sha256": "ed509d5b0126f128b4b9a9a2b53732e6a7d9c74ec908e445f4cb7fbc583ef3e2"
+        },
+        {
+          "id": "wiki-170578-e83989668c822b11",
+          "title": "Vermicompost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377724813",
+          "date": "2026-09-30T20:19:55Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Vermicompost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "a43a1d8104fa741f204a07337b9e0b9162c82e4ce88c402cb679347e9074c4ec",
+          "text": "Vermicast (also called worm castings,[a] worm humus, worm poop, worm manure, or worm faeces) is the end-product of the breakdown of organic matter by earthworms.[1] These excreta have been shown to contain reduced levels of contaminants and a higher saturation of nutrients than the organic materials before vermicomposting.[2]",
+          "sha256": "e83989668c822b1175c8edac8836f5843319e9e4bf4e901a3c416468c281c925"
+        },
+        {
+          "id": "wiki-170578-f92d74c93aae5295",
+          "title": "Vermicompost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377724813",
+          "date": "2026-09-30T20:19:55Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Vermicompost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "a43a1d8104fa741f204a07337b9e0b9162c82e4ce88c402cb679347e9074c4ec",
+          "text": "Vermicompost contains water-soluble nutrients which may be extracted as vermiwash and is an excellent, nutrient-rich organic fertilizer and soil conditioner.[3] It is used in gardening and sustainable, organic farming.",
+          "sha256": "f92d74c93aae5295c928eefdc2ba0b00424aeb59855eb32e108f4720f77a5d63"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-170578-e83989668c822b11",
+        "sha256": "e83989668c822b1175c8edac8836f5843319e9e4bf4e901a3c416468c281c925",
+        "start_utf16": 0,
+        "end_utf16": 327,
+        "text": "Vermicast (also called worm castings,[a] worm humus, worm poop, worm manure, or worm faeces) is the end-product of the breakdown of organic matter by earthworms.[1] These excreta have been shown to contain reduced levels of contaminants and a higher saturation of nutrients than the organic materials before vermicomposting.[2]"
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l02",
+      "topic": "gardening",
+      "kind": "input-output",
+      "question": "Does the cited definition identify vermicast as the organic material before earthworms process it?",
+      "constructed_probe": "Vermicast is the organic input consumed by earthworms before processing.",
+      "expected_probe_supported": false,
+      "expectation": "Reject the constructed counterfactual; correct the question premise using the excerpt.",
+      "sources": [
+        {
+          "id": "wiki-5966-5c7dda9d66ad61e0",
+          "title": "Compost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1373605852",
+          "date": "2026-09-06T21:38:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Compost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "3dd3ef4a398f8de423bb3986cc9a43adb7c425b496fadcb61354b0cbcb8969fc",
+          "text": "Compost is a mixture of ingredients used as plant fertilizer and to improve soil's physical, chemical, and biological properties. It is commonly prepared by decomposing plant and food waste, recycling organic materials, and manure. The resulting mixture is rich in plant nutrients and beneficial organisms, such as bacteria, protozoa, nematodes, and fungi. Compost improves soil fertility in gardens, landscaping, horticulture, urban agriculture, and organic farming, reducing dependency on commercial chemical fertilizers.[1] The benefits of compost include providing nutrients to crops as fertilizer, acting as a soil conditioner, increasing the humus or humic acid contents of the soil, and introducing beneficial microbes that help to suppress pathogens in the soil and reduce soil-borne diseases.",
+          "sha256": "5c7dda9d66ad61e0ad84907fc3dab02774058b205cf9786328c0d4e2cf419c23"
+        },
+        {
+          "id": "wiki-5966-78260458b154170c",
+          "title": "Compost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1373605852",
+          "date": "2026-09-06T21:38:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Compost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "3dd3ef4a398f8de423bb3986cc9a43adb7c425b496fadcb61354b0cbcb8969fc",
+          "text": "At the most basic level, composting requires gathering a mix of green waste (nitrogen-rich materials such as leaves, grass, and food scraps) and brown waste (woody materials rich in carbon, such as stalks, paper, and wood chips).[1] The materials break down into humus in a process taking months.[2] Composting can be a multistep, closely monitored process with measured inputs of water, air, and carbon- and nitrogen-rich materials. The decomposition process is aided by shredding the plant matter, adding water, and ensuring proper aeration by regularly turning the mixture in a process using open piles or windrows.[1][3] Fungi, earthworms, and other detritivores further break up the organic material. Aerobic bacteria and fungi manage the chemical process by converting the inputs into heat, carbon dioxide, and ammonium ions.",
+          "sha256": "78260458b154170c5ed296519af88e00b7e56ab1b7b6ec398abe69901ec6781f"
+        },
+        {
+          "id": "wiki-5966-52571663597f7eb8",
+          "title": "Compost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1373605852",
+          "date": "2026-09-06T21:38:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Compost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "3dd3ef4a398f8de423bb3986cc9a43adb7c425b496fadcb61354b0cbcb8969fc",
+          "text": "Composting is an important part of waste management, since food and other compostable materials make up about 20% of waste in landfills, and due to anaerobic conditions, these materials take longer to biodegrade in the landfill.[4][5] Composting offers an environmentally superior alternative to using organic material for landfill because composting reduces methane emissions due to anaerobic conditions, and provides economic and environmental co-benefits.[6][7] For example, compost can also be used for land and stream reclamation, wetland construction, and landfill cover.",
+          "sha256": "52571663597f7eb897e27fdcbe0c6e0414f9539e31aa2db6fb7f3e552b0afdcf"
+        },
+        {
+          "id": "wiki-170578-ed509d5b0126f128",
+          "title": "Vermicompost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377724813",
+          "date": "2026-09-30T20:19:55Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Vermicompost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "a43a1d8104fa741f204a07337b9e0b9162c82e4ce88c402cb679347e9074c4ec",
+          "text": "Vermicompost (vermi-compost) is the product of the decomposition process using various species of worms, usually red wigglers, white worms, and other earthworms, to create a mixture of decomposing vegetable or food waste, bedding materials, and vermicast. This process is called vermicomposting, with the rearing of worms for this purpose is called vermiculture.",
+          "sha256": "ed509d5b0126f128b4b9a9a2b53732e6a7d9c74ec908e445f4cb7fbc583ef3e2"
+        },
+        {
+          "id": "wiki-170578-e83989668c822b11",
+          "title": "Vermicompost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377724813",
+          "date": "2026-09-30T20:19:55Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Vermicompost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "a43a1d8104fa741f204a07337b9e0b9162c82e4ce88c402cb679347e9074c4ec",
+          "text": "Vermicast (also called worm castings,[a] worm humus, worm poop, worm manure, or worm faeces) is the end-product of the breakdown of organic matter by earthworms.[1] These excreta have been shown to contain reduced levels of contaminants and a higher saturation of nutrients than the organic materials before vermicomposting.[2]",
+          "sha256": "e83989668c822b1175c8edac8836f5843319e9e4bf4e901a3c416468c281c925"
+        },
+        {
+          "id": "wiki-170578-f92d74c93aae5295",
+          "title": "Vermicompost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377724813",
+          "date": "2026-09-30T20:19:55Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Vermicompost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "a43a1d8104fa741f204a07337b9e0b9162c82e4ce88c402cb679347e9074c4ec",
+          "text": "Vermicompost contains water-soluble nutrients which may be extracted as vermiwash and is an excellent, nutrient-rich organic fertilizer and soil conditioner.[3] It is used in gardening and sustainable, organic farming.",
+          "sha256": "f92d74c93aae5295c928eefdc2ba0b00424aeb59855eb32e108f4720f77a5d63"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-170578-e83989668c822b11",
+        "sha256": "e83989668c822b1175c8edac8836f5843319e9e4bf4e901a3c416468c281c925",
+        "start_utf16": 0,
+        "end_utf16": 327,
+        "text": "Vermicast (also called worm castings,[a] worm humus, worm poop, worm manure, or worm faeces) is the end-product of the breakdown of organic matter by earthworms.[1] These excreta have been shown to contain reduced levels of contaminants and a higher saturation of nutrients than the organic materials before vermicomposting.[2]"
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l03",
+      "topic": "gardening",
+      "kind": "condition",
+      "question": "Why does the branch size matter when a woody plant is pruned?",
+      "constructed_probe": "Smaller cuts are generally easier for a woody plant to compartmentalize, limiting potential decay and pathogen intrusion.",
+      "expected_probe_supported": true,
+      "expectation": "Support the probe from the pinned excerpt.",
+      "sources": [
+        {
+          "id": "wiki-14080493-ae387edeb3b81d53",
+          "title": "Grafting",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1376958891",
+          "date": "2026-09-27T03:52:42Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Grafting \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "389e38492a405c27ad18eca9b91f5ec9e57f3d276089cc3b8e36b47445f08ea0",
+          "text": "Grafting or graftage[1] is a horticultural technique whereby tissues of plants are joined so as to continue their growth together. The upper part of the combined plant is called the scion (/\u02c8sa\u026a\u0259n/) while the lower part is called the rootstock. The success of this joining requires that the vascular tissues grow together. The natural equivalent of this process is inosculation. The technique is most commonly used in asexual propagation of commercially-grown plants for the horticultural and agricultural trades. The scion is typically joined to the rootstock at the soil line; however, top-work grafting may occur far above this line, leaving an understock consisting of the lower part of the trunk and the root system.",
+          "sha256": "ae387edeb3b81d5398027b60dfd27c95130684d93582583dc56774beeaee27cc"
+        },
+        {
+          "id": "wiki-14080493-8bf3ead20d84c61a",
+          "title": "Grafting",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1376958891",
+          "date": "2026-09-27T03:52:42Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Grafting \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "389e38492a405c27ad18eca9b91f5ec9e57f3d276089cc3b8e36b47445f08ea0",
+          "text": "In most cases, the grafter selects the stock (rootstock) for its roots and the scion for its stems, leaves, flowers, or fruits.[1] The scion contains the desired genes to be duplicated in future production by the grafted plant.",
+          "sha256": "8bf3ead20d84c61a9e20cea6907df32596f4d16d2002ca2291feac5ea71f6ea6"
+        },
+        {
+          "id": "wiki-14080493-040f28a5f8d715f5",
+          "title": "Grafting",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1376958891",
+          "date": "2026-09-27T03:52:42Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Grafting \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "389e38492a405c27ad18eca9b91f5ec9e57f3d276089cc3b8e36b47445f08ea0",
+          "text": "In stem grafting, a common grafting method, a shoot of a selected, desired plant cultivar is grafted onto the stock of another type. In another common form \u2014 called bud grafting \u2014 a dormant side-bud is grafted onto the stem of another stock plant, and when it has inosculated successfully, it is encouraged to grow by pruning off the stem of the stock plant just above the newly grafted bud.",
+          "sha256": "040f28a5f8d715f56e0fa10d5d1801d4ce1b35564044cab913e7de567f4b86f6"
+        },
+        {
+          "id": "wiki-471376-0397b06c464a1828",
+          "title": "Pruning",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1374208553",
+          "date": "2026-09-10T14:38:44Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Pruning \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7fd9c76375a19f149a58aa8bfaf7d9be1a03ad5d9040676821f8c508a503c562",
+          "text": "Pruning is the selective removal of certain parts of a plant, such as branches, buds, or roots. It is practiced in horticulture (especially fruit tree pruning), arboriculture, and silviculture.",
+          "sha256": "0397b06c464a18280fab646dcbc6487ae31f336bf6765ddeac3dd2d40a96dc41"
+        },
+        {
+          "id": "wiki-471376-47c755faff2223e9",
+          "title": "Pruning",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1374208553",
+          "date": "2026-09-10T14:38:44Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Pruning \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7fd9c76375a19f149a58aa8bfaf7d9be1a03ad5d9040676821f8c508a503c562",
+          "text": "The practice entails the targeted removal of diseased, damaged, dead, non-productive, structurally unsound, or otherwise unwanted plant material from crop and landscape plants. In general, the smaller the branch that is cut, the easier it is for a woody plant to compartmentalize the wound and thus limit the potential for pathogen intrusion and decay. It is therefore preferable to make any necessary formative structural pruning cuts to young plants, rather than removing large, poorly placed branches from mature plants.",
+          "sha256": "47c755faff2223e9d90753f5948d7006a343fb0c26fa18b09580a6e0fddabb6e"
+        },
+        {
+          "id": "wiki-471376-6b2a2bc6a17ddfb6",
+          "title": "Pruning",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1374208553",
+          "date": "2026-09-10T14:38:44Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Pruning \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7fd9c76375a19f149a58aa8bfaf7d9be1a03ad5d9040676821f8c508a503c562",
+          "text": "Woody plants may undergo a process referred to as self-pruning, where they will drop twigs or branches which are no longer producing more energy than they require. It is theorized that this process can also occur in response to lack of water, in order to reduce the surface area where water can be lost.[1] This natural shedding of branches is called cladoptosis.",
+          "sha256": "6b2a2bc6a17ddfb66ca28307a6b6419c28cc9f728bba4650dd8110b5807d2b10"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-471376-47c755faff2223e9",
+        "sha256": "47c755faff2223e9d90753f5948d7006a343fb0c26fa18b09580a6e0fddabb6e",
+        "start_utf16": 0,
+        "end_utf16": 523,
+        "text": "The practice entails the targeted removal of diseased, damaged, dead, non-productive, structurally unsound, or otherwise unwanted plant material from crop and landscape plants. In general, the smaller the branch that is cut, the easier it is for a woody plant to compartmentalize the wound and thus limit the potential for pathogen intrusion and decay. It is therefore preferable to make any necessary formative structural pruning cuts to young plants, rather than removing large, poorly placed branches from mature plants."
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l04",
+      "topic": "gardening",
+      "kind": "condition",
+      "question": "Does the wound explanation say that cutting larger branches makes compartmentalization easier?",
+      "constructed_probe": "Larger branch cuts are easier for woody plants to compartmentalize and therefore reduce decay.",
+      "expected_probe_supported": false,
+      "expectation": "Reject the constructed counterfactual; correct the question premise using the excerpt.",
+      "sources": [
+        {
+          "id": "wiki-14080493-ae387edeb3b81d53",
+          "title": "Grafting",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1376958891",
+          "date": "2026-09-27T03:52:42Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Grafting \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "389e38492a405c27ad18eca9b91f5ec9e57f3d276089cc3b8e36b47445f08ea0",
+          "text": "Grafting or graftage[1] is a horticultural technique whereby tissues of plants are joined so as to continue their growth together. The upper part of the combined plant is called the scion (/\u02c8sa\u026a\u0259n/) while the lower part is called the rootstock. The success of this joining requires that the vascular tissues grow together. The natural equivalent of this process is inosculation. The technique is most commonly used in asexual propagation of commercially-grown plants for the horticultural and agricultural trades. The scion is typically joined to the rootstock at the soil line; however, top-work grafting may occur far above this line, leaving an understock consisting of the lower part of the trunk and the root system.",
+          "sha256": "ae387edeb3b81d5398027b60dfd27c95130684d93582583dc56774beeaee27cc"
+        },
+        {
+          "id": "wiki-14080493-8bf3ead20d84c61a",
+          "title": "Grafting",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1376958891",
+          "date": "2026-09-27T03:52:42Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Grafting \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "389e38492a405c27ad18eca9b91f5ec9e57f3d276089cc3b8e36b47445f08ea0",
+          "text": "In most cases, the grafter selects the stock (rootstock) for its roots and the scion for its stems, leaves, flowers, or fruits.[1] The scion contains the desired genes to be duplicated in future production by the grafted plant.",
+          "sha256": "8bf3ead20d84c61a9e20cea6907df32596f4d16d2002ca2291feac5ea71f6ea6"
+        },
+        {
+          "id": "wiki-14080493-040f28a5f8d715f5",
+          "title": "Grafting",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1376958891",
+          "date": "2026-09-27T03:52:42Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Grafting \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "389e38492a405c27ad18eca9b91f5ec9e57f3d276089cc3b8e36b47445f08ea0",
+          "text": "In stem grafting, a common grafting method, a shoot of a selected, desired plant cultivar is grafted onto the stock of another type. In another common form \u2014 called bud grafting \u2014 a dormant side-bud is grafted onto the stem of another stock plant, and when it has inosculated successfully, it is encouraged to grow by pruning off the stem of the stock plant just above the newly grafted bud.",
+          "sha256": "040f28a5f8d715f56e0fa10d5d1801d4ce1b35564044cab913e7de567f4b86f6"
+        },
+        {
+          "id": "wiki-471376-0397b06c464a1828",
+          "title": "Pruning",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1374208553",
+          "date": "2026-09-10T14:38:44Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Pruning \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7fd9c76375a19f149a58aa8bfaf7d9be1a03ad5d9040676821f8c508a503c562",
+          "text": "Pruning is the selective removal of certain parts of a plant, such as branches, buds, or roots. It is practiced in horticulture (especially fruit tree pruning), arboriculture, and silviculture.",
+          "sha256": "0397b06c464a18280fab646dcbc6487ae31f336bf6765ddeac3dd2d40a96dc41"
+        },
+        {
+          "id": "wiki-471376-47c755faff2223e9",
+          "title": "Pruning",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1374208553",
+          "date": "2026-09-10T14:38:44Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Pruning \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7fd9c76375a19f149a58aa8bfaf7d9be1a03ad5d9040676821f8c508a503c562",
+          "text": "The practice entails the targeted removal of diseased, damaged, dead, non-productive, structurally unsound, or otherwise unwanted plant material from crop and landscape plants. In general, the smaller the branch that is cut, the easier it is for a woody plant to compartmentalize the wound and thus limit the potential for pathogen intrusion and decay. It is therefore preferable to make any necessary formative structural pruning cuts to young plants, rather than removing large, poorly placed branches from mature plants.",
+          "sha256": "47c755faff2223e9d90753f5948d7006a343fb0c26fa18b09580a6e0fddabb6e"
+        },
+        {
+          "id": "wiki-471376-6b2a2bc6a17ddfb6",
+          "title": "Pruning",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1374208553",
+          "date": "2026-09-10T14:38:44Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Pruning \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7fd9c76375a19f149a58aa8bfaf7d9be1a03ad5d9040676821f8c508a503c562",
+          "text": "Woody plants may undergo a process referred to as self-pruning, where they will drop twigs or branches which are no longer producing more energy than they require. It is theorized that this process can also occur in response to lack of water, in order to reduce the surface area where water can be lost.[1] This natural shedding of branches is called cladoptosis.",
+          "sha256": "6b2a2bc6a17ddfb66ca28307a6b6419c28cc9f728bba4650dd8110b5807d2b10"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-471376-47c755faff2223e9",
+        "sha256": "47c755faff2223e9d90753f5948d7006a343fb0c26fa18b09580a6e0fddabb6e",
+        "start_utf16": 0,
+        "end_utf16": 523,
+        "text": "The practice entails the targeted removal of diseased, damaged, dead, non-productive, structurally unsound, or otherwise unwanted plant material from crop and landscape plants. In general, the smaller the branch that is cut, the easier it is for a woody plant to compartmentalize the wound and thus limit the potential for pathogen intrusion and decay. It is therefore preferable to make any necessary formative structural pruning cuts to young plants, rather than removing large, poorly placed branches from mature plants."
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l05",
+      "topic": "civics",
+      "kind": "negated-false-premise",
+      "question": "Can a constitution be uncodified yet written in several legal sources? Give the named example.",
+      "constructed_probe": "It is false that an uncodified constitution must lack written sources: the United Kingdom constitution is written in numerous acts, court cases and treaties.",
+      "expected_probe_supported": true,
+      "expectation": "Support the probe from the pinned excerpt.",
+      "sources": [
+        {
+          "id": "wiki-5253-961c40c10e71969c",
+          "title": "Constitution",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377322873",
+          "date": "2026-09-28T22:36:35Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Constitution \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7bfb1e852de21d1fae1f5efdd80c76368263a4f0cb560ce8c25676c2766687d6",
+          "text": "A constitution, or supreme law, is the aggregate of fundamental principles or established precedents that constitute the legal basis of a polity, organization or other type of entity, and commonly determines how that entity is to be governed.[1]",
+          "sha256": "961c40c10e71969cd3e7835b9d86a4d30597d7be9d3e77ecf6167f8930d7d15a"
+        },
+        {
+          "id": "wiki-5253-674eecc36013ad07",
+          "title": "Constitution",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377322873",
+          "date": "2026-09-28T22:36:35Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Constitution \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7bfb1e852de21d1fae1f5efdd80c76368263a4f0cb560ce8c25676c2766687d6",
+          "text": "When these principles are written down into a single document or set of legal documents, those documents may be said to embody a written constitution; if they are encompassed in a single comprehensive document, it is said to embody a codified constitution. The constitution of the United Kingdom is a notable example of an uncodified constitution; it is instead written in numerous fundamental acts of a legislature, court cases, and treaties.[2]",
+          "sha256": "674eecc36013ad07d88373a3a091d8ebb156b0817a419dda61043659fbdd4996"
+        },
+        {
+          "id": "wiki-5253-71422fe17ab2c970",
+          "title": "Constitution",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377322873",
+          "date": "2026-09-28T22:36:35Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Constitution \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7bfb1e852de21d1fae1f5efdd80c76368263a4f0cb560ce8c25676c2766687d6",
+          "text": "Constitutions concern different levels of organizations, from sovereign countries to companies and unincorporated associations. A treaty that establishes an international organization is also its constitution, in that it would define how that organization is constituted. Within states, a constitution defines the principles upon which the state is based, the procedure in which laws are made, and by whom. Some constitutions, especially codified constitutions, also act as limiters of state power, by establishing lines which a state's rulers cannot cross, such as fundamental rights. Changes to constitutions frequently require consensus or supermajority.[3]",
+          "sha256": "71422fe17ab2c970829fe136d8283f9b62ef5da97fd330fd7aa0eece32ed2b46"
+        },
+        {
+          "id": "wiki-5649-5784165f2f880683",
+          "title": "Constitutional monarchy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1375076140",
+          "date": "2026-09-15T18:37:31Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Constitutional monarchy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "c5a91b97928c7f201e52f0a4eac143fc777c00aac6cb3eb483c6bda7055dda9c",
+          "text": "Constitutional monarchy, also known as limited monarchy, parliamentary monarchy or democratic monarchy, is a form of monarchy in which the monarch exercises their authority in accordance with a constitution and is not alone in making decisions.[1][2][3][4] Constitutional monarchies differ from absolute monarchies (in which a monarch is the only decision-maker) in that they are bound to exercise powers and authorities within limits prescribed by an established legal framework. The monarch is frequently perceived as a visible symbol of national unity.[5]",
+          "sha256": "5784165f2f880683ebc76b1d36dc87622ba687f19013cce12c180c7e474850e4"
+        },
+        {
+          "id": "wiki-5649-ec8239d3a4292626",
+          "title": "Constitutional monarchy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1375076140",
+          "date": "2026-09-15T18:37:31Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Constitutional monarchy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "c5a91b97928c7f201e52f0a4eac143fc777c00aac6cb3eb483c6bda7055dda9c",
+          "text": "The powers of constitutional monarchs vary. In some countries, the monarch has virtually no executive or policy-making power and is primarily a hereditary symbolic head of state (who may be an emperor, king or queen, prince or grand duke),[6] while in other countries, the monarch has meaningful formal powers (such as veto power, appointment power, and power to dissolve parliament).[7][8]",
+          "sha256": "ec8239d3a4292626d3bb4b8940ca6e21ef260d0172a1212a3f219aba5780ee21"
+        },
+        {
+          "id": "wiki-5649-f6af80ebecc9f134",
+          "title": "Constitutional monarchy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1375076140",
+          "date": "2026-09-15T18:37:31Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Constitutional monarchy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "c5a91b97928c7f201e52f0a4eac143fc777c00aac6cb3eb483c6bda7055dda9c",
+          "text": "In countries such as Liechtenstein, Monaco, Morocco, Jordan, Kuwait, Bahrain, Thailand and Bhutan, the constitution grants substantial discretionary powers to the sovereign, while in United Kingdom and other Commonwealth realms, the Netherlands, Spain, Luxembourg, Belgium, Denmark, Norway, Sweden, Lesotho, Malaysia, Cambodia, and Japan, the monarch retains significantly less, if any, personal discretion in the exercise of their authority. While many constitutional monarchies are democratic, some are not.[7]",
+          "sha256": "f6af80ebecc9f134defd4f6bd362cb64d73c1a1a92bf4b4c8a440895bc9f124c"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-5253-674eecc36013ad07",
+        "sha256": "674eecc36013ad07d88373a3a091d8ebb156b0817a419dda61043659fbdd4996",
+        "start_utf16": 0,
+        "end_utf16": 446,
+        "text": "When these principles are written down into a single document or set of legal documents, those documents may be said to embody a written constitution; if they are encompassed in a single comprehensive document, it is said to embody a codified constitution. The constitution of the United Kingdom is a notable example of an uncodified constitution; it is instead written in numerous fundamental acts of a legislature, court cases, and treaties.[2]"
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l06",
+      "topic": "civics",
+      "kind": "negated-false-premise",
+      "question": "Is every constitution written in a set of documents necessarily codified?",
+      "constructed_probe": "A constitution written in any set of legal documents is necessarily codified.",
+      "expected_probe_supported": false,
+      "expectation": "Reject the constructed counterfactual; correct the question premise using the excerpt.",
+      "sources": [
+        {
+          "id": "wiki-5253-961c40c10e71969c",
+          "title": "Constitution",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377322873",
+          "date": "2026-09-28T22:36:35Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Constitution \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7bfb1e852de21d1fae1f5efdd80c76368263a4f0cb560ce8c25676c2766687d6",
+          "text": "A constitution, or supreme law, is the aggregate of fundamental principles or established precedents that constitute the legal basis of a polity, organization or other type of entity, and commonly determines how that entity is to be governed.[1]",
+          "sha256": "961c40c10e71969cd3e7835b9d86a4d30597d7be9d3e77ecf6167f8930d7d15a"
+        },
+        {
+          "id": "wiki-5253-674eecc36013ad07",
+          "title": "Constitution",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377322873",
+          "date": "2026-09-28T22:36:35Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Constitution \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7bfb1e852de21d1fae1f5efdd80c76368263a4f0cb560ce8c25676c2766687d6",
+          "text": "When these principles are written down into a single document or set of legal documents, those documents may be said to embody a written constitution; if they are encompassed in a single comprehensive document, it is said to embody a codified constitution. The constitution of the United Kingdom is a notable example of an uncodified constitution; it is instead written in numerous fundamental acts of a legislature, court cases, and treaties.[2]",
+          "sha256": "674eecc36013ad07d88373a3a091d8ebb156b0817a419dda61043659fbdd4996"
+        },
+        {
+          "id": "wiki-5253-71422fe17ab2c970",
+          "title": "Constitution",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377322873",
+          "date": "2026-09-28T22:36:35Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Constitution \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7bfb1e852de21d1fae1f5efdd80c76368263a4f0cb560ce8c25676c2766687d6",
+          "text": "Constitutions concern different levels of organizations, from sovereign countries to companies and unincorporated associations. A treaty that establishes an international organization is also its constitution, in that it would define how that organization is constituted. Within states, a constitution defines the principles upon which the state is based, the procedure in which laws are made, and by whom. Some constitutions, especially codified constitutions, also act as limiters of state power, by establishing lines which a state's rulers cannot cross, such as fundamental rights. Changes to constitutions frequently require consensus or supermajority.[3]",
+          "sha256": "71422fe17ab2c970829fe136d8283f9b62ef5da97fd330fd7aa0eece32ed2b46"
+        },
+        {
+          "id": "wiki-5649-5784165f2f880683",
+          "title": "Constitutional monarchy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1375076140",
+          "date": "2026-09-15T18:37:31Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Constitutional monarchy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "c5a91b97928c7f201e52f0a4eac143fc777c00aac6cb3eb483c6bda7055dda9c",
+          "text": "Constitutional monarchy, also known as limited monarchy, parliamentary monarchy or democratic monarchy, is a form of monarchy in which the monarch exercises their authority in accordance with a constitution and is not alone in making decisions.[1][2][3][4] Constitutional monarchies differ from absolute monarchies (in which a monarch is the only decision-maker) in that they are bound to exercise powers and authorities within limits prescribed by an established legal framework. The monarch is frequently perceived as a visible symbol of national unity.[5]",
+          "sha256": "5784165f2f880683ebc76b1d36dc87622ba687f19013cce12c180c7e474850e4"
+        },
+        {
+          "id": "wiki-5649-ec8239d3a4292626",
+          "title": "Constitutional monarchy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1375076140",
+          "date": "2026-09-15T18:37:31Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Constitutional monarchy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "c5a91b97928c7f201e52f0a4eac143fc777c00aac6cb3eb483c6bda7055dda9c",
+          "text": "The powers of constitutional monarchs vary. In some countries, the monarch has virtually no executive or policy-making power and is primarily a hereditary symbolic head of state (who may be an emperor, king or queen, prince or grand duke),[6] while in other countries, the monarch has meaningful formal powers (such as veto power, appointment power, and power to dissolve parliament).[7][8]",
+          "sha256": "ec8239d3a4292626d3bb4b8940ca6e21ef260d0172a1212a3f219aba5780ee21"
+        },
+        {
+          "id": "wiki-5649-f6af80ebecc9f134",
+          "title": "Constitutional monarchy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1375076140",
+          "date": "2026-09-15T18:37:31Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Constitutional monarchy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "c5a91b97928c7f201e52f0a4eac143fc777c00aac6cb3eb483c6bda7055dda9c",
+          "text": "In countries such as Liechtenstein, Monaco, Morocco, Jordan, Kuwait, Bahrain, Thailand and Bhutan, the constitution grants substantial discretionary powers to the sovereign, while in United Kingdom and other Commonwealth realms, the Netherlands, Spain, Luxembourg, Belgium, Denmark, Norway, Sweden, Lesotho, Malaysia, Cambodia, and Japan, the monarch retains significantly less, if any, personal discretion in the exercise of their authority. While many constitutional monarchies are democratic, some are not.[7]",
+          "sha256": "f6af80ebecc9f134defd4f6bd362cb64d73c1a1a92bf4b4c8a440895bc9f124c"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-5253-674eecc36013ad07",
+        "sha256": "674eecc36013ad07d88373a3a091d8ebb156b0817a419dda61043659fbdd4996",
+        "start_utf16": 0,
+        "end_utf16": 446,
+        "text": "When these principles are written down into a single document or set of legal documents, those documents may be said to embody a written constitution; if they are encompassed in a single comprehensive document, it is said to embody a codified constitution. The constitution of the United Kingdom is a notable example of an uncodified constitution; it is instead written in numerous fundamental acts of a legislature, court cases, and treaties.[2]"
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l07",
+      "topic": "history",
+      "kind": "temporal",
+      "question": "How did Barcelona's existing Catalonian capital role relate to its joining Aragon?",
+      "constructed_probe": "Barcelona continued as capital of the Principality of Catalonia after joining Aragon.",
+      "expected_probe_supported": true,
+      "expectation": "Support the probe from the pinned excerpt.",
+      "sources": [
+        {
+          "id": "wiki-4443-bc3c6ca9d37be008",
+          "title": "Barcelona",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377465432",
+          "date": "2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Barcelona \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7f30923b72bf525e4a8a38665678b80cf1deaf0398a7de447f0cb5457b063213",
+          "text": "Barcelona[a] is a city on the northeastern coast of Spain. It is the capital and largest city of the autonomous community of Catalonia, as well as the second-most populous municipality of Spain after Madrid. With a population of 1.7 million within city limits,[3] its urban area extends to numerous neighbouring municipalities within the province of Barcelona and is home to around 5.7 million people,[4] making it the fifth most populous urban area of the European Union after Paris, the Ruhr area, Madrid, and Milan.[4] It is one of the largest metropolises on the Mediterranean Sea, located on the coast between the mouths of the rivers Llobregat and Bes\u00f2s, and bounded to the west by the Serra de Collserola mountain range.",
+          "sha256": "bc3c6ca9d37be008f345c17f80f3f946c2cad306a5d00d7409986e07c50641ff"
+        },
+        {
+          "id": "wiki-4443-0ef2f4db203064b8",
+          "title": "Barcelona",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377465432",
+          "date": "2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Barcelona \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7f30923b72bf525e4a8a38665678b80cf1deaf0398a7de447f0cb5457b063213",
+          "text": "According to tradition, Barcelona was founded by either the Phoenicians or the Carthaginians, who had trading posts along the Catalonian coast.[8] In the Middle Ages, Barcelona became the capital of the County of Barcelona. After joining with the Kingdom of Aragon to form the composite monarchy of the Crown of Aragon, Barcelona, which continued to be the capital of the Principality of Catalonia, became the most important city in the Crown of Aragon and its main economic and administrative centre, only to be overtaken by Valencia, wrested from Moorish control by the Catalans, shortly before the dynastic union between the Crown of Castile and the Crown of Aragon in 1516. Barcelona became the centre of Catalan separatism, briefly becoming part of France during the 17th century Reapers' War and again from 1812 to 1814 under Napoleon.",
+          "sha256": "0ef2f4db203064b87e99ca4b4fa72b7b2dfd316b6df51a05aede90ab41e1af75"
+        },
+        {
+          "id": "wiki-4443-4ab51505dd1571e3",
+          "title": "Barcelona",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377465432",
+          "date": "2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Barcelona \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7f30923b72bf525e4a8a38665678b80cf1deaf0398a7de447f0cb5457b063213",
+          "text": "Experiencing industrialization and several workers movements during the 19th and early 20th century, it became the capital of autonomous Catalonia in 1931 and was the epicenter of the revolution experienced by Catalonia during the Spanish Revolution of 1936, until its capture by the fascists in 1939. After the Spanish transition to democracy in the 1970s, Barcelona once again became the capital of an autonomous Catalonia. Barcelona has a rich cultural heritage and is today an important cultural centre and a major tourist destination. Particularly renowned are the architectural works of Antoni Gaud\u00ed and Llu\u00eds Dom\u00e8nech i Montaner, which have been designated UNESCO World Heritage Sites. The city is home to two of the most prestigious universities in Spain: the University of Barcelona and Pompeu Fabra University. The headquarters of the Union for the Mediterranean are located in Barcelona. The city is known for hosting the 1992 Summer Olympics as well as world-class conferences and expositions. In addition, many international sport tournaments have been played here.",
+          "sha256": "4ab51505dd1571e3503e2582d534442946640fd4d27614cfd7a030c6260bcb00"
+        },
+        {
+          "id": "wiki-1216-dc2822e584874304",
+          "title": "Athens",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377429316",
+          "date": "2026-09-29T09:45:00Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Athens \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "e17f64fb11cc29025aa733ac9aca96a284c99e5be072a75642a7c5fa6aef05bc",
+          "text": "Athens[a] is the capital and largest city of Greece. A significant coastal urban area in the Mediterranean, Athens is also the capital of the Attica region and is the southernmost capital on the European mainland. With its urban area's population numbering over 3.6 million, it is the eighth-largest urban area in the European Union (EU). The Municipality of Athens (also City of Athens), which constitutes a small administrative unit of the entire urban area, had a population of 643,452 in 2021,[4] within its official limits, and a land area of 38.96 square kilometres (15.04 square miles).[7][8] Athens joined the UNESCO Global Network of Learning Cities in 2016. [9]",
+          "sha256": "dc2822e584874304748b392fdcfbe7339f8e6baf95774b116f4f3121753d6421"
+        },
+        {
+          "id": "wiki-1216-41e7ff8c76fe4127",
+          "title": "Athens",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377429316",
+          "date": "2026-09-29T09:45:00Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Athens \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "e17f64fb11cc29025aa733ac9aca96a284c99e5be072a75642a7c5fa6aef05bc",
+          "text": "Athens is one of the world's oldest cities, with its recorded history spanning over 3,400 years,[10] and its earliest human presence beginning somewhere between the 11th and 7th millennia BC. According to Greek mythology, the city was named after Athena, the ancient Greek goddess of wisdom, but modern scholars generally agree that the goddess took her name after the city.[11] Classical Athens was one of the most powerful city-states in ancient Greece. It was a centre for Ancient Greek democracy, the arts, education and philosophy,[12][13] and was highly influential throughout the Hellenistic world and the European continent, particularly in ancient Rome.[14] For this reason it is often regarded as the cradle of Western civilisation and the birthplace of democracy in its own right independently from the rest of Greece.[15][16]",
+          "sha256": "41e7ff8c76fe4127ddbd0cb0434df77a0a12692631a7a5c6a97190cb48d76004"
+        },
+        {
+          "id": "wiki-1216-185ad03af8171d57",
+          "title": "Athens",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377429316",
+          "date": "2026-09-29T09:45:00Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Athens \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "e17f64fb11cc29025aa733ac9aca96a284c99e5be072a75642a7c5fa6aef05bc",
+          "text": "In modern times Athens is a large cosmopolitan metropolis and central to economic, financial, industrial, maritime, political and cultural life in Greece. It is a Beta (+) \u2013 status global city according to the Globalization and World Cities Research Network,[17] and is one of the biggest economic centres in Southeast Europe. It also has a large financial sector, and its port Piraeus is both the second-busiest passenger port in Europe[18] and the thirteenth-largest container port in the world.[19] The Athens metropolitan area[20] extends beyond its administrative municipal city limits as well as its urban agglomeration, with a population of 3,638,281 in 2021[4][21][22] over an area of 2,928.717 km^(2) (1,131 sq mi).[8]",
+          "sha256": "185ad03af8171d574f2fc2a05af5dd824159821aaec5508fdf3c913275a3f8a4"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-4443-0ef2f4db203064b8",
+        "sha256": "0ef2f4db203064b87e99ca4b4fa72b7b2dfd316b6df51a05aede90ab41e1af75",
+        "start_utf16": 0,
+        "end_utf16": 841,
+        "text": "According to tradition, Barcelona was founded by either the Phoenicians or the Carthaginians, who had trading posts along the Catalonian coast.[8] In the Middle Ages, Barcelona became the capital of the County of Barcelona. After joining with the Kingdom of Aragon to form the composite monarchy of the Crown of Aragon, Barcelona, which continued to be the capital of the Principality of Catalonia, became the most important city in the Crown of Aragon and its main economic and administrative centre, only to be overtaken by Valencia, wrested from Moorish control by the Catalans, shortly before the dynastic union between the Crown of Castile and the Crown of Aragon in 1516. Barcelona became the centre of Catalan separatism, briefly becoming part of France during the 17th century Reapers' War and again from 1812 to 1814 under Napoleon."
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l08",
+      "topic": "history",
+      "kind": "temporal",
+      "question": "Was joining Aragon the beginning of Barcelona's role as capital of the Principality?",
+      "constructed_probe": "Barcelona first became capital of the Principality of Catalonia after joining Aragon.",
+      "expected_probe_supported": false,
+      "expectation": "Reject the constructed counterfactual; correct the question premise using the excerpt.",
+      "sources": [
+        {
+          "id": "wiki-4443-bc3c6ca9d37be008",
+          "title": "Barcelona",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377465432",
+          "date": "2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Barcelona \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7f30923b72bf525e4a8a38665678b80cf1deaf0398a7de447f0cb5457b063213",
+          "text": "Barcelona[a] is a city on the northeastern coast of Spain. It is the capital and largest city of the autonomous community of Catalonia, as well as the second-most populous municipality of Spain after Madrid. With a population of 1.7 million within city limits,[3] its urban area extends to numerous neighbouring municipalities within the province of Barcelona and is home to around 5.7 million people,[4] making it the fifth most populous urban area of the European Union after Paris, the Ruhr area, Madrid, and Milan.[4] It is one of the largest metropolises on the Mediterranean Sea, located on the coast between the mouths of the rivers Llobregat and Bes\u00f2s, and bounded to the west by the Serra de Collserola mountain range.",
+          "sha256": "bc3c6ca9d37be008f345c17f80f3f946c2cad306a5d00d7409986e07c50641ff"
+        },
+        {
+          "id": "wiki-4443-0ef2f4db203064b8",
+          "title": "Barcelona",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377465432",
+          "date": "2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Barcelona \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7f30923b72bf525e4a8a38665678b80cf1deaf0398a7de447f0cb5457b063213",
+          "text": "According to tradition, Barcelona was founded by either the Phoenicians or the Carthaginians, who had trading posts along the Catalonian coast.[8] In the Middle Ages, Barcelona became the capital of the County of Barcelona. After joining with the Kingdom of Aragon to form the composite monarchy of the Crown of Aragon, Barcelona, which continued to be the capital of the Principality of Catalonia, became the most important city in the Crown of Aragon and its main economic and administrative centre, only to be overtaken by Valencia, wrested from Moorish control by the Catalans, shortly before the dynastic union between the Crown of Castile and the Crown of Aragon in 1516. Barcelona became the centre of Catalan separatism, briefly becoming part of France during the 17th century Reapers' War and again from 1812 to 1814 under Napoleon.",
+          "sha256": "0ef2f4db203064b87e99ca4b4fa72b7b2dfd316b6df51a05aede90ab41e1af75"
+        },
+        {
+          "id": "wiki-4443-4ab51505dd1571e3",
+          "title": "Barcelona",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377465432",
+          "date": "2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Barcelona \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7f30923b72bf525e4a8a38665678b80cf1deaf0398a7de447f0cb5457b063213",
+          "text": "Experiencing industrialization and several workers movements during the 19th and early 20th century, it became the capital of autonomous Catalonia in 1931 and was the epicenter of the revolution experienced by Catalonia during the Spanish Revolution of 1936, until its capture by the fascists in 1939. After the Spanish transition to democracy in the 1970s, Barcelona once again became the capital of an autonomous Catalonia. Barcelona has a rich cultural heritage and is today an important cultural centre and a major tourist destination. Particularly renowned are the architectural works of Antoni Gaud\u00ed and Llu\u00eds Dom\u00e8nech i Montaner, which have been designated UNESCO World Heritage Sites. The city is home to two of the most prestigious universities in Spain: the University of Barcelona and Pompeu Fabra University. The headquarters of the Union for the Mediterranean are located in Barcelona. The city is known for hosting the 1992 Summer Olympics as well as world-class conferences and expositions. In addition, many international sport tournaments have been played here.",
+          "sha256": "4ab51505dd1571e3503e2582d534442946640fd4d27614cfd7a030c6260bcb00"
+        },
+        {
+          "id": "wiki-1216-dc2822e584874304",
+          "title": "Athens",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377429316",
+          "date": "2026-09-29T09:45:00Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Athens \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "e17f64fb11cc29025aa733ac9aca96a284c99e5be072a75642a7c5fa6aef05bc",
+          "text": "Athens[a] is the capital and largest city of Greece. A significant coastal urban area in the Mediterranean, Athens is also the capital of the Attica region and is the southernmost capital on the European mainland. With its urban area's population numbering over 3.6 million, it is the eighth-largest urban area in the European Union (EU). The Municipality of Athens (also City of Athens), which constitutes a small administrative unit of the entire urban area, had a population of 643,452 in 2021,[4] within its official limits, and a land area of 38.96 square kilometres (15.04 square miles).[7][8] Athens joined the UNESCO Global Network of Learning Cities in 2016. [9]",
+          "sha256": "dc2822e584874304748b392fdcfbe7339f8e6baf95774b116f4f3121753d6421"
+        },
+        {
+          "id": "wiki-1216-41e7ff8c76fe4127",
+          "title": "Athens",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377429316",
+          "date": "2026-09-29T09:45:00Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Athens \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "e17f64fb11cc29025aa733ac9aca96a284c99e5be072a75642a7c5fa6aef05bc",
+          "text": "Athens is one of the world's oldest cities, with its recorded history spanning over 3,400 years,[10] and its earliest human presence beginning somewhere between the 11th and 7th millennia BC. According to Greek mythology, the city was named after Athena, the ancient Greek goddess of wisdom, but modern scholars generally agree that the goddess took her name after the city.[11] Classical Athens was one of the most powerful city-states in ancient Greece. It was a centre for Ancient Greek democracy, the arts, education and philosophy,[12][13] and was highly influential throughout the Hellenistic world and the European continent, particularly in ancient Rome.[14] For this reason it is often regarded as the cradle of Western civilisation and the birthplace of democracy in its own right independently from the rest of Greece.[15][16]",
+          "sha256": "41e7ff8c76fe4127ddbd0cb0434df77a0a12692631a7a5c6a97190cb48d76004"
+        },
+        {
+          "id": "wiki-1216-185ad03af8171d57",
+          "title": "Athens",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377429316",
+          "date": "2026-09-29T09:45:00Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Athens \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "e17f64fb11cc29025aa733ac9aca96a284c99e5be072a75642a7c5fa6aef05bc",
+          "text": "In modern times Athens is a large cosmopolitan metropolis and central to economic, financial, industrial, maritime, political and cultural life in Greece. It is a Beta (+) \u2013 status global city according to the Globalization and World Cities Research Network,[17] and is one of the biggest economic centres in Southeast Europe. It also has a large financial sector, and its port Piraeus is both the second-busiest passenger port in Europe[18] and the thirteenth-largest container port in the world.[19] The Athens metropolitan area[20] extends beyond its administrative municipal city limits as well as its urban agglomeration, with a population of 3,638,281 in 2021[4][21][22] over an area of 2,928.717 km^(2) (1,131 sq mi).[8]",
+          "sha256": "185ad03af8171d574f2fc2a05af5dd824159821aaec5508fdf3c913275a3f8a4"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-4443-0ef2f4db203064b8",
+        "sha256": "0ef2f4db203064b87e99ca4b4fa72b7b2dfd316b6df51a05aede90ab41e1af75",
+        "start_utf16": 0,
+        "end_utf16": 841,
+        "text": "According to tradition, Barcelona was founded by either the Phoenicians or the Carthaginians, who had trading posts along the Catalonian coast.[8] In the Middle Ages, Barcelona became the capital of the County of Barcelona. After joining with the Kingdom of Aragon to form the composite monarchy of the Crown of Aragon, Barcelona, which continued to be the capital of the Principality of Catalonia, became the most important city in the Crown of Aragon and its main economic and administrative centre, only to be overtaken by Valencia, wrested from Moorish control by the Catalans, shortly before the dynastic union between the Crown of Castile and the Crown of Aragon in 1516. Barcelona became the centre of Catalan separatism, briefly becoming part of France during the 17th century Reapers' War and again from 1812 to 1814 under Napoleon."
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l09",
+      "topic": "history",
+      "kind": "wrong-subject",
+      "question": "Which city in the excerpt was a centre of Ancient Greek philosophy and education?",
+      "constructed_probe": "Classical Athens was a centre of Ancient Greek philosophy and education.",
+      "expected_probe_supported": true,
+      "expectation": "Support the probe from the pinned excerpt.",
+      "sources": [
+        {
+          "id": "wiki-4443-bc3c6ca9d37be008",
+          "title": "Barcelona",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377465432",
+          "date": "2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Barcelona \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7f30923b72bf525e4a8a38665678b80cf1deaf0398a7de447f0cb5457b063213",
+          "text": "Barcelona[a] is a city on the northeastern coast of Spain. It is the capital and largest city of the autonomous community of Catalonia, as well as the second-most populous municipality of Spain after Madrid. With a population of 1.7 million within city limits,[3] its urban area extends to numerous neighbouring municipalities within the province of Barcelona and is home to around 5.7 million people,[4] making it the fifth most populous urban area of the European Union after Paris, the Ruhr area, Madrid, and Milan.[4] It is one of the largest metropolises on the Mediterranean Sea, located on the coast between the mouths of the rivers Llobregat and Bes\u00f2s, and bounded to the west by the Serra de Collserola mountain range.",
+          "sha256": "bc3c6ca9d37be008f345c17f80f3f946c2cad306a5d00d7409986e07c50641ff"
+        },
+        {
+          "id": "wiki-4443-0ef2f4db203064b8",
+          "title": "Barcelona",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377465432",
+          "date": "2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Barcelona \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7f30923b72bf525e4a8a38665678b80cf1deaf0398a7de447f0cb5457b063213",
+          "text": "According to tradition, Barcelona was founded by either the Phoenicians or the Carthaginians, who had trading posts along the Catalonian coast.[8] In the Middle Ages, Barcelona became the capital of the County of Barcelona. After joining with the Kingdom of Aragon to form the composite monarchy of the Crown of Aragon, Barcelona, which continued to be the capital of the Principality of Catalonia, became the most important city in the Crown of Aragon and its main economic and administrative centre, only to be overtaken by Valencia, wrested from Moorish control by the Catalans, shortly before the dynastic union between the Crown of Castile and the Crown of Aragon in 1516. Barcelona became the centre of Catalan separatism, briefly becoming part of France during the 17th century Reapers' War and again from 1812 to 1814 under Napoleon.",
+          "sha256": "0ef2f4db203064b87e99ca4b4fa72b7b2dfd316b6df51a05aede90ab41e1af75"
+        },
+        {
+          "id": "wiki-4443-4ab51505dd1571e3",
+          "title": "Barcelona",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377465432",
+          "date": "2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Barcelona \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7f30923b72bf525e4a8a38665678b80cf1deaf0398a7de447f0cb5457b063213",
+          "text": "Experiencing industrialization and several workers movements during the 19th and early 20th century, it became the capital of autonomous Catalonia in 1931 and was the epicenter of the revolution experienced by Catalonia during the Spanish Revolution of 1936, until its capture by the fascists in 1939. After the Spanish transition to democracy in the 1970s, Barcelona once again became the capital of an autonomous Catalonia. Barcelona has a rich cultural heritage and is today an important cultural centre and a major tourist destination. Particularly renowned are the architectural works of Antoni Gaud\u00ed and Llu\u00eds Dom\u00e8nech i Montaner, which have been designated UNESCO World Heritage Sites. The city is home to two of the most prestigious universities in Spain: the University of Barcelona and Pompeu Fabra University. The headquarters of the Union for the Mediterranean are located in Barcelona. The city is known for hosting the 1992 Summer Olympics as well as world-class conferences and expositions. In addition, many international sport tournaments have been played here.",
+          "sha256": "4ab51505dd1571e3503e2582d534442946640fd4d27614cfd7a030c6260bcb00"
+        },
+        {
+          "id": "wiki-1216-dc2822e584874304",
+          "title": "Athens",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377429316",
+          "date": "2026-09-29T09:45:00Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Athens \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "e17f64fb11cc29025aa733ac9aca96a284c99e5be072a75642a7c5fa6aef05bc",
+          "text": "Athens[a] is the capital and largest city of Greece. A significant coastal urban area in the Mediterranean, Athens is also the capital of the Attica region and is the southernmost capital on the European mainland. With its urban area's population numbering over 3.6 million, it is the eighth-largest urban area in the European Union (EU). The Municipality of Athens (also City of Athens), which constitutes a small administrative unit of the entire urban area, had a population of 643,452 in 2021,[4] within its official limits, and a land area of 38.96 square kilometres (15.04 square miles).[7][8] Athens joined the UNESCO Global Network of Learning Cities in 2016. [9]",
+          "sha256": "dc2822e584874304748b392fdcfbe7339f8e6baf95774b116f4f3121753d6421"
+        },
+        {
+          "id": "wiki-1216-41e7ff8c76fe4127",
+          "title": "Athens",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377429316",
+          "date": "2026-09-29T09:45:00Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Athens \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "e17f64fb11cc29025aa733ac9aca96a284c99e5be072a75642a7c5fa6aef05bc",
+          "text": "Athens is one of the world's oldest cities, with its recorded history spanning over 3,400 years,[10] and its earliest human presence beginning somewhere between the 11th and 7th millennia BC. According to Greek mythology, the city was named after Athena, the ancient Greek goddess of wisdom, but modern scholars generally agree that the goddess took her name after the city.[11] Classical Athens was one of the most powerful city-states in ancient Greece. It was a centre for Ancient Greek democracy, the arts, education and philosophy,[12][13] and was highly influential throughout the Hellenistic world and the European continent, particularly in ancient Rome.[14] For this reason it is often regarded as the cradle of Western civilisation and the birthplace of democracy in its own right independently from the rest of Greece.[15][16]",
+          "sha256": "41e7ff8c76fe4127ddbd0cb0434df77a0a12692631a7a5c6a97190cb48d76004"
+        },
+        {
+          "id": "wiki-1216-185ad03af8171d57",
+          "title": "Athens",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377429316",
+          "date": "2026-09-29T09:45:00Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Athens \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "e17f64fb11cc29025aa733ac9aca96a284c99e5be072a75642a7c5fa6aef05bc",
+          "text": "In modern times Athens is a large cosmopolitan metropolis and central to economic, financial, industrial, maritime, political and cultural life in Greece. It is a Beta (+) \u2013 status global city according to the Globalization and World Cities Research Network,[17] and is one of the biggest economic centres in Southeast Europe. It also has a large financial sector, and its port Piraeus is both the second-busiest passenger port in Europe[18] and the thirteenth-largest container port in the world.[19] The Athens metropolitan area[20] extends beyond its administrative municipal city limits as well as its urban agglomeration, with a population of 3,638,281 in 2021[4][21][22] over an area of 2,928.717 km^(2) (1,131 sq mi).[8]",
+          "sha256": "185ad03af8171d574f2fc2a05af5dd824159821aaec5508fdf3c913275a3f8a4"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-1216-41e7ff8c76fe4127",
+        "sha256": "41e7ff8c76fe4127ddbd0cb0434df77a0a12692631a7a5c6a97190cb48d76004",
+        "start_utf16": 0,
+        "end_utf16": 837,
+        "text": "Athens is one of the world's oldest cities, with its recorded history spanning over 3,400 years,[10] and its earliest human presence beginning somewhere between the 11th and 7th millennia BC. According to Greek mythology, the city was named after Athena, the ancient Greek goddess of wisdom, but modern scholars generally agree that the goddess took her name after the city.[11] Classical Athens was one of the most powerful city-states in ancient Greece. It was a centre for Ancient Greek democracy, the arts, education and philosophy,[12][13] and was highly influential throughout the Hellenistic world and the European continent, particularly in ancient Rome.[14] For this reason it is often regarded as the cradle of Western civilisation and the birthplace of democracy in its own right independently from the rest of Greece.[15][16]"
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l10",
+      "topic": "history",
+      "kind": "wrong-subject",
+      "question": "Does the Athens excerpt establish that Barcelona was a centre of Ancient Greek philosophy?",
+      "constructed_probe": "Barcelona was a centre of Ancient Greek philosophy and education.",
+      "expected_probe_supported": false,
+      "expectation": "Reject the constructed counterfactual; correct the question premise using the excerpt.",
+      "sources": [
+        {
+          "id": "wiki-4443-bc3c6ca9d37be008",
+          "title": "Barcelona",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377465432",
+          "date": "2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Barcelona \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7f30923b72bf525e4a8a38665678b80cf1deaf0398a7de447f0cb5457b063213",
+          "text": "Barcelona[a] is a city on the northeastern coast of Spain. It is the capital and largest city of the autonomous community of Catalonia, as well as the second-most populous municipality of Spain after Madrid. With a population of 1.7 million within city limits,[3] its urban area extends to numerous neighbouring municipalities within the province of Barcelona and is home to around 5.7 million people,[4] making it the fifth most populous urban area of the European Union after Paris, the Ruhr area, Madrid, and Milan.[4] It is one of the largest metropolises on the Mediterranean Sea, located on the coast between the mouths of the rivers Llobregat and Bes\u00f2s, and bounded to the west by the Serra de Collserola mountain range.",
+          "sha256": "bc3c6ca9d37be008f345c17f80f3f946c2cad306a5d00d7409986e07c50641ff"
+        },
+        {
+          "id": "wiki-4443-0ef2f4db203064b8",
+          "title": "Barcelona",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377465432",
+          "date": "2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Barcelona \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7f30923b72bf525e4a8a38665678b80cf1deaf0398a7de447f0cb5457b063213",
+          "text": "According to tradition, Barcelona was founded by either the Phoenicians or the Carthaginians, who had trading posts along the Catalonian coast.[8] In the Middle Ages, Barcelona became the capital of the County of Barcelona. After joining with the Kingdom of Aragon to form the composite monarchy of the Crown of Aragon, Barcelona, which continued to be the capital of the Principality of Catalonia, became the most important city in the Crown of Aragon and its main economic and administrative centre, only to be overtaken by Valencia, wrested from Moorish control by the Catalans, shortly before the dynastic union between the Crown of Castile and the Crown of Aragon in 1516. Barcelona became the centre of Catalan separatism, briefly becoming part of France during the 17th century Reapers' War and again from 1812 to 1814 under Napoleon.",
+          "sha256": "0ef2f4db203064b87e99ca4b4fa72b7b2dfd316b6df51a05aede90ab41e1af75"
+        },
+        {
+          "id": "wiki-4443-4ab51505dd1571e3",
+          "title": "Barcelona",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377465432",
+          "date": "2026-09-29T14:46:17Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Barcelona \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "7f30923b72bf525e4a8a38665678b80cf1deaf0398a7de447f0cb5457b063213",
+          "text": "Experiencing industrialization and several workers movements during the 19th and early 20th century, it became the capital of autonomous Catalonia in 1931 and was the epicenter of the revolution experienced by Catalonia during the Spanish Revolution of 1936, until its capture by the fascists in 1939. After the Spanish transition to democracy in the 1970s, Barcelona once again became the capital of an autonomous Catalonia. Barcelona has a rich cultural heritage and is today an important cultural centre and a major tourist destination. Particularly renowned are the architectural works of Antoni Gaud\u00ed and Llu\u00eds Dom\u00e8nech i Montaner, which have been designated UNESCO World Heritage Sites. The city is home to two of the most prestigious universities in Spain: the University of Barcelona and Pompeu Fabra University. The headquarters of the Union for the Mediterranean are located in Barcelona. The city is known for hosting the 1992 Summer Olympics as well as world-class conferences and expositions. In addition, many international sport tournaments have been played here.",
+          "sha256": "4ab51505dd1571e3503e2582d534442946640fd4d27614cfd7a030c6260bcb00"
+        },
+        {
+          "id": "wiki-1216-dc2822e584874304",
+          "title": "Athens",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377429316",
+          "date": "2026-09-29T09:45:00Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Athens \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "e17f64fb11cc29025aa733ac9aca96a284c99e5be072a75642a7c5fa6aef05bc",
+          "text": "Athens[a] is the capital and largest city of Greece. A significant coastal urban area in the Mediterranean, Athens is also the capital of the Attica region and is the southernmost capital on the European mainland. With its urban area's population numbering over 3.6 million, it is the eighth-largest urban area in the European Union (EU). The Municipality of Athens (also City of Athens), which constitutes a small administrative unit of the entire urban area, had a population of 643,452 in 2021,[4] within its official limits, and a land area of 38.96 square kilometres (15.04 square miles).[7][8] Athens joined the UNESCO Global Network of Learning Cities in 2016. [9]",
+          "sha256": "dc2822e584874304748b392fdcfbe7339f8e6baf95774b116f4f3121753d6421"
+        },
+        {
+          "id": "wiki-1216-41e7ff8c76fe4127",
+          "title": "Athens",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377429316",
+          "date": "2026-09-29T09:45:00Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Athens \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "e17f64fb11cc29025aa733ac9aca96a284c99e5be072a75642a7c5fa6aef05bc",
+          "text": "Athens is one of the world's oldest cities, with its recorded history spanning over 3,400 years,[10] and its earliest human presence beginning somewhere between the 11th and 7th millennia BC. According to Greek mythology, the city was named after Athena, the ancient Greek goddess of wisdom, but modern scholars generally agree that the goddess took her name after the city.[11] Classical Athens was one of the most powerful city-states in ancient Greece. It was a centre for Ancient Greek democracy, the arts, education and philosophy,[12][13] and was highly influential throughout the Hellenistic world and the European continent, particularly in ancient Rome.[14] For this reason it is often regarded as the cradle of Western civilisation and the birthplace of democracy in its own right independently from the rest of Greece.[15][16]",
+          "sha256": "41e7ff8c76fe4127ddbd0cb0434df77a0a12692631a7a5c6a97190cb48d76004"
+        },
+        {
+          "id": "wiki-1216-185ad03af8171d57",
+          "title": "Athens",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377429316",
+          "date": "2026-09-29T09:45:00Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Athens \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "e17f64fb11cc29025aa733ac9aca96a284c99e5be072a75642a7c5fa6aef05bc",
+          "text": "In modern times Athens is a large cosmopolitan metropolis and central to economic, financial, industrial, maritime, political and cultural life in Greece. It is a Beta (+) \u2013 status global city according to the Globalization and World Cities Research Network,[17] and is one of the biggest economic centres in Southeast Europe. It also has a large financial sector, and its port Piraeus is both the second-busiest passenger port in Europe[18] and the thirteenth-largest container port in the world.[19] The Athens metropolitan area[20] extends beyond its administrative municipal city limits as well as its urban agglomeration, with a population of 3,638,281 in 2021[4][21][22] over an area of 2,928.717 km^(2) (1,131 sq mi).[8]",
+          "sha256": "185ad03af8171d574f2fc2a05af5dd824159821aaec5508fdf3c913275a3f8a4"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-1216-41e7ff8c76fe4127",
+        "sha256": "41e7ff8c76fe4127ddbd0cb0434df77a0a12692631a7a5c6a97190cb48d76004",
+        "start_utf16": 0,
+        "end_utf16": 837,
+        "text": "Athens is one of the world's oldest cities, with its recorded history spanning over 3,400 years,[10] and its earliest human presence beginning somewhere between the 11th and 7th millennia BC. According to Greek mythology, the city was named after Athena, the ancient Greek goddess of wisdom, but modern scholars generally agree that the goddess took her name after the city.[11] Classical Athens was one of the most powerful city-states in ancient Greece. It was a centre for Ancient Greek democracy, the arts, education and philosophy,[12][13] and was highly influential throughout the Hellenistic world and the European continent, particularly in ancient Rome.[14] For this reason it is often regarded as the cradle of Western civilisation and the birthplace of democracy in its own right independently from the rest of Greece.[15][16]"
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l11",
+      "topic": "astronomy",
+      "kind": "formula-number",
+      "question": "What root and approximate ratio express a single magnitude step in brightness?",
+      "constructed_probe": "One magnitude corresponds to the fifth root of 100, approximately 2.512.",
+      "expected_probe_supported": true,
+      "expectation": "Support the probe from the pinned excerpt.",
+      "sources": [
+        {
+          "id": "wiki-748-84ae02af7b59ffd5",
+          "title": "Amateur astronomy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "date": "2026-08-07T22:44:45Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Amateur astronomy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
+          "text": "Amateur astronomy is a hobby where participants enjoy observing, studying, or imaging celestial objects in the sky using the unaided eye, binoculars, telescopes, and other gadgets. Although scientific research may not be their primary goal, some amateur astronomers contribute to citizen science by monitoring variable stars,[1] double stars,[2] sunspots,[3] and occultations of stars by the Moon[4] or asteroids,[4] as well as by discovering transient astronomical events, such as comets,[5] galactic novae[6] or supernovae in other galaxies.[7]",
+          "sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36"
+        },
+        {
+          "id": "wiki-748-014ec0cfce82ca83",
+          "title": "Amateur astronomy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "date": "2026-08-07T22:44:45Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Amateur astronomy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
+          "text": "Amateur astronomers do not use the field of astronomy as their primary source of income or support, as well as typically having no professional degree in astrophysics or advanced academic training in the subject. Most amateur astronomers are hobbyists, while others have a high degree of experience in astronomy and may often assist and work alongside professional astronomers.[8] Many astronomers have studied the sky throughout history in an amateur framework; however, since the beginning of the twentieth century, professional astronomy has become a clearly distinguished activity from amateur astronomy and associated activities.[9]",
+          "sha256": "014ec0cfce82ca83045596fde5079047cc34e1acc683af42ad1dc6ef1eff5c27"
+        },
+        {
+          "id": "wiki-748-6c029fff3bacc427",
+          "title": "Amateur astronomy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "date": "2026-08-07T22:44:45Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Amateur astronomy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
+          "text": "Amateur astronomers typically view the sky at night, when most celestial objects and astronomical events are visible, but others observe during the daytime by viewing the Sun and solar eclipses. Some observe the sky using nothing more than their eyes or binoculars, while more dedicated amateurs often use portable telescopes or telescopes situated in their private or club observatories. However, light pollution has made amateur astronomy increasingly difficult to observe celestial objects, as sky glow washes out darkness and minimizes visibility[10]. Amateurs commonly join amateur astronomical societies, which can advise, educate, or guide individuals towards ways of finding and observing celestial objects. Astronomical societies also promote the science of astronomy among the general public.[11]",
+          "sha256": "6c029fff3bacc427f4c7e95caa04600296ca5fa52ad210801e075fc0d8e08b62"
+        },
+        {
+          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
+          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
+        },
+        {
+          "id": "wiki-1962-46489e46ef00c0b8",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
+          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
+        },
+        {
+          "id": "wiki-1962-5e4e70eaf4445c4c",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The brightest astronomical objects have negative apparent magnitudes, such as Venus at magnitude \u22124.2 or Sirius at magnitude \u22121.46. The faintest stars visible with the naked eye on the darkest night have apparent magnitudes of about +6.5, though this varies depending on a person's eyesight, their altitude, and atmospheric conditions when viewing.[2] The apparent magnitude of known objects can range from \u221226.832 for our Sun to about +31.5 for objects in deep space imaged by the Hubble Space Telescope.[3]",
+          "sha256": "5e4e70eaf4445c4c6418b27683e3af509f916d1f626bc4aab4f9e0365284876c"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-1962-46489e46ef00c0b8",
+        "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8",
+        "start_utf16": 0,
+        "end_utf16": 412,
+        "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star."
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l12",
+      "topic": "astronomy",
+      "kind": "formula-number",
+      "question": "Is a single magnitude step a square-root-of-100 brightness ratio?",
+      "constructed_probe": "One magnitude corresponds to the square root of 100, approximately 10.",
+      "expected_probe_supported": false,
+      "expectation": "Reject the constructed counterfactual; correct the question premise using the excerpt.",
+      "sources": [
+        {
+          "id": "wiki-748-84ae02af7b59ffd5",
+          "title": "Amateur astronomy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "date": "2026-08-07T22:44:45Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Amateur astronomy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
+          "text": "Amateur astronomy is a hobby where participants enjoy observing, studying, or imaging celestial objects in the sky using the unaided eye, binoculars, telescopes, and other gadgets. Although scientific research may not be their primary goal, some amateur astronomers contribute to citizen science by monitoring variable stars,[1] double stars,[2] sunspots,[3] and occultations of stars by the Moon[4] or asteroids,[4] as well as by discovering transient astronomical events, such as comets,[5] galactic novae[6] or supernovae in other galaxies.[7]",
+          "sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36"
+        },
+        {
+          "id": "wiki-748-014ec0cfce82ca83",
+          "title": "Amateur astronomy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "date": "2026-08-07T22:44:45Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Amateur astronomy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
+          "text": "Amateur astronomers do not use the field of astronomy as their primary source of income or support, as well as typically having no professional degree in astrophysics or advanced academic training in the subject. Most amateur astronomers are hobbyists, while others have a high degree of experience in astronomy and may often assist and work alongside professional astronomers.[8] Many astronomers have studied the sky throughout history in an amateur framework; however, since the beginning of the twentieth century, professional astronomy has become a clearly distinguished activity from amateur astronomy and associated activities.[9]",
+          "sha256": "014ec0cfce82ca83045596fde5079047cc34e1acc683af42ad1dc6ef1eff5c27"
+        },
+        {
+          "id": "wiki-748-6c029fff3bacc427",
+          "title": "Amateur astronomy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "date": "2026-08-07T22:44:45Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Amateur astronomy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
+          "text": "Amateur astronomers typically view the sky at night, when most celestial objects and astronomical events are visible, but others observe during the daytime by viewing the Sun and solar eclipses. Some observe the sky using nothing more than their eyes or binoculars, while more dedicated amateurs often use portable telescopes or telescopes situated in their private or club observatories. However, light pollution has made amateur astronomy increasingly difficult to observe celestial objects, as sky glow washes out darkness and minimizes visibility[10]. Amateurs commonly join amateur astronomical societies, which can advise, educate, or guide individuals towards ways of finding and observing celestial objects. Astronomical societies also promote the science of astronomy among the general public.[11]",
+          "sha256": "6c029fff3bacc427f4c7e95caa04600296ca5fa52ad210801e075fc0d8e08b62"
+        },
+        {
+          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
+          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
+        },
+        {
+          "id": "wiki-1962-46489e46ef00c0b8",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
+          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
+        },
+        {
+          "id": "wiki-1962-5e4e70eaf4445c4c",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The brightest astronomical objects have negative apparent magnitudes, such as Venus at magnitude \u22124.2 or Sirius at magnitude \u22121.46. The faintest stars visible with the naked eye on the darkest night have apparent magnitudes of about +6.5, though this varies depending on a person's eyesight, their altitude, and atmospheric conditions when viewing.[2] The apparent magnitude of known objects can range from \u221226.832 for our Sun to about +31.5 for objects in deep space imaged by the Hubble Space Telescope.[3]",
+          "sha256": "5e4e70eaf4445c4c6418b27683e3af509f916d1f626bc4aab4f9e0365284876c"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-1962-46489e46ef00c0b8",
+        "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8",
+        "start_utf16": 0,
+        "end_utf16": 412,
+        "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star."
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l13",
+      "topic": "astronomy",
+      "kind": "material-qualifier",
+      "question": "Under what conditions does the excerpt give about +6.5 as the naked-eye limit?",
+      "constructed_probe": "About +6.5 is a naked-eye limit on the darkest night, varying with eyesight, altitude and atmospheric conditions.",
+      "expected_probe_supported": true,
+      "expectation": "Support the probe from the pinned excerpt.",
+      "sources": [
+        {
+          "id": "wiki-748-84ae02af7b59ffd5",
+          "title": "Amateur astronomy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "date": "2026-08-07T22:44:45Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Amateur astronomy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
+          "text": "Amateur astronomy is a hobby where participants enjoy observing, studying, or imaging celestial objects in the sky using the unaided eye, binoculars, telescopes, and other gadgets. Although scientific research may not be their primary goal, some amateur astronomers contribute to citizen science by monitoring variable stars,[1] double stars,[2] sunspots,[3] and occultations of stars by the Moon[4] or asteroids,[4] as well as by discovering transient astronomical events, such as comets,[5] galactic novae[6] or supernovae in other galaxies.[7]",
+          "sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36"
+        },
+        {
+          "id": "wiki-748-014ec0cfce82ca83",
+          "title": "Amateur astronomy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "date": "2026-08-07T22:44:45Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Amateur astronomy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
+          "text": "Amateur astronomers do not use the field of astronomy as their primary source of income or support, as well as typically having no professional degree in astrophysics or advanced academic training in the subject. Most amateur astronomers are hobbyists, while others have a high degree of experience in astronomy and may often assist and work alongside professional astronomers.[8] Many astronomers have studied the sky throughout history in an amateur framework; however, since the beginning of the twentieth century, professional astronomy has become a clearly distinguished activity from amateur astronomy and associated activities.[9]",
+          "sha256": "014ec0cfce82ca83045596fde5079047cc34e1acc683af42ad1dc6ef1eff5c27"
+        },
+        {
+          "id": "wiki-748-6c029fff3bacc427",
+          "title": "Amateur astronomy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "date": "2026-08-07T22:44:45Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Amateur astronomy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
+          "text": "Amateur astronomers typically view the sky at night, when most celestial objects and astronomical events are visible, but others observe during the daytime by viewing the Sun and solar eclipses. Some observe the sky using nothing more than their eyes or binoculars, while more dedicated amateurs often use portable telescopes or telescopes situated in their private or club observatories. However, light pollution has made amateur astronomy increasingly difficult to observe celestial objects, as sky glow washes out darkness and minimizes visibility[10]. Amateurs commonly join amateur astronomical societies, which can advise, educate, or guide individuals towards ways of finding and observing celestial objects. Astronomical societies also promote the science of astronomy among the general public.[11]",
+          "sha256": "6c029fff3bacc427f4c7e95caa04600296ca5fa52ad210801e075fc0d8e08b62"
+        },
+        {
+          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
+          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
+        },
+        {
+          "id": "wiki-1962-46489e46ef00c0b8",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
+          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
+        },
+        {
+          "id": "wiki-1962-5e4e70eaf4445c4c",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The brightest astronomical objects have negative apparent magnitudes, such as Venus at magnitude \u22124.2 or Sirius at magnitude \u22121.46. The faintest stars visible with the naked eye on the darkest night have apparent magnitudes of about +6.5, though this varies depending on a person's eyesight, their altitude, and atmospheric conditions when viewing.[2] The apparent magnitude of known objects can range from \u221226.832 for our Sun to about +31.5 for objects in deep space imaged by the Hubble Space Telescope.[3]",
+          "sha256": "5e4e70eaf4445c4c6418b27683e3af509f916d1f626bc4aab4f9e0365284876c"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-1962-5e4e70eaf4445c4c",
+        "sha256": "5e4e70eaf4445c4c6418b27683e3af509f916d1f626bc4aab4f9e0365284876c",
+        "start_utf16": 0,
+        "end_utf16": 508,
+        "text": "The brightest astronomical objects have negative apparent magnitudes, such as Venus at magnitude \u22124.2 or Sirius at magnitude \u22121.46. The faintest stars visible with the naked eye on the darkest night have apparent magnitudes of about +6.5, though this varies depending on a person's eyesight, their altitude, and atmospheric conditions when viewing.[2] The apparent magnitude of known objects can range from \u221226.832 for our Sun to about +31.5 for objects in deep space imaged by the Hubble Space Telescope.[3]"
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l14",
+      "topic": "astronomy",
+      "kind": "material-qualifier",
+      "question": "Is the +6.5 naked-eye limit fixed regardless of viewing circumstances?",
+      "constructed_probe": "The naked-eye limit is always exactly +6.5, regardless of eyesight or atmospheric conditions.",
+      "expected_probe_supported": false,
+      "expectation": "Reject the constructed counterfactual; correct the question premise using the excerpt.",
+      "sources": [
+        {
+          "id": "wiki-748-84ae02af7b59ffd5",
+          "title": "Amateur astronomy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "date": "2026-08-07T22:44:45Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Amateur astronomy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
+          "text": "Amateur astronomy is a hobby where participants enjoy observing, studying, or imaging celestial objects in the sky using the unaided eye, binoculars, telescopes, and other gadgets. Although scientific research may not be their primary goal, some amateur astronomers contribute to citizen science by monitoring variable stars,[1] double stars,[2] sunspots,[3] and occultations of stars by the Moon[4] or asteroids,[4] as well as by discovering transient astronomical events, such as comets,[5] galactic novae[6] or supernovae in other galaxies.[7]",
+          "sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36"
+        },
+        {
+          "id": "wiki-748-014ec0cfce82ca83",
+          "title": "Amateur astronomy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "date": "2026-08-07T22:44:45Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Amateur astronomy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
+          "text": "Amateur astronomers do not use the field of astronomy as their primary source of income or support, as well as typically having no professional degree in astrophysics or advanced academic training in the subject. Most amateur astronomers are hobbyists, while others have a high degree of experience in astronomy and may often assist and work alongside professional astronomers.[8] Many astronomers have studied the sky throughout history in an amateur framework; however, since the beginning of the twentieth century, professional astronomy has become a clearly distinguished activity from amateur astronomy and associated activities.[9]",
+          "sha256": "014ec0cfce82ca83045596fde5079047cc34e1acc683af42ad1dc6ef1eff5c27"
+        },
+        {
+          "id": "wiki-748-6c029fff3bacc427",
+          "title": "Amateur astronomy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "date": "2026-08-07T22:44:45Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Amateur astronomy \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
+          "text": "Amateur astronomers typically view the sky at night, when most celestial objects and astronomical events are visible, but others observe during the daytime by viewing the Sun and solar eclipses. Some observe the sky using nothing more than their eyes or binoculars, while more dedicated amateurs often use portable telescopes or telescopes situated in their private or club observatories. However, light pollution has made amateur astronomy increasingly difficult to observe celestial objects, as sky glow washes out darkness and minimizes visibility[10]. Amateurs commonly join amateur astronomical societies, which can advise, educate, or guide individuals towards ways of finding and observing celestial objects. Astronomical societies also promote the science of astronomy among the general public.[11]",
+          "sha256": "6c029fff3bacc427f4c7e95caa04600296ca5fa52ad210801e075fc0d8e08b62"
+        },
+        {
+          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
+          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
+        },
+        {
+          "id": "wiki-1962-46489e46ef00c0b8",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
+          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
+        },
+        {
+          "id": "wiki-1962-5e4e70eaf4445c4c",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The brightest astronomical objects have negative apparent magnitudes, such as Venus at magnitude \u22124.2 or Sirius at magnitude \u22121.46. The faintest stars visible with the naked eye on the darkest night have apparent magnitudes of about +6.5, though this varies depending on a person's eyesight, their altitude, and atmospheric conditions when viewing.[2] The apparent magnitude of known objects can range from \u221226.832 for our Sun to about +31.5 for objects in deep space imaged by the Hubble Space Telescope.[3]",
+          "sha256": "5e4e70eaf4445c4c6418b27683e3af509f916d1f626bc4aab4f9e0365284876c"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-1962-5e4e70eaf4445c4c",
+        "sha256": "5e4e70eaf4445c4c6418b27683e3af509f916d1f626bc4aab4f9e0365284876c",
+        "start_utf16": 0,
+        "end_utf16": 508,
+        "text": "The brightest astronomical objects have negative apparent magnitudes, such as Venus at magnitude \u22124.2 or Sirius at magnitude \u22121.46. The faintest stars visible with the naked eye on the darkest night have apparent magnitudes of about +6.5, though this varies depending on a person's eyesight, their altitude, and atmospheric conditions when viewing.[2] The apparent magnitude of known objects can range from \u221226.832 for our Sun to about +31.5 for objects in deep space imaged by the Hubble Space Telescope.[3]"
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l15",
+      "topic": "gardening",
+      "kind": "compound-tail",
+      "question": "Distinguish the organic matter processed by earthworms from the resulting excreta.",
+      "constructed_probe": "Vermicast is the end-product of earthworm breakdown of organic matter. It is earthworm excreta.",
+      "expected_probe_supported": true,
+      "expectation": "Support the probe from the pinned excerpt.",
+      "sources": [
+        {
+          "id": "wiki-5966-5c7dda9d66ad61e0",
+          "title": "Compost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1373605852",
+          "date": "2026-09-06T21:38:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Compost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "3dd3ef4a398f8de423bb3986cc9a43adb7c425b496fadcb61354b0cbcb8969fc",
+          "text": "Compost is a mixture of ingredients used as plant fertilizer and to improve soil's physical, chemical, and biological properties. It is commonly prepared by decomposing plant and food waste, recycling organic materials, and manure. The resulting mixture is rich in plant nutrients and beneficial organisms, such as bacteria, protozoa, nematodes, and fungi. Compost improves soil fertility in gardens, landscaping, horticulture, urban agriculture, and organic farming, reducing dependency on commercial chemical fertilizers.[1] The benefits of compost include providing nutrients to crops as fertilizer, acting as a soil conditioner, increasing the humus or humic acid contents of the soil, and introducing beneficial microbes that help to suppress pathogens in the soil and reduce soil-borne diseases.",
+          "sha256": "5c7dda9d66ad61e0ad84907fc3dab02774058b205cf9786328c0d4e2cf419c23"
+        },
+        {
+          "id": "wiki-5966-78260458b154170c",
+          "title": "Compost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1373605852",
+          "date": "2026-09-06T21:38:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Compost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "3dd3ef4a398f8de423bb3986cc9a43adb7c425b496fadcb61354b0cbcb8969fc",
+          "text": "At the most basic level, composting requires gathering a mix of green waste (nitrogen-rich materials such as leaves, grass, and food scraps) and brown waste (woody materials rich in carbon, such as stalks, paper, and wood chips).[1] The materials break down into humus in a process taking months.[2] Composting can be a multistep, closely monitored process with measured inputs of water, air, and carbon- and nitrogen-rich materials. The decomposition process is aided by shredding the plant matter, adding water, and ensuring proper aeration by regularly turning the mixture in a process using open piles or windrows.[1][3] Fungi, earthworms, and other detritivores further break up the organic material. Aerobic bacteria and fungi manage the chemical process by converting the inputs into heat, carbon dioxide, and ammonium ions.",
+          "sha256": "78260458b154170c5ed296519af88e00b7e56ab1b7b6ec398abe69901ec6781f"
+        },
+        {
+          "id": "wiki-5966-52571663597f7eb8",
+          "title": "Compost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1373605852",
+          "date": "2026-09-06T21:38:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Compost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "3dd3ef4a398f8de423bb3986cc9a43adb7c425b496fadcb61354b0cbcb8969fc",
+          "text": "Composting is an important part of waste management, since food and other compostable materials make up about 20% of waste in landfills, and due to anaerobic conditions, these materials take longer to biodegrade in the landfill.[4][5] Composting offers an environmentally superior alternative to using organic material for landfill because composting reduces methane emissions due to anaerobic conditions, and provides economic and environmental co-benefits.[6][7] For example, compost can also be used for land and stream reclamation, wetland construction, and landfill cover.",
+          "sha256": "52571663597f7eb897e27fdcbe0c6e0414f9539e31aa2db6fb7f3e552b0afdcf"
+        },
+        {
+          "id": "wiki-170578-ed509d5b0126f128",
+          "title": "Vermicompost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377724813",
+          "date": "2026-09-30T20:19:55Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Vermicompost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "a43a1d8104fa741f204a07337b9e0b9162c82e4ce88c402cb679347e9074c4ec",
+          "text": "Vermicompost (vermi-compost) is the product of the decomposition process using various species of worms, usually red wigglers, white worms, and other earthworms, to create a mixture of decomposing vegetable or food waste, bedding materials, and vermicast. This process is called vermicomposting, with the rearing of worms for this purpose is called vermiculture.",
+          "sha256": "ed509d5b0126f128b4b9a9a2b53732e6a7d9c74ec908e445f4cb7fbc583ef3e2"
+        },
+        {
+          "id": "wiki-170578-e83989668c822b11",
+          "title": "Vermicompost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377724813",
+          "date": "2026-09-30T20:19:55Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Vermicompost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "a43a1d8104fa741f204a07337b9e0b9162c82e4ce88c402cb679347e9074c4ec",
+          "text": "Vermicast (also called worm castings,[a] worm humus, worm poop, worm manure, or worm faeces) is the end-product of the breakdown of organic matter by earthworms.[1] These excreta have been shown to contain reduced levels of contaminants and a higher saturation of nutrients than the organic materials before vermicomposting.[2]",
+          "sha256": "e83989668c822b1175c8edac8836f5843319e9e4bf4e901a3c416468c281c925"
+        },
+        {
+          "id": "wiki-170578-f92d74c93aae5295",
+          "title": "Vermicompost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377724813",
+          "date": "2026-09-30T20:19:55Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Vermicompost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "a43a1d8104fa741f204a07337b9e0b9162c82e4ce88c402cb679347e9074c4ec",
+          "text": "Vermicompost contains water-soluble nutrients which may be extracted as vermiwash and is an excellent, nutrient-rich organic fertilizer and soil conditioner.[3] It is used in gardening and sustainable, organic farming.",
+          "sha256": "f92d74c93aae5295c928eefdc2ba0b00424aeb59855eb32e108f4720f77a5d63"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-170578-e83989668c822b11",
+        "sha256": "e83989668c822b1175c8edac8836f5843319e9e4bf4e901a3c416468c281c925",
+        "start_utf16": 0,
+        "end_utf16": 327,
+        "text": "Vermicast (also called worm castings,[a] worm humus, worm poop, worm manure, or worm faeces) is the end-product of the breakdown of organic matter by earthworms.[1] These excreta have been shown to contain reduced levels of contaminants and a higher saturation of nutrients than the organic materials before vermicomposting.[2]"
+      },
+      "expected_route": "supported-correction-or-answer"
+    },
+    {
+      "id": "l16",
+      "topic": "gardening",
+      "kind": "compound-tail",
+      "question": "Does calling vermicast excreta also establish that it is the unprocessed input?",
+      "constructed_probe": "Vermicast is earthworm excreta. Vermicast is also the unprocessed organic input eaten by earthworms.",
+      "expected_probe_supported": false,
+      "expectation": "Reject the constructed counterfactual; correct the question premise using the excerpt.",
+      "sources": [
+        {
+          "id": "wiki-5966-5c7dda9d66ad61e0",
+          "title": "Compost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1373605852",
+          "date": "2026-09-06T21:38:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Compost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "3dd3ef4a398f8de423bb3986cc9a43adb7c425b496fadcb61354b0cbcb8969fc",
+          "text": "Compost is a mixture of ingredients used as plant fertilizer and to improve soil's physical, chemical, and biological properties. It is commonly prepared by decomposing plant and food waste, recycling organic materials, and manure. The resulting mixture is rich in plant nutrients and beneficial organisms, such as bacteria, protozoa, nematodes, and fungi. Compost improves soil fertility in gardens, landscaping, horticulture, urban agriculture, and organic farming, reducing dependency on commercial chemical fertilizers.[1] The benefits of compost include providing nutrients to crops as fertilizer, acting as a soil conditioner, increasing the humus or humic acid contents of the soil, and introducing beneficial microbes that help to suppress pathogens in the soil and reduce soil-borne diseases.",
+          "sha256": "5c7dda9d66ad61e0ad84907fc3dab02774058b205cf9786328c0d4e2cf419c23"
+        },
+        {
+          "id": "wiki-5966-78260458b154170c",
+          "title": "Compost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1373605852",
+          "date": "2026-09-06T21:38:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Compost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "3dd3ef4a398f8de423bb3986cc9a43adb7c425b496fadcb61354b0cbcb8969fc",
+          "text": "At the most basic level, composting requires gathering a mix of green waste (nitrogen-rich materials such as leaves, grass, and food scraps) and brown waste (woody materials rich in carbon, such as stalks, paper, and wood chips).[1] The materials break down into humus in a process taking months.[2] Composting can be a multistep, closely monitored process with measured inputs of water, air, and carbon- and nitrogen-rich materials. The decomposition process is aided by shredding the plant matter, adding water, and ensuring proper aeration by regularly turning the mixture in a process using open piles or windrows.[1][3] Fungi, earthworms, and other detritivores further break up the organic material. Aerobic bacteria and fungi manage the chemical process by converting the inputs into heat, carbon dioxide, and ammonium ions.",
+          "sha256": "78260458b154170c5ed296519af88e00b7e56ab1b7b6ec398abe69901ec6781f"
+        },
+        {
+          "id": "wiki-5966-52571663597f7eb8",
+          "title": "Compost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1373605852",
+          "date": "2026-09-06T21:38:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Compost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "3dd3ef4a398f8de423bb3986cc9a43adb7c425b496fadcb61354b0cbcb8969fc",
+          "text": "Composting is an important part of waste management, since food and other compostable materials make up about 20% of waste in landfills, and due to anaerobic conditions, these materials take longer to biodegrade in the landfill.[4][5] Composting offers an environmentally superior alternative to using organic material for landfill because composting reduces methane emissions due to anaerobic conditions, and provides economic and environmental co-benefits.[6][7] For example, compost can also be used for land and stream reclamation, wetland construction, and landfill cover.",
+          "sha256": "52571663597f7eb897e27fdcbe0c6e0414f9539e31aa2db6fb7f3e552b0afdcf"
+        },
+        {
+          "id": "wiki-170578-ed509d5b0126f128",
+          "title": "Vermicompost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377724813",
+          "date": "2026-09-30T20:19:55Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Vermicompost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "a43a1d8104fa741f204a07337b9e0b9162c82e4ce88c402cb679347e9074c4ec",
+          "text": "Vermicompost (vermi-compost) is the product of the decomposition process using various species of worms, usually red wigglers, white worms, and other earthworms, to create a mixture of decomposing vegetable or food waste, bedding materials, and vermicast. This process is called vermicomposting, with the rearing of worms for this purpose is called vermiculture.",
+          "sha256": "ed509d5b0126f128b4b9a9a2b53732e6a7d9c74ec908e445f4cb7fbc583ef3e2"
+        },
+        {
+          "id": "wiki-170578-e83989668c822b11",
+          "title": "Vermicompost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377724813",
+          "date": "2026-09-30T20:19:55Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Vermicompost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "a43a1d8104fa741f204a07337b9e0b9162c82e4ce88c402cb679347e9074c4ec",
+          "text": "Vermicast (also called worm castings,[a] worm humus, worm poop, worm manure, or worm faeces) is the end-product of the breakdown of organic matter by earthworms.[1] These excreta have been shown to contain reduced levels of contaminants and a higher saturation of nutrients than the organic materials before vermicomposting.[2]",
+          "sha256": "e83989668c822b1175c8edac8836f5843319e9e4bf4e901a3c416468c281c925"
+        },
+        {
+          "id": "wiki-170578-f92d74c93aae5295",
+          "title": "Vermicompost",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377724813",
+          "date": "2026-09-30T20:19:55Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Vermicompost \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "a43a1d8104fa741f204a07337b9e0b9162c82e4ce88c402cb679347e9074c4ec",
+          "text": "Vermicompost contains water-soluble nutrients which may be extracted as vermiwash and is an excellent, nutrient-rich organic fertilizer and soil conditioner.[3] It is used in gardening and sustainable, organic farming.",
+          "sha256": "f92d74c93aae5295c928eefdc2ba0b00424aeb59855eb32e108f4720f77a5d63"
+        }
+      ],
+      "probe_source": {
+        "edition": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+        "passage": "wiki-170578-e83989668c822b11",
+        "sha256": "e83989668c822b1175c8edac8836f5843319e9e4bf4e901a3c416468c281c925",
+        "start_utf16": 0,
+        "end_utf16": 327,
+        "text": "Vermicast (also called worm castings,[a] worm humus, worm poop, worm manure, or worm faeces) is the end-product of the breakdown of organic matter by earthworms.[1] These excreta have been shown to contain reduced levels of contaminants and a higher saturation of nutrients than the organic materials before vermicomposting.[2]"
+      },
+      "expected_route": "supported-correction-or-answer"
+    }
+  ]
+}

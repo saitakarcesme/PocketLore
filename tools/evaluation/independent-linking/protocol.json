@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "generator_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+  "old_drafts": "Reuse all 60 and 11 historical wrappers byte-for-byte; never regenerate.",
+  "new_generation": "Exactly one draft per 16 new question; unchanged BoundAnswer template, greedy CPU6 threads,4096context,320draft+192 same-model audit tokens for comparison only. Independent scoring never consumes autoregressive budget.",
+  "verifier": {
+    "repo": "cross-encoder/nli-deberta-v3-small",
+    "revision": "fa2804872c3b4bd748f38c0185cc85775361e735",
+    "file": "onnx/model.onnx",
+    "sha256": "59fd8dd78926e15907ab419303179e4196bdedd710e888773e2f0143fe430897",
+    "bytes": 568032787,
+    "license": "Apache-2.0",
+    "labels": [
+      "contradiction",
+      "entailment",
+      "neutral"
+    ],
+    "engine": "ONNX Runtime CPUExecutionProvider,6 intra-op threads,1 inter-op thread, sequential execution",
+    "entailment_min": 0.95,
+    "contradiction_max": 0.02,
+    "max_tokens": 512,
+    "truncation": "Forbidden; oversize pair rejected, record token count. No threshold tuning."
+  },
+  "linking": "Score full claim and each sentence against original cited spans; if any fail, compare same complete claim against each available passage bounded to catalog sentence spans, in source order. First passing passage binds all its available exact spans. No rewritten facts, no dropping clauses, no pooling scores from different sources to rescue a failed full claim. At most six alternative passages.",
+  "rendering": "Expose obligation and subject headings, preserve full original claim, typed reference offsets. Never substitute hidden metadata for prose during source assessment.",
+  "eligibility": "Only structurally parsed drafts with every claim admitted by independent scores; same-model audit does not approve or veto. Incomplete obligation coverage remains a measured quality failure; source-review every eligible rendered answer. No review labels used to decide route.",
+  "quality": "More than4/40 useful old answers,zero unsupported eligible across old/new/historical/probe populations,all9old absent withheld. Every eligibility assessed by builder against actual spans separately from independent review. Negative result preserved.",
+  "runtime_bounds": "Serial inference jobs,each RSS <=8GiB,host-only timing/memory; generation wall<=2h,independent scoring wall<=2h. No Android selected-model claim.",
+  "dependencies": {
+    "onnxruntime": "1.23.2",
+    "tokenizers": "0.22.1",
+    "numpy": "2.3.3"
+  }
+}
