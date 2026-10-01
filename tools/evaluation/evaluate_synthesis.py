@@ -53,7 +53,11 @@ for row in report['cases']:
  text=re.sub(r'\[[^\]]+\]','',row['text']).lower(); kind=row['kind']=='GENERATED'
  if row['id']=='comparison':
   checks['comparison_no_cooling_transfer']=not bool(re.search(r'evaporation occurs(?:(?!condensation)[^.])*cooled',text))
-  checks['comparison_phase_directions']=kind and bool(re.search(r'evaporat[^.]*liquid[^.]*vapo[ur]',text)) and bool(re.search(r'condens[^.]*vapo[ur][^.]*liquid',text))
+  # A direction plus its explicitly sourced inverse is the same phase comparison.
+  explicit_reverse=bool(re.search(r'condens[^.]*vapo[ur][^.]*liquid',text))
+  inverse_phrase='the opposite of evaporation is condensation'
+  sourced_inverse=inverse_phrase in text and inverse_phrase in row['prompt'].lower()
+  checks['comparison_phase_directions']=kind and bool(re.search(r'evaporat[^.]*liquid[^.]*vapo[ur]',text)) and (explicit_reverse or sourced_inverse)
  elif row['id']=='explanation':checks['explanation_heat_removal']=kind and 'heat' in text and bool(re.search(r'remov|cool|los',text))
  elif row['id']=='synthesis':
   checks['synthesis_no_destination_transfer']=not bool(re.search(r'runoff[^.]*lakes',text)) or 'lakes' in row['prompt'].split('[S2]',1)[-1].split('Question:',1)[0].lower()

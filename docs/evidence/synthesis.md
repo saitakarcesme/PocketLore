@@ -37,6 +37,8 @@ The initial 0.5B model SHA-256 was `74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f
 
 - `synthesis/qwen3-sampling`: fixed-seed upstream-style sampling restored explicit phase directions, but groundwater discharge still lost "may" and the conditions paraphrase was withheld. Overall FAIL. The final candidate simplifies the accumulated prompt and explicitly preserves modal uncertainty and example scope; sampling seed, model, source pack, lexical threshold and checks are unchanged.
 
+- `synthesis/phase-check-false-negative`: all four required cases generated, absence abstained, and conflict withholding passed. The only automated failure required the condensation direction to be restated literally, despite the answer explicitly giving evaporation's direction and citing the source's inverse relation. The final evaluator accepts that equivalent only when the inverse phrase is also present in the actual supplied prompt; the failed summary is preserved. No generated output, question, source, model or seed was changed for this evaluator correction.
+
 Early summaries sometimes counted passage IDs in fallback text as a citation check success; their overall results were still FAIL. The current evaluator requires GENERATED before checking generated citations and verifies exact case/model/pack identities. The combined-source grammar prevents the observed missing-half attribution pattern by requiring the supplied source set on each comparison claim. This may overcite; it is not semantic proof or fine-grained provenance.
 
 ## Implemented controls and limits
