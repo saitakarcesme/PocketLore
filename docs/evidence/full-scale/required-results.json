@@ -1,0 +1,31 @@
+{
+  "packages": {
+    "org.pocketlore.app": "a0cebabd78b9246fa5e1272e4bea1587c7ca80e2785fe31f2ee73048a1719de9",
+    "org.pocketlore.app.test": "ac752bc820819476277ead048bf73489d1dcee6bfb708ec097c37f96f84f2109"
+  },
+  "checks": [
+    {
+      "command": [
+        "bash",
+        "tools/android-build.sh"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python3",
+        "tools/evaluation/verify_full_scale_inventory.py"
+      ],
+      "exit_code": 1,
+      "reason": "Independent checks pass; full Android installation and full inventory update measurement require coordinator-approved storage."
+    }
+  ],
+  "evidence": {
+    "required-build.log": "1b13c8fee8c7063bbac8329aa7cb522f889194670012feff722594efe9e48d2b",
+    "required-verify.log": "9b2051c342ab6e2f96b0821c3978b118d94085fc167ec5f026a3e670fb923f55",
+    "final-android/android.json": "4cb713b21645a353420428e216404034d71b53c059d4ef58cf5fbeab12ff4fd1",
+    "final-android/restart.json": "5497f821412a971cc9f98d25394604e8b1335cf632b23e6279cc531a3ae7fc2f",
+    "final-android/instrumentation.log": "aa4c9d0b9c882195888efd2fe8ccfaf354bb93a71cb65106550d64f9fca5159a",
+    "final-android/restart.log": "a13493b66bd45b0caac616434951a6bed121a1686a428d5527b73785d71685a5"
+  }
+}
