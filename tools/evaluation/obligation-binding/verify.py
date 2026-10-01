@@ -72,7 +72,9 @@ def main():
   subprocess.run([TC/'jdk/bin/javac','-d',classes,*sources],check=True);subprocess.run([TC/'jdk/bin/java','-cp',classes,'org.pocketlore.app.BehaviorHarness',inputs],check=True)
   original=run/'results/s01.json';changed=t/'changed.json';changed.write_bytes(original.read_bytes()+b' ');reject(lambda:exact(changed,sha(original)));reject(lambda:exact(t/'missing.json',sha(original)))
   # Real file hashing is exercised, not a self-reported validity flag.
-  small=t/'changed-model.gguf';small.write_bytes(b'wrong');reject(lambda:exact(small,spec['model_sha256']));reject(lambda:exact(t/'missing.gguf',spec['model_sha256']))
+  small=t/'changed-model.gguf'
+  with small.open('wb') as f:f.truncate(model.stat().st_size)
+  reject(lambda:exact(small,spec['model_sha256']));reject(lambda:exact(t/'missing.gguf',spec['model_sha256']))
  print(json.dumps({'artifact_behavior':'PASS','counts':counts,'builder_assessment_not_independent_review':True},indent=2),flush=True)
  failures=[]
  if counts['old_useful_eligible']<=4:failures.append('Useful old supported answers did not exceed4/40')
