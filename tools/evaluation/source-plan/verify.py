@@ -11,13 +11,13 @@ def rejected(fn):
  try:fn()
  except (AssertionError,FileNotFoundError):return
  raise AssertionError('Mutation admitted')
-def main():
+def main(*, diagnostic=False, build_receipt=None):
  for line in (E/'SHA256SUMS').read_text().splitlines():h,p=line.split('  ',1);exact(R/p,h)
  fixture=json.loads((F/'fixtures.json').read_text());exact(F/'fixtures.json',(F/'fixtures.sha256').read_text().strip());require(len(fixture['cases'])==24 and len({c['topic'] for c in fixture['cases']})==6,'Frozen coverage')
  previous=json.loads((R/'tools/evaluation/fact-frames/fixtures.json').read_text());byorigin={c['id']:c for c in previous['cases']};exact(R/'tools/evaluation/fact-frames/fixtures.json',fixture['previous_fixture_sha256'])
  for c in fixture['cases']:require(c['sources']==byorigin[c['origin_case']]['sources'],'Source/provenance drift')
  # Full prior143-record behavior, actual artifact integrity and quality remain regression inputs only.
- sys.path.insert(0,str(R/'tools/evaluation/fact-frames'));spec=importlib.util.spec_from_file_location('old_frames',R/'tools/evaluation/fact-frames/verify.py');old=importlib.util.module_from_spec(spec);spec.loader.exec_module(old);old.main(build_receipt=(E/'build.json',sha(E/'build.json')))
+ sys.path.insert(0,str(R/'tools/evaluation/fact-frames'));spec=importlib.util.spec_from_file_location('old_frames',R/'tools/evaluation/fact-frames/verify.py');old=importlib.util.module_from_spec(spec);spec.loader.exec_module(old);old.main(build_receipt=build_receipt if build_receipt is not None else (E/'build.json',sha(E/'build.json')))
  run=E/'run';receipt=json.loads((run/'receipt.json').read_text());require(receipt['exit_code']==0 and not receipt['killed'],'Partial/failed native run')
  for p,h in receipt['artifacts'].items():exact(run/p,h)
  manifest=json.loads((run/'manifest.json').read_text());exact(F/'fixtures.json',manifest['protocol_sha256']);exact(F/'protocol.json',manifest['execution_sha256']);exact(R/'downloads/model-capability/models/Qwen3-4B-Q4_K_M.gguf',manifest['model_sha256']);require(manifest['model_sha256']=='7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5','Model role/pin');exact(R/'downloads/scale-model-quality/host-build/libpocketlore.so',manifest['library_sha256'])
@@ -49,6 +49,7 @@ def main():
    for k in ['id','rendered','claims','failure']:require(actual[k]==expected[k],'Controller replay mismatch')
   changed=t/'changed-plan';original=run/'results/q10.json';changed.write_bytes(original.read_bytes()+b'changed');rejected(lambda:exact(changed,sha(original)));rejected(lambda:exact(t/'missing-plan',sha(original)))
  require(counts==json.loads((E/'metrics.json').read_text())['counts'],'Derived counts');print(json.dumps({'behavior':'PASS','builder_counts':counts,'independent_review':'pending'},indent=2),flush=True)
+ if diagnostic:return counts
  require(counts['unsupported']==0 and counts['absent_withheld']==4 and counts['useful']>0,'QUALITY FAIL: unsupported, absent or no complete useful generated answer')
  print('QUALITY PASS on new public cases only; no matched-baseline improvement claim')
 if __name__=='__main__':main()

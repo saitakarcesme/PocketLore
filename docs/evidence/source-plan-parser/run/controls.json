@@ -1,0 +1,4320 @@
+[
+  {
+    "id": "active_passive",
+    "source": "The pilot opened the gate.",
+    "claim": "The gate was opened by the pilot.",
+    "supported": true,
+    "matches": [
+      0
+    ],
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "open",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 9,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "opened",
+          "lemma": "open",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 10,
+          "end": 16,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 4,
+          "start": 17,
+          "end": 20,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 21,
+          "end": 25,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 25,
+          "end": 26,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "open",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "nsubjpass",
+          "head": 3,
+          "start": 4,
+          "end": 8,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "was",
+          "lemma": "be",
+          "pos": "AUX",
+          "dep": "auxpass",
+          "head": 3,
+          "start": 9,
+          "end": 12,
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "opened",
+          "lemma": "open",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 3,
+          "start": 13,
+          "end": 19,
+          "morph": "Aspect=Perf|Tense=Past|VerbForm=Part"
+        },
+        {
+          "text": "by",
+          "lemma": "by",
+          "pos": "ADP",
+          "dep": "agent",
+          "head": 3,
+          "start": 20,
+          "end": 22,
+          "morph": ""
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 6,
+          "start": 23,
+          "end": 26,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "pobj",
+          "head": 4,
+          "start": 27,
+          "end": 32,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 3,
+          "start": 32,
+          "end": 33,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "wrong_agent",
+    "source": "The pilot opened the gate.",
+    "claim": "The gate was opened by the sailor.",
+    "supported": false,
+    "matches": null,
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "open",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 9,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "opened",
+          "lemma": "open",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 10,
+          "end": 16,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 4,
+          "start": 17,
+          "end": 20,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 21,
+          "end": 25,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 25,
+          "end": 26,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "open",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "sailor",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "nsubjpass",
+          "head": 3,
+          "start": 4,
+          "end": 8,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "was",
+          "lemma": "be",
+          "pos": "AUX",
+          "dep": "auxpass",
+          "head": 3,
+          "start": 9,
+          "end": 12,
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "opened",
+          "lemma": "open",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 3,
+          "start": 13,
+          "end": 19,
+          "morph": "Aspect=Perf|Tense=Past|VerbForm=Part"
+        },
+        {
+          "text": "by",
+          "lemma": "by",
+          "pos": "ADP",
+          "dep": "agent",
+          "head": 3,
+          "start": 20,
+          "end": 22,
+          "morph": ""
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 6,
+          "start": 23,
+          "end": 26,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "sailor",
+          "lemma": "sailor",
+          "pos": "NOUN",
+          "dep": "pobj",
+          "head": 4,
+          "start": 27,
+          "end": 33,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 3,
+          "start": 33,
+          "end": 34,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "role_reverse",
+    "source": "The pilot followed the sailor.",
+    "claim": "The sailor followed the pilot.",
+    "supported": false,
+    "matches": null,
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "follow",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "sailor",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 9,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "followed",
+          "lemma": "follow",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 10,
+          "end": 18,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 4,
+          "start": 19,
+          "end": 22,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "sailor",
+          "lemma": "sailor",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 23,
+          "end": 29,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 29,
+          "end": 30,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "follow",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "sailor",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "sailor",
+          "lemma": "sailor",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 10,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "followed",
+          "lemma": "follow",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 11,
+          "end": 19,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 4,
+          "start": 20,
+          "end": 23,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 24,
+          "end": 29,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 29,
+          "end": 30,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "condition_drop",
+    "source": "If rain falls, the pilot closes the gate.",
+    "claim": "The pilot closes the gate.",
+    "supported": false,
+    "matches": null,
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "close",
+          "VERB",
+          [
+            "Pres"
+          ],
+          [
+            "Sing"
+          ],
+          [
+            [
+              "advcl",
+              "fall",
+              "VERB",
+              [
+                "Pres"
+              ],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "mark",
+                  "if",
+                  "SCONJ",
+                  [],
+                  [],
+                  []
+                ],
+                [
+                  "nsubj",
+                  "rain",
+                  "NOUN",
+                  [],
+                  [
+                    "Sing"
+                  ],
+                  []
+                ]
+              ]
+            ],
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "If",
+          "lemma": "if",
+          "pos": "SCONJ",
+          "dep": "mark",
+          "head": 2,
+          "start": 0,
+          "end": 2,
+          "morph": ""
+        },
+        {
+          "text": "rain",
+          "lemma": "rain",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 3,
+          "end": 7,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "falls",
+          "lemma": "fall",
+          "pos": "VERB",
+          "dep": "advcl",
+          "head": 6,
+          "start": 8,
+          "end": 13,
+          "morph": "Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": ",",
+          "lemma": ",",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 6,
+          "start": 13,
+          "end": 14,
+          "morph": "PunctType=Comm"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 5,
+          "start": 15,
+          "end": 18,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 6,
+          "start": 19,
+          "end": 24,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "closes",
+          "lemma": "close",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 6,
+          "start": 25,
+          "end": 31,
+          "morph": "Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 8,
+          "start": 32,
+          "end": 35,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 6,
+          "start": 36,
+          "end": 40,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 6,
+          "start": 40,
+          "end": 41,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "close",
+          "VERB",
+          [
+            "Pres"
+          ],
+          [
+            "Sing"
+          ],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 9,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "closes",
+          "lemma": "close",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 10,
+          "end": 16,
+          "morph": "Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 4,
+          "start": 17,
+          "end": 20,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 21,
+          "end": 25,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 25,
+          "end": 26,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "condition_transfer",
+    "source": "If rain falls, the pilot closes the gate.",
+    "claim": "If snow falls, the pilot closes the gate.",
+    "supported": false,
+    "matches": null,
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "close",
+          "VERB",
+          [
+            "Pres"
+          ],
+          [
+            "Sing"
+          ],
+          [
+            [
+              "advcl",
+              "fall",
+              "VERB",
+              [
+                "Pres"
+              ],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "mark",
+                  "if",
+                  "SCONJ",
+                  [],
+                  [],
+                  []
+                ],
+                [
+                  "nsubj",
+                  "rain",
+                  "NOUN",
+                  [],
+                  [
+                    "Sing"
+                  ],
+                  []
+                ]
+              ]
+            ],
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "If",
+          "lemma": "if",
+          "pos": "SCONJ",
+          "dep": "mark",
+          "head": 2,
+          "start": 0,
+          "end": 2,
+          "morph": ""
+        },
+        {
+          "text": "rain",
+          "lemma": "rain",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 3,
+          "end": 7,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "falls",
+          "lemma": "fall",
+          "pos": "VERB",
+          "dep": "advcl",
+          "head": 6,
+          "start": 8,
+          "end": 13,
+          "morph": "Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": ",",
+          "lemma": ",",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 6,
+          "start": 13,
+          "end": 14,
+          "morph": "PunctType=Comm"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 5,
+          "start": 15,
+          "end": 18,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 6,
+          "start": 19,
+          "end": 24,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "closes",
+          "lemma": "close",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 6,
+          "start": 25,
+          "end": 31,
+          "morph": "Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 8,
+          "start": 32,
+          "end": 35,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 6,
+          "start": 36,
+          "end": 40,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 6,
+          "start": 40,
+          "end": 41,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "close",
+          "VERB",
+          [
+            "Pres"
+          ],
+          [
+            "Sing"
+          ],
+          [
+            [
+              "advcl",
+              "fall",
+              "VERB",
+              [
+                "Pres"
+              ],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "mark",
+                  "if",
+                  "SCONJ",
+                  [],
+                  [],
+                  []
+                ],
+                [
+                  "nsubj",
+                  "snow",
+                  "NOUN",
+                  [],
+                  [
+                    "Sing"
+                  ],
+                  []
+                ]
+              ]
+            ],
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "If",
+          "lemma": "if",
+          "pos": "SCONJ",
+          "dep": "mark",
+          "head": 2,
+          "start": 0,
+          "end": 2,
+          "morph": ""
+        },
+        {
+          "text": "snow",
+          "lemma": "snow",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 3,
+          "end": 7,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "falls",
+          "lemma": "fall",
+          "pos": "VERB",
+          "dep": "advcl",
+          "head": 6,
+          "start": 8,
+          "end": 13,
+          "morph": "Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": ",",
+          "lemma": ",",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 6,
+          "start": 13,
+          "end": 14,
+          "morph": "PunctType=Comm"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 5,
+          "start": 15,
+          "end": 18,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 6,
+          "start": 19,
+          "end": 24,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "closes",
+          "lemma": "close",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 6,
+          "start": 25,
+          "end": 31,
+          "morph": "Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 8,
+          "start": 32,
+          "end": 35,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 6,
+          "start": 36,
+          "end": 40,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 6,
+          "start": 40,
+          "end": 41,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "negation",
+    "source": "The pilot did not close the gate.",
+    "claim": "The pilot closed the gate.",
+    "supported": false,
+    "matches": null,
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "close",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "neg",
+              "not",
+              "PART",
+              [],
+              [],
+              []
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 4,
+          "start": 4,
+          "end": 9,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "did",
+          "lemma": "do",
+          "pos": "AUX",
+          "dep": "aux",
+          "head": 4,
+          "start": 10,
+          "end": 13,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "not",
+          "lemma": "not",
+          "pos": "PART",
+          "dep": "neg",
+          "head": 4,
+          "start": 14,
+          "end": 17,
+          "morph": "Polarity=Neg"
+        },
+        {
+          "text": "close",
+          "lemma": "close",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 4,
+          "start": 18,
+          "end": 23,
+          "morph": "VerbForm=Inf"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 6,
+          "start": 24,
+          "end": 27,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 4,
+          "start": 28,
+          "end": 32,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 4,
+          "start": 32,
+          "end": 33,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "close",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 9,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "closed",
+          "lemma": "close",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 10,
+          "end": 16,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 4,
+          "start": 17,
+          "end": 20,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 21,
+          "end": 25,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 25,
+          "end": 26,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "quantifier",
+    "source": "Some pilots opened gates.",
+    "claim": "All pilots opened gates.",
+    "supported": false,
+    "matches": null,
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "open",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Plur"
+              ],
+              []
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Plur"
+              ],
+              [
+                [
+                  "det",
+                  "some",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "Some",
+          "lemma": "some",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 4,
+          "morph": ""
+        },
+        {
+          "text": "pilots",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 5,
+          "end": 11,
+          "morph": "Number=Plur"
+        },
+        {
+          "text": "opened",
+          "lemma": "open",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 12,
+          "end": 18,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "gates",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 19,
+          "end": 24,
+          "morph": "Number=Plur"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 24,
+          "end": 25,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "open",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Plur"
+              ],
+              []
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Plur"
+              ],
+              [
+                [
+                  "det",
+                  "all",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "All",
+          "lemma": "all",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": ""
+        },
+        {
+          "text": "pilots",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 10,
+          "morph": "Number=Plur"
+        },
+        {
+          "text": "opened",
+          "lemma": "open",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 11,
+          "end": 17,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "gates",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 18,
+          "end": 23,
+          "morph": "Number=Plur"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 23,
+          "end": 24,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tense",
+    "source": "The pilot opened the gate.",
+    "claim": "The pilot opens the gate.",
+    "supported": false,
+    "matches": null,
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "open",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 9,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "opened",
+          "lemma": "open",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 10,
+          "end": 16,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 4,
+          "start": 17,
+          "end": 20,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 21,
+          "end": 25,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 25,
+          "end": 26,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "open",
+          "VERB",
+          [
+            "Pres"
+          ],
+          [
+            "Sing"
+          ],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 9,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "opens",
+          "lemma": "open",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 10,
+          "end": 15,
+          "morph": "Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 4,
+          "start": 16,
+          "end": 19,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 20,
+          "end": 24,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 24,
+          "end": 25,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "numeric",
+    "source": "The gate weighs 40 kilograms.",
+    "claim": "The gate weighs 400 kilograms.",
+    "supported": false,
+    "matches": null,
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "weigh",
+          "VERB",
+          [
+            "Pres"
+          ],
+          [
+            "Sing"
+          ],
+          [
+            [
+              "dobj",
+              "kilogram",
+              "NOUN",
+              [],
+              [
+                "Plur"
+              ],
+              [
+                [
+                  "nummod",
+                  "40",
+                  "NUM",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 8,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "weighs",
+          "lemma": "weigh",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 9,
+          "end": 15,
+          "morph": "Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "40",
+          "lemma": "40",
+          "pos": "NUM",
+          "dep": "nummod",
+          "head": 4,
+          "start": 16,
+          "end": 18,
+          "morph": "NumType=Card"
+        },
+        {
+          "text": "kilograms",
+          "lemma": "kilogram",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 19,
+          "end": 28,
+          "morph": "Number=Plur"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 28,
+          "end": 29,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "weigh",
+          "VERB",
+          [
+            "Pres"
+          ],
+          [
+            "Sing"
+          ],
+          [
+            [
+              "dobj",
+              "kilogram",
+              "NOUN",
+              [],
+              [
+                "Plur"
+              ],
+              [
+                [
+                  "nummod",
+                  "400",
+                  "NUM",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 8,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "weighs",
+          "lemma": "weigh",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 9,
+          "end": 15,
+          "morph": "Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "400",
+          "lemma": "400",
+          "pos": "NUM",
+          "dep": "nummod",
+          "head": 4,
+          "start": 16,
+          "end": 19,
+          "morph": "NumType=Card"
+        },
+        {
+          "text": "kilograms",
+          "lemma": "kilogram",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 20,
+          "end": 29,
+          "morph": "Number=Plur"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 29,
+          "end": 30,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "root",
+    "source": "The fifth root of 100 is approximately 2.512.",
+    "claim": "The square root of 100 is approximately 2.512.",
+    "supported": false,
+    "matches": null,
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "be",
+          "AUX",
+          [
+            "Pres"
+          ],
+          [
+            "Sing"
+          ],
+          [
+            [
+              "attr",
+              "2.512",
+              "NUM",
+              [],
+              [],
+              [
+                [
+                  "advmod",
+                  "approximately",
+                  "ADV",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "root",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "amod",
+                  "fifth",
+                  "ADJ",
+                  [],
+                  [],
+                  []
+                ],
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ],
+                [
+                  "prep",
+                  "of",
+                  "ADP",
+                  [],
+                  [],
+                  [
+                    [
+                      "pobj",
+                      "100",
+                      "NUM",
+                      [],
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 2,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "fifth",
+          "lemma": "fifth",
+          "pos": "ADJ",
+          "dep": "amod",
+          "head": 2,
+          "start": 4,
+          "end": 9,
+          "morph": "Degree=Pos"
+        },
+        {
+          "text": "root",
+          "lemma": "root",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 5,
+          "start": 10,
+          "end": 14,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "of",
+          "lemma": "of",
+          "pos": "ADP",
+          "dep": "prep",
+          "head": 2,
+          "start": 15,
+          "end": 17,
+          "morph": ""
+        },
+        {
+          "text": "100",
+          "lemma": "100",
+          "pos": "NUM",
+          "dep": "pobj",
+          "head": 3,
+          "start": 18,
+          "end": 21,
+          "morph": "NumType=Card"
+        },
+        {
+          "text": "is",
+          "lemma": "be",
+          "pos": "AUX",
+          "dep": "ROOT",
+          "head": 5,
+          "start": 22,
+          "end": 24,
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "approximately",
+          "lemma": "approximately",
+          "pos": "ADV",
+          "dep": "advmod",
+          "head": 7,
+          "start": 25,
+          "end": 38,
+          "morph": ""
+        },
+        {
+          "text": "2.512",
+          "lemma": "2.512",
+          "pos": "NUM",
+          "dep": "attr",
+          "head": 5,
+          "start": 39,
+          "end": 44,
+          "morph": "NumType=Card"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 5,
+          "start": 44,
+          "end": 45,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "be",
+          "AUX",
+          [
+            "Pres"
+          ],
+          [
+            "Sing"
+          ],
+          [
+            [
+              "attr",
+              "2.512",
+              "NUM",
+              [],
+              [],
+              [
+                [
+                  "advmod",
+                  "approximately",
+                  "ADV",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "root",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "amod",
+                  "square",
+                  "ADJ",
+                  [],
+                  [],
+                  []
+                ],
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ],
+                [
+                  "prep",
+                  "of",
+                  "ADP",
+                  [],
+                  [],
+                  [
+                    [
+                      "pobj",
+                      "100",
+                      "NUM",
+                      [],
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 2,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "square",
+          "lemma": "square",
+          "pos": "ADJ",
+          "dep": "amod",
+          "head": 2,
+          "start": 4,
+          "end": 10,
+          "morph": "Degree=Pos"
+        },
+        {
+          "text": "root",
+          "lemma": "root",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 5,
+          "start": 11,
+          "end": 15,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "of",
+          "lemma": "of",
+          "pos": "ADP",
+          "dep": "prep",
+          "head": 2,
+          "start": 16,
+          "end": 18,
+          "morph": ""
+        },
+        {
+          "text": "100",
+          "lemma": "100",
+          "pos": "NUM",
+          "dep": "pobj",
+          "head": 3,
+          "start": 19,
+          "end": 22,
+          "morph": "NumType=Card"
+        },
+        {
+          "text": "is",
+          "lemma": "be",
+          "pos": "AUX",
+          "dep": "ROOT",
+          "head": 5,
+          "start": 23,
+          "end": 25,
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "approximately",
+          "lemma": "approximately",
+          "pos": "ADV",
+          "dep": "advmod",
+          "head": 7,
+          "start": 26,
+          "end": 39,
+          "morph": ""
+        },
+        {
+          "text": "2.512",
+          "lemma": "2.512",
+          "pos": "NUM",
+          "dep": "attr",
+          "head": 5,
+          "start": 40,
+          "end": 45,
+          "morph": "NumType=Card"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 5,
+          "start": 45,
+          "end": 46,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "tail",
+    "source": "The pilot opened the gate.",
+    "claim": "The pilot opened the gate. Every ticket was free.",
+    "supported": false,
+    "matches": null,
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "open",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 9,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "opened",
+          "lemma": "open",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 10,
+          "end": 16,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 4,
+          "start": 17,
+          "end": 20,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 21,
+          "end": 25,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 25,
+          "end": 26,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "open",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ],
+        [
+          "ROOT",
+          "be",
+          "AUX",
+          [
+            "Past"
+          ],
+          [
+            "Sing"
+          ],
+          [
+            [
+              "acomp",
+              "free",
+              "ADJ",
+              [],
+              [],
+              []
+            ],
+            [
+              "nsubj",
+              "ticket",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "every",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 9,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "opened",
+          "lemma": "open",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 10,
+          "end": 16,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 4,
+          "start": 17,
+          "end": 20,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 21,
+          "end": 25,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 25,
+          "end": 26,
+          "morph": "PunctType=Peri"
+        },
+        {
+          "text": "Every",
+          "lemma": "every",
+          "pos": "DET",
+          "dep": "det",
+          "head": 7,
+          "start": 27,
+          "end": 32,
+          "morph": ""
+        },
+        {
+          "text": "ticket",
+          "lemma": "ticket",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 8,
+          "start": 33,
+          "end": 39,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "was",
+          "lemma": "be",
+          "pos": "AUX",
+          "dep": "ROOT",
+          "head": 8,
+          "start": 40,
+          "end": 43,
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "free",
+          "lemma": "free",
+          "pos": "ADJ",
+          "dep": "acomp",
+          "head": 8,
+          "start": 44,
+          "end": 48,
+          "morph": "Degree=Pos"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 8,
+          "start": 48,
+          "end": 49,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pronoun",
+    "source": "It is the capital of Newland.",
+    "claim": "It is the capital of Newland.",
+    "supported": false,
+    "matches": null,
+    "source_parse": {
+      "trees": [],
+      "errors": [
+        "unresolved pronoun"
+      ],
+      "tokens": [
+        {
+          "text": "It",
+          "lemma": "it",
+          "pos": "PRON",
+          "dep": "nsubj",
+          "head": 1,
+          "start": 0,
+          "end": 2,
+          "morph": "Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs"
+        },
+        {
+          "text": "is",
+          "lemma": "be",
+          "pos": "AUX",
+          "dep": "ROOT",
+          "head": 1,
+          "start": 3,
+          "end": 5,
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 3,
+          "start": 6,
+          "end": 9,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "capital",
+          "lemma": "capital",
+          "pos": "NOUN",
+          "dep": "attr",
+          "head": 1,
+          "start": 10,
+          "end": 17,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "of",
+          "lemma": "of",
+          "pos": "ADP",
+          "dep": "prep",
+          "head": 3,
+          "start": 18,
+          "end": 20,
+          "morph": ""
+        },
+        {
+          "text": "Newland",
+          "lemma": "Newland",
+          "pos": "PROPN",
+          "dep": "pobj",
+          "head": 4,
+          "start": 21,
+          "end": 28,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 1,
+          "start": 28,
+          "end": 29,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [],
+      "errors": [
+        "unresolved pronoun"
+      ],
+      "tokens": [
+        {
+          "text": "It",
+          "lemma": "it",
+          "pos": "PRON",
+          "dep": "nsubj",
+          "head": 1,
+          "start": 0,
+          "end": 2,
+          "morph": "Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs"
+        },
+        {
+          "text": "is",
+          "lemma": "be",
+          "pos": "AUX",
+          "dep": "ROOT",
+          "head": 1,
+          "start": 3,
+          "end": 5,
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 3,
+          "start": 6,
+          "end": 9,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "capital",
+          "lemma": "capital",
+          "pos": "NOUN",
+          "dep": "attr",
+          "head": 1,
+          "start": 10,
+          "end": 17,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "of",
+          "lemma": "of",
+          "pos": "ADP",
+          "dep": "prep",
+          "head": 3,
+          "start": 18,
+          "end": 20,
+          "morph": ""
+        },
+        {
+          "text": "Newland",
+          "lemma": "Newland",
+          "pos": "PROPN",
+          "dep": "pobj",
+          "head": 4,
+          "start": 21,
+          "end": 28,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 1,
+          "start": 28,
+          "end": 29,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "name_substitution",
+    "source": "The sailor repaired the vessel.",
+    "claim": "The vessel was repaired by the sailor.",
+    "supported": true,
+    "matches": [
+      0
+    ],
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "repair",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "vessel",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "sailor",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "sailor",
+          "lemma": "sailor",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 10,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "repaired",
+          "lemma": "repair",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 11,
+          "end": 19,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 4,
+          "start": 20,
+          "end": 23,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "vessel",
+          "lemma": "vessel",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 2,
+          "start": 24,
+          "end": 30,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 30,
+          "end": 31,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "repair",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "vessel",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "sailor",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "vessel",
+          "lemma": "vessel",
+          "pos": "NOUN",
+          "dep": "nsubjpass",
+          "head": 3,
+          "start": 4,
+          "end": 10,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "was",
+          "lemma": "be",
+          "pos": "AUX",
+          "dep": "auxpass",
+          "head": 3,
+          "start": 11,
+          "end": 14,
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "repaired",
+          "lemma": "repair",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 3,
+          "start": 15,
+          "end": 23,
+          "morph": "Aspect=Perf|Tense=Past|VerbForm=Part"
+        },
+        {
+          "text": "by",
+          "lemma": "by",
+          "pos": "ADP",
+          "dep": "agent",
+          "head": 3,
+          "start": 24,
+          "end": 26,
+          "morph": ""
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 6,
+          "start": 27,
+          "end": 30,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "sailor",
+          "lemma": "sailor",
+          "pos": "NOUN",
+          "dep": "pobj",
+          "head": 4,
+          "start": 31,
+          "end": 37,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 3,
+          "start": 37,
+          "end": 38,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "continued_begin",
+    "source": "The city continued as the capital after union.",
+    "claim": "The city became the capital after union.",
+    "supported": false,
+    "matches": null,
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "continue",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "nsubj",
+              "city",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "prep",
+              "as",
+              "ADP",
+              [],
+              [],
+              [
+                [
+                  "pobj",
+                  "capital",
+                  "NOUN",
+                  [],
+                  [
+                    "Sing"
+                  ],
+                  [
+                    [
+                      "det",
+                      "the",
+                      "DET",
+                      [],
+                      [],
+                      []
+                    ],
+                    [
+                      "prep",
+                      "after",
+                      "ADP",
+                      [],
+                      [],
+                      [
+                        [
+                          "pobj",
+                          "union",
+                          "NOUN",
+                          [],
+                          [
+                            "Sing"
+                          ],
+                          []
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "city",
+          "lemma": "city",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 8,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "continued",
+          "lemma": "continue",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 9,
+          "end": 18,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "as",
+          "lemma": "as",
+          "pos": "ADP",
+          "dep": "prep",
+          "head": 2,
+          "start": 19,
+          "end": 21,
+          "morph": ""
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 5,
+          "start": 22,
+          "end": 25,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "capital",
+          "lemma": "capital",
+          "pos": "NOUN",
+          "dep": "pobj",
+          "head": 3,
+          "start": 26,
+          "end": 33,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "after",
+          "lemma": "after",
+          "pos": "ADP",
+          "dep": "prep",
+          "head": 5,
+          "start": 34,
+          "end": 39,
+          "morph": ""
+        },
+        {
+          "text": "union",
+          "lemma": "union",
+          "pos": "NOUN",
+          "dep": "pobj",
+          "head": 6,
+          "start": 40,
+          "end": 45,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 45,
+          "end": 46,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "become",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "attr",
+              "capital",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "nsubj",
+              "city",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "prep",
+              "after",
+              "ADP",
+              [],
+              [],
+              [
+                [
+                  "pobj",
+                  "union",
+                  "NOUN",
+                  [],
+                  [
+                    "Sing"
+                  ],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "city",
+          "lemma": "city",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 2,
+          "start": 4,
+          "end": 8,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "became",
+          "lemma": "become",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 2,
+          "start": 9,
+          "end": 15,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 4,
+          "start": 16,
+          "end": 19,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "capital",
+          "lemma": "capital",
+          "pos": "NOUN",
+          "dep": "attr",
+          "head": 2,
+          "start": 20,
+          "end": 27,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "after",
+          "lemma": "after",
+          "pos": "ADP",
+          "dep": "prep",
+          "head": 2,
+          "start": 28,
+          "end": 33,
+          "morph": ""
+        },
+        {
+          "text": "union",
+          "lemma": "union",
+          "pos": "NOUN",
+          "dep": "pobj",
+          "head": 5,
+          "start": 34,
+          "end": 39,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 2,
+          "start": 39,
+          "end": 40,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "negated_correction",
+    "source": "The gate was not opened by the pilot.",
+    "claim": "The pilot did not open the gate.",
+    "supported": true,
+    "matches": [
+      0
+    ],
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "open",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "neg",
+              "not",
+              "PART",
+              [],
+              [],
+              []
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "nsubjpass",
+          "head": 4,
+          "start": 4,
+          "end": 8,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "was",
+          "lemma": "be",
+          "pos": "AUX",
+          "dep": "auxpass",
+          "head": 4,
+          "start": 9,
+          "end": 12,
+          "morph": "Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "not",
+          "lemma": "not",
+          "pos": "PART",
+          "dep": "neg",
+          "head": 4,
+          "start": 13,
+          "end": 16,
+          "morph": "Polarity=Neg"
+        },
+        {
+          "text": "opened",
+          "lemma": "open",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 4,
+          "start": 17,
+          "end": 23,
+          "morph": "Aspect=Perf|Tense=Past|VerbForm=Part"
+        },
+        {
+          "text": "by",
+          "lemma": "by",
+          "pos": "ADP",
+          "dep": "agent",
+          "head": 4,
+          "start": 24,
+          "end": 26,
+          "morph": ""
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 7,
+          "start": 27,
+          "end": 30,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "pobj",
+          "head": 5,
+          "start": 31,
+          "end": 36,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 4,
+          "start": 36,
+          "end": 37,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "open",
+          "VERB",
+          [
+            "Past"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "gate",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "neg",
+              "not",
+              "PART",
+              [],
+              [],
+              []
+            ],
+            [
+              "nsubj",
+              "pilot",
+              "NOUN",
+              [],
+              [
+                "Sing"
+              ],
+              [
+                [
+                  "det",
+                  "the",
+                  "DET",
+                  [],
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "The",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 1,
+          "start": 0,
+          "end": 3,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "pilot",
+          "lemma": "pilot",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 4,
+          "start": 4,
+          "end": 9,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": "did",
+          "lemma": "do",
+          "pos": "AUX",
+          "dep": "aux",
+          "head": 4,
+          "start": 10,
+          "end": 13,
+          "morph": "Tense=Past|VerbForm=Fin"
+        },
+        {
+          "text": "not",
+          "lemma": "not",
+          "pos": "PART",
+          "dep": "neg",
+          "head": 4,
+          "start": 14,
+          "end": 17,
+          "morph": "Polarity=Neg"
+        },
+        {
+          "text": "open",
+          "lemma": "open",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 4,
+          "start": 18,
+          "end": 22,
+          "morph": "VerbForm=Inf"
+        },
+        {
+          "text": "the",
+          "lemma": "the",
+          "pos": "DET",
+          "dep": "det",
+          "head": 6,
+          "start": 23,
+          "end": 26,
+          "morph": "Definite=Def|PronType=Art"
+        },
+        {
+          "text": "gate",
+          "lemma": "gate",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 4,
+          "start": 27,
+          "end": 31,
+          "morph": "Number=Sing"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 4,
+          "start": 31,
+          "end": 32,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  },
+  {
+    "id": "product_input",
+    "source": "Worms produce castings.",
+    "claim": "Worms consume castings.",
+    "supported": false,
+    "matches": null,
+    "source_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "produce",
+          "VERB",
+          [
+            "Pres"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "casting",
+              "NOUN",
+              [],
+              [
+                "Plur"
+              ],
+              []
+            ],
+            [
+              "nsubj",
+              "worm",
+              "NOUN",
+              [],
+              [
+                "Plur"
+              ],
+              []
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "Worms",
+          "lemma": "worm",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 1,
+          "start": 0,
+          "end": 5,
+          "morph": "Number=Plur"
+        },
+        {
+          "text": "produce",
+          "lemma": "produce",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 1,
+          "start": 6,
+          "end": 13,
+          "morph": "Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "castings",
+          "lemma": "casting",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 1,
+          "start": 14,
+          "end": 22,
+          "morph": "Number=Plur"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 1,
+          "start": 22,
+          "end": 23,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    },
+    "claim_parse": {
+      "trees": [
+        [
+          "ROOT",
+          "consume",
+          "VERB",
+          [
+            "Pres"
+          ],
+          [],
+          [
+            [
+              "dobj",
+              "casting",
+              "NOUN",
+              [],
+              [
+                "Plur"
+              ],
+              []
+            ],
+            [
+              "nsubj",
+              "worm",
+              "NOUN",
+              [],
+              [
+                "Plur"
+              ],
+              []
+            ]
+          ]
+        ]
+      ],
+      "errors": [],
+      "tokens": [
+        {
+          "text": "Worms",
+          "lemma": "worm",
+          "pos": "NOUN",
+          "dep": "nsubj",
+          "head": 1,
+          "start": 0,
+          "end": 5,
+          "morph": "Number=Plur"
+        },
+        {
+          "text": "consume",
+          "lemma": "consume",
+          "pos": "VERB",
+          "dep": "ROOT",
+          "head": 1,
+          "start": 6,
+          "end": 13,
+          "morph": "Tense=Pres|VerbForm=Fin"
+        },
+        {
+          "text": "castings",
+          "lemma": "casting",
+          "pos": "NOUN",
+          "dep": "dobj",
+          "head": 1,
+          "start": 14,
+          "end": 22,
+          "morph": "Number=Plur"
+        },
+        {
+          "text": ".",
+          "lemma": ".",
+          "pos": "PUNCT",
+          "dep": "punct",
+          "head": 1,
+          "start": 22,
+          "end": 23,
+          "morph": "PunctType=Peri"
+        }
+      ]
+    }
+  }
+]

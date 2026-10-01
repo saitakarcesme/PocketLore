@@ -1,0 +1,7 @@
+{
+  "reviewer": "builder; no independent acceptance",
+  "result": "No structural candidate across127records. No new eligible prose to approve; prior raw source reviews preserved unchanged.",
+  "source_retention": "Every existing bounded source sentence is retained;428 sentence entries across24cases include repeated source passages and are not new coverage.",
+  "controls": "Three supported active/passive/negative equivalences pass;13 counterexamples fail. These constructed controls are not corpus or generated successes.",
+  "limitations": "Dependency model labels and graph equality are fallible. Whole-structure equality still rejects factual paraphrases; copied sentences are not generated usefulness. No claim of repaired semantic entailment."
+}
