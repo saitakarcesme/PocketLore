@@ -1,0 +1,7 @@
+{
+  "scope": "New frozen public development; no held-out inference",
+  "inputs": "run/inputs",
+  "raw_stages_frames_prose": "run/results",
+  "fixtures": "tools/evaluation/source-plan/fixtures.json",
+  "instructions": "Assess each complete raw draft against its actual selected grounds and cited spans, including extra clauses, qualifiers and obligation coverage. No published claims survived. Distinguish absence from extraction starvation and malformed planning. Builder judgments are separate."
+}

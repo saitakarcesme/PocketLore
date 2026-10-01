@@ -1,0 +1,63 @@
+{
+  "counts": {
+    "eligible": 0,
+    "withheld": 24,
+    "unsupported": 0,
+    "useful": 0,
+    "absent_withheld": 4,
+    "plan_calls": 20,
+    "prose_calls": 9
+  },
+  "assessment": "Builder; no independent source acceptance",
+  "generation_wall_seconds": 335.09893687300064,
+  "load_ms": 640.563675,
+  "failures": {
+    "No source frames; planner and prose not run": 4,
+    "Unknown or incompletely parsed factual clause; no partial publication": 6,
+    "Unknown/duplicate plan fact": 5,
+    "Planner withheld an obligation": 6,
+    "Geography subject metadata conflicts with complete claim": 1,
+    "Model withheld an obligation": 1,
+    "Malformed typed claim": 1
+  },
+  "timing_definition": "Native stage first-token includes prompt evaluation/first decoding; total spans call, excludes model load. Nearest rank sorted[ceil(n*p)-1] over stages that generated tokens, not all24 questions or cold runs. No matched comparison with prior question sets.",
+  "native_peaks": [
+    1,
+    1,
+    4242363904,
+    603979776,
+    80413184
+  ],
+  "plan": {
+    "calls": 20,
+    "total_tokens": 382,
+    "max_prompt_tokens": 1005,
+    "first_token_ms": {
+      "p50": 6508.731792,
+      "p95": 12974.398501
+    },
+    "total_ms": {
+      "p50": 7784.475356,
+      "p95": 14214.128781
+    }
+  },
+  "draft": {
+    "calls": 9,
+    "total_tokens": 1328,
+    "max_prompt_tokens": 687,
+    "first_token_ms": {
+      "p50": 6127.534192,
+      "p95": 9244.847851
+    },
+    "total_ms": {
+      "p50": 16425.670193,
+      "p95": 25795.988396
+    }
+  },
+  "host_peak_kib": {
+    "VmRSS": 4922904,
+    "VmHWM": 4922904,
+    "VmSwap": 0
+  },
+  "max_total_generated_tokens": 235
+}
