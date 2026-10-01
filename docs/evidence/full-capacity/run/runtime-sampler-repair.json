@@ -1,0 +1,11 @@
+{
+  "applies_from": "places-05 reconcile; all later steps",
+  "instrumentation_source_sha256": "5f9213f50b517d11590bc052f03874bcd3236269e805f111521133c16f531676",
+  "old_test_retained": "/home/isa/Projects/PocketLore/downloads/full-capacity/test.apk",
+  "reason": "Handle wrapped NoSuchFileException while sampling transient FIFO cleanup; no product change",
+  "test_apk": {
+    "bytes": 319550,
+    "path": "/home/isa/Projects/PocketLore/downloads/full-capacity/test-sampler-repair.apk",
+    "sha256": "85e21285c81be98cbb1758373643d21e08f6907a944c941b7f1c0961ac057552"
+  }
+}

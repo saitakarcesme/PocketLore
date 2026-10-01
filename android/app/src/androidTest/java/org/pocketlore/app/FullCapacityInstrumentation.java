@@ -28,7 +28,7 @@ public final class FullCapacityInstrumentation extends Instrumentation {
         try {
             File files=getTargetContext().getFilesDir(),app=files.getParentFile();String mode=args.getString("mode");
             r.put("mode",mode).put("pid",android.os.Process.myPid()).put("platform","emulator-5562 API35 x86_64; CPU; no inference");
-            sampling=true;sampler=new Thread(()->{while(sampling){try{sample(app);Thread.sleep(250);}catch(java.nio.file.NoSuchFileException e){/* Concurrent committed cleanup; next sample retries. */}catch(Exception e){sampleFailure=e.toString();break;}}},"capacity-sampler");sampler.start();
+            sampling=true;sampler=new Thread(()->{while(sampling){try{sample(app);Thread.sleep(250);}catch(java.nio.file.NoSuchFileException e){/* Concurrent committed cleanup; next sample retries. */}catch(java.io.UncheckedIOException e){if(!(e.getCause() instanceof java.nio.file.NoSuchFileException)){sampleFailure=e.toString();break;}}catch(Exception e){sampleFailure=e.toString();break;}}},"capacity-sampler");sampler.start();
             if(mode.equals("seed")){
                 PackLibrary packs=new PackLibrary(files);
                 for(String name:new String[]{"reference.plpack","science.plpack","broad.plpack"}){File f=new File(files,"capacity-seed/"+name);try(InputStream in=new FileInputStream(f)){packs.install(in,()->false,f.length());}Files.delete(f.toPath());}
@@ -44,6 +44,11 @@ public final class FullCapacityInstrumentation extends Instrumentation {
                 r.put("elapsed_ms",(System.nanoTime()-start)/1e6).put("read_bytes",read[0]).put("files_before",before).put("files_after",SharedShardUpdate.uniqueBytes(files)).put("precommit_files_bytes",lib.lastPhysicalPeak).put("admission_bytes",lib.lastAdmissionPeak).put("new_bytes_written",lib.lastTemporaryPeak);
                 if(!mode.equals("import")){check(rejected&&hash(catalog).equals(prior),"Rollback catalog changed");check(before==SharedShardUpdate.uniqueBytes(files),"Rollback leaked staging");r.put("rollback",true);}
                 check(priorModel.equals(hash(new File(files,"model.gguf"))),"Saved model changed");
+            }else if(mode.equals("reconcile")){
+                ScaleLibrary lib=new ScaleLibrary(files);JSONObject expected=read(new File(files,"capacity-reconcile.json"));String id=hash(new File(files,"capacity-reconcile.json"));ScaleLibrary.Entry found=null;
+                for(ScaleLibrary.Entry e:lib.entries())if(e.id.equals(id))found=e;
+                check(found!=null,"Failed measurement did not commit expected collection");ScaleLibrary.verifySchema(found.directory,found.manifest,()->false);
+                r.put("manifest",id).put("kind",found.kind()).put("shards",found.manifest.getJSONArray("shards")).put("files_after",SharedShardUpdate.uniqueBytes(files)).put("reconciled_import",true).put("measurement_limit","Import committed before sampler failure; original peak and elapsed fields were not persisted, not reconstructed");
             }else if(mode.equals("hash")){
                 ScaleLibrary lib=new ScaleLibrary(files);JSONArray rows=new JSONArray();Set<String> seen=new HashSet<>();
                 for(ScaleLibrary.Entry e:lib.entries())for(int i=0;i<e.manifest.getJSONArray("files").length();i++){

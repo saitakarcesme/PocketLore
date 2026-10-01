@@ -1,0 +1,7 @@
+INSTRUMENTATION_RESULT: failure=java.io.IOException: Sampler failure: java.io.UncheckedIOException: java.nio.file.NoSuchFileException: /data/user/0/org.pocketlore.app/files/capacity-input
+	at org.pocketlore.app.ScaleLibrary.check(ScaleLibrary.java:10)
+	at org.pocketlore.app.FullCapacityInstrumentation.check(FullCapacityInstrumentation.java:15)
+	at org.pocketlore.app.FullCapacityInstrumentation.onStart(FullCapacityInstrumentation.java:77)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+
+INSTRUMENTATION_CODE: 1

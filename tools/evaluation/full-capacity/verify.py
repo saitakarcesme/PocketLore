@@ -20,10 +20,15 @@ def behavior(run):
  runtime=load(run/'runtime.json');apk=runtime['apk']['bytes'];test=runtime['test_apk']['bytes']
  package=load(BASE/'package-storage-after.json');code_bytes=max(package['allocated_code_bytes'],load(BASE/'package-storage-before.json')['allocated_code_bytes'])
  require(package['rows'][0]['apk_sha256']==runtime['apk']['sha256'],'Installed APK identity drift')
+ require(package['rows'][1]['apk_sha256']==load(run/'runtime-sampler-repair.json')['test_apk']['sha256'],'Installed instrumentation identity drift')
  for label,r in rs.items():require(r['status']=='PASS' and r['model_sha256']==MODEL_SHA,label+' failed or model changed')
  for kind,n in [('wiki',15),('places',16)]:
   for i in range(n):
-   r=rs[f'{kind}-{i:02}'];require(len(r['shards'])==i+1,'Rolling sweep cannot satisfy cumulative installation');require(r['files_after']>=r['files_before'],'Installation retired prior assets')
+   r=rs[f'{kind}-{i:02}'];require(len(r['shards'])==i+1,'Rolling sweep cannot satisfy cumulative installation');
+   if r.get('reconciled_import'):
+    require(r['manifest']==sha(run/(f'{kind}-{i:02}'+'-input')/'manifest.json'),'Reconciled catalog differs from attempted import')
+    require('Sampler failure:' in (BASE/'failures'/f'{kind}-{i:02}-original/instrumentation.log').read_text(),'Unexplained import reconciliation')
+   else:require(r['files_after']>=r['files_before'],'Installation retired prior assets')
  for label in ['full-inspection','replacement-inspection','restored-inspection']:
   r=rs[label];require((r['wiki_documents'],r['wiki_full'],r['wiki_leads'],r['places_source_records'])==(6498498,1250000,5248498,81455423),'Full simultaneous counts mismatch')
   require(r['reviewed_collections']==3 and r['reviewed_documents']==1113,'Reviewed editions missing')
@@ -76,7 +81,7 @@ def verify():
    else:raise ValueError('Negative regression accepted '+name)
   fixture=d/'artifact';fixture.write_bytes(b'changed model artifact')
   fails('changed model bytes',lambda:integrity(fixture,MODEL_SHA));fixture.unlink();fails('missing model bytes',lambda:integrity(fixture,MODEL_SHA))
-  shutil.copytree(RUN,d/'run');p=d/'run/full-inspection/result.json';original=p.read_bytes();p.write_bytes(original+b' ')
+  shutil.copytree(RUN,d/'run');behavior(d/'run');p=d/'run/full-inspection/result.json';original=p.read_bytes();p.write_bytes(original+b' ')
   fails('changed raw run bytes',lambda:integrity(p,sha(RUN/'full-inspection/result.json')));p.unlink();fails('missing run artifact',lambda:integrity(p,sha(RUN/'full-inspection/result.json')));p.write_bytes(original)
   r=load(p);r['wiki_documents']=413151;p.write_text(json.dumps(r));fails('subset counts',lambda:behavior(d/'run'));p.write_bytes(original)
   p=d/'run/replacement/result.json';r=load(p);r['precommit_files_bytes']=r['files_before'];p.write_text(json.dumps(r));fails('unmeasured replacement peak',lambda:behavior(d/'run'))

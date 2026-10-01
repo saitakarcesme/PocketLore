@@ -1,0 +1,38 @@
+Performing Streamed Install
+Success
+Performing Streamed Install
+Success
+seed PASS 
+wiki-00 PASS 7299.986159
+wiki-01 PASS 9565.996887
+wiki-02 PASS 14396.39803
+wiki-03 PASS 17489.945626
+wiki-04 PASS 21629.969604
+wiki-05 PASS 26254.286484
+wiki-06 PASS 29681.942604
+wiki-07 PASS 35830.216764
+wiki-08 PASS 37154.811543
+wiki-09 PASS 40249.718617
+wiki-10 PASS 45069.947968
+wiki-11 PASS 53962.242115
+wiki-12 PASS 50984.465698
+wiki-13 PASS 57048.748235
+wiki-14 PASS 60451.157519
+places-00 PASS 6764.381423
+places-01 PASS 7084.0177
+places-02 PASS 13700.145205
+places-03 PASS 15076.730694
+places-04 PASS 24714.183126
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/full-capacity/run.py", line 143, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/full-capacity/run.py", line 112, in main
+    transfer(label,m,{f['path']:base/f['path'] for f in specs})
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/full-capacity/run.py", line 71, in transfer
+    r=step(label,mode,archive);archive.unlink();return r
+  File "/home/isa/Projects/PocketLore/tools/evaluation/full-capacity/run.py", line 45, in step
+    assert 'INSTRUMENTATION_CODE: -1' in (d/'instrumentation.log').read_text(),label
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: places-05

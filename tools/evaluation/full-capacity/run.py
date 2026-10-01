@@ -113,7 +113,9 @@ def main():
  step('full-hashes','hash');step('full-inspection','inspect')
  step('disable','disable');shell('am force-stop '+PKG);step('restart-disabled','restart');step('enable','enable')
  # Representation-only replacement of both objects of the largest wiki shard.
- old_id,original=catalog()['wiki'];replace_paths={};replacement=SCRATCH/'replacement';replacement.mkdir(exist_ok=True)
+ old_id,original=catalog()['wiki']
+ if (SCRATCH/'original-manifest.json').exists():original=json.loads((SCRATCH/'original-manifest.json').read_text())
+ replace_paths={};replacement=SCRATCH/'replacement';replacement.mkdir(exist_ok=True)
  for name in ['000_00003/catalog.sqlite','000_00003/articles.blocks']:
   p=replacement/pathlib.Path(name).name
   if not p.exists():
