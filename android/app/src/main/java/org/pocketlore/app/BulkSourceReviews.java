@@ -4,6 +4,24 @@ import java.io.*;import java.nio.charset.StandardCharsets;import java.util.*;imp
 final class BulkSourceReviews {
  static byte[] readLimited(InputStream input,int limit)throws Exception {try(InputStream in=input;ByteArrayOutputStream out=new ByteArrayOutputStream()){byte[] b=new byte[4096];int n;while((n=in.read(b))!=-1){if(out.size()+n>limit)throw new IOException("Review artifact too large");out.write(b,0,n);}return out.toByteArray();}}
  static ScaleAnswerAdapter.Ledger loadAssets(android.content.res.AssetManager assets)throws Exception {return load(assets.open("bulk-source-reviews.json"),hash->readLimited(assets.open("bulk-reviews/"+hash+".json"),16384));}
+ static ScaleAnswerPublication.Reviews loadPublications(android.content.res.AssetManager assets)throws Exception {
+  return loadPublications(new java.io.ByteArrayInputStream(readLimited(assets.open("bulk-answer-reviews.json"),131072)),hash->readLimited(assets.open("bulk-reviews/"+hash+".json"),16384));
+ }
+ static ScaleAnswerPublication.Reviews loadPublications(InputStream input,ReceiptSource source)throws Exception {
+  JSONArray hashes=new JSONObject(new String(readLimited(input,131072),StandardCharsets.UTF_8)).getJSONArray("receipts");
+  Map<String,ScaleAnswerPublication.Permit> permits=new HashMap<>();
+  for(int i=0;i<hashes.length();i++){
+   String hash=hashes.getString(i);if(!hash.matches("[0-9a-f]{64}"))throw new IOException("Invalid whole-answer review hash");
+   byte[] bytes=source.read(hash);if(bytes==null||bytes.length>16384||!ScaleLibrary.hex(java.security.MessageDigest.getInstance("SHA-256").digest(bytes)).equals(hash))throw new IOException("Whole-answer review changed/missing");
+   JSONObject r=new JSONObject(new String(bytes,StandardCharsets.UTF_8));String target=r.getString("candidate_sha256");
+   if(!target.matches("[0-9a-f]{64}")||!r.getString("scope").equals("whole_answer")||!r.getString("decision").equals("approved")||!r.getBoolean("independent")||r.getString("reviewer").trim().isEmpty()||permits.containsKey(target))throw new IOException("Invalid or duplicate whole-answer review");
+   List<Boolean> claims=new ArrayList<>(),obligations=new ArrayList<>();JSONArray c=r.getJSONArray("claims_supported"),o=r.getJSONArray("obligations_complete");
+   if(c.length()>8||o.length()>4)throw new IOException("Oversized whole-answer review");
+   for(int j=0;j<c.length();j++)claims.add(c.getBoolean(j));for(int j=0;j<o.length();j++)obligations.add(o.getBoolean(j));
+   permits.put(target,new ScaleAnswerPublication.Permit(target,hash,r.getString("reviewer"),true,claims,obligations));
+  }
+  return new ScaleAnswerPublication.Reviews(permits);
+ }
  interface ReceiptSource { byte[] read(String sha256)throws Exception; }
  static ScaleAnswerAdapter.Ledger load(InputStream input)throws Exception {return load(input,hash->{throw new IOException("Independent review receipt unavailable");});}
  static void receipt(JSONObject record,String scope,ReceiptSource source)throws Exception {
