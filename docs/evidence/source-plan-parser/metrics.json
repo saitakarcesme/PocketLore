@@ -1,0 +1,43 @@
+{
+  "counts": {
+    "records": 127,
+    "structural_candidates": 0,
+    "new_useful": 0,
+    "new_absent_withheld": 4
+  },
+  "source_sentences_per_new_case": {
+    "q01": 22,
+    "q02": 22,
+    "q03": 22,
+    "q04": 22,
+    "q05": 16,
+    "q06": 16,
+    "q07": 16,
+    "q08": 16,
+    "q09": 14,
+    "q10": 14,
+    "q11": 14,
+    "q12": 14,
+    "q13": 24,
+    "q14": 24,
+    "q15": 24,
+    "q16": 24,
+    "q17": 15,
+    "q18": 15,
+    "q19": 15,
+    "q20": 15,
+    "q21": 16,
+    "q22": 16,
+    "q23": 16,
+    "q24": 16
+  },
+  "source_sentences_total_with_case_reuse": 428,
+  "unique_parser_inputs": 279,
+  "load_seconds": 0.2339477360001183,
+  "total_seconds": 1.1207430779977585,
+  "max_rss_kib": 169376,
+  "measurement": "Single Python CPU parser process; getrusage self maximum RSS, no phone/PSS/swap or generation measurement",
+  "controls": 16,
+  "installed_environment_regular_bytes": 208259620,
+  "model_wheel_bytes": 12803381
+}

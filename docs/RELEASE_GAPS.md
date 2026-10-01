@@ -236,3 +236,16 @@ The [fixed24-case experiment](evidence/source-plan-generation.md) produced zero 
 | Physical and human acceptance | No physical/GrapheneOS or human usability evidence added. | Actual compatible-device resource/offline/usefulness assessment. | Hardware/operator and human reviewers. |
 
 No external hardware blocker explains this negative experiment. No new task or state was dispatched; the source/representation problem remains concrete independent development work.
+
+## Task 224 repair 1: input retention fixed in prototype, semantic generation unresolved
+
+[New evidence](evidence/source-plan-parser-repair.md): complete bounded sentence catalogs retain14–24 sentences per new case, but the independently trained dependency-parser path finds zero complete structural matches across127 preserved records. Build and113 behavioral/parser controls pass; useful-answer quality still fails. The3 positive/13 negative constructed controls are not real-answer acceptance.
+
+| Remaining gap | Evidence | Next concrete boundary to address | External dependency |
+| --- | --- | --- | --- |
+| Supported useful prose |0/24 useful answers; full syntax equality rejects supported paraphrases even after retaining source material. | Semantic role/condition/definition/formula representation that bridges paraphrase, validated on frozen independent cases before more generation; no per-case rules or repeat matrix. | None for bounded host research; independent source criticism required. |
+| Actual new planning path |SentenceEvidence is an alternate tested input adapter; old4B run was not regenerated. | Integrate a demonstrably support-preserving semantic representation before a fresh declared generation experiment. Do not present retention as answer quality. | None for host implementation. |
+| Parser distribution/mobile resources |New MIT model12.8MB and208.3MB ignored environment, host RSS169,376KiB; not packaged/qualified on Android. | Add exact parser/runtime notices and inventory if selected; qualify mobile parsing and combined resources alongside selected4B. | Approved sufficient-memory environment, mobile implementation/integration. |
+| Release and physical acceptance |APK a51175910637771edef43e3b598385301b3498aadaf00c56a1a8090b25b101e7 is a build artifact only. | Existing integrated release revalidation, clean-machine reproduction, signing ownership, real compatible-device and human usefulness checks. | Clean environment/owner, physical Android/GrapheneOS hardware and reviewers. |
+
+The failed experiment is not externally hardware-blocked. No duplicate task, dispatch, service, model preference or orchestration state change was made.

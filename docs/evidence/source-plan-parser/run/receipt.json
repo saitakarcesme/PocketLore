@@ -1,0 +1,35 @@
+{
+  "load_seconds": 0.2339477360001183,
+  "total_seconds": 1.1207430779977585,
+  "max_rss_kib": 169376,
+  "model": "3.7.1",
+  "spacy": "3.7.5",
+  "sources": {
+    "android/app/src/main/java/org/pocketlore/app/BoundAnswer.java": "3ebc23e6ed3dc73f52ccf899029b0b98dce258c44e7bc717804245206c7ff709",
+    "android/app/src/main/java/org/pocketlore/app/ObligationAnswer.java": "6b9f0e61ba2a7bf5a040f2d9f3899acc682b40cf236ac3395d1bdac8f1819725",
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "f276dc506e3022e445149c6c09e2577f595b287cfc406a760fda525c46c66128",
+    "android/app/src/main/java/org/pocketlore/app/EvidencePrompt.java": "238131c012580bdd1af9c2a67fb7db410c1c4d5f2bc5235a0016eb09d493832a",
+    "android/app/src/main/java/org/pocketlore/app/AnswerEngine.java": "c03f51d31c5e1fa628450978ec6ccc9fe2491de11b6695856856c694826d2dbc",
+    "android/app/src/main/java/org/pocketlore/app/NativeRuntime.java": "ec6f59d59b07ef7f5016657e0fcba0203232ecc7359f56a9ad6c205215fb2085",
+    "android/app/src/main/java/org/pocketlore/app/EvidenceLinker.java": "190ed67e3c5dab7bcb137b8d02c5a4bab08f5f9fb67bb3cace2b3bcff5f7dd8c",
+    "android/app/src/main/java/org/pocketlore/app/SourcePlan.java": "0c4baab094bdf620d5cb7c8058ba5c79e9220f93ca79ed0b7b07dfd45d33e630",
+    "tools/evaluation/scale-model-quality/ScaleHarness.java": "c969a8ff91f4e200e6ca674c68c0bb68e5a7d0bacfa39f5db251708175779558",
+    "tools/evaluation/obligation-binding/BindingHarness.java": "23c74dc755f68eee7c746c4ba7c416adf088a035a1aea9381e5c29e8715c7f06",
+    "tools/evaluation/source-plan/PlanHarness.java": "d5d703ff7a17616a542e352743863887a66b2b97c577fbfea4db2a33863d6904",
+    "android/app/src/main/java/org/pocketlore/app/FactFrames.java": "45dcb15e9582143bb9a37e62fdc9a0198e01554a29a1a3a5b5ef94911ed31c2e",
+    "android/app/src/main/java/org/pocketlore/app/SentenceEvidence.java": "bb070b4e8593eb5b379723b595d884e5103ad7bbaab9d40f0cddab42e86367cb",
+    "tools/evaluation/source-plan-parser/Export.java": "1c5970c7fec223796c4b51c3b94a4ff7a742d26f229206156ee03ffc1191232f",
+    "tools/evaluation/source-plan-parser/run.py": "f04d7a334de253b28c7f172ca8477e0adec40198a01573165d99cc11cc518376",
+    "tools/evaluation/source-plan-parser/structure.py": "928cd59815bf1749d0199254360a71badeac7955181e34c095bd6c0ba244df54",
+    "tools/evaluation/source-plan-parser/protocol.json": "66899c9f0c930ae98b0225da854fa8bc0ae8c0c69dccd2706939fc8be59a1130",
+    "tools/evaluation/source-plan-parser/controls.json": "ca5cc50324e94f91b1bf0aa087f52a88b9674e257fc9e62e6b968a1b2278be65"
+  },
+  "model_sha256": "86cc141f63942d4b2c5fcee06630fd6f904788d2f0ab005cce45aadb8fb73889",
+  "artifacts": {
+    "new-sources.json": "66450bfefe298809b04e2b940bb1ca46d092c91166ef480fb798ce409a141937",
+    "prior-sources.json": "92302ae35c026a2f5b3e786fbeb8c3473bc5a05e8b3dc83c812c5cd61e1d5675",
+    "controls.json": "aa4797e5da2e92b38c4816b0340efb9b7adbd0c3fb16f47c0b555ee349741bcd",
+    "results.json": "2de4e5299cbd8c086d8077ab2c5ecf53b9637f0b71e2174c83b7249bede6904f",
+    "parses.json": "5d3c956d36be5d4e00491c99afb506cbfa2f6af67f750c1407555e0b4f3a58c7"
+  }
+}

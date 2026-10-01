@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")/../.."
-python3 tools/evaluation/source-plan/verify.py
+downloads/source-plan-parser/venv/bin/python tools/evaluation/source-plan-parser/verify.py
