@@ -1,0 +1,86 @@
+{
+  "reviewer": "builder; independent source review separate",
+  "criterion": "Full draft usefulness requires supported facts, all question obligations, relevant inspectable citations and complete usable prose. Source labels at an obligation paragraph may support its subsequent sentences only when the same cited excerpt actually establishes every claim; machine per-sentence gate is reported separately. No extractive fallback counts.",
+  "cases": {
+    "s01": {
+      "result_sha256": "a7c44df8892a9f359785f93a1bd880ae7fb805b8853dee2b352f8f87b932864b",
+      "all_facts_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "The complete halving/middle-comparison procedure is directly supported by S1. The paragraph begins with S1, which establishes both sentences; the stricter per-sentence controller still withholds it. No publication credit.",
+      "cited_claims_supported": true
+    },
+    "s02": {
+      "result_sha256": "9d8959dcfa75160363a08fd76c3b9a497860ced11b1221a3b618ea5e177aeafc",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "S5 explicitly connects insertion order/arbitrary insertion to degeneracy and guaranteed variants; complete concise explanation, and machine screen admits it."
+    },
+    "s03": {
+      "result_sha256": "a37e8093b8b3185f7353e974e7f3bf2bad9824a87eda6a353e97500a59c21677",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "O1 correctly states sorted array with S2; O2 correctly states both subtree inequalities with S4. Subsequent explanatory sentences stay within those same cited subjects, though machine sentence citation gate withholds."
+    },
+    "s04": {
+      "result_sha256": "2fb4ecd94f6d5168255f0b8bdf175b715b346819fab46a3fc0ef51f274b4e7f1",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct logarithmic versus linear worst-case facts, but O2 cites S5 while its explicit singly-linked-list/O(n) claim is in S6. Required exact claim-source binding fails."
+    },
+    "s05": {
+      "result_sha256": "46cf5db98bdd5df894f69066a15969fef954443d4eb6ae4b0fa1efa596595bf6",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly rejects the false premise and quotes the sorted-array prerequisite from S2; all explanatory sentences follow that excerpt. Machine per-sentence syntax gate withholds."
+    },
+    "s06": {
+      "result_sha256": "a499b859d56a541fe9e92dd613ed754be070e7cb14a4bd8e224abb126b0166b4",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly withholds unavailable laptop/time-specific latency; no invented measurement. Useful abstention only."
+    },
+    "s07": {
+      "result_sha256": "e70314193dc37dc4305fceee9528b1478cead6d6150140c38fbd5b2622c6b4dd",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Ingredients and fertilizer/soil-improvement use are established by S1; two-sentence obligation-level citation remains inspectable but machine gate withholds the second sentence."
+    },
+    "s08": {
+      "result_sha256": "e4d4f2c31147a4e3a40faaf579d268294ffedc7f22bee9ab7a5f0943b46b3de6",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Misreads vermicast in the produced mixture as material earthworms decompose, reversing input/output scope. Other excreta/nutrient statements are supported by S5, but the whole draft is not supported."
+    },
+    "s09": {
+      "result_sha256": "0af24fef94f3a37e4426dd05228ebc302b7d70a96ce1f979c9e4d200969962df",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Ordinary compost process is well covered, but again treats vermicast as input. O3 also transfers reduced chemical-fertilizer dependence from compost to both materials and cites only S1 for both sources."
+    },
+    "s10": {
+      "result_sha256": "816185000a77f63c14503de921e6902b8c505a19f85025372d87c04d5d2787c1",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct green/brown inputs and vermicast definition/synonyms, but O2 cites S4 instead of the S5 paragraph that establishes those details; exact claim-source linkage is wrong."
+    }
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "reviewer": "builder; independent source review separate",
+  "criterion": "Full draft usefulness requires supported facts, all question obligations, relevant inspectable citations and complete usable prose. Source labels at an obligation paragraph may support its subsequent sentences only when the same cited excerpt actually establishes every claim; machine per-sentence gate is reported separately. No extractive fallback counts.",
+  "cases": {
+    "s01": {
+      "result_sha256": "67945a829a27846fcf3d3815aeefd765bb9acada23a0b2c3d3d2ef2116fdd1de",
+      "all_facts_supported": true,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Half-elimination is supported by binary-search S1, but the answer omits the middle-element comparison and termination condition; S4 tree citation does not establish this algorithm statement.",
+      "cited_claims_supported": true
+    },
+    "s02": {
+      "result_sha256": "a9ab15cd851c3f8ea06dd71741ea0a166c577313567d8644ab799389f1856aa1",
+      "all_facts_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Correctly associates insertion order with height/degradation, but invents a causal increase in node count and number of operations from imbalance; repeats prompt and provides no grounded citation for those claims.",
+      "cited_claims_supported": false
+    },
+    "s03": {
+      "result_sha256": "2d940de0d588acc59b4f9e06abf30789d491106a8743bdde5b2804f64c51ab6a",
+      "all_facts_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Confuses sorted-array binary search with the tree data structure, asserts a generic BST is balanced, loops to token limit and never answers O2.",
+      "cited_claims_supported": false
+    },
+    "s04": {
+      "result_sha256": "7ea4ddac52c9ef2b517d2d9e99b273337c553e1e7289aa9c74865a8061fe1a94",
+      "all_facts_supported": true,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "The copied binary-search facts occur in its excerpts, but O2 never describes an unbalanced BST and TeX notation is emitted as an invalid source bracket; no proper source citations.",
+      "cited_claims_supported": false
+    },
+    "s05": {
+      "result_sha256": "ef31dc9e6d2595e38e10805593cfd76e277889b38076c8d2b3540b639ddd33e3",
+      "all_facts_supported": true,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Echoes the question and instructions instead of correcting the false premise. No substantive answer is supplied; the echoed question is not counted as an asserted fact.",
+      "cited_claims_supported": false
+    },
+    "s06": {
+      "result_sha256": "2b9f92f52b5a44c0c6e57cf623beeed27588896402457609da6bc94019ab5570",
+      "all_facts_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Invents a laptop latency as a long zero-valued decimal; no supplied source contains that private current measurement. Token limit reached.",
+      "cited_claims_supported": false
+    },
+    "s07": {
+      "result_sha256": "227f236a6fe8fd67b5928dcfe09ad9890b96d667a3b55277e74cd50671c6473c",
+      "all_facts_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Describes ingredients and uses from the supplied compost paragraphs, including wetland/landfill use; no source citations and surplus repeated obligation slots make this an unlinked draft, not fully useful.",
+      "cited_claims_supported": false
+    },
+    "s08": {
+      "result_sha256": "da8ad8806e95e9922ce28a399638f8fa349bdb6062c87b38da447b406b7c8a6b",
+      "all_facts_supported": true,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Worm decomposition is supported by the vermicast excerpt, but the answer omits the vermicast product and is only a minimal role statement; postfix citations cause the strict screen to withhold.",
+      "cited_claims_supported": true
+    },
+    "s09": {
+      "result_sha256": "34ce80acdc1feaf9be59be9eab1891830e4244c940b02d5013146dde818d51a8",
+      "all_facts_supported": true,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Copies real compost and worm-process facts, but retains the instruction fragment complete answer and O3 describes only vermicompost rather than explicitly identifying their shared use. Its O3 source labels do not specifically cite the vermicompost nutrient paragraph.",
+      "cited_claims_supported": false
+    },
+    "s10": {
+      "result_sha256": "2e0afaf366004f4570d24ea2dfe2279c534e02a65933d376845f34d2f3e39c4f",
+      "all_facts_supported": true,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Copies true introductory facts but does not name nitrogen/carbon green/brown inputs or explain vermicast; creates an extra O3 and omits citations.",
+      "cited_claims_supported": false
+    },
+    "s11": {
+      "result_sha256": "702db6e468bc63aa78aa6ab394c4728bebf7d7a6bfbd8c373082d178bb370d84",
+      "all_facts_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Recognizes that worm use contradicts the premise but then claims the source cannot confirm or deny whether worms are avoided; that uncertainty misrepresents the explicit process.",
+      "cited_claims_supported": false
+    },
+    "s12": {
+      "result_sha256": "f33e38aa35ae284741bc1e3652f2b2e9bd285de0f8e4a9f797a2ff3647442ccf",
+      "all_facts_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicit insufficient-evidence response correctly withholds unavailable current local inventory; this is useful abstention, not a generated supported answer.",
+      "cited_claims_supported": true
+    },
+    "s13": {
+      "result_sha256": "547a407e5ea733ac473c7c368e9e8402b1b30f14e550974e7a393bbcdf994ade",
+      "all_facts_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Reverses rootstock/root selection and scion/stems-leaves-fruit selection; also fails the requested upper/lower identification.",
+      "cited_claims_supported": false
+    },
+    "s14": {
+      "result_sha256": "edaedc0c72cdc7240497690e73b6634f5a32dbde26fb61c8d284223178c2edcb",
+      "all_facts_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Changes easier wound compartmentalization into cuts being easier to make, an unsupported causal explanation; the source instead discusses healing/pathogen protection.",
+      "cited_claims_supported": false
+    },
+    "s15": {
+      "result_sha256": "7b111980fa0a06e1f22a19d8e46ce0536327b91826813c5c5ee9da2a0eb7dffd",
+      "all_facts_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Addresses joining/removal but corrupts the grafting definition into the lower part of the rootstock instead of lower part of the combined plant; no citations. Pruning/wound statements are otherwise sourced.",
+      "cited_claims_supported": false
+    },
+    "s16": {
+      "result_sha256": "ac5ce9ace92198acb8d706f1124b677bb43eb411100f71406afe581fb2a98494",
+      "all_facts_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Vascular joining is correct; the water-loss explanation transfers a theorized response in natural self-pruning to manual pruning without retaining the theory/scope qualifier.",
+      "cited_claims_supported": false
+    },
+    "s17": {
+      "result_sha256": "de0708d81c57db79816f1752c68fd6f3b37312cefcc7aa06aa7ce9b9e83ba3e9",
+      "all_facts_supported": true,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Rejects the unsupported grafting premise but adds irrelevant obligation labels and does not state the required vascular joining; not a complete useful correction.",
+      "cited_claims_supported": true
+    },
+    "s18": {
+      "result_sha256": "9a876267784a1e88b5d9b78d9728c8cdfd7fc4ca7a3862b04ab3eae156437a38",
+      "all_facts_supported": true,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Only a list of source labels: no price fabrication, but no substantive answer or explicit absence explanation.",
+      "cited_claims_supported": false
+    },
+    "s19": {
+      "result_sha256": "647181967f359a60c864258c80d2fcf2920670542e92a9df55e02eae4ec8ec4c",
+      "all_facts_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Correct single-document definition is followed by the false claim that the UK dispersed constitution is codified, reversing the source.",
+      "cited_claims_supported": false
+    },
+    "s20": {
+      "result_sha256": "3e2f8ada4e054c185ba651654cb046c9142bcd5f8d1b0cdd92db371c211e570c",
+      "all_facts_supported": true,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Prompt/obligation echo loop to token limit; no substantive answer about variable monarch powers.",
+      "cited_claims_supported": false
+    },
+    "s21": {
+      "result_sha256": "18c41dccaeed1f63924216dcf84ab705f965d207bc03301ebdef235a4a484ef3",
+      "all_facts_supported": true,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Echoes both requested obligations and candidate-reading labels without answering either.",
+      "cited_claims_supported": false
+    },
+    "s22": {
+      "result_sha256": "784f4cb56a891e3d8811e7bed776b3da74623f1928cd16fa934664a3d0665506",
+      "all_facts_supported": true,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Echoes questions and claims excerpts satisfy them without providing the distinctions; no actual explanation.",
+      "cited_claims_supported": false
+    },
+    "s23": {
+      "result_sha256": "56923a2ce277fad507e7d8ace6ac2749aa1d3eba544bae7277296ac8f541ac30",
+      "all_facts_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Initially endorses the universal no-policy-power premise, then contradicts itself and mislabels constitution excerpts as monarchy sources; source explicitly says powers vary.",
+      "cited_claims_supported": false
+    },
+    "s24": {
+      "result_sha256": "b7a57468f427da16bd65d8705d447c318ecd20d8e1e8f56acfc6c89fe3355e80",
+      "all_facts_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Fabricates that a court did not decide anything in a personal current case; neither supplied source establishes this.",
+      "cited_claims_supported": false
+    },
+    "s25": {
+      "result_sha256": "6a30371bd90cc39c8197c4e38e762b59d17b3ebbfe1eaca59b5bd5300b97429c",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Only source labels and extra obligations; no location or constitutional relationship answer."
+    },
+    "s26": {
+      "result_sha256": "1647a6c246d3904204f3510941ab9337a0b2a9685e37d2b32f0fe552f0d6fbdc",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Claims the source provides no reason to reject a coastal-Caribbean description although it explicitly says landlocked eastern Pyrenees; extra empty obligations."
+    },
+    "s27": {
+      "result_sha256": "ddde50eeda8e60eeadc4f31949fda00c6d6a6f36d2b3f2b9e130f9014bf758a7",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Aruba description is source-faithful; Andorra text copies demographics but omits landlocked Pyrenees/borders requested as physical setting. No citations."
+    },
+    "s28": {
+      "result_sha256": "70e5a4aefa115a86ed58cc8e50dd8e2c271c536bcb68c1ef3f0cb434d77a6ca4",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Area, dry/sunny conditions and France/Spain borders are correct, but detached citation-only duplicate obligation slots do not provide a clean linked answer."
+    },
+    "s29": {
+      "result_sha256": "20b3e45ab2fd1e60ac0f8579344bf469f003b06bf7952d01f5ad63f5646bf119",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Echoes the false-premise question with citations rather than correcting it; no substantive answer."
+    },
+    "s30": {
+      "result_sha256": "f2bbcf904d5127eab835b8ac8d3579507165a30b9cab4c398e8dad97f77df993",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Clearly states insufficient evidence for a live border wait; awkward phrasing does not invent a number. Useful abstention, not a supported-answer success."
+    },
+    "s31": {
+      "result_sha256": "00d4531f2e89ee4983e47430844a8e8453c4ed9c4c797afbfbcaccba075473ef",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Vague capital-status tautology never identifies Catalonia or the northeastern Spanish/Mediterranean coast; mismatched citations and broken format."
+    },
+    "s32": {
+      "result_sha256": "bc3095a392a1f049a3a45392ca22faa37a30bd4c8c5950f8cf2529bcdc417a77",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Infers democracy/learning significance from age alone and assigns unrelated Barcelona source labels to Athens facts; does not explain the cited classical intellectual/democratic role."
+    },
+    "s33": {
+      "result_sha256": "b7d38e1b0895aeca6d653d80d8c4f081abc8363c818050d9dd4da02bf4ba04c6",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Both capital statuses are source-faithful and address the question, but no inspectable source labels are emitted."
+    },
+    "s34": {
+      "result_sha256": "af068d6981a611f8332afd88bdd2585d4e0fad779d7a36b1bbef586d70ed8039",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Adds century-specific Barcelona statements without the requested Crown of Aragon role and uses Barcelona again for O2 instead of classical Athens; dates are not established by its cited excerpts."
+    },
+    "s35": {
+      "result_sha256": "d06237c2c87caf2a3f4b0af4730da4ecf43014ebb24c6892845db62eb8e1e06a",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Affirms support for Barcelona as Greek capital, contradicting the supplied location/capital facts; adds empty obligations."
+    },
+    "s36": {
+      "result_sha256": "9685c928168927a0ad5945a769a511b9b26fba5b0a059e8c7951bcba5c5142cb",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Only citation lists; no factual live-data invention but no meaningful absence explanation or answer."
+    }
+  }
+}
