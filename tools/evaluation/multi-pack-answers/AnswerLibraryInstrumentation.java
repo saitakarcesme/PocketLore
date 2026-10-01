@@ -84,6 +84,8 @@ public final class AnswerLibraryInstrumentation extends Instrumentation {
             phase="cancel-prefill";t=System.nanoTime();String q=protocol.getJSONObject("cancellation").getString("question");startQuery(q);await(()->NativeRuntime.operationState()[0]==4,"No actual native prefill reached");long[] observed=NativeRuntime.operationState();long cancel=System.nanoTime();click(panel(),"cancel");ready();JSONObject cancelled=record("cancel-prefill",q,t);check(cancelled.getString("route").equals("CANCELLED"),"Cancelled request published");report.put("cancellation",new JSONObject().put("observed_operation",new JSONArray(observed)).put("click_to_idle_ms",ms(cancel)));save();
             answer(cases.getJSONObject(6));phase="unload";click(panel(),"unload");ready();check(NativeRuntime.resourceState()[0]==0&&!activity.modelReady(),"Model lease survived unload");sample();
             phase="reload";t=System.nanoTime();click(panel(),"reload");ready();check(activity.modelReady()&&NativeRuntime.resourceState()[0]==1,"Reload failed");report.put("reload_ready_ms",ms(t));answer(cases.getJSONObject(7));
+            JSONObject repair=new JSONObject(new String(Files.readAllBytes(new File(root,"link-repair-protocol.json").toPath()),StandardCharsets.UTF_8));
+            for(int i=0;i<repair.getJSONArray("cases").length();i++)answer(repair.getJSONArray("cases").getJSONObject(i));
             check(report.getJSONArray("links").length()>0,"No generated answer available to exercise actual citation links");report.put("status","PASS");
         }catch(Throwable e){try{report.put("status","FAIL").put("failure",e.toString());}catch(Exception ignored){}result.putString("failure",e.toString());}
         finally{

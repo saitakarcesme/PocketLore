@@ -33,7 +33,7 @@ def main():
  for name in ['debug/app-debug.apk','androidTest/debug/app-debug-androidTest.apk']:
   p=R/'android/app/build/outputs/apk'/name;artifacts[p.name]={'sha256':sha(p),'bytes':p.stat().st_size};run(a+['install','-r',p],'install-'+p.name+'.txt')
  run(a+['shell','am','force-stop','org.pocketlore.app'],'stop.txt');run(a+['shell','run-as','org.pocketlore.app','mkdir','-p',base],'mkdir.txt')
- for name,p in [('protocol.json',F/'protocol.json'),('duplicate.plpack',duplicate)]:run(a+['exec-in','run-as','org.pocketlore.app','sh','-c','cat > '+base+'/'+name],'provision-'+name+'.txt',p.read_bytes())
+ for name,p in [('protocol.json',F/'protocol.json'),('link-repair-protocol.json',F/'link-repair-protocol.json'),('duplicate.plpack',duplicate)]:run(a+['exec-in','run-as','org.pocketlore.app','sh','-c','cat > '+base+'/'+name],'provision-'+name+'.txt',p.read_bytes())
  run(a+['shell','settings','put','global','airplane_mode_on','1'],'airplane-set.txt');run(a+['shell','svc','wifi','disable'],'wifi-disable.txt');run(a+['shell','svc','data','disable'],'data-disable.txt');assert run(a+['shell','settings','get','global','airplane_mode_on'],'airplane.txt').strip()==b'1'
  log=run(a+['shell','am','instrument','-w','org.pocketlore.app.test/org.pocketlore.app.AnswerLibraryInstrumentation'],'instrumentation.txt',timeout=900)
  raw=run(a+['exec-out','run-as','org.pocketlore.app','cat',base+'/results.json'],'results.json');r=json.loads(raw)
@@ -42,13 +42,13 @@ def main():
  for row in r.get('rows',[]):
   run(a+['exec-out','run-as','org.pocketlore.app','cat',base+'/'+row['id']+'.json'],row['id']+'.json')
  for link in r.get('links',[]):run(a+['exec-out','run-as','org.pocketlore.app','cat',base+'/'+link['case']+'-citation.png'],link['case']+'-citation.png')
- receipt={'classification':'Actual x86_64 Android emulator JNI, production Qwen2.5 0.5B; not host/phone acceptance','protocol_sha256':sha(F/'protocol.json'),'model':protocol['model'],'duplicate_sha256':sha(duplicate),'artifacts':artifacts,'sources':{str(p.relative_to(R)):sha(p) for p in list((R/'android/app/src/main/java/org/pocketlore/app').glob('*.java'))+[F/'AnswerLibraryInstrumentation.java',R/'android/app/src/main/cpp/runtime.cpp']},'records':{p.name:sha(p) for p in out.iterdir() if p.is_file()}}
+ receipt={'classification':'Actual x86_64 Android emulator JNI, production Qwen2.5 0.5B; not host/phone acceptance','protocol_sha256':sha(F/'protocol.json'),'link_repair_protocol_sha256':sha(F/'link-repair-protocol.json'),'model':protocol['model'],'duplicate_sha256':sha(duplicate),'artifacts':artifacts,'sources':{str(p.relative_to(R)):sha(p) for p in list((R/'android/app/src/main/java/org/pocketlore/app').glob('*.java'))+[F/'AnswerLibraryInstrumentation.java',R/'android/app/src/main/cpp/runtime.cpp']},'records':{p.name:sha(p) for p in out.iterdir() if p.is_file()}}
  (out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n')
  verify(out,r,protocol,log)
 def verify(out,r,protocol,log):
  assert r['catalog_restored'] and r['model']==protocol['model']
  assert 'threads=2' in r['runtime'] and 'context=2048' in r['runtime'] and 'HOST SCREEN' not in r['runtime']
- rows={row['id']:row for row in r['rows']};assert set(rows)=={c['id'] for c in protocol['cases']}|{'cancel-prefill'}
+ rows={row['id']:row for row in r['rows']};assert set(rows)=={c['id'] for c in protocol['cases']}|{'cancel-prefill'}|{c['id'] for c in json.loads((F/'link-repair-protocol.json').read_text())['cases']}
  original={ 'p'+s['edition_sha256']+'_'+s['original_id']:s for s in protocol['sources']}
  for row in rows.values():
   assert row['prompt_tokens']+256<=2048 and row['tokens']<=256 and row['native_after'][1]==0
@@ -73,5 +73,6 @@ if __name__=='__main__':
   for name,digest in receipt['records'].items():assert sha(out/name)==digest,name
   for name,digest in receipt['sources'].items():assert sha(R/name)==digest,name
   assert sha(F/'protocol.json')==receipt['protocol_sha256']
+  assert sha(F/'link-repair-protocol.json')==receipt['link_repair_protocol_sha256']
   verify(out,json.loads((out/'results.json').read_text()),json.loads((F/'protocol.json').read_text()),(out/'instrumentation.txt').read_bytes())
  else:main()
