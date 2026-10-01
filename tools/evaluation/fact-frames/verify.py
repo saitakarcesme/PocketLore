@@ -15,7 +15,7 @@ def sealed(path):
  r=json.loads((path/'receipt.json').read_text());require(r['exit_code']==0 and not r.get('killed'),'Failed/incomplete stage')
  for p,h in r['artifacts'].items():exact(path/p,h)
  return r
-def main():
+def main(*, build_receipt=None):
  fixture=json.loads((F/'fixtures.json').read_text());exact(F/'fixtures.json',(F/'fixtures.sha256').read_text().strip());require(len(fixture['cases'])==20 and len({c['topic'] for c in fixture['cases']})>=4,'Frozen new coverage')
  exact(R/'docs/evidence/independent-linking/SHA256SUMS',fixture['previous_seal_sha256']);exact(R/'tools/evaluation/scale-model-quality/protocol.json',fixture['task220_protocol_sha256'])
  for name in ['scale-model-quality','obligation-binding','independent-linking','fact-frames']:
@@ -81,7 +81,7 @@ def main():
   with changed_model.open('wb') as stream:stream.truncate(model.stat().st_size)
   reject(lambda:exact(changed_model,spec['generator_sha256']));reject(lambda:exact(t/'missing.gguf',spec['generator_sha256']))
  # Reuse after task222 added composition code; the original frame build receipt remains sealed.
- current_build=R/'docs/evidence/guarded-linking/build.json';exact(current_build,'a92befd1acdee02175752d77a36d530c4b8ad61cd13f096f45cb2e02686cfed2')
+ current_build,build_hash=build_receipt if build_receipt is not None else (R/'docs/evidence/guarded-linking/build.json','a92befd1acdee02175752d77a36d530c4b8ad61cd13f096f45cb2e02686cfed2');exact(current_build,build_hash)
  build=json.loads(current_build.read_text());exact(R/build['apk'],build['sha256']);require(build['exit_code']==0,'Build failure');require(counts==json.loads((E/'metrics.json').read_text())['counts'],'Derived counts')
  from public_coverage import measure
  coverage=measure(values,review,[('p','prior_probes',prior),('t','new_probes',fixture['cases'])])
