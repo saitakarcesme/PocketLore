@@ -128,7 +128,8 @@
       "complete_prose": false,
       "fully_useful_draft": false,
       "assessment": "Draft reaches320tokens mid-clause in O2 and never reaches shared-use O3. Visible completed compost facts and vermicompost definition match context, but no parsed binding/complete useful response survives. Correctly withheld as truncation.",
-      "claims": []
+      "claims": [],
+      "raw_clause_review": "O1 ingredients/use/green-brown/aeration/chemical-conversion facts match source context, but its P2.1-P2.3 references omit later aerobic-conversion sentence. O2 definition matches P4.1; vermiculture clause truncates. O3 absent."
     },
     "s10": {
       "result_sha256": "831b95cefe4dbefe30e077b199bed3c7ca0ba3e1e529832c13784c72a8b373d3",
@@ -196,6 +197,110 @@
         {
           "claim_index": 1,
           "assessment": "P5.2 directly gives smaller-branch wound compartmentalization and resulting lower pathogen/decay potential."
+        }
+      ]
+    },
+    "s15": {
+      "result_sha256": "6dc78dcef05932aee1da87afa5c16c3f0be3aba4f8b70ba0d2efe6ab8c4a50d1",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": false,
+      "fully_useful_draft": false,
+      "assessment": "Verbose source-faithful grafting/pruning prose reaches320tokens mid-sentence; incomplete self-pruning clause and no admissible typed draft. Correctly withheld, no success credit.",
+      "claims": [],
+      "raw_clause_review": "O1 plant-tissue joining, roles, vascular requirement, inosculation, propagation and soil/top-work qualifiers match P1. O2 removal targets, young-versus-mature preference and energy-related self-pruning match P4-P6, but final clause truncates."
+    },
+    "s16": {
+      "result_sha256": "7c65d66396cddd75a2d9f2a766be503eccf2a2d1673bf11a77b8c13314be662a",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Both requested obligations are covered. O2 uses supported removal targets such as diseased/damaged/dead material, rather than transferring smaller-wound compartmentalization into a general pruning reason; prose is repetitive but usable.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.3 directly requires vascular tissues to grow together."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P5.1 supports removal of diseased/damaged/dead/nonproductive/unsound material; no pathogen-limit extrapolation is added."
+        }
+      ]
+    },
+    "s17": {
+      "result_sha256": "3afe32cd0056708d90423a6e4ae3db0adffc9361cf2acdb05f9e1d27aaf6c12f",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct raw false-premise explanation cites P1.3 but uses W, so the bound-answer route withholds it. This is lost useful draft potential, not a publication success.",
+      "claims": []
+    },
+    "s18": {
+      "result_sha256": "b3d63f086dc0d9a3daf54d5b55e24c314da2992f2082f41d82535b2225ea80be",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Appropriate withholding of live/local nursery price comparison; no source establishes specific trees or prices.",
+      "claims": []
+    },
+    "s19": {
+      "result_sha256": "6ca2da9699d99990a35bb308e9ee466321383979a3f00fbc43a3d84ead290d30",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Retains both single-comprehensive codification condition and the broader single-or-multiple-documents written definition. No reversal of codified/uncodified roles.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P2.1 directly supplies the distinction, P2.2 gives the multi-document uncodified example."
+        }
+      ]
+    },
+    "s20": {
+      "result_sha256": "67fd21d6037617c2f107eab887320ace8707c14f8de858105d37458e98a9cc70",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Raw answer correctly explains varying monarch powers, but W classification suppresses a supported answer and supplies no typed references. Lost useful content potential.",
+      "claims": []
+    },
+    "s21": {
+      "result_sha256": "bef1a073007bc71fcdd55f022883edfd08b4fc8ea6c145ac9a7e850c377beced",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": false,
+      "fully_useful_draft": false,
+      "assessment": "Draft copies constitution/monarchy descriptions then truncates mid-country list at320tokens. Requested comparison is not delivered as complete bounded prose. Raw references also include unavailable P1.2; no source-binding success.",
+      "claims": []
+    },
+    "s22": {
+      "result_sha256": "c7dbea4bc1b2bfd95b78122f7297185baf4c1f8a740bf4b1b67eef58b14d275f",
+      "all_claims_supported": false,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Codified definition improperly accepts a set of documents instead of requiring a single comprehensive document. Same-model audit misses this material condition error.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P2.1 distinguishes written single/set from codified single-comprehensive; draft conflates them. Uncodified UK example portion otherwise supported by P2.2."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P5.1-P5.2 correctly support differing symbolic versus formal veto/appointment/dissolution powers."
         }
       ]
     }
