@@ -20,7 +20,7 @@ def inspect(path):
    body=apk.read(info);name,extra=struct.unpack_from('<HH',raw,info.header_offset+26);start=info.header_offset+30+name+extra
    r=elf(body);r.update(name=info.filename,sha256=hashlib.sha256(body).hexdigest(),bytes=len(body),zip_offset=start,uncompressed=info.compress_type==0)
    r['zip_valid']=r['uncompressed'] and start%PAGE==0;rows.append(r)
- expected={f'lib/{a}/{n}.so' for a in ['arm64-v8a','x86_64'] for n in ['libpocketlore','libpocketlore_index']}
+ expected={f'lib/{a}/{n}.so' for a in ['arm64-v8a','x86_64'] for n in ['libpocketlore','libpocketlore_index','libpocketlore_attachments']}
  valid={r['name'] for r in rows}==expected and all(r['valid'] and r['zip_valid'] and r['machine']==(183 if '/arm64-v8a/' in r['name'] else 62) for r in rows)
  return {'apk_sha256':hashlib.sha256(raw).hexdigest(),'apk_bytes':len(raw),'libraries':rows,'valid':valid}
 if __name__=='__main__':

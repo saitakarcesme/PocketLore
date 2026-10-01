@@ -1,0 +1,1231 @@
+diff --git i/android/app/src/main/AndroidManifest.xml w/android/app/src/main/AndroidManifest.xml
+index f5026a3..89b920c 100644
+--- i/android/app/src/main/AndroidManifest.xml
++++ w/android/app/src/main/AndroidManifest.xml
+@@ -1,6 +1,9 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+     <application android:allowBackup="false" android:label="PocketLore" android:supportsRtl="true" android:theme="@style/PocketLoreTheme">
++        <provider android:name=".NotebookExportProvider" android:authorities="${applicationId}.notebook" android:exported="false" android:grantUriPermissions="true" />
++        <activity android:name=".SavedActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
++        <activity android:name=".SourceReaderActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+         <activity android:name=".ScaleActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+         <activity android:name=".TravelActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+         <activity android:name=".MainActivity" android:exported="true" android:windowSoftInputMode="adjustResize">
+diff --git i/android/app/src/main/cpp/CMakeLists.txt w/android/app/src/main/cpp/CMakeLists.txt
+index caf740d..d2847ce 100644
+--- i/android/app/src/main/cpp/CMakeLists.txt
++++ w/android/app/src/main/cpp/CMakeLists.txt
+@@ -14,3 +14,6 @@ target_compile_definitions(pocketlore PRIVATE POCKETLORE_REVISION="${POCKETLORE_
+ 
+ # Memory accounting API belongs to the exact immutable pinned llama.cpp revision.
+ target_include_directories(pocketlore PRIVATE "${LLAMA_SOURCE}/src")
++
++# NDK r27: align LOAD and RELRO for both 4 KB and 16 KB Android kernels.
++target_link_options(pocketlore PRIVATE "-Wl,-z,max-page-size=16384" "-Wl,-z,common-page-size=16384")
+diff --git i/android/app/src/main/java/org/pocketlore/app/MainActivity.java w/android/app/src/main/java/org/pocketlore/app/MainActivity.java
+index 6df4311..223f1a2 100644
+--- i/android/app/src/main/java/org/pocketlore/app/MainActivity.java
++++ w/android/app/src/main/java/org/pocketlore/app/MainActivity.java
+@@ -20,13 +20,19 @@ import java.util.concurrent.Executors;
+ 
+ public final class MainActivity extends Activity {
+     private ScrollView[] screenViews;
+-    private Spinner screenNavigation;
++    private LinearLayout answerActions, homeCollections, recentResearch, intro, composer;
++    private TextView resultQuestion;
++    private Button editQuestion;
++    private Button compareAction;
++    private TextView historyState;
++    private String activeQuestion="",restoredAnswer="";
++    private AnswerEngine.Outcome savedOutcome;
+     private int selectedScreen;
+     private ResearchEngine engine;
+     private PackLibrary library;
+     private PackLibrary.Snapshot catalog;
+     private Button collections, reloadLibrary, removeCollection;
+-    private boolean searching;
++    private boolean searching, restoredEditing, hasSnapshot;
+     private long libraryEpoch;
+     private ResearchEngine.Result latestEvidence;
+     private NativePanel nativePanel;
+@@ -44,28 +50,14 @@ public final class MainActivity extends Activity {
+ 
+     @Override public void onCreate(Bundle state) {
+         super.onCreate(state);
+-        LinearLayout root=new LinearLayout(this);root.setOrientation(LinearLayout.VERTICAL);
+-        setContentView(root);ReaderUi.insets(this,root);
+-        LinearLayout header=ReaderUi.column(this);header.setPadding(dp(20),dp(8),dp(20),0);root.addView(header);
+-        TextView title=text("PocketLore",30);ReaderUi.heading(title);header.addView(title);
+-        header.addView(text("Offline • On-device research",14));
+-        Spinner navigation=new Spinner(this);navigation.setMinimumHeight(dp(48));navigation.setContentDescription("Screen navigation");
+-        navigation.setAdapter(new android.widget.ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,new String[]{"Research","Library","Storage & settings"}));header.addView(navigation);
+-        android.widget.FrameLayout pages=new android.widget.FrameLayout(this);root.addView(pages,new LinearLayout.LayoutParams(-1,0,1));
+-        LinearLayout research=ReaderUi.column(this), libraryPage=ReaderUi.column(this), layout=ReaderUi.column(this);
+-        LinearLayout[] bodies={research,libraryPage,layout};
+-        screenViews=new ScrollView[3];
+-        for(int i=0;i<3;i++){screenViews[i]=new ScrollView(this);screenViews[i].setFillViewport(true);screenViews[i].setVisibility(i==(state==null?0:state.getInt("screen",0))?View.VISIBLE:View.GONE);screenViews[i].addView(bodies[i]);pages.addView(screenViews[i]);}
+-        navigation.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener(){
+-            public void onNothingSelected(android.widget.AdapterView<?> p){}
+-            public void onItemSelected(android.widget.AdapterView<?> p,View v,int position,long id){selectedScreen=position;for(int i=0;i<3;i++)screenViews[i].setVisibility(i==position?View.VISIBLE:View.GONE);}
+-        });
+-        screenNavigation=navigation;navigation.setSelection(state==null?0:state.getInt("screen",0));
+-        TextView libraryTitle=text("Your offline library",24);ReaderUi.heading(libraryTitle);libraryPage.addView(libraryTitle);
+-        libraryPage.addView(text("Search installed Knowledge and Places collections. Source records remain separate from generated answers until their rights and support are reviewed.",16));
+-        for(String destination:new String[]{"Knowledge","Places"}){Button b=new Button(this);b.setText(destination);libraryPage.addView(b);b.setOnClickListener(v->startActivity(new android.content.Intent(this,ScaleActivity.class).putExtra("section",destination)));}
+-        Button travel = new Button(this);travel.setText("Regional travel & offline tools");libraryPage.addView(travel);
+-        travel.setOnClickListener(v -> startActivity(new android.content.Intent(this, TravelActivity.class)));
++        if(state!=null){restoredAnswer=state.getString("answerSnapshot","");hasSnapshot=!restoredAnswer.isEmpty();activeQuestion=state.getString("answerQuestion","");restoredEditing=state.getBoolean("editing",false);}
++        LinearLayout root=ReaderUi.shell(this,"Research");
++        android.widget.FrameLayout pages=new android.widget.FrameLayout(this);root.addView(pages,1,new LinearLayout.LayoutParams(-1,0,1));
++        LinearLayout research=ReaderUi.column(this),layout=ReaderUi.column(this);
++        LinearLayout[] bodies={research,layout};screenViews=new ScrollView[2];
++        for(int i=0;i<2;i++){screenViews[i]=new ScrollView(this);screenViews[i].setFillViewport(true);screenViews[i].addView(bodies[i]);pages.addView(screenViews[i]);}
++        selectedScreen=state==null?0:state.getInt("screen",0);setScreen(getIntent().getBooleanExtra("settings",false)?1:selectedScreen);
++        ReaderUi.button(this,layout,"Return to research",this::showResearch);
+         TextView storageTitle=text("Storage & settings",24);ReaderUi.heading(storageTitle);layout.addView(storageTitle);
+         layout.addView(text("Device free space: "+android.text.format.Formatter.formatFileSize(this,getFilesDir().getUsableSpace())+" at screen creation. Import checks run again before copying.",14));
+         packStatus = text("Bundled water-science starter pack", 14); layout.addView(packStatus);
+@@ -80,35 +72,56 @@ public final class MainActivity extends Activity {
+         layout.addView(text("Setup: obtain packs and GGUF files before going offline. Imports retain the original file and need free space for a full copy plus 256 MiB. Large SQLite packs also need space for their expanded index. Unsupported pack formats are rejected. Source rights and dates must be inspected for each edition.",14));
+         reloadLibrary=new Button(this);reloadLibrary.setText("Reload library");layout.addView(reloadLibrary);reloadLibrary.setOnClickListener(v->loadLibrary());
+         Button cancelImport=new Button(this);cancelImport.setText("Cancel pack import");layout.addView(cancelImport);ReaderUi.status(packStatus);cancelImport.setOnClickListener(v->{cancelPack=true;if(packThread!=null)packThread.interrupt();});
+-        TextView prompt=text("Ask your library",24);ReaderUi.heading(prompt);research.addView(prompt);
++        intro=new LinearLayout(this);intro.setOrientation(1);research.addView(intro);ReaderUi.title(this,intro,"A little curiosity.\nA deeper understanding.","Your offline research notebook");
++        composer=new LinearLayout(this);composer.setOrientation(1);ReaderUi.card(this,composer);LinearLayout.LayoutParams cp=new LinearLayout.LayoutParams(-1,-2);cp.topMargin=dp(20);cp.bottomMargin=dp(16);research.addView(composer,cp);
+         question = new EditText(this);
+-        ReaderUi.label(this,research,question,"Question");
+-        question.setHint("Ask about an installed source");
+-        question.setMinLines(2); question.setMaxLines(5); question.setTextSize(18);
+-        question.setContentDescription("Research question"); research.addView(question);
+-        search = new Button(this); search.setText("Answer offline"); research.addView(search);
+-        LinearLayout actions = new LinearLayout(this); actions.setOrientation(LinearLayout.VERTICAL); research.addView(actions);
+-        status = text("Loading installed knowledge pack…", 14); status.setContentDescription("Answer status"); research.addView(status);
+-        answer = text("Ask a question to inspect evidence stored on this device. The bundled starter covers water science. Imported packs are dated references, not current travel or medical advice.", 18);
+-        ReaderUi.status(status); answer.setLineSpacing(dp(4),1.12f); ReaderUi.card(this,answer); answer.setTextIsSelectable(true); answer.setContentDescription("Offline answer"); research.addView(answer);
++        ReaderUi.label(this,composer,question,"Your question");
++        question.setHint("What would you like to understand?");
++        question.setInputType(android.text.InputType.TYPE_CLASS_TEXT|android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE);
++        question.setMinLines(2); question.setMaxLines(6); question.setTextSize(20);question.setBackgroundTintList(android.content.res.ColorStateList.valueOf(ReaderUi.TEAL));
++        question.setContentDescription("Research question"); composer.addView(question);
++        search = new Button(this); search.setText("Research offline  →"); ReaderUi.styleButton(this,search,true);LinearLayout.LayoutParams submit=new LinearLayout.LayoutParams(-1,-2);submit.topMargin=dp(12);composer.addView(search,submit);
++        resultQuestion=text("",28);resultQuestion.setTypeface(android.graphics.Typeface.create("serif",0));ReaderUi.heading(resultQuestion);research.addView(resultQuestion);resultQuestion.setVisibility(View.GONE);
++        editQuestion=ReaderUi.button(this,research,"Edit question",()->{editResearch();question.requestFocus();screenViews[0].smoothScrollTo(0,0);});editQuestion.setVisibility(View.GONE);
++        answerActions = new LinearLayout(this); LinearLayout actions=answerActions; actions.setOrientation(LinearLayout.VERTICAL); research.addView(actions);
++        status = text("Loading installed knowledge pack…", 14); status.setTag("Answer status"); research.addView(status);
++        answer = text("", 18);answer.setVisibility(View.GONE);
++        ReaderUi.status(status); answer.setLineSpacing(dp(4),1.12f); ReaderUi.card(this,answer); answer.setTextIsSelectable(true); answer.setTag("Offline answer"); research.addView(answer);
+         sourceList = new LinearLayout(this); sourceList.setOrientation(LinearLayout.VERTICAL); research.addView(sourceList);
+         nativePanel = new NativePanel(this, layout, actions, answer, status, busy -> {
+-            updateControls();
++            updateControls(); captureCompleted();
+         }, id -> { if(latestEvidence!=null) for(ResearchEngine.Hit hit:latestEvidence.hits) if(hit.passage.id.equals(id)) inspect(hit); });
++        historyState=text("",16);research.addView(historyState);historyState.setVisibility(View.GONE);
++        compareAction=ReaderUi.button(this,research,"Compare retrieved sources",this::compareSources);compareAction.setVisibility(View.GONE);
++        homeCollections=new LinearLayout(this);homeCollections.setOrientation(1);research.addView(homeCollections);
++        recentResearch=new LinearLayout(this);recentResearch.setOrientation(1);research.addView(recentResearch);refreshRecent();
+         search.setEnabled(false);
+         search.setOnClickListener(v -> runSearch());
+-        if (state != null) question.setText(state.getString("question", ""));
++        question.setText(state!=null?state.getString("question", ""):getPreferences(0).getString("draft",""));
+         try{library=new PackLibrary(getFilesDir());loadLibrary();}
+         catch(Exception e){status.setText("Library unavailable: "+e.getMessage());}
+     }
++    private void editResearch(){resultMode(false);answer.setVisibility(View.GONE);sourceList.setVisibility(View.GONE);compareAction.setVisibility(View.GONE);historyState.setVisibility(View.GONE);status.setText("Edit your question, then research again");}
++    private void resultMode(boolean result){
++        intro.setVisibility(result?View.GONE:View.VISIBLE);composer.setVisibility(result?View.GONE:View.VISIBLE);resultQuestion.setText(activeQuestion.isEmpty()?question.getText():activeQuestion);resultQuestion.setVisibility(result?View.VISIBLE:View.GONE);editQuestion.setVisibility(result?View.VISIBLE:View.GONE);if(homeCollections!=null)homeCollections.setVisibility(result?View.GONE:View.VISIBLE);if(recentResearch!=null)recentResearch.setVisibility(result?View.GONE:View.VISIBLE);
++    }
++    private void showHomeCollections(){
++        homeCollections.removeAllViews();TextView title=text("On your bookshelf",22);ReaderUi.heading(title);homeCollections.addView(title);
++        if(catalog!=null&&!catalog.entries.isEmpty())for(PackLibrary.Entry e:catalog.entries)ReaderUi.entry(this,homeCollections,e.id.replace('-',' '),e.active?"Active collection · Edition details":"Installed collection · Inactive",()->new AlertDialog.Builder(this).setTitle(e.id.replace('-',' ')).setMessage("Installed edition: "+e.hash+"\n\n"+(e.active?"Included when researching across active collections. Open citations in a result to read its exact sources.":"This collection is inactive. Enable it in Settings to include it in research.")).setPositiveButton("Close",null).setNeutralButton("Collection settings",(d,w)->showSettings()).show());
++        else ReaderUi.entry(this,homeCollections,"Water science","Bundled USGS source passages",()->ReaderUi.navigate(this,"Library"));
++    }
++    @Override protected void onResume(){super.onResume();refreshRecent();}
++    private void refreshRecent(){
++        if(recentResearch==null)return;NotebookActivity.IO.execute(()->{try(NotebookStore store=new NotebookStore(this)){java.util.List<NotebookStore.Entry> entries=store.list("",false);runOnUiThread(()->{if(destroyed)return;recentResearch.removeAllViews();TextView title=text("Pick up where you left off",22);ReaderUi.heading(title);recentResearch.addView(title);int count=0;for(NotebookStore.Entry e:entries){if(!e.kind.equals("research"))continue;ReaderUi.entry(this,recentResearch,e.title,android.text.format.DateFormat.format("MMM d · HH:mm",e.created).toString()+(e.bookmark?" · Bookmarked":" · Research"),()->startActivity(new android.content.Intent(this,SourceReaderActivity.class).putExtra("record",e.id)));if(++count==3)break;}if(count==0)recentResearch.addView(text("Your completed research will appear here. Start with a question above.",16));});}catch(Exception e){runOnUiThread(()->{if(!destroyed)recentResearch.addView(text("Saved research could not be read. Open Saved to retry.",16));});}});
++    }
+     private void updateControls(){
+-        if(nativePanel==null)return;boolean ready=!nativePanel.isBusy()&&!importing&&!searching;
++        if(nativePanel==null)return;if(answerActions!=null)answerActions.setVisibility(nativePanel.isBusy()?View.VISIBLE:View.GONE);boolean ready=!nativePanel.isBusy()&&!importing&&!searching;
+         search.setEnabled(ready&&engine!=null&&engine.size()>0);question.setEnabled(ready);importPack.setEnabled(ready);
+         collections.setEnabled(ready&&catalog!=null&&!catalog.entries.isEmpty());removeCollection.setEnabled(ready&&catalog!=null&&!catalog.entries.isEmpty());reloadLibrary.setEnabled(ready);
+     }
+     private void showLibrary(PackLibrary.Snapshot next){
+         catalog=next;engine=next.engine;latestEvidence=null;nativePanel.clearEvidence();sourceList.removeAllViews();
+-        packStatus.setText(next.description()+" · "+next.archiveBytes+" installed archive/index bytes"+(ImportRecovery.pending(getFilesDir(),"pack")?"\nPrevious import interrupted or failed. Installed editions retained; select the original file to restart verification.":""));status.setText("Active collections ready · No network permission");updateControls();
++        packStatus.setText(next.description()+" · "+next.archiveBytes+" installed archive/index bytes"+(ImportRecovery.pending(getFilesDir(),"pack")?"\nPrevious import interrupted or failed. Installed editions retained; select the original file to restart verification.":""));status.setText("Ready to research offline");showHomeCollections();updateControls();
+     }
+     private void loadLibrary(){
+         if(importing||searching)return;
+@@ -116,7 +129,7 @@ public final class MainActivity extends Activity {
+         packWorker.execute(()->{packThread=Thread.currentThread();try{
+             PackLibrary.Snapshot next=library.loadMigrating(new java.io.File(getFilesDir(),"knowledge.plpack"));
+             ResearchEngine starter=next.entries.isEmpty()?new ResearchEngine(new InputStreamReader(getAssets().open("water-science.tsv"),StandardCharsets.UTF_8)):null;
+-            runOnUiThread(()->{if(destroyed||epoch!=libraryEpoch)return;showLibrary(next);if(starter!=null){engine=starter;packStatus.setText("Bundled water-science starter · Import collections to build your library");}answer.setText("Select active collections, then ask a question to inspect their sources.");});
++            runOnUiThread(()->{if(destroyed||epoch!=libraryEpoch)return;showLibrary(next);if(starter!=null){engine=starter;packStatus.setText("Bundled water-science starter · Import collections to build your library");}if(starter!=null)showHomeCollections();if(!restoredAnswer.isEmpty()){answer.setVisibility(View.VISIBLE);answer.setText(restoredAnswer);resultMode(true);status.setText("Restored snapshot · Open last saved research for source details");restoredAnswer="";if(restoredEditing)editResearch();}else answer.setVisibility(View.GONE);});
+         }catch(Exception|OutOfMemoryError e){runOnUiThread(()->{if(!destroyed)status.setText("Library could not be loaded; saved collections retained. "+e.getMessage());});}
+         finally{packThread=null;Thread.interrupted();runOnUiThread(()->{if(!destroyed){importing=false;updateControls();}});}});
+     }
+@@ -152,10 +165,10 @@ public final class MainActivity extends Activity {
+     }
+     private void runSearch() {
+         if (nativePanel.isBusy() || importing || engine == null) return;
+-        String query = question.getText().toString().trim();
++        String query = question.getText().toString().trim(); activeQuestion=query;
+         if (query.isEmpty()) { question.setError("Enter a research question"); return; }
+         ((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(question.getWindowToken(), 0);
+-        nativePanel.clearAnswer(); sourceList.removeAllViews();
++        resultMode(true);sourceList.setVisibility(View.VISIBLE);screenViews[0].smoothScrollTo(0,0);hasSnapshot=false;nativePanel.clearAnswer(); answer.setVisibility(View.VISIBLE);sourceList.removeAllViews();compareAction.setVisibility(View.GONE);
+         searching=true;updateControls();status.setText("Searching active collections…");
+         final ResearchEngine selectedEngine=engine;final long epoch=libraryEpoch;
+         worker.execute(() -> {
+@@ -173,41 +186,56 @@ public final class MainActivity extends Activity {
+                 status.setText(String.format(Locale.ROOT, "%d passages retrieved · %.1f ms on this device · Offline", result.hits.size(), millis));
+                 sourceList.removeAllViews();
+                 for (ResearchEngine.Hit hit : result.hits) {
++                    LinearLayout sourceCard=new LinearLayout(this);sourceCard.setOrientation(1);ReaderUi.card(this,sourceCard);LinearLayout.LayoutParams sourceParams=new LinearLayout.LayoutParams(-1,-2);sourceParams.topMargin=dp(16);sourceList.addView(sourceCard,sourceParams);
+                     Button source = new Button(this);
+-                    TextView quote=text("Source excerpt\n"+hit.passage.text,16);quote.setMaxLines(4);quote.setEllipsize(android.text.TextUtils.TruncateAt.END);sourceList.addView(quote);
++                    TextView quote=text("Source excerpt\n"+hit.passage.text,16);quote.setMaxLines(4);quote.setEllipsize(android.text.TextUtils.TruncateAt.END);sourceCard.addView(quote);
+                     source.setText("Inspect source: " + hit.passage.title);
+-                    source.setAllCaps(false);
++                    source.setAllCaps(false);ReaderUi.styleButton(this,source,false);
+                     source.setOnClickListener(v -> inspect(hit));
+-                    sourceList.addView(source);
++                    sourceCard.addView(source);
+                 }
+-                latestEvidence=result;nativePanel.answer(query, result);
++                latestEvidence=result;compareAction.setVisibility(result.hits.size()>=2?View.VISIBLE:View.GONE);nativePanel.answer(query, result);screenViews[0].post(()->answer.requestRectangleOnScreen(new android.graphics.Rect(0,0,answer.getWidth(),Math.min(answer.getHeight(),dp(120))),false));
+             });
+         });
+     }
+     AnswerEngine.Outcome latestAnswer() { return nativePanel.outcome(); }
+     boolean modelReady() { return nativePanel.hasModel() && !nativePanel.isBusy(); }
++    private String sourceDetail(ResearchEngine.Hit hit){
++        ResearchEngine.Passage p=hit.passage;
++        return p.text+"\n\nSource document: "+p.title+"\n"+p.url+"\nSource date / retrieval: "+known(p.sourceDate)+"\nRights: "+known(p.license)+"\nCitation: ["+p.id+"]\n"+p.collectionProvenance+"\n\n"+(p.id.startsWith("water-")?"Pack text is a verbatim USGS paragraph with whitespace normalized.":"Pack text is selected source text with whitespace normalized.")+" URLs are provenance labels, not network links."+String.format(Locale.ROOT,"\nRetrieval rank score: %.3f (not confidence)",hit.score);
++    }
+     private void inspect(ResearchEngine.Hit hit) {
+-        ResearchEngine.Passage p = hit.passage;
+-        TextView detail = text(p.title + "\n\n" + p.text + "\n\nSource document: " + p.title + "\n" + p.url
+-            + "\n\nSource date / retrieval: " + known(p.sourceDate) + "\nRights: " + known(p.license)
+-            + "\n\nCitation: [" + p.id + "]\n" + p.collectionProvenance
+-            + (p.id.startsWith("water-") ? "\n\nPack text is a verbatim USGS paragraph with whitespace normalized." : "\n\nPack text is selected source text with whitespace normalized.") + " Source URLs are provenance labels; the app does not open them."
+-            + String.format(Locale.ROOT, "\n\nRetrieval rank score: %.3f (not confidence)", hit.score), 16);
+-        detail.setTextIsSelectable(true); detail.setPadding(dp(20), dp(10), dp(20), dp(10));
+-        ScrollView scroll = new ScrollView(this); scroll.addView(detail);
+-        AlertDialog.Builder dialog=new AlertDialog.Builder(this).setView(scroll).setPositiveButton("Close", null);
+-        if(p.id.matches("p[0-9a-f]{64}_wiki-.*"))dialog.setNeutralButton("License",(d,w)->{
+-            try{TextView license=text(BroadPack.licenseText(getFilesDir(),p.id),14);ScrollView view=new ScrollView(this);view.addView(license);new AlertDialog.Builder(this).setTitle("CC BY-SA 4.0 · offline license").setView(view).setPositiveButton("Close",null).show();}
+-            catch(Exception e){new AlertDialog.Builder(this).setMessage("Cannot read saved license: "+e.getMessage()).setPositiveButton("Close",null).show();}
+-        });dialog.show();
++        String detail=sourceDetail(hit);
++        if(hit.passage.id.matches("p[0-9a-f]{64}_wiki-.*"))try{detail+="\n\nOffline license\n"+BroadPack.licenseText(getFilesDir(),hit.passage.id);}catch(Exception e){detail+="\nSaved license unavailable: "+e.getMessage();}
++        ReaderUi.openSource(this,hit.passage.title,detail,"Retrieved passage only. Coverage is limited to active installed editions. Source date and rights are supplied above; Unknown means unavailable.");
++    }
++    private void captureCompleted(){
++        if(nativePanel==null||nativePanel.isBusy())return;AnswerEngine.Outcome result=nativePanel.outcome();
++        if(result==null||result==savedOutcome||result.kind==AnswerEngine.Kind.CANCELLED)return;savedOutcome=result;
++        String q=activeQuestion;StringBuilder sources=new StringBuilder("Result label: "+result.kind+"\nReason: "+result.reason+"\nSaved sources are snapshots, not proof of answer quality.\n\n");
++        if(latestEvidence!=null)for(ResearchEngine.Hit hit:latestEvidence.hits)sources.append(sourceDetail(hit)).append("\n\n");
++        NotebookActivity.IO.execute(()->{try(NotebookStore store=new NotebookStore(this)){long id=store.add("research",q,q,result.text,sources.toString(),false);getPreferences(0).edit().putLong("lastRecord",id).apply();runOnUiThread(()->{if(!destroyed){historyState.setVisibility(View.VISIBLE);historyState.setText("Saved to your notebook");refreshRecent();}});}catch(Exception e){runOnUiThread(()->{if(!destroyed){historyState.setVisibility(View.VISIBLE);historyState.setText("Research was not saved: "+e.getMessage());}});}});
++    }
++    private void compareSources(){
++        if(latestEvidence==null||latestEvidence.hits.size()<2){historyState.setText("At least two real retrieved sources are required. You can also compare two records in Saved.");return;}
++        java.util.List<ResearchEngine.Hit> hits=latestEvidence.hits;String[] titles=new String[hits.size()];boolean[] checked=new boolean[hits.size()];for(int i=0;i<titles.length;i++)titles[i]=hits.get(i).passage.title;
++        new AlertDialog.Builder(this).setTitle("Choose two source passages").setMultiChoiceItems(titles,checked,(d,i,on)->checked[i]=on).setNegativeButton("Cancel",null).setPositiveButton("Compare",(d,w)->{
++            java.util.List<ResearchEngine.Hit> selected=new java.util.ArrayList<>();for(int i=0;i<checked.length;i++)if(checked[i])selected.add(hits.get(i));if(selected.size()!=2){historyState.setText("Select exactly two sources.");return;}
++            NotebookActivity.IO.execute(()->{try(NotebookStore store=new NotebookStore(this)){long first=store.add("source",selected.get(0).passage.title,activeQuestion,sourceDetail(selected.get(0)),"Retrieved passage; no new inference or verification.",false);long second=store.add("source",selected.get(1).passage.title,activeQuestion,sourceDetail(selected.get(1)),"Retrieved passage; no new inference or verification.",false);runOnUiThread(()->startActivity(new android.content.Intent(this,SourceReaderActivity.class).putExtra("record",first).putExtra("compare",second)));}catch(Exception e){runOnUiThread(()->historyState.setText("Comparison unavailable: "+e.getMessage()));}});
++        }).show();
+     }
+     private static String known(String value){return value==null||value.trim().isEmpty()?"Unknown":value;}
+     private TextView text(String value, int size) {
+         return ReaderUi.text(this,value,size);
+     }
+     private int dp(int value) { return Math.round(value * getResources().getDisplayMetrics().density); }
+-    @Override protected void onSaveInstanceState(Bundle state) { super.onSaveInstanceState(state); state.putString("question", question.getText().toString()); state.putInt("screen",selectedScreen); }
+-    @Override public void onBackPressed(){if(selectedScreen!=0){screenNavigation.setSelection(0);}else super.onBackPressed();}
++    @Override protected void onSaveInstanceState(Bundle state) { super.onSaveInstanceState(state); state.putString("question", question.getText().toString()); state.putInt("screen",selectedScreen);state.putString("answerQuestion",activeQuestion);state.putBoolean("editing",composer.getVisibility()==View.VISIBLE);if(nativePanel!=null&&(hasSnapshot||nativePanel.outcome()!=null||status.getText().toString().startsWith("Restored snapshot"))&&answer.length()<128000)state.putString("answerSnapshot",answer.getText().toString()); }
++    private void setScreen(int screen){selectedScreen=screen==1?1:0;for(int i=0;i<screenViews.length;i++)screenViews[i].setVisibility(i==selectedScreen?View.VISIBLE:View.GONE);}
++    void showResearch(){setScreen(0);}
++    void showSettings(){setScreen(1);}
++    @Override protected void onNewIntent(android.content.Intent intent){super.onNewIntent(intent);setIntent(intent);setScreen(intent.getBooleanExtra("settings",false)?1:0);}
++    @Override protected void onPause(){super.onPause();if(question!=null)getPreferences(0).edit().putString("draft",question.getText().toString()).apply();}
++    @Override public void onBackPressed(){if(selectedScreen!=0)showResearch();else super.onBackPressed();}
+     @Override protected void onActivityResult(int request, int result, android.content.Intent data) {
+         super.onActivityResult(request, result, data);
+         if (request == PICK_PACK && result == RESULT_OK && data != null && data.getData() != null) {
+diff --git i/android/app/src/main/java/org/pocketlore/app/ReaderUi.java w/android/app/src/main/java/org/pocketlore/app/ReaderUi.java
+index 3e25c45..219e140 100644
+--- i/android/app/src/main/java/org/pocketlore/app/ReaderUi.java
++++ w/android/app/src/main/java/org/pocketlore/app/ReaderUi.java
+@@ -8,24 +8,25 @@ import android.widget.*;
+ 
+ /** Shared native reading surfaces; no data or answer policy belongs here. */
+ final class ReaderUi {
+-    static final int NAVY = Color.rgb(16,29,43), CREAM = Color.rgb(244,238,221);
++    static final int TEAL = Color.rgb(36,91,67);
++    static final int NAVY = Color.rgb(247,244,236), CREAM = Color.rgb(32,38,33);
+     static int dp(Activity a, int n) { return Math.round(n*a.getResources().getDisplayMetrics().density); }
+     static LinearLayout column(Activity a) {
+         LinearLayout v=new LinearLayout(a);v.setOrientation(LinearLayout.VERTICAL);
+-        v.setPadding(dp(a,20),dp(a,12),dp(a,20),dp(a,24));return v;
++        v.setPadding(dp(a,24),dp(a,16),dp(a,24),dp(a,32));return v;
+     }
+     static TextView text(Activity a,String value,int size) {
+-        TextView t=new TextView(a);t.setText(value);t.setTextSize(size);t.setTextColor(CREAM);
++        TextView t=new TextView(a);t.setText(value);t.setTextSize(Math.max(16,size));t.setTextColor(CREAM);
+         t.setPadding(0,dp(a,8),0,dp(a,8));t.setLineSpacing(dp(a,3),1.08f);return t;
+     }
+     static void heading(TextView t) { t.setAccessibilityHeading(true); }
+     static void status(TextView t) { t.setAccessibilityLiveRegion(View.ACCESSIBILITY_LIVE_REGION_POLITE); }
+     static void insets(Activity a, View root) {
+         if(android.os.Build.VERSION.SDK_INT>=30)a.getWindow().setDecorFitsSystemWindows(false);
+-        root.setBackgroundColor(NAVY);a.getWindow().getDecorView().setSystemUiVisibility(0);
++        root.setBackgroundColor(NAVY);a.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR|View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+         a.getWindow().setStatusBarColor(NAVY);a.getWindow().setNavigationBarColor(NAVY);
+         root.setOnApplyWindowInsetsListener((v,i)->{
+-            if(android.os.Build.VERSION.SDK_INT>=30){android.graphics.Insets b=i.getInsets(WindowInsets.Type.systemBars()|WindowInsets.Type.ime());v.setPadding(b.left,b.top,b.right,b.bottom);}
++            if(android.os.Build.VERSION.SDK_INT>=30){android.graphics.Insets b=i.getInsets(WindowInsets.Type.systemBars()|WindowInsets.Type.ime());v.setPadding(b.left,b.top,b.right,b.bottom);View navigation=v.findViewWithTag("destination-nav");if(navigation!=null)navigation.setVisibility(i.isVisible(WindowInsets.Type.ime())?View.GONE:View.VISIBLE);}
+             else v.setPadding(i.getSystemWindowInsetLeft(),i.getSystemWindowInsetTop(),i.getSystemWindowInsetRight(),i.getSystemWindowInsetBottom());
+             return i;
+         });
+@@ -35,10 +36,63 @@ final class ReaderUi {
+         TextView label=text(a,title,14);label.setLabelFor(field.getId());box.addView(label);
+         field.setContentDescription(title);
+     }
+-    static void card(Activity a, View view) {
+-        android.graphics.drawable.GradientDrawable background=new android.graphics.drawable.GradientDrawable();
+-        background.setColor(Color.rgb(27,45,62));background.setCornerRadius(dp(a,12));
+-        view.setBackground(background);view.setPadding(dp(a,16),dp(a,12),dp(a,16),dp(a,12));
++    static android.graphics.drawable.Drawable surface(Activity a,int color,int radius,boolean border) {
++        android.graphics.drawable.GradientDrawable normal=new android.graphics.drawable.GradientDrawable();normal.setColor(color);normal.setCornerRadius(dp(a,radius));
++        if(border)normal.setStroke(dp(a,1),Color.rgb(205,211,201));
++        android.graphics.drawable.GradientDrawable focus=new android.graphics.drawable.GradientDrawable();focus.setColor(color);focus.setCornerRadius(dp(a,radius));focus.setStroke(dp(a,3),TEAL);
++        android.graphics.drawable.StateListDrawable states=new android.graphics.drawable.StateListDrawable();states.addState(new int[]{android.R.attr.state_focused},focus);states.addState(new int[]{},normal);
++        return new android.graphics.drawable.RippleDrawable(android.content.res.ColorStateList.valueOf(0x22245B43),states,null);
++    }
++    static void styleButton(Activity a,Button b,boolean primary){
++        b.setBackground(surface(a,primary?TEAL:Color.TRANSPARENT,12,false));b.setBackgroundTintList(null);b.setTextColor(primary?NAVY:TEAL);b.setPadding(dp(a,12),dp(a,10),dp(a,12),dp(a,10));
++        b.setStateListAnimator(null);b.setElevation(0);b.setMinHeight(dp(a,48));b.setMinWidth(dp(a,48));b.setAllCaps(false);b.setGravity(android.view.Gravity.CENTER_VERTICAL|android.view.Gravity.START);b.setTextSize(16);
++    }
++    static void card(Activity a, View view) {view.setBackground(surface(a,Color.rgb(238,238,229),16,false));view.setPadding(dp(a,20),dp(a,16),dp(a,20),dp(a,16));}
++    static void entry(Activity a,LinearLayout box,String title,String detail,Runnable action){
++        LinearLayout row=new LinearLayout(a);row.setOrientation(1);row.setBackground(surface(a,Color.TRANSPARENT,8,false));row.setPadding(0,dp(a,12),0,dp(a,12));row.setMinimumHeight(dp(a,64));
++        TextView name=text(a,title,20);name.setTypeface(android.graphics.Typeface.create("sans-serif-medium",0));row.addView(name);TextView sub=text(a,detail,16);sub.setTextColor(Color.rgb(89,99,91));row.addView(sub);
++        row.setFocusable(true);row.setClickable(true);row.setContentDescription(title+". "+detail);row.setOnClickListener(v->action.run());row.setAccessibilityDelegate(new View.AccessibilityDelegate(){@Override public void onInitializeAccessibilityNodeInfo(View host,android.view.accessibility.AccessibilityNodeInfo info){super.onInitializeAccessibilityNodeInfo(host,info);info.setClassName(Button.class.getName());}});name.setImportantForAccessibility(2);sub.setImportantForAccessibility(2);box.addView(row);
++        View rule=new View(a);rule.setBackgroundColor(0xFFDADFD4);box.addView(rule,new LinearLayout.LayoutParams(-1,dp(a,1)));
++    }
++    static Button button(Activity a,LinearLayout box,String label,Runnable action) {
++        Button b=new Button(a);b.setText(label);b.setAllCaps(false);b.setTextSize(16);b.setMinHeight(dp(a,48));b.setMinWidth(dp(a,48));
++        styleButton(a,b,false);LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(-1,-2);params.topMargin=dp(a,4);params.bottomMargin=dp(a,4);box.addView(b,params);b.setOnClickListener(v->action.run());return b;
++    }
++    static void title(Activity a,LinearLayout box,String title,String subtitle){TextView heading=text(a,title,32);heading.setTypeface(android.graphics.Typeface.create("serif",0));heading(heading);box.addView(heading);box.addView(text(a,subtitle,16));}
++    static void navigate(Activity a,String destination){
++        if(destination.equals("Research") && a instanceof MainActivity){((MainActivity)a).showResearch();return;}
++        android.content.Intent intent;
++        if(destination.equals("Research"))intent=new android.content.Intent(a,MainActivity.class).addFlags(android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP|android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP);
++        else if(destination.equals("Saved"))intent=new android.content.Intent(a,SavedActivity.class);
++        else intent=new android.content.Intent(a,ScaleActivity.class).putExtra("section",destination.equals("Explore")?"Places":"Knowledge");
++        a.startActivity(intent);if(!(a instanceof MainActivity))a.finish();
++    }
++    static final class Icon extends android.graphics.drawable.Drawable {
++        final String kind; final android.graphics.Paint p=new android.graphics.Paint(3); Icon(String k){kind=k;}
++        public void draw(android.graphics.Canvas c){c.save();c.translate(getBounds().left,getBounds().top);c.scale(getBounds().width()/24f,getBounds().height()/24f);p.setColor(TEAL);p.setStyle(android.graphics.Paint.Style.STROKE);p.setStrokeWidth(1.7f);p.setStrokeCap(android.graphics.Paint.Cap.ROUND);p.setStrokeJoin(android.graphics.Paint.Join.ROUND);
++            android.graphics.Path q=new android.graphics.Path();
++            if(kind.equals("Research")){c.drawCircle(10,10,6,p);c.drawLine(15,15,21,21,p);}
++            else if(kind.equals("Library")){q.moveTo(3,4);q.lineTo(10,4);q.lineTo(12,6);q.lineTo(14,4);q.lineTo(21,4);q.lineTo(21,20);q.lineTo(14,20);q.lineTo(12,22);q.lineTo(10,20);q.lineTo(3,20);q.close();c.drawPath(q,p);c.drawLine(12,6,12,21,p);}
++            else if(kind.equals("Explore")){c.drawCircle(12,12,9,p);q.moveTo(16,8);q.lineTo(14,14);q.lineTo(8,16);q.lineTo(10,10);q.close();c.drawPath(q,p);}
++            else if(kind.equals("Saved")){q.moveTo(6,3);q.lineTo(18,3);q.lineTo(18,21);q.lineTo(12,17);q.lineTo(6,21);q.close();c.drawPath(q,p);}
++            else {c.drawLine(4,6,20,6,p);c.drawLine(4,12,20,12,p);c.drawLine(4,18,20,18,p);c.drawCircle(9,6,2,p);c.drawCircle(16,12,2,p);c.drawCircle(8,18,2,p);}c.restore();}
++        public void setAlpha(int a){p.setAlpha(a);}public void setColorFilter(android.graphics.ColorFilter f){p.setColorFilter(f);}public int getOpacity(){return android.graphics.PixelFormat.TRANSLUCENT;}
++    }
++    static LinearLayout shell(Activity a,String selected){
++        LinearLayout root=new LinearLayout(a);root.setOrientation(1);a.setContentView(root);insets(a,root);
++        LinearLayout bar=new LinearLayout(a);bar.setGravity(android.view.Gravity.CENTER_VERTICAL);bar.setPadding(dp(a,24),dp(a,4),dp(a,16),dp(a,4));
++        TextView brand=text(a,"PocketLore",20);brand.setTypeface(android.graphics.Typeface.create("serif",android.graphics.Typeface.BOLD));bar.addView(brand,new LinearLayout.LayoutParams(0,-2,1));
++        TextView offline=text(a,"Offline",16);offline.setTextColor(TEAL);bar.addView(offline);
++        android.widget.ImageButton settings=new android.widget.ImageButton(a);settings.setImageDrawable(new Icon("Settings"));settings.setPadding(dp(a,13),dp(a,13),dp(a,13),dp(a,13));settings.setContentDescription("Settings");settings.setBackground(surface(a,Color.TRANSPARENT,24,false));bar.addView(settings,new LinearLayout.LayoutParams(dp(a,48),dp(a,48)));settings.setOnClickListener(v->{if(a instanceof MainActivity)((MainActivity)a).showSettings();else a.startActivity(new android.content.Intent(a,MainActivity.class).addFlags(android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP|android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP).putExtra("settings",true));});root.addView(bar);
++        LinearLayout nav=new LinearLayout(a);nav.setOrientation(1);nav.setTag("destination-nav");nav.setPadding(dp(a,12),dp(a,8),dp(a,12),dp(a,4));
++        String[] names={"Research","Library","Explore","Saved"};int columns=a.getResources().getConfiguration().fontScale>1.5?2:4;
++        LinearLayout row=null;for(int n=0;n<names.length;n++){if(n%columns==0){row=new LinearLayout(a);nav.addView(row);}String name=names[n];Button b=new Button(a);b.setText(name);styleButton(a,b,false);b.setGravity(android.view.Gravity.CENTER);Icon icon=new Icon(name);icon.setBounds(0,0,dp(a,22),dp(a,22));b.setCompoundDrawables(null,icon,null,null);b.setCompoundDrawablePadding(dp(a,6));b.setBackground(surface(a,name.equals(selected)||name.equals("Explore")&&selected.equals("Places")?0xFFE1E9DD:Color.TRANSPARENT,16,false));b.setSelected(name.equals(selected));b.setContentDescription(name+(b.isSelected()?", selected":""));b.setOnClickListener(v->navigate(a,name));LinearLayout.LayoutParams np=new LinearLayout.LayoutParams(0,-2,1);np.setMargins(dp(a,2),0,dp(a,2),0);row.addView(b,np);}
++        root.addView(nav);return root;
++    }
++    static void screen(Activity a,LinearLayout page,String selected){LinearLayout root=shell(a,selected);ScrollView scroll=new ScrollView(a);scroll.setFillViewport(true);scroll.addView(page);root.addView(scroll,1,new LinearLayout.LayoutParams(-1,0,1));}
++    static void openSource(Activity a,String title,String detail,String provenance){
++        NotebookActivity.IO.execute(()->{try(NotebookStore store=new NotebookStore(a)){long id=store.add("source",title,"",detail,provenance,false);a.runOnUiThread(()->{if(!a.isDestroyed())a.startActivity(new android.content.Intent(a,SourceReaderActivity.class).putExtra("record",id));});}
++            catch(Exception e){a.runOnUiThread(()->new android.app.AlertDialog.Builder(a).setMessage("Could not save source history: "+e.getMessage()).setPositiveButton("Read without saving",(d,w)->reader(a,title,detail)).setNegativeButton("Close",null).show());}});
+     }
+     static void reader(Activity a,String title,String detail) {
+         LinearLayout body=column(a);TextView name=text(a,title,24);heading(name);body.addView(name);
+diff --git i/android/app/src/main/java/org/pocketlore/app/ScaleActivity.java w/android/app/src/main/java/org/pocketlore/app/ScaleActivity.java
+index 44142ff..4e74208 100644
+--- i/android/app/src/main/java/org/pocketlore/app/ScaleActivity.java
++++ w/android/app/src/main/java/org/pocketlore/app/ScaleActivity.java
+@@ -2,29 +2,32 @@ package org.pocketlore.app;
+ import android.app.*;import android.os.Bundle;import android.content.Intent;import android.widget.*;import java.io.*;import java.util.*;
+ /** Offline bulk browsing remains separate from generation until source rights/support are reviewed. */
+ public final class ScaleActivity extends Activity {
+- Spinner section; LinearLayout layout,results;TextView status;EditText query,city,category,radius;volatile boolean cancelled;volatile InputStream input;Thread worker;ScaleLibrary library;AlertDialog dialog;
++ String sectionName; Button cancelButton; LinearLayout layout,results;TextView status;EditText query,city,category,radius;volatile boolean cancelled;volatile InputStream input;Thread worker;ScaleLibrary library;AlertDialog dialog;
+  interface Work {void run()throws Exception;}
+- void run(Work work){if(worker!=null&&worker.isAlive()){status.setText("An operation is running. Cancel it first.");return;}cancelled=false;status.setText("Working offline…");worker=new Thread(()->{try{work.run();}catch(Exception e){runOnUiThread(()->status.setText(e.getMessage()));}},"bulk-library");worker.start();}
+- void button(String label,Runnable action){Button b=new Button(this);b.setText(label);layout.addView(b);b.setOnClickListener(v->action.run());}
++ void run(Work work){if(worker!=null&&worker.isAlive()){status.setText("An operation is running. Cancel it first.");return;}cancelled=false;if(cancelButton!=null)cancelButton.setVisibility(0);((android.view.inputmethod.InputMethodManager)getSystemService(INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(layout.getWindowToken(),0);status.setText("Working offline…");worker=new Thread(()->{try{work.run();}catch(Exception e){runOnUiThread(()->status.setText(cancelled?"Operation cancelled. Installed sources are unchanged.":"Could not complete: "+e.getMessage()));}finally{runOnUiThread(()->{if(cancelButton!=null)cancelButton.setVisibility(8);});}},"bulk-library");worker.start();}
++ Button button(String label,Runnable action){return ReaderUi.button(this,layout,label,action);}
+  TextView text(String s){TextView t=ReaderUi.text(this,s,18);t.setTextIsSelectable(true);return t;}
+- @Override public void onCreate(Bundle b){super.onCreate(b);ScrollView scroll=new ScrollView(this);layout=ReaderUi.column(this);scroll.addView(layout);setContentView(scroll);ReaderUi.insets(this,scroll);button("Back to library",this::finish);layout.addView(text("Knowledge & Places • Offline\nPartial offline collections. Browse source records; bulk sources are not cleared for generated answers."));status=text("Search installed sources. No network is used.");ReaderUi.status(status);layout.addView(status);try{library=new ScaleLibrary(getFilesDir());}catch(Exception e){status.setText(e.toString());return;}
+- LinearLayout page=layout;LinearLayout tools=ReaderUi.column(this);button("Collection storage & licenses",()->tools.setVisibility(tools.getVisibility()==android.view.View.GONE?android.view.View.VISIBLE:android.view.View.GONE));page.addView(tools);tools.setVisibility(android.view.View.GONE);layout=tools;
++ @Override public void onCreate(Bundle b){super.onCreate(b);sectionName=getIntent().getStringExtra("section");if(sectionName==null)sectionName="Knowledge";layout=ReaderUi.column(this);ReaderUi.screen(this,layout,sectionName.equals("Places")?"Explore":"Library");ReaderUi.title(this,layout,sectionName.equals("Places")?"Explore":"Library",sectionName.equals("Places")?"Search installed place records.":"Read the sources. Keep what matters.");status=text("Offline • Installed collections");ReaderUi.status(status);layout.addView(status);try{library=new ScaleLibrary(getFilesDir());}catch(Exception e){status.setText("Library unavailable: "+e.getMessage());return;}
++ LinearLayout page=layout;LinearLayout tools=ReaderUi.column(this);Button manage=button("Collection storage & licenses",()->tools.setVisibility(tools.getVisibility()==android.view.View.GONE?android.view.View.VISIBLE:android.view.View.GONE));page.addView(tools);tools.setVisibility(android.view.View.GONE);layout=tools;
+  button("Import bulk collection",()->{Intent i=new Intent(Intent.ACTION_OPEN_DOCUMENT);i.addCategory(Intent.CATEGORY_OPENABLE);i.setType("*/*");i.putExtra(Intent.EXTRA_LOCAL_ONLY,true);startActivityForResult(i,300);});
+- button("Cancel operation",()->{cancelled=true;Thread t=worker;if(t!=null)t.interrupt();InputStream in=input;if(in!=null)new Thread(()->{try{in.close();}catch(Exception ignored){}}).start();});
+  button("Active bulk collections",this::collections);button("Collection licenses",()->run(()->{List<ScaleLibrary.Entry> es=library.entries();String[] names=new String[es.size()];for(int i=0;i<es.size();i++)names[i]=es.get(i).manifest.optString("label");runOnUiThread(()->new AlertDialog.Builder(this).setTitle("Collection licenses").setItems(names,(d,i)->run(()->{StringBuilder notices=new StringBuilder();org.json.JSONArray fs=es.get(i).manifest.getJSONArray("files");for(int n=0;n<fs.length();n++){String path=fs.getJSONObject(n).getString("path");if(path.endsWith(".txt")){File f=ScaleLibrary.resolve(es.get(i).directory,path);ScaleLibrary.check(f.length()<=1024*1024,"Notice display bound");notices.append(path).append("\n").append(new String(java.nio.file.Files.readAllBytes(f.toPath()),java.nio.charset.StandardCharsets.UTF_8)).append("\n\n");}}show(names[i],notices.toString());})).setNegativeButton("Close",null).show());}));
+  layout=page;LinearLayout management=layout;
+- LinearLayout knowledge=ReaderUi.column(this),places=ReaderUi.column(this);
+- section=new Spinner(this);section.setMinimumHeight(ReaderUi.dp(this,48));section.setContentDescription("Library section");section.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,new String[]{"Knowledge","Places"}));management.addView(section);management.addView(knowledge);management.addView(places);layout=knowledge;
+- query=new EditText(this);ReaderUi.label(this,layout,query,"Knowledge topic");query.setHint("Reference topic");layout.addView(query);button("Search reference",()->{String q=query.getText().toString();run(()->{List<ScaleWiki.Hit> hits=new ArrayList<>();for(ScaleLibrary.Entry e:library.entries())if(e.active&&e.kind().equals("wiki"))hits.addAll(ScaleWiki.search(e,q,()->cancelled));runOnUiThread(()->{results.removeAllViews();status.setText(hits.isEmpty()?"No matching articles in active installed collections. Import or select a Knowledge collection to search more sources.":hits.size()+" article candidates; relevance is not answer support.");for(ScaleWiki.Hit h:hits){Button item=new Button(this);item.setText(h.title+" · "+h.tier);results.addView(item);item.setOnClickListener(v->run(()->{ScaleWiki.Read r=ScaleWiki.read(h,getCacheDir(),()->cancelled);show(h.title,ScaleWiki.detail(h,r));}));}});});});
+- layout=places;layout.addView(text("Hours and diet suitability are unknown. Routing is unavailable. Distances are straight-line, not travel routes."));city=new EditText(this);ReaderUi.label(this,layout,city,"City name");city.setHint("City name (choose an exact location)");layout.addView(city);category=new EditText(this);ReaderUi.label(this,layout,category,"Source category (optional)");category.setHint("Optional source category, e.g. museum");layout.addView(category);radius=new EditText(this);ReaderUi.label(this,layout,radius,"Straight-line radius (km)");radius.setHint("Straight-line radius in km (up to 100)");radius.setText("1");radius.setInputType(8194);layout.addView(radius);button("Find city",()->{String name=city.getText().toString(),cat=category.getText().toString().trim(),radiusText=radius.getText().toString();run(()->{double km=Double.parseDouble(radiusText);List<ScaleLibrary.Entry> es=library.entries();runOnUiThread(()->{results.removeAllViews();status.setText("No matching cities in active installed Places collections.");});for(ScaleLibrary.Entry e:es)if(e.active&&e.kind().equals("places")){List<ScalePlaces.City> cities=ScalePlaces.cities(e,name,()->cancelled);runOnUiThread(()->{results.removeAllViews();status.setText(cities.isEmpty()?"No matching city in the installed collection.":"Choose a city; results use your radius, not municipal boundaries.");for(ScalePlaces.City c:cities){Button item=new Button(this);item.setText(c.name+", "+c.country+" · "+c.lat+", "+c.lon);results.addView(item);item.setOnClickListener(v->run(()->{List<ScalePlaces.Hit> hits=new ArrayList<>();for(ScaleLibrary.Entry active:library.entries())if(active.active&&active.kind().equals("places"))hits.addAll(ScalePlaces.nearby(active,c.lat,c.lon,km,cat,()->cancelled));hits.sort(java.util.Comparator.comparingDouble(h->h.place.distanceKm));runOnUiThread(()->{results.removeAllViews();status.setText(hits.size()+" nearby candidates. Current hours/diet unknown; routing unavailable.");for(ScalePlaces.Hit h:hits){Button p=new Button(this);p.setText(h.place.name+" · "+h.place.category);results.addView(p);p.setOnClickListener(w->run(()->show(h.place.name,ScalePlaces.detail(h,()->cancelled))));}});}));}});break;}});});layout=management;results=new LinearLayout(this);results.setOrientation(1);layout.addView(results);
+- section.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){public void onNothingSelected(AdapterView<?> p){}public void onItemSelected(AdapterView<?> p,android.view.View v,int index,long id){knowledge.setVisibility(index==0?0:8);places.setVisibility(index==1?0:8);}});
+- section.setSelection(b!=null?b.getInt("section",0):"Places".equals(getIntent().getStringExtra("section"))?1:0);
++ LinearLayout knowledge=ReaderUi.column(this),places=ReaderUi.column(this);knowledge.setPadding(0,0,0,0);places.setPadding(0,0,0,0);
++ management.addView(knowledge);management.addView(places);knowledge.setVisibility(sectionName.equals("Places")?8:0);places.setVisibility(sectionName.equals("Places")?0:8);layout=knowledge;
++ query=new EditText(this);ReaderUi.label(this,layout,query,"Knowledge topic");query.setHint("Reference topic");layout.addView(query);button("Search reference",()->{String q=query.getText().toString();run(()->{List<ResearchEngine.Passage> starter=starterSources(q);List<ScaleWiki.Hit> hits=new ArrayList<>();for(ScaleLibrary.Entry e:library.entries())if(e.active&&e.kind().equals("wiki"))hits.addAll(ScaleWiki.search(e,q,()->cancelled));runOnUiThread(()->{results.removeAllViews();status.setText(hits.isEmpty()&&starter.isEmpty()?"No matching articles in active installed collections. Import or select a Knowledge collection to search more sources.":(hits.size()+starter.size())+" source matches · Open to read");for(ResearchEngine.Passage p:starter)sourceRow(p);for(ScaleWiki.Hit h:hits){Button item=new Button(this);ReaderUi.styleButton(this,item,false);item.setText(h.title+" · "+h.tier);results.addView(item);item.setOnClickListener(v->run(()->{ScaleWiki.Read r=ScaleWiki.read(h,getCacheDir(),()->cancelled);show(h.title,ScaleWiki.detail(h,r));}));}});});});
++ layout=places;city=new EditText(this);ReaderUi.label(this,layout,city,"City name");city.setHint("City name (choose an exact location)");layout.addView(city);category=new EditText(this);ReaderUi.label(this,layout,category,"Source category (optional)");category.setHint("Optional source category, e.g. museum");layout.addView(category);radius=new EditText(this);ReaderUi.label(this,layout,radius,"Straight-line radius (km)");radius.setHint("Straight-line radius in km (up to 100)");radius.setText("1");radius.setInputType(8194);layout.addView(radius);button("Find city",()->{String name=city.getText().toString(),cat=category.getText().toString().trim(),radiusText=radius.getText().toString();run(()->{double km=Double.parseDouble(radiusText);List<ScaleLibrary.Entry> es=library.entries();runOnUiThread(()->{results.removeAllViews();status.setText("No matching cities in active installed Places collections.");});for(ScaleLibrary.Entry e:es)if(e.active&&e.kind().equals("places")){List<ScalePlaces.City> cities=ScalePlaces.cities(e,name,()->cancelled);runOnUiThread(()->{results.removeAllViews();status.setText(cities.isEmpty()?"No matching city in the installed collection.":"Choose a city; results use your radius, not municipal boundaries.");for(ScalePlaces.City c:cities){Button item=new Button(this);ReaderUi.styleButton(this,item,false);item.setText(c.name+", "+c.country+" · "+c.lat+", "+c.lon);results.addView(item);item.setOnClickListener(v->run(()->{List<ScalePlaces.Hit> hits=new ArrayList<>();for(ScaleLibrary.Entry active:library.entries())if(active.active&&active.kind().equals("places"))hits.addAll(ScalePlaces.nearby(active,c.lat,c.lon,km,cat,()->cancelled));hits.sort(java.util.Comparator.comparingDouble(h->h.place.distanceKm));runOnUiThread(()->{results.removeAllViews();status.setText(hits.size()+" nearby candidates. Current hours/diet unknown; routing unavailable.");for(ScalePlaces.Hit h:hits){Button p=new Button(this);ReaderUi.styleButton(this,p,false);p.setText(h.place.name+" · "+h.place.category);results.addView(p);p.setOnClickListener(w->run(()->show(h.place.name,ScalePlaces.detail(h,()->cancelled))));}});}));}});break;}});});layout=management; cancelButton=button("Cancel operation",()->{cancelled=true;Thread t=worker;if(t!=null)t.interrupt();InputStream in=input;if(in!=null)new Thread(()->{try{in.close();}catch(Exception ignored){}}).start();});
++
++ results=new LinearLayout(this);results.setOrientation(1);layout.addView(results);if(!sectionName.equals("Places"))run(()->{List<ResearchEngine.Passage> sources=starterSources("");runOnUiThread(()->{for(ResearchEngine.Passage p:sources)sourceRow(p);status.setText("Bundled sources · Search all active collections above");});});cancelButton.setVisibility(8);page.removeView(manage);page.removeView(tools);page.addView(manage);page.addView(tools);if(sectionName.equals("Places")){page.addView(text("Hours and diet suitability are unknown. Routing is unavailable. Distances are straight-line, not travel routes."));button("Regional travel & tools",()->startActivity(new Intent(this,TravelActivity.class)));}
+  if(b!=null){query.setText(b.getString("query",""));city.setText(b.getString("city",""));category.setText(b.getString("category",""));radius.setText(b.getString("radius","1"));}
+ 
+  }
+- void show(String title,String detail){runOnUiThread(()->{ScrollView s=new ScrollView(this);s.addView(text(title+"\n\n"+detail));dialog=new AlertDialog.Builder(this).setView(s).setPositiveButton("Close",null).show();status.setText("Source inspected offline.");});}
++ List<ResearchEngine.Passage> starterSources(String query)throws Exception{
++  List<ResearchEngine.Passage> found=new ArrayList<>();try(BufferedReader r=new BufferedReader(new InputStreamReader(getAssets().open("water-science.tsv"),java.nio.charset.StandardCharsets.UTF_8))){String line;while((line=r.readLine())!=null){if(line.startsWith("#")||line.startsWith("id\t"))continue;String[] row=line.split("\t",-1);if(row.length!=6)continue;ResearchEngine.Passage p=new ResearchEngine.Passage(row);if(query.trim().isEmpty()||(p.title+" "+p.text).toLowerCase(Locale.ROOT).contains(query.trim().toLowerCase(Locale.ROOT)))found.add(p);}}return found;
++ }
++ void sourceRow(ResearchEngine.Passage p){ReaderUi.entry(this,results,p.title,"USGS · Bundled source",()->ReaderUi.openSource(this,p.title,p.text+"\n\nSource document: "+p.title+"\n"+p.url+"\nSource date / retrieval: "+(p.sourceDate.isEmpty()?"Unknown":p.sourceDate)+"\nRights: "+p.license+"\nCitation: ["+p.id+"]","Bundled water-science passage. Verbatim USGS paragraph with whitespace normalized; limited coverage, not a complete publication."));}
++ void show(String title,String detail){runOnUiThread(()->{if(isDestroyed()||cancelled)return;ReaderUi.openSource(this,title,detail,"Installed bulk source snapshot. Full/lead tier, source date, license and edition are supplied in the source detail where available; missing fields remain unknown. Bulk browsing does not grant generation rights.");status.setText("Source inspected offline.");});}
+  void collections(){run(()->{List<ScaleLibrary.Entry> es=library.entries();String[] names=new String[es.size()];boolean[] checked=new boolean[es.size()];for(int i=0;i<es.size();i++){names[i]=es.get(i).manifest.optString("label")+" · "+es.get(i).bytes()+" bytes";checked[i]=es.get(i).active;}runOnUiThread(()->dialog=new AlertDialog.Builder(this).setTitle("Active bulk collections").setMultiChoiceItems(names,checked,(d,i,v)->checked[i]=v).setPositiveButton("Apply",(d,w)->run(()->{Set<String> ids=new HashSet<>();for(int i=0;i<es.size();i++)if(checked[i])ids.add(es.get(i).id);library.select(ids);runOnUiThread(()->status.setText(ids.size()+" active collections saved."));})).setNegativeButton("Cancel",null).show());});}
+  @Override protected void onActivityResult(int request,int result,Intent data){super.onActivityResult(request,result,data);if(request==300&&result==RESULT_OK&&data!=null)run(()->{try(InputStream in=getContentResolver().openInputStream(data.getData())){input=in;ScaleLibrary.Entry e=library.install(in,()->cancelled);runOnUiThread(()->status.setText("Installed "+e.manifest.optString("label")+"; "+e.bytes()+" bytes."+(library.lastAdmissionPeak>ScaleLibrary.TARGET?" Update is above the 45 GB target but below the 50 GB hard limit.":"")));}finally{input=null;}});}
+- @Override public void onSaveInstanceState(Bundle b){super.onSaveInstanceState(b);if(query!=null){b.putInt("section",section.getSelectedItemPosition());b.putString("query",query.getText().toString());b.putString("city",city.getText().toString());b.putString("category",category.getText().toString());b.putString("radius",radius.getText().toString());}}
++ @Override public void onSaveInstanceState(Bundle b){super.onSaveInstanceState(b);if(query!=null){b.putString("section",sectionName);b.putString("query",query.getText().toString());b.putString("city",city.getText().toString());b.putString("category",category.getText().toString());b.putString("radius",radius.getText().toString());}}
+  @Override public void onDestroy(){cancelled=true;if(worker!=null)worker.interrupt();InputStream in=input;if(in!=null)new Thread(()->{try{in.close();}catch(Exception ignored){}}).start();super.onDestroy();}
+ }
+diff --git i/android/app/src/main/res/values/styles.xml w/android/app/src/main/res/values/styles.xml
+index 5b76188..56d85be 100644
+--- i/android/app/src/main/res/values/styles.xml
++++ w/android/app/src/main/res/values/styles.xml
+@@ -1,24 +1,26 @@
+ <resources>
+-    <style name="PocketLoreTheme" parent="android:style/Theme.Material.NoActionBar">
++    <style name="PocketLoreTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+         <item name="android:fontFamily">sans</item>
+-        <item name="android:colorAccent">#83D9CC</item>
+-        <item name="android:windowBackground">#101D2B</item>
+-        <item name="android:colorBackground">#101D2B</item>
+-        <item name="android:textColorPrimary">#F4EEDD</item>
+-        <item name="android:textColorSecondary">#BCCBD3</item>
+-        <item name="android:textColorLink">#83D9CC</item>
+-        <item name="android:statusBarColor">#101D2B</item>
+-        <item name="android:navigationBarColor">#101D2B</item>
+-        <item name="android:windowLightStatusBar">false</item>
+-        <item name="android:windowLightNavigationBar">false</item>
++        <item name="android:colorAccent">#245B43</item>
++        <item name="android:windowBackground">#F7F4EC</item>
++        <item name="android:colorBackground">#F7F4EC</item>
++        <item name="android:textColorPrimary">#202621</item>
++        <item name="android:textColorSecondary">#59635B</item>
++        <item name="android:textSize">16sp</item>
++        <item name="android:textColorLink">#245B43</item>
++        <item name="android:statusBarColor">#F7F4EC</item>
++        <item name="android:navigationBarColor">#F7F4EC</item>
++        <item name="android:windowLightStatusBar">true</item>
++        <item name="android:windowLightNavigationBar">true</item>
+         <item name="android:buttonStyle">@style/ReaderButton</item>
+         <item name="android:editTextStyle">@style/ReaderInput</item>
+     </style>
+     <style name="ReaderButton" parent="android:style/Widget.Material.Button">
+         <item name="android:minHeight">48dp</item>
++        <item name="android:minWidth">48dp</item>
+         <item name="android:textAllCaps">false</item>
+         <item name="android:textSize">16sp</item>
+-        <item name="android:singleLine">false</item>
++        <item name="android:singleLine">true</item>
+         <item name="android:gravity">center_vertical|start</item>
+         <item name="android:paddingLeft">16dp</item>
+         <item name="android:paddingRight">16dp</item>
+@@ -26,6 +28,6 @@
+     <style name="ReaderInput" parent="android:style/Widget.Material.EditText">
+         <item name="android:minHeight">56dp</item>
+         <item name="android:textSize">18sp</item>
+-        <item name="android:textColorHint">#BCCBD3</item>
++        <item name="android:textColorHint">#59635B</item>
+     </style>
+ </resources>
+diff --git i/android/index-native/CMakeLists.txt w/android/index-native/CMakeLists.txt
+index 70c5c25..3ae1571 100644
+--- i/android/index-native/CMakeLists.txt
++++ w/android/index-native/CMakeLists.txt
+@@ -6,3 +6,6 @@ target_compile_features(pocketlore_index PRIVATE cxx_std_17)
+ target_compile_definitions(pocketlore_index PRIVATE SQLITE_ENABLE_FTS5 SQLITE_THREADSAFE=1 SQLITE_OMIT_LOAD_EXTENSION SQLITE_DEFAULT_MEMSTATUS=0)
+ target_compile_options(pocketlore_index PRIVATE -fvisibility=hidden)
+ target_link_libraries(pocketlore_index m)
++
++# NDK r27: align LOAD and RELRO for both 4 KB and 16 KB Android kernels.
++target_link_options(pocketlore_index PRIVATE "-Wl,-z,max-page-size=16384" "-Wl,-z,common-page-size=16384")
+diff --git i/docs/UI-DIRECTION.md w/docs/UI-DIRECTION.md
+index 999f069..f3fbd32 100644
+--- i/docs/UI-DIRECTION.md
++++ w/docs/UI-DIRECTION.md
+@@ -1,15 +1,32 @@
+-# PocketLore native UI direction
++# PocketLore native product direction — refinement
+ 
+-Objective: make the existing offline research and source readers usable as a calm native Android product without changing answer algorithms, evidence eligibility, rights, imports or data formats.
++Base: coordinator-sealed `15c48b43999cb57599c58477668fc73a03748276`. The installed baseline screenshot shows a form of development controls and clipped content, not an accepted product experience. Earlier compilation and host assertions did not establish Android usability; the original critic rejected that missing proof. This direction precedes refinement code.
+ 
+-Research opens first. A navy shell carries the PocketLore name and explicit offline status. A compact destination selector opens Research, Library or Storage; destinations preserve the question and ongoing operations. Each destination scrolls independently beneath navigation. Research places a labeled multiline question above its action, live operation status, cream answer text and inspectable source cards. Source cards quote actual retrieved passages and retain full citation/provenance inspection. Generated, extractive, abstained and cancelled labels remain controlled by the existing engine.
++## Task-first structure
+ 
+-Library offers Knowledge and Places entry points to the real bulk readers and the existing regional travel tools. Knowledge searches installed article titles and opens full source details. Places searches a city, optional source category and straight-line radius; hours, diet and routing limitations stay visible. No illustrative answers, maps, fabricated coverage or progress percentages are introduced. Empty or absent installed collections must be identified explicitly.
++Four named destinations: Research, Library, Places, Saved. Each destination has a short heading, explicit Offline status and a scrollable content area. Compact navigation uses two rows when text or width needs it, with a selected label rather than color alone. Settings is a secondary action. Model, import, storage, removal and compatibility controls live behind settings/disclosure, not above the question. Back closes a reader or settings before leaving the task. Question drafts and destination survive recreation.
+ 
+-Storage contains actual installed collection status, selection, imports, cancellation, recovery, removal and local model controls. Measured free space is labeled as device free space, not asset accounting or a capacity guarantee. Setup limitations and compatibility details remain reachable. Navigation does not cancel work; Back returns from Storage to Research or from readers to Library.
++Research presents a real question input, the existing answer action, cancellation while busy, truthful answer status, source excerpts, and actions to save or compare actual retrieved evidence. No template answers or simulated progress. Completed results are captured with their question, actual result label and inspectable source metadata in a private local notebook; unfinished or cancelled drafts are not presented as completed answers. Source-only browsing remains separate from generation eligibility.
+ 
+-Use navy #101D2B, raised navy #1B2D3E, cream #F4EEDD and teal #83D9CC. Text uses platform sans serif, 18sp reading copy with generous line spacing; headings are 24–30sp. Buttons and inputs have at least 48dp touch height, wrap long labels and never rely on color alone. All screens honor system and keyboard insets. Selectable source text sits in a scrollable reader with its full title in the scrolling body. TalkBack receives persistent input labels, selected destination state and polite status updates.
++Library searches installed Knowledge collections. Places opens the real city/category/radius search directly and retains absent-hours, routing and coverage labels. No map is implied by stored coordinates. Regional tools remain available as a secondary task. Installed collection metadata is displayed without promoting staged host counts to device coverage.
+ 
+-Verification: compile a real APK using the rig SDK and reused native libraries/assets, preserve command output and SHA-256; add bounded instrumentation for navigation, source inspection, empty states, long labels, large font and keyboard/inset structure. Do not install on emulator-5560/5562 or create an emulator. If no independent device is available, mark runtime checks and screenshots pending; compilation and source checks are not visual acceptance. Freeze the diff and handoff for an independent skeptic before the final checkpoint.
++Saved is a searchable history/bookmark list, with real persistent records, notes and deletion confirmation. Opening a record shows its capture time, source date as supplied (or Unknown), source/edition provenance, and an explicit snapshot label. A full-screen source reader has persisted font size (18/22/26sp) and navy/cream reading themes. It uses scrollable full titles, selectable source text, bookmark, note, export and share actions. A two-item comparison shows the actual saved questions/results/source details sequentially on compact screens; it makes no new factual judgment or inference. Empty selection cannot create a comparison.
+ 
+-Evidence inspected: docs/evidence/full-scale-android-capacity.md (task 303), including the full residency result, clipped 320×640 source control, 1.713–19.139 second city queries, bulk generation denial and outstanding physical-device acceptance. These measurements belong to that baseline, not this UI APK.
++Notebook storage is app-private and separate from pack formats. Bounded SQLite transactions preserve records across process death and reject excessive snapshots instead of silently truncating. Export creates portable UTF-8 Markdown through Android ACTION_CREATE_DOCUMENT; share uses a temporary read-granted content URI and system chooser. Export retains result labels, dates, provenance, limitations and user notes; it does not upgrade rights or answer support. No broad storage/network permission or GMS dependency. Provider/IO failure remains visible and export cancellation is harmless.
++
++## Primary documentation studied
++
++- [Android core app quality](https://developer.android.com/docs/quality-guidelines/core-app-quality): preserve task state and Back behavior, readable composition, 48dp targets, contrast, system sharesheet and internal sensitive-data storage. Local policy keeps offline/noGMS and no automatic cloud backup despite optional online platform guidance.
++- [Android Views accessibility](https://developer.android.com/guide/topics/ui/accessibility/views/apps-views): 48×48dp focusable controls, meaningful distinct control labels, natural TextView announcements and persistent input labels.
++- [Material canonical examples](https://m3.material.io/foundations/layout/canonical-examples/overview): list/detail and supporting content relationships, rather than a single settings form. Its JavaScript-only page was corroborated with [Android's primary canonical Views guidance](https://developer.android.com/develop/ui/views/layout/canonical-layouts): compact lists open details and Back returns to the list. Full adaptive tablet split panes remain a gap.
++- [Apple typography](https://developer.apple.com/design/human-interface-guidelines/typography), read through Apple's [documentation JSON](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/typography.json): system fonts, restrained weight hierarchy and proportionate accessible scaling. Apple point sizes are not treated as Android dp/sp rules.
++
++## Concrete rules and measurement
++
++Use platform sans serif; regular body at 18sp (no body below 16sp), medium headings 24–28sp, visible labels 16sp. Text scales with Android settings. No fixed-height content cards or single-line result titles. All interactive controls have minimum 48dp width and height; scroll content remains reachable with keyboard and system insets. Navy #101D2B and raised #1B2D3E use cream #F4EEDD and teal #83D9CC. The light reader reverses cream/navy and uses dark teal #175F58. Measure contrast from actual sRGB values and record results, rather than asserting theme compliance from appearance. Validate long titles, 200% text, small display, keyboard, selected navigation and accessibility node bounds on the APK when device access is safe.
++
++## Evidence and release boundary
++
++Compile with installed rig SDK/cache, bounded workers and reused pinned native libraries; preserve old APKs and logs. No inference or corpus changes. emulator-5562 may be used only after canonical activity/runner checks show no conflicting test; never touch emulator-5560, erase data, restart devices or create another emulator. Preserve the existing approximately 41GB catalog and signing identity. Capture real screenshots/accessibility trees and run persistence/export/source-flow tests; if blocked, record the exact cause and leave integration unaccepted.
++
++The competitor-feature audit lane was still running at initial inspection; its final handoff arrived before freeze and its artifact/source hashes were verified. See UI-CAPABILITY-GAPS.md for the 63-capability reconciliation. This finite refinement is not a claim of all competitor capabilities or competitive superiority. Physical Android/GrapheneOS, source rights, useful synthesis, offline coverage completeness and human acceptance remain separate gates.
+diff --git i/docs/UI-VERIFICATION.md w/docs/UI-VERIFICATION.md
+index ebf24cb..99ecfd5 100644
+--- i/docs/UI-VERIFICATION.md
++++ w/docs/UI-VERIFICATION.md
+@@ -1,36 +1,53 @@
+-# Native UI candidate verification
++# Refined native UI verification
+ 
+-This lane changes native presentation only. `docs/UI-DIRECTION.md` was written before implementation. MainActivity, ScaleActivity, TravelActivity, ReaderUi, the manifest theme, and platform theme resources contain the product changes. Research remains connected to the original NativePanel and answer pipeline; Library opens the actual bulk readers and regional tools.
++This lane resumes coordinator-sealed `15c48b43999cb57599c58477668fc73a03748276`. The earlier handoff was rejected for an empty reviewed Git diff and absent Android proof; neither that report nor an internal reviewer establishes independent acceptance. This refinement supplies a nonempty patch with explicit new files, real APK identities and Android execution evidence for coordinator sealing and independent acceptance.
+ 
+-## Completed checks
++## What is implemented
+ 
+-- Offline Gradle application and instrumentation compilation, two workers, using the installed rig JDK/SDK and an isolated copy of its dependency cache.
+-- Actual deterministic debug APK finalization, alignment and signature verification. Exact candidate hash and path are in the lane-root HANDOFF.json.
+-- 53 existing host JVM travel behavior assertions: filtering, source metadata, constraints and deterministic tools. These are host results, not Android UI or phone performance evidence.
+-- `python3 tools/evaluation/check_ui_scope.py`: byte identity of the answer, prompt, research, model panel, pack/scale import and source reader classes against the lane base; manifest permission guard; declared control sizes; all reading/accent palette combinations exceed 4.5:1 contrast.
+-- `git diff --check`.
+-- Reused native libraries and small bundled assets have exact hashes in lane evidence/reused-inputs.json; native source comparison is separately recorded. The build skips native recompilation and pinned travel regeneration. No model, heavy corpus or inference was used.
++Research, Library, Places and Saved are separate task destinations. Settings and collection disclosure retain existing setup/recovery controls. A private SQLite notebook records completed results and opened sources; users can search history, bookmark, write notes, remove records with confirmation, compare two real records, and export/share snapshots. Source readers expose source dates and original provenance, persisted reader size and navy/cream themes. A restored research result is explicitly a snapshot; its saved record contains source details. Pack formats, eligibility, rights and answer algorithms are unchanged.
+ 
+-Build command from this checkout:
++## Execution and evidence
++
++The lane-root `HANDOFF-refined.json` identifies the exact final APK, test APK, patch, files, logs and screenshots. Evidence lives in `../evidence-refined` relative to the repository. The first runtime attempt stalled and captured some transitions too early; its raw log, images and FAIL explanation remain preserved. Later synchronization waits for actual states, and successful passes are tied to their own build identities. Historical screenshots with inaccurate state/theme filenames are not promoted to final evidence.
++
++`RefinedUiInstrumentation` runs on the existing emulator-5562, AOSP API35, 320×640 at 160dpi, using its real installed catalog. It exercises:
++
++- Four destinations, Settings access and Back to Research, keyboard display and real native control dimensions.
++- An actual reviewed-pack question after explicitly unloading the model: the engine reports extractive fallback and `invokedModel=false`; completed history is saved. No generated-answer usefulness is claimed.
++- Activity recreation with retained question and explicitly labeled result snapshot.
++- Actual installed article lookup, long source titles, source date, citation identity and retained generation prohibition.
++- Bookmark and note writes, database reopening, Activity restart and persisted reader sizing/themes.
++- Comparison of actual saved research/source records, explicitly without new synthesis.
++- A real Android document picker Save action, successful output-stream completion, actual exported Markdown, and a read-only sharing provider; no compatible receiving app exists on this AOSP image.
++
++Runs at system font scales 1.0 and 2.0 preserve screenshots and accessibility trees. The prior font setting is restored after testing. Node/control dimension checks are bounded tests, not a TalkBack listening assessment. Some controls are intentionally reached by scrolling; screenshots do not establish every interaction or physical-device acceptance.
++
++Before install, the runner state and emulator activity instrumentation are inspected. The installed APK is preserved and its development signing certificate is matched; only an in-place update is used. No uninstall, device wipe/restart, duplicate emulator or emulator-5560 operation occurs. Small catalog JSON hashes and allocated pack/model directory sizes are compared before/after; this does not rehash 41GB or repeat capacity acceptance. Tests add only bounded notebook/export/evidence files. They do not change active packs or model assets.
++
++## Build and host checks
++
++Installed rig JDK/SDK, existing dependency cache, two Gradle workers, 2GB Gradle heap, offline mode:
+ 
+ ```sh
+ PATH="/home/isa/Android/atlas-toolchain/jdk/bin:$PATH" \
+ GRADLE_USER_HOME="$PWD/downloads/ui-gradle" \
+ bash tools/android-build.sh assembleDebug assembleDebugAndroidTest \
+-  -PpocketloreTestRunner=org.pocketlore.app.ReaderUiInstrumentation \
++  -PpocketloreTestRunner=org.pocketlore.app.RefinedUiInstrumentation \
+   -x buildPocketLoreNative -x buildPocketLoreIndex -x buildTravelPack --max-workers=2
+ ```
+ 
+-The first finalization attempt failed because Java was absent from PATH after Gradle succeeded; its full log is preserved. The explicit installed-JDK PATH corrected packaging. No environment/global configuration was modified.
++Native libraries and the small bundled assets are reused with the prior recorded hashes; canonical native source matches were already recorded. No model download or inference. The lane-local original debug key is retained outside Git and the installed app's existing development signer is reused so its data survives update. This is not production signing.
+ 
+-## Pending Android acceptance
++`python3 tools/evaluation/check_ui_scope.py` verifies byte identity of protected engine/import/source-reader classes against the sealed base, no Android permissions, minimum control dimensions and palette contrast. Measured ratios include cream/navy 14.70:1, cream/raised navy 12.15:1, teal/navy 10.35:1, and dark teal/cream 6.44:1. Rendering and contrast are separate checks. `git diff --check` is also required.
+ 
+-ReaderUiInstrumentation is compiled, not executed. It exercises navigation, question retention, control dimensions, Places selection and a truthful empty Knowledge search on fresh isolated app storage. It refuses a saved model. It is not permission to install on the protected canonical emulators. Only emulator-5560 and emulator-5562 were connected; neither was installed, started, stopped or otherwise modified.
++## Remaining limits
+ 
+-On an independently authorized fresh device, run that instrumentation, then verify at 320dp width and 200% font scale: all destinations, long question and title wrapping, keyboard open/closed, gesture and three-button system navigation, scrolling through the final source button, source quotes and complete provenance/license dialogs, TalkBack focus order, import cancellation/recovery, and local model cancellation from Storage through Research. Capture screenshots and accessibility trees with exact APK/device/font identities. No screenshot, TalkBack, keyboard, source-dialog or large-font success is claimed for this candidate. The fixed navigation header particularly needs small-height/keyboard validation.
++See `UI-CAPABILITY-GAPS.md` for the completed static audit and remaining competitor gaps. No competitive win is claimed. Notebook snapshots are not ingestible knowledge packs; export is not sync, restore or rights clearance. Notebook limits are 200 records, 2MiB per record and 16MiB of source body/provenance; notes have their own 20,000-character limit. Excess content fails visibly rather than truncating. Full source text remains in installed collections when a preview or notebook limit applies.
+ 
+-Physical Android/GrapheneOS acceptance, answer usefulness and source-rights review remain open. The earlier capacity evidence is baseline evidence and cannot certify this APK. Storage currently reports archive/index bytes and free device space, not a complete installed-asset census. Process recreation preserves the question and destination, not the answer or source dialog.
++Physical Android/GrapheneOS, TalkBack listening, switch access, adaptive tablet panes, sustained performance/thermals and human acceptance remain open. Shared-recipient delivery remains untested because no receiver is installed. Import/recovery transaction algorithms are unchanged and their controls remain reachable; this UI run does not repeat the heavy capacity/import protocol. Result restoration uses a bounded state snapshot and Saved for complete source inspection; unfinished generation is not resumed after process death.
+ 
+-## Checkpoint and review
++Git could not create checkpoint.git/index.lock because metadata remains mounted read-only. The coordinator must seal the explicitly named final files from the hash manifest, then review that actual commit; the working patch is not a claim of an existing new commit.
+ 
+-The configured private checkpoint.git is mounted read-only: Git could not create index.lock. No milestone commit or push was possible; HEAD remains the recorded base. The complete frozen patch and per-file hashes in HANDOFF.json preserve the working changes for review and later checkpointing. Independent skeptical review is recorded separately in lane evidence; it is not human or physical-device acceptance.
++## Final installed-identity discrepancy
++
++After the candidate UI runs completed, a final device check found installed APK `1b687b9b3568bfcc72feaad6810b1a65d5730af552d75dbd962183779a8fa23e`, matching the canonical host APK, rather than this lane's delivered `3873ba23b6cda8268ec77ced1362a2e3230751d09f7ae111cfecb1795ece364e`. Manifest, DEX, resources and bulk-review assets differ. The exact installed artifact and package update times are preserved in lane evidence. No attempt was made to overwrite canonical work. Candidate runtime logs/screenshots describe the earlier UI test window; the device's final installed state is not claimed as this UI release. Coordinator-controlled reintegration and an installed identity check remain required.
+diff --git i/tools/evaluation/check_ui_scope.py w/tools/evaluation/check_ui_scope.py
+index fde387b..3922328 100644
+--- i/tools/evaluation/check_ui_scope.py
++++ w/tools/evaluation/check_ui_scope.py
+@@ -3,7 +3,7 @@
+ from pathlib import Path
+ import hashlib,json,subprocess,xml.etree.ElementTree as ET
+ root=Path(__file__).resolve().parents[2]
+-base='0d2c9123cf425361fe2c2f77eca8751898f8c70a'
++base='15c48b43999cb57599c58477668fc73a03748276'
+ java=root/'android/app/src/main/java/org/pocketlore/app'
+ protected=['AnswerEngine.java','EvidencePrompt.java','ResearchEngine.java','NativePanel.java','PackLibrary.java','ScaleLibrary.java','ScaleWiki.java','ScalePlaces.java','ImportRecovery.java','TravelCatalog.java']
+ checks=[]
+@@ -25,10 +25,11 @@ def luminance(color):
+     values=[v/12.92 if v<=.04045 else ((v+.055)/1.055)**2.4 for v in values]
+     return sum(v*w for v,w in zip(values,[.2126,.7152,.0722]))
+ ratios={}
+-for foreground in ['F4EEDD','83D9CC','BCCBD3']:
+-    for background in ['101D2B','1B2D3E']:
+-        ratio=(luminance(foreground)+.05)/(luminance(background)+.05)
++for foreground in ['202621','245B43','59635B']:
++    for background in ['F7F4EC','EEEEE5']:
++        values=sorted([luminance(foreground),luminance(background)])
++        ratio=(values[1]+.05)/(values[0]+.05)
+         assert ratio>=4.5
+         ratios[foreground+'/'+background]=round(ratio,2)
+ checks.append('All declared reading/accent colors exceed 4.5:1 on both surfaces')
+-print(json.dumps({'status':'PASS','kind':'host structural checks only','checks':checks,'contrast':ratios,'runtime':'PENDING: no authorized isolated Android device'},indent=2))
++print(json.dumps({'status':'PASS','kind':'host structural checks only','checks':checks,'contrast':ratios,'runtime':'See lane evidence-redesign for exact emulator run receipts; host checks do not establish Android acceptance'},indent=2))
+diff --git 1/DIRECTION-2.md 2/DIRECTION-2.md
+new file mode 100644
+index 0000000..aacd68c
+--- /dev/null
++++ 2/DIRECTION-2.md
+@@ -0,0 +1,23 @@
++# Editorial notebook direction — 2 October 2026
++
++This replaces the rejected dark control-stack design. The actual before capture is ../evidence-redesign/before.png on emulator-5564; it is historical baseline evidence, not acceptance. The optional new-ui-direction skill is absent.
++
++Research opens with a compact PocketLore masthead and offline indicator, an editorial title, a prominent inset question composer and one forest-green action. Real installed collections and recent persisted research occupy separate sections below it. No synthetic topics, histories, counts or maps are permitted. Completed answers replace the empty introduction, retaining visible outcome uncertainty and individually inspectable source quotations. Technical model/import/storage controls remain in Settings.
++
++The four destinations are Research, Library, Explore and Saved. Original line icons supplement readable labels; selection has shape and text state. Library is a searchable source index; Explore searches actual installed place records and clearly states unavailable routing/current hours. Saved uses title-first notebook rows with metadata and disclosed record actions rather than stacks of equally prominent buttons. Source reading preserves bookmarks, notes, comparison, text size, theme and portable export. Back returns to the initiating work.
++
++Warm paper #F7F4EC, ink #202621, secondary #59635B, forest #245B43 and pale surface #EEEEE5 define the light default. Titles use Android serif, body/control text Android sans. Body >=16sp, source 18sp by default, headings 28–34sp, 24dp outer gutters, 8/12/16/24/32dp rhythm. All hit regions >=48dp, wrap long titles, visible focus border, no fixed body heights. Navigation reflows at large font sizes and hides with the keyboard. Insets protect system bars/IME. Contrast is calculated from actual tokens before delivery; runtime geometry is measured, not inferred from declarations.
++
++Empty states offer a real next action; loading uses actual operation state without percentages; errors preserve questions/data; cancelled results remain labelled; restored snapshots retain identity and source access. Source dates and rights live in source details, while result uncertainty stays beside the result. No answer/evidence policy, rights, pack format or inference changes are in scope.
++
++Primary research: Android core quality https://developer.android.com/docs/quality-guidelines/core-app-quality ; Views accessibility https://developer.android.com/guide/topics/ui/accessibility/views/apps-views ; Material canonical layouts https://m3.material.io/foundations/layout/canonical-examples/overview ; Apple typography https://developer.apple.com/design/human-interface-guidelines/typography . The inspected competitor MOBILE-DESIGN-RESEARCH.md derives task-first navigation, 48dp targets, 4.5:1 body contrast, scaling and state retention from these sources. Android measurements govern this implementation; no rival code or visual assets are copied.
++
++Native integration is limited to the exact two CMake linker changes accepted in canonical task305 at b1c20ced202c7b3ae957b2ee0c32e3f999f91750. Packaged ELF LOAD/RELRO and ZIP alignment plus API37 loader state must be evidenced. No compatibility-mode override, generation, corpus download, canonical mutation or use of 5560/5562.
++
++Verification: matching viewport before/after on existing 5564, source and persisted Saved roundtrip, keyboard/Back, enlarged type, cancelled/error/empty states, APK/native hashes and bounded build logs. Development tests and screenshots do not establish physical/human acceptance or competitor superiority. Remaining competitor capabilities stay explicitly pending in UI-CAPABILITY-GAPS.md.
++
++## Measured implementation rules
++
++The actual token pairs measured by tools/evaluation/check_ui_scope.py are ink/paper 14.04:1, ink/surface 13.23:1, forest/paper 7.20:1, forest/surface 6.78:1, secondary/paper 5.69:1 and secondary/surface 5.36:1. These are token contrast measurements, not a complete assistive-technology audit. Native button elevation is removed; keyboard focus receives a 3dp forest outline. Body text remains >=16sp. Runtime reports measure clickable targets, including the settings icon; screenshots use the device's unchanged 1280×2856 viewport.
++
++Collection cards use actual active PackLibrary identities and open edition details; the bundled Water science card leads to Library's actual TSV source passages. Imported bulk source searches retain their existing APIs and generation restrictions. No source card silently scopes the research engine. Recent cards select only persisted research records. Saved search updates actual SQLite results, record actions are disclosed, and reader scroll position persists by record/comparison identity.
+diff --git 1/android/app/src/androidTest/java/org/pocketlore/app/RedesignUiInstrumentation.java 2/android/app/src/androidTest/java/org/pocketlore/app/RedesignUiInstrumentation.java
+new file mode 100644
+index 0000000..1d32f14
+--- /dev/null
++++ 2/android/app/src/androidTest/java/org/pocketlore/app/RedesignUiInstrumentation.java
+@@ -0,0 +1,78 @@
++package org.pocketlore.app;
++
++import android.app.*;
++import android.content.*;
++import android.graphics.*;
++import android.os.*;
++import android.view.*;
++import android.view.accessibility.*;
++import android.widget.*;
++import java.io.*;
++import java.nio.charset.StandardCharsets;
++import java.util.*;
++import java.util.concurrent.atomic.*;
++import java.util.function.BooleanSupplier;
++import org.json.*;
++
++/** Actual installed-reader tests; no inference, catalog mutation or fabricated source content. */
++public final class RedesignUiInstrumentation extends Instrumentation {
++    Activity activity;final JSONArray checks=new JSONArray();File dir;long savedId=-1;String mode;
++    @Override public void onCreate(Bundle args){super.onCreate(args);mode=args.getString("mode","default");start();}
++    void ok(boolean pass,String label){if(!pass)throw new AssertionError(label);checks.put(label);}
++    View find(View root,String name){if(name.equals(root.getTag())||name.contentEquals(root.getContentDescription()==null?"":root.getContentDescription())||root instanceof TextView&&name.contentEquals(((TextView)root).getText()))return root;if(root instanceof ViewGroup)for(int i=0;i<((ViewGroup)root).getChildCount();i++){View r=find(((ViewGroup)root).getChildAt(i),name);if(r!=null)return r;}return null;}
++    View view(String name){View v=find(activity.getWindow().getDecorView(),name);if(v==null)throw new AssertionError("Missing control "+name);return v;}
++    void click(String name){runOnMainSync(()->{View v=view(name);v.requestRectangleOnScreen(new Rect(0,0,v.getWidth(),v.getHeight()),true);v.performClick();});waitForIdleSync();}
++    void await(BooleanSupplier ready,String label)throws Exception{long until=SystemClock.elapsedRealtime()+20000;while(SystemClock.elapsedRealtime()<until){AtomicBoolean yes=new AtomicBoolean();runOnMainSync(()->yes.set(ready.getAsBoolean()));if(yes.get())return;Thread.sleep(50);}throw new AssertionError("Timeout: "+label);}
++    void screenshot(String name)throws Exception{waitForIdleSync();Thread.sleep(1200);Bitmap image=getUiAutomation().takeScreenshot();ok(image!=null,"Screenshot "+name);try(OutputStream o=new FileOutputStream(new File(dir,name+".png"))){image.compress(Bitmap.CompressFormat.PNG,100,o);}image.recycle();AccessibilityNodeInfo root=getUiAutomation().getRootInActiveWindow();try(Writer w=new OutputStreamWriter(new FileOutputStream(new File(dir,name+"-accessibility.txt")),StandardCharsets.UTF_8)){dump(root,w,0);}if(root!=null)root.recycle();}
++    void dump(AccessibilityNodeInfo n,Writer w,int depth)throws Exception{if(n==null)return;Rect r=new Rect();n.getBoundsInScreen(r);w.write(" ".repeat(depth)+n.getClassName()+" text="+n.getText()+" description="+n.getContentDescription()+" bounds="+r+" clickable="+n.isClickable()+" visible="+n.isVisibleToUser()+"\n");for(int i=0;i<n.getChildCount();i++){AccessibilityNodeInfo c=n.getChild(i);dump(c,w,depth+1);if(c!=null)c.recycle();}}
++    void dimensions(View v){if(!v.isShown())return;if(v.isClickable()||v instanceof EditText||v instanceof Spinner){ok(v.getHeight()>=ReaderUi.dp(activity,48),"48dp height: "+((v instanceof TextView)?((TextView)v).getText():v.getContentDescription()));ok(v.getWidth()>=ReaderUi.dp(activity,48),"48dp width");}if(v instanceof ViewGroup)for(int i=0;i<((ViewGroup)v).getChildCount();i++)dimensions(((ViewGroup)v).getChildAt(i));}
++    boolean clickNode(AccessibilityNodeInfo n,String text){if(n==null)return false;if(n.isClickable()&&text.equalsIgnoreCase(String.valueOf(n.getText())))return n.performAction(AccessibilityNodeInfo.ACTION_CLICK);for(int i=0;i<n.getChildCount();i++){AccessibilityNodeInfo c=n.getChild(i);boolean clicked=clickNode(c,text);if(c!=null)c.recycle();if(clicked)return true;}return false;}
++    void finishActivity(){if(activity!=null){runOnMainSync(activity::finish);waitForIdleSync();activity=null;}}
++    @Override public void onStart(){Bundle result=new Bundle();JSONObject report=new JSONObject();try{
++        dir=new File(getTargetContext().getFilesDir(),"ui-redesign-"+mode);dir.mkdirs();
++        report.put("environment","emulator-5564; Android runtime, not physical acceptance").put("mode",mode).put("font_scale",getTargetContext().getResources().getConfiguration().fontScale);
++        activity=startActivitySync(new Intent(getTargetContext(),MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));waitForIdleSync();
++        report.put("activity_font_scale",activity.getResources().getConfiguration().fontScale);await(()->((MainActivity)activity).resourceIdle(),"Model load idle; no inference invoked");
++        runOnMainSync(()->dimensions(activity.getWindow().getDecorView()));screenshot("research");
++        runOnMainSync(()->{EditText q=(EditText)view("Research question");q.setText("How do these installed sources describe this topic, and which source dates and limitations should I keep with my notes?");q.requestFocus();((android.view.inputmethod.InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(q,android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT);});Thread.sleep(400);screenshot("research-keyboard");
++        runOnMainSync(()->((android.view.inputmethod.InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(view("Research question").getWindowToken(),0));waitForIdleSync();
++        runOnMainSync(()->((MainActivity)activity).showSettings());waitForIdleSync();ok(view("Import knowledge pack").isShown(),"Import remains reachable in Settings");runOnMainSync(()->activity.onBackPressed());waitForIdleSync();ok(view("Research question").isShown(),"Back restores Research");
++        runOnMainSync(()->((MainActivity)activity).showSettings());click("Unload model to free memory");await(()->((MainActivity)activity).resourceIdle(),"Model unloaded");ok(!((MainActivity)activity).modelReady(),"No model available for research test");runOnMainSync(()->{((MainActivity)activity).showResearch();((EditText)view("Research question")).setText("What is groundwater?");});await(()->view("Research offline  →").isEnabled(),"Collections ready");click("Research offline  →");await(()->((MainActivity)activity).latestAnswer()!=null,"Actual offline result without inference");ok(!((MainActivity)activity).latestAnswer().invokedModel,"Research test invoked no model");await(()->activity.getPreferences(0).getLong("lastRecord",-1)>0,"Actual research persisted");screenshot("research-result");
++        ActivityMonitor recreation=addMonitor(MainActivity.class.getName(),null,false);runOnMainSync(activity::recreate);Activity restored=waitForMonitorWithTimeout(recreation,20000);removeMonitor(recreation);ok(restored instanceof MainActivity,"Research Activity recreated");activity=restored;await(()->((TextView)view("Answer status")).getText().toString().startsWith("Restored snapshot"),"Snapshot restored after recreation");ok(((EditText)view("Research question")).getText().toString().equals("What is groundwater?"),"Question restored after recreation");screenshot("research-restored");ok(!view("Research question").isShown(),"Completed result uses compact reading state");click("Edit question");ok(view("Research question").isShown(),"Edit question restores composer");runOnMainSync(()->((EditText)view("Research question")).setText("How does groundwater move?"));ActivityMonitor editRecreation=addMonitor(MainActivity.class.getName(),null,false);runOnMainSync(activity::recreate);Activity edited=waitForMonitorWithTimeout(editRecreation,20000);removeMonitor(editRecreation);activity=edited;await(()->((TextView)view("Answer status")).getText().toString().startsWith("Edit your question"),"Editing state restored");ok(view("Research question").isShown()&&((EditText)view("Research question")).getText().toString().equals("How does groundwater move?"),"Draft restored without relabeling previous answer");ok(!view("Offline answer").isShown(),"Previous answer hidden while editing changed question");screenshot("research-edit-restored");
++
++        finishActivity();
++        activity=startActivitySync(new Intent(getTargetContext(),ScaleActivity.class).putExtra("section","Knowledge").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));waitForIdleSync();
++        await(()->((ScaleActivity)activity).results.getChildCount()>0,"Actual bundled source catalog");screenshot("library");
++        await(()->!((ScaleActivity)activity).worker.isAlive(),"Catalog ready");runOnMainSync(()->((ScaleActivity)activity).query.setText("groundwater"));click("Search reference");
++        await(()->!((ScaleActivity)activity).worker.isAlive(),"Source search complete");ok(((ScaleActivity)activity).results.getChildCount()>0,"Real groundwater passages found");screenshot("library-results");
++        ActivityMonitor monitor=addMonitor(SourceReaderActivity.class.getName(),null,false);
++        runOnMainSync(()->((ScaleActivity)activity).results.getChildAt(0).performClick());Activity reader=waitForMonitorWithTimeout(monitor,20000);removeMonitor(monitor);ok(reader instanceof SourceReaderActivity,"Real source opens full-screen reader");Activity libraryActivity=activity;runOnMainSync(libraryActivity::finish);activity=reader;
++        await(()->((SourceReaderActivity)activity).content!=null,"Reader content");SourceReaderActivity r=(SourceReaderActivity)activity;savedId=r.recordId;ok(r.entry.body.contains("Source date / retrieval:"),"Actual source date retained");ok(r.entry.body.contains("Citation: [water-"),"Source identity retained");ok(r.entry.body.contains("USGS"),"Actual source rights retained");if(r.cream){click("Reading options");click("Switch reading theme");click("Reading options");}runOnMainSync(()->((SourceReaderActivity)activity).scroll.scrollTo(0,0));screenshot("source-dark");
++        click("Bookmark this record");await(()->r.entry.bookmark,"Bookmark persisted");
++        runOnMainSync(()->{r.note.setText("UI verification note: retain the source date and citation identity when exporting this offline source.");view("Save note").performClick();});await(()->r.entry.note.startsWith("UI verification note"),"Note saved");
++        click("Reading options");runOnMainSync(()->((Spinner)view("Reader font size")).setSelection(2));click("Switch reading theme");click("Reading options");runOnMainSync(()->dimensions(activity.getWindow().getDecorView()));runOnMainSync(()->((SourceReaderActivity)activity).scroll.scrollTo(0,0));screenshot("source-paper-large");
++        try(NotebookStore store=new NotebookStore(getTargetContext())){NotebookStore.Entry e=store.get(savedId);ok(e.bookmark&&e.note.startsWith("UI verification note"),"Notebook survives new database connection");ok(store.list("groundwater",true).stream().anyMatch(x->x.id==savedId),"Bookmark search uses real saved source");}
++        finishActivity();
++        activity=startActivitySync(new Intent(getTargetContext(),SourceReaderActivity.class).putExtra("record",savedId).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));await(()->((SourceReaderActivity)activity).content!=null,"Reopened record");ok(((SourceReaderActivity)activity).entry.bookmark,"Bookmark restored after Activity restart");ok(((SourceReaderActivity)activity).readingSize==26,"Reader size restored");
++        click("Export snapshot");await(()->((SourceReaderActivity)activity).operation.getText().toString().startsWith("Choose where"),"SAF cancellation picker opens");Thread.sleep(500);getUiAutomation().performGlobalAction(android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_BACK);await(()->((SourceReaderActivity)activity).operation.getText().toString().contains("cancelled"),"SAF cancellation preserves saved source");screenshot("export-cancelled");
++        click("Export snapshot");await(()->((SourceReaderActivity)activity).operation.getText().toString().startsWith("Choose where"),"SAF launched");screenshot("export-document-picker");
++        AccessibilityNodeInfo picker=getUiAutomation().getRootInActiveWindow();boolean clicked=clickNode(picker,"Save");if(picker!=null)picker.recycle();ok(clicked,"Android SAF Save action found");await(()->((SourceReaderActivity)activity).operation.getText().toString().startsWith("Notebook exported"),"SAF document written");screenshot("export-complete");
++        SourceReaderActivity exportReader=(SourceReaderActivity)activity;
++        runOnMainSync(()->exportReader.export(java.util.Collections.singletonList(exportReader.entry),true));await(()->exportReader.operation.getText().toString().startsWith("Choose a recipient"),"Sharesheet launched");screenshot("share-chooser");getUiAutomation().performGlobalAction(android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_BACK);waitForIdleSync();
++        File[] files=new File(getTargetContext().getCacheDir(),"notebook-exports").listFiles();ok(files!=null&&files.length>0,"Real portable export generated");File newest=Arrays.stream(files).max(Comparator.comparingLong(File::lastModified)).get();String exported=new String(java.nio.file.Files.readAllBytes(newest.toPath()),StandardCharsets.UTF_8);ok(exported.contains("Citation: [water-")&&exported.contains("UI verification note")&&exported.contains("Source date / retrieval:"),"Export retains source, date and note");
++        android.net.Uri uri=android.net.Uri.parse("content://"+getTargetContext().getPackageName()+".notebook/"+newest.getName());try(InputStream in=getTargetContext().getContentResolver().openInputStream(uri)){ok(in!=null&&in.read()=='#',"Share provider serves real Markdown");}
++        boolean denied=false;try{getTargetContext().getContentResolver().openOutputStream(uri);}catch(Exception expected){denied=true;}ok(denied,"Share provider rejects writes");
++        java.nio.file.Files.copy(newest.toPath(),new File(dir,"exported-source.md").toPath(),java.nio.file.StandardCopyOption.REPLACE_EXISTING);
++        finishActivity();activity=startActivitySync(new Intent(getTargetContext(),SavedActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));await(()->((SavedActivity)activity).records.getChildCount()>0,"Saved list");screenshot("saved");
++        SavedActivity saved=(SavedActivity)activity;List<NotebookStore.Entry> actual;try(NotebookStore store=new NotebookStore(getTargetContext())){actual=store.list("",false);}ok(actual.size()>=2,"Two real records available");long first=actual.stream().filter(e->e.kind.equals("research")).findFirst().get().id,second=actual.stream().filter(e->e.kind.equals("source")).findFirst().get().id;
++        finishActivity();activity=startActivitySync(new Intent(getTargetContext(),SourceReaderActivity.class).putExtra("record",first).putExtra("compare",second).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));await(()->((SourceReaderActivity)activity).other!=null&&((SourceReaderActivity)activity).content!=null,"Real comparison loaded");ok(((SourceReaderActivity)activity).content.getText().toString().contains("no new synthesis"),"Comparison does not claim new synthesis");screenshot("comparison");
++
++        finishActivity();activity=startActivitySync(new Intent(getTargetContext(),ScaleActivity.class).putExtra("section","Places").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));waitForIdleSync();ok(((ScaleActivity)activity).city.isShown(),"Places is direct destination");screenshot("places");
++        runOnMainSync(()->{((ScaleActivity)activity).city.setText("NoSuchCityForUiVerification");});click("Find city");await(()->!((ScaleActivity)activity).worker.isAlive(),"Unavailable Places search completes");ok(((ScaleActivity)activity).status.getText().toString().contains("No matching"),"Absent place coverage stays unavailable");screenshot("places-empty");
++        File nativeDb=new File(getTargetContext().getCacheDir(),"ui-native-loader.sqlite");android.database.sqlite.SQLiteDatabase fixture=android.database.sqlite.SQLiteDatabase.openOrCreateDatabase(nativeDb,null);fixture.execSQL("CREATE TABLE IF NOT EXISTS loader_check (value TEXT)");fixture.close();ok(NativeIndex.rows(nativeDb.getAbsolutePath(),"SELECT name FROM sqlite_master WHERE name=?",new String[]{"loader_check"},1,()->false).length()==1,"API37 native SQLite query executes");report.put("native_index",NativeIndex.identity());report.put("native_runtime",NativeRuntime.identity());
++        long session=NativeRuntime.create();ok(session!=0,"API37 actual JNI session created without compatibility mode");NativeRuntime.cancel(session);NativeRuntime.close(session);ok(NativeRuntime.identity().contains("llama"),"Native build identity readable");
++        finishActivity();activity=startActivitySync(new Intent(getTargetContext(),SourceReaderActivity.class).putExtra("record",-1L).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));await(()->((SourceReaderActivity)activity).operation.getText().toString().contains("unavailable"),"Missing saved record reports actual error");ok(view("Close reader").isShown(),"Reader error has visible exit");screenshot("source-unavailable");
++        report.put("status","PASS");
++    }catch(Throwable e){try{report.put("status","FAIL").put("error",android.util.Log.getStackTraceString(e));}catch(Exception ignored){}}
++    finally{finishActivity();try{report.put("checks",checks);if(dir!=null)java.nio.file.Files.write(new File(dir,"report.json").toPath(),report.toString(2).getBytes(StandardCharsets.UTF_8));result.putString("report",report.toString());}catch(Exception e){result.putString("error",e.toString());}finish(report.optString("status").equals("PASS")?-1:1,result);}}
++}
+diff --git 1/android/app/src/androidTest/java/org/pocketlore/app/RefinedUiInstrumentation.java 2/android/app/src/androidTest/java/org/pocketlore/app/RefinedUiInstrumentation.java
+new file mode 100644
+index 0000000..5908906
+--- /dev/null
++++ 2/android/app/src/androidTest/java/org/pocketlore/app/RefinedUiInstrumentation.java
+@@ -0,0 +1,73 @@
++package org.pocketlore.app;
++
++import android.app.*;
++import android.content.*;
++import android.graphics.*;
++import android.os.*;
++import android.view.*;
++import android.view.accessibility.*;
++import android.widget.*;
++import java.io.*;
++import java.nio.charset.StandardCharsets;
++import java.util.*;
++import java.util.concurrent.atomic.*;
++import java.util.function.BooleanSupplier;
++import org.json.*;
++
++/** Actual installed-reader tests; no inference, catalog mutation or fabricated source content. */
++public final class RefinedUiInstrumentation extends Instrumentation {
++    Activity activity;final JSONArray checks=new JSONArray();File dir;long savedId=-1;String mode;
++    @Override public void onCreate(Bundle args){super.onCreate(args);mode=args.getString("mode","default");start();}
++    void ok(boolean pass,String label){if(!pass)throw new AssertionError(label);checks.put(label);}
++    View find(View root,String name){if(name.equals(root.getTag())||name.contentEquals(root.getContentDescription()==null?"":root.getContentDescription())||root instanceof TextView&&name.contentEquals(((TextView)root).getText()))return root;if(root instanceof ViewGroup)for(int i=0;i<((ViewGroup)root).getChildCount();i++){View r=find(((ViewGroup)root).getChildAt(i),name);if(r!=null)return r;}return null;}
++    View view(String name){View v=find(activity.getWindow().getDecorView(),name);if(v==null)throw new AssertionError("Missing control "+name);return v;}
++    void click(String name){runOnMainSync(()->{View v=view(name);v.requestRectangleOnScreen(new Rect(0,0,v.getWidth(),v.getHeight()),true);v.performClick();});waitForIdleSync();}
++    void await(BooleanSupplier ready,String label)throws Exception{long until=SystemClock.elapsedRealtime()+20000;while(SystemClock.elapsedRealtime()<until){AtomicBoolean yes=new AtomicBoolean();runOnMainSync(()->yes.set(ready.getAsBoolean()));if(yes.get())return;Thread.sleep(50);}throw new AssertionError("Timeout: "+label);}
++    void screenshot(String name)throws Exception{waitForIdleSync();Thread.sleep(1200);Bitmap image=getUiAutomation().takeScreenshot();ok(image!=null,"Screenshot "+name);try(OutputStream o=new FileOutputStream(new File(dir,name+".png"))){image.compress(Bitmap.CompressFormat.PNG,100,o);}image.recycle();AccessibilityNodeInfo root=getUiAutomation().getRootInActiveWindow();try(Writer w=new OutputStreamWriter(new FileOutputStream(new File(dir,name+"-accessibility.txt")),StandardCharsets.UTF_8)){dump(root,w,0);}if(root!=null)root.recycle();}
++    void dump(AccessibilityNodeInfo n,Writer w,int depth)throws Exception{if(n==null)return;Rect r=new Rect();n.getBoundsInScreen(r);w.write(" ".repeat(depth)+n.getClassName()+" text="+n.getText()+" description="+n.getContentDescription()+" bounds="+r+" clickable="+n.isClickable()+" visible="+n.isVisibleToUser()+"\n");for(int i=0;i<n.getChildCount();i++){AccessibilityNodeInfo c=n.getChild(i);dump(c,w,depth+1);if(c!=null)c.recycle();}}
++    void dimensions(View v){if(!v.isShown())return;if(v instanceof Button||v instanceof EditText||v instanceof Spinner||v instanceof CheckBox){ok(v.getHeight()>=ReaderUi.dp(activity,48),"48dp height: "+((v instanceof TextView)?((TextView)v).getText():v.getContentDescription()));ok(v.getWidth()>=ReaderUi.dp(activity,48),"48dp width");}if(v instanceof ViewGroup)for(int i=0;i<((ViewGroup)v).getChildCount();i++)dimensions(((ViewGroup)v).getChildAt(i));}
++    boolean clickNode(AccessibilityNodeInfo n,String text){if(n==null)return false;if(n.isClickable()&&text.equalsIgnoreCase(String.valueOf(n.getText())))return n.performAction(AccessibilityNodeInfo.ACTION_CLICK);for(int i=0;i<n.getChildCount();i++){AccessibilityNodeInfo c=n.getChild(i);boolean clicked=clickNode(c,text);if(c!=null)c.recycle();if(clicked)return true;}return false;}
++    void finishActivity(){if(activity!=null){runOnMainSync(activity::finish);waitForIdleSync();activity=null;}}
++    @Override public void onStart(){Bundle result=new Bundle();JSONObject report=new JSONObject();try{
++        dir=new File(getTargetContext().getFilesDir(),"ui-refined-"+mode);dir.mkdirs();
++        report.put("environment","emulator-5562; Android runtime, not physical acceptance").put("mode",mode).put("font_scale",getTargetContext().getResources().getConfiguration().fontScale);
++        activity=startActivitySync(new Intent(getTargetContext(),MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));waitForIdleSync();
++        report.put("activity_font_scale",activity.getResources().getConfiguration().fontScale);await(()->((MainActivity)activity).resourceIdle(),"Model load idle; no inference invoked");
++        runOnMainSync(()->dimensions(activity.getWindow().getDecorView()));screenshot("research");
++        runOnMainSync(()->{EditText q=(EditText)view("Research question");q.setText("How do these installed sources describe this topic, and which source dates and limitations should I keep with my notes?");q.requestFocus();((android.view.inputmethod.InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(q,android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT);});Thread.sleep(400);screenshot("research-keyboard");
++        runOnMainSync(()->((android.view.inputmethod.InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(view("Research question").getWindowToken(),0));waitForIdleSync();
++        runOnMainSync(()->((MainActivity)activity).showSettings());waitForIdleSync();ok(view("Import knowledge pack").isShown(),"Import remains reachable in Settings");runOnMainSync(()->activity.onBackPressed());waitForIdleSync();ok(view("Research question").isShown(),"Back restores Research");
++        runOnMainSync(()->((MainActivity)activity).showSettings());click("Unload model to free memory");await(()->((MainActivity)activity).resourceIdle(),"Model unloaded");ok(!((MainActivity)activity).modelReady(),"No model available for research test");runOnMainSync(()->{((MainActivity)activity).showResearch();((EditText)view("Research question")).setText("What is groundwater?");});await(()->view("Answer offline").isEnabled(),"Collections ready");click("Answer offline");await(()->((MainActivity)activity).latestAnswer()!=null,"Actual offline result without inference");ok(!((MainActivity)activity).latestAnswer().invokedModel,"Research test invoked no model");await(()->activity.getPreferences(0).getLong("lastRecord",-1)>0,"Actual research persisted");screenshot("research-result");
++        ActivityMonitor recreation=addMonitor(MainActivity.class.getName(),null,false);runOnMainSync(activity::recreate);Activity restored=waitForMonitorWithTimeout(recreation,20000);removeMonitor(recreation);ok(restored instanceof MainActivity,"Research Activity recreated");activity=restored;await(()->((TextView)view("Answer status")).getText().toString().startsWith("Restored snapshot"),"Snapshot restored after recreation");ok(((EditText)view("Research question")).getText().toString().equals("What is groundwater?"),"Question restored after recreation");screenshot("research-restored");
++
++        finishActivity();
++        activity=startActivitySync(new Intent(getTargetContext(),ScaleActivity.class).putExtra("section","Knowledge").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));waitForIdleSync();
++        runOnMainSync(()->((ScaleActivity)activity).query.setText("United States Declaration of Independence"));click("Search reference");await(()->((ScaleActivity)activity).results.getChildCount()>0,"Long real source title results");await(()->!((ScaleActivity)activity).worker.isAlive(),"Long-title search complete");runOnMainSync(()->{View first=((ScaleActivity)activity).results.getChildAt(0);ok(((TextView)first).getText().length()>=40,"Actual long title is retained");first.requestRectangleOnScreen(new Rect(0,0,first.getWidth(),first.getHeight()),true);dimensions(activity.getWindow().getDecorView());});screenshot("long-title-results");
++        runOnMainSync(()->((ScaleActivity)activity).query.setText("Acid"));click("Search reference");
++        await(()->((ScaleActivity)activity).results.getChildCount()>0,"Actual installed Knowledge results");screenshot("library-results");
++        ActivityMonitor monitor=addMonitor(SourceReaderActivity.class.getName(),null,false);
++        runOnMainSync(()->((ScaleActivity)activity).results.getChildAt(0).performClick());Activity reader=waitForMonitorWithTimeout(monitor,20000);removeMonitor(monitor);ok(reader instanceof SourceReaderActivity,"Real source opens full-screen reader");Activity libraryActivity=activity;runOnMainSync(libraryActivity::finish);activity=reader;
++        await(()->((SourceReaderActivity)activity).content!=null,"Reader content");SourceReaderActivity r=(SourceReaderActivity)activity;savedId=r.recordId;ok(r.entry.body.contains("Source date:"),"Actual source date retained");ok(r.entry.body.contains("Citation identity:"),"Source identity retained");ok(r.entry.body.contains("not cleared for generated answers"),"Generation restriction retained");if(r.cream){click("Reading options");click("Switch reading theme");click("Reading options");}runOnMainSync(()->((SourceReaderActivity)activity).scroll.scrollTo(0,0));screenshot("source-navy");
++        click("Bookmark this record");await(()->r.entry.bookmark,"Bookmark persisted");
++        runOnMainSync(()->{r.note.setText("UI verification note: retain the source date and citation identity when exporting this offline source.");view("Save note").performClick();});await(()->r.entry.note.startsWith("UI verification note"),"Note saved");
++        click("Reading options");runOnMainSync(()->((Spinner)view("Reader font size")).setSelection(2));click("Switch reading theme");click("Reading options");runOnMainSync(()->dimensions(activity.getWindow().getDecorView()));runOnMainSync(()->((SourceReaderActivity)activity).scroll.scrollTo(0,0));screenshot("source-cream-large");
++        try(NotebookStore store=new NotebookStore(getTargetContext())){NotebookStore.Entry e=store.get(savedId);ok(e.bookmark&&e.note.startsWith("UI verification note"),"Notebook survives new database connection");ok(store.list("Acid",true).stream().anyMatch(x->x.id==savedId),"Bookmark search uses real saved source");}
++        finishActivity();
++        activity=startActivitySync(new Intent(getTargetContext(),SourceReaderActivity.class).putExtra("record",savedId).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));await(()->((SourceReaderActivity)activity).content!=null,"Reopened record");ok(((SourceReaderActivity)activity).entry.bookmark,"Bookmark restored after Activity restart");ok(((SourceReaderActivity)activity).readingSize==26,"Reader size restored");
++        click("Export snapshot");await(()->((SourceReaderActivity)activity).operation.getText().toString().startsWith("Choose where"),"SAF launched");screenshot("export-document-picker");
++        AccessibilityNodeInfo picker=getUiAutomation().getRootInActiveWindow();boolean clicked=clickNode(picker,"Save");if(picker!=null)picker.recycle();ok(clicked,"Android SAF Save action found");await(()->((SourceReaderActivity)activity).operation.getText().toString().startsWith("Notebook exported"),"SAF document written");screenshot("export-complete");
++        SourceReaderActivity exportReader=(SourceReaderActivity)activity;
++        runOnMainSync(()->exportReader.export(java.util.Collections.singletonList(exportReader.entry),true));await(()->exportReader.operation.getText().toString().startsWith("Choose a recipient"),"Sharesheet launched");screenshot("share-chooser");getUiAutomation().performGlobalAction(android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_BACK);waitForIdleSync();
++        File[] files=new File(getTargetContext().getCacheDir(),"notebook-exports").listFiles();ok(files!=null&&files.length>0,"Real portable export generated");File newest=Arrays.stream(files).max(Comparator.comparingLong(File::lastModified)).get();String exported=new String(java.nio.file.Files.readAllBytes(newest.toPath()),StandardCharsets.UTF_8);ok(exported.contains("Citation identity:")&&exported.contains("UI verification note")&&exported.contains("Source date:"),"Export retains source, date and note");
++        android.net.Uri uri=android.net.Uri.parse("content://"+getTargetContext().getPackageName()+".notebook/"+newest.getName());try(InputStream in=getTargetContext().getContentResolver().openInputStream(uri)){ok(in!=null&&in.read()=='#',"Share provider serves real Markdown");}
++        boolean denied=false;try{getTargetContext().getContentResolver().openOutputStream(uri);}catch(Exception expected){denied=true;}ok(denied,"Share provider rejects writes");
++        java.nio.file.Files.copy(newest.toPath(),new File(dir,"exported-source.md").toPath(),java.nio.file.StandardCopyOption.REPLACE_EXISTING);
++        finishActivity();activity=startActivitySync(new Intent(getTargetContext(),SavedActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));await(()->((SavedActivity)activity).records.getChildCount()>0,"Saved list");screenshot("saved");
++        SavedActivity saved=(SavedActivity)activity;List<NotebookStore.Entry> actual;try(NotebookStore store=new NotebookStore(getTargetContext())){actual=store.list("",false);}ok(actual.size()>=2,"Two real records available");long first=actual.stream().filter(e->e.kind.equals("research")).findFirst().get().id,second=actual.stream().filter(e->e.kind.equals("source")).findFirst().get().id;
++        finishActivity();activity=startActivitySync(new Intent(getTargetContext(),SourceReaderActivity.class).putExtra("record",first).putExtra("compare",second).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));await(()->((SourceReaderActivity)activity).other!=null&&((SourceReaderActivity)activity).content!=null,"Real comparison loaded");ok(((SourceReaderActivity)activity).content.getText().toString().contains("no new synthesis"),"Comparison does not claim new synthesis");screenshot("comparison");
++
++        finishActivity();activity=startActivitySync(new Intent(getTargetContext(),ScaleActivity.class).putExtra("section","Places").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));waitForIdleSync();ok(((ScaleActivity)activity).city.isShown(),"Places is direct destination");screenshot("places");
++        report.put("status","PASS");
++    }catch(Throwable e){try{report.put("status","FAIL").put("error",android.util.Log.getStackTraceString(e));}catch(Exception ignored){}}
++    finally{finishActivity();try{report.put("checks",checks);if(dir!=null)java.nio.file.Files.write(new File(dir,"report.json").toPath(),report.toString(2).getBytes(StandardCharsets.UTF_8));result.putString("report",report.toString());}catch(Exception e){result.putString("error",e.toString());}finish(report.optString("status").equals("PASS")?-1:1,result);}}
++}
+diff --git 1/android/app/src/main/java/org/pocketlore/app/NotebookActivity.java 2/android/app/src/main/java/org/pocketlore/app/NotebookActivity.java
+new file mode 100644
+index 0000000..d768c98
+--- /dev/null
++++ 2/android/app/src/main/java/org/pocketlore/app/NotebookActivity.java
+@@ -0,0 +1,47 @@
++package org.pocketlore.app;
++
++import android.app.Activity;
++import android.content.*;
++import android.net.Uri;
++import android.os.Bundle;
++import android.widget.TextView;
++import java.io.*;
++import java.nio.charset.StandardCharsets;
++import java.util.*;
++import java.util.concurrent.*;
++
++/** Shared async notebook IO and system export interaction. */
++abstract class NotebookActivity extends Activity {
++    static final int EXPORT_DOCUMENT=702;
++    static final ExecutorService IO=Executors.newSingleThreadExecutor();
++    TextView operation;
++    String pendingExport;
++    void message(String s){if(operation!=null){operation.setVisibility(android.view.View.VISIBLE);operation.setText(s);operation.post(()->operation.requestRectangleOnScreen(new android.graphics.Rect(0,0,operation.getWidth(),operation.getHeight()),false));}}
++    @Override public void onCreate(Bundle state){super.onCreate(state);if(state!=null)pendingExport=state.getString("export");}
++    @Override public void onSaveInstanceState(Bundle b){super.onSaveInstanceState(b);b.putString("export",pendingExport);}
++    interface Task {void run()throws Exception;}
++    void work(Task task){IO.execute(()->{try{task.run();}catch(Exception e){runOnUiThread(()->{if(!isDestroyed())message("Could not complete: "+e.getMessage());});}});}
++    void export(List<NotebookStore.Entry> entries,boolean share){
++        if(entries.isEmpty()){message("No saved records to export.");return;}
++        message("Preparing local notebook export…");
++        work(()->{
++            File dir=new File(getCacheDir(),"notebook-exports");if(!dir.isDirectory()&&!dir.mkdirs())throw new IOException("Export directory unavailable");
++            File[] old=dir.listFiles();long total=0;if(old!=null)for(File f:old){if(f.lastModified()<System.currentTimeMillis()-86400000L)f.delete();else total+=f.length();}
++            if(total>32L*1024*1024)throw new IOException("Temporary exports exceed 32 MiB; try again after their 24-hour retention period.");
++            File out=new File(dir,"notebook-"+UUID.randomUUID()+".md");
++            try(Writer w=new OutputStreamWriter(new FileOutputStream(out),StandardCharsets.UTF_8)){
++                w.write("# PocketLore notebook\n\nOffline snapshots and personal notes. Source rights and answer limitations remain attached; check them before redistribution.\n\n");
++                long bytes=0;for(NotebookStore.Entry e:entries){String record=e.portable();bytes+=record.getBytes(StandardCharsets.UTF_8).length;if(bytes>16L*1024*1024)throw new IOException("Export exceeds 16 MiB. Export fewer records.");w.write(record);w.write("\n---\n\n");}
++            }catch(Exception e){out.delete();throw e;}
++            runOnUiThread(()->{if(isDestroyed())return;try{
++                if(share){Uri uri=Uri.parse("content://"+getPackageName()+".notebook/"+out.getName());Intent send=new Intent(Intent.ACTION_SEND).setType("text/markdown").putExtra(Intent.EXTRA_STREAM,uri).addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);send.setClipData(ClipData.newRawUri("PocketLore notebook",uri));startActivity(Intent.createChooser(send,"Share notebook snapshot"));message("Choose a recipient in Android. Sharing does not verify source rights.");}
++                else {pendingExport=out.getName();startActivityForResult(new Intent(Intent.ACTION_CREATE_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE).setType("text/markdown").putExtra(Intent.EXTRA_TITLE,"PocketLore-"+System.currentTimeMillis()+".md"),EXPORT_DOCUMENT);message("Choose where to save in Android.");}
++            }catch(ActivityNotFoundException e){message("No compatible document or sharing app is installed. Saved records remain on this device.");}});
++        });
++    }
++    @Override protected void onActivityResult(int request,int result,Intent data){super.onActivityResult(request,result,data);if(request!=EXPORT_DOCUMENT)return;
++        if(result!=RESULT_OK||data==null||data.getData()==null){message("Export cancelled. Saved records are unchanged.");pendingExport=null;return;}
++        String name=pendingExport;pendingExport=null;Uri uri=data.getData();if(name==null||!name.matches("notebook-[a-f0-9-]+\\.md")){message("Export expired. Prepare the notebook again.");return;}
++        message("Writing document…");work(()->{try(InputStream in=new FileInputStream(new File(new File(getCacheDir(),"notebook-exports"),name));OutputStream out=getContentResolver().openOutputStream(uri,"wt")){if(out==null)throw new IOException("Document provider returned no output");byte[] bytes=new byte[16384];int n;while((n=in.read(bytes))!=-1)out.write(bytes,0,n);out.flush();}runOnUiThread(()->message("Notebook exported. Source metadata and notes are included."));});
++    }
++}
+diff --git 1/android/app/src/main/java/org/pocketlore/app/NotebookExportProvider.java 2/android/app/src/main/java/org/pocketlore/app/NotebookExportProvider.java
+new file mode 100644
+index 0000000..18511f6
+--- /dev/null
++++ 2/android/app/src/main/java/org/pocketlore/app/NotebookExportProvider.java
+@@ -0,0 +1,25 @@
++package org.pocketlore.app;
++
++import android.content.*;
++import android.database.*;
++import android.net.Uri;
++import android.os.ParcelFileDescriptor;
++import android.provider.OpenableColumns;
++import java.io.*;
++
++/** Read-only, explicitly granted export files; no source/catalog access. */
++public final class NotebookExportProvider extends ContentProvider {
++    public boolean onCreate(){return true;}
++    private File file(Uri uri)throws FileNotFoundException {
++        String name=uri.getLastPathSegment();
++        if(uri.getPathSegments().size()!=1||name==null||!name.matches("notebook-[a-f0-9-]+\\.md"))throw new FileNotFoundException("Invalid export");
++        File f=new File(new File(getContext().getCacheDir(),"notebook-exports"),name);
++        if(!f.isFile())throw new FileNotFoundException("Export no longer available");return f;
++    }
++    public String getType(Uri uri){return "text/markdown";}
++    public ParcelFileDescriptor openFile(Uri uri,String mode)throws FileNotFoundException {if(!"r".equals(mode))throw new FileNotFoundException("Read-only export");return ParcelFileDescriptor.open(file(uri),ParcelFileDescriptor.MODE_READ_ONLY);}
++    public Cursor query(Uri uri,String[] projection,String selection,String[] args,String order){try{File f=file(uri);String[] columns=projection==null?new String[]{OpenableColumns.DISPLAY_NAME,OpenableColumns.SIZE}:projection;MatrixCursor c=new MatrixCursor(columns);Object[] row=new Object[columns.length];for(int i=0;i<columns.length;i++)row[i]=OpenableColumns.DISPLAY_NAME.equals(columns[i])?f.getName():OpenableColumns.SIZE.equals(columns[i])?f.length():null;c.addRow(row);return c;}catch(IOException e){throw new IllegalArgumentException(e);}}
++    public Uri insert(Uri u,ContentValues v){throw new UnsupportedOperationException();}
++    public int update(Uri u,ContentValues v,String s,String[] a){throw new UnsupportedOperationException();}
++    public int delete(Uri u,String s,String[] a){throw new UnsupportedOperationException();}
++}
+diff --git 1/android/app/src/main/java/org/pocketlore/app/NotebookStore.java 2/android/app/src/main/java/org/pocketlore/app/NotebookStore.java
+new file mode 100644
+index 0000000..06128ca
+--- /dev/null
++++ 2/android/app/src/main/java/org/pocketlore/app/NotebookStore.java
+@@ -0,0 +1,42 @@
++package org.pocketlore.app;
++
++import android.content.*;
++import android.database.Cursor;
++import android.database.sqlite.*;
++import java.util.*;
++
++/** Private presentation snapshots; never used as evidence by the answer engine. */
++final class NotebookStore extends SQLiteOpenHelper {
++    static final int MAX_RECORD_BYTES=2*1024*1024, MAX_RECORDS=200;
++    static final class Entry {
++        long id,created; String kind,title,question,body,provenance,note; boolean bookmark;
++        String portable() {
++            return "# "+title+"\n\nKind: "+kind+"\nCaptured: "+new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss 'UTC'",Locale.ROOT){{setTimeZone(TimeZone.getTimeZone("UTC"));}}.format(new Date(created))+
++                "\n\nLocal snapshot; capture time is not the source publication date. No new verification or permission is implied.\n\n"+
++                (question.isEmpty()?"":"## Question\n\n"+question+"\n\n")+"## Content\n\n"+body+"\n\n## Source and coverage\n\n"+provenance+
++                "\n\n## Personal note (not source evidence)\n\n"+note+"\n\n";
++        }
++    }
++    NotebookStore(Context c){super(c,"reader-notebook.sqlite",null,1);}
++    @Override public void onCreate(SQLiteDatabase db){db.execSQL("CREATE TABLE entries (id INTEGER PRIMARY KEY, created INTEGER NOT NULL, kind TEXT NOT NULL, title TEXT NOT NULL, question TEXT NOT NULL, body TEXT NOT NULL, provenance TEXT NOT NULL, note TEXT NOT NULL DEFAULT '', bookmark INTEGER NOT NULL DEFAULT 0)");}
++    @Override public void onUpgrade(SQLiteDatabase db,int old,int next){throw new IllegalStateException("Unsupported notebook schema; existing records retained");}
++    long add(String kind,String title,String question,String body,String provenance,boolean bookmark){
++        if((title+question+body+provenance).getBytes(java.nio.charset.StandardCharsets.UTF_8).length>MAX_RECORD_BYTES)throw new IllegalArgumentException("Source exceeds the 2 MiB notebook limit; it has not been truncated or saved.");
++        SQLiteDatabase db=getWritableDatabase();db.beginTransaction();try{
++            try(Cursor c=db.rawQuery("SELECT count(*) FROM entries",null)){c.moveToFirst();if(c.getInt(0)>=MAX_RECORDS)throw new IllegalStateException("Notebook is full (200 records). Export or remove records before saving more.");}
++            try(Cursor size=db.rawQuery("SELECT coalesce(sum(length(CAST(body AS BLOB))+length(CAST(provenance AS BLOB))),0) FROM entries",null)){size.moveToFirst();if(size.getLong(0)+(body+provenance).getBytes(java.nio.charset.StandardCharsets.UTF_8).length>16L*1024*1024)throw new IllegalStateException("Notebook content limit is 16 MiB. Export or remove records first.");}
++            ContentValues v=new ContentValues();v.put("created",System.currentTimeMillis());v.put("kind",kind);v.put("title",title);v.put("question",question);v.put("body",body);v.put("provenance",provenance);v.put("bookmark",bookmark?1:0);
++            long id=db.insertOrThrow("entries",null,v);db.setTransactionSuccessful();return id;
++        }finally{db.endTransaction();}
++    }
++    List<Entry> list(String query,boolean bookmarks){
++        List<Entry> entries=new ArrayList<>();String where=bookmarks?"bookmark=1":"1=1";
++        String escaped=query.replace("\\","\\\\").replace("%","\\%").replace("_","\\_");
++        try(Cursor c=getReadableDatabase().query("entries",null,where+" AND (title LIKE ? ESCAPE '\\' OR question LIKE ? ESCAPE '\\' OR note LIKE ? ESCAPE '\\')",new String[]{"%"+escaped+"%","%"+escaped+"%","%"+escaped+"%"},null,null,"created DESC, id DESC")){while(c.moveToNext())entries.add(read(c));}return entries;
++    }
++    Entry get(long id){try(Cursor c=getReadableDatabase().query("entries",null,"id=?",new String[]{Long.toString(id)},null,null,null)){if(!c.moveToFirst())throw new IllegalArgumentException("Saved record is unavailable or was removed.");return read(c);}}
++    void update(long id,boolean bookmark,String note){if(note.length()>20000)throw new IllegalArgumentException("Notes are limited to 20,000 characters.");ContentValues v=new ContentValues();v.put("bookmark",bookmark?1:0);v.put("note",note);if(getWritableDatabase().update("entries",v,"id=?",new String[]{Long.toString(id)})!=1)throw new IllegalArgumentException("Saved record no longer exists.");}
++    void note(long id,String note){if(note.length()>20000)throw new IllegalArgumentException("Notes are limited to 20,000 characters.");ContentValues v=new ContentValues();v.put("note",note);if(getWritableDatabase().update("entries",v,"id=?",new String[]{Long.toString(id)})!=1)throw new IllegalArgumentException("Saved record no longer exists.");}
++    void remove(long id){getWritableDatabase().delete("entries","id=?",new String[]{Long.toString(id)});}
++    private Entry read(Cursor c){Entry e=new Entry();e.id=c.getLong(c.getColumnIndexOrThrow("id"));e.created=c.getLong(c.getColumnIndexOrThrow("created"));e.kind=c.getString(c.getColumnIndexOrThrow("kind"));e.title=c.getString(c.getColumnIndexOrThrow("title"));e.question=c.getString(c.getColumnIndexOrThrow("question"));e.body=c.getString(c.getColumnIndexOrThrow("body"));e.provenance=c.getString(c.getColumnIndexOrThrow("provenance"));e.note=c.getString(c.getColumnIndexOrThrow("note"));e.bookmark=c.getInt(c.getColumnIndexOrThrow("bookmark"))!=0;return e;}
++}
+diff --git 1/android/app/src/main/java/org/pocketlore/app/SavedActivity.java 2/android/app/src/main/java/org/pocketlore/app/SavedActivity.java
+new file mode 100644
+index 0000000..1e997cb
+--- /dev/null
++++ 2/android/app/src/main/java/org/pocketlore/app/SavedActivity.java
+@@ -0,0 +1,35 @@
++package org.pocketlore.app;
++
++import android.app.AlertDialog;
++import android.content.Intent;
++import android.os.Bundle;
++import android.widget.*;
++import java.util.*;
++
++public final class SavedActivity extends NotebookActivity {
++    LinearLayout records;EditText filter;boolean bookmarks;long generation;
++    final LinkedHashSet<Long> selected=new LinkedHashSet<>();
++    @Override public void onCreate(Bundle state){super.onCreate(state);
++        LinearLayout page=ReaderUi.column(this);ReaderUi.screen(this,page,"Saved");
++        ReaderUi.title(this,page,"Your notebook","History, bookmarks and notes stay on this device.");
++        filter=new EditText(this);ReaderUi.label(this,page,filter,"Find saved research");filter.setHint("Search titles, questions or notes");page.addView(filter);
++        if(state!=null){filter.setText(state.getString("filter",""));bookmarks=state.getBoolean("bookmarks");long[] ids=state.getLongArray("selected");if(ids!=null)for(long id:ids)selected.add(id);}
++        filter.setImeOptions(android.view.inputmethod.EditorInfo.IME_ACTION_SEARCH);filter.setSingleLine(true);filter.setOnEditorActionListener((v,action,event)->{refresh();return true;});
++        filter.addTextChangedListener(new android.text.TextWatcher(){public void beforeTextChanged(CharSequence s,int start,int count,int after){}public void onTextChanged(CharSequence s,int start,int before,int count){refresh();}public void afterTextChanged(android.text.Editable e){}});
++        Switch only=new Switch(this);only.setText("Bookmarks only");only.setTextSize(16);only.setMinHeight(ReaderUi.dp(this,48));only.setChecked(bookmarks);page.addView(only);only.setOnCheckedChangeListener((v,on)->{bookmarks=on;refresh();});
++        LinearLayout actions=ReaderUi.column(this);ReaderUi.button(this,page,"Notebook actions",()->actions.setVisibility(actions.getVisibility()==8?0:8));page.addView(actions);actions.setVisibility(8);
++        ReaderUi.button(this,actions,"Compare selected (2)",()->{if(selected.size()!=2){message("Select exactly two real saved records to compare.");return;}Long[] ids=selected.toArray(new Long[0]);startActivity(new Intent(this,SourceReaderActivity.class).putExtra("record",ids[0].longValue()).putExtra("compare",ids[1].longValue()));});
++        ReaderUi.button(this,actions,"Export notebook",()->work(()->{List<NotebookStore.Entry> all;try(NotebookStore store=new NotebookStore(this)){all=store.list("",false);}runOnUiThread(()->export(all,false));}));
++        operation=ReaderUi.text(this,"Loading saved history…",16);ReaderUi.status(operation);page.addView(operation);records=new LinearLayout(this);records.setOrientation(1);page.addView(records);
++    }
++    @Override protected void onResume(){super.onResume();refresh();}
++    void refresh(){long epoch=++generation;String query=filter.getText().toString();boolean only=bookmarks;work(()->{List<NotebookStore.Entry> entries;try(NotebookStore store=new NotebookStore(this)){entries=store.list(query,only);}runOnUiThread(()->{if(isDestroyed()||epoch!=generation||records==null)return;records.removeAllViews();message(entries.isEmpty()?"No saved records match. Read a source or finish research to start your history.":entries.size()+" saved records · Select two to compare");for(NotebookStore.Entry e:entries){
++        LinearLayout card=ReaderUi.column(this);card.setPadding(0,ReaderUi.dp(this,8),0,ReaderUi.dp(this,8));LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,-2);lp.bottomMargin=ReaderUi.dp(this,12);records.addView(card,lp);
++        ReaderUi.entry(this,card,e.title,e.note.isEmpty()?"Open saved snapshot":"Includes your note",()->startActivity(new Intent(this,SourceReaderActivity.class).putExtra("record",e.id)));
++        card.addView(ReaderUi.text(this,e.kind+" · "+android.text.format.DateFormat.format("yyyy-MM-dd HH:mm",e.created)+(e.bookmark?" · Bookmarked":" · History"),16));
++        LinearLayout details=new LinearLayout(this);details.setOrientation(1);ReaderUi.button(this,card,"Record actions",()->details.setVisibility(details.getVisibility()==8?0:8));card.addView(details);details.setVisibility(8);
++        CheckBox select=new CheckBox(this);select.setText("Select for comparison");select.setTextSize(16);select.setMinHeight(ReaderUi.dp(this,48));select.setChecked(selected.contains(e.id));details.addView(select);select.setOnCheckedChangeListener((v,on)->{if(on&&selected.size()>=2&&!selected.contains(e.id)){select.setChecked(false);message("Choose at most two records.");}else if(on)selected.add(e.id);else selected.remove(e.id);});
++        ReaderUi.button(this,details,"Remove saved record",()->new AlertDialog.Builder(this).setTitle("Remove saved record?").setMessage("Deletes this history snapshot, bookmark and note. Installed sources remain. Export first if you need a copy.").setNegativeButton("Keep",null).setPositiveButton("Remove",(d,w)->work(()->{try(NotebookStore store=new NotebookStore(this)){store.remove(e.id);}runOnUiThread(()->{selected.remove(e.id);refresh();});})).show());
++    }});});}
++    @Override public void onSaveInstanceState(Bundle b){super.onSaveInstanceState(b);b.putString("filter",filter.getText().toString());b.putBoolean("bookmarks",bookmarks);b.putLongArray("selected",selected.stream().mapToLong(Long::longValue).toArray());}
++}
+diff --git 1/android/app/src/main/java/org/pocketlore/app/SourceReaderActivity.java 2/android/app/src/main/java/org/pocketlore/app/SourceReaderActivity.java
+new file mode 100644
+index 0000000..21562bb
+--- /dev/null
++++ 2/android/app/src/main/java/org/pocketlore/app/SourceReaderActivity.java
+@@ -0,0 +1,57 @@
++package org.pocketlore.app;
++
++import android.content.*;
++import android.os.Bundle;
++import android.graphics.Color;
++import android.view.*;
++import android.widget.*;
++import java.util.*;
++
++/** Full-screen, locally persisted source/result reading, separate from inference. */
++public final class SourceReaderActivity extends NotebookActivity {
++    long recordId,compareId; NotebookStore.Entry entry,other;
++    LinearLayout body; ScrollView scroll; TextView content; EditText note;
++    boolean cream; int readingSize; String draft;
++    @Override public void onCreate(Bundle state){super.onCreate(state);
++        recordId=getIntent().getLongExtra("record",-1);compareId=getIntent().getLongExtra("compare",-1);
++        cream=getPreferences(0).getBoolean("cream",true);readingSize=getPreferences(0).getInt("size",18);
++        if(state!=null)draft=state.getString("note");
++        body=ReaderUi.column(this);scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.addView(body);setContentView(scroll);ReaderUi.insets(this,scroll);
++        ReaderUi.button(this,body,"Close reader",this::finish);operation=ReaderUi.text(this,"Opening saved snapshot…",16);ReaderUi.status(operation);body.addView(operation);
++        work(()->{try(NotebookStore store=new NotebookStore(this)){entry=store.get(recordId);if(compareId!=-1)other=store.get(compareId);}runOnUiThread(()->{if(!isDestroyed()){render();scroll.post(()->scroll.scrollTo(0,state!=null?state.getInt("scroll",0):getPreferences(0).getInt("position-"+recordId+"-"+compareId,0)));}});});
++    }
++    void render(){
++        body.removeAllViews();ReaderUi.button(this,body,"Close reader",this::finish);
++        TextView title=ReaderUi.text(this,other==null?entry.title:"Compare saved evidence",28);title.setTypeface(android.graphics.Typeface.create("serif",0));ReaderUi.heading(title);body.addView(title);
++        body.addView(ReaderUi.text(this,entry.kind.equals("research")?"Saved research · Offline":"Source snapshot · Offline",16));
++        LinearLayout appearance=new LinearLayout(this);appearance.setOrientation(LinearLayout.VERTICAL);ReaderUi.button(this,body,"Reading options",()->appearance.setVisibility(appearance.getVisibility()==8?0:8));body.addView(appearance);appearance.setVisibility(8);
++        if(other==null){java.util.regex.Matcher date=java.util.regex.Pattern.compile("(?m)Source date(?: / retrieval)?: ([^\\n]*)").matcher(entry.body);appearance.addView(ReaderUi.text(this,"Source date: "+(date.find()&&!date.group(1).trim().isEmpty()?date.group(1):"Unknown")+"\nCapture time is not publication time. Edition and coverage remain in the source text.",16));}
++        Spinner size=new Spinner(this);size.setMinimumHeight(ReaderUi.dp(this,48));size.setContentDescription("Reader font size");size.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,new String[]{"Reading size: 18sp","Reading size: 22sp","Reading size: 26sp"}));appearance.addView(size);size.setSelection(readingSize==26?2:readingSize==22?1:0);
++        size.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){public void onNothingSelected(AdapterView<?> p){}public void onItemSelected(AdapterView<?> p,View v,int index,long id){readingSize=new int[]{18,22,26}[index];getPreferences(0).edit().putInt("size",readingSize).apply();if(content!=null)content.setTextSize(readingSize);if(v!=null)colors(v);}});
++        ReaderUi.button(this,appearance,"Switch reading theme",()->{cream=!cream;getPreferences(0).edit().putBoolean("cream",cream).apply();colors(body);applyTheme();});
++        operation=ReaderUi.text(this,"",16);ReaderUi.status(operation);operation.setVisibility(View.GONE);body.addView(operation);
++        content=ReaderUi.text(this,other==null?readingText(entry):"Comparison of two saved records; no new synthesis or verdict.\n\n"+readingText(entry)+"\n────────────\n\n"+readingText(other),readingSize);content.setTextIsSelectable(true);body.addView(content);
++        if(other==null){
++            Button bookmark=ReaderUi.button(this,body,entry.bookmark?"Bookmarked · Remove bookmark":"Bookmark this record",()->{});
++            bookmark.setOnClickListener(v->{boolean next=!entry.bookmark;String text=note==null?entry.note:note.getText().toString();work(()->{try(NotebookStore store=new NotebookStore(this)){store.update(entry.id,next,text);}runOnUiThread(()->{entry.bookmark=next;entry.note=text;bookmark.setText(next?"Bookmarked · Remove bookmark":"Bookmark this record");message(next?"Bookmark saved on this device.":"Bookmark removed; history retained.");});});});
++        }
++
++        if(other==null){
++            note=new EditText(this);ReaderUi.label(this,body,note,"Personal note");note.setMinLines(3);note.setGravity(Gravity.TOP);note.setInputType(android.text.InputType.TYPE_CLASS_TEXT|android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE);note.setFilters(new android.text.InputFilter[]{new android.text.InputFilter.LengthFilter(20000)});note.setText(draft==null?entry.note:draft);body.addView(note);
++            ReaderUi.button(this,body,"Save note",()->{String value=note.getText().toString();work(()->{try(NotebookStore store=new NotebookStore(this)){store.note(entry.id,value);}runOnUiThread(()->{entry.note=value;content.setText(readingText(entry));message("Personal note saved. It is not source evidence.");});});});
++        }
++        ReaderUi.button(this,body,"Export snapshot",()->export(current(),false));
++        ReaderUi.button(this,body,"Share snapshot",()->export(current(),true));
++        colors(body);applyTheme();
++    }
++    private String readingText(NotebookStore.Entry e){return (e.question.isEmpty()?"":"Question\n"+e.question+"\n")+e.body+"\n\nSource and coverage\n"+e.provenance+"\n\nCaptured on this device: "+android.text.format.DateFormat.format("yyyy-MM-dd HH:mm",e.created)+"\nCapture time is not the source publication date.";}
++    private void applyTheme(){scroll.setBackgroundColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);getWindow().setStatusBarColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);getWindow().setNavigationBarColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);getWindow().getDecorView().setSystemUiVisibility(cream?View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR|View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR:0);}
++    private List<NotebookStore.Entry> current(){if(note!=null)entry.note=note.getText().toString();return other==null?Collections.singletonList(entry):Arrays.asList(entry,other);}
++    private void colors(View v){
++        if(v instanceof TextView){TextView t=(TextView)v;t.setTextColor(cream?ReaderUi.CREAM:ReaderUi.NAVY);t.setHintTextColor(cream?Color.rgb(23,95,88):Color.rgb(188,203,211));}
++        if(v instanceof Button)v.setBackgroundTintList(android.content.res.ColorStateList.valueOf(cream?Color.rgb(225,223,210):Color.rgb(27,45,62)));
++        if(v instanceof ViewGroup)for(int i=0;i<((ViewGroup)v).getChildCount();i++)colors(((ViewGroup)v).getChildAt(i));
++    }
++    @Override protected void onPause(){super.onPause();if(scroll!=null)getPreferences(0).edit().putInt("position-"+recordId+"-"+compareId,scroll.getScrollY()).apply();if(note!=null&&entry!=null){String value=note.getText().toString();long id=entry.id;work(()->{try(NotebookStore store=new NotebookStore(this)){store.note(id,value);}});}}
++    @Override public void onSaveInstanceState(Bundle b){super.onSaveInstanceState(b);if(note!=null)b.putString("note",note.getText().toString());if(scroll!=null)b.putInt("scroll",scroll.getScrollY());}
++}
+diff --git 1/docs/UI-CAPABILITY-GAPS.md 2/docs/UI-CAPABILITY-GAPS.md
+new file mode 100644
+index 0000000..315342c
+--- /dev/null
++++ 2/docs/UI-CAPABILITY-GAPS.md
+@@ -0,0 +1,112 @@
++# Native UI refinement: capability boundary
++
++The competitor-feature audit completed at 2026-10-01T21:41:40Z. Its actual `repo/output/HANDOFF.json`, 63-entry features.json, matrix and design/extras documents were read. This lane verified their declared artifact hashes and all 78 unique cited primary-source file hashes, and inspected relevant persistence, reader and export source excerpts. Receipts are in lane evidence-refined/competitor-audit-receipt.json and competitor-source-check.json. The audit is static source/documentation research: no rival APK behavior or performance was reproduced. It reports an initial accidental tracked-asset download and subsequent source-only cleanup; this UI lane did not repeat that acquisition. Bounty data returned 403, so exhaustive current submissions are not established.
++
++Pinned revisions: AndroidLM `5abca020a65dea01a04d52131943e440a5e6f5cf`; BOAR `0cfd4a77badd01297af8dc9a3a10924f8a895105`; upstream Field Atlas `fc6092530f647fd34a665b4924a4a91341eccf66`; Field Atlas vector-search fork `769e85d162f266d9abf831134b4e149175d4dcfe`. The audit examined an older PocketLore baseline; the mapping below updates only this refinement's concrete scope and does not claim the whole union is implemented.
++
++Primary references checked on 2026-10-01:
++
++- [Field Atlas fork](https://github.com/vbuterin/fieldatlas), with upstream [Field Atlas](https://github.com/0x94t3z/fieldatlas): locally verified packs, citation inspection, privacy/diagnostics, model unloading, optional semantic/vector retrieval and audio tooling are described. This UI lane adds notebook workflows; it does not reproduce those retrieval or audio capabilities or validate the reported physical-device claims.
++- [AndroidLM](https://github.com/Phineas1500/AndroidLM): documented broad offline reference/travel sources, location-aware place recommendations, domain reference material and streamed expert-model execution. PocketLore's city/category search remains source-record browsing, without routing, verified current hours, diet suitability, GPS, or a comparable qualified model. No phone speed or answer-quality comparison was run.
++- [BOAR](https://github.com/rferrari/boar-app): documented personal document ingestion, collection export, model selection and multilingual UI. PocketLore exports saved notebook snapshots, not a new ingestible knowledge-pack format; arbitrary PDF/document ingestion and localization are still missing. BOAR's first-run networking design is not adopted.
++
++## Implemented in this lane
++
++- Native Research, Library, Places and Saved destinations, with model/import/storage controls in secondary Settings or disclosure.
++- Private SQLite history of completed research and opened sources, persistent bookmarks and notes, searchable titles/questions/notes, deletion confirmation and explicit storage bounds.
++- Full-screen saved source/result reading, persisted 18/22/26sp sizing, navy and cream reader themes, dates and original provenance, with no inference or rights promotion.
++- Comparison of two actual saved records or two actual retrieved source passages; this presents evidence without generating a comparative answer.
++- Portable UTF-8 Markdown snapshot/notebook export through the Android document picker, and read-granted content-URI sharing through the system chooser.
++
++These statements describe implemented code. Runtime evidence and exact candidate identities are recorded separately; documentation itself is not execution proof.
++
++## Remaining product and acceptance gaps
++
++| Capability | Remaining boundary |
++| --- | --- |
++| Research usefulness | Canonical answer repair is outside this lane; saved weak/abstained results retain their labels. |
++| Follow-up dialogue and projects | No conversational reasoning state, notebook folders, tags, or cross-record synthesis. |
++| Source search | Existing title/FTS readers retained; no new semantic search, article-specific find, OCR, PDF ingestion or document conversion. |
++| Places | No map renderer, routing, GPS, live opening hours, verified diet/accessibility or deduplicated venue guarantee. |
++| Coverage | Only installed editions are searched; staged host assets and database counts are not content completeness or rights clearance. |
++| Reading | Native single-column reading; no rich equation renderer or fully adaptive tablet split-pane workspace. |
++| Portability | Markdown export is not pack import, notebook re-import, sync, encrypted backup or interoperability certification. |
++| Sharing | No compatible receiver on this AOSP emulator; chooser/provider checks cannot prove recipient delivery. |
++| Accessibility | Runtime text scaling and node bounds are bounded checks; TalkBack listening, switch access and human accessibility acceptance remain open. |
++| Hardware | Emulator results do not establish physical Android/GrapheneOS, thermals, memory safety, battery or 12GB-phone acceptance. |
++| Competition | No matched device/corpus/question comparison and no superiority claim. |
++
++
++## Audit capability reconciliation
++
++Every audit identifier is accounted for; retained baseline features are not counted as new implementation.
++
++| Audit ID | This refinement / remaining work |
++| --- | --- |
++| chat-turns | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| chat-sessions | Partial: persistent question/result history and per-record removal; no titled conversational sessions. |
++| chat-memory-controls | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| answer-copy-feedback | Partial: selectable answer/source text and private notes; no structured usefulness feedback. |
++| answer-style | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| retrieval-lexical | Existing title/redirect/FTS readers retained; actual installed article lookup checked. |
++| retrieval-semantic | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| retrieval-scope | Existing active collection selection retained; no new selection policy. |
++| citation-open | Preserved current claim links and source passage inspection; actual bulk source flow checked. |
++| citation-support | Existing answer labels retained; semantic support quality remains canonical work. |
++| source-provenance | Implemented snapshot date/provenance display; correctness depends on supplied source metadata. |
++| comparison-reasoning | Existing engine unchanged; the new workspace does not perform comparative reasoning. |
++| deep-research | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| evidence-gap | Existing fallback/abstention labels retained and fallback exercised; quality repair remains open. |
++| multilingual-answers | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| world-wikipedia | Existing installed full/lead reader retained; no completeness or generated coverage claim. |
++| world-places | Existing installed city/category/radius reader retained; no new place ranking or deduplication. |
++| gps-near-me | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| dietary-evidence | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| place-details | Existing source detail fields retained; missing data remains unavailable. |
++| hours-and-dates | Dates shown when supplied; current hours are explicitly unavailable. |
++| place-ranking | Existing distance/source-candidate labels only; no new recommendation ranking. |
++| travel-guides | Existing regional reader/tools only; no new auxiliary guide integration. |
++| travel-calculators | Existing unit/date/distance tools retained; no new exchange-rate calculator. |
++| emergency-reference | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| ethereum-sources | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| cryptography-sources | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| biology-sources | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| import-text-markdown | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| import-csv | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| import-json | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| import-pdf | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| photos-ocr | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| pdf-ocr | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| attachment-scope | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| collection-export | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| collection-lifecycle | Existing pack selection/removal retained; arbitrary named-document collections still missing. |
++| offline-voice | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| setup-onboarding | Task-first entry and Settings added; guided first-run asset delivery remains missing. |
++| model-selection | Existing single saved-model lifecycle only; no qualified multi-model selector. |
++| model-import | Existing local GGUF checks retained; no larger-model qualification. |
++| model-catalog | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| download-resume | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| pack-update-integrity | Existing transaction/recovery unchanged; heavy update tests not repeated. |
++| storage-budget | Existing byte labels/checks retained; unified full asset ledger and provider-copy qualification remain open. |
++| engine-routing | Existing controller/fallback retained; no new route or model role. |
++| memory-cache | Existing unload/reload retained and explicit unload used; no new warm-state optimization. |
++| cancel-background | Existing cancellation controls retained; no claim of new cancellation/recovery runtime qualification. |
++| progress-recovery | Actual loading/export states and errors implemented; full interrupted-provider scenarios remain open. |
++| telemetry-export | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| task-first-navigation | Implemented; four destinations and secondary Settings, emulator flow checked. |
++| appearance-reader | Implemented reader font/theme controls; full application light theme and tablet composition remain gaps. |
++| accessible-controls | 48dp bounds, keyboard, 100%/200% fonts and node captures checked; TalkBack/switch/human acceptance open. |
++| offline-contract | No INTERNET permission or new GMS dependency; offline emulator UI exercised. |
++| privacy-reset | Per-record deletion with confirmation; no bulk history reset or retention preference. |
++| notebooks | Partial: one bounded local notebook with notes/snapshots; no folders, tags or multiple named notebooks. |
++| comparison-workspace | Partial: two actual saved records or retrieved passages in a sequential reader; no editable dimension grid or tablet side-by-side panes. |
++| freshness-coverage | Source dates, snapshot/preview/edition limitations shown; no query-specific coverage completeness guarantee. |
++| portable-evidence-bundle | Partial: Markdown with source metadata and notes via SAF/share; no JSON bundle round-trip/reimport. |
++| bookmarks-reader | Partial: persistent record bookmarks and font/theme; reading position restores on recreation, not durable bookmark reopen. |
++| recovery-pack-manager | Existing recovery messages retained under Settings; no unified consumer import journal. |
++| experimental-large-model-engines | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++| local-diagnostic-replay | Not implemented by this lane; requires a separate scoped implementation and resource/quality acceptance. |
++
++## Editorial redesign follow-up
++
++The redesign adds a light editorial shell, original icon destinations, actual bundled source browsing, live Saved filtering, disclosed record actions and durable per-record reader position. The latter supersedes the earlier Activity-only reading-position limitation. It does not close the remaining capability matrix: folders/tags, verified notebook reimport, personal document import (canonical330 is separate), OCR/voice, maps/GPS/routing, current hours/diet, semantic retrieval or larger-model hardware qualification remain outside this candidate. No competitive win is claimed. API37 loader verification is separate from physical ARM64/GrapheneOS and full-corpus capacity acceptance.
+diff --git 1/docs/UI-REDESIGN-VERIFICATION.md 2/docs/UI-REDESIGN-VERIFICATION.md
+new file mode 100644
+index 0000000..52bbeb5
+--- /dev/null
++++ 2/docs/UI-REDESIGN-VERIFICATION.md
+@@ -0,0 +1,23 @@
++# Editorial notebook verification
++
++This candidate replaces the rejected refined dark UI. DIRECTION-2.md was written before implementation. The baseline image and stage1 after image are actual emulator-5564 captures at the same viewport; final runtime captures supersede stage1. Prior refined handoffs and their criticisms remain historical. No screenshot alone establishes completion.
++
++The private source base remains 15c48b43999cb57599c58477668fc73a03748276 on codex/pocketlore-ui, actual Git directory ../checkpoint.git, with read-only metadata. Stage1, stage2 and stage3 nonempty patches and file hashes are retained under ../evidence-redesign. Coordinator sealing is required; no invented commit or empty checkpoint is reported.
++
++The design uses original native Views and line icons, no rival code or assets. Research has a single composer, edition-aware bookshelf and real recent research; Library now reads the bundled USGS source passages as well as existing bulk searches; Explore retains actual place search and truthful unavailable routing/hours; Saved retains local records, bookmarks, notes, comparison and export. Source reading supports text sizing, light/dark preference and persistent position. Technical model/import/storage controls remain in Settings. Result text and uncertainty still come from the unchanged answer engine.
++
++Build uses the rig JDK/SDK and cached Gradle, offline, 2 workers, 2 GiB Gradle heap. Native inputs are the four exact binaries extracted from accepted305 APK 9ce430ec0dcf9c4cb5fa537d9b3bcc2cdf197fe59b4121aee54fefa0a7079e92; the accepted two CMake target changes are included verbatim. This is verified binary reuse, not a claimed clean native recompilation. Native-source/build input identities, accepted commit and binary hashes are in native-inputs.json. No old unaligned binary is intentionally shipped. The actual APK is inspected for ELF LOAD/RELRO and ZIP alignment. API37 runtime verifies native session creation/cancellation/close and SQLite query, without generation.
++
++Runtime instrumentation uses only existing emulator-5564 after boot and active-instrumentation checks. The coordinator's sprint receipt reports the GPU renderer; this lane did not restart/wipe/create any emulator or touch 5560/5562. Tests use real bundled groundwater source data, real SQLite notebook records, actual Android SAF and content provider, source rights/date retention, restored question/result, Settings/Back, keyboard, 100%/200% font scale and absent Places coverage. Test-created notes explicitly identify UI verification. Research runs with no loaded model and verifies invokedModel=false; no inference or download is performed. Global font scale is restored afterward.
++
++Limits: these are emulator development checks, not physical Android/GrapheneOS, TalkBack traversal, human usability, rival parity or research-quality acceptance. Active-generation cancellation is not newly exercised because this UI sprint prohibits inference; existing engine cancellation code is unchanged. SAF cancellation is exercised. Full-data303 evidence belongs to API35 emulator-5562: 41,628,602,368 final data/code bytes, 43,145,453,568 measured replacement bytes and 44,796,211,667 calculated provider/reserve bound. None is a 5564 capacity receipt. Bulk source reading remains inherited code and must be integrated against real installed bulk assets separately. No canonical330 personal-document feature is included or claimed.
++
++Remaining capabilities are reconciled in UI-CAPABILITY-GAPS.md. Markdown export is portable text, not a verified notebook reimport format. Comparison presents two actual saved snapshots and does not generate a new synthesis. Source snapshots preserve rights labels but grant no new rights. Notebook limits remain 200 records, 2 MiB per record, 16 MiB body/provenance; notes and metadata add overhead. Physical resource budget and independent final integration remain open.
++
++The cold-restart driver initially failed because Android correctly refused shell access to a non-exported Saved Activity, then because an external Main launch retained the existing task's top screen. Both failures are preserved. The repaired driver uses visible Research/Saved navigation and actual touch coordinates from the current hierarchy; it verifies notebook rows after process restart, reopens the source, dismisses the keyboard with Back, and compares the installed APK bytes with the built APK. No Activity was made exported to accommodate testing.
++
++The populated Research state collapses the introductory composer into a question heading and Edit question action; the original engine output and uncertainty stay visible, with source excerpts in separate cards. The source-unavailable screen has a visible Close reader action before asynchronous loading completes. Loading labels follow real operations; no artificial waiting or fake percentage is used to make a loading screenshot.
++
++The delivery-state test found a real second-recreation failure: changing from a restored result to editing stopped the snapshot from being saved. Both failed 100%/200% reports and their exact APK are retained. Explicit snapshot tracking now preserves the editing state and clears the old snapshot when new research begins. The regression checks compact result → Edit question → changed draft → Activity recreation, ensuring the prior answer is not relabeled or displayed as an answer to that draft. Final receipts must come from the repaired runs, not the failed delivery runs.
++
++During repaired-default verification, instrumentation emitted PASS, then emulator-5564 restarted externally while ADB copied evidence. The guest returned with the same APK hash and 1280×2856 viewport, but its latest report/error screenshot had not survived the restart. The raw PASS output, partial archive and failed copy log are retained as interrupted evidence, not a complete screenshot receipt. Release-default/release-large are the subsequent complete verification runs; no emulator restart, wipe or creation was issued by this lane. DEVICE-USAGE.json records the current serial window.
+diff --git 1/tools/evaluation/verify_16kb_artifacts.py 2/tools/evaluation/verify_16kb_artifacts.py
+new file mode 100644
+index 0000000..12fd714
+--- /dev/null
++++ 2/tools/evaluation/verify_16kb_artifacts.py
+@@ -0,0 +1,27 @@
++#!/usr/bin/env python3
++"""Inspect actual ELF64 program headers and APK entry offsets, not filenames or flags."""
++import hashlib,json,struct,sys,zipfile
++PAGE=16384
++
++def elf(data):
++ if data[:6]!=b'\x7fELF\x02\x01':raise ValueError('Expected little-endian ELF64')
++ offset=struct.unpack_from('<Q',data,32)[0];size,count=struct.unpack_from('<HH',data,54);loads=[];relro=[]
++ for i in range(count):
++  kind,flags,off,va,pa,filesz,memsz,align=struct.unpack_from('<IIQQQQQQ',data,offset+i*size)
++  if kind==1:loads.append({'offset':off,'vaddr':va,'align':align,'valid':align>=PAGE and (va-off)%PAGE==0})
++  if kind==0x6474e552:relro.append({'vaddr':va,'memsz':memsz,'valid':(va+memsz)%PAGE==0})
++ return {'machine':struct.unpack_from('<H',data,18)[0],'loads':loads,'relro':relro,'valid':bool(loads) and all(x['valid'] for x in loads+relro)}
++
++def inspect(path):
++ raw=open(path,'rb').read();rows=[]
++ with zipfile.ZipFile(path) as apk:
++  for info in apk.infolist():
++   if not info.filename.startswith('lib/') or not info.filename.endswith('.so'):continue
++   body=apk.read(info);name,extra=struct.unpack_from('<HH',raw,info.header_offset+26);start=info.header_offset+30+name+extra
++   r=elf(body);r.update(name=info.filename,sha256=hashlib.sha256(body).hexdigest(),bytes=len(body),zip_offset=start,uncompressed=info.compress_type==0)
++   r['zip_valid']=r['uncompressed'] and start%PAGE==0;rows.append(r)
++ expected={f'lib/{a}/{n}.so' for a in ['arm64-v8a','x86_64'] for n in ['libpocketlore','libpocketlore_index']}
++ valid={r['name'] for r in rows}==expected and all(r['valid'] and r['zip_valid'] and r['machine']==(183 if '/arm64-v8a/' in r['name'] else 62) for r in rows)
++ return {'apk_sha256':hashlib.sha256(raw).hexdigest(),'apk_bytes':len(raw),'libraries':rows,'valid':valid}
++if __name__=='__main__':
++ result=inspect(sys.argv[1]);print(json.dumps(result,indent=2));sys.exit(0 if result['valid'] else 1)

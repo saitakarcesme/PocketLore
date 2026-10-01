@@ -1,0 +1,73 @@
+package org.pocketlore.app;
+
+import android.app.*;
+import android.content.*;
+import android.graphics.*;
+import android.os.*;
+import android.view.*;
+import android.view.accessibility.*;
+import android.widget.*;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
+import java.util.concurrent.atomic.*;
+import java.util.function.BooleanSupplier;
+import org.json.*;
+
+/** Actual installed-reader tests; no inference, catalog mutation or fabricated source content. */
+public final class RefinedUiInstrumentation extends Instrumentation {
+    Activity activity;final JSONArray checks=new JSONArray();File dir;long savedId=-1;String mode;
+    @Override public void onCreate(Bundle args){super.onCreate(args);mode=args.getString("mode","default");start();}
+    void ok(boolean pass,String label){if(!pass)throw new AssertionError(label);checks.put(label);}
+    View find(View root,String name){if(name.equals(root.getTag())||name.contentEquals(root.getContentDescription()==null?"":root.getContentDescription())||root instanceof TextView&&name.contentEquals(((TextView)root).getText()))return root;if(root instanceof ViewGroup)for(int i=0;i<((ViewGroup)root).getChildCount();i++){View r=find(((ViewGroup)root).getChildAt(i),name);if(r!=null)return r;}return null;}
+    View view(String name){View v=find(activity.getWindow().getDecorView(),name);if(v==null)throw new AssertionError("Missing control "+name);return v;}
+    void click(String name){runOnMainSync(()->{View v=view(name);v.requestRectangleOnScreen(new Rect(0,0,v.getWidth(),v.getHeight()),true);v.performClick();});waitForIdleSync();}
+    void await(BooleanSupplier ready,String label)throws Exception{long until=SystemClock.elapsedRealtime()+20000;while(SystemClock.elapsedRealtime()<until){AtomicBoolean yes=new AtomicBoolean();runOnMainSync(()->yes.set(ready.getAsBoolean()));if(yes.get())return;Thread.sleep(50);}throw new AssertionError("Timeout: "+label);}
+    void screenshot(String name)throws Exception{waitForIdleSync();Thread.sleep(1200);Bitmap image=getUiAutomation().takeScreenshot();ok(image!=null,"Screenshot "+name);try(OutputStream o=new FileOutputStream(new File(dir,name+".png"))){image.compress(Bitmap.CompressFormat.PNG,100,o);}image.recycle();AccessibilityNodeInfo root=getUiAutomation().getRootInActiveWindow();try(Writer w=new OutputStreamWriter(new FileOutputStream(new File(dir,name+"-accessibility.txt")),StandardCharsets.UTF_8)){dump(root,w,0);}if(root!=null)root.recycle();}
+    void dump(AccessibilityNodeInfo n,Writer w,int depth)throws Exception{if(n==null)return;Rect r=new Rect();n.getBoundsInScreen(r);w.write(" ".repeat(depth)+n.getClassName()+" text="+n.getText()+" description="+n.getContentDescription()+" bounds="+r+" clickable="+n.isClickable()+" visible="+n.isVisibleToUser()+"\n");for(int i=0;i<n.getChildCount();i++){AccessibilityNodeInfo c=n.getChild(i);dump(c,w,depth+1);if(c!=null)c.recycle();}}
+    void dimensions(View v){if(!v.isShown())return;if(v instanceof Button||v instanceof EditText||v instanceof Spinner||v instanceof CheckBox){ok(v.getHeight()>=ReaderUi.dp(activity,48),"48dp height: "+((v instanceof TextView)?((TextView)v).getText():v.getContentDescription()));ok(v.getWidth()>=ReaderUi.dp(activity,48),"48dp width");}if(v instanceof ViewGroup)for(int i=0;i<((ViewGroup)v).getChildCount();i++)dimensions(((ViewGroup)v).getChildAt(i));}
+    boolean clickNode(AccessibilityNodeInfo n,String text){if(n==null)return false;if(n.isClickable()&&text.equalsIgnoreCase(String.valueOf(n.getText())))return n.performAction(AccessibilityNodeInfo.ACTION_CLICK);for(int i=0;i<n.getChildCount();i++){AccessibilityNodeInfo c=n.getChild(i);boolean clicked=clickNode(c,text);if(c!=null)c.recycle();if(clicked)return true;}return false;}
+    void finishActivity(){if(activity!=null){runOnMainSync(activity::finish);waitForIdleSync();activity=null;}}
+    @Override public void onStart(){Bundle result=new Bundle();JSONObject report=new JSONObject();try{
+        dir=new File(getTargetContext().getFilesDir(),"ui-refined-"+mode);dir.mkdirs();
+        report.put("environment","emulator-5562; Android runtime, not physical acceptance").put("mode",mode).put("font_scale",getTargetContext().getResources().getConfiguration().fontScale);
+        activity=startActivitySync(new Intent(getTargetContext(),MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));waitForIdleSync();
+        report.put("activity_font_scale",activity.getResources().getConfiguration().fontScale);await(()->((MainActivity)activity).resourceIdle(),"Model load idle; no inference invoked");
+        runOnMainSync(()->dimensions(activity.getWindow().getDecorView()));screenshot("research");
+        runOnMainSync(()->{EditText q=(EditText)view("Research question");q.setText("How do these installed sources describe this topic, and which source dates and limitations should I keep with my notes?");q.requestFocus();((android.view.inputmethod.InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(q,android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT);});Thread.sleep(400);screenshot("research-keyboard");
+        runOnMainSync(()->((android.view.inputmethod.InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(view("Research question").getWindowToken(),0));waitForIdleSync();
+        runOnMainSync(()->((MainActivity)activity).showSettings());waitForIdleSync();ok(view("Import knowledge pack").isShown(),"Import remains reachable in Settings");runOnMainSync(()->activity.onBackPressed());waitForIdleSync();ok(view("Research question").isShown(),"Back restores Research");
+        runOnMainSync(()->((MainActivity)activity).showSettings());click("Unload model to free memory");await(()->((MainActivity)activity).resourceIdle(),"Model unloaded");ok(!((MainActivity)activity).modelReady(),"No model available for research test");runOnMainSync(()->{((MainActivity)activity).showResearch();((EditText)view("Research question")).setText("What is groundwater?");});await(()->view("Answer offline").isEnabled(),"Collections ready");click("Answer offline");await(()->((MainActivity)activity).latestAnswer()!=null,"Actual offline result without inference");ok(!((MainActivity)activity).latestAnswer().invokedModel,"Research test invoked no model");await(()->activity.getPreferences(0).getLong("lastRecord",-1)>0,"Actual research persisted");screenshot("research-result");
+        ActivityMonitor recreation=addMonitor(MainActivity.class.getName(),null,false);runOnMainSync(activity::recreate);Activity restored=waitForMonitorWithTimeout(recreation,20000);removeMonitor(recreation);ok(restored instanceof MainActivity,"Research Activity recreated");activity=restored;await(()->((TextView)view("Answer status")).getText().toString().startsWith("Restored snapshot"),"Snapshot restored after recreation");ok(((EditText)view("Research question")).getText().toString().equals("What is groundwater?"),"Question restored after recreation");screenshot("research-restored");
+
+        finishActivity();
+        activity=startActivitySync(new Intent(getTargetContext(),ScaleActivity.class).putExtra("section","Knowledge").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));waitForIdleSync();
+        runOnMainSync(()->((ScaleActivity)activity).query.setText("United States Declaration of Independence"));click("Search reference");await(()->((ScaleActivity)activity).results.getChildCount()>0,"Long real source title results");await(()->!((ScaleActivity)activity).worker.isAlive(),"Long-title search complete");runOnMainSync(()->{View first=((ScaleActivity)activity).results.getChildAt(0);ok(((TextView)first).getText().length()>=40,"Actual long title is retained");first.requestRectangleOnScreen(new Rect(0,0,first.getWidth(),first.getHeight()),true);dimensions(activity.getWindow().getDecorView());});screenshot("long-title-results");
+        runOnMainSync(()->((ScaleActivity)activity).query.setText("Acid"));click("Search reference");
+        await(()->((ScaleActivity)activity).results.getChildCount()>0,"Actual installed Knowledge results");screenshot("library-results");
+        ActivityMonitor monitor=addMonitor(SourceReaderActivity.class.getName(),null,false);
+        runOnMainSync(()->((ScaleActivity)activity).results.getChildAt(0).performClick());Activity reader=waitForMonitorWithTimeout(monitor,20000);removeMonitor(monitor);ok(reader instanceof SourceReaderActivity,"Real source opens full-screen reader");Activity libraryActivity=activity;runOnMainSync(libraryActivity::finish);activity=reader;
+        await(()->((SourceReaderActivity)activity).content!=null,"Reader content");SourceReaderActivity r=(SourceReaderActivity)activity;savedId=r.recordId;ok(r.entry.body.contains("Source date:"),"Actual source date retained");ok(r.entry.body.contains("Citation identity:"),"Source identity retained");ok(r.entry.body.contains("not cleared for generated answers"),"Generation restriction retained");if(r.cream){click("Reading options");click("Switch reading theme");click("Reading options");}runOnMainSync(()->((SourceReaderActivity)activity).scroll.scrollTo(0,0));screenshot("source-navy");
+        click("Bookmark this record");await(()->r.entry.bookmark,"Bookmark persisted");
+        runOnMainSync(()->{r.note.setText("UI verification note: retain the source date and citation identity when exporting this offline source.");view("Save note").performClick();});await(()->r.entry.note.startsWith("UI verification note"),"Note saved");
+        click("Reading options");runOnMainSync(()->((Spinner)view("Reader font size")).setSelection(2));click("Switch reading theme");click("Reading options");runOnMainSync(()->dimensions(activity.getWindow().getDecorView()));runOnMainSync(()->((SourceReaderActivity)activity).scroll.scrollTo(0,0));screenshot("source-cream-large");
+        try(NotebookStore store=new NotebookStore(getTargetContext())){NotebookStore.Entry e=store.get(savedId);ok(e.bookmark&&e.note.startsWith("UI verification note"),"Notebook survives new database connection");ok(store.list("Acid",true).stream().anyMatch(x->x.id==savedId),"Bookmark search uses real saved source");}
+        finishActivity();
+        activity=startActivitySync(new Intent(getTargetContext(),SourceReaderActivity.class).putExtra("record",savedId).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));await(()->((SourceReaderActivity)activity).content!=null,"Reopened record");ok(((SourceReaderActivity)activity).entry.bookmark,"Bookmark restored after Activity restart");ok(((SourceReaderActivity)activity).readingSize==26,"Reader size restored");
+        click("Export snapshot");await(()->((SourceReaderActivity)activity).operation.getText().toString().startsWith("Choose where"),"SAF launched");screenshot("export-document-picker");
+        AccessibilityNodeInfo picker=getUiAutomation().getRootInActiveWindow();boolean clicked=clickNode(picker,"Save");if(picker!=null)picker.recycle();ok(clicked,"Android SAF Save action found");await(()->((SourceReaderActivity)activity).operation.getText().toString().startsWith("Notebook exported"),"SAF document written");screenshot("export-complete");
+        SourceReaderActivity exportReader=(SourceReaderActivity)activity;
+        runOnMainSync(()->exportReader.export(java.util.Collections.singletonList(exportReader.entry),true));await(()->exportReader.operation.getText().toString().startsWith("Choose a recipient"),"Sharesheet launched");screenshot("share-chooser");getUiAutomation().performGlobalAction(android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_BACK);waitForIdleSync();
+        File[] files=new File(getTargetContext().getCacheDir(),"notebook-exports").listFiles();ok(files!=null&&files.length>0,"Real portable export generated");File newest=Arrays.stream(files).max(Comparator.comparingLong(File::lastModified)).get();String exported=new String(java.nio.file.Files.readAllBytes(newest.toPath()),StandardCharsets.UTF_8);ok(exported.contains("Citation identity:")&&exported.contains("UI verification note")&&exported.contains("Source date:"),"Export retains source, date and note");
+        android.net.Uri uri=android.net.Uri.parse("content://"+getTargetContext().getPackageName()+".notebook/"+newest.getName());try(InputStream in=getTargetContext().getContentResolver().openInputStream(uri)){ok(in!=null&&in.read()=='#',"Share provider serves real Markdown");}
+        boolean denied=false;try{getTargetContext().getContentResolver().openOutputStream(uri);}catch(Exception expected){denied=true;}ok(denied,"Share provider rejects writes");
+        java.nio.file.Files.copy(newest.toPath(),new File(dir,"exported-source.md").toPath(),java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+        finishActivity();activity=startActivitySync(new Intent(getTargetContext(),SavedActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));await(()->((SavedActivity)activity).records.getChildCount()>0,"Saved list");screenshot("saved");
+        SavedActivity saved=(SavedActivity)activity;List<NotebookStore.Entry> actual;try(NotebookStore store=new NotebookStore(getTargetContext())){actual=store.list("",false);}ok(actual.size()>=2,"Two real records available");long first=actual.stream().filter(e->e.kind.equals("research")).findFirst().get().id,second=actual.stream().filter(e->e.kind.equals("source")).findFirst().get().id;
+        finishActivity();activity=startActivitySync(new Intent(getTargetContext(),SourceReaderActivity.class).putExtra("record",first).putExtra("compare",second).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));await(()->((SourceReaderActivity)activity).other!=null&&((SourceReaderActivity)activity).content!=null,"Real comparison loaded");ok(((SourceReaderActivity)activity).content.getText().toString().contains("no new synthesis"),"Comparison does not claim new synthesis");screenshot("comparison");
+
+        finishActivity();activity=startActivitySync(new Intent(getTargetContext(),ScaleActivity.class).putExtra("section","Places").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));waitForIdleSync();ok(((ScaleActivity)activity).city.isShown(),"Places is direct destination");screenshot("places");
+        report.put("status","PASS");
+    }catch(Throwable e){try{report.put("status","FAIL").put("error",android.util.Log.getStackTraceString(e));}catch(Exception ignored){}}
+    finally{finishActivity();try{report.put("checks",checks);if(dir!=null)java.nio.file.Files.write(new File(dir,"report.json").toPath(),report.toString(2).getBytes(StandardCharsets.UTF_8));result.putString("report",report.toString());}catch(Exception e){result.putString("error",e.toString());}finish(report.optString("status").equals("PASS")?-1:1,result);}}
+}
