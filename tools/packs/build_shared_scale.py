@@ -12,7 +12,7 @@ def sha(p):
   for b in iter(lambda:f.read(1024*1024),b''):h.update(b)
  return h.hexdigest()
 def main():
- ap=argparse.ArgumentParser();ap.add_argument('kind',choices=['wiki','places']);ap.add_argument('--base',type=pathlib.Path);ap.add_argument('--output',required=True,type=pathlib.Path);ap.add_argument('--archive',action='store_true');a=ap.parse_args()
+ ap=argparse.ArgumentParser();ap.add_argument('kind',choices=['wiki','places']);ap.add_argument('--base',type=pathlib.Path);ap.add_argument('--output',required=True,type=pathlib.Path);ap.add_argument('--archive',action='store_true');ap.add_argument('--shard-limit',type=int);a=ap.parse_args()
  old=json.loads(a.base.read_text()) if a.base else None
  known={f['sha256'] for f in old['files']} if old else set()
  if a.kind=='wiki':
@@ -38,6 +38,21 @@ def main():
   for sh in shards:
    with sqlite3.connect('file:'+str(root/sh)+'?mode=ro&immutable=1',uri=True) as c:count+=c.execute('select sum(records) from block').fetchone()[0]
   extra=dict(shards=shards,source_records=count,cities='cities.sqlite',semantic_unique_entities=None)
+ if a.shard_limit is not None:
+  if not 1<=a.shard_limit<=len(extra['shards']):raise ValueError('Invalid shard limit')
+  selected=set(extra['shards'][:a.shard_limit]);extra['shards']=sorted(selected)
+  specs=[f for f in specs if (f['path'].split('/')[0] in selected if a.kind=='wiki' and '/' in f['path'] else f['path'] in selected if f['path'].startswith('compact-') else True)]
+  if a.kind=='wiki':
+   totals=[0,0,0]
+   for sh in selected:
+    with sqlite3.connect('file:'+str(root/sh/'catalog.sqlite')+'?mode=ro&immutable=1',uri=True) as c:vals=c.execute("select count(*),sum(tier='full'),sum(tier='lead') from articles").fetchone()
+    totals=[x+y for x,y in zip(totals,vals)]
+   extra.update(documents=totals[0],full_articles=totals[1],leads=totals[2])
+  else:
+   total=0
+   for sh in selected:
+    with sqlite3.connect('file:'+str(root/sh)+'?mode=ro&immutable=1',uri=True) as c:total+=c.execute('select sum(records) from block').fetchone()[0]
+   extra['source_records']=total
  fs=[]
  for f in specs:
   p=root/f['path'];assert p.stat().st_size==f['bytes'] and sha(p)==f['sha256'],p
@@ -45,6 +60,7 @@ def main():
  m=dict(version=2,kind=a.kind,collection_key='sealed-'+a.kind,label='Sealed '+a.kind+' — all shards, browse only',replaces=sha(a.base) if a.base else '',generation_allowed=False,rights_status='unreviewed_source_specific_terms; browse_only',source_inventory_sha256=sha(inventory),installed_bytes=sum(f['bytes'] for f in fs),files=fs,**extra)
  raw=(json.dumps(m,sort_keys=True,indent=2)+'\n').encode();a.output.parent.mkdir(parents=True,exist_ok=True)
  with a.output.open('xb') as out:out.write(raw)
+ if a.archive and sum(f['bytes'] for f in fs if f['payload'])>2_000_000_000:raise ValueError('Delta exceeds 2GB transport cap; use successive --shard-limit and --base manifests')
  if a.archive:
   with zipfile.ZipFile(a.output.with_suffix('.plscale'),'x',compression=zipfile.ZIP_STORED,allowZip64=True) as z:
    z.writestr('manifest.json',raw)

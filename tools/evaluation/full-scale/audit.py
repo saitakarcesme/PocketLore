@@ -34,7 +34,7 @@ def main(out):
  (out/'counts.json').write_text(json.dumps({'wiki':counts,'places':pc},indent=2)+'\n')
  alias=db(wiki/'redirect-aliases.sqlite');queries=[]
  for q in protocol['wiki_queries']+protocol['redirects']:
-  t=time.monotonic();exact=[];local=[]
+  t=time.monotonic();exact=[];alias_hits=[];local=[]
   redirects=list(alias.execute('select s.name,a.target from aliases a join shard_names s on s.id=a.shard where a.alias=? limit 12',(q.lower(),)))
   for p in shards:
    with db(p) as c:
@@ -42,11 +42,11 @@ def main(out):
     for row in c.execute('select id,title from articles where title=? limit 4',(q,)):exact.append({'shard':p.parent.name,'id':row[0],'title':row[1],'route':'exact'})
     for s,i in redirects:
      if pathlib.Path(s).stem==p.parent.name:
-      for row in c.execute('select id,title from articles where id=?',(i,)):exact.append({'shard':p.parent.name,'id':row[0],'title':row[1],'route':'redirect'})
+      for row in c.execute('select id,title from articles where id=?',(i,)):alias_hits.append({'shard':p.parent.name,'id':row[0],'title':row[1],'route':'redirect'})
     expr=' OR '.join('"'+w+'"' for w in q.lower().split())
     rows=c.execute('select a.id,a.title from search join articles a on a.id=search.rowid where search match ? order by bm25(search,5.0,1.0) limit 12',(expr,)).fetchall()
     local.append([{'shard':p.parent.name,'id':r[0],'title':r[1],'route':'rank'} for r in rows])
-  merged=exact+[s[i] for i in range(12) for s in local if i<len(s)];seen=set();hits=[]
+  merged=exact+alias_hits+[s[i] for i in range(12) for s in local if i<len(s)];seen=set();hits=[]
   for h in merged:
    key=(h['shard'],h['id'])
    if key not in seen:seen.add(key);hits.append(h)
