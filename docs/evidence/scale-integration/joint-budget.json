@@ -1,0 +1,20 @@
+{
+  "definition": "Measured sealed host primary assets plus current APK/model; projection of selection, NOT final Android installation. Excludes source downloads, optional overlapping ZIM, app extracted libraries/ART, existing small packs, update staging and filesystem overhead.",
+  "components": {
+    "wiki_all_15_shards_aliases_notices": 21853451129,
+    "places_all_16_shards": 16817700864,
+    "places_city_travel_osm_notices": 2279572113,
+    "production_model": 491400032,
+    "debug_apk": 15669266
+  },
+  "subtotal_bytes": 41457793404,
+  "target_bytes": 45000000000,
+  "hard_bytes": 50000000000,
+  "unallocated_to_target_bytes": 3542206596,
+  "apk_uncompressed_native_all_abis_bytes": 15372024,
+  "selected_host_only_4b_bytes": 2497280256,
+  "if_model_replaced_subtotal_bytes": 43463673628,
+  "places_4GB_provisional_budget_passed": false,
+  "original_projection_preserved": "state/scale-budget-reconciliation.json (read-only host coordinator record); first-two wiki estimate 22383236368 >22GB; final wiki inventory 21853451129 with only1250000 full articles",
+  "phone_fit_proven": false
+}

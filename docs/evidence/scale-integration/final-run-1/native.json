@@ -1,0 +1,70 @@
+{
+  "environment": "Android x86_64 emulator-5560; not physical hardware",
+  "before": {
+    "pss_kib": 25384,
+    "private_dirty_kib": 14588,
+    "java_used_bytes": 2797488,
+    "native_heap_bytes": 5545536
+  },
+  "sqlite_identity": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "model_bytes": 491400032,
+  "runtime": "llama.cpp bb4caa7540188872173c44d161602d9271386413; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads=2; model-budget=2147483648; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5\/256, seed=42",
+  "small_catalog": "3 of 3 collections active · 1113 distinct source documents · 40891 searchable passages",
+  "load_ms": 341,
+  "loaded_memory": {
+    "pss_kib": 586782,
+    "private_dirty_kib": 99612,
+    "java_used_bytes": 24670736,
+    "native_heap_bytes": 55000160
+  },
+  "bulk_hits_while_model_loaded": 12,
+  "answer": {
+    "question": "Why are headlamps recommended for lighting at night?",
+    "route": "GENERATED",
+    "invoked": true,
+    "draft": "[S1] Headlamps are the recommended light source because they are hands-free.",
+    "rendered": "[p567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea_essentials-e772a5a729be28b9] Headlamps are the recommended light source because they are hands-free.",
+    "reason": "Claim links and lexical support checked; factual entailment still requires source inspection. Sources may differ by conditions or date.",
+    "prompt": "Dated source excerpts. Differences may reflect scope or conditions, not a resolved contradiction.\n[S1]\nDate: 2026-05-28 page updated; retrieved 2026-09-30\nSource subject (data): NPS Ten Essentials\nILLUMINATION – Flashlight and headlamp Lighting is important in the outdoors at night, and can help you find your way out or signal for help. Items include flashlights, and headlamps. Headlamps are the recommended light source because they are hands-free. Be sure to pack extra batteries.\n\n[S2]\nDate: 1787-09-17 original document; retrieved 2026-09-30\nSource subject (data): Constitution (1787 original; superseded provisions, not current law)\nHe shall from time to time give to the Congress Information of the State of the Union, and recommend to their Consideration such Measures as he shall judge necessary and expedient; he may, on extraordinary Occasions, convene both Houses, or either of them, and in Case of Disagreement between them, with Respect to the Time of Adjournment, he may adjourn them to such Time as he shall think proper; he shall receive Ambassadors and other public Ministers; he shall take Care that the Laws be faithfully executed, and shall Commission all the Officers of the United States.\n\nQuestion: Why are headlamps recommended for lighting at night?\nUse one to four complete English sentences, each on its own line starting with source labels. No titles, numbered items or unfinished clauses. Stop when the supported answer is complete. Answer:",
+    "sources": [
+      {
+        "id": "p567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea_essentials-e772a5a729be28b9",
+        "text": "ILLUMINATION – Flashlight and headlamp Lighting is important in the outdoors at night, and can help you find your way out or signal for help. Items include flashlights, and headlamps. Headlamps are the recommended light source because they are hands-free. Be sure to pack extra batteries.",
+        "url": "https:\/\/www.nps.gov\/articles\/10essentials.htm",
+        "rights": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https:\/\/www.nps.gov\/aboutus\/disclaimer.htm"
+      },
+      {
+        "id": "p567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea_constitution-7c83628acb420ae9",
+        "text": "He shall from time to time give to the Congress Information of the State of the Union, and recommend to their Consideration such Measures as he shall judge necessary and expedient; he may, on extraordinary Occasions, convene both Houses, or either of them, and in Case of Disagreement between them, with Respect to the Time of Adjournment, he may adjourn them to such Time as he shall think proper; he shall receive Ambassadors and other public Ministers; he shall take Care that the Laws be faithfully executed, and shall Commission all the Officers of the United States.",
+        "url": "https:\/\/www.archives.gov\/founding-docs\/constitution-transcript",
+        "rights": "National Archives; original United States founding document; Public domain in the United States; https:\/\/www.archives.gov\/global-pages\/privacy.html"
+      },
+      {
+        "id": "p567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea_declaration-cbab713becb1bc10",
+        "text": "We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.--Such has been the patient sufferance of these Colonies; and such is now the necessity which constrains them to alter their former Systems of Government. The history of the present King of Great Britain is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a candid world.",
+        "url": "https:\/\/www.archives.gov\/founding-docs\/declaration-transcript",
+        "rights": "National Archives; original United States founding document; Public domain in the United States; https:\/\/www.archives.gov\/global-pages\/privacy.html"
+      }
+    ],
+    "tokens": 18,
+    "first_token_ms": 25495.999725,
+    "total_ms": 27203.23608
+  },
+  "cancel_reset": true,
+  "combined_memory": {
+    "pss_kib": 609448,
+    "private_dirty_kib": 115320,
+    "java_used_bytes": 3599552,
+    "native_heap_bytes": 45146528
+  },
+  "reload": true,
+  "after": {
+    "pss_kib": 95590,
+    "private_dirty_kib": 75500,
+    "java_used_bytes": 3869888,
+    "native_heap_bytes": 7991280
+  },
+  "elapsed_ms": 29781,
+  "status": "PASS"
+}
