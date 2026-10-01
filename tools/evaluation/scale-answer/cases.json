@@ -1,0 +1,10 @@
+[
+ {"id":"bulk01","question":"How does ASCII represent control information; what aircraft information does airport surveillance radar provide?","documents":[586,4456695],"controls":["cross-shard","unrelated-title"],"expected_route":"withheld_pending_source_review"},
+ {"id":"bulk02","question":"What does absolute value mean without regard to sign; what condition defines an adiabatic process?","documents":[991,1419],"controls":["cross-shard","formula","condition"],"expected_route":"withheld_pending_source_review"},
+ {"id":"bulk03","question":"How are proton-donor and electron-pair acid definitions distinguished?","documents":[656],"controls":["formula","units","OR-match"],"expected_route":"withheld_pending_source_review"},
+ {"id":"bulk04","question":"What chronology and uncertainty does the source give for the Akkadian Empire?","documents":[1566],"controls":["temporal","conditions"],"expected_route":"withheld_pending_source_review"},
+ {"id":"bulk05","question":"Under what environmental conditions can adaptive radiation occur?","documents":[1909],"controls":["condition"],"expected_route":"withheld_pending_source_review"},
+ {"id":"bulk06","question":"What is my current airport radar position?","documents":[4456695],"controls":["personal","live","absent"],"expected_route":"withheld_unavailable"},
+ {"id":"bulk07","question":"What date will the next evolutionary radiation start?","documents":[1909],"controls":["predictive","absent"],"expected_route":"withheld_unavailable"},
+ {"id":"bulk08","question":"Compare ASCII character encoding with chemical acidity without inferring a shared physical mechanism.","documents":[586,656],"controls":["cross-shard","distractor","false-connection"],"expected_route":"withheld_pending_source_review"}
+]

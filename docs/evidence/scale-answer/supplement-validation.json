@@ -1,0 +1,78 @@
+{
+  "counts": {
+    "primary": 24,
+    "paraphrase": 8,
+    "distractor": 8,
+    "false-premise": 8,
+    "absent": 8
+  },
+  "primary_topics": [
+    "Absolute value and notation",
+    "Acid definitions",
+    "Airport radar systems",
+    "Akkadian historical evidence",
+    "Biomolecular separation",
+    "Character encoding",
+    "Evolutionary diversification",
+    "Thermodynamic idealization"
+  ],
+  "sources": 8,
+  "spans": 36,
+  "cases": 56,
+  "status": "pass",
+  "scope": "Artifact integrity and declared obligations only; no answer-quality measurement",
+  "frozen_files": 14,
+  "freeze_sha256": "971c51336d861b2467514c4637ca9aba4bf178de1d64b400f4f98cc7f83882fc",
+  "local_source_check": {
+    "status": "pass",
+    "indexed_lookups": 8,
+    "query_plan": [
+      [
+        3,
+        0,
+        39,
+        "SEARCH documents USING INDEX sqlite_autoindex_documents_1 (id=?)"
+      ]
+    ],
+    "whole_database_hash": "not computed"
+  },
+  "mutation_tests": [
+    {
+      "name": "changed source bytes",
+      "rejected": true
+    },
+    {
+      "name": "shifted UTF-16 offset",
+      "rejected": true
+    },
+    {
+      "name": "changed quote",
+      "rejected": true
+    },
+    {
+      "name": "duplicate question",
+      "rejected": true
+    },
+    {
+      "name": "insufficient topics",
+      "rejected": true
+    },
+    {
+      "name": "unsupported obligation",
+      "rejected": true
+    },
+    {
+      "name": "missing correction requirement",
+      "rejected": true
+    },
+    {
+      "name": "fabricated absence route",
+      "rejected": true
+    },
+    {
+      "name": "distractor as evidence",
+      "rejected": true
+    }
+  ],
+  "utf16_supplementary_self_check": "pass; validation convention only, not a dataset fixture"
+}
