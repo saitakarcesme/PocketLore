@@ -765,6 +765,69 @@
       ],
       "typed_content_supported": true,
       "rendered_binding_failure": "The only explicit Athens subject lives in a hidden metadata field; the final answer loses it."
+    },
+    "n09": {
+      "result_sha256": "509718a24f36babcad1b9c06cbd54b0c6844cfc9cc6d6e39608c20802db1fce4",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Requested product names and spore non-guarantee are correct in full context, but extra product-use assertions and mild-heat detail are absent from the chosen spans. Same-model audit accepts neighboring-source support.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P2.4 names industrial ethanol/lactate but not beverages/preservation uses; these are in the next unselected sentence, which also describes lactate-to-lactic-acid conversion."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P4.2 supports most-spore survival; the mild-heat characterization occurs in unselected P4.1, not P5.2 industry-use sentence."
+        }
+      ]
+    },
+    "n10": {
+      "result_sha256": "51cdede20911651095666fef32170d3bffef78fd8401578a212455699c0f7d7d",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly identifies fifth root rather than square root and retains approximate2.512; exact mathematical source span is correctly linked.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P5.2 renders fifth-root-of100 in TeX and about2.512, establishing the complete answer. Formula brackets are source text, not citation IDs."
+        }
+      ]
+    },
+    "n11": {
+      "result_sha256": "0f0b6cacaf39a941d2d6a6b6a0a04a38ead1330fb4441c4d78e28ee8ded202d9",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Both brightness facts are correct in full context, but both claims cite amateur-astronomy sentences rather than magnitude evidence; one subject field is also wrong. Audit labels claims supported yet obligations incomplete, so withholding occurs for the wrong stated reason.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.1-P1.2 do not establish2.512/inverse scale; needed P5.1/P5.3."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P1.1-P1.2 do not establish negative magnitudes or Venus/Sirius values; needed P6.1."
+        }
+      ]
+    },
+    "n12": {
+      "result_sha256": "e5ab6359cf2c8feff32e349d026c549ab1fe62f8fdb9f1e00fad567a0c4ff618",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct withholding: unidentified museum, accessible entrance and live queue data are absent from the dated general city evidence. No fabricated availability.",
+      "claims": []
     }
   }
 }
