@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "environment": "Host JVM and AOSP x86_64 emulator; no physical device",
+  "pack": {
+    "schema": 1,
+    "region": "Washington, DC: three National Mall and Tidal Basin monuments",
+    "bounds": [
+      38.87,
+      -77.06,
+      38.9,
+      -77.02
+    ],
+    "count": 3,
+    "sha256": "6cb245864d7b42facc8b987d7e4843f795b87912062d09a8bbddcdc034877924",
+    "source_lock_sha256": "5016fa4e06089d02cb6c4fa7f333a003f17affa377ffb9ba865209debc2610b3",
+    "license": "CC0-1.0",
+    "hours": "Not supplied; offline hours may be stale",
+    "routing": "Unavailable; spherical distance only"
+  },
+  "apk_sha256": "688daa5f5069729a23d670b8a4b2882f0b0761832ada5bcb8f75bd930488becb",
+  "test_apk_sha256": "6e50ce820deb4ce703127668300f54e500f9f6b96f774e7596218b3d38fc930f",
+  "scope": "Frozen deterministic behavior and real Activity actions; not a route, live-data or human usefulness acceptance"
+}
