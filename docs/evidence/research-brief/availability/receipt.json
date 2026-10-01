@@ -1,0 +1,13 @@
+{
+  "environment": "LLMRig host Java, -Xmx256m; no inference or Android execution",
+  "files": {
+    "tools/evaluation/research-brief/freeze.json": "9bbd77ac9f1461efcf815870611587efa1980790d2e7fa916db1cc1291de633c",
+    "tools/evaluation/research-brief/availability/run.py": "d7c12a1befe0844c45ee2299227507d4814fdef91e37901a1f9696b286b97914",
+    "tools/evaluation/research-brief/BriefCheck.java": "902848266fe728a336a6d9bf0e6a596325b271336be7e57718d3786d2a6e3966",
+    "android/app/src/main/java/org/pocketlore/app/ResearchBrief.java": "aefb19aa0e18067f46ac8fa8e60ea3327d370a661045da7d51ed6ea9c8849325",
+    "android/app/src/main/java/org/pocketlore/app/EvidenceAvailability.java": "3e656246d6c39386a63bfb5f914ebc6e2dbb1378a605fa870f8a3f9115fff440",
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "90a83d02533b03512150b95d7ee83575a3e74effb93d91b0531611c33dd66cb0",
+    "docs/evidence/research-brief/availability/outputs.json": "9fed5b65b96c7c2507dd9a0b97ac4fde9fe8ee9874f92988ff69e3437138a5fd"
+  },
+  "java": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment Temurin-17.0.20.1+1 (build 17.0.20.1+1)\nOpenJDK 64-Bit Server VM Temurin-17.0.20.1+1 (build 17.0.20.1+1, mixed mode, sharing)\n"
+}
