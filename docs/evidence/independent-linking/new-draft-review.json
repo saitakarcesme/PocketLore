@@ -1,0 +1,70 @@
+{
+  "reviewer": "builder; before independent classifier decisions, not independent source review",
+  "cases": {
+    "l01": {
+      "whole_context_supported": false,
+      "complete_content": false,
+      "assessment": "Transfers compost mixture properties and vermicompost fertilizer/soil-conditioner properties to vermicast. No available span supports all asserted subject-property bindings; whole claim must not be rescued by its true end-product clause."
+    },
+    "l02": {
+      "whole_context_supported": true,
+      "complete_content": true,
+      "assessment": "Raw W text correctly distinguishes end-product from input, but controller withholds it. No generated success credited."
+    },
+    "l03": {
+      "whole_context_supported": true,
+      "complete_content": true,
+      "assessment": "Complete smaller-cut explanation preserves woody-plant condition and pathogen/decay consequence. Subject/qualifier fields contain template placeholders; prose itself is specific."
+    },
+    "l04": {
+      "whole_context_supported": true,
+      "complete_content": true,
+      "assessment": "Raw W text supplies the supported smaller-versus-larger correction but remains withheld."
+    },
+    "l05": {
+      "whole_context_supported": true,
+      "complete_content": true,
+      "assessment": "UK example directly establishes uncodified yet written in acts/cases/treaties."
+    },
+    "l06": {
+      "whole_context_supported": false,
+      "complete_content": false,
+      "assessment": "W opening incorrectly says no definitive answer despite the counterexample it then quotes and explains. Correct later content is not credited as a published useful answer."
+    },
+    "l07": {
+      "whole_context_supported": true,
+      "complete_content": true,
+      "assessment": "Continued capital role and became most-important/economic/administrative centre are in exact P2.2. Does not assert permanent primacy; later Valencia overtaking does not make the stated past transition false. Self-audit rejection is a false negative."
+    },
+    "l08": {
+      "whole_context_supported": true,
+      "complete_content": true,
+      "assessment": "Exact P2.2 supports continued capital role and all additional historical chronology, including Valencia and1516; answers the false premise without saying first became capital."
+    },
+    "l09": {
+      "whole_context_supported": true,
+      "complete_content": true,
+      "assessment": "Athens and the Ancient Greek philosophy/education roles are supported by exact P5.3 plus its article identity."
+    },
+    "l10": {
+      "whole_context_supported": true,
+      "complete_content": true,
+      "assessment": "Raw W correctly denies support for Barcelona philosophy from the Athens excerpt; no generated success credited."
+    },
+    "l11": {
+      "whole_context_supported": true,
+      "complete_content": true,
+      "assessment": "Correct fifth-root interpretation and approximate ratio, but selected Amateur astronomy spans are unrelated. Only rebind to actual Apparent magnitude formula span can support this prose."
+    },
+    "l12": {
+      "whole_context_supported": false,
+      "complete_content": false,
+      "assessment": "Explicit square-root-of-100 conclusion contradicts its own fifth-root TeX and the source. Retain complete text; do not silently drop the wrong concluding clause."
+    },
+    "l13": {
+      "whole_context_supported": true,
+      "complete_content": true,
+      "assessment": "Complete viewing conditions and eyesight/altitude/atmosphere qualifiers are correct in Apparent magnitude, but cited amateur-light-pollution passage is wrong. Subject metadata light pollution is not the actual source title."
+    }
+  }
+}
