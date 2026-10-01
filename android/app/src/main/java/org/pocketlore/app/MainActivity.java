@@ -220,7 +220,7 @@ public final class MainActivity extends Activity {
         TextView detail = text(p.text + "\n\nSource document: " + p.title + "\n" + p.url
             + "\n\nSource date / retrieval: " + known(p.sourceDate) + "\nRights: " + known(p.license)
             + "\n\nCitation: [" + p.id + "]\n" + p.collectionProvenance
-            + (p.id.startsWith("water-") ? "\n\nPack text is a verbatim USGS paragraph with whitespace normalized." : "\n\nPack text is selected source text with whitespace normalized.") + " Source URLs are provenance labels; the app does not open them."
+            + (p.url.startsWith("personal://") ? "\n\nPersonal document text preserves exact extracted offsets; PDF extraction order may differ from visual layout." : p.id.startsWith("water-") ? "\n\nPack text is a verbatim USGS paragraph with whitespace normalized." : "\n\nPack text is selected source text with whitespace normalized.") + " Source URLs are provenance labels; the app does not open them."
             + String.format(Locale.ROOT, "\n\nRetrieval rank score: %.3f (not confidence)", hit.score), 16);
         detail.setTextIsSelectable(true); detail.setPadding(dp(20), dp(10), dp(20), dp(10));
         ScrollView scroll = new ScrollView(this); scroll.addView(detail);

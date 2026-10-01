@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/documents/check.py", line 62, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/documents/check.py", line 51, in main
+    assert b'DOCUMENTS_PASS' in instrument and report['status']=='PASS',f'{out}: {report.get("error",instrument.decode())}'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: /home/isa/Projects/PocketLore/downloads/documents-runs/20261001T223123Z: java.lang.AssertionError: actual_source_dialog_offsets_owner_exact_text
+	at org.pocketlore.app.DocumentsInstrumentation.ok(DocumentsInstrumentation.java:5)
+	at org.pocketlore.app.DocumentsInstrumentation.ui(DocumentsInstrumentation.java:57)
+	at org.pocketlore.app.DocumentsInstrumentation.onStart(DocumentsInstrumentation.java:43)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+

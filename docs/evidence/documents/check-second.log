@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/documents/check.py", line 55, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/documents/check.py", line 48, in main
+    assert b'INSTRUMENTATION_CODE: -1' in instrument and report['status']=='PASS',f'{out}: {report.get("error",instrument.decode())}'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: /home/isa/Projects/PocketLore/downloads/documents-runs/20261001T222610Z: java.io.IOException: Manifest size invalid
+	at org.pocketlore.app.BroadPack.metadata(BroadPack.java:18)
+	at org.pocketlore.app.BroadPack.isBroad(BroadPack.java:21)
+	at org.pocketlore.app.PackLibrary.install(PackLibrary.java:116)
+	at org.pocketlore.app.DocumentsInstrumentation.onStart(DocumentsInstrumentation.java:22)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+

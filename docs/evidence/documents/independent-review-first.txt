@@ -1,0 +1,1 @@
+PersonalText accepts malformed JSON escapes such as \u+041, while PersonalDocumentsActivity loses exportHash after recreation and cannot cancel blocked export writes; current tests cover neither lifecycle recovery nor blocked output cancellation.

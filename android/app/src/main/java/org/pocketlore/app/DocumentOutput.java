@@ -1,0 +1,11 @@
+package org.pocketlore.app;
+import android.content.ContentResolver;import android.net.Uri;import android.os.ParcelFileDescriptor;import android.system.*;import java.io.*;import java.util.function.BooleanSupplier;
+/** Bounded-poll pipe writes. Provider open and regular filesystem stalls remain platform limits. */
+final class DocumentOutput extends OutputStream {
+ private final ParcelFileDescriptor descriptor;private final BooleanSupplier cancel;private boolean closed;
+ private DocumentOutput(ParcelFileDescriptor fd,BooleanSupplier c)throws IOException{descriptor=fd;cancel=c;try{int mode=Os.fstat(fd.getFileDescriptor()).st_mode;if(OsConstants.S_ISFIFO(mode)){int flags=Os.fcntlInt(fd.getFileDescriptor(),OsConstants.F_GETFL,0);Os.fcntlInt(fd.getFileDescriptor(),OsConstants.F_SETFL,flags|OsConstants.O_NONBLOCK);}else if(!OsConstants.S_ISREG(mode))throw new IOException("Unsupported export descriptor");}catch(ErrnoException e){throw new IOException("Cannot prepare export",e);}}
+ static OutputStream open(ContentResolver resolver,Uri uri,BooleanSupplier cancel)throws IOException{PersonalText.check(cancel);ParcelFileDescriptor fd=resolver.openFileDescriptor(uri,"wt");if(fd==null)throw new IOException("Cannot open export destination");try{PersonalText.check(cancel);return new DocumentOutput(fd,cancel);}catch(IOException|RuntimeException|Error e){fd.close();throw e;}}
+ public void write(int b)throws IOException{write(new byte[]{(byte)b},0,1);}
+ public void write(byte[] b,int off,int len)throws IOException{if(off<0||len<0||off>b.length-len)throw new IndexOutOfBoundsException();if(closed)throw new IOException("Export is closed");StructPollfd poll=new StructPollfd();poll.fd=descriptor.getFileDescriptor();poll.events=(short)OsConstants.POLLOUT;while(len>0){PersonalText.check(cancel);try{if(Os.poll(new StructPollfd[]{poll},50)==0)continue;PersonalText.check(cancel);int n=Os.write(poll.fd,b,off,Math.min(len,8192));if(n<=0)throw new IOException("Export made no progress");off+=n;len-=n;}catch(ErrnoException e){PersonalText.check(cancel);if(e.errno==OsConstants.EINTR||e.errno==OsConstants.EAGAIN)continue;throw new IOException("Export write failed",e);}}PersonalText.check(cancel);}
+ public void close()throws IOException{if(!closed){closed=true;descriptor.close();}}
+}

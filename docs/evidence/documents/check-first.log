@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/documents/check.py", line 54, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/documents/check.py", line 39, in main
+    run(adb+['shell','run-as',package,'sh','-c',"'cat > "+folder+'/'+name+"'"],f'push-{package}-{name}.txt',(fixtures/name).read_bytes())
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/documents/check.py", line 25, in run
+    if r.returncode:raise RuntimeError(f'{name}: exit {r.returncode}; see {out}')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: push-org.pocketlore.app.test-empty.pdf.txt: exit 1; see /home/isa/Projects/PocketLore/downloads/documents-runs/20261001T222534Z
