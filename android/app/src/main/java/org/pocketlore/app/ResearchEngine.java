@@ -18,8 +18,11 @@ import java.util.Set;
 public final class ResearchEngine {
     public static final class Passage {
         public final String id, title, url, sourceDate, license, text;
+        public final String collectionProvenance;
         final List<String> terms;
-        Passage(String[] row) {
+        Passage(String[] row) {this(row, "Bundled starter source");}
+        Passage(String[] row,String provenance) {
+            collectionProvenance=provenance;
             id = row[0]; title = row[1]; url = row[2]; sourceDate = row[3];
             license = row[4]; text = row[5]; terms = tokenize(title + " " + text);
         }
@@ -129,6 +132,13 @@ public final class ResearchEngine {
         }
         if (passages.isEmpty()) throw new IOException("Knowledge pack is empty");
         buildIndex();
+    }
+
+    /** A single index over verified active collections; an empty selection is valid. */
+    ResearchEngine(List<Passage> verified) throws IOException {
+        Set<String> ids=new HashSet<>();
+        for(Passage p:verified){if(!ids.add(p.id))throw new IOException("Duplicate library citation");passages.add(p);vocabulary.addAll(p.terms);}
+        if(!passages.isEmpty())buildIndex();
     }
 
     static List<String> tokenize(String text) {

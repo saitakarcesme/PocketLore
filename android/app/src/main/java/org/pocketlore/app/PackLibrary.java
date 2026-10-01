@@ -1,0 +1,102 @@
+package org.pocketlore.app;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.*;
+import java.util.*;
+import java.util.function.BooleanSupplier;
+import org.json.*;
+
+/** Content-addressed editions with one atomically committed active catalog.
+ * An archive rename precedes catalog commit; a crash can leave an unreferenced archive,
+ * which is removed only within this library's owned directory on the next operation.
+ */
+public final class PackLibrary {
+    public static final int MAX_COLLECTIONS=8, MAX_DOCUMENTS=1000, MAX_PASSAGES=5000;
+    public static final long MAX_ARCHIVES=16L*1024*1024,MAX_EXPANDED=16L*1024*1024,
+        MAX_MANIFESTS=2L*1024*1024,MAX_TEXT=1000000,MAX_TOKENS=200000;
+    public static final class Entry {
+        public final String hash,id;public final boolean active;
+        Entry(String hash,String id,boolean active){this.hash=hash;this.id=id;this.active=active;}
+    }
+    public static final class Snapshot {
+        public final List<Entry> entries;public final ResearchEngine engine;
+        public final int distinctDocuments;public final long archiveBytes;
+        Snapshot(List<Entry> entries,ResearchEngine engine,int docs,long bytes){this.entries=Collections.unmodifiableList(entries);this.engine=engine;distinctDocuments=docs;archiveBytes=bytes;}
+        public String description(){int n=0;for(Entry e:entries)if(e.active)n++;return n+" of "+entries.size()+" collections active · "+distinctDocuments+" distinct source documents · "+engine.size()+" searchable passages";}
+    }
+    private final File directory,catalog;
+    public PackLibrary(File files)throws IOException {directory=new File(files,"pack-library");if(!directory.isDirectory()&&!directory.mkdirs())throw new IOException("Cannot create library directory");catalog=new File(directory,"catalog.json");}
+    static void require(boolean ok,String why)throws IOException{if(!ok)throw new IOException(why);}
+    public static void admit(long archives,long expanded,long manifests,long documents,long count,long passages,long text,long tokens)throws IOException {
+        require(archives<=MAX_ARCHIVES&&expanded<=MAX_EXPANDED&&manifests<=MAX_MANIFESTS&&documents<=MAX_DOCUMENTS&&count<=MAX_COLLECTIONS,"Combined collection storage limit exceeded");
+        require(passages<=MAX_PASSAGES&&text<=MAX_TEXT&&tokens<=MAX_TOKENS,"Active collection index limit exceeded; disable collections before adding more");
+    }
+    private List<Entry> entries()throws Exception {
+        List<Entry> result=new ArrayList<>();if(!catalog.exists())return result;
+        require(catalog.length()<=65536,"Catalog too large");JSONObject root=new JSONObject(new String(Files.readAllBytes(catalog.toPath()),StandardCharsets.UTF_8));
+        require(root.getInt("schema")==1,"Unsupported library catalog");JSONArray list=root.getJSONArray("collections");Set<String> seen=new HashSet<>();require(list.length()<=MAX_COLLECTIONS,"Too many collections");
+        for(int i=0;i<list.length();i++){JSONObject e=list.getJSONObject(i);String hash=e.getString("sha256"),id=e.getString("id");require(hash.matches("[0-9a-f]{64}")&&seen.add(hash)&&id.matches("[a-z0-9-]{1,80}")&&e.get("active") instanceof Boolean,"Invalid catalog entry");result.add(new Entry(hash,id,e.getBoolean("active")));}
+        return result;
+    }
+    private void cleanup(List<Entry> entries)throws IOException {
+        Set<String> saved=new HashSet<>();for(Entry e:entries)saved.add(e.hash+".plpack");
+        File[] files=directory.listFiles();if(files==null)throw new IOException("Cannot list library");
+        for(File f:files)if(f.getName().matches("pack-[0-9]+\\.partial|catalog-[0-9]+\\.partial") || (f.getName().matches("[0-9a-f]{64}\\.plpack")&&!saved.contains(f.getName()))) require(f.delete(),"Cannot clean abandoned library stage");
+    }
+    private KnowledgePack read(File file)throws Exception {try(InputStream in=new FileInputStream(file)){return KnowledgePack.read(in,false);}}
+    private Snapshot build(List<Entry> entries,KnowledgePack incoming,BooleanSupplier cancel)throws Exception {
+        long bytes=0,expanded=0,manifests=0,docs=0,chars=0,tokens=0;
+        Set<String> documents=new HashSet<>();Map<String,String[]> rows=new LinkedHashMap<>();Map<String,StringBuilder> provenance=new HashMap<>();
+        for(Entry entry:entries){if(cancel.getAsBoolean()||Thread.currentThread().isInterrupted())throw new InterruptedIOException("Library operation cancelled");
+            KnowledgePack p=incoming!=null&&incoming.sha256.equals(entry.hash)?incoming:read(new File(directory,entry.hash+".plpack"));
+            require(p.sha256.equals(entry.hash)&&p.id.equals(entry.id),"Saved collection identity mismatch");
+            bytes+=p.archiveBytes;expanded+=p.expandedBytes;manifests+=p.manifestBytes;docs+=p.documentCount;
+            admit(bytes,expanded,manifests,docs,entries.size(),rows.size(),chars,tokens);
+            if(!entry.active)continue;
+            for(String[] row:p.rows){documents.add(p.documentKeys.get(row[0]));
+                // Same source snapshot, text and all displayed rights/date metadata: one indexed copy,
+                // with every active edition's provenance retained. Different versions/rights stay distinct.
+                String key=KnowledgePack.hash((p.documentKeys.get(row[0])+"\n"+String.join("\t",Arrays.copyOfRange(row,1,6))).getBytes(StandardCharsets.UTF_8));
+                String source="Collection: "+p.id+"\nEdition SHA-256: "+p.sha256+"\n"+p.provenance.get(row[0])+"\n"+p.warning;
+                if(rows.containsKey(key)){provenance.get(key).append("\n\nAlso retained in:\n").append(source);continue;}
+                chars+=row[5].length();tokens+=ResearchEngine.tokenize(row[1]+" "+row[5]).size();
+                admit(bytes,expanded,manifests,docs,entries.size(),rows.size()+1,chars,tokens);
+                String[] namespaced=row.clone();namespaced[0]="p"+p.sha256+"_"+row[0];rows.put(key,namespaced);provenance.put(key,new StringBuilder(source));
+            }
+        }
+        // No per-pack index exists here; admission completes before the one combined index allocation.
+        List<ResearchEngine.Passage> passages=new ArrayList<>();for(String key:rows.keySet())passages.add(new ResearchEngine.Passage(rows.get(key),provenance.get(key).toString()));
+        return new Snapshot(new ArrayList<>(entries),new ResearchEngine(passages),documents.size(),bytes);
+    }
+    private void commit(List<Entry> entries,BooleanSupplier cancel)throws Exception {
+        JSONArray list=new JSONArray();for(Entry e:entries)list.put(new JSONObject().put("id",e.id).put("sha256",e.hash).put("active",e.active));
+        byte[] bytes=new JSONObject().put("schema",1).put("collections",list).toString(2).getBytes(StandardCharsets.UTF_8);
+        File stage=File.createTempFile("catalog-",".partial",directory);
+        try{try(FileOutputStream out=new FileOutputStream(stage)){out.write(bytes);out.getFD().sync();}
+            if(cancel.getAsBoolean()||Thread.currentThread().isInterrupted())throw new InterruptedIOException("Library operation cancelled");
+            Files.move(stage.toPath(),catalog.toPath(),StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);
+        }finally{stage.delete();}
+    }
+    public synchronized Snapshot load()throws Exception {List<Entry> es=entries();cleanup(es);return build(es,null,()->false);}
+    public synchronized Snapshot select(Set<String> active)throws Exception {
+        List<Entry> old=entries(),es=new ArrayList<>();Set<String> known=new HashSet<>();for(Entry e:old){known.add(e.hash);es.add(new Entry(e.hash,e.id,active.contains(e.hash)));}require(known.containsAll(active),"Unknown active collection");
+        Snapshot next=build(es,null,()->false);commit(es,()->false);return next;
+    }
+    public synchronized Snapshot install(InputStream in,BooleanSupplier cancel)throws Exception {
+        List<Entry> es=entries();cleanup(es);ResourceStorage.requireSpace(KnowledgePack.LIMIT,directory.getUsableSpace());
+        File stage=File.createTempFile("pack-",".partial",directory);File moved=null;boolean committed=false;
+        try{ResourceStorage.copy(in,stage,KnowledgePack.LIMIT,cancel);KnowledgePack p=read(stage);
+            for(Entry e:es)if(e.hash.equals(p.sha256))return build(es,null,cancel);
+            es.add(new Entry(p.sha256,p.id,true));Snapshot next=build(es,p,cancel);
+            if(cancel.getAsBoolean()||Thread.currentThread().isInterrupted())throw new InterruptedIOException("Pack import cancelled");
+            moved=new File(directory,p.sha256+".plpack");Files.move(stage.toPath(),moved.toPath(),StandardCopyOption.ATOMIC_MOVE);
+            commit(es,cancel);committed=true;return next;
+        }finally{stage.delete();if(!committed&&moved!=null)moved.delete();}
+    }
+    /** Legacy source is retained, never deleted or rewritten. Catalog commit is idempotent. */
+    public synchronized Snapshot loadMigrating(File legacy)throws Exception {
+        if(!catalog.exists()&&legacy.exists())try(InputStream in=new FileInputStream(legacy)){return install(in,()->false);}
+        return load();
+    }
+}

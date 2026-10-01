@@ -21,6 +21,11 @@ import java.util.concurrent.Executors;
 
 public final class MainActivity extends Activity {
     private ResearchEngine engine;
+    private PackLibrary library;
+    private PackLibrary.Snapshot catalog;
+    private Button collections, reloadLibrary;
+    private boolean searching;
+    private long libraryEpoch;
     private ResearchEngine.Result latestEvidence;
     private NativePanel nativePanel;
     private EditText question;
@@ -69,6 +74,8 @@ public final class MainActivity extends Activity {
             intent.addCategory(android.content.Intent.CATEGORY_OPENABLE); intent.setType("*/*");
             startActivityForResult(intent, PICK_PACK);
         });
+        collections=new Button(this);collections.setText("Choose collections");layout.addView(collections);collections.setOnClickListener(v->chooseCollections());
+        reloadLibrary=new Button(this);reloadLibrary.setText("Reload library");layout.addView(reloadLibrary);reloadLibrary.setOnClickListener(v->loadLibrary());
         Button cancelImport=new Button(this);cancelImport.setText("Cancel pack import");layout.addView(cancelImport);cancelImport.setOnClickListener(v->{cancelPack=true;if(packThread!=null)packThread.interrupt();});
         question = new EditText(this);
         question.setHint("Ask about an installed source");
@@ -81,25 +88,45 @@ public final class MainActivity extends Activity {
         answer.setTextIsSelectable(true); answer.setContentDescription("Offline answer"); layout.addView(answer);
         sourceList = new LinearLayout(this); sourceList.setOrientation(LinearLayout.VERTICAL); layout.addView(sourceList);
         nativePanel = new NativePanel(this, layout, actions, answer, status, busy -> {
-            search.setEnabled(engine != null && !busy && !importing); question.setEnabled(!busy && !importing); importPack.setEnabled(!busy && !importing);
+            updateControls();
         }, id -> { if(latestEvidence!=null) for(ResearchEngine.Hit hit:latestEvidence.hits) if(hit.passage.id.equals(id)) inspect(hit); });
         search.setEnabled(false);
         search.setOnClickListener(v -> runSearch());
-        packWorker.execute(() -> {
-            try {
-                ResourceStorage.cleanupPackStages(getFilesDir());
-                java.io.File installed = new java.io.File(getFilesDir(), "knowledge.plpack");
-                KnowledgePack pack = installed.exists() ? KnowledgePack.load(installed) : null;
-                ResearchEngine loaded = pack != null ? pack.engine : new ResearchEngine(new InputStreamReader(getAssets().open("water-science.tsv"), StandardCharsets.UTF_8));
-                runOnUiThread(() -> { if (destroyed) return; engine = loaded; search.setEnabled(!nativePanel.isBusy());
-                    if (pack != null) packStatus.setText(pack.id + " · " + pack.engine.size() + " passages\n" + pack.warning + "\nSHA-256: " + pack.sha256);
-                    status.setText(engine.size() + " passages installed · No network permission");
-                    if (state != null) question.setText(state.getString("question", ""));
-                });
-            } catch (Exception | OutOfMemoryError error) {
-                runOnUiThread(() -> { if (!destroyed) status.setText("The installed pack could not be loaded. Reinstall the app. " + error.getMessage()); });
-            }
-        });
+        if (state != null) question.setText(state.getString("question", ""));
+        try{library=new PackLibrary(getFilesDir());loadLibrary();}
+        catch(Exception e){status.setText("Library unavailable: "+e.getMessage());}
+    }
+    private void updateControls(){
+        if(nativePanel==null)return;boolean ready=!nativePanel.isBusy()&&!importing&&!searching;
+        search.setEnabled(ready&&engine!=null&&engine.size()>0);question.setEnabled(ready);importPack.setEnabled(ready);
+        collections.setEnabled(ready&&catalog!=null&&!catalog.entries.isEmpty());reloadLibrary.setEnabled(ready);
+    }
+    private void showLibrary(PackLibrary.Snapshot next){
+        catalog=next;engine=next.engine;latestEvidence=null;nativePanel.clearAnswer();sourceList.removeAllViews();
+        packStatus.setText(next.description());status.setText("Active collections ready · No network permission");updateControls();
+    }
+    private void loadLibrary(){
+        if(importing||nativePanel.isBusy()||searching)return;
+        importing=true;cancelPack=false;long epoch=++libraryEpoch;updateControls();status.setText("Loading active collections…");
+        packWorker.execute(()->{packThread=Thread.currentThread();try{
+            PackLibrary.Snapshot next=library.loadMigrating(new java.io.File(getFilesDir(),"knowledge.plpack"));
+            ResearchEngine starter=next.entries.isEmpty()?new ResearchEngine(new InputStreamReader(getAssets().open("water-science.tsv"),StandardCharsets.UTF_8)):null;
+            runOnUiThread(()->{if(destroyed||epoch!=libraryEpoch)return;showLibrary(next);if(starter!=null){engine=starter;packStatus.setText("Bundled water-science starter · Import collections to build your library");}answer.setText("Select active collections, then ask a question to inspect their sources.");});
+        }catch(Exception|OutOfMemoryError e){runOnUiThread(()->{if(!destroyed)status.setText("Library could not be loaded; saved collections retained. "+e.getMessage());});}
+        finally{packThread=null;Thread.interrupted();runOnUiThread(()->{if(!destroyed){importing=false;updateControls();}});}});
+    }
+    private void chooseCollections(){
+        if(catalog==null||importing||nativePanel.isBusy()||searching)return;
+        final java.util.List<PackLibrary.Entry> entries=catalog.entries;String[] labels=new String[entries.size()];boolean[] checked=new boolean[entries.size()];
+        for(int i=0;i<entries.size();i++){PackLibrary.Entry e=entries.get(i);labels[i]=e.id.replace('-', ' ')+" · edition "+e.hash.substring(0,8);checked[i]=e.active;}
+        new AlertDialog.Builder(this).setTitle("Search these collections").setMultiChoiceItems(labels,checked,(d,i,on)->checked[i]=on)
+            .setNegativeButton("Cancel",null).setPositiveButton("Apply",(d,w)->{
+                java.util.Set<String> active=new java.util.HashSet<>();for(int i=0;i<checked.length;i++)if(checked[i])active.add(entries.get(i).hash);
+                importing=true;long epoch=++libraryEpoch;updateControls();packWorker.execute(()->{packThread=Thread.currentThread();try{PackLibrary.Snapshot next=library.select(active);
+                    runOnUiThread(()->{if(!destroyed&&epoch==libraryEpoch){showLibrary(next);answer.setText(active.isEmpty()?"No collections selected. Choose at least one to search.":"Active collections updated. Ask a new question.");}});
+                }catch(Exception|OutOfMemoryError e){runOnUiThread(()->{if(!destroyed)status.setText("Selection not changed: "+e.getMessage());});}
+                finally{packThread=null;Thread.interrupted();runOnUiThread(()->{if(!destroyed){importing=false;updateControls();}});}});
+            }).show();
     }
     private void runSearch() {
         if (nativePanel.isBusy() || importing || engine == null) return;
@@ -107,19 +134,20 @@ public final class MainActivity extends Activity {
         if (query.isEmpty()) { question.setError("Enter a research question"); return; }
         ((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(question.getWindowToken(), 0);
         nativePanel.clearAnswer(); sourceList.removeAllViews();
-        search.setEnabled(false); status.setText("Searching installed passages…");
+        searching=true;updateControls();status.setText("Searching active collections…");
+        final ResearchEngine selectedEngine=engine;final long epoch=libraryEpoch;
         worker.execute(() -> {
             long start = System.nanoTime();
-            ResearchEngine.Result result = engine.research(query);
+            ResearchEngine.Result result = selectedEngine.research(query);
             double millis = (System.nanoTime() - start) / 1_000_000.0;
             runOnUiThread(() -> {
-                if (destroyed) return;
+                searching=false;if (destroyed || epoch!=libraryEpoch){updateControls();return;}
 
                 status.setText(String.format(Locale.ROOT, "%d passages retrieved · %.1f ms on this device · Offline", result.hits.size(), millis));
                 sourceList.removeAllViews();
                 for (ResearchEngine.Hit hit : result.hits) {
                     Button source = new Button(this);
-                    source.setText("Inspect [" + hit.passage.id + "] " + hit.passage.title);
+                    source.setText("Inspect source: " + hit.passage.title);
                     source.setAllCaps(false);
                     source.setOnClickListener(v -> inspect(hit));
                     sourceList.addView(source);
@@ -134,6 +162,7 @@ public final class MainActivity extends Activity {
         ResearchEngine.Passage p = hit.passage;
         TextView detail = text(p.text + "\n\nSource document: " + p.title + "\n" + p.url
             + "\n\nSource date / retrieval: " + p.sourceDate + "\nRights: " + p.license
+            + "\n\n" + p.collectionProvenance
             + (p.id.startsWith("water-") ? "\n\nPack text is a verbatim USGS paragraph with whitespace normalized." : "\n\nPack text is selected source text with whitespace normalized.") + " Source URLs are provenance labels; the app does not open them."
             + String.format(Locale.ROOT, "\n\nBM25 rank score: %.3f (not confidence)", hit.score), 16);
         detail.setTextIsSelectable(true); detail.setPadding(dp(20), dp(10), dp(20), dp(10));
@@ -150,29 +179,26 @@ public final class MainActivity extends Activity {
         super.onActivityResult(request, result, data);
         if (request == PICK_PACK && result == RESULT_OK && data != null && data.getData() != null) {
             android.net.Uri uri = data.getData();
-            importing = true; cancelPack=false; search.setEnabled(false); question.setEnabled(false); importPack.setEnabled(false);
+            importing = true; cancelPack=false;++libraryEpoch;updateControls();
             packStatus.setText("Validating knowledge pack…");
             packWorker.execute(() -> {
                 packThread=Thread.currentThread();
                 try (java.io.InputStream in = DocumentInput.open(getContentResolver(),uri,()->cancelPack || destroyed)) {
-                    KnowledgePack pack = KnowledgePack.install(in, getFilesDir(),()->cancelPack || destroyed);
-                    runOnUiThread(() -> { if (destroyed) return; engine = pack.engine;
-                        answer.setText("Pack imported. Ask a question to inspect its sources."); sourceList.removeAllViews();
-                        status.setText(engine.size() + " passages installed · No network permission");
-                        packStatus.setText(pack.id + " · " + engine.size() + " passages\n" + pack.warning + "\nSHA-256: " + pack.sha256);
+                    PackLibrary.Snapshot next = library.install(in,()->cancelPack || destroyed);
+                    runOnUiThread(() -> { if (destroyed || cancelPack) return;showLibrary(next);
+                        answer.setText("Collection retained. Search all active collections or choose which to use.");
                     });
                 } catch (Exception | OutOfMemoryError error) {
                     runOnUiThread(() -> { if (!destroyed) packStatus.setText("Pack rejected; previous library retained. " + error.getMessage()); });
                 } finally {
                     packThread=null;Thread.interrupted();
-                    runOnUiThread(() -> { if (destroyed) return; importing = false; question.setEnabled(!nativePanel.isBusy());
-                        search.setEnabled(engine != null && !nativePanel.isBusy()); importPack.setEnabled(!nativePanel.isBusy()); });
+                    runOnUiThread(() -> { if (destroyed) return; importing = false;updateControls(); });
                 }
             });
         }
         if (request == NativePanel.PICK_MODEL && result == RESULT_OK && data != null) nativePanel.selected(data.getData());
     }
-    void releaseForMemoryPressure(){cancelPack=true;if(packThread!=null)packThread.interrupt();latestEvidence=null;if(nativePanel!=null)nativePanel.lowMemory();}
+    void releaseForMemoryPressure(){cancelPack=true;++libraryEpoch;if(packThread!=null)packThread.interrupt();latestEvidence=null;engine=null;catalog=null;sourceList.removeAllViews();if(nativePanel!=null)nativePanel.lowMemory();status.setText("Memory released. Tap Reload library to search your saved active collections.");updateControls();}
     boolean resourceIdle(){return !nativePanel.isBusy();}
     void reloadSavedModel(){nativePanel.reloadSaved();}
     @Override public void onTrimMemory(int level){super.onTrimMemory(level);if(level>=android.content.ComponentCallbacks2.TRIM_MEMORY_RUNNING_LOW)releaseForMemoryPressure();}

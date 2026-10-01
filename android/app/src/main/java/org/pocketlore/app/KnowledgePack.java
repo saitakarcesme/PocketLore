@@ -15,8 +15,15 @@ public final class KnowledgePack {
     public static final int LIMIT = 16 * 1024 * 1024;
     public final ResearchEngine engine;
     public final String id, warning, sha256;
-    private KnowledgePack(ResearchEngine engine, String id, String warning, String hash) {
-        this.engine=engine; this.id=id; this.warning=warning; this.sha256=hash;
+    final List<String[]> rows;
+    final Map<String,String> provenance, documentKeys;
+    final long archiveBytes, expandedBytes, manifestBytes;
+    final int documentCount;
+    private KnowledgePack(ResearchEngine engine, String id, String warning, String hash, List<String[]> rows,
+            Map<String,String> provenance, Map<String,String> documentKeys,long archiveBytes,long expandedBytes,long manifestBytes,int documentCount) {
+        this.engine=engine; this.id=id; this.warning=warning; this.sha256=hash; this.rows=rows;
+        this.provenance=provenance;this.documentKeys=documentKeys;this.archiveBytes=archiveBytes;
+        this.expandedBytes=expandedBytes;this.manifestBytes=manifestBytes;this.documentCount=documentCount;
     }
     static String hash(byte[] bytes) throws Exception {
         StringBuilder s=new StringBuilder();
@@ -45,6 +52,9 @@ public final class KnowledgePack {
     }
     private static void require(boolean ok,String why) throws IOException { if(!ok) throw new IOException(why); }
     public static KnowledgePack read(InputStream source) throws Exception {
+        return read(source,true);
+    }
+    static KnowledgePack read(InputStream source,boolean index) throws Exception {
         byte[] archive=bounded(source,LIMIT); Map<String,byte[]> files=new HashMap<>(); int total=0;
         try(ZipInputStream zip=new ZipInputStream(new ByteArrayInputStream(archive))) {
             ZipEntry entry;
@@ -87,6 +97,7 @@ public final class KnowledgePack {
         String id=field(m,"id"), warning=field(m,"warning"); field(m,"transformation");
         require(id.matches("[a-z0-9-]{1,80}"),"Invalid pack ID");
         require(hash(files.get("passages.tsv")).equals(field(m,"passages_sha256")),"Passage payload hash mismatch");
+        Map<String,String> provenance=new HashMap<>(),documentKeys=new HashMap<>();
         Map<String,String[]> expected=new HashMap<>(); Set<String> documentIds=new HashSet<>();
         JSONArray docs=m.getJSONArray("documents"); require(docs.length()>0 && docs.length()<=1000,"Document count out of range");
         for(int i=0;i<docs.length();i++) {
@@ -101,19 +112,23 @@ public final class KnowledgePack {
             for(int j=0;j<passages.length();j++) {
                 JSONObject p=passages.getJSONObject(j);String digest=field(p,"sha256"), citation=field(p,"id");
                 require(digest.matches("[0-9a-f]{64}") && citation.equals(did+"-"+digest.substring(0,16)),"Invalid stable citation ID");
+                provenance.put(citation,"Original citation: "+citation+"\nSource document ID: "+did+"\nSource SHA-256: "+field(d,"raw_sha256")+"\nPassage SHA-256: "+digest);
+                documentKeys.put(citation,url+"\n"+field(d,"raw_sha256"));
                 require(expected.put(citation,new String[]{title,url,date,rights,digest})==null,"Duplicate citation");
                 require(expected.size()<=20000,"Too many passages");
             }
         }
         String text=utf8(files.get("passages.tsv"));require(text.endsWith("\n"),"Truncated passage payload");
         String[] rows=text.split("\n",-1);require(m.get("passage_count") instanceof Integer,"Invalid passage count type");require(rows.length-1==m.getInt("passage_count") && expected.size()==rows.length-1,"Passage count mismatch");
+        List<String[]> verifiedRows=new ArrayList<>();
         for(int i=0;i<rows.length-1;i++) {
             String[] r=rows[i].split("\t",-1); require(r.length==6,"Invalid passage row");String[] e=expected.remove(r[0]);require(e!=null,"Unknown or duplicate citation");
             for(int j=1;j<=4;j++) require(r[j].equals(e[j-1]),"Provenance does not match manifest");
             require(!r[5].trim().isEmpty() && r[5].length()<=20000 && !r[5].matches("(?s).*[\\p{Cntrl}].*"),"Invalid passage text");
             require(hash(r[5].getBytes(StandardCharsets.UTF_8)).equals(e[4]),"Passage hash mismatch");
+            verifiedRows.add(r);
         }
-        return new KnowledgePack(new ResearchEngine(new StringReader(text)),id,warning,hash(archive));
+        return new KnowledgePack(index?new ResearchEngine(new StringReader(text)):null,id,warning,hash(archive),verifiedRows,provenance,documentKeys,archive.length,total,files.get("manifest.json").length,docs.length());
     }
     public static KnowledgePack load(File file) throws Exception {
         try(InputStream in=new FileInputStream(file)){return read(in);}
