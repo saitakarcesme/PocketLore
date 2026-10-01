@@ -19,6 +19,9 @@ def main():
  exact(F/'new-cases.json',(F/'new-cases.sha256').read_text().strip());new=json.loads((F/'new-cases.json').read_text());oldpath=R/'tools/evaluation/scale-model-quality/protocol.json';exact(oldpath,new['task220_protocol_sha256']);old=json.loads(oldpath.read_text());cases=old['cases']+new['cases'];require(len(cases)==60 and len({c['id'] for c in cases})==60,'Incomplete frozen cases')
  spec=json.loads((F/'execution.json').read_text());require((spec['context_tokens'],spec['draft_tokens'],spec['audit_tokens'])==(4096,320,192),'Budget drift')
  model=R/'downloads/model-capability/models/Qwen3-4B-Q4_K_M.gguf';exact(model,spec['model_sha256']);require(model.stat().st_size==2497280256,'Model identity size')
+ selected=json.loads((R/'docs/evidence/scale-model-quality/runs/initial/qwen3-4b/receipt.json').read_text())
+ require(selected['pin']==json.loads((R/'tools/evaluation/model-capability/qwen3-4b.json').read_text()) and selected['pin']['sha256']==spec['model_sha256'],'Selected model pin drift')
+ exact(R/selected['license'],selected['license_sha256'])
  require('74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db' in (R/'tools/answers/model.env').read_text(),'Production model changed')
  for path in ['tools/answers/model.env','android/app/src/main/cpp/runtime.cpp','android/app/src/main/cpp/resource_budget.h']:
   frozen=subprocess.check_output(['git','show','4d51817:'+path],cwd=R)
