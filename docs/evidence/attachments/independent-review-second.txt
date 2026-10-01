@@ -1,0 +1,1 @@
+Cancellation during model verification can still activate the microphone because record never rechecks cancellation before startRecording; the passing emulator checks cover cancellation after activation, leaving this earlier race untested.

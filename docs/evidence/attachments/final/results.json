@@ -1,0 +1,1013 @@
+{
+  "environment": "Android\/sdk_phone64_x86_64\/emu64x:15\/AE3A.240806.019\/12368160:userdebug\/test-keys",
+  "native_identity": "Tesseract5.5.3 db0ec62f81b0737fbbe184d8fea40af5738f8eef; Leptonica1.85.0 63aef18d98432b8582a1565e241f7bd2ee9cc8d9; whisper.cpp1.7.6 a8d002cfd879315632a579e73f0148d06959de36; CPU2 threads; English",
+  "ocr_absent": "java.io.IOException: English OCR data absent or changed; install the optional pinned asset first",
+  "speech_absent": "java.io.IOException: Local English speech model absent or changed; typing remains available",
+  "changed_asset_rejected_false": "java.io.IOException: Optional asset hash\/size mismatch; installed asset retained",
+  "cancelled_install_false": "java.io.InterruptedIOException: Import cancelled",
+  "changed_asset_rejected_true": "java.io.IOException: Optional asset hash\/size mismatch; installed asset retained",
+  "cancelled_install_true": "java.io.InterruptedIOException: Import cancelled",
+  "invalid_image": "java.io.IOException: Image must decode to at most4million pixels",
+  "pixel_bound": "java.io.IOException: Image must decode to at most4million pixels",
+  "invalid_audio": "java.io.IOException: Choose a PCM WAV recording of at most15 seconds",
+  "pre_cancel": "java.io.InterruptedIOException: Document operation cancelled",
+  "ocr_cancel_ms": 5.441756,
+  "speech_cancel_ms": 23.689108,
+  "background_capture_cancel_ms": 513.212179,
+  "status": "PASS",
+  "checks": [
+    "ocr_absent",
+    "speech_absent",
+    "installed_pinned_false",
+    "changed_asset_rejected_false",
+    "cancelled_install_false",
+    "retained_asset_false",
+    "installed_pinned_true",
+    "changed_asset_rejected_true",
+    "cancelled_install_true",
+    "retained_asset_true",
+    "real_ocr_text",
+    "provenance_text.png",
+    "tilted_image_text",
+    "provenance_tilted.png",
+    "empty_blank.png",
+    "provenance_blank.png",
+    "provenance_photo.jpg",
+    "real_local_transcription",
+    "provenance_speech.wav",
+    "empty_silence.wav",
+    "provenance_silence.wav",
+    "provenance_noise.wav",
+    "invalid_image",
+    "pixel_bound",
+    "invalid_audio",
+    "pre_cancel",
+    "native_phase_false",
+    "cancel_during_actual_native_false",
+    "native_cancel_released_false",
+    "native_phase_true",
+    "cancel_during_actual_native_true",
+    "native_cancel_released_true",
+    "real_ocr_text",
+    "provenance_text.png",
+    "microphone_permission_not_granted",
+    "denied_permission_ui",
+    "actual_activity_recognition_finished",
+    "editable_real_ocr_preview",
+    "review_required_no_auto_submit",
+    "control_Cancel recognition",
+    "cancel_discards_completed_preview",
+    "temporarily_hold_task_speech_asset",
+    "control_Record speech",
+    "absent_engine_ui_keeps_microphone_off",
+    "restore_task_speech_asset",
+    "control_Record speech",
+    "microphone_start_returned",
+    "actual_audiorecord_opened",
+    "background_recording_stopped",
+    "background_clears_capture_and_result",
+    "returned_to_attachment_ui",
+    "preview_after_cancel_retry",
+    "retry_preview_visible"
+  ],
+  "outputs": [
+    {
+      "fixture": "text.png",
+      "text": "OFFLINE LIBRARY\n\nReview every word.",
+      "receipt": "OCR recognized text; not image reasoning\nOriginal location: public fixture:\/\/text.png\nOriginal SHA-256: df98ad742221aae3aecc2f2bfd46cb772158abbddcb9386dce93fd40a81bab53\nRecognized UTF-8 SHA-256: cab5838b171c7e8aea3bf5190ddbf5bddd75970142bd32ff7af9d3e57be751f9\nRecognized UTF-16 offsets: [0, 35)\nAsset SHA-256: 7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2\nTesseract5.5.3 db0ec62f81b0737fbbe184d8fea40af5738f8eef; Leptonica1.85.0 63aef18d98432b8582a1565e241f7bd2ee9cc8d9; whisper.cpp1.7.6 a8d002cfd879315632a579e73f0148d06959de36; CPU2 threads; English\nPersonal input; no public redistribution rights or factual support inferred.",
+      "ms": 57.142714
+    },
+    {
+      "fixture": "tilted.png",
+      "text": "OFFLINE LIBRARY\n\nReview every word.",
+      "receipt": "OCR recognized text; not image reasoning\nOriginal location: public fixture:\/\/tilted.png\nOriginal SHA-256: 20d452f7629fb67c0bfaba049482a7312ae3aa21cadb5e2359a98d85e026dd9f\nRecognized UTF-8 SHA-256: cab5838b171c7e8aea3bf5190ddbf5bddd75970142bd32ff7af9d3e57be751f9\nRecognized UTF-16 offsets: [0, 35)\nAsset SHA-256: 7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2\nTesseract5.5.3 db0ec62f81b0737fbbe184d8fea40af5738f8eef; Leptonica1.85.0 63aef18d98432b8582a1565e241f7bd2ee9cc8d9; whisper.cpp1.7.6 a8d002cfd879315632a579e73f0148d06959de36; CPU2 threads; English\nPersonal input; no public redistribution rights or factual support inferred.",
+      "ms": 42.753473
+    },
+    {
+      "fixture": "blank.png",
+      "text": "",
+      "receipt": "OCR recognized text; not image reasoning\nOriginal location: public fixture:\/\/blank.png\nOriginal SHA-256: f0707cb4f4725bee699908b1c74988e3f521a5d4c9527eb14755078b1c645616\nRecognized UTF-8 SHA-256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\nRecognized UTF-16 offsets: [0, 0)\nAsset SHA-256: 7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2\nTesseract5.5.3 db0ec62f81b0737fbbe184d8fea40af5738f8eef; Leptonica1.85.0 63aef18d98432b8582a1565e241f7bd2ee9cc8d9; whisper.cpp1.7.6 a8d002cfd879315632a579e73f0148d06959de36; CPU2 threads; English\nPersonal input; no public redistribution rights or factual support inferred.",
+      "ms": 23.198747
+    },
+    {
+      "fixture": "photo.jpg",
+      "text": "",
+      "receipt": "OCR recognized text; not image reasoning\nOriginal location: public fixture:\/\/photo.jpg\nOriginal SHA-256: 811c577786a5e7a75e0816540b8e7399e0925226421f0d4434bdf413abbcda6e\nRecognized UTF-8 SHA-256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\nRecognized UTF-16 offsets: [0, 0)\nAsset SHA-256: 7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2\nTesseract5.5.3 db0ec62f81b0737fbbe184d8fea40af5738f8eef; Leptonica1.85.0 63aef18d98432b8582a1565e241f7bd2ee9cc8d9; whisper.cpp1.7.6 a8d002cfd879315632a579e73f0148d06959de36; CPU2 threads; English\nPersonal input; no public redistribution rights or factual support inferred.",
+      "ms": 83.102157
+    },
+    {
+      "fixture": "speech.wav",
+      "text": "And so my fellow Americans ask not what your country can do for you ask what you can do for your country.",
+      "receipt": "Speech transcription; review names and numbers; noise may be mistranscribed\nOriginal location: public fixture:\/\/speech.wav\nOriginal SHA-256: 59dfb9a4acb36fe2a2affc14bacbee2920ff435cb13cc314a08c13f66ba7860e\nRecognized UTF-8 SHA-256: 9f8e19cfc179e7b33762d18d6f394cf31f5b09f004a220dff3b28734748a7d5d\nRecognized UTF-16 offsets: [0, 105)\nAsset SHA-256: 921e4cf8686fdd993dcd081a5da5b6c365bfde1162e72b08d75ac75289920b1f\nTesseract5.5.3 db0ec62f81b0737fbbe184d8fea40af5738f8eef; Leptonica1.85.0 63aef18d98432b8582a1565e241f7bd2ee9cc8d9; whisper.cpp1.7.6 a8d002cfd879315632a579e73f0148d06959de36; CPU2 threads; English\nPersonal input; no public redistribution rights or factual support inferred.",
+      "ms": 5085.505807
+    },
+    {
+      "fixture": "silence.wav",
+      "text": "",
+      "receipt": "Speech transcription; review names and numbers; noise may be mistranscribed\nOriginal location: public fixture:\/\/silence.wav\nOriginal SHA-256: 20eaebffe1816e0ffa6f7f854f5ef4ea80d5349faaf0ce1fec1b713e7fde58fa\nRecognized UTF-8 SHA-256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\nRecognized UTF-16 offsets: [0, 0)\nAsset SHA-256: 921e4cf8686fdd993dcd081a5da5b6c365bfde1162e72b08d75ac75289920b1f\nTesseract5.5.3 db0ec62f81b0737fbbe184d8fea40af5738f8eef; Leptonica1.85.0 63aef18d98432b8582a1565e241f7bd2ee9cc8d9; whisper.cpp1.7.6 a8d002cfd879315632a579e73f0148d06959de36; CPU2 threads; English\nPersonal input; no public redistribution rights or factual support inferred.",
+      "ms": 160.363097
+    },
+    {
+      "fixture": "noise.wav",
+      "text": "",
+      "receipt": "Speech transcription; review names and numbers; noise may be mistranscribed\nOriginal location: public fixture:\/\/noise.wav\nOriginal SHA-256: 476286010bdfdc3e5e25ee2731bf780490f5cdd4dfc1d8a5631f7fce439d4e0b\nRecognized UTF-8 SHA-256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\nRecognized UTF-16 offsets: [0, 0)\nAsset SHA-256: 921e4cf8686fdd993dcd081a5da5b6c365bfde1162e72b08d75ac75289920b1f\nTesseract5.5.3 db0ec62f81b0737fbbe184d8fea40af5738f8eef; Leptonica1.85.0 63aef18d98432b8582a1565e241f7bd2ee9cc8d9; whisper.cpp1.7.6 a8d002cfd879315632a579e73f0148d06959de36; CPU2 threads; English\nPersonal input; no public redistribution rights or factual support inferred.",
+      "ms": 4736.331308
+    },
+    {
+      "fixture": "text.png",
+      "text": "OFFLINE LIBRARY\n\nReview every word.",
+      "receipt": "OCR recognized text; not image reasoning\nOriginal location: public fixture:\/\/text.png\nOriginal SHA-256: df98ad742221aae3aecc2f2bfd46cb772158abbddcb9386dce93fd40a81bab53\nRecognized UTF-8 SHA-256: cab5838b171c7e8aea3bf5190ddbf5bddd75970142bd32ff7af9d3e57be751f9\nRecognized UTF-16 offsets: [0, 35)\nAsset SHA-256: 7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2\nTesseract5.5.3 db0ec62f81b0737fbbe184d8fea40af5738f8eef; Leptonica1.85.0 63aef18d98432b8582a1565e241f7bd2ee9cc8d9; whisper.cpp1.7.6 a8d002cfd879315632a579e73f0148d06959de36; CPU2 threads; English\nPersonal input; no public redistribution rights or factual support inferred.",
+      "ms": 44.949945
+    }
+  ],
+  "memory": [
+    {
+      "elapsed_ms": 89969872,
+      "pss_kib": 24741,
+      "java_bytes": 3911680,
+      "native_bytes": 5613680
+    },
+    {
+      "elapsed_ms": 89969978,
+      "pss_kib": 29346,
+      "java_bytes": 4255744,
+      "native_bytes": 5602944
+    },
+    {
+      "elapsed_ms": 89970044,
+      "pss_kib": 27956,
+      "java_bytes": 4325376,
+      "native_bytes": 5603408
+    },
+    {
+      "elapsed_ms": 89970112,
+      "pss_kib": 27960,
+      "java_bytes": 4325376,
+      "native_bytes": 5603408
+    },
+    {
+      "elapsed_ms": 89970174,
+      "pss_kib": 27960,
+      "java_bytes": 4358144,
+      "native_bytes": 5603408
+    },
+    {
+      "elapsed_ms": 89970236,
+      "pss_kib": 28056,
+      "java_bytes": 4427776,
+      "native_bytes": 5603872
+    },
+    {
+      "elapsed_ms": 89970297,
+      "pss_kib": 28056,
+      "java_bytes": 4427776,
+      "native_bytes": 5603872
+    },
+    {
+      "elapsed_ms": 89970358,
+      "pss_kib": 28148,
+      "java_bytes": 4497408,
+      "native_bytes": 5604336
+    },
+    {
+      "elapsed_ms": 89970418,
+      "pss_kib": 28152,
+      "java_bytes": 4497408,
+      "native_bytes": 5604336
+    },
+    {
+      "elapsed_ms": 89970478,
+      "pss_kib": 28152,
+      "java_bytes": 4497408,
+      "native_bytes": 5604384
+    },
+    {
+      "elapsed_ms": 89970541,
+      "pss_kib": 28260,
+      "java_bytes": 4739072,
+      "native_bytes": 5605440
+    },
+    {
+      "elapsed_ms": 89970602,
+      "pss_kib": 28260,
+      "java_bytes": 4739072,
+      "native_bytes": 5605488
+    },
+    {
+      "elapsed_ms": 89970666,
+      "pss_kib": 28260,
+      "java_bytes": 4739072,
+      "native_bytes": 5605440
+    },
+    {
+      "elapsed_ms": 89970728,
+      "pss_kib": 38761,
+      "java_bytes": 5427200,
+      "native_bytes": 9326224
+    },
+    {
+      "elapsed_ms": 89970789,
+      "pss_kib": 37113,
+      "java_bytes": 6320128,
+      "native_bytes": 12936240
+    },
+    {
+      "elapsed_ms": 89970849,
+      "pss_kib": 55149,
+      "java_bytes": 8683520,
+      "native_bytes": 24722192
+    },
+    {
+      "elapsed_ms": 89970910,
+      "pss_kib": 39783,
+      "java_bytes": 9138176,
+      "native_bytes": 9330384
+    },
+    {
+      "elapsed_ms": 89970973,
+      "pss_kib": 39783,
+      "java_bytes": 9138176,
+      "native_bytes": 9330384
+    },
+    {
+      "elapsed_ms": 89971034,
+      "pss_kib": 39787,
+      "java_bytes": 9875456,
+      "native_bytes": 9331376
+    },
+    {
+      "elapsed_ms": 89971095,
+      "pss_kib": 59721,
+      "java_bytes": 9908224,
+      "native_bytes": 95619600
+    },
+    {
+      "elapsed_ms": 89971204,
+      "pss_kib": 153105,
+      "java_bytes": 9908224,
+      "native_bytes": 508039216
+    },
+    {
+      "elapsed_ms": 89971336,
+      "pss_kib": 163089,
+      "java_bytes": 9908224,
+      "native_bytes": 508039216
+    },
+    {
+      "elapsed_ms": 89971468,
+      "pss_kib": 169897,
+      "java_bytes": 9908224,
+      "native_bytes": 535040048
+    },
+    {
+      "elapsed_ms": 89971600,
+      "pss_kib": 173293,
+      "java_bytes": 9908224,
+      "native_bytes": 535040048
+    },
+    {
+      "elapsed_ms": 89971736,
+      "pss_kib": 206761,
+      "java_bytes": 9908224,
+      "native_bytes": 535040048
+    },
+    {
+      "elapsed_ms": 89971872,
+      "pss_kib": 251269,
+      "java_bytes": 9908224,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89972004,
+      "pss_kib": 251269,
+      "java_bytes": 9908224,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89972136,
+      "pss_kib": 251273,
+      "java_bytes": 9908224,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89972268,
+      "pss_kib": 251273,
+      "java_bytes": 9908224,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89972400,
+      "pss_kib": 251277,
+      "java_bytes": 9908224,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89972532,
+      "pss_kib": 251277,
+      "java_bytes": 9908224,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89972664,
+      "pss_kib": 251277,
+      "java_bytes": 9908224,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89972796,
+      "pss_kib": 251281,
+      "java_bytes": 9908224,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89972928,
+      "pss_kib": 251281,
+      "java_bytes": 9908224,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89973064,
+      "pss_kib": 251285,
+      "java_bytes": 9908224,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89973200,
+      "pss_kib": 251285,
+      "java_bytes": 9908224,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89973332,
+      "pss_kib": 251285,
+      "java_bytes": 9908224,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89973464,
+      "pss_kib": 251289,
+      "java_bytes": 9908224,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89973608,
+      "pss_kib": 251289,
+      "java_bytes": 9940992,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89973741,
+      "pss_kib": 251293,
+      "java_bytes": 9940992,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89973876,
+      "pss_kib": 251293,
+      "java_bytes": 9940992,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89974008,
+      "pss_kib": 251293,
+      "java_bytes": 9940992,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89974140,
+      "pss_kib": 251297,
+      "java_bytes": 9940992,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89974276,
+      "pss_kib": 251297,
+      "java_bytes": 9940992,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89974408,
+      "pss_kib": 251301,
+      "java_bytes": 9940992,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89974540,
+      "pss_kib": 251301,
+      "java_bytes": 9940992,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89974672,
+      "pss_kib": 251301,
+      "java_bytes": 9940992,
+      "native_bytes": 535039936
+    },
+    {
+      "elapsed_ms": 89974804,
+      "pss_kib": 251314,
+      "java_bytes": 9940992,
+      "native_bytes": 535039792
+    },
+    {
+      "elapsed_ms": 89974936,
+      "pss_kib": 251314,
+      "java_bytes": 9940992,
+      "native_bytes": 535039792
+    },
+    {
+      "elapsed_ms": 89975068,
+      "pss_kib": 251318,
+      "java_bytes": 9940992,
+      "native_bytes": 535039792
+    },
+    {
+      "elapsed_ms": 89975204,
+      "pss_kib": 251318,
+      "java_bytes": 9940992,
+      "native_bytes": 535039792
+    },
+    {
+      "elapsed_ms": 89975324,
+      "pss_kib": 251318,
+      "java_bytes": 9940992,
+      "native_bytes": 535039792
+    },
+    {
+      "elapsed_ms": 89975456,
+      "pss_kib": 253578,
+      "java_bytes": 9940992,
+      "native_bytes": 535039792
+    },
+    {
+      "elapsed_ms": 89975588,
+      "pss_kib": 253578,
+      "java_bytes": 9940992,
+      "native_bytes": 535039792
+    },
+    {
+      "elapsed_ms": 89975697,
+      "pss_kib": 253582,
+      "java_bytes": 9940992,
+      "native_bytes": 535455824
+    },
+    {
+      "elapsed_ms": 89975800,
+      "pss_kib": 255110,
+      "java_bytes": 9940992,
+      "native_bytes": 535044480
+    },
+    {
+      "elapsed_ms": 89975885,
+      "pss_kib": 255114,
+      "java_bytes": 9940992,
+      "native_bytes": 535049472
+    },
+    {
+      "elapsed_ms": 89975958,
+      "pss_kib": 249906,
+      "java_bytes": 9940992,
+      "native_bytes": 10036992
+    },
+    {
+      "elapsed_ms": 89976018,
+      "pss_kib": 53790,
+      "java_bytes": 10174464,
+      "native_bytes": 9332800
+    },
+    {
+      "elapsed_ms": 89976078,
+      "pss_kib": 53790,
+      "java_bytes": 10174464,
+      "native_bytes": 9332800
+    },
+    {
+      "elapsed_ms": 89976140,
+      "pss_kib": 54118,
+      "java_bytes": 10506240,
+      "native_bytes": 9334192
+    },
+    {
+      "elapsed_ms": 89976201,
+      "pss_kib": 54122,
+      "java_bytes": 10506240,
+      "native_bytes": 9334192
+    },
+    {
+      "elapsed_ms": 89976264,
+      "pss_kib": 54122,
+      "java_bytes": 10506240,
+      "native_bytes": 9334192
+    },
+    {
+      "elapsed_ms": 89976326,
+      "pss_kib": 82870,
+      "java_bytes": 10637312,
+      "native_bytes": 95048464
+    },
+    {
+      "elapsed_ms": 89976456,
+      "pss_kib": 161470,
+      "java_bytes": 10637312,
+      "native_bytes": 507181360
+    },
+    {
+      "elapsed_ms": 89976572,
+      "pss_kib": 168154,
+      "java_bytes": 10637312,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89976704,
+      "pss_kib": 177170,
+      "java_bytes": 10637312,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89976836,
+      "pss_kib": 189354,
+      "java_bytes": 10637312,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89976972,
+      "pss_kib": 225934,
+      "java_bytes": 10637312,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89977100,
+      "pss_kib": 256270,
+      "java_bytes": 10637312,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89977232,
+      "pss_kib": 256270,
+      "java_bytes": 10637312,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89977364,
+      "pss_kib": 256274,
+      "java_bytes": 10637312,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89977496,
+      "pss_kib": 256274,
+      "java_bytes": 10637312,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89977632,
+      "pss_kib": 256278,
+      "java_bytes": 10637312,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89977764,
+      "pss_kib": 256278,
+      "java_bytes": 10637312,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89977896,
+      "pss_kib": 256278,
+      "java_bytes": 10637312,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89978028,
+      "pss_kib": 256282,
+      "java_bytes": 10637312,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89978156,
+      "pss_kib": 256286,
+      "java_bytes": 10670080,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89978292,
+      "pss_kib": 256286,
+      "java_bytes": 10670080,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89978424,
+      "pss_kib": 256286,
+      "java_bytes": 10670080,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89978556,
+      "pss_kib": 256290,
+      "java_bytes": 10670080,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89978692,
+      "pss_kib": 256290,
+      "java_bytes": 10670080,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89978823,
+      "pss_kib": 256294,
+      "java_bytes": 10670080,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89978960,
+      "pss_kib": 256294,
+      "java_bytes": 10670080,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89979092,
+      "pss_kib": 256294,
+      "java_bytes": 10670080,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89979224,
+      "pss_kib": 256298,
+      "java_bytes": 10670080,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89979360,
+      "pss_kib": 256298,
+      "java_bytes": 10670080,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89979488,
+      "pss_kib": 256302,
+      "java_bytes": 10670080,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89979620,
+      "pss_kib": 256302,
+      "java_bytes": 10670080,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89979752,
+      "pss_kib": 256302,
+      "java_bytes": 10670080,
+      "native_bytes": 534182192
+    },
+    {
+      "elapsed_ms": 89979884,
+      "pss_kib": 256306,
+      "java_bytes": 10670080,
+      "native_bytes": 534182080
+    },
+    {
+      "elapsed_ms": 89980020,
+      "pss_kib": 256306,
+      "java_bytes": 10670080,
+      "native_bytes": 534182080
+    },
+    {
+      "elapsed_ms": 89980152,
+      "pss_kib": 256310,
+      "java_bytes": 10670080,
+      "native_bytes": 534182080
+    },
+    {
+      "elapsed_ms": 89980288,
+      "pss_kib": 256310,
+      "java_bytes": 10670080,
+      "native_bytes": 534182080
+    },
+    {
+      "elapsed_ms": 89980400,
+      "pss_kib": 256310,
+      "java_bytes": 10670080,
+      "native_bytes": 534182080
+    },
+    {
+      "elapsed_ms": 89980532,
+      "pss_kib": 258570,
+      "java_bytes": 10670080,
+      "native_bytes": 534182080
+    },
+    {
+      "elapsed_ms": 89980664,
+      "pss_kib": 258570,
+      "java_bytes": 10670080,
+      "native_bytes": 534182080
+    },
+    {
+      "elapsed_ms": 89980796,
+      "pss_kib": 258644,
+      "java_bytes": 2571760,
+      "native_bytes": 534174496
+    },
+    {
+      "elapsed_ms": 89980865,
+      "pss_kib": 81355,
+      "java_bytes": 2706928,
+      "native_bytes": 9326912
+    },
+    {
+      "elapsed_ms": 89980933,
+      "pss_kib": 47700,
+      "java_bytes": 2932208,
+      "native_bytes": 9328096
+    },
+    {
+      "elapsed_ms": 89980995,
+      "pss_kib": 47700,
+      "java_bytes": 2932208,
+      "native_bytes": 9328096
+    },
+    {
+      "elapsed_ms": 89981055,
+      "pss_kib": 49034,
+      "java_bytes": 3468832,
+      "native_bytes": 23377648
+    },
+    {
+      "elapsed_ms": 89981116,
+      "pss_kib": 38380,
+      "java_bytes": 3923536,
+      "native_bytes": 9338544
+    },
+    {
+      "elapsed_ms": 89981178,
+      "pss_kib": 38384,
+      "java_bytes": 3923536,
+      "native_bytes": 9338544
+    },
+    {
+      "elapsed_ms": 89981242,
+      "pss_kib": 38384,
+      "java_bytes": 4628048,
+      "native_bytes": 13784928
+    },
+    {
+      "elapsed_ms": 89981315,
+      "pss_kib": 125540,
+      "java_bytes": 4628048,
+      "native_bytes": 503776736
+    },
+    {
+      "elapsed_ms": 89981412,
+      "pss_kib": 50635,
+      "java_bytes": 2995136,
+      "native_bytes": 9697984
+    },
+    {
+      "elapsed_ms": 89981548,
+      "pss_kib": 44407,
+      "java_bytes": 3622528,
+      "native_bytes": 20723392
+    },
+    {
+      "elapsed_ms": 89981630,
+      "pss_kib": 53260,
+      "java_bytes": 3622528,
+      "native_bytes": 20894928
+    },
+    {
+      "elapsed_ms": 89981710,
+      "pss_kib": 53520,
+      "java_bytes": 3622528,
+      "native_bytes": 20899920
+    },
+    {
+      "elapsed_ms": 89981776,
+      "pss_kib": 53788,
+      "java_bytes": 3622528,
+      "native_bytes": 20902496
+    },
+    {
+      "elapsed_ms": 89981987,
+      "pss_kib": 56320,
+      "java_bytes": 3860144,
+      "native_bytes": 21132896
+    },
+    {
+      "elapsed_ms": 89982116,
+      "pss_kib": 57494,
+      "java_bytes": 3958448,
+      "native_bytes": 22834624
+    },
+    {
+      "elapsed_ms": 89982187,
+      "pss_kib": 62574,
+      "java_bytes": 4359856,
+      "native_bytes": 26092592
+    },
+    {
+      "elapsed_ms": 89982294,
+      "pss_kib": 59613,
+      "java_bytes": 4593616,
+      "native_bytes": 21426240
+    },
+    {
+      "elapsed_ms": 89982362,
+      "pss_kib": 61024,
+      "java_bytes": 4593616,
+      "native_bytes": 21425696
+    },
+    {
+      "elapsed_ms": 89982443,
+      "pss_kib": 61410,
+      "java_bytes": 4593616,
+      "native_bytes": 21417056
+    },
+    {
+      "elapsed_ms": 89982508,
+      "pss_kib": 61946,
+      "java_bytes": 4593616,
+      "native_bytes": 21416848
+    },
+    {
+      "elapsed_ms": 89982580,
+      "pss_kib": 62657,
+      "java_bytes": 4626384,
+      "native_bytes": 21491408
+    },
+    {
+      "elapsed_ms": 89982643,
+      "pss_kib": 56664,
+      "java_bytes": 4626384,
+      "native_bytes": 21495408
+    },
+    {
+      "elapsed_ms": 89982716,
+      "pss_kib": 56668,
+      "java_bytes": 4663248,
+      "native_bytes": 21494144
+    },
+    {
+      "elapsed_ms": 89982784,
+      "pss_kib": 56688,
+      "java_bytes": 4663248,
+      "native_bytes": 21494144
+    },
+    {
+      "elapsed_ms": 89982855,
+      "pss_kib": 56688,
+      "java_bytes": 4663248,
+      "native_bytes": 21494304
+    },
+    {
+      "elapsed_ms": 89982944,
+      "pss_kib": 56765,
+      "java_bytes": 4683728,
+      "native_bytes": 21506160
+    },
+    {
+      "elapsed_ms": 89983309,
+      "pss_kib": 56800,
+      "java_bytes": 4753360,
+      "native_bytes": 21509376
+    },
+    {
+      "elapsed_ms": 89983387,
+      "pss_kib": 56867,
+      "java_bytes": 4819088,
+      "native_bytes": 21216128
+    },
+    {
+      "elapsed_ms": 89983502,
+      "pss_kib": 56903,
+      "java_bytes": 5392752,
+      "native_bytes": 23016528
+    },
+    {
+      "elapsed_ms": 89983579,
+      "pss_kib": 60286,
+      "java_bytes": 3399808,
+      "native_bytes": 21523440
+    },
+    {
+      "elapsed_ms": 89983655,
+      "pss_kib": 56120,
+      "java_bytes": 3399808,
+      "native_bytes": 21543424
+    },
+    {
+      "elapsed_ms": 89983730,
+      "pss_kib": 56372,
+      "java_bytes": 3432576,
+      "native_bytes": 21577056
+    },
+    {
+      "elapsed_ms": 89983799,
+      "pss_kib": 56376,
+      "java_bytes": 3432576,
+      "native_bytes": 21576272
+    },
+    {
+      "elapsed_ms": 89983869,
+      "pss_kib": 56376,
+      "java_bytes": 3432576,
+      "native_bytes": 21576272
+    },
+    {
+      "elapsed_ms": 89983933,
+      "pss_kib": 56380,
+      "java_bytes": 3432576,
+      "native_bytes": 21576272
+    },
+    {
+      "elapsed_ms": 89983997,
+      "pss_kib": 56380,
+      "java_bytes": 3432576,
+      "native_bytes": 21576272
+    },
+    {
+      "elapsed_ms": 89984067,
+      "pss_kib": 56383,
+      "java_bytes": 3432576,
+      "native_bytes": 21576400
+    },
+    {
+      "elapsed_ms": 89984129,
+      "pss_kib": 56387,
+      "java_bytes": 3432576,
+      "native_bytes": 21576400
+    },
+    {
+      "elapsed_ms": 89984190,
+      "pss_kib": 56387,
+      "java_bytes": 3432576,
+      "native_bytes": 21576400
+    },
+    {
+      "elapsed_ms": 89984250,
+      "pss_kib": 56391,
+      "java_bytes": 3432576,
+      "native_bytes": 21576400
+    },
+    {
+      "elapsed_ms": 89984311,
+      "pss_kib": 56391,
+      "java_bytes": 3432576,
+      "native_bytes": 21576400
+    },
+    {
+      "elapsed_ms": 89984374,
+      "pss_kib": 56391,
+      "java_bytes": 3432576,
+      "native_bytes": 21576592
+    },
+    {
+      "elapsed_ms": 89984437,
+      "pss_kib": 56395,
+      "java_bytes": 3432576,
+      "native_bytes": 21576592
+    },
+    {
+      "elapsed_ms": 89984501,
+      "pss_kib": 56410,
+      "java_bytes": 3465344,
+      "native_bytes": 21570240
+    },
+    {
+      "elapsed_ms": 89984563,
+      "pss_kib": 56414,
+      "java_bytes": 3465344,
+      "native_bytes": 21570240
+    },
+    {
+      "elapsed_ms": 89984623,
+      "pss_kib": 56414,
+      "java_bytes": 3465344,
+      "native_bytes": 21570240
+    },
+    {
+      "elapsed_ms": 89984684,
+      "pss_kib": 56414,
+      "java_bytes": 3465344,
+      "native_bytes": 21570240
+    },
+    {
+      "elapsed_ms": 89984745,
+      "pss_kib": 56418,
+      "java_bytes": 3465344,
+      "native_bytes": 21570240
+    },
+    {
+      "elapsed_ms": 89984811,
+      "pss_kib": 56523,
+      "java_bytes": 3498112,
+      "native_bytes": 31966320
+    },
+    {
+      "elapsed_ms": 89984881,
+      "pss_kib": 66299,
+      "java_bytes": 2711680,
+      "native_bytes": 32258288
+    }
+  ]
+}

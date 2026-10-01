@@ -1,0 +1,21 @@
+{
+  "output": "/home/isa/Projects/PocketLore/downloads/attachments/budget/20261001T231232Z",
+  "environment": "emulator-5562; current APK, retained full catalog, optional OCR and speech",
+  "packages": [
+    {
+      "package": "org.pocketlore.app",
+      "apk_sha256": "21e5132a4ee027a05d8a6ab7edc25be66e8397091cbb7949f30e76922fed6540",
+      "allocated_code_bytes": 22654976
+    },
+    {
+      "package": "org.pocketlore.app.test",
+      "apk_sha256": "77f70588aff86e1087ecfe9180e14cb4072630d6e3e173f0fdde65d55d1be53a",
+      "allocated_code_bytes": 380928
+    }
+  ],
+  "app_allocated_bytes": 41704087552,
+  "installed_with_test_code_bytes": 41727123456,
+  "result_sha256": "f91c8caa8afccbef379e0d1042d5562141b434a21310551f39411255bcc27913",
+  "saved_model_and_catalogs_unchanged": true,
+  "limit": "Observed optional-asset import peak; not a rerun of full shard update or APK update transient peak"
+}

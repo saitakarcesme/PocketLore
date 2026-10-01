@@ -1,0 +1,22 @@
+{
+  "serial": "emulator-5560",
+  "artifacts": {
+    "app-debug.apk": {
+      "bytes": 22637269,
+      "sha256": "21e5132a4ee027a05d8a6ab7edc25be66e8397091cbb7949f30e76922fed6540"
+    },
+    "app-debug-androidTest.apk": {
+      "bytes": 367030,
+      "sha256": "cb9f6137e50de6fc8468a7b3159bd777b4a70a91fc6447270dd73d64677ba846"
+    }
+  },
+  "results_sha256": "867f8ff8b9fa0609f19be24be46fd15c3032c7ca4e76d1b10c9d856848fb1eb3",
+  "status": "PASS",
+  "model_and_catalog_unchanged": true,
+  "model_bytes": 81817803,
+  "artifact_mutations": [
+    "changed",
+    "missing"
+  ],
+  "alignment": "both ABI LOAD and APK16KB passed"
+}
