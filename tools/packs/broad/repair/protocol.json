@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "purpose": "Repair the critic's source fidelity, attribution and semantic quota failures without lowering the original 1000/10000/eight/50 targets.",
+  "frozen_input": "All 1076 source IDs in original edition 915f82f041f59d3cd0e82a8b6fd9dbdb2d12187c2e969c5891de6e3ad46dd67c; bounded replacement selection if exclusions leave targets unmet.",
+  "acquisition": "Serial official MediaWiki API revision metadata then rendered oldid HTML; two attempts per URL; maximum 8 MiB per response; retain all failures/receipts; no media downloads; cache reused by source ID, no rewriting preserved inputs.",
+  "fidelity": "Extract genuine paragraph blocks from rendered article body, retaining explicit math/TeX and numeric unit text. Preserve references and source attribution notices. Exclude media and non-free quoted blocks; document every exclusion. Never infer missing factual text.",
+  "semantic": "Review at least 50 actual title/lead/section-bearing documents per area and record source-specific reasons; keyword counts and biography counts alone are insufficient.",
+  "queries": "Keep all original 40 questions and expected article IDs unchanged; pin new supporting excerpts after extraction and before any retrieval changes. Preserve old edition runs separately.",
+  "quality": "No generated answer or full rights clearance may be inferred from counts, hashes or retrieval. A remaining unmet gate must fail the objective check."
+}
