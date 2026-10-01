@@ -1,0 +1,1 @@
+Before any new inference or matrix replay, the first Java compile failed after an over-broad escape normalization left single backslashes in string regex literals (91 javac errors). Corrected Java string escaping and recompiled successfully; no semantic rule or case changed in response to outcomes.
