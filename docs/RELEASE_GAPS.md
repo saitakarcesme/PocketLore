@@ -1,5 +1,9 @@
 # Release gaps
 
+## Task225 research-brief gap
+
+[Task225](evidence/general-source-backed-research-brief.md) adds an explicit exact-quotation research brief with typed source navigation. Build, host behavioral checks and24 Android fixture replays pass; the required quality check fails. Builder inspection rates15/24 briefs useful, but three absent requests remain unresolved and independent final-output review is pending. These are not generated answers or held-out results. The next concrete product step is per-obligation evidence availability and distractor control, with compact source navigation; a scoped proposal is preserved with the evidence, not dispatched. No new hardware dependency blocks that work. The changed APK1d9c978b9fa406d80d1b5d82d878cb2b4d0266663c57e2903f1d71206a514648 requires later exact release revalidation; all303 inventory measurements remain historical, not automatically renewed for this build. Production remains0.5B; selected4B and physical/unseen/human gates remain open.
+
 ## Task303 current capacity status
 
 [Full Android evidence](evidence/full-scale-android-capacity.md) now establishes simultaneous residency of all31 primary shards on the separately approved emulator-5562. Final app data plus application/test code occupies **41,628,602,368 bytes**; measured replacement app allocation plus package code reaches **43,145,453,568 bytes**. A separately calculated one-provider-archive/reserve bound is **44,796,211,667 bytes**, below the45GB target and50GB hard limit. Build and the behavioral capacity check pass. This resolves the old persistent-storage environment blocker for the measured0.5B candidate; it is not physical or product acceptance.
