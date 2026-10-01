@@ -1,7 +1,16 @@
 cmake_minimum_required(VERSION 3.22)
 project(pocketlore_host LANGUAGES C CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 find_package(JNI REQUIRED)
-# Build the production bridge/controller dependencies unchanged. The Android
-# project disables SIMD flags, so this host comparison uses that same CPU path.
-include_directories(${JNI_INCLUDE_DIRS})
-add_subdirectory("${PROJECT_ROOT}/android/app/src/main/cpp" production)
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+foreach(flag LLAMA_BUILD_COMMON LLAMA_BUILD_TESTS LLAMA_BUILD_TOOLS LLAMA_BUILD_EXAMPLES LLAMA_BUILD_SERVER LLAMA_BUILD_APP LLAMA_BUILD_UI LLAMA_OPENSSL GGML_OPENMP GGML_CUDA GGML_VULKAN GGML_RPC GGML_BLAS GGML_LLAMAFILE)
+ set(${flag} OFF CACHE BOOL "" FORCE)
+endforeach()
+# Host CPU screen only. Android keeps its existing conservative ISA/thread policy.
+set(GGML_NATIVE ON CACHE BOOL "" FORCE)
+add_subdirectory("${LLAMA_SOURCE}" llama)
+add_library(pocketlore SHARED "${PROJECT_ROOT}/android/app/src/main/cpp/runtime.cpp")
+target_include_directories(pocketlore PRIVATE ${JNI_INCLUDE_DIRS} "${LLAMA_SOURCE}/src")
+target_link_libraries(pocketlore PRIVATE llama)
+target_compile_definitions(pocketlore PRIVATE POCKETLORE_HOST_SCREEN=1 POCKETLORE_REVISION="${POCKETLORE_REVISION}")

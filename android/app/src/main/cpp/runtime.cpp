@@ -3,6 +3,7 @@
 #include "llama-ext.h"
 #include "resource_budget.h"
 #include <atomic>
+#include <cstdlib>
 #include <memory>
 #include <mutex>
 #include <stdexcept>
@@ -30,10 +31,20 @@ std::atomic<int> phase{0};
 std::atomic<uint64_t> loadCallbacks{0},abortCallbacks{0},promptTokens{0},contextAttempts{0},allocationFailures{0};
 std::atomic<uint64_t> estimatedModel{0},estimatedKV{0},estimatedCompute{0};
 struct PhaseScope { explicit PhaseScope(int value){phase=value;loadCallbacks=0;abortCallbacks=0;promptTokens=0;} ~PhaseScope(){phase=0;} };
+int runtimeThreads() {
+#if defined(POCKETLORE_HOST_SCREEN) && !defined(__ANDROID__)
+    const char *value=std::getenv("POCKETLORE_HOST_THREADS");
+    const std::string threads=value?value:"6";
+    if(threads.size()!=1 || threads[0]<'1' || threads[0]>'6')throw std::runtime_error("Host threads must be 1 through 6");
+    return threads[0]-'0';
+#else
+    return 2;
+#endif
+}
 llama_context_params contextParams() {
     auto p=llama_context_default_params();
     p.n_ctx=2048;p.n_batch=2048;p.n_ubatch=128;p.n_seq_max=1;p.type_k=GGML_TYPE_F16;p.type_v=GGML_TYPE_F16;
-    p.n_threads=2;p.n_threads_batch=2;return p;
+    p.n_threads=runtimeThreads();p.n_threads_batch=runtimeThreads();return p;
 }
 std::atomic<uint64_t> contextBytes{0},computeBytes{0},modelBufferBytes{0};
 void releaseContext(llama_context *ctx){if(ctx){llama_free(ctx);--activeContexts;contextBytes=0;computeBytes=0;modelBufferBytes=0;}}
@@ -56,7 +67,11 @@ std::string bytes(JNIEnv *env, jbyteArray value) {
 }
 }
 extern "C" JNIEXPORT jstring JNICALL Java_org_pocketlore_app_NativeRuntime_identity(JNIEnv *env, jclass) {
-    return env->NewStringUTF("llama.cpp " POCKETLORE_REVISION "; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads=2; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42");
+    std::string identity="llama.cpp " POCKETLORE_REVISION "; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads="+std::to_string(runtimeThreads())+"; model-budget="+std::to_string(pocketloreModelLimit)+"; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42";
+#if defined(POCKETLORE_HOST_SCREEN) && !defined(__ANDROID__)
+    identity+="; HOST SCREEN native CPU ISA; not Android admission";
+#endif
+    return env->NewStringUTF(identity.c_str());
 }
 extern "C" JNIEXPORT jlong JNICALL Java_org_pocketlore_app_NativeRuntime_create(JNIEnv *env, jclass) {
     try {
@@ -82,7 +97,7 @@ extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_load(JNI
         const auto filename = bytes(env, path);
         if (filename.find('\0') != std::string::npos) throw std::runtime_error("Invalid model path");
         struct stat fileInfo{};
-        if (stat(filename.c_str(), &fileInfo) != 0 || !S_ISREG(fileInfo.st_mode) || fileInfo.st_size < 4 || fileInfo.st_size > 2147483648LL) throw std::runtime_error("Model file must be regular and at most 2048 MiB");
+        if (stat(filename.c_str(), &fileInfo) != 0 || !S_ISREG(fileInfo.st_mode) || fileInfo.st_size < 4 || static_cast<uint64_t>(fileInfo.st_size) > pocketloreModelLimit) throw std::runtime_error("Model file must be regular and within the compiled admission limit");
         PhaseScope observation(1);
         // The pinned upstream no_alloc model propagates simulated allocation into its context.
         // Metadata/graph bookkeeping still allocates; this is not protection from all OOMs.

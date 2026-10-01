@@ -1,0 +1,44 @@
+{
+  "version": 2,
+  "reason": "Explicit human execution revision and coordinator baseline correction; old Qwen2.5 controls do not complete the requested screen.",
+  "frozen_cases_file": "tools/evaluation/model-capability/protocol.json",
+  "frozen_cases_sha256": "d7c8e3d83c83fc3eee6ef767077b241a9fcbc8f3dbb0f0a2021e59f950975f9c",
+  "baseline": "qwen3-1.7b",
+  "models": [
+    {
+      "id": "qwen3-1.7b",
+      "pin": "qwen3.json",
+      "path": "downloads/synthesis/model/Qwen3-1.7B-Q8_0.gguf",
+      "license_path": "android/app/src/main/assets/licenses/synthesis-qwen3-Apache-2.0.txt",
+      "capacity_billion": 1.7
+    },
+    {
+      "id": "qwen3-4b",
+      "pin": "qwen3-4b.json",
+      "path": "downloads/model-capability/models/Qwen3-4B-Q4_K_M.gguf",
+      "license_path": "tools/evaluation/model-capability/licenses/qwen3-4b-LICENSE.txt",
+      "capacity_billion": 4.0
+    },
+    {
+      "id": "phi35-mini",
+      "pin": "phi35-mini.json",
+      "path": "downloads/model-capability/models/Phi-3.5-mini-instruct-Q4_K_M.gguf",
+      "license_path": "tools/evaluation/model-capability/licenses/phi35-mini-LICENSE.txt",
+      "capacity_billion": 3.8
+    }
+  ],
+  "execution": {
+    "backend": "CPU native ISA host-only; same pinned llama.cpp and production bridge, template/controller/grammar; Android ISA/thread/admission defaults unchanged",
+    "threads_per_process": 6,
+    "max_concurrent_processes": 2,
+    "parallel_admission": "Require MemAvailable >=12 GiB before choosing two workers; otherwise one worker. JVM heap capped512MiB, model file/model buffer cap4GiB, existing KV768MiB and compute1GiB screens retained.",
+    "timeout_seconds_per_model": 1200,
+    "context_tokens": 2048,
+    "output_tokens": 256,
+    "sampling": "Unchanged production: Qwen3 nonthinking temperature0.7 top-k20 top-p0.8 presence1.5/256 seed42; Phi greedy. No seed search.",
+    "timing": "Host wall times under up to two six-thread processes; not comparable to old scalar/Android runs and not a standalone model speed ranking.",
+    "outputs": "One generation per case/model; diagnostic call only when controller does not invoke. Persist partial text and active case before work.",
+    "scope": "Host quality screen, not Android admission. Larger files exceed current Android 2GiB cap.",
+    "selection": "Original supported/complete/useful publication rule; prefer smaller file if eligible models tie in useful published count and unsupported count. No grammar or scoring changes."
+  }
+}

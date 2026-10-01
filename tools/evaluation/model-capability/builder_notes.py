@@ -25,4 +25,6 @@ NOTES={
 20:('supported','none','not-useful','Generic lighting information has no brand or battery comparison and does not explicitly acknowledge missing evidence.'),
 21:('unsupported','none','not-useful','Transfers Valley-specific 2500-foot elevation gain and most-crowded status to Tuolumne; dual citations do not support those relations.'),
 22:('withheld','none','not-useful','Refuses snow, river and current-condition planning synthesis despite both sources.'),
+23:('withheld','none','not-useful','Unnecessary refusal; source explicitly distinguishes general ranger guidance from planning the trip for the visitor.'),
+24:('withheld','full','useful','Correctly withholds live trail opening/safety status unavailable offline.'),
 },'qwen25-1.5b':{},'qwen3-1.7b':{}}

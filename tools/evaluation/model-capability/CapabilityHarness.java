@@ -7,6 +7,7 @@ import java.util.*;
 public final class CapabilityHarness {
  static byte[] b(String x){return x.getBytes(StandardCharsets.UTF_8);}
  static String q(String s){return "\""+s.replace("\\","\\\\").replace("\"","\\\"").replace("\n","\\n").replace("\r","\\r").replace("\t","\\t")+"\"";}
+ static void partial(Path out,String id,String text){try{Files.writeString(out.resolve(id+".partial.txt"),text);}catch(IOException e){throw new UncheckedIOException(e);}}
  static String decode(String s){return new String(Base64.getDecoder().decode(s),StandardCharsets.UTF_8);}
  public static void main(String[] args)throws Exception {
   Path input=Path.of(args[0]),out=Path.of(args[2]);Files.createDirectories(out);
@@ -15,7 +16,7 @@ public final class CapabilityHarness {
    NativeRuntime.load(session,b(args[1]));double load=(System.nanoTime()-start)/1e6;
    Files.writeString(out.resolve("load.json"),"{\"identity\":"+q(NativeRuntime.identity())+",\"load_ms\":"+load+",\"resources\":"+Arrays.toString(NativeRuntime.resourceState())+"}\n");
    for(String line:Files.readAllLines(input.resolve("cases.tsv"))) {
-    String[] c=line.split("\t");String id=c[0],question=decode(c[1]);List<ResearchEngine.Hit> hits=new ArrayList<>();
+    String[] c=line.split("\t");String id=c[0],question=decode(c[1]);Files.writeString(out.resolve("active-case.txt"),id);List<ResearchEngine.Hit> hits=new ArrayList<>();
     for(String source:Files.readAllLines(input.resolve(id+".tsv"))) {
      String[] fields=source.split("\t");for(int i=0;i<fields.length;i++)fields[i]=decode(fields[i]);
      hits.add(new ResearchEngine.Hit(new ResearchEngine.Passage(fields),1));
@@ -28,14 +29,14 @@ public final class CapabilityHarness {
      public int runWithSources(byte[] prompt,int limit,NativeRuntime.Sink sink,int sources,boolean combined){return NativeRuntime.generateClaims(session,system,prompt,limit,sink,sources,combined);}
     };
     long begun=System.nanoTime();
-    AnswerEngine.Outcome result=AnswerEngine.answer(question,evidence,generator,x->{},()->false);
+    AnswerEngine.Outcome result=AnswerEngine.answer(question,evidence,generator,x->partial(out,id,x),()->false);
     String prompt=result.prompt,raw=result.rawDraft,error="";int tokens=result.tokens;double first=result.firstTokenMs,total=result.totalMs;boolean diagnostic=!result.invokedModel;
     ResearchEngine.Result selected=EvidencePrompt.select(question,evidence);
     if(diagnostic){
      prompt=EvidencePrompt.build(question,selected);ByteArrayOutputStream buffer=new ByteArrayOutputStream();long[] firstTime={0};begun=System.nanoTime();final long begin=begun;
      try{
       if(generator.countTokens(b(prompt))+EvidencePrompt.OUTPUT_TOKENS>EvidencePrompt.CONTEXT_TOKENS)throw new IllegalStateException("Diagnostic prompt exceeds unchanged budget");
-      tokens=generator.runWithSources(b(prompt),EvidencePrompt.OUTPUT_TOKENS,piece->{if(firstTime[0]==0)firstTime[0]=System.nanoTime();buffer.write(piece,0,piece.length);},selected.hits.size(),question.toLowerCase(Locale.ROOT).startsWith("compare "));
+      tokens=generator.runWithSources(b(prompt),EvidencePrompt.OUTPUT_TOKENS,piece->{if(firstTime[0]==0)firstTime[0]=System.nanoTime();buffer.write(piece,0,piece.length);partial(out,id,buffer.toString(StandardCharsets.UTF_8));},selected.hits.size(),question.toLowerCase(Locale.ROOT).startsWith("compare "));
      }catch(RuntimeException e){error=e.toString();}
      total=(System.nanoTime()-begin)/1e6;first=firstTime[0]==0?0:(firstTime[0]-begin)/1e6;raw=buffer.toString(StandardCharsets.UTF_8);
     }
