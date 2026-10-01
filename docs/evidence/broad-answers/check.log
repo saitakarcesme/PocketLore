@@ -1,0 +1,123 @@
+PASS: actual shared-property leakage withheld; shared supported control retained
+PASS: exact rejected draft withheld and preserved; corrected comparison remains generatable
+{
+  "status": "PASS",
+  "retrieval": {
+    "before": {
+      "found": [
+        "q01",
+        "q02",
+        "q03",
+        "q05",
+        "q06",
+        "q07",
+        "q08",
+        "q09",
+        "q10",
+        "q11",
+        "q12",
+        "q13",
+        "q15",
+        "q16",
+        "q17",
+        "q19",
+        "q20",
+        "q21",
+        "q22",
+        "q23",
+        "q26",
+        "q29",
+        "q31",
+        "q32"
+      ],
+      "misses": [
+        "q04",
+        "q14",
+        "q18",
+        "q24",
+        "q25",
+        "q27",
+        "q28",
+        "q30"
+      ],
+      "absent_hit_count": 6
+    },
+    "after": {
+      "found": [
+        "q01",
+        "q03",
+        "q05",
+        "q06",
+        "q07",
+        "q08",
+        "q09",
+        "q10",
+        "q11",
+        "q12",
+        "q13",
+        "q14",
+        "q15",
+        "q16",
+        "q17",
+        "q19",
+        "q21",
+        "q22",
+        "q23",
+        "q25",
+        "q26",
+        "q29",
+        "q31",
+        "q32"
+      ],
+      "misses": [
+        "q02",
+        "q04",
+        "q18",
+        "q20",
+        "q24",
+        "q27",
+        "q28",
+        "q30"
+      ],
+      "absent_hit_count": 0
+    }
+  },
+  "improved": [
+    "q14",
+    "q25"
+  ],
+  "regressed": [
+    "q02",
+    "q20"
+  ],
+  "routes": {
+    "GENERATED": 3,
+    "FALLBACK": 2,
+    "ABSTAINED": 7,
+    "CANCELLED": 0
+  },
+  "generated": [
+    "explain-cooking",
+    "explain-algae",
+    "mixed-water"
+  ],
+  "builder_useful": 2,
+  "memory": {
+    "pss_kib": 691605,
+    "VmRSS": 784512,
+    "VmSwap": 23004,
+    "java_used_bytes": 47017760
+  },
+  "limitations": "Builder source assessment is separate from independent review; emulator only; no release acceptance",
+  "negative_artifact_checks": [
+    "changed-JNI-output",
+    "missing-JNI-output"
+  ],
+  "native_sample_maxima": [
+    1,
+    1,
+    485452288,
+    25165824,
+    78709248
+  ]
+}
