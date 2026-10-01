@@ -1,3 +1,7 @@
+# Task302 repair1: exact-output publication implemented; real clearance remains open
+
+The latest repair replaces the unconditional publication stub with a review-bound renderer. Build and constructed host/Android publication checks pass, but the required adapter check still exits1 because no real bulk span has independent rights/fidelity clearance. No bulk answer was generated or published. See the repair1 section below; prior checkpoint statements and failures remain historical.
+
 # Task302 source-clearance adapter: pre-implementation protocol
 
 Current status: preparation verified; no bulk span is independently cleared for generated answers. The task225 primary protocol remains unchanged. Task224's preserved negative result shows that source-bound identities and planning do not establish useful supported prose; no historical inference or same-model audit will be repeated.
@@ -45,3 +49,30 @@ The supplementary worker's56 public development cases and eight sources pass its
 Obtain independent source-specific rights and fidelity dispositions for the eight pinned bulk revisions and bounded spans in `bulk-source-reviews.json`, including the preserved notices and raw formula/unit context. Where the retained supplement is insufficient, review the full immutable revision or exclude that span; do not infer clearance from the later supplementary rendering. Bind approved reviews to the ledger's fingerprint, span hash and UTF-16 offsets using the receipt schema already enforced by Android.
 
 Then connect cleared evidence to a whole-claim support/coverage decision and inspect final rendered prose on the already frozen questions. Do not revive same-model self-approval or regenerate historical matrices. This is the precise independent follow-up; no private queue or orchestration state was changed. Places remain browse-only with no new clearance or answer claim. Selected4B Android admission/load/cancel/reload/resources, final release identity/distribution, independent unseen evaluation, physical Android/GrapheneOS and human acceptance remain open. The new APK requires later release revalidation; historical release and303 receipts were not relabeled.
+
+## Repair1 measured result
+
+Recovered all three commits ending at05955b384d8df65a6343dc6b0f69c7aeec604f20 onto the assigned repair branch without resetting or overwriting application work. The supplied independent critic's rework judgment remains valid for real clearance/usefulness. The supplementary handoff has not supplied any new source-specific approval and no later-rendered source is substituted for a bulk revision.
+
+`ScaleAnswerPublication` now constructs final prose and typed citation ranges from the task221 parser. It preserves every claim, including any factual tail, and displays its subject and scope explicitly. A length-delimited review packet binds the question, token count, untouched draft, every obligation, every claim, subject/scope metadata, exact cited edition-aware source identity and original UTF-16 offsets/excerpts, and complete final rendered text. Changing any of these changes the candidate fingerprint.
+
+Publication requires a trusted bundled independent whole-answer permit matching that fingerprint, an identified reviewer, support decisions for every claim and completeness decisions for every obligation. Missing, incomplete or negative decisions withhold the entire output. Receipt bytes must match their SHA256 and declared scope before loading. The old string self-audit interface still rejects; it cannot create a permit. This is a manual exact-output review transport, **not an automated entailment solution**. The app bundle/ordinary review process is the trust boundary; a receipt's self-declared independent flag or hash alone is not authentication or semantic proof. No real approval is included in the empty production registry.
+
+| Check | Actual result |
+|---|---|
+| Required `bash tools/android-build.sh` | Exit0; APK15,702,188 bytes, SHA256 `1b687b9b3568bfcc72feaad6810b1a65d5730af552d75dbd962183779a8fa23e` |
+| Shared host publication/controller behavior | Pass: constructed positive permit and changed-tail/question/subject/scope/provenance rejection, missing/negative/incomplete review, formula-link distinction, cancellation and retry |
+| Android instrumentation, existing emulator-5562 | Pass: same constructed renderer behavior, actual bundled loader positive fixture plus missing/changed publication receipts; eight real installed record denials retained |
+| Required `python3 tools/evaluation/verify_scale_answer_adapter.py` | Exit1 after eleven artifact/review-promotion mutations and behavior pass: zero independently cleared real bulk spans |
+
+[Repair receipts](scale-answer/repair-1/receipt.json), [raw check](scale-answer/repair-1/required-check.log), [Android result](scale-answer/repair-1/android-results.json) and [host output](scale-answer/repair-1/host-tests.log) are separate from the historical failed checkpoint artifacts. The literal required build and instrumentation build produced the same APK. No new inference, old-matrix replay or model performance measurement occurred. Constructed renderer output is not corpus fact, independent approval, generated success or phone qualification.
+
+The frozen eight questions and sealed source bytes are unchanged: six pending-source-review routes and two unavailable routes, zero real published claims. The main source-clearance blocker cannot be repaired by the builder manufacturing an independent receipt. The real source dialog/reader paths remain browse-only, and the new publication mechanism has not been exercised on a genuinely cleared bulk answer. Places, production model and selected4B role remain unchanged.
+
+### Concrete review handoff and remaining work
+
+`tools/evaluation/scale-answer/prepare_review_packet.py` reproducibly assembles the already sealed exact proposed spans and retained raw context into ignored `downloads/scale-answer/independent-review-packet.json` without downloads. Its132,564-byte packet hash is `2fb07d8d599c505b55866d7b826c3705deca19c0d623478999c9cf63af36898c`. The committed [packet manifest](scale-answer/repair-1/review-packet.json) records all eight pending records and no approvals. Raw range offsets retain their producer convention and are not relabeled decoded UTF-16 offsets.
+
+One inherited proposed opening span, Airport surveillance radar, is1224 UTF-16 units and exceeds the runtime1200 limit. It remains preserved and explicitly flagged, rather than silently cropped or counted as admissible. A reviewer must select a complete bounded span and assess whether necessary conditions survive. The other seven proposals fitting the length bound are still not source-cleared or semantically approved.
+
+The exact external dependency is independent rights/fidelity review against these bulk revisions and their source-specific exceptions, including full immutable revision context if the retained ranges cannot establish fidelity. After a reviewer selects/clears exact spans, freeze the resulting review receipts, prepare candidates without changing the frozen questions, and obtain whole-claim/obligation review against the exact final output. The typed publication mechanism can then transport that approval; it cannot supply it. No pending private task or orchestration state was changed. Final release identity, selected4B Android resources, independent unseen evaluation, physical Android/GrapheneOS and human usefulness remain open.

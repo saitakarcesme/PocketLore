@@ -22,7 +22,7 @@ def ledger_check(ledger):
     for key in ['snapshot_sha256','span_sha256','start_utf16','end_utf16']:require(review[key]==r[key],'Review target mismatch')
 def main():
  frozen=json.loads((HERE/'freeze.json').read_text());integrity(frozen)
- receipt=json.loads((OUT/'receipt.json').read_text());integrity(receipt['files'])
+ receipt=json.loads((OUT/'repair-1/receipt.json').read_text());integrity(receipt['files'])
  handoff=json.loads((OUT/'supplement-handoff.json').read_text());base=pathlib.Path('/home/isa/PocketLore-control/scale-workers/quality-preparation')
  for f in handoff['files']:
   data=(base/f['path']).read_bytes();require(len(data)==f['bytes'] and sha(data)==f['sha256'],'Supplement handoff drift')
@@ -32,13 +32,14 @@ def main():
   data=(ROOT/row['record_path']).read_bytes();d=json.loads(data);require(sha(data)==row['row']['sha256'] and sha(d['text'].encode())==row['row']['text_sha256'],'Real sealed record drift')
   review=next(r for r in ledger['dispositions'] if r['record_path']==row['record_path'])
   require(sha(d['wikitext'].encode())==review['retained_wikitext_sha256'] and d['wikitext_ranges']==review['retained_range_map'],'Formula/unit context changed')
+ packet=json.loads((OUT/'repair-1/review-packet.json').read_text());integrity({packet['path']:packet['sha256']})
  print(run().strip())
- android=json.loads((OUT/'android-results.json').read_text());require(len(android['records'])==8,'Android record count');require(android['missing_changed_receipt_tests']==2,'Android receipt mutation coverage')
+ android=json.loads((OUT/'repair-1/android-results.json').read_text());require(len(android['records'])==8,'Android record count');require(android['missing_changed_receipt_tests']==2,'Android receipt mutation coverage');require(android['constructed_publication_checks'] and android['publication_receipt_mutations']==2,'Android publication behavior coverage')
  for r in android['records']:
   source=next(x for x in rows if str(x['row']['id'])==r['id']);require(r['text_sha256']==source['row']['text_sha256'] and r['record_sha256']==source['row']['sha256'],'Android sealed identity')
   require(r['route']=='withheld_pending_source_review' and not r['preview_truncated'],'Unreviewed source admitted or truncated')
  tests=0
- for name in ['tools/evaluation/scale-answer/cases.json','docs/evidence/scale-answer/android-results.json','android/app/src/main/assets/bulk-source-reviews.json']:
+ for name in ['tools/evaluation/scale-answer/cases.json','docs/evidence/scale-answer/repair-1/android-results.json','android/app/src/main/assets/bulk-source-reviews.json','android/app/src/main/assets/bulk-answer-reviews.json','android/app/src/main/java/org/pocketlore/app/ScaleAnswerPublication.java']:
   manifest=frozen if name in frozen else receipt['files']
   for data in [None,(ROOT/name).read_bytes()+b'changed']:
    try:integrity(manifest,{name:data})
@@ -51,7 +52,7 @@ def main():
  print(str(tests)+' actual artifact/review promotion regressions pass; 8 real Android denials verified')
  cleared=[r for r in ledger['dispositions'] if r['rights_status']==r['fidelity_status']=='independently_approved']
  require(cleared,'OBJECTIVE OPEN: zero independently rights/fidelity-cleared bulk spans; no bulk generated claims were published or independently validated')
- raise ValueError('OBJECTIVE OPEN: independently supported useful generated bulk answers remain unmeasured')
+ require(android.get('independently_reviewed_useful_generated_answers',0)>0,'OBJECTIVE OPEN: real generated bulk usefulness has not been measured; constructed publication fixtures are not answer successes')
 if __name__=='__main__':
  try:main()
  except (ValueError,KeyError,FileNotFoundError,AssertionError) as e:print('FAIL:',e);sys.exit(1)
