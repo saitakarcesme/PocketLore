@@ -333,6 +333,31 @@
       "fully_useful_draft": false,
       "assessment": "Both requested geographic and constitutional facts are correct in source context, but P1.2 is not an available bounded sentence label. Integrity gate withholds; raw content potential is not inspectable answer success.",
       "claims": []
+    },
+    "s26": {
+      "result_sha256": "c6da8f6e04ddcfe36674b247a1c8ee926df4022162ce4051a9f9f1c71d76d653",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Requested landlocked European explanation is correct, but extra sixth-smallest claim is outside all selected P4.1-P4.5 spans; same-model audit wrongly approves entire claim.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P4.1 establishes landlocked European location and borders; P4.2-P4.5 contain history, rulers and capital, not European size rank. Size-rank fact is elsewhere in supplied context."
+        }
+      ]
+    },
+    "s27": {
+      "result_sha256": "ffc5aca1067b39ef732319f982c28710a343aa9f45e5bec53bcd6d6dcd4e8760",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": false,
+      "fully_useful_draft": false,
+      "assessment": "Geographic descriptions and visible area/rank statements match full source context, but draft truncates mid-area statement at320tokens. It also assigns overly broad/wrong paragraph labels rather than bounding each fact; no useful bound answer.",
+      "claims": []
     }
   }
 }
