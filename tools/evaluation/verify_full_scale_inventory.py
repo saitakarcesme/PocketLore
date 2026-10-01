@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check real sealed bytes and Android delta behavior; full installation stays a gate."""
 import hashlib,json,pathlib,subprocess,sys,tempfile,shutil,datetime
+from full_scale_capacity import capacity
 ROOT=pathlib.Path(__file__).resolve().parents[2];E=ROOT/'docs/evidence/full-scale'
 ADB=['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb','-s','emulator-5560']
 def sha(p):
@@ -14,6 +15,19 @@ def require(b,s):
  if not b:raise ValueError(s)
 def main():
  seal=json.loads((E/'candidate.json').read_text())
+ # Stop unchanged environment failures before copying weights, installing APKs or rerunning subsets.
+ for relative in ['tools/evaluation/verify_full_scale_inventory.py','tools/evaluation/full_scale_capacity.py','docs/evidence/full-scale/budget.json']:
+  checked(ROOT/relative,seal['artifacts'][relative])
+ budget=json.loads((E/'budget.json').read_text())
+ df=subprocess.check_output(ADB+['shell','df','-k','/data'],text=True,timeout=30)
+ measured=capacity(df,budget['installed_upper_estimate'])
+ out=ROOT/'downloads/full-scale'/('capacity-'+datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'));out.mkdir(parents=True)
+ (out/'capacity.json').write_text(json.dumps(dict(measured,raw_df=df,subsets_rerun=False),indent=2)+'\n')
+ if not measured['prerequisite_met']:
+  print('BLOCKED: persistent Android /data total capacity '+str(measured['total_bytes'])+' bytes is below the '+str(measured['installed_lower_bound_bytes'])+' byte candidate requirement; even an empty filesystem cannot fit it.',file=sys.stderr)
+  print('No APK installation or subset rerun. Full inventory/update gate remains unmet. Measurement: '+str(out),file=sys.stderr)
+  return 1
+
  for p,s in seal['artifacts'].items():checked(ROOT/p,s)
  files=json.loads((E/'host/files.json').read_text())
  for f in files:checked(pathlib.Path(f['path']),f)

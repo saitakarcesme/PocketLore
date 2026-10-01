@@ -1,5 +1,9 @@
 # Release gaps
 
+## Task301 repair2: stop redundant subset retries
+
+The required inventory check now fails early on actual persistent capacity:6.23GB total versus the41.63GB declared candidate plan. [Fresh evidence](evidence/full-scale/repair-2/capacity.json) and five parser/boundary regressions are preserved. Build passes; verifier exits1 without reinstalling APKs or rerunning subsets. Full Android inventory and full-scale update measurements still require coordinator-approved storage. More subset repetitions cannot close this gate; no acceptance requirement was weakened and no service or orchestration state changed.
+
 ## Task301 repair1 dependency check
 
 The recovered task301 implementation and failures remain unchanged. [Fresh environment and required-check receipts](evidence/full-scale/repair-1/environment.json) confirm emulator-5560 still has only6,082,144KiB total userdata. The full41+GB installation/update gate cannot be repaired within this environment or by cleanup. Coordinator-approved persistent Android capacity is the exact dependency; no resize, service restart or replacement emulator is authorized by this repair. Task301 stays blocked; no duplicate work or weakened acceptance is proposed.
