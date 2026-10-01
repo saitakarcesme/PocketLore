@@ -61,7 +61,7 @@ def behavior(run):
  retained=load(BASE/'seed-assets.json');after=load(BASE/'seed-assets-after.json')
  require(len(retained['actual'])==5 and retained['actual']==retained['expected']==after['actual']==after['expected'],'Saved model/reviewed assets changed')
  require(retained['actual']['model.gguf']==MODEL_SHA,'Wrong production model')
- disk_samples=[json.loads(line) for p in run.glob('*/disk-samples.jsonl') for line in p.read_text().splitlines()]
+ disk_samples=[json.loads(line) for p in [*run.glob('*/disk-samples.jsonl'),*(BASE/'failures').rglob('disk-samples.jsonl')] for line in p.read_text().splitlines()]
  data_peak=max(int(x['df_k'].splitlines()[-1].split()[2])*1024 for x in disk_samples)
  require(data_peak<50_000_000_000,'Whole-emulator userdata high-water exceeds hard cap')
  return {'status':'PASS','whole_emulator_userdata_peak_bytes':data_peak,'primary_shards':31,'sealed_asset_bytes':sum(f['bytes'] for f in sealed),'max_measured_update_bytes_including_allocated_code_and_test':max(peaks),'target_met':max(peaks)<=45_000_000_000,'cities_positive':[sum(q['count']>0 for q in rs[label]['cities']) for label in ['full-inspection','replacement-inspection','restored-inspection']],'limits':'Emulator capacity/reader validation only; no phone, rights clearance or model quality acceptance.'}

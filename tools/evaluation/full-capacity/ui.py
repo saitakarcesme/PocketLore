@@ -27,6 +27,8 @@ def main():
  assert 'Source-specific rights:' in source and 'not cleared for generated answers' in source and 'Text SHA-256:' in source
  with (OUT/'source-dialog.png').open('wb') as f:subprocess.run(ADB+['exec-out','screencap','-p'],stdout=f,check=True)
  (OUT/'source.txt').write_text(source)
+ (OUT/'source-process-memory.txt').write_text(sh('dumpsys','meminfo','org.pocketlore.app'))
+ pid=sh('pidof','org.pocketlore.app').strip();assert pid.isdigit();(OUT/'proc-status.txt').write_text(sh('run-as','org.pocketlore.app','cat','/proc/'+pid+'/status'))
  tap(find(tree,lambda a:a.get('text','').lower()=='close'));tree=snapshot('closed')
  tap(find(tree,lambda a:a.get('text','').lower()=='active bulk collections'));tree=wait_text('Complete sealed','collections')
  collection_nodes=[n for n in tree.iter('node') if n.attrib.get('checkable')=='true']

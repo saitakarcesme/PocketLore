@@ -1,0 +1,33 @@
+{
+  "mode": "import",
+  "pid": 5369,
+  "platform": "emulator-5562 API35 x86_64; CPU; no inference",
+  "manifest": "84f0e6a3480d5384c37fe96d9d1f930ec074513a7603de15617891e8ca747929",
+  "shards": [
+    "compact-00.sqlite",
+    "compact-01.sqlite",
+    "compact-02.sqlite",
+    "compact-03.sqlite",
+    "compact-04.sqlite",
+    "compact-05.sqlite",
+    "compact-06.sqlite",
+    "compact-07.sqlite",
+    "compact-08.sqlite",
+    "compact-09.sqlite"
+  ],
+  "kind": "places",
+  "elapsed_ms": 31845.070705,
+  "read_bytes": 982328396,
+  "files_before": 34511429617,
+  "files_after": 35493785792,
+  "precommit_files_bytes": 35493757873,
+  "admission_bytes": 36611347377,
+  "new_bytes_written": 982328256,
+  "status": "PASS",
+  "sampled_app_logical_peak": 35493785792,
+  "sampled_app_allocated_peak": 35494912000,
+  "sampled_pss_peak_kib": 52133,
+  "app_logical_bytes": 35493785792,
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "proc_status": "Name:\t.pocketlore.app\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t5369\nNgid:\t0\nPid:\t5369\nPPid:\t367\nTracerPid:\t0\nUid:\t10148\t10148\t10148\t10148\nGid:\t10148\t10148\t10148\t10148\nFDSize:\t128\nGroups:\t9997 20148 50148 \nKthread:\t0\nVmPeak:\t16750456 kB\nVmSize:\t15971592 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  152208 kB\nVmRSS:\t  123924 kB\nRssAnon:\t   56468 kB\nRssFile:\t   61824 kB\nRssShmem:\t    5632 kB\nVmData:\t 2622592 kB\nVmStk:\t    8192 kB\nVmExe:\t       8 kB\nVmLib:\t  144144 kB\nVmPTE:\t    1052 kB\nVmSwap:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t13\nSigQ:\t0\/15667\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080001204\nSigIgn:\t0000000000000001\nSigCgt:\t0000006e400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t0000000000000000\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\t3\nCpus_allowed_list:\t0-1\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t10\nnonvoluntary_ctxt_switches:\t50\n"
+}
