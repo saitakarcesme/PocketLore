@@ -215,7 +215,18 @@ public final class AnswerEngine {
         for(String clause:BRACKET.matcher(draft).replaceAll("").split("(?i)\\b(?:while|whereas)\\b|\\n+")) {
             Set<String> words=new HashSet<>(ResearchEngine.tokenize(clause));
             boolean first=!Collections.disjoint(words,subjects.get(0)),second=!Collections.disjoint(words,subjects.get(1));
-            if(first==second)continue;
+            if(first && second){
+                // A joint statement may be supported by one excerpt explicitly covering
+                // both subjects. Otherwise, do not distribute one subject's property to both.
+                boolean joint=false;for(Set<String> source:sources)if(source.containsAll(words))joint=true;
+                if(!joint)for(int own=0;own<2;own++){
+                    Set<String> borrowed=new HashSet<>(words);borrowed.retainAll(sources.get(1-own));borrowed.removeAll(sources.get(own));
+                    borrowed.removeAll(subjects.get(0));borrowed.removeAll(subjects.get(1));
+                    if(!borrowed.isEmpty())return "A shared comparison property is established for only one subject; draft withheld.";
+                }
+                continue;
+            }
+            if(!first && !second)continue;
             int own=first?0:1;
             Set<String> borrowed=new HashSet<>(words);borrowed.retainAll(sources.get(1-own));borrowed.removeAll(sources.get(own));
             borrowed.removeAll(subjects.get(0));borrowed.removeAll(subjects.get(1));

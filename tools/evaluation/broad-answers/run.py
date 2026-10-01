@@ -17,7 +17,7 @@ run(A+['shell','cmd','connectivity','airplane-mode','enable'],'airplane.txt');ru
 run(A+['shell','am','force-stop','org.pocketlore.app'],'stop.txt')
 log=run(A+['shell','am','instrument','-w','-e','mode',mode,'org.pocketlore.app.test/org.pocketlore.app.BroadAnswerInstrumentation'],'instrument.txt')
 r=json.loads(run(A+['exec-out','run-as','org.pocketlore.app','cat','files/broad-answer-tests/results.json'],'results.json'))
-for link in r.get('links',[]):run(A+['exec-out','run-as','org.pocketlore.app','cat','files/broad-answer-tests/'+link['case']+'-citation.png'],link['case']+'-citation.png')
+for link in r.get('links',[]):run(A+['exec-out','run-as','org.pocketlore.app','cat','files/broad-answer-tests/'+link['file']],link['file'])
 run(A+['exec-out','run-as','org.pocketlore.app','cat','files/pack-library/catalog.json'],'catalog-after.json')
 receipt={'apk_sha256':sha(R/'android/app/build/outputs/apk/debug/app-debug.apk'),'model_env_sha256':sha(R/'tools/answers/model.env'),'sources':{str(p.relative_to(R)):sha(p) for p in list((R/'android/app/src/main/java/org/pocketlore/app').glob('*.java'))+list(F.glob('*.java'))+[F/'protocol.json',R/'tools/evaluation/broad-reference/protocol.json']},'records':{p.name:sha(p) for p in out.iterdir()}}
 (out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n')

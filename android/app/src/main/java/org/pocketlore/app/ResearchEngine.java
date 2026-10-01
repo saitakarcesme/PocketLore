@@ -44,7 +44,7 @@ public final class ResearchEngine {
     /** First select distinct documents, then at most one additional passage per document. */
     static List<Hit> diverse(List<Hit> input){
         input.sort(Comparator.comparingDouble((Hit h)->h.score).reversed().thenComparing(h->h.passage.id));
-        List<Hit> out=new ArrayList<>();Set<String> docs=new HashSet<>();
+        List<Hit> out=new ArrayList<>();Set<String> docs=new java.util.LinkedHashSet<>();
         for(Hit h:input)if(docs.add(h.passage.url)){out.add(h);if(out.size()==4)return out;}
         for(String url:docs)for(Hit h:input)if(h.passage.url.equals(url)&&!out.contains(h)){out.add(h);break;}
         return new ArrayList<>(out.subList(0,Math.min(4,out.size())));

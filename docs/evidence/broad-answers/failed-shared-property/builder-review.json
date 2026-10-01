@@ -1,0 +1,94 @@
+{
+  "reviewer": "builder, separate from independent source review",
+  "results_sha256": "f0e2a35b5a73d4a22e7d451b1a9ddf0427c292f523e0312dde3a63901f53c5f1",
+  "generated": {
+    "explain-cooking": {
+      "support": "supported",
+      "complete": true,
+      "useful": true,
+      "published_text": "[pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-5355-3c5b194590264bc0] Cooking, also known as cookery, is the art, science and craft of using heat to make food more palatable, digestible, nutritious, or safe.",
+      "rationale": "The cited Cooking opening states the same definition and lists palatability, digestibility, nutrition and safety as uses of heat. This is actual model-produced near-verbatim prose, useful for this narrow question, not synthesis.",
+      "claims": [
+        {
+          "text": "[S1] Cooking, also known as cookery, is the art, science and craft of using heat to make food more palatable, digestible, nutritious, or safe.",
+          "citations": [
+            "pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-5355-3c5b194590264bc0"
+          ],
+          "support": "supported",
+          "rationale": "The cited Cooking opening states the same definition and lists palatability, digestibility, nutrition and safety as uses of heat. This is actual model-produced near-verbatim prose, useful for this narrow question, not synthesis."
+        }
+      ]
+    },
+    "explain-algae": {
+      "support": "supported",
+      "complete": true,
+      "useful": true,
+      "published_text": "[pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-633-4aab155c31f7251e] Algae are any of a large and diverse group of photosynthetic organisms.",
+      "rationale": "The Algae opening describes a large diverse group of photosynthetic organisms; the published definition preserves that limited classification.",
+      "claims": [
+        {
+          "text": "[S1] Algae are any of a large and diverse group of photosynthetic organisms.",
+          "citations": [
+            "pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-633-4aab155c31f7251e"
+          ],
+          "support": "supported",
+          "rationale": "The Algae opening describes a large diverse group of photosynthetic organisms; the published definition preserves that limited classification."
+        }
+      ]
+    },
+    "compare-heat": {
+      "support": "unsupported",
+      "complete": false,
+      "useful": false,
+      "published_text": "[pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-52634-ce4cc302ca6df03b] [pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-52636-f647b02e272d5666] Both baking and boiling are methods of preparing food that use dry heat, typically in an oven, hot ashes, or on hot stones.",
+      "rationale": "Baking uses dry heat according to its excerpt; Boiling instead describes a liquid-to-gas transition. The shared dry-heat predicate transfers baking properties to boiling and is not supported.",
+      "claims": [
+        {
+          "text": "[S1] [S2] Both baking and boiling are methods of preparing food that use dry heat, typically in an oven, hot ashes, or on hot stones.",
+          "citations": [
+            "pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-52634-ce4cc302ca6df03b",
+            "pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-52636-f647b02e272d5666"
+          ],
+          "support": "unsupported",
+          "rationale": "Baking uses dry heat according to its excerpt; Boiling instead describes a liquid-to-gas transition. The shared dry-heat predicate transfers baking properties to boiling and is not supported."
+        }
+      ]
+    },
+    "multi-methods": {
+      "support": "unsupported",
+      "complete": false,
+      "useful": false,
+      "published_text": "[pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-5355-3c5b194590264bc0] [pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-52634-ce4cc302ca6df03b] Cooking and Baking are both methods of preparing food that use dry heat, typically in an oven, hot ashes, or on hot stones.",
+      "rationale": "Baking uses dry heat; Cooking explicitly includes boiling and blanching in water. Labeling both generally as dry-heat methods transfers a narrower property to cooking.",
+      "claims": [
+        {
+          "text": "[S1] [S2] Cooking and Baking are both methods of preparing food that use dry heat, typically in an oven, hot ashes, or on hot stones.",
+          "citations": [
+            "pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-5355-3c5b194590264bc0",
+            "pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-52634-ce4cc302ca6df03b"
+          ],
+          "support": "unsupported",
+          "rationale": "Baking uses dry heat; Cooking explicitly includes boiling and blanching in water. Labeling both generally as dry-heat methods transfers a narrower property to cooking."
+        }
+      ]
+    },
+    "mixed-water": {
+      "support": "supported",
+      "complete": false,
+      "useful": false,
+      "published_text": "[pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-52636-f647b02e272d5666] [p567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea_evaporation-9d28b2eea7f9fc21] Both boiling and evaporation are forms of liquid vapourization.",
+      "rationale": "The Boiling excerpt explicitly calls boiling and evaporation the two main forms of liquid vapourization; the small-pack excerpt describes liquid water becoming gas. The commonality is supported, but the requested comparison omits the differing mechanisms/conditions and is not a fully useful comparison.",
+      "claims": [
+        {
+          "text": "[S1] [S2] Both boiling and evaporation are forms of liquid vapourization.",
+          "citations": [
+            "pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-52636-f647b02e272d5666",
+            "p567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea_evaporation-9d28b2eea7f9fc21"
+          ],
+          "support": "supported",
+          "rationale": "The Boiling excerpt explicitly calls boiling and evaporation the two main forms of liquid vapourization; the small-pack excerpt describes liquid water becoming gas. The commonality is supported, but the requested comparison omits the differing mechanisms/conditions and is not a fully useful comparison."
+        }
+      ]
+    }
+  }
+}

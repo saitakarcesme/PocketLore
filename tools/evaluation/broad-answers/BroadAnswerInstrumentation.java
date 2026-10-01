@@ -55,10 +55,13 @@ public final class BroadAnswerInstrumentation extends Instrumentation {
     private void startQuery(String question)throws Exception{runOnMainSync(()->((EditText)field(activity,"question")).setText(question));click(activity,"search");}
     private void inspectLink(String id)throws Exception{
         AnswerEngine.Outcome outcome=activity.latestAnswer();if(outcome.kind!=AnswerEngine.Kind.GENERATED)return;
-        final String[] cited={null};runOnMainSync(()->{TextView view=(TextView)field(activity,"answer");check(view.getText() instanceof Spanned,"Generated answer has no spans");Spanned text=(Spanned)view.getText();ClickableSpan[] spans=text.getSpans(0,text.length(),ClickableSpan.class);check(spans.length>0,"Generated citations not clickable");int start=text.getSpanStart(spans[0]),end=text.getSpanEnd(spans[0]);cited[0]=text.subSequence(start+1,end-1).toString();spans[0].onClick(view);});
+        final int[] count={0};runOnMainSync(()->{Spanned text=(Spanned)((TextView)field(activity,"answer")).getText();count[0]=text.getSpans(0,text.length(),ClickableSpan.class).length;});
+        for(int linkIndex=0;linkIndex<count[0];linkIndex++){final int ix=linkIndex;
+        final String[] cited={null};runOnMainSync(()->{TextView view=(TextView)field(activity,"answer");check(view.getText() instanceof Spanned,"Generated answer has no spans");Spanned text=(Spanned)view.getText();ClickableSpan[] spans=text.getSpans(0,text.length(),ClickableSpan.class);check(spans.length>0,"Generated citations not clickable");int start=text.getSpanStart(spans[ix]),end=text.getSpanEnd(spans[ix]);cited[0]=text.subSequence(start+1,end-1).toString();spans[ix].onClick(view);});
         ResearchEngine.Result evidence=(ResearchEngine.Result)field(activity,"latestEvidence");ResearchEngine.Hit expected=null;for(ResearchEngine.Hit h:evidence.hits)if(h.passage.id.equals(cited[0]))expected=h;check(expected!=null,"Link not in retrieved evidence");final ResearchEngine.Passage p=expected.passage;
         await(()->visible(getUiAutomation().getRootInActiveWindow()).contains(p.text),"Citation dialog not shown");String text=visible(getUiAutomation().getRootInActiveWindow());check(text.contains(p.id)&&text.contains(p.url)&&text.contains(p.sourceDate)&&text.contains(p.license)&&text.contains(p.collectionProvenance),"Wrong source/edition dialog");
-        JSONObject link=new JSONObject().put("case",id).put("citation",p.id).put("visible",text);report.getJSONArray("links").put(link);screenshot(id+"-citation");dialogClick("Close");save();
+        JSONObject link=new JSONObject().put("case",id).put("citation",p.id).put("visible",text);report.getJSONArray("links").put(link.put("file",id+"-citation-"+ix+".png"));screenshot(id+"-citation-"+ix);dialogClick("Close");save();
+        }
     }
     private JSONObject answer(JSONObject c)throws Exception{phase=c.getString("id");Files.write(new File(root,"active-case.txt").toPath(),bytes(phase));long t=System.nanoTime();startQuery(c.getString("question"));ready();JSONObject r=record(phase,c.getString("question"),t);inspectLink(phase);return r;}
     private void importDuplicate()throws Exception{
