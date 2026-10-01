@@ -110,3 +110,26 @@ and explicit unresolved redistribution scope. Build tools are not shipped
 wholesale. A declared license or a verified hash is not distribution
 clearance; independent reproduction and production signing/publication
 remain separate owner/release gates.
+
+Host capability comparison (task 190; optional models, no weights redistributed)
+-----------------------------------------------------------------------------
+Qwen team / Alibaba Cloud, Qwen2.5-1.5B-Instruct-GGUF at revision
+91cad51170dc346986eccefdc2dd33a9da36ead9, Q4_K_M, Apache-2.0.
+SHA-256: 6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e.
+https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/tree/91cad51170dc346986eccefdc2dd33a9da36ead9
+Full license: android/app/src/main/assets/licenses/synthesis-model-Apache-2.0.txt.
+Publisher attribution: assets/licenses/synthesis-model-notice.txt.
+
+Qwen team / Alibaba Cloud, Qwen3-1.7B-GGUF at revision
+90862c4b9d2787eaed51d12237eafdfe7c5f6077, Q8_0, Apache-2.0.
+SHA-256: 061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a.
+https://huggingface.co/Qwen/Qwen3-1.7B-GGUF/tree/90862c4b9d2787eaed51d12237eafdfe7c5f6077
+Full license: android/app/src/main/assets/licenses/synthesis-qwen3-Apache-2.0.txt.
+Publisher attribution and pinned non-thinking template:
+assets/licenses/synthesis-qwen3-notice.txt.
+
+Publisher-supplied quantizations were not independently reproduced. These
+are measured host candidates, not selected phone releases or endorsements.
+The public evaluation quotes only attributed, licensed real passages from
+the existing reference/science packs; fixture expectations are review
+criteria and never factual corpus content or model answers.

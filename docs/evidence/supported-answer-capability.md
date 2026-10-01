@@ -42,3 +42,5 @@ The verifier checks actual load/generation results, prompt equality, pinned sour
 ## Open gates
 
 Results, source assessments and model/architecture selection will be recorded after the serial run. Existing twelve blocked supported development cases are not declared repaired by this new benchmark. Physical Android/GrapheneOS, research usefulness, independent source review and human acceptance remain open. No bounty submission or competitive superiority is claimed.
+
+Observed during the unchanged run: the production comparison selector drops the reversal excerpt for case `cap-10` (magnetic storms versus reversals), retaining only the storm excerpt. Both oracle-offered and actually retained evidence are therefore distinguished in review inputs. The baseline then calls both phenomena rapid; the retained excerpt does not support that transfer. This is an architecture/evidence-selection failure as well as a raw unsupported draft. A model cannot recover missing evidence by guessing. No selector change or resampling is made in this experiment.
