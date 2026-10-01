@@ -1,3 +1,7 @@
+# Latest strategy change: original revision evidence acquired; approval still open
+
+The new [source-adjudication strategy](302-scale-reviewed-source-answer-adapter-strategy-change.md) replaces repeated rejection-wrapper work with seven bounded source proposals and seven verified original historical pages (3.08MB). Exact source paragraphs, citation/formula differences and attribution context are available for independent inspection. The source ledgers remain pending; no generated answers or independent approvals are invented. Required build passes and adapter check still exits1. Historical reports below remain preserved.
+
 # Repair2 status: recovered code; independent review dependency remains unresolved
 
 The latest required build passes with unchanged APK identity. The required adapter check exits1 at a new explicit source-review preflight: eight exact bulk records remain pending, zero independently cleared spans and zero bundled answer approvals. Six new actual-ledger mutations reject fabricated success counts and missing/changed/oversized receipts. No unchanged Android or inference matrix was repeated. Prior report sections and failed evidence below remain historical.

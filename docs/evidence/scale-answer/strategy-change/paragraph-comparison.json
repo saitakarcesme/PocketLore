@@ -1,0 +1,77 @@
+{
+  "rows": [
+    {
+      "id": 4456695,
+      "revision": "1293781306",
+      "source_html_sha256": "cbcea8f596b42cb3dc463537d1f1d7b790eed9752e4ff96ca360ee39ff9be204",
+      "selected_span_sha256": "12c815d644039a8b4c47ba9ac6bc90510860fc9bab921d766979f5d4e2856cf1",
+      "paragraph_text_sha256": "9928aad5cf5bd110be4c91af43171f49000d54594c6437571b651d8518db068b",
+      "selected_text_present_after_whitespace_normalization": true,
+      "builder_review_status": "pending_independent_rights_and_fidelity_review",
+      "method": "HTMLParser paragraph text includes citation/math text; differences must be inspected, not silently normalized away."
+    },
+    {
+      "id": 1419,
+      "revision": "1301393197",
+      "source_html_sha256": "7b1dda266e36b662f207e57cabfe77d65c93f573569391bc7c639c5ae50e0b92",
+      "selected_span_sha256": "da82984d78c8c22016ee1610351a208aff756608e0e94a7a2e82ce648838066d",
+      "paragraph_text_sha256": "a48669eed43683d4b4f4637828406da9eee4d98925f5b50a4fbf8334aae64ad7",
+      "selected_text_present_after_whitespace_normalization": true,
+      "builder_review_status": "pending_independent_rights_and_fidelity_review",
+      "method": "HTMLParser paragraph text includes citation/math text; differences must be inspected, not silently normalized away."
+    },
+    {
+      "id": 1909,
+      "revision": "1304666309",
+      "source_html_sha256": "84d10e4f748cd27ad3f381045709abacf4322cfc62d61f3e5c2284dc5c2a885f",
+      "selected_span_sha256": "216d56577c6949bef802a22dd57998a9fc7b2b1823a593c0fa269b39ab280e1d",
+      "paragraph_text_sha256": "e8c7e81d2ca945d81bfc5d0ec09bccf802475a94a37fc327d4e9925255f8b271",
+      "selected_text_present_after_whitespace_normalization": false,
+      "builder_review_status": "pending_independent_rights_and_fidelity_review",
+      "method": "HTMLParser paragraph text includes citation/math text; differences must be inspected, not silently normalized away."
+    },
+    {
+      "id": 1566,
+      "revision": "1306891145",
+      "source_html_sha256": "6bcabcad4ea7872aa0076c809c7de36860d5e43aba3aacb6028cb7e43f163555",
+      "selected_span_sha256": "d7155943a19de21c8548ab736669aa0b100e5a218831a6abca42adfd952301fe",
+      "paragraph_text_sha256": "63cd49bcef620cdd71253bc812b37dda66efba5f30c383a5cba5b289f898e70c",
+      "selected_text_present_after_whitespace_normalization": true,
+      "builder_review_status": "pending_independent_rights_and_fidelity_review",
+      "method": "HTMLParser paragraph text includes citation/math text; differences must be inspected, not silently normalized away."
+    },
+    {
+      "id": 586,
+      "revision": "1306300730",
+      "source_html_sha256": "59695c2bfc01fe7dcab004b361cd3690dfa16e846b3f1ee9c1b669ab12ac2210",
+      "selected_span_sha256": "af92403cec9a09196d134f81ee08f1d6a89e6ba56289f8c7908d26228e704706",
+      "paragraph_text_sha256": "c27825bb6d28b019de0276e14f22377a624c4e43a3830bf4f54c697f3ee5813e",
+      "selected_text_present_after_whitespace_normalization": false,
+      "builder_review_status": "pending_independent_rights_and_fidelity_review",
+      "method": "HTMLParser paragraph text includes citation/math text; differences must be inspected, not silently normalized away."
+    },
+    {
+      "id": 991,
+      "revision": "1300937420",
+      "source_html_sha256": "7551866db1d5fc5437be763c037e46212364f581087086363f76c4e43e2a4190",
+      "selected_span_sha256": "63765ab859c32576323dbdf40dbd9eca1a01023535e3c8982155432529918199",
+      "paragraph_text_sha256": "58e4a56f0ffd38009e4efc04720b9ad4356dd352989114a90d7d117dbb9403c7",
+      "selected_text_present_after_whitespace_normalization": false,
+      "builder_review_status": "pending_independent_rights_and_fidelity_review",
+      "method": "HTMLParser paragraph text includes citation/math text; differences must be inspected, not silently normalized away."
+    },
+    {
+      "id": 656,
+      "revision": "1298836412",
+      "source_html_sha256": "bbd2045bf2f17e857ad5e77ac3583a6f9e0bdadb9b74fc3328b0d8d0f0dc066a",
+      "selected_span_sha256": "2b079468834f2cb40ee845e0aa4eda51831b86f5a784355fadbd5279dbda5a97",
+      "paragraph_text_sha256": "1c3a43114c9d64e08f035cb2549f3366a7f28da874d865595be4a473ebf2af30",
+      "selected_text_present_after_whitespace_normalization": true,
+      "builder_review_status": "pending_independent_rights_and_fidelity_review",
+      "method": "HTMLParser paragraph text includes citation/math text; differences must be inspected, not silently normalized away."
+    }
+  ],
+  "packet_path": "downloads/scale-answer/paired-source-review.json",
+  "packet_sha256": "8c44d4559d48100b89abcf7b88ce15f1cd02594b698f3ba4c81e9d077b8e5306",
+  "disclaimer": "Matching paragraph bytes do not prove source-specific rights, question relevance, semantic entailment or complete answers."
+}
