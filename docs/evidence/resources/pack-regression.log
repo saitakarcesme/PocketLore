@@ -1,0 +1,67 @@
+/usr/lib/python3.14/zipfile/__init__.py:1730: UserWarning: Duplicate name: 'manifest.json'
+  return self._open_to_write(zinfo, force_zip64=force_zip64)
+{
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "pack_bytes": 159327,
+  "documents": 10,
+  "passages": 186,
+  "apk_sha256": "5956212585c8c503c77eca370cd3856b56eb4fab2f2ad0ee38c85e84067e94da",
+  "test_apk_sha256": "056b46487fa129ff1e04a84a8a0cd097e9dfc541f7785cf76da54f5c23e368eb",
+  "elapsed_seconds": 48.39733775300192,
+  "corruption_cases": 18,
+  "environment": "LLMRig host build and existing x86_64 emulator; not physical Android",
+  "result": "PASS",
+  "source_acquisitions": [
+    {
+      "id": "evaporation",
+      "original_raw_sha256": "b33071c861d775d10cf118332c0b6d527835241a03e8f0941eb65d2c265685d6",
+      "cached_raw_sha256": "b33071c861d775d10cf118332c0b6d527835241a03e8f0941eb65d2c265685d6"
+    },
+    {
+      "id": "infiltration",
+      "original_raw_sha256": "2e6e7cf685017c989d528f6a30e163933b6de0e28a16e62039b25179d0c0bd31",
+      "cached_raw_sha256": "2e6e7cf685017c989d528f6a30e163933b6de0e28a16e62039b25179d0c0bd31"
+    },
+    {
+      "id": "groundwater",
+      "original_raw_sha256": "b7976d6999a7086df9f86553c6df437e8958db0ba7e7bda9b18abc41b2cc49fc",
+      "cached_raw_sha256": "b7976d6999a7086df9f86553c6df437e8958db0ba7e7bda9b18abc41b2cc49fc"
+    },
+    {
+      "id": "runoff",
+      "original_raw_sha256": "488b58fda0dffd0b222facebcf6bdcea0a8503f339951d1f5f0b0af6d3abf071",
+      "cached_raw_sha256": "488b58fda0dffd0b222facebcf6bdcea0a8503f339951d1f5f0b0af6d3abf071"
+    },
+    {
+      "id": "declaration",
+      "original_raw_sha256": "35da26af4f00a07c4e616d213b5e8d6e8ee3dd47768ae4f9646d5b6105a05731",
+      "cached_raw_sha256": "35da26af4f00a07c4e616d213b5e8d6e8ee3dd47768ae4f9646d5b6105a05731"
+    },
+    {
+      "id": "constitution",
+      "original_raw_sha256": "762b8ad03996e2da42ea56bd019ec8effde6883c4a93fe82bb434b81e9d5356e",
+      "cached_raw_sha256": "762b8ad03996e2da42ea56bd019ec8effde6883c4a93fe82bb434b81e9d5356e"
+    },
+    {
+      "id": "bill-of-rights",
+      "original_raw_sha256": "80521ac4f9918227218c9e80c01a95aeda9ebba883eec0518019c8dff62af722",
+      "cached_raw_sha256": "80521ac4f9918227218c9e80c01a95aeda9ebba883eec0518019c8dff62af722"
+    },
+    {
+      "id": "essentials",
+      "original_raw_sha256": "74b32dc8c78552ccbd2603fd548ed6490d967f568cae8cc4403b17085e313073",
+      "cached_raw_sha256": "74b32dc8c78552ccbd2603fd548ed6490d967f568cae8cc4403b17085e313073"
+    },
+    {
+      "id": "yosemite",
+      "original_raw_sha256": "0a3c45194edbdcee8669cb6af0860a34e650c7baa1ede896e898e44756902923",
+      "cached_raw_sha256": "0a3c45194edbdcee8669cb6af0860a34e650c7baa1ede896e898e44756902923"
+    },
+    {
+      "id": "yellowstone",
+      "original_raw_sha256": "ba2352a777c195f063a8234698b08e2050d28217230febea0fc65d91863b5402",
+      "cached_raw_sha256": "ba2352a777c195f063a8234698b08e2050d28217230febea0fc65d91863b5402"
+    }
+  ]
+}
+/home/isa/Projects/PocketLore/downloads/packs/verify-20261001T033049

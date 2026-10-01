@@ -1,0 +1,1729 @@
+{
+  "pid": 17696,
+  "environment": "AOSP x86_64 emulator, not physical Android",
+  "model_sha256": "061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a",
+  "model_bytes": 1834426016,
+  "runtime": "llama.cpp bb4caa7540188872173c44d161602d9271386413; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads=2; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5\/256, seed=42",
+  "emulator_total_memory_bytes": 2593685504,
+  "emulator_available_before_bytes": 2042777600,
+  "emulator_low_memory_before": false,
+  "java_max_heap_bytes": 201326592,
+  "real_copy_ms": 5104.170226,
+  "staged_model_bytes": 1834426016,
+  "staging_free_space_delta_bytes": 1834430464,
+  "index_load_ms": 109.948865,
+  "index_counts_passages_terms_postings_text_chars": [
+    186,
+    1770,
+    6001,
+    59862
+  ],
+  "persistent_index_bytes": 0,
+  "persistent_inference_cache_bytes": 0,
+  "load_ms": 709.221619,
+  "generation_tokens": 32,
+  "generation_text": "Evaporation is the process by which a liquid turns into a gas when it is heated and loses heat energy, causing the molecules to move faster and escape into the",
+  "generation_ms": 5294.071246,
+  "cancel_after_token_return_ms": 86.321194,
+  "saved_model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "saved_model_bytes": 491400032,
+  "status": "PASS",
+  "checks": [
+    "pinned_real_model",
+    "low_storage_rejected",
+    "model_mid_copy_cancel",
+    "model_cancel_preserves_old",
+    "injected_model_oom_cleanup",
+    "invalid_pack_preserves_old",
+    "pack_mid_copy_cancel",
+    "pack_old_bytes_preserved",
+    "recognized_stage_recovery_only",
+    "full_real_model_staged_hash",
+    "full_stage_removed",
+    "second_resident_session_rejected",
+    "context_overflow_rejected",
+    "real_generation",
+    "context_released_after_generation",
+    "close_cancels_and_holds_resident_lease_until_return",
+    "no_native_lease_or_context_after_cancel",
+    "session_slot_recovered",
+    "activity_saved_model_ready",
+    "trim_model_unavailable",
+    "trim_released_native_lease",
+    "trim_controller_idle",
+    "explicit_reload_after_trim",
+    "low_memory_callback_releases",
+    "saved_model_unchanged_after_pressure"
+  ],
+  "sampled_peak_pss_kib": 2108240,
+  "samples": [
+    {
+      "phase": "baseline",
+      "elapsed_ms": 11787179,
+      "pss_kib": 37660,
+      "java_used_bytes": 3379504,
+      "native_heap_allocated_bytes": 5651408,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11787296,
+      "pss_kib": 39964,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696800,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11787410,
+      "pss_kib": 39968,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11787521,
+      "pss_kib": 39968,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11787630,
+      "pss_kib": 39972,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696768,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11787742,
+      "pss_kib": 39972,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11787856,
+      "pss_kib": 39972,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696768,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11787966,
+      "pss_kib": 39976,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696768,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11788078,
+      "pss_kib": 39412,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696896,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11788190,
+      "pss_kib": 39416,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696896,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11788302,
+      "pss_kib": 39416,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696896,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11788412,
+      "pss_kib": 39475,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11788523,
+      "pss_kib": 39475,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11788635,
+      "pss_kib": 39479,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11788757,
+      "pss_kib": 39479,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11788868,
+      "pss_kib": 39483,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11788979,
+      "pss_kib": 39483,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11789096,
+      "pss_kib": 39487,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11789207,
+      "pss_kib": 39486,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696800,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11789320,
+      "pss_kib": 39446,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11789434,
+      "pss_kib": 39450,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11789545,
+      "pss_kib": 39450,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11789656,
+      "pss_kib": 39454,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696800,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11789768,
+      "pss_kib": 39454,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11789880,
+      "pss_kib": 39458,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11789990,
+      "pss_kib": 39458,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11790102,
+      "pss_kib": 39462,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696752,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11790216,
+      "pss_kib": 39466,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11790335,
+      "pss_kib": 39466,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11790447,
+      "pss_kib": 39470,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11790556,
+      "pss_kib": 39470,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696864,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11790666,
+      "pss_kib": 39474,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11790777,
+      "pss_kib": 39474,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11790902,
+      "pss_kib": 39478,
+      "java_used_bytes": 3858736,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11791015,
+      "pss_kib": 39482,
+      "java_used_bytes": 3891504,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11791126,
+      "pss_kib": 39482,
+      "java_used_bytes": 3891504,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11791237,
+      "pss_kib": 39482,
+      "java_used_bytes": 3891504,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11791349,
+      "pss_kib": 39486,
+      "java_used_bytes": 3891504,
+      "native_heap_allocated_bytes": 5696864,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11791474,
+      "pss_kib": 39486,
+      "java_used_bytes": 3891504,
+      "native_heap_allocated_bytes": 5696864,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11791585,
+      "pss_kib": 39490,
+      "java_used_bytes": 3891504,
+      "native_heap_allocated_bytes": 5696864,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11791696,
+      "pss_kib": 39490,
+      "java_used_bytes": 3891504,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11791808,
+      "pss_kib": 39494,
+      "java_used_bytes": 3891504,
+      "native_heap_allocated_bytes": 5696864,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11791925,
+      "pss_kib": 39494,
+      "java_used_bytes": 3891504,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11792036,
+      "pss_kib": 39498,
+      "java_used_bytes": 3891504,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11792149,
+      "pss_kib": 39498,
+      "java_used_bytes": 3891504,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11792268,
+      "pss_kib": 39498,
+      "java_used_bytes": 3891504,
+      "native_heap_allocated_bytes": 5696816,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "index",
+      "elapsed_ms": 11792378,
+      "pss_kib": 42838,
+      "java_used_bytes": 5816624,
+      "native_heap_allocated_bytes": 8476240,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "index",
+      "elapsed_ms": 11792474,
+      "pss_kib": 56547,
+      "java_used_bytes": 15298864,
+      "native_heap_allocated_bytes": 11737728,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11792488,
+      "pss_kib": 61450,
+      "java_used_bytes": 15298864,
+      "native_heap_allocated_bytes": 16321328,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11792598,
+      "pss_kib": 109683,
+      "java_used_bytes": 15298864,
+      "native_heap_allocated_bytes": 56085200,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11792712,
+      "pss_kib": 294367,
+      "java_used_bytes": 15298864,
+      "native_heap_allocated_bytes": 60026288,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11792850,
+      "pss_kib": 763491,
+      "java_used_bytes": 15298864,
+      "native_heap_allocated_bytes": 60026288,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11792969,
+      "pss_kib": 1152731,
+      "java_used_bytes": 15331632,
+      "native_heap_allocated_bytes": 60026288,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11793109,
+      "pss_kib": 1696773,
+      "java_used_bytes": 15331632,
+      "native_heap_allocated_bytes": 60026288,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11793204,
+      "pss_kib": 1716364,
+      "java_used_bytes": 15331632,
+      "native_heap_allocated_bytes": 51109888,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11793238,
+      "pss_kib": 1761939,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 286826144,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11793414,
+      "pss_kib": 1701655,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423153072,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11793539,
+      "pss_kib": 1730251,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423153072,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11793659,
+      "pss_kib": 1712239,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423153072,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11793850,
+      "pss_kib": 1741566,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423153072,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11794003,
+      "pss_kib": 1758245,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423153072,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11794296,
+      "pss_kib": 1795757,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423153072,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11794534,
+      "pss_kib": 1793385,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423153072,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11794772,
+      "pss_kib": 1793393,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423153072,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11794979,
+      "pss_kib": 1793393,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423153072,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11795252,
+      "pss_kib": 1926467,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423153072,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11795375,
+      "pss_kib": 2017004,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423150896,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11795544,
+      "pss_kib": 2072046,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423150896,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11795666,
+      "pss_kib": 2086130,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423150896,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11795848,
+      "pss_kib": 2101578,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423152624,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11796080,
+      "pss_kib": 2101594,
+      "java_used_bytes": 15380784,
+      "native_heap_allocated_bytes": 423152960,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11796336,
+      "pss_kib": 2104471,
+      "java_used_bytes": 15446320,
+      "native_heap_allocated_bytes": 423167424,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11796507,
+      "pss_kib": 2103846,
+      "java_used_bytes": 3108640,
+      "native_heap_allocated_bytes": 419990288,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11796742,
+      "pss_kib": 2108240,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 417090336,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11796925,
+      "pss_kib": 2107497,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 417090560,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11797088,
+      "pss_kib": 2107169,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 417090672,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11797312,
+      "pss_kib": 2107173,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 417090896,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11797556,
+      "pss_kib": 2107177,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 417091232,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11797756,
+      "pss_kib": 2107181,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 417091456,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11798008,
+      "pss_kib": 2107181,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 417091792,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11798240,
+      "pss_kib": 2107181,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 417092128,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11798476,
+      "pss_kib": 2107039,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 417092464,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "active_cancel",
+      "elapsed_ms": 11798652,
+      "pss_kib": 2071458,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 417086528,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "active_cancel",
+      "elapsed_ms": 11798773,
+      "pss_kib": 1996282,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 417086528,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "active_cancel",
+      "elapsed_ms": 11798895,
+      "pss_kib": 2003474,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 417086528,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "active_cancel",
+      "elapsed_ms": 11799041,
+      "pss_kib": 1999492,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 417086528,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        1,
+        1828474880,
+        234881024,
+        79888896
+      ]
+    },
+    {
+      "phase": "active_cancel",
+      "elapsed_ms": 11799151,
+      "pss_kib": 85346,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 44044976,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "unloaded",
+      "elapsed_ms": 11799204,
+      "pss_kib": 78730,
+      "java_used_bytes": 3141408,
+      "native_heap_allocated_bytes": 7950576,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11799262,
+      "pss_kib": 80906,
+      "java_used_bytes": 3211040,
+      "native_heap_allocated_bytes": 7951040,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11799373,
+      "pss_kib": 80906,
+      "java_used_bytes": 3211040,
+      "native_heap_allocated_bytes": 7951040,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11799485,
+      "pss_kib": 80910,
+      "java_used_bytes": 3243808,
+      "native_heap_allocated_bytes": 7951040,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11799596,
+      "pss_kib": 80910,
+      "java_used_bytes": 3243808,
+      "native_heap_allocated_bytes": 7951040,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11799707,
+      "pss_kib": 80785,
+      "java_used_bytes": 3243808,
+      "native_heap_allocated_bytes": 7951040,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11799818,
+      "pss_kib": 80785,
+      "java_used_bytes": 3243808,
+      "native_heap_allocated_bytes": 7951040,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11799929,
+      "pss_kib": 80789,
+      "java_used_bytes": 3243808,
+      "native_heap_allocated_bytes": 7951040,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11800041,
+      "pss_kib": 80793,
+      "java_used_bytes": 3243808,
+      "native_heap_allocated_bytes": 7951040,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11800152,
+      "pss_kib": 80793,
+      "java_used_bytes": 3243808,
+      "native_heap_allocated_bytes": 7951040,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11800265,
+      "pss_kib": 79167,
+      "java_used_bytes": 3243808,
+      "native_heap_allocated_bytes": 7951040,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11800386,
+      "pss_kib": 78103,
+      "java_used_bytes": 3243808,
+      "native_heap_allocated_bytes": 7951040,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11800500,
+      "pss_kib": 76739,
+      "java_used_bytes": 3243808,
+      "native_heap_allocated_bytes": 7955392,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11800652,
+      "pss_kib": 78673,
+      "java_used_bytes": 3375440,
+      "native_heap_allocated_bytes": 8039616,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11800770,
+      "pss_kib": 102088,
+      "java_used_bytes": 4346464,
+      "native_heap_allocated_bytes": 12383360,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11801030,
+      "pss_kib": 103539,
+      "java_used_bytes": 5119920,
+      "native_heap_allocated_bytes": 28667328,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11801219,
+      "pss_kib": 136777,
+      "java_used_bytes": 5218224,
+      "native_heap_allocated_bytes": 65571408,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11801352,
+      "pss_kib": 591423,
+      "java_used_bytes": 5316528,
+      "native_heap_allocated_bytes": 57068976,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "injected_trim",
+      "elapsed_ms": 11801486,
+      "pss_kib": 136303,
+      "java_used_bytes": 5382064,
+      "native_heap_allocated_bytes": 45976448,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11801603,
+      "pss_kib": 132528,
+      "java_used_bytes": 5414832,
+      "native_heap_allocated_bytes": 28365904,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11801720,
+      "pss_kib": 138976,
+      "java_used_bytes": 5414832,
+      "native_heap_allocated_bytes": 43998064,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11801843,
+      "pss_kib": 608212,
+      "java_used_bytes": 5414832,
+      "native_heap_allocated_bytes": 57216224,
+      "native_live_lease_contexts_model_kv_compute": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11801962,
+      "pss_kib": 125928,
+      "java_used_bytes": 5517232,
+      "native_heap_allocated_bytes": 20139056,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11802079,
+      "pss_kib": 125972,
+      "java_used_bytes": 5517232,
+      "native_heap_allocated_bytes": 20138400,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11802191,
+      "pss_kib": 125972,
+      "java_used_bytes": 5517232,
+      "native_heap_allocated_bytes": 20138400,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11802302,
+      "pss_kib": 125976,
+      "java_used_bytes": 5517232,
+      "native_heap_allocated_bytes": 20138400,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11802431,
+      "pss_kib": 125983,
+      "java_used_bytes": 5517232,
+      "native_heap_allocated_bytes": 20144032,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11802551,
+      "pss_kib": 125559,
+      "java_used_bytes": 5517232,
+      "native_heap_allocated_bytes": 20144032,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11802663,
+      "pss_kib": 125575,
+      "java_used_bytes": 5517232,
+      "native_heap_allocated_bytes": 20143248,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11802773,
+      "pss_kib": 125579,
+      "java_used_bytes": 5517232,
+      "native_heap_allocated_bytes": 20143248,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11802884,
+      "pss_kib": 125579,
+      "java_used_bytes": 5517232,
+      "native_heap_allocated_bytes": 20143248,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "phase": "final",
+      "elapsed_ms": 11802964,
+      "pss_kib": 125603,
+      "java_used_bytes": 5517232,
+      "native_heap_allocated_bytes": 20143248,
+      "native_live_lease_contexts_model_kv_compute": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "sampling_target_ms": 100,
+  "limitations": "Injected callbacks\/allocation errors are controls, not actual OS OOM survival; sampled PSS can miss peaks and is not physical-device RAM."
+}

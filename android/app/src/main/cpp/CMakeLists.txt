@@ -11,3 +11,6 @@ add_subdirectory("${LLAMA_SOURCE}" llama)
 add_library(pocketlore SHARED runtime.cpp)
 target_link_libraries(pocketlore PRIVATE llama)
 target_compile_definitions(pocketlore PRIVATE POCKETLORE_REVISION="${POCKETLORE_REVISION}")
+
+# Memory accounting API belongs to the exact immutable pinned llama.cpp revision.
+target_include_directories(pocketlore PRIVATE "${LLAMA_SOURCE}/src")

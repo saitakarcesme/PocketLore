@@ -10,7 +10,7 @@ public final class NativeRuntime {
     private NativeRuntime() {}
     public interface Sink { void onToken(byte[] utf8); }
     public static native String identity();
-    /** Diagnostic counts: live resident lease and live inference contexts, not memory bytes. */
+    /** Diagnostic counts: live lease, live contexts, model/KV/compute buffer bytes for the active context; not process RSS. */
     public static native long[] resourceState();
     public static native long create();
     public static native void load(long session, byte[] localPath);

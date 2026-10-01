@@ -1,0 +1,944 @@
+{
+  "pid": 17526,
+  "environment": "AOSP x86_64 emulator, not physical Android",
+  "model_sha256": "061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a",
+  "model_bytes": 1834426016,
+  "runtime": "llama.cpp bb4caa7540188872173c44d161602d9271386413; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads=2; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5\/256, seed=42",
+  "emulator_total_memory_bytes": 2593685504,
+  "emulator_available_before_bytes": 2044870656,
+  "emulator_low_memory_before": false,
+  "java_max_heap_bytes": 201326592,
+  "real_copy_ms": 5333.285744,
+  "staged_model_bytes": 1834426016,
+  "staging_free_space_delta_bytes": 1834434560,
+  "index_load_ms": 124.21129,
+  "index_counts_passages_terms_postings_text_chars": [
+    186,
+    1770,
+    6001,
+    59862
+  ],
+  "persistent_index_bytes": 0,
+  "persistent_inference_cache_bytes": 0,
+  "load_ms": 1113.047884,
+  "generation_tokens": 32,
+  "generation_text": "Evaporation is the process by which a liquid turns into a gas when it is heated and loses heat energy, causing the molecules to move faster and escape into the",
+  "generation_ms": 4813.924092,
+  "cancel_after_token_return_ms": 93.122138,
+  "saved_model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "saved_model_bytes": 491400032,
+  "status": "PASS",
+  "checks": [
+    "pinned_real_model",
+    "low_storage_rejected",
+    "model_mid_copy_cancel",
+    "model_cancel_preserves_old",
+    "injected_model_oom_cleanup",
+    "invalid_pack_preserves_old",
+    "pack_mid_copy_cancel",
+    "pack_old_bytes_preserved",
+    "recognized_stage_recovery_only",
+    "full_real_model_staged_hash",
+    "full_stage_removed",
+    "second_resident_session_rejected",
+    "context_overflow_rejected",
+    "real_generation",
+    "context_released_after_generation",
+    "close_cancels_and_holds_resident_lease_until_return",
+    "no_native_lease_or_context_after_cancel",
+    "session_slot_recovered",
+    "activity_saved_model_ready",
+    "trim_model_unavailable",
+    "trim_released_native_lease",
+    "explicit_reload_after_trim",
+    "low_memory_callback_releases",
+    "saved_model_unchanged_after_pressure"
+  ],
+  "sampled_peak_pss_kib": 2091222,
+  "samples": [
+    {
+      "phase": "baseline",
+      "elapsed_ms": 11660064,
+      "pss_kib": 35014,
+      "java_used_bytes": 3658032,
+      "native_heap_allocated_bytes": 5653280
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11660176,
+      "pss_kib": 36513,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11660288,
+      "pss_kib": 36521,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671248
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11660399,
+      "pss_kib": 36521,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11660511,
+      "pss_kib": 36521,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671216
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11660625,
+      "pss_kib": 36525,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671216
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11660737,
+      "pss_kib": 36525,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11660850,
+      "pss_kib": 36552,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671120
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11660961,
+      "pss_kib": 35988,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11661074,
+      "pss_kib": 35988,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671248
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11661186,
+      "pss_kib": 35992,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671248
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11661301,
+      "pss_kib": 35992,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671248
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11661412,
+      "pss_kib": 35996,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11661545,
+      "pss_kib": 35996,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671248
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11661657,
+      "pss_kib": 35993,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11661769,
+      "pss_kib": 35993,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11661881,
+      "pss_kib": 35993,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11661993,
+      "pss_kib": 35997,
+      "java_used_bytes": 3760432,
+      "native_heap_allocated_bytes": 5671248
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11662104,
+      "pss_kib": 35993,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11662217,
+      "pss_kib": 35997,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671248
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11662328,
+      "pss_kib": 36001,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11662439,
+      "pss_kib": 36001,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11662554,
+      "pss_kib": 36005,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11662668,
+      "pss_kib": 36005,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11662779,
+      "pss_kib": 36009,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11662889,
+      "pss_kib": 36009,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11663000,
+      "pss_kib": 36013,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671200
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11663111,
+      "pss_kib": 36009,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671248
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11663222,
+      "pss_kib": 36017,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11663333,
+      "pss_kib": 36017,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11663444,
+      "pss_kib": 36021,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11663556,
+      "pss_kib": 36025,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11663667,
+      "pss_kib": 36025,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11663783,
+      "pss_kib": 36025,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11663895,
+      "pss_kib": 36029,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11664007,
+      "pss_kib": 36029,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11664121,
+      "pss_kib": 36029,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671312
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11664231,
+      "pss_kib": 36033,
+      "java_used_bytes": 3793200,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11664370,
+      "pss_kib": 36037,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11664483,
+      "pss_kib": 36037,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5671312
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11664597,
+      "pss_kib": 36037,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11664710,
+      "pss_kib": 36041,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5671312
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11664822,
+      "pss_kib": 36041,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5671312
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11664936,
+      "pss_kib": 36045,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5671312
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11665047,
+      "pss_kib": 36045,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5671312
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11665157,
+      "pss_kib": 36045,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11665273,
+      "pss_kib": 36045,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "real_staging_copy",
+      "elapsed_ms": 11665386,
+      "pss_kib": 36045,
+      "java_used_bytes": 3825968,
+      "native_heap_allocated_bytes": 5671264
+    },
+    {
+      "phase": "index",
+      "elapsed_ms": 11665498,
+      "pss_kib": 42467,
+      "java_used_bytes": 8847664,
+      "native_heap_allocated_bytes": 8885104
+    },
+    {
+      "phase": "index",
+      "elapsed_ms": 11665582,
+      "pss_kib": 53072,
+      "java_used_bytes": 15233328,
+      "native_heap_allocated_bytes": 11712496
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11665613,
+      "pss_kib": 59391,
+      "java_used_bytes": 15233328,
+      "native_heap_allocated_bytes": 19973488
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11665728,
+      "pss_kib": 102060,
+      "java_used_bytes": 15233328,
+      "native_heap_allocated_bytes": 56059728
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11665864,
+      "pss_kib": 243868,
+      "java_used_bytes": 15233328,
+      "native_heap_allocated_bytes": 60000944
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11665982,
+      "pss_kib": 622764,
+      "java_used_bytes": 15233328,
+      "native_heap_allocated_bytes": 60000944
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11666099,
+      "pss_kib": 939436,
+      "java_used_bytes": 15233328,
+      "native_heap_allocated_bytes": 60000944
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11666283,
+      "pss_kib": 1190633,
+      "java_used_bytes": 15233328,
+      "native_heap_allocated_bytes": 60000944
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11666446,
+      "pss_kib": 1291878,
+      "java_used_bytes": 15233328,
+      "native_heap_allocated_bytes": 60000944
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11666576,
+      "pss_kib": 1615913,
+      "java_used_bytes": 15233328,
+      "native_heap_allocated_bytes": 60000944
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11666710,
+      "pss_kib": 1836507,
+      "java_used_bytes": 15298336,
+      "native_heap_allocated_bytes": 51102736
+    },
+    {
+      "phase": "model_load",
+      "elapsed_ms": 11666721,
+      "pss_kib": 1818248,
+      "java_used_bytes": 3096352,
+      "native_heap_allocated_bytes": 49375136
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11666847,
+      "pss_kib": 1798637,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417071808
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11667086,
+      "pss_kib": 1790996,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417071808
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11667324,
+      "pss_kib": 1790606,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417071808
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11667564,
+      "pss_kib": 1790610,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417071808
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11667800,
+      "pss_kib": 1790610,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417071808
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11668037,
+      "pss_kib": 1790614,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417071808
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11668189,
+      "pss_kib": 1790624,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417071808
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11668344,
+      "pss_kib": 1952249,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417071808
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11668477,
+      "pss_kib": 1967037,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417069632
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11668614,
+      "pss_kib": 1969529,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417069632
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11668761,
+      "pss_kib": 2049895,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417069632
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11668906,
+      "pss_kib": 2090962,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417071360
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11669116,
+      "pss_kib": 2090966,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417071472
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11669299,
+      "pss_kib": 2091070,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417071696
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11669548,
+      "pss_kib": 2091078,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417072032
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11669786,
+      "pss_kib": 2091082,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417072368
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11669992,
+      "pss_kib": 2091082,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417072704
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11670192,
+      "pss_kib": 2091086,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417072928
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11670436,
+      "pss_kib": 2091086,
+      "java_used_bytes": 3178272,
+      "native_heap_allocated_bytes": 417073264
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11670684,
+      "pss_kib": 2091222,
+      "java_used_bytes": 3211040,
+      "native_heap_allocated_bytes": 417073600
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11670913,
+      "pss_kib": 2091214,
+      "java_used_bytes": 3211040,
+      "native_heap_allocated_bytes": 417073936
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11671112,
+      "pss_kib": 2091091,
+      "java_used_bytes": 3211040,
+      "native_heap_allocated_bytes": 417074160
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11671296,
+      "pss_kib": 2091095,
+      "java_used_bytes": 3211040,
+      "native_heap_allocated_bytes": 417074384
+    },
+    {
+      "phase": "generation",
+      "elapsed_ms": 11671508,
+      "pss_kib": 2091080,
+      "java_used_bytes": 3211040,
+      "native_heap_allocated_bytes": 417074608
+    },
+    {
+      "phase": "active_cancel",
+      "elapsed_ms": 11671643,
+      "pss_kib": 2022297,
+      "java_used_bytes": 3211040,
+      "native_heap_allocated_bytes": 280744320
+    },
+    {
+      "phase": "active_cancel",
+      "elapsed_ms": 11671771,
+      "pss_kib": 2013886,
+      "java_used_bytes": 3211040,
+      "native_heap_allocated_bytes": 417068576
+    },
+    {
+      "phase": "active_cancel",
+      "elapsed_ms": 11671900,
+      "pss_kib": 1994580,
+      "java_used_bytes": 3211040,
+      "native_heap_allocated_bytes": 417068576
+    },
+    {
+      "phase": "active_cancel",
+      "elapsed_ms": 11672038,
+      "pss_kib": 1995128,
+      "java_used_bytes": 3211040,
+      "native_heap_allocated_bytes": 417068576
+    },
+    {
+      "phase": "active_cancel",
+      "elapsed_ms": 11672159,
+      "pss_kib": 1998448,
+      "java_used_bytes": 3211040,
+      "native_heap_allocated_bytes": 417068576
+    },
+    {
+      "phase": "active_cancel",
+      "elapsed_ms": 11672348,
+      "pss_kib": 2088671,
+      "java_used_bytes": 3211040,
+      "native_heap_allocated_bytes": 44767376
+    },
+    {
+      "phase": "unloaded",
+      "elapsed_ms": 11672399,
+      "pss_kib": 69285,
+      "java_used_bytes": 3211040,
+      "native_heap_allocated_bytes": 7932624
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11672458,
+      "pss_kib": 73072,
+      "java_used_bytes": 3280672,
+      "native_heap_allocated_bytes": 7933088
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11672568,
+      "pss_kib": 73072,
+      "java_used_bytes": 3280672,
+      "native_heap_allocated_bytes": 7933088
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11672678,
+      "pss_kib": 73076,
+      "java_used_bytes": 3280672,
+      "native_heap_allocated_bytes": 7933088
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11672788,
+      "pss_kib": 73076,
+      "java_used_bytes": 3280672,
+      "native_heap_allocated_bytes": 7933088
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11672899,
+      "pss_kib": 72953,
+      "java_used_bytes": 3280672,
+      "native_heap_allocated_bytes": 7933088
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11673010,
+      "pss_kib": 72437,
+      "java_used_bytes": 3280672,
+      "native_heap_allocated_bytes": 7933088
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11673121,
+      "pss_kib": 72441,
+      "java_used_bytes": 3280672,
+      "native_heap_allocated_bytes": 7933088
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11673234,
+      "pss_kib": 72334,
+      "java_used_bytes": 3280672,
+      "native_heap_allocated_bytes": 7933088
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11673345,
+      "pss_kib": 72338,
+      "java_used_bytes": 3313440,
+      "native_heap_allocated_bytes": 7933088
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11673456,
+      "pss_kib": 72003,
+      "java_used_bytes": 3313440,
+      "native_heap_allocated_bytes": 7933088
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11673573,
+      "pss_kib": 72955,
+      "java_used_bytes": 3313440,
+      "native_heap_allocated_bytes": 7934032
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11673687,
+      "pss_kib": 74857,
+      "java_used_bytes": 3346208,
+      "native_heap_allocated_bytes": 7937376
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11673808,
+      "pss_kib": 71366,
+      "java_used_bytes": 3379056,
+      "native_heap_allocated_bytes": 7938880
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11673932,
+      "pss_kib": 85977,
+      "java_used_bytes": 3514912,
+      "native_heap_allocated_bytes": 8269616
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11674065,
+      "pss_kib": 109769,
+      "java_used_bytes": 5837408,
+      "native_heap_allocated_bytes": 15863360
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11674207,
+      "pss_kib": 107372,
+      "java_used_bytes": 4898736,
+      "native_heap_allocated_bytes": 30299472
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11674348,
+      "pss_kib": 127115,
+      "java_used_bytes": 8564656,
+      "native_heap_allocated_bytes": 54907536
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11674481,
+      "pss_kib": 135708,
+      "java_used_bytes": 5414832,
+      "native_heap_allocated_bytes": 59339232
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11674603,
+      "pss_kib": 139952,
+      "java_used_bytes": 7077808,
+      "native_heap_allocated_bytes": 62220544
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11674733,
+      "pss_kib": 144918,
+      "java_used_bytes": 7077808,
+      "native_heap_allocated_bytes": 66928176
+    },
+    {
+      "phase": "activity_saved_load",
+      "elapsed_ms": 11674853,
+      "pss_kib": 614224,
+      "java_used_bytes": 7143344,
+      "native_heap_allocated_bytes": 58354304
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11674975,
+      "pss_kib": 126115,
+      "java_used_bytes": 7176112,
+      "native_heap_allocated_bytes": 24995408
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11675095,
+      "pss_kib": 133903,
+      "java_used_bytes": 7176112,
+      "native_heap_allocated_bytes": 43167520
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11675209,
+      "pss_kib": 609231,
+      "java_used_bytes": 7176112,
+      "native_heap_allocated_bytes": 58400800
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11675330,
+      "pss_kib": 126583,
+      "java_used_bytes": 7208880,
+      "native_heap_allocated_bytes": 21317776
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11675445,
+      "pss_kib": 126623,
+      "java_used_bytes": 7278512,
+      "native_heap_allocated_bytes": 21327392
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11675556,
+      "pss_kib": 126683,
+      "java_used_bytes": 7278512,
+      "native_heap_allocated_bytes": 21327472
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11675684,
+      "pss_kib": 126695,
+      "java_used_bytes": 7278512,
+      "native_heap_allocated_bytes": 21333136
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11675812,
+      "pss_kib": 126611,
+      "java_used_bytes": 7278512,
+      "native_heap_allocated_bytes": 21333296
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11675952,
+      "pss_kib": 126552,
+      "java_used_bytes": 7278512,
+      "native_heap_allocated_bytes": 21332480
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11676064,
+      "pss_kib": 126611,
+      "java_used_bytes": 7278512,
+      "native_heap_allocated_bytes": 21332480
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11676175,
+      "pss_kib": 126611,
+      "java_used_bytes": 7278512,
+      "native_heap_allocated_bytes": 21332528
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11676285,
+      "pss_kib": 126615,
+      "java_used_bytes": 7278512,
+      "native_heap_allocated_bytes": 21332480
+    },
+    {
+      "phase": "activity_reload",
+      "elapsed_ms": 11676396,
+      "pss_kib": 126615,
+      "java_used_bytes": 7278512,
+      "native_heap_allocated_bytes": 21332480
+    },
+    {
+      "phase": "final",
+      "elapsed_ms": 11676430,
+      "pss_kib": 126639,
+      "java_used_bytes": 7278512,
+      "native_heap_allocated_bytes": 21332480
+    }
+  ],
+  "sampling_target_ms": 100,
+  "limitations": "Injected callbacks\/allocation errors are controls, not actual OS OOM survival; sampled PSS can miss peaks and is not physical-device RAM."
+}

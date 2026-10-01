@@ -104,7 +104,7 @@ parsing is enabled only for that formatted chat. Unsupported templates and conte
 overflow become labeled fallback; embedded chat-control markers are rejected.
 
 Imports require a known size of 4 bytes to 2,048 MiB, available space for the copy
-plus a 32 MiB reserve, a bounded streaming copy with SHA-256, a GGUF header, and a
+plus a 256 MiB reserve, a bounded streaming copy with SHA-256, a GGUF header, and a
 successful native model load before atomic file promotion. The original document
 remains. A failed import preserves the prior saved file, though a native load
 failure after unloading it requires an app restart to reload that file. The
@@ -173,3 +173,5 @@ unmeasured. The 12 GB / 50 GB release gates remain open.
 ## Synthesis development update
 
 Task 050 adds exact chat-token preflight, constrained claim decoding and an optional pinned synthesis model. See [synthesis implementation](SYNTHESIS.md) and [actual evidence](evidence/synthesis.md). Earlier measurements above remain historical; the enlarged context and import bound do not establish arbitrary-model memory safety or phone acceptance.
+
+Task 070 enforces one resident session, explicit context/KV/compute limits, memory-pressure unload and explicit reload, plus staged-import storage recovery. See [resource policy](RESOURCES.md) and [measured resource evidence](evidence/resources.md); allocation-time and physical-device limits remain open.

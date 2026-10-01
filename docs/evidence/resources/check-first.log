@@ -1,0 +1,37 @@
+/home/isa/Projects/PocketLore/downloads/resources/run-20261001T012602Z
+{
+  "status": "PASS",
+  "scope": "Actual emulator JNI and disk measurements; injected callback/storage controls; no physical acceptance",
+  "checks": 24,
+  "artifacts": {
+    "android/app/build/outputs/apk/debug/app-debug.apk": {
+      "bytes": 17793952,
+      "sha256": "d22879be66747f48dde0b48169aac38f4022506f726d860559974e9864dc0b80"
+    },
+    "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": {
+      "bytes": 129382,
+      "sha256": "9720da9d14cc477b585082003da4d63c7f7bd960be42368496cdcfa54db3df2a"
+    },
+    "assets/water-science.tsv": {
+      "uncompressed_bytes": 5380,
+      "compressed_bytes": 2200,
+      "sha256": "a39d54b412f469086bd1ee96425245e36f446ac1a77b0b5730c60e5603084492"
+    },
+    "assets/dc-monuments.tsv": {
+      "uncompressed_bytes": 909,
+      "compressed_bytes": 444,
+      "sha256": "6cb245864d7b42facc8b987d7e4843f795b87912062d09a8bbddcdc034877924"
+    },
+    "lib/arm64-v8a/libpocketlore.so": {
+      "uncompressed_bytes": 5594144,
+      "compressed_bytes": 5594144,
+      "sha256": "4a7af35d7b5f2db257d5b8eb93e374f8865fd34ff30fb6d06f6abdbf1268bcb1"
+    },
+    "lib/x86_64/libpocketlore.so": {
+      "uncompressed_bytes": 6073784,
+      "compressed_bytes": 6073784,
+      "sha256": "08119c29fe7eca017ec5c949193ffdf903e728891cbfca07f0b399830ac86206"
+    }
+  },
+  "results_sha256": "2446000435c3a64b7658c0e75895811ae2fab2532e2e40ee2e28037154ea3f45"
+}

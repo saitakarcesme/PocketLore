@@ -1,5 +1,6 @@
 #include <jni.h>
 #include "llama.h"
+#include "llama-ext.h"
 #include <atomic>
 #include <memory>
 #include <mutex>
@@ -10,19 +11,21 @@
 #include <sys/stat.h>
 
 namespace {
+std::atomic<int> residentCount{0};
 struct Session {
+    Session(){++residentCount;}
     std::atomic<bool> cancelled{false};
     std::mutex operation;
     llama_model *model = nullptr;
-    ~Session() { if (model) llama_model_free(model); }
+    ~Session() { if (model) llama_model_free(model); --residentCount; }
 };
 std::mutex registryMutex;
 std::unordered_map<jlong, std::shared_ptr<Session>> sessions;
 jlong nextId = 1;
-std::weak_ptr<Session> residentLease;
 std::once_flag backendOnce;
 std::atomic<int> activeContexts{0};
-void releaseContext(llama_context *ctx){if(ctx){llama_free(ctx);--activeContexts;}}
+std::atomic<uint64_t> contextBytes{0},computeBytes{0},modelBufferBytes{0};
+void releaseContext(llama_context *ctx){if(ctx){llama_free(ctx);--activeContexts;contextBytes=0;computeBytes=0;modelBufferBytes=0;}}
 std::shared_ptr<Session> get(jlong id) {
     std::lock_guard<std::mutex> lock(registryMutex);
     auto it = sessions.find(id);
@@ -48,10 +51,10 @@ extern "C" JNIEXPORT jlong JNICALL Java_org_pocketlore_app_NativeRuntime_create(
     try {
         std::call_once(backendOnce, [] { llama_backend_init(); });
         std::lock_guard<std::mutex> lock(registryMutex);
-        if (!residentLease.expired()) throw std::runtime_error("One native session at a time; wait for cancellation and release");
+        if (residentCount.load() != 0) throw std::runtime_error("One native session at a time; wait for cancellation and release");
         jlong id = nextId++;
         auto session = std::make_shared<Session>();
-        residentLease = session; sessions.emplace(id, session);
+        sessions.emplace(id, session);
         return id;
     } catch (const std::exception &e) { fail(env, e); return 0; }
 }
@@ -138,6 +141,12 @@ static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobje
         Context ctx(llama_init_from_model(s->model, params), releaseContext);
         if (!ctx) throw std::runtime_error("Cannot create inference context");
         ++activeContexts;
+        uint64_t modelBytes=0,kvBytes=0,workBytes=0;
+        for(const auto &entry:llama_get_memory_breakdown(ctx.get())){modelBytes+=entry.second.model;kvBytes+=entry.second.context;workBytes+=entry.second.compute;}
+        modelBufferBytes=modelBytes;contextBytes=kvBytes;computeBytes=workBytes;
+        // Post-allocation admission screen, not a guarantee against allocation-time OOM.
+        if(modelBytes>2147483648ULL || kvBytes>805306368ULL || workBytes>1073741824ULL)
+            throw std::runtime_error("Runtime buffers exceed model/KV/compute resource budget; use a smaller model");
         using Sampler = std::unique_ptr<llama_sampler, decltype(&llama_sampler_free)>;
         Sampler sampler(nullptr,llama_sampler_free);
         if(sources>0) {
@@ -233,6 +242,6 @@ extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_close(JN
 
 extern "C" JNIEXPORT jlongArray JNICALL Java_org_pocketlore_app_NativeRuntime_resourceState(JNIEnv *env,jclass) {
     std::lock_guard<std::mutex> lock(registryMutex);
-    jlong values[]={residentLease.expired()?0LL:1LL,activeContexts.load()};
-    auto result=env->NewLongArray(2);if(result)env->SetLongArrayRegion(result,0,2,values);return result;
+    jlong values[]={static_cast<jlong>(residentCount.load()),activeContexts.load(),static_cast<jlong>(modelBufferBytes.load()),static_cast<jlong>(contextBytes.load()),static_cast<jlong>(computeBytes.load())};
+    auto result=env->NewLongArray(5);if(result)env->SetLongArrayRegion(result,0,5,values);return result;
 }

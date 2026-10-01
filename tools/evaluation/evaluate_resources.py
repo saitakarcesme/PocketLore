@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Measure actual app/JNI behavior on the existing emulator; preserve raw failures."""
 from pathlib import Path
-import datetime,hashlib,json,os,subprocess,zipfile
+import datetime,hashlib,json,os,subprocess,zipfile,shutil
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'downloads/resources'/datetime.datetime.now(datetime.timezone.utc).strftime('run-%Y%m%dT%H%M%SZ');OUT.mkdir(parents=True)
 print(OUT,flush=True)
@@ -27,11 +27,17 @@ raw=run(adb+['exec-out','run-as','org.pocketlore.app','cat','files/resource-resu
 run(adb+['shell','logcat','-d','--pid='+str(report.get('pid',0)),'-v','threadtime'],'app-logcat.txt')
 run(adb+['shell','run-as','org.pocketlore.app','du','-ak','files','cache','code_cache'],'disk-after.txt')
 run(adb+['shell','cat','/proc/meminfo'],'emulator-meminfo-after.txt');run(adb+['shell','df','-k','/data'],'free-disk-after.txt')
+installed=run(adb+['shell','pm','path','org.pocketlore.app'],'installed-path.txt').decode().strip().split(':',1)[1]
+run(adb+['shell','du','-ak',str(Path(installed).parent)],'installed-apk-tree.txt')
+run(adb+['shell','run-as','org.pocketlore.app','du','-ak','.'],'owned-data-tree.txt')
 assert b'INSTRUMENTATION_CODE: -1' in r and report['status']=='PASS',report
-expected={'pinned_real_model','low_storage_rejected','model_mid_copy_cancel','model_cancel_preserves_old','injected_model_oom_cleanup','invalid_pack_preserves_old','pack_mid_copy_cancel','pack_old_bytes_preserved','recognized_stage_recovery_only','full_real_model_staged_hash','full_stage_removed','second_resident_session_rejected','context_overflow_rejected','real_generation','context_released_after_generation','close_cancels_and_holds_resident_lease_until_return','no_native_lease_or_context_after_cancel','session_slot_recovered','activity_saved_model_ready','trim_model_unavailable','trim_released_native_lease','explicit_reload_after_trim','low_memory_callback_releases','saved_model_unchanged_after_pressure'}
+expected={'pinned_real_model','low_storage_rejected','model_mid_copy_cancel','model_cancel_preserves_old','injected_model_oom_cleanup','invalid_pack_preserves_old','pack_mid_copy_cancel','pack_old_bytes_preserved','recognized_stage_recovery_only','full_real_model_staged_hash','full_stage_removed','second_resident_session_rejected','context_overflow_rejected','real_generation','context_released_after_generation','close_cancels_and_holds_resident_lease_until_return','no_native_lease_or_context_after_cancel','session_slot_recovered','activity_saved_model_ready','trim_model_unavailable','trim_released_native_lease','trim_controller_idle','explicit_reload_after_trim','low_memory_callback_releases','saved_model_unchanged_after_pressure'}
 assert set(report['checks'])==expected and len(report['checks'])==len(expected)
 assert report['generation_tokens']>0 and report['sampled_peak_pss_kib']>0 and len(report['samples'])>3
+assert any(s['native_live_lease_contexts_model_kv_compute'][3]>0 for s in report['samples'])
+assert all(s['native_live_lease_contexts_model_kv_compute'][1]<=1 for s in report['samples'])
 assert report['staged_model_bytes']==report['model_bytes'] and report['model_bytes']==1834426016
+for apk in apks:shutil.copyfile(apk,OUT/apk.name)
 artifacts={str(p.relative_to(ROOT)):{'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in apks}
 with zipfile.ZipFile(apks[0]) as z:
  for n in z.namelist():

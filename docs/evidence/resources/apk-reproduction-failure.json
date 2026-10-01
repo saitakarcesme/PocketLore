@@ -1,0 +1,14 @@
+{
+  "status": "FAIL",
+  "reason": "App APK matched but resource test APK hash changed after switching instrumentation runner and rebuilding. The initial exact test APK was not archived; later audits archive at measurement time.",
+  "artifacts": {
+    "android/app/build/outputs/apk/debug/app-debug.apk": {
+      "measured_sha256": "5956212585c8c503c77eca370cd3856b56eb4fab2f2ad0ee38c85e84067e94da",
+      "rebuilt_sha256": "5956212585c8c503c77eca370cd3856b56eb4fab2f2ad0ee38c85e84067e94da"
+    },
+    "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": {
+      "measured_sha256": "c531e3ae47ab1a64aa53ec42ca97d1571f6ab9c03cbc1edfbed03e341c8d4d77",
+      "rebuilt_sha256": "e8c3e7c83fcf1c4615d17a6a05b2fa943efae2e81a6e2e20e54a3604a34be868"
+    }
+  }
+}

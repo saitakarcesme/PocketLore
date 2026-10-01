@@ -172,6 +172,7 @@ public final class MainActivity extends Activity {
         if (request == NativePanel.PICK_MODEL && result == RESULT_OK && data != null) nativePanel.selected(data.getData());
     }
     void releaseForMemoryPressure(){cancelPack=true;if(packThread!=null)packThread.interrupt();latestEvidence=null;if(nativePanel!=null)nativePanel.lowMemory();}
+    boolean resourceIdle(){return !nativePanel.isBusy();}
     void reloadSavedModel(){nativePanel.reloadSaved();}
     @Override public void onTrimMemory(int level){super.onTrimMemory(level);if(level>=android.content.ComponentCallbacks2.TRIM_MEMORY_RUNNING_LOW)releaseForMemoryPressure();}
     @Override public void onLowMemory(){super.onLowMemory();releaseForMemoryPressure();}
