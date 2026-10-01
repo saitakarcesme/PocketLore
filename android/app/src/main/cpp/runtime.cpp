@@ -70,6 +70,9 @@ extern "C" JNIEXPORT jstring JNICALL Java_org_pocketlore_app_NativeRuntime_ident
     std::string identity="llama.cpp " POCKETLORE_REVISION "; CPU; context="+std::to_string(pocketloreContextTokens)+"; sequences=1; KV=f16; sessions=1; threads="+std::to_string(runtimeThreads())+"; model-budget="+std::to_string(pocketloreModelLimit)+"; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42";
 #if defined(POCKETLORE_HOST_SCREEN) && !defined(__ANDROID__)
     identity+="; HOST SCREEN native CPU ISA; not Android admission";
+#if defined(POCKETLORE_SCALE_BUFFER_V2)
+    identity+="; CPU-repack-buffer-budget="+std::to_string(pocketloreModelBufferLimit);
+#endif
 #endif
     return env->NewStringUTF(identity.c_str());
 }
