@@ -1,3 +1,17 @@
+# Task 222: recovered independent-linking experiment reused
+
+The exact requested strategy was already implemented and measured during task221 repair1, preserved at `2623197415ccdd0cee8bb139500f1e7a48e2c75a` and recovered into the current checkout. Task222 reuses its immutable **60 old drafts, 11 historical wrappers, 16 new generated cases, 16 constructed probes and 994 independent classifier scores**. No old or new inference, classifier run, prompt/seed search, threshold change or fixture change was performed for this task. These are public development regressions, not held-out generalization.
+
+The current Android build passes. The initial check passed shared behavior but stopped at the historical APK mismatch; [that failure](independent-linking-reuse/initial-check.log) is preserved. The check now pins the separately sealed repair2 build receipt, SHA256 APK `7a17268f00b01946690fb3545f665ac28bbfeefb85596fb17655e6cc91d896d9`, while retaining the original classifier experiment APK receipt unchanged. Model/source/runtime/run checks and the zero-unsupported quality gate remain unchanged. [Reuse identity receipt](independent-linking-reuse/reuse.json) and [fresh build log](independent-linking-reuse/android-build.log) distinguish the current compile from historical inference.
+
+`bash tools/evaluation/check_independent_evidence_linking.sh` validates artifacts, 29 shared behavioral checks, exact103-record replay and missing/changed verifier/run rejection, then **fails the quality gate**: eight unsupported eligible records remain, despite8/40 useful supported old answers and all nine absent controls withheld. The negative result is retained; no successful independent entailment repair is claimed. [Actual check output](independent-linking-reuse/final-check.log) supplies the counts and failure. Builder source assessments remain separate from canonical independent criticism.
+
+The materially different source-frame strategy formerly queued as223 was already executed in task221 repair2: [its report](source-fact-frame-support.md) records5/40 old and1/20 new useful answers with a narrowly passing builder-assessed development safety gate. That result does not turn the discriminative-classifier experiment into a pass. Do not repeat223 or create a duplicate task. The already queued [224-source-plan-generation specification](fact-frames/proposed-follow-up.json) addresses avoidable W and correct paraphrases withheld by finite parsing. Its [creation receipt](fact-frames/queue-receipt.json) is reused; no queue or orchestration mutation was needed for task222.
+
+Production remains0.5B, selected4B and the classifier remain host-only, and Android admission, services, private context, main and publication are unchanged. Independent source review, useful broad answer coverage, selected-model mobile admission/resources, integrated release revalidation and physical/human acceptance remain open. The full historical experiment report and original measurements follow unchanged.
+
+---
+
 # Independent evidence linking — task 221 repair
 
 Status: fixed experiment complete with a negative support-safety result; required quality check fails and no product acceptance is claimed.

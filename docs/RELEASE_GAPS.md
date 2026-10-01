@@ -196,3 +196,13 @@ Task 223 was created atomically as a task specification only. Main, runner state
 | Physical and human acceptance | No selected-model Android or phone/GrapheneOS test added. | Actual supported-hardware resource, offline workflow and human usefulness evaluation. | Hardware/operator and human reviewers. |
 
 Task224 was added as a specification only; no runner state or dispatch changed. The product is not complete while these independent and external gates remain.
+
+## Task 222 reuse: independent classifier remains unsuitable as approval
+
+The [reused experiment](evidence/independent-evidence-linking.md) passes current build and artifact/behavior replay, but its unchanged required quality check fails on eight unsupported eligible outputs. This task added no inference and does not supersede the separately measured finite-parser result.
+
+| Remaining gap | Evidence | Next action | External dependency |
+| --- | --- | --- | --- |
+| Independent classifier support safety |994 fixed scores retain role/time/formula and wrong-binding approvals; zero unsupported gate fails. | Keep classifier approval out of production; preserve its negative outputs as regressions. Reuse completed source-frame223 strategy, then already queued224 source-grounded obligation planning. No duplicate matrix or task. | None for bounded host development; independent source review required. |
+| Useful complete answers | Finite-parser repair2 retains5/40 old and1/20 new useful outputs, despite stricter safety. | Existing224 addresses correct blocked paraphrases and avoidable W before prose; no threshold or case-specific grammar loop. | None for host experiment. |
+| Mobile and release qualification | Fresh APK7a17268f00b01946690fb3545f665ac28bbfeefb85596fb17655e6cc91d896d9 compiles shared code only;4B/verifier not deployed. | Retain separate selected-model JNI/admission/resource and integrated release identity gates. | Approved sufficient-memory environment, physical Android/GrapheneOS, signing owner, clean reproduction and human reviewers as already documented. |

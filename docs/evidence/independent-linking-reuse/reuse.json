@@ -1,0 +1,11 @@
+{
+  "reused_checkpoint": "2623197415ccdd0cee8bb139500f1e7a48e2c75a",
+  "current_checkpoint_before_work": "e77c683",
+  "strategy": "Same independent trained classifier, immutable old60/new16 drafts and994 scores; no inference repeated",
+  "current_build_receipt": "docs/evidence/fact-frames/build.json",
+  "current_build_receipt_sha256": "5eb272214ffd5e412104dd453eb51d06e71ce34ee214d69b8494f3d1ef97898d",
+  "build_exit_code": 0,
+  "historical_build_receipt": "docs/evidence/independent-linking/build.json",
+  "historical_experiment_seal_sha256": "f337a99cdab8b415ee2d8223c09497aafe204655a313f06fc375bf7e083d3865",
+  "changes": "Only acceptance build reference updated; old identities, raw scores, fixtures, thresholds, source judgments and Java linker unchanged."
+}
