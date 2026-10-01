@@ -1,0 +1,13 @@
+/home/isa/Projects/PocketLore/downloads/packs/english-reference.plpack: 1 file pushed, 0 skipped. 187.5 MB/s (159327 bytes in 0.001s)
+/home/isa/Projects/PocketLore/downloads/offline/run-20261001T014640Z/corrupt.plpack: 1 file pushed, 0 skipped. 58.6 MB/s (37526 bytes in 0.001s)
+{
+  "result": "PASS",
+  "environment": "AOSP x86_64 emulator; not physical hardware",
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "checks": [
+    "SAF pack selection and import",
+    "persisted pack reload after process restart",
+    "corrupted import rejected with saved hash unchanged",
+    "retrieval and source inspection use imported NPS provenance"
+  ]
+}

@@ -1,0 +1,12 @@
+/home/isa/Projects/PocketLore/downloads/answers/model/qwen2.5-0.5b-instruct-q4_k_m.gguf: 1 file pushed, 0 skipped. 361.3 MB/s (491400032 bytes in 1.297s)
+{
+  "status": "pass",
+  "environment": "emulator only",
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "checks": [
+    "local SAF import and explicit copy-size confirmation",
+    "imported model hash matches pinned GGUF",
+    "saved model reload after process restart",
+    "source provenance dialog from live answer flow"
+  ]
+}

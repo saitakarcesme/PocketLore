@@ -89,3 +89,5 @@ emulator. See [retrieval reproduction](RETRIEVAL.md) and
 ## Synthesis development update
 
 The answer flow now budgets the exact model context, preserves source dates, checks linked claims and exposes final citation spans through the existing source inspector. Comparisons select evidence for each named aspect. Optional synthesis model imports are bounded at 2,048 MiB; actual inference is tested in an isolated emulator fixture, not a new default saved model. See [implementation](SYNTHESIS.md) and [evidence](evidence/synthesis.md) for quality failures and test limits.
+
+For verified fresh installation, local model/pack import and uninstall/reinstall behavior, see [clean offline installation](OFFLINE_INSTALL.md) and its [emulator evidence](evidence/offline-install.md). The audit archives prior app data before uninstalling PocketLore and leaves a fresh imported installation; no physical or GrapheneOS acceptance is implied.
