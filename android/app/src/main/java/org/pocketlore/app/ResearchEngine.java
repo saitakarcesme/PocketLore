@@ -21,7 +21,7 @@ public final class ResearchEngine {
     ResearchEngine(DiskProvider provider){disk=provider;}
     static ResearchEngine combined(List<ResearchEngine> engines){return new ResearchEngine(new DiskProvider(){
         public int size(){int total=0;for(ResearchEngine e:engines)total+=e.size();return total;}
-        public Result research(String q){List<Hit> hits=new ArrayList<>();int candidates=0;for(ResearchEngine e:engines){Result r=e.research(q);hits.addAll(r.hits);candidates+=r.candidatesScored;}
+        public Result research(String q){List<Hit> hits=new ArrayList<>();int candidates=0;for(ResearchEngine e:engines){Result r=e.research(q);for(Hit h:r.hits){Set<String> title=new HashSet<>(tokenize(h.passage.title)),body=new HashSet<>(tokenize(h.passage.text));double score=0;for(String t:new HashSet<>(tokenize(q))){if(title.contains(t))score+=5;if(body.contains(t))score+=1;}hits.add(new Hit(h.passage,score));}candidates+=r.candidatesScored;}
             hits.sort(Comparator.comparingDouble((Hit h)->h.score).reversed().thenComparing(h->h.passage.id));if(hits.size()>4)hits=new ArrayList<>(hits.subList(0,4));
             return new Result(hits,Collections.emptySet(),hits.isEmpty()?"No supporting passage in active collections.":"Retrieved sources only; inspect their dates, scope and rights. No generated answer inferred.",candidates);}
     });}
