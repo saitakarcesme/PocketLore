@@ -14,3 +14,6 @@ target_compile_definitions(pocketlore PRIVATE POCKETLORE_REVISION="${POCKETLORE_
 
 # Memory accounting API belongs to the exact immutable pinned llama.cpp revision.
 target_include_directories(pocketlore PRIVATE "${LLAMA_SOURCE}/src")
+
+# NDK r27: align LOAD and RELRO for both 4 KB and 16 KB Android kernels.
+target_link_options(pocketlore PRIVATE "-Wl,-z,max-page-size=16384" "-Wl,-z,common-page-size=16384")

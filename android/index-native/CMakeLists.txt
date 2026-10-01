@@ -6,3 +6,6 @@ target_compile_features(pocketlore_index PRIVATE cxx_std_17)
 target_compile_definitions(pocketlore_index PRIVATE SQLITE_ENABLE_FTS5 SQLITE_THREADSAFE=1 SQLITE_OMIT_LOAD_EXTENSION SQLITE_DEFAULT_MEMSTATUS=0)
 target_compile_options(pocketlore_index PRIVATE -fvisibility=hidden)
 target_link_libraries(pocketlore_index m)
+
+# NDK r27: align LOAD and RELRO for both 4 KB and 16 KB Android kernels.
+target_link_options(pocketlore_index PRIVATE "-Wl,-z,max-page-size=16384" "-Wl,-z,common-page-size=16384")

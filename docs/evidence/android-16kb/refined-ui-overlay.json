@@ -1,0 +1,16 @@
+{
+  "base_sha256": "3873ba23b6cda8268ec77ced1362a2e3230751d09f7ae111cfecb1795ece364e",
+  "output": "downloads/android-16kb/refined-ui-16kb.apk",
+  "sha256": "9ce430ec0dcf9c4cb5fa537d9b3bcc2cdf197fe59b4121aee54fefa0a7079e92",
+  "bytes": 15706130,
+  "changed_entries": [
+    "META-INF/ANDROIDD.RSA",
+    "META-INF/ANDROIDD.SF",
+    "META-INF/MANIFEST.MF",
+    "lib/arm64-v8a/libpocketlore.so",
+    "lib/arm64-v8a/libpocketlore_index.so",
+    "lib/x86_64/libpocketlore.so",
+    "lib/x86_64/libpocketlore_index.so"
+  ],
+  "policy": "Only four native libraries and signatures differ; UI DEX/resources/manifest/assets preserved byte-for-byte. Separate development overlay, not a source integration or release."
+}
