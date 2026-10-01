@@ -31,7 +31,8 @@ public final class MainActivity extends Activity {
     private EditText question;
     private TextView answer, status;
     private LinearLayout sourceList;
-    private Button search, importPack;
+    private Button search, importPack, briefButton;
+    private volatile boolean cancelBrief;
     private TextView packStatus;
     private volatile boolean importing, cancelPack;
     private volatile Thread packThread;
@@ -93,6 +94,10 @@ public final class MainActivity extends Activity {
         nativePanel = new NativePanel(this, layout, actions, answer, status, busy -> {
             updateControls();
         }, id -> { if(latestEvidence!=null) for(ResearchEngine.Hit hit:latestEvidence.hits) if(hit.passage.id.equals(id)) inspect(hit); });
+        briefButton = new Button(this); briefButton.setText("Research brief · source quotations"); actions.addView(briefButton);
+        briefButton.setOnClickListener(v -> runBrief());
+        Button stopBrief=new Button(this); stopBrief.setText("Cancel research brief"); actions.addView(stopBrief);
+        stopBrief.setOnClickListener(v -> cancelBrief=true);
         search.setEnabled(false);
         search.setOnClickListener(v -> runSearch());
         if (state != null) question.setText(state.getString("question", ""));
@@ -101,7 +106,7 @@ public final class MainActivity extends Activity {
     }
     private void updateControls(){
         if(nativePanel==null)return;boolean ready=!nativePanel.isBusy()&&!importing&&!searching;
-        search.setEnabled(ready&&engine!=null&&engine.size()>0);question.setEnabled(ready);importPack.setEnabled(ready);
+        search.setEnabled(ready&&engine!=null&&engine.size()>0);if(briefButton!=null)briefButton.setEnabled(ready&&engine!=null&&engine.size()>0);question.setEnabled(ready);importPack.setEnabled(ready);
         collections.setEnabled(ready&&catalog!=null&&!catalog.entries.isEmpty());removeCollection.setEnabled(ready&&catalog!=null&&!catalog.entries.isEmpty());reloadLibrary.setEnabled(ready);
     }
     private void showLibrary(PackLibrary.Snapshot next){
@@ -180,6 +185,30 @@ public final class MainActivity extends Activity {
                 latestEvidence=result;nativePanel.answer(query, result);
             });
         });
+    }
+    private void runBrief() {
+        if(nativePanel.isBusy()||importing||searching||engine==null)return;
+        String query=question.getText().toString().trim();
+        if(query.isEmpty()){question.setError("Enter a research question");return;}
+        cancelBrief=false;searching=true;updateControls();nativePanel.clearAnswer();sourceList.removeAllViews();
+        status.setText("Selecting exact source quotations…");
+        ResearchEngine selected=engine;long epoch=libraryEpoch;
+        worker.execute(()->{try{
+            ResearchEngine.Result result=selected.research(query);
+            ResearchBrief.Brief brief=ResearchBrief.create(query,result,()->cancelBrief||destroyed);
+            runOnUiThread(()->{if(destroyed||epoch!=libraryEpoch||cancelBrief)return;
+                latestEvidence=result;
+                android.text.SpannableString rendered=new android.text.SpannableString(brief.text);
+                for(ResearchBrief.Quote quote:brief.quotes){
+                    rendered.setSpan(new android.text.style.ClickableSpan(){public void onClick(View view){
+                        quote.verify(quote.source);inspect(new ResearchEngine.Hit(quote.source,0));
+                    }},quote.displayStart,quote.displayEnd,android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                }
+                answer.setText(rendered);answer.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
+                status.setText(brief.quotes.size()+" source quotations · coverage unverified · no generated answer");
+            });
+        }catch(Exception e){runOnUiThread(()->{if(!destroyed)status.setText("Research brief unavailable: "+e.getMessage());});}
+        finally{runOnUiThread(()->{if(!destroyed){searching=false;if(cancelBrief)status.setText("Research brief cancelled; no partial result");updateControls();}});}});
     }
     AnswerEngine.Outcome latestAnswer() { return nativePanel.outcome(); }
     boolean modelReady() { return nativePanel.hasModel() && !nativePanel.isBusy(); }
