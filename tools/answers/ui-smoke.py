@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Real emulator UI: SAF selection, import confirmation, restart, and source dialog."""
 import argparse, hashlib, json, pathlib, re, subprocess, time, xml.etree.ElementTree as ET
-p=argparse.ArgumentParser();p.add_argument('--adb',required=True);p.add_argument('--serial',required=True);p.add_argument('--out',type=pathlib.Path,required=True);p.add_argument('--model',type=pathlib.Path,required=True);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--adb',required=True);p.add_argument('--serial',required=True);p.add_argument('--out',type=pathlib.Path,required=True);p.add_argument('--model',type=pathlib.Path,required=True);p.add_argument('--import-only',action='store_true');a=p.parse_args()
 assert a.serial.startswith('emulator-')
 a.out.mkdir(parents=True,exist_ok=True)
 count=0
@@ -56,6 +56,9 @@ actual=adb('shell','run-as','org.pocketlore.app','sha256sum','files/model.gguf')
 assert actual==expected,(actual,expected)
 checks.append('imported model hash matches pinned GGUF');screenshot('imported')
 launch();scroll_to('Import local GGUF');wait_text('Local model ready','reloaded');checks.append('saved model reload after process restart');screenshot('reloaded')
+if a.import_only:
+    result={'status':'pass','environment':'emulator only; SAF import/restart, no answer quality claim','model_sha256':actual,'checks':checks}
+    (a.out/'result.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2));raise SystemExit(0)
 # Actual normal question UI and source dialog after the restored model.
 launch();t=tree('query');tap(find(t,'Research question'));adb('shell','input','text','Compare%sevaporation%sand%scondensation');adb('shell','input','keyevent','4')
 tap(find(tree('query-filled'),'Answer offline'))

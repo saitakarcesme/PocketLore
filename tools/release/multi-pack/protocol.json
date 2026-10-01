@@ -1,0 +1,8 @@
+{
+ "scope":"Fresh offline emulator installation, local SAF model and two-pack imports; not physical or useful-research acceptance",
+ "serial":"emulator-5560",
+ "steps":["archive only existing PocketLore fixture app data in ignored storage","uninstall app and test package","fresh empty model/catalog assertion","real SAF model import and process restart","real SAF reference and science imports","real JNI What is magma? and source-button dialogs","disable science through collection control","force-stop/restart and assert reference-only index and saved model","enable science through collection control","force-stop/restart and assert combined index, real JNI and source dialogs","verify saved model/pack hashes and offline permissions"],
+ "questions":["What is magma?","Explain magma and lava, and why headlamps are recommended."],
+ "expected":{"model_sha256":"74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db","reference_sha256":"567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea","science_sha256":"c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274","collections":2,"documents":18,"passages":210,"disabled_passages":186},
+ "limits":"One new fresh installation; old two-cycle/corruption/cancellation evidence remains historical. Source-button inspection is not generated-link or support certification. Uninstall/install touches only project fixture packages; no service restart."
+}
