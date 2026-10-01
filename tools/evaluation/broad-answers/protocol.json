@@ -1,0 +1,221 @@
+{
+  "version": 1,
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "edition_sha256": "b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012",
+  "context_tokens": 2048,
+  "output_tokens": 256,
+  "cases": [
+    {
+      "id": "explain-acid",
+      "question": "Explain acid proton donation.",
+      "kind": "supported",
+      "supports": [
+        {
+          "title": "Acid",
+          "document": "656",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1375977233",
+          "date": "2026-09-21T06:18:24Z (article revision; rendered snapshot 2026-10-01)",
+          "rights": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Acid \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "9196f887e105a0f5a16c165b6603d4284f2df1ea420f3bc6d4ae499a459195d9",
+          "citation": "wiki-656-2a3ab5a6febd8568",
+          "text": "An acid is a molecule or ion capable of either donating a proton (i.e. hydrogen cation, H^(+)), known as a Br\u00f8nsted\u2013Lowry acid, or forming a covalent bond with an electron pair, known as a Lewis acid.[1]",
+          "passage_sha256": "2a3ab5a6febd856800526f562a50d6669a3e60e117a2d6ec297afea09e7e6e1c"
+        }
+      ],
+      "expectation": "Complete source-supported response addressing each requested subject; preserve qualifiers and date/scope. Builder must inspect every published claim; citations alone are insufficient."
+    },
+    {
+      "id": "explain-cooking",
+      "question": "How does cooking use heat?",
+      "kind": "supported",
+      "supports": [
+        {
+          "title": "Cooking",
+          "document": "5355",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1373152093",
+          "date": "2026-09-04T08:32:34Z (article revision; rendered snapshot 2026-10-01)",
+          "rights": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Cooking \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "fa6d1ed2b761f14302acda4e270d5fc6e09ef3d3d3a7d2d4bde39850e28dd2c5",
+          "citation": "wiki-5355-3c5b194590264bc0",
+          "text": "Cooking, also known as cookery, is the art, science and craft of using heat to make food more palatable, digestible, nutritious, or safe. Cooking techniques and ingredients vary widely, from grilling food over an open fire, to using electric stoves, to baking in various types of ovens, to boiling and blanching in water, reflecting local conditions, techniques and traditions. Cooking is an aspect of all human societies and a cultural universal.",
+          "passage_sha256": "3c5b194590264bc096f8f59b7b5a7e16a2980a3684fa9c6f962f349252dc73b3"
+        }
+      ],
+      "expectation": "Complete source-supported response addressing each requested subject; preserve qualifiers and date/scope. Builder must inspect every published claim; citations alone are insufficient."
+    },
+    {
+      "id": "explain-absolute",
+      "question": "Explain absolute value distance from zero.",
+      "kind": "supported",
+      "supports": [
+        {
+          "title": "Absolute value",
+          "document": "991",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371476443",
+          "date": "2026-08-26T17:47:36Z (article revision; rendered snapshot 2026-10-01)",
+          "rights": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Absolute value \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b90000a34fd93ce2ca41dd9ce5c12d3fbb1771c5abb30cf368ff2e189235e024",
+          "citation": "wiki-991-b62dfff2ee9e6bd1",
+          "text": "In mathematics, the absolute value or modulus of a real number [TeX: {\\displaystyle x}] , denoted [TeX: {\\displaystyle |x|}] , is the (non-negative) magnitude of [TeX: {\\displaystyle x}] measured without regard to its sign. Namely, [TeX: {\\displaystyle |x|=x}] if [TeX: {\\displaystyle x}] is a positive number, and [TeX: {\\displaystyle |x|=-x}] if [TeX: {\\displaystyle x}] is negative (in which case [TeX: {\\displaystyle -x}] is positive), and [TeX: {\\displaystyle |0|=0}] . For example, the absolute value of 3 is 3, and the absolute value of \u22123 is also 3. The absolute value of a number may be thought of as its distance from zero.",
+          "passage_sha256": "b62dfff2ee9e6bd1fe6ec743120b21da110d8e4fb871a5b02ec9507a3f0e41e9"
+        }
+      ],
+      "expectation": "Complete source-supported response addressing each requested subject; preserve qualifiers and date/scope. Builder must inspect every published claim; citations alone are insufficient."
+    },
+    {
+      "id": "explain-algae",
+      "question": "What are algae?",
+      "kind": "supported",
+      "supports": [
+        {
+          "title": "Algae",
+          "document": "633",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1376531852",
+          "date": "2026-09-24T18:54:17Z (article revision; rendered snapshot 2026-10-01)",
+          "rights": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Algae \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "74e98d016ef50c8a3bd26f41ca98abc922aa0b9201646002d7d919cc8c2b8f35",
+          "citation": "wiki-633-4aab155c31f7251e",
+          "text": "Algae (/\u02c8\u00e6ld\u0292i\u02d0/ ^(\u24d8) AL-jee,[3] UK also /\u02c8\u00e6l\u0261i\u02d0/ AL-ghee; sing.: alga /\u02c8\u00e6l\u0261\u0259/ ^(\u24d8)) are any of a large and diverse group of photosynthetic organisms. It excludes the land plants (embryophytes). Such organisms range from microscopic unicellular microalgae (including cyanobacteria and phytoplankton) to seaweeds, multicellular macroalgae which may grow up to 50 metres (160 ft) in length. Most algae are aquatic (especially marine), and some form cohesive colonies. Freshwater algae include Charophyta such as the filamentous Spirogyra and the grasslike stoneworts. Most algae are plankton carried passively by water, although some macroalgae have holdfasts for anchorage.",
+          "passage_sha256": "4aab155c31f7251ef4770384b4758851946286567b45322bd48cb50c3fab65d3"
+        }
+      ],
+      "expectation": "Complete source-supported response addressing each requested subject; preserve qualifiers and date/scope. Builder must inspect every published claim; citations alone are insufficient."
+    },
+    {
+      "id": "compare-heat",
+      "question": "Compare baking and boiling.",
+      "kind": "supported",
+      "supports": [
+        {
+          "title": "Baking",
+          "document": "52634",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377463268",
+          "date": "2026-09-29T14:32:33Z (article revision; rendered snapshot 2026-10-01)",
+          "rights": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Baking \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "8ef4da3a5164b93a6175612cdc433e7fd390d695b534c975c82eb2cbe2fbdb6e",
+          "citation": "wiki-52634-ce4cc302ca6df03b",
+          "text": "Baking is a method of preparing food that uses dry heat, typically in an oven, hot ashes, or on hot stones. The most commonly baked foods in 2025 were bread and rolls.[1] Heat is gradually transferred from the surface of unbaked goods to their center, typically at elevated temperatures surpassing 300 \u00b0F (148 \u00b0C). Dry heat cooking imparts a distinctive richness to foods through the processes of caramelization and surface browning. As heat travels through, it transforms batters and doughs into baked goods and more with a firm dry crust and a softer center.[2] Baking can be combined with grilling to produce a hybrid barbecue variant by using both methods simultaneously, or one after the other. Baking is related to barbecuing because the concept of the masonry oven is similar to that of a smoke pit.^([citation needed])",
+          "passage_sha256": "ce4cc302ca6df03bfd98cba503801951c62e0fb0373faa97e0ddc5fe01f15f42"
+        },
+        {
+          "title": "Boiling",
+          "document": "52636",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368567476",
+          "date": "2026-08-09T21:19:19Z (article revision; rendered snapshot 2026-10-01)",
+          "rights": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Boiling \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "f0b2dec17c4a1401e94591749b5b5e0d0e4672cfc5043c8ee2033f31beb903a6",
+          "citation": "wiki-52636-f647b02e272d5666",
+          "text": "Boiling or ebullition is the rapid phase transition from liquid to gas or vapour; the reverse of boiling is condensation. Boiling occurs when a liquid is heated to its boiling point, so that the vapour pressure of the liquid is equal to the pressure exerted on the liquid by the surrounding atmosphere. Boiling and evaporation are the two main forms of liquid vapourization.",
+          "passage_sha256": "f647b02e272d56663f38e9aff7404a89c3d652fb8dacd1318b01bb3fd7ad1fea"
+        }
+      ],
+      "expectation": "Complete source-supported response addressing each requested subject; preserve qualifiers and date/scope. Builder must inspect every published claim; citations alone are insufficient."
+    },
+    {
+      "id": "multi-methods",
+      "question": "Compare cooking and baking.",
+      "kind": "supported",
+      "supports": [
+        {
+          "title": "Cooking",
+          "document": "5355",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1373152093",
+          "date": "2026-09-04T08:32:34Z (article revision; rendered snapshot 2026-10-01)",
+          "rights": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Cooking \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "fa6d1ed2b761f14302acda4e270d5fc6e09ef3d3d3a7d2d4bde39850e28dd2c5",
+          "citation": "wiki-5355-3c5b194590264bc0",
+          "text": "Cooking, also known as cookery, is the art, science and craft of using heat to make food more palatable, digestible, nutritious, or safe. Cooking techniques and ingredients vary widely, from grilling food over an open fire, to using electric stoves, to baking in various types of ovens, to boiling and blanching in water, reflecting local conditions, techniques and traditions. Cooking is an aspect of all human societies and a cultural universal.",
+          "passage_sha256": "3c5b194590264bc096f8f59b7b5a7e16a2980a3684fa9c6f962f349252dc73b3"
+        },
+        {
+          "title": "Baking",
+          "document": "52634",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377463268",
+          "date": "2026-09-29T14:32:33Z (article revision; rendered snapshot 2026-10-01)",
+          "rights": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Baking \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "8ef4da3a5164b93a6175612cdc433e7fd390d695b534c975c82eb2cbe2fbdb6e",
+          "citation": "wiki-52634-ce4cc302ca6df03b",
+          "text": "Baking is a method of preparing food that uses dry heat, typically in an oven, hot ashes, or on hot stones. The most commonly baked foods in 2025 were bread and rolls.[1] Heat is gradually transferred from the surface of unbaked goods to their center, typically at elevated temperatures surpassing 300 \u00b0F (148 \u00b0C). Dry heat cooking imparts a distinctive richness to foods through the processes of caramelization and surface browning. As heat travels through, it transforms batters and doughs into baked goods and more with a firm dry crust and a softer center.[2] Baking can be combined with grilling to produce a hybrid barbecue variant by using both methods simultaneously, or one after the other. Baking is related to barbecuing because the concept of the masonry oven is similar to that of a smoke pit.^([citation needed])",
+          "passage_sha256": "ce4cc302ca6df03bfd98cba503801951c62e0fb0373faa97e0ddc5fe01f15f42"
+        }
+      ],
+      "expectation": "Complete source-supported response addressing each requested subject; preserve qualifiers and date/scope. Builder must inspect every published claim; citations alone are insufficient."
+    },
+    {
+      "id": "mixed-water",
+      "question": "Compare boiling and evaporation.",
+      "kind": "supported",
+      "supports": [
+        {
+          "title": "Boiling",
+          "document": "52636",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368567476",
+          "date": "2026-08-09T21:19:19Z (article revision; rendered snapshot 2026-10-01)",
+          "rights": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Boiling \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "f0b2dec17c4a1401e94591749b5b5e0d0e4672cfc5043c8ee2033f31beb903a6",
+          "citation": "wiki-52636-f647b02e272d5666",
+          "text": "Boiling or ebullition is the rapid phase transition from liquid to gas or vapour; the reverse of boiling is condensation. Boiling occurs when a liquid is heated to its boiling point, so that the vapour pressure of the liquid is equal to the pressure exerted on the liquid by the surrounding atmosphere. Boiling and evaporation are the two main forms of liquid vapourization.",
+          "passage_sha256": "f647b02e272d56663f38e9aff7404a89c3d652fb8dacd1318b01bb3fd7ad1fea"
+        },
+        {
+          "citation": "evaporation-398183fefbcbafbf",
+          "title": "Evaporation",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "rights": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Evaporation is the process that changes liquid water to gaseous water (water vapor). Water moves from the Earth\u2019s surface to the atmosphere via evaporation.",
+          "passage_sha256": "398183fefbcbafbf36b360baa06c31e8d62cb3a36bc0576f396b519fceaa7d13"
+        }
+      ],
+      "expectation": "Complete source-supported response addressing each requested subject; preserve qualifiers and date/scope. Builder must inspect every published claim; citations alone are insufficient."
+    },
+    {
+      "id": "qualifier-algae",
+      "question": "Can algae grow up to 50 metres?",
+      "kind": "supported",
+      "supports": [
+        {
+          "title": "Algae",
+          "document": "633",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1376531852",
+          "date": "2026-09-24T18:54:17Z (article revision; rendered snapshot 2026-10-01)",
+          "rights": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Algae \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "74e98d016ef50c8a3bd26f41ca98abc922aa0b9201646002d7d919cc8c2b8f35",
+          "citation": "wiki-633-4aab155c31f7251e",
+          "text": "Algae (/\u02c8\u00e6ld\u0292i\u02d0/ ^(\u24d8) AL-jee,[3] UK also /\u02c8\u00e6l\u0261i\u02d0/ AL-ghee; sing.: alga /\u02c8\u00e6l\u0261\u0259/ ^(\u24d8)) are any of a large and diverse group of photosynthetic organisms. It excludes the land plants (embryophytes). Such organisms range from microscopic unicellular microalgae (including cyanobacteria and phytoplankton) to seaweeds, multicellular macroalgae which may grow up to 50 metres (160 ft) in length. Most algae are aquatic (especially marine), and some form cohesive colonies. Freshwater algae include Charophyta such as the filamentous Spirogyra and the grasslike stoneworts. Most algae are plankton carried passively by water, although some macroalgae have holdfasts for anchorage.",
+          "passage_sha256": "4aab155c31f7251ef4770384b4758851946286567b45322bd48cb50c3fab65d3"
+        }
+      ],
+      "expectation": "Complete source-supported response addressing each requested subject; preserve qualifiers and date/scope. Builder must inspect every published claim; citations alone are insufficient."
+    },
+    {
+      "id": "absent-1",
+      "question": "What is the algae quorvex telemetry reading?",
+      "kind": "absent",
+      "supports": [],
+      "expectation": "Withhold; sources do not establish this invented or live fact."
+    },
+    {
+      "id": "absent-2",
+      "question": "What is the boiling zenthora signal?",
+      "kind": "absent",
+      "supports": [],
+      "expectation": "Withhold; sources do not establish this invented or live fact."
+    },
+    {
+      "id": "absent-3",
+      "question": "What is the cooking flernium index?",
+      "kind": "absent",
+      "supports": [],
+      "expectation": "Withhold; sources do not establish this invented or live fact."
+    },
+    {
+      "id": "absent-4",
+      "question": "What is the live departure time of the Louisville Museum Plaza shuttle?",
+      "kind": "absent",
+      "supports": [],
+      "expectation": "Withhold; sources do not establish this invented or live fact."
+    }
+  ],
+  "review": "No generated success credited without claim-by-claim builder review against actual selected excerpts; independent criticism separate."
+}
