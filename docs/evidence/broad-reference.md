@@ -1,3 +1,15 @@
+# Task 210 repair 1: source-faithful broad edition
+
+Current repair is in progress; the default objective verifier intentionally fails until a new edition, source-body semantic reviews and actual Android behavior are available. The prior report below is preserved failed evidence, not current acceptance. The critic rejected missing formulas/units, unresolved attribution and keyword-derived topic quotas.
+
+The repair uses bounded official Wikipedia revision lookup and rendered oldid HTML, preserving exact acquisition receipts. It copies mathematical TeX and rendered numeric units, excludes quoted prose/media, retains references and source-specific attribution notices, and excludes unresolved extra licensing terms. Seven extraction regressions pass on actual source defects plus negative fixtures. The initially fast per-title API requests reached HTTP 429; they were stopped, failures retained, and replaced by batched metadata lookup with serial paced HTML acquisition that stops on any further 429. No source worker staging is modified.
+
+Partial source-body reviews, exact supporting excerpts/revisions/hashes and explicitly pending areas are in [the review record](broad-reference/repair/semantic-review.json). These are builder judgments, distinct from independent review. A title shortlist never counts as a completed quota. The original 40 questions and 1,000/10,000/eight/50 targets are unchanged. Current source/pack construction and new-fixture Android tooling are checkpointed as unvalidated until actual runs complete.
+
+---
+
+## Preserved failed task 210 report (checkpoint 9681055)
+
 # Task 210: broad reference, disk-backed retrieval
 
 Builder status: **technical checks pass; breadth/rights/useful-answer release gates remain open**. The local evaluation edition installs 1,076 distinct real Wikipedia-derived documents and 26,660 unique source-substring passages. Together with the retained reference/science editions, Android searches three collections, 1,094 documents and 26,870 passages. This is measured emulator coverage, not merely a staging count. No generated-answer success, distribution clearance, phone acceptance or rival superiority is claimed.

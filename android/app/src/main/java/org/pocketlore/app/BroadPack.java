@@ -77,7 +77,7 @@ final class BroadPack {
     }
    }catch(Exception e){throw new IllegalStateException("Cannot query saved broad index",e);}
    hits.sort(Comparator.comparingDouble((ResearchEngine.Hit h)->h.score).reversed().thenComparing(h->h.passage.id));if(hits.size()>4)hits=new ArrayList<>(hits.subList(0,4));
-   return new ResearchEngine.Result(hits,Collections.emptySet(),hits.isEmpty()?"No matching evidence in the historical edition.":"Historical extracted source passages; inspect omissions and attribution. No generated answer inferred.",candidates);
+   return new ResearchEngine.Result(hits,Collections.emptySet(),hits.isEmpty()?"No matching evidence in the historical edition.":manifest.optString("warning")+" Inspect dated source passages; no generated answer inferred.",candidates);
   }
  });}
 }

@@ -35,7 +35,7 @@ public final class AnswerEngine {
         long start=System.nanoTime();
         evidence=EvidencePrompt.select(question,evidence);
         for(ResearchEngine.Hit hit:evidence.hits)if(hit.passage.collectionProvenance.contains("Generation disabled:"))
-            return fallback(evidence,"Historical broad-reference extraction needs source-quality review; generation disabled for these excerpts.","","",false,0,0,start);
+            return fallback(evidence,"This reference edition is not enabled for model answers; inspect the retrieved sources and their review status.","","",false,0,0,start);
         if (cancelled.getAsBoolean()) return result(Kind.CANCELLED,"Cancelled. No answer was completed.","","Cancelled","",false,0,0,start);
         if (evidence.hits.isEmpty()) {
             String why = evidence.hits.isEmpty() ? "No supporting passage in this installed pack." :

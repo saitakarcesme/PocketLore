@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/packs/broad/repair/seal.py", line 24, in <module>
+    result=validate();(S/'seal.json').write_text(json.dumps(result,indent=2)+'\n');print(len(result['documents']),'real rendered revisions sealed')
+  File "/home/isa/Projects/PocketLore/tools/packs/broad/repair/seal.py", line 18, in validate
+    ident=p.stem;assert p.name in byfile, p.name
+                        ^^^^^^^^^^^^^^^^
+AssertionError: 6570637.html

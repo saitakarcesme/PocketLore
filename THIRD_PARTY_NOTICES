@@ -175,3 +175,7 @@ and hash validation do not cure missing attribution. Retain the historical date,
 extraction warnings and source-specific review gate before publishing any pack.
 See docs/evidence/broad-reference.md and its acquisition receipts for exact pins,
 rights basis, limits and remaining content remediation. Bulk text is not in Git.
+
+Task 210 repair: revision-pinned rendered Wikipedia reference excerpts
+
+The new local rendered-source edition and its public review excerpts retain the article title, Wikipedia contributors attribution, immutable article revision URL, contributor-history link, revision timestamp and exact HTML hash. Wikipedia editorial text is CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/. Selected paragraphs normalize whitespace and preserve source mathematical TeX and superscript/subscript notation; media, navigation, tables and quoted prose are excluded. Source references and any retained public-domain/CC BY 4.0 incorporation notices, creators, source links and terms are included verbatim in each document's provenance. Documents with unresolved additional terms are excluded, not relabeled public domain. Underlying CC BY 4.0 content retains its own attribution and license URL https://creativecommons.org/licenses/by/4.0/; the full Wikipedia article is not generically public domain. Changes and exclusions are recorded separately from source text. No endorsement is implied. Independent review, model-support validation and publication decisions remain pending; source integrity does not establish factual accuracy or legal warranty.

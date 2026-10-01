@@ -8,6 +8,13 @@ def require(ok,why):
 def sha(p):
  with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def digest(b):return hashlib.sha256(b).hexdigest()
+def license_check(manifest,legal):
+ require(manifest.get('license')=='CC-BY-SA-4.0','Missing license')
+ require(legal is not None and digest(legal)=='170b3685f24d098f590c92867787e7be3a86260aed1b96bf4a7594f72a9116be','Missing/changed legal bytes')
+def rejected(fn,label):
+ try:fn()
+ except (ValueError,FileNotFoundError):return label
+ raise ValueError('Mutation accepted: '+label)
 def module(name,path):
  s=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
 def main():
@@ -17,7 +24,7 @@ def main():
  info=json.loads((PACKDIR/'build.json').read_text());require(info['acquisition_receipts_sha256']==seal['receipts_sha256'],'Acquisition receipt drift');review=json.loads((E/'semantic-review.json').read_text());require(sha(E/'semantic-review.json')==info['review_sha256'],'Changed semantic review')
  pack=PACKDIR/'broad-reference.plpack';db=PACKDIR/'index.sqlite';require(sha(pack)==info['pack_sha256'] and sha(db)==info['db_sha256'],'Changed pack/index')
  with zipfile.ZipFile(pack) as z:
-  m=json.loads(z.read('manifest.json'));require(m['license']=='CC-BY-SA-4.0','Missing license');require(digest(z.read('index.sqlite'))==info['db_sha256'],'Archive index mismatch')
+  m=json.loads(z.read('manifest.json'));legal=z.read('CC-BY-SA-4.0.html');license_check(m,legal);require(digest(z.read('index.sqlite'))==info['db_sha256'],'Archive index mismatch')
   require(digest(z.read('CC-BY-SA-4.0.html'))=='170b3685f24d098f590c92867787e7be3a86260aed1b96bf4a7594f72a9116be','Legal bytes changed')
  c=sqlite3.connect('file:'+str(db)+'?mode=ro',uri=True);c.row_factory=sqlite3.Row;reviewed={r['id']:r for r in review['documents']};areas=collections.Counter();source_norm=set();passage_norm=set();documents={};math_count=0;notices=0
  for d in c.execute('SELECT * FROM documents'):
@@ -70,11 +77,16 @@ def main():
  require(reports['import']['pid']!=reports['restart']['pid'],'No process restart')
  require(reports['import'].get('import_ms',0)>0,'No fresh new-edition import measurement')
  require('Index SHA-256 mismatch' in reports['import']['corrupt_index_failure'] and 'cancel' in reports['import']['cancel_status'].lower(),'Corruption/cancellation not verified')
+ negatives=[rejected(lambda:license_check({k:v for k,v in m.items() if k!='license'},legal),'missing-license'),rejected(lambda:license_check(m,None),'missing-legal-text')]
+ with tempfile.TemporaryDirectory(prefix='pocketlore-broad-regression-') as temp:
+  changed=Path(temp)/'changed';changed.write_bytes((E/'run/restart.json').read_bytes()+b' ')
+  negatives.append(rejected(lambda:require(sha(changed)==receipt['records']['restart.json'],'Changed raw artifact'),'changed-artifact'))
+  negatives.append(rejected(lambda:sha(Path(temp)/'missing-model-or-pack'),'missing-artifact'))
  # Mutation tests exercise the source admission policy itself, not a producer success flag.
  base=json.loads((STAGE/'extracted/991.json').read_text());bad=json.loads(json.dumps(base));bad['attribution_notices']=[{'text':'Unspecified additional third-party permission','links':['https://example.invalid']}];require(build.eligible(bad) is not None,'Unresolved attribution mutation accepted')
  try:extract.extract('<div class="mw-parser-output"><p>'+('x'*100)+'<span class="mwe-math-element"></span></p></div>')
  except ValueError:pass
  else:raise ValueError('Missing math mutation accepted')
  require(sha(ROOT/'downloads/broad-reference/rendered-v2-repro/broad-reference.plpack')==sha(pack),'Reproducible build differs')
- print(json.dumps({'status':'PASS','documents':len(documents),'genuine_unique_passages':len(passage_norm),'builder_source_reviewed_areas':dict(areas),'preserved_math_representations':math_count,'preserved_source_notices':notices,'retrieval':results,'limitations':'Builder semantic judgments require independent review; retrieval is not generated support; emulator is not phone acceptance'},indent=2))
+ print(json.dumps({'status':'PASS','documents':len(documents),'genuine_unique_passages':len(passage_norm),'builder_source_reviewed_areas':dict(areas),'preserved_math_representations':math_count,'preserved_source_notices':notices,'retrieval':results,'negative_regressions':negatives,'limitations':'Builder semantic judgments require independent review; retrieval is not generated support; emulator is not phone acceptance'},indent=2))
 if __name__=='__main__':main()

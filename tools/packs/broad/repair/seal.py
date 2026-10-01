@@ -16,9 +16,9 @@ def validate():
  result=[]
  for p in sorted(S.glob('*.html')):
   ident=p.stem;assert p.name in byfile, p.name
-  meta=json.loads((S/(ident+'.json')).read_text());page=next(iter(meta['query']['pages'].values()));assert page in pages.get(ident,[]),ident
+  meta=json.loads((S/(ident+'.json')).read_text());page=next(iter(meta['query']['pages'].values()));assert page in pages.get(str(page['pageid']),[]),ident
   assert 'oldid='+str(page['revisions'][0]['revid']) in byfile[p.name]['url']
-  result.append({'id':ident,'title':page['title'],'revision':page['revisions'][0],'html_sha256':sha(p),'html_bytes':p.stat().st_size,'metadata_sha256':sha(S/(ident+'.json')),'url':byfile[p.name]['url']})
+  result.append({'id':ident,'source_page_id':page['pageid'],'title':page['title'],'revision':page['revisions'][0],'html_sha256':sha(p),'html_bytes':p.stat().st_size,'metadata_sha256':sha(S/(ident+'.json')),'url':byfile[p.name]['url']})
  return {'documents':result,'receipts_sha256':sha(S/'receipts.jsonl'),'downloaded_bytes':sum(r['bytes'] for r in receipts),'http_receipts':len(receipts)}
 if __name__=='__main__':
  result=validate();(S/'seal.json').write_text(json.dumps(result,indent=2)+'\n');print(len(result['documents']),'real rendered revisions sealed')
