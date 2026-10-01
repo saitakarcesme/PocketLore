@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "places-01",
+  "manifest": "679b400dbe11e9ae00ee115f7719de8beba68224f7f5484e62e2a283b660c7e3",
+  "pid": 24623,
+  "kind": "places",
+  "shards": [
+    "compact-01.sqlite"
+  ],
+  "metadata_only": false,
+  "import_ms": 5289.872257,
+  "owned_before": 120949060,
+  "owned_after": 1211902729,
+  "observed_precommit": 1211872979,
+  "new_bytes_written": 1090923919,
+  "usable_bytes": 1023217664,
+  "nearby_count": 1,
+  "source_identity": "679b400dbe11e9ae00ee115f7719de8beba68224f7f5484e62e2a283b660c7e3:compact-01.sqlite:9cd6f4de-e62b-419e-8d5d-b1ccb0fdba58:1",
+  "source": "Isla Guadalupe\nhistoric_site\nStraight-line distance: 0.000 km\nCurrent hours and diet suitability: unknown. Routing unavailable.\nSnapshot status is not live availability.\nEdition\/source identity: 679b400dbe11e9ae00ee115f7719de8beba68224f7f5484e62e2a283b660c7e3:compact-01.sqlite:9cd6f4de-e62b-419e-8d5d-b1ccb0fdba58:1\nSource release: \"2026-09-23.1\"\nSource provenance and attribution (unaltered retained fields):\n{\"id\":\"9cd6f4de-e62b-419e-8d5d-b1ccb0fdba58\",\"confidence\":0.806186318397522,\"websites\":null,\"emails\":null,\"socials\":[\"https:\\\/\\\/www.facebook.com\\\/108180095872798\"],\"phones\":null,\"brand\":{\"wikidata\":null,\"names\":{\"primary\":null,\"common\":null,\"rules\":null}},\"addresses\":[{\"freeform\":null,\"locality\":null,\"postcode\":null,\"region\":null,\"country\":\"MX\"}],\"names\":{\"primary\":\"Isla Guadalupe\",\"common\":null,\"rules\":null},\"sources\":[{\"property\":\"\",\"dataset\":\"meta\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":\"108180095872798\",\"update_time\":\"2026-09-14T00:00:00.000Z\",\"confidence\":0.806186318397522,\"between\":null,\"provider\":\"meta\",\"resource\":\"meta\",\"version\":\"2026-09-14\"},{\"property\":\"\\\/properties\\\/confidence\",\"dataset\":\"Overture\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":null,\"update_time\":\"2026-09-17T22:52:12Z\",\"confidence\":null,\"between\":null,\"provider\":\"overture\",\"resource\":\"confidence_calculation\",\"version\":\"2026-09-17\"}],\"operating_status\":null,\"basic_category\":\"historic_site\",\"taxonomy\":{\"primary\":\"historic_site\",\"hierarchy\":[\"cultural_and_historic\",\"historic_site\"],\"alternates\":null},\"version\":2,\"bbox\":{\"xmin\":-118.29167938232422,\"xmax\":-118.29166412353516,\"ymin\":29.028329849243164,\"ymax\":29.02833366394043}}\nGeoNames city lookup: CC BY 4.0; city proximity is not municipal containment.\nSource-specific terms are retained in collection notices; no generated answer clearance.",
+  "source_records": 5065932,
+  "query_and_inspect_ms": 397.140254,
+  "pss_kib": 51281
+}

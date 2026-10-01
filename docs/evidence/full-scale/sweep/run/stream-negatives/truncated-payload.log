@@ -1,0 +1,10 @@
+INSTRUMENTATION_RESULT: failure=java.util.zip.ZipException: unexpected EOF
+	at java.util.zip.ZipInputStream.read(ZipInputStream.java:245)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at org.pocketlore.app.SharedShardUpdate.install(SharedShardUpdate.java:97)
+	at org.pocketlore.app.ScaleLibrary.installLocked(ScaleLibrary.java:31)
+	at org.pocketlore.app.ScaleLibrary.install(ScaleLibrary.java:29)
+	at org.pocketlore.app.ShardSweepInstrumentation.onStart(ShardSweepInstrumentation.java:13)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+
+INSTRUMENTATION_CODE: 1

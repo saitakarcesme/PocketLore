@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "places-09",
+  "manifest": "71ee1f6c6d339b42e37a95ee66be45db018af9896229470dc30222120c55c134",
+  "pid": 25291,
+  "kind": "places",
+  "shards": [
+    "compact-09.sqlite"
+  ],
+  "metadata_only": false,
+  "import_ms": 3581.197193,
+  "owned_before": 121211204,
+  "owned_after": 1103567614,
+  "observed_precommit": 1103537864,
+  "new_bytes_written": 982326660,
+  "usable_bytes": 1131552768,
+  "nearby_count": 1,
+  "source_identity": "71ee1f6c6d339b42e37a95ee66be45db018af9896229470dc30222120c55c134:compact-09.sqlite:005f9bbd-60b6-47e1-8c33-da40167e7c6b:1",
+  "source": "Plage du Sud\nbeach\nStraight-line distance: 0.000 km\nCurrent hours and diet suitability: unknown. Routing unavailable.\nSnapshot status is not live availability.\nEdition\/source identity: 71ee1f6c6d339b42e37a95ee66be45db018af9896229470dc30222120c55c134:compact-09.sqlite:005f9bbd-60b6-47e1-8c33-da40167e7c6b:1\nSource release: \"2026-09-23.1\"\nSource provenance and attribution (unaltered retained fields):\n{\"id\":\"005f9bbd-60b6-47e1-8c33-da40167e7c6b\",\"confidence\":0.8237708210945129,\"websites\":null,\"emails\":null,\"socials\":[\"https:\\\/\\\/www.facebook.com\\\/1373270559426233\"],\"phones\":null,\"brand\":{\"wikidata\":null,\"names\":{\"primary\":null,\"common\":null,\"rules\":null}},\"addresses\":[{\"freeform\":\"\",\"locality\":\"Hyères\",\"postcode\":\"83400\",\"region\":null,\"country\":\"FR\"}],\"names\":{\"primary\":\"Plage du Sud\",\"common\":null,\"rules\":null},\"sources\":[{\"property\":\"\",\"dataset\":\"meta\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":\"1373270559426233\",\"update_time\":\"2026-09-14T00:00:00.000Z\",\"confidence\":0.8237708210945129,\"between\":null,\"provider\":\"meta\",\"resource\":\"meta\",\"version\":\"2026-09-14\"},{\"property\":\"\\\/properties\\\/confidence\",\"dataset\":\"Overture\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":null,\"update_time\":\"2026-09-17T22:52:12Z\",\"confidence\":null,\"between\":null,\"provider\":\"overture\",\"resource\":\"confidence_calculation\",\"version\":\"2026-09-17\"}],\"operating_status\":null,\"basic_category\":\"beach\",\"taxonomy\":{\"primary\":\"beach\",\"hierarchy\":[\"geographic_entities\",\"land_feature\",\"beach\"],\"alternates\":null},\"version\":9,\"bbox\":{\"xmin\":6.373232841491699,\"xmax\":6.373233795166016,\"ymin\":43.002193450927734,\"ymax\":43.002201080322266}}\nGeoNames city lookup: CC BY 4.0; city proximity is not municipal containment.\nSource-specific terms are retained in collection notices; no generated answer clearance.",
+  "source_records": 5018256,
+  "query_and_inspect_ms": 275.234561,
+  "pss_kib": 56307
+}

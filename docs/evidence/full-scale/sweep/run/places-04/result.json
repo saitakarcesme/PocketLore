@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "places-04",
+  "manifest": "80b05f1a441570fdba6026e2956104ced21c41ad2bdcbacfee5cba927c12f50c",
+  "pid": 24878,
+  "kind": "places",
+  "shards": [
+    "compact-04.sqlite"
+  ],
+  "metadata_only": false,
+  "import_ms": 3946.823723,
+  "owned_before": 121047364,
+  "owned_after": 1170119429,
+  "observed_precommit": 1170089679,
+  "new_bytes_written": 1049042315,
+  "usable_bytes": 1065000960,
+  "nearby_count": 1,
+  "source_identity": "80b05f1a441570fdba6026e2956104ced21c41ad2bdcbacfee5cba927c12f50c:compact-04.sqlite:e1d83545-fccf-4051-aeee-76fd9bdbe1fc:1",
+  "source": "Celuloide Records\npolitical_organization\nStraight-line distance: 0.000 km\nCurrent hours and diet suitability: unknown. Routing unavailable.\nSnapshot status is not live availability.\nEdition\/source identity: 80b05f1a441570fdba6026e2956104ced21c41ad2bdcbacfee5cba927c12f50c:compact-04.sqlite:e1d83545-fccf-4051-aeee-76fd9bdbe1fc:1\nSource release: \"2026-09-23.1\"\nSource provenance and attribution (unaltered retained fields):\n{\"id\":\"e1d83545-fccf-4051-aeee-76fd9bdbe1fc\",\"confidence\":0.15344539284706116,\"websites\":[\"https:\\\/\\\/www.youtube.com\\\/@celuloide_records\"],\"emails\":null,\"socials\":[\"https:\\\/\\\/www.facebook.com\\\/660212301117619\"],\"phones\":null,\"brand\":{\"wikidata\":null,\"names\":{\"primary\":null,\"common\":null,\"rules\":null}},\"addresses\":[{\"freeform\":\"Buenos Aires\",\"locality\":null,\"postcode\":null,\"region\":null,\"country\":\"AQ\"}],\"names\":{\"primary\":\"Celuloide Records\",\"common\":null,\"rules\":null},\"sources\":[{\"property\":\"\",\"dataset\":\"meta\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":\"660212301117619\",\"update_time\":\"2026-09-14T00:00:00.000Z\",\"confidence\":0.15344539284706116,\"between\":null,\"provider\":\"meta\",\"resource\":\"meta\",\"version\":\"2026-09-14\"},{\"property\":\"\\\/properties\\\/confidence\",\"dataset\":\"Overture\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":null,\"update_time\":\"2026-09-17T22:52:12Z\",\"confidence\":null,\"between\":null,\"provider\":\"overture\",\"resource\":\"confidence_calculation\",\"version\":\"2026-09-17\"}],\"operating_status\":null,\"basic_category\":\"political_organization\",\"taxonomy\":{\"primary\":\"political_organization\",\"hierarchy\":[\"community_and_government\",\"civic_organization\",\"political_organization\"],\"alternates\":null},\"version\":1,\"bbox\":{\"xmin\":-74.1796875,\"xmax\":-74.1796875,\"ymin\":-75.93089294433594,\"ymax\":-75.9308853149414}}\nGeoNames city lookup: CC BY 4.0; city proximity is not municipal containment.\nSource-specific terms are retained in collection notices; no generated answer clearance.",
+  "source_records": 5135717,
+  "query_and_inspect_ms": 266.14323,
+  "pss_kib": 55363
+}

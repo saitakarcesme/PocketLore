@@ -2,12 +2,12 @@
   "status": "development host and Android subset; full installation blocked",
   "artifacts": {
     "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": {
-      "bytes": 298358,
-      "sha256": "ac752bc820819476277ead048bf73489d1dcee6bfb708ec097c37f96f84f2109"
+      "bytes": 302886,
+      "sha256": "a6144940b96ee485fd68859e9460b206948bd5e2428265d6f7dd7bf1b42df070"
     },
     "android/app/build/outputs/apk/debug/app-debug.apk": {
       "bytes": 15685650,
-      "sha256": "a0cebabd78b9246fa5e1272e4bea1587c7ca80e2785fe31f2ee73048a1719de9"
+      "sha256": "43894babe475f2719f3b2a732755b16860f88bee781fb86b5e99c850cbdb30ee"
     },
     "android/app/src/androidTest/java/org/pocketlore/app/ShardUpdateInstrumentation.java": {
       "bytes": 12612,
@@ -18,8 +18,8 @@
       "sha256": "daf84be1a4258459dac06dc35c75596fe0b78d4e92240835deff1ead90ead44f"
     },
     "android/app/src/main/java/org/pocketlore/app/ScaleLibrary.java": {
-      "bytes": 11292,
-      "sha256": "383e2bf3d075d565911f5bae2c2381663bc5ee5af5b67ecb11522ea6f8876e4d"
+      "bytes": 11357,
+      "sha256": "297cb0ec6f34fe382544ff788db9bfe3257981028fe12dcaed470871fa5dbf90"
     },
     "android/app/src/main/java/org/pocketlore/app/ScalePlaces.java": {
       "bytes": 3061,
@@ -144,6 +144,10 @@
     "tools/evaluation/full-scale/test_capacity.py": {
       "bytes": 1477,
       "sha256": "1c950afdb598ff50c4054240f905f6d5837a707191a2fa78113eb394206ec67a"
+    },
+    "android/app/src/androidTest/java/org/pocketlore/app/ShardSweepInstrumentation.java": {
+      "bytes": 3463,
+      "sha256": "6f9f197bc3a79c2b7ac223c2a0222bbd9133fe04f081856dc74cbde91cb51c86"
     }
   }
 }

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "places-15",
+  "manifest": "061b8abdddbbf9914c7f05ce35044bbad1ceeb9e52324c1e3ce711ef6113ca38",
+  "pid": 25783,
+  "kind": "places",
+  "shards": [
+    "compact-15.sqlite"
+  ],
+  "metadata_only": false,
+  "import_ms": 3744.745816,
+  "owned_before": 121407812,
+  "owned_after": 1154554632,
+  "observed_precommit": 1154524882,
+  "new_bytes_written": 1033117070,
+  "usable_bytes": 1080565760,
+  "nearby_count": 1,
+  "source_identity": "061b8abdddbbf9914c7f05ce35044bbad1ceeb9e52324c1e3ce711ef6113ca38:compact-15.sqlite:6cee85ea-633e-4ffc-ad9d-2a7bdabb5651:1",
+  "source": "Carnest Auto Xưởng Nội Thất Ô tô\nnull\nStraight-line distance: 0.000 km\nCurrent hours and diet suitability: unknown. Routing unavailable.\nSnapshot status is not live availability.\nEdition\/source identity: 061b8abdddbbf9914c7f05ce35044bbad1ceeb9e52324c1e3ce711ef6113ca38:compact-15.sqlite:6cee85ea-633e-4ffc-ad9d-2a7bdabb5651:1\nSource release: \"2026-09-23.1\"\nSource provenance and attribution (unaltered retained fields):\n{\"id\":\"6cee85ea-633e-4ffc-ad9d-2a7bdabb5651\",\"confidence\":0.35047823190689087,\"websites\":null,\"emails\":[\"mycarstore.vn@gmail.com\"],\"socials\":[\"https:\\\/\\\/www.facebook.com\\\/105691975073847\"],\"phones\":[\"+84944733087\"],\"brand\":{\"wikidata\":null,\"names\":{\"primary\":null,\"common\":null,\"rules\":null}},\"addresses\":[{\"freeform\":\"Di Trạch Hoài Đức Hà Nội\",\"locality\":\"Hanoi\",\"postcode\":\"100000\",\"region\":null,\"country\":\"VN\"}],\"names\":{\"primary\":\"Carnest Auto Xưởng Nội Thất Ô tô\",\"common\":null,\"rules\":null},\"sources\":[{\"property\":\"\",\"dataset\":\"meta\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":\"105691975073847\",\"update_time\":\"2026-09-14T00:00:00.000Z\",\"confidence\":0.35047823190689087,\"between\":null,\"provider\":\"meta\",\"resource\":\"meta\",\"version\":\"2026-09-14\"},{\"property\":\"\\\/properties\\\/confidence\",\"dataset\":\"Overture\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":null,\"update_time\":\"2026-09-17T22:52:12Z\",\"confidence\":null,\"between\":null,\"provider\":\"overture\",\"resource\":\"confidence_calculation\",\"version\":\"2026-09-17\"}],\"operating_status\":null,\"basic_category\":null,\"taxonomy\":null,\"version\":2,\"bbox\":{\"xmin\":105.80271911621094,\"xmax\":105.802734375,\"ymin\":18.129146575927734,\"ymax\":18.129150390625}}\nGeoNames city lookup: CC BY 4.0; city proximity is not municipal containment.\nSource-specific terms are retained in collection notices; no generated answer clearance.",
+  "source_records": 5094226,
+  "query_and_inspect_ms": 530.244508,
+  "pss_kib": 55361
+}

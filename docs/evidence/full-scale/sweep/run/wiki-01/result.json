@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "wiki-01",
+  "manifest": "8f58e1614c2661c70291eb1ea897cab7a82b29aeb4289f77fb34de5de2a13bdc",
+  "pid": 23309,
+  "kind": "wiki",
+  "shards": [
+    "000_00001"
+  ],
+  "metadata_only": false,
+  "import_ms": 5905.068338,
+  "owned_before": 403996924,
+  "owned_after": 1865562366,
+  "observed_precommit": 1865531601,
+  "new_bytes_written": 1461534677,
+  "usable_bytes": 369561600,
+  "source_identity": "8f58e1614c2661c70291eb1ea897cab7a82b29aeb4289f77fb34de5de2a13bdc:000_00001:340:1282035511:8DF28724C6E43F9D9CDFD0E8BC25EB9120A8765726EAEDED3BC3D1D3209372F8",
+  "source_sha256": "8DF28724C6E43F9D9CDFD0E8BC25EB9120A8765726EAEDED3BC3D1D3209372F8",
+  "source_preview": "# Alain Connes\nAlain Connes (French: [alɛ̃ kɔn]; born 1 April 1947) is a French mathematician, known for his contributions to the study of operator algebras and noncommutative geometry. He was a professor at the Collège de France, Institut des Hautes Études Scientifiques, Ohio State University and Vanderbilt University. He was awarded the Fields Medal in 1982.\n\n## Career\nAlain Connes attended high school at Lycée Saint-Charles in Marseille, and was then a student of the classes préparatoires in Lycée Thiers. Between 1966 and 1970 he studied at École normale supérieure in Paris, and in 1973 he obtained a PhD from Pierre and Marie Curie University, under the supervision of Jacques Dixmier.\nFrom 1970 to 1974 he was research fellow at the French National Centre for Scientific Research and during 1975 he held a visiting position at Queen's University at Kingston in Canada.\nIn 1976 he returned to France and worked as professor at Pierre and Marie Curie University until 1980 and at CNRS between 1981 and 1984. Moreover, since 1979 he holds the Léon Motchane Chair at IHES. From 1984 until his retirement in 2017 he held the chair of Analysis and Geometry at Collège de France.\nIn parallel, he was awarded a distinguished professorship at Vanderbilt University between 2003 and 2012, and at Ohio State University between 2012 and 2021.\n\n## Research\nConnes' main research interests revolved around operator algebras. Besides noncommutative geometry, he has applied his works in various areas of mathematics and number theory, differential geometry. Since the 1990s, he developed noncommutative geometry.\nIn his early work on von Neumann algebras in the 1970s, he succeeded in obtaining the almost complete classification of injective factors. He also formulated the Connes embedding problem.\nFollowing this, he made contributions in operator K-theory and index theory, which culminated in the Baum–Connes conjecture. He also introduced cyclic cohomology in the early 1980s as a first step in th",
+  "documents": 447210,
+  "query_and_inspect_ms": 19.37927,
+  "pss_kib": 31514
+}

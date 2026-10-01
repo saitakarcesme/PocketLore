@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "label": "places-00-retire",
+  "manifest": "9caf0bbed5ef6a5f857f5f23a4b08734e9b1a3149683ddf533cfa93826797e95",
+  "pid": 24579,
+  "kind": "places",
+  "shards": [],
+  "metadata_only": true,
+  "import_ms": 606.764857,
+  "owned_before": 1172581130,
+  "owned_after": 120949060,
+  "observed_precommit": 1172584148,
+  "new_bytes_written": 3018,
+  "usable_bytes": 2114174976,
+  "pss_kib": 31796
+}

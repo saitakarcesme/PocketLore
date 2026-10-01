@@ -1,0 +1,10 @@
+INSTRUMENTATION_RESULT: failure=java.io.IOException: Shard admission
+	at org.pocketlore.app.ScaleLibrary.check(ScaleLibrary.java:10)
+	at org.pocketlore.app.ScaleLibrary.verifySchema(ScaleLibrary.java:28)
+	at org.pocketlore.app.SharedShardUpdate.install(SharedShardUpdate.java:113)
+	at org.pocketlore.app.ScaleLibrary.installLocked(ScaleLibrary.java:31)
+	at org.pocketlore.app.ScaleLibrary.install(ScaleLibrary.java:29)
+	at org.pocketlore.app.ShardSweepInstrumentation.onStart(ShardSweepInstrumentation.java:13)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+
+INSTRUMENTATION_CODE: 1

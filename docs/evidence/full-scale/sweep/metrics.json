@@ -1,0 +1,14 @@
+{
+  "primary_shards": 31,
+  "wiki_documents": 6498498,
+  "place_source_records": 81455423,
+  "max_owned_precommit_bytes": 1920628479,
+  "max_owned_retained_bytes": 1920626476,
+  "max_post_operation_pss_kib": 57414,
+  "import_ms_min": 3581.197193,
+  "import_ms_max": 25223.459826,
+  "query_inspect_ms_min": 9.750615,
+  "query_inspect_ms_max": 530.244508,
+  "wall_seconds": 484.53392243800045,
+  "definition": "Observed transaction boundary bytes in sweep-owned directory and post-operation PSS, not continuous peak/whole-device/full-inventory measures"
+}

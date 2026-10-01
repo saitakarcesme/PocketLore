@@ -28,6 +28,12 @@ def behavior(directory):
    assert r['observed_precommit']<=m['installed_bytes']+2*1024*1024
    if kind=='wiki':assert r['source_sha256'].lower()==row['probe']['source_sha256'].lower() and r['source_preview']
    else:assert r['nearby_count']>0 and 'unknown' in r['source'] and 'Routing unavailable' in r['source']
+ negatives=json.loads((directory/'stream-negatives/results.json').read_text())
+ assert {r['case'] for r in negatives}=={'truncated-payload','unmarked-empty-shards'}
+ for r in negatives:
+  assert r['status']=='PASS' and r['remaining_files']==''
+  log=(directory/'stream-negatives'/(r['case']+'.log')).read_text()
+  assert 'INSTRUMENTATION_CODE: 1' in log and 'failure=' in log
  return True
 def main():
  seal=json.loads((E/'receipt.json').read_text())

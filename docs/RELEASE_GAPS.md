@@ -1,5 +1,9 @@
 # Release gaps
 
+## Task301 strategy change: complete-shard compatibility measured
+
+All15 wiki and16 places primary shards now pass an actual Android FIFO rolling sweep with frozen source probes and shared lookup retention. [Evidence](evidence/301-scale-inventory-and-shard-updates-strategy-change.md) covers every complete shard; rolling residency is not full installed coverage or combined global-query validation. Existing two full places shards and model/small-pack catalogs remain intact. Build and additional sweep checker pass; the required full-inventory verifier remains blocked by6.23GB persistent capacity. Coordinator-approved storage for the41+GB candidate plus update/reserves is still needed for simultaneous full installation and actual full-scale replacement peaks. Repeating this completed sweep adds no missing residency evidence. Rights, useful answers, selected4B, current release identity, physical/GrapheneOS and independent unseen/human gates remain open.
+
 ## Task301 repair2: stop redundant subset retries
 
 The required inventory check now fails early on actual persistent capacity:6.23GB total versus the41.63GB declared candidate plan. [Fresh evidence](evidence/full-scale/repair-2/capacity.json) and five parser/boundary regressions are preserved. Build passes; verifier exits1 without reinstalling APKs or rerunning subsets. Full Android inventory and full-scale update measurements still require coordinator-approved storage. More subset repetitions cannot close this gate; no acceptance requirement was weakened and no service or orchestration state changed.

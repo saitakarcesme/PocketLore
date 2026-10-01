@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "places-14",
+  "manifest": "2175bd1c63553c81d2319a798fc74067e665a2b00e7a61f47bac00d76f78a98c",
+  "pid": 25702,
+  "kind": "places",
+  "shards": [
+    "compact-14.sqlite"
+  ],
+  "metadata_only": false,
+  "import_ms": 4998.245851,
+  "owned_before": 121375044,
+  "owned_after": 1169566468,
+  "observed_precommit": 1169536718,
+  "new_bytes_written": 1048161674,
+  "usable_bytes": 1065553920,
+  "nearby_count": 1,
+  "source_identity": "2175bd1c63553c81d2319a798fc74067e665a2b00e7a61f47bac00d76f78a98c:compact-14.sqlite:cbdff49d-a46e-4d3c-b6b1-88ccc7637f25:1",
+  "source": "شركة حراسات امنية ابها في ابها 0534647399 شركات حراسات امنية شركة حراسات\nmanufacturer\nStraight-line distance: 0.000 km\nCurrent hours and diet suitability: unknown. Routing unavailable.\nSnapshot status is not live availability.\nEdition\/source identity: 2175bd1c63553c81d2319a798fc74067e665a2b00e7a61f47bac00d76f78a98c:compact-14.sqlite:cbdff49d-a46e-4d3c-b6b1-88ccc7637f25:1\nSource release: \"2026-09-23.1\"\nSource provenance and attribution (unaltered retained fields):\n{\"id\":\"cbdff49d-a46e-4d3c-b6b1-88ccc7637f25\",\"confidence\":0.7382758855819702,\"websites\":[\"https:\\\/\\\/twitter.com\\\/sharktihrasat\"],\"emails\":null,\"socials\":[\"https:\\\/\\\/www.facebook.com\\\/1730672187158629\"],\"phones\":[\"+966534647399\"],\"brand\":{\"wikidata\":null,\"names\":{\"primary\":null,\"common\":null,\"rules\":null}},\"addresses\":[{\"freeform\":\"المملكة العربية السعودية \",\"locality\":\"Abha\",\"postcode\":\"00966\",\"region\":null,\"country\":\"SA\"}],\"names\":{\"primary\":\"شركة حراسات امنية ابها في ابها 0534647399 شركات حراسات امنية شركة حراسات\",\"common\":null,\"rules\":null},\"sources\":[{\"property\":\"\",\"dataset\":\"meta\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":\"1730672187158629\",\"update_time\":\"2026-09-14T00:00:00.000Z\",\"confidence\":0.7382758855819702,\"between\":null,\"provider\":\"meta\",\"resource\":\"meta\",\"version\":\"2026-09-14\"},{\"property\":\"\\\/properties\\\/confidence\",\"dataset\":\"Overture\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":null,\"update_time\":\"2026-09-17T22:52:12Z\",\"confidence\":null,\"between\":null,\"provider\":\"overture\",\"resource\":\"confidence_calculation\",\"version\":\"2026-09-17\"}],\"operating_status\":null,\"basic_category\":\"manufacturer\",\"taxonomy\":{\"primary\":\"manufacturer\",\"hierarchy\":[\"services_and_business\",\"b2b_service\",\"manufacturer\"],\"alternates\":null},\"version\":9,\"bbox\":{\"xmin\":42.36328125,\"xmax\":42.36328125,\"ymin\":18.13541030883789,\"ymax\":18.135412216186523}}\nGeoNames city lookup: CC BY 4.0; city proximity is not municipal containment.\nSource-specific terms are retained in collection notices; no generated answer clearance.",
+  "source_records": 5058561,
+  "query_and_inspect_ms": 273.423475,
+  "pss_kib": 52509
+}

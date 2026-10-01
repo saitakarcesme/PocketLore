@@ -1,0 +1,92 @@
+{
+  "aliases": "redirect-aliases.sqlite",
+  "collection_key": "rolling-wiki",
+  "documents": 438210,
+  "files": [
+    {
+      "bytes": 22240,
+      "path": "CC-BY-SA-3.0.txt",
+      "payload": false,
+      "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f"
+    },
+    {
+      "bytes": 20138,
+      "path": "CC-BY-SA-4.0.txt",
+      "payload": false,
+      "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+    },
+    {
+      "bytes": 7048,
+      "path": "CC0-1.0.txt",
+      "payload": false,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "bytes": 3362,
+      "path": "NOTICE.txt",
+      "payload": false,
+      "sha256": "9230104a82a2be2b9f58cf774011d4e6cc5dd3c64b5e6e74a23b8dd2aa01fd18"
+    },
+    {
+      "bytes": 16982,
+      "path": "provenance.json",
+      "payload": false,
+      "sha256": "4bf267188415f053be26379030d0d6698bf09a392a02e9bbc6286879200a4e66"
+    },
+    {
+      "bytes": 1583,
+      "path": "redirect-aliases.json",
+      "payload": false,
+      "sha256": "8a28c043058ba1d9a95e4fed5f8a85233bb749b9dcb39ab930a3c43785056e40"
+    },
+    {
+      "bytes": 403890176,
+      "path": "redirect-aliases.sqlite",
+      "payload": false,
+      "sha256": "a691091bc7892155a4e6381d322070076dd6a6064b7a2a23be99e95898b76a12"
+    },
+    {
+      "bytes": 535,
+      "path": "summary.json",
+      "payload": false,
+      "sha256": "bf047deaa8fead0336026658fe92b7b905b09be46f68c0782123afea43f3fe26"
+    },
+    {
+      "bytes": 751742235,
+      "path": "000_00008/articles.blocks",
+      "payload": true,
+      "sha256": "e7343ab54984bc46e2d8286ad1008a462ab24facc63849537539b40ba5fa3b87"
+    },
+    {
+      "bytes": 678154240,
+      "path": "000_00008/catalog.sqlite",
+      "payload": true,
+      "sha256": "c763609151f84d600d843cce27c6d19631e33fb08285fe3adab6609263f4ed97"
+    },
+    {
+      "bytes": 1213,
+      "path": "000_00008/measurement.json",
+      "payload": true,
+      "sha256": "d61086110b8a4ec9e0d934822808ed45e63225363891da93a4ca9114051694cd"
+    }
+  ],
+  "full_articles": 82237,
+  "generation_allowed": false,
+  "installed_bytes": 1833859752,
+  "kind": "wiki",
+  "label": "Rolling compatibility sweep; not full installation",
+  "leads": 355973,
+  "metadata_only": false,
+  "probe": {
+    "id": "657",
+    "source_sha256": "4F062243C5FBA3ECA398151D531901051B3BA7568CDE84A546D54DE8A44C0675",
+    "title": "Bitumen"
+  },
+  "replaces": "e3d2f4a01ec3b685ed95c27e5925f521aa1adf2c51293dd2a5c88939f50c98a0",
+  "rights_status": "unreviewed_source_specific_terms; browse_only",
+  "shards": [
+    "000_00008"
+  ],
+  "source_inventory_sha256": "5160f3a8fa683065707aaa70ccaa87ad475cd32d87561cc70e3a977332835df5",
+  "version": 2
+}

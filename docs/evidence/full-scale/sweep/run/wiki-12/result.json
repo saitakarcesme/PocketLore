@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "wiki-12",
+  "manifest": "d237836c1837955f6447540eac721f7dee71e8b8a22486a26f95c06b7674ed4c",
+  "pid": 24221,
+  "kind": "wiki",
+  "shards": [
+    "000_00012"
+  ],
+  "metadata_only": false,
+  "import_ms": 7706.347937,
+  "owned_before": 404357372,
+  "owned_after": 1834589551,
+  "observed_precommit": 1834558786,
+  "new_bytes_written": 1430201414,
+  "usable_bytes": 400519168,
+  "source_identity": "d237836c1837955f6447540eac721f7dee71e8b8a22486a26f95c06b7674ed4c:000_00012:307:1307002038:27A62D78BDA97D00E64F22D48269A4C672E1988AD25C3FDA2000BA13A54DC92C",
+  "source_sha256": "27A62D78BDA97D00E64F22D48269A4C672E1988AD25C3FDA2000BA13A54DC92C",
+  "source_preview": "# Abraham Lincoln\nAbraham Lincoln (February 12, 1809 – April 15, 1865) was the 16th president of the United States, serving from 1861 until his assassination in 1865. He led the United States through the American Civil War, defeating the Confederate States and playing a major role in the abolition of slavery.\nLincoln was born into poverty in Kentucky and raised on the frontier. He was self-educated and became a lawyer, Illinois state legislator, and U.S. representative. Angered by the Kansas–Nebraska Act of 1854, which opened the territories to slavery, he became a leader of the new Republican Party. He reached a national audience in the 1858 Senate campaign debates against Stephen A. Douglas. Lincoln won the 1860 presidential election, prompting a majority of slave states to begin to secede and form the Confederate States. A month after Lincoln assumed the presidency, Confederate forces attacked Fort Sumter, starting the Civil War.\nLincoln, a moderate Republican, had to navigate a contentious array of factions in managing conflicting political opinions during the war effort. Lincoln closely supervised the strategy and tactics in the war effort, including the selection of generals, and implemented a naval blockade of Southern ports. He suspended the writ of habeas corpus in April 1861, an action that Chief Justice Roger Taney found unconstitutional in Ex parte Merryman, and he averted war with Britain by defusing the Trent Affair. On January 1, 1863, he issued the Emancipation Proclamation, which declared the slaves in the states \"in rebellion\" to be free. On November 19, 1863, he delivered the Gettysburg Address, which became one of the most famous speeches in American history. He promoted the Thirteenth Amendment to the U.S. Constitution, which, in 1865, abolished chattel slavery. Re-elected in 1864, he sought to heal the war-torn nation through Reconstruction.\n\n\nOn April 14, 1865, five days after the Confederate surrender at Appomattox, Lincoln was attending a pl",
+  "documents": 427704,
+  "query_and_inspect_ms": 82.340949,
+  "pss_kib": 32293
+}

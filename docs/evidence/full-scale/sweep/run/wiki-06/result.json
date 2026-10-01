@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "wiki-06",
+  "manifest": "ff36d6414fe6a6731581f41e5e22d9c0525582c8bd2bd003efca11bffb1075bd",
+  "pid": 23727,
+  "kind": "wiki",
+  "shards": [
+    "000_00006"
+  ],
+  "metadata_only": false,
+  "import_ms": 5604.713639,
+  "owned_before": 404160764,
+  "owned_after": 1812688523,
+  "observed_precommit": 1812657758,
+  "new_bytes_written": 1408496994,
+  "usable_bytes": 422436864,
+  "source_identity": "ff36d6414fe6a6731581f41e5e22d9c0525582c8bd2bd003efca11bffb1075bd:000_00006:344:1297821485:C348F2EE87F44885D3CFC4C3F8CF1BC679B3E35D0054651B5CC0C15E1A1FCD1B",
+  "source_sha256": "C348F2EE87F44885D3CFC4C3F8CF1BC679B3E35D0054651B5CC0C15E1A1FCD1B",
+  "source_preview": "# Allan Dwan\nAllan Dwan (born Joseph Aloysius Dwan; April 3, 1885 – December 28, 1981) was a pioneering Canadian and American motion picture director, producer, and screenwriter.\n\n## Early life\nBorn Joseph Aloysius Dwan in Toronto, Ontario, Canada, Dwan was the younger son of commercial traveler of woolen clothing Joseph Michael Dwan (1857–1917) and his wife Mary Jane Dwan (née Hunt). The family moved to the United States when he was seven years old on December 4, 1892, by ferry from Windsor to Detroit, according to his naturalization petition of August 1939. His elder brother, Leo Garnet Dwan (1883–1964), became a physician.\nAllan Dwan studied engineering at the University of Notre Dame and then worked for a lighting company in Chicago. He had a strong interest in the fledgling motion picture industry, and when Essanay Studios offered him the opportunity to become a scriptwriter, he took the job. At that time, some of the East Coast movie makers began to spend winters in California where the climate allowed them to continue productions requiring warm weather. Soon, a number of movie companies worked there year-round, and in 1911, Dwan began working part-time in Hollywood. While still in New York, in 1917 he was the founding president of the East Coast chapter of the Motion Picture Directors Association.\n\n## Career\nDwan started his directing career by accident in 1911, when he was sent by his employers to California, in order to locate a company that had vanished. Dwan managed to track the company down, and learned that they were waiting for a film director (who was an alcoholic) to return from a binge and allow them to resume their work. Dwan wired back to his employers in Chicago, informing them of the situation, and suggested that they disband the company. They wired back, instructing Dwan to direct the stalled film. When Dwan informed the company of the situation, and that their jobs were on the line, they responded: \"You're the best damn director we ever saw\".\n",
+  "documents": 445533,
+  "query_and_inspect_ms": 23.31711,
+  "pss_kib": 31641
+}

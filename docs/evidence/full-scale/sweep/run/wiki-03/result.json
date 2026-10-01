@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "wiki-03",
+  "manifest": "edb7731346294c203ba28bbc6c3e58f919e0b4f22e773aceb2b7703add4c5e22",
+  "pid": 23479,
+  "kind": "wiki",
+  "shards": [
+    "000_00003"
+  ],
+  "metadata_only": false,
+  "import_ms": 6094.397671,
+  "owned_before": 404062460,
+  "owned_after": 1920626476,
+  "observed_precommit": 1920595711,
+  "new_bytes_written": 1516533251,
+  "usable_bytes": 314499072,
+  "source_identity": "edb7731346294c203ba28bbc6c3e58f919e0b4f22e773aceb2b7703add4c5e22:000_00003:336:1305764819:EFB144B35BBDA954DBA94D2DD58D8A35A92341DE5B353BFCD96CB798B36D7E84",
+  "source_sha256": "EFB144B35BBDA954DBA94D2DD58D8A35A92341DE5B353BFCD96CB798B36D7E84",
+  "source_preview": "# Altruism\nAltruism is the concern for the well-being of others, independently of personal benefit or reciprocity.\nThe word altruism was popularised (and possibly coined) by the French philosopher Auguste Comte in French, as altruisme, for an antonym of egoism. He derived it from the Italian altrui, which in turn was derived from Latin alteri, meaning \"other people\" or \"somebody else\". Altruism may be considered a synonym of selflessness, the opposite of self-centeredness.\nAltruism is an important moral value in many cultures and religions. It can expand beyond care for humans to include other sentient beings and future generations.\nAltruism, as observed in populations of organisms, is when an individual performs an action at a cost to itself (in terms of e.g. pleasure and quality of life, time, probability of survival or reproduction) that benefits, directly or indirectly, another individual, without the expectation of reciprocity or compensation for that action.\nThe theory of psychological egoism suggests that no act of sharing, helping, or sacrificing can be \"truly\" altruistic, as the actor may receive an intrinsic reward in the form of personal gratification. The validity of this argument depends on whether such intrinsic rewards qualify as \"benefits\".\nThe term altruism can also refer to an ethical doctrine that claims that individuals are morally obliged to benefit others. Used in this sense, it is usually contrasted with egoism, which claims individuals are morally obligated to serve themselves first.\nEffective altruism is the use of evidence and reason to determine the most effective ways to benefit others.\n\n## The notion of altruism\nThe concept of altruism has a history in philosophical and ethical thought. The term was coined in the 19th century by the founding sociologist and philosopher of science Auguste Comte, and has become a major topic for psychologists (especially evolutionary psychology researchers), evolutionary biologists, and ethologists. Whilst",
+  "documents": 468168,
+  "query_and_inspect_ms": 43.421613,
+  "pss_kib": 31908
+}

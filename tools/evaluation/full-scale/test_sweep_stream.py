@@ -23,6 +23,7 @@ def run():
    else:raise RuntimeError('FIFO timeout')
    start=time.monotonic();writer=subprocess.run(ADB+['shell',"run-as org.pocketlore.app sh -c 'cat > files/sweep-input'"],input=data,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=30);p.wait(timeout=30)
   text=(OUT/(label+'.log')).read_text();assert 'INSTRUMENTATION_CODE: 1' in text and 'failure=' in text
+  assert ('EOF' in text.upper()) if label=='truncated-payload' else ('Shard admission' in text)
   listing=subprocess.check_output(ADB+['shell','run-as','org.pocketlore.app','find','files/sweep-owned','-type','f'],text=True);assert not listing.strip(),listing
   receipt.append(dict(case=label,expected='reject and retain empty owned catalog',status='PASS',input_bytes=len(data),input_sha256=hashlib.sha256(data).hexdigest(),writer_exit=writer.returncode,ms=(time.monotonic()-start)*1000,remaining_files=listing))
  (OUT/'results.json').write_text(json.dumps(receipt,indent=2)+'\n')

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "label": "places-10",
+  "manifest": "cee029fb2d683b5e8e5c327bde20438088c4eca2086c793acb59d16b59a658d0",
+  "pid": 25373,
+  "kind": "places",
+  "shards": [
+    "compact-10.sqlite"
+  ],
+  "metadata_only": false,
+  "import_ms": 3671.188869,
+  "owned_before": 121243972,
+  "owned_after": 1119836920,
+  "observed_precommit": 1119807170,
+  "new_bytes_written": 998563198,
+  "usable_bytes": 1115283456,
+  "nearby_count": 1,
+  "source_identity": "cee029fb2d683b5e8e5c327bde20438088c4eca2086c793acb59d16b59a658d0:compact-10.sqlite:1e68a2fd-1eed-4bcf-9551-9d6f8f6c4427:1",
+  "source": "Amicale des Vanottes - Verne\nsocial_or_community_service\nStraight-line distance: 0.000 km\nCurrent hours and diet suitability: unknown. Routing unavailable.\nSnapshot status is not live availability.\nEdition\/source identity: cee029fb2d683b5e8e5c327bde20438088c4eca2086c793acb59d16b59a658d0:compact-10.sqlite:1e68a2fd-1eed-4bcf-9551-9d6f8f6c4427:1\nSource release: \"2026-09-23.1\"\nSource provenance and attribution (unaltered retained fields):\n{\"id\":\"1e68a2fd-1eed-4bcf-9551-9d6f8f6c4427\",\"confidence\":0.2937403619289398,\"websites\":null,\"emails\":[\"amicaledesvanottes@gmail.com\"],\"socials\":[\"https:\\\/\\\/www.facebook.com\\\/105645185597200\"],\"phones\":null,\"brand\":{\"wikidata\":null,\"names\":{\"primary\":null,\"common\":null,\"rules\":null}},\"addresses\":[{\"freeform\":\"11 Rue des Vignes\",\"locality\":\"Verne\",\"postcode\":\"25110\",\"region\":null,\"country\":\"FR\"}],\"names\":{\"primary\":\"Amicale des Vanottes - Verne\",\"common\":null,\"rules\":null},\"sources\":[{\"property\":\"\",\"dataset\":\"meta\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":\"105645185597200\",\"update_time\":\"2026-09-14T00:00:00.000Z\",\"confidence\":0.2937403619289398,\"between\":null,\"provider\":\"meta\",\"resource\":\"meta\",\"version\":\"2026-09-14\"},{\"property\":\"\\\/properties\\\/confidence\",\"dataset\":\"Overture\",\"license\":\"CDLA-Permissive-2.0\",\"record_id\":null,\"update_time\":\"2026-09-17T22:52:12Z\",\"confidence\":null,\"between\":null,\"provider\":\"overture\",\"resource\":\"confidence_calculation\",\"version\":\"2026-09-17\"}],\"operating_status\":null,\"basic_category\":\"social_or_community_service\",\"taxonomy\":{\"primary\":\"social_or_community_service\",\"hierarchy\":[\"community_and_government\",\"social_or_community_service\"],\"alternates\":null},\"version\":8,\"bbox\":{\"xmin\":6.35538911819458,\"xmax\":6.3553900718688965,\"ymin\":47.39996337890625,\"ymax\":47.39997100830078}}\nGeoNames city lookup: CC BY 4.0; city proximity is not municipal containment.\nSource-specific terms are retained in collection notices; no generated answer clearance.",
+  "source_records": 5075322,
+  "query_and_inspect_ms": 395.789735,
+  "pss_kib": 52446
+}

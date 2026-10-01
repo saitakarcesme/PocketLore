@@ -1,0 +1,1377 @@
+{
+  "scope": "All complete primary shards, rolling Android compatibility only; not full simultaneous residency",
+  "artifacts": {
+    "android/app/src/androidTest/java/org/pocketlore/app/ShardSweepInstrumentation.java": {
+      "bytes": 3463,
+      "sha256": "6f9f197bc3a79c2b7ac223c2a0222bbd9133fe04f081856dc74cbde91cb51c86"
+    },
+    "android/app/src/main/java/org/pocketlore/app/ScaleLibrary.java": {
+      "bytes": 11357,
+      "sha256": "297cb0ec6f34fe382544ff788db9bfe3257981028fe12dcaed470871fa5dbf90"
+    },
+    "android/app/src/main/java/org/pocketlore/app/SharedShardUpdate.java": {
+      "bytes": 8575,
+      "sha256": "c42f3023129d8563984b5e32c5374836f3d9be1624725390118e8b361f29c5a8"
+    },
+    "docs/evidence/full-scale/sweep/plan.json": {
+      "bytes": 11949,
+      "sha256": "eff9c954b86fb70d100d18b54a81f58cbaa0881bfe48c5dda68038b48e3f4f6c"
+    },
+    "docs/evidence/full-scale/sweep/run/places-00/disk.txt": {
+      "bytes": 124,
+      "sha256": "0bf797e0b2c0ea1bd3a340db781e5715f279bce1fba23deef690462c5eea05a9"
+    },
+    "docs/evidence/full-scale/sweep/run/places-00/instrumentation.log": {
+      "bytes": 2745,
+      "sha256": "679181c7f185fecfc6f24438665c1ab6cb538d3335e032331b574882bbaa3ab8"
+    },
+    "docs/evidence/full-scale/sweep/run/places-00/manifest.json": {
+      "bytes": 3472,
+      "sha256": "dcd3738745699122a134ada6029b1a5ef22d0373a4bfc1c488ab6ca2fd1b0cc7"
+    },
+    "docs/evidence/full-scale/sweep/run/places-00/result.json": {
+      "bytes": 2773,
+      "sha256": "e901144087a36cbbabcaedc68e6b22c3be04d7dd67a7580108bba23313e7c881"
+    },
+    "docs/evidence/full-scale/sweep/run/places-00/transfer.json": {
+      "bytes": 197,
+      "sha256": "ca4f93d8c80334d1ca123b9ddf66461cc89a4207c7a685862de81a08e6464de6"
+    },
+    "docs/evidence/full-scale/sweep/run/places-00-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "a74c4e4b4fe97629e4c98c300984221b10acd7735a0be3452802f6b24e93854c"
+    },
+    "docs/evidence/full-scale/sweep/run/places-00-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "c82f4ec372ef7a275f181246ba95cd8f46dc2261dc2a20315327674f9bb6ef2e"
+    },
+    "docs/evidence/full-scale/sweep/run/places-00-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "9caf0bbed5ef6a5f857f5f23a4b08734e9b1a3149683ddf533cfa93826797e95"
+    },
+    "docs/evidence/full-scale/sweep/run/places-00-retire/result.json": {
+      "bytes": 412,
+      "sha256": "476eac098066b294d196bda8da650aeec12fe96fb07283203debcdc2c039da98"
+    },
+    "docs/evidence/full-scale/sweep/run/places-00-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "1a546dba6302e2f1f61ea6aeed466c7ef4b82c8ff8d4189662d4e6d2d92a878e"
+    },
+    "docs/evidence/full-scale/sweep/run/places-01/disk.txt": {
+      "bytes": 124,
+      "sha256": "85c16d2f93702adf3c35010e02609d553115567a4947976e10328e426b75d5eb"
+    },
+    "docs/evidence/full-scale/sweep/run/places-01/instrumentation.log": {
+      "bytes": 2640,
+      "sha256": "f3965ead7691ecefe36a5a3c69cb1dbedf03ad269a010a3567b43f77d638b455"
+    },
+    "docs/evidence/full-scale/sweep/run/places-01/manifest.json": {
+      "bytes": 3471,
+      "sha256": "679b400dbe11e9ae00ee115f7719de8beba68224f7f5484e62e2a283b660c7e3"
+    },
+    "docs/evidence/full-scale/sweep/run/places-01/result.json": {
+      "bytes": 2668,
+      "sha256": "8b471a29eeb6073818d5ba53613b08129482c46b78889684f66feaf65f182ab0"
+    },
+    "docs/evidence/full-scale/sweep/run/places-01/transfer.json": {
+      "bytes": 197,
+      "sha256": "6483c8bcb68e40514595c2fdaaba98682f325333dba21368f33471f0bcceabe4"
+    },
+    "docs/evidence/full-scale/sweep/run/places-01-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "17b98cafa8f919cea9007cc5ec44879d1871b4bf8d4dd392ac96f4320e5a9f4d"
+    },
+    "docs/evidence/full-scale/sweep/run/places-01-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "69eeae22eba83c809a073b69daa4d0a3110a4f9884e62be97ce35852aa29d1bb"
+    },
+    "docs/evidence/full-scale/sweep/run/places-01-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "1ae2dc9cf6c0f5e44fb6548209a5d00aa35bb279905a4b7c3b9c8d25d429ac54"
+    },
+    "docs/evidence/full-scale/sweep/run/places-01-retire/result.json": {
+      "bytes": 412,
+      "sha256": "4d0aeba73586dfe15d76d8f18b815c03cc978d0e6e2fbe65b6933c42781e52d6"
+    },
+    "docs/evidence/full-scale/sweep/run/places-01-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "0cce2241c0729b89c6d298fa1c323b105ca4510f021d66ab5b7b8b1f121ec0e6"
+    },
+    "docs/evidence/full-scale/sweep/run/places-02/disk.txt": {
+      "bytes": 124,
+      "sha256": "d48a19b1fd2a3a236ab768315553f753087717abef0dd3bd229c9807fc7a0bad"
+    },
+    "docs/evidence/full-scale/sweep/run/places-02/instrumentation.log": {
+      "bytes": 2686,
+      "sha256": "3f33a0f63185b411c47e0f88b8cb32a0ff397320f3b8d55d9453083852e64a5d"
+    },
+    "docs/evidence/full-scale/sweep/run/places-02/manifest.json": {
+      "bytes": 3464,
+      "sha256": "3c18669cfe333d8c4f779c243eaf3a809f69eb902b1ed487ffcf37a3f6197f34"
+    },
+    "docs/evidence/full-scale/sweep/run/places-02/result.json": {
+      "bytes": 2714,
+      "sha256": "4e1fd6fa30f4c14df448f34b9dfe67221dd7f105a782bf297c51b22b4d8de0a0"
+    },
+    "docs/evidence/full-scale/sweep/run/places-02/transfer.json": {
+      "bytes": 197,
+      "sha256": "24478f3a625109fd30122101208be427511eeaf18ce70c16005bbdc41cf5a5ca"
+    },
+    "docs/evidence/full-scale/sweep/run/places-02-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "09112be698d29834da0f628ff504ddabc30d584587730a78a666e9ad93c298a9"
+    },
+    "docs/evidence/full-scale/sweep/run/places-02-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "1cc89eed5b185f547ccd4b395c13932efb06eae62595a94bab36260f60599468"
+    },
+    "docs/evidence/full-scale/sweep/run/places-02-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "2e22718fa906bba4eb778934b1400c32af2efcff7e2f47a99943fffc522c4a2b"
+    },
+    "docs/evidence/full-scale/sweep/run/places-02-retire/result.json": {
+      "bytes": 412,
+      "sha256": "ab6f9493504db7d6ac5aea7ec0407b925f1cf0428c755ab57d441599947fc3a0"
+    },
+    "docs/evidence/full-scale/sweep/run/places-02-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "6ee956caa09d691a8d54a7932a9e86920f3e6328c5d0d5809b7ee288d62a3902"
+    },
+    "docs/evidence/full-scale/sweep/run/places-03/disk.txt": {
+      "bytes": 124,
+      "sha256": "cf454ba1a544b999ec3146fb52a2aeeeb57c551e8a685f96d66b3f4cd0ccb9af"
+    },
+    "docs/evidence/full-scale/sweep/run/places-03/instrumentation.log": {
+      "bytes": 3113,
+      "sha256": "bfff8e146207902b4ed800924ff814559be4bd5017f895380c394dade3d512d9"
+    },
+    "docs/evidence/full-scale/sweep/run/places-03/manifest.json": {
+      "bytes": 3459,
+      "sha256": "f34377a4390511f69164b1e5528e208e71c1937dfa53325ade490993963d3eb5"
+    },
+    "docs/evidence/full-scale/sweep/run/places-03/result.json": {
+      "bytes": 3141,
+      "sha256": "f50e6cd1c8bda695e5ed0d403bfb21e73df7b64663da98de7736437b305d3943"
+    },
+    "docs/evidence/full-scale/sweep/run/places-03/transfer.json": {
+      "bytes": 197,
+      "sha256": "3c57a535e8ef1959c2bb9fabc39527f6219efbbab3c76772d676e381f75f11e4"
+    },
+    "docs/evidence/full-scale/sweep/run/places-03-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "a31580c5a329564336f6e9edf23519298a67a51b705e671a76c7bd63d1574690"
+    },
+    "docs/evidence/full-scale/sweep/run/places-03-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "cf9cace2eb3b30ed8f42714b22f9ddad06b0a3467130e3c468d7960177bb1098"
+    },
+    "docs/evidence/full-scale/sweep/run/places-03-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "3b0a7393ee85a9b36ccc2a3e1709745893a26e6f7559de64912a9ceb898d3235"
+    },
+    "docs/evidence/full-scale/sweep/run/places-03-retire/result.json": {
+      "bytes": 412,
+      "sha256": "6b144cfc3d0d0141a7d491e89dd734a7e9168632fce2b079e90fd5fc552bf51d"
+    },
+    "docs/evidence/full-scale/sweep/run/places-03-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "ced0b75e60bb865b39ebad54524ea5e61be9d7f877908332b3b6e58e6e8f2ff7"
+    },
+    "docs/evidence/full-scale/sweep/run/places-04/disk.txt": {
+      "bytes": 124,
+      "sha256": "15e5af0f90b07e92b360c873be96c2103ac702601dca33805fe071e2554751c2"
+    },
+    "docs/evidence/full-scale/sweep/run/places-04/instrumentation.log": {
+      "bytes": 2760,
+      "sha256": "1719889850168fc3074187741d3db60e6e62363a203657fd0faff5b1efc55d7d"
+    },
+    "docs/evidence/full-scale/sweep/run/places-04/manifest.json": {
+      "bytes": 3467,
+      "sha256": "80b05f1a441570fdba6026e2956104ced21c41ad2bdcbacfee5cba927c12f50c"
+    },
+    "docs/evidence/full-scale/sweep/run/places-04/result.json": {
+      "bytes": 2788,
+      "sha256": "5d96e4a86af9e685102c605c0531960e057f76b53617c5fc54882e04775d8a02"
+    },
+    "docs/evidence/full-scale/sweep/run/places-04/transfer.json": {
+      "bytes": 197,
+      "sha256": "2c9ed87f4668c0826836f152fb4b156418cea1a29eb779b66f8162e688d659d0"
+    },
+    "docs/evidence/full-scale/sweep/run/places-04-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "1d70fd2a77b1607c8b9d90f30638b8a540bac24062a5d63790678659cc1151e6"
+    },
+    "docs/evidence/full-scale/sweep/run/places-04-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "c92bb62473904908d43895d8f7cb7882d826b2180b6cf9fac800544fce617e7c"
+    },
+    "docs/evidence/full-scale/sweep/run/places-04-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "39bcdc32a90da2d08deeef788b8d513358d6e5fe13ca154ddb1a292bc051298d"
+    },
+    "docs/evidence/full-scale/sweep/run/places-04-retire/result.json": {
+      "bytes": 412,
+      "sha256": "ca1299626c476b31a1e763fc4ba209a65015b83ba26daa7b79ac25649f40019a"
+    },
+    "docs/evidence/full-scale/sweep/run/places-04-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "4bbf4af334b7bf32d50225e7585eb6a3568e2ef2c82dce17e2cb8b2c85600223"
+    },
+    "docs/evidence/full-scale/sweep/run/places-05/disk.txt": {
+      "bytes": 124,
+      "sha256": "0118f22e2ac84382f007bedde2a9e6d47f749434471a13542df19c3219852a1b"
+    },
+    "docs/evidence/full-scale/sweep/run/places-05/instrumentation.log": {
+      "bytes": 2907,
+      "sha256": "2276ac6cf033763c27aefc5e080398a949449702d2e0e9e89e789bb9d0d86543"
+    },
+    "docs/evidence/full-scale/sweep/run/places-05/manifest.json": {
+      "bytes": 3464,
+      "sha256": "74701c53d4e23730dc3ac5bd998711c19c885df4e92963f57d145b464d9ccd4e"
+    },
+    "docs/evidence/full-scale/sweep/run/places-05/result.json": {
+      "bytes": 2935,
+      "sha256": "c144330ce69ec0c9be69ec65f94d40a375409f44fb47bd9786c833ecc1315c06"
+    },
+    "docs/evidence/full-scale/sweep/run/places-05/transfer.json": {
+      "bytes": 197,
+      "sha256": "df26a9f5782cfddaf86ef89dc6962daf3c24bfd267d14305ec29902fee635497"
+    },
+    "docs/evidence/full-scale/sweep/run/places-05-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "bdc793e2562f57da3ea7e6648847df68b365958e9679ce33ff805615bc79d619"
+    },
+    "docs/evidence/full-scale/sweep/run/places-05-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "7666a35b954380f4f9f553031039bb452f3fc67936da4cf6990bed9dc055c0b0"
+    },
+    "docs/evidence/full-scale/sweep/run/places-05-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "a05140cd014c5e56f7e57e9b04056a13b548e78593b2c4b41dd73b9fae3e1dad"
+    },
+    "docs/evidence/full-scale/sweep/run/places-05-retire/result.json": {
+      "bytes": 412,
+      "sha256": "5e01dab3ed191a9e24a559770758b1b300e78a6fe9a2eb644c6fe8defef46a1d"
+    },
+    "docs/evidence/full-scale/sweep/run/places-05-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "0095e8fe53c691b39d010c05620c3f8e3ba65f89df9d47b3a51ad8367e980092"
+    },
+    "docs/evidence/full-scale/sweep/run/places-06/disk.txt": {
+      "bytes": 124,
+      "sha256": "b79cef5418279055a9d4c5352ac1694df4b992b9c45d8aa6405ca582469a1976"
+    },
+    "docs/evidence/full-scale/sweep/run/places-06/instrumentation.log": {
+      "bytes": 3141,
+      "sha256": "caae7e6bd5d98b66b870dd47ace4b26af98af5e45cec65b85dee8e53f45769fe"
+    },
+    "docs/evidence/full-scale/sweep/run/places-06/manifest.json": {
+      "bytes": 3474,
+      "sha256": "3dbc502a658c42bbc8a128c127e4d5f87f363925ebbcba2fc8abfe8b9cdbbdd1"
+    },
+    "docs/evidence/full-scale/sweep/run/places-06/result.json": {
+      "bytes": 3169,
+      "sha256": "09a19dadfe3282ddbb94d3418a3a44a6ae3ea9ed32c1647f0eb397ac343fce45"
+    },
+    "docs/evidence/full-scale/sweep/run/places-06/transfer.json": {
+      "bytes": 197,
+      "sha256": "c613c3c3bcc8ef88b17c0e0dce6ba22c23a035f55af905d8840c08736340fa07"
+    },
+    "docs/evidence/full-scale/sweep/run/places-06-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "c1d660ab4c47c5e2ac11a3379f7a93c3651d644f2b6d651aa8f0e41ef482f7b6"
+    },
+    "docs/evidence/full-scale/sweep/run/places-06-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "25cd2eb55b31e76162aee4e1638ddb2de25bc0dc329239caccedac33c58639a7"
+    },
+    "docs/evidence/full-scale/sweep/run/places-06-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "a4a1e4c262051b54b0c1de0842eec2411e4a384ee098aababac50774f8ccc9ee"
+    },
+    "docs/evidence/full-scale/sweep/run/places-06-retire/result.json": {
+      "bytes": 412,
+      "sha256": "7e3f1004fd28bacdfac92863c556fb949f871b7fc421a635f28a27d01ed35fd2"
+    },
+    "docs/evidence/full-scale/sweep/run/places-06-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "ad631bc990ff7167f0cab0bd11f41ea80067014345a0da9f10a93d9a2c9458c1"
+    },
+    "docs/evidence/full-scale/sweep/run/places-07/disk.txt": {
+      "bytes": 124,
+      "sha256": "9a0abe616b60775bdb20f4ba198163e3c2d414ae636419f454ad5a06f0d7f71b"
+    },
+    "docs/evidence/full-scale/sweep/run/places-07/instrumentation.log": {
+      "bytes": 2757,
+      "sha256": "8fab2f080420940ec31514aeea18d9388d62a559524b3e026fab30ef6d6437e7"
+    },
+    "docs/evidence/full-scale/sweep/run/places-07/manifest.json": {
+      "bytes": 3458,
+      "sha256": "cf8c1ae44e8b1e0665158d219cfde0c1020f312cdddb8a64eabe7918b5f12e36"
+    },
+    "docs/evidence/full-scale/sweep/run/places-07/result.json": {
+      "bytes": 2785,
+      "sha256": "f29126097e9692a8c73f26597aa0bb454caae8d518269058938b75917c2e480c"
+    },
+    "docs/evidence/full-scale/sweep/run/places-07/transfer.json": {
+      "bytes": 197,
+      "sha256": "93d469788b15dddd49b53df11bc1784659700a7b25b65a6e2d537424c7941b61"
+    },
+    "docs/evidence/full-scale/sweep/run/places-07-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "b03a8a82754c6676cd0ca8bd17ab7c495bdac2a27eab349eeb294788f1bd5c99"
+    },
+    "docs/evidence/full-scale/sweep/run/places-07-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "bbe72d49b52b9ff4a5f1bd903187650d21c9ba366a91a05f73e8bf27b8f47aaa"
+    },
+    "docs/evidence/full-scale/sweep/run/places-07-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "cb8b14a2b33928f799e55666e9eca82f159f9b8f07f89bb082f5916822da0aaf"
+    },
+    "docs/evidence/full-scale/sweep/run/places-07-retire/result.json": {
+      "bytes": 412,
+      "sha256": "236873776c85a8b6cb507dbd1d4ec612b55177ffef5d1952fa2406752ae7dd1c"
+    },
+    "docs/evidence/full-scale/sweep/run/places-07-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "cb021886ccede2228be11ebc65ec06d7611b82c5469d492b7d1be36e6f5b223f"
+    },
+    "docs/evidence/full-scale/sweep/run/places-08/disk.txt": {
+      "bytes": 124,
+      "sha256": "680f6837be0105343a9d57514a2197106909d05c117799720529482c7b3d48fb"
+    },
+    "docs/evidence/full-scale/sweep/run/places-08/instrumentation.log": {
+      "bytes": 2681,
+      "sha256": "f965179772f65819fca02f31869812578aef122c05d0c871cbdb178a45998b81"
+    },
+    "docs/evidence/full-scale/sweep/run/places-08/manifest.json": {
+      "bytes": 3464,
+      "sha256": "2514fd0d4a1701d07ba7e1f0cab16e9594e2192a17196aaac2bf9413fbb8e806"
+    },
+    "docs/evidence/full-scale/sweep/run/places-08/result.json": {
+      "bytes": 2709,
+      "sha256": "cbb13c2a6bb9df474d8da7301c42333fcdf38fbf6d48b8ec5e882bfcdf6186b3"
+    },
+    "docs/evidence/full-scale/sweep/run/places-08/transfer.json": {
+      "bytes": 197,
+      "sha256": "ebbb071172ded40de8ad56f4fcd8c29881739fef91e47c3f69839b666289d990"
+    },
+    "docs/evidence/full-scale/sweep/run/places-08-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "10d4a4eb20e05ccffcd0db556fdacaa07bf29901893df36f6e2568a9a048103a"
+    },
+    "docs/evidence/full-scale/sweep/run/places-08-retire/instrumentation.log": {
+      "bytes": 411,
+      "sha256": "2e5abb68c341f13326cb6dd3f7bcbebd8adfe7504ea38e3bb7f79d33b2855728"
+    },
+    "docs/evidence/full-scale/sweep/run/places-08-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "e069ccf68db24c0cf10bc122e70b516edb3d3b4ec499be0721214cb7fb39a76c"
+    },
+    "docs/evidence/full-scale/sweep/run/places-08-retire/result.json": {
+      "bytes": 411,
+      "sha256": "8b856d99654c9a325d036ff3547039e2cec07b6ab91481d3b3d926e84dda6380"
+    },
+    "docs/evidence/full-scale/sweep/run/places-08-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "b65aaf0103a93b51f331561445557fc276d53e687f190953575c76be0cd0ec8d"
+    },
+    "docs/evidence/full-scale/sweep/run/places-09/disk.txt": {
+      "bytes": 124,
+      "sha256": "5c9567fa685f540f700e191c486e72526ce6c3eecea82742b8a6d78c25b2586c"
+    },
+    "docs/evidence/full-scale/sweep/run/places-09/instrumentation.log": {
+      "bytes": 2631,
+      "sha256": "6015a9bd8a23dc1c89e219a66b01b9a373353278e99ba2992666bad9e9da3aad"
+    },
+    "docs/evidence/full-scale/sweep/run/places-09/manifest.json": {
+      "bytes": 3460,
+      "sha256": "71ee1f6c6d339b42e37a95ee66be45db018af9896229470dc30222120c55c134"
+    },
+    "docs/evidence/full-scale/sweep/run/places-09/result.json": {
+      "bytes": 2659,
+      "sha256": "d123ee83f6ead69d991bdc01670356b22474803299be31b8b4b9bf2f27aefe9a"
+    },
+    "docs/evidence/full-scale/sweep/run/places-09/transfer.json": {
+      "bytes": 196,
+      "sha256": "6436acf55602515aedc35c8a57e0e70b659989e596beafe562b81998f43dfb53"
+    },
+    "docs/evidence/full-scale/sweep/run/places-09-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "593d3146dc3f7906b26c1d6b554d570a3535ffca316e6129d82c3e85dc627d57"
+    },
+    "docs/evidence/full-scale/sweep/run/places-09-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "44b37fc9deffe8da9dc3026c95f3e84520b5e8ac055790f52efffdc80d6ac87f"
+    },
+    "docs/evidence/full-scale/sweep/run/places-09-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "7f61675d4b3928ebe122b41dc1e6669eb97019d19277c9facb53bb6aee6d4373"
+    },
+    "docs/evidence/full-scale/sweep/run/places-09-retire/result.json": {
+      "bytes": 412,
+      "sha256": "a90f0e73e25001bd894926f5cdd9bb4efd875e66f248870bc9966dfbe0d29430"
+    },
+    "docs/evidence/full-scale/sweep/run/places-09-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "9064a75923c6bf8145d6c83e1f1d47c2a6bb55b3e5dae02c2bf2e769fa3dabf2"
+    },
+    "docs/evidence/full-scale/sweep/run/places-10/disk.txt": {
+      "bytes": 124,
+      "sha256": "c05e289dc56fe9a2142ace9181065d74b4705c0d9064ac10347c4a6683571121"
+    },
+    "docs/evidence/full-scale/sweep/run/places-10/instrumentation.log": {
+      "bytes": 2780,
+      "sha256": "ee1012a7192021488db854a58dbeaff3e1f5e6337b694cc6880e77c063d2134f"
+    },
+    "docs/evidence/full-scale/sweep/run/places-10/manifest.json": {
+      "bytes": 3454,
+      "sha256": "cee029fb2d683b5e8e5c327bde20438088c4eca2086c793acb59d16b59a658d0"
+    },
+    "docs/evidence/full-scale/sweep/run/places-10/result.json": {
+      "bytes": 2808,
+      "sha256": "b6cc41058004b1c327900b3474481d95cdfa96bb93a2541dab921d790bc3ad20"
+    },
+    "docs/evidence/full-scale/sweep/run/places-10/transfer.json": {
+      "bytes": 196,
+      "sha256": "f2b10609f67a94bbf89d81d11f174ec42513d001a32808f620197f3857cd949a"
+    },
+    "docs/evidence/full-scale/sweep/run/places-10-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "42b94578562611781bc7f2e58e4961961cd0c4f0608f74004c7634668774ca46"
+    },
+    "docs/evidence/full-scale/sweep/run/places-10-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "31d9b8b1ff233a5e21695067653f9cd74310913a05d2143a0cdc097f09a86c7c"
+    },
+    "docs/evidence/full-scale/sweep/run/places-10-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "bb202b2aac320bad9e9f9f2684c3934da4ab3b0ad488f6ebfb1091908f4f23f2"
+    },
+    "docs/evidence/full-scale/sweep/run/places-10-retire/result.json": {
+      "bytes": 412,
+      "sha256": "91768b2e8fa40c60126b00970d50f2d7cc4b77b0cdcd7b816d4fef8985a04b62"
+    },
+    "docs/evidence/full-scale/sweep/run/places-10-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "fc6499d323ef4c9ce7d02bc65eca0a34d47c16dd176b03c88129b03db6c36216"
+    },
+    "docs/evidence/full-scale/sweep/run/places-11/disk.txt": {
+      "bytes": 124,
+      "sha256": "e337e08ca58d805a0001565a23e1ba0ba37ac08e9d983ae7ec602f08fddc1539"
+    },
+    "docs/evidence/full-scale/sweep/run/places-11/instrumentation.log": {
+      "bytes": 2658,
+      "sha256": "a1670caf7a98a238f29b6e87793f5f1c655ed86da0162efc8ee6685c2165163d"
+    },
+    "docs/evidence/full-scale/sweep/run/places-11/manifest.json": {
+      "bytes": 3456,
+      "sha256": "b5f6abf570a6836c3a2fb11f1a4e2a25ae283f7a67317f4645492692a78ad245"
+    },
+    "docs/evidence/full-scale/sweep/run/places-11/result.json": {
+      "bytes": 2686,
+      "sha256": "6d7d9aeffd28c464baa50221a44c2bf5f6aa6d58a75ca22cf02e31a6be2baea8"
+    },
+    "docs/evidence/full-scale/sweep/run/places-11/transfer.json": {
+      "bytes": 196,
+      "sha256": "856cf642515644146a4694d1ffc0c7bf00764e5813bdf004dd6b5a72aa525742"
+    },
+    "docs/evidence/full-scale/sweep/run/places-11-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "6ff5437510bde382e1b5cb4956212515dd2eee14cd4419e0b1885fe3e13f01a3"
+    },
+    "docs/evidence/full-scale/sweep/run/places-11-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "5b2ca28d7d8a2a6afeced5c4cdf616cd8c90bb27f5d6cad2f6622f539b3a8071"
+    },
+    "docs/evidence/full-scale/sweep/run/places-11-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "2d5093966e0d696848299f9b3ebcc13b3a2f06ee5edba26f2588a198e2fd8c11"
+    },
+    "docs/evidence/full-scale/sweep/run/places-11-retire/result.json": {
+      "bytes": 412,
+      "sha256": "774acb35ac19b564067a53991769c28d8ec1930ec1fcfc88f32dac16e0483ba6"
+    },
+    "docs/evidence/full-scale/sweep/run/places-11-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "7c036e483c6e6299ab170218f8f1d25ff2efb2a8c343cc567260eb7acc941228"
+    },
+    "docs/evidence/full-scale/sweep/run/places-12/disk.txt": {
+      "bytes": 124,
+      "sha256": "06966ba33ede3608d348e18422127b61ec61bdf660bcf94f2190938dff0da1d3"
+    },
+    "docs/evidence/full-scale/sweep/run/places-12/instrumentation.log": {
+      "bytes": 2520,
+      "sha256": "8e06c838b07146e5cc6d0c44ddcfc1c630a6ae3840087708dc7fda19016544e9"
+    },
+    "docs/evidence/full-scale/sweep/run/places-12/manifest.json": {
+      "bytes": 3463,
+      "sha256": "dd56458069147d625af284060d36b37b6e76101fc9720909a128c016bedf0a8c"
+    },
+    "docs/evidence/full-scale/sweep/run/places-12/result.json": {
+      "bytes": 2548,
+      "sha256": "83215c36096c5965aab8bc5ffd62913bc3f09888138c4dd40e905226128207cd"
+    },
+    "docs/evidence/full-scale/sweep/run/places-12/transfer.json": {
+      "bytes": 197,
+      "sha256": "ec28ee397007584c7645000d5534e832c789747a0d361a7a4ff0efc4368c1563"
+    },
+    "docs/evidence/full-scale/sweep/run/places-12-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "cac2072c96454d3c6a63b394df70bff428f98b254ff82230c2f91ee1aedfaa2e"
+    },
+    "docs/evidence/full-scale/sweep/run/places-12-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "8e4c34c6cc1d554c5fdac879dca866511cd7f75b5857cee2678d623e52bce46e"
+    },
+    "docs/evidence/full-scale/sweep/run/places-12-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "1ac59394ebbe0160bcbfec2c37bb667ecd6d727350c39436620ef99cd098f91f"
+    },
+    "docs/evidence/full-scale/sweep/run/places-12-retire/result.json": {
+      "bytes": 412,
+      "sha256": "b4d72ca597a80d14774852e8a7f27e59bc262cdff584bd356960c790a9364e8f"
+    },
+    "docs/evidence/full-scale/sweep/run/places-12-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "8619afb48a0fc4e9d63d84638cf1de8d47d633f56a01550e30b18d2a0ea34036"
+    },
+    "docs/evidence/full-scale/sweep/run/places-13/disk.txt": {
+      "bytes": 124,
+      "sha256": "53bb2a54fcf37a7566f292d62d3f3405cb94a5163ac737cae350dc9639c270eb"
+    },
+    "docs/evidence/full-scale/sweep/run/places-13/instrumentation.log": {
+      "bytes": 2661,
+      "sha256": "3db6294a1b102704885a42fbaaf2ee286e9e309a73f3cb9c6c8dfd51020334fa"
+    },
+    "docs/evidence/full-scale/sweep/run/places-13/manifest.json": {
+      "bytes": 3471,
+      "sha256": "b2cec4eba85f212375e38f6e3788f8950cf1d777b4e272d4e8e63b0d0d150acf"
+    },
+    "docs/evidence/full-scale/sweep/run/places-13/result.json": {
+      "bytes": 2689,
+      "sha256": "7b8b38ec1ab599cac62739067602b5a06b473b971edb27701f0f93031302c8e0"
+    },
+    "docs/evidence/full-scale/sweep/run/places-13/transfer.json": {
+      "bytes": 197,
+      "sha256": "a711fb60702ab64d75e388c3acc22d6a2af314fed230b34de4ac5c85684790e2"
+    },
+    "docs/evidence/full-scale/sweep/run/places-13-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "d27a50d8cf00b8cdad76521a9cf73632bfc07e11c4d8c1b032c884454578b552"
+    },
+    "docs/evidence/full-scale/sweep/run/places-13-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "3909905256c59be8fc8da18ba17ef8578066792fca6b4554c2d7a5cfdabf607e"
+    },
+    "docs/evidence/full-scale/sweep/run/places-13-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "dd2d5b7de62cd0fc2e169fdf6f15ae2104949f7d79308d2dc2bceef9d1a7933c"
+    },
+    "docs/evidence/full-scale/sweep/run/places-13-retire/result.json": {
+      "bytes": 412,
+      "sha256": "2970a7652290814c28fd71ba1803934d75232c229b68dc8652bea34a4e1ea6dc"
+    },
+    "docs/evidence/full-scale/sweep/run/places-13-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "c5efd8f88ce722e7746d9a04c44e66297f07d18e44ab04f08c0b848ab68b32a7"
+    },
+    "docs/evidence/full-scale/sweep/run/places-14/disk.txt": {
+      "bytes": 124,
+      "sha256": "aa9e944346ac6d9ddb85f6fafa9d926514d1a9e8739ead40f3a4469b4397c6d3"
+    },
+    "docs/evidence/full-scale/sweep/run/places-14/instrumentation.log": {
+      "bytes": 2973,
+      "sha256": "0afa2ad38f54a16fe331951b366133b77801d2b94729acc6043d54dc9b382360"
+    },
+    "docs/evidence/full-scale/sweep/run/places-14/manifest.json": {
+      "bytes": 3466,
+      "sha256": "2175bd1c63553c81d2319a798fc74067e665a2b00e7a61f47bac00d76f78a98c"
+    },
+    "docs/evidence/full-scale/sweep/run/places-14/result.json": {
+      "bytes": 3001,
+      "sha256": "6c72392027246a05b29344fc51ac17a9edb908d24ef59efbf8f4fe9f0b83644b"
+    },
+    "docs/evidence/full-scale/sweep/run/places-14/transfer.json": {
+      "bytes": 197,
+      "sha256": "05aeea7cc6ed312f7210a6ed1b9a62d3f9e79360ebd90182cc2957fb196915c0"
+    },
+    "docs/evidence/full-scale/sweep/run/places-14-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "b54f95dc1524fc1d6ba3b1120dac626caf421a6bd236cdb547ef9c132a6e2677"
+    },
+    "docs/evidence/full-scale/sweep/run/places-14-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "67a95637510418a22f6dfe6c60e72f0738c261ee5d182f807cff5104e91257a0"
+    },
+    "docs/evidence/full-scale/sweep/run/places-14-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "4fddb8851d0467185ba7230a93b9b6521915681cc4349064db545db30d7e35f2"
+    },
+    "docs/evidence/full-scale/sweep/run/places-14-retire/result.json": {
+      "bytes": 412,
+      "sha256": "0e83b5f1b6d22b396fb5699f05ed078c1d2482ea6b132ed5620e384b62096f4e"
+    },
+    "docs/evidence/full-scale/sweep/run/places-14-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "2ba80a5f6c7569e8e20e536eac92ac4b5a6c30173e2365428c1dee919eacaaea"
+    },
+    "docs/evidence/full-scale/sweep/run/places-15/disk.txt": {
+      "bytes": 124,
+      "sha256": "ac72d91f48211f24e9fb855d32b25ac383346edce4e484f301e3ce04f3b7b92e"
+    },
+    "docs/evidence/full-scale/sweep/run/places-15/instrumentation.log": {
+      "bytes": 2643,
+      "sha256": "ae64e93d9c45702ff857e25579cebe33cd4dc28c35b5b15543d743bc7e2d145a"
+    },
+    "docs/evidence/full-scale/sweep/run/places-15/manifest.json": {
+      "bytes": 3470,
+      "sha256": "061b8abdddbbf9914c7f05ce35044bbad1ceeb9e52324c1e3ce711ef6113ca38"
+    },
+    "docs/evidence/full-scale/sweep/run/places-15/result.json": {
+      "bytes": 2671,
+      "sha256": "d4dda5ed3ad9fb757c0c3a38623529f253d949075cd82da6301a97bae9879f8d"
+    },
+    "docs/evidence/full-scale/sweep/run/places-15/transfer.json": {
+      "bytes": 197,
+      "sha256": "edc8c4567fe16b0d1f9ef40f3896647091da5ddfa9913879b35712b63451e92a"
+    },
+    "docs/evidence/full-scale/sweep/run/places-15-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "44aa0feae404a2fd280b9ae16f4b9a8d2d51a0357894482ff5b2ace19c5383c7"
+    },
+    "docs/evidence/full-scale/sweep/run/places-15-retire/instrumentation.log": {
+      "bytes": 412,
+      "sha256": "fd4f165517b852f9578072cc69173c4bf1eb82190810abefe5ee42b49ef7bfcc"
+    },
+    "docs/evidence/full-scale/sweep/run/places-15-retire/manifest.json": {
+      "bytes": 3018,
+      "sha256": "322bac17f7040d0be55d7b43aee7608e810f69513666f8cde621d80b9e420370"
+    },
+    "docs/evidence/full-scale/sweep/run/places-15-retire/result.json": {
+      "bytes": 412,
+      "sha256": "7538db568007cc12a1f1c6703067cbdbd7eb9fc2300e8e7b43b1a226dfa8c3c3"
+    },
+    "docs/evidence/full-scale/sweep/run/places-15-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "76d9538759ec80e33c2721ba5cedc91e08175271a96d9c12a0ccdc54a3a86898"
+    },
+    "docs/evidence/full-scale/sweep/run/places-archive.json": {
+      "bytes": 191,
+      "sha256": "dd2be451a2ade69b051b0ccb5164059e064cdad06452c94624b06d5d2b1b44fc"
+    },
+    "docs/evidence/full-scale/sweep/run/places-metadata/disk.txt": {
+      "bytes": 124,
+      "sha256": "2e5eba8c0d5f1fc309ce11801e170e6b226448733ae0b785228bd77b485c3dd2"
+    },
+    "docs/evidence/full-scale/sweep/run/places-metadata/instrumentation.log": {
+      "bytes": 406,
+      "sha256": "9371f3eee761e57056bdf1798889527aece3eb67ae71fa960ee01c6351c7222c"
+    },
+    "docs/evidence/full-scale/sweep/run/places-metadata/manifest.json": {
+      "bytes": 2941,
+      "sha256": "91033fc13dace83c43291e5f96a93e1bd74a33d6c1b86c2e53cbbd0e19f2ab16"
+    },
+    "docs/evidence/full-scale/sweep/run/places-metadata/result.json": {
+      "bytes": 406,
+      "sha256": "b8b14f8a6eb980171676905d2b7b4574a8a3f4df4cc11aea2f8874b313625303"
+    },
+    "docs/evidence/full-scale/sweep/run/places-metadata/transfer.json": {
+      "bytes": 196,
+      "sha256": "ff7aa1418710c23dc192316a20292cd767244d7aecd2f92764381a3917c144a7"
+    },
+    "docs/evidence/full-scale/sweep/run/retained-after.txt": {
+      "bytes": 280,
+      "sha256": "8dc8971e62e4686612845264d51b945df7efbac71bf98b6338016936fb274ea8"
+    },
+    "docs/evidence/full-scale/sweep/run/retained-before.txt": {
+      "bytes": 280,
+      "sha256": "8dc8971e62e4686612845264d51b945df7efbac71bf98b6338016936fb274ea8"
+    },
+    "docs/evidence/full-scale/sweep/run/runtime.json": {
+      "bytes": 613,
+      "sha256": "c1e8720fc8a751507dbed221f467b27c4304aced124c5276ded1cd2fa7bca98f"
+    },
+    "docs/evidence/full-scale/sweep/run/smoke-archive.json": {
+      "bytes": 187,
+      "sha256": "696f891c8a4f06af24dd959b724e695e61e93d4b3a43b1e740a6be24a1059a12"
+    },
+    "docs/evidence/full-scale/sweep/run/smoke.log": {
+      "bytes": 394,
+      "sha256": "3b894c230d95bb846605a955990632f59e946aec61b1a503e0c11f0887e63295"
+    },
+    "docs/evidence/full-scale/sweep/run/stream-negatives/results.json": {
+      "bytes": 630,
+      "sha256": "840bc4c4f96279bfa8d8e45d36786ec0eb2eb8e7dc0ad461c15b8ab4a8ea9842"
+    },
+    "docs/evidence/full-scale/sweep/run/stream-negatives/truncated-payload.log": {
+      "bytes": 617,
+      "sha256": "44e0763af3dc4ebdcab3254ef048c2833d7e3de8e87164d28659b7e69077118b"
+    },
+    "docs/evidence/full-scale/sweep/run/stream-negatives/unmarked-empty-shards.log": {
+      "bytes": 621,
+      "sha256": "5de365919d94f9c8fe3d4affac03a6877c6643afea0033bea3870d75d9f4a178"
+    },
+    "docs/evidence/full-scale/sweep/run/summary.json": {
+      "bytes": 3164,
+      "sha256": "0eea13e166943f05c081b7d0abb592bd9ba2f86c77b620ca60ac681851bf4cf5"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-00/disk.txt": {
+      "bytes": 124,
+      "sha256": "6c79fa35c3397da008cd485161498f443c1790a3e9c6adadd7c1a29c858293e4"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-00/instrumentation.log": {
+      "bytes": 2771,
+      "sha256": "81956af77d513fa85362bf9b6bf3711bdba437abc53a3e799d0ac86b0fbb51d2"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-00/manifest.json": {
+      "bytes": 2744,
+      "sha256": "f1eb016ac1c816ea51fd48253fe3893fbd5e56e2b7977b7158c470b007d2d738"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-00/result.json": {
+      "bytes": 2799,
+      "sha256": "ede6547ceffe7e657d3a2e54b88160d71db5084827a5dc5afc098646493b2ca8"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-00/transfer.json": {
+      "bytes": 197,
+      "sha256": "d48813e85f140d4b1c6e6d08b1a830febe03ccbdd1a7c658bd5f91f16d4931eb"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-00-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "84243012e583f3dfb055f1f01cb5f65ccd2d62dd303cd13ce3788178c5dde5d2"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-00-retire/instrumentation.log": {
+      "bytes": 409,
+      "sha256": "dbdf8da1de7059db83062970f7fc6a389c3ecadf0a2aadd8651084ec9490437a"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-00-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "d699d009059d96ab9df4b49ac579ac50fb5594093510f01d90731321d52a54bc"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-00-retire/result.json": {
+      "bytes": 409,
+      "sha256": "4df46853fc6be39db0ec3da8690758ec9b19f281c62606f7d9b4f0aca2280d91"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-00-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "da573901dbf884637cd09f61785264726cc39b6453ff19ddb1ff80f8fdb3c522"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-01/disk.txt": {
+      "bytes": 124,
+      "sha256": "6194cd611f6024d19c9f79746829d26e6ac26a415a8a5afe6e896fb7cda56728"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-01/instrumentation.log": {
+      "bytes": 2774,
+      "sha256": "9d1d2da0b063ecc635b98b1b2637565eeca34813c3ff00e20c8d35b22cb60e19"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-01/manifest.json": {
+      "bytes": 2749,
+      "sha256": "8f58e1614c2661c70291eb1ea897cab7a82b29aeb4289f77fb34de5de2a13bdc"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-01/result.json": {
+      "bytes": 2802,
+      "sha256": "22bdfe957b398594172d7ef6339a11673b85a73044870a8f9a5aa0d7107ead29"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-01/transfer.json": {
+      "bytes": 197,
+      "sha256": "9fefaeadd9989e0c150e6d5453aad3361f3ceb8804fea400cebae3cc1d134d70"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-01-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "6713b9c02031c2c628e7833b6e34f77c7cc10ea62b61a5aef345a86c1c14f7f7"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-01-retire/instrumentation.log": {
+      "bytes": 409,
+      "sha256": "1ebd6da7dec9b22404d75f7ba7c65e956729a4a167f0979b4ff8476f1182d06a"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-01-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "d0cb744c3c2e18b09c7e3df7b2a2194aa0e3025caddc7389068fe892e7b1cfff"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-01-retire/result.json": {
+      "bytes": 409,
+      "sha256": "4d279116d08267f7c1bcda4b730986a0f6f203f895c895aa131a208c7380556f"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-01-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "5842ae0478d8038b859d36889684092d5a03540d188916f9145d203a0c8ec7f1"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-02/disk.txt": {
+      "bytes": 124,
+      "sha256": "eb0f35e1eb7d683ac96e20121ff081c90b47efc7a80aaaaaaea1c1fc7954dfc8"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-02/instrumentation.log": {
+      "bytes": 1045,
+      "sha256": "95d02f4cad69590b5090b699ab172c1b83845a135dceb7b4a1896855af80c693"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-02/manifest.json": {
+      "bytes": 2744,
+      "sha256": "d5c51bde5fde4992eeabed49efc76d6fea60bc5e9ee67d1489d0ec1bf40ae9a6"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-02/result.json": {
+      "bytes": 1073,
+      "sha256": "b45da1f11d1ceff6e56b2e5c79877fb9375de74f1647b8de94c2228a395f4468"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-02/transfer.json": {
+      "bytes": 197,
+      "sha256": "09d30a584d754d89907bf52bdbe139915a767713b4b93e4925d79ec109701645"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-02-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "497450eb101e16b5316833d6e2f4cbcd7dbc9ed0e1ae7cfd7eb1fb71a96ab97b"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-02-retire/instrumentation.log": {
+      "bytes": 409,
+      "sha256": "de886aa8886ca4b2b3ad7ef6cfe2747080e628ab1b607fbfdc3767515ea1f32c"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-02-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "cba85bba98019a9baba00bbc685f26c57c9940bbc2c7741185abe326f0819adb"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-02-retire/result.json": {
+      "bytes": 409,
+      "sha256": "967d85cad44b9928b43164aa051198e75bbede19e26dcca62f6acb5f1de61010"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-02-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "b99812838a8999c4aed19273b753a9e782be7ffe7b59fe44e1853ca50365ffca"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-03/disk.txt": {
+      "bytes": 124,
+      "sha256": "4b2e604762b518bcf044a78a998dd398b2a21c0b96dd01571eadec32fa2f705f"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-03/instrumentation.log": {
+      "bytes": 2767,
+      "sha256": "c56a3a7a3b3c8a6d6749539c95011eb747de43d1e22ee02541a1cc5b1f3ed944"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-03/manifest.json": {
+      "bytes": 2745,
+      "sha256": "edb7731346294c203ba28bbc6c3e58f919e0b4f22e773aceb2b7703add4c5e22"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-03/result.json": {
+      "bytes": 2795,
+      "sha256": "6441e25ce7513d0038cf94574147e0d3d9024552dd1a7a17caace7b4a79e5cad"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-03/transfer.json": {
+      "bytes": 197,
+      "sha256": "94836ba2f6cda42b42dcbe6335da435018f903b6636b9e12b852936846a5380e"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-03-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "bb1e3218c5dd8739766c5faed9ab9674ad45d8990c52508796b3155f5ae78d99"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-03-retire/instrumentation.log": {
+      "bytes": 409,
+      "sha256": "7054795f0722345c95b30ee977a5e309c862c17fd78856fb9d1a1c760d295847"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-03-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "57b261ceb212c4eda68c3f803b145e8ac27536d63512603034cff47e3d707a01"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-03-retire/result.json": {
+      "bytes": 409,
+      "sha256": "c76ae2532343dcde56ecd3a41719c3ea3899295d2ac93f358a4f9a08fe0cedc9"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-03-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "69d04155c3d4f0e14465f56643658864cbd54dbf1b810cb5e833d58edf98e606"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-04/disk.txt": {
+      "bytes": 124,
+      "sha256": "561b811378fbb5d3026d6ce0bef970b1d885af25837be71ca8baa062d42fd03f"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-04/instrumentation.log": {
+      "bytes": 2764,
+      "sha256": "4b479052e5090c82528ec6aed68451e251750f73d2d15d26bf0ccb931d717bfe"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-04/manifest.json": {
+      "bytes": 2751,
+      "sha256": "6addd59c29f83b401f9e53da2216b37885113ce368075d03e04c2b6c3cb0b634"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-04/result.json": {
+      "bytes": 2792,
+      "sha256": "83784a4927d3beb2c99583d18476bb0f9045256d4159cc71538122fc64b3ff1a"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-04/transfer.json": {
+      "bytes": 197,
+      "sha256": "2a8785857aa31a51f318da9878b1022ed43578f17f60a066d8d2d36e4facae62"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-04-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "e46f5b4e6736c23ba5715e974cf356d59f81dcfeefd5dccca92c59c5591fbebe"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-04-retire/instrumentation.log": {
+      "bytes": 409,
+      "sha256": "48b985de67257f2dabbb71459f9072cb77d2349cd1b037605c8a13a63514de8d"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-04-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "4d48de537746add84b87e38a295bf79e64aedaf2b8e3bffd7d195d36810ed870"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-04-retire/result.json": {
+      "bytes": 409,
+      "sha256": "dc21fa1ac69fcc98b197efc6592ee1b1ad54faa1a1ee2334183b070fc10d2be3"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-04-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "4b031ede3eb94752644b0c4dbbfb03322f8befee91cee8b135b596c468a23019"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-05/disk.txt": {
+      "bytes": 124,
+      "sha256": "a56a94329ce0e8e94bf58688e39875d6dc15bd61bb722ec45223337bf914e735"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-05/instrumentation.log": {
+      "bytes": 2764,
+      "sha256": "6f18da1c435fbc78c1082891b93c3b569da0563e893174e0ed534b78febff3df"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-05/manifest.json": {
+      "bytes": 2748,
+      "sha256": "04fa629cebfb63a5e0dc8c2e09181662257dfe0b62fee77189de6d33a3d7bc5e"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-05/result.json": {
+      "bytes": 2792,
+      "sha256": "98a9372a1b8d6f84a23f4859cd5b4c5eceb43fb75bee617d0215537c7262e51a"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-05/transfer.json": {
+      "bytes": 197,
+      "sha256": "008b947bab0937df9e9b4a8ec47ad3f4537b508a7c3efbaef7e2f2432144198f"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-05-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "c360037a511e3172d850f279c130089fff65eb6e50a325226172477a59c5bfab"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-05-retire/instrumentation.log": {
+      "bytes": 408,
+      "sha256": "cc77bfedaf0c13fbcf88363aa0797916285a0747a54beb3862e5d970046ba467"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-05-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "da1c79f33d3e9e39ce962577f008dd3c59100556eb171d5df0a2d02d5a2fc832"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-05-retire/result.json": {
+      "bytes": 408,
+      "sha256": "d636772e0e14a50f770a00f5ebfef1f8d83c997e6ee6a41491680c6ed3566559"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-05-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "532f214dbe04be25906cf0deac36943640531f99afb1efb5d9b885b8433da06b"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-06/disk.txt": {
+      "bytes": 124,
+      "sha256": "2255f4d02229a710b16e164f86cd3b512632bd985f38c2f2213e6ebdf6784146"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-06/instrumentation.log": {
+      "bytes": 2766,
+      "sha256": "5695dbc86c03032fd53873449ac0871d1e8b2974f8ee2ebebda7afef7707337d"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-06/manifest.json": {
+      "bytes": 2747,
+      "sha256": "ff36d6414fe6a6731581f41e5e22d9c0525582c8bd2bd003efca11bffb1075bd"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-06/result.json": {
+      "bytes": 2794,
+      "sha256": "39920bbfe27250db8fb87588c9d13a5dc48228a93af85a531ca08e173ceb0cfb"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-06/transfer.json": {
+      "bytes": 197,
+      "sha256": "90339dba6613f01ed56f6908ba7307e8d0b790fc43652970bf2e9a0a6e1c7c01"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-06-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "4e0cd7155ed2173d9973f0d5ca441f172f03562e0e088af3c9a013e85253388b"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-06-retire/instrumentation.log": {
+      "bytes": 409,
+      "sha256": "00697e582543bdf603bcb5b17721457c056bd234a10a548f064398f069b3d304"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-06-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "d632c80e6bcfd9adb0167cb1055e34ca8573e8162f3be641507a2de67e9cdc91"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-06-retire/result.json": {
+      "bytes": 409,
+      "sha256": "c81b8d97f5475d6576732d98f8bdf423d21d9bb9ae88d6aac741e8d91e6af124"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-06-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "30b64b44dede9fa2893d753c7a06264fa43cc4c95f7bdcadccb43dc546c32eed"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-07/disk.txt": {
+      "bytes": 124,
+      "sha256": "69aabc879f4bd1354e7d5e3411f52c988f250df2e604fb7bcbac85f969c7e93e"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-07/instrumentation.log": {
+      "bytes": 2771,
+      "sha256": "7a9efb5526d9bf662c8bfc7f32ee2af2c55419d0ad788b48d0e78c038cdcd7ea"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-07/manifest.json": {
+      "bytes": 2742,
+      "sha256": "64a71b40baa17c45ec1eeeb8e1563aea088b42d9018f09f02b9aa0c172ff170f"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-07/result.json": {
+      "bytes": 2799,
+      "sha256": "8e4494bfe301fc69f62622abe49570c52642828ee3e8d75e38c793c7109b3ee0"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-07/transfer.json": {
+      "bytes": 197,
+      "sha256": "9f2f3977b9dbfb785eab4d21f5e5f91b35a0c2277941db9f73ad7836cad147a0"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-07-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "3178121828a0d78aedd2fe3738411dbabdf56cf2c14f24d3e2ccc30cb3fb02c6"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-07-retire/instrumentation.log": {
+      "bytes": 409,
+      "sha256": "891ef8233b181af990293701bc00dd18ab9df38507c11b357461815247db4a34"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-07-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "e3d2f4a01ec3b685ed95c27e5925f521aa1adf2c51293dd2a5c88939f50c98a0"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-07-retire/result.json": {
+      "bytes": 409,
+      "sha256": "4c281cbfbefa547806639f61648072b9692de51dea933a83d6fec506381a41bd"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-07-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "62a9221f8847b346b4bce4ba8e9e48f9b428936acc71b2b04ee73eecb0fdd520"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-08/disk.txt": {
+      "bytes": 124,
+      "sha256": "7e25cc2668808f917c842bdabbb3e978e8ed416ef9a4266878d2c3a8c8d76ae8"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-08/instrumentation.log": {
+      "bytes": 2787,
+      "sha256": "ca77d260f33cea84424f30b6759475986a8d7a4e114ac7e93dccde0a9d2425da"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-08/manifest.json": {
+      "bytes": 2744,
+      "sha256": "de594f7cc8ceb6f1c7cc6c873212da45352ee1de2129f9b4b6b4dee6350af6d1"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-08/result.json": {
+      "bytes": 2815,
+      "sha256": "7f284fc3593e823d9d861cd3e9f634b9f94bd86813a0a33b68a8667a59979f4f"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-08/transfer.json": {
+      "bytes": 197,
+      "sha256": "8311567136bfbea8de393fc92d784477d0a211caec0297b19cfcfd0066104208"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-08-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "de1bf5443fe3f2fb53f8269a253839af92f39fccbe7875a7430a6215a25ed5a8"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-08-retire/instrumentation.log": {
+      "bytes": 408,
+      "sha256": "76ae1caba946836cface41e3e7335de3f90fead4260ced8cc768ebc67b722998"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-08-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "34beb1d0f4e4c82cd8cbc78a161e799aa8004a2c5f16f85fc0cbf3e44be7fab7"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-08-retire/result.json": {
+      "bytes": 408,
+      "sha256": "9e4aedebcf2afd843f3a69d7f6cee352dbd5513ac546359fd470aec32b53e3f7"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-08-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "84729f5dbe9638e1a10eb85d6f11c199b5ea53b8b5152b5be5d8be313b07a284"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-09/disk.txt": {
+      "bytes": 124,
+      "sha256": "12924ce4795a4449ce999ba303d81cc3c20c80548ca75fe60471042e4fcc4bc4"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-09/instrumentation.log": {
+      "bytes": 2797,
+      "sha256": "4d7cdf2158ead4bcbe3e1a781ac55325467f37d4e79f876ed1e0a82e89f16799"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-09/manifest.json": {
+      "bytes": 2745,
+      "sha256": "fc9ab86bc207e6e6b20990fee2b86089462ca7e1069377e83cc9cecac444892d"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-09/result.json": {
+      "bytes": 2825,
+      "sha256": "4f01800259cc66d1fc36c275b1305db81e95428e48a9478c43ea52796ddaec17"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-09/transfer.json": {
+      "bytes": 197,
+      "sha256": "550a552fc8babbd8aa2205f922f78875e13931ddb28e2a82ad11237e21287dd6"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-09-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "9ef1095098915f69feb7b1c30bf470371b14e085b1f8f405f03eec7f1bc3b81b"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-09-retire/instrumentation.log": {
+      "bytes": 408,
+      "sha256": "c7c287759d9ff28a2bc89d8a8ad09a555a1e991cad1e11b8f4924e282b045b64"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-09-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "ad846739a5ad1d92c7ca2b1ba813c3d5a243fa3c97c2d9ec886c63c3b35d8141"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-09-retire/result.json": {
+      "bytes": 408,
+      "sha256": "81f226141d4fea0a8924ca81317ac3ee6cc3070241018b72faf38aafe7799dec"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-09-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "9daea959b68aed3a6d4c67637113cc35294cc4ce85b094839da70c121735a3ce"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-10/disk.txt": {
+      "bytes": 124,
+      "sha256": "1cd03af16ad533a799adbd32ba5c1c994a6a9c2372ae722706e96f43d94730d2"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-10/instrumentation.log": {
+      "bytes": 2760,
+      "sha256": "14d535311122c4aff89243b7f36bc7ef0765f6a57e666b4636261d88ad71db9e"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-10/manifest.json": {
+      "bytes": 2757,
+      "sha256": "d6e42bc1ba37d972fd57b22c0198f394a5f4aa1c2f4f900e79f563c80d6c0aba"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-10/result.json": {
+      "bytes": 2788,
+      "sha256": "731c6326a55478df723ceed3f90b3576543e376652a073b2784591c59784ff6a"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-10/transfer.json": {
+      "bytes": 197,
+      "sha256": "529dc57f436b34ec4ece64a0b1f733a8cd5ec48b5ba2db4112874bd2c119f171"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-10-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "119e502f7ea8b435e33aed1166bc34dd9b4272de8729c4f85b6f8c4f7f036dcd"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-10-retire/instrumentation.log": {
+      "bytes": 409,
+      "sha256": "676cf1dfcebbe7067e8b0051f729ae4ef2c270befb014074b3305c5cbbf32c58"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-10-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "9ee0b22eae584c4fc1b13f9f905836daee71f700d5958ea6a9b46a2befa058d8"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-10-retire/result.json": {
+      "bytes": 409,
+      "sha256": "5af57958576e10a2a720be59be72fbd153f9d55e1a5d994b3e11d722a93c20d3"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-10-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "72cec85f6a831e3253069f3d3f2711d6fd90cb7017eab94def893cc7d5b3f90a"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-11/disk.txt": {
+      "bytes": 124,
+      "sha256": "a3b83a24b517e2b06d1fde3295945083ef3503885ea07b5bc48d175b169d5323"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-11/instrumentation.log": {
+      "bytes": 2783,
+      "sha256": "26ce89ef43855c8fb5261622562d4eecf19db06ab907b85a9422d2f884e2f6a0"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-11/manifest.json": {
+      "bytes": 2738,
+      "sha256": "2cba9e256207ab3a50d70a56c9d536943cc1c4bd01171d08aef802553b381c5e"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-11/result.json": {
+      "bytes": 2811,
+      "sha256": "4f30c0518d2b3c4a6d150319c75aa31cd639bfb855921bfe696459f323673782"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-11/transfer.json": {
+      "bytes": 197,
+      "sha256": "0ee8ab8d605e07d34e34374942c39df96e7fb9e9950f757d82f57e9e915d727d"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-11-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "9ca98d1161f47d060ad2dbd2705032a4d6b9f40cbbd297d23b2817dc61e34269"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-11-retire/instrumentation.log": {
+      "bytes": 409,
+      "sha256": "8b7099fbd3da93801361108336851c4953e92d5f5e075e8e2071c3d0923ff0f5"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-11-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "4e720fb9a5299536666a31fa75be7fa2ee7ee6279fdce873381fc0446017084f"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-11-retire/result.json": {
+      "bytes": 409,
+      "sha256": "5cb0fb60bd3c1a9496b844f26025422303d62170fafc205b5d41a28f326644ee"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-11-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "abdd517dbd6283d9b372841e24a2656fadab6e30ce499b092652b1f4faf4164f"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-12/disk.txt": {
+      "bytes": 124,
+      "sha256": "ee4c5bc10efaff81e5262f89b139f0ac484e478484c8cf4aad18e1ccc298a2e4"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-12/instrumentation.log": {
+      "bytes": 2761,
+      "sha256": "d3587f893a231bc3198bf3bf0c5956b855e244b416048ecf869ad8b6c3c3325a"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-12/manifest.json": {
+      "bytes": 2752,
+      "sha256": "d237836c1837955f6447540eac721f7dee71e8b8a22486a26f95c06b7674ed4c"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-12/result.json": {
+      "bytes": 2789,
+      "sha256": "39bd5e7f534997a109e668e5acdaa4a40f30f813003fc01f034afb569fd787a8"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-12/transfer.json": {
+      "bytes": 197,
+      "sha256": "b757edb036859a3f2773564af63bd6860da0a8629cc8cbf6d041db380597b6f3"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-12-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "3e5b46772653dd6def614ebcd817549ec94dd4d8d3ab675893700b06b4461b5a"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-12-retire/instrumentation.log": {
+      "bytes": 409,
+      "sha256": "56a98c39a9a7e7a76a80ba5faa0b102e091f9e1fd860d68f66985afde582e586"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-12-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "82dfcf40abdeec4543ae84b5f7d80d643cbdee44bb5846c7a946d592dd8b4207"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-12-retire/result.json": {
+      "bytes": 409,
+      "sha256": "bd271a710e1eb8f863b9d195df35e5bb0272267ab56d339eae3d71a65a8c3106"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-12-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "cf0576de1d3857cbb1a09aa455f14169808622d4a016aab389dd219bf398deeb"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-13/disk.txt": {
+      "bytes": 124,
+      "sha256": "b043bfb9b07640a6e11fbc3b8bda1ce3ef1d460f01a7f6d392694817e0e154f0"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-13/instrumentation.log": {
+      "bytes": 2771,
+      "sha256": "5b16c70a27517d452f2806a031971d433fb1fb04cbd38cbe1ff6900b67b88d65"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-13/manifest.json": {
+      "bytes": 2745,
+      "sha256": "fcee56561e416f0da9a71d1782a03ad974fd7a7a92a448edc07dfe0f17de89dc"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-13/result.json": {
+      "bytes": 2799,
+      "sha256": "ac1b161377575012d8ada50d53160ad9f87f8f016ea4c615c88d2f1de8a93dd8"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-13/transfer.json": {
+      "bytes": 197,
+      "sha256": "1c4e3547a3b2bf645682a4e826e318dbc65fe86043beda9a37f1db5b308fef8e"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-13-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "25300906f2e2d6563cbb52aeace680ec808941ac02b6a7faefc57dde8fcd87aa"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-13-retire/instrumentation.log": {
+      "bytes": 409,
+      "sha256": "903d1f7d4e5562402bae09cc06caedd4e1c171ee23d410e68cedac67cee2530e"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-13-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "feb3054d0b45ed403e85f426ff5a061b4337ae8092b257003069c73bb56e1527"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-13-retire/result.json": {
+      "bytes": 409,
+      "sha256": "1029d537be4281b2481c6fd2697f622c361450c698a29b9722a64b144e60ce62"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-13-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "1260ca4666e762cff29463f485064e9ed1c46c830ed35c36cf94a783686ee9e0"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-14/disk.txt": {
+      "bytes": 124,
+      "sha256": "e4f55593d1c7182da29e60dec59d013b28c9f8639caca05e53bb25347e4d59c9"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-14/instrumentation.log": {
+      "bytes": 2763,
+      "sha256": "2cd440cece237e4d6bd391ed12d38a71856d6c6e259c96da0c9d2c40ca9f6f95"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-14/manifest.json": {
+      "bytes": 2749,
+      "sha256": "c178d1992e1272dbf960cef628690f3878475104d016dd4e58c10c94fc6b4e19"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-14/result.json": {
+      "bytes": 2791,
+      "sha256": "1ed264955d89ba5bf831248237afa5d55f6daf5417562fe5c650e2ecfbf5f815"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-14/transfer.json": {
+      "bytes": 197,
+      "sha256": "af53d207c5e0d3f2443f4648e88b609bc1a1302182b1170f05ad4bed53758ff3"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-14-retire/disk.txt": {
+      "bytes": 124,
+      "sha256": "fc3db86b959e38ab0356e6b9ae0b4a8c2e99f8a03689b465c7a8f3f910581113"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-14-retire/instrumentation.log": {
+      "bytes": 409,
+      "sha256": "98c138cff1b4077460f7798eed14abb607a86fcd19c63ca6b4c712556ff61fe2"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-14-retire/manifest.json": {
+      "bytes": 2003,
+      "sha256": "31a4f4cba16aca0b3399bde6d04e584f8bdb6db6b58f75243384699fc4fcc077"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-14-retire/result.json": {
+      "bytes": 409,
+      "sha256": "0d89d132b532478eafbf968a658af172e6bf66b02b44be26999a44804105a3fb"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-14-retire/transfer.json": {
+      "bytes": 191,
+      "sha256": "a1fe1cf3c4deb5690b7f017c80ddf5a34dd6d96659d9f23cbb74bd9622fc2bee"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-archive.json": {
+      "bytes": 191,
+      "sha256": "755f0268444d195a921102e1e79f98c2de3c9f7154588dc3a5f992fb01c2fd59"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-metadata/disk.txt": {
+      "bytes": 124,
+      "sha256": "a080279b53d5594a4f61438f4a619f62a3641428327ba3a9bb0a019ac388c6d8"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-metadata/instrumentation.log": {
+      "bytes": 403,
+      "sha256": "7941cdc22e1119a397bda5f48856909a5f6952ef661f74f4220773b843a1fd7e"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-metadata/manifest.json": {
+      "bytes": 1931,
+      "sha256": "0b6b175625cce6b17b8e49823fb83a418066b00481bf33fcef29bc52058ab5b3"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-metadata/result.json": {
+      "bytes": 403,
+      "sha256": "58fd2ff9303660606041acf4196c574c77af371ed45bf74d4e3ef91bcf9a887f"
+    },
+    "docs/evidence/full-scale/sweep/run/wiki-metadata/transfer.json": {
+      "bytes": 196,
+      "sha256": "7808c5fd211daf2c9904c4e84514b555b565555dcf8e739ec3878d5fdf3f7b93"
+    },
+    "docs/evidence/full-scale/sweep/wiki-probe-attribution.json": {
+      "bytes": 7634,
+      "sha256": "ccf428c961f2703970b34ca3cc9dfc4a99ab6138b80fb374fdf867dc3a86866e"
+    },
+    "downloads/full-scale/sweep/runtime-app.apk": {
+      "bytes": 15685650,
+      "sha256": "43894babe475f2719f3b2a732755b16860f88bee781fb86b5e99c850cbdb30ee"
+    },
+    "downloads/full-scale/sweep/runtime-test.apk": {
+      "bytes": 302886,
+      "sha256": "03880afe6f9adfcc6e52e368f4b1f1e29649451b22b26a0214cafe10b3c5526a"
+    },
+    "tools/evaluation/full-scale/freeze_sweep.py": {
+      "bytes": 1987,
+      "sha256": "72d89be9c78dfbee8938ef6644b89d7fbd91309bf4197acc48305e0ee9dc0489"
+    },
+    "tools/evaluation/full-scale/run_sweep.py": {
+      "bytes": 6630,
+      "sha256": "92392eccd3903bdd62d7642baa3da2c6320642f829b1574503fc390b0f000b81"
+    },
+    "tools/evaluation/full-scale/test_sweep_stream.py": {
+      "bytes": 2575,
+      "sha256": "381f5f0929021fe957ea0493f035b005cb6cdabe4e151698cfbe92e2d50512d8"
+    },
+    "tools/evaluation/full-scale/verify_sweep.py": {
+      "bytes": 3403,
+      "sha256": "5ffead930b6e00c5173eb4114391d8668e399f67c9ac05db36515f16032e7299"
+    },
+    "docs/evidence/full-scale/sweep/metrics.json": {
+      "bytes": 554,
+      "sha256": "9a31c23e9d258cd4b5859ee159af5c7e20bdfe6f311d87d7465ecc7b31d4ca24"
+    }
+  }
+}
