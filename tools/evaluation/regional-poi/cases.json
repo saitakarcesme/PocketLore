@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "frozen_date": "2026-10-01",
+  "definition": "Public development cases frozen before product filter changes. Required and avoided strings are case-insensitive literal phrases in the pinned label plus description. An empty category means all; unknown categories must produce no matches, never all.",
+  "cases": [
+    {"id":"natural-history","category":"museum","require":"NATURAL HISTORY","avoid":"","expected":["Q148554"]},
+    {"id":"civic-house","category":"civic","require":"White House","avoid":"","expected":["Q35525"]},
+    {"id":"garden","category":"park-garden","require":"botanical","avoid":"","expected":["Q1848855"]},
+    {"id":"monument-lincoln","category":"monument","require":"Lincoln","avoid":"","expected":["Q213559"]},
+    {"id":"art-without-women","category":"museum","require":"art museum","avoid":"Women","expected":["Q214867","Q1620553","Q1075126","Q1967614"]},
+    {"id":"absent-food-category","category":"restaurant","require":"","avoid":"","expected":[]},
+    {"id":"absent-lodging-category","category":"hotel","require":"","avoid":"","expected":[]},
+    {"id":"conflicting-text","category":"museum","require":"history","avoid":"history","expected":[]},
+    {"id":"conflicting-category","category":"monument","require":"museum","avoid":"","expected":[]},
+    {"id":"absent-amenity","category":"","require":"wheelchair guaranteed","avoid":"","expected":[]},
+    {"id":"absent-venue","category":"","require":"Eiffel Tower","avoid":"","expected":[]},
+    {"id":"trimmed-preference","category":" museum ","require":" natural history ","avoid":" SPACE ","expected":["Q148554"]}
+  ],
+  "planning_controls": [
+    "All selected stops must satisfy category, require and avoid predicates before distance sorting and truncation.",
+    "Origin is excluded; all stops lie inside the radius; ties sort by source ID.",
+    "Zero radius from Washington Monument with museum preference yields no candidates.",
+    "Conflicting history/history preferences yield no candidates without silent relaxation.",
+    "NaN, infinity, negative radius, invalid origin, invalid stop limit are rejected.",
+    "Every selected ID has an inspection button; actual dialog includes pinned revision, coordinates, source hash, rights and stale-hours/unavailable-routing disclosures."
+  ]
+}

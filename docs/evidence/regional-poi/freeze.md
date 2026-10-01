@@ -1,0 +1,5 @@
+# Public regional development freeze
+
+Before changing catalog/filter implementation, freeze the 12 cases in tools/evaluation/regional-poi/cases.json and the exact 25-entity source lock. No private holdout is involved. Categories are editorial: monument, museum, park-garden and civic; they group pinned labels/descriptions, not access/amenity guarantees. Case expectations are set from source review, not measured product output. Absent categories and conflicting preferences must not be silently relaxed.
+
+Acquisition observations: the Wikidata search API and initial bare Q148554 EntityData URL returned HTTP 403. Explicit flavor=simple EntityData retrieval succeeded; revision-qualified copies are independently refetched and hash-compared. Initial acquisition found National Gallery's label under mul rather than en; its label is English-readable and is pinned with the field selector. MLK Memorial has two P625 statements; the selected statement ID and total candidate count are pinned, and coordinate ambiguity is disclosed. Raw downloads remain ignored. No media are selected.
