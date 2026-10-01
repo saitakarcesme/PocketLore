@@ -1,0 +1,31 @@
+{
+  "reviewer": "builder; independent source review pending",
+  "purpose": "Historical audit route and reasoning, not new draft-generation success",
+  "cases": {
+    "r01": {
+      "result_sha256": "e736113e6459c1dcc7d7e325cb4e968b0da4913bf85c01811c11e81eb4b0f6b6",
+      "route": "SCREEN_ELIGIBLE",
+      "assessment": "Unsupported input-role transfer is approved. Exact original s08 first sentence still makes vermicast material decomposed by worms instead of an output of their breakdown."
+    },
+    "r02": {
+      "result_sha256": "c23fa398d341497dc275618d57ae94107e51a698926703b4972be09dd8d1ccd3",
+      "route": "SCREEN_ELIGIBLE",
+      "assessment": "Unsupported input role and shared-property transfer across three obligations are all approved; structure does not repair semantic support."
+    },
+    "r03": {
+      "result_sha256": "894cbe1337adbc2d7706f3429ebe3f0a75ddeee79a2741b16268e8f3dbc0cbf8",
+      "route": "WITHHELD",
+      "assessment": "C1 is marked UNSUPPORTED but final VERDICT is PASS. Controller correctly withholds the inconsistent audit; C1 is indeed the codification reversal."
+    },
+    "r04": {
+      "result_sha256": "78a037424a7e77d2411f08d8e1b6ddd901e6d6b8dd46af066d3b35f45ddb41dc",
+      "route": "WITHHELD",
+      "assessment": "Withheld, but audit reason misses continued-versus-became. It inaccurately paraphrases source as became capital and rejects the historical main-centre description for not mentioning later Valencia displacement; that is not the actual failing claim."
+    },
+    "r05": {
+      "result_sha256": "35858c61bcae831cf86afee9b598fca5611faabd99e4180626756ffab17b2ac7",
+      "route": "SCREEN_ELIGIBLE",
+      "assessment": "Approves the historical transfer of smaller-wound pathogen protection into the general reason for pruning unwanted material. The real source condition remains unmet."
+    }
+  }
+}
