@@ -1,3 +1,11 @@
+# Task 221 repair 2: finite source-frame development gate passes; usefulness remains narrow
+
+The [current repair report](source-fact-frame-support.md) preserves all previous experiments, adds twenty frozen real host generations and replays143 records through a source-first finite semantic parser. Both required checks pass. Builder source review finds **5/40** useful supported old answers, **zero unsupported eligible outputs**, all eleven absent controls withheld, and only **1/20** useful new answers. Independent review is pending; this is not general entailment, selected-model Android execution or product acceptance. The post-output geography-heading correction and its first replay are preserved. Task224 records the next concrete source-plan generation experiment; task223 must reuse this work. Production model/admission remain unchanged.
+
+The reports below are historical failures with their original measurements and identities, not the current result.
+
+---
+
 # Task 221 repair 1: independent linking still fails support safety
 
 The materially different independent-evidence-linking strategy is implemented and measured in [the repair report](independent-evidence-linking.md). All old drafts and raw failures are preserved; only sixteen newly frozen questions received generation. The pinned independent classifier retains **8/40** useful old answers, below the previous twelve, and still admits unsupported role, definition, time and formula claims. All nine absent controls remain withheld. Build and 29 behavioral/integrity checks pass, but the required quality command exits 1. The zero-unsupported gate remains unmet; production and Android admission are unchanged. Task 223 records the next source-first constraint experiment without repeating old generation.

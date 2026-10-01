@@ -182,3 +182,17 @@ The [fixed independent verifier experiment](evidence/independent-evidence-linkin
 | Physical and human acceptance | No selected-model Android, physical Android/GrapheneOS, thermal or human acceptance evidence added. | Measure on real supported hardware after a support-safe candidate exists. | Hardware/operator and human reviewers. |
 
 Task 223 was created atomically as a task specification only. Main, runner state, services, production model preferences and publication remain untouched; the unsuccessful repair remains a failing checkpoint.
+
+## Task 221 repair 2: bounded safety regression repaired; broad usefulness open
+
+[Current evidence](evidence/source-fact-frame-support.md) records passing build and behavioral/artifact checks plus builder source review:5/40 old useful eligible answers, zero unsupported eligible records, all eleven absent controls withheld. Only1/20 new generations is eligible. Historical positive scores that approved unsupported chronology remain preserved; this finite adapter is not general entailment or independent acceptance.
+
+| Remaining gap | Evidence | Next action | Real external dependency |
+| --- | --- | --- | --- |
+| Complete useful answer coverage | 35/40 old supported and19/20 new questions withheld, including correct paraphrases and avoidable W; wrong codification/chronology drafts persist. | Queued224-source-plan-generation: assign source-grounded obligation plans before complete prose, fixed budget and new frozen cases, no old inference or case-specific grammar loop. Source-first task223 should reuse this completed experiment. | None for bounded host implementation; canonical independent source review remains required. |
+| General support safety and obligation coverage | Only finite relation semantics implemented; one post-output subject-heading defect was fixed and preserved. | Independently inspect exact final claims and headings; retain renamed-entity, unknown-tail, role/time/condition and formula regressions in224. | Independent reviewer; no private holdout needed for development. |
+| Selected-model Android integration |4B ran on host only, RSS/HWM4,893,708KiB; shared code merely compiles. Production remains0.5B and limits unchanged. | Separate admission/load/cancel/reload/JNI and combined catalog/native memory qualification before wiring model/controller. | Approved sufficiently provisioned emulator/device; no builder supervision change. |
+| Candidate release and distribution | Final compile APK7a17268f00b01946690fb3545f665ac28bbfeefb85596fb17655e6cc91d896d9 differs from prior release. | Existing candidate revalidation task213 must freeze the actually integrated model/controller/APK; preserve historical APKs. | Clean reproduction environment and signing owner decisions. |
+| Physical and human acceptance | No selected-model Android or phone/GrapheneOS test added. | Actual supported-hardware resource, offline workflow and human usefulness evaluation. | Hardware/operator and human reviewers. |
+
+Task224 was added as a specification only; no runner state or dispatch changed. The product is not complete while these independent and external gates remain.

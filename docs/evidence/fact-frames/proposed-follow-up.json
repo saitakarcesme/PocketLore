@@ -1,0 +1,27 @@
+{
+  "id": "224-source-plan-generation",
+  "objective": "Generate complete useful answers from source-grounded obligation plans before prose, addressing avoidable withholding and syntax rejection shown by the finite fact-frame experiment without extending case-specific paraphrase rules.",
+  "dependencies": [
+    "221-obligation-source-binding"
+  ],
+  "scope": [
+    "android",
+    "tools/evaluation",
+    "docs",
+    "FINDINGS.md"
+  ],
+  "acceptance_checks": [
+    [
+      "bash",
+      "tools/android-build.sh"
+    ],
+    [
+      "bash",
+      "tools/evaluation/check_source_plan_generation.sh"
+    ]
+  ],
+  "artifacts": [
+    "docs/evidence/source-plan-generation.md"
+  ],
+  "instructions": "Inspect sealed task221 repair2 and any task223 handoff first; source-first task223 strategy has already been measured in repair2 and must not be repeated. Preserve all previous raw outputs. Freeze at least24 new public multi-obligation explanation/comparison/qualifier/absence cases across six topics before implementation. One declared source-first obligation-plan and complete-prose architecture, same pinned4B host candidate,4096context and512total generated tokens across all stages; no seed/prompt search. Parse source relation/condition/time and assign exact edition-aware spans before prose generation; verify every complete generated claim against its plan and source, without self-approval or NLI-score approval. Do not generate canned/template/extractive answers or call quoted plans generated success. Inspect every published claim, report complete useful coverage and wrong publication separately; zero unsupported and all absent withheld remain mandatory. Retain prior counterexamples as replay-only regressions, not a new inference matrix. Explicitly measure whether source planning repairs unsupported Barcelona chronology and false W on explicit facts without merely adding grammar variants. Keep production model.env and Android admission unchanged. Host results are not selected-model Android proof. No private holdout, services, orchestration state, push, main advancement or publication. If negative, preserve it and identify the concrete failing boundary; do not launch an endless grammar/prompt loop."
+}
