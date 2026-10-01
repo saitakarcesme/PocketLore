@@ -84,6 +84,7 @@ public final class AnswerEngine {
         if(error.isEmpty() && !conflicts.isEmpty() && (!citations(linked).containsAll(conflicts) ||
             !linked.toLowerCase(Locale.ROOT).matches("(?s).*(disagree|conflict|uncertain|unresolved|contradict).*")))
             error="Potential unresolved source disagreement: ["+String.join("] [",conflicts)+"]. The model did not disclose both sides; its draft was withheld. Inspect these sources.";
+        if (error.isEmpty()) error=comparisonSupportFailure(question,linked,evidence,excerptLimit);
         if (error.isEmpty()) error=claimSupportFailure(linked,evidence,excerptLimit);
         if (!error.isEmpty()) return fallback(evidence,error,draft,prompt,true,count,firstMs,start);
         return new Outcome(Kind.GENERATED,linked,draft,"Claim links and lexical support checked; factual entailment still requires source inspection. Sources may differ by conditions or date.",prompt,
@@ -118,6 +119,25 @@ public final class AnswerEngine {
             Set<String> supportedNumbers=new HashSet<>();Matcher sourceNumbers=Pattern.compile("\\b[0-9]+(?:[.,][0-9]+)*\\b").matcher(source);
             while(sourceNumbers.find())supportedNumbers.add(sourceNumbers.group().replace(",",""));
             while(numbers.find())if(!supportedNumbers.contains(numbers.group().replace(",","")))return "A claim contains a number absent from its cited excerpts; draft withheld.";
+        }
+        return "";
+    }
+    /** Narrow cross-subject leakage screen; conservative, not semantic entailment. */
+    static String comparisonSupportFailure(String question,String draft,ResearchEngine.Result evidence,int limit) {
+        Matcher comparison=Pattern.compile("(?i)^compare\\s+(.+?)\\s+(?:and|with|versus)\\s+(.+?)[.?!]?$").matcher(question.trim());
+        if(!comparison.matches() || evidence.hits.size()!=2)return "";
+        List<Set<String>> subjects=Arrays.asList(new HashSet<>(ResearchEngine.tokenize(comparison.group(1))),new HashSet<>(ResearchEngine.tokenize(comparison.group(2))));
+        List<Set<String>> sources=Arrays.asList(new HashSet<>(ResearchEngine.tokenize(EvidencePrompt.excerpt(evidence.hits.get(0),limit))),new HashSet<>(ResearchEngine.tokenize(EvidencePrompt.excerpt(evidence.hits.get(1),limit))));
+        Set<String> common=new HashSet<>(subjects.get(0));common.retainAll(subjects.get(1));
+        for(Set<String> subject:subjects)subject.removeAll(common);
+        for(String clause:BRACKET.matcher(draft).replaceAll("").split("(?i)\\b(?:while|whereas)\\b|\\n+")) {
+            Set<String> words=new HashSet<>(ResearchEngine.tokenize(clause));
+            boolean first=!Collections.disjoint(words,subjects.get(0)),second=!Collections.disjoint(words,subjects.get(1));
+            if(first==second)continue;
+            int own=first?0:1;
+            Set<String> borrowed=new HashSet<>(words);borrowed.retainAll(sources.get(1-own));borrowed.removeAll(sources.get(own));
+            borrowed.removeAll(subjects.get(0));borrowed.removeAll(subjects.get(1));
+            if(!borrowed.isEmpty())return "A comparison clause borrows terms only supported for the other subject; draft withheld.";
         }
         return "";
     }

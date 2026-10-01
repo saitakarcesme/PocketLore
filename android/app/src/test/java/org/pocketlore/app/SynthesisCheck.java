@@ -27,6 +27,10 @@ public final class SynthesisCheck {
         require(AnswerEngine.answer("test lamp active",evidence,overBudget,t->{},()->false).kind==AnswerEngine.Kind.FALLBACK,"Budget overflow not withheld");
         AnswerEngine.Generator forbidden=(p,n,s)->{throw new AssertionError("Cancelled generation invoked");};
         require(AnswerEngine.answer("test lamp active",evidence,forbidden,t->{},()->true).kind==AnswerEngine.Kind.CANCELLED,"Cancellation failed");
+        ResearchEngine.Result colors=new ResearchEngine(new StringReader(row("color-a","Alpha lamp emits red light.")+row("color-b","Beta lamp emits blue light."))).research("Compare alpha lamp and beta lamp");
+        colors=EvidencePrompt.select("Compare alpha lamp and beta lamp",colors);
+        require(!AnswerEngine.comparisonSupportFailure("Compare alpha lamp and beta lamp","Alpha lamp emits blue light [color-a] [color-b].",colors,900).isEmpty(),"Cross-subject property transfer accepted");
+        require(AnswerEngine.comparisonSupportFailure("Compare alpha lamp and beta lamp","Alpha lamp emits red light [color-a].\nBeta lamp emits blue light [color-b].",colors,900).isEmpty(),"Supported comparison withheld");
         System.out.println("PASS: fictional conflict controls, both-source links, raw preservation, unsupported numbers, token overflow and cancellation");
     }
 }
