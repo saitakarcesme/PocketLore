@@ -79,6 +79,7 @@ public final class AnswerEngine {
         Set<String> allowed=EvidencePrompt.ids(evidence);
         String linked=EvidencePrompt.resolve(draft,evidence);
         String error=citationFailure(linked,allowed);
+        if(error.isEmpty())error=completeClaimFailure(linked,evidence,excerptLimit);
         if (count>=EvidencePrompt.OUTPUT_TOKENS) error="The model reached the output limit before finishing.";
         Set<String> conflicts=EvidencePrompt.conflicts(evidence);
         if(error.isEmpty() && !conflicts.isEmpty() && (!citations(linked).containsAll(conflicts) ||
@@ -90,6 +91,37 @@ public final class AnswerEngine {
         if (!error.isEmpty()) return fallback(evidence,error,draft,prompt,true,count,firstMs,start);
         return new Outcome(Kind.GENERATED,linked,draft,"Claim links and lexical support checked; factual entailment still requires source inspection. Sources may differ by conditions or date.",prompt,
             citations(linked),true,count,firstMs,(System.nanoTime()-start)/1e6);
+    }
+    /** Conservative surface-completeness screen, not a parser or entailment proof.
+     * Source-anchored final words catch cut stems without a domain dictionary.
+     * Legitimate paraphrases can be withheld; preserve the draft for inspection.
+     */
+    static String completeClaimFailure(String draft,ResearchEngine.Result evidence,int limit) {
+        String[] claims=draft.trim().split("\\n+");
+        if(claims.length>4)return "More than four claims; draft withheld.";
+        Set<String> dangling=new HashSet<>(Arrays.asList("a","an","the","of","in","to","by","at","and","or","but","while","whereas","because","if","when","which","that","with","without","from","for","as","than","until","before","after","its","their","our","your","this","these","those","is","are","was","were","be","being","been","can","could","may","might","should","must","will","would","not","only","such","same","other","more","most","least","minimum","maximum","each","every","between","within"));
+        for(String claim:claims) {
+            String prose=BRACKET.matcher(claim).replaceAll("").trim();
+            if(!prose.endsWith(".") || prose.matches(".*[,;:]\\s*\\.$"))return "Incomplete sentence ending; draft withheld.";
+            if(prose.matches("(?is).*https?://.*|.*www\\..*"))return "Use source labels instead of generated URLs; draft withheld.";
+            for(int cp:prose.codePoints().toArray())if(Character.isLetter(cp) && Character.UnicodeScript.of(cp)!=Character.UnicodeScript.LATIN)
+                return "Non-English-script claim; draft withheld.";
+            Matcher words=Pattern.compile("[A-Za-z]+(?:'[A-Za-z]+)?").matcher(prose);
+            List<String> tokens=new ArrayList<>();while(words.find())tokens.add(words.group().toLowerCase(Locale.ROOT));
+            if(tokens.size()<2)return "Empty or numbered claim; draft withheld.";
+            // A deliberately conservative predicate vocabulary; unknown constructions
+            // are withheld rather than treating a noun phrase as a complete clause.
+            if(!prose.toLowerCase(Locale.ROOT).matches("(?s).*\\b(is|are|was|were|has|have|had|can|could|may|might|must|will|would|should|does|do|did|contains?|contain|comprises?|includes?|requires?|provides?|protects?|helps?|keeps?|makes?|occurs?|causes?|releases?|released|moves?|rises?|falls?|travels?|flows?|forms?|results?|allows?|enables?|passes?|ensures?|sustains?|generates?|converts?|uses?|refers?|means?|consists?|depends?|varies|differ|differs|preserves?|prevents?|explains?|states?|gives?|leads?|becomes?|builds?|grows?|remains?|reflects?|holds?|happens?|supports?|evaporates?|condenses?|distributes?|retains?|represents?|brings?|bring|carry|pack|check|prepare|avoid|use|stay|remember|know)\\b.*"))
+                return "No complete clause predicate recognized; draft withheld.";
+            String last=tokens.get(tokens.size()-1);
+            if(dangling.contains(last))return "Dangling clause ending; draft withheld.";
+            StringBuilder source=new StringBuilder();
+            for(ResearchEngine.Hit hit:evidence.hits)if(citations(claim).contains(hit.passage.id))source.append(EvidencePrompt.excerpt(hit,limit)).append(' ');
+            Set<String> ending=supportTerms(Collections.singleton(last));
+            if(Collections.disjoint(ending,supportTerms(ResearchEngine.tokenize(source.toString()))))
+                return "Claim ending lacks a complete source-supported word; draft withheld.";
+        }
+        return "";
     }
     static String citationFailure(String draft, Set<String> allowed) {
         if (draft.trim().isEmpty()) return "The model returned an empty answer.";

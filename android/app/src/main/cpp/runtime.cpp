@@ -197,8 +197,10 @@ static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobje
         Sampler sampler(nullptr,llama_sampler_free);
         if(sources>0) {
             if(sources>4)throw std::runtime_error("Too many synthesis sources");
-            std::string grammar=combined ? "root ::= \"Insufficient evidence.\" | claim \"\\n\" claim\n" : "root ::= \"Insufficient evidence.\" | claim (\"\\n\" claim)?\n";
-            grammar+=R"(claim ::= references " " [^\n\r\[\].]{1,220} "."
+            // Total output tokens, not a character counter, bound claim length.
+            // A second claim is optional even for a comparison; never force filler.
+            std::string grammar="root ::= \"Insufficient evidence.\" | claim (\"\\n\" claim){0,3}\n";
+            grammar+=R"(claim ::= references " " [^\n\r\[\].]+ "."
 references ::= )";
             if(combined) {
                 grammar+="\"";for(int i=1;i<=sources;i++){if(i>1)grammar+=" ";grammar+="[S"+std::to_string(i)+"]";}grammar+="\"\n";
