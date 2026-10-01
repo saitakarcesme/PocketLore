@@ -1,0 +1,9 @@
+/home/isa/Projects/PocketLore/downloads/multi-pack-library/run-20261001T062421188288Z
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/verify_multi_pack_library.py", line 86, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/verify_multi_pack_library.py", line 57, in main
+    assert p.returncode==0 and r['status']=='PASS' and 'INSTRUMENTATION_CODE: -1' in (out/(mode+'-instrumentation.txt')).read_text(),str(out/(mode+'.json'))
+                               ~^^^^^^^^^^
+KeyError: 'status'

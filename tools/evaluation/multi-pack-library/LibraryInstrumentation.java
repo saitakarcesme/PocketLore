@@ -73,7 +73,7 @@ public final class LibraryInstrumentation extends Instrumentation {
         root=new File(getTargetContext().getFilesDir(),"multi-pack-tests");root.mkdirs();report.put("mode",mode).put("pid",android.os.Process.myPid());
         if(mode.equals("exercise"))assertions();
         getUiAutomation();
-        activity=(MainActivity)startActivitySync(new Intent(getTargetContext(),MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));ready();
+        activity=(MainActivity)startActivitySync(new Intent(getTargetContext(),MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK));ready();
         // Actual unload control keeps retrieval evaluation separate from generated-answer quality.
         runOnMainSync(()->((Button)field(field(activity,"nativePanel"),"unload")).performClick());ready();
         if(mode.equals("exercise")){

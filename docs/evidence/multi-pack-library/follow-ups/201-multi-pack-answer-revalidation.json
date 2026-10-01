@@ -1,0 +1,26 @@
+{
+  "id": "201-multi-pack-answer-revalidation",
+  "objective": "Revalidate the current pinned production model against the combined reference/science catalog: freeze discriminating cross-pack, disabled-collection, duplicate-edition and citation-link cases; run actual Android JNI with the production controller and exact active pack hashes. Inspect generated claims against their cited edition excerpts and distinguish withheld/fallback routes. Verify namespace-aware source dialogs and disabled-source exclusion, model load/cancel/reload, context budget and combined index/native memory. Preserve failures; do not infer quality from retrieval or rename an optional model as deployed. Implement the behavioral acceptance script.",
+  "scope": [
+    "android",
+    "tools/evaluation",
+    "docs",
+    "FINDINGS.md"
+  ],
+  "dependencies": [
+    "200-multi-pack-library"
+  ],
+  "acceptance_checks": [
+    [
+      "bash",
+      "tools/android-build.sh"
+    ],
+    [
+      "bash",
+      "tools/evaluation/check_multi_pack_answers.sh"
+    ]
+  ],
+  "artifacts": [
+    "docs/evidence/multi-pack-answer-revalidation.md"
+  ]
+}

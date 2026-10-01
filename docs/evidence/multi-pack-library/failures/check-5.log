@@ -1,0 +1,87 @@
+/home/isa/Projects/PocketLore/downloads/multi-pack-library/run-20261001T061527926621Z
+{
+  "status": "PASS",
+  "classification": "Actual x86_64 emulator catalog/retrieval/UI/trim behavior; not generated support, OS OOM or phone acceptance",
+  "artifacts": {
+    "app-debug.apk": {
+      "sha256": "2d1588d0f9ddc1227621ad28afe3fcb329f7619599368d9357ac6c10d145b26a",
+      "bytes": 11921193
+    },
+    "app-debug-androidTest.apk": {
+      "sha256": "911ea625ac6e36d6a925f0d5bd24800fd27f5ed9dce67003d22c06eacb851ee9",
+      "bytes": 245922
+    }
+  },
+  "fixtures": {
+    "reference.plpack": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+    "science.plpack": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274",
+    "duplicate.plpack": "9daa617d43017589d86ede4ee223c7875b6f55b8a8c4bffb76067f3b146c3feb",
+    "same-name.plpack": "47914aa8dd88602e7edf91ef81a3650d651d433ecd22bfd29a4c95a7dc8d0db7",
+    "conflicting-id.plpack": "6b7b589778325f44d2279cc055cbf7229238a2fa66e6af1a56371adf9252dbc9",
+    "corrupt.plpack": "eb670393cfc232bb65c1538be7c0d21d59e1606f56da297f8b09aa494123b78c",
+    "large-a.plpack": "ccb3ca26f2a212e58963e4ff282b718a4051d21c827d20b503793a4c9d1af1d6",
+    "large-b.plpack": "800974c5ba4649abdf6d5fb1afd19213949354aa02b61cffeb471e3a1e61f93f"
+  },
+  "protocol_sha256": "200515b6e0979e6d3d91e319cbd626253c12c4555b679e5e4c901393e5c6465b",
+  "source_sha256": {
+    "android/app/src/main/java/org/pocketlore/app/TravelCommands.java": "a5b5adb2e086465bfeba489b5bedd81ae22dce160990080af063033068d73ff1",
+    "android/app/src/main/java/org/pocketlore/app/TravelTools.java": "523a9dfbafdcd94f1ef897fd28792d9330fd43cb3190c0f03d3fae32e7e51a15",
+    "android/app/src/main/java/org/pocketlore/app/KnowledgePack.java": "b5d63c64775845e2de17b6a628f816cbc3b9806100eb88aecaf96584a1df5906",
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "26bb390467886f267c7164babc1d01665e3b4fa516550ab0830115ded292ec7b",
+    "android/app/src/main/java/org/pocketlore/app/ResourceStorage.java": "75d783b83c667b367b88bac634cf6a499e5d4a031d0c5eb9991164586a5ef265",
+    "android/app/src/main/java/org/pocketlore/app/DocumentInput.java": "b2f472f8bbba519ae5fdf9a631613bff7d3849a4dcb65c26ac90d39bd879f93f",
+    "android/app/src/main/java/org/pocketlore/app/ModelImport.java": "4d2e69782c0dc89839e53fad332f7258916f07cb1b61b309c26feea21bf183ad",
+    "android/app/src/main/java/org/pocketlore/app/NativePanel.java": "339c67dd88c6ea68e91cdadbcfeb593362b590627f4869b884993db696f29a3f",
+    "android/app/src/main/java/org/pocketlore/app/NativeRuntime.java": "ec6f59d59b07ef7f5016657e0fcba0203232ecc7359f56a9ad6c205215fb2085",
+    "android/app/src/main/java/org/pocketlore/app/MainActivity.java": "bb67bc6b6187afa2d37bfa3ce87a407bd8733d43f8513cacd8a87e2e424937bd",
+    "android/app/src/main/java/org/pocketlore/app/TravelActivity.java": "cc4eb6cc61704b12dc58f58c6c18ee0d7dc28fa09abd52030f8ade5be69f3d2f",
+    "android/app/src/main/java/org/pocketlore/app/TravelCatalog.java": "e7eabf25f753f0371a45c6a76149624729c8911be42d242c0643db0416c49b2e",
+    "android/app/src/main/java/org/pocketlore/app/AnswerEngine.java": "8609b96313f79cc35f68e12e969912e271c97b22011454673bf8cf5824e7118f",
+    "android/app/src/main/java/org/pocketlore/app/EvidencePrompt.java": "8535c3440651dc1a26ed459ab5d78e81c47ab77d13ce7f0c4f48a9e5616d8e35",
+    "android/app/src/main/java/org/pocketlore/app/PackLibrary.java": "16bb1979836f8085ad643d6d3611beef9c720bd6fec8b3dbc0ceb9c11c68fb29"
+  },
+  "records": {
+    "boot.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "fingerprint.txt": "e07fd7d414c3b262449a1a48ec96db76edc31b2273ac896fc04f4f44870e7426",
+    "saved-before.txt": "3b7a4c9699e2e46686145e3d6503d9071c41d4ee6eb9386b338a9b46717edcc8",
+    "build.log": "bde53b638f2e3d35ecab30b0306a883d8a60d8e22400c4d4988080b4067867a7",
+    "install-app-debug.apk.txt": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+    "install-app-debug-androidTest.apk.txt": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+    "stop-before.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mkdir.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "files-before.txt": "b45e7b6aaec0ccbe41adc106bb40800af6daf335ffd272dfda72079a79258009",
+    "prior-library-files.txt": "851351cb17afa536f32964124a608683ffc27fd0032ea3988d73a2fe657c2ce8",
+    "prior-catalog.json": "af8b4e47b29a230b4136b7a170ccb5c998ff23495f294898f976f7c2750e17bd",
+    "prior-567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea.plpack": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+    "prior-c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274.plpack": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274",
+    "archive-catalog.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-reference.plpack.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-science.plpack.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-duplicate.plpack.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-same-name.plpack.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-conflicting-id.plpack.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-corrupt.plpack.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-large-a.plpack.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-large-b.plpack.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "airplane-set.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wifi-disable.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data-disable.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "airplane.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "stop-exercise.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exercise-instrumentation.txt": "8ff85831cc40d638c460e5e80c434f888aed18e3d5a91ee85d131133b9a5e726",
+    "exercise.json": "bfc149597f991e5a60cf63d43c507f432c6661b7789612e058ea4d04b0a1468c",
+    "stop-restart.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "clear-owned-marker.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "restart-instrumentation.txt": "8ff85831cc40d638c460e5e80c434f888aed18e3d5a91ee85d131133b9a5e726",
+    "platform-trim.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "restart.json": "597975ecfbd6f9850c527bb1de622d54abe2a5ec7aab3ff8e5e0ac5deca7da5d",
+    "science-dialog.png": "3fc5c270b59a30ce82ad67fc2db312121de9c93bd0f4da625a1fa84709fd5273",
+    "reference-dialog.png": "1d1e6d982ef6c9832f14c47e30f46c348f89f508987f22ffb4041ca433b1ab11",
+    "reload-dialog.png": "3fc5c270b59a30ce82ad67fc2db312121de9c93bd0f4da625a1fa84709fd5273",
+    "saved-after.txt": "3b7a4c9699e2e46686145e3d6503d9071c41d4ee6eb9386b338a9b46717edcc8",
+    "final-catalog.json": "af8b4e47b29a230b4136b7a170ccb5c998ff23495f294898f976f7c2750e17bd"
+  },
+  "collections": 2,
+  "distinct_active_documents": 18,
+  "active_passages": 210
+}

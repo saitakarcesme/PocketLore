@@ -1,0 +1,16 @@
+{
+  "mode": "restart",
+  "pid": 8940,
+  "restart_status": "1 of 2 collections active · 10 distinct source documents · 186 searchable passages",
+  "collection_controls": "",
+  "status": "FAIL",
+  "failure": "java.lang.AssertionError: Missing dialog control: science supplement 2026 10 01 v1 · edition c69f3129",
+  "failure_memory": {
+    "phase": "failure",
+    "pss_kib": 89772,
+    "java_used_bytes": 23853216,
+    "java_max_bytes": 201326592,
+    "VmRSS": 175728,
+    "VmSwap": 22752
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "202-multi-pack-release-revalidation",
+  "objective": "Freeze and revalidate the candidate after multi-pack catalog and dependent model integration work. Update exact APK/DEX/native/dependency/asset identities, reproducible install/demo instructions and distribution inventory as needed; demonstrate fresh offline installation, both pinned editions, active selection persistence, source inspection and intact saved model. Run existing release checks against the actual new candidate and preserve failed historical identities. Keep clean-machine reproduction, production signing ownership, physical Android/GrapheneOS and human acceptance open. Do not publish or advance main.",
+  "scope": [
+    "docs",
+    "tools",
+    "THIRD_PARTY_NOTICES",
+    "README.md",
+    "FINDINGS.md"
+  ],
+  "dependencies": [
+    "200-multi-pack-library",
+    "201-multi-pack-answer-revalidation"
+  ],
+  "acceptance_checks": [
+    [
+      "bash",
+      "tools/android-build.sh"
+    ],
+    [
+      "bash",
+      "tools/verify-release.sh"
+    ]
+  ],
+  "artifacts": [
+    "docs/evidence/multi-pack-release-revalidation.md"
+  ]
+}

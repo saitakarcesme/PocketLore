@@ -1,0 +1,138 @@
+{
+  "mode": "exercise",
+  "pid": 8358,
+  "tests": [
+    "two-real-editions",
+    "idempotent-import",
+    "duplicate-document-provenance",
+    "same-name-distinct-edition",
+    "disabled-pack",
+    "all-disabled",
+    "eight-admission-boundaries",
+    "heap-reserve-boundary",
+    "staging-cleanup"
+  ],
+  "rejections": [
+    {
+      "case": "conflicting-id",
+      "failure": "java.io.IOException: Passage payload hash mismatch"
+    },
+    {
+      "case": "corrupt",
+      "failure": "java.io.IOException: Missing pack entries"
+    },
+    {
+      "case": "cancel-before",
+      "failure": "java.io.InterruptedIOException: Import cancelled",
+      "latency_ms": 0.437327
+    },
+    {
+      "case": "cancel-during",
+      "failure": "java.io.InterruptedIOException: Import cancelled",
+      "latency_ms": 0.594311
+    },
+    {
+      "case": "combined-admission",
+      "failure": "java.io.IOException: Combined collection storage limit exceeded"
+    }
+  ],
+  "combined": "2 of 2 collections active · 18 distinct source documents · 210 searchable passages",
+  "archive_bytes": 190510,
+  "index_counts": [
+    210,
+    2052,
+    6922,
+    69818
+  ],
+  "memory_combined": {
+    "phase": "combined",
+    "pss_kib": 83921,
+    "java_used_bytes": 5899904,
+    "java_max_bytes": 201326592,
+    "VmRSS": 168968,
+    "VmSwap": 22344
+  },
+  "cross_pack": [
+    {
+      "id": "p567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea_essentials-e772a5a729be28b9",
+      "text": "ILLUMINATION – Flashlight and headlamp Lighting is important in the outdoors at night, and can help you find your way out or signal for help. Items include flashlights, and headlamps. Headlamps are the recommended light source because they are hands-free. Be sure to pack extra batteries.",
+      "provenance": "Collection: english-reference-2026-10-01\nEdition SHA-256: 567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea\nOriginal citation: essentials-e772a5a729be28b9\nSource document ID: essentials\nSource SHA-256: 74b32dc8c78552ccbd2603fd548ed6490d967f568cae8cc4403b17085e313073\nPassage SHA-256: e772a5a729be28b9e8df7b2d0c57eab04d2140e467b08db4caa3ad59d972379f\nDated reference excerpts, not current conditions or complete safety guidance. Verify travel conditions before departure.",
+      "url": "https:\/\/www.nps.gov\/articles\/10essentials.htm",
+      "date": "2026-05-28 page updated; retrieved 2026-09-30",
+      "rights": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https:\/\/www.nps.gov\/aboutus\/disclaimer.htm"
+    },
+    {
+      "id": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-magma-b214c1cb4647b3fc",
+      "text": "Scientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface.",
+      "provenance": "Collection: science-supplement-2026-10-01-v1\nEdition SHA-256: c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274\nOriginal citation: science-magma-b214c1cb4647b3fc\nSource document ID: science-magma\nSource SHA-256: 5c292ab4a524ed1b37e978cfa3f77d047b3e0ea9b4f89e05b2a45b17db19eba3\nPassage SHA-256: b214c1cb4647b3fc44c29dbccb9c86a3de82ac1f5d0fee16c31b23f9f8732831\nDated introductory science excerpts, not current forecasts or medical advice. This separate edition replaces the active pack; it does not merge libraries.",
+      "url": "https:\/\/www.usgs.gov\/faqs\/what-difference-between-magma-and-lava",
+      "date": "Publication\/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+      "rights": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https:\/\/www.usgs.gov\/information-policies-and-instructions\/copyrights-and-credits"
+    },
+    {
+      "id": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-volcanoes-32d96fe23eb26081",
+      "text": "Molten rock below the surface of the Earth that rises in volcanic vents is known as magma, but after it erupts from a volcano it is called lava. Magma is made of molten rock, crystals, and dissolved gas—imagine an unopened bottle of soda with grains of sand inside. The molten rock is made of the chemicals oxygen, silicon, aluminum, iron, magnesium, calcium, sodium, potassium, titanium, and manganese. After cooling, liquid magma may form crystals of various minerals until it becomes completely solid and forms an igneous or magmatic rock.",
+      "provenance": "Collection: science-supplement-2026-10-01-v1\nEdition SHA-256: c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274\nOriginal citation: science-volcanoes-32d96fe23eb26081\nSource document ID: science-volcanoes\nSource SHA-256: 8ee456020cc13ef8386d389f4c0458acb45c84a123958273a30f044d3bbf760c\nPassage SHA-256: 32d96fe23eb26081caf3ddae8883a39725928868b71710aa68241c00f7c2ef79\nDated introductory science excerpts, not current forecasts or medical advice. This separate edition replaces the active pack; it does not merge libraries.",
+      "url": "https:\/\/www.usgs.gov\/programs\/VHP\/about-volcanoes",
+      "date": "Publication\/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+      "rights": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https:\/\/www.usgs.gov\/information-policies-and-instructions\/copyrights-and-credits"
+    },
+    {
+      "id": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-volcanoes-ac98f2017c5f7717",
+      "text": "Originating many tens of miles beneath the ground, magma is lighter than surrounding solid rock. It is driven towards Earth's surface by buoyancy, it is lighter than the surrounding rock, and by pressure from gas within it. Magma forces its way upward and may ultimately break though weak areas in the Earth's crust. If so, an eruption begins.",
+      "provenance": "Collection: science-supplement-2026-10-01-v1\nEdition SHA-256: c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274\nOriginal citation: science-volcanoes-ac98f2017c5f7717\nSource document ID: science-volcanoes\nSource SHA-256: 8ee456020cc13ef8386d389f4c0458acb45c84a123958273a30f044d3bbf760c\nPassage SHA-256: ac98f2017c5f7717bb261b6245103f0d1bb226ab30dfc71dd54d17e7bf0c6c7e\nDated introductory science excerpts, not current forecasts or medical advice. This separate edition replaces the active pack; it does not merge libraries.",
+      "url": "https:\/\/www.usgs.gov\/programs\/VHP\/about-volcanoes",
+      "date": "Publication\/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+      "rights": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https:\/\/www.usgs.gov\/information-policies-and-instructions\/copyrights-and-credits"
+    }
+  ],
+  "science-dialog": {
+    "hits": [
+      {
+        "id": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-magma-b214c1cb4647b3fc",
+        "text": "Scientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface.",
+        "provenance": "Collection: science-supplement-2026-10-01-v1\nEdition SHA-256: c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274\nOriginal citation: science-magma-b214c1cb4647b3fc\nSource document ID: science-magma\nSource SHA-256: 5c292ab4a524ed1b37e978cfa3f77d047b3e0ea9b4f89e05b2a45b17db19eba3\nPassage SHA-256: b214c1cb4647b3fc44c29dbccb9c86a3de82ac1f5d0fee16c31b23f9f8732831\nDated introductory science excerpts, not current forecasts or medical advice. This separate edition replaces the active pack; it does not merge libraries.",
+        "url": "https:\/\/www.usgs.gov\/faqs\/what-difference-between-magma-and-lava",
+        "date": "Publication\/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+        "rights": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https:\/\/www.usgs.gov\/information-policies-and-instructions\/copyrights-and-credits"
+      },
+      {
+        "id": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-volcanoes-32d96fe23eb26081",
+        "text": "Molten rock below the surface of the Earth that rises in volcanic vents is known as magma, but after it erupts from a volcano it is called lava. Magma is made of molten rock, crystals, and dissolved gas—imagine an unopened bottle of soda with grains of sand inside. The molten rock is made of the chemicals oxygen, silicon, aluminum, iron, magnesium, calcium, sodium, potassium, titanium, and manganese. After cooling, liquid magma may form crystals of various minerals until it becomes completely solid and forms an igneous or magmatic rock.",
+        "provenance": "Collection: science-supplement-2026-10-01-v1\nEdition SHA-256: c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274\nOriginal citation: science-volcanoes-32d96fe23eb26081\nSource document ID: science-volcanoes\nSource SHA-256: 8ee456020cc13ef8386d389f4c0458acb45c84a123958273a30f044d3bbf760c\nPassage SHA-256: 32d96fe23eb26081caf3ddae8883a39725928868b71710aa68241c00f7c2ef79\nDated introductory science excerpts, not current forecasts or medical advice. This separate edition replaces the active pack; it does not merge libraries.",
+        "url": "https:\/\/www.usgs.gov\/programs\/VHP\/about-volcanoes",
+        "date": "Publication\/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+        "rights": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https:\/\/www.usgs.gov\/information-policies-and-instructions\/copyrights-and-credits"
+      },
+      {
+        "id": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-volcanoes-fdd579e7694cec41",
+        "text": "Many mountains form by folding, faulting, uplift, and erosion of the Earth's crust. Volcanic terrain, however, is built by the slow accumulation of erupted lava. The vent may be visible as a small bowl shaped depression at the summit of a cone or shield-shaped mountain. Through a series of cracks within and beneath the volcano, the vent connects to one or more linked storage areas of molten or partially molten rock (magma). This connection to fresh magma allows the volcano to erupt over and over again in the same location. In this way, the volcano grows ever larger, until it is no longer stable. Pieces of the volcano collapse as rock falls or as landslides.",
+        "provenance": "Collection: science-supplement-2026-10-01-v1\nEdition SHA-256: c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274\nOriginal citation: science-volcanoes-fdd579e7694cec41\nSource document ID: science-volcanoes\nSource SHA-256: 8ee456020cc13ef8386d389f4c0458acb45c84a123958273a30f044d3bbf760c\nPassage SHA-256: fdd579e7694cec4107e243a214a882feef2371492ecf9347388885531a73c401\nDated introductory science excerpts, not current forecasts or medical advice. This separate edition replaces the active pack; it does not merge libraries.",
+        "url": "https:\/\/www.usgs.gov\/programs\/VHP\/about-volcanoes",
+        "date": "Publication\/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+        "rights": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https:\/\/www.usgs.gov\/information-policies-and-instructions\/copyrights-and-credits"
+      },
+      {
+        "id": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-volcanoes-bc12a568b075b592",
+        "text": "Magma can be erupted in a variety of ways. Sometimes molten rock simply pours from the vent as fluid lava flows. It can also shoot violently into the air as dense clouds of rock shards (tephra) and gas. Larger fragments fall back around the vent, and clouds of tephra may move down the slope of the volcano under the force of gravity. Ash, tiny pieces of tephra the thickness of a strand of hair, may be carried by the wind only to fall to the ground many miles away. The smallest ash particles may be erupted miles into the sky and carried many times around the world by winds high in the atmosphere before they fall to the ground.",
+        "provenance": "Collection: science-supplement-2026-10-01-v1\nEdition SHA-256: c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274\nOriginal citation: science-volcanoes-bc12a568b075b592\nSource document ID: science-volcanoes\nSource SHA-256: 8ee456020cc13ef8386d389f4c0458acb45c84a123958273a30f044d3bbf760c\nPassage SHA-256: bc12a568b075b592751f8bd803ce8b7b141c3e475e0b67747e7870b173462114\nDated introductory science excerpts, not current forecasts or medical advice. This separate edition replaces the active pack; it does not merge libraries.",
+        "url": "https:\/\/www.usgs.gov\/programs\/VHP\/about-volcanoes",
+        "date": "Publication\/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+        "rights": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https:\/\/www.usgs.gov\/information-policies-and-instructions\/copyrights-and-credits"
+      }
+    ],
+    "visible_dialog": "[pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-magma-b214c1cb4647b3fc] What is the difference between magma and lava?\nScientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface.\n\nSource document: What is the difference between magma and lava?\nhttps:\/\/www.usgs.gov\/faqs\/what-difference-between-magma-and-lava\n\nSource date \/ retrieval: Publication\/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nRights: U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https:\/\/www.usgs.gov\/information-policies-and-instructions\/copyrights-and-credits\n\nCollection: science-supplement-2026-10-01-v1\nEdition SHA-256: c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274\nOriginal citation: science-magma-b214c1cb4647b3fc\nSource document ID: science-magma\nSource SHA-256: 5c292ab4a524ed1b37e978cfa3f77d047b3e0ea9b4f89e05b2a45b17db19eba3\nPassage SHA-256: b214c1cb4647b3fc44c29dbccb9c86a3de82ac1f5d0fee16c31b23f9f8732831\nDated introductory science excerpts, not current forecasts or medical advice. This separate edition replaces the active pack; it does not merge libraries.\n\nPack text is selected source text with whitespace normalized. Source URLs are provenance labels; the app does not open them.\n\nBM25 rank score: 13.034 (not confidence)\nCLOSE\n",
+    "answer": "Insufficient evidence in the selected excerpts for: difference. Inspect the full passages.",
+    "route": "ABSTAINED"
+  },
+  "status": "FAIL",
+  "failure": "java.lang.AssertionError: Missing dialog control: Close",
+  "failure_memory": {
+    "phase": "failure",
+    "pss_kib": 67996,
+    "java_used_bytes": 3786192,
+    "java_max_bytes": 201326592,
+    "VmRSS": 154712,
+    "VmSwap": 22216
+  }
+}

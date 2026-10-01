@@ -13,7 +13,7 @@ The original Constitution includes superseded provisions and historical slavery
 language. Its title and original date distinguish it from current law. Travel
 pages are dated snapshots: conditions, regulations and closures can change.
 Source inspection displays the document title, URL, date status, retrieval date,
-attribution and rights. The pack warning appears above the question field.
+attribution and rights. Edition warnings and exact source/pack hashes appear in the source dialog; notices from older app versions are labeled.
 
 ## Reproduce on LLMRig
 
@@ -67,23 +67,49 @@ and text. The importer requires row metadata to match its document manifest.
 manifest bound (2 MiB), supported schema/language, UTF-8, entry names, duplicate
 entries/documents/citations, ZIP directory and CRC consistency, metadata,
 payload and passage hashes, citation derivation and row counts. It never extracts
-ZIP paths. Index creation succeeds before a synced staging file is atomically
-renamed over `files/knowledge.plpack`. Any rejected import leaves the previous
-pack intact and removes staging files. The saved archive is revalidated on each
-activity startup. Interrupted copies are rejected; the OS process dying at the
-atomic rename boundary retains either complete archive, although orphan staging
-cleanup after process death is not yet implemented. A corrupt saved archive
-fails closed and can be replaced through Import knowledge pack.
+ZIP paths. The Activity now uses `PackLibrary`: verified archives are retained by full
+SHA-256 in `files/pack-library`, while an atomically committed catalog records active
+collections. One combined index is constructed after aggregate admission. The old
+`knowledge.plpack` is migrated once and retained unchanged; the legacy installer API
+remains for isolated historical checks. Every catalog load revalidates its archives.
+Failed/cancelled imports preserve the committed catalog and remove their stages;
+crash-orphan cleanup is restricted to this library's owned directory.
+
+Import both the reference and science editions, then tap **Choose collections** and
+**Apply** to select what is searched. Both remain installed across restart. Selecting
+none leaves search explicitly empty. **Reload library** restores the active index
+after an Android memory-trim callback. Search results expose **Inspect source** buttons
+with edition, original citation, full source/text hashes, dates and rights. Citation
+IDs are namespaced by full archive hash; exact duplicate source snapshots/text/rights
+are indexed once with all active edition provenance retained. Original pack bytes and
+licenses are unchanged. See [multi-pack measurements](evidence/multi-pack-library.md).
 
 Hashes are corruption checks, not a publisher signature. A malicious publisher
 can construct an internally consistent false pack; users must obtain packs from
 trusted sources and compare the displayed archive SHA-256 with a trusted release.
 The importer does not fact-check text or independently recognize its language.
-It retains one active imported pack; merging, pack browsing, removal UI and
-background resumable installation remain future work. Memory is bounded by the
-archive limits but peak import/index RAM has not been profiled on a phone.
+The catalog admits at most eight retained collections and applies aggregate archive,
+expanded-data, manifest, document and active index budgets. Inactive collections still
+consume storage. Removal UI and background resumable installation remain future work.
+The index/heap admission policy is deliberately below task-170's largest measured
+repetition-only workload; diverse-corpus and physical-device behavior remain open.
 
-## Behavioral verification
+## Current multi-pack verification
+
+Run `python3 tools/evaluation/verify_multi_pack_library.py` with the pinned public
+artifacts and existing emulator-5560. It archives only recognized project fixture
+catalogs before testing; unrelated user collections cause a refusal. It exercises
+combined/disabled retrieval, actual controls and dialogs, duplicates, integrity and
+cancellation rollback, combined admission, cold restart and platform-trim reload.
+It keeps the saved model unchanged and deliberately unloads it during retrieval
+measurements. These are not generated-answer quality results. Tasks 201 and 202
+revalidate JNI integration and the changed release candidate separately.
+
+## Historical single-pack behavioral verification
+
+The following describes the preserved task-030 run, not the current Activity catalog
+contract; its legacy saved-file/UI assumptions require release revalidation.
+
 
 The verifier rebuilds twice and compares bytes, constructs corrupt archives,
 builds and installs the APK plus `PackSmokeInstrumentation`, and runs the actual

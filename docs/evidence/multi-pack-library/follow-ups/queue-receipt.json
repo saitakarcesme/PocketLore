@@ -1,0 +1,20 @@
+{
+  "action": "Task specifications only, explicitly requested revalidation; no dispatch, runner state or service changes",
+  "tasks": [
+    {
+      "path": "/home/isa/PocketLore-control/tasks/201-multi-pack-answer-revalidation.json",
+      "sha256": "27b391ceee00c308055677bd6e98fab0624b205c8c9503dbfe9aa19585c5e969",
+      "dependencies": [
+        "200-multi-pack-library"
+      ]
+    },
+    {
+      "path": "/home/isa/PocketLore-control/tasks/202-multi-pack-release-revalidation.json",
+      "sha256": "dc692e77fc6ca01b4e20a51ad76a5a3b98e2025b6dc768df85855db375527945",
+      "dependencies": [
+        "200-multi-pack-library",
+        "201-multi-pack-answer-revalidation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "mode": "exercise",
+  "pid": 9690,
+  "tests": [
+    "two-real-editions",
+    "idempotent-import",
+    "duplicate-document-provenance",
+    "same-name-distinct-edition",
+    "disabled-pack",
+    "all-disabled",
+    "eight-admission-boundaries",
+    "heap-reserve-boundary",
+    "staging-cleanup"
+  ],
+  "rejections": [
+    {
+      "case": "conflicting-id",
+      "failure": "java.io.IOException: Passage payload hash mismatch"
+    },
+    {
+      "case": "corrupt",
+      "failure": "java.io.IOException: Missing pack entries"
+    },
+    {
+      "case": "cancel-before",
+      "failure": "java.io.InterruptedIOException: Import cancelled",
+      "latency_ms": 0.561775
+    },
+    {
+      "case": "cancel-during",
+      "failure": "java.io.InterruptedIOException: Import cancelled",
+      "latency_ms": 0.915248
+    },
+    {
+      "case": "combined-admission",
+      "failure": "java.io.IOException: Combined collection storage limit exceeded"
+    }
+  ]
+}
