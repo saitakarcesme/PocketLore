@@ -1,0 +1,97 @@
+{
+  "status": "development host and Android subset; full installation blocked",
+  "artifacts": {
+    "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": {
+      "bytes": 289962,
+      "sha256": "6a8be00c7740096f29c66b4c93a15d482d3f48c4e77c4666edb213dac5155ba5"
+    },
+    "android/app/build/outputs/apk/debug/app-debug.apk": {
+      "bytes": 15685650,
+      "sha256": "b5e0afdbcf6ee92e5022eb7ecca6276c5709274276cd48698148b09ec71e1362"
+    },
+    "android/app/src/androidTest/java/org/pocketlore/app/ShardUpdateInstrumentation.java": {
+      "bytes": 7246,
+      "sha256": "64c1d3ebfb2b4f84c0655aa5e310a9c13ba8f844e29d3ec37591cb687592fd41"
+    },
+    "android/app/src/main/java/org/pocketlore/app/ScaleActivity.java": {
+      "bytes": 7275,
+      "sha256": "daf84be1a4258459dac06dc35c75596fe0b78d4e92240835deff1ead90ead44f"
+    },
+    "android/app/src/main/java/org/pocketlore/app/ScaleLibrary.java": {
+      "bytes": 11292,
+      "sha256": "383e2bf3d075d565911f5bae2c2381663bc5ee5af5b67ecb11522ea6f8876e4d"
+    },
+    "android/app/src/main/java/org/pocketlore/app/ScalePlaces.java": {
+      "bytes": 3061,
+      "sha256": "d7e72cbfe93f86f404cb73796e5c955cd92c4b361320b5ae42fabb32c015883e"
+    },
+    "android/app/src/main/java/org/pocketlore/app/ScaleWiki.java": {
+      "bytes": 8470,
+      "sha256": "018631a3c9931b11fb411a8e9dd3fce5fe67e57f1d18cc780c8da2920ef9f8b8"
+    },
+    "android/app/src/main/java/org/pocketlore/app/SharedShardUpdate.java": {
+      "bytes": 8461,
+      "sha256": "9f1b5bd9eaed6c60d01917a7325ec6cf486e06c9425e4a914656aac680da2191"
+    },
+    "docs/evidence/full-scale/host/cities.json": {
+      "bytes": 548292,
+      "sha256": "eb3cfd249fea52a5c494af072674c8581000c842690c9063b1a8310cda1e926e"
+    },
+    "docs/evidence/full-scale/host/counts.json": {
+      "bytes": 2983,
+      "sha256": "f01a1348f34e0dad33be5085cf32d42d438aa6c30b412237c0344d797affb656"
+    },
+    "docs/evidence/full-scale/host/files.json": {
+      "bytes": 15010,
+      "sha256": "0081dfca5fa040a1c695d0431e0ef310dcee759602c564b5caeea83cb9811ac4"
+    },
+    "docs/evidence/full-scale/host/summary.json": {
+      "bytes": 256,
+      "sha256": "8fddba7573707593b4cbb99e5527a9c2629d5b6e73c966799773b378a736bd76"
+    },
+    "docs/evidence/full-scale/host/wiki-queries.json": {
+      "bytes": 19188,
+      "sha256": "fa1be3622cc97d1f920811db3209a9deee64a67b788bdc6d361195199b6c9d32"
+    },
+    "downloads/full-scale/fixtures/base.plscale": {
+      "bytes": 75083,
+      "sha256": "d331be2cf5665aef169a1d6ab25b73962006501fd81ed664678e88e67404ebca"
+    },
+    "downloads/full-scale/fixtures/corrupt.plscale": {
+      "bytes": 65130,
+      "sha256": "0e3b5b97a5c71f570e9bc073bd25c77ec6b57c1c3930fad9f8925ec1d7646f7c"
+    },
+    "downloads/full-scale/fixtures/update.plscale": {
+      "bytes": 65130,
+      "sha256": "f1819da1df86275a1e815b6815a7fd9f99c37154e4f195a59f600028dff1a342"
+    },
+    "downloads/full-scale/places-fixture/places.plscale": {
+      "bytes": 70145358,
+      "sha256": "409b530911251ecb120bd378f541cd49eacf6a2ad4c8ed6ce867e7b0a1588c8d"
+    },
+    "tools/evaluation/full-scale/audit.py": {
+      "bytes": 4830,
+      "sha256": "0950241eb55b6857b7274b053efa83002c633361b38ba25ee1847da8f0043e18"
+    },
+    "tools/evaluation/full-scale/fixtures.py": {
+      "bytes": 3752,
+      "sha256": "a0b1cba00dbf50e06d299f2de781894ea519368a22371b0e169b8f59bbd7c506"
+    },
+    "tools/evaluation/full-scale/places_fixture.py": {
+      "bytes": 3216,
+      "sha256": "b3a4f8afa86bede987172065ec871ccb32357b1974f21e32de5faf36ad7c0d1e"
+    },
+    "tools/evaluation/full-scale/protocol.json": {
+      "bytes": 1665,
+      "sha256": "2591db4b6b28fb2d3b6c240cc2a8cd3701adabbcfa2d1b94f8d339d6a74e174c"
+    },
+    "tools/evaluation/verify_full_scale_inventory.py": {
+      "bytes": 5083,
+      "sha256": "18620f9379dadd0010a487dc29a9c89787de0087698059a596dcf6d5b1da8b15"
+    },
+    "tools/packs/build_shared_scale.py": {
+      "bytes": 5040,
+      "sha256": "eede0f3bd19567fb73710161465547bb997ca7165c3cf04d2ee2c008c874b118"
+    }
+  }
+}

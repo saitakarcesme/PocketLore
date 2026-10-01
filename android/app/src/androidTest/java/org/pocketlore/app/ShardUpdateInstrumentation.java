@@ -22,6 +22,12 @@ public final class ShardUpdateInstrumentation extends Instrumentation {
   check(ScaleLibrary.hash(new File(lib.root,"catalog.json"),()->false).equals(catalog),"Cancel changed catalog");
   check(SharedShardUpdate.uniqueBytes(scope)==before,"Failed update leaked files");
   File retained=ScaleLibrary.resolve(base.directory,"NOTICE.txt");
+  File object=ScaleLibrary.resolve(base.directory,"NOTICE.txt");byte[] original=Files.readAllBytes(object.toPath());byte[] changed=original.clone();changed[0]^=1;Files.write(object.toPath(),changed);
+  reject(()->{try(InputStream in=new FileInputStream(new File(input,"update.plscale"))){lib.install(in,()->false);}});Files.write(object.toPath(),original);
+  File hidden=new File(scope,"hidden-object");Files.move(object.toPath(),hidden.toPath());
+  reject(()->{try(InputStream in=new FileInputStream(new File(input,"update.plscale"))){lib.install(in,()->false);}});Files.move(hidden.toPath(),object.toPath());
+  File interrupted=new File(lib.root,"pending-simulated-crash");check(interrupted.mkdir(),"Create interrupted stage");Files.write(new File(interrupted,"partial").toPath(),new byte[1024]);
+  check(new ScaleLibrary(scope).entries().size()==1&&!interrupted.exists(),"Interrupted stage recovery");
   lib.select(Collections.emptySet());ScaleLibrary.Entry updated;
   long start=System.nanoTime();try(InputStream in=new FileInputStream(new File(input,"update.plscale"))){updated=lib.install(in,()->false);}
   long elapsed=System.nanoTime()-start;
@@ -34,8 +40,13 @@ public final class ShardUpdateInstrumentation extends Instrumentation {
   reject(()->SharedShardUpdate.admit(ScaleLibrary.HARD-1,1,1,Long.MAX_VALUE));
   reject(()->SharedShardUpdate.admit(1,1,1,1));
   reject(()->{try(InputStream in=new FileInputStream(new File(input,"update.plscale"))){new ScaleLibrary(Files.createTempDirectory(getTargetContext().getCacheDir().toPath(),"missing-base-").toFile()).install(in,()->false);}});
+  long wikiPeak=lib.lastTemporaryPeak,wikiAdmission=lib.lastAdmissionPeak,wikiPhysicalPeak=lib.lastPhysicalPeak,wikiAfter=SharedShardUpdate.uniqueBytes(scope);
+  ScaleLibrary.Entry places;try(InputStream in=new FileInputStream(new File(input,"places.plscale"))){places=lib.install(in,()->false);}
+  JSONArray cityResults=new JSONArray();
+  for(String name:new String[]{"London","Mexico City"}){long t=System.nanoTime();List<ScalePlaces.City> cs=ScalePlaces.cities(places,name,()->false);check(!cs.isEmpty(),"City alias missing");ScalePlaces.City city=cs.get(0);List<ScalePlaces.Hit> ps=ScalePlaces.nearby(places,city.lat,city.lon,1,null,()->false);check(!ps.isEmpty(),"Positive place coverage missing");String detail=ScalePlaces.detail(ps.get(0),()->false);check(detail.contains("unknown")&&detail.contains("Routing unavailable"),"Live disclosure lost");List<ScalePlaces.Hit> cats=ScalePlaces.nearby(places,city.lat,city.lon,1,"restaurant",()->false);cityResults.put(new JSONObject().put("city",name).put("count",ps.size()).put("restaurant_count",cats.size()).put("ms",(System.nanoTime()-t)/1e6).put("source",detail));}
+  check(ScalePlaces.nearby(places,19.4326,-99.1332,1,"pocketlore nonexistent category 300",()->false).isEmpty(),"Absent category leak");
   check(ScaleLibrary.hash(new File(files,"model.gguf"),()->false).equals(modelBefore),"Model changed");
-  JSONObject result=new JSONObject().put("status","PASS").put("platform","emulator-5560 x86_64, real source subset only").put("before_bytes",before).put("after_bytes",SharedShardUpdate.uniqueBytes(scope)).put("new_temporary_peak",lib.lastTemporaryPeak).put("admission_peak_with_reserve",lib.lastAdmissionPeak).put("update_ms",elapsed/1e6).put("cancel_ms",cancelNs/1e6).put("shared_object",true).put("corrupt_cancel_rollback",true).put("restart_selection",true).put("model_sha256",modelBefore).put("hits",hits).put("pss_kib",android.os.Debug.getPss());
+  JSONObject result=new JSONObject().put("status","PASS").put("platform","emulator-5560 x86_64, real source subset only").put("before_bytes",before).put("after_bytes",SharedShardUpdate.uniqueBytes(scope)).put("wiki_after_bytes",wikiAfter).put("wiki_observed_precommit_bytes",wikiPhysicalPeak).put("new_temporary_peak",wikiPeak).put("admission_peak_with_reserve",wikiAdmission).put("update_ms",elapsed/1e6).put("cancel_ms",cancelNs/1e6).put("shared_object",true).put("changed_missing_shared_object_rejected",true).put("interrupted_stage_recovery",true).put("corrupt_cancel_rollback",true).put("restart_selection",true).put("model_sha256",modelBefore).put("cities",cityResults).put("hits",hits).put("pss_kib",android.os.Debug.getPss());
   ScaleLibrary.write(new File(files,"shard-update-result.json"),result.toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));report.putString("result",result.toString());finish(-1,report);
  }catch(Throwable e){report.putString("failure",android.util.Log.getStackTraceString(e));finish(1,report);}finally{if(scope!=null)try{ScaleLibrary.removeTree(scope);}catch(Exception ignored){}}
  }
