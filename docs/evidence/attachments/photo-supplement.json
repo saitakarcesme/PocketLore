@@ -1,0 +1,19 @@
+{
+  "source": "https://commons.wikimedia.org/w/index.php?title=File:Red_octagonal_stop_sign.jpg&oldid=1215001130",
+  "original_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Red_octagonal_stop_sign.jpg",
+  "author": "Dmitry Novoklimov (Novoklimov)",
+  "date": "2008-11-08",
+  "license": "CC0-1.0",
+  "transform": "Whole frame resized to 1600x1200 LANCZOS, JPEG quality90; no crop or recognition tuning",
+  "expectation": "Record real photo OCR accuracy for visible STOP; supplemental development observation, not physical camera capture or image reasoning",
+  "files": {
+    "stop-original.jpg": {
+      "bytes": 1831272,
+      "sha256": "4eedbf8200d8392093a85a60b9508dfb41af21e69288c777fa5842eac0975fb2"
+    },
+    "photo.jpg": {
+      "bytes": 272346,
+      "sha256": "811c577786a5e7a75e0816540b8e7399e0925226421f0d4434bdf413abbcda6e"
+    }
+  }
+}

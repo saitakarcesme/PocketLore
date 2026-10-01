@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "output": "/home/isa/Projects/PocketLore/downloads/attachments/runs/20261001T230826Z",
+  "checks": 52,
+  "receipt": {
+    "serial": "emulator-5560",
+    "artifacts": {
+      "app-debug.apk": {
+        "bytes": 22637269,
+        "sha256": "1e323c3b1007f0b4f243bb805abc6d43aaa96ee002680ec84d3dd036813ece38"
+      },
+      "app-debug-androidTest.apk": {
+        "bytes": 358166,
+        "sha256": "9677852110b0c4dc1a8545d9e7111d9b7711ae58a791753c30079844d4118a64"
+      }
+    },
+    "results_sha256": "48bf0ed1595ae604be7ff5c65160aba107c50a59efd68c8d29e010e3918d0719",
+    "status": "PASS",
+    "model_and_catalog_unchanged": true,
+    "model_bytes": 81817803,
+    "artifact_mutations": [
+      "changed",
+      "missing"
+    ],
+    "alignment": "both ABI LOAD and APK16KB passed"
+  }
+}

@@ -1,0 +1,1 @@
+AttachmentsActivity keeps recording when backgrounded until its deadline, and cancelling a completed preview leaves submission enabled despite displaying cancellation assurance; lifecycle and cancellation tests should cover both behaviors.

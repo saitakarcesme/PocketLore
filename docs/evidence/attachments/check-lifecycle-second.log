@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/attachments/check.py", line 53, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/attachments/check.py", line 43, in main
+    if b'Process crashed' in log:run(adb+['logcat','-d','-t','200','-s','AndroidRuntime'],'crash.txt');raise AssertionError(str(out))
+                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: /home/isa/Projects/PocketLore/downloads/attachments/runs/20261001T230719Z

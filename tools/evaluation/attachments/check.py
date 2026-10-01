@@ -13,6 +13,7 @@ def alignment(data):
 def main():
  fixture=json.loads((ROOT/'docs/evidence/attachments/fixtures.json').read_text());models=json.loads((ROOT/'tools/attachments/models.json').read_text());inputs={n:ROOT/'downloads/attachments/fixtures'/n for n in fixture['files']}
  for n,p in inputs.items():verify(p,fixture['files'][n])
+ photo=json.loads((ROOT/'docs/evidence/attachments/photo-supplement.json').read_text());inputs['photo.jpg']=ROOT/'downloads/attachments/fixtures/photo.jpg';verify(inputs['photo.jpg'],photo['files']['photo.jpg'])
  for kind,pin in models.items():p=ROOT/'downloads/attachments'/('models/'+pin['file'] if kind=='speech' else pin['file']);verify(p,pin);inputs[pin['file']]=p
  with tempfile.TemporaryDirectory() as tmp:
   p=Path(tmp)/'asset';p.write_bytes(b'changed')
@@ -45,7 +46,8 @@ def main():
  run(adb+['shell','run-as','org.pocketlore.app','du','-sk','files/attachment-assets','cache'],'storage.txt');run(adb+['shell','dumpsys','meminfo','org.pocketlore.app'],'meminfo.txt');run(adb+['shell','df','-k','/data'],'capacity.txt')
  receipt={'serial':SERIAL,'artifacts':identities,'results_sha256':sha(out/'results.json'),'status':report['status'],'model_and_catalog_unchanged':before==after,'model_bytes':sum(p['bytes'] for p in models.values()),'artifact_mutations':['changed','missing'],'alignment':'both ABI LOAD and APK16KB passed'};(out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n')
  assert report['status']=='PASS' and b'ATTACHMENTS_PASS' in log,f'{out}: {report.get("error")}'
- required={'real_ocr_text','tilted_image_text','real_local_transcription','empty_blank.png','empty_silence.wav','ocr_absent','speech_absent','invalid_image','pixel_bound','invalid_audio','native_cancel_released_false','native_cancel_released_true','denied_permission_ui','editable_real_ocr_preview'};assert required.issubset(report['checks'])
+ required={'real_ocr_text','tilted_image_text','real_local_transcription','empty_blank.png','empty_silence.wav','ocr_absent','speech_absent','invalid_image','pixel_bound','invalid_audio','native_cancel_released_false','native_cancel_released_true','denied_permission_ui','editable_real_ocr_preview','cancel_discards_completed_preview','absent_engine_ui_keeps_microphone_off','actual_audiorecord_opened','background_clears_capture_and_result','provenance_photo.jpg'};assert required.issubset(report['checks'])
  run(adb+['exec-out','run-as','org.pocketlore.app','cat','files/'+directory+'/preview.png'],'preview.png')
+ run(adb+['shell','pm','revoke','org.pocketlore.app','android.permission.RECORD_AUDIO'],'revoke-after.txt')
  print(json.dumps({'status':'PASS','output':str(out),'checks':len(report['checks']),'receipt':receipt},indent=2))
 if __name__=='__main__':main()
