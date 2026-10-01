@@ -26,6 +26,9 @@ def main():
  protocol=json.loads((F/'protocol.json').read_text());pin=protocol['verifier'];model=R/'downloads/independent-linking/model'/pin['file'];exact(model,pin['sha256']);require(model.stat().st_size==pin['bytes']<=1024**3,'Verifier cap')
  exact(R/'downloads/model-capability/models/Qwen3-4B-Q4_K_M.gguf',protocol['generator_sha256'])
  acquisition=json.loads((E/'model-receipt.json').read_text());require(acquisition['pin']==pin,'Model pin drift')
+ inventory=json.loads((E/'host-inventory.json').read_text());site=R/'downloads/independent-linking/venv/lib/python3.14/site-packages'
+ for package in inventory['packages']:
+  for item in package['files']:exact(site/item['relative'],item['sha256'])
  for p,v in acquisition['assets'].items():exact(R/'downloads/independent-linking/model'/p,v['sha256'])
  receipt(E/'new-run');runmanifest=json.loads((E/'new-run/manifest.json').read_text())
  for p,h in runmanifest['sources'].items():exact(R/p,h)
