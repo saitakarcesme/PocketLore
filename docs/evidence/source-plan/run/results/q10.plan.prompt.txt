@@ -1,0 +1,10 @@
+Select evidence for every numbered question obligation using ONLY the supplied source-grounded fact IDs. Preserve subject, input/output direction and time/conditions; do not invent an unstated link. Output exactly one line per obligation in this format: O1|F1,F2. Select at most eight fact IDs per obligation. If the available facts cannot answer an obligation, output W|O1|reason. No prose answer, heading or explanation outside this format. A selected fact is evidence, not permission to assert a false premise.
+--- USER ---
+Available source-grounded facts (relation and ordered arguments):
+F1 | definition|written constitution|single-or-set-written
+P2.1 | Constitution | 2026-09-28T22:36:35Z (article revision; rendered snapshot 2026-10-01) | When these principles are written down into a single document or set of legal documents, those documents may be said to embody a written constitution; if they are encompassed in a single comprehensive document, it is said to embody a codified constitution.
+F2 | definition|codified constitution|single-comprehensive
+P2.1 | Constitution | 2026-09-28T22:36:35Z (article revision; rendered snapshot 2026-10-01) | When these principles are written down into a single document or set of legal documents, those documents may be said to embody a written constitution; if they are encompassed in a single comprehensive document, it is said to embody a codified constitution.
+
+Question obligations:
+O1: Contrast what a constitution establishes with how a constitutional monarch must exercise authority.
