@@ -1,0 +1,378 @@
+{
+  "import_ms": 81.424704,
+  "pack_sha256": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274",
+  "pack_id": "science-supplement-2026-10-01-v1",
+  "passages": 24,
+  "retrieval": [
+    {
+      "id": "earthquakes",
+      "question": "What causes an earthquake?",
+      "expected": "present",
+      "found_required": true,
+      "hits": [
+        {
+          "id": "science-earthquakes-8702c21b891d6d23",
+          "score": 6.080356840576084,
+          "text": "An earthquake is caused by a sudden slip on a fault. The tectonic plates are always slowly moving, but they get stuck at their edges due to friction. When the stress on the edge overcomes the friction, there is an earthquake that releases energy in waves that travel through the earth's crust and cause the shaking that we feel."
+        },
+        {
+          "id": "science-earthquakes-a2a4b87ce7382257",
+          "score": 3.1091174213809945,
+          "text": "The Pacific Plate grinds northwestward past the North American Plate at a rate of about two inches per year. Parts of the San Andreas Fault system adapt to this movement by constant \"creep\" resulting in many tiny shocks and a few moderate earth tremors. In other areas where creep is NOT constant, strain can build up for hundreds of years, producing great earthquakes when it finally releases."
+        },
+        {
+          "id": "science-earthquakes-8175f293a0ec4536",
+          "score": 1.3332121772716858,
+          "text": "In California there are two plates - the Pacific Plate and the North American Plate. The Pacific Plate consists of most of the Pacific Ocean floor and the California Coast line. The North American Plate comprises most the North American Continent and parts of the Atlantic Ocean floor. The primary boundary between these two plates is the San Andreas Fault. The San Andreas Fault is more than 650 miles long and extends to depths of at least 10 miles. Many other smaller faults like the Hayward (Northern California) and the San Jacinto (Southern California) branch from and join the San Andreas Fault Zone."
+        }
+      ],
+      "retrieval_ms": 0.97851,
+      "without_model_route": "FALLBACK",
+      "reason": "No local model is loaded."
+    },
+    {
+      "id": "volcanoes",
+      "question": "How does repeated lava eruption build volcanic terrain?",
+      "expected": "present",
+      "found_required": true,
+      "hits": [
+        {
+          "id": "science-volcanoes-7e17ab9821fed9ef",
+          "score": 7.389986797575103,
+          "text": "Volcanoes are openings, or vents where lava, tephra (small rocks), and steam erupt onto the Earth's surface. Volcanic eruptions can last days, months, or even years."
+        },
+        {
+          "id": "science-volcanoes-fdd579e7694cec41",
+          "score": 4.900101739748129,
+          "text": "Many mountains form by folding, faulting, uplift, and erosion of the Earth's crust. Volcanic terrain, however, is built by the slow accumulation of erupted lava. The vent may be visible as a small bowl shaped depression at the summit of a cone or shield-shaped mountain. Through a series of cracks within and beneath the volcano, the vent connects to one or more linked storage areas of molten or partially molten rock (magma). This connection to fresh magma allows the volcano to erupt over and over again in the same location. In this way, the volcano grows ever larger, until it is no longer stable. Pieces of the volcano collapse as rock falls or as landslides."
+        },
+        {
+          "id": "science-volcanoes-32d96fe23eb26081",
+          "score": 2.9609854781321436,
+          "text": "Molten rock below the surface of the Earth that rises in volcanic vents is known as magma, but after it erupts from a volcano it is called lava. Magma is made of molten rock, crystals, and dissolved gas—imagine an unopened bottle of soda with grains of sand inside. The molten rock is made of the chemicals oxygen, silicon, aluminum, iron, magnesium, calcium, sodium, potassium, titanium, and manganese. After cooling, liquid magma may form crystals of various minerals until it becomes completely solid and forms an igneous or magmatic rock."
+        },
+        {
+          "id": "science-volcanoes-ac98f2017c5f7717",
+          "score": 2.4625173400490947,
+          "text": "Originating many tens of miles beneath the ground, magma is lighter than surrounding solid rock. It is driven towards Earth's surface by buoyancy, it is lighter than the surrounding rock, and by pressure from gas within it. Magma forces its way upward and may ultimately break though weak areas in the Earth's crust. If so, an eruption begins."
+        }
+      ],
+      "retrieval_ms": 0.390792,
+      "without_model_route": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question"
+    },
+    {
+      "id": "magma",
+      "question": "What is the difference between magma and lava?",
+      "expected": "present",
+      "found_required": true,
+      "hits": [
+        {
+          "id": "science-magma-b214c1cb4647b3fc",
+          "score": 6.2557971631265765,
+          "text": "Scientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface."
+        },
+        {
+          "id": "science-volcanoes-32d96fe23eb26081",
+          "score": 3.443667737524965,
+          "text": "Molten rock below the surface of the Earth that rises in volcanic vents is known as magma, but after it erupts from a volcano it is called lava. Magma is made of molten rock, crystals, and dissolved gas—imagine an unopened bottle of soda with grains of sand inside. The molten rock is made of the chemicals oxygen, silicon, aluminum, iron, magnesium, calcium, sodium, potassium, titanium, and manganese. After cooling, liquid magma may form crystals of various minerals until it becomes completely solid and forms an igneous or magmatic rock."
+        },
+        {
+          "id": "science-volcanoes-fdd579e7694cec41",
+          "score": 2.8536642532867322,
+          "text": "Many mountains form by folding, faulting, uplift, and erosion of the Earth's crust. Volcanic terrain, however, is built by the slow accumulation of erupted lava. The vent may be visible as a small bowl shaped depression at the summit of a cone or shield-shaped mountain. Through a series of cracks within and beneath the volcano, the vent connects to one or more linked storage areas of molten or partially molten rock (magma). This connection to fresh magma allows the volcano to erupt over and over again in the same location. In this way, the volcano grows ever larger, until it is no longer stable. Pieces of the volcano collapse as rock falls or as landslides."
+        },
+        {
+          "id": "science-volcanoes-bc12a568b075b592",
+          "score": 2.2884118796884176,
+          "text": "Magma can be erupted in a variety of ways. Sometimes molten rock simply pours from the vent as fluid lava flows. It can also shoot violently into the air as dense clouds of rock shards (tephra) and gas. Larger fragments fall back around the vent, and clouds of tephra may move down the slope of the volcano under the force of gravity. Ash, tiny pieces of tephra the thickness of a strand of hair, may be carried by the wind only to fall to the ground many miles away. The smallest ash particles may be erupted miles into the sky and carried many times around the world by winds high in the atmosphere before they fall to the ground."
+        }
+      ],
+      "retrieval_ms": 0.255784,
+      "without_model_route": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question"
+    },
+    {
+      "id": "dna",
+      "question": "How do DNA instructions become proteins?",
+      "expected": "present",
+      "found_required": true,
+      "hits": [
+        {
+          "id": "science-dna-160b4c88f7f463ae",
+          "score": 6.423647777791685,
+          "text": "DNA contains the instructions needed for an organism to develop, survive and reproduce. To carry out these functions, DNA sequences must be converted into messages that can be used to produce proteins, which are the complex molecules that do most of the work in our bodies. Each DNA sequence that contains instructions to make a protein is known as a gene. The size of a gene may vary greatly, ranging from about 1,000 bases to 1 million bases in humans. Genes only make up about 1 percent of the DNA sequence. DNA sequences outside this 1 percent are involved in regulating when, how and how much of a protein is made."
+        },
+        {
+          "id": "science-dna-d32bd953c9df60a3",
+          "score": 5.675325102984543,
+          "text": "DNA's instructions are used to make proteins in a two-step process. First, enzymes read the information in a DNA molecule and transcribe it into an intermediary molecule called messenger ribonucleic acid, or mRNA. Next, the information contained in the mRNA molecule is translated into the \"language\" of amino acids, which are the building blocks of proteins. This language tells the cell's protein-making machinery the precise order in which to link the amino acids to produce a specific protein. This is a major task because there are 20 types of amino acids, which can be placed in many different orders to form a wide variety of proteins."
+        },
+        {
+          "id": "science-chromosomes-bd1bb41122a2e2eb",
+          "score": 5.527926277941421,
+          "text": "Chromosomes are thread-like structures located inside the nucleus of animal and plant cells. Each chromosome is made of protein and a single molecule of deoxyribonucleic acid (DNA). Passed from parents to offspring, DNA contains the specific instructions that make each type of living creature unique."
+        },
+        {
+          "id": "science-dna-0215cec38b4684c9",
+          "score": 4.415827341828416,
+          "text": "Deoxyribonucleic acid (DNA) is a molecule that contains the biological instructions that make each species unique. DNA, along with the instructions it contains, is passed from adult organisms to their offspring during reproduction."
+        }
+      ],
+      "retrieval_ms": 0.233672,
+      "without_model_route": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question"
+    },
+    {
+      "id": "chromosomes",
+      "question": "How do histones package DNA in chromosomes?",
+      "expected": "present",
+      "found_required": true,
+      "hits": [
+        {
+          "id": "science-chromosomes-1c53684112e2a81e",
+          "score": 11.049515139929532,
+          "text": "The unique structure of chromosomes keeps DNA tightly wrapped around spool-like proteins, called histones. Without such packaging, DNA molecules would be too long to fit inside cells. For example, if all of the DNA molecules in a single human cell were unwound from their histones and placed end-to-end, they would stretch 6 feet."
+        },
+        {
+          "id": "science-chromosomes-bd1bb41122a2e2eb",
+          "score": 4.516841348263277,
+          "text": "Chromosomes are thread-like structures located inside the nucleus of animal and plant cells. Each chromosome is made of protein and a single molecule of deoxyribonucleic acid (DNA). Passed from parents to offspring, DNA contains the specific instructions that make each type of living creature unique."
+        },
+        {
+          "id": "science-chromosomes-ae26d52981dd0bd9",
+          "score": 3.587754839282542,
+          "text": "For an organism to grow and function properly, cells must constantly divide to produce new cells to replace old, worn-out cells. During cell division, it is essential that DNA remains intact and evenly distributed among cells. Chromosomes are a key part of the process that ensures DNA is accurately copied and distributed in the vast majority of cell divisions. Still, mistakes do occur on rare occasions."
+        },
+        {
+          "id": "science-chromosomes-8442295081e7aeba",
+          "score": 2.782629487133867,
+          "text": "The term chromosome comes from the Greek words for color (chroma) and body (soma). Scientists gave this name to chromosomes because they are cell structures, or bodies, that are strongly stained by some colorful dyes used in research."
+        }
+      ],
+      "retrieval_ms": 0.276208,
+      "without_model_route": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question"
+    },
+    {
+      "id": "magnetic-core",
+      "question": "How does the Earth's core generate a magnetic field?",
+      "expected": "present",
+      "found_required": true,
+      "hits": [
+        {
+          "id": "science-magnetic-core-f3a6eb6e41f10ed5",
+          "score": 9.863077752294295,
+          "text": "The Earth's outer core is in a state of turbulent convection as the result of radioactive heating and chemical differentiation. This sets up a process that is a bit like a naturally occurring electrical generator, where the convective kinetic energy is converted to electrical and magnetic energy. Basically, the motion of the electrically conducting iron in the presence of the Earth's magnetic field induces electric currents. Those electric currents generate their own magnetic field, and as the result of this internal feedback, the process is self-sustaining so long as there is an energy source sufficient to maintain convection."
+        },
+        {
+          "id": "science-magnetic-storms-d3c855e5484d8b4b",
+          "score": 4.314487138398406,
+          "text": "Sometimes the Sun emits a coronal mass ejection at a time when the magnetic field lines of the Earth and Sun are directly connected. When these events occur, we can experience a truly large magnetic storm."
+        },
+        {
+          "id": "science-magnetic-reversals-fa7c0c5d35627493",
+          "score": 4.296048366713112,
+          "text": "Incredible as it may seem, the magnetic field occasionally flips over! The geomagnetic poles are currently roughly coincident with the geographic poles, but occasionally the magnetic poles wander far away from the geographic poles and undergo an \"excursion\" from their preferred state. Earth's dynamo has no preference for a particular polarity, so, after an excursional period, the magnetic field, upon returning to its usual state of rough alignment with the Earth’s rotational axis, could just as easily have one polarity as another."
+        },
+        {
+          "id": "science-magnetic-reversals-1b0f8ca08f5ea836",
+          "score": 4.087949111593561,
+          "text": "Yes. We can see evidence of magnetic polarity reversals by examining the geologic record. When lavas or sediments solidify, they often preserve a signature of the ambient magnetic field at the time of deposition."
+        }
+      ],
+      "retrieval_ms": 0.404374,
+      "without_model_route": "FALLBACK",
+      "reason": "No local model is loaded."
+    },
+    {
+      "id": "magnetic-reversals",
+      "question": "Has the Earth's magnetic polarity flipped in the past?",
+      "expected": "present",
+      "found_required": true,
+      "hits": [
+        {
+          "id": "science-magnetic-reversals-fa7c0c5d35627493",
+          "score": 10.037697939514445,
+          "text": "Incredible as it may seem, the magnetic field occasionally flips over! The geomagnetic poles are currently roughly coincident with the geographic poles, but occasionally the magnetic poles wander far away from the geographic poles and undergo an \"excursion\" from their preferred state. Earth's dynamo has no preference for a particular polarity, so, after an excursional period, the magnetic field, upon returning to its usual state of rough alignment with the Earth’s rotational axis, could just as easily have one polarity as another."
+        },
+        {
+          "id": "science-magnetic-reversals-1b0f8ca08f5ea836",
+          "score": 4.805049675276881,
+          "text": "Yes. We can see evidence of magnetic polarity reversals by examining the geologic record. When lavas or sediments solidify, they often preserve a signature of the ambient magnetic field at the time of deposition."
+        },
+        {
+          "id": "science-earthquakes-a2a4b87ce7382257",
+          "score": 3.4240997285425983,
+          "text": "The Pacific Plate grinds northwestward past the North American Plate at a rate of about two inches per year. Parts of the San Andreas Fault system adapt to this movement by constant \"creep\" resulting in many tiny shocks and a few moderate earth tremors. In other areas where creep is NOT constant, strain can build up for hundreds of years, producing great earthquakes when it finally releases."
+        },
+        {
+          "id": "science-magnetic-storms-d3c855e5484d8b4b",
+          "score": 2.7881794075519704,
+          "text": "Sometimes the Sun emits a coronal mass ejection at a time when the magnetic field lines of the Earth and Sun are directly connected. When these events occur, we can experience a truly large magnetic storm."
+        }
+      ],
+      "retrieval_ms": 0.283728,
+      "without_model_route": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question"
+    },
+    {
+      "id": "magnetic-storms",
+      "question": "How long can rapid variations in the magnetic field last?",
+      "expected": "present",
+      "found_required": true,
+      "hits": [
+        {
+          "id": "science-magnetic-storms-3b8945c553ef6dfa",
+          "score": 15.038506240691307,
+          "text": "A magnetic storm is a period of rapid magnetic field variation. It can last from hours to days."
+        },
+        {
+          "id": "science-magnetic-core-f3a6eb6e41f10ed5",
+          "score": 5.091596191467471,
+          "text": "The Earth's outer core is in a state of turbulent convection as the result of radioactive heating and chemical differentiation. This sets up a process that is a bit like a naturally occurring electrical generator, where the convective kinetic energy is converted to electrical and magnetic energy. Basically, the motion of the electrically conducting iron in the presence of the Earth's magnetic field induces electric currents. Those electric currents generate their own magnetic field, and as the result of this internal feedback, the process is self-sustaining so long as there is an energy source sufficient to maintain convection."
+        },
+        {
+          "id": "science-magnetic-reversals-b147d6da540593c7",
+          "score": 3.7128773695473622,
+          "text": "These reversals are random with no apparent periodicity to their occurrence. They can happen as often as every 10 thousand years or so and as infrequently as every 50 million years or more. The last reversal was about 780,000 years ago."
+        },
+        {
+          "id": "science-magnetic-reversals-1b0f8ca08f5ea836",
+          "score": 3.6958965478945403,
+          "text": "Yes. We can see evidence of magnetic polarity reversals by examining the geologic record. When lavas or sediments solidify, they often preserve a signature of the ambient magnetic field at the time of deposition."
+        }
+      ],
+      "retrieval_ms": 0.17765,
+      "without_model_route": "FALLBACK",
+      "reason": "No local model is loaded."
+    },
+    {
+      "id": "absent-1",
+      "question": "What time will the next earthquake strike London?",
+      "expected": "absent",
+      "found_required": false,
+      "hits": [
+        {
+          "id": "science-earthquakes-8702c21b891d6d23",
+          "score": 3.040178420288042,
+          "text": "An earthquake is caused by a sudden slip on a fault. The tectonic plates are always slowly moving, but they get stuck at their edges due to friction. When the stress on the edge overcomes the friction, there is an earthquake that releases energy in waves that travel through the earth's crust and cause the shaking that we feel."
+        },
+        {
+          "id": "science-magnetic-storms-d3c855e5484d8b4b",
+          "score": 2.492492555991347,
+          "text": "Sometimes the Sun emits a coronal mass ejection at a time when the magnetic field lines of the Earth and Sun are directly connected. When these events occur, we can experience a truly large magnetic storm."
+        },
+        {
+          "id": "science-magnetic-reversals-1b0f8ca08f5ea836",
+          "score": 2.4897286362832842,
+          "text": "Yes. We can see evidence of magnetic polarity reversals by examining the geologic record. When lavas or sediments solidify, they often preserve a signature of the ambient magnetic field at the time of deposition."
+        },
+        {
+          "id": "science-dna-d32bd953c9df60a3",
+          "score": 2.362714802867048,
+          "text": "DNA's instructions are used to make proteins in a two-step process. First, enzymes read the information in a DNA molecule and transcribe it into an intermediary molecule called messenger ribonucleic acid, or mRNA. Next, the information contained in the mRNA molecule is translated into the \"language\" of amino acids, which are the building blocks of proteins. This language tells the cell's protein-making machinery the precise order in which to link the amino acids to produce a specific protein. This is a major task because there are 20 types of amino acids, which can be placed in many different orders to form a wide variety of proteins."
+        }
+      ],
+      "retrieval_ms": 0.127902,
+      "without_model_route": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question"
+    },
+    {
+      "id": "absent-2",
+      "question": "Which medicine repairs chromosomes?",
+      "expected": "absent",
+      "found_required": false,
+      "hits": [
+        {
+          "id": "science-chromosomes-8442295081e7aeba",
+          "score": 2.782629487133867,
+          "text": "The term chromosome comes from the Greek words for color (chroma) and body (soma). Scientists gave this name to chromosomes because they are cell structures, or bodies, that are strongly stained by some colorful dyes used in research."
+        },
+        {
+          "id": "science-chromosomes-bd1bb41122a2e2eb",
+          "score": 2.699246955667324,
+          "text": "Chromosomes are thread-like structures located inside the nucleus of animal and plant cells. Each chromosome is made of protein and a single molecule of deoxyribonucleic acid (DNA). Passed from parents to offspring, DNA contains the specific instructions that make each type of living creature unique."
+        },
+        {
+          "id": "science-chromosomes-1c53684112e2a81e",
+          "score": 2.070491126106754,
+          "text": "The unique structure of chromosomes keeps DNA tightly wrapped around spool-like proteins, called histones. Without such packaging, DNA molecules would be too long to fit inside cells. For example, if all of the DNA molecules in a single human cell were unwound from their histones and placed end-to-end, they would stretch 6 feet."
+        },
+        {
+          "id": "science-chromosomes-ae26d52981dd0bd9",
+          "score": 1.9440024298827927,
+          "text": "For an organism to grow and function properly, cells must constantly divide to produce new cells to replace old, worn-out cells. During cell division, it is essential that DNA remains intact and evenly distributed among cells. Chromosomes are a key part of the process that ensures DNA is accurately copied and distributed in the vast majority of cell divisions. Still, mistakes do occur on rare occasions."
+        }
+      ],
+      "retrieval_ms": 0.119619,
+      "without_model_route": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question"
+    },
+    {
+      "id": "absent-3",
+      "question": "Will a magnetic storm close my flight tomorrow?",
+      "expected": "absent",
+      "found_required": false,
+      "hits": [
+        {
+          "id": "science-magnetic-storms-3b8945c553ef6dfa",
+          "score": 5.822499887640344,
+          "text": "A magnetic storm is a period of rapid magnetic field variation. It can last from hours to days."
+        },
+        {
+          "id": "science-magnetic-storms-d3c855e5484d8b4b",
+          "score": 5.242468602283809,
+          "text": "Sometimes the Sun emits a coronal mass ejection at a time when the magnetic field lines of the Earth and Sun are directly connected. When these events occur, we can experience a truly large magnetic storm."
+        },
+        {
+          "id": "science-magnetic-reversals-1b0f8ca08f5ea836",
+          "score": 2.005751150965459,
+          "text": "Yes. We can see evidence of magnetic polarity reversals by examining the geologic record. When lavas or sediments solidify, they often preserve a signature of the ambient magnetic field at the time of deposition."
+        },
+        {
+          "id": "science-magnetic-reversals-fa7c0c5d35627493",
+          "score": 1.8401290083078616,
+          "text": "Incredible as it may seem, the magnetic field occasionally flips over! The geomagnetic poles are currently roughly coincident with the geographic poles, but occasionally the magnetic poles wander far away from the geographic poles and undergo an \"excursion\" from their preferred state. Earth's dynamo has no preference for a particular polarity, so, after an excursional period, the magnetic field, upon returning to its usual state of rough alignment with the Earth’s rotational axis, could just as easily have one polarity as another."
+        }
+      ],
+      "retrieval_ms": 0.115522,
+      "without_model_route": "ABSTAINED",
+      "reason": "Selected excerpts do not cover the question"
+    },
+    {
+      "id": "absent-4",
+      "question": "What is the temperature on Mars today?",
+      "expected": "absent",
+      "found_required": false,
+      "hits": [],
+      "retrieval_ms": 0.075795,
+      "without_model_route": "ABSTAINED",
+      "reason": "No supporting passage in this installed pack."
+    }
+  ],
+  "corruption": [
+    {
+      "case": "bitflip.plpack",
+      "error": "java.io.IOException: Passage payload hash mismatch"
+    },
+    {
+      "case": "rights.plpack",
+      "error": "java.io.IOException: Invalid metadata: license"
+    },
+    {
+      "case": "source-hash.plpack",
+      "error": "java.io.IOException: Invalid stable citation ID"
+    }
+  ],
+  "installed_status": "24 passages installed · No network permission",
+  "inspection": {
+    "citation": "science-magma-b214c1cb4647b3fc",
+    "visible_text": "[science-magma-b214c1cb4647b3fc] What is the difference between magma and lava?\nScientists use the term magma for molten rock that is underground and lava for molten rock that breaks through the Earth's surface.\n\nSource document: What is the difference between magma and lava?\nhttps:\/\/www.usgs.gov\/faqs\/what-difference-between-magma-and-lava\n\nSource date \/ retrieval: Publication\/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01\nRights: U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https:\/\/www.usgs.gov\/information-policies-and-instructions\/copyrights-and-credits\n\nPack text is selected source text with whitespace normalized. Source URLs are provenance labels; the app does not open them.\n\nBM25 rank score: 6.256 (not confidence)\nCLOSE\n"
+  },
+  "activity_import": true,
+  "activity_corrupt_rejected": true,
+  "staging_cleanup": true,
+  "status": "PASS",
+  "original_library_restored": true
+}

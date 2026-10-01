@@ -158,6 +158,7 @@ public final class MainActivity extends Activity {
                     KnowledgePack pack = KnowledgePack.install(in, getFilesDir(),()->cancelPack || destroyed);
                     runOnUiThread(() -> { if (destroyed) return; engine = pack.engine;
                         answer.setText("Pack imported. Ask a question to inspect its sources."); sourceList.removeAllViews();
+                        status.setText(engine.size() + " passages installed · No network permission");
                         packStatus.setText(pack.id + " · " + engine.size() + " passages\n" + pack.warning + "\nSHA-256: " + pack.sha256);
                     });
                 } catch (Exception | OutOfMemoryError error) {

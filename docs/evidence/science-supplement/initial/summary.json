@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "scope": "Builder-authored public retrieval and emulator import/source UI, not generated-answer or physical acceptance",
+  "pack_sha256": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274",
+  "pack_bytes": 31183,
+  "documents": 8,
+  "passages": 24,
+  "topics": [
+    "genetics",
+    "geology",
+    "geomagnetism"
+  ],
+  "supported_top4": 8,
+  "absent_blocked": 4,
+  "artifacts": {
+    "app-debug.apk": {
+      "sha256": "d31b692e1098aa994332174b958ad1c88172694d692bda33c09914cb6ad646d1",
+      "bytes": 11773557
+    },
+    "app-debug-androidTest.apk": {
+      "sha256": "b8689f3c85ba4d816b4d8f87ca6f05b78820a3d23064dd123ecb2fb3c451fa53",
+      "bytes": 240542
+    }
+  },
+  "fixture_sha256": "d775afe09a6e64e565872894d4510e264ebd49de5c156629aeae71693f595198",
+  "results_sha256": "32cd8c00ca3525480b28282059eb5733b351e42e627f7e116c8e3846006038e7"
+}
