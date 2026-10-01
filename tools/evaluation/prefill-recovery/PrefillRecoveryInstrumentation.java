@@ -51,7 +51,7 @@ public final class PrefillRecoveryInstrumentation extends Instrumentation {
                 load();AtomicInteger callbacks=new AtomicInteger();long id=session;long prefillStart=System.nanoTime();
                 Future<Integer> generating=worker.submit(()->NativeRuntime.generate(id,bytes(prompt),spec.getInt("max_output_tokens"),b->callbacks.incrementAndGet()));
                 long[] observed=awaitPhase(4,2,generating);check(callbacks.get()==0&&observed[3]>=1700,"Did not observe long prefill before first token");
-                report.put("prefill_observed",new JSONArray(observed)).put("prefill_observation_ms",ms(prefillStart)).put("token_callbacks_before_cancel",callbacks.get());
+                report.put("prefill_resources",new JSONArray(NativeRuntime.resourceState())).put("prefill_observed",new JSONArray(observed)).put("prefill_observation_ms",ms(prefillStart)).put("token_callbacks_before_cancel",callbacks.get());
                 if(mode.equals("kill-ready")){
                     for(String name:new String[]{"model.partial","pack-140000.partial"}){File f=new File(root,name);check(!f.exists(),"Refuse to overwrite preexisting stage");Files.write(f.toPath(),bytes("seeded interrupted-import stage"),StandardOpenOption.CREATE_NEW);}
                     Files.write(new File(root,"prefill-notes.partial").toPath(),bytes("unrelated fixture retained"));

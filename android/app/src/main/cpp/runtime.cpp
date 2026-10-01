@@ -46,7 +46,7 @@ std::shared_ptr<Session> get(jlong id) {
 void fail(JNIEnv *env, const std::exception &error) {
     if (!env->ExceptionCheck()) env->ThrowNew(env->FindClass("java/lang/IllegalStateException"), error.what());
 }
-bool aborted(void *data) { ++abortCallbacks;return static_cast<Session *>(data)->cancelled.load(); }
+bool aborted(void *data) { if(phase==4||phase==5)++abortCallbacks;return static_cast<Session *>(data)->cancelled.load(); }
 bool progress(float, void *data) { if(phase==2)++loadCallbacks;return !static_cast<Session *>(data)->cancelled.load(); }
 std::string bytes(JNIEnv *env, jbyteArray value) {
     if (!value) throw std::runtime_error("Missing UTF-8 bytes");
@@ -86,7 +86,7 @@ extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_load(JNI
         PhaseScope observation(1);
         // The pinned upstream no_alloc model propagates simulated allocation into its context.
         // Metadata/graph bookkeeping still allocates; this is not protection from all OOMs.
-        auto dryParams=p;dryParams.no_alloc=true;
+        auto dryParams=p;dryParams.no_alloc=true;dryParams.load_mode=LLAMA_LOAD_MODE_NONE;
         using Model=std::unique_ptr<llama_model,decltype(&llama_model_free)>;
         using DryContext=std::unique_ptr<llama_context,decltype(&llama_free)>;
         {

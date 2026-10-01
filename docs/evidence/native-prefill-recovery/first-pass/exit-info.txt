@@ -1,0 +1,68 @@
+ACTIVITY MANAGER PROCESS EXIT INFO (dumpsys activity exit-info)
+Last Timestamp of Persistence Into Persistent Storage: 2026-10-01 05:13:17.480
+  package: org.pocketlore.app
+    Historical Process Exit for uid=10168
+        ApplicationExitInfo #0:
+          timestamp=2026-10-01 05:40:04.947 pid=4410 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop org.pocketlore.app due to finished inst state=empty trace=null
+        ApplicationExitInfo #1:
+          timestamp=2026-10-01 05:40:02.486 pid=4345 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=2 (SIGNALED) subreason=0 (UNKNOWN) status=9
+          importance=125 pss=0.00 rss=0.00 description=null state=empty trace=null
+        ApplicationExitInfo #2:
+          timestamp=2026-10-01 05:40:01.730 pid=4285 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=125 pss=0.00 rss=0.00 description=stop org.pocketlore.app due to finished inst state=empty trace=null
+        ApplicationExitInfo #3:
+          timestamp=2026-10-01 05:38:37.514 pid=4203 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=5 (APP CRASH(NATIVE)) subreason=0 (UNKNOWN) status=6
+          importance=125 pss=0.00 rss=0.00 description=crash state=empty trace=null
+        ApplicationExitInfo #4:
+          timestamp=2026-10-01 05:32:18.175 pid=4084 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop org.pocketlore.app due to finished inst state=empty trace=null
+        ApplicationExitInfo #5:
+          timestamp=2026-10-01 05:28:33.272 pid=3954 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop org.pocketlore.app due to finished inst state=empty trace=null
+        ApplicationExitInfo #6:
+          timestamp=2026-10-01 05:25:43.125 pid=3822 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=100 pss=0.00 rss=0.00 description=stop org.pocketlore.app due to finished inst state=empty trace=null
+        ApplicationExitInfo #7:
+          timestamp=2026-10-01 05:24:16.443 pid=3725 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=125 pss=0.00 rss=0.00 description=stop org.pocketlore.app due to finished inst state=empty trace=null
+        ApplicationExitInfo #8:
+          timestamp=2026-10-01 05:23:43.240 pid=3626 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=125 pss=0.00 rss=0.00 description=stop org.pocketlore.app due to finished inst state=empty trace=null
+        ApplicationExitInfo #9:
+          timestamp=2026-10-01 05:22:49.012 pid=3543 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=125 pss=0.00 rss=0.00 description=stop org.pocketlore.app due to finished inst state=empty trace=null
+        ApplicationExitInfo #10:
+          timestamp=2026-10-01 05:22:07.224 pid=3433 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=125 pss=0.00 rss=0.00 description=stop org.pocketlore.app due to finished inst state=empty trace=null
+        ApplicationExitInfo #11:
+          timestamp=2026-10-01 05:21:21.779 pid=3330 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=12 (DEPENDENCY DIED) subreason=0 (UNKNOWN) status=0
+          importance=125 pss=0.00 rss=0.00 description=depends on provider org.pocketlore.app.test/org.pocketlore.app.StalledDocumentsProvider in dying proc org.pocketlore.app.test (adj -10000) state=empty trace=null
+        ApplicationExitInfo #12:
+          timestamp=2026-10-01 05:20:05.287 pid=3256 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=125 pss=0.00 rss=0.00 description=stop org.pocketlore.app due to finished inst state=empty trace=null
+        ApplicationExitInfo #13:
+          timestamp=2026-10-01 05:15:10.008 pid=3134 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=125 pss=0.00 rss=0.00 description=stop org.pocketlore.app due to finished inst state=empty trace=null
+        ApplicationExitInfo #14:
+          timestamp=2026-10-01 05:09:40.098 pid=3004 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=125 pss=0.00 rss=0.00 description=stop org.pocketlore.app due to finished inst state=empty trace=null
+        ApplicationExitInfo #15:
+          timestamp=2026-10-01 05:07:29.805 pid=2873 realUid=10168 packageUid=10168 definingUid=10168 user=0
+          process=org.pocketlore.app reason=10 (USER REQUESTED) subreason=21 (FORCE STOP) status=0
+          importance=125 pss=0.00 rss=0.00 description=stop org.pocketlore.app due to finished inst state=empty trace=null

@@ -30,8 +30,10 @@ def main():
     run(adb+['shell','run-as','org.pocketlore.app','rm','-f',*['files/prefill-recovery-tests/'+m+'.json' for m in ['lifecycle','kill-ready','restart']]],'clear-results.txt')
     log=run(instrument('lifecycle'),'lifecycle-instrumentation.txt');life=json.loads(read('lifecycle'))
     run(adb+['shell','logcat','-d','--pid='+str(life['pid']),'-v','threadtime'],'lifecycle-logcat.txt')
-    assert b'INSTRUMENTATION_CODE: -1' in log and life['status']=='PASS',life
+    assert b'INSTRUMENTATION_CODE: -1' in log and life.get('status')=='PASS',str(out/'lifecycle.json')
     assert life['prefill_observed'][0]==4 and life['prefill_observed'][2]>0 and life['prefill_observed'][3]>=1700
+    assert life['prefill_resources'][:2]==[1,1]
+    assert all(0<actual<=estimate<=limit for actual,estimate,limit in zip(life['prefill_resources'][2:],life['prefill_observed'][6:],[spec['budget_bytes'][k] for k in ['model','kv','compute']]))
     assert life['prefill_result']==-1 and life['token_callbacks_before_cancel']==life['token_callbacks_after_cancel']==0 and life['prefill_cancel_ms']<5000
     assert life['load_observed'][0]==2 and life['load_observed'][1]>0 and life['closed_load_result']=='Cancelled' and life['close_load_ms']<5000
     assert life['final_resources'][:2]==[0,0] and life['invalid_model_failure']
@@ -53,6 +55,9 @@ def main():
             pid=marker['pid'];assert str(pid) in run(adb+['shell','pidof','org.pocketlore.app'],'pid-before-kill.txt').decode().split()
             assert marker['prefill_observed'][0]==4 and marker['prefill_observed'][2]>0 and marker['token_callbacks_before_cancel']==0
             run(adb+['shell','run-as','org.pocketlore.app','kill','-9',str(pid)],'sigkill.txt');proc.wait(timeout=15)
+            exit_info=run(adb+['shell','dumpsys','activity','exit-info','org.pocketlore.app'],'exit-info.txt').decode()
+            records=[b for b in exit_info.split('ApplicationExitInfo #') if ('pid='+str(pid)+' ') in b]
+            assert len(records)==1 and 'reason=2 (SIGNALED)' in records[0] and 'status=9' in records[0]
             gone=run(adb+['shell','pidof','org.pocketlore.app'],'pid-after-kill.txt',allow=True);assert str(pid) not in gone.decode().split()
         finally:
             if proc.poll() is None:proc.terminate();proc.wait(timeout=10)

@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "scope": "CPU x86_64 emulator; SIGKILL is not OS OOM; policy rejection is not failed allocation",
+  "fixture_sha256": "0d28f42eadd5dc0aace4d251f6f089249db381319278d6ba4c196844c861368e",
+  "artifacts": {
+    "app-debug.apk": {
+      "sha256": "d31b692e1098aa994332174b958ad1c88172694d692bda33c09914cb6ad646d1",
+      "bytes": 11773557
+    },
+    "app-debug-androidTest.apk": {
+      "sha256": "00fe32dc7905f1041d726536ca8002b955a97546dea8bf867ef1883493e3aa53",
+      "bytes": 237022
+    }
+  },
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "prefill_cancel_ms": 18.617738,
+  "close_load_ms": 27.105094,
+  "killed_pid": 4571,
+  "restart_pid": 4638,
+  "failed_real_context_allocations": 0,
+  "saved_assets_unchanged": true,
+  "record_sha256": {
+    "lifecycle.json": "ae602148120ce999347f224fca09ac4d00c986f8c814e1b58634718217c2fce9",
+    "kill-ready.json": "8989e304871ec64743569b3a14b4eb81f1ce3a9b535310977df40fb35c250ecc",
+    "restart.json": "b3b969de8032a738ec08f8090d706c5f656c1fa3dfb17e39b0cce5c351f25ceb"
+  }
+}
