@@ -56,6 +56,8 @@ final class ScaleAnswerAdapter {
   }
   Reference link(int obligation,String label,BooleanSupplier cancel){cancelled(cancel);require(obligation>=1&&obligation<=BoundAnswer.obligations(question).size(),"Unknown obligation");BoundAnswer.Span s=catalog.spans.get(label);require(s!=null,"Unknown typed source label (formula brackets are text)");for(Evidence e:evidence)if(e.source==s.source)return new Reference(obligation,e,s);throw new IllegalArgumentException("Source not admitted");}
   String prompt(BooleanSupplier cancel){cancelled(cancel);String p=BoundAnswer.prompt(question,catalog,new BoundAnswer.Cancel());cancelled(cancel);return p;}
+  ScaleAnswerPublication.Candidate candidate(String draft,int tokens,BooleanSupplier cancel){return ScaleAnswerPublication.prepare(this,draft,tokens,cancel);}
+  ScaleAnswerPublication.Candidate publish(ScaleAnswerPublication.Candidate candidate,ScaleAnswerPublication.Reviews reviews,BooleanSupplier cancel){return ScaleAnswerPublication.publish(candidate,reviews,cancel);}
   String publish(String draft,String modelAudit){throw new IllegalStateException("Independent whole-claim support and obligation coverage required; rights, quotes and self-audit cannot publish");}
  }
  private ScaleAnswerAdapter(){}
