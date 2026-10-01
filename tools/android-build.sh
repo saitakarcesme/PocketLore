@@ -20,4 +20,7 @@ arguments=("$@")
 if (( $# == 0 )); then arguments=(assembleDebug); fi
 network_arguments=(--offline)
 if [[ ${POCKETLORE_GRADLE_ONLINE:-0} == 1 ]]; then network_arguments=(); fi
-exec "$toolchain/gradle-8.13/bin/gradle" -p "$project_root/android" "${network_arguments[@]}" --console=plain --init-script "$project_root/tools/release/debug-signing.gradle" "${arguments[@]}"
+"$toolchain/gradle-8.13/bin/gradle" -p "$project_root/android" "${network_arguments[@]}" --console=plain --init-script "$project_root/tools/release/debug-signing.gradle" "${arguments[@]}"
+
+# Deterministic candidate packaging is part of every successful build invocation.
+python3 "$project_root/tools/release/finalize_apk.py"

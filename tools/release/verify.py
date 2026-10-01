@@ -3,7 +3,7 @@
 import argparse,copy,hashlib,importlib.util,json,os,subprocess,tempfile,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
-EVIDENCE=ROOT/'docs/evidence/release-v2'
+EVIDENCE=ROOT/'docs/evidence/release-v3'
 MANIFEST=EVIDENCE/'manifest.json'
 def sha(p):
     with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
@@ -46,6 +46,7 @@ def main():
         with zipfile.ZipFile(apk) as z:
             manifest['apk_entries']={n:{'bytes':len(z.read(n)),'sha256':hashlib.sha256(z.read(n)).hexdigest()} for n in z.namelist() if n.startswith(('assets/','lib/'))}
         MANIFEST.write_text(json.dumps(manifest,indent=2)+'\n')
+    print(run(['python3','tools/release/check_reproducibility.py']).strip())
     m=json.loads(MANIFEST.read_text())
     for name,identity in m['artifacts'].items():
         p=ROOT/name;assert p.stat().st_size==identity['bytes'] and sha(p)==identity['sha256'],name
