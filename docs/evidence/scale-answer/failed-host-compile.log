@@ -1,0 +1,1 @@
+Initial AdapterCheck.java compilation failed before executing tests: Alternatives in a multi-catch statement cannot be related by subclassing; CancellationException is a subclass of IllegalStateException. The redundant subclass alternative was removed; no source or expected result changed.
