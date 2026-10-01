@@ -6,7 +6,7 @@ public final class LinkBehavior {
  public static void main(String[] args){
   String e=String.join("",Collections.nCopies(64,"a")),h=String.join("",Collections.nCopies(64,"b"));String text="Athens was a centre of philosophy. Formula [5] is ordinary text.";
   BoundAnswer.Source s=new BoundAnswer.Source(e,"article-1",h,BoundAnswer.sha(text),"Athens","2026-10-01","Test fixture; not factual corpus",text);BoundAnswer.Cancel cancel=new BoundAnswer.Cancel();BoundAnswer.Catalog catalog=new BoundAnswer.Catalog(Arrays.asList(s),cancel);
-  BoundAnswer.Draft d=BoundAnswer.parse("Describe Athens.","O1|P1.1|Athens|none|It was a centre of philosophy. Formula [5] is ordinary text.",12,catalog,cancel);
+  BoundAnswer.Draft d=BoundAnswer.parse("Describe Athens.","O1|P1.1|Athens|none|It was a centre of philosophy. Formula [5] is ordinary text.",catalog,12,cancel);
   Map<String,EvidenceLinker.Score> scores=new HashMap<>();List<EvidenceLinker.Candidate> candidates=EvidenceLinker.candidates(d.claims.get(0),catalog,cancel);check(candidates.size()==2);check(candidates.get(0).pairs.size()==3);
   rejects(()->EvidenceLinker.bind(d,catalog,scores,cancel));
   for(EvidenceLinker.Candidate c:candidates)for(EvidenceLinker.Pair p:c.pairs)scores.put(p.key,new EvidenceLinker.Score(0,1,0,12,""));
