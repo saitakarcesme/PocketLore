@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verify measured host artifacts, source provenance and controller behavior, not entailment."""
 from pathlib import Path
-import base64,hashlib,json,sqlite3,subprocess,tempfile,sys
+import base64,hashlib,json,sqlite3,subprocess,tempfile,sys,shutil
 R=Path(__file__).resolve().parents[2];F=R/'tools/evaluation/scale-model-quality';E=R/'docs/evidence/scale-model-quality'
 def sha(p):
  with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
@@ -11,7 +11,10 @@ def hashed(p,h):require(sha(p)==h,'Artifact hash changed: '+str(p))
 def model(p,pin):
  require(p.stat().st_size==pin['bytes']<=6_000_000_000,'Model file size changed')
  hashed(p,pin['sha256'])
+def run_artifacts(d,receipt):
+ for path,h in receipt['artifact_hashes'].items():hashed(d/path,h)
 def main():
+ subprocess.run([sys.executable,str(F/'check_profiles.py')],check=True)
  protocol=json.loads((F/'protocol.json').read_text());hashed(F/'protocol.json',(F/'protocol.sha256').read_text().strip())
  cases=protocol['cases'];require(len(cases)>=48 and len({c['topic'] for c in cases})>=8,'Frozen case breadth missing')
  require({c['kind'] for c in cases}>={'literal','explanation','comparison','multi-part','false-premise','absence'},'Case shapes missing')
@@ -34,6 +37,11 @@ def main():
    archived=subprocess.check_output(['git','show',revision+':'+path],cwd=R)
    require(hashlib.sha256(archived).hexdigest()==h,'Compiled source identity changed: '+path)
    if path.endswith('.java'):hashed(R/path,h)
+ for name in ['qwen25-7b','qwen15-moe']:
+  failed=E/'runs/initial'/name;receipt=json.loads((failed/'receipt.json').read_text());run_artifacts(failed,receipt)
+  for c in cases:
+   v=json.loads((failed/(c['id']+'.json')).read_text())
+   require(v['tokens']==0 and not v['raw'] and 'Runtime buffers exceed' in v['failure'],'Historical allocation failure overwritten')
  selection=json.loads((E/'selection.json').read_text());require(selection['deployment']=='unchanged production 0.5B','Optional model relabeled as deployed')
  require(set(selection['runs'])=={'baseline','qwen3-4b','qwen25-7b','qwen15-moe'},'Incomplete model matrix')
  prompts={};replay=[];counts={}
@@ -43,7 +51,7 @@ def main():
   require(pin==json.loads(pins[name].read_text()),'Pinned model differs from run')
   require(receipt['id']==name and receipt['exit_code']==0 and not receipt['timeout'],'Failed/incomplete quality run')
   require(len(pin['revision'])==40,'Mutable model revision');hashed(R/receipt['license'],receipt['license_sha256'])
-  for p,h in receipt['artifact_hashes'].items():hashed(d/p,h)
+  run_artifacts(d,receipt)
   load=json.loads((d/'load.json').read_text());require('bb4caa7540188872173c44d161602d9271386413' in load['identity'] and 'threads=6' in load['identity'],'Runtime identity differs')
   review=json.loads((E/'reviews'/f'{name}.json').read_text());require(set(review['cases'])=={c['id'] for c in cases},'Missing clause/source reviews: '+name)
   counts[name]={'candidate':0,'withheld':0,'useful_drafts_supported_population':0,'useful_abstentions':0,'unsupported_candidates':0}
@@ -75,8 +83,9 @@ def main():
    try:fn()
    except (FileNotFoundError,ValueError):return
    raise ValueError('Corruption accepted')
-  sample=t/'run.json';sample.write_text('{}');h=sha(sample);sample.unlink();reject(lambda:hashed(sample,h));sample.write_text('{ }');reject(lambda:hashed(sample,h))
-  baseline=json.loads((R/selection['runs']['baseline']/'receipt.json').read_text())['pin'];reject(lambda:model(t/'missing.gguf',baseline))
+  original=R/selection['runs']['baseline'];copy=t/'changed-run';shutil.copytree(original,copy);receipt=json.loads((copy/'receipt.json').read_text())
+  sample=copy/'s01.json';content=sample.read_bytes();sample.unlink();reject(lambda:run_artifacts(copy,receipt));sample.write_bytes(content+b' ');reject(lambda:run_artifacts(copy,receipt))
+  baseline=receipt['pin'];reject(lambda:model(t/'missing.gguf',baseline))
   changed=t/'changed.gguf'
   with changed.open('wb') as f:f.truncate(baseline['bytes'])
   reject(lambda:model(changed,baseline))

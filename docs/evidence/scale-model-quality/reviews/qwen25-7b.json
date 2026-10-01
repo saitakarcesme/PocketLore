@@ -145,6 +145,102 @@
       "obligations_complete": true,
       "fully_useful_draft": true,
       "assessment": "Correctly withholds absent future local pricing; useful abstention only."
+    },
+    "s19": {
+      "result_sha256": "96854683066ddcb61904465e89891a5539a905d68f774be4045af5e9c1128f7f",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly explains codification as one comprehensive document rather than dispersed written principles, established by S2."
+    },
+    "s20": {
+      "result_sha256": "a8bad97a29517519e1fdcfaf50f0e8496886dfdb381a7afee30d779664498ce5",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly explains variability using symbolic/no-policy and formal-power cases exactly established by S5."
+    },
+    "s21": {
+      "result_sha256": "f2ef21d034553fb1fb6568f2ec7ce066111b870ee78036d1347003cba0cb9f8a",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Both requested constitutional functions are addressed, but O2 adds power-variation and hereditary-symbolic-head details from S5 while citing only S4."
+    },
+    "s22": {
+      "result_sha256": "51824f9790289ed68f04148f1fb6736ed918562419f36bce98b06c6fe0543b12",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Conflates codified with merely written by allowing a set of legal documents instead of one comprehensive document; the monarch-power distinction is otherwise correct."
+    },
+    "s23": {
+      "result_sha256": "2f156bfb606ad75f0f2711525512f89bdf1d1899cf0e302212a3d75d72ba0347",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Correctly rejects the universal powerless-monarch premise, but attributes power variation and veto/appointment/dissolution examples to S4 instead of their establishing S5."
+    },
+    "s24": {
+      "result_sha256": "c027a7df335c8b8c146243ae556e5d4abe72af84af2d257430f947b11869fcb1",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Clearly withholds absent private court decision despite malformed obligation-label placement; useful semantic abstention, never a published factual answer."
+    },
+    "s25": {
+      "result_sha256": "9ac6de21e045bcf53db146e8c3a3cef5cba44af512e3ee11f45e61513d98725e",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correct Aruba distance/direction and constituent-country relationship, including the exact 1986 qualification, each with S1 support; screen candidate."
+    },
+    "s26": {
+      "result_sha256": "bac225fac4c9649aee63e9462c269f58e6d3ad1ea023c39c1f8758e886c65f76",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correct geographic correction from S4 establishes why the Caribbean-island description is wrong; end-position citation is a machine formatting issue, not absent support."
+    },
+    "s27": {
+      "result_sha256": "4f3f994a7d4ebebf9ab94bd95ad6c7673105763a9464e0332cd2f23b41c71075",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Both locations/settings and additional details are supported by the explicit S1/S2 and S4/S5 paragraph links; unlike 4B, the added distances and elevation have their source paragraphs cited."
+    },
+    "s28": {
+      "result_sha256": "a52e891265f8a9cad9627b1df9e08bd593ed24aacd26530d265fffb47f614eb3",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Area, dimensions and climate are established by S2, and France/Spain borders by S4; all requested facts and added details are supported."
+    },
+    "s29": {
+      "result_sha256": "fec812ddd5beb1f70fb95ed8a1d4366880cc06e7d03f9ed9c8795fa52da3d4d7",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Correctly rejects the false coastline description, but cites Aruba S2 and tourism/EU Andorra S6 instead of the geographic Andorra S4 excerpt."
+    },
+    "s30": {
+      "result_sha256": "1d1ffe44708eedde6f8bb1799a77ea006c03b29bed2a01347f740bac7273f8a8",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly withholds unprovided live border waiting time; useful abstention only."
     }
   }
 }
