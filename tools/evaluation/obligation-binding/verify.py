@@ -18,6 +18,9 @@ def reject(fn):
 def main():
  exact(F/'new-cases.json',(F/'new-cases.sha256').read_text().strip());new=json.loads((F/'new-cases.json').read_text());oldpath=R/'tools/evaluation/scale-model-quality/protocol.json';exact(oldpath,new['task220_protocol_sha256']);old=json.loads(oldpath.read_text());cases=old['cases']+new['cases'];require(len(cases)==60 and len({c['id'] for c in cases})==60,'Incomplete frozen cases')
  spec=json.loads((F/'execution.json').read_text());require((spec['context_tokens'],spec['draft_tokens'],spec['audit_tokens'])==(4096,320,192),'Budget drift')
+ oldseal=R/'docs/evidence/scale-model-quality/SHA256SUMS'
+ exact(oldseal,hashlib.sha256(subprocess.check_output(['git','show','4d51817:docs/evidence/scale-model-quality/SHA256SUMS'],cwd=R)).hexdigest())
+ for line in oldseal.read_text().splitlines():h,p=line.split('  ',1);exact(R/p,h)
  model=R/'downloads/model-capability/models/Qwen3-4B-Q4_K_M.gguf';exact(model,spec['model_sha256']);require(model.stat().st_size==2497280256,'Model identity size')
  selected=json.loads((R/'docs/evidence/scale-model-quality/runs/initial/qwen3-4b/receipt.json').read_text())
  require(selected['pin']==json.loads((R/'tools/evaluation/model-capability/qwen3-4b.json').read_text()) and selected['pin']['sha256']==spec['model_sha256'],'Selected model pin drift')
