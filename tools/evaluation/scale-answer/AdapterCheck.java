@@ -6,6 +6,7 @@ public final class AdapterCheck {
  static void rejects(Runnable r){try{r.run();}catch(IllegalArgumentException|IllegalStateException e){return;}throw new AssertionError("Invalid adapter input accepted");}
  static ScaleAnswerAdapter.Review approval(ScaleAnswerAdapter.Snapshot s,int start,int end){return new ScaleAnswerAdapter.Review(s.fingerprint(),start,end,BoundAnswer.sha(s.text.substring(start,end)),"a".repeat(64),"b".repeat(64),true);}
  public static void main(String[] args)throws Exception {
+  ScalePublicationChecks.run();
   String text="Subject Ω 😀 retains \\sqrt[5]{100} [12] only when the stated condition holds.";
   String[] fields={"a".repeat(64),"shard-a","fixture","1","b".repeat(64),BoundAnswer.sha(text),"Constructed subject","https://example.invalid/1","https://example.invalid/history","2026-01-01","Constructed test rights","No factual corpus clearance","c".repeat(64),"constructed formula context"};
   ScaleAnswerAdapter.Snapshot s=new ScaleAnswerAdapter.Snapshot(fields,text);
