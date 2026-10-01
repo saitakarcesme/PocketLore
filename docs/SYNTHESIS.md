@@ -12,7 +12,7 @@ A narrow conflict detector recognizes otherwise identical statements with opposi
 
 ## Reproduce on LLMRig
 
-Provision the existing pinned runtime and English pack using their documented fetch/build steps. The optional synthesis model is separately pinned in `tools/evaluation/synthesis-model.json`; its upstream Apache-2.0 license and attribution are bundled in Android assets. No weights enter Git.
+Provision the existing pinned runtime and English pack using their documented fetch/build steps. The optional Qwen3-1.7B Q8 synthesis model is separately pinned in `tools/evaluation/synthesis-model.json`; its upstream Apache-2.0 license and attribution are bundled in Android assets. No weights enter Git.
 
 ```sh
 python3 tools/evaluation/fetch-synthesis-model.py
@@ -23,3 +23,5 @@ bash tools/evaluation/check_synthesis.sh
 The first command performs online provisioning into ignored downloads. The checks require the existing booted `emulator-5560`; they do not launch an emulator or restart services. The evaluator installs the app/test APKs and uses an isolated test model and pack, preserving the app's saved model. It executes real production JNI generation, token-overflow/cancellation checks, and citation-span callbacks, with raw prompts, source excerpts and outputs saved under unique ignored `downloads/synthesis/run-*` directories. It fails when a required generation or bounded development meaning check fails. Host fictional control tests are separate from the real-source quality cases.
 
 The five development questions were frozen before tuning; four require generated answers and one requires absent-evidence abstention. An additional fictional sensor conflict tests control behavior only. No private holdout is used. See [measured evidence](evidence/synthesis.md) for actual results, failures and claim review. Physical hardware, independent source-support review, broad reasoning quality, sustained performance and resource acceptance remain open.
+
+The Qwen3 adapter uses its upstream non-thinking assistant prefix, counted in the same native tokenizer path as generation. Earlier Qwen2.5-1.5B trials and their license/pin remain preserved. This optional candidate uses an isolated test model and does not replace the app's saved model.

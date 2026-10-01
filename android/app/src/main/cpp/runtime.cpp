@@ -38,7 +38,7 @@ std::string bytes(JNIEnv *env, jbyteArray value) {
 }
 }
 extern "C" JNIEXPORT jstring JNICALL Java_org_pocketlore_app_NativeRuntime_identity(JNIEnv *env, jclass) {
-    return env->NewStringUTF("llama.cpp " POCKETLORE_REVISION "; CPU; context=2048; threads=2; greedy");
+    return env->NewStringUTF("llama.cpp " POCKETLORE_REVISION "; CPU; context=2048; threads=2; greedy; Qwen3 non-thinking adapter");
 }
 extern "C" JNIEXPORT jlong JNICALL Java_org_pocketlore_app_NativeRuntime_create(JNIEnv *env, jclass) {
     try {
@@ -86,6 +86,15 @@ static std::string chatText(JNIEnv *env, const std::shared_ptr<Session>& s, jbyt
             if (llama_chat_apply_template(tmpl, messages, 2, true, formatted.data(), size) != size)
                 throw std::runtime_error("Chat formatting failed");
             text.assign(formatted.data(), size);
+            char architecture[64]={};
+            llama_model_meta_val_str(s->model,"general.architecture",architecture,sizeof(architecture));
+            if(std::string(architecture)=="qwen3") {
+                // Upstream Qwen3 enable_thinking=false assistant prefix. No reasoning tokens are generated.
+                const std::string assistant="<|im_start|>assistant\n";
+                if(text.size()<assistant.size() || text.compare(text.size()-assistant.size(),assistant.size(),assistant)!=0 || std::string(tmpl).find("enable_thinking")==std::string::npos)
+                    throw std::runtime_error("Unsupported Qwen3 non-thinking template");
+                text+="<think>\n\n</think>\n\n";
+            }
     return text;
 }
 extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_countChatTokens(JNIEnv *env,jclass,jlong id,jbyteArray system,jbyteArray prompt) {

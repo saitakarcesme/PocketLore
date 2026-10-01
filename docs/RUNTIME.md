@@ -172,4 +172,4 @@ unmeasured. The 12 GB / 50 GB release gates remain open.
 
 ## Synthesis development update
 
-Task 050 adds exact chat-token preflight, constrained claim decoding and an optional pinned 1.5B model. See [synthesis implementation](SYNTHESIS.md) and [actual evidence](evidence/synthesis.md). Earlier measurements above remain historical; the enlarged context and import bound do not establish arbitrary-model memory safety or phone acceptance.
+Task 050 adds exact chat-token preflight, constrained claim decoding and an optional pinned synthesis model. See [synthesis implementation](SYNTHESIS.md) and [actual evidence](evidence/synthesis.md). Earlier measurements above remain historical; the enlarged context and import bound do not establish arbitrary-model memory safety or phone acceptance.

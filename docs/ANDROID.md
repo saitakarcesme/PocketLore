@@ -88,4 +88,4 @@ emulator. See [retrieval reproduction](RETRIEVAL.md) and
 
 ## Synthesis development update
 
-The answer flow now budgets the exact model context, preserves source dates, checks linked claims and exposes final citation spans through the existing source inspector. Comparisons select evidence for each named aspect. Optional 1.5B model imports are bounded at 2,048 MiB; its actual inference is tested in an isolated emulator fixture, not a new default saved model. See [implementation](SYNTHESIS.md) and [evidence](evidence/synthesis.md) for quality failures and test limits.
+The answer flow now budgets the exact model context, preserves source dates, checks linked claims and exposes final citation spans through the existing source inspector. Comparisons select evidence for each named aspect. Optional synthesis model imports are bounded at 2,048 MiB; actual inference is tested in an isolated emulator fixture, not a new default saved model. See [implementation](SYNTHESIS.md) and [evidence](evidence/synthesis.md) for quality failures and test limits.
