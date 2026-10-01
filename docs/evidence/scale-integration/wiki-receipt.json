@@ -1,0 +1,63 @@
+{
+  "manifest_sha256": "55ef0ea864fb0c123d5b8eab8202205eb66e48d01f055002feb09df0ce3d440b",
+  "archive_bytes": 1424170364,
+  "archive_sha256": "a4c555469aa4f76ef2c1ea0978ca378f635502c5555ea6215b038e61267f6b12",
+  "manifest": {
+    "version": 1,
+    "kind": "wiki",
+    "generation_allowed": false,
+    "rights_status": "unreviewed_source_specific_terms; browse_only",
+    "source_inventory_sha256": "5160f3a8fa683065707aaa70ccaa87ad475cd32d87561cc70e3a977332835df5",
+    "installed_bytes": 1424167452,
+    "files": [
+      {
+        "path": "000_00000/articles.blocks",
+        "bytes": 748666069,
+        "sha256": "7d254e4fa1d0ddc4a13f71cd6c9263b48af6746060cff1b548d0795be6586e21"
+      },
+      {
+        "path": "000_00000/catalog.sqlite",
+        "bytes": 675430400,
+        "sha256": "1cb8bc54ad2b489c498aad22d937ce539be66f220acc5eac66243c3a410a2bcb"
+      },
+      {
+        "path": "000_00000/measurement.json",
+        "bytes": 1213,
+        "sha256": "9f44a9999cdcc916d27c199bb83673ebaaaf2fae35a954cb1c343d51828ab3f0"
+      },
+      {
+        "path": "NOTICE.txt",
+        "bytes": 3362,
+        "sha256": "9230104a82a2be2b9f58cf774011d4e6cc5dd3c64b5e6e74a23b8dd2aa01fd18"
+      },
+      {
+        "path": "CC-BY-SA-3.0.txt",
+        "bytes": 22240,
+        "sha256": "3f941b3b89cf7b8370ceb83cc76d2120d471b58735d8ca60238a751a48d7f72f"
+      },
+      {
+        "path": "CC-BY-SA-4.0.txt",
+        "bytes": 20138,
+        "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+      },
+      {
+        "path": "CC0-1.0.txt",
+        "bytes": 7048,
+        "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+      },
+      {
+        "path": "provenance.json",
+        "bytes": 16982,
+        "sha256": "4bf267188415f053be26379030d0d6698bf09a392a02e9bbc6286879200a4e66"
+      }
+    ],
+    "shards": [
+      "000_00000"
+    ],
+    "label": "English reference \u2014 first shard",
+    "documents": 413151,
+    "full_articles": 82022,
+    "leads": 331129,
+    "lane_commit": "db58d7015b176b2f4721a9fe9a221c9593456e14"
+  }
+}

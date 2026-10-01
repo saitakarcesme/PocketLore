@@ -1,0 +1,93 @@
+{
+  "manifest_sha256": "fedc92ecf51ec8a0b23d536170c6caa5fcd706196830384ca8fc2b9033405a94",
+  "archive_bytes": 1172549792,
+  "archive_sha256": "9be278b33b17150281f98ebfd56f42c9ce26455b8e88663802bb5ed69bb0f2e7",
+  "manifest": {
+    "version": 1,
+    "kind": "places",
+    "generation_allowed": false,
+    "rights_status": "unreviewed_source_specific_terms; browse_only",
+    "source_inventory_sha256": "b914e9109dfd563c6d197f703bd6c8784acca931e2c81d8797ac32e7db0a0a48",
+    "installed_bytes": 1172544801,
+    "files": [
+      {
+        "path": "compact-00.sqlite",
+        "bytes": 1051631616,
+        "sha256": "4400b3fbfa08850916f4e1d0ae0b66f242b95e696fccae04019a92660274e51c"
+      },
+      {
+        "path": "cities.sqlite",
+        "bytes": 120569856,
+        "sha256": "aafe7f64035c17da59b3b6b241d5354aff1b967730a1f38833e8d61a326faa86"
+      },
+      {
+        "path": "notices/Apache-2.0.html",
+        "bytes": 11358,
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "path": "notices/Apache-2.0.receipt.json",
+        "bytes": 438,
+        "sha256": "58275bcdc8ae23f33256a29d2c6ff5e012e3b49ed94f55681dd883535d90e826"
+      },
+      {
+        "path": "notices/CC-BY-4.0.html",
+        "bytes": 48957,
+        "sha256": "4d5114d10169ebdb6df0addb42c28e6ec33b1f58f985cbae04096bd55ec71af7"
+      },
+      {
+        "path": "notices/CC-BY-4.0.receipt.json",
+        "bytes": 453,
+        "sha256": "3250eda3b655394e3cfb116061813f12fc7088d9bb64c3ee78b71214bdda6aff"
+      },
+      {
+        "path": "notices/CC-BY-SA-4.0.html",
+        "bytes": 51860,
+        "sha256": "170b3685f24d098f590c92867787e7be3a86260aed1b96bf4a7594f72a9116be"
+      },
+      {
+        "path": "notices/CC-BY-SA-4.0.receipt.json",
+        "bytes": 465,
+        "sha256": "67b047df036faaea19ecb54c41430bf2ece69d1d30fe4611449ae82b936d7886"
+      },
+      {
+        "path": "notices/CC0-1.0.html",
+        "bytes": 32438,
+        "sha256": "83245a53f17ca0fe50dfa1e320e800be7dca2e887abf531b0b8206c92ed9c645"
+      },
+      {
+        "path": "notices/CC0-1.0.receipt.json",
+        "bytes": 461,
+        "sha256": "8b67a88016a53b6749e1f339dc89e4a15e49bc94457feb3cf1e4c635d6bc3a0e"
+      },
+      {
+        "path": "notices/CDLA-Permissive-2.0.html",
+        "bytes": 144836,
+        "sha256": "80fce128a72ac0f2c23cda5963aef027cc39552fd4d6ae649499cd2e5e677535"
+      },
+      {
+        "path": "notices/CDLA-Permissive-2.0.receipt.json",
+        "bytes": 441,
+        "sha256": "77593121b2946b1412b4758b9b2b3a6b42680890b0f810eaee2619df6c12aece"
+      },
+      {
+        "path": "notices/ODbL-1.0.html",
+        "bytes": 51176,
+        "sha256": "b8d8aebb21bf405f93f6e21bbf0d8f0a749844f9812ec58692f189add6402b47"
+      },
+      {
+        "path": "notices/ODbL-1.0.receipt.json",
+        "bytes": 446,
+        "sha256": "5c810698c8ba8da707c1d9e547ba89b87368d9b659d70a9b672eb39cf1e0f0ff"
+      }
+    ],
+    "shards": [
+      "compact-00.sqlite"
+    ],
+    "cities": "cities.sqlite",
+    "label": "World places \u2014 first shard",
+    "source_records": 5120674,
+    "semantic_unique_entities": null,
+    "lane_commit": "9a04ac33488a05f61435d62f8be249fd7fe135af"
+  }
+}

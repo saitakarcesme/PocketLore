@@ -1,0 +1,25 @@
+{
+  "environment": "Android x86_64 emulator-5560; not physical hardware",
+  "before": {
+    "pss_kib": 22751,
+    "private_dirty_kib": 12540,
+    "java_used_bytes": 2764720,
+    "native_heap_bytes": 5546000
+  },
+  "sqlite_identity": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+  "archive_bytes": 1172549792,
+  "archive_sha256": "9be278b33b17150281f98ebfd56f42c9ce26455b8e88663802bb5ed69bb0f2e7",
+  "import_ms": 3693,
+  "edition": "fedc92ecf51ec8a0b23d536170c6caa5fcd706196830384ca8fc2b9033405a94",
+  "installed_bytes": 1172547596,
+  "temporary_bytes": 1172547596,
+  "may_generate": false,
+  "after": {
+    "pss_kib": 27115,
+    "private_dirty_kib": 13888,
+    "java_used_bytes": 3827520,
+    "native_heap_bytes": 5806256
+  },
+  "elapsed_ms": 6410,
+  "status": "PASS"
+}

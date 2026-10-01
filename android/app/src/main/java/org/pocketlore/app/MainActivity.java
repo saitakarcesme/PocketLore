@@ -65,6 +65,7 @@ public final class MainActivity extends Activity {
         TextView title = text("PocketLore", 32); title.setTextColor(Color.rgb(22, 67, 45)); layout.addView(title);
         layout.addView(text("Offline research • local library", 16));
         layout.addView(text("Source-backed passages · Import a knowledge pack or local model", 14));
+        Button bulk = new Button(this); bulk.setText("Reference and world places"); layout.addView(bulk); bulk.setOnClickListener(v -> startActivity(new android.content.Intent(this, ScaleActivity.class)));
         Button travel = new Button(this); travel.setText("Offline travel and tools"); layout.addView(travel);
         travel.setOnClickListener(v -> startActivity(new android.content.Intent(this, TravelActivity.class)));
         packStatus = text("Bundled water-science starter pack", 14); layout.addView(packStatus);
