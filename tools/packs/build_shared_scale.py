@@ -14,7 +14,7 @@ def sha(p):
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('kind',choices=['wiki','places']);ap.add_argument('--base',type=pathlib.Path);ap.add_argument('--output',required=True,type=pathlib.Path);ap.add_argument('--archive',action='store_true');ap.add_argument('--shard-limit',type=int);a=ap.parse_args()
  old=json.loads(a.base.read_text()) if a.base else None
- known={f['sha256'] for f in old['files']} if old else set()
+ known={f['sha256'] for f in old['files']} if old and old.get('version')==2 else set()
  if a.kind=='wiki':
   root=LANES/'wiki/edition-v7';inventory=root/'installed-inventory.json';allfiles=json.loads(inventory.read_text())['files'];shards=sorted({f['path'].split('/')[0] for f in allfiles if f['path'].endswith('/catalog.sqlite')});specs=allfiles
   import sqlite3
@@ -63,8 +63,11 @@ def main():
  if a.archive and sum(f['bytes'] for f in fs if f['payload'])>2_000_000_000:raise ValueError('Delta exceeds 2GB transport cap; use successive --shard-limit and --base manifests')
  if a.archive:
   with zipfile.ZipFile(a.output.with_suffix('.plscale'),'x',compression=zipfile.ZIP_STORED,allowZip64=True) as z:
-   z.writestr('manifest.json',raw)
+   z.writestr(zipfile.ZipInfo('manifest.json',(2026,10,1,0,0,0)),raw)
    for f in fs:
-    if f['payload']:z.write(root/f['path'],f['path'])
+    if f['payload']:
+     info=zipfile.ZipInfo(f['path'],(2026,10,1,0,0,0));info.file_size=f['bytes']
+     with (root/f['path']).open('rb') as src,z.open(info,'w',force_zip64=True) as dst:
+      for chunk in iter(lambda:src.read(1024*1024),b''):dst.write(chunk)
  print(json.dumps({'manifest':str(a.output),'sha256':sha(a.output),'installed_bytes':m['installed_bytes'],'incoming_payload_bytes':sum(f['bytes'] for f in fs if f['payload']),'shared_bytes':sum(f['bytes'] for f in fs if not f['payload'])}))
 if __name__=='__main__':main()

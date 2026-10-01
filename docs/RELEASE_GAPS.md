@@ -1,5 +1,13 @@
 # Release gaps
 
+## Task301 current scale status
+
+[Shared-shard evidence](evidence/full-scale-inventory.md) supersedes the older installed-bulk counts: the emulator currently retains two full places shards (10,186,606 source records) with one shared city database, plus the unchanged three reviewed/reference/science editions and saved production0.5B model. Full host wiki/place inventories have been rehashed and queried; they remain distinct from installed coverage. Android still misses18/20 frozen cities with those two shards; Mexico City remains about8.5seconds. Full host20/20 is not Android or useful-answer acceptance.
+
+The version2 delta importer, removal/recovery, actual two-full-shard update, smaller real-source cross-shard tests and separate-process reload have concrete rig evidence. The required build passes; the inventory command deliberately exits1 after its independent checks because full41+GB installation/update remains unmeasured on the existing6GB userdata filesystem. **Dependency:** coordinator-approved Android storage with room for the full inventory, one incoming shard and reserves; no service resizing is authorized here. Next action is progressive sealed-delta installation and full inventory/replacement measurements once provisioned. Host budget arithmetic estimates44.80GB for one largest-shard replacement under stated assumptions; unknown provider caches/filesystem overhead and selected4B remain separate risks.
+
+Existing task302 and answer-architecture work remain independent rig work. Source rights stay browse-only, selected4B remains host-only, and current app changes invalidate release-v5 as the latest APK identity. Revalidate exact release artifacts after remaining scale/model integration; no duplicated queue task was created. Physical/GrapheneOS, signing owner, independent clean-machine and unseen matched evaluation, and human acceptance remain open.
+
 ## Current development candidate: release-v5, 2026-10-01
 
 The task213 repair supersedes the historical audit-only release-identity failure: both `bash tools/android-build.sh` and `bash tools/verify-release.sh` pass against APK `3d804882ea576fb5ebdd29144a88fa8002c99efbd97c45323928a7c8a1d2e98f`. [Exact evidence](evidence/broad-candidate-release.md) records fresh offline three-edition SAF installation, selection persistence, real production JNI citation-span navigation, source/license inspection, corrupt/cancelled rollback and unchanged saved model. Historical failures and release-v4 are preserved.

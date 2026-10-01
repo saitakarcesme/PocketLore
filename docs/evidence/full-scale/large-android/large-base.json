@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "mode": "large-base",
+  "pid": 22256,
+  "manifest": "abe759be34fe67d09596b84bd7c0b6984ac26eacaec92ccc56eed2f1e6524918",
+  "source_records": 5120674,
+  "shards": [
+    "compact-00.sqlite"
+  ],
+  "archive_bytes": 1172549841,
+  "app_files_before": 2046434233,
+  "app_files_after": 3219015015,
+  "observed_precommit_bytes": 3218982158,
+  "new_bytes_written": 1172547925,
+  "admission_peak": 4526793263,
+  "ms": 3973.244451,
+  "pss_kib": 30065,
+  "shared_cities": false,
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+}
