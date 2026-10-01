@@ -17,7 +17,10 @@ trap 'code=$?; echo "exit=$code evidence=$out"' EXIT
 [[ $("$adb" -s "$serial" shell getconf PAGE_SIZE | tr -d '\r') == 16384 ]]
 "$adb" -s "$serial" shell getprop > "$out/properties.txt"
 "$adb" -s "$serial" shell dumpsys package org.pocketlore.app > "$out/package-before.txt"
-apk=${POCKETLORE_16KB_APK:-android/app/build/outputs/apk/debug/app-debug.apk}
+bash tools/android-build.sh assembleDebug assembleDebugAndroidTest -PpocketloreTestRunner=org.pocketlore.app.PageSizeInstrumentation > "$out/build.log" 2>&1
+python3 tools/evaluation/test_16kb_artifacts.py > "$out/mutations.log"
+python3 tools/runtime/repack-16kb-candidate.py > "$out/overlay.log"
+apk=${POCKETLORE_16KB_APK:-downloads/android-16kb/refined-ui-16kb.apk}
 testapk=android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
 python3 tools/evaluation/verify_16kb_artifacts.py "$apk" > "$out/elf-zip.json"
 "$tc/sdk/build-tools/35.0.0/zipalign" -c -P 16 -v 4 "$apk" > "$out/zipalign.log"
@@ -25,8 +28,8 @@ source tools/answers/model.env
 model="downloads/answers/model/$MODEL_FILENAME"
 echo "$MODEL_SHA256  $model" | sha256sum -c -
 sha256sum "$apk" "$testapk" "$model" > "$out/identities.txt"
-"$adb" -s "$serial" install -r "$apk"
-"$adb" -s "$serial" install -r "$testapk"
+"$adb" -s "$serial" install --no-incremental -r "$apk"
+"$adb" -s "$serial" install --no-incremental -r "$testapk"
 "$adb" -s "$serial" shell dumpsys package org.pocketlore.app > "$out/package-after.txt"
 # Require package manager to clear the previous automatic 4KB compatibility state.
 grep -q 'pageSizeCompat=0' "$out/package-after.txt"

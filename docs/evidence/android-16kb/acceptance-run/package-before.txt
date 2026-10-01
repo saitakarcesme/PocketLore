@@ -1,0 +1,106 @@
+Activity Resolver Table:
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        ae6faf org.pocketlore.app/.MainActivity filter f0e07c0
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+
+Domain verification status:
+
+Registered ContentProviders:
+  org.pocketlore.app/.NotebookExportProvider:
+    Provider{7f6ad42 org.pocketlore.app/.NotebookExportProvider}
+
+ContentProvider Authorities:
+  [org.pocketlore.app.notebook]:
+    Provider{7f6ad42 org.pocketlore.app/.NotebookExportProvider}
+      applicationInfo=ApplicationInfo{8ab9149 org.pocketlore.app}
+
+Key Set Manager:
+  [org.pocketlore.app]
+      Signing KeySets: 64
+
+Packages:
+  Package [org.pocketlore.app] (ec74a4e):
+    appId=10230
+    pccId=-1
+    pkg=Package{a7a4783 org.pocketlore.app}
+    codePath=/data/app/~~AK0A17Ud7TswPjiJ4P2wQw==/org.pocketlore.app-SNheh-i_fEsCxuVAcq2zlw==
+    resourcePath=/data/app/~~AK0A17Ud7TswPjiJ4P2wQw==/org.pocketlore.app-SNheh-i_fEsCxuVAcq2zlw==
+    legacyNativeLibraryDir=/data/app/~~AK0A17Ud7TswPjiJ4P2wQw==/org.pocketlore.app-SNheh-i_fEsCxuVAcq2zlw==/lib
+    extractNativeLibs=false
+    primaryCpuAbi=x86_64
+    secondaryCpuAbi=null
+    cpuAbiOverride=null
+    versionCode=1 minSdk=28 targetSdk=35
+    minExtensionVersions=[]
+    versionName=0.1.0-bootstrap
+    hiddenApiEnforcementPolicy=2
+    usesNonSdkApi=false
+    splits=[base]
+    apkSigningVersion=4
+    flags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    forceQueryable=false
+    pageSizeCompat=0
+    scannedAsStoppedSystemApp=false
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    timeStamp=2026-10-02 00:04:48
+    lastUpdateTime=2026-10-02 00:04:48
+    installerPackageName=null
+    installerPackageUid=-1
+    initiatingPackageName=com.android.shell
+    originatingPackageName=null
+    packageSource=1
+    loadingProgress=100%
+    loadingCompletedTime=1970-01-01 01:00:00
+    appMetadataFilePath=null
+    appMetadataSource=0
+    signatures=PackageSignatures{81a3da7 version:4, signatures:[283B9D4B43C98E005181F85B13FD923664F856E7A6CA2D65A34444A1B7401FAD], past signatures:[]}
+    installPermissionsFixed=false
+    pkgFlags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    privatePkgFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    apexModuleName=null
+    User 0: ceDataInode=3105551 deDataInode=795086 pccCeDataInode=0 pccDeDataInode=0 installed=true hidden=false suspended=false appLockEnabled=false distractionFlags=0 stopped=false notLaunched=false enabled=0 instant=false virtual=false quarantined=false
+      installReason=0
+      dataDir=/data/user/0/org.pocketlore.app
+      firstInstallTime=2026-10-01 23:52:00
+      uninstallReason=0
+      overlay paths:
+        /product/overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk
+        /product/overlay/EmulationPixel10Pro/EmulationPixel10ProOverlay.apk
+      legacy overlay paths:
+        /product/overlay/NavigationBarModeGestural/NavigationBarModeGesturalOverlay.apk
+        /product/overlay/EmulationPixel10Pro/EmulationPixel10ProOverlay.apk
+      runtime permissions:
+
+Queries:
+  system apps queryable: false
+  queries via forceQueryable:
+  queries via package name:
+    org.pocketlore.app:
+      org.pocketlore.app.test
+    org.pocketlore.app.test:
+      org.pocketlore.app
+  queries via component:
+    com.google.android.as:
+      org.pocketlore.app
+    com.google.android.settings.intelligence:
+      org.pocketlore.app
+    com.google.android.as.oss:
+      org.pocketlore.app
+    com.google.android.apps.accessibility.voiceaccess:
+      org.pocketlore.app
+  queryable via interaction:
+    User 0:
+      [com.android.dynsystem,com.android.keychain,com.android.location.fused,com.android.localtransport,com.android.emulator.multidisplay,com.android.server.telecom,com.android.DeviceAsWebcam,com.android.inputdevices,com.android.settings,android,com.android.providers.settings]:
+        org.pocketlore.app
+      com.google.android.inputmethod.latin:
+        org.pocketlore.app
+  queryable via uses-library:
+
+Dexopt state:
+  [org.pocketlore.app]
+    path: /data/app/~~AK0A17Ud7TswPjiJ4P2wQw==/org.pocketlore.app-SNheh-i_fEsCxuVAcq2zlw==/base.apk
+      x86_64: [status=run-from-apk] [reason=unknown] [primary-abi]
+        [location is error]
