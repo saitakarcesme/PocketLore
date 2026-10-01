@@ -1,0 +1,18 @@
+{
+ "scope":"Constructed mathematical language controls, never corpus facts or generated answers",
+ "source":{"step":"1.0","dimension":"level","ratio_dimension":"intensity","degree":"3","radicand":"8"},
+ "cases":[
+ ["A difference of 1.0 in level corresponds to an intensity ratio of the cube root of 8, which is approximately 2.0.",true],
+ ["The cube root of 8 is used to calculate the intensity ratio for a one-level difference in level.",true],
+ ["The cube root of 8 is approximately 2.0, which represents the intensity ratio for a one-level difference in level.",true],
+ ["The square root of 8 is approximately 2.0, which represents the intensity ratio for a one-level difference in level.",false],
+ ["The cube root of 8 is approximately 2.7.",false],
+ ["The cube root of 8 is used to calculate the intensity ratio for a two-level difference in level.",false],
+ ["The cube root of 8 is not approximately 2.0.",false],
+ ["The cube root of 8 is approximately 2.0. All tickets are free.",false],
+ ["The cube root of 8 is approximately 2.0, which causes the intensity ratio for a one-level difference in level.",false],
+ ["The cube root of 8 is used to calculate the velocity ratio for a one-level difference in level.",false],
+ ["A difference of 1.0 in level corresponds to an intensity ratio of the square root of 8.",false],
+ ["The cube root of 8 is approximately 2.0.",true]
+ ]
+}
