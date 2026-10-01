@@ -12,7 +12,8 @@ out=R/'downloads/obligation-binding'/datetime.datetime.now(datetime.timezone.utc
 for x in fixtures:
  assert sha(R/x['original_path'])==x['original_sha256']
  (inputs/(x['id']+'.claims.tsv')).write_text(''.join(str(c['obligation'])+'\t'+','.join(map(str,c['paragraphs']))+'\t'+enc(c['subject'])+'\t'+enc(c['qualifier'])+'\t'+enc(c['claim'])+'\n' for c in x['claims']))
-sources=[R/'android/app/src/main/java/org/pocketlore/app'/(n+'.java') for n in ['BoundAnswer','ObligationAnswer','ResearchEngine','EvidencePrompt','AnswerEngine','NativeRuntime']]+[R/'tools/evaluation/scale-model-quality/ScaleHarness.java',F/'BindingHarness.java',F/'HistoryHarness.java'];subprocess.run([TC/'jdk/bin/javac','-d',classes,*sources],check=True)
+sources=[R/'android/app/src/main/java/org/pocketlore/app'/(n+'.java') for n in ['BoundAnswer','ObligationAnswer','ResearchEngine','EvidencePrompt','AnswerEngine','NativeRuntime']]+[R/'tools/evaluation/scale-model-quality/ScaleHarness.java',F/'BindingHarness.java',F/'HistoryHarness.java',F/'HistoryPreflight.java'];subprocess.run([TC/'jdk/bin/javac','-d',classes,*sources],check=True)
+subprocess.run([TC/'jdk/bin/java','-cp',classes,'org.pocketlore.app.HistoryPreflight',inputs],check=True)
 lib=R/'downloads/scale-model-quality/host-build/libpocketlore.so';cmd=[str(TC/'jdk/bin/java'),'-Xmx512m','-Djava.library.path='+str(lib.parent),'-cp',str(classes),'org.pocketlore.app.HistoryHarness',str(inputs),str(model),str(out/'results')];manifest={'fixture_sha256':sha(F/'history.json'),'model_sha256':sha(model),'library_sha256':sha(lib),'source_hashes':{str(p.relative_to(R)):sha(p) for p in sources+[F/'run_history.py']},'stage':'Historical typed-wrapper native audit, no fresh generation credit','command':cmd};(out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 start=time.monotonic();samples=[];killed=''
 with (out/'stdout.txt').open('w') as stdout,(out/'stderr.txt').open('w') as stderr:
