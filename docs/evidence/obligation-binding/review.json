@@ -303,6 +303,36 @@
           "assessment": "P5.1-P5.2 correctly support differing symbolic versus formal veto/appointment/dissolution powers."
         }
       ]
+    },
+    "s23": {
+      "result_sha256": "7724011e474edfaac850d0006f7056bfe3e4640eb58aa4cea9e77b3d71b90794",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Raw correction properly rejects universal powerless-monarch premise using meaningful formal/discretionary powers. W classification loses this supported correction; no bound citation publication.",
+      "claims": []
+    },
+    "s24": {
+      "result_sha256": "7c2eac290762ccff4b519da0dc1fd570acd1accc7a1a042dde3a4cd9dda407dd",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Appropriate absence withholding of a pending current court decision.",
+      "claims": []
+    },
+    "s25": {
+      "result_sha256": "d880c5a39a182800aa6e16fef1fc496c1b216546fa4027d1397d32a9f94d0022",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Both requested geographic and constitutional facts are correct in source context, but P1.2 is not an available bounded sentence label. Integrity gate withholds; raw content potential is not inspectable answer success.",
+      "claims": []
     }
   }
 }

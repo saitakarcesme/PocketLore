@@ -39,7 +39,7 @@ def main():
    s=v[stage]
    if s['tokens']:
     require(s['first_token_ms']>0 and s['total_ms']>=s['first_token_ms'],'Invalid timing');require(s['prompt_tokens']+(320 if stage=='draft' else 192)<=4096,'Context overflow')
-  require(not any(v['native_after']),'Active context not released')
+  require(v['native_after']==[1,0,0,0,0],'Active context not released or resident handle lost')
   byid={s['id']:s for s in c['sources']}
   for source in c['sources']:
    dbrow=con.execute('select p.body,p.sha,d.title,d.url,d.date,d.rights,d.sha from passages p join documents d on d.id=p.document where p.citation=?',(source['id'],)).fetchone()
@@ -66,7 +66,8 @@ def main():
  for h in json.loads((F/'history.json').read_text()):
   exact(R/h['original_path'],h['original_sha256'])
   v=json.loads((history/'results'/(h['id']+'.json')).read_text());require(v['claims'] and v['audit']['tokens']>0,'Historical test rejected only syntax or missing native audit')
- cancel=json.loads((history/'results/cancellation.json').read_text());require(cancel['callback_count']==1 and cancel['cancel_latency_ms']>=0 and cancel['retry_tokens']>0 and not any(cancel['after_cancel']) and not any(cancel['after_retry']),'Cancellation/retry failed')
+ cancel=json.loads((history/'results/cancellation.json').read_text());require(cancel['callback_count']==1 and 0<=cancel['cancel_latency_ms']<=2000 and cancel['retry_tokens']>0 and cancel['after_cancel']==[1,0,0,0,0] and cancel['after_retry']==[1,0,0,0,0],'Cancellation/retry failed')
+ require(json.loads((history/'results/closed.json').read_text())==[0,0,0,0,0],'Native model handle not closed')
  with tempfile.TemporaryDirectory(prefix='pocketlore-binding-check-') as tmp:
   t=Path(tmp);inputs=t/'inputs';shutil.copytree(run/'inputs',inputs);(inputs/'replay.tsv').write_text('\n'.join(rows)+'\n');classes=t/'classes';classes.mkdir();sources=[R/p for p in manifest['sources'] if p.endswith('.java')]+[F/'BehaviorHarness.java']
   subprocess.run([TC/'jdk/bin/javac','-d',classes,*sources],check=True);subprocess.run([TC/'jdk/bin/java','-cp',classes,'org.pocketlore.app.BehaviorHarness',inputs],check=True)

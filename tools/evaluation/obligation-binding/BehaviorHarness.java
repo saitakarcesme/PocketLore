@@ -11,6 +11,10 @@ public final class BehaviorHarness {
   BoundAnswer.Source a=source("a".repeat(64),"same-id",text),b=source("b".repeat(64),"same-id",text);BoundAnswer.Catalog catalog=new BoundAnswer.Catalog(Arrays.asList(a,b),cancel);
   ok(!catalog.spans.get("P1.1").source.key().equals(catalog.spans.get("P2.1").source.key()),"Edition namespaces collapsed");
   reject(()->new BoundAnswer.Catalog(Arrays.asList(a,a),cancel));
+  reject(()->new BoundAnswer.Catalog(Arrays.asList(a,source(a.edition,a.id,"Different immutable passage content.")),cancel));
+  BoundAnswer.Source unicode=source("d".repeat(64),"unicode","A telescope symbol 🔭 remains ordinary text. Another sentence includes 2.512 and [1].");
+  BoundAnswer.Catalog unicodeCatalog=new BoundAnswer.Catalog(List.of(unicode),cancel);
+  for(BoundAnswer.Span span:unicodeCatalog.spans.values())ok(span.text().equals(unicode.text.substring(span.start,span.end)),"UTF16 span corrupts a surrogate or decimal");
   reject(()->new BoundAnswer.Source(a.edition,a.id,a.documentHash,a.hash,a.title,a.date,a.rights,text+" corrupted"));
   reject(()->new BoundAnswer.Source(a.edition,a.id,a.documentHash,a.hash,a.title,a.date,"",text));
   for(BoundAnswer.Span s:catalog.spans.values())ok(s.text().equals(s.source.text.substring(s.start,s.end)),"Span mismatch");
