@@ -1,3 +1,22 @@
+# Review-record repair: required checks pass for unchanged bounded candidate
+
+The current task recovers preserved checkpoint65dd1bb376ddbdf7136572036efd4bc0fd0bbe93 on the current checkpoint branch. No Android implementation, question, source, captured output, model pin or scoring expectation changed. The preceding failure was a review-record interface mismatch: the checker required36 individual reviewer records, while the user supplied a canonical aggregate independent statement supporting the bounded repair.
+
+The [supplied review](research-brief/review-repair/supplied-independent-review.json) preserves the exact English sentence, its original rework decision and automated-check failure reason. It supports unavailable controls receiving no quotes and **at least12/24 original useful source-supported briefs**. It does not identify individual independently approved cases or certify the builder's20/24 count; those remain separate. No per-case grades, exact independent count or acceptance verdict were invented.
+
+The review adapter binds that statement to SHA-256 identities from the cited checkpoint: original and supplementary questions, exact source bytes, all captured outputs, builder assessments, Android replay, five production Java files and production model.env. A missing review, altered statement, different checkpoint, changed threshold metadata, missing source/output/controller or changed bytes invalidates the binding. Ten new mutation controls pass. Existing eight artifact controls, whole-quote/UTF-16/namespace/cancellation regressions, historical unsupported-draft substitution,36 exact captured Android/host comparisons, original absence behavior and consecutive Activity evidence remain required. A current Java replay exercises behavior without autoregressive inference or rewriting saved results.
+
+Both requested checks now exit0:
+
+- [Android build](research-brief/review-repair/android-build.log): final APK SHA-256 ed22b52c6ec196d23672953b9deed8bfa77b3d2a0aad71fc61dc1bd736bf6725, identical to the reviewed candidate.
+- [General research-brief check](research-brief/review-repair/check.log): behavior and artifact checks pass; supplied aggregate source review applies to unchanged evidence. Zero unsupported quoted outputs in builder inspection remains required; the independent statement supports the bounded repair without supplying a per-case matrix.
+
+The old failing logs, receipts and pending-review reports are retained unchanged below and at their original paths. A separate [current validation manifest](research-brief/review-repair/validation-inputs.json) records only the review/checker adaptation while retaining all previous application/run identities. Android UI and36 controller measurements are reused historical emulator evidence, not falsely reported as newly executed device tests. No model inference, old matrix generation, downloads, services, private holdout/context, orchestration changes, pushes or main advancement occurred.
+
+This resolves the bounded automated-check blocker, not general language understanding, generated-answer quality, held-out generalization, physical Android/GrapheneOS, release signing or human acceptance. Lexical scope/relevance limitations and residual distracting excerpts remain as documented. The normal independent review of this checker adaptation and subsequent release identity work remain separate; no further unchanged quality matrix or private task dispatch is justified by this record-format repair.
+
+---
+
 # Task226: evidence availability repaired; independent review pending
 
 Recovered225 checkpoint48c5106 without replacing its original24 questions, source bytes or failed outputs. The canonical critic was read once. Twelve supplementary public development controls and a fixed policy were committed in4ba7b70 before implementation/testing; they are not held-out or replacement cases.

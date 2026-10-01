@@ -1,5 +1,9 @@
 # Release gaps
 
+## Current brief review-record status
+
+[The bounded review-record repair](evidence/general-source-backed-research-brief.md) binds the user-supplied independent statement to unchanged checkpoint65dd1bb application and source/output identities. Build and required brief check now pass; at least12/24 useful source-supported original briefs are independently supported in aggregate, while20/24 remains the builder assessment. No individual independent grades or product acceptance are inferred. Old failing/pending logs remain historical below. Broad phrasing, generated answers, unseen evaluation, physical devices and final release gates remain open; no new inference or Android code change was needed.
+
 ## Task226 availability repair
 
 [Task226 evidence](evidence/general-source-backed-research-brief.md) records3/3 original and7 supplementary unavailable requests correctly withheld without quotes; builder usefulness rises from15 to20 of24. Build and controller replay pass. Actual UI exposed and repaired225's stuck native-panel busy flag. The required checker still fails solely pending independent final-output source review, with no relaxed quality gate or relabeled builder scores. Review of the frozen outputs is the immediate dependency, not new inference or hardware. Generic phrasing coverage, residual distractors and broad-edition admission remain limitations. Final APKed22b52c6ec196d23672953b9deed8bfa77b3d2a0aad71fc61dc1bd736bf6725 requires later release revalidation; physical/unseen/human gates remain open.

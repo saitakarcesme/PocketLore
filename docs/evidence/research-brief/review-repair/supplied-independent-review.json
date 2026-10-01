@@ -1,0 +1,29 @@
+{
+  "origin": "Independent critic supplied verbatim by the user for the preserved checkpoint; not a builder-authored semantic review",
+  "checkpoint": "65dd1bb376ddbdf7136572036efd4bc0fd0bbe93",
+  "raw_critic": {
+    "decision": "rework",
+    "visible_result": "Independent inspection supports the bounded repair: unavailable controls produce no quotes and at least twelve original briefs provide useful, source-supported coverage; broader language handling, generated answers, and physical-device acceptance remain open.",
+    "reason": "Required automated checks or builder process failed. "
+  },
+  "interpretation": {
+    "minimum_useful_original_briefs": 12,
+    "exact_independent_count": null,
+    "per_case_independent_labels_available": false,
+    "scope": "Bounded source-brief development repair only; no generated, physical or generalization acceptance"
+  },
+  "reviewed_files": {
+    "tools/evaluation/research-brief/cases.json": "7f9389fb913dd904dcfc8fb6d72b78c5c13936807a9b31c9395dc79d6ddc3c6c",
+    "tools/evaluation/research-brief/sources.json": "f27241e60c08ed16cd68a1c9927ac5989b86165352134e7bee06e94a5f9eb2df",
+    "tools/evaluation/research-brief/availability/cases.json": "30b5e3a7377dd6a9ff23449fe2650293b8901db3343d3bf5061e52aec6788a82",
+    "docs/evidence/research-brief/availability/outputs.json": "9fed5b65b96c7c2507dd9a0b97ac4fde9fe8ee9874f92988ff69e3437138a5fd",
+    "docs/evidence/research-brief/availability/builder-review.json": "897fe90052f87a8df9adda215247b1061176e5faffed645a1d2690bfbd89cbc5",
+    "docs/evidence/research-brief/availability/android-results.json": "4def77eb356bf5bf0d26ba3e6ce0d7f0036a7fc8089e1b08b61275cf73d5a773",
+    "android/app/src/main/java/org/pocketlore/app/ResearchBrief.java": "aefb19aa0e18067f46ac8fa8e60ea3327d370a661045da7d51ed6ea9c8849325",
+    "android/app/src/main/java/org/pocketlore/app/EvidenceAvailability.java": "3e656246d6c39386a63bfb5f914ebc6e2dbb1378a605fa870f8a3f9115fff440",
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "90a83d02533b03512150b95d7ee83575a3e74effb93d91b0531611c33dd66cb0",
+    "android/app/src/main/java/org/pocketlore/app/MainActivity.java": "56b407321b9c7b40784afced0348abca43ea839d3ba5a755d9eae58c90edc5fd",
+    "android/app/src/main/java/org/pocketlore/app/NativePanel.java": "aaa2b8e77090eaa57adfbc2efcbbeea320e8a8259582405c4295135c352fdc13",
+    "tools/answers/model.env": "2d932887a64251c6561f4082739136be2a204728c8acd8fb7a1a0eff69526d97"
+  }
+}
