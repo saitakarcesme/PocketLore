@@ -9,9 +9,10 @@ public final class FrameBehavior {
  public static void main(String[] args){
   // Name substitution establishes the same relation independent of article/case identity.
   for(String city:Arrays.asList("Arbordale","Stonebay","Athens")){
-   BoundAnswer.Catalog c=catalog("Control",city+" is the capital and largest city of Newland.");String text=city+" is the capital and largest city of Newland.";FactFrames.Proof p=bind(c,text);check(p.trace.size()==2);check(p.draft.claims.get(0).text.equals(text));check(p.draft.claims.get(0).references.get(0).text().equals(text));
+   BoundAnswer.Catalog c=catalog(city,city+" is the capital and largest city of Newland.");String text=city+" is the capital and largest city of Newland.";FactFrames.Proof p=bind(c,text);check(p.trace.size()==2);check(p.draft.claims.get(0).text.equals(text));check(p.draft.claims.get(0).references.get(0).text().equals(text));
    reject(()->bind(c,"Newland is the capital and largest city of "+city+"."));reject(()->bind(c,text+" All visitors receive free transport."));reject(()->bind(c,city+" is not the capital and largest city of Newland."));
   }
+  BoundAnswer.Catalog unresolved=catalog("Arbordale","It is the capital and largest city of Newland.");reject(()->bind(unresolved,"It is the capital and largest city of Newland."));
   BoundAnswer.Catalog temp=catalog("Control","In food processing, flash processing is a process of food preservation in which packaged foods (e.g., milk and fruit juices) are treated with mild heat, usually to less than 100 °C (212 °F), to eliminate pathogens and extend shelf life.");
   check(bind(temp,"The usual temperature qualification for flash processing is less than 100 °C (212 °F).").trace.size()==1);reject(()->bind(temp,"The usual temperature qualification for flash processing is less than 100 °C (100 °F)."));reject(()->bind(temp,"The temperature for flash processing is always exactly 100 °C (212 °F)."));
   BoundAnswer.Catalog formula=catalog("Control","A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512.");
