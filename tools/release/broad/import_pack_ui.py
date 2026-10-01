@@ -13,7 +13,13 @@ def tree(label):
     (a.out/f'{count:03d}-{label}.xml').write_text(value)
     return ET.fromstring(value)
 def find(t,label):
-    return next((n for n in t.iter('node') if n.get('text','').casefold()==label.casefold() or n.get('content-desc','')==label),None)
+    height=int(adb('shell','wm','size').splitlines()[-1].split('x')[-1])
+    for n in t.iter('node'):
+        if n.get('text','').casefold()==label.casefold() or n.get('content-desc','')==label:
+            bounds=list(map(int,re.findall(r'\d+',n.get('bounds',''))))
+            if len(bounds)==4 and bounds[3]<height-100 and bounds[1]>40:return n
+    return None
+
 def tap(n):
     assert n is not None
     x1,y1,x2,y2=map(int,re.findall(r'\d+',n.get('bounds')))
@@ -33,7 +39,7 @@ def wait_text(fragment,label):
         time.sleep(.2)
     raise AssertionError('UI text not found: '+fragment)
 def launch():
-    adb('shell','am','force-stop','org.pocketlore.app');adb('shell','am','start','-n','org.pocketlore.app/.MainActivity')
+    adb('shell','am','force-stop','org.pocketlore.app');adb('shell','am','start','-f','0x10008000','-n','org.pocketlore.app/.MainActivity')
     time.sleep(.5)
 
 def screenshot(name):
