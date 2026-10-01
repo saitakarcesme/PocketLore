@@ -364,36 +364,36 @@
     "rendered_sha256": "ffd9797834fcec4638cc51dad05fd176aa8e0b43c9d94920c7db260f0f99a91b",
     "assessment_role": "builder source inspection, not independent review",
     "source_supported": true,
-    "complete": false,
-    "useful": false,
+    "complete": true,
+    "useful": true,
     "generated_success": false,
     "absent_control": false,
     "absence_correctly_classified": null,
-    "reason": "First-person advice is not a request for a private result; retain navigation paragraph. Supplementary diagnostic only, not included in primary usefulness numerator."
+    "reason": "Only the full NPS navigation passage remains, with physical backup and preparation skills; first-person advice is retained."
   },
   {
     "id": "a08",
     "rendered_sha256": "8d1ea99e50148dc87a5b9a4d0673409c80b6c0e5a07be7713421a5f25cfb067e",
     "assessment_role": "builder source inspection, not independent review",
     "source_supported": true,
-    "complete": false,
-    "useful": false,
+    "complete": true,
+    "useful": true,
     "generated_success": false,
     "absent_control": false,
     "absence_correctly_classified": null,
-    "reason": "Retain packaging passage without distant magnetic distractors. Supplementary diagnostic only, not included in primary usefulness numerator."
+    "reason": "The histone packaging explanation and related chromosome passages remain intact."
   },
   {
     "id": "a09",
     "rendered_sha256": "c2de4b28ba1fab5b8caab5406a91a360c8378c130f51425af3798fe68226a13a",
     "assessment_role": "builder source inspection, not independent review",
     "source_supported": true,
-    "complete": false,
+    "complete": true,
     "useful": false,
     "generated_success": false,
     "absent_control": false,
     "absence_correctly_classified": null,
-    "reason": "Retain energy requirement and feedback; do not shorten condition. Supplementary diagnostic only, not included in primary usefulness numerator."
+    "reason": "The required energy condition remains, but storm/reversal background is unnecessary; no new causal link is inferred."
   },
   {
     "id": "a10",
@@ -417,18 +417,18 @@
     "generated_success": false,
     "absent_control": false,
     "absence_correctly_classified": null,
-    "reason": "Constructed cross-topic false-premise/distractor control; do not infer causal relation between retrieved paragraphs. Supplementary diagnostic only, not included in primary usefulness numerator."
+    "reason": "Only earthquake passages remain; they explain energy release but do not establish the requested contrast with DNA. The false comparison is unresolved, not silently affirmed."
   },
   {
     "id": "a12",
     "rendered_sha256": "911f18a48c08f28a256e52061d91e26aac53a705eed4166ca4c24c1ba0f35f41",
     "assessment_role": "builder source inspection, not independent review",
     "source_supported": true,
-    "complete": false,
-    "useful": false,
+    "complete": true,
+    "useful": true,
     "generated_success": false,
     "absent_control": false,
     "absence_correctly_classified": null,
-    "reason": "Generic prospective mechanism, not a dated forecast; preserve pairing explanation. Supplementary diagnostic only, not included in primary usefulness numerator."
+    "reason": "Generic future-tense cell-division explanation is not classified as an event forecast; pairing and template conditions remain explicit."
   }
 ]

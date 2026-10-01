@@ -55,6 +55,14 @@ def verify():
    if expected[r['id']]!='REFERENCE':
     assert r['route']=='unavailable' and not r['source_ids'] and 'No quotations selected.' in r['rendered']
  print('3 original absent controls and 12 supplementary controls pass; no unrelated quotes in unavailable routes')
+ # Consecutive actual Activity requests must remain usable after extractive completion.
+ import xml.etree.ElementTree as ET
+ for id in ['b22','b23','b24','b01']:
+  tree=ET.parse(OUT/('ui-'+id+'.xml'))
+  answer=next(n.get('text') for n in tree.iter('node') if n.get('content-desc')=='Offline answer')
+  if id!='b01':assert answer.startswith('Evidence unavailable') and 'Quote [' not in answer
+  else:assert 'two-step process' in answer and answer.startswith('Source-backed research brief')
+ assert 'b01 actual Activity control and output passed' in (OUT/'ui.log').read_text()
  # Eligibility requires actual source review, not receipt presence or quote overlap.
  errors=[]
  absent=[r for r in reviews if r['absent_control']]
@@ -67,6 +75,7 @@ def verify():
   for a,b in zip(checked,saved):
    assert a['id']==b['id'] and a['rendered_sha256']==hashlib.sha256(b['rendered'].encode()).hexdigest()
    assert a['assessment_role']=='independent source review'
+   if b['route']=='unavailable':assert not a['eligible'],'Unavailable output marked eligible'
   if any(r['eligible'] and not r['source_supported'] for r in checked):errors.append('unsupported eligible brief')
   if sum(r['eligible'] and r['source_supported'] and r['complete'] and r['useful'] for r in checked[:24])<12:errors.append('fewer than twelve independently reviewed useful briefs')
  if errors:

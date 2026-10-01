@@ -1,0 +1,8 @@
+b22 actual Activity control and output passed
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/research-brief/availability/ui.py", line 24, in <module>
+    tap(locate('content-desc','Research question'))
+        ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/research-brief/availability/ui.py", line 17, in locate
+    raise RuntimeError('Control unavailable: '+value)
+RuntimeError: Control unavailable: Research question

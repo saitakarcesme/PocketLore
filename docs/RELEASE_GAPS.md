@@ -1,5 +1,9 @@
 # Release gaps
 
+## Task226 availability repair
+
+[Task226 evidence](evidence/general-source-backed-research-brief.md) records3/3 original and7 supplementary unavailable requests correctly withheld without quotes; builder usefulness rises from15 to20 of24. Build and controller replay pass. Actual UI exposed and repaired225's stuck native-panel busy flag. The required checker still fails solely pending independent final-output source review, with no relaxed quality gate or relabeled builder scores. Review of the frozen outputs is the immediate dependency, not new inference or hardware. Generic phrasing coverage, residual distractors and broad-edition admission remain limitations. Final APKed22b52c6ec196d23672953b9deed8bfa77b3d2a0aad71fc61dc1bd736bf6725 requires later release revalidation; physical/unseen/human gates remain open.
+
 ## Task225 research-brief gap
 
 [Task225](evidence/general-source-backed-research-brief.md) adds an explicit exact-quotation research brief with typed source navigation. Build, host behavioral checks and24 Android fixture replays pass; the required quality check fails. Builder inspection rates15/24 briefs useful, but three absent requests remain unresolved and independent final-output review is pending. These are not generated answers or held-out results. The next concrete product step is per-obligation evidence availability and distractor control, with compact source navigation; a scoped proposal is preserved with the evidence, not dispatched. No new hardware dependency blocks that work. The changed APK1d9c978b9fa406d80d1b5d82d878cb2b4d0266663c57e2903f1d71206a514648 requires later exact release revalidation; all303 inventory measurements remain historical, not automatically renewed for this build. Production remains0.5B; selected4B and physical/unseen/human gates remain open.
