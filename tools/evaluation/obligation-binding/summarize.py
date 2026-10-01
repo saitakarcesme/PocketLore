@@ -12,4 +12,4 @@ samples=json.loads((E/'run/memory.json').read_text());stats['memory']={k+'_peak_
 (E/'metrics.json').write_text(json.dumps(stats,indent=2)+'\n')
 # This is review input, never an automatic semantic score.
 cases={c['id']:c for p in [R/'tools/evaluation/scale-model-quality/protocol.json',R/'tools/evaluation/obligation-binding/new-cases.json'] for c in json.loads(p.read_text())['cases']}
-inputs=[{'id':r['id'],'question':r['question'],'expectation':cases[r['id']]['expectation'],'obligations':cases[r['id']]['obligations'],'source_context':cases[r['id']]['sources'],'draft':r['draft']['raw'],'claims_with_exact_spans':r['claims']} for r in records];(E/'independent-review-inputs.json').write_text(json.dumps(inputs,indent=2)+'\n');print(json.dumps(stats,indent=2))
+inputs=[{'id':r['id'],'question':r['question'],'expectation':cases[r['id']]['expectation'],'obligations':cases[r['id']]['obligations'],'source_context':cases[r['id']]['sources'],'draft':r['draft']['raw'],'rendered':r['rendered'],'claims_with_exact_spans':r['claims']} for r in records];(E/'independent-review-inputs.json').write_text(json.dumps(inputs,indent=2)+'\n');print(json.dumps(stats,indent=2))
