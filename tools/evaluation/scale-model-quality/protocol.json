@@ -55,16 +55,6 @@
           "sha256": "4612472077b3ed1adfb262cd9af504cd15b02b56210c2ff99bb574d9786c0f78"
         },
         {
-          "id": "wiki-4320-542b4aed17d37a85",
-          "title": "Binary search tree",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
-          "date": "2026-06-01T16:22:16Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Binary search tree \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
-          "text": "Binary search trees allow binary search for fast lookup, addition, and removal of data items. Since the nodes in a BST are laid out so that each comparison skips about half of the remaining tree, the lookup performance is proportional to that of binary logarithm. BSTs were devised in the 1960s for the problem of efficient storage of labeled data and are attributed to Conway Berners-Lee and David Wheeler.",
-          "sha256": "542b4aed17d37a859080a9e894fc9e3382767d2ddab6e1ae222ab0e7b71bd430"
-        },
-        {
           "id": "wiki-4320-b8068c6ddb4f72d9",
           "title": "Binary search tree",
           "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
@@ -73,6 +63,16 @@
           "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
           "text": "The performance of a binary search tree is dependent on the order of insertion of the nodes into the tree since arbitrary insertions may lead to degeneracy; several variations of the binary search tree can be built with guaranteed worst-case performance. The basic operations include: search, traversal, insert and delete. BSTs with guaranteed worst-case complexities perform better than an unsorted array, which would require linear search time.",
           "sha256": "b8068c6ddb4f72d901d1beee2b162a42db075cfb63a76a9c52b24405a403bca5"
+        },
+        {
+          "id": "wiki-4320-9cc35e0474312679",
+          "title": "Binary search tree",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
+          "date": "2026-06-01T16:22:16Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Binary search tree \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
+          "text": "The complexity analysis of BST shows that, on average, the insert, delete and search takes [TeX: {\\displaystyle \\Theta (\\log n)}] for [TeX: {\\displaystyle n}] nodes. In the worst case, they degrade to that of a singly linked list: [TeX: {\\displaystyle O(n)}] . To address the boundless increase of the tree height with arbitrary insertions and deletions, self-balancing variants of BSTs are introduced to bound the worst lookup complexity to that of the binary logarithm. AVL trees were the first self-balancing binary search trees, invented in 1962 by Georgy Adelson-Velsky and Evgenii Landis.[1][2][3]",
+          "sha256": "9cc35e04743126793262e8a6389ea926c51f480bbd2f22dac64d496ffbba5143"
         }
       ],
       "expected_route": "supported answer"
@@ -128,16 +128,6 @@
           "sha256": "4612472077b3ed1adfb262cd9af504cd15b02b56210c2ff99bb574d9786c0f78"
         },
         {
-          "id": "wiki-4320-542b4aed17d37a85",
-          "title": "Binary search tree",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
-          "date": "2026-06-01T16:22:16Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Binary search tree \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
-          "text": "Binary search trees allow binary search for fast lookup, addition, and removal of data items. Since the nodes in a BST are laid out so that each comparison skips about half of the remaining tree, the lookup performance is proportional to that of binary logarithm. BSTs were devised in the 1960s for the problem of efficient storage of labeled data and are attributed to Conway Berners-Lee and David Wheeler.",
-          "sha256": "542b4aed17d37a859080a9e894fc9e3382767d2ddab6e1ae222ab0e7b71bd430"
-        },
-        {
           "id": "wiki-4320-b8068c6ddb4f72d9",
           "title": "Binary search tree",
           "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
@@ -146,6 +136,16 @@
           "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
           "text": "The performance of a binary search tree is dependent on the order of insertion of the nodes into the tree since arbitrary insertions may lead to degeneracy; several variations of the binary search tree can be built with guaranteed worst-case performance. The basic operations include: search, traversal, insert and delete. BSTs with guaranteed worst-case complexities perform better than an unsorted array, which would require linear search time.",
           "sha256": "b8068c6ddb4f72d901d1beee2b162a42db075cfb63a76a9c52b24405a403bca5"
+        },
+        {
+          "id": "wiki-4320-9cc35e0474312679",
+          "title": "Binary search tree",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
+          "date": "2026-06-01T16:22:16Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Binary search tree \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
+          "text": "The complexity analysis of BST shows that, on average, the insert, delete and search takes [TeX: {\\displaystyle \\Theta (\\log n)}] for [TeX: {\\displaystyle n}] nodes. In the worst case, they degrade to that of a singly linked list: [TeX: {\\displaystyle O(n)}] . To address the boundless increase of the tree height with arbitrary insertions and deletions, self-balancing variants of BSTs are introduced to bound the worst lookup complexity to that of the binary logarithm. AVL trees were the first self-balancing binary search trees, invented in 1962 by Georgy Adelson-Velsky and Evgenii Landis.[1][2][3]",
+          "sha256": "9cc35e04743126793262e8a6389ea926c51f480bbd2f22dac64d496ffbba5143"
         }
       ],
       "expected_route": "supported answer"
@@ -202,16 +202,6 @@
           "sha256": "4612472077b3ed1adfb262cd9af504cd15b02b56210c2ff99bb574d9786c0f78"
         },
         {
-          "id": "wiki-4320-542b4aed17d37a85",
-          "title": "Binary search tree",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
-          "date": "2026-06-01T16:22:16Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Binary search tree \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
-          "text": "Binary search trees allow binary search for fast lookup, addition, and removal of data items. Since the nodes in a BST are laid out so that each comparison skips about half of the remaining tree, the lookup performance is proportional to that of binary logarithm. BSTs were devised in the 1960s for the problem of efficient storage of labeled data and are attributed to Conway Berners-Lee and David Wheeler.",
-          "sha256": "542b4aed17d37a859080a9e894fc9e3382767d2ddab6e1ae222ab0e7b71bd430"
-        },
-        {
           "id": "wiki-4320-b8068c6ddb4f72d9",
           "title": "Binary search tree",
           "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
@@ -220,6 +210,16 @@
           "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
           "text": "The performance of a binary search tree is dependent on the order of insertion of the nodes into the tree since arbitrary insertions may lead to degeneracy; several variations of the binary search tree can be built with guaranteed worst-case performance. The basic operations include: search, traversal, insert and delete. BSTs with guaranteed worst-case complexities perform better than an unsorted array, which would require linear search time.",
           "sha256": "b8068c6ddb4f72d901d1beee2b162a42db075cfb63a76a9c52b24405a403bca5"
+        },
+        {
+          "id": "wiki-4320-9cc35e0474312679",
+          "title": "Binary search tree",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
+          "date": "2026-06-01T16:22:16Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Binary search tree \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
+          "text": "The complexity analysis of BST shows that, on average, the insert, delete and search takes [TeX: {\\displaystyle \\Theta (\\log n)}] for [TeX: {\\displaystyle n}] nodes. In the worst case, they degrade to that of a singly linked list: [TeX: {\\displaystyle O(n)}] . To address the boundless increase of the tree height with arbitrary insertions and deletions, self-balancing variants of BSTs are introduced to bound the worst lookup complexity to that of the binary logarithm. AVL trees were the first self-balancing binary search trees, invented in 1962 by Georgy Adelson-Velsky and Evgenii Landis.[1][2][3]",
+          "sha256": "9cc35e04743126793262e8a6389ea926c51f480bbd2f22dac64d496ffbba5143"
         }
       ],
       "expected_route": "supported answer"
@@ -276,16 +276,6 @@
           "sha256": "4612472077b3ed1adfb262cd9af504cd15b02b56210c2ff99bb574d9786c0f78"
         },
         {
-          "id": "wiki-4320-542b4aed17d37a85",
-          "title": "Binary search tree",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
-          "date": "2026-06-01T16:22:16Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Binary search tree \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
-          "text": "Binary search trees allow binary search for fast lookup, addition, and removal of data items. Since the nodes in a BST are laid out so that each comparison skips about half of the remaining tree, the lookup performance is proportional to that of binary logarithm. BSTs were devised in the 1960s for the problem of efficient storage of labeled data and are attributed to Conway Berners-Lee and David Wheeler.",
-          "sha256": "542b4aed17d37a859080a9e894fc9e3382767d2ddab6e1ae222ab0e7b71bd430"
-        },
-        {
           "id": "wiki-4320-b8068c6ddb4f72d9",
           "title": "Binary search tree",
           "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
@@ -294,6 +284,16 @@
           "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
           "text": "The performance of a binary search tree is dependent on the order of insertion of the nodes into the tree since arbitrary insertions may lead to degeneracy; several variations of the binary search tree can be built with guaranteed worst-case performance. The basic operations include: search, traversal, insert and delete. BSTs with guaranteed worst-case complexities perform better than an unsorted array, which would require linear search time.",
           "sha256": "b8068c6ddb4f72d901d1beee2b162a42db075cfb63a76a9c52b24405a403bca5"
+        },
+        {
+          "id": "wiki-4320-9cc35e0474312679",
+          "title": "Binary search tree",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
+          "date": "2026-06-01T16:22:16Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Binary search tree \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
+          "text": "The complexity analysis of BST shows that, on average, the insert, delete and search takes [TeX: {\\displaystyle \\Theta (\\log n)}] for [TeX: {\\displaystyle n}] nodes. In the worst case, they degrade to that of a singly linked list: [TeX: {\\displaystyle O(n)}] . To address the boundless increase of the tree height with arbitrary insertions and deletions, self-balancing variants of BSTs are introduced to bound the worst lookup complexity to that of the binary logarithm. AVL trees were the first self-balancing binary search trees, invented in 1962 by Georgy Adelson-Velsky and Evgenii Landis.[1][2][3]",
+          "sha256": "9cc35e04743126793262e8a6389ea926c51f480bbd2f22dac64d496ffbba5143"
         }
       ],
       "expected_route": "supported answer"
@@ -349,16 +349,6 @@
           "sha256": "4612472077b3ed1adfb262cd9af504cd15b02b56210c2ff99bb574d9786c0f78"
         },
         {
-          "id": "wiki-4320-542b4aed17d37a85",
-          "title": "Binary search tree",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
-          "date": "2026-06-01T16:22:16Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Binary search tree \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
-          "text": "Binary search trees allow binary search for fast lookup, addition, and removal of data items. Since the nodes in a BST are laid out so that each comparison skips about half of the remaining tree, the lookup performance is proportional to that of binary logarithm. BSTs were devised in the 1960s for the problem of efficient storage of labeled data and are attributed to Conway Berners-Lee and David Wheeler.",
-          "sha256": "542b4aed17d37a859080a9e894fc9e3382767d2ddab6e1ae222ab0e7b71bd430"
-        },
-        {
           "id": "wiki-4320-b8068c6ddb4f72d9",
           "title": "Binary search tree",
           "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
@@ -367,6 +357,16 @@
           "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
           "text": "The performance of a binary search tree is dependent on the order of insertion of the nodes into the tree since arbitrary insertions may lead to degeneracy; several variations of the binary search tree can be built with guaranteed worst-case performance. The basic operations include: search, traversal, insert and delete. BSTs with guaranteed worst-case complexities perform better than an unsorted array, which would require linear search time.",
           "sha256": "b8068c6ddb4f72d901d1beee2b162a42db075cfb63a76a9c52b24405a403bca5"
+        },
+        {
+          "id": "wiki-4320-9cc35e0474312679",
+          "title": "Binary search tree",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
+          "date": "2026-06-01T16:22:16Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Binary search tree \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
+          "text": "The complexity analysis of BST shows that, on average, the insert, delete and search takes [TeX: {\\displaystyle \\Theta (\\log n)}] for [TeX: {\\displaystyle n}] nodes. In the worst case, they degrade to that of a singly linked list: [TeX: {\\displaystyle O(n)}] . To address the boundless increase of the tree height with arbitrary insertions and deletions, self-balancing variants of BSTs are introduced to bound the worst lookup complexity to that of the binary logarithm. AVL trees were the first self-balancing binary search trees, invented in 1962 by Georgy Adelson-Velsky and Evgenii Landis.[1][2][3]",
+          "sha256": "9cc35e04743126793262e8a6389ea926c51f480bbd2f22dac64d496ffbba5143"
         }
       ],
       "expected_route": "supported correction"
@@ -422,16 +422,6 @@
           "sha256": "4612472077b3ed1adfb262cd9af504cd15b02b56210c2ff99bb574d9786c0f78"
         },
         {
-          "id": "wiki-4320-542b4aed17d37a85",
-          "title": "Binary search tree",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
-          "date": "2026-06-01T16:22:16Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Binary search tree \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
-          "text": "Binary search trees allow binary search for fast lookup, addition, and removal of data items. Since the nodes in a BST are laid out so that each comparison skips about half of the remaining tree, the lookup performance is proportional to that of binary logarithm. BSTs were devised in the 1960s for the problem of efficient storage of labeled data and are attributed to Conway Berners-Lee and David Wheeler.",
-          "sha256": "542b4aed17d37a859080a9e894fc9e3382767d2ddab6e1ae222ab0e7b71bd430"
-        },
-        {
           "id": "wiki-4320-b8068c6ddb4f72d9",
           "title": "Binary search tree",
           "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
@@ -440,6 +430,16 @@
           "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
           "text": "The performance of a binary search tree is dependent on the order of insertion of the nodes into the tree since arbitrary insertions may lead to degeneracy; several variations of the binary search tree can be built with guaranteed worst-case performance. The basic operations include: search, traversal, insert and delete. BSTs with guaranteed worst-case complexities perform better than an unsorted array, which would require linear search time.",
           "sha256": "b8068c6ddb4f72d901d1beee2b162a42db075cfb63a76a9c52b24405a403bca5"
+        },
+        {
+          "id": "wiki-4320-9cc35e0474312679",
+          "title": "Binary search tree",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1357250297",
+          "date": "2026-06-01T16:22:16Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Binary search tree \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "06ddab5bc808020e5144b6d0de6e7b840d282267eb762e51a999d4183afa4948",
+          "text": "The complexity analysis of BST shows that, on average, the insert, delete and search takes [TeX: {\\displaystyle \\Theta (\\log n)}] for [TeX: {\\displaystyle n}] nodes. In the worst case, they degrade to that of a singly linked list: [TeX: {\\displaystyle O(n)}] . To address the boundless increase of the tree height with arbitrary insertions and deletions, self-balancing variants of BSTs are introduced to bound the worst lookup complexity to that of the binary logarithm. AVL trees were the first self-balancing binary search trees, invented in 1962 by Georgy Adelson-Velsky and Evgenii Landis.[1][2][3]",
+          "sha256": "9cc35e04743126793262e8a6389ea926c51f480bbd2f22dac64d496ffbba5143"
         }
       ],
       "expected_route": "withhold"
@@ -3096,36 +3096,6 @@
       "expectation": "Reverse logarithmic scale: brighter means lower number; brightest can negative.",
       "sources": [
         {
-          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
-          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
-        },
-        {
-          "id": "wiki-1962-f862f17e880fd809",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "Unless stated otherwise, the word magnitude in astronomy usually refers to a celestial object's apparent magnitude. The magnitude scale likely dates to before the ancient Roman astronomer Claudius Ptolemy, whose star catalog popularized the system by listing stars from 1st magnitude (brightest) to 6th magnitude (dimmest).[1] The modern scale was mathematically defined to closely match this historical system by Norman Pogson in 1856.",
-          "sha256": "f862f17e880fd809c7008ae11eb03b3ee917d1e80dd35895d1fd6cd2a6cb3644"
-        },
-        {
-          "id": "wiki-1962-46489e46ef00c0b8",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
-          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
-        },
-        {
           "id": "wiki-748-84ae02af7b59ffd5",
           "title": "Amateur astronomy",
           "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
@@ -3154,6 +3124,36 @@
           "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
           "text": "Amateur astronomers typically view the sky at night, when most celestial objects and astronomical events are visible, but others observe during the daytime by viewing the Sun and solar eclipses. Some observe the sky using nothing more than their eyes or binoculars, while more dedicated amateurs often use portable telescopes or telescopes situated in their private or club observatories. However, light pollution has made amateur astronomy increasingly difficult to observe celestial objects, as sky glow washes out darkness and minimizes visibility[10]. Amateurs commonly join amateur astronomical societies, which can advise, educate, or guide individuals towards ways of finding and observing celestial objects. Astronomical societies also promote the science of astronomy among the general public.[11]",
           "sha256": "6c029fff3bacc427f4c7e95caa04600296ca5fa52ad210801e075fc0d8e08b62"
+        },
+        {
+          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
+          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
+        },
+        {
+          "id": "wiki-1962-46489e46ef00c0b8",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
+          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
+        },
+        {
+          "id": "wiki-1962-5e4e70eaf4445c4c",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The brightest astronomical objects have negative apparent magnitudes, such as Venus at magnitude \u22124.2 or Sirius at magnitude \u22121.46. The faintest stars visible with the naked eye on the darkest night have apparent magnitudes of about +6.5, though this varies depending on a person's eyesight, their altitude, and atmospheric conditions when viewing.[2] The apparent magnitude of known objects can range from \u221226.832 for our Sun to about +31.5 for objects in deep space imaged by the Hubble Space Telescope.[3]",
+          "sha256": "5e4e70eaf4445c4c6418b27683e3af509f916d1f626bc4aab4f9e0365284876c"
         }
       ],
       "expected_route": "supported answer"
@@ -3169,36 +3169,6 @@
       "expectation": "Citizen science monitoring stars/sunspots/occultations or transient discoveries; some, not all.",
       "sources": [
         {
-          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
-          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
-        },
-        {
-          "id": "wiki-1962-f862f17e880fd809",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "Unless stated otherwise, the word magnitude in astronomy usually refers to a celestial object's apparent magnitude. The magnitude scale likely dates to before the ancient Roman astronomer Claudius Ptolemy, whose star catalog popularized the system by listing stars from 1st magnitude (brightest) to 6th magnitude (dimmest).[1] The modern scale was mathematically defined to closely match this historical system by Norman Pogson in 1856.",
-          "sha256": "f862f17e880fd809c7008ae11eb03b3ee917d1e80dd35895d1fd6cd2a6cb3644"
-        },
-        {
-          "id": "wiki-1962-46489e46ef00c0b8",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
-          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
-        },
-        {
           "id": "wiki-748-84ae02af7b59ffd5",
           "title": "Amateur astronomy",
           "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
@@ -3227,6 +3197,36 @@
           "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
           "text": "Amateur astronomers typically view the sky at night, when most celestial objects and astronomical events are visible, but others observe during the daytime by viewing the Sun and solar eclipses. Some observe the sky using nothing more than their eyes or binoculars, while more dedicated amateurs often use portable telescopes or telescopes situated in their private or club observatories. However, light pollution has made amateur astronomy increasingly difficult to observe celestial objects, as sky glow washes out darkness and minimizes visibility[10]. Amateurs commonly join amateur astronomical societies, which can advise, educate, or guide individuals towards ways of finding and observing celestial objects. Astronomical societies also promote the science of astronomy among the general public.[11]",
           "sha256": "6c029fff3bacc427f4c7e95caa04600296ca5fa52ad210801e075fc0d8e08b62"
+        },
+        {
+          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
+          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
+        },
+        {
+          "id": "wiki-1962-46489e46ef00c0b8",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
+          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
+        },
+        {
+          "id": "wiki-1962-5e4e70eaf4445c4c",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The brightest astronomical objects have negative apparent magnitudes, such as Venus at magnitude \u22124.2 or Sirius at magnitude \u22121.46. The faintest stars visible with the naked eye on the darkest night have apparent magnitudes of about +6.5, though this varies depending on a person's eyesight, their altitude, and atmospheric conditions when viewing.[2] The apparent magnitude of known objects can range from \u221226.832 for our Sun to about +31.5 for objects in deep space imaged by the Hubble Space Telescope.[3]",
+          "sha256": "5e4e70eaf4445c4c6418b27683e3af509f916d1f626bc4aab4f9e0365284876c"
         }
       ],
       "expected_route": "supported answer"
@@ -3243,36 +3243,6 @@
       "expectation": "Brightness affected by luminosity/distance/extinction versus observing/studying/imaging hobby.",
       "sources": [
         {
-          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
-          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
-        },
-        {
-          "id": "wiki-1962-f862f17e880fd809",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "Unless stated otherwise, the word magnitude in astronomy usually refers to a celestial object's apparent magnitude. The magnitude scale likely dates to before the ancient Roman astronomer Claudius Ptolemy, whose star catalog popularized the system by listing stars from 1st magnitude (brightest) to 6th magnitude (dimmest).[1] The modern scale was mathematically defined to closely match this historical system by Norman Pogson in 1856.",
-          "sha256": "f862f17e880fd809c7008ae11eb03b3ee917d1e80dd35895d1fd6cd2a6cb3644"
-        },
-        {
-          "id": "wiki-1962-46489e46ef00c0b8",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
-          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
-        },
-        {
           "id": "wiki-748-84ae02af7b59ffd5",
           "title": "Amateur astronomy",
           "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
@@ -3301,6 +3271,36 @@
           "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
           "text": "Amateur astronomers typically view the sky at night, when most celestial objects and astronomical events are visible, but others observe during the daytime by viewing the Sun and solar eclipses. Some observe the sky using nothing more than their eyes or binoculars, while more dedicated amateurs often use portable telescopes or telescopes situated in their private or club observatories. However, light pollution has made amateur astronomy increasingly difficult to observe celestial objects, as sky glow washes out darkness and minimizes visibility[10]. Amateurs commonly join amateur astronomical societies, which can advise, educate, or guide individuals towards ways of finding and observing celestial objects. Astronomical societies also promote the science of astronomy among the general public.[11]",
           "sha256": "6c029fff3bacc427f4c7e95caa04600296ca5fa52ad210801e075fc0d8e08b62"
+        },
+        {
+          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
+          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
+        },
+        {
+          "id": "wiki-1962-46489e46ef00c0b8",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
+          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
+        },
+        {
+          "id": "wiki-1962-5e4e70eaf4445c4c",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The brightest astronomical objects have negative apparent magnitudes, such as Venus at magnitude \u22124.2 or Sirius at magnitude \u22121.46. The faintest stars visible with the naked eye on the darkest night have apparent magnitudes of about +6.5, though this varies depending on a person's eyesight, their altitude, and atmospheric conditions when viewing.[2] The apparent magnitude of known objects can range from \u221226.832 for our Sun to about +31.5 for objects in deep space imaged by the Hubble Space Telescope.[3]",
+          "sha256": "5e4e70eaf4445c4c6418b27683e3af509f916d1f626bc4aab4f9e0365284876c"
         }
       ],
       "expected_route": "supported answer"
@@ -3317,36 +3317,6 @@
       "expectation": "About2.512; e.g variable/double stars,sunspots,occultations.",
       "sources": [
         {
-          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
-          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
-        },
-        {
-          "id": "wiki-1962-f862f17e880fd809",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "Unless stated otherwise, the word magnitude in astronomy usually refers to a celestial object's apparent magnitude. The magnitude scale likely dates to before the ancient Roman astronomer Claudius Ptolemy, whose star catalog popularized the system by listing stars from 1st magnitude (brightest) to 6th magnitude (dimmest).[1] The modern scale was mathematically defined to closely match this historical system by Norman Pogson in 1856.",
-          "sha256": "f862f17e880fd809c7008ae11eb03b3ee917d1e80dd35895d1fd6cd2a6cb3644"
-        },
-        {
-          "id": "wiki-1962-46489e46ef00c0b8",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
-          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
-        },
-        {
           "id": "wiki-748-84ae02af7b59ffd5",
           "title": "Amateur astronomy",
           "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
@@ -3375,6 +3345,36 @@
           "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
           "text": "Amateur astronomers typically view the sky at night, when most celestial objects and astronomical events are visible, but others observe during the daytime by viewing the Sun and solar eclipses. Some observe the sky using nothing more than their eyes or binoculars, while more dedicated amateurs often use portable telescopes or telescopes situated in their private or club observatories. However, light pollution has made amateur astronomy increasingly difficult to observe celestial objects, as sky glow washes out darkness and minimizes visibility[10]. Amateurs commonly join amateur astronomical societies, which can advise, educate, or guide individuals towards ways of finding and observing celestial objects. Astronomical societies also promote the science of astronomy among the general public.[11]",
           "sha256": "6c029fff3bacc427f4c7e95caa04600296ca5fa52ad210801e075fc0d8e08b62"
+        },
+        {
+          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
+          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
+        },
+        {
+          "id": "wiki-1962-46489e46ef00c0b8",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
+          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
+        },
+        {
+          "id": "wiki-1962-5e4e70eaf4445c4c",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The brightest astronomical objects have negative apparent magnitudes, such as Venus at magnitude \u22124.2 or Sirius at magnitude \u22121.46. The faintest stars visible with the naked eye on the darkest night have apparent magnitudes of about +6.5, though this varies depending on a person's eyesight, their altitude, and atmospheric conditions when viewing.[2] The apparent magnitude of known objects can range from \u221226.832 for our Sun to about +31.5 for objects in deep space imaged by the Hubble Space Telescope.[3]",
+          "sha256": "5e4e70eaf4445c4c6418b27683e3af509f916d1f626bc4aab4f9e0365284876c"
         }
       ],
       "expected_route": "supported answer"
@@ -3390,36 +3390,6 @@
       "expectation": "Reject reverse-scale premise.",
       "sources": [
         {
-          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
-          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
-        },
-        {
-          "id": "wiki-1962-f862f17e880fd809",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "Unless stated otherwise, the word magnitude in astronomy usually refers to a celestial object's apparent magnitude. The magnitude scale likely dates to before the ancient Roman astronomer Claudius Ptolemy, whose star catalog popularized the system by listing stars from 1st magnitude (brightest) to 6th magnitude (dimmest).[1] The modern scale was mathematically defined to closely match this historical system by Norman Pogson in 1856.",
-          "sha256": "f862f17e880fd809c7008ae11eb03b3ee917d1e80dd35895d1fd6cd2a6cb3644"
-        },
-        {
-          "id": "wiki-1962-46489e46ef00c0b8",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
-          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
-        },
-        {
           "id": "wiki-748-84ae02af7b59ffd5",
           "title": "Amateur astronomy",
           "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
@@ -3448,6 +3418,36 @@
           "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
           "text": "Amateur astronomers typically view the sky at night, when most celestial objects and astronomical events are visible, but others observe during the daytime by viewing the Sun and solar eclipses. Some observe the sky using nothing more than their eyes or binoculars, while more dedicated amateurs often use portable telescopes or telescopes situated in their private or club observatories. However, light pollution has made amateur astronomy increasingly difficult to observe celestial objects, as sky glow washes out darkness and minimizes visibility[10]. Amateurs commonly join amateur astronomical societies, which can advise, educate, or guide individuals towards ways of finding and observing celestial objects. Astronomical societies also promote the science of astronomy among the general public.[11]",
           "sha256": "6c029fff3bacc427f4c7e95caa04600296ca5fa52ad210801e075fc0d8e08b62"
+        },
+        {
+          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
+          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
+        },
+        {
+          "id": "wiki-1962-46489e46ef00c0b8",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
+          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
+        },
+        {
+          "id": "wiki-1962-5e4e70eaf4445c4c",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The brightest astronomical objects have negative apparent magnitudes, such as Venus at magnitude \u22124.2 or Sirius at magnitude \u22121.46. The faintest stars visible with the naked eye on the darkest night have apparent magnitudes of about +6.5, though this varies depending on a person's eyesight, their altitude, and atmospheric conditions when viewing.[2] The apparent magnitude of known objects can range from \u221226.832 for our Sun to about +31.5 for objects in deep space imaged by the Hubble Space Telescope.[3]",
+          "sha256": "5e4e70eaf4445c4c6418b27683e3af509f916d1f626bc4aab4f9e0365284876c"
         }
       ],
       "expected_route": "supported correction"
@@ -3463,36 +3463,6 @@
       "expectation": "Absent identified object/live measurement; abstain.",
       "sources": [
         {
-          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
-          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
-        },
-        {
-          "id": "wiki-1962-f862f17e880fd809",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "Unless stated otherwise, the word magnitude in astronomy usually refers to a celestial object's apparent magnitude. The magnitude scale likely dates to before the ancient Roman astronomer Claudius Ptolemy, whose star catalog popularized the system by listing stars from 1st magnitude (brightest) to 6th magnitude (dimmest).[1] The modern scale was mathematically defined to closely match this historical system by Norman Pogson in 1856.",
-          "sha256": "f862f17e880fd809c7008ae11eb03b3ee917d1e80dd35895d1fd6cd2a6cb3644"
-        },
-        {
-          "id": "wiki-1962-46489e46ef00c0b8",
-          "title": "Apparent magnitude",
-          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
-          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
-          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
-          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
-          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
-          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
-        },
-        {
           "id": "wiki-748-84ae02af7b59ffd5",
           "title": "Amateur astronomy",
           "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
@@ -3521,6 +3491,36 @@
           "source_sha256": "90983007cbe1ae55c7a50b07b340f4ff14637f14c5ee2edffd39aa1e3681cbe2",
           "text": "Amateur astronomers typically view the sky at night, when most celestial objects and astronomical events are visible, but others observe during the daytime by viewing the Sun and solar eclipses. Some observe the sky using nothing more than their eyes or binoculars, while more dedicated amateurs often use portable telescopes or telescopes situated in their private or club observatories. However, light pollution has made amateur astronomy increasingly difficult to observe celestial objects, as sky glow washes out darkness and minimizes visibility[10]. Amateurs commonly join amateur astronomical societies, which can advise, educate, or guide individuals towards ways of finding and observing celestial objects. Astronomical societies also promote the science of astronomy among the general public.[11]",
           "sha256": "6c029fff3bacc427f4c7e95caa04600296ca5fa52ad210801e075fc0d8e08b62"
+        },
+        {
+          "id": "wiki-1962-a8d2fd1ff8d4a4a4",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "Apparent magnitude (m) is a measure of the brightness of a star, astronomical object or other celestial objects like artificial satellites. Its value depends on its intrinsic luminosity, its distance, and any extinction of the object's light caused by interstellar dust or atmosphere along the line of sight to the observer.",
+          "sha256": "a8d2fd1ff8d4a4a41eaa0df4ae7370fab32b9e8e47659515e2a9e193898e7b18"
+        },
+        {
+          "id": "wiki-1962-46489e46ef00c0b8",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The scale is reverse logarithmic: the brighter an object is, the lower its magnitude number. A difference of 1.0 in magnitude corresponds to the brightness ratio of [TeX: {\\displaystyle {\\sqrt[{5}]{100}}}] , or about 2.512. For example, a magnitude 2.0 star is 2.512 times as bright as a magnitude 3.0 star, 6.31 times as bright as a magnitude 4.0 star, and precisely 100 times as bright as a magnitude 7.0 star.",
+          "sha256": "46489e46ef00c0b836b76ccc7bf5291bcad643323233d49cf376ee707ac54ee8"
+        },
+        {
+          "id": "wiki-1962-5e4e70eaf4445c4c",
+          "title": "Apparent magnitude",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1371120743",
+          "date": "2026-08-24T18:25:02Z (article revision; rendered snapshot 2026-10-01)",
+          "license": "CC BY-SA 4.0; https://creativecommons.org/licenses/by-sa/4.0/; Apparent magnitude \u2014 Wikipedia contributors; retain attribution/history/license, indicate changes, share adaptations alike. Media and quoted paragraphs excluded; source-specific attribution notices and terms retained below; unresolved additional terms excluded.",
+          "source_sha256": "b61918874c99587f136297c3da646802185143784773b18e59807d1b1cb17dae",
+          "text": "The brightest astronomical objects have negative apparent magnitudes, such as Venus at magnitude \u22124.2 or Sirius at magnitude \u22121.46. The faintest stars visible with the naked eye on the darkest night have apparent magnitudes of about +6.5, though this varies depending on a person's eyesight, their altitude, and atmospheric conditions when viewing.[2] The apparent magnitude of known objects can range from \u221226.832 for our Sun to about +31.5 for objects in deep space imaged by the Hubble Space Telescope.[3]",
+          "sha256": "5e4e70eaf4445c4c6418b27683e3af509f916d1f626bc4aab4f9e0365284876c"
         }
       ],
       "expected_route": "withhold"

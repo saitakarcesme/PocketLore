@@ -43,7 +43,7 @@ int runtimeThreads() {
 }
 llama_context_params contextParams() {
     auto p=llama_context_default_params();
-    p.n_ctx=2048;p.n_batch=2048;p.n_ubatch=128;p.n_seq_max=1;p.type_k=GGML_TYPE_F16;p.type_v=GGML_TYPE_F16;
+    p.n_ctx=pocketloreContextTokens;p.n_batch=pocketloreContextTokens;p.n_ubatch=128;p.n_seq_max=1;p.type_k=GGML_TYPE_F16;p.type_v=GGML_TYPE_F16;
     p.n_threads=runtimeThreads();p.n_threads_batch=runtimeThreads();return p;
 }
 std::atomic<uint64_t> contextBytes{0},computeBytes{0},modelBufferBytes{0};
@@ -67,7 +67,7 @@ std::string bytes(JNIEnv *env, jbyteArray value) {
 }
 }
 extern "C" JNIEXPORT jstring JNICALL Java_org_pocketlore_app_NativeRuntime_identity(JNIEnv *env, jclass) {
-    std::string identity="llama.cpp " POCKETLORE_REVISION "; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads="+std::to_string(runtimeThreads())+"; model-budget="+std::to_string(pocketloreModelLimit)+"; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42";
+    std::string identity="llama.cpp " POCKETLORE_REVISION "; CPU; context="+std::to_string(pocketloreContextTokens)+"; sequences=1; KV=f16; sessions=1; threads="+std::to_string(runtimeThreads())+"; model-budget="+std::to_string(pocketloreModelLimit)+"; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42";
 #if defined(POCKETLORE_HOST_SCREEN) && !defined(__ANDROID__)
     identity+="; HOST SCREEN native CPU ISA; not Android admission";
 #endif
@@ -168,14 +168,14 @@ static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobje
         auto s = get(id);
         std::lock_guard<std::mutex> lock(s->operation);
         if (!s->model) throw std::runtime_error("No model loaded");
-        if (limit < 1 || limit > 256 || !sink) throw std::runtime_error("Invalid generation arguments");
+        if (limit < 1 || limit > pocketloreOutputTokens || !sink) throw std::runtime_error("Invalid generation arguments");
         if (s->cancelled) return -1;
         auto text = bytes(env, prompt);
         if (text.size() > 32768) throw std::runtime_error("Prompt exceeds byte limit");
         if (chat) text=chatText(env,s,system,prompt);
         const auto *vocab = llama_model_get_vocab(s->model);
         int count = -llama_tokenize(vocab, text.data(), text.size(), nullptr, 0, true, chat);
-        if (count <= 0 || count + limit > 2048) throw std::runtime_error("Prompt and output exceed 2048-token context");
+        if (count <= 0 || count + limit > pocketloreContextTokens) throw std::runtime_error("Prompt and output exceed compiled context profile");
         std::vector<llama_token> tokens(count);
         if (llama_tokenize(vocab, text.data(), text.size(), tokens.data(), count, true, chat) != count)
             throw std::runtime_error("Tokenization failed");

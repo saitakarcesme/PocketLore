@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "stage": "Host oracle-evidence scale screen, not deployment or production retrieval",
+  "context_tokens": 4096,
+  "output_tokens": 512,
+  "model_file_cap_bytes": 6000000000,
+  "threads_per_process": 6,
+  "max_cpu_processes": 2,
+  "admission": "At each launch require MemAvailable >= candidate file bytes + 3 GiB per-process allocation/JVM reserve + 2 GiB host reserve; one resident model/context per process. No GPU available in sandbox. No emulator inference concurrently.",
+  "timeout_seconds_per_model": 14400,
+  "decoder": "Greedy generateChat for every candidate; no claims grammar, no seed search; pinned Qwen3 non-thinking template handling retained",
+  "architecture": "Deterministic semicolon obligation plan, dated subject-specific sources, ranked per-obligation reading order, one labeled answer slot per obligation. Existing citation/completeness/number/temporal/lexical claim checks retained; full support/completeness judged separately by builder source review.",
+  "selection": "Rank fully source-supported, obligation-complete, useful drafts; report screened candidates separately. Prefer no unsupported candidate publications and smaller assets on quality ties. Do not deploy on raw host score; require measured profile and real emulator subset. Negative results retain precise integration/architecture follow-up.",
+  "timing": "Per-process CPU host under up to two six-thread jobs, including text-output capture; separate from Android and previous thread/backend results. Token count and native sample maxima recorded. No phone speed claim."
+}
