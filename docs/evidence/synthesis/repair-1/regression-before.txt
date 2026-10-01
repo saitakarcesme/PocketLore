@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: Rejected checkpoint's pre-saturation speed claim was published
+	at org.pocketlore.app.TemporalScopeCheck.require(TemporalScopeCheck.java:9)
+	at org.pocketlore.app.TemporalScopeCheck.main(TemporalScopeCheck.java:18)

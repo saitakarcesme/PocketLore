@@ -23,15 +23,16 @@ final class NativePanel {
     private final Button model, cancel;
     private final TextView state, output, answerStatus;
     private final java.util.function.Consumer<Boolean> busyChanged;
+    private final java.util.function.Consumer<String> inspectCitation;
     private volatile AnswerEngine.Outcome outcome;
     private long answerEpoch;
     private volatile boolean stopped, cancelled;
     private volatile long session;
     private boolean busy, retrieving;
-    NativePanel(Activity activity, LinearLayout layout, LinearLayout actions, TextView output, TextView answerStatus, java.util.function.Consumer<Boolean> busyChanged) {
-        this.activity = activity; this.output = output; this.answerStatus = answerStatus; this.busyChanged = busyChanged;
+    NativePanel(Activity activity, LinearLayout layout, LinearLayout actions, TextView output, TextView answerStatus, java.util.function.Consumer<Boolean> busyChanged, java.util.function.Consumer<String> inspectCitation) {
+        this.activity = activity; this.output = output; this.answerStatus = answerStatus; this.busyChanged = busyChanged; this.inspectCitation=inspectCitation;
         state = new TextView(activity);
-        state.setText("Experimental local generation · Import a local GGUF (up to 512 MiB). Small models may give incorrect answers. Inspect the retrieved sources.");
+        state.setText("Experimental local generation · Import a local GGUF (up to 2048 MiB). Small models may give incorrect answers. Inspect the retrieved sources.");
         layout.addView(state);
         model = new Button(activity); model.setText("Import local GGUF"); model.setContentDescription("Import local model"); layout.addView(model);
         cancel = new Button(activity); cancel.setText("Cancel inference or import"); cancel.setEnabled(false); cancel.setContentDescription("Cancel current operation"); actions.addView(cancel);
@@ -72,7 +73,7 @@ final class NativePanel {
         try (Cursor c = activity.getContentResolver().query(uri, new String[]{OpenableColumns.SIZE}, null, null, null)) {
             if (c != null && c.moveToFirst() && !c.isNull(0)) size = c.getLong(0);
         } catch (Exception e) { state.setText("Cannot inspect local file: " + e.getMessage()); return; }
-        if (size < 4 || size > ModelImport.MAX_BYTES) { state.setText("Choose a local GGUF with a known size, at most 512 MiB."); return; }
+        if (size < 4 || size > ModelImport.MAX_BYTES) { state.setText("Choose a local GGUF with a known size, at most 2048 MiB."); return; }
         final long bytes = size;
         new AlertDialog.Builder(activity).setTitle("Copy model to app storage?")
             .setMessage("Required additional storage: " + bytes + " bytes plus a 32 MiB reserve. The original file remains. SHA-256 is calculated during import; it is an identity, not a trust guarantee.")
@@ -114,7 +115,11 @@ final class NativePanel {
         output.setText("Preparing an offline answer…"); answerStatus.setText("Checking retrieved evidence…");
         worker.execute(() -> {
             AnswerEngine.Outcome result = AnswerEngine.answer(question, evidence,
-                id == 0 ? null : (prompt, limit, sink) -> NativeRuntime.generateChat(id, EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8), prompt, limit, sink),
+                id == 0 ? null : new AnswerEngine.Generator() {
+                    public int run(byte[] prompt,int limit,NativeRuntime.Sink sink) { return NativeRuntime.generateChat(id,EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt,limit,sink); }
+                    public int runWithSources(byte[] prompt,int limit,NativeRuntime.Sink sink,int sources,boolean combined) {return NativeRuntime.generateClaims(id,EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt,limit,sink,sources,combined);}
+                    public int countTokens(byte[] prompt) { return NativeRuntime.countChatTokens(id,EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt); }
+                },
                 text -> activity.runOnUiThread(() -> {
                     if (!stopped && !cancelled && epoch == answerEpoch) {
                         answerStatus.setText("Generating locally · Citation checks pending");
@@ -125,10 +130,11 @@ final class NativePanel {
                 if (stopped || epoch != answerEpoch) return;
                 // A click can arrive after native completion but before this UI callback.
                 AnswerEngine.Outcome visible = cancelled ? AnswerEngine.discardAfterCancel(result) : result;
-                outcome = visible; output.setText(visible.text);
+                outcome = visible;
+                output.setText(linkClaims(visible,inspectCitation));output.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
                 String label;
                 switch (visible.kind) {
-                    case GENERATED: label = "Generated locally · Citation IDs checked; inspect factual support"; break;
+                    case GENERATED: label = "Generated locally · Linked claims; inspect support and source differences"; break;
                     case FALLBACK: label = "Extractive fallback · " + visible.reason; break;
                     case ABSTAINED: label = "Abstained · " + visible.reason; break;
                     default: label = "Cancelled · Partial draft discarded";
@@ -137,6 +143,18 @@ final class NativePanel {
                 setBusy(false);
             });
         });
+    }
+    static android.text.SpannableString linkClaims(AnswerEngine.Outcome visible,java.util.function.Consumer<String> inspect) {
+        android.text.SpannableString linked=new android.text.SpannableString(visible.text);
+        java.util.regex.Matcher citations=java.util.regex.Pattern.compile("\\[([^\\[\\]]+)\\]").matcher(visible.text);
+        while(citations.find()) {
+            String citation=citations.group(1);
+            if(!visible.citedIds.contains(citation))continue;
+            linked.setSpan(new android.text.style.ClickableSpan() {
+                public void onClick(android.view.View view) { inspect.accept(citation); }
+            },citations.start(),citations.end(),android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+        return linked;
     }
     private void setBusy(boolean value) {
         busy = value; model.setEnabled(!value); cancel.setEnabled(value);

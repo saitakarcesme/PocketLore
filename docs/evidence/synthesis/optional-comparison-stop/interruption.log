@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/evaluate_synthesis.py", line 37, in <module>
+    assert b'INSTRUMENTATION_CODE: -1' in result,result.decode()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: INSTRUMENTATION_RESULT: shortMsg=Process crashed.
+INSTRUMENTATION_CODE: 0
+

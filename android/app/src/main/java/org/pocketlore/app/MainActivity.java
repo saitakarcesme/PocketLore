@@ -21,6 +21,7 @@ import java.util.concurrent.Executors;
 
 public final class MainActivity extends Activity {
     private ResearchEngine engine;
+    private ResearchEngine.Result latestEvidence;
     private NativePanel nativePanel;
     private EditText question;
     private TextView answer, status;
@@ -76,7 +77,7 @@ public final class MainActivity extends Activity {
         sourceList = new LinearLayout(this); sourceList.setOrientation(LinearLayout.VERTICAL); layout.addView(sourceList);
         nativePanel = new NativePanel(this, layout, actions, answer, status, busy -> {
             search.setEnabled(engine != null && !busy && !importing); question.setEnabled(!busy && !importing); importPack.setEnabled(!busy && !importing);
-        });
+        }, id -> { if(latestEvidence!=null) for(ResearchEngine.Hit hit:latestEvidence.hits) if(hit.passage.id.equals(id)) inspect(hit); });
         search.setEnabled(false);
         search.setOnClickListener(v -> runSearch());
         worker.execute(() -> {
@@ -117,7 +118,7 @@ public final class MainActivity extends Activity {
                     source.setOnClickListener(v -> inspect(hit));
                     sourceList.addView(source);
                 }
-                nativePanel.answer(query, result);
+                latestEvidence=result;nativePanel.answer(query, result);
             });
         });
     }

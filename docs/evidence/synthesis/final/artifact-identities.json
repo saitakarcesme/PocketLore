@@ -1,0 +1,19 @@
+{
+  "implementation_commit": "3ac4122f6b54ff2f2aa46e33899b8606a078c6c3",
+  "run_directory": "downloads/synthesis/run-20261001T004437Z",
+  "apk_sha256": "b726fe8c6364a4a42e6526802d00de5af1427b3e804d3e7ec95eed4e05ce2676",
+  "test_apk_sha256": "7c61415ec9c92844b5c68248610f277513edc1d0eada1571506b7b33d233fc92",
+  "native_libraries": {
+    "lib/arm64-v8a/libpocketlore.so": "47878f01fe41b989ebc952c3dc21d11c2753d09e6a9b5b994e75ee4e471d53c5",
+    "lib/x86_64/libpocketlore.so": "35ff53c5a71792e9a35ab4f08e37fa490d1d166412d6fef03df5d9f289d95815"
+  },
+  "model_sha256": "061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a",
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "fixture_sha256": "1eb30aa083e9f34be45b13ee09a67c7c7442d67a2ff81050b2d92b248450840e",
+  "results_sha256": "8e68cc1bce95ee7521c62f2f391f9e1e8c8cc37acb4a02618e0ef9924e63c711",
+  "runtime": "llama.cpp bb4caa7540188872173c44d161602d9271386413; CPU; context=2048; threads=2; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42",
+  "archived_apks": [
+    "downloads/synthesis/run-20261001T004437Z/app-debug.apk",
+    "downloads/synthesis/run-20261001T004437Z/app-debug-androidTest.apk"
+  ]
+}

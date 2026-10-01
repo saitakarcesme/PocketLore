@@ -1,0 +1,31 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "comparison_route": true,
+    "comparison_budget": true,
+    "comparison_citations": true,
+    "comparison_multiple_sources": true,
+    "explanation_route": true,
+    "explanation_budget": true,
+    "explanation_citations": true,
+    "synthesis_route": true,
+    "synthesis_budget": true,
+    "synthesis_citations": true,
+    "synthesis_multiple_sources": true,
+    "conditions_route": true,
+    "conditions_budget": true,
+    "conditions_citations": true,
+    "absent_route": true,
+    "absent_budget": true,
+    "conflict-fixture_route": false,
+    "conflict-fixture_budget": true,
+    "conflict-fixture_citations": false,
+    "comparison_phase_directions": true,
+    "explanation_heat_removal": true,
+    "synthesis_both_processes": true,
+    "conditions_scope_qualifiers": false,
+    "conflict_fixture_disclosure": false
+  },
+  "scope": "Real generation, context and citation structure; source entailment requires recorded claim review",
+  "apk_sha256": "d3b3d96da1ad9a4b355737144712d24e802852d53c8a929dadf59ff021054708"
+}

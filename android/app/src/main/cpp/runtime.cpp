@@ -38,7 +38,7 @@ std::string bytes(JNIEnv *env, jbyteArray value) {
 }
 }
 extern "C" JNIEXPORT jstring JNICALL Java_org_pocketlore_app_NativeRuntime_identity(JNIEnv *env, jclass) {
-    return env->NewStringUTF("llama.cpp " POCKETLORE_REVISION "; CPU; context=512; threads=2; greedy");
+    return env->NewStringUTF("llama.cpp " POCKETLORE_REVISION "; CPU; context=2048; threads=2; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42");
 }
 extern "C" JNIEXPORT jlong JNICALL Java_org_pocketlore_app_NativeRuntime_create(JNIEnv *env, jclass) {
     try {
@@ -69,16 +69,9 @@ extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_load(JNI
         }
     } catch (const std::exception &e) { fail(env, e); }
 }
-static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobject sink, bool chat, jbyteArray system = nullptr) {
-    try {
-        auto s = get(id);
-        std::lock_guard<std::mutex> lock(s->operation);
-        if (!s->model) throw std::runtime_error("No model loaded");
-        if (limit < 1 || limit > 256 || !sink) throw std::runtime_error("Invalid generation arguments");
-        if (s->cancelled) return -1;
-        auto text = bytes(env, prompt);
-        if (text.size() > 32768) throw std::runtime_error("Prompt exceeds byte limit");
-        if (chat) {
+static std::string chatText(JNIEnv *env, const std::shared_ptr<Session>& s, jbyteArray system, jbyteArray prompt) {
+    auto text=bytes(env,prompt);
+    if(text.size()>32768)throw std::runtime_error("Prompt exceeds byte limit");
             if (text.find('\0') != std::string::npos || text.find("<|") != std::string::npos || text.find("[INST]") != std::string::npos)
                 throw std::runtime_error("Unsupported prompt control marker");
             const char *tmpl = llama_model_chat_template(s->model, nullptr);
@@ -93,22 +86,77 @@ static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobje
             if (llama_chat_apply_template(tmpl, messages, 2, true, formatted.data(), size) != size)
                 throw std::runtime_error("Chat formatting failed");
             text.assign(formatted.data(), size);
-        }
+            char architecture[64]={};
+            llama_model_meta_val_str(s->model,"general.architecture",architecture,sizeof(architecture));
+            if(std::string(architecture)=="qwen3") {
+                // Upstream Qwen3 enable_thinking=false assistant prefix. No reasoning tokens are generated.
+                const std::string assistant="<|im_start|>assistant\n";
+                if(text.size()<assistant.size() || text.compare(text.size()-assistant.size(),assistant.size(),assistant)!=0 || std::string(tmpl).find("enable_thinking")==std::string::npos)
+                    throw std::runtime_error("Unsupported Qwen3 non-thinking template");
+                text+="<think>\n\n</think>\n\n";
+            }
+    return text;
+}
+extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_countChatTokens(JNIEnv *env,jclass,jlong id,jbyteArray system,jbyteArray prompt) {
+    try {
+        auto s=get(id);std::lock_guard<std::mutex> lock(s->operation);
+        if(!s->model)throw std::runtime_error("No model loaded");
+        auto text=chatText(env,s,system,prompt);
+        return -llama_tokenize(llama_model_get_vocab(s->model),text.data(),text.size(),nullptr,0,true,true);
+    } catch(const std::exception& e){fail(env,e);return 0;}
+}
+static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobject sink, bool chat, jbyteArray system = nullptr, int sources = 0, bool combined = false) {
+    try {
+        auto s = get(id);
+        std::lock_guard<std::mutex> lock(s->operation);
+        if (!s->model) throw std::runtime_error("No model loaded");
+        if (limit < 1 || limit > 256 || !sink) throw std::runtime_error("Invalid generation arguments");
+        if (s->cancelled) return -1;
+        auto text = bytes(env, prompt);
+        if (text.size() > 32768) throw std::runtime_error("Prompt exceeds byte limit");
+        if (chat) text=chatText(env,s,system,prompt);
         const auto *vocab = llama_model_get_vocab(s->model);
         int count = -llama_tokenize(vocab, text.data(), text.size(), nullptr, 0, true, chat);
-        if (count <= 0 || count + limit > 512) throw std::runtime_error("Prompt and output exceed 512-token context");
+        if (count <= 0 || count + limit > 2048) throw std::runtime_error("Prompt and output exceed 2048-token context");
         std::vector<llama_token> tokens(count);
         if (llama_tokenize(vocab, text.data(), text.size(), tokens.data(), count, true, chat) != count)
             throw std::runtime_error("Tokenization failed");
         auto params = llama_context_default_params();
-        params.n_ctx = 512; params.n_batch = 512; params.n_ubatch = 128;
+        params.n_ctx = 2048; params.n_batch = 2048; params.n_ubatch = 128;
         params.n_threads = 2; params.n_threads_batch = 2;
         params.abort_callback = aborted; params.abort_callback_data = s.get();
         using Context = std::unique_ptr<llama_context, decltype(&llama_free)>;
         Context ctx(llama_init_from_model(s->model, params), llama_free);
         if (!ctx) throw std::runtime_error("Cannot create inference context");
         using Sampler = std::unique_ptr<llama_sampler, decltype(&llama_sampler_free)>;
-        Sampler sampler(llama_sampler_init_greedy(), llama_sampler_free);
+        Sampler sampler(nullptr,llama_sampler_free);
+        if(sources>0) {
+            if(sources>4)throw std::runtime_error("Too many synthesis sources");
+            std::string grammar=combined ? "root ::= \"Insufficient evidence.\" | claim \"\\n\" claim\n" : "root ::= \"Insufficient evidence.\" | claim (\"\\n\" claim)?\n";
+            grammar+=R"(claim ::= references " " [^\n\r\[\].]{1,220} "."
+references ::= )";
+            if(combined) {
+                grammar+="\"";for(int i=1;i<=sources;i++){if(i>1)grammar+=" ";grammar+="[S"+std::to_string(i)+"]";}grammar+="\"\n";
+            } else grammar+="citation (\" \" citation)?\n";
+            grammar+="citation ::= ";
+            for(int i=1;i<=sources;i++){if(i>1)grammar+=" | ";grammar+="\"[S"+std::to_string(i)+"]\"";}
+            grammar+="\n";
+            auto *constraint=llama_sampler_init_grammar(vocab,grammar.c_str(),"root");
+            if(!constraint)throw std::runtime_error("Cannot initialize claim grammar");
+            sampler.reset(llama_sampler_chain_init(llama_sampler_chain_default_params()));
+            if(!sampler){llama_sampler_free(constraint);throw std::runtime_error("Cannot initialize sampler chain");}
+            llama_sampler_chain_add(sampler.get(),constraint);
+            char architecture[64]={};
+            llama_model_meta_val_str(s->model,"general.architecture",architecture,sizeof(architecture));
+            if(std::string(architecture)=="qwen3") {
+                // Upstream non-thinking sampling guidance; fixed seed makes this development run reproducible.
+                llama_sampler_chain_add(sampler.get(),llama_sampler_init_penalties(llama_vocab_n_tokens(vocab),256,1.0f,0.0f,1.5f));
+                llama_sampler_chain_add(sampler.get(),llama_sampler_init_top_k(20));
+                llama_sampler_chain_add(sampler.get(),llama_sampler_init_top_p(0.8f,1));
+                llama_sampler_chain_add(sampler.get(),llama_sampler_init_temp(0.7f));
+                llama_sampler_chain_add(sampler.get(),llama_sampler_init_dist(42));
+            } else llama_sampler_chain_add(sampler.get(),llama_sampler_init_greedy());
+        } else sampler.reset(llama_sampler_init_greedy());
         if (!sampler) throw std::runtime_error("Cannot create sampler");
         jclass sinkClass = env->GetObjectClass(sink);
         jmethodID emit = env->GetMethodID(sinkClass, "onToken", "([B)V");
@@ -146,6 +194,10 @@ extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generate
 }
 extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generateChat(JNIEnv *env, jclass, jlong id, jbyteArray system, jbyteArray prompt, jint limit, jobject sink) {
     return generate(env, id, prompt, limit, sink, true, system);
+}
+extern "C" JNIEXPORT jint JNICALL Java_org_pocketlore_app_NativeRuntime_generateClaims(JNIEnv *env,jclass,jlong id,jbyteArray system,jbyteArray prompt,jint limit,jobject sink,jint sources,jboolean combined) {
+    if(sources<1 || sources>4){std::runtime_error error("Invalid claim source count");fail(env,error);return 0;}
+    return generate(env,id,prompt,limit,sink,true,system,sources,combined);
 }
 extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_cancel(JNIEnv *env, jclass, jlong id) {
     try { get(id)->cancelled = true; } catch (const std::exception &e) { fail(env, e); }

@@ -1,0 +1,23 @@
+{
+  "status": "FAIL",
+  "checks": {
+    "comparison_route": false,
+    "comparison_budget": true,
+    "comparison_citations": true,
+    "comparison_multiple_sources": true,
+    "explanation_route": false,
+    "explanation_budget": true,
+    "explanation_citations": true,
+    "synthesis_route": false,
+    "synthesis_budget": true,
+    "synthesis_citations": true,
+    "synthesis_multiple_sources": true,
+    "conditions_route": false,
+    "conditions_budget": true,
+    "conditions_citations": true,
+    "absent_route": true,
+    "absent_budget": true
+  },
+  "scope": "Real generation, context and citation structure; source entailment requires recorded claim review",
+  "apk_sha256": "9a11e04f622bbecf652d5714418c5b6eee18abacc65bd12e69d5768a6ddbceee"
+}

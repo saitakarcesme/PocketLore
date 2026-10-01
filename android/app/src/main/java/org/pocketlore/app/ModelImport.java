@@ -6,11 +6,11 @@ import java.util.function.BooleanSupplier;
 
 /** Bounded, cancellable staging. Caller validates GGUF with the runtime before atomic promotion. */
 public final class ModelImport {
-    public static final long MAX_BYTES = 512L * 1024 * 1024;
+    public static final long MAX_BYTES = 2048L * 1024 * 1024;
     public static final long RESERVE_BYTES = 32L * 1024 * 1024;
     public static String copy(InputStream input, File stage, long expected, long available,
                               BooleanSupplier cancelled) throws Exception {
-        if (expected < 4 || expected > MAX_BYTES) throw new IOException("Model size must be known and at most 512 MiB");
+        if (expected < 4 || expected > MAX_BYTES) throw new IOException("Model size must be known and at most 2048 MiB");
         if (available < expected + RESERVE_BYTES) throw new IOException("Insufficient free storage for model copy and reserve");
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         long total = 0;
