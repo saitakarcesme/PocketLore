@@ -1,0 +1,52 @@
+android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+ android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+  android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+   android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 63 - 1080, 211) clickable=false visible=true
+     android.widget.TextView text=PocketLore description=null bounds=Rect(63, 80 - 792, 193) clickable=false visible=true
+     android.widget.TextView text=Offline description=null bounds=Rect(792, 87 - 912, 186) clickable=false visible=true
+     android.widget.ImageButton text=null description=Settings bounds=Rect(912, 74 - 1038, 200) clickable=true visible=true
+    android.widget.FrameLayout text=null description=null bounds=Rect(0, 211 - 1080, 1499) clickable=false visible=true
+     android.widget.ScrollView text=null description=null bounds=Rect(0, 211 - 1080, 1499) clickable=false visible=true
+      android.widget.LinearLayout text=null description=null bounds=Rect(0, 211 - 1080, 1499) clickable=false visible=true
+       android.widget.LinearLayout text=null description=null bounds=Rect(63, 253 - 1017, 735) clickable=false visible=true
+        android.widget.TextView text=A little curiosity.
+A deeper understanding. description=null bounds=Rect(63, 253 - 1017, 636) clickable=false visible=true
+        android.widget.TextView text=Your offline research notebook description=null bounds=Rect(63, 636 - 1017, 735) clickable=false visible=true
+       android.widget.LinearLayout text=null description=null bounds=Rect(63, 788 - 1017, 1499) clickable=false visible=true
+        android.widget.TextView text=Your question description=null bounds=Rect(116, 830 - 964, 929) clickable=false visible=true
+        android.widget.EditText text=How do these installed sources describe this topic, and which source dates and limitations should I keep with my notes? description=Research question bounds=Rect(116, 929 - 964, 1241) clickable=true visible=true
+        android.widget.Button text=Research offline  → description=null bounds=Rect(116, 1273 - 964, 1399) clickable=true visible=true
+        android.widget.Button text=Research brief · source quotations description=null bounds=Rect(116, 1410 - 964, 1499) clickable=true visible=true
+        android.widget.Button text=Photo text and speech input description=null bounds=Rect(116, 1558 - 964, 1499) clickable=true visible=false
+       android.widget.TextView text=Ready to research offline description=null bounds=Rect(63, 1779 - 1017, 1499) clickable=false visible=false
+       android.widget.LinearLayout text=null description=null bounds=Rect(63, 1878 - 1017, 1499) clickable=false visible=false
+       android.widget.LinearLayout text=null description=null bounds=Rect(63, 1878 - 1017, 1499) clickable=false visible=false
+        android.widget.TextView text=On your bookshelf description=null bounds=Rect(63, 1878 - 1017, 1499) clickable=false visible=false
+        android.widget.Button text=null description=english reference 2026 10 01. Active collection · Edition details bounds=Rect(63, 1997 - 1017, 1499) clickable=true visible=false
+         android.widget.TextView text=english reference 2026 10 01 description=null bounds=Rect(63, 2029 - 1017, 1499) clickable=false visible=false
+         android.widget.TextView text=Active collection · Edition details description=null bounds=Rect(63, 2142 - 1017, 1499) clickable=false visible=false
+        android.view.View text=null description=null bounds=Rect(63, 2273 - 1017, 1499) clickable=false visible=false
+        android.widget.Button text=null description=science supplement 2026 10 01 v1. Active collection · Edition details bounds=Rect(63, 2276 - 1017, 1499) clickable=true visible=false
+         android.widget.TextView text=science supplement 2026 10 01 v1 description=null bounds=Rect(63, 2308 - 1017, 1499) clickable=false visible=false
+         android.widget.TextView text=Active collection · Edition details description=null bounds=Rect(63, 2421 - 1017, 1499) clickable=false visible=false
+        android.view.View text=null description=null bounds=Rect(63, 2552 - 1017, 1499) clickable=false visible=false
+        android.widget.Button text=null description=broad reference rendered 20261001 v2. Active collection · Edition details bounds=Rect(63, 2555 - 1017, 1499) clickable=true visible=false
+         android.widget.TextView text=broad reference rendered 20261001 v2 description=null bounds=Rect(63, 2587 - 1017, 1499) clickable=false visible=false
+         android.widget.TextView text=Active collection · Edition details description=null bounds=Rect(63, 2700 - 1017, 1499) clickable=false visible=false
+        android.view.View text=null description=null bounds=Rect(63, 2831 - 1017, 1499) clickable=false visible=false
+       android.widget.LinearLayout text=null description=null bounds=Rect(63, 2834 - 1017, 1499) clickable=false visible=false
+        android.widget.TextView text=Pick up where you left off description=null bounds=Rect(63, 2834 - 1017, 1499) clickable=false visible=false
+        android.widget.Button text=null description=What is my blood sodium result?. Oct 2 · 01:30 · Research bounds=Rect(63, 2953 - 1017, 1499) clickable=true visible=false
+         android.widget.TextView text=What is my blood sodium result? description=null bounds=Rect(63, 2985 - 1017, 1499) clickable=false visible=false
+         android.widget.TextView text=Oct 2 · 01:30 · Research description=null bounds=Rect(63, 3098 - 1017, 1499) clickable=false visible=false
+        android.view.View text=null description=null bounds=Rect(63, 3229 - 1017, 1499) clickable=false visible=false
+        android.widget.Button text=null description=What is groundwater?. Oct 2 · 01:30 · Research bounds=Rect(63, 3232 - 1017, 1499) clickable=true visible=false
+         android.widget.TextView text=What is groundwater? description=null bounds=Rect(63, 3264 - 1017, 1499) clickable=false visible=false
+         android.widget.TextView text=Oct 2 · 01:30 · Research description=null bounds=Rect(63, 3377 - 1017, 1499) clickable=false visible=false
+        android.view.View text=null description=null bounds=Rect(63, 3508 - 1017, 1499) clickable=false visible=false
+        android.widget.Button text=null description=What is my blood sodium result?. Oct 2 · 01:30 · Research bounds=Rect(63, 3511 - 1017, 1499) clickable=true visible=false
+         android.widget.TextView text=What is my blood sodium result? description=null bounds=Rect(63, 3543 - 1017, 1499) clickable=false visible=false
+         android.widget.TextView text=Oct 2 · 01:30 · Research description=null bounds=Rect(63, 3656 - 1017, 1499) clickable=false visible=false
+        android.view.View text=null description=null bounds=Rect(63, 3787 - 1017, 1499) clickable=false visible=false
+ android.view.View text=null description=null bounds=Rect(0, 2274 - 1080, 2400) clickable=false visible=true
