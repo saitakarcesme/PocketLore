@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")/../.."
-# Repair uses frozen task221 drafts; the original same-model failure remains sealed.
 python3 tools/evaluation/independent-linking/verify.py
