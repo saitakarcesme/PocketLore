@@ -1,0 +1,16 @@
+Frame behavioral checks: 39
+Independent binding behavioral checks: 29
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/fact-frames/verify.py", line 86, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/fact-frames/verify.py", line 83, in main
+    build=json.loads((E/'build.json').read_text());exact(R/build['apk'],build['sha256']);require(build['exit_code']==0,'Build failure');require(counts==json.loads((E/'metrics.json').read_text())['counts'],'Derived counts')
+                                                   ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/fact-frames/verify.py", line 9, in exact
+    def exact(p,h):require(p.is_file() and sha(p)==h,'Missing/changed artifact: '+str(p))
+                   ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/fact-frames/verify.py", line 8, in require
+    if not v:raise AssertionError(m)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing/changed artifact: /home/isa/Projects/PocketLore/android/app/build/outputs/apk/debug/app-debug.apk

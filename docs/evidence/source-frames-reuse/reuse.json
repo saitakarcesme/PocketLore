@@ -1,0 +1,36 @@
+{
+  "reused_source_frame_checkpoint": "e77c683",
+  "inspected_guarded_checkpoint": "4fbc982",
+  "inference_repeated": false,
+  "parser_changed": false,
+  "commands": [
+    {
+      "command": [
+        "bash",
+        "tools/android-build.sh"
+      ],
+      "exit_code": 0,
+      "log": "android-build.log"
+    },
+    {
+      "command": [
+        "bash",
+        "tools/evaluation/check_source_fact_frames.sh"
+      ],
+      "exit_code": 1,
+      "log": "initial-check.log",
+      "reason": "Preserved historical APK mismatch"
+    },
+    {
+      "command": [
+        "bash",
+        "tools/evaluation/check_source_fact_frames.sh"
+      ],
+      "exit_code": 0,
+      "log": "final-check.log"
+    }
+  ],
+  "current_apk_sha256": "2d04838f2bf676b474e355d93e5228b775acc4d444a17f8eee1542b6bd51b1db",
+  "independent_source_review": "pending",
+  "next_step": "Existing224 reused; no queue mutation"
+}

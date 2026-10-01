@@ -1,3 +1,28 @@
+# Task 223: source-frame prototype reused and coverage made explicit
+
+Task221 repair2 already implemented and measured this exact source-first strategy. Task222 reuse and guarded repair preserve the independently trained classifier failure separately. This task reuses all **143 records**:103 prior draft/probe records,20 real new4B drafts and20 new constructed probes. No generation, classifier inference, threshold search, parser-rule change or new asset acquisition occurred. The frozen20-case specification, fixed994 classifier pairs, raw frames, parse errors, span mappings and historical failures remain unchanged. This is public retrospective development, not held-out generalization or product acceptance.
+
+Both task223 commands pass: `bash tools/android-build.sh` and `bash tools/evaluation/check_source_fact_frames.sh`. The first validation attempt correctly rejected the old frame APK identity after task222 added shared code; [that failure](source-frames-reuse/initial-check.log) is preserved. The check now pins task222's separate current APK receipt without replacing the original sealed receipt. Actual APK SHA256 is `2d04838f2bf676b474e355d93e5228b775acc4d444a17f8eee1542b6bd51b1db`. [Fresh build](source-frames-reuse/android-build.log) and [final check](source-frames-reuse/final-check.log) record the results. The source-frame parser itself is hash-identical to its prior measured implementation.
+
+The check recompiles and replays the actual143-record controller, runs39 frame and29 original linking/renderer behavioral tests, verifies live pinned model/native/source artifacts and exact typed spans, and rejects changed/missing model/run artifacts. It derives and checks a new [coverage breakdown](source-frames-reuse/coverage.json) directly from frozen fixtures, final routes and separately identified builder assessments. It does not regenerate prose or treat classifier labels as entailment.
+
+| Generated question population | Useful eligible / all questions | Complete / eligible | Supported / eligible | Withheld |
+| --- | ---: | ---: | ---: | ---: |
+| Original48, including8 absent |5/48|5/5|5/5|43 |
+| Previous new12, including1 absent |1/12|1/1|1/1|11 |
+| Independent-linking new16 |1/16|1/1|1/1|15 |
+| Source-frame new20, including2 absent |1/20|1/1|1/1|19 |
+
+The required supported-old denominator remains **5/40**, and all **eleven absent controls** withhold. Conditional builder-assessed support precision is100% among the eight eligible generated answers, but useful question coverage is only8/96 overall (including absent questions), and5/40 on supported old cases. This small conditional count is not evidence of100% general factual precision. Historical wrappers and constructed probes are excluded from generated-success counts. Completeness of a withheld answer is not inferred from its W label.
+
+False rejections remain severe: the prior16 probes contain8 expected positives, of which7 are rejected; the new20 probes contain8 expected positives, all8 rejected. All20 expected negative probes across both sets withhold. New t10's positive prose has a conflicting Barcelona wrapper heading; it remains counted as a rejection of the frozen positive expectation rather than silently changing the label. Supported corrections, different subjects and paraphrases remain challenging; unknown clauses fail closed. Final source bindings for l11/r06 and repaired p01 are preserved, while n02 still withholds rather than retaining its damaged links. Ten total eligible records include these eight generated answers, one historical wrapper and one constructed probe; builder review finds no unsupported final output, pending independent source review.
+
+No additional task was queued: existing224-source-plan-generation is the precise independent next step for avoidable W and supported prose rejected by finite grammar. Repeating223 or its old inference would add no new evidence. Production model/admission, services, orchestration state and main remain unchanged. Selected4B Android admission/load/cancel/reload and combined resources, actual mobile verifier integration, candidate release identity, physical Android/GrapheneOS and human acceptance remain open.
+
+The original implementation report below preserves the actual generation protocol, freeze, post-output safety correction, resource measurements and limitations unchanged.
+
+---
+
 # Source-first fact frames: bounded task 221 repair 2
 
 This is a public development experiment and builder assessment, not independent acceptance. Both required commands passed: `bash tools/android-build.sh` and `bash tools/evaluation/check_obligation_binding.sh`. The latter reruns shared Java behavior and all 143 saved records, validates actual model/run/source/APK identities, rejects missing or changed model/run artifacts, and applies separately recorded builder source judgments. It does not independently prove those judgments.

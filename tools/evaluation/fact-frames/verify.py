@@ -80,7 +80,13 @@ def main():
   changed_model=t/'changed.gguf'
   with changed_model.open('wb') as stream:stream.truncate(model.stat().st_size)
   reject(lambda:exact(changed_model,spec['generator_sha256']));reject(lambda:exact(t/'missing.gguf',spec['generator_sha256']))
- build=json.loads((E/'build.json').read_text());exact(R/build['apk'],build['sha256']);require(build['exit_code']==0,'Build failure');require(counts==json.loads((E/'metrics.json').read_text())['counts'],'Derived counts')
+ # Reuse after task222 added composition code; the original frame build receipt remains sealed.
+ current_build=R/'docs/evidence/guarded-linking/build.json';exact(current_build,'a92befd1acdee02175752d77a36d530c4b8ad61cd13f096f45cb2e02686cfed2')
+ build=json.loads(current_build.read_text());exact(R/build['apk'],build['sha256']);require(build['exit_code']==0,'Build failure');require(counts==json.loads((E/'metrics.json').read_text())['counts'],'Derived counts')
+ from public_coverage import measure
+ coverage=measure(values,review,[('p','prior_probes',prior),('t','new_probes',fixture['cases'])])
+ require(coverage==json.loads((R/'docs/evidence/source-frames-reuse/coverage.json').read_text()),'Coverage denominators drift')
+ print(json.dumps(coverage,indent=2),flush=True)
  print(json.dumps({'artifact_behavior':'PASS','builder_counts':counts,'independent_review':'pending','scope':'Finite public-development grammar, not general entailment or production acceptance'},indent=2),flush=True)
  require(counts['old_useful_eligible']>4,'Useful old coverage <=4/40');require(counts['unsupported_eligible']==0,'Unsupported eligible output');require((counts['old_absent_withheld'],counts['prior_absent_withheld'],counts['new_absent_withheld'])==(8,1,2),'Absent controls not all withheld');print('QUALITY PASS on frozen public development only')
 if __name__=='__main__':main()
