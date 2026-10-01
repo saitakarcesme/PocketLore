@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "scope": "Task222 repair1 retrospective development regression; no held-out claim",
+  "inputs": "Reuse all103 independent-linking records,994 scores and existing frozen16 new questions/probes. No generation or classifier inference, no changed model/threshold/prompt/seed/fixtures.",
+  "architecture": "Independent classifier admission is necessary but insufficient. After its fixed whole-claim/every-sentence check, source-first FactFrames must prove every complete generated claim from actual catalog relations. Final typed references come only from the semantic proof. NLI candidate references and final proof references are recorded separately; a positive NLI label does not certify final citation entailment. Neither stage can rewrite prose, drop clauses, convert W or call fallback success.",
+  "limits": "Unchanged6passages,8claims,8refs,1200-character source sentence window,512classifier tokens fail-closed and0.95entailment/0.02contradiction thresholds. Existing frozen4B4096context/320draft+192audit runs only; audit not approval.",
+  "gate": "More than4/40 useful supported old answers,zero unsupported across103records,all8+1 absent controls withheld; unchanged manual source review separate from mechanical proof.",
+  "limitations": "This combines two previously measured controllers on known public regressions. Any safety gain belongs to the narrow semantic veto, not independent classifier accuracy or general entailment. No Android verifier/model integration or production model/admission changes. No new task duplicating224."
+}
