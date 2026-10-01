@@ -1,0 +1,32 @@
+{
+  "mode": "import",
+  "pid": 3251,
+  "platform": "emulator-5562 API35 x86_64; CPU; no inference",
+  "manifest": "c7541623363a2e78ca45c2d730fb745a72c3757c4cc2b9f027d0c3503f85f36f",
+  "shards": [
+    "000_00000",
+    "000_00001",
+    "000_00002",
+    "000_00003",
+    "000_00004",
+    "000_00005",
+    "000_00006",
+    "000_00007",
+    "000_00008"
+  ],
+  "kind": "wiki",
+  "elapsed_ms": 37154.811543,
+  "read_bytes": 1429905175,
+  "files_before": 14796028807,
+  "files_after": 16225959842,
+  "precommit_files_bytes": 16225933684,
+  "admission_bytes": 17791097676,
+  "new_bytes_written": 1429904877,
+  "status": "PASS",
+  "sampled_app_logical_peak": 16225966452,
+  "sampled_app_allocated_peak": 16226639872,
+  "sampled_pss_peak_kib": 33663,
+  "app_logical_bytes": 16225959842,
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "proc_status": "Name:\t.pocketlore.app\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t3251\nNgid:\t0\nPid:\t3251\nPPid:\t367\nTracerPid:\t0\nUid:\t10148\t10148\t10148\t10148\nGid:\t10148\t10148\t10148\t10148\nFDSize:\t128\nGroups:\t9997 20148 50148 \nKthread:\t0\nVmPeak:\t16752632 kB\nVmSize:\t15961476 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  133032 kB\nVmRSS:\t  122108 kB\nRssAnon:\t   54524 kB\nRssFile:\t   61952 kB\nRssShmem:\t    5632 kB\nVmData:\t 2623384 kB\nVmStk:\t    8192 kB\nVmExe:\t       8 kB\nVmLib:\t  144144 kB\nVmPTE:\t    1052 kB\nVmSwap:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t15\nSigQ:\t0\/15667\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080001204\nSigIgn:\t0000000000000001\nSigCgt:\t0000006e400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t0000000000000000\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\t3\nCpus_allowed_list:\t0-1\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t10\nnonvoluntary_ctxt_switches:\t53\n"
+}

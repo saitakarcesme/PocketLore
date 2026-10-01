@@ -1,0 +1,14 @@
+{
+  "mode": "seed",
+  "pid": 2292,
+  "platform": "emulator-5562 API35 x86_64; CPU; no inference",
+  "reviewed_documents": 1113,
+  "reviewed_passages": 40891,
+  "status": "PASS",
+  "sampled_app_logical_peak": 705672807,
+  "sampled_app_allocated_peak": 705777664,
+  "sampled_pss_peak_kib": 83044,
+  "app_logical_bytes": 659333533,
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "proc_status": "Name:\t.pocketlore.app\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t2292\nNgid:\t0\nPid:\t2292\nPPid:\t367\nTracerPid:\t0\nUid:\t10148\t10148\t10148\t10148\nGid:\t10148\t10148\t10148\t10148\nFDSize:\t128\nGroups:\t9997 20148 50148 \nKthread:\t0\nVmPeak:\t16750268 kB\nVmSize:\t15955020 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  238324 kB\nVmRSS:\t  133188 kB\nRssAnon:\t   62896 kB\nRssFile:\t   63872 kB\nRssShmem:\t    6420 kB\nVmData:\t 2639696 kB\nVmStk:\t    8192 kB\nVmExe:\t       8 kB\nVmLib:\t  142376 kB\nVmPTE:\t    1084 kB\nVmSwap:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t14\nSigQ:\t0\/15667\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080001204\nSigIgn:\t0000000000000001\nSigCgt:\t0000006e400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t0000000000000000\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\t3\nCpus_allowed_list:\t0-1\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t29\nnonvoluntary_ctxt_switches:\t56\n"
+}

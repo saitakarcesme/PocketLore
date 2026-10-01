@@ -1,0 +1,25 @@
+{
+  "mode": "import",
+  "pid": 4467,
+  "platform": "emulator-5562 API35 x86_64; CPU; no inference",
+  "manifest": "3c8806631a70a4a4fcfa16dafececcfef313370e33993db58ccc18538c7cbfe9",
+  "shards": [
+    "compact-00.sqlite",
+    "compact-01.sqlite"
+  ],
+  "kind": "places",
+  "elapsed_ms": 7084.0177,
+  "read_bytes": 1090923988,
+  "files_before": 25844512735,
+  "files_after": 26935466236,
+  "precommit_files_bytes": 26935436583,
+  "admission_bytes": 28161623335,
+  "new_bytes_written": 1090923848,
+  "status": "PASS",
+  "sampled_app_logical_peak": 26935466236,
+  "sampled_app_allocated_peak": 26936446976,
+  "sampled_pss_peak_kib": 55634,
+  "app_logical_bytes": 26935466236,
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "proc_status": "Name:\t.pocketlore.app\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t4467\nNgid:\t0\nPid:\t4467\nPPid:\t367\nTracerPid:\t0\nUid:\t10148\t10148\t10148\t10148\nGid:\t10148\t10148\t10148\t10148\nFDSize:\t128\nGroups:\t9997 20148 50148 \nKthread:\t0\nVmPeak:\t16750452 kB\nVmSize:\t16387184 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  154124 kB\nVmRSS:\t  154124 kB\nRssAnon:\t   87052 kB\nRssFile:\t   61568 kB\nRssShmem:\t    5504 kB\nVmData:\t 1979884 kB\nVmStk:\t    8192 kB\nVmExe:\t       8 kB\nVmLib:\t  144144 kB\nVmPTE:\t    1108 kB\nVmSwap:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t13\nSigQ:\t0\/15667\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080001204\nSigIgn:\t0000000000000001\nSigCgt:\t0000006e400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t0000000000000000\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\t3\nCpus_allowed_list:\t0-1\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t8\nnonvoluntary_ctxt_switches:\t46\n"
+}

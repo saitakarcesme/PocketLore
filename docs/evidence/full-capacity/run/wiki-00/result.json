@@ -1,0 +1,24 @@
+{
+  "mode": "import",
+  "pid": 2427,
+  "platform": "emulator-5562 API35 x86_64; CPU; no inference",
+  "manifest": "febf93dfe64306f0e715194a4ced5785a6dbaa162d48fb8272174cf0c9ff1868",
+  "shards": [
+    "000_00000"
+  ],
+  "kind": "wiki",
+  "elapsed_ms": 7299.986159,
+  "read_bytes": 1828063049,
+  "files_before": 2817996820,
+  "files_after": 4646091904,
+  "precommit_files_bytes": 4646059047,
+  "admission_bytes": 6609385097,
+  "new_bytes_written": 1828062227,
+  "status": "PASS",
+  "sampled_app_logical_peak": 4646091904,
+  "sampled_app_allocated_peak": 4646342656,
+  "sampled_pss_peak_kib": 28027,
+  "app_logical_bytes": 4646091904,
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "proc_status": "Name:\t.pocketlore.app\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t2427\nNgid:\t0\nPid:\t2427\nPPid:\t367\nTracerPid:\t0\nUid:\t10148\t10148\t10148\t10148\nGid:\t10148\t10148\t10148\t10148\nFDSize:\t128\nGroups:\t9997 20148 50148 \nKthread:\t0\nVmPeak:\t16750268 kB\nVmSize:\t16394968 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t  127408 kB\nVmRSS:\t  123964 kB\nRssAnon:\t   56892 kB\nRssFile:\t   61568 kB\nRssShmem:\t    5504 kB\nVmData:\t 1976596 kB\nVmStk:\t    8192 kB\nVmExe:\t       8 kB\nVmLib:\t  144144 kB\nVmPTE:\t    1056 kB\nVmSwap:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t14\nSigQ:\t0\/15667\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080001204\nSigIgn:\t0000000000000001\nSigCgt:\t0000006e400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t0000000000000000\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\t3\nCpus_allowed_list:\t0-1\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t17\nnonvoluntary_ctxt_switches:\t28\n"
+}
