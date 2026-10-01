@@ -1,0 +1,153 @@
+{
+  "source_commit": "3313891c177bb372cbedb47eb510b52e4f9ae23a",
+  "sealed_commit": "3f16c33b831c47b9a43aaf20fa21f55add3c18c6",
+  "files": [
+    {
+      "sealed_path": "DIRECTION-2.md",
+      "sealed_sha256": "916e4252471be1e6deb4045a9a595dddf6b84905250e2563e4e6b749a6895785",
+      "integrated_path": "docs/evidence/product-ui/DIRECTION-2.md",
+      "integrated_sha256": "916e4252471be1e6deb4045a9a595dddf6b84905250e2563e4e6b749a6895785",
+      "byte_identical": true
+    },
+    {
+      "sealed_path": "android/app/src/androidTest/java/org/pocketlore/app/RedesignUiInstrumentation.java",
+      "sealed_sha256": "2cd239fe633873b56d970e3cff056af42dd683b9d6dd19d99156458e8083c881",
+      "integrated_path": "android/app/src/androidTest/java/org/pocketlore/app/RedesignUiInstrumentation.java",
+      "integrated_sha256": "2cd239fe633873b56d970e3cff056af42dd683b9d6dd19d99156458e8083c881",
+      "byte_identical": true
+    },
+    {
+      "sealed_path": "android/app/src/androidTest/java/org/pocketlore/app/RefinedUiInstrumentation.java",
+      "sealed_sha256": "a342a4eb4e846f18c0dca2298f14d8bbfda18915c9880421130f65302e1eb0b8",
+      "integrated_path": "android/app/src/androidTest/java/org/pocketlore/app/RefinedUiInstrumentation.java",
+      "integrated_sha256": "a342a4eb4e846f18c0dca2298f14d8bbfda18915c9880421130f65302e1eb0b8",
+      "byte_identical": true
+    },
+    {
+      "sealed_path": "android/app/src/main/AndroidManifest.xml",
+      "sealed_sha256": "67c04b052c30a9a61f218dd445af19a5a79b25db808831dc569dbca1e10bec28",
+      "integrated_path": "android/app/src/main/AndroidManifest.xml",
+      "integrated_sha256": "0d9d41ba83026a6444fd1345b300fff69263428c453d80ddac22c50fba451655",
+      "byte_identical": false
+    },
+    {
+      "sealed_path": "android/app/src/main/cpp/CMakeLists.txt",
+      "sealed_sha256": "e8ddb24cdb9c9c714629ccb8b1ce90bcd46024a0383f60199aa643105d1bf12f",
+      "integrated_path": "android/app/src/main/cpp/CMakeLists.txt",
+      "integrated_sha256": "e8ddb24cdb9c9c714629ccb8b1ce90bcd46024a0383f60199aa643105d1bf12f",
+      "byte_identical": true
+    },
+    {
+      "sealed_path": "android/app/src/main/java/org/pocketlore/app/MainActivity.java",
+      "sealed_sha256": "e1bdf1af67170965d89a9852d7ba2b919b88a556059116a9e4da42ada222431f",
+      "integrated_path": "android/app/src/main/java/org/pocketlore/app/MainActivity.java",
+      "integrated_sha256": "2227e3fa283445445b7ae128fd89773cd455116f41d2aefd278115b3e3c71d49",
+      "byte_identical": false
+    },
+    {
+      "sealed_path": "android/app/src/main/java/org/pocketlore/app/NotebookActivity.java",
+      "sealed_sha256": "fde998e06782b80648cf6e1f0bf0c382a751f32654c9373bd63abfac894c4350",
+      "integrated_path": "android/app/src/main/java/org/pocketlore/app/NotebookActivity.java",
+      "integrated_sha256": "fde998e06782b80648cf6e1f0bf0c382a751f32654c9373bd63abfac894c4350",
+      "byte_identical": true
+    },
+    {
+      "sealed_path": "android/app/src/main/java/org/pocketlore/app/NotebookExportProvider.java",
+      "sealed_sha256": "5ce2d75991fefba821e297d2a14c3d776fabbd9cd3149929cf561605a9475e4d",
+      "integrated_path": "android/app/src/main/java/org/pocketlore/app/NotebookExportProvider.java",
+      "integrated_sha256": "5ce2d75991fefba821e297d2a14c3d776fabbd9cd3149929cf561605a9475e4d",
+      "byte_identical": true
+    },
+    {
+      "sealed_path": "android/app/src/main/java/org/pocketlore/app/NotebookStore.java",
+      "sealed_sha256": "42aa4d7d587a69fa57e265e5bdc31b11e56cff0500c014d2fb0f5f2424780499",
+      "integrated_path": "android/app/src/main/java/org/pocketlore/app/NotebookStore.java",
+      "integrated_sha256": "42aa4d7d587a69fa57e265e5bdc31b11e56cff0500c014d2fb0f5f2424780499",
+      "byte_identical": true
+    },
+    {
+      "sealed_path": "android/app/src/main/java/org/pocketlore/app/ReaderUi.java",
+      "sealed_sha256": "1115b86d763b639a7346e14cc53e2807240d601e3120384ae4916e772b972bd1",
+      "integrated_path": "android/app/src/main/java/org/pocketlore/app/ReaderUi.java",
+      "integrated_sha256": "1115b86d763b639a7346e14cc53e2807240d601e3120384ae4916e772b972bd1",
+      "byte_identical": true
+    },
+    {
+      "sealed_path": "android/app/src/main/java/org/pocketlore/app/SavedActivity.java",
+      "sealed_sha256": "f46b7c320e992bde6a4a0e8d1a5af8f5e5457b12ee1ed9abd35728454ea7ac6e",
+      "integrated_path": "android/app/src/main/java/org/pocketlore/app/SavedActivity.java",
+      "integrated_sha256": "f46b7c320e992bde6a4a0e8d1a5af8f5e5457b12ee1ed9abd35728454ea7ac6e",
+      "byte_identical": true
+    },
+    {
+      "sealed_path": "android/app/src/main/java/org/pocketlore/app/ScaleActivity.java",
+      "sealed_sha256": "522c2f447d59134b8c2240f8cb22866dab573076dd4f2c6eeddcd1cd24d80747",
+      "integrated_path": "android/app/src/main/java/org/pocketlore/app/ScaleActivity.java",
+      "integrated_sha256": "5b91a3944a8f2777e895e6ceb4e03e68373193e3483cccfc50841a60c9196c66",
+      "byte_identical": false
+    },
+    {
+      "sealed_path": "android/app/src/main/java/org/pocketlore/app/SourceReaderActivity.java",
+      "sealed_sha256": "ec1dfabeeff184f3ea241c29e955986b0a0d5550cd750abc574e9297a83c888a",
+      "integrated_path": "android/app/src/main/java/org/pocketlore/app/SourceReaderActivity.java",
+      "integrated_sha256": "ec1dfabeeff184f3ea241c29e955986b0a0d5550cd750abc574e9297a83c888a",
+      "byte_identical": true
+    },
+    {
+      "sealed_path": "android/app/src/main/res/values/styles.xml",
+      "sealed_sha256": "808dbff5f19eea9e7731461f36c3c26bd9133359216a6b7b7ecbf8debeb4056d",
+      "integrated_path": "android/app/src/main/res/values/styles.xml",
+      "integrated_sha256": "808dbff5f19eea9e7731461f36c3c26bd9133359216a6b7b7ecbf8debeb4056d",
+      "byte_identical": true
+    },
+    {
+      "sealed_path": "android/index-native/CMakeLists.txt",
+      "sealed_sha256": "76d2309b2bddc7b79c5032cda98e3ffcc2b301243b646a72e439ea10072d3264",
+      "integrated_path": "android/index-native/CMakeLists.txt",
+      "integrated_sha256": "76d2309b2bddc7b79c5032cda98e3ffcc2b301243b646a72e439ea10072d3264",
+      "byte_identical": true
+    },
+    {
+      "sealed_path": "docs/UI-CAPABILITY-GAPS.md",
+      "sealed_sha256": "da36570eb4b824292a9df14e3e9a0b2f1fb00affff965cff9707244fbd3ae3d6",
+      "integrated_path": "docs/UI-CAPABILITY-GAPS.md",
+      "integrated_sha256": "3e68d3d2f2fa9d346529253f3d86234bbb547baecde86bd1817ca97555ff3fea",
+      "byte_identical": false
+    },
+    {
+      "sealed_path": "docs/UI-DIRECTION.md",
+      "sealed_sha256": "53b956b727f70ac89e3eb3646409485caa2a54cd51eff7706f2ca832f5574c20",
+      "integrated_path": "docs/UI-DIRECTION.md",
+      "integrated_sha256": "53b956b727f70ac89e3eb3646409485caa2a54cd51eff7706f2ca832f5574c20",
+      "byte_identical": true
+    },
+    {
+      "sealed_path": "docs/UI-REDESIGN-VERIFICATION.md",
+      "sealed_sha256": "3adaf7c80841a2cd67b08ee68f656ffd10afebe74b59e4de0803084ea33a3f3f",
+      "integrated_path": "docs/UI-REDESIGN-VERIFICATION.md",
+      "integrated_sha256": "1c20f093c26cd0cdd124d12f77b90bf1f256f75c63033ea7f1f468ab3897440d",
+      "byte_identical": false
+    },
+    {
+      "sealed_path": "docs/UI-VERIFICATION.md",
+      "sealed_sha256": "f7e286116fe731128345ad58f7ef6031600a381ed555ef1762a0d7f752cca455",
+      "integrated_path": "docs/UI-VERIFICATION.md",
+      "integrated_sha256": "ed09ba7cd643ace9b1d924234afcfc27f1db2052003058d724108124a7f82f77",
+      "byte_identical": false
+    },
+    {
+      "sealed_path": "tools/evaluation/check_ui_scope.py",
+      "sealed_sha256": "01cb0c65773bfe2a8c8dc57e7277eb0fb6414aabc101117e8b873f35bfa760b5",
+      "integrated_path": "tools/evaluation/check_ui_scope.py",
+      "integrated_sha256": "460e20c131d363ca888a595fc3f88a0b285380b3c6075c01ac07518b353fca41",
+      "byte_identical": false
+    },
+    {
+      "sealed_path": "tools/evaluation/verify_16kb_artifacts.py",
+      "sealed_sha256": "25391f0220f0303075f6c7cfdfa29e033b0d953f9041f76f08c572a3e60b84a4",
+      "integrated_path": "tools/evaluation/verify_16kb_artifacts.py",
+      "integrated_sha256": "bc4a75627c9869c53e1969af8de1a4ebc305b25bab50483ac609dd7cd3a37224",
+      "byte_identical": false
+    }
+  ]
+}

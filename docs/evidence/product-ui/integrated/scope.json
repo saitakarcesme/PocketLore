@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "kind": "host structural checks only",
+  "checks": [
+    "AnswerEngine.java byte-identical to base",
+    "EvidencePrompt.java byte-identical to base",
+    "ResearchEngine.java byte-identical to base",
+    "NativePanel.java byte-identical to base",
+    "PackLibrary.java byte-identical to base",
+    "ScaleLibrary.java byte-identical to base",
+    "ScaleWiki.java byte-identical to base",
+    "ScalePlaces.java byte-identical to base",
+    "ImportRecovery.java byte-identical to base",
+    "TravelCatalog.java byte-identical to base",
+    "EvidenceAvailability.java byte-identical to base",
+    "ResearchBrief.java byte-identical to base",
+    "PersonalDocuments.java byte-identical to base",
+    "PersonalDocumentsActivity.java byte-identical to base",
+    "PersonalText.java byte-identical to base",
+    "AttachmentEngine.java byte-identical to base",
+    "AttachmentsActivity.java byte-identical to base",
+    "AttachmentAssets.java byte-identical to base",
+    "Only existing optional microphone permission retained; no INTERNET",
+    "Native control minimum dimensions declared",
+    "All declared reading/accent colors exceed 4.5:1 on both surfaces"
+  ],
+  "contrast": {
+    "202621/F7F4EC": 14.04,
+    "202621/EEEEE5": 13.23,
+    "245B43/F7F4EC": 7.2,
+    "245B43/EEEEE5": 6.78,
+    "59635B/F7F4EC": 5.69,
+    "59635B/EEEEE5": 5.36
+  },
+  "runtime": "See canonical product-ui evidence; these checks alone do not establish Android acceptance"
+}

@@ -1,0 +1,60 @@
+android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+ android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+  android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+   android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 63 - 1080, 248) clickable=false visible=true
+     android.widget.TextView text=PocketLore description=null bounds=Rect(63, 74 - 703, 237) clickable=false visible=true
+     android.widget.TextView text=Offline description=null bounds=Rect(703, 85 - 912, 225) clickable=false visible=true
+     android.widget.ImageButton text=null description=Settings bounds=Rect(912, 92 - 1038, 218) clickable=true visible=true
+    android.widget.ScrollView text=null description=null bounds=Rect(0, 248 - 1080, 1794) clickable=false visible=true
+     android.widget.LinearLayout text=null description=null bounds=Rect(0, 248 - 1080, 1794) clickable=false visible=true
+      android.widget.TextView text=Library description=null bounds=Rect(63, 290 - 1017, 469) clickable=false visible=true
+      android.widget.TextView text=Read the sources. Keep what matters. description=null bounds=Rect(63, 469 - 1017, 711) clickable=false visible=true
+      android.widget.TextView text=Bundled sources · Search all active collections above description=null bounds=Rect(63, 711 - 1017, 966) clickable=false visible=true
+      android.widget.Button text=Personal documents and collection export description=null bounds=Rect(63, 977 - 1017, 1127) clickable=true visible=true
+      android.widget.LinearLayout text=null description=null bounds=Rect(63, 1138 - 1017, 1611) clickable=false visible=true
+       android.widget.TextView text=Knowledge topic description=null bounds=Rect(63, 1138 - 1017, 1278) clickable=false visible=true
+       android.widget.EditText text=Reference topic description=Knowledge topic bounds=Rect(63, 1278 - 1017, 1439) clickable=true visible=true
+       android.widget.Button text=Search reference description=null bounds=Rect(63, 1450 - 1017, 1600) clickable=true visible=true
+      android.widget.LinearLayout text=null description=null bounds=Rect(63, 1611 - 1017, 1794) clickable=false visible=true
+       android.widget.Button text=null description=Evaporation. USGS · Bundled source bounds=Rect(63, 1611 - 1017, 1794) clickable=true visible=true
+        android.widget.TextView text=Evaporation description=null bounds=Rect(63, 1643 - 1017, 1794) clickable=false visible=true
+        android.widget.TextView text=USGS · Bundled source description=null bounds=Rect(63, 1805 - 1017, 1794) clickable=false visible=false
+       android.view.View text=null description=null bounds=Rect(63, 1977 - 1017, 1794) clickable=false visible=false
+       android.widget.Button text=null description=Condensation. USGS · Bundled source bounds=Rect(63, 1980 - 1017, 1794) clickable=true visible=false
+        android.widget.TextView text=Condensation description=null bounds=Rect(63, 2012 - 1017, 1794) clickable=false visible=false
+        android.widget.TextView text=USGS · Bundled source description=null bounds=Rect(63, 2174 - 1017, 1794) clickable=false visible=false
+       android.view.View text=null description=null bounds=Rect(63, 2346 - 1017, 1794) clickable=false visible=false
+       android.widget.Button text=null description=Evaporative cooling. USGS · Bundled source bounds=Rect(63, 2349 - 1017, 1794) clickable=true visible=false
+        android.widget.TextView text=Evaporative cooling description=null bounds=Rect(63, 2381 - 1017, 1794) clickable=false visible=false
+        android.widget.TextView text=USGS · Bundled source description=null bounds=Rect(63, 2543 - 1017, 1794) clickable=false visible=false
+       android.view.View text=null description=null bounds=Rect(63, 2715 - 1017, 1794) clickable=false visible=false
+       android.widget.Button text=null description=Infiltration and groundwater recharge. USGS · Bundled source bounds=Rect(63, 2718 - 1017, 1794) clickable=true visible=false
+        android.widget.TextView text=Infiltration and groundwater recharge description=null bounds=Rect(63, 2750 - 1017, 1794) clickable=false visible=false
+        android.widget.TextView text=USGS · Bundled source description=null bounds=Rect(63, 3034 - 1017, 1794) clickable=false visible=false
+       android.view.View text=null description=null bounds=Rect(63, 3206 - 1017, 1794) clickable=false visible=false
+       android.widget.Button text=null description=Unsaturated and saturated zones. USGS · Bundled source bounds=Rect(63, 3209 - 1017, 1794) clickable=true visible=false
+        android.widget.TextView text=Unsaturated and saturated zones description=null bounds=Rect(63, 3241 - 1017, 1794) clickable=false visible=false
+        android.widget.TextView text=USGS · Bundled source description=null bounds=Rect(63, 3525 - 1017, 1794) clickable=false visible=false
+       android.view.View text=null description=null bounds=Rect(63, 3697 - 1017, 1794) clickable=false visible=false
+       android.widget.Button text=null description=Aquifer recharge times. USGS · Bundled source bounds=Rect(63, 3700 - 1017, 1794) clickable=true visible=false
+        android.widget.TextView text=Aquifer recharge times description=null bounds=Rect(63, 3732 - 1017, 1794) clickable=false visible=false
+        android.widget.TextView text=USGS · Bundled source description=null bounds=Rect(63, 3894 - 1017, 1794) clickable=false visible=false
+       android.view.View text=null description=null bounds=Rect(63, 4066 - 1017, 1794) clickable=false visible=false
+       android.widget.Button text=null description=Surface runoff. USGS · Bundled source bounds=Rect(63, 4069 - 1017, 1794) clickable=true visible=false
+        android.widget.TextView text=Surface runoff description=null bounds=Rect(63, 4101 - 1017, 1794) clickable=false visible=false
+        android.widget.TextView text=USGS · Bundled source description=null bounds=Rect(63, 4263 - 1017, 1794) clickable=false visible=false
+       android.view.View text=null description=null bounds=Rect(63, 4435 - 1017, 1794) clickable=false visible=false
+       android.widget.Button text=null description=Urbanization and runoff. USGS · Bundled source bounds=Rect(63, 4438 - 1017, 1794) clickable=true visible=false
+        android.widget.TextView text=Urbanization and runoff description=null bounds=Rect(63, 4470 - 1017, 1794) clickable=false visible=false
+        android.widget.TextView text=USGS · Bundled source description=null bounds=Rect(63, 4632 - 1017, 1794) clickable=false visible=false
+       android.view.View text=null description=null bounds=Rect(63, 4804 - 1017, 1794) clickable=false visible=false
+      android.widget.Button text=Collection storage & licenses description=null bounds=Rect(63, 4818 - 1017, 1794) clickable=true visible=false
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 1794 - 1080, 2274) clickable=false visible=true
+     android.widget.LinearLayout text=null description=null bounds=Rect(32, 1815 - 1048, 2039) clickable=false visible=true
+      android.widget.Button text=Research description=Research bounds=Rect(37, 1815 - 535, 2039) clickable=true visible=true
+      android.widget.Button text=Library description=Library, selected bounds=Rect(545, 1815 - 1043, 2039) clickable=true visible=true
+     android.widget.LinearLayout text=null description=null bounds=Rect(32, 2039 - 1048, 2263) clickable=false visible=true
+      android.widget.Button text=Explore description=Explore bounds=Rect(37, 2039 - 535, 2263) clickable=true visible=true
+      android.widget.Button text=Saved description=Saved bounds=Rect(545, 2039 - 1043, 2263) clickable=true visible=true
+ android.view.View text=null description=null bounds=Rect(0, 2274 - 1080, 2400) clickable=false visible=true
