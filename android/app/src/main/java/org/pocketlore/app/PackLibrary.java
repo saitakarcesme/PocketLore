@@ -137,6 +137,14 @@ public final class PackLibrary {
         try { cleanup(es); } catch(IOException ignored) { /* Next load retries owned cleanup. */ }
         return next;
     }
+    /** Exact portable archive; no provenance or ownership assertion is rewritten. */
+    public synchronized void exportCollection(String hash,OutputStream out,BooleanSupplier cancel)throws Exception {
+        Entry found=null;for(Entry e:entries())if(e.hash.equals(hash))found=e;
+        require(found!=null,"Unknown collection");File archive=new File(directory,hash+".plpack");
+        require(!BroadPack.isBroad(archive),"Bulk edition export is not supported by this bounded document workflow");
+        KnowledgePack verified=read(archive);require(verified.sha256.equals(hash),"Stored collection integrity failure");
+        try(InputStream in=new FileInputStream(archive)){byte[] buffer=new byte[8192];int n;while((n=in.read(buffer))!=-1){PersonalText.check(cancel);out.write(buffer,0,n);}PersonalText.check(cancel);out.flush();}
+    }
     /** Legacy source is retained, never deleted or rewritten. Catalog commit is idempotent. */
     public synchronized Snapshot loadMigrating(File legacy)throws Exception {
         if(!catalog.exists()&&legacy.exists())try(InputStream in=new FileInputStream(legacy)){return install(in,()->false);}

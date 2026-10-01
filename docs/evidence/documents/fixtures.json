@@ -1,0 +1,37 @@
+{
+  "kind": "constructed public parser tests, not corpus",
+  "files": {
+    "empty.pdf": {
+      "bytes": 1369,
+      "sha256": "6928514b3dcf95d5d71fec38e883367399e1d2e65a6dd5a6d36064a9fce9673c"
+    },
+    "nested.json": {
+      "bytes": 84,
+      "sha256": "f0b8f8879b8e0f7f6542bda83bf6d7111a9a1b3bc0b156f5e0edfe4dbae2d651"
+    },
+    "notes.md": {
+      "bytes": 73,
+      "sha256": "1dec1ffaf764993505712df0589b97874f0c14cd2eeae3c0d5ad8ed61874f3b8"
+    },
+    "notes.txt": {
+      "bytes": 67,
+      "sha256": "f23d9ffa8123bab9a6aa173b56869a6a06f59b636f708b2619245a53a0514418"
+    },
+    "password.pdf": {
+      "bytes": 1426,
+      "sha256": "c39db56e4ebd2b25bcb2a89a98b43d7b23c487c49a9cdb61eda1e21cb15cfa46"
+    },
+    "quoted.csv": {
+      "bytes": 95,
+      "sha256": "971246abce0dd9a291c3c5d89c796260a0d5a089c51807604e57e4bae2e361b8"
+    },
+    "scanned.pdf": {
+      "bytes": 1741,
+      "sha256": "6ca304a52dce359d8f24a032fd375dba2dc8cfc1b557ff3fc3be2c89398a59a4"
+    },
+    "text.pdf": {
+      "bytes": 1457,
+      "sha256": "93db970e47c489d00be50342b4745ba3858d8e7b16c89e312b3b0394cd2878ab"
+    }
+  }
+}

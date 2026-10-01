@@ -1,0 +1,15 @@
+Using Python 3.12.14 environment at: downloads/documents-tools
+Resolved 4 packages in 185ms
+Downloading pillow (6.6MiB)
+Downloading reportlab (1.9MiB)
+ Downloaded reportlab
+ Downloaded pillow
+Prepared 4 packages in 152ms
+warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 4 packages in 11ms
+ + charset-normalizer==3.5.2
+ + pillow==12.3.0
+ + pypdf==6.1.1
+ + reportlab==4.4.4

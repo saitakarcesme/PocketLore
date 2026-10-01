@@ -1,0 +1,83 @@
+Acceptance: Separate proposed/final/deprecated standards and security assumptions; a frozen comparison includes relevant limitations and exact revision links; avoid implying implementational security advice from retrieval.
+
+Priority **P1**; proposed owner **Specialist sources**; tasks CF-14. Constraint: No new unbounded asset; obey shared storage ledger. All shared RAM/storage/GMS/offline rules above apply. License: independent implementation; pinned code notices plus source-specific model/data rights.
+
+### biology-sources — Use a specialist science collection with optional semantic retrieval.
+
+Field Atlas catalogs biology/longevity material from the vbuterin line and a local query encoder; its public-data label explicitly defers to individual pack sources.
+
+Evidence: [f-catalog: app/src/main/assets/knowledge/catalog.json](https://github.com/0x94t3z/fieldatlas/blob/fc6092530f647fd34a665b4924a4a91341eccf66/app/src/main/assets/knowledge/catalog.json#L3), [f-vectors: app/src/main/java/xyz/fieldatlas/research/KnowledgeDatabase.kt](https://github.com/0x94t3z/fieldatlas/blob/fc6092530f647fd34a665b4924a4a91341eccf66/app/src/main/java/xyz/fieldatlas/research/KnowledgeDatabase.kt#L87), [v-vector: app/src/main/java/xyz/fieldatlas/research/KnowledgeDatabase.kt](https://github.com/vbuterin/fieldatlas/blob/769e85d162f266d9abf831134b4e149175d4dcfe/app/src/main/java/xyz/fieldatlas/research/KnowledgeDatabase.kt#L87).
+
+Release boundary: Source file identical at v1.2.0-rc.1; release APK binary behavior not independently verified. Experimental vector-search branch; no published GitHub APK release found.
+
+PocketLore: **partial-with-reported-emulator-evidence** — Local lexical retrieval and selected pack search exist; semantic embedder not found in reviewed production paths. Source: [`android/app/src/main/java/org/pocketlore/app/ResearchEngine.java`](../android/app/src/main/java/org/pocketlore/app/ResearchEngine.java). Existing evidence: [broad-candidate-release.md](../docs/evidence/broad-candidate-release.md).
+
+Acceptance: Per-document license review and exact excerpts precede generation; scholarly metadata alone cannot support a claim; compare matched lexical/semantic retrieval costs and support.
+
+Priority **P1**; proposed owner **Specialist sources**; tasks CF-15. Constraint: No new unbounded asset; obey shared storage ledger. All shared RAM/storage/GMS/offline rules above apply. License: independent implementation; pinned code notices plus source-specific model/data rights.
+
+Limit: Public-data labels and passage counts do not establish redistribution rights or science answer quality.
+
+### import-text-markdown — Import local TXT or Markdown into a named collection.
+
+Boar creates chunked embedded persistent custom collections; Field Atlas imports bounded text attachments and extracts readable text for a question.
+
+Evidence: [b-import: src/services/documentImporter.ts](https://github.com/rferrari/boar-app/blob/0cfd4a77badd01297af8dc9a3a10924f8a895105/src/services/documentImporter.ts#L108), [b-docui: src/ui-android/PersonalDocumentsManager.tsx](https://github.com/rferrari/boar-app/blob/0cfd4a77badd01297af8dc9a3a10924f8a895105/src/ui-android/PersonalDocumentsManager.tsx#L1), [f-policy: app/src/main/java/xyz/fieldatlas/attachments/AttachmentPolicy.kt](https://github.com/0x94t3z/fieldatlas/blob/fc6092530f647fd34a665b4924a4a91341eccf66/app/src/main/java/xyz/fieldatlas/attachments/AttachmentPolicy.kt#L28), [f-reader: app/src/main/java/xyz/fieldatlas/attachments/AndroidAttachmentReader.kt](https://github.com/0x94t3z/fieldatlas/blob/fc6092530f647fd34a665b4924a4a91341eccf66/app/src/main/java/xyz/fieldatlas/attachments/AndroidAttachmentReader.kt#L13).
+
+Release boundary: File differs from v1.0.0; current behavior cannot be attributed to its APK. File absent at v1.0.0; main-only source evidence. Source file identical at v1.2.0-rc.1; release APK binary behavior not independently verified.
+
+PocketLore: **infrastructure-only** — Bounded pipe input with cancellation; this is not TXT/PDF document extraction. Provider-open IPC and stalled regular/FUSE reads remain limitations. Source: [`android/app/src/main/java/org/pocketlore/app/DocumentInput.java`](../android/app/src/main/java/org/pocketlore/app/DocumentInput.java). Existing evidence: [stalled-provider-cancellation.md](../docs/evidence/stalled-provider-cancellation.md).
+
+Acceptance: SAF local import decodes bounded Unicode, preserves title/origin, previews extraction, indexes atomically and supports cancel; Markdown is text, not executable HTML.
+
+Priority **P1**; proposed owner **Document imports**; tasks CF-16. Constraint: No new unbounded asset; obey shared storage ledger. All shared RAM/storage/GMS/offline rules above apply. License: independent implementation; pinned code notices plus source-specific model/data rights.
+
+### import-csv — Import a CSV with useful row and field context.
+
+Boar converts naive comma-split rows into pipe-separated text; Field Atlas treats CSV as decoded text, not a typed relational import.
+
+Evidence: [b-import: src/services/documentImporter.ts](https://github.com/rferrari/boar-app/blob/0cfd4a77badd01297af8dc9a3a10924f8a895105/src/services/documentImporter.ts#L108), [f-policy: app/src/main/java/xyz/fieldatlas/attachments/AttachmentPolicy.kt](https://github.com/0x94t3z/fieldatlas/blob/fc6092530f647fd34a665b4924a4a91341eccf66/app/src/main/java/xyz/fieldatlas/attachments/AttachmentPolicy.kt#L28), [f-reader: app/src/main/java/xyz/fieldatlas/attachments/AndroidAttachmentReader.kt](https://github.com/0x94t3z/fieldatlas/blob/fc6092530f647fd34a665b4924a4a91341eccf66/app/src/main/java/xyz/fieldatlas/attachments/AndroidAttachmentReader.kt#L13).
+
+Release boundary: File differs from v1.0.0; current behavior cannot be attributed to its APK. Source file identical at v1.2.0-rc.1; release APK binary behavior not independently verified.
+
+PocketLore: **infrastructure-only** — Bounded pipe input with cancellation; this is not TXT/PDF document extraction. Provider-open IPC and stalled regular/FUSE reads remain limitations. Source: [`android/app/src/main/java/org/pocketlore/app/DocumentInput.java`](../android/app/src/main/java/org/pocketlore/app/DocumentInput.java). Existing evidence: [stalled-provider-cancellation.md](../docs/evidence/stalled-provider-cancellation.md).
+
+Acceptance: Handle quoted commas, escaped quotes and multiline cells with row identities; preview columns and report parse errors; field headers follow chunks into evidence.
+
+Priority **P1**; proposed owner **Document imports**; tasks CF-16. Constraint: No new unbounded asset; obey shared storage ledger. All shared RAM/storage/GMS/offline rules above apply. License: independent implementation; pinned code notices plus source-specific model/data rights.
+
+Limit: Boar uses naive comma splitting; Field Atlas decodes CSV as text. Full structured CSV interpretation is a PocketLore enhancement, not verified competitor parity.
+
+### import-json — Import structured JSON or readable JSON text.
+
+Boar recognizes arrays with title/body/source fields or falls back to text; Field Atlas reads JSON as text attachments.
+
+Evidence: [b-import: src/services/documentImporter.ts](https://github.com/rferrari/boar-app/blob/0cfd4a77badd01297af8dc9a3a10924f8a895105/src/services/documentImporter.ts#L108), [f-policy: app/src/main/java/xyz/fieldatlas/attachments/AttachmentPolicy.kt](https://github.com/0x94t3z/fieldatlas/blob/fc6092530f647fd34a665b4924a4a91341eccf66/app/src/main/java/xyz/fieldatlas/attachments/AttachmentPolicy.kt#L28).
+
+Release boundary: File differs from v1.0.0; current behavior cannot be attributed to its APK. Source file identical at v1.2.0-rc.1; release APK binary behavior not independently verified.
+
+PocketLore: **infrastructure-only** — Bounded pipe input with cancellation; this is not TXT/PDF document extraction. Provider-open IPC and stalled regular/FUSE reads remain limitations. Source: [`android/app/src/main/java/org/pocketlore/app/DocumentInput.java`](../android/app/src/main/java/org/pocketlore/app/DocumentInput.java). Existing evidence: [stalled-provider-cancellation.md](../docs/evidence/stalled-provider-cancellation.md).
+
+Acceptance: Support a documented title/source/body array and generic JSON preview with paths; reject invalid or oversized input without partial collection activation; preserve exact source identity.
+
+Priority **P1**; proposed owner **Document imports**; tasks CF-16. Constraint: No new unbounded asset; obey shared storage ledger. All shared RAM/storage/GMS/offline rules above apply. License: independent implementation; pinned code notices plus source-specific model/data rights.
+
+### import-pdf — Import a text PDF and cite its pages.
+
+Boar uses local PDF text extraction and rejects password-protected PDFs; Field Atlas extracts text and can OCR uncertain/scanned pages with page limits.
+
+Evidence: [b-import: src/services/documentImporter.ts](https://github.com/rferrari/boar-app/blob/0cfd4a77badd01297af8dc9a3a10924f8a895105/src/services/documentImporter.ts#L108), [f-pdf: app/src/main/java/xyz/fieldatlas/attachments/PdfTextReader.kt](https://github.com/0x94t3z/fieldatlas/blob/fc6092530f647fd34a665b4924a4a91341eccf66/app/src/main/java/xyz/fieldatlas/attachments/PdfTextReader.kt#L1), [f-reader: app/src/main/java/xyz/fieldatlas/attachments/AndroidAttachmentReader.kt](https://github.com/0x94t3z/fieldatlas/blob/fc6092530f647fd34a665b4924a4a91341eccf66/app/src/main/java/xyz/fieldatlas/attachments/AndroidAttachmentReader.kt#L13).
+
+Release boundary: File differs from v1.0.0; current behavior cannot be attributed to its APK. Source file identical at v1.2.0-rc.1; release APK binary behavior not independently verified.
+
+PocketLore: **infrastructure-only** — Bounded pipe input with cancellation; this is not TXT/PDF document extraction. Provider-open IPC and stalled regular/FUSE reads remain limitations. Source: [`android/app/src/main/java/org/pocketlore/app/DocumentInput.java`](../android/app/src/main/java/org/pocketlore/app/DocumentInput.java). Existing evidence: [stalled-provider-cancellation.md](../docs/evidence/stalled-provider-cancellation.md).
+
+Acceptance: Extract text with page mapping and bounded pages/bytes; disclose encrypted, empty, malformed and scanned-only PDFs; no silent successful zero-text import.
+
+Priority **P1**; proposed owner **Document imports**; tasks CF-17. Constraint: Parsing and page rendering memory bounded; parser license and native dependency provenance required. All shared RAM/storage/GMS/offline rules above apply. License: independent implementation; pinned code notices plus source-specific model/data rights.
+
+### photos-ocr — Photograph or choose an image and research recognized text offline.
+
+Field Atlas wires photo picker and TakePicture to bounded image extraction with bundled English Tesseract data and hash checking.
+
+Evidence: [f-main: app/src/main/java/xyz/fieldatlas/MainActivity.kt](https://github.com/0x94t3z/fieldatlas/blob/fc6092530f647fd34a665b4924a4a91341eccf66/app/src/main/java/xyz/fieldatlas/MainActivity.kt#L119), [f-ocr: app/src/main/java/xyz/fieldatlas/attachments/ImageTextReader.kt](https://github.com/0x94t3z/fieldatlas/blob/fc6092530f647fd34a665b4924a4a91341eccf66/app/src/main/java/xyz/fieldatlas/attachments/ImageTextReader.kt#L30), [f-reader: app/src/main/java/xyz/fieldatlas/attachments/AndroidAttachmentReader.kt](https://github.com/0x94t3z/fieldatlas/blob/fc6092530f647fd34a665b4924a4a91341eccf66/app/src/main/java/xyz/fieldatlas/attachments/AndroidAttachmentReader.kt#L13).

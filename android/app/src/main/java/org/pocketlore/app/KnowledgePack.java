@@ -19,7 +19,7 @@ public final class KnowledgePack {
     final Map<String,String> provenance, documentKeys;
     final long archiveBytes, expandedBytes, manifestBytes;
     final int documentCount;
-    private KnowledgePack(ResearchEngine engine, String id, String warning, String hash, List<String[]> rows,
+    KnowledgePack(ResearchEngine engine, String id, String warning, String hash, List<String[]> rows,
             Map<String,String> provenance, Map<String,String> documentKeys,long archiveBytes,long expandedBytes,long manifestBytes,int documentCount) {
         this.engine=engine; this.id=id; this.warning=warning; this.sha256=hash; this.rows=rows;
         this.provenance=provenance;this.documentKeys=documentKeys;this.archiveBytes=archiveBytes;
@@ -55,7 +55,7 @@ public final class KnowledgePack {
         return read(source,true);
     }
     static KnowledgePack read(InputStream source,boolean index) throws Exception {
-        byte[] archive=bounded(source,LIMIT); Map<String,byte[]> files=new HashMap<>(); int total=0;
+        byte[] archive=bounded(source,LIMIT); KnowledgePack personal=PersonalDocuments.decode(archive,index); if(personal!=null)return personal; Map<String,byte[]> files=new HashMap<>(); int total=0;
         try(ZipInputStream zip=new ZipInputStream(new ByteArrayInputStream(archive))) {
             ZipEntry entry;
             while((entry=zip.getNextEntry())!=null) {
