@@ -1,3 +1,5 @@
+> Historical UI lane document from sealed3f16c33; statements below describe that candidate, not current canonical capabilities. For integrated documents330, attachments340 and current APK checks, see [product UI integration](evidence/product-ui-integration.md).
+
 # Refined native UI verification
 
 This lane resumes coordinator-sealed `15c48b43999cb57599c58477668fc73a03748276`. The earlier handoff was rejected for an empty reviewed Git diff and absent Android proof; neither that report nor an internal reviewer establishes independent acceptance. This refinement supplies a nonempty patch with explicit new files, real APK identities and Android execution evidence for coordinator sealing and independent acceptance.

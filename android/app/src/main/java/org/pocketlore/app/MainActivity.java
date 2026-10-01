@@ -270,7 +270,7 @@ public final class MainActivity extends Activity {
     private void setScreen(int screen){selectedScreen=screen==1?1:0;for(int i=0;i<screenViews.length;i++)screenViews[i].setVisibility(i==selectedScreen?View.VISIBLE:View.GONE);}
     void showResearch(){setScreen(0);}
     void showSettings(){setScreen(1);}
-    @Override protected void onNewIntent(android.content.Intent intent){super.onNewIntent(intent);setIntent(intent);setScreen(intent.getBooleanExtra("settings",false)?1:0);}
+    @Override protected void onNewIntent(android.content.Intent intent){super.onNewIntent(intent);setIntent(intent);setScreen(intent.getBooleanExtra("settings",false)?1:0);if(intent.getBooleanExtra("reload_library",false))loadLibrary();}
     @Override protected void onPause(){super.onPause();if(question!=null)getPreferences(0).edit().putString("draft",question.getText().toString()).apply();}
     @Override public void onBackPressed(){if(selectedScreen!=0)showResearch();else super.onBackPressed();}
     @Override protected void onActivityResult(int request, int result, android.content.Intent data) {

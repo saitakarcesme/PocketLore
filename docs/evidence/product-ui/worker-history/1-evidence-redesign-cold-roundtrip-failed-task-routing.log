@@ -1,0 +1,6 @@
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+Traceback (most recent call last):
+  File "/home/isa/PocketLore-control/scale-workers/ui/repo/../evidence-redesign/cold-roundtrip.py", line 24, in <module>
+    nodes=ET.fromstring(xml).iter('node');q=next(n for n in nodes if n.get('content-desc')=='Research question');bounds=q.get('bounds');import re
+                                            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration

@@ -1,3 +1,5 @@
+> Historical UI lane document from sealed3f16c33; statements below describe that candidate, not current canonical capabilities. For integrated documents330, attachments340 and current APK checks, see [product UI integration](evidence/product-ui-integration.md).
+
 # Native UI refinement: capability boundary
 
 The competitor-feature audit completed at 2026-10-01T21:41:40Z. Its actual `repo/output/HANDOFF.json`, 63-entry features.json, matrix and design/extras documents were read. This lane verified their declared artifact hashes and all 78 unique cited primary-source file hashes, and inspected relevant persistence, reader and export source excerpts. Receipts are in lane evidence-refined/competitor-audit-receipt.json and competitor-source-check.json. The audit is static source/documentation research: no rival APK behavior or performance was reproduced. It reports an initial accidental tracked-asset download and subsequent source-only cleanup; this UI lane did not repeat that acquisition. Bounty data returned 403, so exhaustive current submissions are not established.

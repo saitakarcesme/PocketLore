@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/documents/check.py", line 67, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/documents/check.py", line 31, in main
+    run(['bash','tools/android-build.sh','assembleDebug','assembleDebugAndroidTest','-I',ROOT/'tools/evaluation/documents/source.gradle','-PpocketloreTestRunner=org.pocketlore.app.DocumentsInstrumentation'],'build.log')
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/documents/check.py", line 25, in run
+    if r.returncode:raise RuntimeError(f'{name}: exit {r.returncode}; see {out}')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: build.log: exit 1; see /home/isa/Projects/PocketLore/downloads/documents-runs/20261001T233240Z

@@ -1,3 +1,5 @@
+> Historical UI lane document from sealed3f16c33; statements below describe that candidate, not current canonical capabilities. For integrated documents330, attachments340 and current APK checks, see [product UI integration](evidence/product-ui-integration.md).
+
 # Editorial notebook verification
 
 This candidate replaces the rejected refined dark UI. DIRECTION-2.md was written before implementation. The baseline image and stage1 after image are actual emulator-5564 captures at the same viewport; final runtime captures supersede stage1. Prior refined handoffs and their criticisms remain historical. No screenshot alone establishes completion.
