@@ -10,6 +10,12 @@ class FidelityTests(unittest.TestCase):
  def test_real_algae_unit(self):
   d=self.source('633');self.assertIn('50 metres (160 ft)',d['blocks'][0]['text'])
  def test_main_body_not_small_template(self):self.assertGreater(len(self.source('358')['blocks']),30)
+ def test_real_additional_attribution_preserved(self):
+  import sqlite3
+  c=sqlite3.connect(P.parents[3]/'downloads/broad-reference/v1/index.sqlite');ident=c.execute("SELECT id FROM documents WHERE title='Agriculture'").fetchone()[0]
+  d=self.source(ident);self.assertGreater(len(d['attribution_notices']),5)
+  self.assertTrue(any('Food and Agriculture Organization' in n['text'] for n in d['attribution_notices']))
+  self.assertTrue(any(n['links'] for n in d['attribution_notices']))
  def test_missing_math_rejected(self):
   with self.assertRaisesRegex(ValueError,'Math element'):m.extract('<div class="mw-parser-output"><p>'+('A'*100)+'<span class="mwe-math-element"><img src="x"></span></p></div>')
  def test_quoted_block_excluded(self):

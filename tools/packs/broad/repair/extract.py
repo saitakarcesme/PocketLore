@@ -59,7 +59,9 @@ def extract(html):
  return {'blocks':blocks,'references':references,'attribution_notices':list({json.dumps(x,sort_keys=True):x for x in notices}.values()),'excluded':excluded,'math_representations':math}
 if __name__=='__main__':
  root=Path(__file__).resolve().parents[4];stage=root/'downloads/broad-reference/html-v2';out=stage/'extracted';out.mkdir(exist_ok=True);db=sqlite3.connect(root/'downloads/broad-reference/v1/index.sqlite');summary=[]
- for ident,title,area in db.execute('select id,title,area from documents order by rowid'):
+ records=list(db.execute('select id,title,area from documents order by rowid'))
+ if (stage/'extra-index.json').exists():records += [(r['id'],r['title'],r['area']) for r in json.loads((stage/'extra-index.json').read_text()) if 'id' in r]
+ for ident,title,area in records:
   src=stage/(ident+'.html');meta=stage/(ident+'.json')
   if not src.exists():continue
   try:
