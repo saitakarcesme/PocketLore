@@ -198,3 +198,13 @@ records are browse-only and are not licensed-for-generation or distribution by
 virtue of hashes. Places attribution and source-specific rights stay in original
 record JSON and accompanying notice files. Overture UUID uniqueness is not proof
 of distinct real-world places. OSM/GeoNames/Wikivoyage remain separate source families.
+
+Task300 installed first-shard manifests preserve full source notice files and exact
+per-file hashes in docs/evidence/scale-integration/{wiki,places}-receipt.json.
+Wiki dataset pin: finewiki 8bd13e72e6a002407649b3e898535f42ceb1aeb9;
+article IDs, revisions, source dates, Wikipedia title/page/history links and text
+hashes remain inspectable. Dataset licensing is not a blanket clearance of
+third-party material or source fidelity; bulk generation and distribution
+qualification remain open. Overture release2026-09-23.1 retains provider-level
+license/update_time/record_id fields; GeoNames lookup data retains CC BY4.0
+attribution. Companion OSM and Wikivoyage staging is not installed by this milestone.

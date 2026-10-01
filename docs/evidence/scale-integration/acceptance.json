@@ -1,0 +1,70 @@
+{
+  "recorded_utc": "2026-10-01T16:17:10.036260+00:00",
+  "checks": [
+    {
+      "argv": [
+        "bash",
+        "tools/android-build.sh"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "python3",
+        "tools/evaluation/verify_scale_integration.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "first-shard browse/import/lifecycle/JNI milestone only; all documented full-product gates remain open",
+  "artifacts": {
+    "docs/evidence/scale-integration/acceptance-build.txt": {
+      "bytes": 6954,
+      "sha256": "deef381ecc4a89846229e5448da612de14a2392a1509c9d0fd34eecd9a263cbc"
+    },
+    "docs/evidence/scale-integration/acceptance-verify.txt": {
+      "bytes": 367,
+      "sha256": "d96a2c229154b543dd6363f0687682dd6550015953d29ab01c1966a805ee674b"
+    },
+    "docs/evidence/scale-integration/candidate.json": {
+      "bytes": 18395,
+      "sha256": "3c8affb393a9da2dfebb977bc7d1a9a2637f86471aa774335188fab9dd81dc7a"
+    },
+    "docs/evidence/scale-integration/acceptance-run/inspect.json": {
+      "bytes": 21905,
+      "sha256": "af671a81babea47601559a7cf9bcabb62a5d0eeb74b05edab2474b9898a5e89b"
+    },
+    "docs/evidence/scale-integration/acceptance-run/inspect.txt": {
+      "bytes": 18825,
+      "sha256": "cb0524f9c2fd9a6a7bbca5f35c7ae29aa9c1969bd739084e3c613a2c1ddb2177"
+    },
+    "docs/evidence/scale-integration/acceptance-run/native.json": {
+      "bytes": 12304,
+      "sha256": "cf27bfd208092c599137e3482417be389767caca294f7376b84f16bc69dd9b93"
+    },
+    "docs/evidence/scale-integration/acceptance-run/native.txt": {
+      "bytes": 11923,
+      "sha256": "5db92b8dc1a319b8435b39d4b969a1d1a6ff225817ea2e5fec85daa6bc8c12b3"
+    },
+    "docs/evidence/scale-integration/acceptance-run/negative.json": {
+      "bytes": 3843,
+      "sha256": "64ab9a05c4c9423ed987bbcaefa17887d0a3d1be34655205958110d6c13cc552"
+    },
+    "docs/evidence/scale-integration/acceptance-run/negative.txt": {
+      "bytes": 3645,
+      "sha256": "78abe752aaac20cfb98a76df9640e83fd62ce009239696efb011b91a79adb979"
+    },
+    "docs/evidence/scale-integration/acceptance-run/run.json": {
+      "bytes": 341,
+      "sha256": "c0a12254f35d8586709ae90091b4f42c7cc9def402e8b259a0851577c3e7088a"
+    },
+    "docs/evidence/scale-integration/acceptance-run/ui.json": {
+      "bytes": 6108,
+      "sha256": "f3e85b03748068fa4a21992becc7cf851c30e0a71db9001528ac6c0d50b19a89"
+    },
+    "docs/evidence/scale-integration/acceptance-run/ui.txt": {
+      "bytes": 6061,
+      "sha256": "cc26c8a0fa4d4dfa9afbfdecb1c776d1eb9adfea622d27b7158db320519763e3"
+    }
+  }
+}

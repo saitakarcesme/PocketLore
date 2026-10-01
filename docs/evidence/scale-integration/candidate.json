@@ -1,0 +1,416 @@
+{
+  "scope": "Task300 first-shard development milestone; not full-product/rights/quality/phone acceptance",
+  "source_checkpoint": "bd038c7afbc2a4258a2e3811d5ab42adc2505a6d",
+  "artifacts": {
+    "android/.gitignore": {
+      "bytes": 44,
+      "sha256": "f0d90fe6dd188cfa5cbac987949cfa3893a2c1ac3cf6dbfcb837e0e2abb698b1"
+    },
+    "android/app/build.gradle": {
+      "bytes": 1814,
+      "sha256": "bb0637b09dadaec129b98515c7d78b78dfaea1f5a1fe0a5ea8a77fa4d1b4ecb7"
+    },
+    "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": {
+      "bytes": 270990,
+      "sha256": "1c06863aa6d0a0423161955d4f74c1c4253320f329c52d3f713fda8bd6149db9"
+    },
+    "android/app/build/outputs/apk/debug/app-debug.apk": {
+      "bytes": 15669266,
+      "sha256": "3d804882ea576fb5ebdd29144a88fa8002c99efbd97c45323928a7c8a1d2e98f"
+    },
+    "android/app/src/androidTest/java/org/pocketlore/app/AnswerSmokeInstrumentation.java": {
+      "bytes": 9839,
+      "sha256": "54ed210c98457b017102b059191f1df06194a3d7cf6fbbe2b4b22e980a47fcd2"
+    },
+    "android/app/src/androidTest/java/org/pocketlore/app/NativeSmokeInstrumentation.java": {
+      "bytes": 11973,
+      "sha256": "e8331ad7656b94bc432778af17021d0e3d4b91bc2e2b3a0f585511c41043e34b"
+    },
+    "android/app/src/androidTest/java/org/pocketlore/app/OfflineInstrumentation.java": {
+      "bytes": 7107,
+      "sha256": "562246c3cf5d25d38534a1bf2fb26c6dddf8d7a50616850a144e490deb13c477"
+    },
+    "android/app/src/androidTest/java/org/pocketlore/app/PackSmokeInstrumentation.java": {
+      "bytes": 3474,
+      "sha256": "592f404d1f64cdff42ecbca8138efbdae3a77edcb784860e59af886f617e4bcc"
+    },
+    "android/app/src/androidTest/java/org/pocketlore/app/ResourceInstrumentation.java": {
+      "bytes": 11760,
+      "sha256": "c2fe181ce79747170fa6f71e1915019f72fcf62b3817eb4d09d374188cc1494c"
+    },
+    "android/app/src/androidTest/java/org/pocketlore/app/RetrievalSmokeInstrumentation.java": {
+      "bytes": 3698,
+      "sha256": "95c2c82ceaf16661f8b510fecd38ebaa77c46cd3b8fbd2c68fe90dd250ef177d"
+    },
+    "android/app/src/androidTest/java/org/pocketlore/app/ScaleIntegrationInstrumentation.java": {
+      "bytes": 18405,
+      "sha256": "59b8924350bb961e78401c90dcefa4a071bef4272e73972a7c579498e55a75fa"
+    },
+    "android/app/src/androidTest/java/org/pocketlore/app/ScaleLibraryInstrumentation.java": {
+      "bytes": 2617,
+      "sha256": "10a117d4d834e67f7261329bb8f1265debf5cfe5f2c72065100fc24d9232612a"
+    },
+    "android/app/src/androidTest/java/org/pocketlore/app/ScaleProbeInstrumentation.java": {
+      "bytes": 1033,
+      "sha256": "d937d3e64dfd5d4d28e3bf24893302fb8dfff07603fe9eff2f22fc373d1175ae"
+    },
+    "android/app/src/androidTest/java/org/pocketlore/app/SynthesisInstrumentation.java": {
+      "bytes": 6701,
+      "sha256": "2c87e2fecfff36d697f74ff2f7fbfda3af63f8b3dc09a57032969a24b46f2a20"
+    },
+    "android/app/src/androidTest/java/org/pocketlore/app/TravelChecks.java": {
+      "bytes": 4127,
+      "sha256": "15afe11c705619c7f7861052a636b9ab5dcdc77564e8988715f581740608b35e"
+    },
+    "android/app/src/androidTest/java/org/pocketlore/app/TravelInstrumentation.java": {
+      "bytes": 2771,
+      "sha256": "b31ddc39f0206544e34bce1faa6c8b3ecc575e2337fc0462abee7bc3474baa55"
+    },
+    "android/app/src/main/AndroidManifest.xml": {
+      "bytes": 795,
+      "sha256": "79ad0b8cf45de25a2f520edba9b1bc87d5bda17284be72997398d5db1011fa60"
+    },
+    "android/app/src/main/assets/.gitignore": {
+      "bytes": 69,
+      "sha256": "cfa3bde05125bfe338ef10b62a4e8a9d29e1bfe9dac55b2e72102d1c41910827"
+    },
+    "android/app/src/main/assets/dc-monuments-manifest.json": {
+      "bytes": 1029,
+      "sha256": "56856c60ada031a65911dcd2f26d89bbb23f4ac1fc6b69d06bbff11ffb60d5fa"
+    },
+    "android/app/src/main/assets/licenses/answer-model-notice.txt": {
+      "bytes": 567,
+      "sha256": "9d79291db5e14170605e50f436ae99f10ce9e7389ab6184e66d5c78a34c4d374"
+    },
+    "android/app/src/main/assets/licenses/llama.cpp.txt": {
+      "bytes": 1078,
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+    },
+    "android/app/src/main/assets/licenses/qwen2.5-Apache-2.0.txt": {
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    "android/app/src/main/assets/licenses/smoke-model-Apache-2.0.txt": {
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "android/app/src/main/assets/licenses/sqlite.txt": {
+      "bytes": 1553,
+      "sha256": "9de843cf4a8c5230019b23f4b5565ca4add12257084211ced7ec52fdcf8e8651"
+    },
+    "android/app/src/main/assets/licenses/synthesis-model-Apache-2.0.txt": {
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    "android/app/src/main/assets/licenses/synthesis-model-notice.txt": {
+      "bytes": 681,
+      "sha256": "c4e92009450a020a87f15bfcf896f7bcb7006312f01e0c82f65d495908336dd1"
+    },
+    "android/app/src/main/assets/licenses/synthesis-qwen3-Apache-2.0.txt": {
+      "bytes": 11544,
+      "sha256": "5de36594c10839788a8c589443a8ef9d8b8d17c65a1b5807206ae037fc36c6bd"
+    },
+    "android/app/src/main/assets/licenses/synthesis-qwen3-notice.txt": {
+      "bytes": 486,
+      "sha256": "23c8c78dbde2e46aeb736a4fe764cf5157275548033edc82577049f9b6f09c52"
+    },
+    "android/app/src/main/assets/licenses/travel-wikidata-notice.txt": {
+      "bytes": 1087,
+      "sha256": "0ceb3cdba284583b407112bc7deca6af201cdfd3c230ba70d1c557cc6dc23e53"
+    },
+    "android/app/src/main/cpp/CMakeLists.txt": {
+      "bytes": 989,
+      "sha256": "a72e52f97e8bcc71d71c94965d74970c8a19a7897c2b92cc72db39d6caf8af3e"
+    },
+    "android/app/src/main/cpp/resource_budget.h": {
+      "bytes": 1309,
+      "sha256": "867e7c4c74032b3901367d3ed0089fa8a1f521f573985c7be8f9b5bb89e3808b"
+    },
+    "android/app/src/main/cpp/runtime.cpp": {
+      "bytes": 19077,
+      "sha256": "2da1e08ced2613175457ffe8aafb846dc8b1d83bb6904c960529df68da467863"
+    },
+    "android/app/src/main/java/org/pocketlore/app/AnswerEngine.java": {
+      "bytes": 21101,
+      "sha256": "c03f51d31c5e1fa628450978ec6ccc9fe2491de11b6695856856c694826d2dbc"
+    },
+    "android/app/src/main/java/org/pocketlore/app/BoundAnswer.java": {
+      "bytes": 10236,
+      "sha256": "3ebc23e6ed3dc73f52ccf899029b0b98dce258c44e7bc717804245206c7ff709"
+    },
+    "android/app/src/main/java/org/pocketlore/app/BroadPack.java": {
+      "bytes": 11782,
+      "sha256": "1272e50b7a11573f4404a81dd571975bb83ebda9b252646063e4602b46cd2623"
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentInput.java": {
+      "bytes": 3756,
+      "sha256": "b2f472f8bbba519ae5fdf9a631613bff7d3849a4dcb65c26ac90d39bd879f93f"
+    },
+    "android/app/src/main/java/org/pocketlore/app/EvidenceLinker.java": {
+      "bytes": 4369,
+      "sha256": "190ed67e3c5dab7bcb137b8d02c5a4bab08f5f9fb67bb3cace2b3bcff5f7dd8c"
+    },
+    "android/app/src/main/java/org/pocketlore/app/EvidencePrompt.java": {
+      "bytes": 8925,
+      "sha256": "238131c012580bdd1af9c2a67fb7db410c1c4d5f2bc5235a0016eb09d493832a"
+    },
+    "android/app/src/main/java/org/pocketlore/app/FactFrames.java": {
+      "bytes": 14827,
+      "sha256": "45dcb15e9582143bb9a37e62fdc9a0198e01554a29a1a3a5b5ef94911ed31c2e"
+    },
+    "android/app/src/main/java/org/pocketlore/app/GuardedEvidenceLinker.java": {
+      "bytes": 1084,
+      "sha256": "3e1a190b40a98f43af736e9102c2d6d7fa3ca9625dd383a5cb3207b35e2647e2"
+    },
+    "android/app/src/main/java/org/pocketlore/app/ImportRecovery.java": {
+      "bytes": 1189,
+      "sha256": "e1fc27710c14dd9ffe5757c182aa0bf086588937a9076ba1e266cc838c6ac840"
+    },
+    "android/app/src/main/java/org/pocketlore/app/KnowledgePack.java": {
+      "bytes": 10707,
+      "sha256": "b5d63c64775845e2de17b6a628f816cbc3b9806100eb88aecaf96584a1df5906"
+    },
+    "android/app/src/main/java/org/pocketlore/app/MainActivity.java": {
+      "bytes": 20739,
+      "sha256": "60e4b41250413b9209d7954400e821ea158982fb3d2970ebf4462ef4dcb665f5"
+    },
+    "android/app/src/main/java/org/pocketlore/app/ModelImport.java": {
+      "bytes": 2300,
+      "sha256": "4d2e69782c0dc89839e53fad332f7258916f07cb1b61b309c26feea21bf183ad"
+    },
+    "android/app/src/main/java/org/pocketlore/app/NativeIndex.java": {
+      "bytes": 718,
+      "sha256": "ec632a7e572cac37b2d332c13454aa1871d91de753b512fdfcb3e507d67970bc"
+    },
+    "android/app/src/main/java/org/pocketlore/app/NativePanel.java": {
+      "bytes": 14872,
+      "sha256": "26a492ba300d640f18eb238b4e6d284a44f68e1537c016ee7ed78e7d765092be"
+    },
+    "android/app/src/main/java/org/pocketlore/app/NativeRuntime.java": {
+      "bytes": 1926,
+      "sha256": "ec6f59d59b07ef7f5016657e0fcba0203232ecc7359f56a9ad6c205215fb2085"
+    },
+    "android/app/src/main/java/org/pocketlore/app/ObligationAnswer.java": {
+      "bytes": 4529,
+      "sha256": "6b9f0e61ba2a7bf5a040f2d9f3899acc682b40cf236ac3395d1bdac8f1819725"
+    },
+    "android/app/src/main/java/org/pocketlore/app/PackLibrary.java": {
+      "bytes": 13582,
+      "sha256": "b43384dff4a457baaabc6eb74948a253b5bf6f7beca22006ab41774fd42c36a3"
+    },
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": {
+      "bytes": 13360,
+      "sha256": "f276dc506e3022e445149c6c09e2577f595b287cfc406a760fda525c46c66128"
+    },
+    "android/app/src/main/java/org/pocketlore/app/ResourceStorage.java": {
+      "bytes": 1743,
+      "sha256": "75d783b83c667b367b88bac634cf6a499e5d4a031d0c5eb9991164586a5ef265"
+    },
+    "android/app/src/main/java/org/pocketlore/app/ScaleActivity.java": {
+      "bytes": 7153,
+      "sha256": "aacc4050b9b6f623c487382dd4f0df0e44991b297e53cbc39b3a0f05d919ceb7"
+    },
+    "android/app/src/main/java/org/pocketlore/app/ScaleLibrary.java": {
+      "bytes": 10066,
+      "sha256": "57b843ddfa64262d21ce89e5a8dbff0f94ed9486381aa94bd1840baec5753af4"
+    },
+    "android/app/src/main/java/org/pocketlore/app/ScalePlaces.java": {
+      "bytes": 3052,
+      "sha256": "e238620f854bf9c1f935b619f262ce0be0b1ec2d99253cdeecc06c67de88e568"
+    },
+    "android/app/src/main/java/org/pocketlore/app/ScaleWiki.java": {
+      "bytes": 7607,
+      "sha256": "daedfac9dff025a06b867d7b29ced74c8e81c2181dc7a4d9497b077505e55cb6"
+    },
+    "android/app/src/main/java/org/pocketlore/app/SourceTextSlice.java": {
+      "bytes": 3067,
+      "sha256": "862d8cd3496b096622ac04e3457a4a1114953be4502831fe649efaab59536492"
+    },
+    "android/app/src/main/java/org/pocketlore/app/TravelActivity.java": {
+      "bytes": 6577,
+      "sha256": "cc4eb6cc61704b12dc58f58c6c18ee0d7dc28fa09abd52030f8ade5be69f3d2f"
+    },
+    "android/app/src/main/java/org/pocketlore/app/TravelCatalog.java": {
+      "bytes": 6342,
+      "sha256": "e7eabf25f753f0371a45c6a76149624729c8911be42d242c0643db0416c49b2e"
+    },
+    "android/app/src/main/java/org/pocketlore/app/TravelCommands.java": {
+      "bytes": 1262,
+      "sha256": "a5b5adb2e086465bfeba489b5bedd81ae22dce160990080af063033068d73ff1"
+    },
+    "android/app/src/main/java/org/pocketlore/app/TravelTools.java": {
+      "bytes": 1939,
+      "sha256": "523a9dfbafdcd94f1ef897fd28792d9330fd43cb3190c0f03d3fae32e7e51a15"
+    },
+    "android/app/src/main/java/org/pocketlore/places/CompactPlaces.java": {
+      "bytes": 8252,
+      "sha256": "85fbcfca976556ed0e497de2f4547158d00be4d824d91891ee7882f294be772c"
+    },
+    "android/app/src/main/java/org/pocketlore/places/OfflinePlaces.java": {
+      "bytes": 5961,
+      "sha256": "dc2e52e474575c0725942e1883fd279c883de00a55e4ff0c53f27b1330797100"
+    },
+    "android/app/src/test/java/org/pocketlore/app/AnswerEngineCheck.java": {
+      "bytes": 4137,
+      "sha256": "96aa3635f55f7be3ced5ca69276e9751ad978afcd1e280e722df425c96653761"
+    },
+    "android/app/src/test/java/org/pocketlore/app/ResearchEngineCheck.java": {
+      "bytes": 1702,
+      "sha256": "0f7e8b39669a17ea02d65a841e610dd18728e9ca801100f334cbe155101cea2a"
+    },
+    "android/app/src/test/java/org/pocketlore/app/RetrievalIndexCheck.java": {
+      "bytes": 2288,
+      "sha256": "3c8c4c55bf4c50cac0ef75d48fc33b28b107eedf069233221fea284cb185dd54"
+    },
+    "android/app/src/test/java/org/pocketlore/app/SynthesisCheck.java": {
+      "bytes": 4301,
+      "sha256": "bd3e84e02f93133f4e327100671bfb2981f9a446e058d45e2454e5931e286bd4"
+    },
+    "android/app/src/test/java/org/pocketlore/app/TemporalScopeCheck.java": {
+      "bytes": 3078,
+      "sha256": "4f6c8d92fefb1da94042ab6d74f5de825a1906534400c85c5d7cb563f4c84eb5"
+    },
+    "android/build.gradle": {
+      "bytes": 69,
+      "sha256": "048ecfefe09971849fc8c9326de9d0e8af7e50e371aed980e2e1617124bb969f"
+    },
+    "android/gradle.properties": {
+      "bytes": 98,
+      "sha256": "19f172c25c4cdabbea0d32804ebc91ccf312e37ca7bd4ba76ca9fc24406f1063"
+    },
+    "android/host-checks/ScaleImportCheck.java": {
+      "bytes": 2317,
+      "sha256": "cbe5a4438b766fd2dc45ed3454d1ceaf10b16a1749d969968e7e0b9a3970c6de"
+    },
+    "android/index-native/CMakeLists.txt": {
+      "bytes": 545,
+      "sha256": "9b3c35ceb0ebd36f950f49db4abf96d42a896e6e1b44e55897286d2e6ca27a5a"
+    },
+    "android/index-native/index.cpp": {
+      "bytes": 4179,
+      "sha256": "d674815fa8a7a275fc9fb0a1dba30b05a73496b74c9ac4b43ac23ff78d6819ac"
+    },
+    "android/knowledge-sources.json": {
+      "bytes": 2711,
+      "sha256": "f786b4f019deeb33a198ca5f9585d7a6bc5b05caaf267fbdc9d2a22ce39b2c7c"
+    },
+    "android/settings.gradle": {
+      "bytes": 271,
+      "sha256": "94b571f1f197cb2a4d4226cfba232221b8dacd4e742ad9624f04263f341b56c4"
+    },
+    "docs/evidence/scale-integration/final-run-5/inspect.json": {
+      "bytes": 21906,
+      "sha256": "e910a638fba676b6d6d48265c1182a2649caa2a9da0a3996861374526e8f0f38"
+    },
+    "docs/evidence/scale-integration/final-run-5/inspect.txt": {
+      "bytes": 18826,
+      "sha256": "82e8a055b3f275d17b417ff205992f89409e2b83c23e785e4a97e5955d8d49d0"
+    },
+    "docs/evidence/scale-integration/final-run-5/native.json": {
+      "bytes": 12305,
+      "sha256": "740ceeaf7c626a2a0e16478ab286e3381ca5659c50f5fd4b5386fff2a6ab01c6"
+    },
+    "docs/evidence/scale-integration/final-run-5/native.txt": {
+      "bytes": 11924,
+      "sha256": "d535a54110a040ea9979737998e305b63fc7f660e144e307b4c514bb1217a3de"
+    },
+    "docs/evidence/scale-integration/final-run-5/negative.json": {
+      "bytes": 3845,
+      "sha256": "a9998e9ba7ca77915db198e6d609e88806d6f504d202372dc0c2f2a4f5cf7301"
+    },
+    "docs/evidence/scale-integration/final-run-5/negative.txt": {
+      "bytes": 3647,
+      "sha256": "455deb5d1ae6d933fb6cd74ee6aaaee149c5e46fea2e758f8817aec15a69a958"
+    },
+    "docs/evidence/scale-integration/final-run-5/run.json": {
+      "bytes": 341,
+      "sha256": "0da31809efce044a9d2c6b968dcbfe391071189743e93b2550fbba3f62612823"
+    },
+    "docs/evidence/scale-integration/final-run-5/ui.json": {
+      "bytes": 6108,
+      "sha256": "a00efb6e01384e6d75c6658297442aaf6c5499b05b3820cd03b53c30d2b74446"
+    },
+    "docs/evidence/scale-integration/final-run-5/ui.txt": {
+      "bytes": 6061,
+      "sha256": "43773b5022d7ac826ba1896d8eaea9692cdbd7054b05c385559e1b77769a843f"
+    },
+    "downloads/answers/model/qwen2.5-0.5b-instruct-q4_k_m.gguf": {
+      "bytes": 491400032,
+      "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+    },
+    "downloads/scale-integration/source-fixture.plscale": {
+      "bytes": 30220,
+      "sha256": "1b57367bef6d67edfab0ec8a821814f646dbae642798c75d8ba6b4e4754b8be7"
+    },
+    "tools/answers/model.env": {
+      "bytes": 336,
+      "sha256": "2d932887a64251c6561f4082739136be2a204728c8acd8fb7a1a0eff69526d97"
+    },
+    "tools/evaluation/scale-integration/build_bundles.py": {
+      "bytes": 2557,
+      "sha256": "35e7b115b810e9e15834333ea5215aa011acc0ec108ceb1203c24cee751016f9"
+    },
+    "tools/evaluation/scale-integration/build_source_fixture.py": {
+      "bytes": 2525,
+      "sha256": "221744cc91ff0200ec9160bd172ea9a69270b71a6f29b378a247525968b0534c"
+    },
+    "tools/evaluation/scale-integration/inspect_handoffs.py": {
+      "bytes": 1323,
+      "sha256": "f3231fcf39b3b88729db2c38eb8ff1f18b25dc57c1f261d960e925d1dcd48e12"
+    },
+    "tools/evaluation/scale-integration/protocol.json": {
+      "bytes": 1856,
+      "sha256": "57aa7c7d83fdb263bb17e3bf7a6c4bc3c7022ce8c1a8aaba9d1a17212bcad4ee"
+    },
+    "tools/evaluation/scale-integration/run_android.py": {
+      "bytes": 1695,
+      "sha256": "130aae756a44259bdc2f4275f25a4a938e98cbcbdcdee270ed81fcc0d47672b3"
+    },
+    "tools/evaluation/scale-integration/seal_candidate.py": {
+      "bytes": 2101,
+      "sha256": "7458a9431a4f0bd69199dc18dc7a8f157ca968a43371c883bccf4f8f2cb48e3d"
+    },
+    "tools/evaluation/verify_scale_integration.py": {
+      "bytes": 6101,
+      "sha256": "03f5622a8f6dd313692679fd84a01164da1621b5867c80cfb436ccf20c8de250"
+    },
+    "tools/runtime/build-index.sh": {
+      "bytes": 1048,
+      "sha256": "aed8934fb25ff9a36e5ea7d00772a0514ba6e0ad39d72a2e34b706516a2f7936"
+    },
+    "tools/runtime/fetch-index.py": {
+      "bytes": 1200,
+      "sha256": "8c15d01ec18950f38dd36bccebd0f60ba214f92cb0a662062d4a04b6f41c63f6"
+    },
+    "tools/runtime/sqlite-pin.json": {
+      "bytes": 535,
+      "sha256": "202420df1f44a34c7ce712c13f26aa317c401ab271850f75d94a5a0d79fff724"
+    }
+  },
+  "apk_members": {
+    "classes.dex": {
+      "bytes": 261704,
+      "sha256": "53dd5e69eec1aaee6c4c70a4a49dd02e7374ceba9cdaf32bbe3c700f8ee99d21"
+    },
+    "lib/arm64-v8a/libpocketlore.so": {
+      "bytes": 5598088,
+      "sha256": "dfc27add562f0898aef3be15df9be0af2f8dc4c1ddabb5eb1e63928d5c53023e"
+    },
+    "lib/arm64-v8a/libpocketlore_index.so": {
+      "bytes": 1848880,
+      "sha256": "d587cd588387c36a7972a2be685d496563d544f6af1e9807a1d67641107f31d1"
+    },
+    "lib/x86_64/libpocketlore.so": {
+      "bytes": 6077720,
+      "sha256": "cfba0bc0b16347d8290f76280069daf55be243416f622be314c1b073719aeb87"
+    },
+    "lib/x86_64/libpocketlore_index.so": {
+      "bytes": 1847336,
+      "sha256": "372aabdf0bba336a2bf1ab054e1339eca14ed8d9ffaffd2be0107c45828105d9"
+    }
+  },
+  "model_role": "Qwen2.5 0.5B remains production; Qwen3 4B remains host-only",
+  "evidence_environment": "emulator-5560 x86_64; airplane mode1 wifi0; rig builds only",
+  "rights_and_answer_gate": "all new bulk editions browse-only; task221 useful support remains mandatory",
+  "full_inventory_installed": false
+}

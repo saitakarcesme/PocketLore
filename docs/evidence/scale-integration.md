@@ -1,6 +1,6 @@
 # Task 300: measured first-shard product integration
 
-Status: **offline browse/import/JNI milestone, not full-product completion or acceptance**. All builds, artifact hashing and execution ran on LLMRig. Android observations are from the supervised x86_64 emulator-5560, with airplane mode enabled and Wi-Fi disabled; no physical or GrapheneOS measurements exist. No private holdout was accessed, model tuned, service restarted, branch switched or artifact published.
+Status: **offline browse/import/JNI milestone, not full-product completion or acceptance**. Final APK SHA-256: `3d804882ea576fb5ebdd29144a88fa8002c99efbd97c45323928a7c8a1d2e98f` (15,669,266 bytes). All builds, artifact hashing and execution ran on LLMRig. Android observations are from the supervised x86_64 emulator-5560, with airplane mode enabled and Wi-Fi disabled; no physical or GrapheneOS measurements exist. No private holdout was accessed, model tuned, service restarted, branch switched or artifact published.
 
 ## Source and review integrity
 
@@ -60,7 +60,7 @@ The unchanged production SHA is `74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb
 
 Actual draft: `[S1] Headlamps are the recommended light source because they are hands-free.` The production controller rendered the exact namespaced NPS citation. **Builder assessment:** supported and complete for this narrow question, because the actual cited excerpt explicitly states this reason. It is near-extractive generated prose, not evidence of broad synthesis, task221 quality or generalization. Unrelated Constitution/Declaration retrieval candidates remain in the raw record as failures. No canned response or fallback is counted as generation.
 
-The recorded control loaded in about0.38seconds, first token around26seconds, total generation about28seconds, with combined PSS around576,000KiB. Every run's exact timings and observed RSS/swap remain in raw JSON. These are emulator CPU measurements, not phone performance. The selected4B candidate remains host-only, and its historical26/40 draft potential versus4/40 useful controller results are not superseded.
+The final frozen control loaded in354ms, first token25435.371ms, total controller time27168.603ms, with combined PSS576100KiB. Controller times start after initial retrieval and exclude model load. The largest-source read took2415ms; sampled maxima were35340KiB PSS and10502656 Java bytes across82 samples. See [measurement summary](scale-integration/measurement-summary.json) for observed RSS/swap and definitions. Every run's exact timings and observed RSS/swap remain in raw JSON. These are emulator CPU measurements, not phone performance. The selected4B candidate remains host-only, and its historical26/40 draft potential versus4/40 useful controller results are not superseded.
 
 ## Reproduction and gates
 
@@ -73,3 +73,9 @@ The recorded control loaded in about0.38seconds, first token around26seconds, to
 Remaining concrete work is queued as301-scale-inventory-and-shard-updates and302-scale-reviewed-source-answer-adapter. No orchestration state was changed or task dispatched. Full multi-shard/redirect quality, incremental update peak, OSM/Wikivoyage app interfaces, broad rights/fidelity clearance, useful source-bound bulk answers and selected-model Android qualification remain open. General answer-architecture task224 is reused rather than duplicating its old matrix.
 
 Before competitive evaluation, freeze code, model, prompts, retrieval settings and corpus hashes. A **separate independent evaluator** must retain unseen/topic-held-out/source-held-out questions, distractors, paraphrases, multi-part/false-premise/absent/time-sensitive cases and compare named rival versions/frontier-web under matched conditions. Builder access remains prohibited. Development questions here are diagnostics, not generalization evidence; contamination and development/held-out results must be reported separately. No rival superiority, human acceptance, clean-machine reproduction, production signing or physical/GrapheneOS gate is claimed.
+
+The current source/check freeze is a development candidate, not a final competitive freeze. The read-only held-out evaluation has not run. Follow-up work must issue a new immutable identity and separate evaluation; it must not silently reuse these public questions as unseen evidence.
+
+### Required check results
+
+Both required commands exited0 on the frozen candidate. [Build log](scale-integration/acceptance-build.txt), [behavioral verifier log](scale-integration/acceptance-verify.txt), [fresh emulator run identity](scale-integration/acceptance-run/run.json) and [receipt hashes](scale-integration/acceptance.json) preserve actual results. Missing and same-sized changed copies of the actual model and actual run JSON were rejected; original weights/evidence were not modified. This result certifies the explicit measured milestone only. The broader task/product remains partial with the release gaps above.

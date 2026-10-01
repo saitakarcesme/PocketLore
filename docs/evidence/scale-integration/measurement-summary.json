@@ -1,0 +1,56 @@
+{
+  "source": "final-run-5 on pinned candidate; frozen public development only",
+  "apk": {
+    "bytes": 15669266,
+    "sha256": "3d804882ea576fb5ebdd29144a88fa8002c99efbd97c45323928a7c8a1d2e98f"
+  },
+  "wiki_query_ms": [
+    10,
+    9,
+    12,
+    6,
+    13,
+    11,
+    9,
+    8
+  ],
+  "wiki_exact_query_titles_present": 0,
+  "cities_with_nearby_results": 1,
+  "positive_places_query_ms": [
+    8598
+  ],
+  "oversized_block_bytes": 23473862,
+  "oversized_record_temporary_bytes": 23473862,
+  "oversized_read_ms": 2415,
+  "oversized_sampled_peak": {
+    "pss_kib": 35340,
+    "java_used_bytes": 10502656,
+    "samples": 82,
+    "interval_ms": 20
+  },
+  "oversized_after": {
+    "pss_kib": 35672,
+    "private_dirty_kib": 20644,
+    "java_used_bytes": 10736128,
+    "native_heap_bytes": 7419920,
+    "rss_kib": 101952,
+    "swap_kib": 25180
+  },
+  "read_cancel_ms": 4,
+  "query_cancel_ms": 1,
+  "model_load_ms": 354,
+  "controller_first_token_ms": 25435.371444,
+  "controller_total_ms": 27168.603492,
+  "controller_timing_definition": "From AnswerEngine entry after initial retrieval; includes evidence selection/token counting, prefill and decoding; excludes model load. Single control, no percentile/general latency claim.",
+  "combined_memory": {
+    "pss_kib": 576100,
+    "private_dirty_kib": 81656,
+    "java_used_bytes": 3977680,
+    "native_heap_bytes": 45079008,
+    "rss_kib": 646412,
+    "swap_kib": 24216
+  },
+  "generated_control_tokens": 18,
+  "bulk_generation_eligible_sources": 0,
+  "semantic_assessment": "Builder: hands-free explanation supported by exact NPS excerpt. Independent review pending. Not bulk generated support."
+}
