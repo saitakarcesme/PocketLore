@@ -12,6 +12,10 @@ public final class NativeRuntime {
     public static native String identity();
     /** Diagnostic counts: live lease, live contexts, model/KV/compute buffer bytes for the active context; not process RSS. */
     public static native long[] resourceState();
+    /** Read-only diagnostics: phase (0 idle,1 preflight,2 load,3 context,4 prefill,5 decode),
+     * load callbacks, abort callbacks, prompt tokens, context attempts/failures, estimated model/KV/compute bytes.
+     * Counters are observations, not synchronization guarantees or process-memory measurements. */
+    public static native long[] operationState();
     public static native long create();
     public static native void load(long session, byte[] localPath);
     public static native int generate(long session, byte[] prompt, int maxTokens, Sink sink);

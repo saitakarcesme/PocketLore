@@ -1,6 +1,7 @@
 #include <jni.h>
 #include "llama.h"
 #include "llama-ext.h"
+#include "resource_budget.h"
 #include <atomic>
 #include <memory>
 #include <mutex>
@@ -24,6 +25,16 @@ std::unordered_map<jlong, std::shared_ptr<Session>> sessions;
 jlong nextId = 1;
 std::once_flag backendOnce;
 std::atomic<int> activeContexts{0};
+// Read-only lifecycle observations: idle, preflight, weight load, context, prefill, decode.
+std::atomic<int> phase{0};
+std::atomic<uint64_t> loadCallbacks{0},abortCallbacks{0},promptTokens{0},contextAttempts{0},allocationFailures{0};
+std::atomic<uint64_t> estimatedModel{0},estimatedKV{0},estimatedCompute{0};
+struct PhaseScope { explicit PhaseScope(int value){phase=value;loadCallbacks=0;abortCallbacks=0;promptTokens=0;} ~PhaseScope(){phase=0;} };
+llama_context_params contextParams() {
+    auto p=llama_context_default_params();
+    p.n_ctx=2048;p.n_batch=2048;p.n_ubatch=128;p.n_seq_max=1;p.type_k=GGML_TYPE_F16;p.type_v=GGML_TYPE_F16;
+    p.n_threads=2;p.n_threads_batch=2;return p;
+}
 std::atomic<uint64_t> contextBytes{0},computeBytes{0},modelBufferBytes{0};
 void releaseContext(llama_context *ctx){if(ctx){llama_free(ctx);--activeContexts;contextBytes=0;computeBytes=0;modelBufferBytes=0;}}
 std::shared_ptr<Session> get(jlong id) {
@@ -35,8 +46,8 @@ std::shared_ptr<Session> get(jlong id) {
 void fail(JNIEnv *env, const std::exception &error) {
     if (!env->ExceptionCheck()) env->ThrowNew(env->FindClass("java/lang/IllegalStateException"), error.what());
 }
-bool aborted(void *data) { return static_cast<Session *>(data)->cancelled.load(); }
-bool progress(float, void *data) { return !aborted(data); }
+bool aborted(void *data) { ++abortCallbacks;return static_cast<Session *>(data)->cancelled.load(); }
+bool progress(float, void *data) { if(phase==2)++loadCallbacks;return !static_cast<Session *>(data)->cancelled.load(); }
 std::string bytes(JNIEnv *env, jbyteArray value) {
     if (!value) throw std::runtime_error("Missing UTF-8 bytes");
     std::string result(env->GetArrayLength(value), '\0');
@@ -72,7 +83,28 @@ extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_load(JNI
         if (filename.find('\0') != std::string::npos) throw std::runtime_error("Invalid model path");
         struct stat fileInfo{};
         if (stat(filename.c_str(), &fileInfo) != 0 || !S_ISREG(fileInfo.st_mode) || fileInfo.st_size < 4 || fileInfo.st_size > 2147483648LL) throw std::runtime_error("Model file must be regular and at most 2048 MiB");
+        PhaseScope observation(1);
+        // The pinned upstream no_alloc model propagates simulated allocation into its context.
+        // Metadata/graph bookkeeping still allocates; this is not protection from all OOMs.
+        auto dryParams=p;dryParams.no_alloc=true;
+        using Model=std::unique_ptr<llama_model,decltype(&llama_model_free)>;
+        using DryContext=std::unique_ptr<llama_context,decltype(&llama_free)>;
+        {
+            Model dry(llama_model_load_from_file(filename.c_str(),dryParams),llama_model_free);
+            if(!dry)throw std::runtime_error(s->cancelled ? "Cancelled" : "Cannot preflight GGUF model");
+            if(s->cancelled)throw std::runtime_error("Cancelled");
+            auto cp=contextParams();cp.abort_callback=aborted;cp.abort_callback_data=s.get();
+            DryContext simulated(llama_init_from_model(dry.get(),cp),llama_free);
+            if(!simulated)throw std::runtime_error("Cannot estimate inference buffers");
+            uint64_t model=0,kv=0,compute=0;
+            for(const auto &entry:llama_get_memory_breakdown(simulated.get())){model+=entry.second.model;kv+=entry.second.context;compute+=entry.second.compute;}
+            estimatedModel=model;estimatedKV=kv;estimatedCompute=compute;
+            requireNativeBudget(model,kv,compute);
+        }
+        if(s->cancelled)throw std::runtime_error("Cancelled");
+        phase=2;
         s->model = llama_model_load_from_file(filename.c_str(), p);
+        if(s->cancelled){if(s->model){llama_model_free(s->model);s->model=nullptr;}throw std::runtime_error("Cancelled");}
         if (!s->model) throw std::runtime_error(s->cancelled ? "Cancelled" : "Cannot load GGUF model");
         if (llama_model_has_encoder(s->model)) {
             llama_model_free(s->model); s->model = nullptr;
@@ -132,21 +164,20 @@ static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobje
         std::vector<llama_token> tokens(count);
         if (llama_tokenize(vocab, text.data(), text.size(), tokens.data(), count, true, chat) != count)
             throw std::runtime_error("Tokenization failed");
-        auto params = llama_context_default_params();
-        params.n_ctx = 2048; params.n_batch = 2048; params.n_ubatch = 128;
-        params.n_seq_max = 1; params.type_k = GGML_TYPE_F16; params.type_v = GGML_TYPE_F16;
-        params.n_threads = 2; params.n_threads_batch = 2;
+        PhaseScope observation(3);promptTokens=count;
+        requireNativeBudget(estimatedModel,estimatedKV,estimatedCompute);
+        auto params = contextParams();
         params.abort_callback = aborted; params.abort_callback_data = s.get();
         using Context = std::unique_ptr<llama_context, decltype(&releaseContext)>;
+        ++contextAttempts;
         Context ctx(llama_init_from_model(s->model, params), releaseContext);
-        if (!ctx) throw std::runtime_error("Cannot create inference context");
+        if (!ctx){++allocationFailures;throw std::runtime_error("Cannot create inference context");}
         ++activeContexts;
         uint64_t modelBytes=0,kvBytes=0,workBytes=0;
         for(const auto &entry:llama_get_memory_breakdown(ctx.get())){modelBytes+=entry.second.model;kvBytes+=entry.second.context;workBytes+=entry.second.compute;}
         modelBufferBytes=modelBytes;contextBytes=kvBytes;computeBytes=workBytes;
-        // Post-allocation admission screen, not a guarantee against allocation-time OOM.
-        if(modelBytes>2147483648ULL || kvBytes>805306368ULL || workBytes>1073741824ULL)
-            throw std::runtime_error("Runtime buffers exceed model/KV/compute resource budget; use a smaller model");
+        // Retain actual accounting as a second screen after simulated preflight.
+        requireNativeBudget(modelBytes,kvBytes,workBytes);
         using Sampler = std::unique_ptr<llama_sampler, decltype(&llama_sampler_free)>;
         Sampler sampler(nullptr,llama_sampler_free);
         if(sources>0) {
@@ -186,6 +217,7 @@ references ::= )";
         int generated = 0;
         while (generated < limit) {
             if (s->cancelled) return -1;
+            phase=generated==0 ? 4 : 5;
             int result = llama_decode(ctx.get(), batch);
             if (s->cancelled) return -1;
             if (result != 0) throw std::runtime_error("Model decode failed");
@@ -244,4 +276,9 @@ extern "C" JNIEXPORT jlongArray JNICALL Java_org_pocketlore_app_NativeRuntime_re
     std::lock_guard<std::mutex> lock(registryMutex);
     jlong values[]={static_cast<jlong>(residentCount.load()),activeContexts.load(),static_cast<jlong>(modelBufferBytes.load()),static_cast<jlong>(contextBytes.load()),static_cast<jlong>(computeBytes.load())};
     auto result=env->NewLongArray(5);if(result)env->SetLongArrayRegion(result,0,5,values);return result;
+}
+
+extern "C" JNIEXPORT jlongArray JNICALL Java_org_pocketlore_app_NativeRuntime_operationState(JNIEnv *env,jclass) {
+    jlong values[]={phase.load(),static_cast<jlong>(loadCallbacks.load()),static_cast<jlong>(abortCallbacks.load()),static_cast<jlong>(promptTokens.load()),static_cast<jlong>(contextAttempts.load()),static_cast<jlong>(allocationFailures.load()),static_cast<jlong>(estimatedModel.load()),static_cast<jlong>(estimatedKV.load()),static_cast<jlong>(estimatedCompute.load())};
+    auto result=env->NewLongArray(9);if(result)env->SetLongArrayRegion(result,0,9,values);return result;
 }
