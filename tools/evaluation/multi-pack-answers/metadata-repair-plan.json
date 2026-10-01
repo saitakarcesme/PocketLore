@@ -1,0 +1,7 @@
+{
+  "change": "Model-facing evidence metadata separation: retain exact dated excerpts and S labels; keep titles and URLs in source dialogs/provenance instead of generation context. No model, decoding, grammar or support-check changes.",
+  "reason": "Preserved literal-magma draft echoes question-shaped title and literal-chromosomes echoes URL instead of factual content.",
+  "cases": "All original and two literal questions unchanged; one before/after matrix, no additional question or seed search.",
+  "guards": "Missing citation, generated URL, temporal and claim-support checks remain unchanged. No draft rewriting into a successful answer.",
+  "limits": "May still fail; independent semantic source review required."
+}

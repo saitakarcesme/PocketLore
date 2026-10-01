@@ -1,0 +1,25 @@
+{
+  "status": "FAIL",
+  "routes": {
+    "reference": "FALLBACK",
+    "science": "FALLBACK",
+    "cross-pack": "FALLBACK",
+    "disabled-science": "ABSTAINED",
+    "absent": "ABSTAINED",
+    "duplicate": "FALLBACK",
+    "cancel-prefill": "CANCELLED",
+    "after-cancel": "FALLBACK",
+    "after-reload": "FALLBACK",
+    "literal-magma": "FALLBACK",
+    "literal-chromosomes": "FALLBACK"
+  },
+  "invoked_requests": 9,
+  "generated_citation_dialogs": 0,
+  "cancel_click_to_idle_ms": 111.954238,
+  "peak_pss_kib": 685373,
+  "peak_rss_kib": 762304,
+  "peak_swap_kib": 25436,
+  "peak_java_used_bytes": 26774368,
+  "native_buffer_peak_bytes": 589327360,
+  "limitations": "Behavior/integrity checks only; source-support/completeness/usefulness must be reviewed separately; no phone or OS OOM acceptance."
+}

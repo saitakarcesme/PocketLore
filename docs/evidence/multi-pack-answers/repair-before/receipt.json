@@ -1,0 +1,78 @@
+{
+  "classification": "Actual x86_64 Android emulator JNI, production Qwen2.5 0.5B; not host/phone acceptance",
+  "protocol_sha256": "de0a914c5a87ada9819e751c5762da5559257af01f7e4974b7ac3fae53d871fa",
+  "link_repair_protocol_sha256": "fecf2b5472a034a8a30aca1255581c52b956e8e064c8c3001bb45bf542ec24cc",
+  "model": {
+    "role": "Current production/demo Qwen2.5 0.5B Q4_K_M, not optional Qwen3",
+    "repository": "Qwen/Qwen2.5-0.5B-Instruct-GGUF",
+    "revision": "9217f5db79a29953eb74d5343926648285ec7e67",
+    "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+    "bytes": 491400032
+  },
+  "duplicate_sha256": "9daa617d43017589d86ede4ee223c7875b6f55b8a8c4bffb76067f3b146c3feb",
+  "artifacts": {
+    "app-debug.apk": {
+      "sha256": "2d1588d0f9ddc1227621ad28afe3fcb329f7619599368d9357ac6c10d145b26a",
+      "bytes": 11921193
+    },
+    "app-debug-androidTest.apk": {
+      "sha256": "9bb691ea3268292966b194d04adf56a0a3eca0e62e6621f8ee36bd6642a80321",
+      "bytes": 256770
+    }
+  },
+  "sources": {
+    "android/app/src/main/java/org/pocketlore/app/TravelCommands.java": "a5b5adb2e086465bfeba489b5bedd81ae22dce160990080af063033068d73ff1",
+    "android/app/src/main/java/org/pocketlore/app/TravelTools.java": "523a9dfbafdcd94f1ef897fd28792d9330fd43cb3190c0f03d3fae32e7e51a15",
+    "android/app/src/main/java/org/pocketlore/app/ResourceStorage.java": "75d783b83c667b367b88bac634cf6a499e5d4a031d0c5eb9991164586a5ef265",
+    "android/app/src/main/java/org/pocketlore/app/DocumentInput.java": "b2f472f8bbba519ae5fdf9a631613bff7d3849a4dcb65c26ac90d39bd879f93f",
+    "android/app/src/main/java/org/pocketlore/app/ModelImport.java": "4d2e69782c0dc89839e53fad332f7258916f07cb1b61b309c26feea21bf183ad",
+    "android/app/src/main/java/org/pocketlore/app/NativeRuntime.java": "ec6f59d59b07ef7f5016657e0fcba0203232ecc7359f56a9ad6c205215fb2085",
+    "android/app/src/main/java/org/pocketlore/app/TravelActivity.java": "cc4eb6cc61704b12dc58f58c6c18ee0d7dc28fa09abd52030f8ade5be69f3d2f",
+    "android/app/src/main/java/org/pocketlore/app/TravelCatalog.java": "e7eabf25f753f0371a45c6a76149624729c8911be42d242c0643db0416c49b2e",
+    "android/app/src/main/java/org/pocketlore/app/AnswerEngine.java": "8609b96313f79cc35f68e12e969912e271c97b22011454673bf8cf5824e7118f",
+    "android/app/src/main/java/org/pocketlore/app/EvidencePrompt.java": "8535c3440651dc1a26ed459ab5d78e81c47ab77d13ce7f0c4f48a9e5616d8e35",
+    "android/app/src/main/java/org/pocketlore/app/KnowledgePack.java": "b5d63c64775845e2de17b6a628f816cbc3b9806100eb88aecaf96584a1df5906",
+    "android/app/src/main/java/org/pocketlore/app/MainActivity.java": "bb67bc6b6187afa2d37bfa3ce87a407bd8733d43f8513cacd8a87e2e424937bd",
+    "android/app/src/main/java/org/pocketlore/app/NativePanel.java": "339c67dd88c6ea68e91cdadbcfeb593362b590627f4869b884993db696f29a3f",
+    "android/app/src/main/java/org/pocketlore/app/PackLibrary.java": "16bb1979836f8085ad643d6d3611beef9c720bd6fec8b3dbc0ceb9c11c68fb29",
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "26bb390467886f267c7164babc1d01665e3b4fa516550ab0830115ded292ec7b",
+    "tools/evaluation/multi-pack-answers/AnswerLibraryInstrumentation.java": "240930235393a72e89c08dc60ca505c8f891258c9d676b8cfc4df5b1a4d06f7e",
+    "android/app/src/main/cpp/runtime.cpp": "ff89c5c857fa18ce9168db67abe91a1e1ca4851bf4196014aeb92ee7f8856e42"
+  },
+  "records": {
+    "boot.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "fingerprint.txt": "e07fd7d414c3b262449a1a48ec96db76edc31b2273ac896fc04f4f44870e7426",
+    "saved-before.txt": "3b7a4c9699e2e46686145e3d6503d9071c41d4ee6eb9386b338a9b46717edcc8",
+    "catalog-before.json": "af8b4e47b29a230b4136b7a170ccb5c998ff23495f294898f976f7c2750e17bd",
+    "pack-english-reference-2026-10-01.txt": "65d819880f250ed8b911a8e37aa1f9554a702f756a70f3e574288014e4b23437",
+    "pack-science-supplement-2026-10-01-v1.txt": "69ee661c59c709dc935b0b1698b9c063e197c4f13c65870c663d5af1be3a5cc8",
+    "duplicate.plpack": "9daa617d43017589d86ede4ee223c7875b6f55b8a8c4bffb76067f3b146c3feb",
+    "build.log": "5b6a27f3307010f1381863b34e46dacdae5accb133383e26bfe6ff11eef484f3",
+    "install-app-debug.apk.txt": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+    "install-app-debug-androidTest.apk.txt": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+    "stop.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mkdir.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-protocol.json.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-link-repair-protocol.json.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-duplicate.plpack.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "airplane-set.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wifi-disable.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "data-disable.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "airplane.txt": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+    "instrumentation.txt": "2651d4bce285cabd647004c7d7713b29aa96c5d19131e52b4ddf2ec12177351e",
+    "results.json": "f12583f75990c02061d5e982182b65b630e9f1b77e353a2212bbee2004f58309",
+    "saved-after.txt": "3b7a4c9699e2e46686145e3d6503d9071c41d4ee6eb9386b338a9b46717edcc8",
+    "catalog-after.json": "af8b4e47b29a230b4136b7a170ccb5c998ff23495f294898f976f7c2750e17bd",
+    "reference.json": "07eabaac1c3cfb088d7d662beb24fa1a676afc307add0da47bc5ab3bacc11815",
+    "science.json": "e68a1f48a64778bbafc5441a0b321205853d5dedb4298899048c0ba677d06a1a",
+    "cross-pack.json": "22826a254a6c838bcc4398cc4ac4b934a99f1bd1bf7c4fd8ec57fe1ef66ded83",
+    "disabled-science.json": "e27ecb4361c0e7ada8e444263ab8e00f1e4d05fa2a0cbbd029d1e3bcfbdae86a",
+    "absent.json": "ef3e19f8b708f90a771d3ecb4797aba455a679a7c73910a494e1218be33210e7",
+    "duplicate.json": "cb4f309dc6fd20a68f382780885f38127c89dc11e8d60b2cc625548b25907d0a",
+    "cancel-prefill.json": "09ea034f0f7c072b0760ba417345062255cd80f0d6a71ffa5f3d309ed424f4f6",
+    "after-cancel.json": "896cdeb3a5343e4bb71e2872c7702ff1dbd45e40745ba44fb740234a457a4b2d",
+    "after-reload.json": "c214ab867b1cb83a9cfac3e4dd95e5de08981356767bf96c345bbcde59b3c2d0",
+    "literal-magma.json": "6ab6b284900f81b28d8dbdd6995577e79f89f8f7b3c54e21d16f6271c66bb087",
+    "literal-chromosomes.json": "d23df65490898eb12639b5c53a165fa76d2af2ba83ab4200266567c1d622a319"
+  }
+}
