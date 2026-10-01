@@ -38,7 +38,7 @@ std::string bytes(JNIEnv *env, jbyteArray value) {
 }
 }
 extern "C" JNIEXPORT jstring JNICALL Java_org_pocketlore_app_NativeRuntime_identity(JNIEnv *env, jclass) {
-    return env->NewStringUTF("llama.cpp " POCKETLORE_REVISION "; CPU; context=2048; threads=2; greedy; Qwen3 non-thinking adapter");
+    return env->NewStringUTF("llama.cpp " POCKETLORE_REVISION "; CPU; context=2048; threads=2; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42");
 }
 extern "C" JNIEXPORT jlong JNICALL Java_org_pocketlore_app_NativeRuntime_create(JNIEnv *env, jclass) {
     try {
@@ -146,7 +146,16 @@ references ::= )";
             sampler.reset(llama_sampler_chain_init(llama_sampler_chain_default_params()));
             if(!sampler){llama_sampler_free(constraint);throw std::runtime_error("Cannot initialize sampler chain");}
             llama_sampler_chain_add(sampler.get(),constraint);
-            llama_sampler_chain_add(sampler.get(),llama_sampler_init_greedy());
+            char architecture[64]={};
+            llama_model_meta_val_str(s->model,"general.architecture",architecture,sizeof(architecture));
+            if(std::string(architecture)=="qwen3") {
+                // Upstream non-thinking sampling guidance; fixed seed makes this development run reproducible.
+                llama_sampler_chain_add(sampler.get(),llama_sampler_init_penalties(llama_vocab_n_tokens(vocab),256,1.0f,0.0f,1.5f));
+                llama_sampler_chain_add(sampler.get(),llama_sampler_init_top_k(20));
+                llama_sampler_chain_add(sampler.get(),llama_sampler_init_top_p(0.8f,1));
+                llama_sampler_chain_add(sampler.get(),llama_sampler_init_temp(0.7f));
+                llama_sampler_chain_add(sampler.get(),llama_sampler_init_dist(42));
+            } else llama_sampler_chain_add(sampler.get(),llama_sampler_init_greedy());
         } else sampler.reset(llama_sampler_init_greedy());
         if (!sampler) throw std::runtime_error("Cannot create sampler");
         jclass sinkClass = env->GetObjectClass(sink);

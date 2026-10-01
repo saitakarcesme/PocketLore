@@ -25,3 +25,5 @@ The first command performs online provisioning into ignored downloads. The check
 The five development questions were frozen before tuning; four require generated answers and one requires absent-evidence abstention. An additional fictional sensor conflict tests control behavior only. No private holdout is used. See [measured evidence](evidence/synthesis.md) for actual results, failures and claim review. Physical hardware, independent source-support review, broad reasoning quality, sustained performance and resource acceptance remain open.
 
 The Qwen3 adapter uses its upstream non-thinking assistant prefix, counted in the same native tokenizer path as generation. Earlier Qwen2.5-1.5B trials and their license/pin remain preserved. This optional candidate uses an isolated test model and does not replace the app's saved model.
+
+Qwen3 claims use temperature 0.7, top-k 20, top-p 0.8 and presence penalty 1.5 over 256 generated tokens, with fixed seed 42. Other architectures retain greedy sampling. Exact settings appear in the native identity and evidence; no multi-seed success selection is performed.
