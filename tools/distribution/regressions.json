@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "frozen_date": "2026-10-01",
+  "scope": "Public local artifacts only; no private context, signing keys or credential reads.",
+  "cases": [
+    {"id":"missing-notice","mutation":"Remove one required notice file from an isolated copy of the inventory input artifacts.","expected":"reject with exact missing path"},
+    {"id":"changed-native-artifact","mutation":"Flip one byte in an isolated copy of a recorded packaged native library.","expected":"reject hash mismatch"},
+    {"id":"changed-build-artifact","mutation":"Flip one byte in an isolated copy of a resolved build dependency.","expected":"reject hash mismatch"},
+    {"id":"missing-component","mutation":"Remove a native component row from a copied inventory.","expected":"reject inventory coverage mismatch"},
+    {"id":"false-distribution-ready","mutation":"Mark distribution ready while unresolved notice/owner/independent reproduction gates remain.","expected":"reject unsupported readiness claim"}
+  ],
+  "verification": "Recompute recorded hashes, match actual APK members and resolved dependency output, trace native link inputs, verify installed notices without silently generating replacements; never treat a file's existence as a license grant."
+}
