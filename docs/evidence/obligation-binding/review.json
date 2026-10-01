@@ -589,6 +589,60 @@
       "fully_useful_draft": false,
       "assessment": "Source-faithful magnitude definition and amateur practices become a verbose repeated-source description, ending mid-clause at320tokens. Invalid/overlarge reference lists are also visible, but the primary bound failure is truncation; no complete answer.",
       "claims": []
+    },
+    "s46": {
+      "result_sha256": "277397946613977e64a8bc353a9382b884a239eb64deefcadf7131fecd3e8ac2",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Correct rounded2.512 brightness ratio and two concrete citizen-science observation types. No square-root reinterpretation. One irrelevant extra reference is a precision issue, not absence of support because P5.2 establishes the ratio.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P5.2 supports displayed four-significant-figure ratio; P1.2 is unnecessary for this claim."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P1.2 explicitly names variable-star and double-star monitoring."
+        }
+      ]
+    },
+    "s47": {
+      "result_sha256": "bc5c3a4d2bb56c29b2c91218c02f9e618eca56a8f821a597a35ae136192ec883",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct raw inverse-scale false-premise correction and approximate ratio; W record prevents typed supported answer delivery.",
+      "claims": []
+    },
+    "s48": {
+      "result_sha256": "0e8f4f90bc74c5ee5a99289aaf7a2a274b97ef6f767514af4fe7e9da54675d28",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct withholding of a real-time measurement of an unidentified star; distinguishes known examples from the absent observation.",
+      "claims": []
+    },
+    "n01": {
+      "result_sha256": "367eb95619d455ee4b235d7aa83b3f44b62e902a3f38ca1833c4a3667cd7b24d",
+      "all_claims_supported": false,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Explicit input/output discriminator still produces a self-contradiction: first says vermicast is not eaten, then includes it among material eaten. Source establishes output, not that asserted input role; audit approves all.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P5.1 supports earthworm excreta/end-product; P4.1 describes a created mixture containing vermicast, not that worms eat it. Final input list contradicts the draft first sentence."
+        }
+      ]
     }
   }
 }
