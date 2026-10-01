@@ -44,7 +44,8 @@ def main():
  for link in r.get('links',[]):run(a+['exec-out','run-as','org.pocketlore.app','cat',base+'/'+link['case']+'-citation.png'],link['case']+'-citation.png')
  receipt={'classification':'Actual x86_64 Android emulator JNI, production Qwen2.5 0.5B; not host/phone acceptance','protocol_sha256':sha(F/'protocol.json'),'model':protocol['model'],'duplicate_sha256':sha(duplicate),'artifacts':artifacts,'sources':{str(p.relative_to(R)):sha(p) for p in list((R/'android/app/src/main/java/org/pocketlore/app').glob('*.java'))+[F/'AnswerLibraryInstrumentation.java',R/'android/app/src/main/cpp/runtime.cpp']},'records':{p.name:sha(p) for p in out.iterdir() if p.is_file()}}
  (out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n')
- assert r.get('status')=='PASS' and b'INSTRUMENTATION_CODE: -1' in log,str(out/'results.json')
+ verify(out,r,protocol,log)
+def verify(out,r,protocol,log):
  assert r['catalog_restored'] and r['model']==protocol['model']
  assert 'threads=2' in r['runtime'] and 'context=2048' in r['runtime'] and 'HOST SCREEN' not in r['runtime']
  rows={row['id']:row for row in r['rows']};assert set(rows)=={c['id'] for c in protocol['cases']}|{'cancel-prefill'}
@@ -61,8 +62,16 @@ def main():
  assert rows['duplicate']['prompt']==rows['reference']['prompt'] and rows['duplicate']['passages']==210 and rows['duplicate']['documents']==18
  assert rows['cancel-prefill']['route']=='CANCELLED' and r['cancellation']['observed_operation'][0]==4
  for id in ['after-cancel','after-reload']:assert rows[id]['invoked'] and rows[id]['route']!='CANCELLED'
- assert len(r['links'])>0 and all(rows[l['case']]['route']=='GENERATED' and l['citation'] in rows[l['case']]['text'] and l['citation'] in l['visible'] for l in r['links'])
+ assert all(rows[l['case']]['route']=='GENERATED' and l['citation'] in rows[l['case']]['text'] and l['citation'] in l['visible'] for l in r['links'])
  assert len(r['samples'])>10 and any(s['native'][1]>0 and sum(s['native'][2:])>0 for s in r['samples'])
- summary={'status':'PASS','routes':{id:row['route'] for id,row in rows.items()},'invoked_requests':sum(row['invoked'] for row in rows.values()),'generated_citation_dialogs':len(r['links']),'cancel_click_to_idle_ms':r['cancellation']['click_to_idle_ms'],'peak_pss_kib':max(s['pss_kib'] for s in r['samples']),'peak_rss_kib':max(s['VmRSS'] for s in r['samples']),'peak_swap_kib':max(s['VmSwap'] for s in r['samples']),'peak_java_used_bytes':max(s['java_used_bytes'] for s in r['samples']),'native_buffer_peak_bytes':max(sum(s['native'][2:]) for s in r['samples']),'limitations':'Behavior/integrity checks only; source-support/completeness/usefulness must be reviewed separately; no phone or OS OOM acceptance.'}
+ summary={'status':r['status'],'routes':{id:row['route'] for id,row in rows.items()},'invoked_requests':sum(row['invoked'] for row in rows.values()),'generated_citation_dialogs':len(r['links']),'cancel_click_to_idle_ms':r['cancellation']['click_to_idle_ms'],'peak_pss_kib':max(s['pss_kib'] for s in r['samples']),'peak_rss_kib':max(s['VmRSS'] for s in r['samples']),'peak_swap_kib':max(s['VmSwap'] for s in r['samples']),'peak_java_used_bytes':max(s['java_used_bytes'] for s in r['samples']),'native_buffer_peak_bytes':max(sum(s['native'][2:]) for s in r['samples']),'limitations':'Behavior/integrity checks only; source-support/completeness/usefulness must be reviewed separately; no phone or OS OOM acceptance.'}
  (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary,indent=2),flush=True)
-if __name__=='__main__':main()
+ assert r.get('status')=='PASS' and len(r['links'])>0 and b'INSTRUMENTATION_CODE: -1' in log,str(out/'results.json')
+if __name__=='__main__':
+ if len(sys.argv)==3 and sys.argv[1]=='--verify-recorded':
+  out=Path(sys.argv[2]);receipt=json.loads((out/'receipt.json').read_text())
+  for name,digest in receipt['records'].items():assert sha(out/name)==digest,name
+  for name,digest in receipt['sources'].items():assert sha(R/name)==digest,name
+  assert sha(F/'protocol.json')==receipt['protocol_sha256']
+  verify(out,json.loads((out/'results.json').read_text()),json.loads((F/'protocol.json').read_text()),(out/'instrumentation.txt').read_bytes())
+ else:main()

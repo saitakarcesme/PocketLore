@@ -1,0 +1,31 @@
+{
+  "status": "FAIL",
+  "routes": {
+    "reference": "FALLBACK",
+    "science": "FALLBACK",
+    "cross-pack": "FALLBACK",
+    "disabled-science": "ABSTAINED",
+    "absent": "ABSTAINED",
+    "duplicate": "FALLBACK",
+    "cancel-prefill": "CANCELLED",
+    "after-cancel": "FALLBACK",
+    "after-reload": "FALLBACK"
+  },
+  "invoked_requests": 7,
+  "generated_citation_dialogs": 0,
+  "cancel_click_to_idle_ms": 107.807322,
+  "peak_pss_kib": 684041,
+  "peak_rss_kib": 772296,
+  "peak_swap_kib": 23900,
+  "peak_java_used_bytes": 26770304,
+  "native_buffer_peak_bytes": 589327360,
+  "limitations": "Behavior/integrity checks only; source-support/completeness/usefulness must be reviewed separately; no phone or OS OOM acceptance."
+}
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/multi-pack-answers/run.py", line 76, in <module>
+    verify(out,json.loads((out/'results.json').read_text()),json.loads((F/'protocol.json').read_text()),(out/'instrumentation.txt').read_bytes())
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/multi-pack-answers/run.py", line 69, in verify
+    assert r.get('status')=='PASS' and len(r['links'])>0 and b'INSTRUMENTATION_CODE: -1' in log,str(out/'results.json')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: downloads/multi-pack-answers/run-20261001T064046900406Z/results.json
