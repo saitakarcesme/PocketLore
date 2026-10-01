@@ -1,0 +1,37 @@
+
+Exception occurred while executing 'start':
+java.lang.SecurityException: Permission Denial: starting Intent { flg=0x10000000 xflg=0x4 cmp=org.pocketlore.app/.SavedActivity } from null (pid=13528, uid=2000) not exported from uid 10230
+	at com.android.server.wm.Session$$ExternalSyntheticBUOutline1.m(R8$$SyntheticClass:0)
+	at com.android.server.wm.ActivityTaskSupervisor.checkStartAnyActivityPermission(ActivityTaskSupervisor.java:1298)
+	at com.android.server.wm.ActivityStarter.executeRequest(ActivityStarter.java:1343)
+	at com.android.server.wm.ActivityStarter.execute(ActivityStarter.java:945)
+	at com.android.server.wm.ActivityTaskManagerService.startActivityAsUser(ActivityTaskManagerService.java:1377)
+	at com.android.server.wm.ActivityTaskManagerService.startActivityAsUser(ActivityTaskManagerService.java:1320)
+	at com.android.server.am.ActivityManagerService.startActivityAsUserWithFeature(ActivityManagerService.java:4150)
+	at com.android.server.am.ActivityManagerShellCommand.runStartActivity(ActivityManagerShellCommand.java:906)
+	at com.android.server.am.ActivityManagerShellCommand.onCommand(ActivityManagerShellCommand.java:265)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:40)
+	at com.android.server.am.ActivityManagerService.onShellCommand(ActivityManagerService.java:11665)
+	at android.os.Binder.shellCommand(Binder.java:1061)
+	at android.os.Binder.onTransact(Binder.java:921)
+	at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:5884)
+	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:3584)
+	at android.os.Binder.execTransactInternal(Binder.java:1347)
+	at android.os.Binder.execTransact(Binder.java:1301)
+Traceback (most recent call last):
+  File "/home/isa/PocketLore-control/scale-workers/ui/repo/../evidence-redesign/cold-roundtrip.py", line 10, in <module>
+    run('shell','am','start','-n','org.pocketlore.app/.SavedActivity');time.sleep(1.5)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/PocketLore-control/scale-workers/ui/repo/../evidence-redesign/cold-roundtrip.py", line 4, in run
+    def run(*a):return subprocess.check_output(adb+list(a))
+                       ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 473, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb', '-s', 'emulator-5564', 'shell', 'am', 'start', '-n', 'org.pocketlore.app/.SavedActivity']' returned non-zero exit status 255.

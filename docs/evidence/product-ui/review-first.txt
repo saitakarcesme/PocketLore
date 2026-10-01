@@ -1,0 +1,1 @@
+Library opens personal documents without a result callback, leaving Research's retained engine stale after import until reload, so the Library route must notify Research and test that updated sources become searchable.
