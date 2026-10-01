@@ -4,7 +4,7 @@ PocketLore source is Apache-2.0 unless identified otherwise. No rival applicatio
 
 Android SDK, Android NDK, OpenJDK and Gradle are external build tools governed by their respective licenses; they are not bundled in source control. Each shipped native dependency must be pinned and carry its license. Each data pack must record source URL, acquisition date, license, transformation and content hash. Model weights require separate model-license review and an exact digest. A repository license never replaces dataset or model terms.
 
-Knowledge-pack and native-runtime notices will be added alongside their implementation before distribution.
+Implemented knowledge-pack and native-runtime notices are recorded below and bundled with the relevant artifacts.
 
 Starter knowledge pack: U.S. Geological Survey Water Science School textual material. Source URLs, paragraph selectors and SHA-256 pins are in android/knowledge-sources.json. USGS-authored federal text is public domain in the United States, subject to the agency's noted third-party exceptions; no images or third-party credited material are included. Downloaded text and APKs are excluded from Git. The acquisition script verifies pinned paragraph content. See https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits.
 
@@ -52,3 +52,11 @@ https://creativecommons.org/publicdomain/zero/1.0/
 Revision dates, immutable revision URLs and raw hashes: tools/packs/travel-sources.lock.json.
 Bundled attribution: android/app/src/main/assets/licenses/travel-wikidata-notice.txt.
 Only three selected places are included; no live hours, routing or availability.
+
+Release demonstration model (separately imported, no weights in APK/Git):
+Qwen/Qwen2.5-0.5B-Instruct-GGUF, revision
+9217f5db79a29953eb74d5343926648285ec7e67, Q4_K_M, Apache-2.0.
+SHA-256: 74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db.
+Full model license and publisher notice are packaged in assets/licenses/
+qwen2.5-Apache-2.0.txt and answer-model-notice.txt. Quantization was supplied
+by the publisher and was not independently reproduced by PocketLore.

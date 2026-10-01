@@ -1,6 +1,6 @@
-# Android starter slice
+# Android application and historical development notes
 
-PocketLore 0.1 is a native Android application with a small installed water-science pack, BM25 passage retrieval, explicit coverage warnings and local source inspection. It has no network permission or Google Play Services dependency. It retrieves evidence rather than generating explanations. This is not yet a bounty-ready research assistant.
+PocketLore now combines local JNI generation, evidence retrieval, citation inspection, pack/model import, cancellation and an offline travel slice. It has no requested permissions or Google Play Services dependency. Generated output can be incomplete or withheld; this is not an accepted research assistant. Use the current [release build/install/demo guide](RELEASE.md). The sections below preserve development history; early extractive UI commands are superseded by **Answer offline**.
 
 ## Build and install
 
@@ -22,7 +22,7 @@ tools/android-build.sh
 
 The build script uses Gradle offline mode and existing cached dependencies by default. On a fresh developer machine, acquire SDK packages and run `POCKETLORE_GRADLE_ONLINE=1 tools/android-build.sh assembleDebug` once with network access. This is a development debug APK, signed with a local debug key; a stable release signing/install path is still open. Minimum Android is API 28; only API 35 emulator behavior has been exercised. No physical phone or GrapheneOS acceptance is claimed.
 
-Open PocketLore, enter a question, and choose **Find evidence**. Try `Compare evaporation and condensation`. Scroll to **Inspect** to read a passage, its source URL, retrieval date and rights without opening a browser. Unmatched questions produce an explicit no-evidence response. Partial word coverage produces a warning, but this is not a calibrated answerability detector. Ranking is lexical English matching, with no stemming or semantic retrieval yet.
+Open PocketLore, enter a question, and choose **Find evidence**. Try `Compare evaporation and condensation`. Scroll to **Inspect** to read a passage, its source URL, retrieval date and rights without opening a browser. Unmatched questions produce an explicit no-evidence response. Partial word coverage produces a warning, but this is not a calibrated answerability detector. This describes the original lexical baseline; task 040 below adds limited inflection handling and ranking expansions.
 
 ## Knowledge provenance
 
