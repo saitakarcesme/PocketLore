@@ -719,6 +719,52 @@
           "assessment": "P2.2 explicitly establishes UK uncodified yet written acts/cases/treaties. P3.2 is extraneous. The actual claim says this contradicts the false premise, not that it endorses it."
         }
       ]
+    },
+    "n06": {
+      "result_sha256": "74e4f8202bfe909f6bcdf94d7d0e0c63914533dab738c8ebbdb0051e43cdf1a1",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Raw answer correctly explains both non-guarantees: some constitutional monarchies are not democratic and powers range from significant to minimal. W classification withholds a supported correction instead of binding citations.",
+      "claims": []
+    },
+    "n07": {
+      "result_sha256": "b7c3538813594580fc8989c7c75a80b7a3f568f44de56d20d84caccd1b00637b",
+      "all_claims_supported": false,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Explicit temporal discriminator still answered incorrectly: became-after is substituted for continued-to-be. Exact cited sentence contradicts the new event ordering; self-audit approves.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P2.2 states Barcelona continued as Principality capital after joining; becoming referred to most-important city/economic-administrative centre, not first acquiring capital status."
+        }
+      ]
+    },
+    "n08": {
+      "result_sha256": "31605be5421f1b99ee6eb6d99c2495fb281102fbfdaa1a33ce65b799b3ba6b46",
+      "all_claims_supported": false,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Typed metadata identifies Athens correctly, but renderer hides subject/obligation context: following Barcelona, the next rendered sentence starts It and can attribute Greek democracy to Barcelona. No self-contained supported final answer despite source-faithful text under the hidden metadata.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Barcelona tradition-qualified Phoenician/Carthaginian origin is directly supported by P2.1."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P5.3 is about classical Athens; source and model record rely on antecedent/context. Rendered answer omits the Athens subject, leaving It after a Barcelona assertion."
+        }
+      ],
+      "typed_content_supported": true,
+      "rendered_binding_failure": "The only explicit Athens subject lives in a hidden metadata field; the final answer loses it."
     }
   }
 }
