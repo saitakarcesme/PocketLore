@@ -14,9 +14,9 @@
       "result_sha256": "9d8959dcfa75160363a08fd76c3b9a497860ced11b1221a3b618ea5e177aeafc",
       "all_facts_supported": true,
       "cited_claims_supported": true,
-      "obligations_complete": true,
-      "fully_useful_draft": true,
-      "assessment": "S5 explicitly connects insertion order/arbitrary insertion to degeneracy and guaranteed variants; complete concise explanation, and machine screen admits it."
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Names insertion order and degeneracy plus existence of worst-case-guaranteed variants, but does not explain how tree shape or search work changes; supported screen candidate, incomplete explanation. This corrects the initial optimistic builder rating consistently with the 7B rubric."
     },
     "s03": {
       "result_sha256": "a37e8093b8b3185f7353e974e7f3bf2bad9824a87eda6a353e97500a59c21677",
@@ -273,6 +273,86 @@
       "obligations_complete": true,
       "fully_useful_draft": false,
       "assessment": "Both requested historical roles are supplied, but changes continued-to-be Catalonia capital into became-capital after joining Aragon, an unsupported temporal change."
+    },
+    "s35": {
+      "result_sha256": "a6f75f08a94935473292399c3524cf6458e89f5d319a250dde40f3e57fcc7035",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Correctly names Athens and Catalonia with exact source links, but labels a contradicted premise insufficient rather than giving the requested clear rejection; not a complete support judgment."
+    },
+    "s36": {
+      "result_sha256": "aee3a00b985d7a09e3a6ddeff221c649bf287f126dd57ca37e723e6b3101d908",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly withholds absent current opening hours and ticket prices; useful abstention only."
+    },
+    "s37": {
+      "result_sha256": "225d1f8a4f68630396d3dfab17aedca6519c64402f218daa900c4415694d2870",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Complete electron-transfer/redox/ATP explanation established by S1; paragraph citation support is distinct from machine withholding."
+    },
+    "s38": {
+      "result_sha256": "5469913f82a54dcfc50bf09f1e9622bfbe7eafba5b6668d0a402ad30b3a422db",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly states that most spores survive, establishing why universal elimination is wrong, with exact S4 support; screen candidate."
+    },
+    "s39": {
+      "result_sha256": "d20a7ba92ef56d2d5aa43c6f34331049cc8f1ed8920f5a422f5fa3ea8a8f44c9",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Both mechanisms and preservation purpose are supported by the indicated S1/S4 paragraphs, with the additional dairy/history sentence correctly citing S5."
+    },
+    "s40": {
+      "result_sha256": "f070632fef40318be9c59aabe83b6ee6d4e5288c6c07dba24084d86560ad92d5",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Correct two products and temperature, with exact S2/S4 support, but both obligation slots are noun/value fragments rather than complete explanatory clauses."
+    },
+    "s41": {
+      "result_sha256": "6ca16f2937b70c2c3fa08800e524b65727ae0c462a48c60294a2f1af40ccf4e4",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly rejects total spore destruction and quotes the exact survival qualification from S4; useful paragraph-supported correction despite machine withholding."
+    },
+    "s42": {
+      "result_sha256": "f140eedfc37e87c03a27714babd48f89ba4dcaa1712cabe42b8436abbabf222a",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly withholds the absent current private bottle microbial count; useful abstention only."
+    },
+    "s43": {
+      "result_sha256": "2b68a67d24f109e3765cf19ee6bd552106863dd829ff0e097b376e3a1721077a",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Inverse scale and ratio are correct, but negative Venus/Sirius and visibility-limit details come from S6 rather than the only cited S5; omits the explicit variability qualification on naked-eye limits."
+    },
+    "s44": {
+      "result_sha256": "c662b4c66bd88547c530af7cee099bb0afc875b8a5ad08177227c2371487fdff",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Complete citizen-science contribution explanation with monitoring and discovery examples established by S1."
     }
   }
 }

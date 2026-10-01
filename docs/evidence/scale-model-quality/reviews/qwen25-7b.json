@@ -1,0 +1,62 @@
+{
+  "reviewer": "builder; independent source review separate",
+  "criterion": "Full draft usefulness requires supported facts, all question obligations, relevant inspectable citations and complete usable prose. Source labels at an obligation paragraph may support its subsequent sentences only when the same cited excerpt actually establishes every claim; machine per-sentence gate is reported separately. No extractive fallback counts.",
+  "cases": {
+    "s01": {
+      "result_sha256": "f5966ffd3082085f19396909880150a02a05bff25b10cc45433b6641cb5f7e20",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Complete middle-comparison, half elimination and termination explanation established by S1; paragraph support, machine citation-placement withholding."
+    },
+    "s02": {
+      "result_sha256": "a9f18ed898e0cd054845012c0dd8dd7d8d27371720c56c1b0061bf55920b67fe",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Names insertion order and degeneracy but does not explain how tree shape or search work changes; a supported screen candidate that remains incomplete as an explanation."
+    },
+    "s03": {
+      "result_sha256": "81699b77851d0359d457e2812a4b578b64f94d06cb89cc0f339a1a84681ec685",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correct sorted-array requirement and left/right tree key ordering with exact S2/S4 support; screen candidate."
+    },
+    "s04": {
+      "result_sha256": "7c7d9c7de271d7e95fec2703f351a24a7d2eef736f6ba602e7ef91764f616abe",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Both complexity claims are factual, but worst-case linked-list O(n) comes from S6 rather than cited S5; copied TeX brackets also fail the citation parser."
+    },
+    "s05": {
+      "result_sha256": "6b98fad60b50cdbc46e1182234126dc7e5473c74e59fd9b24b81caa977bb5f42",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Correctly rejects the unsorted-array premise, but attributes the quoted prerequisite sentence to S1 although that exact sentence is in S2; the cited S1 only describes searching a sorted array."
+    },
+    "s06": {
+      "result_sha256": "7a2125d81fd250b353306aefd5dffebd6407f4c2edb0a7fdc8862ff55cecb407",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly withholds unmeasured laptop latency; useful abstention only."
+    },
+    "s07": {
+      "result_sha256": "805cec52082abf99daf1713f0ae002d940cdaa260844380241ffb7d7d52a1a20",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Both green/brown inputs and soil-fertility/fertilizer-use role are established by S1; complete paragraph-supported answer withheld by the sentence-level gate."
+    }
+  }
+}

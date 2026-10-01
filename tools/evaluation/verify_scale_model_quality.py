@@ -23,11 +23,24 @@ def main():
   for s in c['sources']:
    row=con.execute('select p.body,p.sha,d.title,d.url,d.date,d.rights,d.sha from passages p join documents d on d.id=p.document where p.citation=?',(s['id'],)).fetchone()
    require(row==(s['text'],s['sha256'],s['title'],s['url'],s['date'],s['license'],s['source_sha256']),'Source bytes/provenance changed: '+s['id'])
+ for line in (E/'SHA256SUMS').read_text().splitlines():
+  h,path=line.split('  ',1);hashed(R/path,h)
+ for stage,revision,execution,library in [('initial','9db899b','execution.json','host-build'),('buffer-v2','097fe24','execution-buffer-v2.json','host-buffer-v2-build')]:
+  manifest=json.loads((E/'runs'/stage/'manifest.json').read_text())
+  require(manifest['protocol_sha256']==sha(F/'protocol.json'),'Manifest protocol differs')
+  require(manifest['execution_sha256']==sha(F/execution),'Execution policy changed')
+  hashed(R/'downloads/scale-model-quality'/library/'libpocketlore.so',manifest['library_sha256'])
+  for path,h in manifest['source_hashes'].items():
+   archived=subprocess.check_output(['git','show',revision+':'+path],cwd=R)
+   require(hashlib.sha256(archived).hexdigest()==h,'Compiled source identity changed: '+path)
+   if path.endswith('.java'):hashed(R/path,h)
  selection=json.loads((E/'selection.json').read_text());require(selection['deployment']=='unchanged production 0.5B','Optional model relabeled as deployed')
  require(set(selection['runs'])=={'baseline','qwen3-4b','qwen25-7b','qwen15-moe'},'Incomplete model matrix')
  prompts={};replay=[];counts={}
  for name,loc in selection['runs'].items():
   d=R/loc;receipt=json.loads((d/'receipt.json').read_text());pin=receipt['pin'];model(R/receipt['path'],pin)
+  pins={'baseline':R/'tools/evaluation/model-capability/baseline.json','qwen3-4b':R/'tools/evaluation/model-capability/qwen3-4b.json','qwen25-7b':F/'qwen25-7b.json','qwen15-moe':F/'qwen15-moe.json'}
+  require(pin==json.loads(pins[name].read_text()),'Pinned model differs from run')
   require(receipt['id']==name and receipt['exit_code']==0 and not receipt['timeout'],'Failed/incomplete quality run')
   require(len(pin['revision'])==40,'Mutable model revision');hashed(R/receipt['license'],receipt['license_sha256'])
   for p,h in receipt['artifact_hashes'].items():hashed(d/p,h)
