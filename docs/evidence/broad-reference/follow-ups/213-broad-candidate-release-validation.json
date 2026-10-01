@@ -1,0 +1,27 @@
+{
+  "id": "213-broad-candidate-release-validation",
+  "objective": "Freeze and revalidate the candidate after reviewed broad-edition and answer integration. Update exact APK/DEX/native/dependency/model/data/index identities and distribution notices; preserve release-v4 and task210 failed/evaluation-only editions as historical evidence. Demonstrate fresh offline installation with reference, science and reviewed broad editions, active selection persistence, source/license inspection, real supported JNI navigation, corrupt/cancelled rollback and unchanged saved model. Recompute install/update/temp/cache bytes against 50 GB and opening/native memory on emulator, with phone and GrapheneOS gates open. Run exact release checks and missing/changed-artifact regressions. Independent clean-machine reproduction, production signing ownership and human acceptance remain separate; no production key generation, publication, main advancement, private holdout or service changes.",
+  "dependencies": [
+    "212-broad-evidence-answer-integration"
+  ],
+  "scope": [
+    "tools",
+    "docs",
+    "THIRD_PARTY_NOTICES",
+    "README.md",
+    "FINDINGS.md"
+  ],
+  "acceptance_checks": [
+    [
+      "bash",
+      "tools/android-build.sh"
+    ],
+    [
+      "bash",
+      "tools/verify-release.sh"
+    ]
+  ],
+  "artifacts": [
+    "docs/evidence/broad-candidate-release.md"
+  ]
+}

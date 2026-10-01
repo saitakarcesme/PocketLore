@@ -8,12 +8,12 @@ Use an existing Python environment with PyArrow (the recorded run used Python 3.
 
 ```bash
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=2
-python tools/corpus/acquire.py /absolute/private/staging/candidates --rules tools/corpus/selection-v4.json
-python tools/corpus/curate.py /absolute/private/staging/candidates /absolute/private/staging/final --policy tools/corpus/curation-v1.json
-python tools/corpus/validate.py /absolute/private/staging/final
-python tools/corpus/test_validation.py /absolute/private/staging/final
-python tools/corpus/manifest.py /absolute/private/staging/final
-python tools/corpus/freeze.py /absolute/private/staging/final
+python tools/packs/corpus/acquire.py /absolute/private/staging/candidates --rules tools/packs/corpus/selection-v4.json
+python tools/packs/corpus/curate.py /absolute/private/staging/candidates /absolute/private/staging/final --policy tools/packs/corpus/curation-v1.json
+python tools/packs/corpus/validate.py /absolute/private/staging/final
+python tools/packs/corpus/test_validation.py /absolute/private/staging/final
+python tools/packs/corpus/manifest.py /absolute/private/staging/final
+python tools/packs/corpus/freeze.py /absolute/private/staging/final
 ```
 
 Acquisition and full validation each restrict their process to two available CPUs and 2 GiB virtual address space. HTTP uses one connection at a time, two attempts per URL, a 45-second socket timeout, and a 600 MiB per-file ceiling. Five immutable upstream shards total 1,738,494,300 bytes. Do not run several acquisition/validation processes concurrently if a combined two-core budget is required. The validator streams upstream batches but retains selected documents in memory. Actual peak RSS and elapsed acquisition time appear in `counts.json`.
@@ -43,3 +43,5 @@ Mutation tests operate on copies of genuine staged records and verify missing-ri
 ## Isolated Git handoff
 
 The attached worktree Git metadata was mounted read-only. Commits are stored in `/home/isa/PocketLore-control/corpus-acquisition/branch.git`, an independent bare copy made with `--no-hardlinks`; the main repository was not edited. Use the repository path, branch and commit in `HANDOFF.json` for review/import. No merge or push is performed.
+
+Integration note (task 210): these tools were relocated from the sealed acquisition branch. Commands that write reports must run in a new owned staging directory, never the sealed handoff. Android evaluation-edition packaging is in `tools/packs/broad/build.py`; integrity does not establish source-specific rights or semantic breadth.

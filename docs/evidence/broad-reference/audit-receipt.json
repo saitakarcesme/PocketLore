@@ -1,0 +1,42 @@
+{
+  "tools/evaluation/verify_broad_reference.py": {
+    "bytes": 9538,
+    "sha256": "1b0501c04e5b2b2db7bf5c91c58cb466aa302550ddcd5947024bd304b2b17a3d"
+  },
+  "tools/packs/broad/build.py": {
+    "bytes": 6510,
+    "sha256": "6a6d338ff8649398b7a7e57ae7ee0e034a92daf128b500070a3bf9c75f542f34"
+  },
+  "tools/evaluation/broad-reference/run_android.py": {
+    "bytes": 3973,
+    "sha256": "ffdb264d4fe8be2654116fd23ad3d7d4c9362052dba4ae8fd6252d3161422e3e"
+  },
+  "docs/evidence/broad-reference/checks/android-build.log": {
+    "bytes": 6399,
+    "sha256": "92c409f02a181bd9d72da9d4114e780a4cdb0c0d65c87fc478f9eacb3c00d80c"
+  },
+  "docs/evidence/broad-reference/checks/android-check.log": {
+    "bytes": 71,
+    "sha256": "22ea4eb45d72823614ab2fd96fbaf8c979c8aff618347302b765645e3f118ff8"
+  },
+  "docs/evidence/broad-reference/checks/verify-broad-reference.json": {
+    "bytes": 1192,
+    "sha256": "af70514164c287bcc79a4c04ebedad0f94401d2a84213cae01b2e251fc78eae1"
+  },
+  "docs/evidence/broad-reference/metrics.json": {
+    "bytes": 1661,
+    "sha256": "de88f18c97e523872a77728efab908ce2f6cd97f5a22f8d4e53e057a08d9e21f"
+  },
+  "docs/evidence/broad-reference/topic-audit.json": {
+    "bytes": 95292,
+    "sha256": "6d339be3aceaf82447420c69ddad38e8fc1b8bd8b8647a0b1db7a1a378ecd173"
+  },
+  "docs/evidence/broad-reference/disk-accounting.json": {
+    "bytes": 584,
+    "sha256": "9a7d96358147c3d68ff44cae2400d0c5f21be6e1bb3bfe78119529f66b6e34b8"
+  },
+  "docs/evidence/broad-reference/app-disk-all.txt": {
+    "bytes": 1323,
+    "sha256": "f83fbd0fb4bf4963e494524b4cd97e4de3da8cd2cc9602c55536c36d76476b02"
+  }
+}

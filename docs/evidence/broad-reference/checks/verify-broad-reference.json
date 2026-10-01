@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "meaning": "Artifact integrity, bounded emulator behavior and measured retrieval only; semantic breadth, source-specific rights and generated usefulness remain open",
+  "documents": 1076,
+  "unique_passages": 26660,
+  "areas_heuristic": {
+    "geography": 147,
+    "science": 148,
+    "computing": 143,
+    "practical reference": 80,
+    "history": 143,
+    "mathematics": 135,
+    "travel": 137,
+    "civics": 143
+  },
+  "retrieval": {
+    "import": {
+      "expected_document_top4": 29,
+      "supported_queries": 32,
+      "misses": [
+        "q03",
+        "q14",
+        "q25"
+      ],
+      "absent_with_small_pack_hits": 4,
+      "broad_absent_empty": 8,
+      "retrieval_p50_ms": 3.650847,
+      "retrieval_p95_ms": 20.282554
+    },
+    "restart": {
+      "expected_document_top4": 29,
+      "supported_queries": 32,
+      "misses": [
+        "q03",
+        "q14",
+        "q25"
+      ],
+      "absent_with_small_pack_hits": 4,
+      "broad_absent_empty": 8,
+      "retrieval_p50_ms": 4.488407,
+      "retrieval_p95_ms": 20.302313
+    }
+  },
+  "negative_regressions": [
+    "missing-license",
+    "changed-behavior-artifact",
+    "missing-pack-artifact"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "211-source-faithful-broad-edition",
+  "objective": "Repair source fidelity and rights for a distributable broad edition without lowering task210 frozen targets: at least 1000 distinct real documents, 10000 unique genuine passages, eight knowledge areas and 50 semantically reviewed documents per area. Reuse sealed bytes where valid; acquire bounded immutable article-revision HTML/XML or an alternate licensed reference route for missing formulas/units/attribution. Preserve source-specific third-party exceptions and article contributors/revisions, exclude or replace unresolved documents, and retain all old extraction failures. Use task210 audit counterexamples including Futurist cooking, Louisville Museum Plaza, Absolute value, Algae and Transport in Belgium. Publish per-document topical judgments separately from keyword labels and a rights/extraction disposition with exact provenance; do not manufacture formulas or count biography/transport-company labels as practical guidance. Produce a new compatible disk-backed edition and exercise actual Android import, inspection, cancellation and unchanged small-pack/model retention; no private holdout, services or publication.",
+  "dependencies": [
+    "210-scalable-reference-coverage"
+  ],
+  "scope": [
+    "android",
+    "tools/packs",
+    "tools/evaluation",
+    "docs",
+    "THIRD_PARTY_NOTICES",
+    "FINDINGS.md"
+  ],
+  "acceptance_checks": [
+    [
+      "bash",
+      "tools/android-build.sh"
+    ],
+    [
+      "python3",
+      "tools/evaluation/verify_source_faithful_broad.py"
+    ]
+  ],
+  "artifacts": [
+    "docs/evidence/source-faithful-broad.md"
+  ]
+}
