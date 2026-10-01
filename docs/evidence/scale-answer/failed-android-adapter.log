@@ -1,0 +1,7 @@
+java.lang.IllegalArgumentException: Invalid source hash
+	at org.pocketlore.app.ScaleAnswerAdapter.require(ScaleAnswerAdapter.java:9)
+	at org.pocketlore.app.ScaleAnswerAdapter$Snapshot.<init>(ScaleAnswerAdapter.java:16)
+	at org.pocketlore.app.ScaleWiki.answerSnapshot(ScaleWiki.java:43)
+	at org.pocketlore.app.ScaleAnswerInstrumentation.onStart(ScaleAnswerInstrumentation.java:10)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+

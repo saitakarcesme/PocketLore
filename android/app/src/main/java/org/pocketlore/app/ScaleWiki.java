@@ -40,7 +40,7 @@ final class ScaleWiki {
   String rights="Wikipedia contributors; CC BY-SA 4.0 dataset terms; source status: "+h.rights;
   String history="https://en.wikipedia.org/w/index.php?curid="+h.id+"&action=history";
   // The verified JSON record hash binds the exact retained formula/unit supplement and range map.
-  return new ScaleAnswerAdapter.Snapshot(new String[]{h.edition.manifest.getString("source_inventory_sha256"),h.shard,h.id,h.revision,h.recordHash,h.sourceHash,h.title,h.url,history,h.date,rights,"Unresolved source-specific exceptions; see retained source ranges",h.recordHash,r.wikitextScope},r.text);
+  return new ScaleAnswerAdapter.Snapshot(new String[]{h.edition.manifest.getString("source_inventory_sha256"),h.shard,h.id,h.revision,h.recordHash,h.sourceHash.toLowerCase(Locale.ROOT),h.title,h.url,history,h.date,rights,"Unresolved source-specific exceptions; see retained source ranges",h.recordHash,r.wikitextScope},r.text);
  }
  static String answerReview(Hit h,Read r,ScaleAnswerAdapter.Ledger ledger)throws Exception {
   ScaleAnswerAdapter.Snapshot snapshot=answerSnapshot(h,r);ScaleAnswerAdapter.Review review=ledger.get(snapshot);
