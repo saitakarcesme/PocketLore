@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/release/verify.py", line 87, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/release/verify.py", line 51, in main
+    p=ROOT/name;assert p.stat().st_size==identity['bytes'] and sha(p)==identity['sha256'],name
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: android/app/build/outputs/apk/debug/app-debug.apk

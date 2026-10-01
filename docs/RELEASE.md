@@ -20,6 +20,8 @@ Runtime/model pins are immutable revisions; text blocks and travel revisions are
 
 ## Offline build and candidate verification
 
+Current evidence: normal and forced builds succeed, but the forced rebuild changes DEX checksum metadata and APK hash. The exact frozen-identity verifier therefore currently fails. This is an unresolved reproducibility gate, not permission to refresh the manifest or claim the rebuilt bytes were freshly tested. See the evidence report for both hashes.
+
 ```sh
 python3 tools/android-knowledge-pack.py --cache downloads/starter-source-cache
 python3 tools/packs/build_pack.py

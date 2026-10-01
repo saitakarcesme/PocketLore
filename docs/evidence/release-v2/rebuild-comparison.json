@@ -1,0 +1,37 @@
+{
+  "measured_apk_sha256": "45b9d7f8851b015c04c3f885303e25ef32a289fa9d52de38c532642a472826ea",
+  "rebuilt_apk_sha256": "1e8032b80ee45024c131bd4512f32ccc0d76eb4bd18ecb770d142bc1436beff8",
+  "measured_bytes": 11822564,
+  "rebuilt_bytes": 11822564,
+  "changed_zip_payloads": [
+    "classes2.dex"
+  ],
+  "dexdump_disassembly_equal_excluding_input_filename_headers": true,
+  "embedded_class_checksum_differences": {
+    "Lorg/pocketlore/app/ResearchEngine$$ExternalSyntheticLambda0;": {
+      "measured": "36907638a",
+      "rebuilt": "-2e27d8d2c"
+    },
+    "Lorg/pocketlore/app/ResearchEngine$$ExternalSyntheticLambda1;": {
+      "measured": "3bcb8a0c",
+      "rebuilt": "-268f48d36"
+    },
+    "Lorg/pocketlore/app/ResearchEngine$$ExternalSyntheticLambda2;": {
+      "measured": "-3760f20fb",
+      "rebuilt": "-2e13f339"
+    },
+    "Lorg/pocketlore/app/ResearchEngine$$ExternalSyntheticLambda3;": {
+      "measured": "1ce13012a",
+      "rebuilt": "34ef8724e"
+    },
+    "Lorg/pocketlore/app/ResearchEngine$$ExternalSyntheticLambda4;": {
+      "measured": "212954bd8",
+      "rebuilt": "4ce520e3"
+    },
+    "Lorg/pocketlore/app/ResearchEngine$$ExternalSyntheticLambda5;": {
+      "measured": "26e4ebb7e",
+      "rebuilt": "33f208e0e"
+    }
+  },
+  "limitation": "Disassembly equality and identical other ZIP payloads do not establish byte reproducibility or substitute fresh validation of the rebuilt APK. Exact identity verifier intentionally fails."
+}

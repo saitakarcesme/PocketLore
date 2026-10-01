@@ -1,6 +1,6 @@
 # Release preparation: development candidate
 
-Task 100 prepares reproducible local build/install/demo instructions and an auditable candidate inventory. This is **not an accepted release, bounty submission, superiority claim or physical-device result**. Work and measurements run on LLMRig; private holdout is untouched. No private runner/state/service configuration is modified.
+Task 100 prepares local build/install/demo instructions and an auditable candidate inventory. **Final checks: Android build PASS; release verifier FAIL after a forced rebuild changed the frozen APK identity. Byte reproducibility remains unresolved.** This is **not an accepted release, bounty submission, superiority claim or physical-device result**. Work and measurements run on LLMRig; private holdout is untouched. No private runner/state/service configuration is modified.
 
 ## Reproduction and artifacts
 
@@ -62,3 +62,26 @@ The named release verifier passes actual byte/permission/dependency checks, two 
 The first candidate passed cached normal builds and its fresh demo, but forcing build tasks with `assembleDebug --rerun-tasks` failed at `validateSigningDebug`: Gradle attempted to create a debug key in read-only `/home/isa/.config/.android`. A surviving prior APK hash was initially printed by a follow-up command; that hash did **not** prove a successful rebuild. The [actual failure log](release-failures/debug-signing-readonly.log) is authoritative.
 
 The scoped build wrapper now creates/retains a project-local development keystore under ignored `downloads/android-debug`, and a Gradle init hook selects it before Android configuration is finalized. The first hook attempt ran too late; [that failure](release-failures/signing-hook-order.log) is retained too. No global configuration, preexisting private key or service was modified. This creates a new debug signing identity, so the original candidate and evidence remain in `release/` while the current candidate receives separate `release-v2/` measurements. Stable production signing remains open.
+
+## Current candidate v2 and final check status
+
+The project-local-key candidate completed a new two-cycle clean offline demonstration at `downloads/offline/run-20261001T022501Z`. Both cycles passed fresh absence/import/restart/source-inspection checks. The first also passed corrupted assets, real generation, cancellation and recreation. The final emulator retains the second fresh imported installation, airplane mode on. No model weights or app-data backups were committed.
+
+The measured APK is 11,822,564 bytes, SHA-256 `45b9d7f8851b015c04c3f885303e25ef32a289fa9d52de38c532642a472826ea`; model and pack identities are unchanged from the table above. Current debug signer SHA-256 is `283b9d4b43c98e005181f85b13fd923664f856e7a6ca2d65a34444a1b7401fad`. The [v2 manifest](release-v2/manifest.json) freezes 67 source-file identities, 14 packaged asset/library identities, the signer and artifact hashes. Its candidate APK remains archived at the ignored fresh-demo run path.
+
+| Exact question | Route | Tokens | AnswerEngine total ms |
+| --- | --- | ---: | ---: |
+| Compare evaporation and condensation | GENERATED | 62 | 26560.236 |
+| What is groundwater? | FALLBACK | 39 | 29425.595 |
+| quasar supernova | ABSTAINED | 0 | 0.097 |
+| Does evaporation cure diabetes? | ABSTAINED | 0 | 1.429 |
+
+The raw drafts repeat the imprecise comparison and withheld groundwater error described above; [current raw results](release-v2/cycle-1-loaded-result.json) preserve them. Streamed cancellation acknowledgement was 72 ms. Timing excludes retrieval/loading/import/UI and is emulator-only. The initial freeze verifier passed artifact and behavior checks, including negative mutations.
+
+A subsequent successful `bash tools/android-build.sh assembleDebug --rerun-tasks` produced a different APK hash: `1e8032b80ee45024c131bd4512f32ccc0d76eb4bd18ecb770d142bc1436beff8` (same size). `bash tools/android-build.sh` also passes, but the final exact command `bash tools/verify-release.sh` exits 1 because this rebuilt APK differs from the measured candidate. This is the final status; initial verifier passes do not supersede it.
+
+[Rebuild comparison](release-v2/rebuild-comparison.json) identifies only `classes2.dex` as a changed ZIP payload. Embedded class checksums differ for six synthetic ResearchEngine lambdas; dexdump disassembly is equal after stripping the two input-filename headers. All other ZIP payloads, including native libraries and licensed assets, match. This diagnostic does not prove complete binary/behavioral equivalence. The exact-hash gate was not relaxed, the rebuilt APK was not substituted into the measured manifest, and the newly rebuilt bytes have not received another fresh-install demo.
+
+This is an unresolved build-tool reproducibility issue under the cached rig toolchain, not a hardware or private-coordinator blocker. A follow-up must determine deterministic DEX metadata generation and remeasure the resulting exact APK before freezing a later candidate. Normal cached builds and source/data reproducibility are not clean-build byte reproducibility. The application APK size changed between the historical 17,794,384-byte artifact and the regenerated 11,822,564-byte candidate while the recorded asset/native payload identities remained equal; the current verifier binds the exact measured artifact rather than assuming historical packaging equivalence.
+
+Evidence: [passing build log](release-v2/build.log), [forced-build log](release-v2/forced-rebuild.log), [initial pre-rebuild verification](release-v2/initial-verification.txt), [final failed identity check](release-failures/rebuilt-apk-identity.txt). Signing/read-only and hook-order failures remain preserved separately. Product, physical, independent review and distribution gates remain open.

@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "environment": "Existing AOSP x86_64 emulator, fresh app installs; not physical Android/GrapheneOS",
+  "checks": [
+    "APK permissions/runtime dependencies and no installed Play Services",
+    "original app data archived and tar verified",
+    "cycle-1 verified empty install and no-model fallback",
+    "cycle-1 local SAF model import/hash/restart/source inspection",
+    "real offline answer invocation, abstention, cancel and recreation",
+    "corrupt GGUF rejection and import-dialog cancellation retain saved hash",
+    "cycle-1 SAF pack import/restart/corrupt rejection/NPS inspection",
+    "cycle-2 verified empty install and no-model fallback",
+    "cycle-2 local SAF model import/hash/restart/source inspection",
+    "cycle-2 SAF pack import/restart/corrupt rejection/NPS inspection"
+  ],
+  "artifacts": {
+    "app-debug.apk": {
+      "bytes": 11822564,
+      "sha256": "45b9d7f8851b015c04c3f885303e25ef32a289fa9d52de38c532642a472826ea"
+    },
+    "app-debug-androidTest.apk": {
+      "bytes": 116298,
+      "sha256": "dbd2c7bb54abfa0a8ebfe93eafe36c88b9cad94f4cbcb0113cf97d50bf463e8c"
+    },
+    "qwen2.5-0.5b-instruct-q4_k_m.gguf": {
+      "bytes": 491400032,
+      "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+    },
+    "english-reference.plpack": {
+      "bytes": 159327,
+      "sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea"
+    }
+  },
+  "final_state": "Second clean installation with locally imported model/pack; airplane mode on, Wi-Fi/mobile data off; old app data archived, not restored",
+  "limitations": "Offline execution and control behavior, not research-quality acceptance; no packet capture or physical-radio test"
+}

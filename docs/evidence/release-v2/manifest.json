@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "candidate": "development debug; not accepted release",
+  "demo_run": "run-20261001T022501Z",
+  "source_commit": "c00c9fb5951831e371ce89100c8f16641e74c8bc",
+  "signer": "Signer #1 certificate DN: CN=Android Debug, O=Android, C=US\nSigner #1 certificate SHA-256 digest: 283b9d4b43c98e005181f85b13fd923664f856e7a6ca2d65a34444a1b7401fad\nSigner #1 certificate SHA-1 digest: d93f39da3c1522d4ec910d450e7e62cfe048e293\nSigner #1 certificate MD5 digest: 27d5d8937ebeee5e3cf410f14fb804ea\n",
+  "source_files": {
+    "android/.gitignore": "f0d90fe6dd188cfa5cbac987949cfa3893a2c1ac3cf6dbfcb837e0e2abb698b1",
+    "android/app/build.gradle": "469825f99e581a87b803e43528eeee528a1401b59f5c6356a8fb40e2c727b6a8",
+    "android/app/src/androidTest/java/org/pocketlore/app/AnswerSmokeInstrumentation.java": "54ed210c98457b017102b059191f1df06194a3d7cf6fbbe2b4b22e980a47fcd2",
+    "android/app/src/androidTest/java/org/pocketlore/app/NativeSmokeInstrumentation.java": "e8331ad7656b94bc432778af17021d0e3d4b91bc2e2b3a0f585511c41043e34b",
+    "android/app/src/androidTest/java/org/pocketlore/app/OfflineInstrumentation.java": "562246c3cf5d25d38534a1bf2fb26c6dddf8d7a50616850a144e490deb13c477",
+    "android/app/src/androidTest/java/org/pocketlore/app/PackSmokeInstrumentation.java": "592f404d1f64cdff42ecbca8138efbdae3a77edcb784860e59af886f617e4bcc",
+    "android/app/src/androidTest/java/org/pocketlore/app/ResourceInstrumentation.java": "c2fe181ce79747170fa6f71e1915019f72fcf62b3817eb4d09d374188cc1494c",
+    "android/app/src/androidTest/java/org/pocketlore/app/RetrievalSmokeInstrumentation.java": "95c2c82ceaf16661f8b510fecd38ebaa77c46cd3b8fbd2c68fe90dd250ef177d",
+    "android/app/src/androidTest/java/org/pocketlore/app/SynthesisInstrumentation.java": "2c87e2fecfff36d697f74ff2f7fbfda3af63f8b3dc09a57032969a24b46f2a20",
+    "android/app/src/androidTest/java/org/pocketlore/app/TravelChecks.java": "b7cde3201f5635f38c3a2abc747bbfe9050a886b77c13f6c278686d72e05aec7",
+    "android/app/src/androidTest/java/org/pocketlore/app/TravelInstrumentation.java": "62fa438cf2c5d55cfa31e649dca16fe3f738c4d471af91149bde445b25abf9e7",
+    "android/app/src/main/AndroidManifest.xml": "481202082692010a038dd517e6737a87f5f816a59b4f89f8854279cdba8fcfca",
+    "android/app/src/main/assets/.gitignore": "cfa3bde05125bfe338ef10b62a4e8a9d29e1bfe9dac55b2e72102d1c41910827",
+    "android/app/src/main/assets/dc-monuments-manifest.json": "dab4b680420c3bbacdfd61f17483016e421a452e468ab31695321453f1b54a60",
+    "android/app/src/main/assets/licenses/answer-model-notice.txt": "9d79291db5e14170605e50f436ae99f10ce9e7389ab6184e66d5c78a34c4d374",
+    "android/app/src/main/assets/licenses/llama.cpp.txt": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+    "android/app/src/main/assets/licenses/qwen2.5-Apache-2.0.txt": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+    "android/app/src/main/assets/licenses/smoke-model-Apache-2.0.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "android/app/src/main/assets/licenses/synthesis-model-Apache-2.0.txt": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+    "android/app/src/main/assets/licenses/synthesis-model-notice.txt": "c4e92009450a020a87f15bfcf896f7bcb7006312f01e0c82f65d495908336dd1",
+    "android/app/src/main/assets/licenses/synthesis-qwen3-Apache-2.0.txt": "5de36594c10839788a8c589443a8ef9d8b8d17c65a1b5807206ae037fc36c6bd",
+    "android/app/src/main/assets/licenses/synthesis-qwen3-notice.txt": "23c8c78dbde2e46aeb736a4fe764cf5157275548033edc82577049f9b6f09c52",
+    "android/app/src/main/assets/licenses/travel-wikidata-notice.txt": "9fe4a0a077cd1ed4a6743c7ae9c7779666be6c348297a5b679a76f03ff755c70",
+    "android/app/src/main/cpp/CMakeLists.txt": "a72e52f97e8bcc71d71c94965d74970c8a19a7897c2b92cc72db39d6caf8af3e",
+    "android/app/src/main/cpp/runtime.cpp": "38ca69aaf38ecbfb7d032143df1f72deaa8d2d92e07a142614d37c8aa820b495",
+    "android/app/src/main/java/org/pocketlore/app/AnswerEngine.java": "b7ce2663d5af2160fd1704f4378505ca5d80d7037b746fa74f23b065323b61c6",
+    "android/app/src/main/java/org/pocketlore/app/EvidencePrompt.java": "e2630efa5126a29f63d5ef2195bad30137de08377476288a9ef082309d477b9e",
+    "android/app/src/main/java/org/pocketlore/app/KnowledgePack.java": "a57f6f343674c78929727063dee01f9588a0a1056aae4d0a83e17e242d6d2b82",
+    "android/app/src/main/java/org/pocketlore/app/MainActivity.java": "138b469eddeb99a28ae3c414afec82149f66f52e77ef435b8c06d138d9668e9f",
+    "android/app/src/main/java/org/pocketlore/app/ModelImport.java": "99c7ab6051f2952fa5084acee1a4bef4ce7ea169a012f3f7225e251763da6e46",
+    "android/app/src/main/java/org/pocketlore/app/NativePanel.java": "d28c49fcfbc4421503a40a7888f1e846925c9d75a531e78b375a86724e22b206",
+    "android/app/src/main/java/org/pocketlore/app/NativeRuntime.java": "e07fd01abd8111144ccdff8cb04917371fae000a3175da03fcb572190aeadbc3",
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "a22bece047bf751d0d8adc71cc818550b6d6bf3f603c257f525ac7af2be5aede",
+    "android/app/src/main/java/org/pocketlore/app/ResourceStorage.java": "75d783b83c667b367b88bac634cf6a499e5d4a031d0c5eb9991164586a5ef265",
+    "android/app/src/main/java/org/pocketlore/app/TravelActivity.java": "35d0e80eca9dbe614c07b830d1101ff7a598a2a8d09a6475f6a5a919776d6555",
+    "android/app/src/main/java/org/pocketlore/app/TravelCatalog.java": "b9ae6ee94d5d37138e7d17651ef34fbf4a44e86cacceb8917fbf5fb2b5782cc9",
+    "android/app/src/main/java/org/pocketlore/app/TravelCommands.java": "a5b5adb2e086465bfeba489b5bedd81ae22dce160990080af063033068d73ff1",
+    "android/app/src/main/java/org/pocketlore/app/TravelTools.java": "523a9dfbafdcd94f1ef897fd28792d9330fd43cb3190c0f03d3fae32e7e51a15",
+    "android/app/src/test/java/org/pocketlore/app/AnswerEngineCheck.java": "96aa3635f55f7be3ced5ca69276e9751ad978afcd1e280e722df425c96653761",
+    "android/app/src/test/java/org/pocketlore/app/ResearchEngineCheck.java": "0f7e8b39669a17ea02d65a841e610dd18728e9ca801100f334cbe155101cea2a",
+    "android/app/src/test/java/org/pocketlore/app/RetrievalIndexCheck.java": "3c8c4c55bf4c50cac0ef75d48fc33b28b107eedf069233221fea284cb185dd54",
+    "android/app/src/test/java/org/pocketlore/app/SynthesisCheck.java": "bd3e84e02f93133f4e327100671bfb2981f9a446e058d45e2454e5931e286bd4",
+    "android/app/src/test/java/org/pocketlore/app/TemporalScopeCheck.java": "4f6c8d92fefb1da94042ab6d74f5de825a1906534400c85c5d7cb563f4c84eb5",
+    "android/build.gradle": "048ecfefe09971849fc8c9326de9d0e8af7e50e371aed980e2e1617124bb969f",
+    "android/gradle.properties": "19f172c25c4cdabbea0d32804ebc91ccf312e37ca7bd4ba76ca9fc24406f1063",
+    "android/knowledge-sources.json": "f786b4f019deeb33a198ca5f9585d7a6bc5b05caaf267fbdc9d2a22ce39b2c7c",
+    "android/settings.gradle": "94b571f1f197cb2a4d4226cfba232221b8dacd4e742ad9624f04263f341b56c4",
+    "tools/android-build.sh": "c5806df4a85f3f6def1135591bceba1630187c68226ca578b8be52597e789f5d",
+    "tools/answers/check.sh": "9fbdf47c2f59f14b92f0905e7afe24a02b8e350f4750ef06af241fe5c8fc642f",
+    "tools/answers/development-cases.json": "1209c55fea82f39ebe2d22004b3b6cff259e55442d6f255a7dd9b884ee94ae75",
+    "tools/answers/fetch-model.sh": "de68ee0e35ee95728b5bc80c65bdc62e14aac5885f62f09ace94757eb9855551",
+    "tools/answers/model.env": "2d932887a64251c6561f4082739136be2a204728c8acd8fb7a1a0eff69526d97",
+    "tools/answers/ui-smoke.py": "394a8a294e60694398afba9e0b7e5cfd888ee5b70f4ceab58697ab8fb45d96f3",
+    "tools/packs/build_pack.py": "d0cb979c2ad00c9f2818636a85baf1673892ee4e0b910fcd066773b29a2b9a91",
+    "tools/packs/build_travel.py": "a6c9f8ae106ba1d8e01ff83097f15866d30d3f1c1db4d414e13950e3cf1bdab9",
+    "tools/packs/sources.lock.json": "1f7d8cf0cfcb93d419c86d97f7c9719ebc230d6592e7a95c03ef681426135638",
+    "tools/packs/travel-sources.lock.json": "5016fa4e06089d02cb6c4fa7f333a003f17affa377ffb9ba865209debc2610b3",
+    "tools/packs/ui_smoke.py": "365563c804e690478690bc07bd7173590192bf767975a10be967c2b29018537a",
+    "tools/packs/verify_pack.py": "410a8572a4a8681f614007ea2f18f5145514b085f83998ab2d3ce30f1e0a9674",
+    "tools/packs/verify_travel.py": "828b1a28c4a5d77f40fd44e490316941a313e1532e2da862b8b56a3203421432",
+    "tools/release/debug-signing.gradle": "9d8a8e697b504eaa89985d05837c5b882de84397616d8de48181da99b3c55b4b",
+    "tools/release/verify.py": "9ad47f0486fe3ba4be6dc812d96ad0a974a8f51e5392eea287cfb6beb3272821",
+    "tools/runtime/build-native.sh": "3a80b27c6d9ad1a1b3ae6681fadf40705e4e7c38701cba227084b0614e2b3a64",
+    "tools/runtime/fetch.sh": "f4089a94a767ec3b6b6bcb68829b1d37c1327766f0237c8cbc692835a48b0abe",
+    "tools/runtime/pins.env": "1cb0aa2695c803496945dac1e9a3b7fadcf63e33b5b1434dbe70a284b973840a",
+    "tools/runtime/start-emulator.sh": "3c0ac04e6badfc9a81edae5590ccac496a2fb0c2951dfab62e6f315fb90e8e0c",
+    "tools/runtime/verify-native.sh": "cc8753e4cf492baadb1efc451985dd92a1d6c1109e975603f8203f61648c87d2"
+  },
+  "build_tools": {
+    "jdk": "Temurin 17.0.20.1+1",
+    "gradle": "8.13",
+    "android_gradle_plugin": "8.9.2",
+    "sdk": "35",
+    "build_tools": "35.0.0",
+    "ndk": "r27c",
+    "cmake": "3.22.1"
+  },
+  "runtime": {
+    "llama_cpp_revision": "bb4caa7540188872173c44d161602d9271386413",
+    "license": "MIT",
+    "backends": [
+      "CPU"
+    ],
+    "abis": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "java_runtime_dependencies": [],
+    "static_support": [
+      "NDK libc++ and compiler runtime; toolchain licenses apply"
+    ],
+    "ndk_notice_sha256": "f96f763beb66a7ba7a667647fc64c0226ace875e590c831fdd9579ec1c1d91e1"
+  },
+  "artifacts": {
+    "android/app/build/outputs/apk/debug/app-debug.apk": {
+      "bytes": 11822564,
+      "sha256": "45b9d7f8851b015c04c3f885303e25ef32a289fa9d52de38c532642a472826ea"
+    },
+    "downloads/answers/model/qwen2.5-0.5b-instruct-q4_k_m.gguf": {
+      "bytes": 491400032,
+      "sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db"
+    },
+    "downloads/packs/english-reference.plpack": {
+      "bytes": 159327,
+      "sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea"
+    }
+  },
+  "apk_entries": {
+    "lib/arm64-v8a/libpocketlore.so": {
+      "bytes": 5594632,
+      "sha256": "7b4f93a27ebb039fc0e20ebf1584647887cc2e6f205fab375020a4d5e2264607"
+    },
+    "lib/x86_64/libpocketlore.so": {
+      "bytes": 6074216,
+      "sha256": "e8daa8b88affff3cdcfb186ee00d4e97f07fef47a959b0296acb00133f6b7656"
+    },
+    "assets/dc-monuments-manifest.json": {
+      "bytes": 476,
+      "sha256": "dab4b680420c3bbacdfd61f17483016e421a452e468ab31695321453f1b54a60"
+    },
+    "assets/dc-monuments.tsv": {
+      "bytes": 909,
+      "sha256": "6cb245864d7b42facc8b987d7e4843f795b87912062d09a8bbddcdc034877924"
+    },
+    "assets/licenses/answer-model-notice.txt": {
+      "bytes": 567,
+      "sha256": "9d79291db5e14170605e50f436ae99f10ce9e7389ab6184e66d5c78a34c4d374"
+    },
+    "assets/licenses/llama.cpp.txt": {
+      "bytes": 1078,
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+    },
+    "assets/licenses/qwen2.5-Apache-2.0.txt": {
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    "assets/licenses/smoke-model-Apache-2.0.txt": {
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "assets/licenses/synthesis-model-Apache-2.0.txt": {
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    "assets/licenses/synthesis-model-notice.txt": {
+      "bytes": 681,
+      "sha256": "c4e92009450a020a87f15bfcf896f7bcb7006312f01e0c82f65d495908336dd1"
+    },
+    "assets/licenses/synthesis-qwen3-Apache-2.0.txt": {
+      "bytes": 11544,
+      "sha256": "5de36594c10839788a8c589443a8ef9d8b8d17c65a1b5807206ae037fc36c6bd"
+    },
+    "assets/licenses/synthesis-qwen3-notice.txt": {
+      "bytes": 486,
+      "sha256": "23c8c78dbde2e46aeb736a4fe764cf5157275548033edc82577049f9b6f09c52"
+    },
+    "assets/licenses/travel-wikidata-notice.txt": {
+      "bytes": 665,
+      "sha256": "9fe4a0a077cd1ed4a6743c7ae9c7779666be6c348297a5b679a76f03ff755c70"
+    },
+    "assets/water-science.tsv": {
+      "bytes": 5380,
+      "sha256": "a39d54b412f469086bd1ee96425245e36f446ac1a77b0b5730c60e5603084492"
+    }
+  },
+  "evidence": {
+    "summary.json": "2a2af48e8e05e5831bb319447dd34e3386ce263c8675cad8d2292c29c1326b1c",
+    "cycle-1-loaded-result.json": "83c95259a382fc4e7d9692df31daf6cef6c50fd5e6b86bf9a65eb85debc3c990",
+    "cycle-1-fresh-result.json": "bb8887f6b301de8b6241bd36fac65f9a7d7bcf28276660671199c5fc915cb7b9",
+    "cycle-2-fresh-result.json": "489015ac393f2324eb25a9caf2f79a6aee392bc9e311bcc060a2724bb3fb071e",
+    "permissions.txt": "4bc3f67cf145849d3191901592a6a5c266397d74a031c6df278cf9327cff87eb",
+    "runtime-dependencies.txt": "eab81c900e5bf6220b85ee1826766fca7695c8d9acee5cbe333b6c063756b1e4",
+    "fingerprint.txt": "e07fd7d414c3b262449a1a48ec96db76edc31b2273ac896fc04f4f44870e7426",
+    "abi.txt": "aaf631698ae5160ceb04a97681a14887fdcab47cd6e0f163c87485b3b1340b62",
+    "cycle-1-model-ui/result.json": "478dcae85daf88321bec2eb6c03f8adc974223bfcd00a4777f2ef4c995780fba",
+    "cycle-1-model-ui/source-dialog.png": "73cd53586292a01fead1fb078f85c7cf43a80a17d96a300bb85ab52ae90145d8",
+    "cycle-1-pack-ui/result.json": "2cb1f64da744d49cba3d51647627f0fa2a184f68edf73103cb87f5ba66a9fa44",
+    "cycle-2-model-ui/result.json": "478dcae85daf88321bec2eb6c03f8adc974223bfcd00a4777f2ef4c995780fba",
+    "cycle-2-pack-ui/result.json": "2cb1f64da744d49cba3d51647627f0fa2a184f68edf73103cb87f5ba66a9fa44"
+  },
+  "source_locks": {
+    "tools/runtime/pins.env": "1cb0aa2695c803496945dac1e9a3b7fadcf63e33b5b1434dbe70a284b973840a",
+    "tools/answers/model.env": "2d932887a64251c6561f4082739136be2a204728c8acd8fb7a1a0eff69526d97",
+    "tools/packs/sources.lock.json": "1f7d8cf0cfcb93d419c86d97f7c9719ebc230d6592e7a95c03ef681426135638",
+    "tools/packs/travel-sources.lock.json": "5016fa4e06089d02cb6c4fa7f333a003f17affa377ffb9ba865209debc2610b3",
+    "android/knowledge-sources.json": "f786b4f019deeb33a198ca5f9585d7a6bc5b05caaf267fbdc9d2a22ce39b2c7c"
+  }
+}
