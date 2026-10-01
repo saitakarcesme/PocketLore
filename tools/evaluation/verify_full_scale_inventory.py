@@ -36,6 +36,13 @@ def main():
     try:checked(copy,s)
     except ValueError:pass
     else:raise ValueError('Changed/missing real artifact accepted')
+ large=json.loads((E/'large-android/large-update.json').read_text());base=json.loads((E/'large-android/large-base.json').read_text());manifest=json.loads((E/'places-stage-2.json').read_text())
+ require(large['shared_cities'] and large['source_records']==10186606 and large['pid']!=base['pid'],'Full-shard update/restart receipt')
+ require(large['new_bytes_written']<1100000000 and large['observed_precommit_bytes']<50000000000,'Full-shard delta duplicated edition or exceeded budget')
+ for f in manifest['files']:
+  remote='files/scale-library/objects/'+f['sha256']
+  actual=subprocess.check_output(ADB+['shell','run-as','org.pocketlore.app','sha256sum',remote],text=True).split()[0]
+  require(actual==f['sha256'],'Installed full-shard/shared file changed')
  for p in ['android/app/build/outputs/apk/debug/app-debug.apk','android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk']:subprocess.run(ADB+['install','-r',str(ROOT/p)],check=True)
  subprocess.run(ADB+['shell','run-as','org.pocketlore.app','mkdir','-p','files/shard-fixtures'],check=True)
  for p in list((ROOT/'downloads/full-scale/fixtures').glob('*.plscale'))+[ROOT/'downloads/full-scale/places-fixture/places.plscale']:
@@ -45,10 +52,15 @@ def main():
  run=subprocess.run(ADB+['shell','am','instrument','-w','org.pocketlore.app.test/org.pocketlore.app.ShardUpdateInstrumentation'],text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,check=True)
  (out/'instrumentation.log').write_text(run.stdout);require('INSTRUMENTATION_CODE: -1' in run.stdout,'Android transaction failed; '+str(out))
  raw=subprocess.check_output(ADB+['shell','run-as','org.pocketlore.app','cat','files/shard-update-result.json']);(out/'android.json').write_bytes(raw);r=json.loads(raw)
- require(r['status']=='PASS' and r['shared_object'] and r['corrupt_cancel_rollback'] and r['restart_selection'] and r['changed_missing_shared_object_rejected'] and r['interrupted_stage_recovery'],'Update recovery gate')
+ require(r['status']=='PASS' and r['shared_object'] and r['corrupt_cancel_rollback'] and r['restart_selection'] and r['changed_missing_shared_object_rejected'] and r['interrupted_stage_recovery'] and r['removed_shard_reclaimed'],'Update recovery gate')
  require(len(r['cities'])==2 and all(x['count']>0 for x in r['cities']),'Android multi-shard place coverage')
  require(r['wiki_observed_precommit_bytes']>=r['wiki_after_bytes'] and r['new_temporary_peak']<r['wiki_after_bytes'],'Delta peak did not retain/reuse content')
  require(r['model_sha256']=='74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db','Production model changed')
+ subprocess.run(ADB+['shell','am','force-stop','org.pocketlore.app'],check=True)
+ restart=subprocess.run(ADB+['shell','am','instrument','-w','-e','mode','restart','org.pocketlore.app.test/org.pocketlore.app.ShardUpdateInstrumentation'],text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,check=True)
+ (out/'restart.log').write_text(restart.stdout);require('INSTRUMENTATION_CODE: -1' in restart.stdout,'Separate process reload failed')
+ raw=subprocess.check_output(ADB+['shell','run-as','org.pocketlore.app','cat','files/shard-restart-result.json']);(out/'restart.json').write_bytes(raw);restart_result=json.loads(raw)
+ require(restart_result['pid']!=r['pid'] and restart_result['collections']==2 and restart_result['model_sha256']==r['model_sha256'],'Restart changed model/catalog')
  print('PASS: all sealed host hashes/counts, frozen exact/redirect/city results, changed/missing artifacts and fresh Android shared-object delta/rollback/subset checks.',flush=True)
  print('Raw emulator result:',out,flush=True)
  print('BLOCKED: full 41+GB installed inventory and full-scale update peak have not been measured on an approved Android environment; existing emulator userdata is about 6GB. Host/subset results cannot satisfy that gate.',file=sys.stderr)
