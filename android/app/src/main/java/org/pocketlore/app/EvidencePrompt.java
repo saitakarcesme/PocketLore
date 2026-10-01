@@ -53,11 +53,19 @@ final class EvidencePrompt {
     }
     static Set<String> uncovered(String question,ResearchEngine.Result evidence) {return uncovered(question,evidence,900);}
     static Set<String> uncovered(String question,ResearchEngine.Result evidence,int limit) {
-        Set<String> missing=new TreeSet<>(ResearchEngine.tokenize(question));missing.removeAll(QUERY_WORDS);
+        Set<String> missing=new TreeSet<>(coverageTerms(question));missing.removeAll(QUERY_WORDS);
         Set<String> covered=new HashSet<>();
-        for(ResearchEngine.Hit hit:evidence.hits)for(String word:ResearchEngine.tokenize(excerpt(hit,limit)))covered.add(inflection(word));
+        for(ResearchEngine.Hit hit:evidence.hits)for(String word:coverageTerms(excerpt(hit,limit)))covered.add(inflection(word));
         missing.removeIf(word->covered.contains(inflection(word)));
         return missing;
+    }
+    // Coverage-only spelling/abbreviation equivalents. Never rewrite source text,
+    // prompts, ranking or claim validation, and never drop unsupported qualifiers.
+    private static List<String> coverageTerms(String text) {
+        List<String> words=new ArrayList<>();
+        for(String word:ResearchEngine.tokenize(text.replaceAll("(?i)\\bback\\s+up\\b", "backup")))
+            words.add(word.equals("uv") ? "ultraviolet" : word);
+        return words;
     }
     private static String inflection(String word) {return word.length()>3 && word.endsWith("s") && !word.endsWith("ss") ? word.substring(0,word.length()-1) : word;}
     static String build(String question,ResearchEngine.Result evidence) {return build(question,evidence,900);}
