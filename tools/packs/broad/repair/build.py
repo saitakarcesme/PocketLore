@@ -24,11 +24,15 @@ def build(out,review):
  from seal import validate
  seal=validate();sealed={d['id']:d for d in seal['documents']}
  reviews=json.loads(review.read_text());assert reviews['status']=='builder-source-reviewed'
- approved={r['id']:r for r in reviews['documents']};areas=collections.Counter();docs=[];excluded=[]
+ approved={r['id']:r for r in reviews['documents']};areas=collections.Counter();docs=[];excluded=[];document_dedup={}
  for p in sorted((STAGE/'extracted').glob('*.json'),key=lambda p:int(p.stem)):
   d=json.loads(p.read_text());reason=eligible(d)
   if reason:excluded.append({'id':d['id'],'title':d['title'],'reason':reason,'notices':d['attribution_notices']});continue
   assert sha(STAGE/(d['id']+'.html'))==d['html_sha256']==sealed[d['id']]['html_sha256'] and d['revision']==sealed[d['id']]['revision']
+  body_identity=digest(norm('\n\n'.join(b['text'] for b in d['blocks'])).encode())
+  if body_identity in document_dedup:
+   excluded.append({'id':d['id'],'title':d['title'],'reason':'Duplicate normalized source document','same_as':document_dedup[body_identity]});continue
+  document_dedup[body_identity]=d['id']
   if d['id'] in approved:
    r=approved[d['id']];assert r['html_sha256']==d['html_sha256'] and r['support_text'] in '\n'.join(x['text'] for x in d['blocks']);assert r['reason'];area=r['area'];areas[area]+=1
   else:area='Other reference (not counted toward area quotas)'

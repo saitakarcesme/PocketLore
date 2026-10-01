@@ -20,7 +20,9 @@ if known:
  run(adb+['shell','am','force-stop','org.pocketlore.app'],'stop-before-fixture.txt')
  for suffix in ['.plpack','.sqlite']:run(adb+['exec-out','run-as','org.pocketlore.app','cat','files/pack-library/'+old+suffix],'archived-'+old+suffix)
  catalog['collections']=[e for e in entries if e not in known]
- run(adb+['exec-in','run-as','org.pocketlore.app','sh','-c','cat > files/pack-library/catalog.json'], 'replace-owned-catalog.txt',(json.dumps(catalog)+'\n').encode())
+ run(adb+['exec-in','run-as','org.pocketlore.app','sh','-c','cat > files/pack-library/catalog.json.repair-stage'], 'replace-owned-catalog.txt',(json.dumps(catalog)+'\n').encode())
+ run(adb+['shell','run-as','org.pocketlore.app','mv','files/pack-library/catalog.json.repair-stage','files/pack-library/catalog.json'],'commit-owned-catalog.txt')
+ assert json.loads(run(adb+['exec-out','run-as','org.pocketlore.app','cat','files/pack-library/catalog.json'],'prepared-catalog.json'))==catalog,'Fixture catalog replacement failed'
 run(adb+['shell','run-as','org.pocketlore.app','mkdir','-p','files/broad-tests'],'mkdir.txt')
 corrupt=out/'corrupt.plpack'
 with zipfile.ZipFile(pack) as z,zipfile.ZipFile(corrupt,'w',zipfile.ZIP_DEFLATED) as w:

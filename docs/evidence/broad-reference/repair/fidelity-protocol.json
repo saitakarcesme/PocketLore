@@ -1,0 +1,17 @@
+{
+  "purpose": "Source formula/unit visibility only; no generation success credit",
+  "cases": [
+    {
+      "question": "absolute value 3",
+      "citation": "pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-991-b62dfff2ee9e6bd1",
+      "text": "In mathematics, the absolute value or modulus of a real number [TeX: {\\displaystyle x}] , denoted [TeX: {\\displaystyle |x|}] , is the (non-negative) magnitude of [TeX: {\\displaystyle x}] measured without regard to its sign. Namely, [TeX: {\\displaystyle |x|=x}] if [TeX: {\\displaystyle x}] is a positive number, and [TeX: {\\displaystyle |x|=-x}] if [TeX: {\\displaystyle x}] is negative (in which case [TeX: {\\displaystyle -x}] is positive), and [TeX: {\\displaystyle |0|=0}] . For example, the absolute value of 3 is 3, and the absolute value of \u22123 is also 3. The absolute value of a number may be thought of as its distance from zero.",
+      "required": "[TeX: {\\displaystyle |0|=0}]"
+    },
+    {
+      "question": "algae 50 metres",
+      "citation": "pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-633-4aab155c31f7251e",
+      "text": "Algae (/\u02c8\u00e6ld\u0292i\u02d0/ ^(\u24d8) AL-jee,[3] UK also /\u02c8\u00e6l\u0261i\u02d0/ AL-ghee; sing.: alga /\u02c8\u00e6l\u0261\u0259/ ^(\u24d8)) are any of a large and diverse group of photosynthetic organisms. It excludes the land plants (embryophytes). Such organisms range from microscopic unicellular microalgae (including cyanobacteria and phytoplankton) to seaweeds, multicellular macroalgae which may grow up to 50 metres (160 ft) in length. Most algae are aquatic (especially marine), and some form cohesive colonies. Freshwater algae include Charophyta such as the filamentous Spirogyra and the grasslike stoneworts. Most algae are plankton carried passively by water, although some macroalgae have holdfasts for anchorage.",
+      "required": "50 metres (160 ft)"
+    }
+  ]
+}

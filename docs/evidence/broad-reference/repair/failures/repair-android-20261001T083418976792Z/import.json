@@ -1,0 +1,8 @@
+{
+  "mode": "import",
+  "pid": 14667,
+  "saved_model_before": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "existing_broad_reused": true,
+  "status": "FAIL",
+  "failure": "java.lang.AssertionError: Broad import did not retain small editions: 3 of 3 collections active · 1094 distinct source documents · 26870 searchable passages"
+}

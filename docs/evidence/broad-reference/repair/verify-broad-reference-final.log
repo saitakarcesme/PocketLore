@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "documents": 1095,
+  "genuine_unique_passages": 40681,
+  "builder_source_reviewed_areas": {
+    "geography": 50,
+    "computing": 50,
+    "science": 50,
+    "history": 50,
+    "mathematics": 50,
+    "travel": 50,
+    "civics": 50,
+    "practical reference": 50
+  },
+  "preserved_math_representations": 8179,
+  "preserved_source_notices": 36,
+  "retrieval": {
+    "import": {
+      "expected_document_top4": 24,
+      "of": 32,
+      "misses": [
+        "q04",
+        "q14",
+        "q18",
+        "q24",
+        "q25",
+        "q27",
+        "q28",
+        "q30"
+      ],
+      "p50_ms": 3.179013,
+      "p95_ms": 37.288327
+    },
+    "restart": {
+      "expected_document_top4": 24,
+      "of": 32,
+      "misses": [
+        "q04",
+        "q14",
+        "q18",
+        "q24",
+        "q25",
+        "q27",
+        "q28",
+        "q30"
+      ],
+      "p50_ms": 3.425385,
+      "p95_ms": 36.266712
+    }
+  },
+  "negative_regressions": [
+    "missing-license",
+    "missing-legal-text",
+    "changed-artifact",
+    "missing-artifact"
+  ],
+  "limitations": "Builder semantic judgments require independent review; retrieval is not generated support; emulator is not phone acceptance"
+}

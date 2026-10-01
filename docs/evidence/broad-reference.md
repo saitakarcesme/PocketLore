@@ -1,10 +1,58 @@
-# Task 210 repair 1: source-faithful broad edition
+# Task 210 repair 1: rendered broad-reference edition
 
-Current repair is in progress; the default objective verifier intentionally fails until a new edition, source-body semantic reviews and actual Android behavior are available. The prior report below is preserved failed evidence, not current acceptance. The critic rejected missing formulas/units, unresolved attribution and keyword-derived topic quotas.
+Builder result: the required Android build and behavioral verifier pass for a newly imported edition with **1,095 distinct documents and 40,681 unique genuine paragraphs**. The unchanged eight-area quota now has **50 source-body-reviewed documents per area**, with exact supporting excerpts and rationales in the [400-record builder review](broad-reference/repair/semantic-review.json). This is builder evidence for independent review, not release acceptance. The 695 other admitted documents do not count toward semantic area quotas. Coverage remains selective, with alphabetic and Western/historical biases; it is not encyclopedic completeness.
 
-The repair uses bounded official Wikipedia revision lookup and rendered oldid HTML, preserving exact acquisition receipts. It copies mathematical TeX and rendered numeric units, excludes quoted prose/media, retains references and source-specific attribution notices, and excludes unresolved extra licensing terms. Seven extraction regressions pass on actual source defects plus negative fixtures. The initially fast per-title API requests reached HTTP 429; they were stopped, failures retained, and replaced by batched metadata lookup with serial paced HTML acquisition that stops on any further 429. No source worker staging is modified.
+## Repair of the rejected source defects
 
-Partial source-body reviews, exact supporting excerpts/revisions/hashes and explicitly pending areas are in [the review record](broad-reference/repair/semantic-review.json). These are builder judgments, distinct from independent review. A title shortlist never counts as a completed quota. The original 40 questions and 1,000/10,000/eight/50 targets are unchanged. Current source/pack construction and new-fixture Android tooling are checkpointed as unvalidated until actual runs complete.
+The original 2023 extraction and failed checkpoint remain below. Their missing content is not repaired by invented facts or hash checks. A separate edition uses 1,173 bounded official Wikipedia rendered revision snapshots acquired on 2026-10-01, preserving immutable revision IDs, actual source dates, exact HTML hashes and [HTTP receipts](broad-reference/repair/acquisition-receipts.jsonl). Existing source-worker artifacts remain read-only and unchanged shards were not downloaded again. This is a new dated source edition, not a restoration of the same 2023 article revisions. Cached HTML bytes are the reproducibility input: oldid rendering can depend on templates, so future network refetch byte equality is not promised.
+
+The extractor copies source math as plain TeX and preserves rendered numerical units, superscripts and subscripts. The admitted sources contain 8,179 mathematical representations. Actual Absolute value and Algae regressions require the zero/three examples and `50 metres (160 ft)` respectively; seven extraction tests include missing-math rejection, real main-body selection, quotation exclusion and attribution-link preservation. Full verification reparses every admitted HTML snapshot and compares source paragraphs, references and notices with the installed database content. This establishes extraction fidelity for selected paragraphs, not universal factual accuracy or complete article transcription. Tables, media, quoted paragraphs and navigation are excluded; some retained paragraphs depend on nearby context, and TeX is not typeset.
+
+Wikipedia editorial text retains CC BY-SA 4.0, article title, Wikipedia contributors, permanent revision URL, contributor-history URL, license URL, modifications and source hash. It is not relabeled public domain. All 36 admitted source-specific attribution notices retain their text and source/license links. Admission accepts explicitly identified public-domain incorporation or CC BY 4.0 terms; **67 documents with unresolved additional terms are excluded**, including ambiguous version-specific/IGO notices. Eleven more have no eligible prose: 78 exclusions total, individually recorded in [the build inventory](broad-reference/repair/edition-build.json). Unresolved terms are not silently cleared by a generic footer. These conservative rules and builder source review still require independent scrutiny; distribution remains unpublished and `distribution_ready` remains false. See [Wikimedia terms](https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use) and [CC BY 4.0 obligations](https://creativecommons.org/licenses/by/4.0/legalcode.en).
+
+Science, history, geography, mathematics, computing, civics, practical reference and travel each have 50 separately reviewed documents. The review binds exact source-body excerpts and hashes, rather than accepting topic keywords. Practical replacements are real tools/methods/gardening sources; closed venues and unsuitable historical transport samples were excluded from travel quotas. These assessments are explicitly the builder's, not independent reviewer judgments.
+
+## Exact edition and reproduction
+
+| Artifact | Bytes | SHA-256 |
+|---|---:|---|
+| Debug APK | 11,921,193 | `d3f32566fbff579a0175e65662ea212ef18a1346e20f390d10127b6d52f7523f` |
+| New broad archive | 46,339,444 | `b8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012` |
+| New SQLite index | 121,401,344 | `9009b19de43f851a815d1797779a94ab47077cc2fc5b3dfe70fc4bdf9a097386` |
+| Saved Qwen2.5 0.5B model | 491,400,032 | `74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db` |
+
+Two builds from the sealed cached snapshots produce identical archive/index bytes on this rig. Cross-machine SQLite reproducibility remains unmeasured. The [source inventory](broad-reference/repair/source-inventory.json) binds 1,233 HTTP receipts totaling 572,836,292 downloaded bytes; original reused dataset download costs remain in the historical report. No bulk source or model binaries enter Git.
+
+```sh
+# Reuse the sealed downloads/broad-reference/html-v2 snapshot and frozen review.
+python3 tools/packs/broad/repair/seal.py
+python3 tools/packs/broad/repair/extract.py
+python3 tools/packs/broad/repair/build.py --out downloads/broad-reference/rendered-v2-rebuild --review docs/evidence/broad-reference/repair/semantic-review.json
+bash tools/android-build.sh
+python3 tools/evaluation/verify_broad_reference.py
+```
+
+The builder refuses to overwrite an experiment. Acquisition commands and replacement title pins are in `tools/packs/broad/repair/`; serial requests stop on HTTP 429. The verifier expects the measured `rendered-v2` assets and committed Android receipts, and rejects changed or missing artifacts. For a deliberate new project-fixture import, `tools/evaluation/broad-reference/run_repair_android.py` archives only the known old broad fixture before catalog replacement; it must not be generalized to unrelated user data.
+
+## Actual offline emulator evidence
+
+The [fresh import](broad-reference/repair/run/import.json) took **31,501.659 ms**. A different process [reopened](broad-reference/repair/run/restart.json) the catalog in **384.508 ms**. Three retained active collections contain **1,113 documents and 40,891 passages**. The two small editions and saved model hash remain intact. Eight actual source buttons per run display edition-aware citations, source dates, rights and provenance; [source](broad-reference/repair/run/restart-source.png) and [offline license](broad-reference/repair/run/restart-license.png) screenshots were visually inspected. Airplane mode was enabled, Wi-Fi/data disabled. Instrumentation supplies the project fixture URI to the real import worker; external SAF browsing is not newly tested.
+
+The unchanged 40-query development protocol retrieves the expected article in **24/32 supported queries**, both after import and restart. Misses are q04, q14, q18, q24, q25, q27, q28 and q30. This falls from the historical edition's 29/32: more source text and changed selected paragraphs expose ranking limitations, not improved answer quality. All eight absent cases have zero broad hits and abstain; unrelated small-pack matches can remain. Restart retrieval/serialization nearest-rank p50 is **3.425 ms**, p95 **36.267 ms** over 40 requests, excluding model load/generation and UI inspection. No model generation is credited; broad evidence remains disabled for generated answers pending separate integration.
+
+An additional frozen two-query formula/unit UI supplement failed on `absolute value 3`: the expected formula paragraph was absent from the top four. The second unit case was not reached. Its [raw failure](broad-reference/repair/failures/fidelity-20261001T083916763576Z/) and protocol are preserved; this is not counted as successful on-screen formula inspection. Database/source fidelity passes independently. No query rewrite or seed search was used to hide the miss.
+
+Isolated real parser corruption is rejected with `Index SHA-256 mismatch`; the UI second-broad-import path separately refuses admission. Cancellation leaves no owned stages and preserves the catalog/model. The measured cancellation operation took 131.554 ms including test-call overhead; it is not a click-to-idle latency claim. Opening Java heap delta on restart is **856,064 bytes**. Restart PSS/RSS/swap before opening were 92,546/180,144/22,464 KiB; after opening 94,096/181,840/22,464 KiB; after queries 75,647/165,472/22,336 KiB. These are emulator snapshots, not a peak or physical-phone/OOM safety measurement. SQLite remains disk-backed with a 2 MiB cache, no mmap, bounded candidate rows and unchanged archive/index admission caps.
+
+[Disk measurements](broad-reference/repair/run/disk.txt) separate installed pack library (164,032 KiB allocated), saved model (479,892 KiB), test fixtures/logs (100,640 KiB) and cache (8 KiB). APK is separate above. The new archive and index alone total 167,740,788 logical bytes; APK/model/archive/index total 671,062,013 bytes before small packs, filesystem/runtime overhead and tests. Import staging requires archive/index copies within existing admission/reserve checks. This edition is well below the 50 GB target; it does not establish capacity or phone acceptance for arbitrary larger editions.
+
+## Checks, failures and remaining work
+
+Both required checks pass; [verifier output](broad-reference/repair/verify-broad-reference.log) records exact counts, timing and negative missing-license/legal-text/changed-or-missing-artifact regressions. Additional checks reject missing math and unresolved attribution notices. The source-byte verification covers every admitted document and every passage, including normalization deduplication and UTF-16 offsets.
+
+Preserved failures include initial API 429 responses, partial seal/metadata defects, the first repair driver's catalog-move failure, old task-210 failures and the additional formula retrieval miss. The successful fresh run corrected the driver with a separate atomic move plus readback; it is not mislabeled reuse of the old edition. No emulator/service restart or production-model change occurred.
+
+Remaining concrete rig work is passage diversity/relevance and multi-part evidence selection on the preserved misses, followed by actual supported JNI integration (existing task 212) and exact candidate/dependency/offline release revalidation (213). Existing task 211's extraction and quota work is substantially supplied by this repair and should not simply repeat it; independent source/rights review remains necessary. No private queue or runner state is edited here. Production signing ownership, independent clean-machine reproduction, physical Android/GrapheneOS and human acceptance remain open.
 
 ---
 
