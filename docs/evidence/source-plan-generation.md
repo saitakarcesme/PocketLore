@@ -1,0 +1,11 @@
+# Source-grounded plan before prose — task 224
+
+Measurement in progress; no quality result or acceptance claimed. The new24-question public development set was frozen in9580629 before implementation. It spans computing, horticulture, civics, geography/history, food biology and astronomy with four absent controls. Real licensed excerpts and expected obligations are pinned; corpus facts were not synthesized.
+
+One material architecture is declared in tools/evaluation/source-plan/protocol.json. Unchanged FactFrames extracts source-grounded relation/subject/condition/formula entries before generation. A first real4B call selects fact IDs for each question obligation; a second call generates complete cited prose using only that plan. Independent deterministic validation requires every full generated claim to match a selected source relation for its obligation. NLI scores and same-model audits do not grant approval. No output is rewritten into an extractive/template answer.
+
+The source extractor and claim parser remain unchanged to isolate the effect of planning; unknown families and correct paraphrases may remain unsupported by the implementation. Plan selection is relevance, not an entailment or coverage guarantee. Exact provenance and original sentence labels remain attached. Bounds are32 source frames,8 selected per obligation,4 obligations,8 claims/references and existing6passage/1200-character sentence windows.
+
+Fixed host CPU6-thread Qwen3 4B Q4_K_M SHA2567485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5;4096 context each call,128 plan plus320 prose tokens, at most448 of512 total generated tokens. No frames or invalid/withheld plan prevents the prose call. Exactly one attempt per stage; no prompt, seed, threshold or case-specific parser search. Earlier143 source-frame outputs and994 classifier scores remain regression artifacts, never regenerated.
+
+Production model.env and Android admission are unchanged. This is host screening plus shared Java behavior, not selected-model Android execution, phone suitability, private holdout or human acceptance. Final results, builder source review, checks and resource receipts will be appended after the fixed run completes.
