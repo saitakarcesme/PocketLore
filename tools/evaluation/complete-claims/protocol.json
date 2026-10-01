@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "classification": "New public development; real licensed excerpts, never holdout",
+  "cases": [
+    {
+      "id": "new-01",
+      "type": "explanation",
+      "question": "Explain how DNA instructions are used to make proteins.",
+      "sources": [
+        {
+          "id": "science-dna-d32bd953c9df60a3",
+          "title": "Deoxyribonucleic Acid (DNA) Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+          "date": "2020-08-24 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "DNA's instructions are used to make proteins in a two-step process. First, enzymes read the information in a DNA molecule and transcribe it into an intermediary molecule called messenger ribonucleic acid, or mRNA. Next, the information contained in the mRNA molecule is translated into the \"language\" of amino acids, which are the building blocks of proteins. This language tells the cell's protein-making machinery the precise order in which to link the amino acids to produce a specific protein. This is a major task because there are 20 types of amino acids, which can be placed in many different orders to form a wide variety of proteins."
+        }
+      ],
+      "expectation": "Enzymes transcribe DNA information into mRNA; mRNA information is translated into amino-acid order for proteins; preserve both steps.",
+      "answerable": true
+    },
+    {
+      "id": "new-02",
+      "type": "comparison",
+      "question": "Compare genes and DNA sequences outside genes.",
+      "sources": [
+        {
+          "id": "science-dna-160b4c88f7f463ae",
+          "title": "Deoxyribonucleic Acid (DNA) Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+          "date": "2020-08-24 page updated; retrieved 2026-10-01",
+          "license": "National Human Genome Research Institute (NIH); Public domain in the United States; selected agency-authored text; https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright",
+          "text": "DNA contains the instructions needed for an organism to develop, survive and reproduce. To carry out these functions, DNA sequences must be converted into messages that can be used to produce proteins, which are the complex molecules that do most of the work in our bodies. Each DNA sequence that contains instructions to make a protein is known as a gene. The size of a gene may vary greatly, ranging from about 1,000 bases to 1 million bases in humans. Genes only make up about 1 percent of the DNA sequence. DNA sequences outside this 1 percent are involved in regulating when, how and how much of a protein is made."
+        }
+      ],
+      "expectation": "Genes encode protein instructions and comprise about one percent; outside sequences regulate when/how/how much protein is made, not useless DNA.",
+      "answerable": true
+    },
+    {
+      "id": "new-03",
+      "type": "explanation",
+      "question": "Why can a volcano erupt over and over in the same location?",
+      "sources": [
+        {
+          "id": "science-volcanoes-fdd579e7694cec41",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Many mountains form by folding, faulting, uplift, and erosion of the Earth's crust. Volcanic terrain, however, is built by the slow accumulation of erupted lava. The vent may be visible as a small bowl shaped depression at the summit of a cone or shield-shaped mountain. Through a series of cracks within and beneath the volcano, the vent connects to one or more linked storage areas of molten or partially molten rock (magma). This connection to fresh magma allows the volcano to erupt over and over again in the same location. In this way, the volcano grows ever larger, until it is no longer stable. Pieces of the volcano collapse as rock falls or as landslides."
+        }
+      ],
+      "expectation": "Vent connects through cracks to magma storage; connection to fresh magma enables repeated eruption; not perpetual guaranteed eruption.",
+      "answerable": true
+    },
+    {
+      "id": "new-04",
+      "type": "qualifier",
+      "question": "When can a coronal mass ejection cause a truly large magnetic storm?",
+      "sources": [
+        {
+          "id": "science-magnetic-storms-d3c855e5484d8b4b",
+          "title": "What is a magnetic storm?",
+          "url": "https://www.usgs.gov/faqs/what-a-magnetic-storm",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Sometimes the Sun emits a coronal mass ejection at a time when the magnetic field lines of the Earth and Sun are directly connected. When these events occur, we can experience a truly large magnetic storm."
+        }
+      ],
+      "expectation": "When Earth/Sun field lines directly connect at emission; can, not every ejection inevitably.",
+      "answerable": true
+    },
+    {
+      "id": "new-05",
+      "type": "comparison",
+      "question": "Compare Hetch Hetchy and Wawona in late summer.",
+      "sources": [
+        {
+          "id": "yosemite-341ac915dc513bc0",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "The immediate area around the reservoir is a no-camping zone, but hiking over six miles will lead to wonderful cascade waterfalls or peaceful lakes. Hetch Hetchy tends to be busiest in the spring and fall because of its low-elevation destinations and warm temperatures. In the summer, it can be very arid and hot."
+        },
+        {
+          "id": "yosemite-700f87fd529671b2",
+          "title": "Yosemite trail regions",
+          "url": "https://www.nps.gov/yose/planyourvisit/trails.htm",
+          "date": "2025-07-17 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "At the southern end of the park, Wawona is a quiet, forested area with trails that lead to waterfalls, lakes, and stunning granite features. In late summer, trails become hot and dry."
+        }
+      ],
+      "expectation": "Hetch Hetchy can be arid/hot in summer; Wawona trails hot/dry in late summer; retain each place and season; no live status.",
+      "answerable": true
+    },
+    {
+      "id": "new-06",
+      "type": "multisource",
+      "question": "How do first-aid supplies and a repair kit prepare for emergencies?",
+      "sources": [
+        {
+          "id": "essentials-b68c0099fce7653f",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "FIRST-AID SUPPLIES \u2013 First Aid Kit Prepare for emergencies by packing first-aid supplies. Start with a pre-made kit and modify it to fit your trip and your medical needs. Check the expiration date on all items and replace them as needed. Include any personal medications you regularly take. Consider including an emergency guide in case you are faced with an unfamiliar medical emergency."
+        },
+        {
+          "id": "essentials-59d02ca0df497a7a",
+          "title": "NPS Ten Essentials",
+          "url": "https://www.nps.gov/articles/10essentials.htm",
+          "date": "2026-05-28 page updated; retrieved 2026-09-30",
+          "license": "National Park Service; ten-category system credited to The Mountaineers, Mountaineering: The Freedom of the Hills, 8th edition (2010); NPS explanatory text only; Public domain in the United States; https://www.nps.gov/aboutus/disclaimer.htm",
+          "text": "REPAIR KIT AND TOOLS \u2013 Duct tape, knife, multi-tool, and scissors Carry a basic repair kit with you to help repair equipment. Include items like duct tape, knife, and scissors. Pack a multi-tool, a small tool that includes a knife, screwdriver, can opener, etc. A trowel and toilet paper may also be important. Bring any tools specific to your trip and your activity."
+        }
+      ],
+      "expectation": "First-aid kit tailored to medical needs, expiration checks/personal medications; repair tools for equipment specific to trip; do not turn tools into medical treatment.",
+      "answerable": true
+    },
+    {
+      "id": "new-07",
+      "type": "explanation",
+      "question": "What protections apply when private property is taken for public use?",
+      "sources": [
+        {
+          "id": "bill-of-rights-1fd7554a5bbaa295",
+          "title": "Bill of Rights (1791 historical text)",
+          "url": "https://www.archives.gov/founding-docs/bill-of-rights-transcript",
+          "date": "1791-12-15 ratification; retrieved 2026-09-30",
+          "license": "National Archives; original United States founding document; Public domain in the United States; https://www.archives.gov/global-pages/privacy.html",
+          "text": "No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation."
+        }
+      ],
+      "expectation": "Just compensation required by historical excerpt; do not invent current procedures or amounts.",
+      "answerable": true
+    },
+    {
+      "id": "new-08",
+      "type": "multisource",
+      "question": "How do volcanic vents and wind affect where ash falls?",
+      "sources": [
+        {
+          "id": "science-volcanoes-7e17ab9821fed9ef",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Volcanoes are openings, or vents where lava, tephra (small rocks), and steam erupt onto the Earth's surface. Volcanic eruptions can last days, months, or even years."
+        },
+        {
+          "id": "science-volcanoes-bc12a568b075b592",
+          "title": "About Volcanoes",
+          "url": "https://www.usgs.gov/programs/VHP/about-volcanoes",
+          "date": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "license": "U.S. Geological Survey; Public domain in the United States; selected agency-authored text; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits",
+          "text": "Magma can be erupted in a variety of ways. Sometimes molten rock simply pours from the vent as fluid lava flows. It can also shoot violently into the air as dense clouds of rock shards (tephra) and gas. Larger fragments fall back around the vent, and clouds of tephra may move down the slope of the volcano under the force of gravity. Ash, tiny pieces of tephra the thickness of a strand of hair, may be carried by the wind only to fall to the ground many miles away. The smallest ash particles may be erupted miles into the sky and carried many times around the world by winds high in the atmosphere before they fall to the ground."
+        }
+      ],
+      "expectation": "Vents emit tephra; ash is tiny tephra transported by wind far away, smallest particles may circle globe before falling; preserve may and size distinction.",
+      "answerable": true
+    }
+  ],
+  "packs": {
+    "downloads/packs/english-reference.plpack": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+    "downloads/science/science-supplement-2026-10-01-v1.plpack": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274"
+  },
+  "prior_cases_sha256": "d7c8e3d83c83fc3eee6ef767077b241a9fcbc8f3dbb0f0a2021e59f950975f9c",
+  "evaluation_model": "Qwen3 1.7B Q8 optional candidate, fixed task-200 evaluation anchor; production/demo remains Qwen2.5 0.5B",
+  "model_sha256": "061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a",
+  "execution": "One before run on eight new cases; preserve prior 24-case Qwen3 host run as before reference. One after run on all32. CPU native ISA six threads, fixed production Qwen3 sampling seed42, context2048/output256. No seed/prompt search. Emulator subset cap-02,cap-05,new-01 after host screen, separate timing/outputs.",
+  "change": "Remove per-claim character cap and mandatory second claim; allow one through four cited complete sentences under unchanged total token/context bounds. Reject incomplete publication structurally without weakening existing evidence, numeric, conflict or temporal guards.",
+  "assessment": "Same task190 builder rubric, source entailment/completeness/usefulness separately; negative quality outcome valid and must remain reported.",
+  "emulator_cases": [
+    "cap-02",
+    "cap-05",
+    "new-01"
+  ]
+}
