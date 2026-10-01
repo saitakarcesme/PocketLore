@@ -1,0 +1,15 @@
+{
+  "kind": "Constructed controller regressions, not corpus facts",
+  "question": "Describe the documented relation; explain its condition.",
+  "valid": "O1|S1|Establish the relation\nO2|S2|Explain its condition",
+  "invalid": [
+    "O1|S1|Establish the relation",
+    "O1|S1|Relation\nO1|S2|Condition",
+    "O1|S99|Relation\nO2|S2|Condition",
+    "O1|S1,S1|Relation\nO2|S2|Condition",
+    "O1|S1|\nO2|S2|Condition",
+    "O1|S1|Relation|Extra\nO2|S2|Condition",
+    "W|O1|Unavailable"
+  ],
+  "additional_required_checks": ["truncation", "cancellation and retry", "cross-edition identity", "exact evidence mutation", "complete factual tail retained", "pending review cannot publish"]
+}
