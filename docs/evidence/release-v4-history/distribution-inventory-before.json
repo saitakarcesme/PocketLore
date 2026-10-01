@@ -4,8 +4,8 @@
   "scope": "Debug candidate inventory; no publication, legal clearance or independent clean-machine reproduction",
   "apk": {
     "path": "PROJECT/android/app/build/outputs/apk/debug/app-debug.apk",
-    "bytes": 11921193,
-    "sha256": "934147a471c948ea77de51d89663759a2925351c382f5412287535017e67a1f5",
+    "bytes": 11904809,
+    "sha256": "8d6aef5b9ab8898c6b5c9668236b67752cc17d61e53030620811d1367aef9f64",
     "role": "debug-candidate"
   },
   "native": [
@@ -13,8 +13,8 @@
       "abi": "arm64-v8a",
       "packaged_library": {
         "path": "PROJECT/android/app/build/generated/nativeLibs/arm64-v8a/libpocketlore.so",
-        "bytes": 5597736,
-        "sha256": "c96d261ff54d05b43473da9ebecf9d849dbe4c366d2aa7ee296752f6ec1685c8",
+        "bytes": 5597016,
+        "sha256": "ce2f2c78219a29e4959ff721af1c86b6ae357c106515a9e3a167e0f6ac80b25d",
         "role": "packaged-native-library"
       },
       "llama_revision": "bb4caa7540188872173c44d161602d9271386413",
@@ -91,8 +91,8 @@
         },
         {
           "path": "PROJECT/android/native-build/build/arm64-v8a/CMakeFiles/pocketlore.dir/runtime.cpp.o",
-          "bytes": 811248,
-          "sha256": "201e0a1624643985122fa3d0965c80dbf3b546a1770820cbdfb96b052c89383b",
+          "bytes": 794392,
+          "sha256": "08da5061c10ca05935be0fd90447fca38c2b73ca55db356acf7f1df34ec88c82",
           "role": "static-link-input",
           "license": "Apache-2.0",
           "notice": "PROJECT/THIRD_PARTY_NOTICES"
@@ -141,8 +141,8 @@
       "abi": "x86_64",
       "packaged_library": {
         "path": "PROJECT/android/app/build/generated/nativeLibs/x86_64/libpocketlore.so",
-        "bytes": 6077192,
-        "sha256": "28ce62513468da1b4c766751f296409e5ce124ff04e51a28d665c95d0f4babcc",
+        "bytes": 6076440,
+        "sha256": "6fbaef5768db43ca8f554c44b49dfbf6ee4cd21d04ccafeb86728a63c8b59fe5",
         "role": "packaged-native-library"
       },
       "llama_revision": "bb4caa7540188872173c44d161602d9271386413",
@@ -219,8 +219,8 @@
         },
         {
           "path": "PROJECT/android/native-build/build/x86_64/CMakeFiles/pocketlore.dir/runtime.cpp.o",
-          "bytes": 777816,
-          "sha256": "c4fa54d18ac56d40ce56f1c73bcb39880f4abf5d81d511a25946bae9fa396b48",
+          "bytes": 762360,
+          "sha256": "6d71c6cda47cc4e92283c2abff719a7fc442d738ad872936781574b9e7d87b59",
           "role": "static-link-input",
           "license": "Apache-2.0",
           "notice": "PROJECT/THIRD_PARTY_NOTICES"
@@ -8251,7 +8251,6 @@
         "role": "model-license"
       },
       "limitation": "Publisher quantization; not independently reproduced",
-      "deployment_role": "optional evaluated or smoke candidate, not deployed",
       "source_repository": "https://huggingface.co/tensorblock/SmolLM2-135M-Instruct-GGUF",
       "pinned_url": "https://huggingface.co/tensorblock/SmolLM2-135M-Instruct-GGUF/resolve/32db44d69cedb731dc0fc96f60e01a86c6f5919d/SmolLM2-135M-Instruct-Q3_K_M.gguf"
     },
@@ -8272,7 +8271,6 @@
         "role": "model-license"
       },
       "limitation": "Publisher quantization; not independently reproduced",
-      "deployment_role": "production/demo, imported separately",
       "source_repository": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF",
       "pinned_url": "https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct-GGUF/resolve/9217f5db79a29953eb74d5343926648285ec7e67/qwen2.5-0.5b-instruct-q4_k_m.gguf"
     },
@@ -8293,7 +8291,6 @@
         "role": "model-license"
       },
       "limitation": "Publisher quantization; not independently reproduced",
-      "deployment_role": "optional evaluated or smoke candidate, not deployed",
       "source_repository": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF",
       "pinned_url": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/91cad51170dc346986eccefdc2dd33a9da36ead9/qwen2.5-1.5b-instruct-q4_k_m.gguf"
     },
@@ -8314,7 +8311,6 @@
         "role": "model-license"
       },
       "limitation": "Publisher quantization; not independently reproduced",
-      "deployment_role": "optional evaluated or smoke candidate, not deployed",
       "source_repository": "https://huggingface.co/Qwen/Qwen3-1.7B-GGUF",
       "pinned_url": "https://huggingface.co/Qwen/Qwen3-1.7B-GGUF/resolve/90862c4b9d2787eaed51d12237eafdfe7c5f6077/Qwen3-1.7B-Q8_0.gguf"
     }
@@ -10741,13 +10737,13 @@
     },
     {
       "entry": "lib/arm64-v8a/libpocketlore.so",
-      "sha256": "c96d261ff54d05b43473da9ebecf9d849dbe4c366d2aa7ee296752f6ec1685c8",
-      "bytes": 5597736
+      "sha256": "ce2f2c78219a29e4959ff721af1c86b6ae357c106515a9e3a167e0f6ac80b25d",
+      "bytes": 5597016
     },
     {
       "entry": "lib/x86_64/libpocketlore.so",
-      "sha256": "28ce62513468da1b4c766751f296409e5ce124ff04e51a28d665c95d0f4babcc",
-      "bytes": 6077192
+      "sha256": "6fbaef5768db43ca8f554c44b49dfbf6ee4cd21d04ccafeb86728a63c8b59fe5",
+      "bytes": 6076440
     }
   ],
   "host_build_utilities": [

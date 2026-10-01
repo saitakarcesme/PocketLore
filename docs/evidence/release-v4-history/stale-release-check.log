@@ -1,0 +1,10 @@
+PASS: two forced builds byte-identical: 934147a471c948ea77de51d89663759a2925351c382f5412287535017e67a1f5
+/home/isa/Projects/PocketLore/downloads/release-repro/run-20261001T071338419473Z
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/release/verify.py", line 88, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/release/verify.py", line 52, in main
+    p=ROOT/name;assert p.stat().st_size==identity['bytes'] and sha(p)==identity['sha256'],name
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: android/app/build/outputs/apk/debug/app-debug.apk

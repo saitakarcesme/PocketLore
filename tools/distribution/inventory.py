@@ -107,6 +107,7 @@ def capture():
   inv['host_build_utilities'].append({'name':name,'version':version,'artifact':file(p,'host-build-utility'),'license_status':'Host OS license/dependency closure not audited; not bundled.'})
  for model in inv['models']:
   repo={'SmolLM2-135M':'tensorblock/SmolLM2-135M-Instruct-GGUF','Qwen2.5-0.5B':'Qwen/Qwen2.5-0.5B-Instruct-GGUF','Qwen2.5-1.5B':'Qwen/Qwen2.5-1.5B-Instruct-GGUF','Qwen3-1.7B':'Qwen/Qwen3-1.7B-GGUF'}[model['name']]
+  model['deployment_role']='production/demo, imported separately' if model['name']=='Qwen2.5-0.5B' else 'optional evaluated or smoke candidate, not deployed'
   model['source_repository']='https://huggingface.co/'+repo
   model['pinned_url']=model['source_repository']+'/resolve/'+model['revision']+'/'+Path(model['artifact']['path']).name
  inv['build_recipe']=[file(ROOT/rel,'build-recipe') for rel in ['tools/android-build.sh','tools/runtime/build-native.sh','tools/runtime/pins.env','tools/release/finalize_apk.py','tools/distribution/native-notices.lock.json','android/build.gradle','android/app/build.gradle','android/app/src/main/cpp/CMakeLists.txt']]
