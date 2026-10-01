@@ -1,0 +1,24 @@
+{
+  "serial": "emulator-5562",
+  "rows": [
+    {
+      "package": "org.pocketlore.app",
+      "apk_path": "/data/app/~~5-GKyR_wiY6dVm5tH1xG6g==/org.pocketlore.app-CrIWkraxIXIi9_DIYnyZKQ==/base.apk",
+      "apk_sha256": "634d60fd48284ffdb7a568125930fff9a4e42e146ce7ddb9366eec102689b7d3",
+      "allocated_code_bytes": 15716352,
+      "du_k": "8\t/data/app/~~5-GKyR_wiY6dVm5tH1xG6g==/org.pocketlore.app-CrIWkraxIXIi9_DIYnyZKQ==/lib/x86_64\n16\t/data/app/~~5-GKyR_wiY6dVm5tH1xG6g==/org.pocketlore.app-CrIWkraxIXIi9_DIYnyZKQ==/lib\n15348\t/data/app/~~5-GKyR_wiY6dVm5tH1xG6g==/org.pocketlore.app-CrIWkraxIXIi9_DIYnyZKQ==\n"
+    },
+    {
+      "package": "org.pocketlore.app.test",
+      "apk_path": "/data/app/~~ZJMYeUln1fKThptQoLIkpg==/org.pocketlore.app.test-QY-ADiiwGwiVJLVRAh7RwA==/base.apk",
+      "apk_sha256": "7d7d9073c3b6b409eef8bfa2799a255db8ed65c8b80f2ddc36bb14ad70609b29",
+      "allocated_code_bytes": 335872,
+      "du_k": "328\t/data/app/~~ZJMYeUln1fKThptQoLIkpg==/org.pocketlore.app.test-QY-ADiiwGwiVJLVRAh7RwA==\n"
+    }
+  ],
+  "allocated_code_bytes": 16052224,
+  "app_allocated_bytes": 41612550144,
+  "app_du_k": "40637256\t.\n",
+  "data_df_k": "Filesystem       1K-blocks     Used Available Use% Mounted on\n/dev/block/dm-43  65871612 40937000  24787156  63% /data/user/0\n",
+  "guest_memory": "MemTotal:        4014868 kB\nMemFree:          322904 kB\nMemAvailable:    2855512 kB\nBuffers:            5744 kB\nCached:          2750964 kB\nSwapCached:            0 kB\nActive:          2185668 kB\nInactive:        1089820 kB\nActive(anon):     542860 kB\nInactive(anon):        0 kB\nActive(file):    1642808 kB\nInactive(file):  1089820 kB\nUnevictable:        4120 kB\nMlocked:            4120 kB\nSwapTotal:       3011144 kB\nSwapFree:        2949704 kB\nDirty:                24 kB\nWriteback:             0 kB\nAnonPages:        522952 kB\nMapped:          1020776 kB\nShmem:             21032 kB\nKReclaimable:     120504 kB\nSlab:             226080 kB\nSReclaimable:     120504 kB\nSUnreclaim:       105576 kB\nKernelStack:       20548 kB\nPageTables:        50208 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     5018576 kB\nCommitted_AS:   82027784 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       47840 kB\nVmallocChunk:          0 kB\nPercpu:             2320 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nDirectMap4k:       57176 kB\nDirectMap2M:     4136960 kB\n"
+}

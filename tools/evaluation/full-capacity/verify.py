@@ -36,6 +36,7 @@ def behavior(run):
   require(r['reviewed_collections']==3 and r['reviewed_documents']==1113,'Reviewed editions missing')
   require(len(r['wiki_queries'])==11 and len(r['cities'])==20,'Frozen queries missing')
   require(all(q.get('source') and q['ms']>0 for q in r['wiki_queries']),'Source inspection missing')
+  for q,want in zip(r['wiki_queries'],load(ROOT/'tools/evaluation/full-capacity/protocol.json')['wiki_queries']):require(q['query']==want and q['title']==want,'Exact-title regression')
   require(all(q['count']>0 and q.get('source') for q in r['cities']),'Full inventory city/category misses remain')
   require(r['absent_category_withheld'] and r['query_cancelled'],'Absence/cancellation failed')
   require(r['app_logical_bytes']>41_000_000_000,'Not whole simultaneous declared candidate')
@@ -70,6 +71,8 @@ def behavior(run):
  retained=load(BASE/'seed-assets.json');after=load(BASE/'seed-assets-after.json')
  require(len(retained['actual'])==5 and retained['actual']==retained['expected']==after['actual']==after['expected'],'Saved model/reviewed assets changed')
  require(retained['actual']['model.gguf']==MODEL_SHA,'Wrong production model')
+ ui=load(BASE/'ui/result.json');require(ui['actual_source_dialog'] and ui['real_controls'] and ui['active_collections']==2 and not ui['generation'],'Actual source/collection UI not validated')
+ rendered=(BASE/'ui/source.txt').read_text();require('Citation identity:' in rendered and 'Text SHA-256:' in rendered and 'not cleared for generated answers' in rendered,'Visible source provenance/disclosure missing')
  disk_samples=[json.loads(line) for p in [*run.glob('*/disk-samples.jsonl'),*(BASE/'failures').rglob('disk-samples.jsonl')] for line in p.read_text().splitlines()]
  data_peak=max(int(x['df_k'].splitlines()[-1].split()[2])*1024 for x in disk_samples)
  require(data_peak<50_000_000_000,'Whole-emulator userdata high-water exceeds hard cap')

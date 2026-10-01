@@ -4,9 +4,13 @@ Run on LLMRig with the dedicated coordinator-managed emulator-5562 already boote
 
 1. `bash tools/android-build.sh assembleDebug assembleDebugAndroidTest -PpocketloreTestRunner=org.pocketlore.app.FullCapacityInstrumentation`
 2. `python3 tools/evaluation/full-capacity/run.py`
-3. `python3 tools/evaluation/full-capacity/ui.py`
-4. `python3 tools/evaluation/full-capacity/freeze.py`
-5. `bash tools/evaluation/check_full_scale_android_capacity.sh`.
+3. `python3 tools/evaluation/full-capacity/final_candidate.py` (separately pins and checks the bounded redirect repair after the storage run).
+4. `python3 tools/evaluation/full-capacity/ui.py`.
+5. `python3 tools/evaluation/full-capacity/package_storage.py after` (the preserved `before` receipt was taken during initial installation).
+6. `python3 tools/evaluation/full-capacity/freeze.py`.
+7. `bash tools/evaluation/check_full_scale_android_capacity.sh`.
+
+These are the recorded experiment entry points, not a command to overwrite the sealed evidence. Existing outputs deliberately refuse overwrites; completed installation replay checks the live catalog identity and returns without repeating transfers. A fresh repetition needs separate evidence/scratch paths in the scripts and a coordinator-approved fresh fixture environment. Never delete the current full catalog to make a rerun convenient. Historical executed wrapper/instrumentation sources are retained under `docs/evidence/full-capacity/executed-source`; later test-driver and resume-guard repairs are recorded separately.
 
 The run consumes the task300 sealed lane paths and task301 frozen manifests. It rehashes immutable source assets, incrementally imports all shards through `ScaleLibrary.install`, and keeps all prior shards resident. One incoming ZIP is recreated in ignored `downloads/full-capacity`; local ADB streams it into an app-owned FIFO. There is no research network or inference. `capacity-aux` holds declared OSM/Wikivoyage inventory for storage accounting, without claiming integrated Android readers. The actual small-pack library remains independently imported through `PackLibrary.install`.
 

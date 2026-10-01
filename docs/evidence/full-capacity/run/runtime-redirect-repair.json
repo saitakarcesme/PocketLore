@@ -1,0 +1,71 @@
+{
+  "apk": {
+    "bytes": 15685650,
+    "path": "/home/isa/Projects/PocketLore/downloads/full-capacity/redirect-repair-apk.apk",
+    "sha256": "634d60fd48284ffdb7a568125930fff9a4e42e146ce7ddb9366eec102689b7d3"
+  },
+  "import_code_equivalence": [
+    {
+      "measured_commit": "a34f121",
+      "path": "android/app/src/main/java/org/pocketlore/app/ScaleLibrary.java",
+      "sha256": "297cb0ec6f34fe382544ff788db9bfe3257981028fe12dcaed470871fa5dbf90",
+      "unchanged": true
+    },
+    {
+      "measured_commit": "a34f121",
+      "path": "android/app/src/main/java/org/pocketlore/app/SharedShardUpdate.java",
+      "sha256": "c42f3023129d8563984b5e32c5374836f3d9be1624725390118e8b361f29c5a8",
+      "unchanged": true
+    },
+    {
+      "measured_commit": "a34f121",
+      "path": "android/app/src/main/java/org/pocketlore/app/NativeIndex.java",
+      "sha256": "ec632a7e572cac37b2d332c13454aa1871d91de753b512fdfcb3e507d67970bc",
+      "unchanged": true
+    },
+    {
+      "measured_commit": "a34f121",
+      "path": "android/app/src/main/java/org/pocketlore/app/ResourceStorage.java",
+      "sha256": "75d783b83c667b367b88bac634cf6a499e5d4a031d0c5eb9991164586a5ef265",
+      "unchanged": true
+    }
+  ],
+  "packaged_identities": {
+    "AndroidManifest.xml": {
+      "bytes": 2556,
+      "sha256": "8cf093ebcde8cb9d55341c4688833da42649e1b2a75726fc752e7cef8ac7877b"
+    },
+    "classes.dex": {
+      "bytes": 270048,
+      "sha256": "1e482491648323496a040f1f4c71abd01478bc46c573d585009a2e4803369a72"
+    },
+    "lib/arm64-v8a/libpocketlore.so": {
+      "bytes": 5598088,
+      "sha256": "dfc27add562f0898aef3be15df9be0af2f8dc4c1ddabb5eb1e63928d5c53023e"
+    },
+    "lib/arm64-v8a/libpocketlore_index.so": {
+      "bytes": 1848880,
+      "sha256": "d587cd588387c36a7972a2be685d496563d544f6af1e9807a1d67641107f31d1"
+    },
+    "lib/x86_64/libpocketlore.so": {
+      "bytes": 6077720,
+      "sha256": "cfba0bc0b16347d8290f76280069daf55be243416f622be314c1b073719aeb87"
+    },
+    "lib/x86_64/libpocketlore_index.so": {
+      "bytes": 1847336,
+      "sha256": "372aabdf0bba336a2bf1ab054e1339eca14ed8d9ffaffd2be0107c45828105d9"
+    }
+  },
+  "previous_apk": {
+    "bytes": 15685650,
+    "path": "/home/isa/Projects/PocketLore/downloads/full-capacity/app.apk",
+    "sha256": "43894babe475f2719f3b2a732755b16860f88bee781fb86b5e99c850cbdb30ee"
+  },
+  "scope": "Only alias shard filename normalization changes production behavior; storage measurements use earlier separately pinned APK with identical import code",
+  "source_commit": "47190e129283c6d248ed3ed3791d7458c9f9b5e2",
+  "test_apk": {
+    "bytes": 321506,
+    "path": "/home/isa/Projects/PocketLore/downloads/full-capacity/redirect-repair-test_apk.apk",
+    "sha256": "7d7d9073c3b6b409eef8bfa2799a255db8ed65c8b80f2ddc36bb14ad70609b29"
+  }
+}

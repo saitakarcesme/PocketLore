@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/full-capacity/ui.py", line 43, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/full-capacity/ui.py", line 26, in main
+    tree=wait_text('Acid ·','search',scroll=True);tap(find(tree,lambda a:a.get('text','').startswith('Acid ·')))
+                                                      ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/full-capacity/ui.py", line 10, in find
+    def find(tree,predicate):return next(n for n in tree.iter('node') if predicate(n.attrib))
+                                    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration

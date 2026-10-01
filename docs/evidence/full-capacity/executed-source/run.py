@@ -72,11 +72,6 @@ def transfer(label,m,paths,mode='import'):
 
 def main():
  OUT.mkdir(parents=True,exist_ok=True);SCRATCH.mkdir(parents=True,exist_ok=True)
- if (OUT/'complete.json').exists():
-  expected=json.loads((OUT/'complete.json').read_text())['catalog'];actual=catalog()
-  assert {k:v[0] for k,v in expected.items()}=={k:v[0] for k,v in actual.items()},'Recorded run does not match this device; do not reuse historical results as a new installation'
-  print('Completed run retained; live catalog identities match. No repeated transfers or queries.',flush=True);return
- if list(OUT.glob('wiki-*/result.json')):assert catalog(),'Recorded partial run has no device catalog; explicit reconciliation required'
  if not (OUT/'environment.json').exists():
   assert shell('getprop sys.boot_completed').strip()=='1'
   env={key:shell(cmd) for key,cmd in {'fingerprint':'getprop ro.build.fingerprint','abi':'getprop ro.product.cpu.abi','api':'getprop ro.build.version.sdk','data_df_k':'df -k /data','memory':'cat /proc/meminfo','cpu':'cat /proc/cpuinfo','boot_id':'cat /proc/sys/kernel/random/boot_id'}.items()};env['serial']='emulator-5562';assert env['api'].strip()=='35' and env['abi'].strip()=='x86_64';assert int(env['data_df_k'].splitlines()[-1].split()[1])*1024>50_000_000_000;save(OUT/'environment.json',env)
@@ -118,9 +113,7 @@ def main():
  step('full-hashes','hash');step('full-inspection','inspect')
  step('disable','disable');shell('am force-stop '+PKG);step('restart-disabled','restart');step('enable','enable')
  # Representation-only replacement of both objects of the largest wiki shard.
- old_id,original=catalog()['wiki']
- if (SCRATCH/'original-manifest.json').exists():original=json.loads((SCRATCH/'original-manifest.json').read_text())
- replace_paths={};replacement=SCRATCH/'replacement';replacement.mkdir(exist_ok=True)
+ old_id,original=catalog()['wiki'];replace_paths={};replacement=SCRATCH/'replacement';replacement.mkdir(exist_ok=True)
  for name in ['000_00003/catalog.sqlite','000_00003/articles.blocks']:
   p=replacement/pathlib.Path(name).name
   if not p.exists():

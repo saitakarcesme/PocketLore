@@ -1,6 +1,6 @@
 # Full-scale Android capacity validation (task 303)
 
-Status: protocol frozen; measurement pending. This is emulator capacity and reader validation, not physical-device, source-rights or generated-answer acceptance.
+Status: required build and behavioral capacity verifier pass on emulator-5562; independent criticism and product acceptance remain open. This is emulator capacity and reader validation, not physical-device, source-rights or generated-answer acceptance.
 
 Recovered the useful task301 implementation through preserved checkpoint `49117a8926f299780eec7ce922ff92f16eaa123f` onto the existing checkpoint branch. Main at inspection was `0e09794`. Earlier 6.23 GB emulator failures and the rolling sweep remain historical evidence; they cannot satisfy simultaneous residency.
 
@@ -49,3 +49,40 @@ The test-only sampler now retries that specific disappearing-file condition; oth
 ## Full-catalog redirect failure
 
 The first simultaneous reader run returned the eight exact titles correctly and restaurant candidates in all twenty cities, but `USA`, `NYC` and `UK` fell through to unrelated FTS titles. These raw failures remain in the inspection reports; their instrumentation status reflects completion of the capacity/read exercise, not correctness of every redirect. Inspection of the sealed aliases database found acquisition shard names ending in `.parquet`; Android normalized only `.sqlite`, so it silently skipped the actual targets. The existing host protocol's target IDs/titles are frozen in `tools/evaluation/full-capacity/redirect-regression.json` before the narrow Android mapping repair. Final acceptance additionally requires actual installed Android resolution and source inspection for those exact targets. Existing storage/import measurements remain tied to the earlier APK; the repaired candidate is separately identified and does not change shared import/update code or source bytes.
+
+
+## Actual results and current candidate
+
+The final candidate APK is **`634d60fd48284ffdb7a568125930fff9a4e42e146ce7ddb9366eec102689b7d3`**, 15,685,650 bytes. [Candidate identity](full-capacity/run/runtime-redirect-repair.json) pins its DEX/native/manifest hashes, actual installed test APK and unchanged import-code hashes. Storage transactions were measured on the separately preserved `43894b…30ee` APK; the final production change only corrects redirect shard-name normalization. The final candidate then resolved/read all three frozen redirect targets and opened the actual source dialog with the same complete catalog. No import behavior or asset bytes changed in that repair.
+
+All **31 primary shards** remain installed simultaneously: **6,498,498 wiki records** (1,250,000 full articles and 5,248,498 leads) and **81,455,423 places source records**. The Android audit verifies **84 distinct bulk objects / 40,950,708,231 bytes**, including 343,329 bytes of retained notices beyond the initial sealed input table. Both the initial and restored full-object audits pass. The reviewed editions and saved model retain their exact hashes before/after; shared cities and aliases are stored once, not once per shard.
+
+| Measurement | Decimal bytes / result |
+| --- | ---: |
+| Final app-data allocation after UI | 41,612,550,144 |
+| Installed application code allocation | 15,716,352 |
+| Installed test package allocation | 335,872 |
+| Final installed allocation including test package | **41,628,602,368** |
+| Largest-shard replacement precommit logical app files | 43,127,620,900 |
+| Inverse replacement precommit logical app files | 43,128,006,822 |
+| Maximum sampled app allocation plus larger measured package-code allocation | **43,145,453,568** |
+| Maximum sampled whole-emulator `/data` usage, including OS/other guest files | 43,436,118,016 |
+| Conservative one-provider-archive allowance plus 128 MiB reserve | **44,796,211,667** |
+
+The observed installation and replacement fit the **45 GB target and 50 GB hard cap** for this candidate and delivery path. The provider figure is an accounting bound using the measured peak plus the 1,516,540,371-byte inverse archive and 134,217,728-byte reserve; it is **not an observed provider-copy peak**. Retaining every input archive on the device would add another complete inventory and is not qualified by this result. The measured local FIFO transport retains no Android incoming ZIP. Application/test code is measured separately with `du`; the final table conservatively includes the slightly larger final test package. Temporary peaks, APK update overhead, unrelated user files and provider behavior must not be silently conflated.
+
+The representative changed-object update took **61.822 seconds**, and restoration took **59.596 seconds**, including retained-object verification. Both changed large objects coexist with the old version before catalog publication; obsolete objects are reclaimed afterward. A real cancellation after more than 1 MiB of incoming data and a corrupt notice payload both reject without changing the published catalog or saved model. The cancelled attempt's 12.394 seconds includes retained-hash verification, so it is not a cancellation-signal latency claim. Active selection survives an actual process restart; all collections were re-enabled for final inspection.
+
+The three full reader passes each return restaurant candidates in **20/20 frozen cities** (results capped at 30, not a venue census). The initial exact-title/source checks took 297–507 ms; first-pass city queries took **1.713–19.139 seconds**. Mexico City took 8.688 seconds and New York 19.139 seconds. This is a remaining usability gap, not rival-level speed. The original redirect misses remain visible in all pre-repair reports; the final repaired lookup resolves United States, New York City and United Kingdom with exact expected shard/article IDs and source reads in **282–396 ms**. No generated answers were requested or scored.
+
+Observed import/reader instrumentation PSS peaked at **88,226 KiB** across successfully captured samples (including the final redirect regression), with raw RSS/swap/process snapshots in each result. This excludes the lost sampler fields already disclosed. The normal UI source dialog snapshot reports **569,978 KiB PSS, 693,440 KiB RSS and zero process swap**, after the ordinary Activity lifecycle may load the pinned 0.5B model. It is a separate single snapshot, not a sustained model qualification, OOM, thermal or physical-phone result. Guest MemTotal and swap configuration remain explicit in the environment receipts.
+
+[Actual UI source dialog](full-capacity/ui/source-dialog.png), [active collections](full-capacity/ui/active-collections.png), accessibility dumps and source/provenance text are preserved. Two UI-driver failures are retained: case-sensitive matching of an uppercased Android button, then tapping an 18-pixel clipped result over system navigation on the 320×640 display. The final driver scrolls the target fully into view. These were test-driver repairs; no failed attempt was relabeled as a successful UI run.
+
+## Checks, limitations and next step
+
+- `bash tools/android-build.sh`: **PASS**, final APK identity above; [required build log](full-capacity/required-build.log).
+- `bash tools/evaluation/check_full_scale_android_capacity.sh`: **PASS**; [behavioral/integrity results](full-capacity/verification.log) and [immutable receipt](full-capacity/receipt.json). Changed/missing model bytes and run artifacts, subset counts and an unmeasured replacement peak are all rejected by actual negative mutations.
+- Original sampler/UI/redirect failures, prior task301 failures and both earlier APK identities remain preserved. No full-corpus redownload, repeated inference or emulator service change occurred. Emulator-5560 was not modified.
+
+The capacity environment dependency is resolved for this measured baseline candidate. Remaining independent work includes a bounded end-user shard-delivery/import workflow with one incoming archive at a time, and profiling/optimizing the measured dense-city query cost without dropping source fields. Update the release/distribution identity after those product changes and the separately authorized model work; do not reuse release-v5 hashes. Auxiliary database residency is not reader integration. Rights/source fidelity, supported generated answers, selected-4B Android admission/load/cancel/reload/resource qualification, independent unseen matched evaluation, clean-machine reproduction, production signing ownership, physical Android/GrapheneOS and human acceptance remain open. No private holdout, global preference, orchestration, service or main change is part of this checkpoint.

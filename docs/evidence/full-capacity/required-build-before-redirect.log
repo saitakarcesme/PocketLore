@@ -19,8 +19,8 @@ Consolidate compiler generated dependencies of target pocketlore_index
 [100%] Built target pocketlore_index
 
 > Task :app:buildPocketLoreNative
--- llama.cpp version: 0.2.0-dev
 CMAKE_BUILD_TYPE=Release
+-- llama.cpp version: 0.2.0-dev
 -- Setting GGML_NATIVE_DEFAULT to OFF
 -- Warning: ccache not found - consider installing it for faster compilation or disable this warning with GGML_CCACHE=OFF
 -- CMAKE_SYSTEM_PROCESSOR: aarch64
@@ -148,6 +148,6 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 6s
+BUILD SUCCESSFUL in 7s
 38 actionable tasks: 5 executed, 33 up-to-date
-Final debug APK SHA-256: 634d60fd48284ffdb7a568125930fff9a4e42e146ce7ddb9366eec102689b7d3
+Final debug APK SHA-256: 43894babe475f2719f3b2a732755b16860f88bee781fb86b5e99c850cbdb30ee
