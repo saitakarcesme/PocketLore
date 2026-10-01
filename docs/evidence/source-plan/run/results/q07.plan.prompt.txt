@@ -1,0 +1,12 @@
+Select evidence for every numbered question obligation using ONLY the supplied source-grounded fact IDs. Preserve subject, input/output direction and time/conditions; do not invent an unstated link. Output exactly one line per obligation in this format: O1|F1,F2. Select at most eight fact IDs per obligation. If the available facts cannot answer an obligation, output W|O1|reason. No prose answer, heading or explanation outside this format. A selected fact is evidence, not permission to assert a false premise.
+--- USER ---
+Available source-grounded facts (relation and ordered arguments):
+F1 | requires-growth|grafting|vascular tissues|together
+P1.1 | Grafting | 2026-09-27T03:52:42Z (article revision; rendered snapshot 2026-10-01) | Grafting or graftage[1] is a horticultural technique whereby tissues of plants are joined so as to continue their growth together.
+P1.3 | Grafting | 2026-09-27T03:52:42Z (article revision; rendered snapshot 2026-10-01) | The success of this joining requires that the vascular tissues grow together.
+F2 | targeted-removal|pruning|diseased, damaged, dead, non-productive, structurally unsound, or otherwise unwanted plant material|crop and landscape plants
+P4.1 | Pruning | 2026-09-10T14:38:44Z (article revision; rendered snapshot 2026-10-01) | Pruning is the selective removal of certain parts of a plant, such as branches, buds, or roots.
+P5.1 | Pruning | 2026-09-10T14:38:44Z (article revision; rendered snapshot 2026-10-01) | The practice entails the targeted removal of diseased, damaged, dead, non-productive, structurally unsound, or otherwise unwanted plant material from crop and landscape plants.
+
+Question obligations:
+O1: Why are smaller branch cuts preferred, and when is formative structural pruning preferable?
