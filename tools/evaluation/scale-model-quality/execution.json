@@ -11,5 +11,6 @@
   "decoder": "Greedy generateChat for every candidate; no claims grammar, no seed search; pinned Qwen3 non-thinking template handling retained",
   "architecture": "Deterministic semicolon obligation plan, dated subject-specific sources, ranked per-obligation reading order, one labeled answer slot per obligation. Existing citation/completeness/number/temporal/lexical claim checks retained; full support/completeness judged separately by builder source review.",
   "selection": "Rank fully source-supported, obligation-complete, useful drafts; report screened candidates separately. Prefer no unsupported candidate publications and smaller assets on quality ties. Do not deploy on raw host score; require measured profile and real emulator subset. Negative results retain precise integration/architecture follow-up.",
-  "timing": "Per-process CPU host under up to two six-thread jobs, including text-output capture; separate from Android and previous thread/backend results. Token count and native sample maxima recorded. No phone speed claim."
+  "timing": "Per-process CPU host under up to two six-thread jobs, including text-output capture; separate from Android and previous thread/backend results. Token count and native sample maxima recorded. No phone speed claim.",
+  "aggregate_admission": "Sum of active model file sizes + 2 GiB per process must fit startup MemAvailable minus 2 GiB host reserve, in addition to the live per-launch check."
 }
