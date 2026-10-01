@@ -1,0 +1,94 @@
+{
+  "reviewer": "builder; independent source criticism pending",
+  "criterion": "Inspect every generated factual clause against actual cited span, separately from same-model audit. Complete means all requested obligations usefully explained, not just mentioned. Typed reference correctness does not prove entailment. Withheld or malformed prose never counts as eligible success.",
+  "cases": {
+    "s01": {
+      "result_sha256": "f00a347a4b799cc834ff3b98f953522b573bbdb85cbd554f570628db5b77f500",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Complete middle-comparison and repeated half-elimination description; exact selected sentences establish both. It does not restate sorted prerequisite, but answers the requested narrowing mechanism as in task220 rubric.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.1 establishes middle comparison and sorted context; P1.2 establishes elimination, repetition and found endpoint."
+        }
+      ]
+    },
+    "s02": {
+      "result_sha256": "fff1ed0874a68e40431c7105938350be008d3359fc691d5bac23ade6ddd20130",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": false,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Same incomplete explanation identified in task220: degeneracy is named without explaining shape or performance consequence. Model audit incorrectly marks completeness.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "Exact P5.1 supports stated dependence/degeneracy/variants; does not itself explain how shape/search work changes."
+        }
+      ]
+    },
+    "s03": {
+      "result_sha256": "b3b7df832f6ee1de5bae60a898bfcc761854de36fb79b64864d6d07cc56faf16",
+      "all_claims_supported": true,
+      "all_cited_spans_support": true,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": true,
+      "assessment": "Both requested ordering obligations answered; extra endpoint/operation facts are also exactly cited.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.3 supports absent endpoint; P2.3 sorted-array prerequisite."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P4.1 supports left/right key ordering; P5.2 lists operations."
+        }
+      ]
+    },
+    "s04": {
+      "result_sha256": "7707082af1aa6f70fd38e8f29a15e9bd9d8e661b745f20bc29d7142940d8ddc4",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Facts correct in full supplied evidence, but logarithmic worst-case claim cites only first-paragraph middle/elimination sentences, not P2.1. Same-model audit falsely certifies source support.",
+      "claims": [
+        {
+          "claim_index": 1,
+          "assessment": "P1.1-P1.3 do not establish logarithmic complexity; they support only the procedural and empty-range clause."
+        },
+        {
+          "claim_index": 2,
+          "assessment": "P4.2 supports height cost; P5.1 degeneracy and guaranteed variants; P6.2 singly linked-list O(n) worst case."
+        }
+      ]
+    },
+    "s05": {
+      "result_sha256": "67b67cee1b8f3dbbe5211776e23dcb12012a3c7afc304382111dfef073ea3615",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": true,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Raw prose correctly rejects false premise and names exact P2.3, but uses W rather than a typed claim; no bound citations or generated publication credit.",
+      "claims": []
+    },
+    "s06": {
+      "result_sha256": "a57bb61471df5e42213507d3032204d4537b5b39aa187b17084d2578859062e7",
+      "all_claims_supported": true,
+      "all_cited_spans_support": false,
+      "obligations_complete": false,
+      "complete_prose": true,
+      "fully_useful_draft": false,
+      "assessment": "Appropriate absence withholding; no measured laptop latency in evidence. No typed supported answer is produced.",
+      "claims": []
+    }
+  }
+}
