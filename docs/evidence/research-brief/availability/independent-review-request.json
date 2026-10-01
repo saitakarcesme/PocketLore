@@ -1,0 +1,17 @@
+{
+  "purpose": "Independent source inspection requested; no independent labels supplied by builder",
+  "primary_count": 24,
+  "supplementary_count": 12,
+  "files": {
+    "tools/evaluation/research-brief/cases.json": "7f9389fb913dd904dcfc8fb6d72b78c5c13936807a9b31c9395dc79d6ddc3c6c",
+    "tools/evaluation/research-brief/sources.json": "f27241e60c08ed16cd68a1c9927ac5989b86165352134e7bee06e94a5f9eb2df",
+    "tools/evaluation/research-brief/availability/cases.json": "30b5e3a7377dd6a9ff23449fe2650293b8901db3343d3bf5061e52aec6788a82",
+    "docs/evidence/research-brief/availability/outputs.json": "9fed5b65b96c7c2507dd9a0b97ac4fde9fe8ee9874f92988ff69e3437138a5fd"
+  },
+  "requirements": [
+    "Inspect each complete final output against actual cited passages including relevance, qualifiers and false-premise context",
+    "At least 12 of the original 24 must be complete useful source-supported briefs; no credit for generated success",
+    "Zero unsupported eligible outputs; no unavailable output eligible; all original and supplementary unavailable requests have zero quotes",
+    "Return independently attributed judgments bound to rendered SHA-256; do not relabel builder assessments"
+  ]
+}

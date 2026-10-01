@@ -194,7 +194,9 @@ public final class MainActivity extends Activity {
         status.setText("Selecting exact source quotations…");
         ResearchEngine selected=engine;long epoch=libraryEpoch;
         worker.execute(()->{try{
-            ResearchEngine.Result result=selected.research(query);
+            ResearchEngine.Result result=EvidenceAvailability.scope(query)==EvidenceAvailability.Scope.REFERENCE
+                ? selected.research(query)
+                : new ResearchEngine.Result(java.util.Collections.emptyList(),java.util.Collections.emptySet(),"Evidence unavailable");
             ResearchBrief.Brief brief=ResearchBrief.create(query,result,()->cancelBrief||destroyed);
             runOnUiThread(()->{if(destroyed||epoch!=libraryEpoch||cancelBrief)return;
                 latestEvidence=result;
@@ -208,7 +210,7 @@ public final class MainActivity extends Activity {
                 status.setText(brief.availability==EvidenceAvailability.Scope.REFERENCE ? brief.quotes.size()+" source quotations · coverage unverified · no generated answer" : EvidenceAvailability.reason(brief.availability));
             });
         }catch(Exception e){runOnUiThread(()->{if(!destroyed)status.setText("Research brief unavailable: "+e.getMessage());});}
-        finally{runOnUiThread(()->{if(!destroyed){searching=false;if(cancelBrief)status.setText("Research brief cancelled; no partial result");updateControls();}});}});
+        finally{runOnUiThread(()->{if(!destroyed){searching=false;nativePanel.finishResearchBrief();if(cancelBrief)status.setText("Research brief cancelled; no partial result");updateControls();}});}});
     }
     AnswerEngine.Outcome latestAnswer() { return nativePanel.outcome(); }
     boolean modelReady() { return nativePanel.hasModel() && !nativePanel.isBusy(); }

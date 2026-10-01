@@ -81,6 +81,8 @@ final class NativePanel {
     boolean hasModel() { return session != 0; }
     void clearEvidence() { ++answerEpoch; outcome=null; retrieving=false; output.setText(""); }
     void searchFailed() { clearEvidence(); setBusy(false); }
+    /** Complete an extractive operation without starting or crediting native generation. */
+    void finishResearchBrief() { retrieving=false; setBusy(false); }
     void clearAnswer() { ++answerEpoch; outcome = null; cancelled = false; retrieving = true; output.setText(""); setBusy(true); }
     void cancel() {
         cancelled = true;

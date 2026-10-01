@@ -1,3 +1,33 @@
+# Task226: evidence availability repaired; independent review pending
+
+Recovered225 checkpoint48c5106 without replacing its original24 questions, source bytes or failed outputs. The canonical critic was read once. Twelve supplementary public development controls and a fixed policy were committed in4ba7b70 before implementation/testing; they are not held-out or replacement cases.
+
+General English capability checks now withhold personal-record, current/live and explicit future-event requests with specific reasons and zero quotes. Mixed requests explicitly withhold their general portion too, rather than silently completing only part. First-person advice and generic future-tense explanations remain reference requests. The Activity bypasses retrieval for unavailable scopes. These are conservative linguistic rules, not entity/topic/question-ID rules or an all-language semantic oracle.
+
+The unchanged BM25 order receives a fixed quarter-of-leading-score floor and two-distinct-term relevance filter (one for single-term queries), with generic function words excluded. These features select possible quotations, never certify entailment or completeness. Exact whole passages, visible subjects/dates/conditions, UTF-16 spans, rights and edition identities remain. No thresholds, seeds, prompts or source facts were searched or rewritten after output inspection.
+
+## Actual milestones
+
+- All3 original absence controls and7 supplementary unavailable/mixed requests return explicit unavailability and zero quotations. Five supplementary reference requests remain reference requests.
+- Builder source inspection rates20/24 original briefs complete/useful, versus15/24 before repair. Five distractor failures are removed; b07 still contains unrelated volcanic material and is not credited. All21 supported cases retain expected evidence, which is a retrieval result rather than a quality score. Supplementary a11 remains an incomplete false-comparison question, not an affirmed DNA/tectonic relationship.
+- Zero generated-answer successes are claimed. No model inference, old matrix/audit generation, new corpus download or production model change occurred. Qwen2.5 0.5B remains deployed; Qwen3 4B remains host-only and unused here.
+- Narrow regression ran first. Fourteen behavioral groups, historical draft-substitution rejection, eight changed/missing real artifact controls and36 exact Android/host replays pass. Frozen225 primary source/archive identities remain unchanged.
+- Repeated actual Activity checks found a225 production bug: extractive completion left NativePanel busy, preventing the next question. Two failed UI traces and disabled-control XML remain preserved. The repair explicitly finishes the extractive operation without starting generation. The first diagnosis of a scroll-driver problem was incomplete.
+
+## Evidence and gates
+
+Android build passes. Final lifecycle-repaired APK SHA-256 is ed22b52c6ec196d23672953b9deed8bfa77b3d2a0aad71fc61dc1bd736bf6725. Earlier226 build/test APKs and all225 receipts are historical, not relabeled as this candidate.
+
+The required check passes behavioral, artifact and availability checks, then still exits1 solely because independent final-output source review is missing. The zero-unsupported, all-absence and at-least12/24 independently useful quality gates remain unchanged. Builder judgments are not renamed as independent review. The ordinary independent review stage is the remaining dependency; no private task queue or runner state was changed.
+
+[New outputs](research-brief/availability/outputs.json), [builder inspections](research-brief/availability/builder-review.json), [supplementary controls](../../tools/evaluation/research-brief/availability/cases.json), [pre-test policy](research-brief/availability/protocol.md), [narrow results](research-brief/availability/narrow.json), [check log](research-brief/availability/check.log), and [immutable review inputs](research-brief/availability/independent-review-request.json) preserve the evidence. Original225 outputs remain at their original paths. Supplementary quality-preparation was not substituted or claimed as held-out evaluation.
+
+The captured36-call host retrieval/render p50/p95 is0.673/1.978ms; the pre-lifecycle Android controller replay is2.249/17.944ms, using nearest rank. These exclude index construction, UI rendering and inference, and are not phone latency or model throughput. No new model-memory qualification is claimed.
+
+The capability vocabulary may miss unfamiliar phrasing or conservatively reject possessive general questions. Relevance remains lexical; residual distractors, incomplete false-premise coverage, verbose provenance and conservative exclusion of reviewed broad-edition overrides remain limitations. The next action is independent inspection of this frozen repair, not another unchanged matrix. Physical/GrapheneOS, unseen evaluation, release identity and human acceptance remain open. The original225 report follows unchanged.
+
+---
+
 # Task 225: evidence-first research brief
 
 ## Declaration before implementation
