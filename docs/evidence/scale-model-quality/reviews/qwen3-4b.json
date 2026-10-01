@@ -353,6 +353,38 @@
       "obligations_complete": true,
       "fully_useful_draft": true,
       "assessment": "Complete citizen-science contribution explanation with monitoring and discovery examples established by S1."
+    },
+    "s45": {
+      "result_sha256": "aec97d41b510764627e062e5b1381824d03b58d3de0fddd9eac0250bd20fef56",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Both apparent-brightness dependencies and amateur observing/citizen-science activities are established by their respective S4/S1 paragraphs."
+    },
+    "s46": {
+      "result_sha256": "7092d7f469d1ba4189f9ae0cafcab71b3da04adc429686a820b75b6bce436d35",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correct fifth-root-of-100 ratio and two observation examples with exact S5/S1 support; the math root bracket is a parser issue, not an invented source."
+    },
+    "s47": {
+      "result_sha256": "c6473570b65ac903d41692e874d5370633958af475189046955440dec8a580de",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Rejects the reversed brightness premise and supplies the inverse scale and ratio from S5; complete supported correction."
+    },
+    "s48": {
+      "result_sha256": "01233fd5d097cee069445d6ef65f67501d89f0134d3e9f60740d39d7ce47de2e",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly withholds absent current unidentified-star brightness; useful abstention only."
     }
   }
 }

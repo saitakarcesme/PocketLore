@@ -53,10 +53,98 @@
     "s07": {
       "result_sha256": "805cec52082abf99daf1713f0ae002d940cdaa260844380241ffb7d7d52a1a20",
       "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Green/brown inputs and soil-fertility use are factual, but the green/brown input details come from S2 rather than the sole cited S1. Corrected during exact excerpt audit."
+    },
+    "s08": {
+      "result_sha256": "819e0373ba2f6e36e1481d20a1fdb279ccb5130091113b5ea53085ef2c425e29",
+      "all_facts_supported": true,
       "cited_claims_supported": true,
       "obligations_complete": true,
       "fully_useful_draft": true,
-      "assessment": "Both green/brown inputs and soil-fertility/fertilizer-use role are established by S1; complete paragraph-supported answer withheld by the sentence-level gate."
+      "assessment": "Correctly distinguishes the worms decomposing organic input in S4 from vermicast as the excreted product in S5, avoiding the earlier 4B input/output error."
+    },
+    "s09": {
+      "result_sha256": "9191c99448a908d25cc3715ea0bd1043b2f0fe82bbd4ee6dd5cba0da8e55f6bc",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "O1 cites S1 for process details in S2; O2 treats vermicast as decomposed input; O3 transfers all physical/chemical/biological improvement properties from compost to both subjects without vermicompost S6 support."
+    },
+    "s10": {
+      "result_sha256": "2479c615d46c66a70233205ed2fa4dbf46d7758180f555a53edb58d8bec30b41",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Both requested definitions are factual, but vermicast end-product and synonyms are in S5, not the cited S4."
+    },
+    "s11": {
+      "result_sha256": "aeb6342e7321c07fa86d519d299da8ccfe9068ba2c12b92d19387800dad8ed00",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly rejects the worm-free premise with exact S4 worm-use evidence; paragraph-citation machine withholding remains separate."
+    },
+    "s12": {
+      "result_sha256": "9f9cde8feb6f552b43537b78c58bb9e311fbab42b2df3b7b0a06653d566c865b",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly withholds absent local live stock; useful abstention only."
+    },
+    "s13": {
+      "result_sha256": "216e3472015722be35c7d2c973b96b9b4e050f53b2f5f815ead09cac77564c56",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly identifies upper scion and lower rootstock with exact S1 support; screen candidate."
+    },
+    "s14": {
+      "result_sha256": "feda3c5cb0ba4d187668ea744b8abd7150c165cd56462ac44cc7841ab7e1f1ea",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explains smaller wounds, compartmentalization and pathogen/decay risk with exact S5 support, retaining the young/mature pruning qualification."
+    },
+    "s15": {
+      "result_sha256": "ed67bdca6c15936fe88a2b2ec16c9db81d0e06cfeb581278b98fe91b7d99f63b",
+      "all_facts_supported": true,
+      "cited_claims_supported": false,
+      "obligations_complete": true,
+      "fully_useful_draft": false,
+      "assessment": "Both requested operations are correct, but O2 adds diseased/damaged/unwanted-material details from S5 while citing only S4."
+    },
+    "s16": {
+      "result_sha256": "f89004e0b4148afe6880d0b558b0b80d34fbfb8644558b28dc850f2cdac5c06a",
+      "all_facts_supported": false,
+      "cited_claims_supported": false,
+      "obligations_complete": false,
+      "fully_useful_draft": false,
+      "assessment": "Screen candidate transfers the benefit of smaller pruning wounds into a general reason for pruning unwanted material. S5 establishes compartmentalization after a small cut, not that removing unwanted material itself limits pathogen intrusion and decay. Same scope error was withheld in the 4B draft."
+    },
+    "s17": {
+      "result_sha256": "7a3265c7e05c94bba271cf15149a04cbc050bcb32f95c9c2d4a57d69a1e53aab",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Explicitly rejects the no-vascular-union premise and quotes the exact S1 requirement, explaining the contradiction."
+    },
+    "s18": {
+      "result_sha256": "3f243f01552cbffe7bc998ce9ba0da669f5724275aeb80545290d91569768494",
+      "all_facts_supported": true,
+      "cited_claims_supported": true,
+      "obligations_complete": true,
+      "fully_useful_draft": true,
+      "assessment": "Correctly withholds absent future local pricing; useful abstention only."
     }
   }
 }

@@ -1,0 +1,2 @@
+O1: [S2] Binary search runs in logarithmic time in the worst case, making $ O(\log n) $ comparisons, where $ n $ is the number of elements in the array.  
+O2: [S5] The performance of a binary search tree is dependent on the order of insertion of the nodes into the tree since arbitrary insertions may lead to degeneracy; several variations of the binary search tree can be built with guaranteed worst-case performance. In the worst case, they degrade to that of a singly linked list: $ O(n) $.

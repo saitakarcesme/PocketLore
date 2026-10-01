@@ -12,7 +12,7 @@ Candidates are the actual 0.5B baseline, reused Qwen3 4B Q4_K_M (2,497,280,256 b
 
 ## Preserved resource failure and execution revision
 
-The initial run is `downloads/scale-model-quality/matrix-20261001T092716Z`. The baseline completed 48 calls. The 4B job remains active. Both larger models initially produced 48 zero-token buffer-admission errors: these are failed resource attempts, not quality measurements, despite the harness process exiting normally.
+The initial run is `downloads/scale-model-quality/matrix-20261001T092716Z`. The baseline completed 48 calls. The 4B job completed all 48 calls in 1,808.879 seconds. Both larger models initially produced 48 zero-token buffer-admission errors: these are failed resource attempts, not quality measurements, despite the harness process exiting normally.
 
 CPU_Mapped plus CPU_REPACK weight buffers measured about 7.8 GB for 7B and 8.22 GB for MoE, exceeding the original file-equals-buffer assumption. Peak process RSS on those failed attempts was 7,674,200 KiB and 8,317,828 KiB respectively, with zero sampled swap. No host memory exhaustion was attempted.
 
@@ -22,7 +22,7 @@ Timing is CPU host timing under declared concurrent work, not an isolated speed 
 
 ## Assessment and current limitations
 
-Builder source assessments are recorded separately in `scale-model-quality/reviews`. A draft can be semantically useful yet withheld by the sentence-citation gate; this is reported as draft capability, never published success. Correct absent answers are counted separately from the 40 supported/false-premise cases. All candidate text still needs independent source criticism. No selection is made from partial runs.
+Builder source assessments are recorded separately in `scale-model-quality/reviews`. Completed baseline/4B review finds respectively 1/40 and 26/40 fully useful supported drafts, and 4/8 versus 8/8 useful absent-case responses. Machine candidates are 0 and 5; one of those five 4B candidates is incomplete. These are draft/screen outcomes, not production publications. The partial 7B run includes a source-scope error in s16 that passes the lexical controller: a benefit of smaller pruning wounds is recast as the general purpose of removing unwanted material. No parser or prompt change is being made during the matrix. A draft can be semantically useful yet withheld by the sentence-citation gate; this is reported as draft capability, never published success. Correct absent answers are counted separately from the 40 supported/false-premise cases. All candidate text still needs independent source criticism. No selection is made from partial runs.
 
 The existing emulator has approximately 2.42 GiB total RAM and cannot establish these larger candidates' mobile suitability. Its admission limits remain unchanged. The sealed Android worker handoff was hash-checked read-only and is not merged: it retains the same model ceiling, reports an answer-check failure also seen at its baseline, and has no emulator execution evidence. No private worker state, holdout or services were read or altered.
 

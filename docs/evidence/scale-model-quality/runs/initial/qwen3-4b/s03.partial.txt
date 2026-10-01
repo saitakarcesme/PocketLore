@@ -1,0 +1,2 @@
+O1: [S2] The data organization required by binary search is a sorted array. Binary search requires the array to be sorted first to be able to apply the algorithm.  
+O2: [S4] In a binary search tree, the left subtree of each internal node contains nodes with keys less than the node's key, and the right subtree contains nodes with keys greater than the node's key. This ordering allows the binary search tree to maintain the properties necessary for efficient search operations.
