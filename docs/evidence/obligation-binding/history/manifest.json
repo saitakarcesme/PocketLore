@@ -1,0 +1,30 @@
+{
+  "fixture_sha256": "cdb225743fe94654bc7d0a2da2f05724da92344392c68be02d42d63358764ba9",
+  "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+  "library_sha256": "38cc3d9108c865fac5c7b8744987b58bee5a3ff9b37529f919e5ce24db42dfef",
+  "source_hashes": {
+    "android/app/src/main/java/org/pocketlore/app/BoundAnswer.java": "3ebc23e6ed3dc73f52ccf899029b0b98dce258c44e7bc717804245206c7ff709",
+    "android/app/src/main/java/org/pocketlore/app/ObligationAnswer.java": "6b9f0e61ba2a7bf5a040f2d9f3899acc682b40cf236ac3395d1bdac8f1819725",
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "f276dc506e3022e445149c6c09e2577f595b287cfc406a760fda525c46c66128",
+    "android/app/src/main/java/org/pocketlore/app/EvidencePrompt.java": "238131c012580bdd1af9c2a67fb7db410c1c4d5f2bc5235a0016eb09d493832a",
+    "android/app/src/main/java/org/pocketlore/app/AnswerEngine.java": "c03f51d31c5e1fa628450978ec6ccc9fe2491de11b6695856856c694826d2dbc",
+    "android/app/src/main/java/org/pocketlore/app/NativeRuntime.java": "ec6f59d59b07ef7f5016657e0fcba0203232ecc7359f56a9ad6c205215fb2085",
+    "tools/evaluation/scale-model-quality/ScaleHarness.java": "c969a8ff91f4e200e6ca674c68c0bb68e5a7d0bacfa39f5db251708175779558",
+    "tools/evaluation/obligation-binding/BindingHarness.java": "23c74dc755f68eee7c746c4ba7c416adf088a035a1aea9381e5c29e8715c7f06",
+    "tools/evaluation/obligation-binding/HistoryHarness.java": "142273a6feb5f66350dca18565366f30fccdf2167c8bd916ccad29692b1c591a",
+    "tools/evaluation/obligation-binding/HistoryPreflight.java": "fb01b472397e2095b495e373e06b26c9d1c41cab7186fe505e3f7490b8074194",
+    "tools/evaluation/obligation-binding/run_history.py": "64663cdbfe106ffb401ed1d807490cffe5bbcc5d1122c6fd3148cf828fa58e2b"
+  },
+  "stage": "Historical typed-wrapper native audit, no fresh generation credit",
+  "command": [
+    "/home/isa/Android/atlas-toolchain/jdk/bin/java",
+    "-Xmx512m",
+    "-Djava.library.path=/home/isa/Projects/PocketLore/downloads/scale-model-quality/host-build",
+    "-cp",
+    "/home/isa/Projects/PocketLore/downloads/obligation-binding/history-20261001T123102Z/classes",
+    "org.pocketlore.app.HistoryHarness",
+    "/home/isa/Projects/PocketLore/downloads/obligation-binding/history-20261001T123102Z/inputs",
+    "/home/isa/Projects/PocketLore/downloads/model-capability/models/Qwen3-4B-Q4_K_M.gguf",
+    "/home/isa/Projects/PocketLore/downloads/obligation-binding/history-20261001T123102Z/results"
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "scope": "CPU host only, one six-thread inference process; same-model audit, builder review not independent criticism",
+  "percentile_definition": "Nearest rank ceil(p*n)-1 across different questions, not repeated cold trials; generation includes context/prefill and per-chunk capture; summed draft and audit generation is reported separately from first draft token; token counting and UI are excluded",
+  "populations": {
+    "s": {
+      "cases": 48,
+      "eligible": 20,
+      "withheld": 28,
+      "useful_bound_drafts": 13,
+      "context_supported_complete_content_potential": 27,
+      "fully_useful_eligible": 12,
+      "unsupported_eligible": 7
+    },
+    "n": {
+      "cases": 12,
+      "eligible": 7,
+      "withheld": 5,
+      "useful_bound_drafts": 3,
+      "context_supported_complete_content_potential": 8,
+      "fully_useful_eligible": 2,
+      "unsupported_eligible": 5
+    }
+  },
+  "draft_total_ms": {
+    "n": 60,
+    "p50": 44900.389578,
+    "p95": 70529.657127,
+    "min": 28474.350313,
+    "max": 71035.720208
+  },
+  "draft_first_token_ms": {
+    "n": 60,
+    "p50": 33611.65164,
+    "p95": 57624.361073,
+    "min": 20364.777397,
+    "max": 60245.081801
+  },
+  "audit_total_ms": {
+    "n": 31,
+    "p50": 15616.482793,
+    "p95": 23378.713143,
+    "min": 6753.749897,
+    "max": 26388.105002
+  },
+  "question_generation_ms": {
+    "n": 60,
+    "p50": 57101.129914000005,
+    "p95": 83334.80456,
+    "min": 30450.9107,
+    "max": 89148.041407
+  },
+  "total_tokens": {
+    "n": 60,
+    "p50": 107,
+    "p95": 320,
+    "min": 47,
+    "max": 320
+  },
+  "context_prompt_tokens_max": 2523,
+  "native_peaks": [
+    1,
+    1,
+    4242363904,
+    603979776,
+    80413184
+  ],
+  "placeholder_qualifier_fields": 15,
+  "memory": {
+    "VmRSS_peak_bytes": 4886200320,
+    "VmHWM_peak_bytes": 4974891008,
+    "VmSwap_peak_bytes": 21458944
+  },
+  "load": {
+    "identity": "llama.cpp bb4caa7540188872173c44d161602d9271386413; CPU; context=4096; sequences=1; KV=f16; sessions=1; threads=6; model-budget=6000000000; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42; HOST SCREEN native CPU ISA; not Android admission",
+    "load_ms": 999.936724
+  },
+  "main_elapsed_s": 3407.9010667360053,
+  "cancellation": {
+    "stage": "Separate native callback cancellation and same-handle retry fixture; no quality credit",
+    "callback_count": 1,
+    "cancel_tokens": -1,
+    "cancel_error": "",
+    "cancel_latency_ms": 22.999717,
+    "after_cancel": [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "retry_tokens": 3,
+    "retry_raw": "Reply READY.",
+    "after_retry": [
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "history_routes": {
+    "r01": "SCREEN_ELIGIBLE",
+    "r02": "SCREEN_ELIGIBLE",
+    "r03": "WITHHELD",
+    "r04": "WITHHELD",
+    "r05": "SCREEN_ELIGIBLE",
+    "r06": "SCREEN_ELIGIBLE",
+    "r07": "WITHHELD",
+    "r08": "SCREEN_ELIGIBLE",
+    "r09": "SCREEN_ELIGIBLE",
+    "r10": "WITHHELD",
+    "r11": "WITHHELD"
+  }
+}

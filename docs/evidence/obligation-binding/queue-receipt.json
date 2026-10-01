@@ -1,0 +1,11 @@
+{
+  "task": "222-independent-evidence-linking",
+  "dependency": [
+    "221-obligation-source-binding"
+  ],
+  "sha256": "edf0a2ddfb627c1a746d39392c448ef652d4c8ccd2cdd863d4863b7461af1c9f",
+  "path": "/home/isa/PocketLore-control/tasks/222-independent-evidence-linking.json",
+  "action": "Created task specification atomically",
+  "created_utc": "2026-10-01T12:36:57.015985+00:00",
+  "limitation": "No dispatch or runner state changed. Scheduling and independent review of the failed task221 result remain coordinator responsibilities."
+}
