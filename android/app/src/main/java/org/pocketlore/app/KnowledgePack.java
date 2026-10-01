@@ -119,12 +119,17 @@ public final class KnowledgePack {
         try(InputStream in=new FileInputStream(file)){return read(in);}
     }
     /** Validation and index creation precede atomic replacement; failures preserve the old pack. */
-    public static KnowledgePack install(InputStream in, File directory) throws Exception {
+    public static synchronized KnowledgePack install(InputStream in, File directory) throws Exception {
+        return install(in,directory,()->false);
+    }
+    public static synchronized KnowledgePack install(InputStream in,File directory,java.util.function.BooleanSupplier cancelled)throws Exception {
+        ResourceStorage.cleanupPackStages(directory);
+        ResourceStorage.requireSpace(LIMIT,directory.getUsableSpace());
         File temporary=File.createTempFile("pack-", ".partial",directory);
         try {
-            byte[] bytes=bounded(in,LIMIT);
-            KnowledgePack pack=read(new ByteArrayInputStream(bytes));
-            try(FileOutputStream out=new FileOutputStream(temporary)){out.write(bytes);out.getFD().sync();}
+            ResourceStorage.copy(in,temporary,LIMIT,cancelled);
+            KnowledgePack pack=load(temporary);
+            if(cancelled.getAsBoolean() || Thread.currentThread().isInterrupted())throw new InterruptedIOException("Pack import cancelled");
             Files.move(temporary.toPath(),new File(directory,"knowledge.plpack").toPath(),StandardCopyOption.ATOMIC_MOVE,StandardCopyOption.REPLACE_EXISTING);
             return pack;
         } finally {temporary.delete();}

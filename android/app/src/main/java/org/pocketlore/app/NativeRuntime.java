@@ -10,6 +10,8 @@ public final class NativeRuntime {
     private NativeRuntime() {}
     public interface Sink { void onToken(byte[] utf8); }
     public static native String identity();
+    /** Diagnostic counts: live resident lease and live inference contexts, not memory bytes. */
+    public static native long[] resourceState();
     public static native long create();
     public static native void load(long session, byte[] localPath);
     public static native int generate(long session, byte[] prompt, int maxTokens, Sink sink);

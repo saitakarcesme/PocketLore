@@ -7,6 +7,7 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <sys/stat.h>
 
 namespace {
 struct Session {
@@ -18,7 +19,10 @@ struct Session {
 std::mutex registryMutex;
 std::unordered_map<jlong, std::shared_ptr<Session>> sessions;
 jlong nextId = 1;
+std::weak_ptr<Session> residentLease;
 std::once_flag backendOnce;
+std::atomic<int> activeContexts{0};
+void releaseContext(llama_context *ctx){if(ctx){llama_free(ctx);--activeContexts;}}
 std::shared_ptr<Session> get(jlong id) {
     std::lock_guard<std::mutex> lock(registryMutex);
     auto it = sessions.find(id);
@@ -38,14 +42,16 @@ std::string bytes(JNIEnv *env, jbyteArray value) {
 }
 }
 extern "C" JNIEXPORT jstring JNICALL Java_org_pocketlore_app_NativeRuntime_identity(JNIEnv *env, jclass) {
-    return env->NewStringUTF("llama.cpp " POCKETLORE_REVISION "; CPU; context=2048; threads=2; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42");
+    return env->NewStringUTF("llama.cpp " POCKETLORE_REVISION "; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads=2; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42");
 }
 extern "C" JNIEXPORT jlong JNICALL Java_org_pocketlore_app_NativeRuntime_create(JNIEnv *env, jclass) {
     try {
         std::call_once(backendOnce, [] { llama_backend_init(); });
         std::lock_guard<std::mutex> lock(registryMutex);
+        if (!residentLease.expired()) throw std::runtime_error("One native session at a time; wait for cancellation and release");
         jlong id = nextId++;
-        sessions.emplace(id, std::make_shared<Session>());
+        auto session = std::make_shared<Session>();
+        residentLease = session; sessions.emplace(id, session);
         return id;
     } catch (const std::exception &e) { fail(env, e); return 0; }
 }
@@ -61,6 +67,8 @@ extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_load(JNI
         p.progress_callback_user_data = s.get();
         const auto filename = bytes(env, path);
         if (filename.find('\0') != std::string::npos) throw std::runtime_error("Invalid model path");
+        struct stat fileInfo{};
+        if (stat(filename.c_str(), &fileInfo) != 0 || !S_ISREG(fileInfo.st_mode) || fileInfo.st_size < 4 || fileInfo.st_size > 2147483648LL) throw std::runtime_error("Model file must be regular and at most 2048 MiB");
         s->model = llama_model_load_from_file(filename.c_str(), p);
         if (!s->model) throw std::runtime_error(s->cancelled ? "Cancelled" : "Cannot load GGUF model");
         if (llama_model_has_encoder(s->model)) {
@@ -123,11 +131,13 @@ static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobje
             throw std::runtime_error("Tokenization failed");
         auto params = llama_context_default_params();
         params.n_ctx = 2048; params.n_batch = 2048; params.n_ubatch = 128;
+        params.n_seq_max = 1; params.type_k = GGML_TYPE_F16; params.type_v = GGML_TYPE_F16;
         params.n_threads = 2; params.n_threads_batch = 2;
         params.abort_callback = aborted; params.abort_callback_data = s.get();
-        using Context = std::unique_ptr<llama_context, decltype(&llama_free)>;
-        Context ctx(llama_init_from_model(s->model, params), llama_free);
+        using Context = std::unique_ptr<llama_context, decltype(&releaseContext)>;
+        Context ctx(llama_init_from_model(s->model, params), releaseContext);
         if (!ctx) throw std::runtime_error("Cannot create inference context");
+        ++activeContexts;
         using Sampler = std::unique_ptr<llama_sampler, decltype(&llama_sampler_free)>;
         Sampler sampler(nullptr,llama_sampler_free);
         if(sources>0) {
@@ -219,4 +229,10 @@ extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_close(JN
         s = it->second; sessions.erase(it);
     }
     s->cancelled = true; // An in-flight call retains ownership until it exits.
+}
+
+extern "C" JNIEXPORT jlongArray JNICALL Java_org_pocketlore_app_NativeRuntime_resourceState(JNIEnv *env,jclass) {
+    std::lock_guard<std::mutex> lock(registryMutex);
+    jlong values[]={residentLease.expired()?0LL:1LL,activeContexts.load()};
+    auto result=env->NewLongArray(2);if(result)env->SetLongArrayRegion(result,0,2,values);return result;
 }

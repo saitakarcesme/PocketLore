@@ -140,6 +140,8 @@ public final class ResearchEngine {
     }
 
     public int size() { return passages.size(); }
+    /** Counts describe logical index payload, not JVM object allocation or serialized storage. */
+    public long[] resourceCounts(){long postings=0,characters=0;for(List<Posting> list:index.values())postings+=list.size();for(Passage p:passages)characters+=p.text.length();return new long[]{passages.size(),index.size(),postings,characters};}
     public Result research(String question) {
         Set<String> terms = new HashSet<>(tokenize(question));
         Set<String> missing = new java.util.TreeSet<>(terms);

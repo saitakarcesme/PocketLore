@@ -7,11 +7,11 @@ import java.util.function.BooleanSupplier;
 /** Bounded, cancellable staging. Caller validates GGUF with the runtime before atomic promotion. */
 public final class ModelImport {
     public static final long MAX_BYTES = 2048L * 1024 * 1024;
-    public static final long RESERVE_BYTES = 32L * 1024 * 1024;
+    public static final long RESERVE_BYTES = ResourceStorage.RESERVE_BYTES;
     public static String copy(InputStream input, File stage, long expected, long available,
                               BooleanSupplier cancelled) throws Exception {
         if (expected < 4 || expected > MAX_BYTES) throw new IOException("Model size must be known and at most 2048 MiB");
-        if (available < expected + RESERVE_BYTES) throw new IOException("Insufficient free storage for model copy and reserve");
+        ResourceStorage.requireSpace(expected,available);
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         long total = 0;
         byte[] buffer = new byte[65536];
@@ -24,8 +24,9 @@ public final class ModelImport {
                 digest.update(buffer, 0, count); output.write(buffer, 0, count);
             }
             if (total != expected) throw new IOException("Incomplete model copy");
+            if (cancelled.getAsBoolean()) throw new IOException("Cancelled");
             output.getFD().sync();
-        } catch (Exception error) { stage.delete(); throw error; }
+        } catch (Exception | OutOfMemoryError error) { stage.delete(); throw error; }
         try (FileInputStream check = new FileInputStream(stage)) {
             if (check.read() != 'G' || check.read() != 'G' || check.read() != 'U' || check.read() != 'F') {
                 stage.delete(); throw new IOException("Not a GGUF file");

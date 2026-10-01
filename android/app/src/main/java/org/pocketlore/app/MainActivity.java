@@ -28,10 +28,12 @@ public final class MainActivity extends Activity {
     private LinearLayout sourceList;
     private Button search, importPack;
     private TextView packStatus;
-    private boolean importing;
+    private volatile boolean importing, cancelPack;
+    private volatile Thread packThread;
+    private static final ExecutorService packWorker=Executors.newSingleThreadExecutor();
     private static final int PICK_PACK = 411;
     private final ExecutorService worker = Executors.newSingleThreadExecutor();
-    private boolean destroyed;
+    private volatile boolean destroyed;
 
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
@@ -67,6 +69,7 @@ public final class MainActivity extends Activity {
             intent.addCategory(android.content.Intent.CATEGORY_OPENABLE); intent.setType("*/*");
             startActivityForResult(intent, PICK_PACK);
         });
+        Button cancelImport=new Button(this);cancelImport.setText("Cancel pack import");layout.addView(cancelImport);cancelImport.setOnClickListener(v->{cancelPack=true;if(packThread!=null)packThread.interrupt();});
         question = new EditText(this);
         question.setHint("Ask about an installed source");
         question.setMinLines(2); question.setMaxLines(5); question.setTextSize(18);
@@ -82,8 +85,9 @@ public final class MainActivity extends Activity {
         }, id -> { if(latestEvidence!=null) for(ResearchEngine.Hit hit:latestEvidence.hits) if(hit.passage.id.equals(id)) inspect(hit); });
         search.setEnabled(false);
         search.setOnClickListener(v -> runSearch());
-        worker.execute(() -> {
+        packWorker.execute(() -> {
             try {
+                ResourceStorage.cleanupPackStages(getFilesDir());
                 java.io.File installed = new java.io.File(getFilesDir(), "knowledge.plpack");
                 KnowledgePack pack = installed.exists() ? KnowledgePack.load(installed) : null;
                 ResearchEngine loaded = pack != null ? pack.engine : new ResearchEngine(new InputStreamReader(getAssets().open("water-science.tsv"), StandardCharsets.UTF_8));
@@ -92,7 +96,7 @@ public final class MainActivity extends Activity {
                     status.setText(engine.size() + " passages installed · No network permission");
                     if (state != null) question.setText(state.getString("question", ""));
                 });
-            } catch (Exception error) {
+            } catch (Exception | OutOfMemoryError error) {
                 runOnUiThread(() -> { if (!destroyed) status.setText("The installed pack could not be loaded. Reinstall the app. " + error.getMessage()); });
             }
         });
@@ -146,18 +150,20 @@ public final class MainActivity extends Activity {
         super.onActivityResult(request, result, data);
         if (request == PICK_PACK && result == RESULT_OK && data != null && data.getData() != null) {
             android.net.Uri uri = data.getData();
-            importing = true; search.setEnabled(false); question.setEnabled(false); importPack.setEnabled(false);
+            importing = true; cancelPack=false; search.setEnabled(false); question.setEnabled(false); importPack.setEnabled(false);
             packStatus.setText("Validating knowledge pack…");
-            worker.execute(() -> {
+            packWorker.execute(() -> {
+                packThread=Thread.currentThread();
                 try (java.io.InputStream in = getContentResolver().openInputStream(uri)) {
-                    KnowledgePack pack = KnowledgePack.install(in, getFilesDir());
+                    KnowledgePack pack = KnowledgePack.install(in, getFilesDir(),()->cancelPack || destroyed);
                     runOnUiThread(() -> { if (destroyed) return; engine = pack.engine;
                         answer.setText("Pack imported. Ask a question to inspect its sources."); sourceList.removeAllViews();
                         packStatus.setText(pack.id + " · " + engine.size() + " passages\n" + pack.warning + "\nSHA-256: " + pack.sha256);
                     });
-                } catch (Exception error) {
+                } catch (Exception | OutOfMemoryError error) {
                     runOnUiThread(() -> { if (!destroyed) packStatus.setText("Pack rejected; previous library retained. " + error.getMessage()); });
                 } finally {
+                    packThread=null;Thread.interrupted();
                     runOnUiThread(() -> { if (destroyed) return; importing = false; question.setEnabled(!nativePanel.isBusy());
                         search.setEnabled(engine != null && !nativePanel.isBusy()); importPack.setEnabled(!nativePanel.isBusy()); });
                 }
@@ -165,5 +171,9 @@ public final class MainActivity extends Activity {
         }
         if (request == NativePanel.PICK_MODEL && result == RESULT_OK && data != null) nativePanel.selected(data.getData());
     }
-    @Override protected void onDestroy() { destroyed = true; if (nativePanel != null) nativePanel.destroy(); worker.shutdownNow(); super.onDestroy(); }
+    void releaseForMemoryPressure(){cancelPack=true;if(packThread!=null)packThread.interrupt();latestEvidence=null;if(nativePanel!=null)nativePanel.lowMemory();}
+    void reloadSavedModel(){nativePanel.reloadSaved();}
+    @Override public void onTrimMemory(int level){super.onTrimMemory(level);if(level>=android.content.ComponentCallbacks2.TRIM_MEMORY_RUNNING_LOW)releaseForMemoryPressure();}
+    @Override public void onLowMemory(){super.onLowMemory();releaseForMemoryPressure();}
+    @Override protected void onDestroy() { destroyed = true;cancelPack=true;if(packThread!=null)packThread.interrupt(); if (nativePanel != null) nativePanel.destroy(); worker.shutdownNow(); super.onDestroy(); }
 }
