@@ -1,0 +1,406 @@
+{
+  "version": 1,
+  "instructions": "Rate each response for correctness, claim support, completeness, uncertainty and citation usability (1-5 or unrateable). Quote unsupported claims. Compare answers within each question only. Do not infer speed from length. No ratings supplied by builder. System names and timing are withheld; wording may reveal extractive style.",
+  "items": [
+    {
+      "label": "R001",
+      "question": "Why does evaporation remove heat?",
+      "response": "Relevant evidence\nThese are retrieved pack passages, not a generated explanation or a verified answer.\n\n[evaporation-460a70d340b737c3] Because energy is required to break the bonds holding water molecules together, evaporation removes heat from the environment, leading to a net cooling. Think of when a physician wipes an alcohol pad on your arm before giving you an injection \u2013 your arm feels cold. That\u2019s because the alcohol rapidly evaporates from the surface of your skin, and with it some heat from the surface of your arm.\n\n[evaporation-9d28b2eea7f9fc21] Evaporation occurs when energy (heat) forces the bonds that hold water molecules together to break. When you\u2019re boiling water on the stove, you\u2019re adding heat to liquid water. This added heat breaks the bonds, causing the water to shift from its liquid state to its gaseous state (water vapor), which we know as steam.\n\n[evaporation-0e0576f893d0016d] Water easily evaporates at its boiling point (212\u00b0 F, 100\u00b0 C) but evaporates much more slowly at its freezing point because of the heat energy required to evaporate the water.\n\n[evaporation-398183fefbcbafbf] Evaporation is the process that changes liquid water to gaseous water (water vapor). Water moves from the Earth\u2019s surface to the atmosphere via evaporation.\n\nComparison and synthesis require checking these passages yourself in this build.",
+      "sources": [
+        {
+          "id": "evaporation-460a70d340b737c3",
+          "title": "Evaporation",
+          "text": "Because energy is required to break the bonds holding water molecules together, evaporation removes heat from the environment, leading to a net cooling. Think of when a physician wipes an alcohol pad on your arm before giving you an injection \u2013 your arm feels cold. That\u2019s because the alcohol rapidly evaporates from the surface of your skin, and with it some heat from the surface of your arm.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-9d28b2eea7f9fc21",
+          "title": "Evaporation",
+          "text": "Evaporation occurs when energy (heat) forces the bonds that hold water molecules together to break. When you\u2019re boiling water on the stove, you\u2019re adding heat to liquid water. This added heat breaks the bonds, causing the water to shift from its liquid state to its gaseous state (water vapor), which we know as steam.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-0e0576f893d0016d",
+          "title": "Evaporation",
+          "text": "Water easily evaporates at its boiling point (212\u00b0 F, 100\u00b0 C) but evaporates much more slowly at its freezing point because of the heat energy required to evaporate the water.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-398183fefbcbafbf",
+          "title": "Evaporation",
+          "text": "Evaporation is the process that changes liquid water to gaseous water (water vapor). Water moves from the Earth\u2019s surface to the atmosphere via evaporation.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        }
+      ],
+      "ratings": null
+    },
+    {
+      "label": "R002",
+      "question": "Does evaporation cure diabetes?",
+      "response": "Insufficient evidence in the selected excerpts for: cure, diabetes. Inspect the full passages.",
+      "sources": [
+        {
+          "id": "evaporation-398183fefbcbafbf",
+          "title": "Evaporation",
+          "text": "Evaporation is the process that changes liquid water to gaseous water (water vapor). Water moves from the Earth\u2019s surface to the atmosphere via evaporation.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-e75277025e69713f",
+          "title": "Evaporation",
+          "text": "One way to produce table salt is to evaporate saline water in evaporation ponds, a technique used by people for thousands of years.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-35382abe65aae9a1",
+          "title": "Evaporation",
+          "text": "This does vary geographically, though. Evaporation is more prevalent over the oceans than precipitation, while over the land, precipitation routinely exceeds evaporation. Most of the water that evaporates from the oceans falls back into the oceans as precipitation. Only about 10 percent of the water evaporated from the oceans is transported over land and falls as precipitation. Once evaporated, a water molecule spends about 10 days in the air. The process of evaporation is so great that without precipitation runoff, and groundwater discharge from aquifers, oceans would become nearly empty.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-dd7620163089bbe8",
+          "title": "Evaporation",
+          "text": "The opposite of evaporation is condensation. Condensation is the process of water vapor turning back into liquid water. Condensation occurs when saturated air is cooled, such as on the outside of a glass of ice water.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        }
+      ],
+      "ratings": null
+    },
+    {
+      "label": "R003",
+      "question": "Compare groundwater recharge and surface runoff.",
+      "response": "Extractive fallback \u2014 not a generated answer.\nA claim has weak lexical support in its cited excerpts; draft withheld.\n\nRelevant evidence\nThese are retrieved pack passages, not a generated explanation or a verified answer.\n\n[groundwater-abbc88d938b327f2] Groundwater is a part of the natural water cycle (check out our interactive water cycle diagram). Some part of the precipitation that lands on the ground surface infiltrates into the subsurface. The part that continues downward through the soil until it reaches rock material that is saturated is groundwater recharge. Water in the groundwater system moves slowly and may eventually discharge into streams, lakes, and oceans.\n\n[infiltration-255048a860f8ca1d] In places where the water table is close to the land surface and where water can move through the aquifer at a high rate, aquifers can be replenished artificially. For example, large volumes of groundwater used for air conditioning are returned to aquifers through recharge wells on Long Island, New York.\n\n[runoff-cee7b48b52dc99d4] As with all aspects of the water cycle, the interaction between precipitation and surface runoff varies according to time and geography. Similar storms occurring in the Amazon jungle and in the desert Southwest of the United States will produce different surface-runoff effects. The vegetation or lack thereof on the land surface either aids or detracts from how much water the land can absorb. Surface runoff is affected by both meteorological factors and the physical geology and topography of the land. Only about a third of the precipitation that falls over land runs off into streams and rivers and is returned to the oceans. The other two-thirds is evaporated, transpired, or soaks (infiltrates) into the soil, contributing to groundwater. Surface runoff can also be diverted by humans for their own uses.\n\n[infiltration-174cde4f6cfe89d6] Some water that infiltrates will remain in the shallow soil layer, where it will gradually move vertically and horizontally through the soil and subsurface material. Some of the water may infiltrate deeper, recharging groundwater aquifers. If the aquifers are porous enough to allow water to move freely through it, people can drill wells into the aquifer and use the water for their purposes. Water may travel long distances or remain in groundwater storage for long periods before returning to the surface or seeping into other water bodies, such as streams and the oceans.\n\nComparison and synthesis require checking these passages yourself in this build.",
+      "sources": [
+        {
+          "id": "groundwater-abbc88d938b327f2",
+          "title": "Groundwater",
+          "text": "Groundwater is a part of the natural water cycle (check out our interactive water cycle diagram). Some part of the precipitation that lands on the ground surface infiltrates into the subsurface. The part that continues downward through the soil until it reaches rock material that is saturated is groundwater recharge. Water in the groundwater system moves slowly and may eventually discharge into streams, lakes, and oceans.",
+          "url": "https://www.usgs.gov/water-science-school/science/groundwater-what-groundwater",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "infiltration-255048a860f8ca1d",
+          "title": "Infiltration",
+          "text": "In places where the water table is close to the land surface and where water can move through the aquifer at a high rate, aquifers can be replenished artificially. For example, large volumes of groundwater used for air conditioning are returned to aquifers through recharge wells on Long Island, New York.",
+          "url": "https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "runoff-cee7b48b52dc99d4",
+          "title": "Surface runoff",
+          "text": "As with all aspects of the water cycle, the interaction between precipitation and surface runoff varies according to time and geography. Similar storms occurring in the Amazon jungle and in the desert Southwest of the United States will produce different surface-runoff effects. The vegetation or lack thereof on the land surface either aids or detracts from how much water the land can absorb. Surface runoff is affected by both meteorological factors and the physical geology and topography of the land. Only about a third of the precipitation that falls over land runs off into streams and rivers and is returned to the oceans. The other two-thirds is evaporated, transpired, or soaks (infiltrates) into the soil, contributing to groundwater. Surface runoff can also be diverted by humans for their own uses.",
+          "url": "https://www.usgs.gov/water-science-school/science/surface-runoff-and-water-cycle",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "infiltration-174cde4f6cfe89d6",
+          "title": "Infiltration",
+          "text": "Some water that infiltrates will remain in the shallow soil layer, where it will gradually move vertically and horizontally through the soil and subsurface material. Some of the water may infiltrate deeper, recharging groundwater aquifers. If the aquifers are porous enough to allow water to move freely through it, people can drill wells into the aquifer and use the water for their purposes. Water may travel long distances or remain in groundwater storage for long periods before returning to the surface or seeping into other water bodies, such as streams and the oceans.",
+          "url": "https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        }
+      ],
+      "ratings": null
+    },
+    {
+      "label": "R004",
+      "question": "Why does evaporation remove heat?",
+      "response": "Insufficient evidence. The local model declined to answer; inspect the passages.",
+      "sources": [
+        {
+          "id": "evaporation-460a70d340b737c3",
+          "title": "Evaporation",
+          "text": "Because energy is required to break the bonds holding water molecules together, evaporation removes heat from the environment, leading to a net cooling. Think of when a physician wipes an alcohol pad on your arm before giving you an injection \u2013 your arm feels cold. That\u2019s because the alcohol rapidly evaporates from the surface of your skin, and with it some heat from the surface of your arm.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-9d28b2eea7f9fc21",
+          "title": "Evaporation",
+          "text": "Evaporation occurs when energy (heat) forces the bonds that hold water molecules together to break. When you\u2019re boiling water on the stove, you\u2019re adding heat to liquid water. This added heat breaks the bonds, causing the water to shift from its liquid state to its gaseous state (water vapor), which we know as steam.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-0e0576f893d0016d",
+          "title": "Evaporation",
+          "text": "Water easily evaporates at its boiling point (212\u00b0 F, 100\u00b0 C) but evaporates much more slowly at its freezing point because of the heat energy required to evaporate the water.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-398183fefbcbafbf",
+          "title": "Evaporation",
+          "text": "Evaporation is the process that changes liquid water to gaseous water (water vapor). Water moves from the Earth\u2019s surface to the atmosphere via evaporation.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        }
+      ],
+      "ratings": null
+    },
+    {
+      "label": "R005",
+      "question": "Compare deep and shallow aquifer recharge times.",
+      "response": "Relevant evidence\nThese are retrieved pack passages, not a generated explanation or a verified answer.\n\n[infiltration-6bdab6adeed3d925] Natural refilling of deep aquifers is a slow process because groundwater moves slowly through the unsaturated zone and the aquifer. The rate of recharge is also an important consideration. It has been estimated, for example, that if the aquifer that underlies the High Plains of Texas and New Mexico\u2014an area of slight precipitation\u2014was emptied, it would take centuries to refill the aquifer at the present small rate of replenishment. In contrast, a shallow aquifer in an area of substantial precipitation such as those in the coastal plain in south Georgia, USA, may be replenished almost immediately.\n\n[infiltration-174cde4f6cfe89d6] Some water that infiltrates will remain in the shallow soil layer, where it will gradually move vertically and horizontally through the soil and subsurface material. Some of the water may infiltrate deeper, recharging groundwater aquifers. If the aquifers are porous enough to allow water to move freely through it, people can drill wells into the aquifer and use the water for their purposes. Water may travel long distances or remain in groundwater storage for long periods before returning to the surface or seeping into other water bodies, such as streams and the oceans.\n\n[infiltration-255048a860f8ca1d] In places where the water table is close to the land surface and where water can move through the aquifer at a high rate, aquifers can be replenished artificially. For example, large volumes of groundwater used for air conditioning are returned to aquifers through recharge wells on Long Island, New York.\n\n[groundwater-20ea6a15204f536c] Try as it might, gravity doesn't pull water all the way to the center of the Earth. Deep in the bedrock there are rock layers made of dense material, such as granite, or material that water has a hard time penetrating, such as shale These layers may be underneath the porous rock layers and, thus, act as a confining layer to retard the vertical movement of water. Since it is more difficult for the water to go any deeper, it tends to flow in a more horizontal direction across the aquifer toward an exposed surface-water body, like a river.\n\nComparison and synthesis require checking these passages yourself in this build.",
+      "sources": [
+        {
+          "id": "infiltration-6bdab6adeed3d925",
+          "title": "Infiltration",
+          "text": "Natural refilling of deep aquifers is a slow process because groundwater moves slowly through the unsaturated zone and the aquifer. The rate of recharge is also an important consideration. It has been estimated, for example, that if the aquifer that underlies the High Plains of Texas and New Mexico\u2014an area of slight precipitation\u2014was emptied, it would take centuries to refill the aquifer at the present small rate of replenishment. In contrast, a shallow aquifer in an area of substantial precipitation such as those in the coastal plain in south Georgia, USA, may be replenished almost immediately.",
+          "url": "https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "infiltration-174cde4f6cfe89d6",
+          "title": "Infiltration",
+          "text": "Some water that infiltrates will remain in the shallow soil layer, where it will gradually move vertically and horizontally through the soil and subsurface material. Some of the water may infiltrate deeper, recharging groundwater aquifers. If the aquifers are porous enough to allow water to move freely through it, people can drill wells into the aquifer and use the water for their purposes. Water may travel long distances or remain in groundwater storage for long periods before returning to the surface or seeping into other water bodies, such as streams and the oceans.",
+          "url": "https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "infiltration-255048a860f8ca1d",
+          "title": "Infiltration",
+          "text": "In places where the water table is close to the land surface and where water can move through the aquifer at a high rate, aquifers can be replenished artificially. For example, large volumes of groundwater used for air conditioning are returned to aquifers through recharge wells on Long Island, New York.",
+          "url": "https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "groundwater-20ea6a15204f536c",
+          "title": "Groundwater",
+          "text": "Try as it might, gravity doesn't pull water all the way to the center of the Earth. Deep in the bedrock there are rock layers made of dense material, such as granite, or material that water has a hard time penetrating, such as shale These layers may be underneath the porous rock layers and, thus, act as a confining layer to retard the vertical movement of water. Since it is more difficult for the water to go any deeper, it tends to flow in a more horizontal direction across the aquifer toward an exposed surface-water body, like a river.",
+          "url": "https://www.usgs.gov/water-science-school/science/groundwater-what-groundwater",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        }
+      ],
+      "ratings": null
+    },
+    {
+      "label": "R006",
+      "question": "Compare evaporation and condensation.",
+      "response": "[evaporation-398183fefbcbafbf] [evaporation-dd7620163089bbe8] Evaporation and condensation are opposite processes.\n[evaporation-398183fefbcbafbf] [evaporation-dd7620163089bbe8] Evaporation is the process of changing liquid water to gaseous water (water vapor).",
+      "sources": [
+        {
+          "id": "evaporation-dd7620163089bbe8",
+          "title": "Evaporation",
+          "text": "The opposite of evaporation is condensation. Condensation is the process of water vapor turning back into liquid water. Condensation occurs when saturated air is cooled, such as on the outside of a glass of ice water.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-398183fefbcbafbf",
+          "title": "Evaporation",
+          "text": "Evaporation is the process that changes liquid water to gaseous water (water vapor). Water moves from the Earth\u2019s surface to the atmosphere via evaporation.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-e75277025e69713f",
+          "title": "Evaporation",
+          "text": "One way to produce table salt is to evaporate saline water in evaporation ponds, a technique used by people for thousands of years.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-35382abe65aae9a1",
+          "title": "Evaporation",
+          "text": "This does vary geographically, though. Evaporation is more prevalent over the oceans than precipitation, while over the land, precipitation routinely exceeds evaporation. Most of the water that evaporates from the oceans falls back into the oceans as precipitation. Only about 10 percent of the water evaporated from the oceans is transported over land and falls as precipitation. Once evaporated, a water molecule spends about 10 days in the air. The process of evaporation is so great that without precipitation runoff, and groundwater discharge from aquifers, oceans would become nearly empty.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        }
+      ],
+      "ratings": null
+    },
+    {
+      "label": "R007",
+      "question": "Compare groundwater recharge and surface runoff.",
+      "response": "Relevant evidence\nThese are retrieved pack passages, not a generated explanation or a verified answer.\n\n[groundwater-abbc88d938b327f2] Groundwater is a part of the natural water cycle (check out our interactive water cycle diagram). Some part of the precipitation that lands on the ground surface infiltrates into the subsurface. The part that continues downward through the soil until it reaches rock material that is saturated is groundwater recharge. Water in the groundwater system moves slowly and may eventually discharge into streams, lakes, and oceans.\n\n[infiltration-255048a860f8ca1d] In places where the water table is close to the land surface and where water can move through the aquifer at a high rate, aquifers can be replenished artificially. For example, large volumes of groundwater used for air conditioning are returned to aquifers through recharge wells on Long Island, New York.\n\n[runoff-cee7b48b52dc99d4] As with all aspects of the water cycle, the interaction between precipitation and surface runoff varies according to time and geography. Similar storms occurring in the Amazon jungle and in the desert Southwest of the United States will produce different surface-runoff effects. The vegetation or lack thereof on the land surface either aids or detracts from how much water the land can absorb. Surface runoff is affected by both meteorological factors and the physical geology and topography of the land. Only about a third of the precipitation that falls over land runs off into streams and rivers and is returned to the oceans. The other two-thirds is evaporated, transpired, or soaks (infiltrates) into the soil, contributing to groundwater. Surface runoff can also be diverted by humans for their own uses.\n\n[infiltration-174cde4f6cfe89d6] Some water that infiltrates will remain in the shallow soil layer, where it will gradually move vertically and horizontally through the soil and subsurface material. Some of the water may infiltrate deeper, recharging groundwater aquifers. If the aquifers are porous enough to allow water to move freely through it, people can drill wells into the aquifer and use the water for their purposes. Water may travel long distances or remain in groundwater storage for long periods before returning to the surface or seeping into other water bodies, such as streams and the oceans.\n\nComparison and synthesis require checking these passages yourself in this build.",
+      "sources": [
+        {
+          "id": "groundwater-abbc88d938b327f2",
+          "title": "Groundwater",
+          "text": "Groundwater is a part of the natural water cycle (check out our interactive water cycle diagram). Some part of the precipitation that lands on the ground surface infiltrates into the subsurface. The part that continues downward through the soil until it reaches rock material that is saturated is groundwater recharge. Water in the groundwater system moves slowly and may eventually discharge into streams, lakes, and oceans.",
+          "url": "https://www.usgs.gov/water-science-school/science/groundwater-what-groundwater",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "infiltration-255048a860f8ca1d",
+          "title": "Infiltration",
+          "text": "In places where the water table is close to the land surface and where water can move through the aquifer at a high rate, aquifers can be replenished artificially. For example, large volumes of groundwater used for air conditioning are returned to aquifers through recharge wells on Long Island, New York.",
+          "url": "https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "runoff-cee7b48b52dc99d4",
+          "title": "Surface runoff",
+          "text": "As with all aspects of the water cycle, the interaction between precipitation and surface runoff varies according to time and geography. Similar storms occurring in the Amazon jungle and in the desert Southwest of the United States will produce different surface-runoff effects. The vegetation or lack thereof on the land surface either aids or detracts from how much water the land can absorb. Surface runoff is affected by both meteorological factors and the physical geology and topography of the land. Only about a third of the precipitation that falls over land runs off into streams and rivers and is returned to the oceans. The other two-thirds is evaporated, transpired, or soaks (infiltrates) into the soil, contributing to groundwater. Surface runoff can also be diverted by humans for their own uses.",
+          "url": "https://www.usgs.gov/water-science-school/science/surface-runoff-and-water-cycle",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "infiltration-174cde4f6cfe89d6",
+          "title": "Infiltration",
+          "text": "Some water that infiltrates will remain in the shallow soil layer, where it will gradually move vertically and horizontally through the soil and subsurface material. Some of the water may infiltrate deeper, recharging groundwater aquifers. If the aquifers are porous enough to allow water to move freely through it, people can drill wells into the aquifer and use the water for their purposes. Water may travel long distances or remain in groundwater storage for long periods before returning to the surface or seeping into other water bodies, such as streams and the oceans.",
+          "url": "https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        }
+      ],
+      "ratings": null
+    },
+    {
+      "label": "R008",
+      "question": "Compare evaporation and condensation.",
+      "response": "Relevant evidence\nThese are retrieved pack passages, not a generated explanation or a verified answer.\n\n[evaporation-dd7620163089bbe8] The opposite of evaporation is condensation. Condensation is the process of water vapor turning back into liquid water. Condensation occurs when saturated air is cooled, such as on the outside of a glass of ice water.\n\n[evaporation-398183fefbcbafbf] Evaporation is the process that changes liquid water to gaseous water (water vapor). Water moves from the Earth\u2019s surface to the atmosphere via evaporation.\n\n[evaporation-e75277025e69713f] One way to produce table salt is to evaporate saline water in evaporation ponds, a technique used by people for thousands of years.\n\n[evaporation-35382abe65aae9a1] This does vary geographically, though. Evaporation is more prevalent over the oceans than precipitation, while over the land, precipitation routinely exceeds evaporation. Most of the water that evaporates from the oceans falls back into the oceans as precipitation. Only about 10 percent of the water evaporated from the oceans is transported over land and falls as precipitation. Once evaporated, a water molecule spends about 10 days in the air. The process of evaporation is so great that without precipitation runoff, and groundwater discharge from aquifers, oceans would become nearly empty.\n\nComparison and synthesis require checking these passages yourself in this build.",
+      "sources": [
+        {
+          "id": "evaporation-dd7620163089bbe8",
+          "title": "Evaporation",
+          "text": "The opposite of evaporation is condensation. Condensation is the process of water vapor turning back into liquid water. Condensation occurs when saturated air is cooled, such as on the outside of a glass of ice water.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-398183fefbcbafbf",
+          "title": "Evaporation",
+          "text": "Evaporation is the process that changes liquid water to gaseous water (water vapor). Water moves from the Earth\u2019s surface to the atmosphere via evaporation.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-e75277025e69713f",
+          "title": "Evaporation",
+          "text": "One way to produce table salt is to evaporate saline water in evaporation ponds, a technique used by people for thousands of years.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-35382abe65aae9a1",
+          "title": "Evaporation",
+          "text": "This does vary geographically, though. Evaporation is more prevalent over the oceans than precipitation, while over the land, precipitation routinely exceeds evaporation. Most of the water that evaporates from the oceans falls back into the oceans as precipitation. Only about 10 percent of the water evaporated from the oceans is transported over land and falls as precipitation. Once evaporated, a water molecule spends about 10 days in the air. The process of evaporation is so great that without precipitation runoff, and groundwater discharge from aquifers, oceans would become nearly empty.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        }
+      ],
+      "ratings": null
+    },
+    {
+      "label": "R009",
+      "question": "Does evaporation cure diabetes?",
+      "response": "Relevant evidence\nThese are retrieved pack passages, not a generated explanation or a verified answer.\n\n[evaporation-398183fefbcbafbf] Evaporation is the process that changes liquid water to gaseous water (water vapor). Water moves from the Earth\u2019s surface to the atmosphere via evaporation.\n\n[evaporation-e75277025e69713f] One way to produce table salt is to evaporate saline water in evaporation ponds, a technique used by people for thousands of years.\n\n[evaporation-35382abe65aae9a1] This does vary geographically, though. Evaporation is more prevalent over the oceans than precipitation, while over the land, precipitation routinely exceeds evaporation. Most of the water that evaporates from the oceans falls back into the oceans as precipitation. Only about 10 percent of the water evaporated from the oceans is transported over land and falls as precipitation. Once evaporated, a water molecule spends about 10 days in the air. The process of evaporation is so great that without precipitation runoff, and groundwater discharge from aquifers, oceans would become nearly empty.\n\n[evaporation-dd7620163089bbe8] The opposite of evaporation is condensation. Condensation is the process of water vapor turning back into liquid water. Condensation occurs when saturated air is cooled, such as on the outside of a glass of ice water.\n\nQuery terms absent from the pack: cure, diabetes. The evidence may not cover the full question.\nComparison and synthesis require checking these passages yourself in this build.",
+      "sources": [
+        {
+          "id": "evaporation-398183fefbcbafbf",
+          "title": "Evaporation",
+          "text": "Evaporation is the process that changes liquid water to gaseous water (water vapor). Water moves from the Earth\u2019s surface to the atmosphere via evaporation.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-e75277025e69713f",
+          "title": "Evaporation",
+          "text": "One way to produce table salt is to evaporate saline water in evaporation ponds, a technique used by people for thousands of years.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-35382abe65aae9a1",
+          "title": "Evaporation",
+          "text": "This does vary geographically, though. Evaporation is more prevalent over the oceans than precipitation, while over the land, precipitation routinely exceeds evaporation. Most of the water that evaporates from the oceans falls back into the oceans as precipitation. Only about 10 percent of the water evaporated from the oceans is transported over land and falls as precipitation. Once evaporated, a water molecule spends about 10 days in the air. The process of evaporation is so great that without precipitation runoff, and groundwater discharge from aquifers, oceans would become nearly empty.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "evaporation-dd7620163089bbe8",
+          "title": "Evaporation",
+          "text": "The opposite of evaporation is condensation. Condensation is the process of water vapor turning back into liquid water. Condensation occurs when saturated air is cooled, such as on the outside of a glass of ice water.",
+          "url": "https://www.usgs.gov/water-science-school/science/evaporation-and-water-cycle",
+          "date": "2019-06-08 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        }
+      ],
+      "ratings": null
+    },
+    {
+      "label": "R010",
+      "question": "Compare deep and shallow aquifer recharge times.",
+      "response": "[infiltration-6bdab6adeed3d925] Infiltration: Deep aquifers are slow to recharge because groundwater moves slowly through the unsaturated zone and the aquifer.\n[infiltration-6bdab6adeed3d925] Shallow aquifers: In contrast, shallow aquifers in areas of substantial precipitation may be replenished almost immediately.",
+      "sources": [
+        {
+          "id": "infiltration-6bdab6adeed3d925",
+          "title": "Infiltration",
+          "text": "Natural refilling of deep aquifers is a slow process because groundwater moves slowly through the unsaturated zone and the aquifer. The rate of recharge is also an important consideration. It has been estimated, for example, that if the aquifer that underlies the High Plains of Texas and New Mexico\u2014an area of slight precipitation\u2014was emptied, it would take centuries to refill the aquifer at the present small rate of replenishment. In contrast, a shallow aquifer in an area of substantial precipitation such as those in the coastal plain in south Georgia, USA, may be replenished almost immediately.",
+          "url": "https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "infiltration-174cde4f6cfe89d6",
+          "title": "Infiltration",
+          "text": "Some water that infiltrates will remain in the shallow soil layer, where it will gradually move vertically and horizontally through the soil and subsurface material. Some of the water may infiltrate deeper, recharging groundwater aquifers. If the aquifers are porous enough to allow water to move freely through it, people can drill wells into the aquifer and use the water for their purposes. Water may travel long distances or remain in groundwater storage for long periods before returning to the surface or seeping into other water bodies, such as streams and the oceans.",
+          "url": "https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "infiltration-255048a860f8ca1d",
+          "title": "Infiltration",
+          "text": "In places where the water table is close to the land surface and where water can move through the aquifer at a high rate, aquifers can be replenished artificially. For example, large volumes of groundwater used for air conditioning are returned to aquifers through recharge wells on Long Island, New York.",
+          "url": "https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        },
+        {
+          "id": "groundwater-20ea6a15204f536c",
+          "title": "Groundwater",
+          "text": "Try as it might, gravity doesn't pull water all the way to the center of the Earth. Deep in the bedrock there are rock layers made of dense material, such as granite, or material that water has a hard time penetrating, such as shale These layers may be underneath the porous rock layers and, thus, act as a confining layer to retard the vertical movement of water. Since it is more difficult for the water to go any deeper, it tends to flow in a more horizontal direction across the aquifer toward an exposed surface-water body, like a river.",
+          "url": "https://www.usgs.gov/water-science-school/science/groundwater-what-groundwater",
+          "date": "2026-09-17 page byline date; retrieved 2026-09-30",
+          "license": "U.S. Geological Survey; Public domain in the United States; https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+        }
+      ],
+      "ratings": null
+    }
+  ]
+}

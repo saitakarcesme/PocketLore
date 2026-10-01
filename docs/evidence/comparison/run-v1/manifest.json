@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "environment": {
+    "fingerprint": "Android/sdk_phone64_x86_64/emu64x:15/AE3A.240806.019/12368160:userdebug/test-keys",
+    "abi": "x86_64",
+    "airplane_mode": "1"
+  },
+  "measurement_class": "AOSP emulator on LLMRig; not physical Android",
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "protocol_sha256": "1c8b1439e40457bf9c141653d7f72fcbb552805a8269e4f64ff8e95861694510",
+  "results_sha256": "244a7de58ec4eba43d56c05dc4061fab6895154c151eb6c69a6c1bc821036425",
+  "apk_sha256": "27f9d7824be8b843db7b7238c39c56893005c09f808267cf72e765c87fe0789b",
+  "test_apk_sha256": "38ba1528e5fbfa68767ba70b8511c11334ca8dfcf8bff9cbd4b9ed270df88c3d",
+  "git_commit": "7caf54414a5a5be8fd986d9122e3916c41f4d4ba",
+  "source_hashes": {
+    "android/app/src/main/java/org/pocketlore/app/AnswerEngine.java": "b7ce2663d5af2160fd1704f4378505ca5d80d7037b746fa74f23b065323b61c6",
+    "android/app/src/main/java/org/pocketlore/app/EvidencePrompt.java": "e2630efa5126a29f63d5ef2195bad30137de08377476288a9ef082309d477b9e",
+    "android/app/src/main/java/org/pocketlore/app/KnowledgePack.java": "a57f6f343674c78929727063dee01f9588a0a1056aae4d0a83e17e242d6d2b82",
+    "android/app/src/main/java/org/pocketlore/app/MainActivity.java": "138b469eddeb99a28ae3c414afec82149f66f52e77ef435b8c06d138d9668e9f",
+    "android/app/src/main/java/org/pocketlore/app/ModelImport.java": "99c7ab6051f2952fa5084acee1a4bef4ce7ea169a012f3f7225e251763da6e46",
+    "android/app/src/main/java/org/pocketlore/app/NativePanel.java": "d28c49fcfbc4421503a40a7888f1e846925c9d75a531e78b375a86724e22b206",
+    "android/app/src/main/java/org/pocketlore/app/NativeRuntime.java": "e07fd01abd8111144ccdff8cb04917371fae000a3175da03fcb572190aeadbc3",
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "a22bece047bf751d0d8adc71cc818550b6d6bf3f603c257f525ac7af2be5aede",
+    "android/app/src/main/java/org/pocketlore/app/ResourceStorage.java": "75d783b83c667b367b88bac634cf6a499e5d4a031d0c5eb9991164586a5ef265",
+    "android/app/src/main/java/org/pocketlore/app/TravelActivity.java": "35d0e80eca9dbe614c07b830d1101ff7a598a2a8d09a6475f6a5a919776d6555",
+    "android/app/src/main/java/org/pocketlore/app/TravelCatalog.java": "b9ae6ee94d5d37138e7d17651ef34fbf4a44e86cacceb8917fbf5fb2b5782cc9",
+    "android/app/src/main/java/org/pocketlore/app/TravelCommands.java": "a5b5adb2e086465bfeba489b5bedd81ae22dce160990080af063033068d73ff1",
+    "android/app/src/main/java/org/pocketlore/app/TravelTools.java": "523a9dfbafdcd94f1ef897fd28792d9330fd43cb3190c0f03d3fae32e7e51a15",
+    "tools/evaluation/comparison/ComparisonInstrumentation.java": "15078b699f762fa75fa740522904fab5c7e6c6e9debd9dcd7fad703f49c10dd5",
+    "tools/evaluation/comparison/source.gradle": "8b8a0d48e05ae730d1af76035d6159fa63c60ee4d67556f122783d1df2a34f53",
+    "tools/evaluation/run_comparison.py": "572b3141508cad3320945ede5670083fa442f7aa95f2ffeb4597ea4850b60dfc",
+    "tools/evaluation/verify_comparison.py": "a5e979077daf9f9ed9243a3a9aa1ed72a8ecddd0d19d923e0b587500cc48c15b"
+  },
+  "external_rivals": {
+    "status": "not run",
+    "reason": "No configured authorized rival endpoint supplied; no credentials sought or outputs fabricated."
+  }
+}
