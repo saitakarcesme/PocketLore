@@ -1,0 +1,39 @@
+{
+  "result": "BLOCKED: full Android inventory/update storage unmeasured",
+  "build_exit": 0,
+  "verifier_exit": 1,
+  "artifacts": {
+    "android/android.json": {
+      "bytes": 60926,
+      "sha256": "08a161035d26d8aa014c04a656b5fd69ca6fed14c014fec2f64cb8c16be5c5af"
+    },
+    "android/instrumentation.log": {
+      "bytes": 60720,
+      "sha256": "8d0adec0e79373b516b5c745cbd31dc802db2839911ef8c800f9f37f6391b741"
+    },
+    "android/restart.json": {
+      "bytes": 169,
+      "sha256": "6e3fcdd47778170256f1e2dd8c299c7b104b87bff8c0e7d3bdf991a6d47da658"
+    },
+    "android/restart.log": {
+      "bytes": 205,
+      "sha256": "23cd031ffa36b227ca12b7ebe888b8a4858beda9828c57a346d0308ed4d0be23"
+    },
+    "build.log": {
+      "bytes": 6954,
+      "sha256": "1b13c8fee8c7063bbac8329aa7cb522f889194670012feff722594efe9e48d2b"
+    },
+    "check-exits.json": {
+      "bytes": 42,
+      "sha256": "24f31c563ca349b2e83085f6662a15f81bd0768e6aae64c78de5be002cc98e4f"
+    },
+    "environment.json": {
+      "bytes": 4718,
+      "sha256": "f1b43cf1cac062c567dd10f9785cf248bf48d92c926cd4810851db0c74362fc9"
+    },
+    "verify.log": {
+      "bytes": 547,
+      "sha256": "c679f16092859cad38fc8ac3db3fc760dfe320282a28cf046513c39e677cdc29"
+    }
+  }
+}
