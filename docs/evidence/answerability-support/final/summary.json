@@ -1,0 +1,64 @@
+{
+  "verbatim_support": {
+    "practical-sun": {
+      "source_contained_lines": 1,
+      "scope": "Verbatim source support only; not usefulness or general paraphrase entailment"
+    },
+    "practical-navigation": {
+      "source_contained_lines": 1,
+      "scope": "Verbatim source support only; not usefulness or general paraphrase entailment"
+    }
+  },
+  "status": "PASS",
+  "scope": "Current public coverage and real JNI invocation/safety, not semantic or physical acceptance",
+  "before_supported_blocked": 14,
+  "after_supported_blocked": 12,
+  "absent_blocked": 10,
+  "additional_absent_blocked": 3,
+  "recovered": [
+    "practical-sun",
+    "practical-navigation"
+  ],
+  "routes": {
+    "practical-sun": "GENERATED",
+    "practical-navigation": "GENERATED",
+    "absent-space": "ABSTAINED",
+    "absent-treatment": "ABSTAINED",
+    "absent-routes": "ABSTAINED",
+    "absent-prices": "ABSTAINED",
+    "absent-country": "ABSTAINED",
+    "absent-composition": "ABSTAINED",
+    "absent-physics": "ABSTAINED",
+    "absent-comparison": "ABSTAINED",
+    "absent-empty": "ABSTAINED",
+    "absent-stopwords": "ABSTAINED",
+    "additional-absent-0": "ABSTAINED",
+    "additional-absent-1": "ABSTAINED",
+    "additional-absent-2": "ABSTAINED"
+  },
+  "environment": {
+    "fingerprint": "Android/sdk_phone64_x86_64/emu64x:15/AE3A.240806.019/12368160:userdebug/test-keys",
+    "abi": "x86_64",
+    "airplane_mode": "1"
+  },
+  "model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+  "pack_sha256": "567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea",
+  "artifacts": {
+    "app-debug.apk": {
+      "sha256": "2457ee6c474d1d6b8f6447ed2a698b2b491ea1f03208ab7b78ab5eec9796fd7d",
+      "bytes": 11769461
+    },
+    "app-debug-androidTest.apk": {
+      "sha256": "fac25093ef95576bd8c9971d1eeca7681f34c2e8ddd37d59aea5dc23172d3053",
+      "bytes": 233402
+    }
+  },
+  "results_sha256": "6bc29cb2855e58b11f9c1cf0b58746af980cab5fe6498c778c37a2b218eea43e",
+  "protocol_sha256": "399c102282521162a2998931ee2cc9286b1675341d1d6c8f5837c09900b0c0d8",
+  "fixture_sha256": "9358ed5398460e9fde4e8e11fb30211b35a554b51cd27ae92e1cd251b8169f98",
+  "source_sha256": {
+    "android/app/src/main/java/org/pocketlore/app/EvidencePrompt.java": "24b3c4a97fc5ee0db724e33344fe10f5b451675c40972eee1e3f209c9f265cf1",
+    "android/app/src/main/java/org/pocketlore/app/AnswerEngine.java": "b7ce2663d5af2160fd1704f4378505ca5d80d7037b746fa74f23b065323b61c6",
+    "tools/evaluation/answerability/AnswerabilityInstrumentation.java": "ca7da5bff0b45b3b5d206fade1f5545a7f53aadf540affead6b9ce96bae773c3"
+  }
+}

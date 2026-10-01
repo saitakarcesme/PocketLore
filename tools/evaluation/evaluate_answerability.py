@@ -53,13 +53,26 @@ def main():
     assert b'INSTRUMENTATION_CODE: -1' in log
     raw=run(adb+['exec-out','run-as','org.pocketlore.app','cat','files/answerability-tests/results.json'],'results.json');report=json.loads(raw)
     assert {r['id']:r['question'] for r in report['rows']}=={r['id']:r['question'] for r in testcases} and len(report['rows'])==len(testcases)
+    support={}
     for row in report['rows']:
         if row['id'] in recovered:
             assert row['invoked_model'] and row['tokens']>0 and row['raw_draft'] and row['prompt']
             assert row['kind'] in ['GENERATED','FALLBACK','ABSTAINED']
             if row['kind']=='GENERATED':
                 ids=set(re.findall(r'\[([^\[\]]+)\]',row['text']));assert ids and ids<={s['id'] for s in row['sources']}
+                # Conservative support audit: no expected answer strings or model scoring.
+                # Copies must actually occur in their cited source and supplied prompt.
+                relevant=next(c['required_evidence_groups'] for c in cases if c['id']==row['id'])
+                assert all(ids & set(group) for group in relevant)
+                sources={s['id']:s['text'] for s in row['sources']};count=0
+                for line in row['text'].splitlines():
+                    if not line.strip():continue
+                    citations=set(re.findall(r'\[([^\[\]]+)\]',line));prose=re.sub(r'\[[^\[\]]+\]','',line).strip()
+                    assert prose and prose in row['prompt'] and any(prose in sources[i] for i in citations)
+                    count+=1
+                support[row['id']]={'source_contained_lines':count,'scope':'Verbatim source support only; not usefulness or general paraphrase entailment'}
+
         else:assert row['kind']=='ABSTAINED' and not row['invoked_model'] and row['tokens']==0
-    summary={'status':'PASS','scope':'Current public coverage and real JNI invocation/safety, not semantic or physical acceptance','before_supported_blocked':14,'after_supported_blocked':blocked(after,'present'),'absent_blocked':10,'additional_absent_blocked':len(spec['additional_absent_questions']),'recovered':recovered,'routes':{r['id']:r['kind'] for r in report['rows']},'environment':environment,'model_sha256':model_sha,'pack_sha256':sha(pack),'artifacts':identities,'results_sha256':sha(out/'results.json'),'protocol_sha256':sha(out/'protocol.json'),'fixture_sha256':sha(frozen),'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [src/'EvidencePrompt.java',src/'AnswerEngine.java',ROOT/'tools/evaluation/answerability/AnswerabilityInstrumentation.java']}}
+    summary={'verbatim_support':support,'status':'PASS','scope':'Current public coverage and real JNI invocation/safety, not semantic or physical acceptance','before_supported_blocked':14,'after_supported_blocked':blocked(after,'present'),'absent_blocked':10,'additional_absent_blocked':len(spec['additional_absent_questions']),'recovered':recovered,'routes':{r['id']:r['kind'] for r in report['rows']},'environment':environment,'model_sha256':model_sha,'pack_sha256':sha(pack),'artifacts':identities,'results_sha256':sha(out/'results.json'),'protocol_sha256':sha(out/'protocol.json'),'fixture_sha256':sha(frozen),'source_sha256':{str(p.relative_to(ROOT)):sha(p) for p in [src/'EvidencePrompt.java',src/'AnswerEngine.java',ROOT/'tools/evaluation/answerability/AnswerabilityInstrumentation.java']}}
     (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary,indent=2))
 if __name__=='__main__':main()
