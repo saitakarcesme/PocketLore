@@ -164,7 +164,7 @@ public final class MainActivity extends Activity {
             + "\n\nSource date / retrieval: " + p.sourceDate + "\nRights: " + p.license
             + "\n\nCitation: [" + p.id + "]\n" + p.collectionProvenance
             + (p.id.startsWith("water-") ? "\n\nPack text is a verbatim USGS paragraph with whitespace normalized." : "\n\nPack text is selected source text with whitespace normalized.") + " Source URLs are provenance labels; the app does not open them."
-            + String.format(Locale.ROOT, "\n\nBM25 rank score: %.3f (not confidence)", hit.score), 16);
+            + String.format(Locale.ROOT, "\n\nRetrieval rank score: %.3f (not confidence)", hit.score), 16);
         detail.setTextIsSelectable(true); detail.setPadding(dp(20), dp(10), dp(20), dp(10));
         ScrollView scroll = new ScrollView(this); scroll.addView(detail);
         AlertDialog.Builder dialog=new AlertDialog.Builder(this).setTitle(p.title).setView(scroll).setPositiveButton("Close", null);

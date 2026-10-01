@@ -1,0 +1,80 @@
+{
+  "format": "pocketlore-sqlite-v1",
+  "id": "broad-reference-20231101-evaluation-v1",
+  "documents": 1076,
+  "passages": 26660,
+  "areas": {
+    "geography": 147,
+    "science": 148,
+    "computing": 143,
+    "practical reference": 80,
+    "history": 143,
+    "mathematics": 135,
+    "travel": 137,
+    "civics": 143
+  },
+  "area_passages": {
+    "geography": 6068,
+    "science": 3826,
+    "computing": 2911,
+    "practical reference": 1682,
+    "history": 4486,
+    "mathematics": 2265,
+    "travel": 2521,
+    "civics": 2901
+  },
+  "db_sha256": "2b142df934c53d5f54a979fe0e3639e2a5e6b592ca98a34b317a9a778d062067",
+  "db_bytes": 125472768,
+  "schema": [
+    [
+      "documents",
+      "CREATE TABLE documents(id TEXT PRIMARY KEY,title TEXT NOT NULL,url TEXT NOT NULL UNIQUE,date TEXT NOT NULL,rights TEXT NOT NULL,provenance TEXT NOT NULL,body TEXT NOT NULL,sha TEXT NOT NULL UNIQUE,area TEXT NOT NULL)"
+    ],
+    [
+      "passage_document",
+      "CREATE INDEX passage_document ON passages(document)"
+    ],
+    [
+      "passages",
+      "CREATE TABLE passages(pid INTEGER PRIMARY KEY,citation TEXT NOT NULL UNIQUE,document TEXT NOT NULL REFERENCES documents(id),body TEXT NOT NULL,sha TEXT NOT NULL UNIQUE,normalized_sha TEXT NOT NULL UNIQUE,start INTEGER NOT NULL,end INTEGER NOT NULL)"
+    ],
+    [
+      "search",
+      "CREATE VIRTUAL TABLE search USING fts4(title,body,tokenize=porter)"
+    ],
+    [
+      "search_content",
+      "CREATE TABLE 'search_content'(docid INTEGER PRIMARY KEY, 'c0title', 'c1body')"
+    ],
+    [
+      "search_docsize",
+      "CREATE TABLE 'search_docsize'(docid INTEGER PRIMARY KEY, size BLOB)"
+    ],
+    [
+      "search_segdir",
+      "CREATE TABLE 'search_segdir'(level INTEGER,idx INTEGER,start_block INTEGER,leaves_end_block INTEGER,end_block INTEGER,root BLOB,PRIMARY KEY(level, idx))"
+    ],
+    [
+      "search_segments",
+      "CREATE TABLE 'search_segments'(blockid INTEGER PRIMARY KEY, block BLOB)"
+    ],
+    [
+      "search_stat",
+      "CREATE TABLE 'search_stat'(id INTEGER PRIMARY KEY, value BLOB)"
+    ]
+  ],
+  "license": "CC-BY-SA-4.0",
+  "distribution_ready": false,
+  "snapshot_inventory_sha256": "849b9b065940b2dc7019c306eac1805fa43fc09c9d9eb396e0d7740a9e9e8810",
+  "sources_sha256": "8e33e513d28cebc411252315e8b3de71b6b45537e4e85ab6ac672ecbb4c44a10",
+  "chunks_sha256": "9aaa7e56e246d45869bdd985ca60332f94d125cc4a5f77273809aa9b6b92d97b",
+  "warning": "Historical 2023 extraction; formulas, units and third-party attribution may be missing. Evaluation-only source lookup; no current travel/safety guidance; generation disabled pending review.",
+  "source_topics": "Heuristic assignments, not proof of semantic breadth or 50 reviewed documents per area.",
+  "pack_sha256": "915f82f041f59d3cd0e82a8b6fd9dbdb2d12187c2e969c5891de6e3ad46dd67c",
+  "pack_bytes": 46822920,
+  "elapsed_seconds": 11.008860465000907,
+  "peak_host_rss_kib": 329316,
+  "extraction_flags": 549,
+  "source_files_verified": 28,
+  "download_bytes_reused": 1738494300
+}

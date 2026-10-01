@@ -25,8 +25,9 @@ run(adb+['shell','cmd','connectivity','airplane-mode','enable'],'airplane.txt');
 for mode in ['import','restart']:
  run(adb+['shell','am','force-stop','org.pocketlore.app'],'stop-'+mode+'.txt')
  log=run(adb+['shell','am','instrument','-w','-e','mode',mode,'org.pocketlore.app.test/org.pocketlore.app.BroadInstrumentation'],mode+'-instrumentation.txt')
- r=json.loads(run(adb+['exec-out','run-as','org.pocketlore.app','cat','files/broad-tests/'+mode+'.json'],mode+'.json'));assert r['status']=='PASS' and b'INSTRUMENTATION_CODE: -1' in log,r
+ r=json.loads(run(adb+['exec-out','run-as','org.pocketlore.app','cat','files/broad-tests/'+mode+'.json'],mode+'.json'));assert r['status']=='PASS' and b'INSTRUMENTATION_CODE: -1' in log,{k:v for k,v in r.items() if k not in ['queries','dialogs']}
+ for name in [mode+'-source.png',mode+'-license.png']:run(adb+['exec-out','run-as','org.pocketlore.app','cat','files/broad-tests/'+name],name)
 run(adb+['exec-out','run-as','org.pocketlore.app','cat','files/pack-library/catalog.json'],'catalog-after.json');model=run(adb+['shell','run-as','org.pocketlore.app','sha256sum','files/model.gguf'],'model-after.txt');assert model==(out/'model-before.txt').read_bytes()
 run(adb+['shell','run-as','org.pocketlore.app','du','-ak','files/pack-library','files/broad-tests','files/model.gguf','cache'],'disk.txt')
-apk=R/'android/app/build/outputs/apk/debug/app-debug.apk';receipt={'apk':{'sha256':sha(apk),'bytes':apk.stat().st_size},'pack':{'sha256':sha(pack),'bytes':pack.stat().st_size},'protocol_sha256':sha(F/'protocol.json'),'sources':{str(p.relative_to(R)):sha(p) for p in list((R/'android/app/src/main/java/org/pocketlore/app').glob('*.java'))+[F/'BroadInstrumentation.java']},'records':{p.name:sha(p) for p in out.iterdir() if p.suffix in ['.json','.txt','.log']}}
+apk=R/'android/app/build/outputs/apk/debug/app-debug.apk';receipt={'apk':{'sha256':sha(apk),'bytes':apk.stat().st_size},'pack':{'sha256':sha(pack),'bytes':pack.stat().st_size},'protocol_sha256':sha(F/'protocol.json'),'sources':{str(p.relative_to(R)):sha(p) for p in list((R/'android/app/src/main/java/org/pocketlore/app').glob('*.java'))+[F/'BroadInstrumentation.java']},'records':{p.name:sha(p) for p in out.iterdir() if p.suffix in ['.json','.txt','.log','.png']}}
 (out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');print('PASS',out)
