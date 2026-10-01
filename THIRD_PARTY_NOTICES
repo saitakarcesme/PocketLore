@@ -60,3 +60,20 @@ SHA-256: 74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db.
 Full model license and publisher notice are packaged in assets/licenses/
 qwen2.5-Apache-2.0.txt and answer-model-notice.txt. Quantization was supplied
 by the publisher and was not independently reproduced by PocketLore.
+
+Science supplement (task 150), edition science-supplement-2026-10-01-v1:
+24 selected English text paragraphs from eight USGS and NHGRI documents,
+spanning geology, genetics and geomagnetism. Exact source URLs, raw snapshot
+and paragraph SHA-256 pins, dates and rights are in
+tools/packs/science-sources.lock.json and the generated pack manifest.
+USGS-authored federal text is public domain in the United States; NHGRI
+material is public domain unless otherwise indicated. These selected text
+blocks exclude third-party credited material, images, captions and media.
+Policies: https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits
+and https://www.genome.gov/about-nhgri/Policies-Guidance/Copyright.
+Attribution and rights links travel with every passage. No agency endorsement
+is implied. Retrieved 2026-10-01; unknown USGS article dates remain unknown,
+while NHGRI source dates are retained. Only HTML removal and whitespace
+normalization are applied; no synthetic factual text is included. Downloaded
+source pages and the optional pack remain ignored and are not embedded in
+the APK or repository. See docs/evidence/science-supplement.md.
