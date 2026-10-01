@@ -1,0 +1,18 @@
+import groovy.json.JsonOutput
+gradle.projectsEvaluated {
+    def root=gradle.rootProject
+    root.tasks.register('pocketloreDistributionDependencies') {
+        doLast {
+            def rows=[]
+            root.allprojects.each { p ->
+                [p.buildscript.configurations.findByName('classpath'),p.configurations.findByName('debugRuntimeClasspath')].findAll { it!=null && it.canBeResolved }.each { c ->
+                    c.resolvedConfiguration.resolvedArtifacts.each { a ->
+                        rows << [project:p.path,configuration:c.name,coordinate:a.moduleVersion.id.toString(),artifact:a.file.absolutePath,type:a.type,classifier:a.classifier]
+                    }
+                }
+            }
+            def out=new File(root.projectDir.parentFile,'downloads/distribution/resolved.json')
+            out.parentFile.mkdirs();out.text=JsonOutput.prettyPrint(JsonOutput.toJson(rows.sort { it.coordinate+it.artifact }))
+        }
+    }
+}

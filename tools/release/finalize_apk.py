@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Re-emit debug DEX without incremental class checksums; align and sign exact candidate."""
 from pathlib import Path
-import hashlib,os,subprocess,tempfile,zipfile
+import hashlib,json,os,subprocess,tempfile,zipfile
 ROOT=Path(__file__).resolve().parents[2]
 TC=Path(os.environ.get('POCKETLORE_TOOLCHAIN','/home/isa/Android/atlas-toolchain'))
 # AGP's pinned builder embeds the D8 version used by this project; no new compiler.
@@ -17,6 +17,13 @@ def main():
         temp=Path(directory);dex=temp/'dex';dex.mkdir();inputs=[]
         with zipfile.ZipFile(apk) as archive:
             entries={n:(archive.read(n),archive.getinfo(n).compress_type) for n in archive.namelist()}
+        # Preserve installed NDK aggregate redistribution notices for static runtime inputs.
+        # Exact pins fail closed if tooling/notices drift; never synthesize license text.
+        for notice in json.loads((ROOT/'tools/distribution/native-notices.lock.json').read_text()):
+            raw=(TC/notice['toolchain_path']).read_bytes()
+            if hashlib.sha256(raw).hexdigest()!=notice['sha256']:
+                raise ValueError('Pinned NDK notice changed: '+notice['toolchain_path'])
+            entries[notice['apk_path']]=(raw,zipfile.ZIP_DEFLATED)
         for name,(data,_) in entries.items():
             if name.startswith('classes') and name.endswith('.dex'):
                 p=temp/name;p.write_bytes(data);inputs.append(p)
