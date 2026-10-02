@@ -1,5 +1,9 @@
 # Release gaps
 
+## Task500 strategy-change limit
+
+The new whole-output review contract makes exact external review auditable but supplies no qualified semantic authority. Structural tests cannot close general generated usefulness; production stays unavailable and the required quality gate fails. Selected-model Android and current full installed/update budgets remain unmeasured. [The strategy evidence](evidence/500-general-grounded-generation-strategy-change.md) records this different trust boundary without repeating model screens or relabeling quotes.
+
 ## Task500 repair2 measured blocker
 
 Separate-model host verification falsely approved five unsupported drafts and both unavailable controls despite passing six paired probes. Production remains unqualified. The next distinct candidate must be evaluated against complete preserved drafts without tuning these verdicts, and fit a reconciled distribution: the current two-model proposal exceeds the historical50GB update allowance. Selected-model Android execution, current complete storage/memory and independent unseen quality remain unmeasured; see [actual negative evidence](evidence/general-grounded-generation.md).
