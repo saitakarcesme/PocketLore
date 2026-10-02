@@ -1,0 +1,6 @@
+gradle.beforeProject { app ->
+ app.plugins.withId('com.android.application') {
+  def base = new File(app.rootProject.projectDir, '../tools/evaluation/general-generation-repair')
+  app.android.sourceSets.androidTest.java.srcDirs += [new File(base, 'tests')]
+ }
+}
