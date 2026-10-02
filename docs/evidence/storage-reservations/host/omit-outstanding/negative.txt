@@ -1,0 +1,6 @@
+{"fixture":"available-boundary","status":"PASS","available_exact":268439552}
+{"fixture":"target-boundary","status":"PASS","projected_exact":45000000000}
+{"fixture":"hard-boundary","status":"PASS","unknown_and_overflow_rejected":true}
+Exception in thread "main" java.lang.AssertionError
+	at org.pocketlore.app.StorageReservationCheck.require(StorageReservationCheck.java:10)
+	at org.pocketlore.app.StorageReservationCheck.main(StorageReservationCheck.java:36)

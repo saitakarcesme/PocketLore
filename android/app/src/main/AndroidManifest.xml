@@ -3,7 +3,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <application android:allowBackup="false" android:label="PocketLore" android:supportsRtl="true" android:theme="@style/PocketLoreTheme">
+    <application android:name=".StorageApplication" android:allowBackup="false" android:label="PocketLore" android:supportsRtl="true" android:theme="@style/PocketLoreTheme">
         <activity android:name=".AttachmentsActivity" android:exported="false" />
         <activity android:name=".PersonalDocumentsActivity" android:exported="false" />
         <provider android:name=".NotebookExportProvider" android:authorities="${applicationId}.notebook" android:exported="false" android:grantUriPermissions="true" />

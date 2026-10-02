@@ -121,6 +121,8 @@ public final class PackLibrary {
     private Snapshot installLocked(InputStream in,BooleanSupplier cancel,long expected)throws Exception {
         require(expected==-1 || expected>0&&expected<=BroadPack.MAX_ARCHIVE,"Invalid declared archive size");
         List<Entry> es=entries();cleanup(es);ResourceStorage.requireSpace(expected<0?BroadPack.MAX_ARCHIVE:expected,directory.getUsableSpace());
+        // Archive plus expanded database, one database-sized journal allowance and bounded verification staging.
+        try(ResourceStorage.Reservation reservation=ResourceStorage.reserve(ResourceStorage.stagePeak((expected<0?BroadPack.MAX_ARCHIVE:expected)+2L*BroadPack.MAX_DATABASE+16L*1024*1024))){
         File stage=File.createTempFile("pack-",".partial",directory);File moved=null;boolean committed=false;
         try{ResourceStorage.copy(in,stage,expected<0?BroadPack.MAX_ARCHIVE:expected,cancel);
             require(expected<0||stage.length()==expected,"Archive length differs from declared size");
@@ -137,6 +139,7 @@ public final class PackLibrary {
             moved=new File(directory,p.sha256+".plpack");Files.move(stage.toPath(),moved.toPath(),StandardCopyOption.ATOMIC_MOVE);
             commit(es,cancel);committed=true;return next;
         }finally{stage.delete();if(!committed&&moved!=null)moved.delete();}
+        }
     }
     /** Commit the retained catalog before deleting owned bytes; an interrupted cleanup is retried on load. */
     private Snapshot removeLocked(String hash)throws Exception {

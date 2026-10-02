@@ -12,6 +12,7 @@ public final class ModelImport {
                               BooleanSupplier cancelled) throws Exception {
         if (expected < 4 || expected > MAX_BYTES) throw new IOException("Model size must be known and at most 2048 MiB");
         ResourceStorage.requireSpace(expected,available);
+        try(ResourceStorage.Reservation reservation=ResourceStorage.reserve(ResourceStorage.stagePeak(expected))){
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
         long total = 0;
         byte[] buffer = new byte[65536];
@@ -38,6 +39,7 @@ public final class ModelImport {
         StringBuilder hash = new StringBuilder();
         for (byte b : digest.digest()) hash.append(String.format(java.util.Locale.ROOT, "%02x", b & 255));
         return hash.toString();
+        }
     }
     private ModelImport() {}
 }

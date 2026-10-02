@@ -1,0 +1,63 @@
+{
+  "environment": "LLMRig host JVM; no Android/device execution",
+  "configuration": "2 active processors;128MiB Java heap; not measured total RSS",
+  "sources": {
+    "android/app/src/main/java/org/pocketlore/app/ResourceStorage.java": "6ed44870a8e4d7b372d1261697dd56081edea304faecb9f4cc98cbc1f05d1861",
+    "android/app/src/main/java/org/pocketlore/app/ModelImport.java": "9201f5624b0d9037a1f93442f2c72dd8546dc0b78bb524d80455d3f2902fa09e",
+    "tools/evaluation/storage-reservations/StorageReservationCheck.java": "3b4acb71d138959924801142e355c006cb0e82a08f574fde332063fc8806c15b",
+    "android/app/src/main/java/org/pocketlore/app/StorageApplication.java": "6af9eeaac0782f6cafd84b6115bd255cb0657e8c092761c8fcab656eed5e478b",
+    "android/app/src/main/java/org/pocketlore/app/NativePanel.java": "f0c10610d1e44cdd7a0e8b8bffb9f7d932b53b4c546cd5c3794c88fed0a03682",
+    "android/app/src/main/java/org/pocketlore/app/PackLibrary.java": "80031e72b47a3fb79923580751b3e5888e68c2913cd70707d9e2ec0605a60bb3",
+    "android/app/src/main/java/org/pocketlore/app/PersonalDocuments.java": "2b98d50aa6966ef27ba791b772d9415db84573d1f08a9f833f05443268c41fae",
+    "android/app/src/main/java/org/pocketlore/app/AttachmentAssets.java": "d10f30cb85ca08da862081e7ef20673c242e1ac65ee32c3263ae47532f5c22f2",
+    "android/app/src/main/AndroidManifest.xml": "79cd4d402a992a1c44a881b11b3dfada9848d23c23ff312d6907085397280336"
+  },
+  "fixtures_sha256": "cc03dad2c6e839fbf4de37d56376fd2e03a3e9d6df7be3eef7de190724f54be5",
+  "records": [
+    {
+      "fixture": "available-boundary",
+      "status": "PASS",
+      "available_exact": 268439552
+    },
+    {
+      "fixture": "target-boundary",
+      "status": "PASS",
+      "projected_exact": 45000000000
+    },
+    {
+      "fixture": "hard-boundary",
+      "status": "PASS",
+      "unknown_and_overflow_rejected": true
+    },
+    {
+      "fixture": "concurrent",
+      "status": "PASS",
+      "admitted": 1,
+      "denied": 1,
+      "remaining_reserved": 0
+    },
+    {
+      "fixture": "release",
+      "status": "PASS",
+      "before_during_cancel_and_failure_deleted_stage": true
+    },
+    {
+      "fixture": "rollback-retry",
+      "status": "PASS",
+      "retry_coexistence_logical_bytes": 48,
+      "final_fixture_logical_bytes": 23,
+      "real_native_model": false
+    }
+  ],
+  "negative_controls": [
+    {
+      "mutation": "omit-outstanding",
+      "returncode": 1
+    },
+    {
+      "mutation": "leak-release",
+      "returncode": 1
+    }
+  ],
+  "status": "PASS"
+}

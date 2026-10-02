@@ -9,6 +9,8 @@ public final class ScaleImportCheck {
     static void rejected(Attempt a)throws Exception{try{a.run();throw new AssertionError("Accepted invalid input");}catch(IOException expected){checks++;}}
     public static void main(String[] args)throws Exception {
         File dir=Files.createTempDirectory("scale-import-").toFile(),stage=new File(dir,"model.partial");
+        // Host fixture accounting only; Android configures an app/package meter at startup.
+        ResourceStorage.configure(()->{long used=0;File[] files=dir.listFiles();if(files==null)throw new IOException("Unknown fixture usage");for(File f:files)used=Math.addExact(used,f.length());return new ResourceStorage.Snapshot(used,dir.getUsableSpace());});
         byte[] good="GGUFfixture".getBytes(java.nio.charset.StandardCharsets.UTF_8);
         long space=ResourceStorage.RESERVE_BYTES+good.length;
         String hash=ModelImport.copy(new ByteArrayInputStream(good),stage,good.length,space,()->false);

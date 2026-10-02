@@ -147,9 +147,10 @@ final class NativePanel {
         setBusy(true); cancelled = false; memorySuspended=false; state.setText("Copying and verifying local model…");
         worker.execute(() -> {
             File stage = new File(activity.getFilesDir(), "model.partial");
-            long candidate = 0;
+            long candidate = 0; ResourceStorage.Reservation reservation=null;
             try {
                 if (stopped) return;
+                reservation=ResourceStorage.reserve(ResourceStorage.stagePeak(size));
                 ImportRecovery.begin(activity.getFilesDir(),"model");
                 ModelCatalog library=new ModelCatalog(activity.getFilesDir());
                 long retained=SharedShardUpdate.uniqueBytes(new File(activity.getApplicationInfo().dataDir))+new File(activity.getApplicationInfo().sourceDir).length();
@@ -172,7 +173,7 @@ final class NativePanel {
                 ImportRecovery.finish(activity.getFilesDir(),"model");
                 showState("Selected: "+spec.description()+"\nTransaction budget: "+peak+" bytes"+(peak>ModelCatalog.TARGET?" · above 45 GB target":"")+"\n"+NativeRuntime.identity());
             } catch (Exception | OutOfMemoryError e) { if (candidate != 0) release(); restorePrevious("Import failed: " + e.getMessage()); }
-            finally { stage.delete(); done(); }
+            finally { stage.delete(); if(reservation!=null)reservation.close(); done(); }
         });
     }
     void answer(String question, ResearchEngine.Result evidence) {

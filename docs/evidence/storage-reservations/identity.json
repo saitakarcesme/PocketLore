@@ -1,0 +1,13 @@
+{
+  "environment": "LLMRig host build/JVM only; no new device receipts",
+  "raw_run": "/home/isa/Projects/PocketLore/downloads/storage-reservations/20261002T031731Z-b5400040",
+  "apk_sha256": "3dd57ac93d861878b35df3f4e7f978a32f1222dcd9bd6b1a23052219ef8716a2",
+  "apk_bytes": 22702878,
+  "fixtures_commit": "2114235",
+  "configured_gradle_workers": 2,
+  "configured_gradle_heap": "2GiB",
+  "actual_total_build_peak": "not measured",
+  "historical_full_390_allocated_app_package_bytes": 41728667648,
+  "historical_full_390_sampled_peak_bytes": 41757052928,
+  "current_device_baseline": "not remeasured; historical identity must not be relabeled current"
+}

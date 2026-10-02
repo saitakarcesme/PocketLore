@@ -380,3 +380,7 @@ The subsequent required run failed at specialist instrumentation transport with 
 ## Task410 existing API37 receipt audit
 
 Offline inspection of run20261002T025132Z-be41f6a6 supports six phase streams, transport completion, unchanged boot, restored font and enumerated APK/model assets, separately from task400's preserved reboot failures. Overall classification remains incomplete: the reported test APK lacks immutable source/build-input and installed-test-package binding. This audit does not accept400 or change production behavior; see docs/evidence/modern-receipt-audit.md. No device work was repeated.
+
+## Task420 bounded storage reservations
+
+Frozen six public CF-01 fixtures pass against production Java storage/model-copy paths on the host, with failing outstanding-accounting/release mutations. Android compilation passes; covered staging now holds serialized same-process reservations against measured app/package usage and outstanding peaks, with45GB target and50GB hard refusal. Android meter execution and full update/provider accounting remain unmeasured; no current whole-device safety claim. Historical303/390 capacity,400blocked and410incomplete provenance are unchanged. See docs/evidence/storage-reservations.md.
