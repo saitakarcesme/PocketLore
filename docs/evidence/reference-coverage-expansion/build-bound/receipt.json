@@ -1,0 +1,37 @@
+{
+  "command": [
+    "bash",
+    "tools/android-build.sh",
+    "assembleDebug",
+    "assembleDebugAndroidTest",
+    "-I",
+    "/home/isa/Projects/PocketLore/tools/evaluation/reference-expansion/source.gradle",
+    "-PpocketloreTestRunner=org.pocketlore.app.ReferenceExpansionInstrumentation"
+  ],
+  "returncode": 0,
+  "elapsed_seconds": 10.292773192981258,
+  "source_input_sha256": "0e178b2ad8339b20070aad35092cecbfdfb28ed69f057d61812eecd162ff98bc",
+  "source_commit": "a1c628f7033918908d3a2fffda640a892cc4a66e",
+  "artifacts": {
+    "app": {
+      "path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/build-bound-a1c628f/binaries/app-debug.apk",
+      "sha256": "21a6efc62c73f28871619bb4806f264a4dbd1c9e663a9256506972ab353341f5",
+      "bytes": 22719262
+    },
+    "test": {
+      "path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/build-bound-a1c628f/binaries/app-debug-androidTest.apk",
+      "sha256": "b8ab30b9c9096ed356c15c7dda4307723f13c8370173997d86563cdb941a2721",
+      "bytes": 430874
+    },
+    "native": {
+      "lib/arm64-v8a/libpocketlore.so": "09e453a05f084e41dd1084f306f4cae264895e181fe5d953d09b514e3d22230a",
+      "lib/arm64-v8a/libpocketlore_attachments.so": "093561c7a72855b833aaf85aa8bdba664bb37e99c25f8d78ed7c8faace40ca0b",
+      "lib/arm64-v8a/libpocketlore_index.so": "9ea023c19fb4e55fc1d01de21796995dbbd2bd8ad046c9c90849e315bc80b699",
+      "lib/x86_64/libpocketlore.so": "941637a0c50c4b8648387c85834430eb0660a8c19ef26ee41698b72a0892afcb",
+      "lib/x86_64/libpocketlore_attachments.so": "74ef9b1934de55622de961ecb4b75583f9c71698286496c67c21fd2e87979b70",
+      "lib/x86_64/libpocketlore_index.so": "7a43b08d8323a1aefe970cacc0a9cd81fad7673feaec9b01ec813bdfbdad6602"
+    }
+  },
+  "model_env_sha256": "2d932887a64251c6561f4082739136be2a204728c8acd8fb7a1a0eff69526d97",
+  "classification": "Host build; no model loaded or selected, no device access"
+}
