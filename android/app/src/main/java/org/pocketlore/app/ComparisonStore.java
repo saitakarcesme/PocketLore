@@ -7,7 +7,7 @@ final class ComparisonStore {
  final File root;final Context context;
  ComparisonStore(Context context){this.context=context;root=new File(context.getFilesDir(),"manual-comparisons");}
  static String hash(String text)throws Exception{byte[] b=MessageDigest.getInstance("SHA-256").digest(text.getBytes(StandardCharsets.UTF_8));StringBuilder h=new StringBuilder();for(byte v:b)h.append(String.format(Locale.ROOT,"%02x",v&255));return h.toString();}
- static String identity(NotebookStore.Entry e)throws Exception{return hash(new JSONArray().put(e.id).put(e.created).put(e.kind).put(e.title).put(e.body).put(e.provenance).toString());}
+ static String identity(NotebookStore.Entry e)throws Exception{return hash(new JSONArray().put(e.id).put(e.created).put(e.kind).put(e.title).put(e.question).put(e.body).put(e.provenance).toString());}
  static String label(String s)throws IOException{if(s==null||s.trim().isEmpty()||s.length()>80||s.matches("(?s).*[\\p{Cntrl}].*"))throw new IOException("Use 1–80 visible characters for labels");return s.trim();}
  static void require(boolean b,String message)throws IOException{if(!b)throw new IOException(message);}
  JSONObject create(long left,long right)throws Exception{
