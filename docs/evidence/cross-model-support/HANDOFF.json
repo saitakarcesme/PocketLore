@@ -1,0 +1,20 @@
+{
+  "run": "/home/isa/Projects/PocketLore/docs/evidence/cross-model-support/run-20261002T141505Z",
+  "original_run": "/home/isa/Projects/PocketLore/downloads/cross-model-support/run-20261002T141505Z",
+  "classification": "negative host verifier experiment; not qualified production",
+  "manifest_sha256": "9cd8c25141c7df46fa642ea77ab8e88c848eb1d6f4de23163f0ccda27d059598",
+  "required_checks": {
+    "bash tools/android-build.sh": {
+      "exit_code": 0,
+      "receipt": "android-build-final.log"
+    },
+    "bash tools/evaluation/check_general_generation.sh": {
+      "exit_code": 1,
+      "receipt": "required-check-final.log"
+    }
+  },
+  "final_apk_sha256": "f2ec8bbdcd1496c9ea07f867be3fd62cc98aa37ba10cfe31466e5bd7dc004c3a",
+  "android_execution_for_final_apk": false,
+  "source_review": "source-review.json",
+  "post_inference_parser_repair": "Zero-token and explicit native-error rejection; all18 original route values replay unchanged; executed source is manifest source_commit, not final parser."
+}

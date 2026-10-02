@@ -9,8 +9,12 @@ public final class CrossModelSupport {
   if(draft==null||draft.length()>16000)throw new IllegalArgumentException("Draft exceeds verification admission");
   return context.prompt()+"\nBEGIN UNTRUSTED PROPOSED ANSWER\n"+draft+"\nEND UNTRUSTED PROPOSED ANSWER\nEvaluate the whole answer; do not omit any factual tail.";
  }
+ public static Decision decision(String raw,int tokens,int limit,String failure){
+  if(failure==null||!failure.isEmpty())return Decision.INVALID;
+  return decision(raw,tokens,limit);
+ }
  public static Decision decision(String raw,int tokens,int limit){
-  if(raw==null||tokens<0||tokens>=limit)return Decision.INVALID;
+  if(raw==null||tokens<=0||tokens>=limit)return Decision.INVALID;
   String first=raw.trim().split("\\R",2)[0].trim();
   for(Decision d:new Decision[]{Decision.SUPPORTED_COMPLETE,Decision.REJECT,Decision.ABSENT})if(first.equals("VERDICT: "+d.name()))return d;
   return Decision.INVALID;

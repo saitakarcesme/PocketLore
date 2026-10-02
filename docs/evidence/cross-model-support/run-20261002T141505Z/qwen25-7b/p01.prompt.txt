@@ -1,0 +1,28 @@
+QUESTION
+Is assembly always exactly one statement per machine instruction?
+EXTERNAL EVIDENCE
+
+[[S1]]
+Identity: reference-5739-86ff3287ece77838
+Title: Compiler
+Snapshot: Revision 1373605841 at 2026-09-06T21:38:00Z; retrieved 2026-10-01
+Rights: Wikipedia contributors; Compiler; https://en.wikipedia.org/w/index.php?oldid=1373605841; contributor history https://en.wikipedia.org/w/index.php?curid=5739&action=history; CC BY-SA 4.0; selected transformed text distributed on the same terms; no added restrictions; https://creativecommons.org/licenses/by-sa/4.0/
+URL: https://en.wikipedia.org/w/index.php?oldid=1373605841
+BEGIN PASSAGE
+There are many different types of compilers which produce output in different useful forms. A cross-compiler produces code for a different central processing unit (CPU) or operating system than the one on which the cross-compiler itself runs. A bootstrap compiler is often a temporary compiler, used for compiling a more permanent or better optimized compiler for a language.
+END PASSAGE
+
+[[S2]]
+Identity: reference-1368-bb237b999458543d
+Title: Assembly language
+Snapshot: Revision 1376923639 at 2026-09-27T00:46:25Z; retrieved 2026-10-01
+Rights: Wikipedia contributors; Assembly language; https://en.wikipedia.org/w/index.php?oldid=1376923639; contributor history https://en.wikipedia.org/w/index.php?curid=1368&action=history; CC BY-SA 4.0; selected transformed text distributed on the same terms; no added restrictions; https://creativecommons.org/licenses/by-sa/4.0/
+URL: https://en.wikipedia.org/w/index.php?oldid=1376923639
+BEGIN PASSAGE
+In computing, assembly language (alternatively assembler language[1] or symbolic machine code),[2][3][4] often referred to simply as assembly and commonly abbreviated as ASM or asm, is any low-level programming language with a very strong correspondence between the instructions in the language and the architecture's machine code instructions.[5] Assembly language usually has one statement per machine code instruction (1:1), but constants, comments, assembler directives,[6] symbolic labels of, e.g., memory locations, registers, and macros[7][1] are generally also supported.
+END PASSAGE
+
+BEGIN UNTRUSTED PROPOSED ANSWER
+No. Assembly usually has one statement per machine code instruction, while constants, comments, directives, labels and macros are also supported [[S2]]. GAPS: none.
+END UNTRUSTED PROPOSED ANSWER
+Evaluate the whole answer; do not omit any factual tail.

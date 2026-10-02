@@ -1,0 +1,16 @@
+{
+  "records": 18,
+  "routes": {
+    "SUPPORTED_COMPLETE": 14,
+    "REJECT": 4,
+    "ABSENT": 0,
+    "INVALID": 0
+  },
+  "max_rss_bytes": 8189145088,
+  "max_swap_bytes": 0,
+  "median_first_token_ms": 21441.2996495,
+  "median_total_ms": 34355.728596,
+  "max_prompt_tokens": 1369,
+  "max_output_tokens": 218,
+  "native_failures": []
+}

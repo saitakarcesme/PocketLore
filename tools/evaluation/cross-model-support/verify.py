@@ -1,11 +1,16 @@
 from pathlib import Path
-import json,hashlib,subprocess,tempfile,shutil,sys
+import base64,json,hashlib,subprocess,tempfile,shutil,sys
 R=Path(__file__).resolve().parents[3];F=Path(__file__).parent;P=R/'docs/evidence/cross-model-support'
 def sha(p):
  with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def artifacts(d):
  m=json.loads((d/'manifest.json').read_text())
- for n,h in m['inputs'].items():assert sha(R/n)==h,n
+ for n,h in m['inputs'].items():
+  executed=subprocess.check_output(['git','show',m['source_commit']+':'+n],cwd=R)
+  assert hashlib.sha256(executed).hexdigest()==h,n
+  # The final parser repair is replayed below; never relabel it as executed inference.
+  if n not in ['android/app/src/main/java/org/pocketlore/app/CrossModelSupport.java','tools/evaluation/cross-model-support/SupportHarness.java']:
+   assert sha(R/n)==h,n
  for n,h in m['verification_inputs'].items():assert sha(d/'inputs'/n)==h,n
  assert sha(Path(m['runtime']['path']))==m['runtime']['sha256']
  assert len(m['runs'])==1;run=m['runs'][0];assert run['exit_code']==0
@@ -15,14 +20,22 @@ def artifacts(d):
  for c in cases:
   row=json.loads((d/'qwen25-7b'/(c['id']+'.json')).read_text());assert row['prompt_tokens']+512<=4096 and row['tokens']<=512
   first=row['raw'].strip().splitlines()[0] if row['raw'].strip() else ''
-  expected=first.removeprefix('VERDICT: ') if first in ['VERDICT: SUPPORTED_COMPLETE','VERDICT: ABSENT','VERDICT: REJECT'] and 0<=row['tokens']<512 else 'INVALID'
+  expected=first.removeprefix('VERDICT: ') if first in ['VERDICT: SUPPORTED_COMPLETE','VERDICT: ABSENT','VERDICT: REJECT'] and 0<row['tokens']<512 and not row['failure'] else 'INVALID'
   assert row['screen_route']==expected,c['id']
  return cases
 handoff=json.loads((P/'HANDOFF.json').read_text());d=Path(handoff['run']);cases=artifacts(d)
+assert sha(d/'manifest.json')==handoff['manifest_sha256']
+independent=json.loads((P/'source-review.json').read_text())
+assert independent['manifest_sha256']==sha(d/'manifest.json')
+assert independent['receipt_sha256']==sha(d/'qwen25-7b/receipt.json')
+for name,digest in independent['frozen_sha256'].items():assert sha(R/name)==digest,name
 with tempfile.TemporaryDirectory() as tmp:
  java=Path('/home/isa/Android/atlas-toolchain/jdk/bin');base=R/'android/app/src/main/java/org/pocketlore/app'
  subprocess.run([java/'javac','-d',tmp,*[base/(n+'.java') for n in ['ResearchEngine','GeneralGroundedAnswer','CrossModelSupport']],F/'Behavior.java'],check=True)
- subprocess.run([java/'java','-Xmx128m','-cp',tmp,'org.pocketlore.app.Behavior'],check=True)
+ rows=[json.loads((d/'qwen25-7b'/(c['id']+'.json')).read_text()) for c in cases]
+ replay=Path(tmp)/'replay.tsv'
+ replay.write_text(''.join(base64.b64encode(r['raw'].encode()).decode()+'\t'+str(r['tokens'])+'\t'+r['failure']+'\t'+r['screen_route']+'\n' for r in rows))
+ subprocess.run([java/'java','-Xmx128m','-cp',tmp,'org.pocketlore.app.Behavior',replay],check=True)
 for name in ['g01.json','p06.json']:
  with tempfile.TemporaryDirectory() as tmp:
   copy=Path(tmp);shutil.copy2(d/'manifest.json',copy/'manifest.json');shutil.copytree(d/'inputs',copy/'inputs');shutil.copytree(d/'qwen25-7b',copy/'qwen25-7b')
@@ -31,6 +44,18 @@ for name in ['g01.json','p06.json']:
   try:artifacts(copy)
   except (AssertionError,FileNotFoundError):pass
   else:raise AssertionError('missing/changed verifier result accepted')
+for mode in ['missing-model','changed-runtime']:
+ with tempfile.TemporaryDirectory() as tmp:
+  copy=Path(tmp);m=json.loads((d/'manifest.json').read_text())
+  shutil.copytree(d/'inputs',copy/'inputs')
+  if mode=='missing-model':m['runs'][0]['model_path']=str(copy/'missing.gguf')
+  else:
+   (copy/'changed.so').write_bytes(b'changed runtime artifact')
+   m['runtime']['path']=str(copy/'changed.so')
+  (copy/'manifest.json').write_text(json.dumps(m))
+  try:artifacts(copy)
+  except (AssertionError,FileNotFoundError):pass
+  else:raise AssertionError(mode+' accepted')
 review=json.loads((R/'docs/evidence/general-generation/support-review.json').read_text())
 old={c['id']:c for c in review['models']['qwen3-4b']['cases']}
 print('PASS: real verifier artifacts, fixed decision parser, missing/changed output rejection; semantic result is separately reviewed')

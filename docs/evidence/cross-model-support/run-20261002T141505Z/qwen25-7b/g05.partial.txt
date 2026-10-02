@@ -1,0 +1,6 @@
+VERDICT: REJECT
+
+REASONS:
+1. The proposed answer incorrectly states that the excerpt says assembly is always exactly one statement per instruction. The passage from [[S2]] actually states that "assembly language usually has one statement per machine code instruction (1:1), but constants, comments, assembler directives, symbolic labels, and macros are generally supported." This means that while the primary mapping is one statement per instruction, there are exceptions.
+2. The answer does not accurately reflect the information provided in the excerpts. Specifically, it omits the mention of additional elements like constants, comments, assembler directives, symbolic labels, and macros, which are supported in assembly language.
+3. The proposed answer incorrectly concludes that there are no gaps, when in fact, the passage explicitly mentions that there are exceptions to the one-to-one mapping.
