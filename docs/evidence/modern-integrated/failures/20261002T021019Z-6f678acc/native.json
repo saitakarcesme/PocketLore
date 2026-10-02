@@ -1,0 +1,229 @@
+{
+  "apk_sha256": "9c71a32dbc2deac3d650c6849a335379bd2b005c1516437c613bcd0fcff7dd70",
+  "apk_bytes": 22702878,
+  "libraries": [
+    {
+      "machine": 183,
+      "loads": [
+        {
+          "offset": 0,
+          "vaddr": 0,
+          "align": 16384,
+          "valid": true
+        },
+        {
+          "offset": 5474768,
+          "vaddr": 5491152,
+          "align": 16384,
+          "valid": true
+        },
+        {
+          "offset": 5592976,
+          "vaddr": 5625744,
+          "align": 16384,
+          "valid": true
+        }
+      ],
+      "relro": [
+        {
+          "vaddr": 5491152,
+          "memsz": 128560,
+          "valid": true
+        }
+      ],
+      "valid": true,
+      "name": "lib/arm64-v8a/libpocketlore.so",
+      "sha256": "09e453a05f084e41dd1084f306f4cae264895e181fe5d953d09b514e3d22230a",
+      "bytes": 5598088,
+      "zip_offset": 393216,
+      "uncompressed": true,
+      "zip_valid": true
+    },
+    {
+      "machine": 183,
+      "loads": [
+        {
+          "offset": 0,
+          "vaddr": 0,
+          "align": 16384,
+          "valid": true
+        },
+        {
+          "offset": 3224832,
+          "vaddr": 3241216,
+          "align": 16384,
+          "valid": true
+        },
+        {
+          "offset": 3268864,
+          "vaddr": 3301632,
+          "align": 16384,
+          "valid": true
+        }
+      ],
+      "relro": [
+        {
+          "vaddr": 3241216,
+          "memsz": 51968,
+          "valid": true
+        }
+      ],
+      "valid": true,
+      "name": "lib/arm64-v8a/libpocketlore_attachments.so",
+      "sha256": "093561c7a72855b833aaf85aa8bdba664bb37e99c25f8d78ed7c8faace40ca0b",
+      "bytes": 3271872,
+      "zip_offset": 5996544,
+      "uncompressed": true,
+      "zip_valid": true
+    },
+    {
+      "machine": 183,
+      "loads": [
+        {
+          "offset": 0,
+          "vaddr": 0,
+          "align": 16384,
+          "valid": true
+        },
+        {
+          "offset": 1810544,
+          "vaddr": 1826928,
+          "align": 16384,
+          "valid": true
+        },
+        {
+          "offset": 1833944,
+          "vaddr": 1866712,
+          "align": 16384,
+          "valid": true
+        }
+      ],
+      "relro": [
+        {
+          "vaddr": 1826928,
+          "memsz": 24464,
+          "valid": true
+        }
+      ],
+      "valid": true,
+      "name": "lib/arm64-v8a/libpocketlore_index.so",
+      "sha256": "9ea023c19fb4e55fc1d01de21796995dbbd2bd8ad046c9c90849e315bc80b699",
+      "bytes": 1848880,
+      "zip_offset": 9273344,
+      "uncompressed": true,
+      "zip_valid": true
+    },
+    {
+      "machine": 62,
+      "loads": [
+        {
+          "offset": 0,
+          "vaddr": 0,
+          "align": 16384,
+          "valid": true
+        },
+        {
+          "offset": 5954560,
+          "vaddr": 5970944,
+          "align": 16384,
+          "valid": true
+        },
+        {
+          "offset": 6072592,
+          "vaddr": 6105360,
+          "align": 16384,
+          "valid": true
+        }
+      ],
+      "relro": [
+        {
+          "vaddr": 5970944,
+          "memsz": 123904,
+          "valid": true
+        }
+      ],
+      "valid": true,
+      "name": "lib/x86_64/libpocketlore.so",
+      "sha256": "941637a0c50c4b8648387c85834430eb0660a8c19ef26ee41698b72a0892afcb",
+      "bytes": 6077720,
+      "zip_offset": 11124736,
+      "uncompressed": true,
+      "zip_valid": true
+    },
+    {
+      "machine": 62,
+      "loads": [
+        {
+          "offset": 0,
+          "vaddr": 0,
+          "align": 16384,
+          "valid": true
+        },
+        {
+          "offset": 3579920,
+          "vaddr": 3596304,
+          "align": 16384,
+          "valid": true
+        },
+        {
+          "offset": 3620768,
+          "vaddr": 3653536,
+          "align": 16384,
+          "valid": true
+        }
+      ],
+      "relro": [
+        {
+          "vaddr": 3596304,
+          "memsz": 40944,
+          "valid": true
+        }
+      ],
+      "valid": true,
+      "name": "lib/x86_64/libpocketlore_attachments.so",
+      "sha256": "74ef9b1934de55622de961ecb4b75583f9c71698286496c67c21fd2e87979b70",
+      "bytes": 3623768,
+      "zip_offset": 17203200,
+      "uncompressed": true,
+      "zip_valid": true
+    },
+    {
+      "machine": 62,
+      "loads": [
+        {
+          "offset": 0,
+          "vaddr": 0,
+          "align": 16384,
+          "valid": true
+        },
+        {
+          "offset": 1808976,
+          "vaddr": 1825360,
+          "align": 16384,
+          "valid": true
+        },
+        {
+          "offset": 1832432,
+          "vaddr": 1865200,
+          "align": 16384,
+          "valid": true
+        }
+      ],
+      "relro": [
+        {
+          "vaddr": 1825360,
+          "memsz": 26032,
+          "valid": true
+        }
+      ],
+      "valid": true,
+      "name": "lib/x86_64/libpocketlore_index.so",
+      "sha256": "7a43b08d8323a1aefe970cacc0a9cd81fad7673feaec9b01ec813bdfbdad6602",
+      "bytes": 1847336,
+      "zip_offset": 20840448,
+      "uncompressed": true,
+      "zip_valid": true
+    }
+  ],
+  "valid": true
+}

@@ -1,0 +1,226 @@
+{
+  "state.txt": {
+    "bytes": 7,
+    "sha256": "c98373c1abef78070f6beef6b4ae4fbf3de348dac280195c7f93441920584af9"
+  },
+  "state.txt.command.json": {
+    "bytes": 59,
+    "sha256": "2c41195f32a6dab0da7357ed510350f034957bca2109dc6aaeb4912f46167dd1"
+  },
+  "boot.txt": {
+    "bytes": 2,
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  "boot.txt.command.json": {
+    "bytes": 58,
+    "sha256": "ed8fcbc495fabfee4fa38ae8379398189a61a82d86bea5ed98fce30fb4167530"
+  },
+  "sdk.txt": {
+    "bytes": 3,
+    "sha256": "b58a3da5fde2680191877ec88a1aa7d06927cc3b30cdf0d0db8c39b488891576"
+  },
+  "sdk.txt.command.json": {
+    "bytes": 57,
+    "sha256": "0c05b6c3a674302b8123b733ec92a3148b252e90514e8a75e3e7d00bd2115ff6"
+  },
+  "pages.txt": {
+    "bytes": 6,
+    "sha256": "33f50728129313570f6b953c08b559d9cb5f673e981e647cee4dc10d6cd48e99"
+  },
+  "pages.txt.command.json": {
+    "bytes": 58,
+    "sha256": "8bd3dc011beac6156c0a7c4addef35236f3a3b1fb49d89025d5266434df12172"
+  },
+  "properties.txt": {
+    "bytes": 26303,
+    "sha256": "d6ead083a8c0e36345923137a17e2d3dbfe39f4bd119468bed3a6ff5220edba4"
+  },
+  "properties.txt.command.json": {
+    "bytes": 58,
+    "sha256": "0cc6372ae6d0b93d13e14e643fcbdfca0e0068874a148e3a75b5e5b5c79aae22"
+  },
+  "package-before.txt": {
+    "bytes": 4932,
+    "sha256": "95e49a3d26bb0710ff6e0e2ce3ab29c7e20aeb68dbd65455defea96beaea380e"
+  },
+  "package-before.txt.command.json": {
+    "bytes": 57,
+    "sha256": "4a4c6e0d9115bb9ad7e845b3ed751ecc6d790b5c5c885ba44877070c2b2e79c5"
+  },
+  "assets-before.txt": {
+    "bytes": 334,
+    "sha256": "85847d4c6aba89dea14b6cfa03b17f2bdf9d94ccfa19b0e85078ecc830ff5acd"
+  },
+  "assets-before.txt.command.json": {
+    "bytes": 56,
+    "sha256": "3f58d608a814936ff76a0b3d212cf27ef4c3d608bd4623aa9afd939f725c432c"
+  },
+  "allocated-before.txt": {
+    "bytes": 9,
+    "sha256": "4b4da6673069a84dc1dae89406f08562fa92aefc9e52f22097cb132eb2732b8c"
+  },
+  "allocated-before.txt.command.json": {
+    "bytes": 58,
+    "sha256": "725a118fa20a88f3d85103becdbd6d9c6ae7b4da763a5b3bd1b47b096bb500c6"
+  },
+  "logical-before.txt": {
+    "bytes": 12,
+    "sha256": "562186ee2f03f4a8e1001eca372b0650a281e3912575605c4f2da0faa44648a2"
+  },
+  "logical-before.txt.command.json": {
+    "bytes": 58,
+    "sha256": "c47c3ab7bbd81fde97d8e6ddc3a84bbcb199cb016b9bfddfca79b02b8225bbbd"
+  },
+  "df-before.txt": {
+    "bytes": 122,
+    "sha256": "a3ab24db17e1e1f8ea47548f69cee22d0472591aa06aa197b6f09cf49a0124f0"
+  },
+  "df-before.txt.command.json": {
+    "bytes": 58,
+    "sha256": "143dac5568b76288ee47e7bf0192f5a10960774879c666bba106521dc78407ff"
+  },
+  "build.log": {
+    "bytes": 32523,
+    "sha256": "5a770ea647e070cc0f2c11c9a218f470d7e551cfd996575c2cae72a2e371bf55"
+  },
+  "build.log.command.json": {
+    "bytes": 56,
+    "sha256": "8f9d35fe04f1423d961a74993513cb2ed48dbf1b8f5d749f11975dc945e33aaa"
+  },
+  "native.json": {
+    "bytes": 5062,
+    "sha256": "fba0f61ed35434f41cecffe41347defcdfa679dd151a7eb4bc0e9749dcb0b4b4"
+  },
+  "native.json.command.json": {
+    "bytes": 57,
+    "sha256": "3eeffdac1eb39dc3222b9cb9ce0f0d09eb8aed0dd0af287d1c19128e7ce0ee81"
+  },
+  "zipalign.txt": {
+    "bytes": 2236,
+    "sha256": "25e65d984e576618c4e3288a22325f71b04ede7323f24308ce10b7c7187c6d92"
+  },
+  "zipalign.txt.command.json": {
+    "bytes": 59,
+    "sha256": "d141742a1225a393be30e0d439cc76153af790e6796c232a346807e8294cf7a3"
+  },
+  "permissions.txt": {
+    "bytes": 214,
+    "sha256": "ad96613200a24b502da5652d9881880414e4655f443537a9ec1225bf1bc2e559"
+  },
+  "permissions.txt.command.json": {
+    "bytes": 58,
+    "sha256": "3046fe0cb64c38474e42d7ba4949a43ac1ce1ee6b8289811803feebef1e25642"
+  },
+  "install-app-debug.apk.txt": {
+    "bytes": 36,
+    "sha256": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7"
+  },
+  "install-app-debug.apk.txt.command.json": {
+    "bytes": 56,
+    "sha256": "2408ad998e4b9c537fa775e8bcd830f7b68c655b8c784a389d183adf2c646620"
+  },
+  "install-app-debug-androidTest.apk.txt": {
+    "bytes": 36,
+    "sha256": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7"
+  },
+  "install-app-debug-androidTest.apk.txt.command.json": {
+    "bytes": 56,
+    "sha256": "831924f5468a2ad5ef81d603a5efd8adcaf5052afe34b57d66e1f27319316b35"
+  },
+  "font-before.txt": {
+    "bytes": 4,
+    "sha256": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+  },
+  "font-before.txt.command.json": {
+    "bytes": 55,
+    "sha256": "1fbec09f13c956e9e945e03bc07b49fd3a913f1cf4cca8b35fd54553d3b989fd"
+  },
+  "font-restored.txt": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "font-restored.txt.command.json": {
+    "bytes": 58,
+    "sha256": "77277429cc79a55f13bc47c0499a08382420037cd3e7ba081f17ac72d6b7f3dc"
+  },
+  "native-cards-recognition/runtime.txt": {
+    "bytes": 2941,
+    "sha256": "9fe7d2b411be9aa3bc990ffb295dbf68f94bf2ef6d6d9203bcf173536fecb11b"
+  },
+  "native-cards-recognition/runtime.txt.command.json": {
+    "bytes": 54,
+    "sha256": "62cd73f82f56e3b6fd11347b8a672cc4dbc31784bcf2a528f80bc7343e4dff09"
+  },
+  "native-cards-recognition/files.txt": {
+    "bytes": 128,
+    "sha256": "dec4910e7bf6b6ec10cbb102171ff39b1161d471b97b5a6f87b044cff8fb45b1"
+  },
+  "native-cards-recognition/files.txt.command.json": {
+    "bytes": 57,
+    "sha256": "09c6f20768f135b575d87a67f1561db16e56a20e13fa5b1ef0d80d8b19dd2cbd"
+  },
+  "native-cards-recognition/city-292223.md": {
+    "bytes": 17647,
+    "sha256": "8fea3834f3536457d6e2af919c0f75ce9398dc9b96e11fa03f38b1c4e3d82ed4"
+  },
+  "native-cards-recognition/city-292223.md.command.json": {
+    "bytes": 57,
+    "sha256": "678af2423a7206cd70f09913bb11f4f172ff34309eb7f6a8297c7d77987e1dc6"
+  },
+  "native-cards-recognition/city-292223.png": {
+    "bytes": 282287,
+    "sha256": "882265d2049b59f4cc73a6b8e79d1c63220628d30b77967da89823067c34ebd3"
+  },
+  "native-cards-recognition/city-292223.png.command.json": {
+    "bytes": 57,
+    "sha256": "cf49bfc6794d7adefee2919f4a63adbc68f302c6c9a8fa53a71ce7d3ae6a8e49"
+  },
+  "native-cards-recognition/city-292672.md": {
+    "bytes": 17648,
+    "sha256": "abe1db84139d9f4ed0cbbcea15680519d5ddf1cd11a075f83785073e90c7f3ab"
+  },
+  "native-cards-recognition/city-292672.md.command.json": {
+    "bytes": 57,
+    "sha256": "09c1d849e04e9a8ed119945028569892f92fa28b383b1bd85a58d128d66775ca"
+  },
+  "native-cards-recognition/city-292672.png": {
+    "bytes": 285173,
+    "sha256": "1fba9315986d4d72b73fb2caa20f65536969919d127cc94f07fc6ec1c5b8c84d"
+  },
+  "native-cards-recognition/city-292672.png.command.json": {
+    "bytes": 58,
+    "sha256": "3baa14786de68a497fa4a1001efee33b4e3ac7040137e1915baf77a12b86b563"
+  },
+  "native-cards-recognition/city-292968.md": {
+    "bytes": 17651,
+    "sha256": "f1b29e0e4b2b83a4ecd658d1d78b0c565c0d3a63a92ea6d14033f7006a7d2303"
+  },
+  "native-cards-recognition/city-292968.md.command.json": {
+    "bytes": 57,
+    "sha256": "43180775096617d10c1c1ebf5416213d2889d52e10024ec9a1169c88a63ed5e9"
+  },
+  "native-cards-recognition/city-292968.png": {
+    "bytes": 289585,
+    "sha256": "2ed7ee0d1049c79c16a233c9e2133bdcb7451daf3db46e162e0d735546463fc1"
+  },
+  "native-cards-recognition/city-292968.png.command.json": {
+    "bytes": 58,
+    "sha256": "5c951689612d2481882ad01879a9111ac0231b4e965da24a9ed9b09ab2cac0dd"
+  },
+  "native-cards-recognition/recognition-absent.png": {
+    "bytes": 213846,
+    "sha256": "964cf44bb5771b3f57cadf0bc0341bd4d3c91a14be06715667373ac08a17bf5f"
+  },
+  "native-cards-recognition/recognition-absent.png.command.json": {
+    "bytes": 58,
+    "sha256": "764de6c9c38896b70dd3894ac12ce6f7d57e29fbb37276bfdf7d3e61065cf9f7"
+  },
+  "native-cards-recognition/report.json": {
+    "bytes": 3341,
+    "sha256": "3d3de2804e3e866bb092f1f76a4de09e87873fdee5fa10b09f9ac7593911f44f"
+  },
+  "native-cards-recognition/report.json.command.json": {
+    "bytes": 57,
+    "sha256": "5ddf312cdd7db576a600ebb897c9369e72de0c854af35c2971bb183cf7322bf8"
+  }
+}
