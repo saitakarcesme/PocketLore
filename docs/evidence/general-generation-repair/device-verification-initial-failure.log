@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/general-generation-repair/verify_device.py", line 16, in <module>
+    h=json.loads((P/'HANDOFF.json').read_text());d=Path(h['run']);verify(d)
+                                                                  ~~~~~~^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/general-generation-repair/verify_device.py", line 8, in verify
+    for n,h in inputs.items():assert sha(R/n)==h,n
+                                     ^^^^^^^^^^^
+AssertionError: tools/evaluation/check_general_generation.sh

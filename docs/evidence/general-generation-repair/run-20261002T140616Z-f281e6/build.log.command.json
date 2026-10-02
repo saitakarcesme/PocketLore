@@ -1,0 +1,15 @@
+{
+  "command": [
+    "bash",
+    "tools/android-build.sh",
+    "assembleDebug",
+    "assembleDebugAndroidTest",
+    "-I",
+    "/home/isa/Projects/PocketLore/tools/evaluation/general-generation-repair/source.gradle",
+    "-PpocketloreTestRunner=org.pocketlore.app.GeneralIntegrationInstrumentation"
+  ],
+  "timeout_seconds": 300,
+  "returncode": 0,
+  "timed_out": false,
+  "elapsed_seconds": 12.799645841994788
+}
