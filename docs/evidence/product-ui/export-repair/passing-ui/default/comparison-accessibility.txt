@@ -1,0 +1,43 @@
+android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+ android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+  android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+   android.widget.ScrollView text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 63 - 1080, 2400) clickable=false visible=true
+     android.widget.Button text=Close reader description=null bounds=Rect(63, 116 - 1017, 242) clickable=true visible=true
+     android.widget.TextView text=Compare saved evidence description=null bounds=Rect(63, 253 - 1017, 392) clickable=false visible=true
+     android.widget.TextView text=Saved research · Offline description=null bounds=Rect(63, 392 - 1017, 491) clickable=false visible=true
+     android.widget.Button text=Reading options description=null bounds=Rect(63, 502 - 1017, 628) clickable=true visible=true
+     android.widget.TextView text=Comparison of two saved records; no new synthesis or verdict.
+
+Question
+What is my blood sodium result?
+Evidence unavailable · no answer inferred
+Personal evidence unavailable: these public reference collections do not contain an authenticated record for you.
+No quotations selected. If your request also includes a general reference question, ask that part separately; it has not been answered here.
+Your question (not a source assertion):
+What is my blood sodium result?
+
+Source and coverage
+Result label: SOURCE_BRIEF (extractive, not generated). Coverage is unverified.
+
+
+Captured on this device: 2026-10-02 01:52
+Capture time is not the source publication date.
+────────────
+
+Some water that infiltrates will remain in the shallow soil layer, where it will gradually move vertically and horizontally through the soil and subsurface material. Some of the water may infiltrate deeper, recharging groundwater aquifers. If the aquifers are porous enough to allow water to move freely through it, people can drill wells into the aquifer and use the water for their purposes. Water may travel long distances or remain in groundwater storage for long periods before returning to the surface or seeping into other water bodies, such as streams and the oceans.
+
+Source document: Infiltration and groundwater recharge
+https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle
+Source date / retrieval: 2026-09-30
+Rights: USGS-authored text; U.S. public domain
+Citation: [water-04]
+
+Source and coverage
+Bundled water-science passage. Verbatim USGS paragraph with whitespace normalized; limited coverage, not a complete publication.
+
+Captured on this device: 2026-10-02 01:52
+Capture time is not the source publication date. description=null bounds=Rect(63, 639 - 1017, 2400) clickable=false visible=true
+     android.widget.Button text=Export snapshot description=null bounds=Rect(63, 8036 - 1017, 2400) clickable=true visible=false
+     android.widget.Button text=Share snapshot description=null bounds=Rect(63, 8184 - 1017, 2400) clickable=true visible=false
+ android.view.View text=null description=null bounds=Rect(0, 2274 - 1080, 2400) clickable=false visible=true

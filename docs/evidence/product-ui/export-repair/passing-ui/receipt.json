@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "serial": "emulator-5560",
+  "artifacts": {
+    "app-debug.apk": {
+      "bytes": 22670037,
+      "sha256": "812c2dd15b2c9ff04e7b7e77916978c8367c41d2e6cc3a8d40088c6bbfa764a3"
+    },
+    "app-debug-androidTest.apk": {
+      "bytes": 445562,
+      "sha256": "fd197cc5e3879eba6ef0cfddafe42c8f3bf81223eaeaa255446962c1956067ab"
+    }
+  },
+  "reports": [
+    {
+      "mode": "default",
+      "sha256": "715e87f1c60bab444e9860aae0745c5345a2553874b7ff4e78a8de09211c2145",
+      "checks": 112
+    },
+    {
+      "mode": "large",
+      "sha256": "44f1b8f63fae7e205770808e8f157acf93d607cea00f91bf288f8b4ec689b888",
+      "checks": 112
+    }
+  ],
+  "cold_restart": true,
+  "saved_assets_unchanged": true,
+  "native_payloads_unchanged": true,
+  "configured_gradle": "2 workers /2GiB heap; not measured total peak",
+  "output": "/home/isa/Projects/PocketLore/downloads/product-ui/runs/20261001T235202Z"
+}

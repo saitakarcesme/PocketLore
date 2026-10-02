@@ -1,0 +1,105 @@
+Activity Resolver Table:
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        acb8bed org.pocketlore.app/.MainActivity filter 39afa22
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.LAUNCHER"
+
+Domain verification status:
+
+Registered ContentProviders:
+  org.pocketlore.app/.NotebookExportProvider:
+    Provider{81cf66a org.pocketlore.app/.NotebookExportProvider}
+
+ContentProvider Authorities:
+  [org.pocketlore.app.notebook]:
+    Provider{81cf66a org.pocketlore.app/.NotebookExportProvider}
+      applicationInfo=ApplicationInfo{765675b org.pocketlore.app}
+
+Key Set Manager:
+  [org.pocketlore.app]
+      Signing KeySets: 32
+
+Packages:
+  Package [org.pocketlore.app] (8ac6dc2):
+    appId=10172
+    pkg=Package{70cebf8 org.pocketlore.app}
+    codePath=/data/app/~~BSuwRGaCtPCJmYY2szUBZw==/org.pocketlore.app-gylCjWndbqJgA_e1K109EQ==
+    resourcePath=/data/app/~~BSuwRGaCtPCJmYY2szUBZw==/org.pocketlore.app-gylCjWndbqJgA_e1K109EQ==
+    legacyNativeLibraryDir=/data/app/~~BSuwRGaCtPCJmYY2szUBZw==/org.pocketlore.app-gylCjWndbqJgA_e1K109EQ==/lib
+    extractNativeLibs=false
+    primaryCpuAbi=x86_64
+    secondaryCpuAbi=null
+    cpuAbiOverride=null
+    versionCode=1 minSdk=28 targetSdk=35
+    minExtensionVersions=[]
+    versionName=0.1.0-bootstrap
+    hiddenApiEnforcementPolicy=2
+    usesNonSdkApi=false
+    splits=[base]
+    apkSigningVersion=3
+    flags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    forceQueryable=false
+    scannedAsStoppedSystemApp=false
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    timeStamp=2026-10-02 01:53:59
+    lastUpdateTime=2026-10-02 01:53:59
+    installerPackageName=null
+    installerPackageUid=-1
+    initiatingPackageName=com.android.shell
+    originatingPackageName=null
+    packageSource=1
+    appMetadataFilePath=null
+    appMetadataSource=0
+    signatures=PackageSignatures{1d8819a version:3, signatures:[8c9ee016], past signatures:[]}
+    installPermissionsFixed=false
+    pkgFlags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    privatePkgFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION ALLOW_AUDIO_PLAYBACK_CAPTURE PRIVATE_FLAG_ALLOW_NATIVE_HEAP_POINTER_TAGGING ]
+    apexModuleName=null
+    requested permissions:
+      android.permission.RECORD_AUDIO
+    User 0: ceDataInode=352416 deDataInode=98375 installed=true hidden=false suspended=false distractionFlags=0 stopped=false notLaunched=false enabled=0 instant=false virtual=false quarantined=false
+      installReason=0
+      dataDir=/data/user/0/org.pocketlore.app
+      firstInstallTime=2026-10-01 18:29:16
+      uninstallReason=0
+      overlay paths:
+        /data/resource-cache/com.android.systemui-neutral-xBpx.frro
+        /data/resource-cache/com.android.systemui-accent-VRlw.frro
+        /data/resource-cache/com.android.systemui-dynamic-Z5jG.frro
+      runtime permissions:
+        android.permission.RECORD_AUDIO: granted=false, flags=[ USER_SENSITIVE_WHEN_GRANTED|USER_SENSITIVE_WHEN_DENIED]
+
+Queries:
+  system apps queryable: false
+  queries via forceQueryable:
+  queries via package name:
+    org.pocketlore.app:
+      org.pocketlore.app.test
+    org.pocketlore.app.test:
+      org.pocketlore.app
+  queries via component:
+    com.android.settings.intelligence:
+      org.pocketlore.app
+  queryable via interaction:
+    User 0:
+      [com.android.localtransport,com.android.emulator.multidisplay,android,com.android.dynsystem,com.android.DeviceAsWebcam,com.android.keychain,com.android.server.telecom,com.android.settings,com.android.providers.settings,com.android.inputdevices,com.android.location.fused]:
+        org.pocketlore.app
+      com.android.inputmethod.latin:
+        org.pocketlore.app
+      org.pocketlore.app.test:
+        org.pocketlore.app
+      org.pocketlore.app:
+        [com.android.soundpicker,com.android.providers.downloads.ui,com.android.mtp,com.android.providers.downloads,com.android.providers.media]
+  queryable via uses-library:
+
+Dexopt state:
+  [org.pocketlore.app]
+    path: /data/app/~~BSuwRGaCtPCJmYY2szUBZw==/org.pocketlore.app-gylCjWndbqJgA_e1K109EQ==/base.apk
+      x86_64: [status=run-from-apk] [reason=unknown] [primary-abi]
+        [location is error]
+
+Compiler stats:
+  [org.pocketlore.app]
+    (No recorded stats)
