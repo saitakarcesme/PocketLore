@@ -1,0 +1,6 @@
+gradle.beforeProject { app ->
+ app.plugins.withId('com.android.application') {
+  app.android.sourceSets.androidTest.manifest.srcFile(new File(app.rootProject.projectDir, '../tools/evaluation/modern-integrated/AndroidManifest.xml'))
+  ['modern-integrated','product-ui','documents'].each { lane -> app.android.sourceSets.androidTest.java.srcDirs += [new File(app.rootProject.projectDir, '../tools/evaluation/'+lane+'/tests')] }
+ }
+}
