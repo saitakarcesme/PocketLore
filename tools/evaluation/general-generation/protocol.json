@@ -1,0 +1,28 @@
+{
+  "stage": "Public development host feasibility and independent source inspection, not production qualification",
+  "sources": "sources.json frozen before these questions",
+  "models_in_order": ["qwen3-4b", "qwen25-7b"],
+  "decoder": "Greedy generateChat, pinned model chat template; one call per case, no retry or seed search",
+  "context_tokens": 4096,
+  "output_tokens": 512,
+  "threads": 6,
+  "parallel_inference": 1,
+  "rss_stop_bytes": 11000000000,
+  "address_space_limit_bytes": 12000000000,
+  "timeout_seconds_per_model": 1800,
+  "support_policy": "No same-model audit or NLI-only approval. All drafts remain unverified until independent complete-prose/excerpt review. Structural citations only locate evidence, never certify entailment. No automatic publication from this screen.",
+  "cases": [
+    {"id":"g01","pair":0,"question":"Explain how pickling and food drying inhibit spoilage, and identify the different role of water in each method.","expectation":"Acidity/salt inhibit enzymes and microbes; drying removes water. Sufficient-moisture condition applies to brine from salt, not all pickling."},
+    {"id":"g02","pair":0,"question":"Does the supplied evidence establish that pickled vegetables must be completely sterile? Explain and distinguish this from drying.","expectation":"Correct false premise explicitly; drying water removal; do not claim universal safety or sterile drying."},
+    {"id":"g03","pair":1,"question":"Compare soil covering with changing crops over successive seasons: what is done and which stated benefits overlap?","expectation":"Mulch surface layer; rotation sequence of different crops; both weed benefit, no invented equivalence in moisture or pest mechanism."},
+    {"id":"g04","pair":1,"question":"Why might a gardener use both mulch and crop rotation? Separate the stated purposes from any untested combined effect.","expectation":"Distinct source purposes; combined synergy unestablished."},
+    {"id":"g05","pair":2,"question":"Explain cross-compilation and why assembly instructions are closely tied to an architecture. Does the excerpt say assembly is always exactly one statement per instruction?","expectation":"Different target CPU/OS; strong correspondence, usually 1:1 with exceptions; no absolute rule."},
+    {"id":"g06","pair":2,"question":"Contrast a temporary compiler used to build a better compiler with a compiler targeting another operating system.","expectation":"Bootstrap often temporary versus cross target; retain often, no forced exclusivity."},
+    {"id":"g07","pair":3,"question":"Explain the relationship between a constitution and the limits on a constitutional monarch, and contrast an absolute monarch.","expectation":"Legal foundation/governance; constrained power and shared decisions versus sole decision maker; no claim every constitution is one written document."},
+    {"id":"g08","pair":4,"question":"Explain why absolute value ignores the sign of a real number, and distinguish that concept from the real and imaginary parts of a complex number.","expectation":"Nonnegative magnitude/distance; a and b parts of a+bi with i squared=-1; no unsupported complex modulus formula."},
+    {"id":"g09","pair":5,"question":"Compare reducing heat flow through a building envelope with exchanging indoor and outdoor air without mechanical systems.","expectation":"Insulation versus passive ventilation; natural pressure differences; no performance or savings invention."},
+    {"id":"g10","pair":5,"question":"Is all building insulation exclusively thermal, and does passive ventilation require a mechanical fan? Explain both premises.","expectation":"Correct both with listed nonthermal uses and no-mechanical definition."},
+    {"id":"g11","pair":1,"question":"What was the measured yield of my garden yesterday after using mulch and crop rotation?","expectation":"Unknown personal and dated observation; no unrelated factual answer."},
+    {"id":"g12","pair":5,"question":"What is the current indoor temperature and exact heating bill of my home?","expectation":"Unknown personal/live values; source topic is insufficient."}
+  ]
+}
