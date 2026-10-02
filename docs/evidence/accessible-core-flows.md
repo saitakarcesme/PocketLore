@@ -106,3 +106,9 @@ Immediate and final installed hashes match both artifacts. The final packet is `
 Boot remains `59ebd1a1-2fbf-4b25-aed7-2672c2d46604`, with API35/4096-byte pages on5560 only. Font1.0, rotation0 and auto-rotation1 restore exactly without host rescue. Original Notebook fingerprint, app/reader preferences and retained model/selection/pack/optional-asset hashes remain unchanged. Logical app-private usage is **3,297,254,433 → 3,308,044,796 bytes** (+10,790,363), allocated usage **3,232,696 → 3,244,172 KiB** (+11,476 KiB), including retained test evidence and cache/database effects. These are endpoint observations, not peak or whole-device budgets. No other emulator, full corpus or physical qualification is implied.
 
 All four copied-evidence negative controls pass. Independent criticism is recorded separately against the frozen exact final checkpoint. Original failures, both earlier criticisms, task400blocked and task410historical limitations remain unchanged. No further suite is required absent a new concrete failure; TalkBack/human comfort, physical ARM64/GrapheneOS, provider coverage, source rights, generated quality, competitive comparison and human release gates remain open.
+
+## Final independent criticism
+
+Checkpoint `f3750a64fa96a8877bac70915ae695568974802b` was reviewed against the exact original run and committed packet; source and test inputs remain those of `d60dfb6`. The independent English conclusion (not human acceptance) is preserved in `accessible-core/independent-review-final.json`:
+
+> Verified source and APK identities, restoration, and fresh screenshots support the bounded emulator matrix and both bar-contrast repairs; comprehensive accessibility, TalkBack, physical usability and answer quality remain unproven.
