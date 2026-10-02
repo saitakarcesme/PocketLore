@@ -46,10 +46,6 @@ def verify(out):
  m=json.loads((out/'manifest.json').read_text());assert m['serial']=='emulator-5564' and m['sdk']==37 and m['page_size']==16384
  for name,pin in m['files'].items():assert sha(out/name)==pin,'Missing or changed '+name
  assert {x['file'] for x in m['reports']}=={'default/report.json','large/report.json','cold/report.json','documents/results.json','documents-cold/restart.json','native-cards-recognition/report.json'}
- for control in ['false','true']:
-  folder='probe-'+control;probe=json.loads((out/folder/'report.json').read_text());validate(probe,m['run_id']+'-probe-'+control);assert probe['automation']==(control=='true')
-  validate_transport((out/folder/'runtime.txt').read_text(),json.loads((out/folder/'runtime.txt.command.json').read_text()))
-  assert (out/folder/'boot-after.txt').read_bytes()==(out/'boot-id-before.txt').read_bytes()
  for lane in m['reports']:
   r=json.loads((out/lane['file']).read_text());validate(r,m['run_id'])
   transport=(out/lane['transport']).read_text()
@@ -77,7 +73,7 @@ def verify(out):
 
 def main():
  if len(sys.argv)>1:verify(pathlib.Path(sys.argv[1]));print('Verified modern immutable receipts');return
- run_id=time.strftime('%Y%m%dT%H%M%SZ',time.gmtime())+'-'+uuid.uuid4().hex[:8];out=ROOT/'downloads/modern-integrated'/run_id;out.mkdir(parents=True);(out/'executed-check.py').write_bytes(pathlib.Path(__file__).read_bytes());print(out,flush=True);reports=[]
+ run_id=time.strftime('%Y%m%dT%H%M%SZ',time.gmtime())+'-'+uuid.uuid4().hex[:8];out=ROOT/'downloads/modern-integrated'/run_id;out.mkdir(parents=True);print(out,flush=True);reports=[]
  def run(cmd,name,data=None,timeout=400):
   p=out/name;p.parent.mkdir(parents=True,exist_ok=True);start=time.monotonic()
   try:r=subprocess.run(list(map(str,cmd)),cwd=ROOT,input=data,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=timeout)

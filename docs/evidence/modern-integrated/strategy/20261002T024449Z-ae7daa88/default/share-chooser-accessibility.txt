@@ -1,0 +1,47 @@
+android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+ android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+  android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+   android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+    android.widget.ScrollView text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+     android.view.ViewGroup text=null description=null bounds=Rect(0, 1726 - 1280, 1907) clickable=false visible=true
+      android.view.View text=null description=null bounds=Rect(544, 1750 - 736, 1762) clickable=false visible=true
+      android.widget.FrameLayout text=null description=null bounds=Rect(0, 1786 - 1280, 1907) clickable=false visible=true
+       android.view.ViewGroup text=null description=null bounds=Rect(0, 1786 - 1280, 1859) clickable=false visible=true
+        android.widget.TextView text=Sharing 1 file description=null bounds=Rect(48, 1786 - 358, 1859) clickable=false visible=true
+     android.widget.ScrollView text=null description=null bounds=Rect(0, 1907 - 1280, 2856) clickable=false visible=true
+      android.widget.LinearLayout text=null description=null bounds=Rect(0, 1907 - 1280, 2856) clickable=false visible=true
+       android.widget.LinearLayout text=null description=null bounds=Rect(0, 1907 - 1280, 2156) clickable=false visible=true
+        android.widget.LinearLayout text=null description=null bounds=Rect(0, 1907 - 1280, 2099) clickable=false visible=true
+         android.widget.RelativeLayout text=null description=null bounds=Rect(48, 1907 - 1232, 2075) clickable=false visible=true
+          android.widget.ImageView text=null description=null bounds=Rect(96, 1955 - 168, 2027) clickable=false visible=true
+          android.widget.LinearLayout text=null description=null bounds=Rect(216, 1966 - 1144, 2015) clickable=false visible=true
+           android.widget.TextView text=notebook-f6474a47-5b9b-481a-b4e5-3c75ebbd41d6.md description=null bounds=Rect(216, 1966 - 1144, 2015) clickable=false visible=true
+         androidx.recyclerview.widget.RecyclerView text=null description=null bounds=Rect(640, 2099 - 640, 2099) clickable=false visible=false
+        androidx.compose.ui.platform.ComposeView text=null description=null bounds=Rect(0, 2099 - 1280, 2099) clickable=false visible=false
+         android.view.View text=null description=null bounds=Rect(0, 2099 - 0, 2099) clickable=false visible=false
+        android.view.View text=null description=null bounds=Rect(48, 2123 - 1232, 2126) clickable=false visible=true
+       android.widget.TabHost text=null description=null bounds=Rect(0, 2156 - 1280, 2856) clickable=false visible=true
+        android.widget.LinearLayout text=null description=null bounds=Rect(0, 2156 - 1280, 2856) clickable=false visible=true
+         android.widget.FrameLayout text=null description=null bounds=Rect(0, 2156 - 1280, 2856) clickable=false visible=true
+          androidx.viewpager.widget.ViewPager text=null description=null bounds=Rect(0, 2156 - 1280, 2856) clickable=false visible=true
+           android.widget.RelativeLayout text=null description=null bounds=Rect(0, 2156 - 1280, 2856) clickable=false visible=true
+            android.widget.GridView text=null description=null bounds=Rect(0, 2156 - 1280, 2856) clickable=false visible=true
+             android.widget.LinearLayout text=null description=null bounds=Rect(0, 2156 - 1280, 2470) clickable=false visible=true
+              android.widget.TextView text=No recommended people to share with description=null bounds=Rect(0, 2284 - 1280, 2341) clickable=false visible=true
+              android.widget.LinearLayout text=null description=null bounds=Rect(1280, 2156 - 1280, 2470) clickable=true visible=false
+               android.widget.ImageView text=null description=null bounds=Rect(1300, 2159 - 1280, 2369) clickable=false visible=false
+               android.widget.TextView text=null description=null bounds=Rect(1292, 2369 - 1280, 2418) clickable=false visible=false
+             android.widget.LinearLayout text=null description=null bounds=Rect(0, 2470 - 1280, 2784) clickable=false visible=true
+              android.widget.LinearLayout text=null description=null bounds=Rect(0, 2470 - 256, 2784) clickable=true visible=true
+               android.widget.ImageView text=null description=null bounds=Rect(20, 2473 - 236, 2683) clickable=false visible=true
+               android.widget.TextView text=Quick Share description=null bounds=Rect(12, 2683 - 244, 2732) clickable=false visible=true
+              android.widget.LinearLayout text=null description=null bounds=Rect(256, 2470 - 512, 2784) clickable=true visible=true
+               android.widget.ImageView text=null description=null bounds=Rect(276, 2473 - 492, 2683) clickable=false visible=true
+               android.widget.TextView text=Drive description=null bounds=Rect(268, 2683 - 500, 2732) clickable=false visible=true
+              android.widget.LinearLayout text=null description=null bounds=Rect(512, 2470 - 768, 2784) clickable=true visible=true
+               android.widget.ImageView text=null description=null bounds=Rect(532, 2473 - 748, 2683) clickable=false visible=true
+               android.widget.TextView text=Gmail description=null bounds=Rect(524, 2683 - 756, 2732) clickable=false visible=true
+              android.widget.LinearLayout text=null description=null bounds=Rect(768, 2470 - 1024, 2784) clickable=true visible=true
+               android.widget.ImageView text=null description=null bounds=Rect(788, 2473 - 1004, 2683) clickable=false visible=true
+               android.widget.TextView text=Gmail description=null bounds=Rect(780, 2683 - 1012, 2732) clickable=false visible=true
+               android.widget.TextView text=Chat description=null bounds=Rect(780, 2732 - 1012, 2781) clickable=false visible=true

@@ -368,3 +368,7 @@ A normal data-preserving replacement install restores the accepted APK on5564 wi
 ## Task400 repair2 freshness and restoration evidence
 
 Fresh API37 run20261002T023305Z-ce6da5b0 passes all six required phases with original font readbacks and unchanged boot ID. Failed subsequent repair1 receipts remain separate. Bounded batch collection reduces transport calls and restores font before collection; this does not prove the unexplained emulator instability cannot recur. Physical, full-capacity API37, present-asset recognition, TalkBack/human, quality/rights and release gates remain open; no old capacity measurements substitute for the new subset snapshot.
+
+## Task400 strategy-change gate remains failing after confirmed guest reboot
+
+The transaction design now preserves current UI reports/screenshots and restores font before teardown. It does not cure the environment: fresh cold instrumentation fails and kernel boot ID changes. Required remaining gate is stable coordinator-owned5564 operation through the complete declared suite; earlier builder passes cannot satisfy it. No causal link to UWB startup aborts, host memory or services is established. Do not repeat unchanged suites or relax boot/transport/identity checks. Cold/document/native/final-retention and all physical/full-capacity/quality gates remain open.

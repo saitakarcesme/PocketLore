@@ -1,0 +1,31 @@
+/home/isa/Projects/PocketLore/downloads/modern-integrated/20261002T024449Z-ae7daa88
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 129, in main
+    for label,scale in [('default','1.0'),('large','2.0')]:
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 94, in instrument
+    shell(['stat','-c',"'%s %b'",app_path],'apk-size-'+label+'.txt')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 82, in run
+    p=out/name;p.parent.mkdir(parents=True,exist_ok=True);start=time.monotonic()
+    
+AssertionError: ('cold/runtime.txt', 255, PosixPath('/home/isa/Projects/PocketLore/downloads/modern-integrated/20261002T024449Z-ae7daa88'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 174, in <module>
+    else:raise AssertionError('Changed installed identity accepted')
+                          ^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 130, in main
+    mode=run_id+'-'+label
+          ~~~~~~~~~^~~~~~
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 122, in restore_font
+    validate_transport(value.decode(),json.loads((out/(folder+'/runtime.txt.command.json')).read_text()));stream_evidence(value.decode(),probe,out/folder);validate(json.loads((out/folder/'report.json').read_text()),probe)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 83, in shell
+    try:r=subprocess.run(list(map(str,cmd)),cwd=ROOT,input=data,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=timeout)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 82, in run
+    p=out/name;p.parent.mkdir(parents=True,exist_ok=True);start=time.monotonic()
+    
+AssertionError: ('font-final.txt', 1, PosixPath('/home/isa/Projects/PocketLore/downloads/modern-integrated/20261002T024449Z-ae7daa88'))
