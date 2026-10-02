@@ -1,0 +1,711 @@
+{
+  "schema": 1,
+  "task": "task500 repair2",
+  "scope": "Supplemental independent development source review; canonical critic owns acceptance",
+  "run": "downloads/cross-model-support/run-20261002T141505Z",
+  "executed_source_commit": "371eb553fb4e1b8a8f754a70c4a4a873e06c3a15",
+  "manifest_sha256": "9cd8c25141c7df46fa642ea77ab8e88c848eb1d6f4de23163f0ccda27d059598",
+  "receipt_sha256": "c8e28736db167a14755a8e6204fea73ba790a2583a2927204aa7a79b10404b0d",
+  "verifier_model_identity_recorded": {
+    "id": "qwen25-7b",
+    "repo": "bartowski/Qwen2.5-7B-Instruct-GGUF",
+    "revision": "8911e8a47f92bac19d6f5c64a2e2095bd2f7d031",
+    "base_repo": "Qwen/Qwen2.5-7B-Instruct",
+    "base_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "filename": "Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+    "bytes": 4683074240,
+    "sha256": "65b8fcd92af6b4fefa935c625d1ac27ea29dcb6ee14589c55a8f115ceaaa1423",
+    "license": "apache-2.0",
+    "path": "downloads/scale-model-quality/models/Qwen2.5-7B-Instruct-Q4_K_M.gguf"
+  },
+  "production_verifier": "UNAVAILABLE",
+  "production_qualified": false,
+  "status": "FAIL_ZERO_UNSUPPORTED_CANDIDATES_AND_ABSENT_CLASSIFICATION",
+  "frozen_sha256": {
+    "tools/evaluation/cross-model-support/protocol.json": "a493e3e98819137f48fa4dc74f9998f3a6f781ef4064e23d7114d82a06a5ada5",
+    "tools/evaluation/general-generation/sources.json": "c590d4ad9927fc75942e34be3161099444b6cc2f73f28d964880ebda85efd986",
+    "tools/evaluation/general-generation/protocol.json": "df9b9f1611dd5eb77f3070c479f1417168c7f450562f51abe892ce7965e2b4e3",
+    "docs/evidence/general-generation/support-review.json": "ac7640cbf08c502fb485148c57c9c6d0427df4924a5bca4c88bdd6d1fae607e3",
+    "downloads/reference-expansion/reference-expansion.plpack": "61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135"
+  },
+  "integrity": {
+    "records": 18,
+    "process_exit_code": 0,
+    "receipt_file_hashes": "All match",
+    "input_hashes": "All match manifest",
+    "original_drafts": "Twelve exact preserved Qwen3 4B raw drafts; no regeneration",
+    "probe_drafts": "Six exact frozen protocol drafts",
+    "source_paragraphs": "All exact archive metadata and complete text; all present in verifier prompts",
+    "token_limits": "All positive tokens below512 and full prompt plus512 within4096",
+    "observed_runtime_errors": 0
+  },
+  "cases": [
+    {
+      "id": "g01",
+      "question": "Explain how pickling and food drying inhibit spoilage, and identify the different role of water in each method.",
+      "classification": "Preserved model draft",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/g01.draft.txt",
+      "draft_sha256": "7d8aa4d482e95f0a32909fc63daa4098166e1403f89131b6ff4058055d05282f",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/g01.json",
+      "verifier_record_sha256": "88732b543c19212cea1aa4f19c33b823fad471ee918e2c1fbccba0d0c5607d5a",
+      "verifier_text_sha256": "8326fa5cb58f2d379db7450edf361fa16b0df6b50d107d8fe4c51ddc6a52675a",
+      "prompt_sha256": "86b0297d8e9c2919d688fd9bae5cfe2f982aa5cd19da1a96783166e2936449e8",
+      "sources": {
+        "S1": {
+          "id": "reference-2259607-e908bb7063551eeb",
+          "text_sha256": "e908bb7063551eeb072ea3097dca0c2a155f4ed82934fa5828dfbca546341112"
+        },
+        "S2": {
+          "id": "reference-158573-7383bbc6df68b49d",
+          "text_sha256": "7383bbc6df68b49d89d6c873b1541bd1e074f4666842617c7765fa795f527d4c"
+        }
+      },
+      "verifier_decision": "SUPPORTED_COMPLETE",
+      "review_expected_decision": "REJECT",
+      "review_category": "FALSE_APPROVAL",
+      "draft_supported": false,
+      "draft_complete": false,
+      "review_finding": "False approval: original dry-salt brine discussion drops sufficient-moisture qualification and drying inhibition becomes absence-of-water prevention; verifier summarizes supported opening but overlooks stronger ending",
+      "specific_original_draft_errors": [
+        {
+          "claim": "In pickling, water plays a role ... being drawn out ... create a brine",
+          "error": "Omits S1 sufficient-moisture condition for dry-salt brine and does not distinguish vinegar pickles; examples narrow the sentence somewhat but the water comparison remains underqualified"
+        },
+        {
+          "claim": "absence of water prevents the growth of spoilage organisms",
+          "error": "S2 states removal inhibits growth, not complete absence or unconditional prevention"
+        }
+      ],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "g02",
+      "question": "Does the supplied evidence establish that pickled vegetables must be completely sterile? Explain and distinguish this from drying.",
+      "classification": "Preserved model draft",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/g02.draft.txt",
+      "draft_sha256": "e0d1c07e2faae3f4b12d6b655e6061bdbb2f204fd2dc41b07e040b0591b6733b",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/g02.json",
+      "verifier_record_sha256": "096a80d58f6daf24687439bb7efae925788b9a505e65c40c8c20a37c6a446ca4",
+      "verifier_text_sha256": "2be23e5be4155ce1607c5a2f518a226f683ff2e803b1c50861472a2adea92baf",
+      "prompt_sha256": "ec08ca161fc4a502ce248b816a498bb05177586becf06e930046943155a56724",
+      "sources": {
+        "S1": {
+          "id": "reference-2259607-e908bb7063551eeb",
+          "text_sha256": "e908bb7063551eeb072ea3097dca0c2a155f4ed82934fa5828dfbca546341112"
+        },
+        "S2": {
+          "id": "reference-158573-7383bbc6df68b49d",
+          "text_sha256": "7383bbc6df68b49d89d6c873b1541bd1e074f4666842617c7765fa795f527d4c"
+        }
+      },
+      "verifier_decision": "SUPPORTED_COMPLETE",
+      "review_expected_decision": "SUPPORTED_COMPLETE",
+      "review_category": "RETAINED_SUPPORTED_EDUCATIONAL",
+      "draft_supported": true,
+      "draft_complete": true,
+      "review_finding": "Retained supported correction of sterility premise and water-removal distinction",
+      "specific_original_draft_errors": [],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "g03",
+      "question": "Compare soil covering with changing crops over successive seasons: what is done and which stated benefits overlap?",
+      "classification": "Preserved model draft",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/g03.draft.txt",
+      "draft_sha256": "9a1f51637ea3e8393897cf39bcfe592799c293360ef9ab69abf9921d345c6091",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/g03.json",
+      "verifier_record_sha256": "107d34a0d4a4031f30addebb538cc112eea41c1a81aebe4a57d53931996c5974",
+      "verifier_text_sha256": "01b99a9779375614f496f08a976755ad3e4160db9ed4ca50f057373af1ce5f59",
+      "prompt_sha256": "2d6e6a859c99fe5a1933db133033bd293f8f6cfdd733a85af86ad2c6523a445d",
+      "sources": {
+        "S1": {
+          "id": "reference-432174-c4ba2176e40b85a3",
+          "text_sha256": "c4ba2176e40b85a35ced2267de4f7162e0a72a0734c5e0627f796b5734c675e5"
+        },
+        "S2": {
+          "id": "reference-46470-5d9b9cd87b755893",
+          "text_sha256": "5d9b9cd87b75589360f47906f2e089b485caec5079b9bb64f47dea6d27900b96"
+        }
+      },
+      "verifier_decision": "SUPPORTED_COMPLETE",
+      "review_expected_decision": "REJECT",
+      "review_category": "FALSE_APPROVAL",
+      "draft_supported": false,
+      "draft_complete": false,
+      "review_finding": "False approval: verifier explicitly endorses shared soil-health/fertility and mulch physical protection despite absence of those shared/mechanistic claims from cited paragraphs",
+      "specific_original_draft_errors": [
+        {
+          "claim": "overlap ... improvement of soil health; Both practices contribute to ... health and fertility",
+          "error": "S2 states reduced reliance on one nutrient set; shared health/fertility benefit exceeds supplied wording and is not marked inference"
+        },
+        {
+          "claim": "soil covering focuses on physical protection",
+          "error": "Physical protection is not a stated S1 purpose"
+        }
+      ],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "g04",
+      "question": "Why might a gardener use both mulch and crop rotation? Separate the stated purposes from any untested combined effect.",
+      "classification": "Preserved model draft",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/g04.draft.txt",
+      "draft_sha256": "0a806da53b5bfe6f2d9582b2e00d8811257c3c42e16b75fc122ef41e94b394a7",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/g04.json",
+      "verifier_record_sha256": "4d24a798e0df43d6bf4fab53c50304ced8f5f6a810c82e35ba787d95a6a17bdc",
+      "verifier_text_sha256": "58d7316fb80d387d12bcdea6522fd070af412494d026f2088c608de4aa1259ef",
+      "prompt_sha256": "eeaeed59236176d7dc0f53ef2140bf59684557adfe85696a090fc205cb699f18",
+      "sources": {
+        "S1": {
+          "id": "reference-432174-c4ba2176e40b85a3",
+          "text_sha256": "c4ba2176e40b85a35ced2267de4f7162e0a72a0734c5e0627f796b5734c675e5"
+        },
+        "S2": {
+          "id": "reference-46470-5d9b9cd87b755893",
+          "text_sha256": "5d9b9cd87b75589360f47906f2e089b485caec5079b9bb64f47dea6d27900b96"
+        }
+      },
+      "verifier_decision": "SUPPORTED_COMPLETE",
+      "review_expected_decision": "SUPPORTED_COMPLETE",
+      "review_category": "RETAINED_SUPPORTED_EDUCATIONAL",
+      "draft_supported": true,
+      "draft_complete": true,
+      "review_finding": "Retained stated individual purposes and explicit untested combined-effect limitation",
+      "specific_original_draft_errors": [],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "g05",
+      "question": "Explain cross-compilation and why assembly instructions are closely tied to an architecture. Does the excerpt say assembly is always exactly one statement per instruction?",
+      "classification": "Preserved model draft",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/g05.draft.txt",
+      "draft_sha256": "7a02ad1f140ed3c99848923a79600c642145998a3389bf70c9d8ca55fe1e3e03",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/g05.json",
+      "verifier_record_sha256": "21f1c9dfa734da5339a7fa09b57730a583600fc7a8e1bf92d0918743a1f01037",
+      "verifier_text_sha256": "a710175afb79a18ab04300a2a296d0847eec49162759c5b68f3791d52636185c",
+      "prompt_sha256": "7da28d5ae53a3cae0a0a95ab30848895f884bc7fa4933286523f0fb4497b25fb",
+      "sources": {
+        "S1": {
+          "id": "reference-5739-86ff3287ece77838",
+          "text_sha256": "86ff3287ece77838eb6128ee6d3337cfac459467492051d744c614a12acf66e3"
+        },
+        "S2": {
+          "id": "reference-1368-bb237b999458543d",
+          "text_sha256": "bb237b999458543d08e5cc945400737c2a8856e3c643294bfdd1d7d4ec340dae"
+        }
+      },
+      "verifier_decision": "REJECT",
+      "review_expected_decision": "REJECT",
+      "review_category": "CORRECT_REJECTION",
+      "draft_supported": false,
+      "draft_complete": false,
+      "review_finding": "Correct rejection of always contradiction; verifier reason falsely alleges constants/directives/macros omitted, although original draft lists them",
+      "specific_original_draft_errors": [
+        {
+          "claim": "The excerpt does say that assembly is always exactly one statement per instruction",
+          "error": "Direct contradiction of S2 usually; following usually/exceptions sentences do not repair contradictory affirmative verdict"
+        },
+        {
+          "claim": "target platform that may not have a compiler available",
+          "error": "Target compiler unavailability not in S1"
+        }
+      ],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "g06",
+      "question": "Contrast a temporary compiler used to build a better compiler with a compiler targeting another operating system.",
+      "classification": "Preserved model draft",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/g06.draft.txt",
+      "draft_sha256": "ef182d6411c3ca7699dd0e67c5fb0db4dd2adf0fbb09ecc06bea69734eb0421b",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/g06.json",
+      "verifier_record_sha256": "6fde5c653e401b8dc0aefde7192d090a2fc27bf2d4401fffcee4a3489d9f1832",
+      "verifier_text_sha256": "dc7ecbb13b292975ba8b23ad34909d3fdfbf90df3013302767fa0b930998c6d5",
+      "prompt_sha256": "c941a5146e884f4003ba5c1819b4b70b5e1521a23f41f801478fe5a56aba44ed",
+      "sources": {
+        "S1": {
+          "id": "reference-5739-86ff3287ece77838",
+          "text_sha256": "86ff3287ece77838eb6128ee6d3337cfac459467492051d744c614a12acf66e3"
+        },
+        "S2": {
+          "id": "reference-1368-bb237b999458543d",
+          "text_sha256": "bb237b999458543d08e5cc945400737c2a8856e3c643294bfdd1d7d4ec340dae"
+        }
+      },
+      "verifier_decision": "SUPPORTED_COMPLETE",
+      "review_expected_decision": "REJECT",
+      "review_category": "FALSE_APPROVAL",
+      "draft_supported": false,
+      "draft_complete": false,
+      "review_finding": "False approval: final categorical bootstrap-is-temporary wording loses often and replaces permanent/optimized with robust; verifier accepts the broad contrast without qualifier review",
+      "specific_original_draft_errors": [
+        {
+          "claim": "a bootstrap compiler is a temporary tool for building a more robust compiler",
+          "error": "S1 says often temporary and more permanent or better optimized; final categorical temporary and robust wording strengthens source"
+        }
+      ],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "g07",
+      "question": "Explain the relationship between a constitution and the limits on a constitutional monarch, and contrast an absolute monarch.",
+      "classification": "Preserved model draft",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/g07.draft.txt",
+      "draft_sha256": "6949136af2b18faf56e75e84267f8f7f6b3b403cc0c1a5a8cb87501105050282",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/g07.json",
+      "verifier_record_sha256": "422c2d5fa7b24bbbb586f3d1f70bb1fed301b04fe1b9974b53c6309c7c66a0c7",
+      "verifier_text_sha256": "75c5efd50c7fd07409fa1d3b2b6a9f82bfab8eca669b3c0abd576753e59dd234",
+      "prompt_sha256": "18b9f39f7bf2e1b91cfbaf4ed55acb7c3903ccfb5998150d07c01a32d3378eb2",
+      "sources": {
+        "S1": {
+          "id": "reference-5253-961c40c10e71969c",
+          "text_sha256": "961c40c10e71969cd3e7835b9d86a4d30597d7be9d3e77ecf6167f8930d7d15a"
+        },
+        "S2": {
+          "id": "reference-5649-5784165f2f880683",
+          "text_sha256": "5784165f2f880683ebc76b1d36dc87622ba687f19013cce12c180c7e474850e4"
+        }
+      },
+      "verifier_decision": "SUPPORTED_COMPLETE",
+      "review_expected_decision": "SUPPORTED_COMPLETE",
+      "review_category": "RETAINED_SUPPORTED_EDUCATIONAL",
+      "draft_supported": true,
+      "draft_complete": true,
+      "review_finding": "Retained concise legal foundation, constitutional constraints and sole-decision contrast; without such constraints remains tied to constitutional framework",
+      "specific_original_draft_errors": [],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "g08",
+      "question": "Explain why absolute value ignores the sign of a real number, and distinguish that concept from the real and imaginary parts of a complex number.",
+      "classification": "Preserved model draft",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/g08.draft.txt",
+      "draft_sha256": "35f5af77daee7a39056856169add1d213266a682222ddcbd8937cc850b48a8f9",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/g08.json",
+      "verifier_record_sha256": "651154b4a1d74e41e24f4537c77450e829e30709a4f0423f5767a948b2d575fe",
+      "verifier_text_sha256": "73cbd335ea633ee12ba0e5a7ae31d0c92c0acebcf3fc5bfbc5b9e02d6ecee18f",
+      "prompt_sha256": "cae7e81cf30c6e30a3c681dc7af7f28791c4eca625f6ec0e4a24af2b117ede78",
+      "sources": {
+        "S1": {
+          "id": "reference-991-b62dfff2ee9e6bd1",
+          "text_sha256": "b62dfff2ee9e6bd1fe6ec743120b21da110d8e4fb871a5b02ec9507a3f0e41e9"
+        },
+        "S2": {
+          "id": "reference-5826-2d21e4a4384605b3",
+          "text_sha256": "2d21e4a4384605b3ff081440e29f274293b7bfd81995f59c216d70441a7ddf16"
+        }
+      },
+      "verifier_decision": "SUPPORTED_COMPLETE",
+      "review_expected_decision": "REJECT",
+      "review_category": "FALSE_APPROVAL",
+      "draft_supported": false,
+      "draft_complete": true,
+      "review_finding": "False approval: complex-plane and real/imaginary-axis interpretation added beyond supplied S2 paragraph; verifier explicitly denies unsupported additions",
+      "specific_original_draft_errors": [
+        {
+          "claim": "complex plane ... real axis ... imaginary axis",
+          "error": "Geometric plane and axis interpretation absent from the single S2 paragraph; plausible external knowledge cannot establish supplied-source support"
+        }
+      ],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "g09",
+      "question": "Compare reducing heat flow through a building envelope with exchanging indoor and outdoor air without mechanical systems.",
+      "classification": "Preserved model draft",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/g09.draft.txt",
+      "draft_sha256": "1ed78a5e5b3c9646637b619045aa81367e116f2340b947d58feedd5fbc83cdb9",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/g09.json",
+      "verifier_record_sha256": "f777d8d9df1ad414c6c8a679094e1818c488fe0f8cec589d76faf39fd230d50c",
+      "verifier_text_sha256": "a35ad06951fc9d580852be2e4509c394746a5b6249d1a82413a77ae45c4d1a6e",
+      "prompt_sha256": "dfaea2a091008916e153f60dd04086aa8953cb6b131d87da9ad4ba7301628bf2",
+      "sources": {
+        "S1": {
+          "id": "reference-6900318-7c6fe4f31766ac60",
+          "text_sha256": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328"
+        },
+        "S2": {
+          "id": "reference-7655739-6b17719b6e5462c5",
+          "text_sha256": "6b17719b6e5462c567c6d80ab7f9685925d075b0f741e5267b4dbd20c642b70e"
+        }
+      },
+      "verifier_decision": "SUPPORTED_COMPLETE",
+      "review_expected_decision": "REJECT",
+      "review_category": "FALSE_APPROVAL",
+      "draft_supported": false,
+      "draft_complete": true,
+      "review_finding": "False approval: maintaining temperature, energy-consumption reductions and air-quality purpose added beyond excerpts; verifier repeats unsupported air-quality characterization",
+      "specific_original_draft_errors": [
+        {
+          "claim": "maintaining indoor temperatures and reducing energy consumption for heating or cooling",
+          "error": "These performance effects are not stated in S1 and are asserted without qualifications"
+        },
+        {
+          "claim": "other focuses on air quality",
+          "error": "S2 defines air exchange and pressure forces, not an air-quality result or purpose"
+        }
+      ],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "g10",
+      "question": "Is all building insulation exclusively thermal, and does passive ventilation require a mechanical fan? Explain both premises.",
+      "classification": "Preserved model draft",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/g10.draft.txt",
+      "draft_sha256": "af78f7438bbd74d6f4e5d47bedfdd6a0fc67d68bc3dad23a8a101873afd91229",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/g10.json",
+      "verifier_record_sha256": "ec115c908a4dce55e9156ad5db5c4ddbd0c3726898d4c99210149a048fd75a13",
+      "verifier_text_sha256": "21f5df52a10c6a7b161090b9e2e27989e41b023bfe735f0b63068a5b38505a90",
+      "prompt_sha256": "5570e37de08c2af83d2d9b2ba87a9c14e2909d1acd284c77ec80bae607d0b76b",
+      "sources": {
+        "S1": {
+          "id": "reference-6900318-7c6fe4f31766ac60",
+          "text_sha256": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328"
+        },
+        "S2": {
+          "id": "reference-7655739-6b17719b6e5462c5",
+          "text_sha256": "6b17719b6e5462c567c6d80ab7f9685925d075b0f741e5267b4dbd20c642b70e"
+        }
+      },
+      "verifier_decision": "SUPPORTED_COMPLETE",
+      "review_expected_decision": "SUPPORTED_COMPLETE",
+      "review_category": "RETAINED_SUPPORTED_EDUCATIONAL",
+      "draft_supported": true,
+      "draft_complete": true,
+      "review_finding": "Retained supported nonthermal insulation uses and natural-pressure, no-mechanical ventilation correction",
+      "specific_original_draft_errors": [],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "g11",
+      "question": "What was the measured yield of my garden yesterday after using mulch and crop rotation?",
+      "classification": "Preserved model draft",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/g11.draft.txt",
+      "draft_sha256": "a8d34aa30c220b6394faa3890688a0eedd705bccda07cf1ea9f67f94f57c3192",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/g11.json",
+      "verifier_record_sha256": "7bd82eb12c720d450dc0bdc4e55b52fa3b08dcc6737862909e4f454769ec3e8e",
+      "verifier_text_sha256": "3a0bf57663a8669fa8e42825544b897b80829331af7a449d8f8ab75fb0f2d116",
+      "prompt_sha256": "d9063a490ca1bfb466c723c401bee9780f20c4179f1b50414b3f4e17421184b4",
+      "sources": {
+        "S1": {
+          "id": "reference-432174-c4ba2176e40b85a3",
+          "text_sha256": "c4ba2176e40b85a35ced2267de4f7162e0a72a0734c5e0627f796b5734c675e5"
+        },
+        "S2": {
+          "id": "reference-46470-5d9b9cd87b755893",
+          "text_sha256": "5d9b9cd87b75589360f47906f2e089b485caec5079b9bb64f47dea6d27900b96"
+        }
+      },
+      "verifier_decision": "SUPPORTED_COMPLETE",
+      "review_expected_decision": "ABSENT",
+      "review_category": "ABSENT_MISCLASSIFIED_AS_USEFUL_SUCCESS",
+      "draft_supported": true,
+      "draft_complete": true,
+      "review_finding": "Incorrect useful-success classification: original correctly says personal garden yield Unknown; verifier acknowledges missing measurements but returns SUPPORTED_COMPLETE instead of ABSENT or REJECT",
+      "specific_original_draft_errors": [],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "g12",
+      "question": "What is the current indoor temperature and exact heating bill of my home?",
+      "classification": "Preserved model draft",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/g12.draft.txt",
+      "draft_sha256": "def6a212bbdd407e580260895a38b41f945d08b249dc952fd170009bc756e144",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/g12.json",
+      "verifier_record_sha256": "ee8984e8d60702064cf916973f8af45c4c69812419ab89bf584db96b60143915",
+      "verifier_text_sha256": "a3750e00ef63c992a559b4a43572d6797a3356f768626cfe2d7b416999065b97",
+      "prompt_sha256": "28a61d7d27a3bfaf98cb21a7c771805e07025601c673d43a5eac62cfb67ad1bf",
+      "sources": {
+        "S1": {
+          "id": "reference-6900318-7c6fe4f31766ac60",
+          "text_sha256": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328"
+        },
+        "S2": {
+          "id": "reference-7655739-6b17719b6e5462c5",
+          "text_sha256": "6b17719b6e5462c567c6d80ab7f9685925d075b0f741e5267b4dbd20c642b70e"
+        }
+      },
+      "verifier_decision": "SUPPORTED_COMPLETE",
+      "review_expected_decision": "ABSENT",
+      "review_category": "ABSENT_MISCLASSIFIED_AS_USEFUL_SUCCESS",
+      "draft_supported": true,
+      "draft_complete": true,
+      "review_finding": "Incorrect useful-success classification: original correctly declines live temperature and exact bill; verifier acknowledges absence and gaps but returns SUPPORTED_COMPLETE",
+      "specific_original_draft_errors": [],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "p01",
+      "question": "Is assembly always exactly one statement per machine instruction?",
+      "classification": "Constructed positive false-premise correction, not corpus text",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/p01.draft.txt",
+      "draft_sha256": "c8ec510f57ae93e033ccd97728e91ff25f9aa2dae761420ccb6a488b784c32ab",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/p01.json",
+      "verifier_record_sha256": "6631f1f8a850d08176ba4fe5eb7a7f4a38b7ad34cadccc6c1264de5d55a1dcf3",
+      "verifier_text_sha256": "6ac8ba8843e38ff8fec135018689415c0fe7cbbfdc44b588446586f7631f11db",
+      "prompt_sha256": "b30a9cb9a31cae680f4c17d3af4f4432d2168e1aa47cf66c7d9681159b32b313",
+      "sources": {
+        "S1": {
+          "id": "reference-5739-86ff3287ece77838",
+          "text_sha256": "86ff3287ece77838eb6128ee6d3337cfac459467492051d744c614a12acf66e3"
+        },
+        "S2": {
+          "id": "reference-1368-bb237b999458543d",
+          "text_sha256": "bb237b999458543d08e5cc945400737c2a8856e3c643294bfdd1d7d4ec340dae"
+        }
+      },
+      "verifier_decision": "SUPPORTED_COMPLETE",
+      "review_expected_decision": "SUPPORTED_COMPLETE",
+      "review_category": "CORRECT_POSITIVE_PROBE",
+      "draft_supported": true,
+      "draft_complete": true,
+      "review_finding": "Correct retention of usually qualification and supported exceptions; explicit No corrects always premise",
+      "specific_original_draft_errors": [],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "p02",
+      "question": "Is assembly always exactly one statement per machine instruction?",
+      "classification": "Constructed counterfactual absolute qualifier",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/p02.draft.txt",
+      "draft_sha256": "657c4a1ea495f479047b3e2d81a0e3fa210beb2a9b079be8bf001970d42da7e1",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/p02.json",
+      "verifier_record_sha256": "3dc7a639ee2cea460447315767e3618daa8363f40744832a677a0be1bcb9a956",
+      "verifier_text_sha256": "5a3593947c051d336beeae41fdec32cddc2d9d83d13b9a5d9d2fdc05d11cca97",
+      "prompt_sha256": "0fc076a2896262142c896e81beebb05b2e637939a15687091bfaac9613e96cd7",
+      "sources": {
+        "S1": {
+          "id": "reference-5739-86ff3287ece77838",
+          "text_sha256": "86ff3287ece77838eb6128ee6d3337cfac459467492051d744c614a12acf66e3"
+        },
+        "S2": {
+          "id": "reference-1368-bb237b999458543d",
+          "text_sha256": "bb237b999458543d08e5cc945400737c2a8856e3c643294bfdd1d7d4ec340dae"
+        }
+      },
+      "verifier_decision": "REJECT",
+      "review_expected_decision": "REJECT",
+      "review_category": "CORRECT_NEGATIVE_PROBE",
+      "draft_supported": false,
+      "draft_complete": false,
+      "review_finding": "Correct rejection of always qualifier contradicting usually in S2",
+      "specific_original_draft_errors": [],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "p03",
+      "question": "How does passive ventilation exchange air?",
+      "classification": "Constructed supported paraphrase",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/p03.draft.txt",
+      "draft_sha256": "5e531ad229333e2e4b259d7e0cf78e15d8f66332217513361fcb250ad273c7e4",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/p03.json",
+      "verifier_record_sha256": "e8b7ac70e61eadb88093dd0cb161d957ab98d691fbdc9d28ff6a245481639699",
+      "verifier_text_sha256": "09d08fbf32f1f009403255c6142e1e18877db79fd906c89bce5f2ac9f0a712d9",
+      "prompt_sha256": "bc582228cfa1a9007ed00723422568623cee7f3c28c3307f9cbfbd213191a9d3",
+      "sources": {
+        "S1": {
+          "id": "reference-6900318-7c6fe4f31766ac60",
+          "text_sha256": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328"
+        },
+        "S2": {
+          "id": "reference-7655739-6b17719b6e5462c5",
+          "text_sha256": "6b17719b6e5462c567c6d80ab7f9685925d075b0f741e5267b4dbd20c642b70e"
+        }
+      },
+      "verifier_decision": "SUPPORTED_COMPLETE",
+      "review_expected_decision": "SUPPORTED_COMPLETE",
+      "review_category": "CORRECT_POSITIVE_PROBE",
+      "draft_supported": true,
+      "draft_complete": true,
+      "review_finding": "Correct retention of no-mechanical, natural-pressure ventilation paraphrase",
+      "specific_original_draft_errors": [],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "p04",
+      "question": "How does passive ventilation exchange air?",
+      "classification": "Constructed unsupported factual tail and numeric claim",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/p04.draft.txt",
+      "draft_sha256": "a92b493356fd6c179656c4bf0a6c2ff37036458e3caaea1fd3f66281e9f9dc88",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/p04.json",
+      "verifier_record_sha256": "48a0e55463f7f8eb7a278cc0ed49ddc6d578f4747d976d21c60a17b59cd93aa9",
+      "verifier_text_sha256": "5302412594e9af8eaca992baeaefdf475ec1467f7a3d7281eefd3e97ed5a5c09",
+      "prompt_sha256": "03a3c2b2906d9a66a1a40826b527a00caf850701d83ffa170eb8db2ba8726144",
+      "sources": {
+        "S1": {
+          "id": "reference-6900318-7c6fe4f31766ac60",
+          "text_sha256": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328"
+        },
+        "S2": {
+          "id": "reference-7655739-6b17719b6e5462c5",
+          "text_sha256": "6b17719b6e5462c567c6d80ab7f9685925d075b0f741e5267b4dbd20c642b70e"
+        }
+      },
+      "verifier_decision": "REJECT",
+      "review_expected_decision": "REJECT",
+      "review_category": "CORRECT_NEGATIVE_PROBE",
+      "draft_supported": false,
+      "draft_complete": false,
+      "review_finding": "Correct rejection of guaranteed 30 percent savings absent from S1; entire supported-opening-plus-unsupported-tail draft rejected",
+      "specific_original_draft_errors": [],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "p05",
+      "question": "What equation defines the imaginary unit in the excerpt?",
+      "classification": "Constructed supported formula paraphrase",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/p05.draft.txt",
+      "draft_sha256": "3d51b2c70fc118353ebf2686ada7c76db5647b661f9d4cdc1e8678a678bbecbe",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/p05.json",
+      "verifier_record_sha256": "85cc69849533d834826e9d765e7a7a0b69687687b97fb8b74bfe0827a4ec2985",
+      "verifier_text_sha256": "afb8b9e832730fb2988224ef5d5530290da7d85caa5cee59012e895ccdc2b873",
+      "prompt_sha256": "521933a4adcb366431bfce3edfd82a121eb655e7d634b338c45a1d8584c0b7b5",
+      "sources": {
+        "S1": {
+          "id": "reference-991-b62dfff2ee9e6bd1",
+          "text_sha256": "b62dfff2ee9e6bd1fe6ec743120b21da110d8e4fb871a5b02ec9507a3f0e41e9"
+        },
+        "S2": {
+          "id": "reference-5826-2d21e4a4384605b3",
+          "text_sha256": "2d21e4a4384605b3ff081440e29f274293b7bfd81995f59c216d70441a7ddf16"
+        }
+      },
+      "verifier_decision": "SUPPORTED_COMPLETE",
+      "review_expected_decision": "SUPPORTED_COMPLETE",
+      "review_category": "CORRECT_POSITIVE_PROBE",
+      "draft_supported": true,
+      "draft_complete": true,
+      "review_finding": "Correct retention of imaginary-unit negative-one equation from S2",
+      "specific_original_draft_errors": [],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    },
+    {
+      "id": "p06",
+      "question": "What equation defines the imaginary unit in the excerpt?",
+      "classification": "Constructed formula sign contradiction",
+      "draft_path": "downloads/cross-model-support/run-20261002T141505Z/inputs/p06.draft.txt",
+      "draft_sha256": "ff3a0779e6c1d72246185fae2a5ac38bf79a6f294fc0e5ee392fe03f8e9adaf9",
+      "verifier_record": "downloads/cross-model-support/run-20261002T141505Z/qwen25-7b/p06.json",
+      "verifier_record_sha256": "b1a6cf20c596ddd2ebe20e212df7260843c29df4ad5e34eb137e3f765ca6c225",
+      "verifier_text_sha256": "6b5953a9e3b7d5d7872f40701b0889c7cf3d67b248adc03c3a225f2f543ea2ce",
+      "prompt_sha256": "1c2cfac93807d354ab68dcc983dd48189ae0f12e9307c8ae5e8d865da0426ccb",
+      "sources": {
+        "S1": {
+          "id": "reference-991-b62dfff2ee9e6bd1",
+          "text_sha256": "b62dfff2ee9e6bd1fe6ec743120b21da110d8e4fb871a5b02ec9507a3f0e41e9"
+        },
+        "S2": {
+          "id": "reference-5826-2d21e4a4384605b3",
+          "text_sha256": "2d21e4a4384605b3ff081440e29f274293b7bfd81995f59c216d70441a7ddf16"
+        }
+      },
+      "verifier_decision": "REJECT",
+      "review_expected_decision": "REJECT",
+      "review_category": "CORRECT_NEGATIVE_PROBE",
+      "draft_supported": false,
+      "draft_complete": false,
+      "review_finding": "Correct rejection of positive-one sign contradiction against negative one in S2",
+      "specific_original_draft_errors": [],
+      "verifier_failure": "",
+      "whole_draft_and_complete_sources_retained": true,
+      "production_publishable": false
+    }
+  ],
+  "counts": {
+    "raw_routes": {
+      "SUPPORTED_COMPLETE": 14,
+      "REJECT": 4
+    },
+    "educational_original_cases": 10,
+    "educational_provisional_approvals": 9,
+    "educational_false_approvals": 5,
+    "educational_supported_retained": 4,
+    "educational_supported_available": 4,
+    "educational_correct_rejections": 1,
+    "false_rejections": 0,
+    "absent_controls": 2,
+    "correct_absent_or_reject_classifications": 0,
+    "absent_misclassified_as_useful": 2,
+    "positive_probes_retained": 3,
+    "positive_probes": 3,
+    "negative_probes_rejected": 3,
+    "negative_probes": 3,
+    "total_provisional_approvals": 14,
+    "provisional_approvals_that_cannot_count_as_supported_useful": 7
+  },
+  "false_approval_ids": [
+    "g01",
+    "g03",
+    "g06",
+    "g08",
+    "g09"
+  ],
+  "absent_misclassification_ids": [
+    "g11",
+    "g12"
+  ],
+  "retention": "All four supported educational drafts retained; both absence controls excluded from useful-generation count; paired probes are constructed controls, not model-generated useful answers",
+  "parser_followup": {
+    "executed_source_differences": [
+      {
+        "path": "android/app/src/main/java/org/pocketlore/app/CrossModelSupport.java",
+        "executed_sha256": "2cdd4d7c232c96a38295162ba2090166ace76f4616f9c86ffb8130cb84e0a5cf",
+        "current_sha256": "69e4efd8b185bf41beb570f5965053cede442685e0edaf22bd20e4a3cdd729f3"
+      },
+      {
+        "path": "tools/evaluation/cross-model-support/SupportHarness.java",
+        "executed_sha256": "027a21a9e21a24e79171ba6afdcfc990f66a81660b7b39976cc629996e13b9be",
+        "current_sha256": "af60927d1d89ee7a60254bf03b8bb0286ee53db931fe33a333455d8e2423f608"
+      }
+    ],
+    "inspection": "Current failure-aware overload rejects null/nonempty errors; current parser rejects zero tokens; original inference did not use those changes",
+    "all_observed_rows_unaffected": true,
+    "basis": "All eighteen existing rows have empty error, strictly positive sublimit tokens and exact allowed first line; current rule yields identical routes",
+    "new_inference": "None"
+  },
+  "rationale_limit": "Correct verdict does not certify rationale: g05 rejection contains a false omission allegation; complete raw judgments remain preserved",
+  "deployment_limits": [
+    "Production verifier remains explicitly UNAVAILABLE",
+    "No Android selected-model verifier execution or physical-device acceptance",
+    "Given historical dual-model update budget exceeds50GB; four-GB emulator cannot qualify the requested configuration",
+    "Same Qwen organization/family artifacts; not independent human or canonical criticism",
+    "Public development oracle evidence, no unseen holdout, retriever evaluation or competitive comparison",
+    "Positive paired probes do not rescue five full-draft false approvals or absence routing failures",
+    "No threshold, prompt, seed search or regeneration performed by reviewer"
+  ],
+  "conclusion": "Retained useful source-supported drafts and passed paired probes coexist with material full-prose false approvals; verifier is not qualified for automatic support decisions"
+}

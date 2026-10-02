@@ -1,0 +1,3 @@
+PASS: 11 verdict/transport controls; no entailment or completeness qualification
+PASS: real verifier artifacts, fixed decision parser, missing/changed output rejection; semantic result is separately reviewed
+{"false_support_approvals": ["g01", "g03", "g06", "g08", "g09"], "incomplete_approvals": ["g01", "g03", "g06"], "supported_complete_educational_retained": ["g02", "g04", "g07", "g10"], "absence_promoted": ["g11", "g12"], "probe_disagreements": [], "status": "FAIL", "production_qualification": false}

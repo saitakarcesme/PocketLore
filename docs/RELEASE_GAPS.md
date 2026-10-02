@@ -1,5 +1,9 @@
 # Release gaps
 
+## Task500 repair2 measured blocker
+
+Separate-model host verification falsely approved five unsupported drafts and both unavailable controls despite passing six paired probes. Production remains unqualified. The next distinct candidate must be evaluated against complete preserved drafts without tuning these verdicts, and fit a reconciled distribution: the current two-model proposal exceeds the historical50GB update allowance. Selected-model Android execution, current complete storage/memory and independent unseen quality remain unmeasured; see [actual negative evidence](evidence/general-grounded-generation.md).
+
 ## Current brief review-record status
 
 [The bounded review-record repair](evidence/general-source-backed-research-brief.md) binds the user-supplied independent statement to unchanged checkpoint65dd1bb application and source/output identities. Build and required brief check now pass; at least12/24 useful source-supported original briefs are independently supported in aggregate, while20/24 remains the builder assessment. No individual independent grades or product acceptance are inferred. Old failing/pending logs remain historical below. Broad phrasing, generated answers, unseen evaluation, physical devices and final release gates remain open; no new inference or Android code change was needed.

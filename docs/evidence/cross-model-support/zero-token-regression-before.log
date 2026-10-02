@@ -1,0 +1,3 @@
+Exception in thread "main" java.lang.AssertionError: SUPPORTED_COMPLETE != INVALID
+	at org.pocketlore.app.Behavior.eq(Behavior.java:4)
+	at org.pocketlore.app.Behavior.main(Behavior.java:13)
