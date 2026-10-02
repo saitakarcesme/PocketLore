@@ -94,6 +94,9 @@ public final class MainActivity extends Activity {
             updateControls(); captureCompleted();
         }, id -> { if(latestEvidence!=null) for(ResearchEngine.Hit hit:latestEvidence.hits) if(hit.passage.id.equals(id)) inspect(hit); });
         briefButton=ReaderUi.button(this,composer,"Research brief · source quotations",this::runBrief);
+        ReaderUi.styleButton(this,briefButton,true);ReaderUi.styleButton(this,search,false);
+        composer.removeView(briefButton);composer.addView(briefButton,composer.indexOfChild(search));
+        composer.addView(text("No model needed for source briefs. Separate subquestions with new lines or semicolons (up to six). Unknown parts remain visible; quotations are not generated answers.",14),composer.indexOfChild(briefButton));
         ReaderUi.button(this,actions,"Cancel research brief",()->cancelBrief=true);
         ReaderUi.button(this,composer,"Photo text and speech input",()->{if(!importing&&!searching&&!nativePanel.isBusy())startActivityForResult(new android.content.Intent(this,AttachmentsActivity.class),340);});
         ReaderUi.button(this,layout,"Personal documents and collection export",()->{if(!importing&&!searching&&!nativePanel.isBusy())startActivityForResult(new android.content.Intent(this,PersonalDocumentsActivity.class),330);});
@@ -212,10 +215,10 @@ public final class MainActivity extends Activity {
         status.setText("Selecting exact source quotations…");
         ResearchEngine selected=engine;long epoch=libraryEpoch;
         worker.execute(()->{try{
-            ResearchEngine.Result result=EvidenceAvailability.scope(query)==EvidenceAvailability.Scope.REFERENCE
-                ? selected.research(query)
-                : new ResearchEngine.Result(java.util.Collections.emptyList(),java.util.Collections.emptySet(),"Evidence unavailable");
-            ResearchBrief.Brief brief=ResearchBrief.create(query,result,()->cancelBrief||destroyed);
+            ResearchWorkspace.Result workspace=ResearchWorkspace.create(query,selected,()->cancelBrief||destroyed);
+            ResearchBrief.Brief brief=workspace.brief;
+            java.util.List<ResearchEngine.Hit> hits=new java.util.ArrayList<>();for(ResearchBrief.Quote quote:brief.quotes)hits.add(new ResearchEngine.Hit(quote.source,0));
+            ResearchEngine.Result result=new ResearchEngine.Result(hits,java.util.Collections.emptySet(),"Extractive research sections, not generated answers");
             runOnUiThread(()->{if(destroyed||epoch!=libraryEpoch||cancelBrief)return;
                 latestEvidence=result;
                 android.text.SpannableString rendered=new android.text.SpannableString(brief.text);
@@ -226,7 +229,7 @@ public final class MainActivity extends Activity {
                 }
                 hasSnapshot=true;answer.setText(rendered);answer.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
                 saveBrief(query,brief);
-                status.setText(brief.availability==EvidenceAvailability.Scope.REFERENCE ? brief.quotes.size()+" source quotations · coverage unverified · no generated answer" : EvidenceAvailability.reason(brief.availability));
+                status.setText(brief.availability==EvidenceAvailability.Scope.REFERENCE ? workspace.sections.size()+" subquestions · "+brief.quotes.size()+" source quotations · inspect coverage gaps · no generated answer" : EvidenceAvailability.reason(brief.availability));
             });
         }catch(Exception e){runOnUiThread(()->{if(!destroyed)status.setText("Research brief unavailable: "+e.getMessage());});}
         finally{runOnUiThread(()->{if(!destroyed){searching=false;nativePanel.finishResearchBrief();if(cancelBrief)status.setText("Research brief cancelled; no partial result");updateControls();}});}});
