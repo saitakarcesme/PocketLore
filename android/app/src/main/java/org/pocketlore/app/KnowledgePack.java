@@ -17,6 +17,8 @@ public final class KnowledgePack {
     public final String id, warning, sha256;
     final List<String[]> rows;
     final Map<String,String> provenance, documentKeys;
+    // Schema-2 legal text is shared by reference, not copied into every indexed passage.
+    final Map<String,String> offlineLicenses=new HashMap<>();
     final long archiveBytes, expandedBytes, manifestBytes;
     final int documentCount;
     KnowledgePack(ResearchEngine engine, String id, String warning, String hash, List<String[]> rows,
@@ -101,7 +103,7 @@ public final class KnowledgePack {
         String id=field(m,"id"), warning=field(m,"warning"); field(m,"transformation");
         require(id.matches("[a-z0-9-]{1,80}"),"Invalid pack ID");
         require(hash(files.get("passages.tsv")).equals(field(m,"passages_sha256")),"Passage payload hash mismatch");
-        Map<String,String> provenance=new HashMap<>(),documentKeys=new HashMap<>();
+        Map<String,String> provenance=new HashMap<>(),documentKeys=new HashMap<>(),offlineLicenses=new HashMap<>();
         Map<String,String[]> expected=new HashMap<>(); Map<String,String[]> originalSpans=new HashMap<>();
         Map<String,String> boundSpans=new HashMap<>(); Set<String> documentIds=new HashSet<>(), sourceIdentities=new HashSet<>();
         JSONArray docs=m.getJSONArray("documents"); require(docs.length()>0 && docs.length()<=1000,"Document count out of range");
@@ -154,7 +156,8 @@ public final class KnowledgePack {
                 if(schema==2) require(p.has("source_utf16_start") && p.has("source_utf16_end"),"Missing source paragraph binding");
                 if(legal!=null) {
                     require(!legal.trim().isEmpty() && legal.length()<=24000,"Invalid offline license text");
-                    provenance.put(citation,provenance.get(citation)+"\nRights basis: "+field(d,"rights_basis")+"\nRights limits: "+field(d,"rights_disposition")+"\nOffline license text:\n"+legal);
+                    provenance.put(citation,provenance.get(citation)+"\nRights basis: "+field(d,"rights_basis")+"\nRights limits: "+field(d,"rights_disposition")+(schema==2?"\nOffline license SHA-256: "+hash(legal.getBytes(StandardCharsets.UTF_8)):"\nOffline license text:\n"+legal));
+                    if(schema==2) offlineLicenses.put(citation,legal);
                 }
                 documentKeys.put(citation,url+"\n"+field(d,"raw_sha256"));
                 require(expected.put(citation,new String[]{title,url,date,rights,digest})==null,"Duplicate citation");
@@ -177,7 +180,10 @@ public final class KnowledgePack {
             if(boundSpans.containsKey(r[0])) require(r[5].equals(boundSpans.get(r[0])),"Literal source paragraph changed");
             verifiedRows.add(r);
         }
-        return new KnowledgePack(index?new ResearchEngine(new StringReader(text)):null,id,warning,hash(archive),verifiedRows,provenance,documentKeys,archive.length,total,files.get("manifest.json").length,docs.length());
+        ResearchEngine engine=null;
+        if(index){List<ResearchEngine.Passage> indexed=new ArrayList<>();for(String[] row:verifiedRows) indexed.add(new ResearchEngine.Passage(row,provenance.get(row[0]),offlineLicenses.getOrDefault(row[0],"")));engine=new ResearchEngine(indexed);}
+        KnowledgePack result=new KnowledgePack(engine,id,warning,hash(archive),verifiedRows,provenance,documentKeys,archive.length,total,files.get("manifest.json").length,docs.length());
+        result.offlineLicenses.putAll(offlineLicenses);return result;
     }
     public static KnowledgePack load(File file) throws Exception {
         try(InputStream in=new FileInputStream(file)){return read(in);}

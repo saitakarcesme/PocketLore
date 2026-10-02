@@ -34,7 +34,7 @@ public final class ResearchBrief {
         byte[] digest=MessageDigest.getInstance("SHA-256").digest(text.getBytes(StandardCharsets.UTF_8));StringBuilder out=new StringBuilder();for(byte b:digest)out.append(String.format(java.util.Locale.ROOT,"%02x",b&255));return out.toString();
     }catch(Exception e){throw new IllegalStateException(e);}}
     private static String identity(ResearchEngine.Passage p){
-        StringBuilder b=new StringBuilder();for(String field:new String[]{p.id,p.title,p.url,p.sourceDate,p.license,p.collectionProvenance,p.text})b.append(field.length()).append(':').append(field);return hash(b.toString());
+        StringBuilder b=new StringBuilder();for(String field:new String[]{p.id,p.title,p.url,p.sourceDate,p.license,p.collectionProvenance,p.text})b.append(field.length()).append(':').append(field);if(!p.offlineLicense.isEmpty())b.append(p.offlineLicense.length()).append(':').append(p.offlineLicense);return hash(b.toString());
     }
     private static void cancelled(BooleanSupplier stop){if(stop.getAsBoolean()||Thread.currentThread().isInterrupted())throw new java.util.concurrent.CancellationException("Brief cancelled; no partial result");}
     private static boolean metadata(ResearchEngine.Passage p){
