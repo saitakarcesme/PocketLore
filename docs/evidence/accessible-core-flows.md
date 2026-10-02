@@ -1,6 +1,6 @@
 # Accessible core-flow controls — task 450
 
-The bounded emulator matrix and required build pass on the exact candidate below; no accessibility-compliance, physical comfort or product-acceptance claim follows.
+The required build and revised bounded check pass on source checkpoint `4c29fd5`, with 72 states and actual rendered status-bar samples. The earlier automated pass and independent visual finding remain historical evidence; the reconciliation is recorded separately below. No accessibility-compliance, physical comfort or product-acceptance claim follows.
 
 ## Scope and frozen protocol
 
@@ -32,9 +32,9 @@ All existing runs remain under `downloads/accessible-core/` and are bound by `ac
 
 The reader-close clipping failure was a concrete product defect, repaired by the outer inset container. A later landscape test correctly refused a landscape-width window still rendered on a portrait display; the harness now requires observed display rotation and records actual local font configuration before measuring controls. Additional retained failures cover focus-mode transitions, a landscape IME request before window focus, and nested comparison actions outside the visible scroll viewport. The latter persisted after removing competing test scroll requests and led to the shared focus-reveal fix. No failed receipt is relabeled as a pass.
 
-## Exact final run and measurements
+## Initial passing matrix, before independent visual review
 
-Final tested source checkpoint **e8e638b**, run **20261002T044441Z-3fee2078**. Source/build-input manifest SHA-256: `9f7860be12066a75dc3da9a02547bea84206440310f0713f1237e9231249f818`. It records all tracked Android/tool input hashes, SDK jar hash, fixture hash and Gradle configuration (two workers, 2 GiB heap, not measured total process memory). The source map remained unchanged through the build/run and offline verification. `bash tools/android-build.sh` passed again after the matrix and reproduced the same production APK.
+Initially tested source checkpoint **e8e638b**, run **20261002T044441Z-3fee2078**. Source/build-input manifest SHA-256: `9f7860be12066a75dc3da9a02547bea84206440310f0713f1237e9231249f818`. It records all tracked Android/tool input hashes, SDK jar hash, fixture hash and Gradle configuration (two workers, 2 GiB heap, not measured total process memory). The source map remained unchanged through the build/run and offline verification. `bash tools/android-build.sh` passed again after the matrix and reproduced the same production APK.
 
 | Artifact | Bytes | SHA-256 |
 | --- | ---: | --- |
@@ -60,3 +60,26 @@ Independent review of the frozen final source/evidence checkpoint is recorded se
 ## Open gates
 
 Physical ARM64/GrapheneOS, TalkBack, human navigation/font comfort, broad rights, supported generated quality, matched comparisons and human release acceptance remain open. Automated bounds and contrast checks cannot establish accessibility compliance. Task 400 remains blocked and task 410's historical provenance is unchanged. This task adds no synthesis, automatic evidence assignment, model/corpus assets or parity/superiority claim.
+
+## Independent visual review and reconciliation
+
+The first review of `2a15a53` found white status icons over cream in portrait screenshots, despite passing requested appearance-mode checks. Its exact English conclusion is preserved in `accessible-core/independent-review-first.json`. The initial automated PASS does not qualify those rendered bars.
+
+The test previously narrowed the app window, introducing OS letterboxing behavior. The revised layout constrains the content root to the same frozen 360/640 dp widths within a full-width window. Reader light/dark themes now also set the matching window background, preserving the backing surface beyond the scroll container. The revised check samples the actual status-bar screenshot: the clear central third must have the expected background, and contrasting rendered icon pixels must be present. It retains the full background fraction as an observation; icon occupancy is not counted as a background fault. This is bounded screenshot evidence, not a complete system-UI contrast audit.
+
+Run `20261002T045331Z-65e24a72` failed the initial pixel-test occupancy assumption: only 88.98% of the entire status band was background because dark icons occupied the rest. The preserved screenshot shows dark icons, 5,595 pixels above 4.5:1 and maximum observed contrast 5.5554:1. The corrected sampling separates the clear center background from icon regions, rather than lowering the required glyph contrast. Settings and owned records were restored in that failed invocation.
+
+## Reconciled final candidate and fresh receipts
+
+Source checkpoint **4c29fd5**, run **20261002T045657Z-93b53e81**, source/build manifest SHA-256 **87523bb215a1ea5debd86968e7ae03a53e5fb755aa7656b20e3cb020effab264**. `bash tools/evaluation/check_accessible_core_flows.sh` passed, followed by a separate successful `bash tools/android-build.sh`; the latter reproduced the same production APK. Exact source maps are unchanged. Both immediate and final installed production/test hashes match the build. The revised packet is `accessible-core/status-reconciled-run/`; the original passing packet is not overwritten.
+
+| Final artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| Production APK | 22,719,262 | `70d0fd45dc5dc02e3fd81c85976bdf52756c30750f703202593f3ccdbeeed120` |
+| Instrumentation APK | 441,913 | `0763840f94cd682832fb5401eba9e78452da906dedc044c6d19aeae399f46da6` |
+
+The revised receipt contains **72 states**, **150 action observations**, **30 text contrasts**, **30 rendered status-bar samples**, and **1,708 successful assertions**, with the same six scale/layout combinations and four flows. Minimum sampled text contrast remains **7.2031:1**. Every central status background sample is 100% the expected color; every status sample contains at least 20 rendered pixels contrasting at 4.5:1 or greater, and the lowest maximum observed glyph contrast is **5.5554:1**. This detects the reviewed white-on-cream failure but does not establish contrast for every antialiased pixel, system dialog or icon. Builder visual inspection confirms dark icons in the two corresponding portrait reader/document states previously flagged by review. The constrained content width is recorded per Activity while the surrounding window now spans the display.
+
+Environment remains **5560/API35/4096-byte pages**, boot ID `59ebd1a1-2fbf-4b25-aed7-2672c2d46604` unchanged; font **1.0 → 1.0**, user rotation **0 → 0**, auto-rotation **1 → 1**, without host rescue. Original Notebook fingerprint, preferences and model/selection/collection/optional-asset lists remain unchanged. Task-owned source/comparison/import fixtures were removed. Storage was **3,285,336,727 → 3,296,122,849 logical bytes** (+10,786,122) and **3,220,032 → 3,231,500 allocated KiB** (+11,468 KiB), including retained evidence/cache/SQLite allocations; this is not a continuous peak or whole-device budget.
+
+Missing-stream, corrupt-receipt, stale-run and changed-installed-test negative controls pass; offline cross-artifact verification also passes. The exact originals, including screenshots and all accessibility streams, are hashed in the new packet's `original-artifacts.json`. No screenshot/APK/model payloads are committed. The first review and failed pixel-occupancy invocation remain separately preserved. Independent re-review is attached to the final frozen checkpoint; these bounded emulator results leave all physical, TalkBack, human comfort, provider, rights and quality gates above open.
