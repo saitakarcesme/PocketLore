@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/general-research/check.py", line 113, in <module>
+    if __name__=='__main__':device() if '--device' in sys.argv else audit()
+                                                                    ~~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/general-research/check.py", line 96, in audit
+    assessment=review['cases'][row['id']];assert assessment['rendered_sha256']==sha(row['rendered'].encode());assert assessment['unsupported_attributed_claims']==0
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str

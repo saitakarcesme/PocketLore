@@ -1,0 +1,27 @@
+{
+  "install": {
+    "import_or_reload_ms": 529,
+    "pss_kib": 122971,
+    "app_logical_bytes": 3332148911,
+    "collections": 4,
+    "documents": 1120,
+    "passages": 40913
+  },
+  "restart": {
+    "import_or_reload_ms": 450,
+    "pss_kib": 135867,
+    "app_logical_bytes": 3333305223,
+    "collections": 4,
+    "documents": 1120,
+    "passages": 40913
+  },
+  "logical-before": "3330591330\t.",
+  "logical-after": "3334277143\t.",
+  "allocated-before": "3267568\t.",
+  "allocated-after": "3271300\t.",
+  "api": "35",
+  "pages": "4096",
+  "boot-before": "59ebd1a1-2fbf-4b25-aed7-2672c2d46604",
+  "font-before": "1.0",
+  "rotation-before": "0"
+}
