@@ -1,0 +1,1 @@
+Admit 120 bounded paragraphs across 20 subject families with preserved notices, excluding later spans and unresolved candidates; this source review establishes neither legal clearance nor product acceptance.

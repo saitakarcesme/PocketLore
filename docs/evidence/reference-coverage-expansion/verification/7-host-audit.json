@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "scope": "Host development artifact/assessment audit only",
+  "cases": 53,
+  "useful_source_briefs": 35,
+  "appropriate_absence": 6,
+  "unsupported_attributed_claims": 0,
+  "negative_controls": [
+    "missing-output",
+    "changed-output",
+    "changed-assessment"
+  ]
+}

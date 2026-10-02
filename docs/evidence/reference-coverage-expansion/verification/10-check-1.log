@@ -1,0 +1,12 @@
+{"files": 37, "source_bytes": 11890226, "documents": 7, "spans": 22, "negative_controls": ["missing:originals/1376037819.json", "changed:originals/1376037819.json", "missing:originals/wiki-current.json", "changed:originals/wiki-current.json", "missing:originals/CC-BY-SA-4.0.txt", "changed:originals/CC-BY-SA-4.0.txt", "missing:originals/1376037819-footer.html", "changed:originals/1376037819-footer.html", "missing:originals/1376037819-history.html", "changed:originals/1376037819-history.html", "missing:originals/osbooks-biology-bundle-LICENSE.base64", "changed:originals/osbooks-biology-bundle-LICENSE.base64", "missing:originals/osbooks-chemistry-bundle-LICENSE.base64", "changed:originals/osbooks-chemistry-bundle-LICENSE.base64", "missing:originals/osbooks-principles-economics-bundle-LICENSE.base64", "changed:originals/osbooks-principles-economics-bundle-LICENSE.base64"], "status": "PASS"}
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/general-research/check.py", line 125, in <module>
+    if __name__=='__main__':device() if '--device' in sys.argv else audit()
+                                                                    ~~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/general-research/check.py", line 102, in audit
+    candidate=json.loads(FINAL.read_text());out=pathlib.Path(candidate['original_run']);m=verify(out)
+                                                                                          ~~~~~~^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/general-research/check.py", line 25, in verify
+    assert changed==set(amendment['changed_inputs']),'Current build inputs differ from tested candidate'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Current build inputs differ from tested candidate

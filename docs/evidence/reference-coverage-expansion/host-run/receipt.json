@@ -1,0 +1,28 @@
+{
+  "environment": "LLMRig host JVM; NOT Android; no model inference",
+  "configuration": "2 active processors,256MiB Java heap; isolated Python wait reports Java child maximum RSS via getrusage",
+  "pack_sha256": "61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135",
+  "source_files": {
+    "android/app/src/main/java/org/pocketlore/app/ResearchEngine.java": "76d3356479ff3ed4ef2c90eb7b95613f9d972885fd34a72693dcd8330492f9b8",
+    "android/app/src/main/java/org/pocketlore/app/ResearchBrief.java": "c9d4d749523cd38f9c0dbf8059b63aab4d66c9172d0ef21cbeb197fb8891361e",
+    "android/app/src/main/java/org/pocketlore/app/ResearchWorkspace.java": "2e1d48f3534d21f0e34c11c854f721b62bab9e152c5b44a327832a7255fc09e8",
+    "android/app/src/main/java/org/pocketlore/app/EvidenceAvailability.java": "3e656246d6c39386a63bfb5f914ebc6e2dbb1378a605fa870f8a3f9115fff440",
+    "tools/evaluation/reference-expansion/HostResearchCheck.java": "0ab45e2f0dee93f1db3624ef22eb445f26e88f45ac4a49cab9d6cab607097217"
+  },
+  "development_sha256": "7ffc25a4adfcd04a19ec09dd37e23efa0c2c42ede53115986771aeb06d76d20d",
+  "cases": 53,
+  "absence_failures": [],
+  "files": {
+    "sources.tsv": "a44ad188025754cf2629bee242c67c8c855092d48e122a5c70726635841ef5c4",
+    "license.txt": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5",
+    "cases.tsv": "a9c535fdb9dd7673dd051b15ef93d269af889179fdaed98c757a9178ad8491a8",
+    "compile.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.txt.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.txt.command.json": "88a945edafde057dae061a45d60edec67767a5cf6dbcd3b1eb6683ce0ac54408",
+    "raw.tsv": "bd2d92e45d6da347a359dacfc3627b23ca9f2f82b95b86688899a9057d1717de",
+    "raw.tsv.stderr": "6d0d8390d9a3da0dc7c094e03fbf1779d2471ab8c2d751565a433bad4c7842a1",
+    "raw.tsv.command.json": "0033dcd1fe2642a16aa8d3ed5a34deb3a694d0392ae0974cfea291cf22ab62e0",
+    "outputs.json": "025c97e0e7efb8c7bd6a2a04f3084b1899209cffcfde22b9144d8068e718e4ea"
+  },
+  "status": "OBSERVED; quality and device gates separate"
+}
