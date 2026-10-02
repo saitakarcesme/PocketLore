@@ -1,0 +1,1 @@
+{"command": ["/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb", "-s", "emulator-5560", "shell", "am", "instrument", "-r", "-w", "-e", "run_id", "20261002T050658Z-0992dbe4", "-e", "source_manifest_sha256", "78dd0981aea2fe41496db6d4c820adc597edf7d8881740575791f6aad19b2788", "org.pocketlore.app.test/org.pocketlore.app.AccessibleInstrumentation"], "returncode": 0}

@@ -1,6 +1,6 @@
 # Accessible core-flow controls — task 450
 
-The required build and status-bar check passed on source checkpoint `4c29fd5`, but a second independent screenshot review found low-contrast dark-reader navigation icons; its automated scope was incomplete. The earlier automated pass and independent visual finding remain historical evidence; the reconciliation is recorded separately below. No accessibility-compliance, physical comfort or product-acceptance claim follows.
+Both required checks pass on final tested source `d60dfb6`, run `20261002T050658Z-0992dbe4`: 72 states across six configurations, with actual status and navigation contrast samples. Earlier passing scopes, independent findings and failures remain separately preserved below. This is bounded emulator evidence, not accessibility compliance or product acceptance.
 
 ## Scope and frozen protocol
 
@@ -91,3 +91,18 @@ The second independent review of `ef87bc0` confirmed identity/retention and stat
 The reader now applies modern status/navigation appearance **after** legacy bar colors and visibility flags, so those calls cannot replace the final requested appearance. The test adds actual navigation-region pixel samples derived from navigation insets, including side bars in landscape. It requires rendered contrasting glyph pixels and the expected background, retaining measurements and screenshots. No global navigation mode or theme preference is changed.
 
 The call-order repair failed in run `20261002T050511Z-a159716c`: the actual dark-reader navigation sample had zero pixels reaching 4.5:1 and maximum contrast **1.6478:1**. This failure remains preserved. The bounded final design retains light app chrome behind both system bars, with dark icons, while the scrollable reading surface and its text still follow the selected light/dark reading theme. It does not claim a whole-window night mode. Both status and navigation screenshot assertions retain the 4.5:1 threshold; content theme contrast is checked separately.
+
+## Final system-bar-qualified bounded run
+
+The current tested source is **d60dfb6**, run **20261002T050658Z-0992dbe4**, source/build-input SHA-256 **78dd0981aea2fe41496db6d4c820adc597edf7d8881740575791f6aad19b2788**. Both required commands pass. The separate production build reproduces the matrix APK; source maps remain unchanged. Final source/evidence commits after this source checkpoint only freeze documentation and receipts.
+
+| Current artifact | Bytes | SHA-256 |
+| --- | ---: | --- |
+| Production APK | 22,719,262 | `1709ed5c7cd412a9cc770204ea2f8722f5ada18085784c1bbfab1ef3dcec57cf` |
+| Instrumentation APK | 443,113 | `0234dc2dd5c65098587b93f2add1f63fb072962e44199d2cd56ad4ff5a4e517a` |
+
+Immediate and final installed hashes match both artifacts. The final packet is `accessible-core/final-bars-run/`, including exact original-artifact references and fresh offline cross-artifact verification. It supersedes neither historical raw data nor its failure classification. The current assertions require **72 states**, **150 control observations**, **30 text contrasts**, **30 status samples** and **30 navigation samples**, across all six frozen configurations; **1,768 assertions** passed. Minimum sampled text contrast is **7.2031:1**; minimum maximum-observed status glyph contrast is **5.5554:1**, and navigation glyph contrast is **8.5220:1**. Each bar sample separately contains at least 20 pixels at or above 4.5:1 against its observed backing surface. The screenshots visibly show dark navigation icons on light chrome around the dark reading pane; no full-window night mode is claimed.
+
+Boot remains `59ebd1a1-2fbf-4b25-aed7-2672c2d46604`, with API35/4096-byte pages on5560 only. Font1.0, rotation0 and auto-rotation1 restore exactly without host rescue. Original Notebook fingerprint, app/reader preferences and retained model/selection/pack/optional-asset hashes remain unchanged. Logical app-private usage is **3,297,254,433 → 3,308,044,796 bytes** (+10,790,363), allocated usage **3,232,696 → 3,244,172 KiB** (+11,476 KiB), including retained test evidence and cache/database effects. These are endpoint observations, not peak or whole-device budgets. No other emulator, full corpus or physical qualification is implied.
+
+All four copied-evidence negative controls pass. Independent criticism is recorded separately against the frozen exact final checkpoint. Original failures, both earlier criticisms, task400blocked and task410historical limitations remain unchanged. No further suite is required absent a new concrete failure; TalkBack/human comfort, physical ARM64/GrapheneOS, provider coverage, source rights, generated quality, competitive comparison and human release gates remain open.
