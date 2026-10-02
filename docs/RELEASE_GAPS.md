@@ -340,3 +340,7 @@ The [personal-document report](evidence/documents.md) records passing build and7
 ## Task360 nearby travel
 
 [Evidence](evidence/nearby-travel.md) establishes bounded manual/GPS-interface behavior and three reviewed extractive city cards on5560. Physical GPS fix/permission-dialog behavior, energy and precise/approximate fixes need device measurement. Positive real dietary-tag coverage remains unestablished; source acquisition/review would be required before expanding it. The regional descriptions are DC-only, global subset misses remain, and Mexico City query latency is8.51s. Final full-inventory APK/update budget, source-rights expansion, unseen quality and physical/GrapheneOS acceptance remain open; task302 is not resolved by city metadata.
+
+## Task370 retrieval resources
+
+[Evidence](evidence/hybrid-retrieval.md) records current full-installed31-shard emulator reader/cache behavior and exact APK identity. Relevance and answer quality are unchanged; no semantic embedder is deployed. The next distinct retrieval experiment needs frozen independently judged lexical/semantic relevance plus licensed pinned model/resources, not another unchanged cache timing run. Remaining resource gates include simultaneous model/KV/reader peaks, full candidate installation/update/code overhead and physical sustained/GrapheneOS measurements. The cache assumes immutable admitted app-private source files; it does not certify source rights or support.
