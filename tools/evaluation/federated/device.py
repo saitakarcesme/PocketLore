@@ -40,6 +40,7 @@ try:
  for mode in ['install','restart']:
   if mode=='restart':shell(['am','force-stop','org.pocketlore.app'],'cold-stop.txt')
   run(ADB+['shell','am','instrument','-w','-e','run_id',out.name,'-e','source_hash',source,'-e','mode',mode,'org.pocketlore.app.test/org.pocketlore.app.FederatedInstrumentation'],mode+'-raw.txt',timeout=300,allow=True)
+  observed=shell(['cat','/proc/sys/kernel/random/boot_id'],mode+'-boot.txt');assert observed==(out/'before-boot.txt').read_bytes(),'Boot changed during instrumentation; invocation invalid'
   raw=run(ADB+['exec-out','run-as','org.pocketlore.app','cat',d+'/'+mode+'.json'],mode+'.json');report=json.loads(raw)
   for screen in report['screens']:
    for ext in ['.png','.txt']:run(ADB+['exec-out','run-as','org.pocketlore.app','cat',d+'/'+screen+ext],screen+ext)
@@ -47,4 +48,7 @@ try:
   assert report['status']=='PASS',report.get('error')
  identity('final');assert inputs()==src['inputs'];(out/'manifest.json').write_text(json.dumps({'run_id':out.name,'source_hash':source,'apks':apks,'files':{p.name:sha(p) for p in out.iterdir() if p.is_file()}},indent=2)+'\n');status='PASS'
 finally:
+ if status!='PASS':
+  try:identity('failure')
+  except Exception as error:(out/'failure-observation-error.txt').write_text(str(error))
  (out/'seal.json').write_text(json.dumps({'status':status,'files':{p.name:sha(p) for p in out.iterdir() if p.is_file() and p.name!='seal.json'}},indent=2)+'\n')
