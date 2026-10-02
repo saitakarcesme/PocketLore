@@ -79,6 +79,7 @@ public final class MainActivity extends Activity {
         ReaderUi.label(this,composer,question,"Your question");
         question.setHint("What would you like to understand?");
         question.setInputType(android.text.InputType.TYPE_CLASS_TEXT|android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+        question.setImeOptions(android.view.inputmethod.EditorInfo.IME_FLAG_NO_EXTRACT_UI);
         question.setMinLines(2); question.setMaxLines(6); question.setTextSize(20);question.setBackgroundTintList(android.content.res.ColorStateList.valueOf(ReaderUi.TEAL));
         question.setContentDescription("Research question"); composer.addView(question);
         search = new Button(this); search.setText("Research offline  →"); ReaderUi.styleButton(this,search,true);LinearLayout.LayoutParams submit=new LinearLayout.LayoutParams(-1,-2);submit.topMargin=dp(12);composer.addView(search,submit);
