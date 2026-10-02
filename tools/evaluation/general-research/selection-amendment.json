@@ -1,0 +1,19 @@
+{
+  "preserved_before_run": "run-20261002T053712Z-7b1158",
+  "before_first_execution_of_revision": true,
+  "changes": [
+    "Brief-only exclusion of Generation disabled sources before combined top-four truncation; unchanged generated/browse paths",
+    "At least half of normalized content-query terms must occur in a candidate title/body; fixed topical retrieval heuristic, never support approval"
+  ],
+  "not_changed": [
+    "24 questions and source expectations",
+    "source packets, rights exclusions and availability policy",
+    "independent usefulness threshold and zero unsupported attribution"
+  ],
+  "known_remaining_failures": [
+    "Strict missing-vocabulary false rejections",
+    "current noun versus temporal-current false rejection",
+    "Excluded warning-bearing documents remain absent"
+  ],
+  "no_threshold_or_seed_search": true
+}
