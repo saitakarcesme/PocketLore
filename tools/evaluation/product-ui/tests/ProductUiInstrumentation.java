@@ -16,8 +16,8 @@ import org.json.*;
 
 /** Actual installed-reader tests; no inference, catalog mutation or fabricated source content. */
 public final class ProductUiInstrumentation extends Instrumentation {
-    Activity activity;final JSONArray checks=new JSONArray();File dir;long savedId=-1;String mode,runId;
-    @Override public void onCreate(Bundle args){super.onCreate(args);mode=args.getString("mode","default");runId=args.getString("run_id","unbound");start();}
+    Activity activity;final JSONArray checks=new JSONArray();File dir;long savedId=-1;String mode,runId,fontBefore;Bundle invocation;
+    @Override public void onCreate(Bundle args){super.onCreate(args);invocation=args;mode=args.getString("mode","default");runId=args.getString("run_id","unbound");start();}
     void ok(boolean pass,String label){if(!pass)throw new AssertionError(label);checks.put(label);}
     View find(View root,String name){if(name.equals(root.getTag())||name.contentEquals(root.getContentDescription()==null?"":root.getContentDescription())||root instanceof TextView&&name.contentEquals(((TextView)root).getText()))return root;if(root instanceof ViewGroup)for(int i=0;i<((ViewGroup)root).getChildCount();i++){View r=find(((ViewGroup)root).getChildAt(i),name);if(r!=null)return r;}return null;}
     View view(String name){View v=find(activity.getWindow().getDecorView(),name);if(v==null)throw new AssertionError("Missing control "+name);return v;}
@@ -53,7 +53,7 @@ public final class ProductUiInstrumentation extends Instrumentation {
         }finally{finishActivity();resolver.call(stalled,"release",null,null);source.delete();try(NotebookStore store=new NotebookStore(getTargetContext())){store.remove(id);}}
     }
     @Override public void onStart(){Bundle result=new Bundle();JSONObject report=new JSONObject();try{
-        dir=new File(getTargetContext().getFilesDir(),"product-ui-"+mode);dir.mkdirs();
+        fontBefore=DeviceEvidence.begin(this,invocation);dir=new File(getTargetContext().getFilesDir(),"product-ui-"+mode);dir.mkdirs();
         report.put("environment","Android API"+Build.VERSION.SDK_INT+" emulator; not physical acceptance").put("run_id",runId).put("sdk",Build.VERSION.SDK_INT).put("mode",mode).put("font_scale",getTargetContext().getResources().getConfiguration().fontScale);
         if(mode.startsWith("restart")){JSONObject prior=new JSONObject(new String(java.nio.file.Files.readAllBytes(new File(getTargetContext().getFilesDir(),"product-ui-last.json").toPath()),StandardCharsets.UTF_8));savedId=prior.getLong("saved_source_id");activity=startActivitySync(new Intent(getTargetContext(),SourceReaderActivity.class).putExtra("record",savedId).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));await(()->((SourceReaderActivity)activity).content!=null,"Cold reader loads");SourceReaderActivity cold=(SourceReaderActivity)activity;ok(cold.entry.bookmark&&cold.entry.note.startsWith("UI verification note"),"Bookmark and note survive process death");ok(cold.entry.body.contains("Citation: [water-"),"Cold source identity retained");screenshot("cold-reader");report.put("saved_source_id",savedId).put("status","PASS");return;}
         stalledExport(report);
@@ -105,5 +105,5 @@ public final class ProductUiInstrumentation extends Instrumentation {
         finishActivity();activity=startActivitySync(new Intent(getTargetContext(),SourceReaderActivity.class).putExtra("record",-1L).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));await(()->((SourceReaderActivity)activity).operation.getText().toString().contains("unavailable"),"Missing saved record reports actual error");ok(view("Close reader").isShown(),"Reader error has visible exit");screenshot("source-unavailable");
         report.put("saved_source_id",savedId).put("status","PASS");java.nio.file.Files.write(new File(getTargetContext().getFilesDir(),"product-ui-last.json").toPath(),report.toString().getBytes(StandardCharsets.UTF_8));
     }catch(Throwable e){try{report.put("status","FAIL").put("error",android.util.Log.getStackTraceString(e));}catch(Exception ignored){}}
-    finally{finishActivity();try{report.put("checks",checks);if(dir!=null)java.nio.file.Files.write(new File(dir,"report.json").toPath(),report.toString(2).getBytes(StandardCharsets.UTF_8));result.putString("report",report.toString());}catch(Exception e){result.putString("error",e.toString());}finish(report.optString("status").equals("PASS")?-1:1,result);}}
+    finally{finishActivity();try{DeviceEvidence.restore(this,fontBefore,report);report.put("checks",checks);if(dir!=null)java.nio.file.Files.write(new File(dir,"report.json").toPath(),report.toString(2).getBytes(StandardCharsets.UTF_8));DeviceEvidence.emit(this,invocation,dir);result.putString("report",report.toString());}catch(Exception e){try{report.put("status","FAIL");}catch(Exception ignored){}result.putString("error",e.toString());}finish(report.optString("status").equals("PASS")?-1:1,result);}}
 }

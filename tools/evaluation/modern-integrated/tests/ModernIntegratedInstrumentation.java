@@ -2,9 +2,9 @@ package org.pocketlore.app;
 import android.app.*;import android.content.*;import android.os.*;import android.system.*;import android.view.*;import android.widget.*;import android.graphics.*;import java.io.*;import java.nio.charset.StandardCharsets;import java.nio.file.*;import org.json.*;
 /** Existing resident model only; no generation call, corpus provisioning or service changes. */
 public final class ModernIntegratedInstrumentation extends Instrumentation {
- String id;File dir;Activity activity;JSONObject report=new JSONObject();JSONArray checks=new JSONArray();long session;
+ String id;Bundle invocation;File dir;Activity activity;JSONObject report=new JSONObject();JSONArray checks=new JSONArray();long session;
  void ok(boolean b,String s){if(!b)throw new AssertionError(s);checks.put(s);}
- public void onCreate(Bundle b){super.onCreate(b);id=b.getString("run_id");start();}
+ public void onCreate(Bundle b){super.onCreate(b);invocation=b;id=b.getString("run_id");start();}
  interface Ready{boolean get();}void await(Ready r)throws Exception{long end=SystemClock.elapsedRealtime()+20000;while(!r.get()&&SystemClock.elapsedRealtime()<end)Thread.sleep(50);ok(r.get(),"Activity ready");}
  View find(View v,String label){if(v instanceof TextView&&label.equals(((TextView)v).getText().toString()))return v;if(v instanceof android.view.ViewGroup)for(int i=0;i<((android.view.ViewGroup)v).getChildCount();i++){View x=find(((android.view.ViewGroup)v).getChildAt(i),label);if(x!=null)return x;}return null;}
  void image(String name)throws Exception{waitForIdleSync();Thread.sleep(400);Bitmap b=getUiAutomation().takeScreenshot();ok(b!=null,"Screenshot "+name);try(OutputStream out=new FileOutputStream(new File(dir,name+".png"))){b.compress(Bitmap.CompressFormat.PNG,100,out);}b.recycle();getUiAutomation().getRootInActiveWindow();}
@@ -26,6 +26,6 @@ public final class ModernIntegratedInstrumentation extends Instrumentation {
   boolean absent=false;try{AttachmentEngine.image(root,new byte[]{1},"public absent-engine control",()->false);}catch(IOException e){absent=e.getMessage().contains("absent");}ok(absent,"Missing OCR fails explicitly before image recognition");
   Debug.MemoryInfo mem=new Debug.MemoryInfo();Debug.getMemoryInfo(mem);report.put("final_pss_kib",mem.getTotalPss()).put("status","PASS");
  }catch(Throwable t){try{report.put("status","FAIL").put("error",android.util.Log.getStackTraceString(t));}catch(Exception ignored){}}
- finally{if(session!=0)NativeRuntime.close(session);close();try{report.put("checks",checks);Files.write(new File(dir,"report.json").toPath(),report.toString(2).getBytes(StandardCharsets.UTF_8));result.putString("stream",report.toString());}catch(Exception e){result.putString("stream",e.toString());}finish(report.optString("status").equals("PASS")?-1:1,result);}
+ finally{if(session!=0)NativeRuntime.close(session);close();try{report.put("checks",checks);Files.write(new File(dir,"report.json").toPath(),report.toString(2).getBytes(StandardCharsets.UTF_8));DeviceEvidence.emit(this,invocation,dir);result.putString("stream",report.toString());}catch(Exception e){result.putString("stream",e.toString());}finish(report.optString("status").equals("PASS")?-1:1,result);}
  }
 }

@@ -37,4 +37,19 @@ class EvidenceBundle(unittest.TestCase):
  def test_truncated_archive_rejected(self):
   with self.assertRaises(Exception):check.unpack(b'broken tar',pathlib.Path('/tmp'))
 
+
+
+class StreamedEvidence(unittest.TestCase):
+ def test_actual_report_transfer_and_mutations(self):
+  import base64,hashlib,tempfile
+  payload=(EVIDENCE/'20261002T020922Z-0fb6e277/native-cards-recognition/report.json').read_bytes()
+  c={'run_id':'fixture','name':'report.json','index':0,'count':1,'data':base64.b64encode(payload).decode()}
+  m={'run_id':'fixture','files':{'report.json':{'bytes':len(payload),'sha256':hashlib.sha256(payload).hexdigest()}}}
+  def wire(chunk,manifest):return 'INSTRUMENTATION_STATUS: pocketlore_chunk='+json.dumps(chunk)+'\nINSTRUMENTATION_STATUS: pocketlore_manifest='+json.dumps(manifest)
+  with tempfile.TemporaryDirectory() as d:
+   path=pathlib.Path(d);check.stream_evidence(wire(c,m),'fixture',path);self.assertEqual((path/'report.json').read_bytes(),payload)
+   for wrong in [dict(c,run_id='stale'),dict(c,count=2),dict(c,data=base64.b64encode(payload+b'x').decode()),dict(c,name='../outside.json')]:
+    with self.assertRaises(AssertionError):check.stream_evidence(wire(wrong,m),'fixture',path)
+   for raw in [wire(c,m).splitlines()[0],wire(c,m)+'\n'+wire(c,m)]:
+    with self.assertRaises(AssertionError):check.stream_evidence(raw,'fixture',path)
 if __name__=='__main__':unittest.main()

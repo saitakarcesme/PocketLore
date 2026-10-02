@@ -5,4 +5,4 @@
 <instrumentation android:name="org.pocketlore.app.ModernIntegratedInstrumentation" android:targetPackage="org.pocketlore.app" />
 <instrumentation android:name="org.pocketlore.app.ProductUiInstrumentation" android:targetPackage="org.pocketlore.app" />
 <instrumentation android:name="org.pocketlore.app.DocumentsInstrumentation" android:targetPackage="org.pocketlore.app" />
-</manifest>
+<instrumentation android:name="org.pocketlore.app.ModernTeardownProbe" android:targetPackage="org.pocketlore.app" /></manifest>

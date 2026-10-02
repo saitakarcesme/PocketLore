@@ -1,5 +1,5 @@
 """Explicit API37 subset compatibility; no model generation or shared serial defaults."""
-import copy,hashlib,io,json,pathlib,subprocess,sys,tarfile,time,uuid
+import base64,copy,hashlib,io,json,pathlib,subprocess,sys,tarfile,time,uuid
 ROOT=pathlib.Path(__file__).resolve().parents[3]
 ADB=['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb','-s','emulator-5564']
 PKG='org.pocketlore.app'
@@ -23,6 +23,25 @@ def unpack(raw,destination):
    total+=item.size;assert total<=64*1024*1024,'Evidence bundle exceeds64MiB'
    assert pathlib.Path(name).suffix in ('.json','.png','.txt','.md'),'Unexpected evidence member'
    (destination/name).write_bytes(archive.extractfile(item).read())
+def stream_evidence(raw,run_id,destination):
+ chunks={};manifest=None;total=0
+ for line in raw.splitlines():
+  if line.startswith('INSTRUMENTATION_STATUS: pocketlore_chunk='):
+   c=json.loads(line.split('=',1)[1]);assert c['run_id']==run_id
+   name=c['name'];assert pathlib.Path(name).name==name and '/' not in name and name not in ('.','..')
+   assert pathlib.Path(name).suffix in ('.json','.png','.txt','.md')
+   assert type(c['index']) is int and type(c['count']) is int and 0<=c['index']<c['count']<=512
+   value=base64.b64decode(c['data'],validate=True);assert len(value)<=32768
+   total+=len(value);assert total<=64*1024*1024
+   entry=chunks.setdefault(name,{'count':c['count'],'parts':{}});assert entry['count']==c['count'] and c['index'] not in entry['parts'];entry['parts'][c['index']]=value
+  elif line.startswith('INSTRUMENTATION_STATUS: pocketlore_manifest='):
+   assert manifest is None;manifest=json.loads(line.split('=',1)[1]);assert manifest['run_id']==run_id
+ assert manifest is not None and set(manifest['files'])==set(chunks),'Missing evidence manifest/files'
+ for name,pin in manifest['files'].items():
+  entry=chunks[name];assert set(entry['parts'])==set(range(entry['count'])),'Missing evidence chunk'
+  value=b''.join(entry['parts'][i] for i in range(entry['count']));assert len(value)==pin['bytes'] and hashlib.sha256(value).hexdigest()==pin['sha256'],'Corrupt streamed evidence'
+  (destination/name).write_bytes(value)
+ return manifest
 def verify(out):
  m=json.loads((out/'manifest.json').read_text());assert m['serial']=='emulator-5564' and m['sdk']==37 and m['page_size']==16384
  for name,pin in m['files'].items():assert sha(out/name)==pin,'Missing or changed '+name
@@ -40,6 +59,7 @@ def verify(out):
  assert {'Precancelled load rejected','Cancel reset close reload releases native state','Missing speech does not start microphone','Missing OCR fails explicitly before image recognition'}.issubset(modern['checks'])
  for label,scale in [('default',1.0),('large',2.0)]:
   r=json.loads((out/f'{label}/report.json').read_text());assert r['sdk']==37 and r['activity_font_scale']==scale
+  assert r['font_original']==r['font_restored']==(out/'font-before.txt').read_text().strip()
   assert {'Research test invoked no model','Draft restored without relabeling previous answer','Retry destination matches exact source bytes','Activity destruction closes blocked writer','Source opening and note persistence survive blocked destination','Android Back closes keyboard without leaving Research'}.issubset(r['checks'])
   assert (out/f'{label}/research-keyboard.png').stat().st_size>10000 and 'EditText' in (out/f'{label}/research-keyboard-accessibility.txt').read_text()
  d=json.loads((out/'documents/results.json').read_text());assert d['api']==37
@@ -69,25 +89,11 @@ def main():
   app_path=shell(['pm','path',PKG],'apk-path-'+label+'.txt').decode().strip().removeprefix('package:');shell(['sha256sum',app_path],'apk-hash-'+label+'.txt')
   shell(['stat','-c',"'%s %b'",app_path],'apk-size-'+label+'.txt')
   shell(['dumpsys','meminfo',PKG],'meminfo-'+label+'.txt')
- def instrument(cls,folder,remote,extra=(),restore=None):
-  log=folder+'/runtime.txt';failure=None
-  try:
-   value=run(ADB+['shell','am','instrument','-r','-w','-e','run_id',run_id,*extra,PKG+'.test/'+PKG+'.'+cls],log)
-   validate_transport(value.decode(),json.loads((out/(log+'.command.json')).read_text()))
-  except Exception as e:failure=e
-  if restore is not None:
-   try:restore()
-   except Exception as e:
-    if failure is None:failure=e
-  # Diagnostics are retained on transport failure; never substitute a recovered PASS.
-  try:
-   names=shell(['run-as',PKG,'ls',remote],folder+'/files.txt').decode().splitlines()
-   names=[n for n in names if pathlib.Path(n).suffix in ('.json','.png','.txt','.md')]
-   assert names and all('/' not in n and not n.startswith('-') for n in names)
-   raw=run(ADB+['exec-out','run-as',PKG,'tar','-cf','-','-C',remote,*names],folder+'/bundle.tar')
-   unpack(raw,out/folder)
-  finally:
-   if failure:raise failure
+ def instrument(cls,folder,remote,extra=()):
+  log=folder+'/runtime.txt'
+  value=run(ADB+['shell','am','instrument','-r','-w','-e','run_id',run_id,'-e','device_evidence','true',*extra,PKG+'.test/'+PKG+'.'+cls],log)
+  validate_transport(value.decode(),json.loads((out/(log+'.command.json')).read_text()))
+  stream_evidence(value.decode(),run_id,out/folder)
   filename='report.json'
   if cls=='DocumentsInstrumentation':filename='restart.json' if 'restart' in extra else 'results.json'
   validate(json.loads((out/folder/filename).read_text()),run_id);reports.append({'file':folder+'/'+filename,'transport':log})
@@ -106,14 +112,19 @@ def main():
  for p in [apk,test]:run(ADB+['install','--no-incremental','-r',p],'install-'+p.name+'.txt')
  registrations=shell(['pm','list','instrumentation'],'registered-tests.txt').decode()
  assert all(PKG+'.test/'+PKG+'.'+name in registrations for name in ['ModernIntegratedInstrumentation','ProductUiInstrumentation','DocumentsInstrumentation']),'Required instrumentation not registered'
+ for control in ['false','true']:
+  probe=run_id+'-probe-'+control;folder='probe-'+control
+  value=run(ADB+['shell','am','instrument','-r','-w','-e','run_id',probe,'-e','device_evidence','true','-e','automation',control,PKG+'.test/'+PKG+'.ModernTeardownProbe'],folder+'/runtime.txt')
+  validate_transport(value.decode(),json.loads((out/(folder+'/runtime.txt.command.json')).read_text()));stream_evidence(value.decode(),probe,out/folder);validate(json.loads((out/folder/'report.json').read_text()),probe)
+  boot=shell(['cat','/proc/sys/kernel/random/boot_id'],folder+'/boot-after.txt');assert boot==(out/'boot-id-before.txt').read_bytes(),'Probe rebooted device'
  font=shell(['settings','get','system','font_scale'],'font-before.txt').decode().strip()
  def restore_font(name):
   shell(['settings','delete','system','font_scale'] if font=='null' else ['settings','put','system','font_scale',font],name+'.txt')
   actual=shell(['settings','get','system','font_scale'],name+'-value.txt').decode().strip();assert actual==font,'Font restoration readback failed'
  try:
   for label,scale in [('default','1.0'),('large','2.0')]:
-   shell(['settings','put','system','font_scale',scale],'font-'+label+'.txt');mode=run_id+'-'+label
-   instrument('ProductUiInstrumentation',label,'files/product-ui-'+mode,['-e','mode',mode],lambda:restore_font('font-'+label+'-restored'))
+   mode=run_id+'-'+label
+   instrument('ProductUiInstrumentation',label,'files/product-ui-'+mode,['-e','mode',mode,'-e','font_target',scale])
   shell(['am','force-stop',PKG],'cold-stop.txt');mode='restart-'+run_id
   instrument('ProductUiInstrumentation','cold','files/product-ui-'+mode,['-e','mode',mode])
  finally:restore_font('font-final')
