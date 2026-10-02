@@ -19,3 +19,13 @@ The new candidate must bind build inputs, APKs, installed state, corpus, setting
 ## Open gates
 
 Source dispositions, admitted counts, implementation, development tests, required checks, independent criticism and new candidate/device evidence are not yet complete. Exclusive modern5564 ownership is required before device work. Physical Android/GrapheneOS, full-capacity modern Android, TalkBack, generated quality, broad rights clearance, independent unseen/matched comparison and human acceptance remain open. No competitive claim follows from this task.
+
+## First implementation checkpoint
+
+The schema-2 importer now carries complete selected source text, shared offline licenses, rights-review and source-packet identities, and contiguous exact paragraph bindings. It rejects missing identities, duplicate source identities, source-text hash mismatch, missing/changed licenses, unadmitted rights, fractional offsets, shifted paragraphs, trailing unbound text and split Unicode surrogate ranges. Existing schema-1 packs remain readable; this is integrity validation, not cryptographic proof of publisher authenticity.
+
+The initial Android build passed on LLMRig (`downloads/reference-expansion/build-initial.log`), producing APK SHA-256 `993f5932b80c8d77820252353c14517b04b5ab7d52d1037c73b06dc1177b6d9a`. This is compilation only, not device validation. Gradle is configured for two workers and a 2 GiB heap; no total-process memory claim is made.
+
+The original extraction packet is frozen at SHA-256 `abbb800f0c837f401cb9c9d0f3ccf836e191c9f06d797917ef7678833ee392bc` in `downloads/reference-expansion/source-packet.json`. It contains 140 candidates and 1,095 candidate paragraphs, not admitted coverage. Independent source review is explicitly narrower: inspect first-paragraph admission plus source-wide rights/context; later paragraphs remain excluded. Discovered missing attribution notices, formula/list lead-ins and misplaced topic content must remain recorded, not promoted by hash matching.
+
+The new public development protocol contains 53 questions across the selected families, paraphrases, four multipart requests, six unavailable-evidence controls and three misleading premises. `tools/evaluation/reference-expansion/development.json` SHA-256: `7ffc25a4adfcd04a19ec09dd37e23efa0c2c42ede53115986771aeb06d76d20d`. Questions were frozen after source selection and before retrieval changes or execution. Excluding an expected source records a miss, not permission to rewrite the expectation. These builder-visible cases establish no unseen generalization.

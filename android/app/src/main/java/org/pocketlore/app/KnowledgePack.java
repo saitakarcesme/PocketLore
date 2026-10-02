@@ -93,12 +93,17 @@ public final class KnowledgePack {
         }
         require(offset==end,"Unexpected ZIP directory data");
         JSONObject m=new JSONObject(utf8(files.get("manifest.json")));
-        require(m.get("schema").equals(1) && field(m,"language").equals("en"),"Unsupported pack schema or language");
+        require(m.get("schema") instanceof Integer,"Invalid pack schema type");
+        int schema=m.getInt("schema");
+        require((schema==1 || schema==2) && field(m,"language").equals("en"),"Unsupported pack schema or language");
+        JSONObject sharedLicenses=schema==2?m.getJSONObject("licenses"):null;
+        if(schema==2) require(field(m,"source_packet_sha256").matches("[0-9a-f]{64}"),"Missing source packet identity");
         String id=field(m,"id"), warning=field(m,"warning"); field(m,"transformation");
         require(id.matches("[a-z0-9-]{1,80}"),"Invalid pack ID");
         require(hash(files.get("passages.tsv")).equals(field(m,"passages_sha256")),"Passage payload hash mismatch");
         Map<String,String> provenance=new HashMap<>(),documentKeys=new HashMap<>();
-        Map<String,String[]> expected=new HashMap<>(); Map<String,String[]> originalSpans=new HashMap<>(); Set<String> documentIds=new HashSet<>();
+        Map<String,String[]> expected=new HashMap<>(); Map<String,String[]> originalSpans=new HashMap<>();
+        Map<String,String> boundSpans=new HashMap<>(); Set<String> documentIds=new HashSet<>(), sourceIdentities=new HashSet<>();
         JSONArray docs=m.getJSONArray("documents"); require(docs.length()>0 && docs.length()<=1000,"Document count out of range");
         for(int i=0;i<docs.length();i++) {
             JSONObject d=docs.getJSONObject(i);String did=field(d,"id");
@@ -108,21 +113,46 @@ public final class KnowledgePack {
             require(field(d,"retrieved_date").matches("[0-9]{4}-[0-9]{2}-[0-9]{2}") && field(d,"raw_sha256").matches("[0-9a-f]{64}"),"Invalid source date or hash");
             require(field(d,"language").equals("en"),"Non-English document metadata");field(d,"category");
             String rights=field(d,"attribution")+"; "+field(d,"license")+"; "+field(d,"license_url");
+            String sourceText=null, legal=null;
+            if(schema==2) {
+                String identity=field(d,"source_identity");
+                require(identity.equals(url+"#sha256="+field(d,"raw_sha256")),"Mismatched source identity");
+                require(sourceIdentities.add(identity),"Duplicate source identity");
+                sourceText=d.getString("source_text");
+                require(!sourceText.isEmpty() && sourceText.length()<=16000 && hash(sourceText.getBytes(StandardCharsets.UTF_8)).equals(field(d,"source_text_sha256")),"Source text identity mismatch");
+                require(field(d,"rights_review_sha256").matches("[0-9a-f]{64}"),"Missing rights review identity");
+                require(field(d,"rights_status").equals("admit-selected-spans"),"Source rights not admitted");
+                JSONObject license=sharedLicenses.getJSONObject(field(d,"license_id"));
+                legal=license.getString("text");
+                require(hash(legal.getBytes(StandardCharsets.UTF_8)).equals(field(license,"sha256")) && field(license,"url").equals(field(d,"license_url")),"Offline license identity mismatch");
+            } else if(d.has("license_text")) legal=d.getString("license_text");
             JSONArray passages=d.getJSONArray("passages");require(passages.length()>0,"Empty document");
+            long previousFinish=-2;
             for(int j=0;j<passages.length();j++) {
                 JSONObject p=passages.getJSONObject(j);String digest=field(p,"sha256"), citation=field(p,"id");
                 require(digest.matches("[0-9a-f]{64}") && citation.equals(did+"-"+digest.substring(0,16)),"Invalid stable citation ID");
                 provenance.put(citation,"Original citation: "+citation+"\nSource document ID: "+did+"\nSource SHA-256: "+field(d,"raw_sha256")+"\nPassage SHA-256: "+digest);
                 if(p.has("source_utf16_start") || p.has("source_utf16_end")) {
+                    require(p.get("source_utf16_start") instanceof Integer || p.get("source_utf16_start") instanceof Long,"Invalid source start type");
+                    require(p.get("source_utf16_end") instanceof Integer || p.get("source_utf16_end") instanceof Long,"Invalid source end type");
                     long start=p.getLong("source_utf16_start"), finish=p.getLong("source_utf16_end");
                     require(start>=0 && finish>start && finish-start<=20000,"Invalid original source span");
+                    if(schema==2) {
+                        require(finish<=sourceText.length() && start==previousFinish+2,"Invalid or noncontiguous source paragraph span");
+                        require(!(start>0 && Character.isLowSurrogate(sourceText.charAt((int)start))),"Split source surrogate");
+                        require(!(finish<sourceText.length() && Character.isLowSurrogate(sourceText.charAt((int)finish))),"Split source surrogate");
+                        String literal=sourceText.substring((int)start,(int)finish);
+                        require(literal.indexOf('\n')<0 && hash(literal.getBytes(StandardCharsets.UTF_8)).equals(digest),"Source paragraph mismatch");
+                        if(start>0) require(sourceText.substring((int)start-2,(int)start).equals("\n\n"),"Source paragraph separator mismatch");
+                        boundSpans.put(citation,literal);previousFinish=finish;
+                    }
                     String originalHash=field(p,"source_span_sha256");
                     require(originalHash.matches("[0-9a-f]{64}"),"Invalid original span hash");
                     originalSpans.put(citation,new String[]{Long.toString(finish-start),originalHash});
                     provenance.put(citation,provenance.get(citation)+"\n"+(d.has("source_text_format")?"Source text ("+field(d,"source_text_format")+")":"Original Markdown")+" UTF-16 range: ["+start+", "+finish+")\nOriginal span SHA-256: "+originalHash+"\n"+field(m,"transformation"));
                 }
-                if(d.has("license_text")) {
-                    String legal=d.getString("license_text");
+                if(schema==2) require(p.has("source_utf16_start") && p.has("source_utf16_end"),"Missing source paragraph binding");
+                if(legal!=null) {
                     require(!legal.trim().isEmpty() && legal.length()<=24000,"Invalid offline license text");
                     provenance.put(citation,provenance.get(citation)+"\nRights basis: "+field(d,"rights_basis")+"\nRights limits: "+field(d,"rights_disposition")+"\nOffline license text:\n"+legal);
                 }
@@ -130,6 +160,7 @@ public final class KnowledgePack {
                 require(expected.put(citation,new String[]{title,url,date,rights,digest})==null,"Duplicate citation");
                 require(expected.size()<=20000,"Too many passages");
             }
+            if(schema==2) require(previousFinish==sourceText.length(),"Unbound trailing source text");
         }
         String text=utf8(files.get("passages.tsv"));require(text.endsWith("\n"),"Truncated passage payload");
         String[] rows=text.split("\n",-1);require(m.get("passage_count") instanceof Integer,"Invalid passage count type");require(rows.length-1==m.getInt("passage_count") && expected.size()==rows.length-1,"Passage count mismatch");
@@ -143,6 +174,7 @@ public final class KnowledgePack {
                 String[] span=originalSpans.get(r[0]);String original=r[5].replace('\u2028','\n').replace('\u2409','\t');
                 require(original.length()==Long.parseLong(span[0]) && hash(original.getBytes(StandardCharsets.UTF_8)).equals(span[1]),"Original Markdown span mismatch");
             }
+            if(boundSpans.containsKey(r[0])) require(r[5].equals(boundSpans.get(r[0])),"Literal source paragraph changed");
             verifiedRows.add(r);
         }
         return new KnowledgePack(index?new ResearchEngine(new StringReader(text)):null,id,warning,hash(archive),verifiedRows,provenance,documentKeys,archive.length,total,files.get("manifest.json").length,docs.length());
