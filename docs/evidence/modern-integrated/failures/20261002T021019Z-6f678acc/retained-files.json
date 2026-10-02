@@ -1,0 +1,162 @@
+{
+  "state.txt": {
+    "bytes": 7,
+    "sha256": "c98373c1abef78070f6beef6b4ae4fbf3de348dac280195c7f93441920584af9"
+  },
+  "state.txt.command.json": {
+    "bytes": 59,
+    "sha256": "59fe19da1e7ccc7c1bdd3ce53fbbd1e5c910c07e13d08b0d242da3d2cf32f148"
+  },
+  "boot.txt": {
+    "bytes": 2,
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  "boot.txt.command.json": {
+    "bytes": 58,
+    "sha256": "4881d584d2bfb96d64271d78820cb5dac88444d852e927813bc32a7381c5d9c7"
+  },
+  "sdk.txt": {
+    "bytes": 3,
+    "sha256": "b58a3da5fde2680191877ec88a1aa7d06927cc3b30cdf0d0db8c39b488891576"
+  },
+  "sdk.txt.command.json": {
+    "bytes": 58,
+    "sha256": "f5eb4b1f6aeb6e89548177b4b7442770b53bacc05ba22c8fb93120a29b715e21"
+  },
+  "pages.txt": {
+    "bytes": 6,
+    "sha256": "33f50728129313570f6b953c08b559d9cb5f673e981e647cee4dc10d6cd48e99"
+  },
+  "pages.txt.command.json": {
+    "bytes": 57,
+    "sha256": "8aa43e3de9a68d17895a84e36bf8b990cbda72ec7f849cb7d8dd700d068cd570"
+  },
+  "properties.txt": {
+    "bytes": 26303,
+    "sha256": "250930c6d215342b83a00b084b4e1c50f874a09fa8422f47634ccb408224c07e"
+  },
+  "properties.txt.command.json": {
+    "bytes": 58,
+    "sha256": "4fee2f714b5bf2942278f43fe74652142b1af8b33a1320a9e4917e97b604df21"
+  },
+  "package-before.txt": {
+    "bytes": 5139,
+    "sha256": "021aed24739346a9d001770895e507913255992bc27d9f94e6b0b909979c3918"
+  },
+  "package-before.txt.command.json": {
+    "bytes": 58,
+    "sha256": "364ed9ca99075405465a642b0e3621bcc51023f8c91e33ae5d4e67242d23d43e"
+  },
+  "assets-before.txt": {
+    "bytes": 334,
+    "sha256": "85847d4c6aba89dea14b6cfa03b17f2bdf9d94ccfa19b0e85078ecc830ff5acd"
+  },
+  "assets-before.txt.command.json": {
+    "bytes": 56,
+    "sha256": "75ac3072210b8aa4a9b243e223b963c1db757e85e4064bda6ef5823180f16909"
+  },
+  "allocated-before.txt": {
+    "bytes": 9,
+    "sha256": "a76bef4224bb23df4cfd55f7dab7d8246f5923e4d05bc6d666ce4097ea1a1350"
+  },
+  "allocated-before.txt.command.json": {
+    "bytes": 58,
+    "sha256": "ee34784d6776a22406493171a9227fd1639d904daa85dcb3c733c4fab0a74ace"
+  },
+  "logical-before.txt": {
+    "bytes": 12,
+    "sha256": "fd6d789be9e9470934a7d73404e3ccc6c80334ba1b992c038e69b4abd68b1fdb"
+  },
+  "logical-before.txt.command.json": {
+    "bytes": 57,
+    "sha256": "0d3d843ec002a9fdd6c8f27d9f17920569ca21d490988d53c3682c2691d24f36"
+  },
+  "df-before.txt": {
+    "bytes": 122,
+    "sha256": "7836872c1bd318018d2b4c9d2453149d08f99c383776fdc7f969103e9f796ba3"
+  },
+  "df-before.txt.command.json": {
+    "bytes": 58,
+    "sha256": "ae8b7de2dbc81848be43ff3b7424c2a79621e9ccc42ecc1646ff2c47721b99f0"
+  },
+  "build.log": {
+    "bytes": 32354,
+    "sha256": "4ac0cd24b1c154786ddc0d797f81835c5522f61422f36bb8c42197be2bf70c16"
+  },
+  "build.log.command.json": {
+    "bytes": 56,
+    "sha256": "e97fd0752dafc699cda7837b380f1ba7b28acc546c98ccd1bd9aafa20d7ca439"
+  },
+  "native.json": {
+    "bytes": 5062,
+    "sha256": "fba0f61ed35434f41cecffe41347defcdfa679dd151a7eb4bc0e9749dcb0b4b4"
+  },
+  "native.json.command.json": {
+    "bytes": 57,
+    "sha256": "e262e51ff4bd26b538fd92b190e54a08c9cd62d8579acdaf7d3e0177a7592e96"
+  },
+  "zipalign.txt": {
+    "bytes": 2236,
+    "sha256": "25e65d984e576618c4e3288a22325f71b04ede7323f24308ce10b7c7187c6d92"
+  },
+  "zipalign.txt.command.json": {
+    "bytes": 59,
+    "sha256": "65b51eaf2b128075693de0e7fcc8ef9acc189df839d2e2d2f0a5f7f75868998e"
+  },
+  "permissions.txt": {
+    "bytes": 214,
+    "sha256": "ad96613200a24b502da5652d9881880414e4655f443537a9ec1225bf1bc2e559"
+  },
+  "permissions.txt.command.json": {
+    "bytes": 59,
+    "sha256": "1128ec63cc4a5331f07bbe07a68f4560dffd4ccc5babd52e48b85a7a635a033d"
+  },
+  "install-app-debug.apk.txt": {
+    "bytes": 36,
+    "sha256": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7"
+  },
+  "install-app-debug.apk.txt.command.json": {
+    "bytes": 56,
+    "sha256": "640e75e8354b1c479f5b2e4e03646025b9260108651b61a3eca95b90c9120052"
+  },
+  "install-app-debug-androidTest.apk.txt": {
+    "bytes": 36,
+    "sha256": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7"
+  },
+  "install-app-debug-androidTest.apk.txt.command.json": {
+    "bytes": 57,
+    "sha256": "05e1bba2adc6adfb549dac813ff9e654958c5d4dfc93237fef3b713e893fd90d"
+  },
+  "font-before.txt": {
+    "bytes": 4,
+    "sha256": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+  },
+  "font-before.txt.command.json": {
+    "bytes": 58,
+    "sha256": "a5f54eb241195b11bfb62d04ad496b6f5536ac417000065e5a4307bf5fa2720a"
+  },
+  "font-restored.txt": {
+    "bytes": 20,
+    "sha256": "a7d0391f2b9ecc7dc302d6ca042251f413b26e1f1ee29d396e7db3df0701640f"
+  },
+  "font-restored.txt.command.json": {
+    "bytes": 58,
+    "sha256": "7888aaa22e23564625604d798a28f6cc86090da1eea94e51d42513c2a9000e91"
+  },
+  "native-cards-recognition/runtime.txt": {
+    "bytes": 3056,
+    "sha256": "7f9e2a66746ecb17187ca0874c717a85fbe42e07352ece8e9b7440cef60da490"
+  },
+  "native-cards-recognition/runtime.txt.command.json": {
+    "bytes": 55,
+    "sha256": "df3f06b63c21167f81d91314da187325fb080510842f0628d2f8faeb3a594f48"
+  },
+  "native-cards-recognition/files.txt": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native-cards-recognition/files.txt.command.json": {
+    "bytes": 56,
+    "sha256": "199d4004c8c3548ee2dc979c44221ae04d1d3a90554cd9b2e24e93134d71a1f6"
+  }
+}

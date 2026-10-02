@@ -10,13 +10,16 @@ def sha(p):
  return h.hexdigest()
 def validate(report,run_id):
  assert report['run_id']==run_id and report['status']=='PASS','Stale or failed report'
+def validate_transport(raw,metadata):
+ assert metadata.get("returncode")==0 and "timeout_seconds" not in metadata,"Failed transport"
+ assert "INSTRUMENTATION_CODE: -1" in raw and "Process crashed" not in raw,"Instrumentation completion missing"
 def verify(out):
  m=json.loads((out/'manifest.json').read_text());assert m['serial']=='emulator-5564' and m['sdk']==37 and m['page_size']==16384
  for name,pin in m['files'].items():assert sha(out/name)==pin,'Missing or changed '+name
  for lane in m['reports']:
   r=json.loads((out/lane['file']).read_text());validate(r,m['run_id'])
-  transport=(out/lane['transport']).read_text();assert 'INSTRUMENTATION_CODE: -1' in transport and 'Process crashed' not in transport
-  c=json.loads((out/(lane['transport']+'.command.json')).read_text());assert c['returncode']==0
+  transport=(out/lane['transport']).read_text()
+  c=json.loads((out/(lane['transport']+'.command.json')).read_text());validate_transport(transport,c)
  assert (out/'installed-hash.txt').read_text().split()[0]==m['apk_sha256']
  assert (out/'assets-before.txt').read_bytes()==(out/'assets-after.txt').read_bytes(),'Saved asset identity changed'
  modern=json.loads((out/'native-cards-recognition/report.json').read_text());assert modern['generation_performed'] is False and modern['page_size']==16384 and modern['sdk']==37
@@ -51,8 +54,8 @@ def main():
  def instrument(cls,folder,remote,extra=()):
   log=folder+'/runtime.txt';failure=None
   try:
-   value=run(ADB+['shell','am','instrument','-w','-e','run_id',run_id,*extra,PKG+'.test/'+PKG+'.'+cls],log)
-   assert b'INSTRUMENTATION_CODE: -1' in value and b'Process crashed' not in value,'Instrumentation completion missing'
+   value=run(ADB+['shell','am','instrument','-r','-w','-e','run_id',run_id,*extra,PKG+'.test/'+PKG+'.'+cls],log)
+   validate_transport(value.decode(),json.loads((out/(log+'.command.json')).read_text()))
   except Exception as e:failure=e
   # Diagnostics are retained on transport failure; never substitute a recovered PASS.
   try:
@@ -64,6 +67,7 @@ def main():
   filename='report.json'
   if cls=='DocumentsInstrumentation':filename='restart.json' if 'restart' in extra else 'results.json'
   validate(json.loads((out/folder/filename).read_text()),run_id);reports.append({'file':folder+'/'+filename,'transport':log})
+ run(['python3','-m','unittest','discover','-s','tools/evaluation/modern-integrated','-p','test_*.py'],'receipt-tests.txt')
  assert run(ADB+['get-state'],'state.txt').strip()==b'device'
  assert shell(['getprop','sys.boot_completed'],'boot.txt').strip()==b'1'
  assert shell(['getprop','ro.build.version.sdk'],'sdk.txt').strip()==b'37'
@@ -71,6 +75,7 @@ def main():
  shell(['getprop'],'properties.txt');shell(['dumpsys','package',PKG],'package-before.txt');capture_assets('before')
  run(['bash','tools/android-build.sh','assembleDebug','assembleDebugAndroidTest','-I',ROOT/'tools/evaluation/modern-integrated/source.gradle','-PpocketloreTestRunner=org.pocketlore.app.ModernIntegratedInstrumentation'],'build.log')
  apk=ROOT/'android/app/build/outputs/apk/debug/app-debug.apk';test=ROOT/'android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk';apk_hash=sha(apk)
+ assert apk_hash=='9c71a32dbc2deac3d650c6849a335379bd2b005c1516437c613bcd0fcff7dd70','Accepted390 application identity changed'
  run(['python3','tools/evaluation/verify_16kb_artifacts.py',apk],'native.json')
  run(['/home/isa/Android/atlas-toolchain/sdk/build-tools/35.0.0/zipalign','-c','-P','16','-v','4',apk],'zipalign.txt')
  run(['/home/isa/Android/atlas-toolchain/sdk/build-tools/35.0.0/aapt','dump','permissions',apk],'permissions.txt')
@@ -115,5 +120,14 @@ def main():
   except AssertionError:negative.append('stale-even-with-rehashed-artifact')
   else:raise AssertionError('Stale run accepted')
  finally:victim.write_bytes(original)
+ identity=out/'installed-hash.txt';saved=identity.read_bytes()
+ try:
+  identity.write_text('0'*64+'  /changed.apk\n')
+  altered=copy.deepcopy(m);altered['files']['installed-hash.txt']=sha(identity);(out/'manifest.json').write_text(json.dumps(altered))
+  try:verify(out)
+  except AssertionError:negative.append('changed-installed-identity-even-with-rehashed-receipt')
+  else:raise AssertionError('Changed installed identity accepted')
+ finally:
+  identity.write_bytes(saved);(out/'manifest.json').write_text(json.dumps(m,indent=2)+'\n')
  (out/'negative-controls.json').write_text(json.dumps(negative));verify(out);print(json.dumps({'status':'PASS','output':str(out),'apk_sha256':apk_hash}),flush=True)
 if __name__=='__main__':main()
