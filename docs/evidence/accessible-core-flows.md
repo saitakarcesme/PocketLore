@@ -1,6 +1,6 @@
 # Accessible core-flow controls — task 450
 
-The required build and revised bounded check pass on source checkpoint `4c29fd5`, with 72 states and actual rendered status-bar samples. The earlier automated pass and independent visual finding remain historical evidence; the reconciliation is recorded separately below. No accessibility-compliance, physical comfort or product-acceptance claim follows.
+The required build and status-bar check passed on source checkpoint `4c29fd5`, but a second independent screenshot review found low-contrast dark-reader navigation icons; its automated scope was incomplete. The earlier automated pass and independent visual finding remain historical evidence; the reconciliation is recorded separately below. No accessibility-compliance, physical comfort or product-acceptance claim follows.
 
 ## Scope and frozen protocol
 
@@ -69,7 +69,7 @@ The test previously narrowed the app window, introducing OS letterboxing behavio
 
 Run `20261002T045331Z-65e24a72` failed the initial pixel-test occupancy assumption: only 88.98% of the entire status band was background because dark icons occupied the rest. The preserved screenshot shows dark icons, 5,595 pixels above 4.5:1 and maximum observed contrast 5.5554:1. The corrected sampling separates the clear center background from icon regions, rather than lowering the required glyph contrast. Settings and owned records were restored in that failed invocation.
 
-## Reconciled final candidate and fresh receipts
+## Status-reconciled candidate, before navigation review
 
 Source checkpoint **4c29fd5**, run **20261002T045657Z-93b53e81**, source/build manifest SHA-256 **87523bb215a1ea5debd86968e7ae03a53e5fb755aa7656b20e3cb020effab264**. `bash tools/evaluation/check_accessible_core_flows.sh` passed, followed by a separate successful `bash tools/android-build.sh`; the latter reproduced the same production APK. Exact source maps are unchanged. Both immediate and final installed production/test hashes match the build. The revised packet is `accessible-core/status-reconciled-run/`; the original passing packet is not overwritten.
 
@@ -83,3 +83,11 @@ The revised receipt contains **72 states**, **150 action observations**, **30 te
 Environment remains **5560/API35/4096-byte pages**, boot ID `59ebd1a1-2fbf-4b25-aed7-2672c2d46604` unchanged; font **1.0 → 1.0**, user rotation **0 → 0**, auto-rotation **1 → 1**, without host rescue. Original Notebook fingerprint, preferences and model/selection/collection/optional-asset lists remain unchanged. Task-owned source/comparison/import fixtures were removed. Storage was **3,285,336,727 → 3,296,122,849 logical bytes** (+10,786,122) and **3,220,032 → 3,231,500 allocated KiB** (+11,468 KiB), including retained evidence/cache/SQLite allocations; this is not a continuous peak or whole-device budget.
 
 Missing-stream, corrupt-receipt, stale-run and changed-installed-test negative controls pass; offline cross-artifact verification also passes. The exact originals, including screenshots and all accessibility streams, are hashed in the new packet's `original-artifacts.json`. No screenshot/APK/model payloads are committed. The first review and failed pixel-occupancy invocation remain separately preserved. Independent re-review is attached to the final frozen checkpoint; these bounded emulator results leave all physical, TalkBack, human comfort, provider, rights and quality gates above open.
+
+## Navigation-bar review and bounded repair
+
+The second independent review of `ef87bc0` confirmed identity/retention and status-bar repair but identified dark gray Android navigation icons on the dark reader background. Its exact conclusion is preserved in `accessible-core/independent-review-second.json`. The status-only pixel test did not cover that region; its PASS is not navigation contrast proof.
+
+The reader now applies modern status/navigation appearance **after** legacy bar colors and visibility flags, so those calls cannot replace the final requested appearance. The test adds actual navigation-region pixel samples derived from navigation insets, including side bars in landscape. It requires rendered contrasting glyph pixels and the expected background, retaining measurements and screenshots. No global navigation mode or theme preference is changed.
+
+The call-order repair failed in run `20261002T050511Z-a159716c`: the actual dark-reader navigation sample had zero pixels reaching 4.5:1 and maximum contrast **1.6478:1**. This failure remains preserved. The bounded final design retains light app chrome behind both system bars, with dark icons, while the scrollable reading surface and its text still follow the selected light/dark reading theme. It does not claim a whole-window night mode. Both status and navigation screenshot assertions retain the 4.5:1 threshold; content theme contrast is checked separately.

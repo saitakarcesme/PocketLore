@@ -45,7 +45,14 @@ public final class SourceReaderActivity extends NotebookActivity {
         colors(body);applyTheme();
     }
     private String readingText(NotebookStore.Entry e){return (e.question.isEmpty()?"":"Question\n"+e.question+"\n")+e.body+"\n\nSource and coverage\n"+e.provenance+"\n\nCaptured on this device: "+android.text.format.DateFormat.format("yyyy-MM-dd HH:mm",e.created)+"\nCapture time is not the source publication date.";}
-    private void applyTheme(){getWindow().setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(cream?ReaderUi.NAVY:ReaderUi.CREAM));scroll.setBackgroundColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);readerRoot.setBackgroundColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);getWindow().setStatusBarColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);getWindow().setNavigationBarColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);getWindow().getDecorView().setSystemUiVisibility(cream?View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR|View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR:0);ReaderUi.barAppearance(this,cream);}
+    private void applyTheme(){
+        // Reading themes change the content surface; system bars retain readable app chrome.
+        getWindow().setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(ReaderUi.NAVY));
+        scroll.setBackgroundColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);readerRoot.setBackgroundColor(ReaderUi.NAVY);
+        getWindow().setStatusBarColor(ReaderUi.NAVY);getWindow().setNavigationBarColor(ReaderUi.NAVY);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR|View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
+        ReaderUi.barAppearance(this,true);
+    }
     private List<NotebookStore.Entry> current(){if(note!=null)entry.note=note.getText().toString();return other==null?Collections.singletonList(entry):Arrays.asList(entry,other);}
     private void colors(View v){
         if(v instanceof TextView){TextView t=(TextView)v;t.setTextColor(cream?ReaderUi.CREAM:ReaderUi.NAVY);t.setHintTextColor(cream?Color.rgb(23,95,88):Color.rgb(188,203,211));}
