@@ -1,5 +1,5 @@
 """Explicit API37 subset compatibility; no model generation or shared serial defaults."""
-import base64,copy,hashlib,io,json,pathlib,subprocess,sys,tarfile,time,uuid
+import base64,zipfile,copy,hashlib,io,json,pathlib,subprocess,sys,tarfile,time,uuid
 ROOT=pathlib.Path(__file__).resolve().parents[3]
 ADB=['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb','-s','emulator-5564']
 PKG='org.pocketlore.app'
@@ -45,7 +45,7 @@ def stream_evidence(raw,run_id,destination):
 def verify(out):
  m=json.loads((out/'manifest.json').read_text());assert m['serial']=='emulator-5564' and m['sdk']==37 and m['page_size']==16384
  for name,pin in m['files'].items():assert sha(out/name)==pin,'Missing or changed '+name
- assert {x['file'] for x in m['reports']}=={'default/report.json','large/report.json','cold/report.json','documents/results.json','documents-cold/restart.json','native-cards-recognition/report.json'}
+ assert {x['file'] for x in m['reports']}=={'default/report.json','large/report.json','cold/report.json','documents/results.json','documents-cold/restart.json','native-cards-recognition/report.json','brief-warm/install.json','brief-cold-0/restart.json','brief-cold-1/restart.json','brief-cold-2/restart.json'}
  for lane in m['reports']:
   r=json.loads((out/lane['file']).read_text());validate(r,m['run_id'])
   transport=(out/lane['transport']).read_text()
@@ -69,6 +69,11 @@ def verify(out):
  assert {'live_catalog_restored_exactly','personal_library_return_does_not_infer','actual_source_dialog_offsets_owner_exact_text','blocked_export_cancelled'}.issubset(d['checks'])
  cold=json.loads((out/'cold/report.json').read_text());assert 'Bookmark and note survive process death' in cold['checks']
  reopened=json.loads((out/'documents-cold/restart.json').read_text());assert reopened['api']==37 and reopened['retained_collections']==7
+ brief=json.loads((out/'brief-warm/install.json').read_text());assert len(brief['outputs'])==8 and not brief['outputs'][2]['quotes']
+ assert all(not r['generated'] for r in brief['outputs'])
+ assert 'exact edition passage and offline license inspected' in brief['checks']
+ for i in range(3):
+  cold=json.loads((out/('brief-cold-'+str(i)+'/restart.json')).read_text());assert cold['outputs'][0]['rendered']==brief['outputs'][0]['rendered']
  assert 'pageSizeCompat=0' in (out/'package-after.txt').read_text()
  assert 'App compatibility' not in (out/'ui.xml').read_text()
  assert 'android.permission.INTERNET' not in (out/'permissions.txt').read_text()
@@ -86,7 +91,7 @@ def main():
  def shell(args,name):return run(ADB+['shell']+args,name)
  def capture_assets(label):
   # Exact initial paths: absent values stay explicit, not a setup instruction.
-  command="for p in files/model.gguf files/model-selection files/pack-library/catalog.json files/scale-library/catalog.json files/page-size-test/model.gguf files/attachment-assets/tessdata/eng.traineddata files/attachment-assets/ggml-tiny.en.bin; do if [ -f \"$p\" ]; then sha256sum \"$p\"; else echo ABSENT:$p; fi; done"
+  command="for p in files/model.gguf files/model-selection files/scale-library/catalog.json files/page-size-test/model.gguf files/attachment-assets/tessdata/eng.traineddata files/attachment-assets/ggml-tiny.en.bin; do if [ -f \"$p\" ]; then sha256sum \"$p\"; else echo ABSENT:$p; fi; done"
   shell(['run-as',PKG,'sh','-c',"'"+command+"'"],'assets-'+label+'.txt')
   shell(['run-as',PKG,'du','-sk','.'],'allocated-'+label+'.txt');shell(['run-as',PKG,'du','-sb','.'],'logical-'+label+'.txt');shell(['df','-k','/data'],'df-'+label+'.txt')
   app_path=shell(['pm','path',PKG],'apk-path-'+label+'.txt').decode().strip().removeprefix('package:');shell(['sha256sum',app_path],'apk-hash-'+label+'.txt')
@@ -95,10 +100,11 @@ def main():
  def instrument(cls,folder,remote,extra=()):
   log=folder+'/runtime.txt'
   value=run(ADB+['shell','am','instrument','-r','-w','-e','run_id',run_id,'-e','device_evidence','true',*extra,PKG+'.test/'+PKG+'.'+cls],log)
-  validate_transport(value.decode(),json.loads((out/(log+'.command.json')).read_text()))
   stream_evidence(value.decode(),run_id,out/folder)
+  validate_transport(value.decode(),json.loads((out/(log+'.command.json')).read_text()))
   filename='report.json'
   if cls=='DocumentsInstrumentation':filename='restart.json' if 'restart' in extra else 'results.json'
+  if cls=='FrozenBriefInstrumentation':filename='restart.json' if 'restart' in extra else 'install.json'
   validate(json.loads((out/folder/filename).read_text()),run_id);reports.append({'file':folder+'/'+filename,'transport':log})
  assert run(ADB+['get-state'],'state.txt').strip()==b'device'
  assert shell(['getprop','sys.boot_completed'],'boot.txt').strip()==b'1'
@@ -145,6 +151,27 @@ def main():
  shell(['am','force-stop',PKG],'documents-cold-stop.txt')
  instrument('DocumentsInstrumentation','documents-cold','files/'+directory,['-e','directory',directory,'-e','phase','restart'])
  instrument('ModernIntegratedInstrumentation','native-cards-recognition','files/modern-'+run_id)
+ # Small already reviewed pack, no new acquisition or hidden question set.
+ pack=ROOT/'downloads/general-research/reviewed-reference.plpack';assert sha(pack)=='10bb8878270ac7b7aa65036a5fd71007c34b3721bc269ce77544d542f0f27656'
+ folder='files/general-research-'+run_id;shell(['run-as',PKG,'mkdir','-p',folder],'brief-mkdir.txt')
+ original_cases=json.loads((ROOT/'tools/evaluation/general-research/cases.json').read_text());cases=[original_cases[i] for i in [0,20,23]]+[original_cases[0]]*5
+ payloads={'valid.plpack':pack.read_bytes(),'cases.json':json.dumps(cases).encode()}
+ with zipfile.ZipFile(pack) as z:original={n:z.read(n) for n in z.namelist()}
+ for change in ['corrupt','rights','offset']:
+  f=dict(original);manifest=json.loads(f['manifest.json'])
+  if change=='corrupt':f['passages.tsv']+=b'changed'
+  elif change=='rights':manifest['documents'][0]['license_text']=''
+  else:manifest['documents'][0]['passages'][0]['source_utf16_end']+=1
+  f['manifest.json']=json.dumps(manifest).encode();buffer=io.BytesIO()
+  with zipfile.ZipFile(buffer,'w') as z:
+   for n,b in f.items():z.writestr(n,b)
+  payloads[change+'.plpack']=buffer.getvalue()
+ for name,b in payloads.items():run(ADB+['shell','run-as',PKG,'sh','-c',"'cat > "+folder+'/'+name+"'"],'brief-provision-'+name+'.txt',b)
+ instrument('FrozenBriefInstrumentation','brief-warm',folder,['-e','mode','install','-e','source_hash',sha(out/'source-inputs.json')])
+ for i in range(3):
+  shell(['am','force-stop',PKG],'brief-cold-'+str(i)+'-stop.txt')
+  instrument('FrozenBriefInstrumentation','brief-cold-'+str(i),folder,['-e','mode','restart','-e','source_hash',sha(out/'source-inputs.json')])
+
  shell(['cat','/proc/sys/kernel/random/boot_id'],'boot-id-after.txt')
  capture_assets('after');shell(['dumpsys','package',PKG],'package-after.txt');shell(['dumpsys','meminfo',PKG],'memory-after.txt')
  path=shell(['pm','path',PKG],'installed-path.txt').decode().strip().removeprefix('package:');shell(['sha256sum',path],'installed-hash.txt')
