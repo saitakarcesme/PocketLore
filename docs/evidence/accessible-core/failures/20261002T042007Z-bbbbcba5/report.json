@@ -1,0 +1,21 @@
+{
+  "contrast": [],
+  "error": "java.nio.file.NoSuchFileException: /data/user/0/org.pocketlore.app.test/files/invalid.json\n\tat sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:220)\n\tat java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:434)\n\tat java.nio.file.Files.newOutputStream(Files.java:216)\n\tat java.nio.file.Files.write(Files.java:3292)\n\tat org.pocketlore.app.AccessibleInstrumentation.onStart(AccessibleInstrumentation.java:39)\n\tat android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)\n",
+  "status": "FAIL",
+  "run_id": "20261002T042007Z-bbbbcba5",
+  "source_manifest_sha256": "3a4cb98ad353cd5183b3cda7ce8f51e21cdbfb6f56f700a55f44b303a6e2b5b2",
+  "checks": [
+    "run_identity",
+    "owned_directory",
+    "fixture_source_hash",
+    "overlong_label_denied_frozen_input",
+    "rotation_unfrozen",
+    "SourceReaderActivity_preferences_restored",
+    "MainActivity_preferences_restored",
+    "owned_cleanup",
+    "owned_cleanup",
+    "original_records_retained"
+  ],
+  "states": [],
+  "controls": []
+}

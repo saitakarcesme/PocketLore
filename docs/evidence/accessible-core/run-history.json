@@ -1,0 +1,158 @@
+[
+  {
+    "path": "downloads/accessible-core/20261002T041916Z-2b96c719",
+    "status": "FAIL",
+    "error": "java.io.IOException: Use 1\u201380 visible characters for labels",
+    "states": 0,
+    "restore_error": null,
+    "cause": []
+  },
+  {
+    "path": "downloads/accessible-core/20261002T042007Z-bbbbcba5",
+    "status": "FAIL",
+    "error": "java.nio.file.NoSuchFileException: /data/user/0/org.pocketlore.app.test/files/invalid.json",
+    "states": 0,
+    "restore_error": null,
+    "cause": []
+  },
+  {
+    "path": "downloads/accessible-core/20261002T042115Z-980e7c3e",
+    "status": "FAIL",
+    "error": "java.nio.file.NoSuchFileException: /data/user/0/org.pocketlore.app.test/files/invalid.json",
+    "states": 0,
+    "restore_error": null,
+    "cause": []
+  },
+  {
+    "path": "downloads/accessible-core/20261002T042206Z-a2423ba2",
+    "status": "No complete decoded receipt; original raw failure or owned recovery remains at the recorded path"
+  },
+  {
+    "path": "downloads/accessible-core/20261002T042429Z-236927f7",
+    "status": "FAIL",
+    "error": "java.lang.AssertionError: UI assertion failed",
+    "states": 0,
+    "restore_error": null,
+    "cause": [
+      "Caused by: java.lang.AssertionError: Research_focus"
+    ]
+  },
+  {
+    "path": "downloads/accessible-core/20261002T042536Z-13b10c57",
+    "status": "FAIL",
+    "error": "java.lang.AssertionError: reader_status_theme",
+    "states": 5,
+    "restore_error": null,
+    "cause": []
+  },
+  {
+    "path": "downloads/accessible-core/20261002T042625Z-b0464de6",
+    "status": "FAIL",
+    "error": "java.lang.AssertionError: UI assertion failed",
+    "states": 6,
+    "restore_error": null,
+    "cause": [
+      "Caused by: java.lang.AssertionError: Close reader_scroll_reachable"
+    ]
+  },
+  {
+    "path": "downloads/accessible-core/20261002T042728Z-5ddbc00d",
+    "status": "FAIL",
+    "error": "java.lang.AssertionError: UI assertion failed",
+    "states": 7,
+    "restore_error": null,
+    "cause": [
+      "Caused by: java.lang.AssertionError: Close reader_scroll_reachable [63,63][882,126] of 819x126"
+    ]
+  },
+  {
+    "path": "downloads/accessible-core/20261002T042831Z-be7e0ab9",
+    "status": "FAIL",
+    "error": "java.lang.AssertionError: UI assertion failed",
+    "states": 12,
+    "restore_error": null,
+    "cause": [
+      "Caused by: java.lang.AssertionError: Explore_scroll_reachable [845,2080][1080,2263] of 394x183"
+    ]
+  },
+  {
+    "path": "downloads/accessible-core/20261002T043039Z-12f2d9e1",
+    "status": "FAIL",
+    "error": "java.lang.AssertionError: keyboard_visible",
+    "states": 13,
+    "restore_error": null,
+    "cause": []
+  },
+  {
+    "path": "downloads/accessible-core/20261002T043301Z-4a80e603",
+    "status": "FAIL",
+    "error": "java.lang.AssertionError: UI assertion failed",
+    "states": 1,
+    "restore_error": null,
+    "cause": [
+      "Caused by: java.lang.AssertionError: Research_focus"
+    ]
+  },
+  {
+    "path": "downloads/accessible-core/20261002T043407Z-ebccbf13",
+    "status": "FAIL",
+    "error": "java.lang.AssertionError: UI assertion failed",
+    "states": 1,
+    "restore_error": null,
+    "cause": [
+      "Caused by: java.lang.AssertionError: Research_focus"
+    ]
+  },
+  {
+    "path": "downloads/accessible-core/20261002T043504Z-602666bc",
+    "status": "FAIL",
+    "error": "java.lang.AssertionError: UI assertion failed",
+    "states": 11,
+    "restore_error": null,
+    "cause": [
+      "Caused by: java.lang.AssertionError: Export comparison_scroll_reachable [63,2864][882,2990] of 819x126"
+    ]
+  },
+  {
+    "path": "downloads/accessible-core/20261002T043622Z-3258c2fa",
+    "status": "FAIL",
+    "error": "java.lang.AssertionError: UI assertion failed",
+    "states": 11,
+    "restore_error": null,
+    "cause": [
+      "Caused by: java.lang.AssertionError: Open source 1 / 1_scroll_reachable [116,2106][829,2232] of 713x126"
+    ]
+  },
+  {
+    "path": "downloads/accessible-core/20261002T043744Z-5d70d28c",
+    "status": "FAIL",
+    "error": "java.lang.AssertionError: UI assertion failed",
+    "states": 11,
+    "restore_error": null,
+    "cause": [
+      "Caused by: java.lang.AssertionError: Open source 1 / 1_scroll_reachable [116,2106][829,2232] of 713x126"
+    ]
+  },
+  {
+    "path": "downloads/accessible-core/20261002T043931Z-467dbaab",
+    "status": "FAIL",
+    "error": "java.lang.AssertionError: UI assertion failed",
+    "states": 14,
+    "restore_error": null,
+    "cause": [
+      "Caused by: java.lang.AssertionError: Research offline  \u2192_focus"
+    ]
+  },
+  {
+    "path": "downloads/accessible-core/20261002T044107Z-52cf3940",
+    "status": "FAIL",
+    "error": "java.lang.AssertionError: actual_context_font_scale",
+    "states": 49,
+    "restore_error": null,
+    "cause": []
+  },
+  {
+    "path": "downloads/accessible-core/recovery-042206",
+    "status": "No complete decoded receipt; original raw failure or owned recovery remains at the recorded path"
+  }
+]
