@@ -1,0 +1,1 @@
+{"returncode": 1, "command": ["bash", "tools/android-build.sh", "assembleDebug", "assembleDebugAndroidTest", "-I", "/home/isa/Projects/PocketLore/tools/evaluation/android-storage-meter/source.gradle", "-PpocketloreTestRunner=org.pocketlore.app.StorageMeterInstrumentation"]}

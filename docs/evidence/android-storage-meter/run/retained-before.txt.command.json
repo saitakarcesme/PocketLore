@@ -1,0 +1,1 @@
+{"returncode": 0, "command": ["/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb", "-s", "emulator-5560", "shell", "run-as", "org.pocketlore.app", "sh", "-c", "'for d in files shared_prefs databases; do if [ -d \"$d\" ]; then /system/bin/find \"$d\" -type f -exec /system/bin/sha256sum {} \\; ; else echo ABSENT:$d; fi; done | sort'"]}

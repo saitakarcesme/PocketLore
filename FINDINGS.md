@@ -384,3 +384,7 @@ Offline inspection of run20261002T025132Z-be41f6a6 supports six phase streams, t
 ## Task420 bounded storage reservations
 
 Frozen six public CF-01 fixtures pass against production Java storage/model-copy paths on the host, with failing outstanding-accounting/release mutations. Android compilation passes; covered staging now holds serialized same-process reservations against measured app/package usage and outstanding peaks, with45GB target and50GB hard refusal. Android meter execution and full update/provider accounting remain unmeasured; no current whole-device safety claim. Historical303/390 capacity,400blocked and410incomplete provenance are unchanged. See docs/evidence/storage-reservations.md.
+
+## Task430 actual Android meter observation
+
+Fresh source/build/test binding and installed hashes accompany a passing bounded API35/4096-byte-page run on5560. Four actual meter samples equal independently recomputed stat totals; concurrency, import cancellation/failure/retry, personal import/export, invalid optional-asset rejection and persistent-data retention pass. Android hard-link creation was denied; real inode-alias dedup and missing/symlink failures were tested explicitly. Earlier failed observations remain preserved. No production code changed, inference ran or other emulator was touched; full capacity/provider/physical/quality gates and400/410 historical limitations remain open. See docs/evidence/android-storage-meter.md.

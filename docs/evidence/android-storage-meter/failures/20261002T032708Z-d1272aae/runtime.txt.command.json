@@ -1,0 +1,1 @@
+{"returncode": 0, "command": ["/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb", "-s", "emulator-5560", "shell", "am", "instrument", "-r", "-w", "-e", "run_id", "20261002T032708Z-d1272aae", "-e", "source_manifest_sha256", "dd56ddb508a05e2833d5207345051e63bbff81c2d129590457e56a4c31645ac2", "org.pocketlore.app.test/org.pocketlore.app.StorageMeterInstrumentation"]}

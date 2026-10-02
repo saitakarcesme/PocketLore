@@ -1,0 +1,15 @@
+{
+  "run_id": "20261002T033004Z-e75ff656",
+  "source_manifest_sha256": "4f73c3bfe5f38c95ac2a81b59e62b908cc6a889f9eddf117abce989f8f568232",
+  "sdk": 35,
+  "page_size": 4096,
+  "error": "java.io.IOException: Independent stat completion absent\n\tat org.pocketlore.app.StorageMeterInstrumentation.external(StorageMeterInstrumentation.java:28)\n\tat org.pocketlore.app.StorageMeterInstrumentation.reconcile(StorageMeterInstrumentation.java:32)\n\tat org.pocketlore.app.StorageMeterInstrumentation.onStart(StorageMeterInstrumentation.java:38)\n\tat android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)\n",
+  "checks": [
+    "actual_storage_application_started",
+    "startup_zero_reservations",
+    "fresh_owned_fixture",
+    "owned_fixture_removed",
+    "final_zero_reservations"
+  ],
+  "status": "FAIL"
+}
