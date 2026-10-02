@@ -1,0 +1,1042 @@
+{
+  "run": "downloads/modern-integrated/20261002T025132Z-be41f6a6",
+  "candidate": "4e5652009485a86b80e04415cbce740b36472db7",
+  "files": {
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/allocated-after.txt": {
+      "bytes": 9,
+      "sha256": "362880eb829ca8d98ebc31d477e74da8788f20766330e9fd092df77f60164417"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/allocated-after.txt.command.json": {
+      "bytes": 57,
+      "sha256": "6454682ccd8d0fed5e15b44c12b3edaba225b6611c376581d25ca7b9e78ef375"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/allocated-before.txt": {
+      "bytes": 9,
+      "sha256": "d81ed2b2599848ff59e62930f86e268ec47943ac9f7f55e14551b4f3a30bf0c5"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/allocated-before.txt.command.json": {
+      "bytes": 58,
+      "sha256": "aa06c1c37234ce3db5c7107049e20e17c0affb08365cee01c36ca78a41927a3f"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/apk-hash-after.txt": {
+      "bytes": 156,
+      "sha256": "6a9d52132d3c57e292db39e292ecda3f23004d49e1837b04a1b6bc4d984e57f9"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/apk-hash-after.txt.command.json": {
+      "bytes": 57,
+      "sha256": "dcb2e154edf9c4cf70eb0bdca3c173b9a0276dc45857a3875a09789709f4b2a5"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/apk-hash-before.txt": {
+      "bytes": 156,
+      "sha256": "02dd326eb93e65c75cc2813b4e5b280de6d235bbba1ab36a958a7f9739cc786e"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/apk-hash-before.txt.command.json": {
+      "bytes": 57,
+      "sha256": "59c4b85033882b90cb9495c7aa2625caafed664065d2b59a3505fdcb16df0cce"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/apk-path-after.txt": {
+      "bytes": 98,
+      "sha256": "75c272766d5421d1a25daee0515b0de527c977fb56a186d201357a4b0107a7f6"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/apk-path-after.txt.command.json": {
+      "bytes": 57,
+      "sha256": "967eced46211c3893d264a3a7c153f33f9da7f9e6bbf02844a53d4df1ea1d6b0"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/apk-path-before.txt": {
+      "bytes": 98,
+      "sha256": "374c3ebba1f17ab07a4d7d8ebe04d220d728eb6a35be6c0d382590b2ac1dedbc"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/apk-path-before.txt.command.json": {
+      "bytes": 58,
+      "sha256": "68f5a0b809bf555fad1e722b6862e9c2f970e0b108af5cbff59ed68b7a37307f"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/apk-size-after.txt": {
+      "bytes": 15,
+      "sha256": "dfd33c5e5f6b3d0a3c55df43565b53ddef4767695ec85be7c04f9aa507960a79"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/apk-size-after.txt.command.json": {
+      "bytes": 58,
+      "sha256": "29ce96dfe31cd3ab79feb84279e174670fdc7c59e27e57b7f7353404a941376a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/apk-size-before.txt": {
+      "bytes": 15,
+      "sha256": "dfd33c5e5f6b3d0a3c55df43565b53ddef4767695ec85be7c04f9aa507960a79"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/apk-size-before.txt.command.json": {
+      "bytes": 58,
+      "sha256": "24b73ab4bdd0835113b3b634833f2876d6ea774fac43168f4127a7517774d96f"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/assets-after.txt": {
+      "bytes": 334,
+      "sha256": "85847d4c6aba89dea14b6cfa03b17f2bdf9d94ccfa19b0e85078ecc830ff5acd"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/assets-after.txt.command.json": {
+      "bytes": 56,
+      "sha256": "30f0201c4fbb8aafafa57a17db4fecd3f47e98c6b612aba66058670afb9030d2"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/assets-before.txt": {
+      "bytes": 334,
+      "sha256": "85847d4c6aba89dea14b6cfa03b17f2bdf9d94ccfa19b0e85078ecc830ff5acd"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/assets-before.txt.command.json": {
+      "bytes": 56,
+      "sha256": "8ad39434353e100344fdf562e6327a156fb8862a4589951d18b76dd7b01ed6e2"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/boot-id-after.txt": {
+      "bytes": 37,
+      "sha256": "610ad90606f197043f74ed337162e2992cc6f643a58b4463ee23d8d8a0aa5195"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/boot-id-after.txt.command.json": {
+      "bytes": 57,
+      "sha256": "e403cdcce83506b4d83763f974fe37b760a2d07c88c162cf7a36f700ff2e0641"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/boot-id-before.txt": {
+      "bytes": 37,
+      "sha256": "610ad90606f197043f74ed337162e2992cc6f643a58b4463ee23d8d8a0aa5195"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/boot-id-before.txt.command.json": {
+      "bytes": 58,
+      "sha256": "6976fee2aae263228254f2dbd373a343a8a59e718a995d453e31c8e7dc3b72e8"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/boot.txt": {
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/boot.txt.command.json": {
+      "bytes": 57,
+      "sha256": "f4ca9da9271ebea48c25fd1fee1bd3cdaa8e576e9b38316386a25e82ebee7f57"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/build.log": {
+      "bytes": 32242,
+      "sha256": "4928bd0b5dcf957c90c5537debba4f02fb0fd1fe64ba3b0635281d9ffc8977ca"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/build.log.command.json": {
+      "bytes": 56,
+      "sha256": "fe55e3564043b52a2486f30924ffe050b4bfc542c1de41f898e3c7a6d344e87c"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/cold/cold-reader-accessibility.txt": {
+      "bytes": 3170,
+      "sha256": "7a0e46d46556fdb3747ab20c78d9e01c2eb39111ac8a3f9e2f8bcf3a4704a85d"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/cold/cold-reader.png": {
+      "bytes": 330051,
+      "sha256": "7ed0d925a1adc4edfa1d9e8a3e9c44c3d0559039995bc4848a77a89b6df0e36a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/cold/report.json": {
+      "bytes": 419,
+      "sha256": "93f5dd387e602814f404425e1994bf12773f7d01f96c7813ee7bd1d2a6b7ee6a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/cold/runtime.txt": {
+      "bytes": 455979,
+      "sha256": "d59328f9c57163aecc059799511fff48770f4549b7d65fce7b4bba0a83ec7198"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/cold/runtime.txt.command.json": {
+      "bytes": 55,
+      "sha256": "595b2abcd0a2f5f727b3f583f221feeb9705bb1a754ea843f2ce262051245d09"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/cold-stop.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/cold-stop.txt.command.json": {
+      "bytes": 57,
+      "sha256": "157d08b417414058515debe9c140ff28cca352bb757dfd7002afd377f86a94d1"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/blocked-export-cancelled-accessibility.txt": {
+      "bytes": 2400,
+      "sha256": "9e2efc90d75f6bf48dae77c011c7ddf2e963e76183123ac7663990c5f39a0ae9"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/blocked-export-cancelled.png": {
+      "bytes": 208697,
+      "sha256": "94e1bb69fc7e369ee2dd4f47bab2980a3cefc382e382904b5fba7d57c6e9f0c8"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/brief-unavailable-accessibility.txt": {
+      "bytes": 3338,
+      "sha256": "bc67edf3287503c131797172adad029cb935d96265b6a2bf1ded3288e7d765ce"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/brief-unavailable.png": {
+      "bytes": 219477,
+      "sha256": "c6ed785275b54c18c71fa9948e3d85343961166a1ab478895ac7f0711c21f38f"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/comparison-accessibility.txt": {
+      "bytes": 3241,
+      "sha256": "ef454daa7385f72ced2dcdc6a32e1a1adeccbf4c7515cb970eac2a7c5ee3a09f"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/comparison.png": {
+      "bytes": 259847,
+      "sha256": "82b7cd2bb9b58822134e8cce4bcbb0b2947c45ab608a790ab64d4ab24ae82269"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/export-cancelled-accessibility.txt": {
+      "bytes": 3330,
+      "sha256": "b8c90cd0ffcd1035e729be01339875607b76218e49fbfb0586f3ca3ab039065d"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/export-cancelled.png": {
+      "bytes": 328213,
+      "sha256": "7fe5dfeb75ea42cd26b157af1d479a5e0ca539e3dfc75935d975eb5ec15606ef"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/export-complete-accessibility.txt": {
+      "bytes": 3341,
+      "sha256": "cae405e81913b43f3cf8f19258d2e56ef961960511e5c92d535f0442ef313b16"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/export-complete.png": {
+      "bytes": 317154,
+      "sha256": "f7f02589df451557ebb1760107c04ea643a40015c1453af75c3fc6c680a4a419"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/export-document-picker-accessibility.txt": {
+      "bytes": 21564,
+      "sha256": "e0427985737f3c589fa24bf7f915e023b1507b5f9a093c847f94dae0b5e4bb2e"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/export-document-picker.png": {
+      "bytes": 90240,
+      "sha256": "71efc11b09e5f2f8168d2b64250bae998f6a38520163dbca446881b9661c7ade"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/exported-source.md": {
+      "bytes": 1483,
+      "sha256": "60dea31cfeea8f13e27e02e6de5e945ab1750f89f5eb21e531d376eb8fd53780"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/library-accessibility.txt": {
+      "bytes": 7818,
+      "sha256": "c8e430178b9fbea64c14f07a6a638d1ef635e8ca59911d9840f6de4f78dffaba"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/library-results-accessibility.txt": {
+      "bytes": 4460,
+      "sha256": "550278a391709a493312d2de5d890428628035605ed71d043b4fa7efbb91e5b7"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/library-results.png": {
+      "bytes": 164335,
+      "sha256": "0d37b4426bb51c439185fb1c5eded752f29fb39378ffa4680aa4f02b19bcfae8"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/library.png": {
+      "bytes": 175557,
+      "sha256": "ef112cc939566652b07c3a19b21dbd786e7d74bde450ab617b8b52963919675d"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/long-title-dialog-accessibility.txt": {
+      "bytes": 2868,
+      "sha256": "e59b36481bae5ccb565a8c7ac83c65cbcca7fe66ecf7a4641d1580b3ad0eac18"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/long-title-dialog.png": {
+      "bytes": 279177,
+      "sha256": "ee2f032144696bed3143def132d92d74aeb5fe5795f036837669c64116da3000"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/places-accessibility.txt": {
+      "bytes": 5232,
+      "sha256": "15178451b6a2ae608af3807610bdc55d4b8b1d44bf34c756388adc052ca8b58a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/places-empty-accessibility.txt": {
+      "bytes": 5249,
+      "sha256": "4c34a067be1fe4b84639bc240c877ed40b813823be21e13919c4f643e1b4bbfa"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/places-empty.png": {
+      "bytes": 175418,
+      "sha256": "13e14904a83f951d2b68a867c60e73a8a1b690c70415b0b75b9ff85dd730b070"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/places.png": {
+      "bytes": 169056,
+      "sha256": "a04642a9ebef0be8d47cec869e126feab165e7d35fe04a3764e824a2008ade1e"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/report.json": {
+      "bytes": 5912,
+      "sha256": "2d9e944cd3b4b8778bf4a4e7bccb8773e037e67817becfda493b351ea5b9400a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/research-accessibility.txt": {
+      "bytes": 6470,
+      "sha256": "eaa1eefe46bb82011caf7f5d172357ced84fc7dbdb700ddaa9fcfac864e166ba"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/research-edit-restored-accessibility.txt": {
+      "bytes": 6330,
+      "sha256": "37c742a00b0aa418657a9425efca68dbd52d96b1dfb239572c6280e8bdda29a0"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/research-edit-restored.png": {
+      "bytes": 193417,
+      "sha256": "43f00d4f4e971858283662269723fc73d97cd086648be0dce64ddb2079130e22"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/research-keyboard-accessibility.txt": {
+      "bytes": 5817,
+      "sha256": "e5dd6f6dbd36e26f5ed525bbf2bb3c318512b1c361d33271410d6b545d3e05b4"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/research-keyboard.png": {
+      "bytes": 216101,
+      "sha256": "1131bde5c7d3db348b3fccffc47271827245ccc420138c4d50516dd85c71426c"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/research-restored-accessibility.txt": {
+      "bytes": 4220,
+      "sha256": "50d70547e6cd9d1a3fba224cfaac708b9ca426b828bcdede88512d53e42efead"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/research-restored.png": {
+      "bytes": 265262,
+      "sha256": "1b683b8ebc3198d91115dcb360f20328dfccb2113e05b74c1cc7b342cfbfcb36"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/research-result-accessibility.txt": {
+      "bytes": 6534,
+      "sha256": "83db08da0382f7dee27676aa699aee41b67f9df1d3a530a9859d2b415302608a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/research-result.png": {
+      "bytes": 270313,
+      "sha256": "771f3575cf4114728dd0f963209561c81b31ff2df72491ca8a71cedcb36abb3c"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/research.png": {
+      "bytes": 191759,
+      "sha256": "a8098c3f8c8306388ce1d87febb4a653e3153f3e8b1953c6acfb06ac6f0e6ae4"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/runtime.txt": {
+      "bytes": 6524584,
+      "sha256": "a63f66bf5bf6bf8093729e9ee42594d31fd003781b702f36b86019831ee14f9d"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/runtime.txt.command.json": {
+      "bytes": 55,
+      "sha256": "72c9f986c0b2239717667a7a2846e4f55ad24a79cb0b3165e7d215d73a3b6e90"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/saved-accessibility.txt": {
+      "bytes": 74401,
+      "sha256": "d293885be8700b2f511d400ab1a162552c482ccbf8896757866e17a7d97b4af0"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/saved.png": {
+      "bytes": 193413,
+      "sha256": "18e8bb8e9fd2981bd1436cd4646b50278f543cba53de5d5a57b7f43ab20d49d7"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/share-chooser-accessibility.txt": {
+      "bytes": 6055,
+      "sha256": "d70e55b10d6572177e8569bd3f9846cd1170abc629271968bdea3ccccbb22843"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/share-chooser.png": {
+      "bytes": 241657,
+      "sha256": "2f508c67258372fa8558c467f4db65a60d9e551c2d27e22a2676b286f9f2bb0b"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/source-dark-accessibility.txt": {
+      "bytes": 3067,
+      "sha256": "3122527f5de72a1af4daa79bbd50bff4e89919fd535c3efde77ce7afd166cf7a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/source-dark.png": {
+      "bytes": 292257,
+      "sha256": "f5a6fb80bcc942b15fbaa547e4a5fd8756c469f6d916fdd391a0f3b7f6a300c5"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/source-paper-large-accessibility.txt": {
+      "bytes": 3337,
+      "sha256": "c6e93b9f019fc1de94db8b71a6a893f0356f98051425b357bc72daf04bb60dff"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/source-paper-large.png": {
+      "bytes": 288472,
+      "sha256": "1d95859ff9df8573e0e5adb9ede9390c78fd760ab84518fc89ba1408f1846044"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/source-unavailable-accessibility.txt": {
+      "bytes": 883,
+      "sha256": "9127010f6eb403f5d1bfabf294a7b96229f973e415f7d2f274cbb7734aa6f06c"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/default/source-unavailable.png": {
+      "bytes": 48595,
+      "sha256": "96663e4cb3f87ff97918cbe9601b32c34478a3634bd928dbf103b61ea054fb94"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/df-after.txt": {
+      "bytes": 122,
+      "sha256": "7be075441360068aff4e26615c76b3bdfe56fa8183cfda42acde1beb3575c314"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/df-after.txt.command.json": {
+      "bytes": 58,
+      "sha256": "f314c6d84b774f9939e6886ac2a99e686724538b56f0cf4e205b9ee428176cfa"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/df-before.txt": {
+      "bytes": 122,
+      "sha256": "76491e19f20e3d5847b3ca43cd6f29388b23f03fd5038de9a0b0813032d5d767"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/df-before.txt.command.json": {
+      "bytes": 57,
+      "sha256": "d660dcfa714d01512579e2e97026965caddbdd94810a585cfa3126e1e7cc5272"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/documents/results.json": {
+      "bytes": 12641,
+      "sha256": "15ed02fb6a202d78835d7d497aa1c98f5687f187ad64b498d73d883871b3d85b"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/documents/runtime.txt": {
+      "bytes": 456967,
+      "sha256": "1f4511d8fe78148ede6d3c0459c12583b52c0f1d7afa975f358860d98428a93b"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/documents/runtime.txt.command.json": {
+      "bytes": 55,
+      "sha256": "c92386edfe73a1a7650df57ed0d5b48e98f3d39d4425694e7d866e40980be492"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/documents/source-dialog.png": {
+      "bytes": 320170,
+      "sha256": "d558d9239d5285b7f3235961697ca01b81a5ed2104db5686f460fa2fe62a5958"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/documents/source-dialog.txt": {
+      "bytes": 2031,
+      "sha256": "6863c0c9fde5ebd37b55bb71e1ac0e019079a300c6597d689ce503bb0f0980aa"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/documents-cold/restart.json": {
+      "bytes": 192,
+      "sha256": "d870a2d79440ebe2754e9c64eaa7db2c48c3357991cba952f328484532b27fda"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/documents-cold/results.json": {
+      "bytes": 12641,
+      "sha256": "15ed02fb6a202d78835d7d497aa1c98f5687f187ad64b498d73d883871b3d85b"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/documents-cold/runtime.txt": {
+      "bytes": 457635,
+      "sha256": "91a1735598311d42b4145eb7b2358bf0ccfe4f2919a0b86a26865510fbb366d3"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/documents-cold/runtime.txt.command.json": {
+      "bytes": 55,
+      "sha256": "05da0e82f6c17116d6791cc8454bf383f0c530b6ae42a5c1bd2a6a0d55ef3dcf"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/documents-cold/source-dialog.png": {
+      "bytes": 320170,
+      "sha256": "d558d9239d5285b7f3235961697ca01b81a5ed2104db5686f460fa2fe62a5958"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/documents-cold/source-dialog.txt": {
+      "bytes": 2031,
+      "sha256": "6863c0c9fde5ebd37b55bb71e1ac0e019079a300c6597d689ce503bb0f0980aa"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/documents-cold-stop.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/documents-cold-stop.txt.command.json": {
+      "bytes": 57,
+      "sha256": "91313e3e71d678447486a5661c69ac7269ca51fc1673f6ad5d9b88dc14480cca"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/executed-check.py": {
+      "bytes": 15749,
+      "sha256": "9b4bc3f85ede866548848db7670d5aa525540e39689394daab11edbace249f32"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/final-launch.txt": {
+      "bytes": 168,
+      "sha256": "6cf7b9e771cbc9558589ad62c1a07db4bfed4240fd15c8bbfb28f1fd36994795"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/final-launch.txt.command.json": {
+      "bytes": 56,
+      "sha256": "9c72b9ffb98e8b1eb1a96a38e79bbb3bba5ef83647198e614b96a7bbe57fa6a4"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/final.png": {
+      "bytes": 201115,
+      "sha256": "8e9163a2f989004c00b5eb3e1737860ce355e31e0f1bf0854e77d9b8fc337bb8"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/final.png.command.json": {
+      "bytes": 57,
+      "sha256": "34985a6d29cfa40dc92689c8b47aed2adda6d384565cc9edf15047f7b32f49c4"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-empty.pdf.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-empty.pdf.txt.command.json": {
+      "bytes": 57,
+      "sha256": "be4e04523c4cd1bd62fbf7e139034005165325df1b36fe5d1fa95c84d594eaac"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-nested.json.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-nested.json.txt.command.json": {
+      "bytes": 58,
+      "sha256": "13b50bea14a8d64ab56aba0ec93c83a61b2f03e537217f1503bc5dfad571ba49"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-notes.md.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-notes.md.txt.command.json": {
+      "bytes": 58,
+      "sha256": "ccbe46c6e34c35bc5df9b48a5560ab6216d5e90c7b0522917d11643250121eeb"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-notes.txt.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-notes.txt.txt.command.json": {
+      "bytes": 57,
+      "sha256": "92af53e5258075e3714e802caeecc47a6c13b7babbca3bbbd1f7db8da850cf5f"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-password.pdf.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-password.pdf.txt.command.json": {
+      "bytes": 57,
+      "sha256": "b265cea33e5fa1f70a9227fc97b3013aff7f3ebc68a92c3dec237af458f30b4b"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-quoted.csv.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-quoted.csv.txt.command.json": {
+      "bytes": 57,
+      "sha256": "e05eb0f74ddccf12da7a133849a9704a8bba4458977a7c9fe43aff2d0e151dea"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-scanned.pdf.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-scanned.pdf.txt.command.json": {
+      "bytes": 58,
+      "sha256": "71b667339548b981b023683e12a63aa2750f8751cc3b5c67bc2279657b5fea78"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-text.pdf.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app-text.pdf.txt.command.json": {
+      "bytes": 57,
+      "sha256": "7ecfcddfd32ebd6b2cd4854306002e658428908bb7cd6af589330ef939e4a7a8"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-empty.pdf.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-empty.pdf.txt.command.json": {
+      "bytes": 58,
+      "sha256": "32a7f33506ac63b3f5f14773af3c00057746d98394753f8d8a2c6e9032106ccd"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-nested.json.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-nested.json.txt.command.json": {
+      "bytes": 57,
+      "sha256": "2cdcbbc7ce9de70b92e7195e847e19d387b0c9d34050a412dbe7f29d61b916b8"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-notes.md.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-notes.md.txt.command.json": {
+      "bytes": 58,
+      "sha256": "ee30e5c2ee4d22ee239994b89698a301f745b48063d107f3237ee26544c676ca"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-notes.txt.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-notes.txt.txt.command.json": {
+      "bytes": 58,
+      "sha256": "8db4669e6fba10781daa1611ced94f46b9fb41890df2fa49bbc68e457ba1ad3c"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-password.pdf.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-password.pdf.txt.command.json": {
+      "bytes": 58,
+      "sha256": "4a59426849f44b9799f01970e636f547d76940869d432734d54c9115792e887f"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-quoted.csv.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-quoted.csv.txt.command.json": {
+      "bytes": 57,
+      "sha256": "1c3b2090f0a1bcdbcef6de2b41d447104db78238f7913d6172b4c6f8eb7c233a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-scanned.pdf.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-scanned.pdf.txt.command.json": {
+      "bytes": 57,
+      "sha256": "afb3ef292bcad9403def11b13720a35c19c1a034d8ab9418517042eaab4f202d"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-text.pdf.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/fixture-org.pocketlore.app.test-text.pdf.txt.command.json": {
+      "bytes": 58,
+      "sha256": "e231686a245a2397e0a30c21318a5356b859b56ddb5e3d0a63970b282f8eca0e"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/font-before.txt": {
+      "bytes": 4,
+      "sha256": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/font-before.txt.command.json": {
+      "bytes": 57,
+      "sha256": "e987bf0d571a38463c5322177eb60b56609134d64c70976a60e106d8dd5bac25"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/font-final-value.txt": {
+      "bytes": 4,
+      "sha256": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/font-final-value.txt.command.json": {
+      "bytes": 57,
+      "sha256": "e3fe111af6a1c7809deb150f741d561ddb7906205375abf6cbd94dc0f7458326"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/font-final.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/font-final.txt.command.json": {
+      "bytes": 57,
+      "sha256": "79af417e2a47bfa0217b015743b6a08033cc664d517db6e78caf6c0f90a56be0"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/install-app-debug-androidTest.apk.txt": {
+      "bytes": 36,
+      "sha256": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/install-app-debug-androidTest.apk.txt.command.json": {
+      "bytes": 57,
+      "sha256": "2dc716fcdf149e92bb3b2a01e0d2bcfe0ab2a54bc65855193d8ecdab7bbe6b14"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/install-app-debug.apk.txt": {
+      "bytes": 36,
+      "sha256": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/install-app-debug.apk.txt.command.json": {
+      "bytes": 56,
+      "sha256": "eb3e3e3fdd4f42e8719931e9be48b7399232bf8df00e013f84b465be72f81af3"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/installed-hash.txt": {
+      "bytes": 156,
+      "sha256": "6a9d52132d3c57e292db39e292ecda3f23004d49e1837b04a1b6bc4d984e57f9"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/installed-hash.txt.command.json": {
+      "bytes": 58,
+      "sha256": "292b2284c6408453a025a7c30c74df9ed4fabcb80f01a8b84b2d4e524194647e"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/installed-path.txt": {
+      "bytes": 98,
+      "sha256": "75c272766d5421d1a25daee0515b0de527c977fb56a186d201357a4b0107a7f6"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/installed-path.txt.command.json": {
+      "bytes": 57,
+      "sha256": "e75ff33393cb08057890a92fb074f375253aa21e4adbc0ef7499e104ff9f2778"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/blocked-export-cancelled-accessibility.txt": {
+      "bytes": 2406,
+      "sha256": "b6b31341f8efa913a520af0bd4c405af2b46d9c6906df84f51429e4001e824a5"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/blocked-export-cancelled.png": {
+      "bytes": 238128,
+      "sha256": "95b5eccdb226db4847c4d5d571cad4f29d95950728d7c359e0ffad0533bc3ba5"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/brief-unavailable-accessibility.txt": {
+      "bytes": 3463,
+      "sha256": "c5b34c0b34894da95251ed5d6847dc378944adafc850e839d1789535db0f628e"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/brief-unavailable.png": {
+      "bytes": 235769,
+      "sha256": "011f0fdd56208e85b6b76b6f8d2561434192b6f56d0fc80fd205354e9971aa6c"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/comparison-accessibility.txt": {
+      "bytes": 3245,
+      "sha256": "10b4c87a8ce824db8e870a7da112a7a0709ed08cf40da21386fb619024e01dd6"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/comparison.png": {
+      "bytes": 244096,
+      "sha256": "6a99beae54b061635ce98cd4084c0ee06fcbd8953273a6e9f7e910a1b29a361e"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/export-cancelled-accessibility.txt": {
+      "bytes": 3332,
+      "sha256": "3832c228bd4598f6dcc21bc64cbe65bb025492f296aa71225c9d986d1acdc60c"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/export-cancelled.png": {
+      "bytes": 270128,
+      "sha256": "fa8eadeab7ea14027de06744499d5553604692d84b70b1972397f98f3ff693ab"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/export-complete-accessibility.txt": {
+      "bytes": 3344,
+      "sha256": "be57cab2cd8dd1bccda37ed0cf55668bc32eec42b80067f466a4d244536b282e"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/export-complete.png": {
+      "bytes": 262294,
+      "sha256": "def927e19fb9d84b7ce7df2729c932262b6379ab266024af310e17b67e5d110f"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/export-document-picker-accessibility.txt": {
+      "bytes": 21598,
+      "sha256": "d54565983bb15d8f2bea8d1d412224ddf19ddc2f281e5142136f2920e0b2b341"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/export-document-picker.png": {
+      "bytes": 113567,
+      "sha256": "7bca7ab63d1e579776ac220b8d9220e3bdc0ff70b07102b4d075cde3301db564"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/exported-source.md": {
+      "bytes": 1483,
+      "sha256": "631e658a159245c49df1648110061d3270ce0792289a75fab979c8b2d5490329"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/library-accessibility.txt": {
+      "bytes": 7955,
+      "sha256": "852c4448cb2e17f05c6b7bcb621e10d842ce1437eb03116f64eda3fcc1bdae91"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/library-results-accessibility.txt": {
+      "bytes": 4596,
+      "sha256": "942a6ba76f5d9d2460bf40d612d077268ae0f41743d904eb4b63c7f9e4f7fd1a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/library-results.png": {
+      "bytes": 204456,
+      "sha256": "90c8b4e4c7b1197f69eacd40901b88b6d7a504431e83a7c5ae54b8ac241c5080"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/library.png": {
+      "bytes": 204086,
+      "sha256": "85a71035a6b7e382679a785140655c474903bd8a6bafc4c89f36bc008266e1a7"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/long-title-dialog-accessibility.txt": {
+      "bytes": 2869,
+      "sha256": "2f268c791e2dccaa5f7cc524fffd46aea71eb4eee0846c370ca4c6a4852d2836"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/long-title-dialog.png": {
+      "bytes": 232494,
+      "sha256": "e1caf8576b94bd635486e265c051b14e7961a9b604a16c775c6e96a63101a679"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/places-accessibility.txt": {
+      "bytes": 5369,
+      "sha256": "7f7ec22623a5ab5c3f8b56a15605d127501252ff81d863e17e57ba4c76e42f6a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/places-empty-accessibility.txt": {
+      "bytes": 5382,
+      "sha256": "cadd6778d239112cbb3e993302ba6c834ce398b2b139a754196011cc45f5569a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/places-empty.png": {
+      "bytes": 216688,
+      "sha256": "e2dc9e1206fd4a2ce954139b565db8f14f00970d8b891125f2385efa36daed33"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/places.png": {
+      "bytes": 219138,
+      "sha256": "3a2402afec7a2f11053db40c07917729aa9e532476f3fa1f7e95ae3ec236d543"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/report.json": {
+      "bytes": 5910,
+      "sha256": "0debfc60a7aaadc38652c5014a5c7e82fbcd94cb49d066a399bee24ee3b15044"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/research-accessibility.txt": {
+      "bytes": 6607,
+      "sha256": "b4036fc5b2f56af88306b9a67a69b71293f093606a57d9d51f8b9fa652e4430d"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/research-edit-restored-accessibility.txt": {
+      "bytes": 6467,
+      "sha256": "369185768cc2859a1e5a72312f6f1f8a9c0b26063bd389a5fd2eec7f01762edd"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/research-edit-restored.png": {
+      "bytes": 207026,
+      "sha256": "d61c3d3f8a12523f636df6bd160222e1d073a5e6cd12346f3bc94dda12f2a62a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/research-keyboard-accessibility.txt": {
+      "bytes": 5820,
+      "sha256": "0af6c2fb868c726dd25bcf6ac4948364e828004998a43ade6910ab259e9a3d10"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/research-keyboard.png": {
+      "bytes": 273575,
+      "sha256": "ab5cdb115f83b6a629be117fdbb20d624075be285f0d67cb07d6a200481877c6"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/research-restored-accessibility.txt": {
+      "bytes": 4347,
+      "sha256": "2452f76b0e6cbd547d1d9031d76cea4b32308b8698de430c038c3cb203794083"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/research-restored.png": {
+      "bytes": 216831,
+      "sha256": "f458a83dc6a54ee2a1ac32451d3a4cd76866964706684610131ee18acbe91de9"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/research-result-accessibility.txt": {
+      "bytes": 6669,
+      "sha256": "ccb7b281a56dc9cf2764d7c0241e7390894326f479a29685d98c10c5752a5f58"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/research-result.png": {
+      "bytes": 218320,
+      "sha256": "953822f02a752f4602ef49125810833038877f5a449eaa678fdf07925c4a6dc4"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/research.png": {
+      "bytes": 207545,
+      "sha256": "61f66c12ef79697cc5e2f9e94d9db6d59e2fecf3e2cf7a2a905ae5aa5cf2e74c"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/runtime.txt": {
+      "bytes": 6506200,
+      "sha256": "26b4987a47bee87ee6c681b248af4fad920faa224fcd72e1758baba3ca75a034"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/runtime.txt.command.json": {
+      "bytes": 55,
+      "sha256": "19f38589c9048d6170a64b0b1f571f95f91cd1d55746c3430c6270e1124a8a5f"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/saved-accessibility.txt": {
+      "bytes": 77573,
+      "sha256": "464fcf1e5e74b83fd5ffe3cc0f3168f1517bea3b84f152b2a8090012a33c405a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/saved.png": {
+      "bytes": 224384,
+      "sha256": "49c1464107b84992eb177ba15edd622f60653b5017910bdb58f0c07e4442290c"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/share-chooser-accessibility.txt": {
+      "bytes": 6055,
+      "sha256": "809cd4659e874cde584b0cce3f8284d63f963d41e66afccd4e8f4de15a0086e3"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/share-chooser.png": {
+      "bytes": 216277,
+      "sha256": "22c6c3596e10b1e12284e78fcc549ef97e0b94a34239ff1ca777166e02b724ed"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/source-dark-accessibility.txt": {
+      "bytes": 3077,
+      "sha256": "c42a49aa074bbb34b95229ed0940a90b81272821a0a2de57182ed7217e7c9e23"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/source-dark.png": {
+      "bytes": 245120,
+      "sha256": "2bf4ff1777a4b0aec50fdf36604bb8fb25d5a962dbc7bcba215cf0c7e863bda3"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/source-paper-large-accessibility.txt": {
+      "bytes": 3347,
+      "sha256": "544da56839788520b19e42428cf2e7b31dc728d65f9b786f05eb6749a7f51eed"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/source-paper-large.png": {
+      "bytes": 242383,
+      "sha256": "36442c915e4983449190ab1b44c4819e5c5a42ee3d580da9cd236ca55151c236"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/source-unavailable-accessibility.txt": {
+      "bytes": 883,
+      "sha256": "c1128a7ce0bf0862214db9399afd7c31862faaba8e4f78a70e5336a4ea7a57cf"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/large/source-unavailable.png": {
+      "bytes": 78134,
+      "sha256": "7aab6e788ebeca39b9c4c3fabe636e806aeadcbdcc113ca1610754e870b4461e"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/logical-after.txt": {
+      "bytes": 12,
+      "sha256": "4516371b01aea6751984b758874b49f3271876c6ac7d5cb46cbe1e8df7d53933"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/logical-after.txt.command.json": {
+      "bytes": 58,
+      "sha256": "0c6d469c0cf4e7b8a372b0b468dbc0dc4afa7a4d895fb91b81496afff884b296"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/logical-before.txt": {
+      "bytes": 12,
+      "sha256": "b1424791528c43e0735c54f6949ed0570cd77718c68e67e29bcb690197f580a6"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/logical-before.txt.command.json": {
+      "bytes": 58,
+      "sha256": "67fe0fa8df61991dafeb7b35951de4de67b8a670dd4f9a89fbef25547778c14b"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/manifest.json": {
+      "bytes": 28225,
+      "sha256": "8311ec2ef33a0555f5b2ef0f19d8297ab6b74c1d1fbe260be48ec98820f48e94"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/meminfo-after.txt": {
+      "bytes": 41,
+      "sha256": "0f0df4ea7c05d184186579dae4f57980fc8779d3afb6e075da2b7f631156a5ce"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/meminfo-after.txt.command.json": {
+      "bytes": 58,
+      "sha256": "4c73e97819ca098ac3898e1180d02e1776495ce25bc6761377d41b93f009b2ce"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/meminfo-before.txt": {
+      "bytes": 41,
+      "sha256": "0f0df4ea7c05d184186579dae4f57980fc8779d3afb6e075da2b7f631156a5ce"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/meminfo-before.txt.command.json": {
+      "bytes": 56,
+      "sha256": "832c0771aca35c75a965807485e322c01483c9639071014534e0eaea01d909ac"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/memory-after.txt": {
+      "bytes": 41,
+      "sha256": "0f0df4ea7c05d184186579dae4f57980fc8779d3afb6e075da2b7f631156a5ce"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/memory-after.txt.command.json": {
+      "bytes": 58,
+      "sha256": "2850b0a33ecb8a1b53e563b92a3c9117e76fd2a59e5b5420b04b684229d30fe2"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/mkdir-org.pocketlore.app.test.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/mkdir-org.pocketlore.app.test.txt.command.json": {
+      "bytes": 58,
+      "sha256": "661b2dd6078d734007f244f441cdcd189182dadfa6d095e3f7f17b3a4543d31b"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/mkdir-org.pocketlore.app.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/mkdir-org.pocketlore.app.txt.command.json": {
+      "bytes": 58,
+      "sha256": "af1d96e229c5f6850a6f8abba77cf7746183e2cc6e14b3fbdc82849b32734fb8"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/native-cards-recognition/city-292223.md": {
+      "bytes": 17647,
+      "sha256": "e6ab2d636a091aea20ebb57f6629adc8e9701b99b03c9af7b80cd256311df20e"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/native-cards-recognition/city-292223.png": {
+      "bytes": 287464,
+      "sha256": "ee9fc3fcb0860ffa4cda75a20d4defcaf8c5a0fcf3552d67386b0fd28fce1bfc"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/native-cards-recognition/city-292672.md": {
+      "bytes": 17648,
+      "sha256": "5c86b43c4bb5ff7139e6cc22cd145645018b651ad567fc215a9cf27cbdbb2b63"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/native-cards-recognition/city-292672.png": {
+      "bytes": 290560,
+      "sha256": "60e136b7acf0a6825d93ed0a567fa417e22e0791ef71680db51aadf2196a22d1"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/native-cards-recognition/city-292968.md": {
+      "bytes": 17651,
+      "sha256": "fce428bbfa0dfc460a79bfe6aa26aa812cda778d4775a00bd9dfb35e0406b052"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/native-cards-recognition/city-292968.png": {
+      "bytes": 294196,
+      "sha256": "9fdd93a2f7f4eff60985f621008547eaa9cec94332376afc4f4918782d4825ab"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/native-cards-recognition/recognition-absent.png": {
+      "bytes": 213920,
+      "sha256": "67bb1fab8e064eeb60f9c11dfa49ddd5bc6613dce4bb59277900f91c957d3145"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/native-cards-recognition/report.json": {
+      "bytes": 3828,
+      "sha256": "d03d19a21b8f0dfea91d28d88a0cdf122ca200f1e030fd86356ce803e8c92740"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/native-cards-recognition/runtime.txt": {
+      "bytes": 1561809,
+      "sha256": "54dd7da0b33ebe0b981699d6935a679570cd4733eb1368652f32d4b9fd78cd26"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/native-cards-recognition/runtime.txt.command.json": {
+      "bytes": 55,
+      "sha256": "0fc07aac920652ddd35f03ceb63253934130593e60076b75720e4ef3ab57e29a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/native.json": {
+      "bytes": 5062,
+      "sha256": "fba0f61ed35434f41cecffe41347defcdfa679dd151a7eb4bc0e9749dcb0b4b4"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/native.json.command.json": {
+      "bytes": 57,
+      "sha256": "33ac7371167a09d75cc056d697e3d102d9f21882f4f08f685ae35f0e9ecc57e0"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/negative-controls.json": {
+      "bytes": 125,
+      "sha256": "37427ee987d7e8b2f1f33352bbdb9c7a0e846f39f72ca756b54efbde5f295672"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/package-after.txt": {
+      "bytes": 5527,
+      "sha256": "9131b82d8a3eacd9738f51d33d1496009fc70475a0d553021f72169afcfb975a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/package-after.txt.command.json": {
+      "bytes": 58,
+      "sha256": "02f7f43927546982308937bc318d1e2f6c54e3a315d2ff1bbaddb566b5f7cdc5"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/package-before.txt": {
+      "bytes": 4487,
+      "sha256": "213f2c89f898bcc8495e7b8099dda1adc944c9ff3da40c61a731c4536435a349"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/package-before.txt.command.json": {
+      "bytes": 57,
+      "sha256": "85f767642472c7ebf5511d2489a8b8cb115e6f4d85d428a76b2d67e81a85a480"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/pages.txt": {
+      "bytes": 6,
+      "sha256": "33f50728129313570f6b953c08b559d9cb5f673e981e647cee4dc10d6cd48e99"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/pages.txt.command.json": {
+      "bytes": 58,
+      "sha256": "3ca0eb8644f1aa33593c05657967d34b01c5a3a8e778787fc8c9b311ee5082e4"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/permissions.txt": {
+      "bytes": 214,
+      "sha256": "ad96613200a24b502da5652d9881880414e4655f443537a9ec1225bf1bc2e559"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/permissions.txt.command.json": {
+      "bytes": 59,
+      "sha256": "bcbc41417d578fa0f4e950c106a0fd4ad9292a6eba9cd7f6782ff9933f10b428"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/probe-false/boot-after.txt": {
+      "bytes": 37,
+      "sha256": "610ad90606f197043f74ed337162e2992cc6f643a58b4463ee23d8d8a0aa5195"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/probe-false/boot-after.txt.command.json": {
+      "bytes": 58,
+      "sha256": "595a3d6914ab461eec04b5dd07515cddf5b3d27f31e5cded53b619698596337d"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/probe-false/report.json": {
+      "bytes": 85,
+      "sha256": "5046d2cf0c8a33da68ed20913e0825da680c94a41087a6fb7ca8fdb5cf25eb07"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/probe-false/runtime.txt": {
+      "bytes": 671,
+      "sha256": "690e384e7bfdc682021d09db30c25b3878227eddbe5b405a0e8c7fedb9ceaa8e"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/probe-false/runtime.txt.command.json": {
+      "bytes": 57,
+      "sha256": "4b27165f1019e1519d4e8b36cec618a6f370f225020611ec806e90219a912894"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/probe-true/boot-after.txt": {
+      "bytes": 37,
+      "sha256": "610ad90606f197043f74ed337162e2992cc6f643a58b4463ee23d8d8a0aa5195"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/probe-true/boot-after.txt.command.json": {
+      "bytes": 58,
+      "sha256": "08caf1bb4cef9ce8df85b3fec755471a5d04c5a5aa24b388991d8f3efb15850f"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/probe-true/probe.png": {
+      "bytes": 191686,
+      "sha256": "b222d0ca034f23745e16956743f2a4457fe7bab620e6936d4018699e69c7a10c"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/probe-true/report.json": {
+      "bytes": 83,
+      "sha256": "e67237bf611af627d93515919b5aa6603782a8a64f8bda815a8dbffadaa33ebd"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/probe-true/runtime.txt": {
+      "bytes": 262369,
+      "sha256": "4ee2c2387fabe77ec57cca2f477b34ad464648490df3eead18b9d6dd5efa64b7"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/probe-true/runtime.txt.command.json": {
+      "bytes": 55,
+      "sha256": "82ea1ee514a41375ce1165cc4d42d1e913e464723001db1473dcd573aea2ea28"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/properties.txt": {
+      "bytes": 26072,
+      "sha256": "e941b0f0bd475df8be3e38a57e246fbd24e46320b7cea5edca8a3adfa93a5b4e"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/properties.txt.command.json": {
+      "bytes": 58,
+      "sha256": "1570e5414e4bd42e0f5fb5d1669e51095e529e2d07c58f0186ed261f7076a3ca"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/receipt-tests.txt": {
+      "bytes": 104,
+      "sha256": "065c7d15facfd20f14fb9182747be315f3349fa1d5e1a0e966047509f4bfa9b1"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/receipt-tests.txt.command.json": {
+      "bytes": 58,
+      "sha256": "f847ebc2a4b5466c51d2a75efd135a78864808ae90682300abe990ebba9c9f1a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/registered-tests.txt": {
+      "bytes": 450,
+      "sha256": "bc2e6c16c77b04a14200fe86626d36aef13835a3c8a4c197a6250a712dbd483c"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/registered-tests.txt.command.json": {
+      "bytes": 58,
+      "sha256": "f411ddbd16ec9b24c51d981c44455071e79070ae6c5471a738ec3ead6e98bd3b"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/sdk.txt": {
+      "bytes": 3,
+      "sha256": "b58a3da5fde2680191877ec88a1aa7d06927cc3b30cdf0d0db8c39b488891576"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/sdk.txt.command.json": {
+      "bytes": 58,
+      "sha256": "1c37c2391a2a33f221dedba0bf8fded293743bdc843996f47b0d7f07af638881"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/state.txt": {
+      "bytes": 7,
+      "sha256": "c98373c1abef78070f6beef6b4ae4fbf3de348dac280195c7f93441920584af9"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/state.txt.command.json": {
+      "bytes": 59,
+      "sha256": "87d99006737ed0a1d31763ea70c121ad9eec912a53f8c4c3d36b77c5ba950fa3"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/ui-dump.txt": {
+      "bytes": 54,
+      "sha256": "1dcc60e061bdd2388a11cf57d37025ad8984c22e897e0c97932b2f0ede763258"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/ui-dump.txt.command.json": {
+      "bytes": 56,
+      "sha256": "f0747f29e1602f916d0d823cc975df43fdfa1935a790a829d04b915147c3443a"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/ui.xml": {
+      "bytes": 12919,
+      "sha256": "5b2ece4f6ba3422eb595f3b5c6179554b8c4b36f69352d0c0dfaa7e030ca2f78"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/ui.xml.command.json": {
+      "bytes": 58,
+      "sha256": "c447522009b79c45e9641b7936e6aa54f01fa713054a18c7990a3b8378071c85"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/zipalign.txt": {
+      "bytes": 2236,
+      "sha256": "25e65d984e576618c4e3288a22325f71b04ede7323f24308ce10b7c7187c6d92"
+    },
+    "downloads/modern-integrated/20261002T025132Z-be41f6a6/zipalign.txt.command.json": {
+      "bytes": 58,
+      "sha256": "27239ddc8be76400b23363464c769124c59d0921ad89fdca8f538d177b953709"
+    },
+    "/home/isa/PocketLore-control/evidence/400-modern-integrated-android-compatibility-strategy-change/review/check-1.log": {
+      "bytes": 282,
+      "sha256": "d450580cc216eb6fe0d68c805c022c9c22edf95682652654b4bd9b091634dca9"
+    }
+  }
+}

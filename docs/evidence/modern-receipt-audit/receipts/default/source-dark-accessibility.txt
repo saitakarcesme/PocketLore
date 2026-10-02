@@ -1,0 +1,28 @@
+android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+ android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+  android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+   android.widget.ScrollView text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 156 - 1280, 2856) clickable=false visible=true
+     android.widget.Button text=Close reader description=null bounds=Rect(72, 216 - 1208, 360) clickable=true visible=true
+     android.widget.TextView text=Infiltration and groundwater recharge description=null bounds=Rect(72, 372 - 1208, 647) clickable=false visible=true
+     android.widget.TextView text=Source snapshot · Offline description=null bounds=Rect(72, 647 - 1208, 760) clickable=false visible=true
+     android.widget.Button text=Reading options description=null bounds=Rect(72, 772 - 1208, 916) clickable=true visible=true
+     android.widget.TextView text=Some water that infiltrates will remain in the shallow soil layer, where it will gradually move vertically and horizontally through the soil and subsurface material. Some of the water may infiltrate deeper, recharging groundwater aquifers. If the aquifers are porous enough to allow water to move freely through it, people can drill wells into the aquifer and use the water for their purposes. Water may travel long distances or remain in groundwater storage for long periods before returning to the surface or seeping into other water bodies, such as streams and the oceans.
+
+Source document: Infiltration and groundwater recharge
+https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle
+Source date / retrieval: 2026-09-30
+Rights: USGS-authored text; U.S. public domain
+Citation: [water-04]
+
+Source and coverage
+Bundled water-science passage. Verbatim USGS paragraph with whitespace normalized; limited coverage, not a complete publication.
+
+Captured on this device: 2026-10-02 04:52
+Capture time is not the source publication date. description=null bounds=Rect(72, 928 - 1208, 2856) clickable=false visible=true
+     android.widget.Button text=Bookmark this record description=null bounds=Rect(72, 5480 - 1208, 2856) clickable=true visible=false
+     android.widget.TextView text=Personal note description=null bounds=Rect(72, 5636 - 1208, 2856) clickable=false visible=false
+     android.widget.EditText text=null description=Personal note bounds=Rect(72, 5749 - 1208, 2856) clickable=true visible=false
+     android.widget.Button text=Save note description=null bounds=Rect(72, 6023 - 1208, 2856) clickable=true visible=false
+     android.widget.Button text=Export snapshot description=null bounds=Rect(72, 6191 - 1208, 2856) clickable=true visible=false
+     android.widget.Button text=Share snapshot description=null bounds=Rect(72, 6359 - 1208, 2856) clickable=true visible=false

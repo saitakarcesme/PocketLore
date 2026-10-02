@@ -1,0 +1,4 @@
+instrumentation:org.pocketlore.app.test/org.pocketlore.app.ModernIntegratedInstrumentation (target=org.pocketlore.app)
+instrumentation:org.pocketlore.app.test/org.pocketlore.app.ModernTeardownProbe (target=org.pocketlore.app)
+instrumentation:org.pocketlore.app.test/org.pocketlore.app.ProductUiInstrumentation (target=org.pocketlore.app)
+instrumentation:org.pocketlore.app.test/org.pocketlore.app.DocumentsInstrumentation (target=org.pocketlore.app)

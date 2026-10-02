@@ -1,0 +1,23 @@
+android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+ android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+  android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+   android.widget.ScrollView text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 156 - 1280, 2856) clickable=false visible=true
+     android.widget.Button text=Close reader description=null bounds=Rect(72, 216 - 1208, 360) clickable=true visible=true
+     android.widget.TextView text=Export isolation test description=null bounds=Rect(72, 372 - 1208, 530) clickable=false visible=true
+     android.widget.TextView text=Source snapshot · Offline description=null bounds=Rect(72, 530 - 1208, 643) clickable=false visible=true
+     android.widget.Button text=Reading options description=null bounds=Rect(72, 655 - 1208, 799) clickable=true visible=true
+     android.widget.TextView text=Export cancelled. A partial destination may remain; saved records are unchanged. description=null bounds=Rect(72, 811 - 1208, 995) clickable=false visible=true
+     android.widget.TextView text=Public constructed transport fixture, not research evidence.
+
+Source and coverage
+Test-only source
+
+Captured on this device: 2026-10-02 04:51
+Capture time is not the source publication date. description=null bounds=Rect(72, 995 - 1208, 2111) clickable=false visible=true
+     android.widget.Button text=Bookmark this record description=null bounds=Rect(72, 2123 - 1208, 2267) clickable=true visible=true
+     android.widget.TextView text=Personal note description=null bounds=Rect(72, 2279 - 1208, 2392) clickable=false visible=true
+     android.widget.EditText text=Saved while export is blocked description=Personal note bounds=Rect(72, 2392 - 1208, 2654) clickable=true visible=true
+     android.widget.Button text=Save note description=null bounds=Rect(72, 2666 - 1208, 2810) clickable=true visible=true
+     android.widget.Button text=Export snapshot description=null bounds=Rect(72, 2834 - 1208, 2856) clickable=true visible=false
+     android.widget.Button text=Share snapshot description=null bounds=Rect(72, 3002 - 1208, 2856) clickable=true visible=false

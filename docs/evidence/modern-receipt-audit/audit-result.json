@@ -1,0 +1,72 @@
+{
+  "audit_check": "PASS",
+  "classification": "incomplete",
+  "receipt_validation": "supported",
+  "phases": {
+    "default": {
+      "returncode": 0,
+      "elapsed_seconds": 42.01824072099407,
+      "checks": 108,
+      "streamed_files": 44,
+      "decoded_bytes": 4775767
+    },
+    "large": {
+      "returncode": 0,
+      "elapsed_seconds": 40.85703223499877,
+      "checks": 108,
+      "streamed_files": 44,
+      "decoded_bytes": 4762236
+    },
+    "cold": {
+      "returncode": 0,
+      "elapsed_seconds": 2.929492167997523,
+      "checks": 3,
+      "streamed_files": 3,
+      "decoded_bytes": 333640
+    },
+    "documents": {
+      "returncode": 0,
+      "elapsed_seconds": 3.147062105999794,
+      "checks": 83,
+      "streamed_files": 3,
+      "decoded_bytes": 334842
+    },
+    "documents-cold": {
+      "returncode": 0,
+      "elapsed_seconds": 0.648762169003021,
+      "checks": 0,
+      "streamed_files": 4,
+      "decoded_bytes": 335034
+    },
+    "native-cards-recognition": {
+      "returncode": 0,
+      "elapsed_seconds": 8.103668518000632,
+      "checks": 57,
+      "streamed_files": 8,
+      "decoded_bytes": 1142914
+    },
+    "probe-false": {
+      "returncode": 0,
+      "elapsed_seconds": 0.38596493800287135,
+      "checks": 0,
+      "streamed_files": 1,
+      "decoded_bytes": 85
+    },
+    "probe-true": {
+      "returncode": 0,
+      "elapsed_seconds": 2.074740701005794,
+      "checks": 0,
+      "streamed_files": 2,
+      "decoded_bytes": 191769
+    }
+  },
+  "negative_controls": [
+    "stale-run",
+    "missing-phase",
+    "corrupt-chunk",
+    "corrupted-manifest-hash",
+    "boot-mismatch",
+    "font-mismatch",
+    "failed-transport"
+  ]
+}

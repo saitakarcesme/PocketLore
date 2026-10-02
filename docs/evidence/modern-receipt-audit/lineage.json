@@ -1,0 +1,19 @@
+{
+  "base": "5ea7a6dc51ed7ebd8a44545746b0ca87ef188479",
+  "candidate": "4e5652009485a86b80e04415cbce740b36472db7",
+  "candidate_parent": "b2f7d65da740485e95830047dcd9146e06e22802",
+  "main_tree": "8706fb0e6bc4db9556caee947b734c5d4b738ba9",
+  "candidate_sources": {
+    "android/app/src/androidTest/java/org/pocketlore/app/DeviceEvidence.java": "d42ed596be1e0eb9667dafb69e2dd2ff48abdb82a95f2b72ac086096e1d75cb7",
+    "tools/evaluation/check_modern_integrated.sh": "d0788eff34e088cdb770f5a3bc9b466e3bf6437db69f13f969140ef440e14db0",
+    "tools/evaluation/documents/tests/DocumentsInstrumentation.java": "07d450bdcac4c7c42f9bee0541bc14839c4b56c00343f11133243626ad3dff3c",
+    "tools/evaluation/modern-integrated/AndroidManifest.xml": "304e33f36ccdcd6e3c1360a10137e50d95e0963ac6b81ef648a5524357e40c2c",
+    "tools/evaluation/modern-integrated/check.py": "9b4bc3f85ede866548848db7670d5aa525540e39689394daab11edbace249f32",
+    "tools/evaluation/modern-integrated/source.gradle": "4c98525a7b16d98fd8047e300afe958ad779c042dc1c9bb3d4a9c858434674cd",
+    "tools/evaluation/modern-integrated/test_receipts.py": "1d314a17033f7f00586490db45edffa3238e1f74a950e15d49a57eca4d50b9f6",
+    "tools/evaluation/modern-integrated/tests/ModernIntegratedInstrumentation.java": "e344558058e2a356e3061abd832af46e560a40dcca45d0d95292125fd7d510eb",
+    "tools/evaluation/modern-integrated/tests/ModernTeardownProbe.java": "8072f3ecfefc0ba09d3122d5396b6b859641d98b5c521103c28123bb48a570c2",
+    "tools/evaluation/product-ui/tests/ProductUiInstrumentation.java": "d9e849343d4ef50370868b0fda4a3bbd0e01ac877f9315e53473e291a09f5935"
+  },
+  "limitation": "No captured source-tree/build-input attestation or installed test-APK hash binds the manifest test_sha256 to this candidate; matching checker and production tree do not fill that gap."
+}

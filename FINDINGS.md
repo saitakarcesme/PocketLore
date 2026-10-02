@@ -376,3 +376,7 @@ One unchanged accepted application APK9c71a32d…7dd70 now has sequential curren
 ## Task390 repair1 — specialist failure evidence and fresh validation
 
 The subsequent required run failed at specialist instrumentation transport with empty stdout; its cause cannot be recovered from the old wrapper, and a later unbound PASS report is not evidence of that run's success. Preserved all available failed bytes. Added command exit/duration/timeout capture, diagnostic report capture on failure, strict completion/run-ID binding and actual negative receipt tests. A new default integrated check ran all seven lanes fresh without reuse and passed in approximately338s on the unchanged APK9c71a32d…7dd70. Current full5562 sampled allocated app/package/test-provider peak41,757,052,928bytes; old success and failure receipts remain distinct. See docs/evidence/integrated-candidate.md; no physical, quality, rights or release gates are waived.
+
+## Task410 existing API37 receipt audit
+
+Offline inspection of run20261002T025132Z-be41f6a6 supports six phase streams, transport completion, unchanged boot, restored font and enumerated APK/model assets, separately from task400's preserved reboot failures. Overall classification remains incomplete: the reported test APK lacks immutable source/build-input and installed-test-package binding. This audit does not accept400 or change production behavior; see docs/evidence/modern-receipt-audit.md. No device work was repeated.
