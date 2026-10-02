@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/reference-expansion/verify.py", line 95, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/reference-expansion/verify.py", line 57, in main
+    assert h['status']=='ready_for_supervised_review','New candidate incomplete: '+', '.join(h.get('remaining_gates',[]))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: New candidate incomplete: New exclusive coordinator lease for emulator-5564, Actual new APK/edition installation and current subset storage/reservation measurements, Research/source/Back/import-export/cancel/reopen device receipts and exact retained identities, Source-level inspection of actual Android outputs, Current-candidate general research behavioral receipt and all required checks passing, Supervised independent review of final immutable candidate
