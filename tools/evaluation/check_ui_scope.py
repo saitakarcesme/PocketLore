@@ -3,7 +3,9 @@
 from pathlib import Path
 import hashlib,json,subprocess,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[2]
-base='1d4614a0c798b37f4d1e6425777050d4a45b91a3'
+# Task390 preserves the accepted integrated baseline, including task350 model
+# selection and task370 cache changes; task310's older baseline is historical.
+base='8f23811bcd32aaf6cd9fc6364d1dd7afa540ba48'
 java=root/'android/app/src/main/java/org/pocketlore/app'
 protected=['AnswerEngine.java','EvidencePrompt.java','ResearchEngine.java','NativePanel.java','PackLibrary.java','ScaleLibrary.java','ScaleWiki.java','ScalePlaces.java','ImportRecovery.java','TravelCatalog.java','EvidenceAvailability.java','ResearchBrief.java','PersonalDocuments.java','PersonalDocumentsActivity.java','PersonalText.java','AttachmentEngine.java','AttachmentsActivity.java','AttachmentAssets.java']
 checks=[]

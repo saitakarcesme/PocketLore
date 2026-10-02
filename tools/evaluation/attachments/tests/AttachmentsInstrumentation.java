@@ -16,7 +16,7 @@ public final class AttachmentsInstrumentation extends Instrumentation{
   try{NativePanel panel=(NativePanel)field(parent,"nativePanel");main(panel::lowMemory);await(()->parent.resourceIdle(),"handoff_model_unloaded");
    for(int code:new int[]{3,4}){
     ActivityMonitor monitor=addMonitor(AttachmentsActivity.class.getName(),null,false);
-    main(()->{parent.showResearch();Button button=find(parent.getWindow().getDecorView(),"Photo text and speech input");if(button==null)throw new AssertionError("Attachment control missing");button.performClick();});
+    main(()->{parent.showResearch();Button edit=find(parent.getWindow().getDecorView(),"Edit question");if(edit!=null&&edit.isShown())edit.performClick();Button button=find(parent.getWindow().getDecorView(),"Photo text and speech input");if(button==null||!button.isShown()||!button.isEnabled())throw new AssertionError("Attachment control unavailable");button.performClick();});
     activity=(AttachmentsActivity)waitForMonitorWithTimeout(monitor,10000);removeMonitor(monitor);ok(activity!=null,"actual_question_attachment_route_"+code);
     main(()->activity.onActivityResult(code,Activity.RESULT_OK,new Intent().setData(android.net.Uri.fromFile(new File(input,code==3?"text.png":"speech.wav")))));await(this::idle,"handoff_recognition_finished_"+code);
     String recognized=((EditText)field(activity,"preview")).getText().toString();ok(!recognized.trim().isEmpty(),"real_recognized_handoff_"+code);String edited=recognized+" reviewed";
