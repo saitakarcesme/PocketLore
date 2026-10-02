@@ -1,0 +1,14 @@
+PASS: 13 integration/lifecycle controls; test verifier is synthetic and establishes no entailment or Android execution
+PASS: actual NativePanel general chat wiring, no finite claims grammar, no qualified production verifier
+Recorded unexecuted repository file changed after run: tools/evaluation/check_general_generation.sh
+PASS: actual API37 unavailable-verifier UI route, exact artifacts, retention, and corruption rejection; NOT selected-model JNI or quality
+PASS: long query windows, bounded full paragraphs, cancellation/retry, duplicate identity, missing citation, no structural promotion
+Queries: [Compare the conservation of soil moisture when mulch covers the surface with the reduction in pest and weed pressure across a sequence of different crops; distinguish nutrients from moisture without assuming identical benefits., Compare the conservation of soil moisture when mulch covers the surface with the reduction in pest and weed pressure across a sequence of different crops, distinguish nutrients from moisture without assuming identical benefits., conservation soil moisture mulch covers surface reduction pest weed pressure across sequence, weed pressure across sequence different crops distinguish nutrients moisture without assuming identical, moisture without assuming identical benefits]
+reference-432174-c4ba2176e40b85a3	Mulch
+reference-7655739-6b17719b6e5462c5	Passive ventilation
+reference-46470-5d9b9cd87b755893	Crop rotation
+reference-2259607-e908bb7063551eeb	Pickling
+reference-991-b62dfff2ee9e6bd1	Absolute value
+reference-5739-86ff3287ece77838	Compiler
+{"artifact_behavior": "PASS", "negative_controls": ["missing-output", "changed-output", "changed-model-identity", "missing-model"], "scope": "host development; no semantic approval inferred"}
+{"product_gates": {"independent_review_present": true, "selected_model_android_jni_ui": false, "general_runtime_support_verifier_qualified": false, "current_complete_distribution_measured": false}, "status": "FAIL", "reason": "Host draft feasibility is not a qualified general supported Android answer path"}

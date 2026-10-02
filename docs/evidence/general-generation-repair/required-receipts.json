@@ -1,0 +1,21 @@
+{
+  "checks": [
+    {
+      "command": [
+        "bash",
+        "tools/android-build.sh"
+      ],
+      "exit_code": 0,
+      "log_sha256": "1b56b84d6c8d5b4b6e6c70e6db670bbd1cdcd69b5b0b53f23841289766f21218"
+    },
+    {
+      "command": [
+        "bash",
+        "tools/evaluation/check_general_generation.sh"
+      ],
+      "exit_code": 1,
+      "log_sha256": "e8540fdd49c4d1f2866b291c6ef23d2463951cf6e9856196470af6c9d0920c27"
+    }
+  ],
+  "scope": "Wiring/lifecycle verified; general product quality still FAIL"
+}

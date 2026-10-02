@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5564",
+    "install",
+    "-r",
+    "/home/isa/Projects/PocketLore/downloads/general-generation-repair/run-20261002T140616Z-f281e6/binaries/app-debug.apk"
+  ],
+  "timeout_seconds": 300,
+  "returncode": 0,
+  "timed_out": false,
+  "elapsed_seconds": 0.20321060801506974
+}
