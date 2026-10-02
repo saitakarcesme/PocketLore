@@ -20,7 +20,7 @@ def verify(d):
   for when in ['installed','final']:assert d[when+'-'+pkg+'.txt'].decode().split()[0]==info['sha256']
  assert len(r['states'])==72 and len(set(r['states']))==72
  assert all(x['ratio']>=4.5 for x in r['contrast'])
- assert len(r['status_pixels'])==30 and all(x['background_fraction']>=.90 and x['contrasting_pixels']>=20 for x in r['status_pixels'])
+ assert len(r['status_pixels'])==30 and all(x['center_background_fraction']>=.99 and x['contrasting_pixels']>=20 for x in r['status_pixels'])
  for name in r['states']:
   assert d[name+'.png'].startswith(b'\x89PNG') and len(d[name+'.png'])>10000
   assert len(d[name+'.txt'])>100
