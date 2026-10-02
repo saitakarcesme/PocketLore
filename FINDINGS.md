@@ -428,3 +428,7 @@ Fixed host development run20261002T120622Z-88748f has35independently assessed us
 ### Task480 repair-1 — collector repair, device gate still open
 
 Recovered the120-document/20-family edition and frozen public results without regenerating sources or inference. Build and corrected synthetic receipt controls pass; both required behavioral checks remain incomplete pending a new exclusive5564lease and actual installation/source-output/storage receipts. Run-owned APK retention and independent staging/reservation observations are implemented but device-unvalidated. Original compile/fixture failures are retained in docs/evidence/reference-coverage-expansion/repair-1. No protected device or holdout was accessed; no acceptance claim follows.
+
+### Task480 repair-2 — recovered, awaiting exclusive device ownership
+
+Recovered the exact failed repair-1 tree and allowed the collector to recognize repair-2 leases without weakening ownership/expiry validation. No new exclusive5564lease is available in the authorized runtime state; actual Android execution remains blocked. No repeated matrix, acquisition, device command or behavioral pass claim. The existing incomplete HANDOFF and prior failed receipts are preserved.
