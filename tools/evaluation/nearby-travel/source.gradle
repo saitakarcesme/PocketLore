@@ -1,0 +1,1 @@
+gradle.beforeProject { app -> app.plugins.withId('com.android.application') { app.android.sourceSets.androidTest.java.srcDirs += [new File(app.rootProject.projectDir, '../tools/evaluation/nearby-travel/tests')] } }

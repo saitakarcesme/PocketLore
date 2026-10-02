@@ -1,0 +1,21 @@
+package org.pocketlore.app;
+import android.content.Context;import java.io.*;import java.nio.charset.StandardCharsets;import java.security.MessageDigest;import java.util.*;import org.json.*;
+/** Narrow independently reviewed GeoNames field projection, never a bulk generation permit. */
+final class ReviewedCities {
+ static final String PIN="abebbc64ad13392c8079b2f7312e9b914331240aaebd45426a1f167bd30eaa62";
+ static final String[] FIELDS={"geonameid","name","latitude","longitude","country_code","modification_date"};
+ static String hash(String s)throws Exception{return ScaleLibrary.hex(MessageDigest.getInstance("SHA-256").digest(s.getBytes(StandardCharsets.UTF_8)));}
+ static JSONObject load(Context context)throws Exception{try(InputStream in=context.getAssets().open("reviewed-cities.json")){byte[] b=in.readAllBytes();ScaleLibrary.check(b.length<=200000,"Reviewed payload limit");String text=new String(b,StandardCharsets.UTF_8);ScaleLibrary.check(hash(text).equals(PIN),"Reviewed receipt changed");JSONObject p=new JSONObject(text);ScaleLibrary.check(hash(p.getString("license_html")).equals(p.getString("license_sha256")),"Missing or changed license");return p;}}
+ static JSONObject match(JSONObject payload,ScalePlaces.City city)throws Exception{
+  JSONArray cards=payload.getJSONArray("cards");for(int i=0;i<cards.length();i++){JSONObject card=cards.getJSONObject(i);if(!card.getString("id").equals(city.id))continue;
+   ScaleLibrary.check(hash(city.raw).equals(card.getString("stored_row_sha256")),"Changed reviewed source row");JSONArray fields=card.getJSONArray("fields");ScaleLibrary.check(fields.length()==6,"Reviewed field count");
+   for(int j=0;j<6;j++){JSONObject f=fields.getJSONObject(j);ScaleLibrary.check(f.getString("field").equals(FIELDS[j]),"Unreviewed field");int start=f.getInt("start_utf16"),end=f.getInt("end_utf16");String quote=f.getString("quote");ScaleLibrary.check(start>=0&&end>=start&&end<=city.raw.length()&&city.raw.substring(start,end).equals(quote)&&hash(quote).equals(f.getString("sha256")),"Changed reviewed field span");}
+   ScaleLibrary.check(fields.getJSONObject(0).getString("quote").equals(city.id)&&fields.getJSONObject(1).getString("quote").equals(city.name)&&fields.getJSONObject(4).getString("quote").equals(city.country)&&fields.getJSONObject(5).getString("quote").equals(city.date)&&Double.parseDouble(fields.getJSONObject(2).getString("quote"))==city.lat&&Double.parseDouble(fields.getJSONObject(3).getString("quote"))==city.lon,"Indexed identity differs from source");
+   ScaleLibrary.check(card.getString("notice").contains("GeoNames")&&card.getString("notice").contains("https://creativecommons.org/licenses/by/4.0/")&&!payload.getString("license_html").isEmpty(),"Missing attribution or license");return card;
+  }return null;
+ }
+ static String render(JSONObject payload,JSONObject card,int selected)throws Exception{
+  StringBuilder out=new StringBuilder("Saved extractive city metadata · not generated reasoning or a current observation\n\n");JSONArray fields=card.getJSONArray("fields");for(int i=0;i<fields.length();i++)if(selected<0||selected==i){JSONObject f=fields.getJSONObject(i);out.append(f.getString("field")).append(": ").append(f.getString("quote")).append("\nOriginal stored-row UTF-16 [").append(f.getInt("start_utf16")).append(", ").append(f.getInt("end_utf16")).append(") · slice SHA-256 ").append(f.getString("sha256")).append("\n\n");}
+  out.append(card.getString("notice")).append("\nOriginal record: ").append(card.getString("source_url")).append("\nArchive SHA-256: ").append(card.getString("archive_sha256")).append("\nOriginal row SHA-256: ").append(card.getString("original_row_sha256")).append("\nStored row SHA-256: ").append(card.getString("stored_row_sha256")).append("\nAcquisition: ").append(card.getString("acquired_utc")).append("\nUpstream archive release date and per-field originating agency: unknown.\nOnly six selected fields; no alternate names or complete raw row. No boundaries, entrance, routing or venue evidence.\n\nOffline CC BY 4.0 legal text\n").append(android.text.Html.fromHtml(payload.getString("license_html").substring(payload.getString("license_html").indexOf("<div id=\"legal-code-body\">"),payload.getString("license_html").indexOf("</main>")),android.text.Html.FROM_HTML_MODE_LEGACY).toString());return out.toString();
+ }
+}
