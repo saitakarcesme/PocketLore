@@ -1,0 +1,16 @@
+{
+  "kind": "Frozen public development, not unseen evaluation",
+  "cases": 24,
+  "source_packet_sha256": "b5824bc56fd2b25995ed4ec4e8b1988d67a559b302ca6ae888263860183dcccf",
+  "cases_sha256": "64cf9d39d0bb014a49041037643ca0de335e1f2032a04c5e21c67b762707e6b8",
+  "architecture": "Explicit subquestions separated by newline/semicolon/question boundaries; each gets bounded whole quotations and explicit gaps, no generated factual connective prose. No case-ID/topic/entity rules in runtime. Retain unchanged single-question generated path separately.",
+  "limits": {
+    "question_utf16": 2048,
+    "parts": 6,
+    "quotations_per_part": 2,
+    "quotation_units_total": 12288
+  },
+  "assessment": "Independently inspect every rendered quotation for exact provenance, relevance and completeness to its section; source brief usefulness is not generated success. Require absent controls without quotes, no altered source claims; report all partial/missing obligations, not quote counts as quality.",
+  "acquisition_limits": "16 planned revisions,9 acquired before429; stopped without retries/alternate API route. No broad corpus clearance. Current OpenStax NC sources excluded.",
+  "freeze_before": "Any app/controller/retrieval implementation change or case execution"
+}
