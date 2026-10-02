@@ -1,0 +1,15 @@
+{
+  "command": [
+    "bash",
+    "tools/android-build.sh",
+    "assembleDebug",
+    "assembleDebugAndroidTest",
+    "-I",
+    "/home/isa/Projects/PocketLore/tools/evaluation/reference-expansion/source.gradle",
+    "-PpocketloreTestRunner=org.pocketlore.app.ReferenceExpansionInstrumentation"
+  ],
+  "timeout_seconds": 300,
+  "returncode": 0,
+  "timed_out": false,
+  "elapsed_seconds": 10.148831259983126
+}

@@ -60,5 +60,8 @@
   "device_source_assessment": "docs/evidence/reference-coverage-expansion/device-source-assessment.json",
   "device_profile": "Existing emulator-5564 API37, page size16384, subset only; no physical/full-capacity proof",
   "device_source_assessment_sha256": "1c065272072d25ca4fd0f1e4aa45b4ab1bb3530c4a2937e8d19ef5bdb549a22c",
-  "canonical_review_status": "Pending supervised canonical critic; source inspection is not task acceptance"
+  "canonical_review_status": "Pending supervised canonical critic; source inspection is not task acceptance",
+  "review_packet": "docs/evidence/reference-coverage-expansion/task481/packet-manifest-v2.json",
+  "review_packet_sha256": "75719356ae4b61ab2d1ff807c02ce14276929dd025b4a131604a51016d538493",
+  "review_packet_check": "python3 docs/evidence/reference-coverage-expansion/task481/verify_packet.py"
 }

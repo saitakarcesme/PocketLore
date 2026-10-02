@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5564",
+    "push",
+    "/home/isa/Projects/PocketLore/downloads/reference-expansion/run-20261002T125014Z-45bccf/binaries/app-debug.apk",
+    "/data/local/tmp/reference480-run-20261002T125014Z-45bccf-app.apk"
+  ],
+  "timeout_seconds": 300,
+  "returncode": 0,
+  "timed_out": false,
+  "elapsed_seconds": 0.06833187298616394
+}

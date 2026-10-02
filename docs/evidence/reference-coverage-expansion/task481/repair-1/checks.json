@@ -1,0 +1,29 @@
+[
+  {
+    "command": [
+      "bash",
+      "tools/android-build.sh"
+    ],
+    "exit_code": 0,
+    "log": "docs/evidence/reference-coverage-expansion/task481/repair-1/build.log",
+    "sha256": "fc3c893eeab0e5257ed2ee5b73469d35d7bc2ac2fa128899785785cc24fc668b"
+  },
+  {
+    "command": [
+      "bash",
+      "tools/evaluation/check_general_research_product.sh"
+    ],
+    "exit_code": 0,
+    "log": "docs/evidence/reference-coverage-expansion/task481/repair-1/general.log",
+    "sha256": "236d313ade1c18a1565f93b82b297dc554d7cf27cf348b4e8f6eabe7d2db8245"
+  },
+  {
+    "command": [
+      "bash",
+      "tools/evaluation/check_reference_coverage_expansion.sh"
+    ],
+    "exit_code": 0,
+    "log": "docs/evidence/reference-coverage-expansion/task481/repair-1/expansion.log",
+    "sha256": "9331206e24471197a2161057b5b2f26846ef9e6512d5169440711e5e00986083"
+  }
+]
