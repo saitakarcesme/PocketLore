@@ -1,4 +1,4 @@
-# General grounded generation — in-progress bounded host experiment
+# General grounded generation — bounded host experiment, product gate fails
 
 Task500 does not yet satisfy its product objective. A general full-paragraph context and draft path replaces finite relation templates in the new experiment, without changing the deployed model or claiming an unverified draft is supported. The required quality checker deliberately remains failing while general semantic verification, selected-model Android execution and current complete distribution measurements are missing.
 
@@ -24,4 +24,36 @@ The current authorized API37 emulator has4,007,040KiB total and2,244,428KiB avai
 
 storage-plan.json reconciles the two weight choices against the historical full303 allocation and update/provider allowance, not a new full installation. Replacing its baseline gives43.634GB for4B and45.820GB for7B before subsequent candidate changes. Historical update allowances become46.802GB and48.988GB respectively; staging another model copy can approach49.479GB for7B before unknown later overhead. Target45GB and hard50GB remain unchanged, and no coverage is silently dropped. Current full installed inventory/provider/update peaks require measurement; modern5564 is only a subset.
 
-The new shared controller is an experimental host path and is not wired into production answer publication. Safe withholding therefore yields zero newly qualified generated product answers, not100% support precision or success. Required build, run outputs, independent source inspection and final check status will be bound below. Source briefs remain explicitly extractive. Physical ARM64/GrapheneOS, model admission in a sufficiently provisioned Android environment, general semantic verification, relevance/completeness, rights, independent unseen comparison and human acceptance remain open.
+The new shared controller is an experimental host path and is not wired into production answer publication. Safe withholding therefore yields zero newly qualified generated product answers, not100% support precision or success. The Android build passes (APK65e91629f4af8238b5c9885023843412fe6adaf12c30972b857c8561eac6effa); this new APK is not installed for selected-model qualification. The installed API37 APK remains task490 f14099efbb96f945b739fc88da7f1ecfba34a61f5d1a270faf052d3440d8035d. Device probes are read-only: boot is unchanged, and both selection-file reads return the same missing-file error, not a successful selection receipt. Full raw transport exits are retained. Run outputs, independent source inspection and final check status are bound below. Source briefs remain explicitly extractive. Physical ARM64/GrapheneOS, model admission in a sufficiently provisioned Android environment, general semantic verification, relevance/completeness, rights, independent unseen comparison and human acceptance remain open.
+
+
+## Completed execution and measured performance
+
+Both serial native processes completed all twelve requests with exit0, one draft per question. All24 drafts, exact prompts, incremental text, model/runtime logs, native counters, timing and one-second process samples are copied into general-generation/run-20261002T134119Z; ignored weights remain at their recorded paths. GGUF loader logs confirm qwen3/qwen2 architecture and Q4_K Medium, mmap plus CPU repacking. There were no seed/prompt retries, new downloads, concurrent inference, service changes or device generation.
+
+| Host candidate | Load seconds | First token median/p95 seconds | Total median/p95 seconds | Sampled RSS peak bytes | Sampled swap peak |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Qwen3 4B | 1.117 | 9.526 / 14.069 | 20.653 / 44.717 | 4,940,734,464 | 0 |
+| Qwen2.5 7B | 2.607 | 15.749 / 20.150 | 30.274 / 46.259 | 7,983,595,520 | 0 |
+
+These percentiles use nearest rank for12different requests, not repeated cold trials. Model load is separate; first-token and total include fresh-context prefill and token capture; reading/hashing weights warms host caches. Both are host CPU results.4B prompt maximum936 tokens,7B932; generation maxima360/227, within4096/512. Native weight/KV/compute peaks were4,242,363,904/603,979,776/80,413,184bytes and7,798,468,608/234,881,024/81,527,296bytes. Native counters are not whole-process memory. The current4GB emulator cannot establish either profile's Android feasibility.
+
+The required Android build passes. check_general_generation.sh verifies model/runtime/input/output hashes, all24 actual records, token budgets and compiled retrieval/cancellation behaviors; missing output, changed output, changed model identity and missing model mutations fail. It then exits1 honestly for missing general runtime entailment qualification, selected-model Android JNI/UI execution and current full-distribution measurements. This is a negative product result, not a docs-only pass or a claim that general generation is delivered.
+
+## Remaining concrete work
+
+Preserve these exact drafts for source-support regression rather than regenerating the same questions. A separately pinned stronger independent verifier must be qualified against full compound claims, subject/condition transfers and wrong-neighbor citations before any automated publication; neither the generator nor the already failed NLI/finite-frame mechanism is an approval authority. That is an unresolved engineering step, not proven solved by this experiment. End-to-end retrieval must also reduce the observed generic-window distractors without losing the required paragraphs. Selected-model JNI/load/cancel/restart requires an approved Android environment with measured memory headroom for the selected profile; no baseline playback can substitute. Reconcile current full distribution plus model/shard update reservations before selecting a mobile deployment. No task queue or orchestration state was changed.
+
+
+## Independent development source review and selection
+
+The supplementary independent source reviewer inspected all24 full drafts against their actual provided paragraphs, including all factual clauses, qualifiers, citation targets and requested coverage. Its exact hashes and case judgments are in general-generation/support-review.json. This is separate from builder assessment and is not the canonical final grade or unseen evaluation.
+
+| Candidate | Fully supported, correctly cited, complete educational drafts /10 | Correct unavailable responses /2 | Newly qualified product publications |
+| --- | ---: | ---: | ---: |
+| Qwen3 4B | 4 | 2 | 0 |
+| Qwen2.5 7B | 5 | 2 | 0 |
+
+4B g05 says assembly is always one statement per instruction, contradicting its source and later prose; g06 loses the bootstrap compiler's often-temporary qualifier; g08 adds an unsupported complex-plane explanation. Both models add unsupported shared soil-health benefits in g03.7B g05 cites the assembly paragraph for cross-compilation, g07 overstates unrestricted monarch power, and g09 omits the pressure mechanism.4B g01 loses a sufficient-moisture condition and strengthens inhibition to prevention. All failures are retained, not repaired by deleting tails or assigning a favorable quote. Correct abstention is not credited as generated educational usefulness. The generator's GAPS:none is not treated as a verifier finding.
+
+**Selection result: no candidate qualifies for general product publication.** The7B's one additional successful draft on ten public oracle questions is insufficient to establish a reliable model preference, and its memory/storage costs are larger. Keep production selection unchanged. The4B remains an experimental asset, not a newly deployed baseline. New implementation and real model execution are checkpointed, but task500's full product objective remains unmet and the required general-generation check exits1. Canonical criticism must evaluate the immutable packet; this report does not award acceptance.

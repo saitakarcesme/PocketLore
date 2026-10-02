@@ -1,0 +1,9 @@
+{
+  "command": [
+    "bash",
+    "tools/evaluation/check_general_generation.sh"
+  ],
+  "exit_code": 1,
+  "log_sha256": "399699831029fc63e691c5b220bfe743f8c165a53f3e577937a56049938fcb44",
+  "interpretation": "Artifact and behavior checks pass, required product gate fails; no pass inferred from safe withholding"
+}
