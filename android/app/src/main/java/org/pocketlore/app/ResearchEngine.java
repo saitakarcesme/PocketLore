@@ -24,7 +24,7 @@ public final class ResearchEngine {
         public Result sourceResearch(String q){
             List<Hit> hits=new ArrayList<>();int candidates=0;
             for(ResearchEngine e:engines){Result r=e.sourceResearch(q);for(Hit h:r.hits)hits.add(new Hit(h.passage,rankScore(q,h.passage)+h.score*.01));candidates+=r.candidatesScored;}
-            Set<String> missing=new TreeSet<>(rankTerms(q)),present=new HashSet<>();
+            Set<String> missing=new java.util.TreeSet<>(rankTerms(q)),present=new HashSet<>();
             for(Hit h:hits)present.addAll(rankTerms(h.passage.title+" "+h.passage.text));missing.removeAll(present);
             if(!missing.isEmpty())hits.clear();
             return new Result(diverse(hits),missing,"Eligible reference candidates only; not verified support",candidates);
