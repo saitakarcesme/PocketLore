@@ -7,14 +7,17 @@ def verify_report(report,run_id,pack_hash):
  assert report['status']=='PASS',report.get('error')
  assert report['pack_sha256']==pack_hash
 
+def record_command(out,cmd,name,timeout=360,input=None):
+ start=time.monotonic()
+ try:r=subprocess.run(list(map(str,cmd)),cwd=ROOT,input=input,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=timeout)
+ except subprocess.TimeoutExpired as e:
+  (out/name).write_bytes(e.stdout or b'');(out/(name+'.command.json')).write_text(json.dumps({'timeout_seconds':timeout,'elapsed_seconds':time.monotonic()-start})+'\n');raise
+ (out/name).write_bytes(r.stdout);(out/(name+'.command.json')).write_text(json.dumps({'returncode':r.returncode,'elapsed_seconds':time.monotonic()-start})+'\n');assert r.returncode==0,(name,r.returncode,r.stdout[-2000:]);return r.stdout
+
 def main():
  out=ROOT/'downloads/specialist'/time.strftime('run-%Y%m%dT%H%M%SZ',time.gmtime());out.mkdir(parents=True)
- def run(cmd,name,timeout=360,input=None):
-  start=time.monotonic()
-  try:r=subprocess.run(list(map(str,cmd)),cwd=ROOT,input=input,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=timeout)
-  except subprocess.TimeoutExpired as e:
-   (out/name).write_bytes(e.stdout or b'');(out/(name+'.command.json')).write_text(json.dumps({'timeout_seconds':timeout,'elapsed_seconds':time.monotonic()-start})+'\n');raise
-  (out/name).write_bytes(r.stdout);(out/(name+'.command.json')).write_text(json.dumps({'returncode':r.returncode,'elapsed_seconds':time.monotonic()-start})+'\n');assert r.returncode==0,(name,r.returncode,r.stdout[-2000:]);return r.stdout
+ def run(cmd,name,timeout=360,input=None):return record_command(out,cmd,name,timeout,input)
+ run([sys.executable,'-m','unittest','discover','-s','tools/evaluation/specialist','-p','test_receipts.py'],'receipt-tests.txt')
  pack=out/'valid.plpack';m=build(pack);repeat=out/'repeat.plpack';build(repeat);assert pack.read_bytes()==repeat.read_bytes();assert len(m['documents'])==8
  with zipfile.ZipFile(pack) as z:files={n:z.read(n) for n in z.namelist()}
  rows={r.split('\t')[0]:r.split('\t')[5] for r in files['passages.tsv'].decode().split('\n') if r};lock=json.loads(LOCK.read_text())
