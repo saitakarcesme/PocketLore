@@ -6,12 +6,12 @@
   "baseline_status": "Accepted470 immutable historical profile; not replaced by this packet",
   "candidate": {
     "app": {
-      "path": "android/app/build/outputs/apk/debug/app-debug.apk",
+      "path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/build-bound-a1c628f/binaries/app-debug.apk",
       "sha256": "21a6efc62c73f28871619bb4806f264a4dbd1c9e663a9256506972ab353341f5",
       "bytes": 22719262
     },
     "test": {
-      "path": "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/build-bound-a1c628f/binaries/app-debug-androidTest.apk",
       "sha256": "b8ab30b9c9096ed356c15c7dda4307723f13c8370173997d86563cdb941a2721",
       "bytes": 430874
     },
@@ -46,5 +46,9 @@
     "Full-corpus capacity on API37",
     "Blanket bulk rights clearance"
   ],
-  "evaluation_rule": "Future evaluator owns NEW unseen source/topic-held-out cases; do not reuse these public development questions for final unseen claims"
+  "evaluation_rule": "Future evaluator owns NEW unseen source/topic-held-out cases; do not reuse these public development questions for final unseen claims",
+  "source_commit": "a1c628f7033918908d3a2fffda640a892cc4a66e",
+  "build_binding": "docs/evidence/reference-coverage-expansion/build-bound/receipt.json",
+  "source_manifest_sha256": "0e178b2ad8339b20070aad35092cecbfdfb28ed69f057d61812eecd162ff98bc",
+  "model_env_sha256": "2d932887a64251c6561f4082739136be2a204728c8acd8fb7a1a0eff69526d97"
 }
