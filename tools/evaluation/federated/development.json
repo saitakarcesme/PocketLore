@@ -1,0 +1,33 @@
+{
+  "classification": "Public development, not unseen; source selection precedes questions",
+  "sources": [
+    {
+      "path": "downloads/reference-expansion/reference-expansion.plpack",
+      "sha256": "61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135"
+    },
+    {
+      "path": "downloads/science/science-supplement-2026-10-01-v1.plpack",
+      "sha256": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274"
+    }
+  ],
+  "personal_fixture": "Observing notebook: Planned observing session on 2026-10-12 requires clear weather.\n\nObserving notebook revision: As of 2026-10-02, the session is postponed if rain is forecast.",
+  "personal_scope": "Constructed personal document test, not external scientific authority",
+  "questions": [
+    "Amateur astronomy; What is DNA?; Observing notebook",
+    "What causes earthquakes?; Black hole",
+    "What is the difference between magma and lava?; Acid",
+    "Chromosomes; Chemical equilibrium",
+    "Observing notebook",
+    "What is my DNA test result?",
+    "Are observatories open right now?",
+    "Quantum taxi availability on Mars"
+  ],
+  "controls": [
+    "same local citation ID across distinct editions",
+    "same source duplicate with preserved provenance",
+    "conflicting dated conditions retained",
+    "deleted and disabled collection exclusion",
+    "mid-retrieval cancellation and retry",
+    "restart selection persistence"
+  ]
+}
