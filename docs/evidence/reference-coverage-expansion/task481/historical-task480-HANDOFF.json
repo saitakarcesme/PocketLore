@@ -1,0 +1,54 @@
+{
+  "freeze_id": "pocketlore-480-reference-expansion-v1-pending-device",
+  "task_id": "480-expand-reviewed-reference-coverage-20261002a",
+  "status": "incomplete",
+  "baseline_commit": "a0cba18",
+  "baseline_status": "Accepted470 immutable historical profile; not replaced by this packet",
+  "candidate": {
+    "app": {
+      "path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/build-bound-a1c628f/binaries/app-debug.apk",
+      "sha256": "21a6efc62c73f28871619bb4806f264a4dbd1c9e663a9256506972ab353341f5",
+      "bytes": 22719262
+    },
+    "test": {
+      "path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/build-bound-a1c628f/binaries/app-debug-androidTest.apk",
+      "sha256": "b8ab30b9c9096ed356c15c7dda4307723f13c8370173997d86563cdb941a2721",
+      "bytes": 430874
+    },
+    "pack": {
+      "path": "downloads/reference-expansion/reference-expansion.plpack",
+      "sha256": "61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135",
+      "bytes": 501453
+    }
+  },
+  "source_selection_sha256": "21dab3107d7267b7a4ec79eeba32d7677cff087ecc5a354746a65779086bc29a",
+  "source_packet_sha256": "abbb800f0c837f401cb9c9d0f3ccf836e191c9f06d797917ef7678833ee392bc",
+  "source_review_sha256": "987d9b904c49afaf42f7529a1ba3b1a94dd713c0764ea6a529c494e4dea0f568",
+  "development_sha256": "7ffc25a4adfcd04a19ec09dd37e23efa0c2c42ede53115986771aeb06d76d20d",
+  "documents": 120,
+  "subject_families": 20,
+  "active_installed_counts": null,
+  "packaged_fallback": "Existing bundled source pack unchanged; not counted as active/new coverage",
+  "host_evidence": "docs/evidence/reference-coverage-expansion/build-host-summary.json",
+  "remaining_gates": [
+    "New exclusive coordinator lease for emulator-5564",
+    "Actual new APK/edition installation and current subset storage/reservation measurements",
+    "Research/source/Back/import-export/cancel/reopen device receipts and exact retained identities",
+    "Source-level inspection of actual Android outputs",
+    "Current-candidate general research behavioral receipt and all required checks passing",
+    "Supervised independent review of final immutable candidate"
+  ],
+  "forbidden_claims": [
+    "Generated-answer success",
+    "Unseen generalization",
+    "Matched-rival superiority",
+    "Physical Android or GrapheneOS acceptance",
+    "Full-corpus capacity on API37",
+    "Blanket bulk rights clearance"
+  ],
+  "evaluation_rule": "Future evaluator owns NEW unseen source/topic-held-out cases; do not reuse these public development questions for final unseen claims",
+  "source_commit": "a1c628f7033918908d3a2fffda640a892cc4a66e",
+  "build_binding": "docs/evidence/reference-coverage-expansion/build-bound/receipt.json",
+  "source_manifest_sha256": "0e178b2ad8339b20070aad35092cecbfdfb28ed69f057d61812eecd162ff98bc",
+  "model_env_sha256": "2d932887a64251c6561f4082739136be2a204728c8acd8fb7a1a0eff69526d97"
+}

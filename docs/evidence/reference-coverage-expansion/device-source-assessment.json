@@ -1,0 +1,2442 @@
+{
+  "schema": 1,
+  "run_id": "run-20261002T125014Z-45bccf",
+  "assessment_role": "independent source inspection of PUBLIC DEVELOPMENT",
+  "classification": "PUBLIC DEVELOPMENT; builder-visible; not held out",
+  "assessment_scope": "Actual Android rendered and quotes fields; baseline_rendered is a separate retrieval comparator and receives no source-quality acceptance here",
+  "input_artifacts": [
+    {
+      "path": "downloads/reference-expansion/run-20261002T125014Z-45bccf/install.json",
+      "sha256": "a3a78b3a8f203b1dc9761ab6b38ee476b07fe8f3cb387900f92305637f196dbe"
+    },
+    {
+      "path": "downloads/reference-expansion/host-20261002T120622Z-88748f/outputs.json",
+      "sha256": "025c97e0e7efb8c7bd6a2a04f3084b1899209cffcfde22b9144d8068e718e4ea"
+    },
+    {
+      "path": "docs/evidence/reference-coverage-expansion/host-source-assessment.json",
+      "sha256": "3f3d2371cc470c8793b483e9f11eae04283afdf61385ad9d37d2100f8ff9f346"
+    },
+    {
+      "path": "tools/evaluation/reference-expansion/development.json",
+      "sha256": "7ffc25a4adfcd04a19ec09dd37e23efa0c2c42ede53115986771aeb06d76d20d"
+    },
+    {
+      "path": "downloads/reference-expansion/source-packet.json",
+      "sha256": "abbb800f0c837f401cb9c9d0f3ccf836e191c9f06d797917ef7678833ee392bc"
+    },
+    {
+      "path": "docs/evidence/reference-coverage-expansion/source-review.json",
+      "sha256": "987d9b904c49afaf42f7529a1ba3b1a94dd713c0764ea6a529c494e4dea0f568"
+    },
+    {
+      "path": "downloads/reference-expansion/reference-expansion.plpack",
+      "sha256": "61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135"
+    },
+    {
+      "path": "docs/evidence/reference-coverage-expansion/source-artifacts.json",
+      "sha256": "b7984508afc1342e4cbfb451feaab06cb73fdca8395c28becc69625ffaa68c69"
+    }
+  ],
+  "pack_sha256": "61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135",
+  "method": "Inspect every structured quote against original HTML byte ranges, reproduce the disclosed transformation, verify admitted pack text, and reuse historical dispositions only for exact rendered equivalence",
+  "boolean_rubric": {
+    "relevant": "True only for directly responsive evidence without irrelevant or tangential extras",
+    "complete": "Complete bounded source coverage or appropriate unavailable-fact abstention",
+    "useful_source_brief": "Bounded responsive source brief; not generated reasoning quality or human acceptance"
+  },
+  "summary": {
+    "cases": 53,
+    "exact_host_rendered_matches": 49,
+    "independently_assessed_rendered_differences": [
+      "dev-03-literal",
+      "dev-05-literal",
+      "dev-12-paraphrase",
+      "dev-absent-4"
+    ],
+    "quotation_occurrences_verified": 54,
+    "distinct_original_paragraphs_verified": 26,
+    "unsupported_attributed_claims": 0,
+    "useful_source_briefs": 35,
+    "appropriate_absences": 6,
+    "nonabsent_not_useful": 12,
+    "directly_relevant_cases": 29,
+    "complete_source_briefs": 35,
+    "complete_or_appropriate_absence_cases": 41,
+    "misleading_premise_cases": 3,
+    "misleading_premises_directly_exposed": 2,
+    "misleading_premises_unresolved": 1
+  },
+  "limitations": [
+    "No device commands, inference, network, private independent comparison or holdout access",
+    "Source fidelity does not establish independent factual truth, generated synthesis quality, canonical acceptance or blanket rights clearance",
+    "Historical original-source dispositions reused without expanding their admitted spans or rights scope",
+    "The preservation premise remains only partly addressed; generic coverage warnings do not resolve every misleading premise"
+  ],
+  "cases": {
+    "dev-01-literal": {
+      "rendered_sha256": "f870f8a08ed926e0ca7d09d699e1ba7da1b1da1ff08a932055192714e1f8b9f2",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The paragraph lists observing, studying and imaging, then qualifies citizen-science participation as something some amateurs do",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 748,
+          "title": "Amateur astronomy",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "original_html_path": "downloads/broad-reference/html-v2/748.html",
+          "original_html_sha256": "e13ec0086bddd42c53a35b7378ff1cabe7a3607aef9174ddde1b6ab20cc2d7cd",
+          "original_metadata_path": "downloads/broad-reference/html-v2/748.json",
+          "original_metadata_sha256": "641bf149cda33b2bd443184573885d004376b5e5974f234c8a55bb2f9d0b3f52",
+          "original_paragraph_sha256": "24473ed25aee7537ad3accd87a22359083642a64507bbda4437feecf10f81284",
+          "original_html_utf8_range": [
+            72132,
+            77940
+          ],
+          "quoted_text_sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 748,
+          "revision": 1368244598,
+          "html_sha256": "e13ec0086bddd42c53a35b7378ff1cabe7a3607aef9174ddde1b6ab20cc2d7cd",
+          "span_sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-01-paraphrase": {
+      "rendered_sha256": "1783fc899d92061608fc8543433950a6a490fb53703351f1f44c2ca4911345d8",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The paragraph lists observing, studying and imaging, then qualifies citizen-science participation as something some amateurs do",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 748,
+          "title": "Amateur astronomy",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "original_html_path": "downloads/broad-reference/html-v2/748.html",
+          "original_html_sha256": "e13ec0086bddd42c53a35b7378ff1cabe7a3607aef9174ddde1b6ab20cc2d7cd",
+          "original_metadata_path": "downloads/broad-reference/html-v2/748.json",
+          "original_metadata_sha256": "641bf149cda33b2bd443184573885d004376b5e5974f234c8a55bb2f9d0b3f52",
+          "original_paragraph_sha256": "24473ed25aee7537ad3accd87a22359083642a64507bbda4437feecf10f81284",
+          "original_html_utf8_range": [
+            72132,
+            77940
+          ],
+          "quoted_text_sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 748,
+          "revision": 1368244598,
+          "html_sha256": "e13ec0086bddd42c53a35b7378ff1cabe7a3607aef9174ddde1b6ab20cc2d7cd",
+          "span_sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-02-literal": {
+      "rendered_sha256": "2683834f999ec413cfbf2c745564ccf727fba30312d60dcd80ac04cf64eace27",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "Both proton donation and electron-pair bonding concepts appear with their separate acid labels",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 656,
+          "title": "Acid",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1375977233",
+          "original_html_path": "downloads/broad-reference/html-v2/656.html",
+          "original_html_sha256": "895a9a34bf9fccc3a0bdefd7f867abc29c74545d0b5029bd2704c7bf4b020a5b",
+          "original_metadata_path": "downloads/broad-reference/html-v2/656.json",
+          "original_metadata_sha256": "ba088ea0dff4a62426b79039f9e19579e5973e8b8e92d192f20d8dd35cb59f35",
+          "original_paragraph_sha256": "1656002113786b390e2c615f402600c34e45ae426dd0fbe0bec8c5b8079e28f1",
+          "original_html_utf8_range": [
+            126351,
+            127896
+          ],
+          "quoted_text_sha256": "2a3ab5a6febd856800526f562a50d6669a3e60e117a2d6ec297afea09e7e6e1c",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 656,
+          "revision": 1375977233,
+          "html_sha256": "895a9a34bf9fccc3a0bdefd7f867abc29c74545d0b5029bd2704c7bf4b020a5b",
+          "span_sha256": "2a3ab5a6febd856800526f562a50d6669a3e60e117a2d6ec297afea09e7e6e1c"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-02-paraphrase": {
+      "rendered_sha256": "c4e035e2cbb6bc8cd7e3459679186ac967ade175bd62218084ca06aff3cb5200",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "Both proton donation and electron-pair bonding concepts appear with their separate acid labels",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 656,
+          "title": "Acid",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1375977233",
+          "original_html_path": "downloads/broad-reference/html-v2/656.html",
+          "original_html_sha256": "895a9a34bf9fccc3a0bdefd7f867abc29c74545d0b5029bd2704c7bf4b020a5b",
+          "original_metadata_path": "downloads/broad-reference/html-v2/656.json",
+          "original_metadata_sha256": "ba088ea0dff4a62426b79039f9e19579e5973e8b8e92d192f20d8dd35cb59f35",
+          "original_paragraph_sha256": "1656002113786b390e2c615f402600c34e45ae426dd0fbe0bec8c5b8079e28f1",
+          "original_html_utf8_range": [
+            126351,
+            127896
+          ],
+          "quoted_text_sha256": "2a3ab5a6febd856800526f562a50d6669a3e60e117a2d6ec297afea09e7e6e1c",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 656,
+          "revision": 1375977233,
+          "html_sha256": "895a9a34bf9fccc3a0bdefd7f867abc29c74545d0b5029bd2704c7bf4b020a5b",
+          "span_sha256": "2a3ab5a6febd856800526f562a50d6669a3e60e117a2d6ec297afea09e7e6e1c"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-03-literal": {
+      "rendered_sha256": "5af30c8c89929bc77fc1a0a9c1c2e47b29789bd04cbfa58323618d4852ed36d2",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The quotation preserves saturation and latent heat conditions; removal of an unmatched term label changes no attributed claim or substantive coverage.",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": false,
+      "historical_assessment_reused": false,
+      "android_difference_independently_assessed": true,
+      "rendered_diff": [
+        "--- ",
+        "+++ ",
+        "@@ -12,7 +12,6 @@",
+        " Citation: [p61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135_reference-1419-711786880f3ca804]",
+        " ",
+        " Coverage not verified: inspect whether these excerpts answer every part, condition and premise of this subquestion.",
+        "-Unmatched query terms (not a factual judgment): affect",
+        " ",
+        " Comparison / connection gap: no relationship between sections, causal chain, verdict, live status or personal result has been inferred. Any unanswered part remains Unknown.",
+        " Omitted candidate passages: 3 (bounded selection, relevance, size or source review)."
+      ],
+      "source_references": [
+        {
+          "page_id": 1419,
+          "title": "Adiabatic process",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1376273575",
+          "original_html_path": "downloads/broad-reference/html-v2/1419.html",
+          "original_html_sha256": "ae02f170e2d8d1496a083cb421ebbe4e77196d7d7ce56b11630a898b8f65c5d8",
+          "original_metadata_path": "downloads/broad-reference/html-v2/1419.json",
+          "original_metadata_sha256": "a4f89313ca2e3e630afe3bd8fb93245f7bcd3f5a218a8a670396f7a11837c598",
+          "original_paragraph_sha256": "6124aebfda66511e9cd7c79796fddc2a2343a81ff461aca5c43b4f27c007687a",
+          "original_html_utf8_range": [
+            142724,
+            144215
+          ],
+          "quoted_text_sha256": "711786880f3ca804c2c7c8ddb33569a6f974c4701c4fbb2ae95cb7312abf8c13",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 1419,
+          "revision": 1376273575,
+          "html_sha256": "ae02f170e2d8d1496a083cb421ebbe4e77196d7d7ce56b11630a898b8f65c5d8",
+          "span_sha256": "711786880f3ca804c2c7c8ddb33569a6f974c4701c4fbb2ae95cb7312abf8c13"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-03-paraphrase": {
+      "rendered_sha256": "c9aeeb0c7f799e6eff3c8700333e16ff89a353af49c010a25580aa75e49c7e1d",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The passage preserves saturation, precipitation and latent-heat conditions rather than inventing a weather forecast",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 1419,
+          "title": "Adiabatic process",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1376273575",
+          "original_html_path": "downloads/broad-reference/html-v2/1419.html",
+          "original_html_sha256": "ae02f170e2d8d1496a083cb421ebbe4e77196d7d7ce56b11630a898b8f65c5d8",
+          "original_metadata_path": "downloads/broad-reference/html-v2/1419.json",
+          "original_metadata_sha256": "a4f89313ca2e3e630afe3bd8fb93245f7bcd3f5a218a8a670396f7a11837c598",
+          "original_paragraph_sha256": "6124aebfda66511e9cd7c79796fddc2a2343a81ff461aca5c43b4f27c007687a",
+          "original_html_utf8_range": [
+            142724,
+            144215
+          ],
+          "quoted_text_sha256": "711786880f3ca804c2c7c8ddb33569a6f974c4701c4fbb2ae95cb7312abf8c13",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 1419,
+          "revision": 1376273575,
+          "html_sha256": "ae02f170e2d8d1496a083cb421ebbe4e77196d7d7ce56b11630a898b8f65c5d8",
+          "span_sha256": "711786880f3ca804c2c7c8ddb33569a6f974c4701c4fbb2ae95cb7312abf8c13"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-04-literal": {
+      "rendered_sha256": "e09f4b020ce9c7a2a6a836b62f2a72dec9a5d6f38743ef547a892ef12fa93d3a",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The source describes organized structures and many unique features without treating every bacterial feature as unique",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 4209093,
+          "title": "Bacterial cell structure",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1377492458",
+          "original_html_path": "downloads/broad-reference/html-v2/4209093.html",
+          "original_html_sha256": "7521d9f81d2557d6847b888f7cb0a3655cb7e3483b85973750102da21901c543",
+          "original_metadata_path": "downloads/broad-reference/html-v2/4209093.json",
+          "original_metadata_sha256": "0db9eaf07df82817c824c231c068306432f7762dcfe9b31af4bbe8da422b7c8e",
+          "original_paragraph_sha256": "4938370d1f08f91fec4256266fa319f4b2f8e0caf287eb973dd83a12b8602cc2",
+          "original_html_utf8_range": [
+            63079,
+            64036
+          ],
+          "quoted_text_sha256": "a7e7da1ae0109b8c37d3ff2fc8f9c637b9be1fc9b257f9cb34d07027c1431e0d",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 4209093,
+          "revision": 1377492458,
+          "html_sha256": "7521d9f81d2557d6847b888f7cb0a3655cb7e3483b85973750102da21901c543",
+          "span_sha256": "a7e7da1ae0109b8c37d3ff2fc8f9c637b9be1fc9b257f9cb34d07027c1431e0d"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-04-paraphrase": {
+      "rendered_sha256": "0a1c80409be35eaa4aaeb4d61c0e2f80cf1cf4eb9368ae98499349eb1e239682",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The source describes organized structures and many unique features without treating every bacterial feature as unique",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 4209093,
+          "title": "Bacterial cell structure",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1377492458",
+          "original_html_path": "downloads/broad-reference/html-v2/4209093.html",
+          "original_html_sha256": "7521d9f81d2557d6847b888f7cb0a3655cb7e3483b85973750102da21901c543",
+          "original_metadata_path": "downloads/broad-reference/html-v2/4209093.json",
+          "original_metadata_sha256": "0db9eaf07df82817c824c231c068306432f7762dcfe9b31af4bbe8da422b7c8e",
+          "original_paragraph_sha256": "4938370d1f08f91fec4256266fa319f4b2f8e0caf287eb973dd83a12b8602cc2",
+          "original_html_utf8_range": [
+            63079,
+            64036
+          ],
+          "quoted_text_sha256": "a7e7da1ae0109b8c37d3ff2fc8f9c637b9be1fc9b257f9cb34d07027c1431e0d",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 4209093,
+          "revision": 1377492458,
+          "html_sha256": "7521d9f81d2557d6847b888f7cb0a3655cb7e3483b85973750102da21901c543",
+          "span_sha256": "a7e7da1ae0109b8c37d3ff2fc8f9c637b9be1fc9b257f9cb34d07027c1431e0d"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-05-literal": {
+      "rendered_sha256": "d8b68f73e92fc6fca750fc3f1e2c3cde97a1865fdec79bc5836cd66105edb745",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The quotation preserves conditional ecological opportunity and selection mechanisms; the changed omitted candidate count adds no factual source claim.",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": false,
+      "historical_assessment_reused": false,
+      "android_difference_independently_assessed": true,
+      "rendered_diff": [
+        "--- ",
+        "+++ ",
+        "@@ -15,4 +15,4 @@",
+        " Unmatched query terms (not a factual judgment): trigger",
+        " ",
+        " Comparison / connection gap: no relationship between sections, causal chain, verdict, live status or personal result has been inferred. Any unanswered part remains Unknown.",
+        "-Omitted candidate passages: 1 (bounded selection, relevance, size or source review).",
+        "+Omitted candidate passages: 2 (bounded selection, relevance, size or source review)."
+      ],
+      "source_references": [
+        {
+          "page_id": 1909,
+          "title": "Adaptive radiation",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1343089429",
+          "original_html_path": "downloads/broad-reference/html-v2/1909.html",
+          "original_html_sha256": "dbd0b13c11d27a385476b00a98ce945e483546d1693555c659e492d7d647d4ed",
+          "original_metadata_path": "downloads/broad-reference/html-v2/1909.json",
+          "original_metadata_sha256": "c98346e9ed504833ae4d0d58326438fda85c06a50c6049bd9d8e64cf514bd6d0",
+          "original_paragraph_sha256": "338587030e4a0bdd3aaaae418d84a328988374f7dc41a2ac2bc2ab6ef74f60ed",
+          "original_html_utf8_range": [
+            102441,
+            105652
+          ],
+          "quoted_text_sha256": "e8c7e81d2ca945d81bfc5d0ec09bccf802475a94a37fc327d4e9925255f8b271",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 1909,
+          "revision": 1343089429,
+          "html_sha256": "dbd0b13c11d27a385476b00a98ce945e483546d1693555c659e492d7d647d4ed",
+          "span_sha256": "e8c7e81d2ca945d81bfc5d0ec09bccf802475a94a37fc327d4e9925255f8b271"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-05-paraphrase": {
+      "rendered_sha256": "ce67b4b0c0dd59bab12bfe93fca98192556c350b95b4fecf18f81c4e71e587c1",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The ecological opportunity, population, selection and diversity chain remains explicitly conditional rather than guaranteed",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 1909,
+          "title": "Adaptive radiation",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1343089429",
+          "original_html_path": "downloads/broad-reference/html-v2/1909.html",
+          "original_html_sha256": "dbd0b13c11d27a385476b00a98ce945e483546d1693555c659e492d7d647d4ed",
+          "original_metadata_path": "downloads/broad-reference/html-v2/1909.json",
+          "original_metadata_sha256": "c98346e9ed504833ae4d0d58326438fda85c06a50c6049bd9d8e64cf514bd6d0",
+          "original_paragraph_sha256": "338587030e4a0bdd3aaaae418d84a328988374f7dc41a2ac2bc2ab6ef74f60ed",
+          "original_html_utf8_range": [
+            102441,
+            105652
+          ],
+          "quoted_text_sha256": "e8c7e81d2ca945d81bfc5d0ec09bccf802475a94a37fc327d4e9925255f8b271",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 1909,
+          "revision": 1343089429,
+          "html_sha256": "dbd0b13c11d27a385476b00a98ce945e483546d1693555c659e492d7d647d4ed",
+          "span_sha256": "e8c7e81d2ca945d81bfc5d0ec09bccf802475a94a37fc327d4e9925255f8b271"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-06-literal": {
+      "rendered_sha256": "c9d2b2d112143de59e11ebdb83467f95ec9391feac8dba8a57ceaa9199e40df9",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "Nonnegative magnitude, sign cases, zero and examples directly address the real-number question with source TeX preserved; complex-number representation does not answer the real-number modulus question",
+      "source_level_relevance": "mixed",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 991,
+          "title": "Absolute value",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1371476443",
+          "original_html_path": "downloads/broad-reference/html-v2/991.html",
+          "original_html_sha256": "1b5b90205309a1aacae26e9df0c49089d2a01bd6f609b2a97f31972737872d51",
+          "original_metadata_path": "downloads/broad-reference/html-v2/991.json",
+          "original_metadata_sha256": "821fcd2889fc822f280a3b0e8b750531c6807f9724f19219cda7c4f62a886df1",
+          "original_paragraph_sha256": "ce5f662de161a46887d398c7b2c085556a8e45b80bcf7eed289bbc0ece3d8f95",
+          "original_html_utf8_range": [
+            82801,
+            94073
+          ],
+          "quoted_text_sha256": "b62dfff2ee9e6bd1fe6ec743120b21da110d8e4fb871a5b02ec9507a3f0e41e9",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        },
+        {
+          "page_id": 5826,
+          "title": "Complex number",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1376162849",
+          "original_html_path": "downloads/broad-reference/html-v2/5826.html",
+          "original_html_sha256": "9e3da33b78d02a3848cd2b07a633e644ab9a18ec71ee05900eddf8193922160f",
+          "original_metadata_path": "downloads/broad-reference/html-v2/5826.json",
+          "original_metadata_sha256": "bff4cd8dacd4e9c6c2aba920faf6213da3528adf759b766943bebfe978dd5426",
+          "original_paragraph_sha256": "4c8a944fdea92d94b7b43ef21a7dcfb8e66b139c4b055959256c64d32ca99f5b",
+          "original_html_utf8_range": [
+            117617,
+            124615
+          ],
+          "quoted_text_sha256": "2d21e4a4384605b3ff081440e29f274293b7bfd81995f59c216d70441a7ddf16",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 991,
+          "revision": 1371476443,
+          "html_sha256": "1b5b90205309a1aacae26e9df0c49089d2a01bd6f609b2a97f31972737872d51",
+          "span_sha256": "b62dfff2ee9e6bd1fe6ec743120b21da110d8e4fb871a5b02ec9507a3f0e41e9"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-06-paraphrase": {
+      "rendered_sha256": "914b002394b56a00ba275367408c1237f7c4aaa8b96d2f632df7a96bc3827847",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "Nonnegative magnitude, sign cases, zero and examples directly address the real-number question with source TeX preserved",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 991,
+          "title": "Absolute value",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1371476443",
+          "original_html_path": "downloads/broad-reference/html-v2/991.html",
+          "original_html_sha256": "1b5b90205309a1aacae26e9df0c49089d2a01bd6f609b2a97f31972737872d51",
+          "original_metadata_path": "downloads/broad-reference/html-v2/991.json",
+          "original_metadata_sha256": "821fcd2889fc822f280a3b0e8b750531c6807f9724f19219cda7c4f62a886df1",
+          "original_paragraph_sha256": "ce5f662de161a46887d398c7b2c085556a8e45b80bcf7eed289bbc0ece3d8f95",
+          "original_html_utf8_range": [
+            82801,
+            94073
+          ],
+          "quoted_text_sha256": "b62dfff2ee9e6bd1fe6ec743120b21da110d8e4fb871a5b02ec9507a3f0e41e9",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 991,
+          "revision": 1371476443,
+          "html_sha256": "1b5b90205309a1aacae26e9df0c49089d2a01bd6f609b2a97f31972737872d51",
+          "span_sha256": "b62dfff2ee9e6bd1fe6ec743120b21da110d8e4fb871a5b02ec9507a3f0e41e9"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-07-literal": {
+      "rendered_sha256": "51b5a749450f4972e46157eb90009e77b9445c3d2cdd154de0fd9b4884c61ff8",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The source identifies coordinate-system use and contrasts synthetic geometry without asserting superiority",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 2202,
+          "title": "Analytic geometry",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1373603189",
+          "original_html_path": "downloads/broad-reference/html-v2/2202.html",
+          "original_html_sha256": "b4c85b9edda4a2e419edbae9140fa7ff75f1ee266d514b3d6e0c50755243af2e",
+          "original_metadata_path": "downloads/broad-reference/html-v2/2202.json",
+          "original_metadata_sha256": "a897e77e0faf2e7c4e32977f9666b6d575ec257dc9b703edb096d037bb30a549",
+          "original_paragraph_sha256": "abcf145b6be7c44b982c75ca022fa8617d4070efb4d7f1cc1a8b8ad0ef02d498",
+          "original_html_utf8_range": [
+            123773,
+            124460
+          ],
+          "quoted_text_sha256": "6e910008a473caff0df6029d130927a4bfbf1b9e2f5b34c11362bd84d0883bc9",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 2202,
+          "revision": 1373603189,
+          "html_sha256": "b4c85b9edda4a2e419edbae9140fa7ff75f1ee266d514b3d6e0c50755243af2e",
+          "span_sha256": "6e910008a473caff0df6029d130927a4bfbf1b9e2f5b34c11362bd84d0883bc9"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-07-paraphrase": {
+      "rendered_sha256": "12b37b35d55de82b9db531544b3bc213575449b075148ea3780fb87b6b9e0b86",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The source identifies coordinate-system use and contrasts synthetic geometry without asserting superiority",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 2202,
+          "title": "Analytic geometry",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1373603189",
+          "original_html_path": "downloads/broad-reference/html-v2/2202.html",
+          "original_html_sha256": "b4c85b9edda4a2e419edbae9140fa7ff75f1ee266d514b3d6e0c50755243af2e",
+          "original_metadata_path": "downloads/broad-reference/html-v2/2202.json",
+          "original_metadata_sha256": "a897e77e0faf2e7c4e32977f9666b6d575ec257dc9b703edb096d037bb30a549",
+          "original_paragraph_sha256": "abcf145b6be7c44b982c75ca022fa8617d4070efb4d7f1cc1a8b8ad0ef02d498",
+          "original_html_utf8_range": [
+            123773,
+            124460
+          ],
+          "quoted_text_sha256": "6e910008a473caff0df6029d130927a4bfbf1b9e2f5b34c11362bd84d0883bc9",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 2202,
+          "revision": 1373603189,
+          "html_sha256": "b4c85b9edda4a2e419edbae9140fa7ff75f1ee266d514b3d6e0c50755243af2e",
+          "span_sha256": "6e910008a473caff0df6029d130927a4bfbf1b9e2f5b34c11362bd84d0883bc9"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-08-literal": {
+      "rendered_sha256": "5402024e9dce5fac1156e7be371101efc330f3721e6415bf026b89401ea5da52",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "Time and storage complexity plus best, worst and average cases are explicitly present; numerical matrix algorithms introduce a different subject without explaining the requested algorithm-analysis measures",
+      "source_level_relevance": "mixed",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 2230,
+          "title": "Analysis of algorithms",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1365706079",
+          "original_html_path": "downloads/broad-reference/html-v2/2230.html",
+          "original_html_sha256": "f6bc8707b5fd1f82c9ec3dcb32e511fff6593b4744f4b40e806588bd6493af53",
+          "original_metadata_path": "downloads/broad-reference/html-v2/2230.json",
+          "original_metadata_sha256": "4157f0b67a9142810b8f4744e9af72e1fe10effab3ed540d7b4144cffd45d081",
+          "original_paragraph_sha256": "10fd1e4727537de3ce06923bfe2d5e83d5d77e17c5c837cda1c582dd26708a71",
+          "original_html_utf8_range": [
+            66371,
+            68241
+          ],
+          "quoted_text_sha256": "492adbb8071247af0bd7a0b2f65e73a807004ca5e06a613e072a0e5267a35bfb",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        },
+        {
+          "page_id": 7330660,
+          "title": "Numerical linear algebra",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1360706462",
+          "original_html_path": "downloads/broad-reference/html-v2/7330660.html",
+          "original_html_sha256": "9869995d72f24899af035ff82f30229cb7430423cc446b0a6155ce80921b1183",
+          "original_metadata_path": "downloads/broad-reference/html-v2/7330660.json",
+          "original_metadata_sha256": "d360491cabe13e86d4f20f607d6b47a595b71c1d003ca6e372a8755b1cf7461e",
+          "original_paragraph_sha256": "a319b4210a33f250e49f9b37cf3b76e70e44ba72ca335aae94624d071dc39bf7",
+          "original_html_utf8_range": [
+            54968,
+            57058
+          ],
+          "quoted_text_sha256": "0ddc3097347c1fed4fd652bf725002e7d53612bd77dd703e29d434233d56440c",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 2230,
+          "revision": 1365706079,
+          "html_sha256": "f6bc8707b5fd1f82c9ec3dcb32e511fff6593b4744f4b40e806588bd6493af53",
+          "span_sha256": "492adbb8071247af0bd7a0b2f65e73a807004ca5e06a613e072a0e5267a35bfb"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-08-paraphrase": {
+      "rendered_sha256": "3cdebdd2dab288be2a764f3c75acc0b69f7028a6f207a257d848f66b2cf74288",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": false,
+      "useful_source_brief": false,
+      "appropriate_absence": false,
+      "rationale": "The source states that equal-sized inputs can behave differently but does not explain why or give a mechanism",
+      "source_level_relevance": "related_or_partial",
+      "source_level_completeness": "partial",
+      "failure_class": "retrieved_source_insufficient_for_question",
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 2230,
+          "title": "Analysis of algorithms",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1365706079",
+          "original_html_path": "downloads/broad-reference/html-v2/2230.html",
+          "original_html_sha256": "f6bc8707b5fd1f82c9ec3dcb32e511fff6593b4744f4b40e806588bd6493af53",
+          "original_metadata_path": "downloads/broad-reference/html-v2/2230.json",
+          "original_metadata_sha256": "4157f0b67a9142810b8f4744e9af72e1fe10effab3ed540d7b4144cffd45d081",
+          "original_paragraph_sha256": "10fd1e4727537de3ce06923bfe2d5e83d5d77e17c5c837cda1c582dd26708a71",
+          "original_html_utf8_range": [
+            66371,
+            68241
+          ],
+          "quoted_text_sha256": "492adbb8071247af0bd7a0b2f65e73a807004ca5e06a613e072a0e5267a35bfb",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 2230,
+          "revision": 1365706079,
+          "html_sha256": "f6bc8707b5fd1f82c9ec3dcb32e511fff6593b4744f4b40e806588bd6493af53",
+          "span_sha256": "492adbb8071247af0bd7a0b2f65e73a807004ca5e06a613e072a0e5267a35bfb"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-09-literal": {
+      "rendered_sha256": "dd17aadce64e8b5c4703fa9dffc41ad8bbfa5f477610ce1af83c59bdb53ea59e",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "Ada features and compile-time error detection are quoted with the dated standard qualifier retained; assembly-language features do not establish features of Ada",
+      "source_level_relevance": "mixed",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 1242,
+          "title": "Ada (programming language)",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1365106242",
+          "original_html_path": "downloads/broad-reference/html-v2/1242.html",
+          "original_html_sha256": "ff95f9af70fc822bdcbdfe5e03296e38f2343e98b3ab04e6408d2b9fe9161ba2",
+          "original_metadata_path": "downloads/broad-reference/html-v2/1242.json",
+          "original_metadata_sha256": "1f4937b76e36cfdbe6f8eb58c79d222b974d5c333e0bdd3e0b609ee10f0ec021",
+          "original_paragraph_sha256": "940248eaad403e9dd7a45d54ce82baca72016f6f1368fb08d7dce46bfe0a7e60",
+          "original_html_utf8_range": [
+            100488,
+            105312
+          ],
+          "quoted_text_sha256": "3c756fc915d6b14c7041da4a3ee1d7d5ea7df68b2bde22130c92d9b8cd698a50",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        },
+        {
+          "page_id": 1368,
+          "title": "Assembly language",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1376923639",
+          "original_html_path": "downloads/broad-reference/html-v2/1368.html",
+          "original_html_sha256": "ff465be8d42b16bac522892d2ab69a82d7e799f5fa02c26eff33b7d407084b54",
+          "original_metadata_path": "downloads/broad-reference/html-v2/1368.json",
+          "original_metadata_sha256": "687e18eb3c802ea411ad39bff9e2ac41fa5d5988400b18e34a821654356b2e19",
+          "original_paragraph_sha256": "7c7c61bef09535ad43c8292766d1c5c8a741015a96921ffa8e1ab29433e87912",
+          "original_html_utf8_range": [
+            86380,
+            91528
+          ],
+          "quoted_text_sha256": "bb237b999458543d08e5cc945400737c2a8856e3c643294bfdd1d7d4ec340dae",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 1242,
+          "revision": 1365106242,
+          "html_sha256": "ff95f9af70fc822bdcbdfe5e03296e38f2343e98b3ab04e6408d2b9fe9161ba2",
+          "span_sha256": "3c756fc915d6b14c7041da4a3ee1d7d5ea7df68b2bde22130c92d9b8cd698a50"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-09-paraphrase": {
+      "rendered_sha256": "10cde5503fe0c61d0851c4ea065299a61bf0d5c736546b39bbbaacf4c1ad51bb",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "Ada features and compile-time error detection are quoted with the dated standard qualifier retained",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 1242,
+          "title": "Ada (programming language)",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1365106242",
+          "original_html_path": "downloads/broad-reference/html-v2/1242.html",
+          "original_html_sha256": "ff95f9af70fc822bdcbdfe5e03296e38f2343e98b3ab04e6408d2b9fe9161ba2",
+          "original_metadata_path": "downloads/broad-reference/html-v2/1242.json",
+          "original_metadata_sha256": "1f4937b76e36cfdbe6f8eb58c79d222b974d5c333e0bdd3e0b609ee10f0ec021",
+          "original_paragraph_sha256": "940248eaad403e9dd7a45d54ce82baca72016f6f1368fb08d7dce46bfe0a7e60",
+          "original_html_utf8_range": [
+            100488,
+            105312
+          ],
+          "quoted_text_sha256": "3c756fc915d6b14c7041da4a3ee1d7d5ea7df68b2bde22130c92d9b8cd698a50",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 1242,
+          "revision": 1365106242,
+          "html_sha256": "ff95f9af70fc822bdcbdfe5e03296e38f2343e98b3ab04e6408d2b9fe9161ba2",
+          "span_sha256": "3c756fc915d6b14c7041da4a3ee1d7d5ea7df68b2bde22130c92d9b8cd698a50"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-10-literal": {
+      "rendered_sha256": "1889525a3c802bfcacfa8d9ac6b2a4dd2330e3b7c3770be0629f4520e09ead98",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": false,
+      "useful_source_brief": false,
+      "appropriate_absence": false,
+      "rationale": "The obligated Block cipher paragraph was withheld during source review; this is a corpus admission gap rather than an admitted-source retrieval miss",
+      "source_level_relevance": "no_evidence",
+      "source_level_completeness": "none",
+      "failure_class": "missing_reviewed_source",
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [],
+      "frozen_source_obligations": [
+        {
+          "page_id": 4594,
+          "revision": 1376267143,
+          "html_sha256": "89c11c680d0cc08349f08726bbbeb8bc855d2ca5d005d4b3c913bbcc48b989f3",
+          "span_sha256": "7b9795ec1468d18db8e415a370520557ad776d500ce2af8e8102977b41ddb92b"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-10-paraphrase": {
+      "rendered_sha256": "1e8250d5c803c34a4f82612cfd6099f27983cc02885c1cfaa5aeea49678bcf17",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": false,
+      "useful_source_brief": false,
+      "appropriate_absence": false,
+      "rationale": "The needed Block cipher paragraph is not admitted, so no quotation answers how block encryption organizes bits",
+      "source_level_relevance": "no_evidence",
+      "source_level_completeness": "none",
+      "failure_class": "missing_reviewed_source",
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [],
+      "frozen_source_obligations": [
+        {
+          "page_id": 4594,
+          "revision": 1376267143,
+          "html_sha256": "89c11c680d0cc08349f08726bbbeb8bc855d2ca5d005d4b3c913bbcc48b989f3",
+          "span_sha256": "7b9795ec1468d18db8e415a370520557ad776d500ce2af8e8102977b41ddb92b"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-11-literal": {
+      "rendered_sha256": "41c10c5c3f206d7a0175b3ffe4a57fef580c319ce2e6c659b74d3ca10481e68e",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The paragraph identifies governing principles or precedents and the legal basis of an entity without offering current legal advice",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 5253,
+          "title": "Constitution",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1377322873",
+          "original_html_path": "downloads/broad-reference/html-v2/5253.html",
+          "original_html_sha256": "a3cee3772790c85b88e0f751ec670511352339351756c791e161fa46d2a782d8",
+          "original_metadata_path": "downloads/broad-reference/html-v2/5253.json",
+          "original_metadata_sha256": "63441278401415d3ee5811ff150208cf7ac9de552d34de8cd0c7ec7b589ad22a",
+          "original_paragraph_sha256": "bbda0ebc14a4265b465f9184030000b5c97d1ebbc7a4227e6e3d13aece5431e9",
+          "original_html_utf8_range": [
+            136364,
+            137665
+          ],
+          "quoted_text_sha256": "961c40c10e71969cd3e7835b9d86a4d30597d7be9d3e77ecf6167f8930d7d15a",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 5253,
+          "revision": 1377322873,
+          "html_sha256": "a3cee3772790c85b88e0f751ec670511352339351756c791e161fa46d2a782d8",
+          "span_sha256": "961c40c10e71969cd3e7835b9d86a4d30597d7be9d3e77ecf6167f8930d7d15a"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-11-paraphrase": {
+      "rendered_sha256": "55adb82cad227aadfecfdea4adef272a0e1f47d3569cba528eea70710cf310bf",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The paragraph identifies governing principles or precedents and the legal basis of an entity without offering current legal advice",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 5253,
+          "title": "Constitution",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1377322873",
+          "original_html_path": "downloads/broad-reference/html-v2/5253.html",
+          "original_html_sha256": "a3cee3772790c85b88e0f751ec670511352339351756c791e161fa46d2a782d8",
+          "original_metadata_path": "downloads/broad-reference/html-v2/5253.json",
+          "original_metadata_sha256": "63441278401415d3ee5811ff150208cf7ac9de552d34de8cd0c7ec7b589ad22a",
+          "original_paragraph_sha256": "bbda0ebc14a4265b465f9184030000b5c97d1ebbc7a4227e6e3d13aece5431e9",
+          "original_html_utf8_range": [
+            136364,
+            137665
+          ],
+          "quoted_text_sha256": "961c40c10e71969cd3e7835b9d86a4d30597d7be9d3e77ecf6167f8930d7d15a",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 5253,
+          "revision": 1377322873,
+          "html_sha256": "a3cee3772790c85b88e0f751ec670511352339351756c791e161fa46d2a782d8",
+          "span_sha256": "961c40c10e71969cd3e7835b9d86a4d30597d7be9d3e77ecf6167f8930d7d15a"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-12-literal": {
+      "rendered_sha256": "6fe7bd0a5ee0819c8dcd3dd918418403e67c8f612ccc58816b579728e9bcee2f",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "New Kingdom predominance and multiple end-date definitions remain explicit in the historical passage",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 874,
+          "title": "Ancient Egypt",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1376471813",
+          "original_html_path": "downloads/broad-reference/html-v2/874.html",
+          "original_html_sha256": "38d096fff05991d00a91b3f38f72f7972b8a5fa179d59bace24264ba90f595de",
+          "original_metadata_path": "downloads/broad-reference/html-v2/874.json",
+          "original_metadata_sha256": "5253de4e5d21beb462e2000f7b1c407f70a9251e4c47df857dbd0f2f718387a6",
+          "original_paragraph_sha256": "582784337d28ea0ef5d1fa8a9f59961a0381d761f12304e287f324c03e23d2bb",
+          "original_html_utf8_range": [
+            155795,
+            158867
+          ],
+          "quoted_text_sha256": "a71bce3bb1b3f96c36ab88c2022c5278f8166af602554149ed10015db37ce25c",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 874,
+          "revision": 1376471813,
+          "html_sha256": "38d096fff05991d00a91b3f38f72f7972b8a5fa179d59bace24264ba90f595de",
+          "span_sha256": "a71bce3bb1b3f96c36ab88c2022c5278f8166af602554149ed10015db37ce25c"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-12-paraphrase": {
+      "rendered_sha256": "5e516e7623bc4d27f61f2316fbd6dbf935e58779d7ab32b450eab3213b33ac41",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": false,
+      "useful_source_brief": false,
+      "appropriate_absence": false,
+      "rationale": "No quotation answers the alternative end dates despite an admitted responsive paragraph; removing an unmatched term label leaves this retrieval miss unresolved.",
+      "source_level_relevance": "no_evidence",
+      "source_level_completeness": "none",
+      "failure_class": "retrieval_miss",
+      "historical_rendered_exact_equivalence": false,
+      "historical_assessment_reused": false,
+      "android_difference_independently_assessed": true,
+      "rendered_diff": [
+        "--- ",
+        "+++ ",
+        "@@ -4,7 +4,6 @@",
+        " Subquestion 1 (your input, not a source claim):",
+        " Is there just one definition for the end of ancient Egypt?",
+        " Unknown — no admissible relevant passage selected from active collections. No answer inferred.",
+        "-Unmatched query terms (not a factual judgment): just",
+        " ",
+        " Comparison / connection gap: no relationship between sections, causal chain, verdict, live status or personal result has been inferred. Any unanswered part remains Unknown.",
+        " Omitted candidate passages: 4 (bounded selection, relevance, size or source review)."
+      ],
+      "source_references": [],
+      "frozen_source_obligations": [
+        {
+          "page_id": 874,
+          "revision": 1376471813,
+          "html_sha256": "38d096fff05991d00a91b3f38f72f7972b8a5fa179d59bace24264ba90f595de",
+          "span_sha256": "a71bce3bb1b3f96c36ab88c2022c5278f8166af602554149ed10015db37ce25c"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-13-literal": {
+      "rendered_sha256": "11f58ca880b5f2322bc3d103e8fa8419ba3a541ba88ba327844bf585371a8f3f",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The paragraph distinguishes greatest discharge from disputed river length rather than treating both rankings as certain",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 1701,
+          "title": "Amazon River",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1376437983",
+          "original_html_path": "downloads/broad-reference/html-v2/1701.html",
+          "original_html_sha256": "458fa88b003270037222a2486c89f87f977cdcb32991efc92110072cde46afa5",
+          "original_metadata_path": "downloads/broad-reference/html-v2/1701.json",
+          "original_metadata_sha256": "2fd8b34a430f41e76bd1b9ff2ea330db5a5bcbba916937d8269ec0b564dcff11",
+          "original_paragraph_sha256": "0b36e293e8c5f06bafdc71c497edde928023c5e0c92f8f965da654c96e948d7b",
+          "original_html_utf8_range": [
+            550189,
+            555650
+          ],
+          "quoted_text_sha256": "031bba805bcade8cc9f42b57b31e61b8356b1a0d5425fd90f44b45ccf1597c30",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 1701,
+          "revision": 1376437983,
+          "html_sha256": "458fa88b003270037222a2486c89f87f977cdcb32991efc92110072cde46afa5",
+          "span_sha256": "031bba805bcade8cc9f42b57b31e61b8356b1a0d5425fd90f44b45ccf1597c30"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-13-paraphrase": {
+      "rendered_sha256": "4024d6d4e481224b436b35f02709ae09f03fe122aebe05818e1c145d19b93351",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The paragraph distinguishes greatest discharge from disputed river length rather than treating both rankings as certain",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 1701,
+          "title": "Amazon River",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1376437983",
+          "original_html_path": "downloads/broad-reference/html-v2/1701.html",
+          "original_html_sha256": "458fa88b003270037222a2486c89f87f977cdcb32991efc92110072cde46afa5",
+          "original_metadata_path": "downloads/broad-reference/html-v2/1701.json",
+          "original_metadata_sha256": "2fd8b34a430f41e76bd1b9ff2ea330db5a5bcbba916937d8269ec0b564dcff11",
+          "original_paragraph_sha256": "0b36e293e8c5f06bafdc71c497edde928023c5e0c92f8f965da654c96e948d7b",
+          "original_html_utf8_range": [
+            550189,
+            555650
+          ],
+          "quoted_text_sha256": "031bba805bcade8cc9f42b57b31e61b8356b1a0d5425fd90f44b45ccf1597c30",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 1701,
+          "revision": 1376437983,
+          "html_sha256": "458fa88b003270037222a2486c89f87f977cdcb32991efc92110072cde46afa5",
+          "span_sha256": "031bba805bcade8cc9f42b57b31e61b8356b1a0d5425fd90f44b45ccf1597c30"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-14-literal": {
+      "rendered_sha256": "7aef2d90d767a1f0480018473e6fc75d3f11784b6d2495ef162c77ea8c6d1127",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": false,
+      "useful_source_brief": false,
+      "appropriate_absence": false,
+      "rationale": "Pasteurization and drying address microorganisms and enzymes but omit oxidation, visual deterioration and waste benefits from the withheld source obligation",
+      "source_level_relevance": "related_or_partial",
+      "source_level_completeness": "partial",
+      "failure_class": "missing_reviewed_source_with_partial_substitutes",
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 23311,
+          "title": "Pasteurization",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1366228867",
+          "original_html_path": "downloads/broad-reference/html-v2/23311.html",
+          "original_html_sha256": "0a9874cef422ade90ffa747428b84f702a3ab24e09ceea0987df7f48334137ca",
+          "original_metadata_path": "downloads/broad-reference/html-v2/23311.json",
+          "original_metadata_sha256": "df2808c2156e76eab50a96d840e367f971af4997442e7ab3fe29761b2dfaca9d",
+          "original_paragraph_sha256": "464ed44b725b9844fd453087072ce46d6ad1d4cc1159e6ce016cf0038e1a9bf3",
+          "original_html_utf8_range": [
+            81079,
+            83995
+          ],
+          "quoted_text_sha256": "966cad0f0316eaeee4bcd00ff247bc2c85fa9f30ca8193bd1db21e1da5ad9058",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        },
+        {
+          "page_id": 158573,
+          "title": "Food drying",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1375576160",
+          "original_html_path": "downloads/broad-reference/html-v2/158573.html",
+          "original_html_sha256": "d9b58012d1dbf950f3a2779fd49ba8df78013614746fbc161ebca15ecd37ddf8",
+          "original_metadata_path": "downloads/broad-reference/html-v2/158573.json",
+          "original_metadata_sha256": "903a958d8d1345e3f0eb363b41663622f2d1a7ff2ccf62e556d020039996c339",
+          "original_paragraph_sha256": "28010eae79fb0224c7fcba4c9b57e49cf29da55353aa1d38c99ecc52979f1ece",
+          "original_html_utf8_range": [
+            62049,
+            64494
+          ],
+          "quoted_text_sha256": "7383bbc6df68b49d89d6c873b1541bd1e074f4666842617c7765fa795f527d4c",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 10834,
+          "revision": 1324600990,
+          "html_sha256": "d0c8b60e6179843e2957f5a8a8d44d4504174fe536b4c1778fda2869d3cb6c61",
+          "span_sha256": "02052cad906920e99dc6e3d5d79f96e36e9542f2ff0169acc86a08ed8a188f5e"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-14-paraphrase": {
+      "rendered_sha256": "6fee60e2f909664beaa7e996d87b63d5dfede5d0f648f2ec351bcde95cfdfb91",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": false,
+      "useful_source_brief": false,
+      "appropriate_absence": false,
+      "rationale": "Pickling describes preservation mechanisms and duration but does not explain waste reduction; the obligated Food preservation paragraph remains withheld",
+      "source_level_relevance": "related_or_partial",
+      "source_level_completeness": "partial",
+      "failure_class": "missing_reviewed_source_with_partial_substitutes",
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 2259607,
+          "title": "Pickling",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1376488146",
+          "original_html_path": "downloads/broad-reference/html-v2/2259607.html",
+          "original_html_sha256": "7b97c1e3d8c57b6ed72850853cb62988debe99a2d149714624318c2f739ef47e",
+          "original_metadata_path": "downloads/broad-reference/html-v2/2259607.json",
+          "original_metadata_sha256": "a413ddeb36cc45a6c7e1d46dac14267fb84c86015615bd507d55162dd4bccd33",
+          "original_paragraph_sha256": "fb1cc86745c7a3353d927384e5539be6064684d401fdde269d9d781755cbc55b",
+          "original_html_utf8_range": [
+            76299,
+            80912
+          ],
+          "quoted_text_sha256": "e908bb7063551eeb072ea3097dca0c2a155f4ed82934fa5828dfbca546341112",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 10834,
+          "revision": 1324600990,
+          "html_sha256": "d0c8b60e6179843e2957f5a8a8d44d4504174fe536b4c1778fda2869d3cb6c61",
+          "span_sha256": "02052cad906920e99dc6e3d5d79f96e36e9542f2ff0169acc86a08ed8a188f5e"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-15-literal": {
+      "rendered_sha256": "4beceae90395ac8854cad6ef112a13920be6a6213480b1c2cb6e2dd76fd62102",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": false,
+      "useful_source_brief": false,
+      "appropriate_absence": false,
+      "rationale": "The admitted Mulch paragraph directly lists uses, yet the literal question receives only Unknown",
+      "source_level_relevance": "no_evidence",
+      "source_level_completeness": "none",
+      "failure_class": "retrieval_miss",
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [],
+      "frozen_source_obligations": [
+        {
+          "page_id": 432174,
+          "revision": 1376736622,
+          "html_sha256": "f01f8576dad738c820c6ecee05ecbbe287eb54a4983671747c1180532135cc39",
+          "span_sha256": "c4ba2176e40b85a35ced2267de4f7162e0a72a0734c5e0627f796b5734c675e5"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-15-paraphrase": {
+      "rendered_sha256": "d4049f51c5abf66c06262bcab4b91bfc4ae09e868a5802449ca89d9e77cde6fe",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "Moisture, fertility, weeds and visual appearance are listed as reasons for mulch without guaranteed outcomes; quilt construction is irrelevant to soil-surface materials",
+      "source_level_relevance": "mixed",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 432174,
+          "title": "Mulch",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1376736622",
+          "original_html_path": "downloads/broad-reference/html-v2/432174.html",
+          "original_html_sha256": "f01f8576dad738c820c6ecee05ecbbe287eb54a4983671747c1180532135cc39",
+          "original_metadata_path": "downloads/broad-reference/html-v2/432174.json",
+          "original_metadata_sha256": "518088fc94b4f41b4d08123affe761cb78e77c686362e3ddfebd1ff8adc8a817",
+          "original_paragraph_sha256": "7dbcae4c8443315abdc2d7df33272782e9cec44ef2b183c1c5f4afbe0c1b6ef3",
+          "original_html_utf8_range": [
+            68985,
+            69672
+          ],
+          "quoted_text_sha256": "c4ba2176e40b85a35ced2267de4f7162e0a72a0734c5e0627f796b5734c675e5",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        },
+        {
+          "page_id": 25203,
+          "title": "Quilting",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1373407332",
+          "original_html_path": "downloads/broad-reference/html-v2/25203.html",
+          "original_html_sha256": "0e8cf53a35a17c6c275a6f915fe98052a8c34d1fe7feca6a34e53737a6147127",
+          "original_metadata_path": "downloads/broad-reference/html-v2/25203.json",
+          "original_metadata_sha256": "f21e63b98dc5c762b40bb20fd12f3c185231d6f9e924697e1089ad2926ae7978",
+          "original_paragraph_sha256": "b8da0776f7e71468df16709d6e23f1c9d0998759030d0c0b5bd8ca1e8763dbbd",
+          "original_html_utf8_range": [
+            60664,
+            61898
+          ],
+          "quoted_text_sha256": "e5bd43ebae0182b899a53d24366ddb1a4cd182582322955bb51a353c0e22a3a0",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 432174,
+          "revision": 1376736622,
+          "html_sha256": "f01f8576dad738c820c6ecee05ecbbe287eb54a4983671747c1180532135cc39",
+          "span_sha256": "c4ba2176e40b85a35ced2267de4f7162e0a72a0734c5e0627f796b5734c675e5"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-16-literal": {
+      "rendered_sha256": "746cda70585b9af4adde28babf84a42e4c5ff5208e4c396e8bd1623634428bec",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "Mechanized garment production is described while continued hand sewing is expressly preserved",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 92295,
+          "title": "Sewing",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1375554016",
+          "original_html_path": "downloads/broad-reference/html-v2/92295.html",
+          "original_html_sha256": "908b854008831d8c53ddea0022d32d5fa1e8d5c2b83c8f01a7b3b314ffc7a1c6",
+          "original_metadata_path": "downloads/broad-reference/html-v2/92295.json",
+          "original_metadata_sha256": "4f6c169179772bf006c7624c77ae39f42d345910e9ce60e73649514462f75177",
+          "original_paragraph_sha256": "94abcab5c514b3393facf84ef47a0d0d53da0fd36aa704681233bf2844313234",
+          "original_html_utf8_range": [
+            73451,
+            75077
+          ],
+          "quoted_text_sha256": "5fd3273546cae8c811d3e1f5c47a82e212f187c65c2677d5834af02583e5361a",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 92295,
+          "revision": 1375554016,
+          "html_sha256": "908b854008831d8c53ddea0022d32d5fa1e8d5c2b83c8f01a7b3b314ffc7a1c6",
+          "span_sha256": "5fd3273546cae8c811d3e1f5c47a82e212f187c65c2677d5834af02583e5361a"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-16-paraphrase": {
+      "rendered_sha256": "c2b2661373e044221e574901c01b85c8992ed9d320c0d55167a9c002f7b89322",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "Mechanized garment production is described while continued hand sewing is expressly preserved",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 92295,
+          "title": "Sewing",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1375554016",
+          "original_html_path": "downloads/broad-reference/html-v2/92295.html",
+          "original_html_sha256": "908b854008831d8c53ddea0022d32d5fa1e8d5c2b83c8f01a7b3b314ffc7a1c6",
+          "original_metadata_path": "downloads/broad-reference/html-v2/92295.json",
+          "original_metadata_sha256": "4f6c169179772bf006c7624c77ae39f42d345910e9ce60e73649514462f75177",
+          "original_paragraph_sha256": "94abcab5c514b3393facf84ef47a0d0d53da0fd36aa704681233bf2844313234",
+          "original_html_utf8_range": [
+            73451,
+            75077
+          ],
+          "quoted_text_sha256": "5fd3273546cae8c811d3e1f5c47a82e212f187c65c2677d5834af02583e5361a",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 92295,
+          "revision": 1375554016,
+          "html_sha256": "908b854008831d8c53ddea0022d32d5fa1e8d5c2b83c8f01a7b3b314ffc7a1c6",
+          "span_sha256": "5fd3273546cae8c811d3e1f5c47a82e212f187c65c2677d5834af02583e5361a"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-17-literal": {
+      "rendered_sha256": "7615a35f66f68cd2203a667498b01c016c919dadb6a97f521c5f6064c734188e",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The woodworking skill list supplies the requested activities without inventing a procedure",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 33118,
+          "title": "Woodworking",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1376194336",
+          "original_html_path": "downloads/broad-reference/html-v2/33118.html",
+          "original_html_sha256": "2dd166891270a1dbc4585baf2295cdffeac6c53299ac4741dd8c9b05514f8dfd",
+          "original_metadata_path": "downloads/broad-reference/html-v2/33118.json",
+          "original_metadata_sha256": "58afa61e0f46b6634293d238e433a3e8177567543fd685d0048435b2acffb42d",
+          "original_paragraph_sha256": "84f0282c60daf0bec9bc48d60d8b8718c284edce13aa90ae6340f76726843b29",
+          "original_html_utf8_range": [
+            68920,
+            69836
+          ],
+          "quoted_text_sha256": "03f5413b0e2eacdf0abbc46eadada0c9e4ef9d84f371555918e6592bde3feb2c",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 33118,
+          "revision": 1376194336,
+          "html_sha256": "2dd166891270a1dbc4585baf2295cdffeac6c53299ac4741dd8c9b05514f8dfd",
+          "span_sha256": "03f5413b0e2eacdf0abbc46eadada0c9e4ef9d84f371555918e6592bde3feb2c"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-17-paraphrase": {
+      "rendered_sha256": "1e3cb86f70bf3f607a577510a7881d064f9693a83458cae809619dc4ce513969",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The woodworking skill list supplies the requested activities without inventing a procedure",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 33118,
+          "title": "Woodworking",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1376194336",
+          "original_html_path": "downloads/broad-reference/html-v2/33118.html",
+          "original_html_sha256": "2dd166891270a1dbc4585baf2295cdffeac6c53299ac4741dd8c9b05514f8dfd",
+          "original_metadata_path": "downloads/broad-reference/html-v2/33118.json",
+          "original_metadata_sha256": "58afa61e0f46b6634293d238e433a3e8177567543fd685d0048435b2acffb42d",
+          "original_paragraph_sha256": "84f0282c60daf0bec9bc48d60d8b8718c284edce13aa90ae6340f76726843b29",
+          "original_html_utf8_range": [
+            68920,
+            69836
+          ],
+          "quoted_text_sha256": "03f5413b0e2eacdf0abbc46eadada0c9e4ef9d84f371555918e6592bde3feb2c",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 33118,
+          "revision": 1376194336,
+          "html_sha256": "2dd166891270a1dbc4585baf2295cdffeac6c53299ac4741dd8c9b05514f8dfd",
+          "span_sha256": "03f5413b0e2eacdf0abbc46eadada0c9e4ef9d84f371555918e6592bde3feb2c"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-18-literal": {
+      "rendered_sha256": "cf1eff1ead0c787b15271d3474d35def8001cd9b26d92beb8219a4a4cdbfb14e",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The caliper passage explicitly lists dimensions of objects and holes without asserting a precision specification; the micrometer overview is adjacent instrumentation information without supplying additional caliper dimensions",
+      "source_level_relevance": "mixed",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 1635762,
+          "title": "Calipers",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1376010151",
+          "original_html_path": "downloads/broad-reference/html-v2/1635762.html",
+          "original_html_sha256": "e694d07f57818ef1cdb0aaa3bf2254d2420a28710cb843f1f924301da6e7e395",
+          "original_metadata_path": "downloads/broad-reference/html-v2/1635762.json",
+          "original_metadata_sha256": "5aad02165f66619099e0799167c11c8414209189e5c77acce926d6e9dae00d06",
+          "original_paragraph_sha256": "788b928b7b6ee72a5f570eff5acfbcbc6f27f917e5d0f842ed8f3fa2c5c21646",
+          "original_html_utf8_range": [
+            70262,
+            72099
+          ],
+          "quoted_text_sha256": "eaa02dd749142edc4a57752c212c874751fcca14e0aaa9bf46488b55421cb727",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        },
+        {
+          "page_id": 43935,
+          "title": "Micrometer (device)",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1373549610",
+          "original_html_path": "downloads/broad-reference/html-v2/43935.html",
+          "original_html_sha256": "2c71c43e159a3d3be670cd8e28bac6ad19e1be58080afbd79f1c2580f7ec2793",
+          "original_metadata_path": "downloads/broad-reference/html-v2/43935.json",
+          "original_metadata_sha256": "987f6d9094531dd37a862e255aed9e2cbea3a2d6673c9d395f49a0a4dae7db69",
+          "original_paragraph_sha256": "a515c2bba2542029a8b29cf8364874433e5c8030c0ab8a0a2d0f743b11bad22c",
+          "original_html_utf8_range": [
+            72314,
+            76563
+          ],
+          "quoted_text_sha256": "3db93f445b790eb6f573208c1f2be17393e81f4de4258b735bbeaa19bd1497ab",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 1635762,
+          "revision": 1376010151,
+          "html_sha256": "e694d07f57818ef1cdb0aaa3bf2254d2420a28710cb843f1f924301da6e7e395",
+          "span_sha256": "eaa02dd749142edc4a57752c212c874751fcca14e0aaa9bf46488b55421cb727"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-18-paraphrase": {
+      "rendered_sha256": "b9c9d2d93f1859b0cf53622917fde6d209580e9822cda070b62418773616f730",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The caliper passage explicitly lists dimensions of objects and holes without asserting a precision specification; the micrometer overview is adjacent but does not specifically establish the requested hole-depth measurement",
+      "source_level_relevance": "mixed",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 1635762,
+          "title": "Calipers",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1376010151",
+          "original_html_path": "downloads/broad-reference/html-v2/1635762.html",
+          "original_html_sha256": "e694d07f57818ef1cdb0aaa3bf2254d2420a28710cb843f1f924301da6e7e395",
+          "original_metadata_path": "downloads/broad-reference/html-v2/1635762.json",
+          "original_metadata_sha256": "5aad02165f66619099e0799167c11c8414209189e5c77acce926d6e9dae00d06",
+          "original_paragraph_sha256": "788b928b7b6ee72a5f570eff5acfbcbc6f27f917e5d0f842ed8f3fa2c5c21646",
+          "original_html_utf8_range": [
+            70262,
+            72099
+          ],
+          "quoted_text_sha256": "eaa02dd749142edc4a57752c212c874751fcca14e0aaa9bf46488b55421cb727",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        },
+        {
+          "page_id": 43935,
+          "title": "Micrometer (device)",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1373549610",
+          "original_html_path": "downloads/broad-reference/html-v2/43935.html",
+          "original_html_sha256": "2c71c43e159a3d3be670cd8e28bac6ad19e1be58080afbd79f1c2580f7ec2793",
+          "original_metadata_path": "downloads/broad-reference/html-v2/43935.json",
+          "original_metadata_sha256": "987f6d9094531dd37a862e255aed9e2cbea3a2d6673c9d395f49a0a4dae7db69",
+          "original_paragraph_sha256": "a515c2bba2542029a8b29cf8364874433e5c8030c0ab8a0a2d0f743b11bad22c",
+          "original_html_utf8_range": [
+            72314,
+            76563
+          ],
+          "quoted_text_sha256": "3db93f445b790eb6f573208c1f2be17393e81f4de4258b735bbeaa19bd1497ab",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 1635762,
+          "revision": 1376010151,
+          "html_sha256": "e694d07f57818ef1cdb0aaa3bf2254d2420a28710cb843f1f924301da6e7e395",
+          "span_sha256": "eaa02dd749142edc4a57752c212c874751fcca14e0aaa9bf46488b55421cb727"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-19-literal": {
+      "rendered_sha256": "e43800846fc9789f2fb62676f9d4db9761495f505a4c08115b018353a1b04e53",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "Thermal, acoustic, fire and impact purposes are distinguished without adding installation advice",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 6900318,
+          "title": "Building insulation",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1375683714",
+          "original_html_path": "downloads/broad-reference/html-v2/6900318.html",
+          "original_html_sha256": "ba349df242e94cb9ac22b80975f0a19a7823d2b45d1ecfd19ec7e3659a3a31c1",
+          "original_metadata_path": "downloads/broad-reference/html-v2/6900318.json",
+          "original_metadata_sha256": "35727baa638845198d2c1a39e49427355bf3b005ec9a9bcbfd1e9849bd40c6c1",
+          "original_paragraph_sha256": "990f59b2dce760d7f9769fc23fdf61a33168f4c83f5baca68ca5a2f96953f66f",
+          "original_html_utf8_range": [
+            104097,
+            105436
+          ],
+          "quoted_text_sha256": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 6900318,
+          "revision": 1375683714,
+          "html_sha256": "ba349df242e94cb9ac22b80975f0a19a7823d2b45d1ecfd19ec7e3659a3a31c1",
+          "span_sha256": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-19-paraphrase": {
+      "rendered_sha256": "bebb6b29856e624f83dadab2beaa606333169d67187353eb165270ac0458138b",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "Thermal, acoustic, fire and impact purposes are distinguished without adding installation advice",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 6900318,
+          "title": "Building insulation",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1375683714",
+          "original_html_path": "downloads/broad-reference/html-v2/6900318.html",
+          "original_html_sha256": "ba349df242e94cb9ac22b80975f0a19a7823d2b45d1ecfd19ec7e3659a3a31c1",
+          "original_metadata_path": "downloads/broad-reference/html-v2/6900318.json",
+          "original_metadata_sha256": "35727baa638845198d2c1a39e49427355bf3b005ec9a9bcbfd1e9849bd40c6c1",
+          "original_paragraph_sha256": "990f59b2dce760d7f9769fc23fdf61a33168f4c83f5baca68ca5a2f96953f66f",
+          "original_html_utf8_range": [
+            104097,
+            105436
+          ],
+          "quoted_text_sha256": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 6900318,
+          "revision": 1375683714,
+          "html_sha256": "ba349df242e94cb9ac22b80975f0a19a7823d2b45d1ecfd19ec7e3659a3a31c1",
+          "span_sha256": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-20-literal": {
+      "rendered_sha256": "f98f049ea0df8aa4baa539f5e3d774dc1df288d4cb810c37684faa9d3e1eec0d",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The definition identifies the sport and map-and-compass navigation without inventing a route",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 22520,
+          "title": "Orienteering",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1375936233",
+          "original_html_path": "downloads/broad-reference/html-v2/22520.html",
+          "original_html_sha256": "cb4d064046c323b79603e2c8ae5bdfdf3b7cbdcbb8a30bc84fab86bf00e34cc7",
+          "original_metadata_path": "downloads/broad-reference/html-v2/22520.json",
+          "original_metadata_sha256": "cb3ace8b18e0e4204a0e29a4bea2f404ed334c2d39f6d09117c7707917f867bd",
+          "original_paragraph_sha256": "39235f4e4051c5f949fafffc8e24a4460b6aac1c39f56b6cc70352b6898534ad",
+          "original_html_utf8_range": [
+            90646,
+            91235
+          ],
+          "quoted_text_sha256": "025d619b36355953772a9f511f08c828d1956e0ece0fb7511f4f5218474afc12",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 22520,
+          "revision": 1375936233,
+          "html_sha256": "cb4d064046c323b79603e2c8ae5bdfdf3b7cbdcbb8a30bc84fab86bf00e34cc7",
+          "span_sha256": "025d619b36355953772a9f511f08c828d1956e0ece0fb7511f4f5218474afc12"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-20-paraphrase": {
+      "rendered_sha256": "1b6adf645e86d09a6a97480348cc1394dd48b4ff9058eb009f8a6854da80cee7",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": false,
+      "useful_source_brief": false,
+      "appropriate_absence": false,
+      "rationale": "The sport definition names map-and-compass navigation but gives no method for actually navigating unfamiliar terrain",
+      "source_level_relevance": "related_or_partial",
+      "source_level_completeness": "partial",
+      "failure_class": "retrieved_source_insufficient_for_question",
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 22520,
+          "title": "Orienteering",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1375936233",
+          "original_html_path": "downloads/broad-reference/html-v2/22520.html",
+          "original_html_sha256": "cb4d064046c323b79603e2c8ae5bdfdf3b7cbdcbb8a30bc84fab86bf00e34cc7",
+          "original_metadata_path": "downloads/broad-reference/html-v2/22520.json",
+          "original_metadata_sha256": "cb3ace8b18e0e4204a0e29a4bea2f404ed334c2d39f6d09117c7707917f867bd",
+          "original_paragraph_sha256": "39235f4e4051c5f949fafffc8e24a4460b6aac1c39f56b6cc70352b6898534ad",
+          "original_html_utf8_range": [
+            90646,
+            91235
+          ],
+          "quoted_text_sha256": "025d619b36355953772a9f511f08c828d1956e0ece0fb7511f4f5218474afc12",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 22520,
+          "revision": 1375936233,
+          "html_sha256": "cb4d064046c323b79603e2c8ae5bdfdf3b7cbdcbb8a30bc84fab86bf00e34cc7",
+          "span_sha256": "025d619b36355953772a9f511f08c828d1956e0ece0fb7511f4f5218474afc12"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-multipart-1": {
+      "rendered_sha256": "3cb6e0c345cfc37f31df24d8dfab085e7e006e3de4a8393b84a65f7580a03f36",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "Both independent subquestions receive directly responsive labeled paragraphs without an invented relationship",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 748,
+          "title": "Amateur astronomy",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "original_html_path": "downloads/broad-reference/html-v2/748.html",
+          "original_html_sha256": "e13ec0086bddd42c53a35b7378ff1cabe7a3607aef9174ddde1b6ab20cc2d7cd",
+          "original_metadata_path": "downloads/broad-reference/html-v2/748.json",
+          "original_metadata_sha256": "641bf149cda33b2bd443184573885d004376b5e5974f234c8a55bb2f9d0b3f52",
+          "original_paragraph_sha256": "24473ed25aee7537ad3accd87a22359083642a64507bbda4437feecf10f81284",
+          "original_html_utf8_range": [
+            72132,
+            77940
+          ],
+          "quoted_text_sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        },
+        {
+          "page_id": 5253,
+          "title": "Constitution",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1377322873",
+          "original_html_path": "downloads/broad-reference/html-v2/5253.html",
+          "original_html_sha256": "a3cee3772790c85b88e0f751ec670511352339351756c791e161fa46d2a782d8",
+          "original_metadata_path": "downloads/broad-reference/html-v2/5253.json",
+          "original_metadata_sha256": "63441278401415d3ee5811ff150208cf7ac9de552d34de8cd0c7ec7b589ad22a",
+          "original_paragraph_sha256": "bbda0ebc14a4265b465f9184030000b5c97d1ebbc7a4227e6e3d13aece5431e9",
+          "original_html_utf8_range": [
+            136364,
+            137665
+          ],
+          "quoted_text_sha256": "961c40c10e71969cd3e7835b9d86a4d30597d7be9d3e77ecf6167f8930d7d15a",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 748,
+          "revision": 1368244598,
+          "html_sha256": "e13ec0086bddd42c53a35b7378ff1cabe7a3607aef9174ddde1b6ab20cc2d7cd",
+          "span_sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36"
+        },
+        {
+          "page_id": 5253,
+          "revision": 1377322873,
+          "html_sha256": "a3cee3772790c85b88e0f751ec670511352339351756c791e161fa46d2a782d8",
+          "span_sha256": "961c40c10e71969cd3e7835b9d86a4d30597d7be9d3e77ecf6167f8930d7d15a"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-multipart-2": {
+      "rendered_sha256": "20ccb96c77062bea05878b5abe9f3d98856ac3e465fcd3c0b61f2a0776787859",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": false,
+      "useful_source_brief": false,
+      "appropriate_absence": false,
+      "rationale": "Algorithm analysis is covered, with a tangential numerical-algebra quotation, but block ciphers remain Unknown because their obligated source was withheld; numerical matrix algorithms neither establish block-cipher behavior nor add the requested complexity distinction",
+      "source_level_relevance": "mixed",
+      "source_level_completeness": "partial",
+      "failure_class": "missing_reviewed_source",
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 2230,
+          "title": "Analysis of algorithms",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1365706079",
+          "original_html_path": "downloads/broad-reference/html-v2/2230.html",
+          "original_html_sha256": "f6bc8707b5fd1f82c9ec3dcb32e511fff6593b4744f4b40e806588bd6493af53",
+          "original_metadata_path": "downloads/broad-reference/html-v2/2230.json",
+          "original_metadata_sha256": "4157f0b67a9142810b8f4744e9af72e1fe10effab3ed540d7b4144cffd45d081",
+          "original_paragraph_sha256": "10fd1e4727537de3ce06923bfe2d5e83d5d77e17c5c837cda1c582dd26708a71",
+          "original_html_utf8_range": [
+            66371,
+            68241
+          ],
+          "quoted_text_sha256": "492adbb8071247af0bd7a0b2f65e73a807004ca5e06a613e072a0e5267a35bfb",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        },
+        {
+          "page_id": 7330660,
+          "title": "Numerical linear algebra",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1360706462",
+          "original_html_path": "downloads/broad-reference/html-v2/7330660.html",
+          "original_html_sha256": "9869995d72f24899af035ff82f30229cb7430423cc446b0a6155ce80921b1183",
+          "original_metadata_path": "downloads/broad-reference/html-v2/7330660.json",
+          "original_metadata_sha256": "d360491cabe13e86d4f20f607d6b47a595b71c1d003ca6e372a8755b1cf7461e",
+          "original_paragraph_sha256": "a319b4210a33f250e49f9b37cf3b76e70e44ba72ca335aae94624d071dc39bf7",
+          "original_html_utf8_range": [
+            54968,
+            57058
+          ],
+          "quoted_text_sha256": "0ddc3097347c1fed4fd652bf725002e7d53612bd77dd703e29d434233d56440c",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 2230,
+          "revision": 1365706079,
+          "html_sha256": "f6bc8707b5fd1f82c9ec3dcb32e511fff6593b4744f4b40e806588bd6493af53",
+          "span_sha256": "492adbb8071247af0bd7a0b2f65e73a807004ca5e06a613e072a0e5267a35bfb"
+        },
+        {
+          "page_id": 4594,
+          "revision": 1376267143,
+          "html_sha256": "89c11c680d0cc08349f08726bbbeb8bc855d2ca5d005d4b3c913bbcc48b989f3",
+          "span_sha256": "7b9795ec1468d18db8e415a370520557ad776d500ce2af8e8102977b41ddb92b"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-multipart-3": {
+      "rendered_sha256": "7a3d1a01d01412e3d8f57385e1c05bef644b34e79d3f80318c734ea2e1b4b745",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": false,
+      "useful_source_brief": false,
+      "appropriate_absence": false,
+      "rationale": "Insulation is covered but mulch remains Unknown despite an admitted directly responsive paragraph",
+      "source_level_relevance": "related_or_partial",
+      "source_level_completeness": "partial",
+      "failure_class": "retrieval_miss",
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 6900318,
+          "title": "Building insulation",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1375683714",
+          "original_html_path": "downloads/broad-reference/html-v2/6900318.html",
+          "original_html_sha256": "ba349df242e94cb9ac22b80975f0a19a7823d2b45d1ecfd19ec7e3659a3a31c1",
+          "original_metadata_path": "downloads/broad-reference/html-v2/6900318.json",
+          "original_metadata_sha256": "35727baa638845198d2c1a39e49427355bf3b005ec9a9bcbfd1e9849bd40c6c1",
+          "original_paragraph_sha256": "990f59b2dce760d7f9769fc23fdf61a33168f4c83f5baca68ca5a2f96953f66f",
+          "original_html_utf8_range": [
+            104097,
+            105436
+          ],
+          "quoted_text_sha256": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 432174,
+          "revision": 1376736622,
+          "html_sha256": "f01f8576dad738c820c6ecee05ecbbe287eb54a4983671747c1180532135cc39",
+          "span_sha256": "c4ba2176e40b85a35ced2267de4f7162e0a72a0734c5e0627f796b5734c675e5"
+        },
+        {
+          "page_id": 6900318,
+          "revision": 1375683714,
+          "html_sha256": "ba349df242e94cb9ac22b80975f0a19a7823d2b45d1ecfd19ec7e3659a3a31c1",
+          "span_sha256": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-multipart-4": {
+      "rendered_sha256": "db258c7322ee793b92ea7a9dca5c8fbb2f592c45c3856ed71def7d6288d895b0",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": false,
+      "useful_source_brief": false,
+      "appropriate_absence": false,
+      "rationale": "Orienteering is covered, but preservation mechanisms are only partly represented and omit oxidation, visual deterioration and waste benefits",
+      "source_level_relevance": "related_or_partial",
+      "source_level_completeness": "partial",
+      "failure_class": "missing_reviewed_source_with_partial_substitutes",
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 23311,
+          "title": "Pasteurization",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1366228867",
+          "original_html_path": "downloads/broad-reference/html-v2/23311.html",
+          "original_html_sha256": "0a9874cef422ade90ffa747428b84f702a3ab24e09ceea0987df7f48334137ca",
+          "original_metadata_path": "downloads/broad-reference/html-v2/23311.json",
+          "original_metadata_sha256": "df2808c2156e76eab50a96d840e367f971af4997442e7ab3fe29761b2dfaca9d",
+          "original_paragraph_sha256": "464ed44b725b9844fd453087072ce46d6ad1d4cc1159e6ce016cf0038e1a9bf3",
+          "original_html_utf8_range": [
+            81079,
+            83995
+          ],
+          "quoted_text_sha256": "966cad0f0316eaeee4bcd00ff247bc2c85fa9f30ca8193bd1db21e1da5ad9058",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        },
+        {
+          "page_id": 158573,
+          "title": "Food drying",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1375576160",
+          "original_html_path": "downloads/broad-reference/html-v2/158573.html",
+          "original_html_sha256": "d9b58012d1dbf950f3a2779fd49ba8df78013614746fbc161ebca15ecd37ddf8",
+          "original_metadata_path": "downloads/broad-reference/html-v2/158573.json",
+          "original_metadata_sha256": "903a958d8d1345e3f0eb363b41663622f2d1a7ff2ccf62e556d020039996c339",
+          "original_paragraph_sha256": "28010eae79fb0224c7fcba4c9b57e49cf29da55353aa1d38c99ecc52979f1ece",
+          "original_html_utf8_range": [
+            62049,
+            64494
+          ],
+          "quoted_text_sha256": "7383bbc6df68b49d89d6c873b1541bd1e074f4666842617c7765fa795f527d4c",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        },
+        {
+          "page_id": 22520,
+          "title": "Orienteering",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1375936233",
+          "original_html_path": "downloads/broad-reference/html-v2/22520.html",
+          "original_html_sha256": "cb4d064046c323b79603e2c8ae5bdfdf3b7cbdcbb8a30bc84fab86bf00e34cc7",
+          "original_metadata_path": "downloads/broad-reference/html-v2/22520.json",
+          "original_metadata_sha256": "cb3ace8b18e0e4204a0e29a4bea2f404ed334c2d39f6d09117c7707917f867bd",
+          "original_paragraph_sha256": "39235f4e4051c5f949fafffc8e24a4460b6aac1c39f56b6cc70352b6898534ad",
+          "original_html_utf8_range": [
+            90646,
+            91235
+          ],
+          "quoted_text_sha256": "025d619b36355953772a9f511f08c828d1956e0ece0fb7511f4f5218474afc12",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 10834,
+          "revision": 1324600990,
+          "html_sha256": "d0c8b60e6179843e2957f5a8a8d44d4504174fe536b4c1778fda2869d3cb6c61",
+          "span_sha256": "02052cad906920e99dc6e3d5d79f96e36e9542f2ff0169acc86a08ed8a188f5e"
+        },
+        {
+          "page_id": 22520,
+          "revision": 1375936233,
+          "html_sha256": "cb4d064046c323b79603e2c8ae5bdfdf3b7cbdcbb8a30bc84fab86bf00e34cc7",
+          "span_sha256": "025d619b36355953772a9f511f08c828d1956e0ece0fb7511f4f5218474afc12"
+        }
+      ],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-absent-1": {
+      "rendered_sha256": "5327d8b4400e9c2fcd22417133d4c9ec637e13bcb5afed54256d9476685b5dc8",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": true,
+      "useful_source_brief": false,
+      "appropriate_absence": true,
+      "rationale": "The unavailable personal, live, predictive or imaginary fact receives Unknown without any attributed quotation masquerading as evidence",
+      "source_level_relevance": "no_quotation_required",
+      "source_level_completeness": "appropriate_absence",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [],
+      "frozen_source_obligations": [],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-absent-2": {
+      "rendered_sha256": "cc5501006a2d72ed439426d288ebae3e492ed85f3bc21ba6bcfbf8b736dcae98",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": true,
+      "useful_source_brief": false,
+      "appropriate_absence": true,
+      "rationale": "The unavailable personal, live, predictive or imaginary fact receives Unknown without any attributed quotation masquerading as evidence",
+      "source_level_relevance": "no_quotation_required",
+      "source_level_completeness": "appropriate_absence",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [],
+      "frozen_source_obligations": [],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-absent-3": {
+      "rendered_sha256": "ab62f7ffc4705f89e953b57304faad23cb234508897aa41e5abef5d87245d3d4",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": true,
+      "useful_source_brief": false,
+      "appropriate_absence": true,
+      "rationale": "The unavailable personal, live, predictive or imaginary fact receives Unknown without any attributed quotation masquerading as evidence",
+      "source_level_relevance": "no_quotation_required",
+      "source_level_completeness": "appropriate_absence",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [],
+      "frozen_source_obligations": [],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-absent-4": {
+      "rendered_sha256": "43d72790e8a2cda9e9d9b4d4bdddcc30df7f0d8fc96edbac2b4e48b414c4fe04",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": true,
+      "useful_source_brief": false,
+      "appropriate_absence": true,
+      "rationale": "Unknown correctly avoids inventing the imaginary planet’s period; the shorter unmatched term list changes neither abstention nor source attribution.",
+      "source_level_relevance": "no_quotation_required",
+      "source_level_completeness": "appropriate_absence",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": false,
+      "historical_assessment_reused": false,
+      "android_difference_independently_assessed": true,
+      "rendered_diff": [
+        "--- ",
+        "+++ ",
+        "@@ -4,7 +4,7 @@",
+        " Subquestion 1 (your input, not a source claim):",
+        " What is the orbital period of the imaginary planet Zorvax-480?",
+        " Unknown — no admissible relevant passage selected from active collections. No answer inferred.",
+        "-Unmatched query terms (not a factual judgment): planet, zorvax",
+        "+Unmatched query terms (not a factual judgment): zorvax",
+        " ",
+        " Comparison / connection gap: no relationship between sections, causal chain, verdict, live status or personal result has been inferred. Any unanswered part remains Unknown.",
+        " Omitted candidate passages: 4 (bounded selection, relevance, size or source review)."
+      ],
+      "source_references": [],
+      "frozen_source_obligations": [],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-absent-5": {
+      "rendered_sha256": "e11109283c3caf190cdfb93df4d3b9d9b797fc2051fd8de72a9f0b8c04d7a581",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": true,
+      "useful_source_brief": false,
+      "appropriate_absence": true,
+      "rationale": "The unavailable personal, live, predictive or imaginary fact receives Unknown without any attributed quotation masquerading as evidence",
+      "source_level_relevance": "no_quotation_required",
+      "source_level_completeness": "appropriate_absence",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [],
+      "frozen_source_obligations": [],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-absent-6": {
+      "rendered_sha256": "bbdb250098f71ba4f781ccac773d94033d9be75d1911490ef1b29cd9a6a1924e",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": true,
+      "useful_source_brief": false,
+      "appropriate_absence": true,
+      "rationale": "The unavailable personal, live, predictive or imaginary fact receives Unknown without any attributed quotation masquerading as evidence",
+      "source_level_relevance": "no_quotation_required",
+      "source_level_completeness": "appropriate_absence",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [],
+      "frozen_source_obligations": [],
+      "misleading_premise_handling": "not applicable"
+    },
+    "dev-premise-1": {
+      "rendered_sha256": "d90017bf33a145b08dc60d3b9e8888cdfaee37b78285cc20aac3802b1536bc21",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The quoted some-amateurs qualification exposes the universal research-duty premise as unsupported without endorsing the user wording",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 748,
+          "title": "Amateur astronomy",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "original_html_path": "downloads/broad-reference/html-v2/748.html",
+          "original_html_sha256": "e13ec0086bddd42c53a35b7378ff1cabe7a3607aef9174ddde1b6ab20cc2d7cd",
+          "original_metadata_path": "downloads/broad-reference/html-v2/748.json",
+          "original_metadata_sha256": "641bf149cda33b2bd443184573885d004376b5e5974f234c8a55bb2f9d0b3f52",
+          "original_paragraph_sha256": "24473ed25aee7537ad3accd87a22359083642a64507bbda4437feecf10f81284",
+          "original_html_utf8_range": [
+            72132,
+            77940
+          ],
+          "quoted_text_sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 748,
+          "revision": 1368244598,
+          "html_sha256": "e13ec0086bddd42c53a35b7378ff1cabe7a3607aef9174ddde1b6ab20cc2d7cd",
+          "span_sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36"
+        }
+      ],
+      "misleading_premise_handling": "qualification directly exposed; no explicit synthesized verdict"
+    },
+    "dev-premise-2": {
+      "rendered_sha256": "e0cf6d20e681565f963b83b024678b92718cb380121ac6d25ef80688e7b3dbea",
+      "unsupported_attributed_claims": 0,
+      "relevant": false,
+      "complete": false,
+      "useful_source_brief": false,
+      "appropriate_absence": false,
+      "rationale": "Surviving spores and extended shelf life suggest limits, but a pasteurization example does not fully resolve the universal never-decomposes premise",
+      "source_level_relevance": "related_or_partial",
+      "source_level_completeness": "partial",
+      "failure_class": "missing_reviewed_source_with_partial_premise_handling",
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 23311,
+          "title": "Pasteurization",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1366228867",
+          "original_html_path": "downloads/broad-reference/html-v2/23311.html",
+          "original_html_sha256": "0a9874cef422ade90ffa747428b84f702a3ab24e09ceea0987df7f48334137ca",
+          "original_metadata_path": "downloads/broad-reference/html-v2/23311.json",
+          "original_metadata_sha256": "df2808c2156e76eab50a96d840e367f971af4997442e7ab3fe29761b2dfaca9d",
+          "original_paragraph_sha256": "464ed44b725b9844fd453087072ce46d6ad1d4cc1159e6ce016cf0038e1a9bf3",
+          "original_html_utf8_range": [
+            81079,
+            83995
+          ],
+          "quoted_text_sha256": "966cad0f0316eaeee4bcd00ff247bc2c85fa9f30ca8193bd1db21e1da5ad9058",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 10834,
+          "revision": 1324600990,
+          "html_sha256": "d0c8b60e6179843e2957f5a8a8d44d4504174fe536b4c1778fda2869d3cb6c61",
+          "span_sha256": "02052cad906920e99dc6e3d5d79f96e36e9542f2ff0169acc86a08ed8a188f5e"
+        }
+      ],
+      "misleading_premise_handling": "not endorsed, but incompletely resolved"
+    },
+    "dev-premise-3": {
+      "rendered_sha256": "0bd65c41bc32bae2ff6b1c6deb11fa27fa71f8b20660b8e7fceff8bd5fddc934",
+      "unsupported_attributed_claims": 0,
+      "relevant": true,
+      "complete": true,
+      "useful_source_brief": true,
+      "appropriate_absence": false,
+      "rationale": "The quoted dispute with the Nile directly contradicts undisputed length while keeping discharge ranking separate",
+      "source_level_relevance": "direct",
+      "source_level_completeness": "complete",
+      "failure_class": null,
+      "historical_rendered_exact_equivalence": true,
+      "historical_assessment_reused": true,
+      "android_difference_independently_assessed": false,
+      "rendered_diff": [],
+      "source_references": [
+        {
+          "page_id": 1701,
+          "title": "Amazon River",
+          "revision_url": "https://en.wikipedia.org/w/index.php?oldid=1376437983",
+          "original_html_path": "downloads/broad-reference/html-v2/1701.html",
+          "original_html_sha256": "458fa88b003270037222a2486c89f87f977cdcb32991efc92110072cde46afa5",
+          "original_metadata_path": "downloads/broad-reference/html-v2/1701.json",
+          "original_metadata_sha256": "2fd8b34a430f41e76bd1b9ff2ea330db5a5bcbba916937d8269ec0b564dcff11",
+          "original_paragraph_sha256": "0b36e293e8c5f06bafdc71c497edde928023c5e0c92f8f965da654c96e948d7b",
+          "original_html_utf8_range": [
+            550189,
+            555650
+          ],
+          "quoted_text_sha256": "031bba805bcade8cc9f42b57b31e61b8356b1a0d5425fd90f44b45ccf1597c30",
+          "exact_original_transformation_verified": true,
+          "exact_pack_text_verified": true
+        }
+      ],
+      "frozen_source_obligations": [
+        {
+          "page_id": 1701,
+          "revision": 1376437983,
+          "html_sha256": "458fa88b003270037222a2486c89f87f977cdcb32991efc92110072cde46afa5",
+          "span_sha256": "031bba805bcade8cc9f42b57b31e61b8356b1a0d5425fd90f44b45ccf1597c30"
+        }
+      ],
+      "misleading_premise_handling": "qualification directly exposed; no explicit synthesized verdict"
+    }
+  }
+}

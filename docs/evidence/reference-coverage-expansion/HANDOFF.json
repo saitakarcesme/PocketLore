@@ -1,19 +1,19 @@
 {
-  "freeze_id": "pocketlore-480-reference-expansion-v1-pending-device",
-  "task_id": "480-expand-reviewed-reference-coverage-20261002a",
-  "status": "incomplete",
+  "freeze_id": "pocketlore-481-reference-expansion-api37-v1",
+  "task_id": "481-reference-edition-live-device",
+  "status": "ready_for_supervised_review",
   "baseline_commit": "a0cba18",
   "baseline_status": "Accepted470 immutable historical profile; not replaced by this packet",
   "candidate": {
     "app": {
-      "path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/build-bound-a1c628f/binaries/app-debug.apk",
-      "sha256": "21a6efc62c73f28871619bb4806f264a4dbd1c9e663a9256506972ab353341f5",
-      "bytes": 22719262
+      "path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/run-20261002T125014Z-45bccf/binaries/app-debug.apk",
+      "bytes": 22719262,
+      "sha256": "67605c098d2b35bc9b7f2fc2015cd9ed0598292c22c6c2bcdb2513ed5958455d"
     },
     "test": {
-      "path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/build-bound-a1c628f/binaries/app-debug-androidTest.apk",
-      "sha256": "b8ab30b9c9096ed356c15c7dda4307723f13c8370173997d86563cdb941a2721",
-      "bytes": 430874
+      "path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/run-20261002T125014Z-45bccf/binaries/app-debug-androidTest.apk",
+      "bytes": 437178,
+      "sha256": "67b851e572cecb264a9f46dddfe3caf37646523e7521fd2dcd6dc65f81af44a2"
     },
     "pack": {
       "path": "downloads/reference-expansion/reference-expansion.plpack",
@@ -27,16 +27,19 @@
   "development_sha256": "7ffc25a4adfcd04a19ec09dd37e23efa0c2c42ede53115986771aeb06d76d20d",
   "documents": 120,
   "subject_families": 20,
-  "active_installed_counts": null,
+  "active_installed_counts": {
+    "collections": 2,
+    "distinct_documents": 127,
+    "passages": 142,
+    "new_edition_documents": 120,
+    "new_edition_families": 20
+  },
   "packaged_fallback": "Existing bundled source pack unchanged; not counted as active/new coverage",
   "host_evidence": "docs/evidence/reference-coverage-expansion/build-host-summary.json",
   "remaining_gates": [
-    "New exclusive coordinator lease for emulator-5564",
-    "Actual new APK/edition installation and current subset storage/reservation measurements",
-    "Research/source/Back/import-export/cancel/reopen device receipts and exact retained identities",
-    "Source-level inspection of actual Android outputs",
-    "Current-candidate general research behavioral receipt and all required checks passing",
-    "Supervised independent review of final immutable candidate"
+    "Canonical independent criticism and task acceptance",
+    "NEW evaluator-owned unseen/matched evaluation",
+    "Physical Android/GrapheneOS and human release acceptance"
   ],
   "forbidden_claims": [
     "Generated-answer success",
@@ -47,8 +50,15 @@
     "Blanket bulk rights clearance"
   ],
   "evaluation_rule": "Future evaluator owns NEW unseen source/topic-held-out cases; do not reuse these public development questions for final unseen claims",
-  "source_commit": "a1c628f7033918908d3a2fffda640a892cc4a66e",
-  "build_binding": "docs/evidence/reference-coverage-expansion/build-bound/receipt.json",
-  "source_manifest_sha256": "0e178b2ad8339b20070aad35092cecbfdfb28ed69f057d61812eecd162ff98bc",
-  "model_env_sha256": "2d932887a64251c6561f4082739136be2a204728c8acd8fb7a1a0eff69526d97"
+  "source_commit": "6eb6d305e572c0511f2a35d2cbc2d0315864f9a9",
+  "build_binding": "downloads/reference-expansion/run-20261002T125014Z-45bccf/source-inputs.json",
+  "source_manifest_sha256": "53bacec4119b0985fe4982600771c15fb9ec230738335709d5410469d8686da5",
+  "model_env_sha256": "2d932887a64251c6561f4082739136be2a204728c8acd8fb7a1a0eff69526d97",
+  "device_run": "/home/isa/Projects/PocketLore/downloads/reference-expansion/run-20261002T125014Z-45bccf",
+  "device_manifest_sha256": "90e6d8fca32d486300504983469d4dd42c43f11d3b9228cd7b814a55e4e5a4ed",
+  "apk_sha256": "67605c098d2b35bc9b7f2fc2015cd9ed0598292c22c6c2bcdb2513ed5958455d",
+  "device_source_assessment": "docs/evidence/reference-coverage-expansion/device-source-assessment.json",
+  "device_profile": "Existing emulator-5564 API37, page size16384, subset only; no physical/full-capacity proof",
+  "device_source_assessment_sha256": "1c065272072d25ca4fd0f1e4aa45b4ab1bb3530c4a2937e8d19ef5bdb549a22c",
+  "canonical_review_status": "Pending supervised canonical critic; source inspection is not task acceptance"
 }
