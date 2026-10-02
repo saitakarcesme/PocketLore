@@ -9,7 +9,7 @@ public final class StorageMeterInstrumentation extends Instrumentation {
  void ok(boolean b,String name){if(!b)throw new AssertionError(name);checks.put(name);}
  void reject(Action a,String name)throws Exception{try{a.run();}catch(IOException e){checks.put(name);return;}throw new AssertionError(name);}
  public void onCreate(Bundle b){args=b;start();}
- static long meter()throws Exception{try(ResourceStorage.Reservation r=ResourceStorage.reserve(0)){return r.projectedBytes;}}
+ static long meter()throws Exception{try(ResourceStorage.Reservation r=ResourceStorage.reserve(0)){return r.projectedBytes-held();}}
  static long held()throws Exception{java.lang.reflect.Field f=ResourceStorage.class.getDeclaredField("appLedger");f.setAccessible(true);return ((ResourceStorage.Ledger)f.get(null)).reservedBytes();}
  JSONObject external()throws Exception{
   android.content.pm.ApplicationInfo a=getTargetContext().getApplicationInfo();List<String> roots=new ArrayList<>(Arrays.asList(a.dataDir,a.sourceDir));
@@ -29,7 +29,7 @@ public final class StorageMeterInstrumentation extends Instrumentation {
   }
   return new JSONObject().put("logical",logical).put("allocated",allocated).put("covered",covered).put("unique_inodes",seen.size()).put("stat_rows",rows);
  }
- void reconcile(String name)throws Exception{long before=meter();JSONObject observed=external();long after=meter();ok(before==after&&after==observed.getLong("covered"),name+"_independent_stat_exact");report.put(name,observed.put("meter",after));}
+ void reconcile(String name)throws Exception{long before=meter();JSONObject observed=external();long after=meter();report.put(name,observed.put("meter",after).put("meter_before",before).put("reserved",held()));ok(before==after&&after==observed.getLong("covered"),name+"_independent_stat_exact");}
  void remove(File f)throws IOException{if(Files.isSymbolicLink(f.toPath())){Files.delete(f.toPath());return;}if(f.isDirectory()){File[] children=f.listFiles();if(children==null)throw new IOException("Cannot enumerate own fixture");for(File c:children)remove(c);}Files.delete(f.toPath());}
  public void onStart(){boolean pass=false;try{
   String id=args.getString("run_id");if(id==null||!id.matches("[A-Za-z0-9-]+"))throw new IOException("Invalid invocation");report.put("run_id",id).put("source_manifest_sha256",args.getString("source_manifest_sha256")).put("sdk",Build.VERSION.SDK_INT).put("page_size",Os.sysconf(android.system.OsConstants._SC_PAGESIZE));

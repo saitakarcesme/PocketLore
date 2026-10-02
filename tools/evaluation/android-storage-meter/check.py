@@ -30,6 +30,7 @@ def verify(data):
    seen.add(key);logical+=size;allocated+=blocks*512;covered+=max(size,blocks*512)
   assert sample['meter']==sample['covered']==covered and sample['logical']==logical and sample['allocated']==allocated
  assert r['during']['meter']>r['before']['meter']
+ assert r['before']['reserved']==0 and r['during']['reserved']==8192+1048576 and r['after']['reserved']==0
  required={'actual_storage_application_started','startup_zero_reservations','during_copy_reservation_held','copy_success_release','unknown_symlink_denied','concurrent_one_admitted','concurrent_release','cancel_cleanup_release','failure_cleanup_release','same_process_retry','personal_import_export_startup','personal_release','optional_failure_release','owned_fixture_removed','final_zero_reservations'}
  assert required<=set(r['checks'])
  return r
