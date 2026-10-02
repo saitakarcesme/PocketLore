@@ -26,10 +26,15 @@ def verify(out):
  for serial in ('emulator-5560','emulator-5562'):
   assert (out/(serial+'-assets-before.txt')).read_bytes()==(out/(serial+'-assets-after.txt')).read_bytes()
   assert (out/(serial+'-selection-before.txt')).read_bytes()==(out/(serial+'-selection-after.txt')).read_bytes()
+ if (out/'storage-audit').is_dir():
+  pins=json.loads((ROOT/'tools/attachments/models.json').read_text());expected={v['sha256'] for v in pins.values()}
+  for serial in ('emulator-5560','emulator-5562'):
+   assert {line.split()[0] for line in (out/'storage-audit'/(serial+'-recognition-hashes.txt')).read_text().splitlines()}==expected
  return manifest
 
 def main():
- if len(sys.argv)>1:verify(pathlib.Path(sys.argv[1]));print('Verified integrated receipts');return
+ reuse=pathlib.Path(sys.argv[2]) if len(sys.argv)>2 and sys.argv[1]=='--reuse' else None
+ if len(sys.argv)>1 and reuse is None:verify(pathlib.Path(sys.argv[1]));print('Verified integrated receipts');return
  out=ROOT/'downloads/integrated-candidate'/time.strftime('%Y%m%dT%H%M%SZ',time.gmtime());out.mkdir(parents=True);print(out,flush=True)
  def run(cmd,name,timeout=600):
   r=subprocess.run(list(map(str,cmd)),cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=timeout);(out/name).write_bytes(r.stdout);assert r.returncode==0,(name,r.stdout[-2000:]);return r.stdout
@@ -57,7 +62,17 @@ def main():
  sampler=threading.Thread(target=sample);sampler.start();lanes=[]
  try:
   for name,script,folder in LANES:
-   lane_name=name;base=ROOT/folder;before=set(base.glob('*'));env=os.environ.copy();env['POCKETLORE_NO_GENERATION']='1'
+   lane_name=name
+   report_names={'product_ui':['report-default.json','report-large.json','cold-report.json'],'documents':['results.json','restart.json'],'attachments':['results.json'],'model_management':['import.json','select.json'],'nearby':['report.json'],'cache':['report.json'],'specialist':['install.json','restart.json']}[name]
+   serial='emulator-5562' if name in ('cache','specialist') else 'emulator-5560'
+   previous=reuse/name if reuse else None
+   if previous and (previous/'receipt.json').is_file() and (previous/'integrated-installed-hash.txt').is_file():
+    receipt=json.loads((previous/'receipt.json').read_text());claimed=receipt.get('apk_sha256',receipt.get('artifacts',{}).get('app-debug.apk',{}).get('sha256'))
+    assert receipt['status']=='PASS' and claimed==candidate and (previous/'integrated-installed-hash.txt').read_text().split()[0]==candidate
+    assert all(json.loads((previous/n).read_text())['status']=='PASS' for n in report_names)
+    # Reuse only complete, same-candidate Android runs, retaining their original times.
+    shutil.copytree(previous,out/name);lanes.append({'name':name,'serial':serial,'source':str(previous),'reports':report_names,'reused':True});print(name+' REUSED PASS',flush=True);continue
+   base=ROOT/folder;before=set(base.glob('*'));env=os.environ.copy();env['POCKETLORE_NO_GENERATION']='1'
    with (out/(name+'.log')).open('wb') as log:r=subprocess.run(['bash','tools/evaluation/'+script],cwd=ROOT,env=env,stdout=log,stderr=subprocess.STDOUT,timeout=1500)
    created=[p for p in base.glob('*') if p not in before and p.is_dir()];assert len(created)==1,(name,created);source=created[0];target=out/name;target.mkdir()
    for p in source.rglob('*'):
@@ -76,6 +91,7 @@ def main():
    adb(serial,['shell','run-as','org.pocketlore.app','sh','-c',"'if test -d "+folder+"; then du -ak "+folder+"; else echo absent; fi'"],serial+'-'+folder.split('/')[-1]+'-allocated.txt')
   adb(serial,['shell','run-as','org.pocketlore.app','cat','files/pack-library/catalog.json','files/scale-library/catalog.json'],serial+'-catalogs.txt');adb(serial,['shell','run-as','org.pocketlore.app','sh','-c',"'if test -f files/model-selection; then cat files/model-selection; else echo legacy-model.gguf; fi'"],serial+'-selection-after.txt')
   adb(serial,['shell','dumpsys','meminfo','org.pocketlore.app'],serial+'-memory.txt')
+ storage_dir=pathlib.Path(run(['python3','tools/evaluation/integrated-candidate/storage_snapshot.py'],'storage-audit.log').decode().strip());shutil.copytree(storage_dir,out/'storage-audit')
  manifest={'status':'PASS','apk_sha256':candidate,'apk_bytes':apk.stat().st_size,'lanes':lanes,'files':{str(p.relative_to(out)):sha(p) for p in sorted(out.rglob('*')) if p.is_file()}}
  (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n');verify(out)
  # Mutate only disposable copies of actual raw reports, never canonical evidence.
