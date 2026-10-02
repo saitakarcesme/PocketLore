@@ -1,0 +1,7 @@
+gradle.beforeProject { app ->
+    app.plugins.withId('com.android.application') {
+        def base = new File(app.rootProject.projectDir, '../tools/evaluation/android-storage-meter')
+        app.android.sourceSets.androidTest.java.srcDirs += [new File(base, 'tests')]
+        app.android.sourceSets.androidTest.manifest.srcFile(new File(base, 'AndroidManifest.xml'))
+    }
+}
