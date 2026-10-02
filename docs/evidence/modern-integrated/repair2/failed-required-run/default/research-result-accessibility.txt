@@ -1,0 +1,42 @@
+android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+ android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+  android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+   android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 156 - 1280, 324) clickable=false visible=true
+     android.widget.TextView text=PocketLore description=null bounds=Rect(72, 175 - 950, 304) clickable=false visible=true
+     android.widget.TextView text=Offline description=null bounds=Rect(950, 183 - 1088, 296) clickable=false visible=true
+     android.widget.ImageButton text=null description=Settings bounds=Rect(1088, 168 - 1232, 312) clickable=true visible=true
+    android.widget.FrameLayout text=null description=null bounds=Rect(0, 324 - 1280, 2539) clickable=false visible=true
+     android.widget.ScrollView text=null description=null bounds=Rect(0, 324 - 1280, 2539) clickable=false visible=true
+      android.widget.LinearLayout text=null description=null bounds=Rect(0, 324 - 1280, 2539) clickable=false visible=true
+       android.widget.TextView text=What is groundwater? description=null bounds=Rect(72, 372 - 1208, 530) clickable=false visible=true
+       android.widget.Button text=Edit question description=null bounds=Rect(72, 542 - 1208, 686) clickable=true visible=true
+       android.widget.TextView text=Extractive fallback · No local model is loaded. · 5 ms description=null bounds=Rect(72, 698 - 1208, 811) clickable=false visible=true
+       android.widget.TextView text=Extractive fallback — not a generated answer.
+No local model is loaded.
+
+Relevant evidence
+These are retrieved pack passages, not a generated explanation or a verified answer.
+
+[water-04] Some water that infiltrates will remain in the shallow soil layer, where it will gradually move vertically and horizontally through the soil and subsurface material. Some of the water may infiltrate deeper, recharging groundwater aquifers. If the aquifers are porous enough to allow water to move freely through it, people can drill wells into the aquifer and use the water for their purposes. Water may travel long distances or remain in groundwater storage for long periods before returning to the surface or seeping into other water bodies, such as streams and the oceans.
+
+[water-06] Natural refilling of deep aquifers is a slow process because groundwater moves slowly through the unsaturated zone and the aquifer. The rate of recharge is also an important consideration. It has been estimated, for example, that if the aquifer that underlies the High Plains of Texas and New Mexico—an area of slight precipitation—was emptied, it would take centuries to refill the aquifer at the present small rate of replenishment. In contrast, a shallow aquifer in an area of substantial precipitation such as those in the coastal plain in south Georgia, USA, may be replenished almost immediately.
+
+Comparison and synthesis require checking these passages yourself in this build. description=null bounds=Rect(72, 811 - 1208, 2539) clickable=false visible=true
+       android.widget.LinearLayout text=null description=null bounds=Rect(72, 4632 - 1208, 2539) clickable=false visible=false
+        android.widget.LinearLayout text=null description=null bounds=Rect(72, 4680 - 1208, 2539) clickable=false visible=false
+         android.widget.TextView text=Source excerpt
+Some water that infiltrates will remain in the shallow soil layer, where it will gradually move vertically and horizontally through the soil and subsurface material. Some of the water may infiltrate deeper, recharging groundwater aquifers. If the aquifers are porous enough to allow water to move freely through it, people can drill wells into the aquifer and use the water for their purposes. Water may travel long distances or remain in groundwater storage for long periods before returning to the surface or seeping into other water bodies, such as streams and the oceans. description=null bounds=Rect(132, 4728 - 1148, 2539) clickable=false visible=false
+         android.widget.Button text=Inspect source: Infiltration and groundwater recharge description=null bounds=Rect(132, 5054 - 1148, 2539) clickable=true visible=false
+        android.widget.LinearLayout text=null description=null bounds=Rect(72, 5294 - 1208, 2539) clickable=false visible=false
+         android.widget.TextView text=Source excerpt
+Natural refilling of deep aquifers is a slow process because groundwater moves slowly through the unsaturated zone and the aquifer. The rate of recharge is also an important consideration. It has been estimated, for example, that if the aquifer that underlies the High Plains of Texas and New Mexico—an area of slight precipitation—was emptied, it would take centuries to refill the aquifer at the present small rate of replenishment. In contrast, a shallow aquifer in an area of substantial precipitation such as those in the coastal plain in south Georgia, USA, may be replenished almost immediately. description=null bounds=Rect(132, 5342 - 1148, 2539) clickable=false visible=false
+         android.widget.Button text=Inspect source: Aquifer recharge times description=null bounds=Rect(132, 5668 - 1148, 2539) clickable=true visible=false
+       android.widget.TextView text=Saved to your notebook description=null bounds=Rect(72, 5860 - 1208, 2539) clickable=false visible=false
+       android.widget.Button text=Compare retrieved sources description=null bounds=Rect(72, 5985 - 1208, 2539) clickable=true visible=false
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 2539 - 1280, 2784) clickable=false visible=true
+     android.widget.LinearLayout text=null description=null bounds=Rect(36, 2563 - 1244, 2772) clickable=false visible=true
+      android.widget.Button text=Research description=Research, selected bounds=Rect(42, 2563 - 332, 2772) clickable=true visible=true
+      android.widget.Button text=Library description=Library bounds=Rect(344, 2563 - 634, 2772) clickable=true visible=true
+      android.widget.Button text=Explore description=Explore bounds=Rect(646, 2563 - 936, 2772) clickable=true visible=true
+      android.widget.Button text=Saved description=Saved bounds=Rect(948, 2563 - 1238, 2772) clickable=true visible=true
