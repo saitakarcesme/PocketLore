@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "apk_sha256": "9c71a32dbc2deac3d650c6849a335379bd2b005c1516437c613bcd0fcff7dd70",
+  "apk_bytes": 22702878,
+  "baseline_sha256": "3ec885a048293a5d0bb3d6f82b36bb073dacfa9025e413ff16b091b136f2f097",
+  "protocol_sha256": "d1c4c6112ba11848c002afc781fb5883cca0462d12d0fa5286830ef4300722c6",
+  "files": {
+    "state.txt": "c98373c1abef78070f6beef6b4ae4fbf3de348dac280195c7f93441920584af9",
+    "properties.txt": "50b7d7fa93ce42c21253f6d5fdb8accc618bafc68b0a23cd69fbae3b143f2cdf",
+    "disk-before.txt": "1d73ba059d8a1af174d0f211c574933c72af45bcfe298a04ffee2231e7fa26ec",
+    "before.txt": "bb9842744fe5d6e6f0d98ce6c368c7200ed1ddeee1d7d8d8e06e52de3f0f40e1",
+    "build.log": "f357f5ce2d34d1672bf2d47de8ebd341e2040ed83baaaf354a39a48f01c8afe9",
+    "install-app-debug.apk.txt": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+    "install-app-debug-androidTest.apk.txt": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+    "runtime.txt": "64e5ec6992f404a60dc5bae34ca3d671e20bca8630774007a666f2d5cc1aad2e",
+    "report.json": "0a6259eedc5efb51467f4cd5947972deec3b9544c6c42696e991945bc06025e9",
+    "after.txt": "bb9842744fe5d6e6f0d98ce6c368c7200ed1ddeee1d7d8d8e06e52de3f0f40e1",
+    "installed-path.txt": "8829ed88101d9073410af53996f606e83818e2ba910b0cfdcfc2ae34d3213c90",
+    "installed-hash.txt": "ee23b1c4d66df3047ae083c327079f6725a3c55df625c5b0c180eef0b915596c",
+    "disk-after.txt": "1d73ba059d8a1af174d0f211c574933c72af45bcfe298a04ffee2231e7fa26ec"
+  },
+  "semantic_embedder": null,
+  "scope": "Full installed API35 emulator corpus; unchanged ranking, bounded verified-preview cache; not phone or answer support"
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/product-ui/check.py", line 42, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/product-ui/check.py", line 31, in main
+    assert report['status']=='PASS',(out,report.get('error'));assert report['activity_font_scale']==float(scale)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (PosixPath('/home/isa/Projects/PocketLore/downloads/product-ui/runs/20261002T011712Z'), 'java.lang.AssertionError: Timeout: Personal evidence unavailable in actual brief flow\n\tat org.pocketlore.app.ProductUiInstrumentation.await(ProductUiInstrumentation.java:25)\n\tat org.pocketlore.app.ProductUiInstrumentation.onStart(ProductUiInstrumentation.java:70)\n\tat android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)\n')

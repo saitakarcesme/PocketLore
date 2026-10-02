@@ -1,0 +1,160 @@
+{
+  "import_or_reload_ms": 605,
+  "pack_sha256": "4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c",
+  "rejections": [],
+  "pss_kib": 73508,
+  "app_data_bytes": 41702744091,
+  "archive_bytes": 194793,
+  "collections": 4,
+  "documents": 1121,
+  "passages": 40955,
+  "status": "PASS",
+  "checks": [
+    "Pinned edition installed and active restart",
+    "Prior document collection retained",
+    "Frozen query retrieves document eip-155",
+    "Rendered source dates rights span and edition 0",
+    "Frozen query retrieves document eip-196",
+    "Rendered source dates rights span and edition 1",
+    "Frozen query retrieves document eip-197",
+    "Rendered source dates rights span and edition 2",
+    "Frozen query retrieves document eip-198",
+    "Rendered source dates rights span and edition 3",
+    "Frozen query retrieves document eip-712",
+    "Rendered source dates rights span and edition 4",
+    "Frozen query retrieves document eip-2028",
+    "Rendered source dates rights span and edition 5",
+    "Frozen query retrieves document erc-20",
+    "Rendered source dates rights span and edition 6",
+    "Frozen query retrieves document erc-165",
+    "Rendered source dates rights span and edition 7",
+    "Invented absent token returns no evidence"
+  ],
+  "queries": [
+    {
+      "query": "replay protection",
+      "ms": 12,
+      "hits": [
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_eip-155-5bc928b5c8ffcef9",
+          "text": "--- eip: 155 title: Simple replay attack protection author: Vitalik Buterin (@vbuterin) type: Standards Track category: Core status: Final created: 2016-10-14 ---  ### Hard fork [Spurious Dragon](.\/eip-607.md)  ### Parameters - `FORK_BLKNUM`: 2,675,000 - `CHAIN_ID`: 1 (main net)  ### Specification  If `block.number >= FORK_BLKNUM` and `CHAIN_ID` is available, then when computing the hash of a transaction for the purposes of signing, instead of hashing only six rlp encoded elements `(nonce, gasprice, startgas, to, value, data)`, you **SHOULD** hash nine rlp encoded elements `(nonce, gasprice, startgas, to, value, data, chainid, 0, 0)`.  If you do, then the `v` of the signature **MUST** be set to `{0,1} + CHAIN_ID * 2 + 35` where `{0,1}` is the parity of the `y` value of the curve point for which `r` is the x-value in the secp256k1 signing process.  If you choose to only hash 6 values, then `v` continues to be set to `{0,1} + 27` as previously.  If `block.number >= FORK_BLKNUM` and `v = CHAIN_ID * 2 + 35` or `v = CHAIN_ID * 2 + 36`, then when computing the hash of a transaction for purposes of recovering, instead of hashing six rlp encoded elements `(nonce, gasprice, startgas, to, value, data)`, hash nine rlp encoded elements `(nonce, gasprice, startgas, to, value, data, chainid, 0, 0)`. The currently existing signature scheme using `v = 27` and `v = 28` remains valid and continues to operate under the same rules as it did previously.  ### Example  Consider a transaction with `nonce = 9`, `gasprice = 20 * 10**9`, `startgas = 21000`, `to = 0x3535353535353535353535353535353535353535`, `value = 10**18`, `data=''` (empty).  The \"signing data\" becomes:  ``` 0xec098504a817c800825208943535353535353535353535353535353535353535880de0b6b3a764000080018080 ```  The \"signing hash\" becomes:  ``` 0xdaf5a779ae972f972197303d7b574746c7ef83eadac0f2791ad23db92e4c8e53 ```  If the transaction is signed with the private key `0x4646464646464646464646464646464646464646464646464646464646464646`, then the v,r,s values become:  ``` (37, 18515461264373351373200002665853028612451056578545711640558177340181847433846, 46948507304638947509940763649030358759909902576025900602547168820602576006531) ```  Notice the use of 37 instead of 27. The signed tx would become:  ``` 0xf86c098504a817c800825208943535353535353535353535353535353535353535880de0b6b3a76400008025a028ef61340bd939bc2195fe537567866003e1a15d3c71ff63e1590620aa636276a067cbe9d8997f761aecb703304b3800ccf555c9f3dc64214b297fb1966a3b6d83 ```  ### Rationale  This would provide a way to send transactions that work on Ethereum without working on ETC or the Morden testnet. ETC is encouraged to adopt this EIP but replacing `CHAIN_ID` with a different value, and all future testnets, consortium chains and alt-etherea are encouraged to adopt this EIP replacing `CHAIN_ID` with a unique value.   ### List of Chain ID's:  | `CHAIN_ID`     | Chain(s)                                   | | ---------------| -------------------------------------------| | 1              | Ethereum mainnet                           | | 2              | Morden (disused), Expanse mainnet          | | 3              | Ropsten                                    | | 4              | Rinkeby                                    | | 5              | Goerli                                     | | 42             | Kovan                                      | | 1337           | Geth private chains (default)              |   Find more chain ID's on [chainid.network](https:\/\/chainid.network) and contribute to [ethereum-lists\/chains](https:\/\/github.com\/ethereum-lists\/chains). "
+        },
+        {
+          "id": "p567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea_essentials-f1c425461e39b7df",
+          "text": "SUN PROTECTION – Sunglasses, sunscreen, and hat Sun protection is necessary to protect your skin and eyes against harsh UV rays that are responsible for sunburns and skin cancer. Consider using sunglasses, sunscreen, and hats. Sun-protection clothing such as pants and long sleeve shirts can also help minimize your exposure to the sun."
+        },
+        {
+          "id": "p567e9bbbaab896826809ec20f81ae1c4b3f421b011931edae0989d28cfce10ea_declaration-fd92ee9c04cabbe7",
+          "text": "He has abdicated Government here, by declaring us out of his Protection and waging War against us."
+        },
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_eip-712-b9d302a7b9410a55",
+          "text": "## Abstract  This is a standard for hashing and signing of typed structured data as opposed to just bytestrings. It includes a  * theoretical framework for correctness of encoding functions, * specification of structured data similar to and compatible with Solidity structs, * safe hashing algorithm for instances of those structures, * safe inclusion of those instances in the set of signable messages, * an extensible mechanism for domain separation, * new RPC call `eth_signTypedData`, and * an optimized implementation of the hashing algorithm in EVM.  It does not include replay protection.  "
+        }
+      ]
+    },
+    {
+      "query": "elliptic curve scalar multiplication",
+      "ms": 8,
+      "hits": [
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_eip-196-215965da8a3e5d29",
+          "text": "--- eip: 196 title: Precompiled contracts for addition and scalar multiplication on the elliptic curve alt_bn128 author: Christian Reitwiessner <chris@ethereum.org> type: Standards Track category: Core status: Final created: 2017-02-02 ---  "
+        },
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_eip-196-1bcb620e83e9e1a0",
+          "text": "## Abstract  This EIP suggests to add precompiled contracts for addition and scalar multiplication on a specific pairing-friendly elliptic curve. This can in turn be combined with [EIP-197](.\/eip-197.md) to verify zkSNARKs in Ethereum smart contracts. The general benefit of zkSNARKs for Ethereum is that it will increase the privacy for users (because of the Zero-Knowledge property) and might also be a scalability solution (because of the succinctness and efficient verifiability property).  "
+        }
+      ]
+    },
+    {
+      "query": "pairing check",
+      "ms": 10,
+      "hits": [
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_eip-197-9bcfc1c21ce70451",
+          "text": "--- eip: 197 title: Precompiled contracts for optimal ate pairing check on the elliptic curve alt_bn128 author: Vitalik Buterin <vitalik@ethereum.org>, Christian Reitwiessner <chris@ethereum.org> type: Standards Track category: Core status: Final created: 2017-02-06 ---  "
+        },
+        {
+          "id": "pb8d18801b099402205938979ab2bb44ee9a316f06f030aab789cf93ba3605012_wiki-4080-cbc996306fb2b118",
+          "text": "It has been suspected for many years that Fourier Sampling is a problem that exists within BQP, but not within the polynomial hierarchy. Recent conjectures have provided evidence that a similar problem, Fourier Checking, also exists in the class BQP without being contained in the polynomial hierarchy. This conjecture is especially notable because it suggests that problems existing in BQP could be classified as harder than NP-Complete problems. Paired with the fact that many practical BQP problems are suspected to exist outside of P (it is suspected and not verified because there is no proof that P ≠ NP), this illustrates the potential power of quantum computing in relation to classical computing.[7]"
+        },
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_eip-197-ed328dc8106d4664",
+          "text": "## Simple Summary  Precompiled contracts for elliptic curve pairing operations are required in order to perform zkSNARK verification within the block gas limit.  "
+        }
+      ]
+    },
+    {
+      "query": "modular exponentiation",
+      "ms": 40,
+      "hits": [
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_eip-198-22fd30fe4c21fc92",
+          "text": "--- eip: 198 title: Big integer modular exponentiation author: Vitalik Buterin (@vbuterin) status: Final type: Standards Track category: Core created: 2017-01-30 ---  "
+        },
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_eip-198-fb16866c5086f2b8",
+          "text": "# Parameters  * `GQUADDIVISOR: 20`  "
+        }
+      ]
+    },
+    {
+      "query": "typed structured data hashing signing",
+      "ms": 15,
+      "hits": [
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_eip-712-517b1338ee4966ad",
+          "text": "--- eip: 712 title: Typed structured data hashing and signing description: A procedure for hashing and signing of typed structured data as opposed to just bytestrings. author: Remco Bloemen (@Recmo), Leonid Logvinov (@LogvinovLeon), Jacob Evans (@dekz) discussions-to: https:\/\/ethereum-magicians.org\/t\/eip-712-eth-signtypeddata-as-a-standard-for-machine-verifiable-and-human-readable-typed-data-signing\/397 status: Final type: Standards Track category: Interface created: 2017-09-12 requires: 155, 191 ---  "
+        },
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_eip-712-b9d302a7b9410a55",
+          "text": "## Abstract  This is a standard for hashing and signing of typed structured data as opposed to just bytestrings. It includes a  * theoretical framework for correctness of encoding functions, * specification of structured data similar to and compatible with Solidity structs, * safe hashing algorithm for instances of those structures, * safe inclusion of those instances in the set of signable messages, * an extensible mechanism for domain separation, * new RPC call `eth_signTypedData`, and * an optimized implementation of the hashing algorithm in EVM.  It does not include replay protection.  "
+        }
+      ]
+    },
+    {
+      "query": "calldata gas cost",
+      "ms": 21,
+      "hits": [
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_eip-2028-01994497612c367d",
+          "text": "## Simple Summary We propose to reduce the gas cost of Calldata (`GTXDATANONZERO`) from its current value of 68 gas per byte to 16 gas per byte, to be backed by mathematical modeling and empirical estimates. The mathematical model is the one used in the works of Sompolinsky and Zohar [1] and Pass, Seeman and Shelat [2], which relates network security to network delay. We shall (1) evaluate the theoretical impact of lower Calldata gas cost on network delay using this model, (2) validate the model empirically, and (3) base the proposed gas cost on our findings.  "
+        },
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_eip-2028-da07bf4f4bb9de2c",
+          "text": "## Test Cases To suggest the gas cost of calldata we shall conduct two types of tests: 1. Network tests, conducted on the Ethereum mainnet, used to estimate the effect on increasing block size on _D_p_ and _D_t_, on the overall network delay D and the efficiency ratio (**), as well as delays between different mining pools. Those tests will include regression tests on existing data, and stress tests to introduce extreme scenarios. 2. Local tests, conducted on a single node and measuring the processing time as a function of Calldata amount and general computation limits.  "
+        }
+      ]
+    },
+    {
+      "query": "token allowance transferFrom",
+      "ms": 30,
+      "hits": [
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_erc-20-6c47e24e768b5f02",
+          "text": "## Token ### Methods  **NOTES**:  - The following specifications use syntax from Solidity `0.4.17` (or above)  - Callers MUST handle `false` from `returns (bool success)`.  Callers MUST NOT assume that `false` is never returned!   #### name  Returns the name of the token - e.g. `\"MyToken\"`.  OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.   ``` js function name() public view returns (string) ```   #### symbol  Returns the symbol of the token. E.g. \"HIX\".  OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.  ``` js function symbol() public view returns (string) ```    #### decimals  Returns the number of decimals the token uses - e.g. `8`, means to divide the token amount by `100000000` to get its user representation.  OPTIONAL - This method can be used to improve usability, but interfaces and other contracts MUST NOT expect these values to be present.  ``` js function decimals() public view returns (uint8) ```   #### totalSupply  Returns the total token supply.  ``` js function totalSupply() public view returns (uint256) ```    #### balanceOf  Returns the account balance of another account with address `_owner`.  ``` js function balanceOf(address _owner) public view returns (uint256 balance) ```    #### transfer  Transfers `_value` amount of tokens to address `_to`, and MUST fire the `Transfer` event. The function SHOULD `throw` if the message caller's account balance does not have enough tokens to spend.  *Note* Transfers of 0 values MUST be treated as normal transfers and fire the `Transfer` event.  ``` js function transfer(address _to, uint256 _value) public returns (bool success) ```    #### transferFrom  Transfers `_value` amount of tokens from address `_from` to address `_to`, and MUST fire the `Transfer` event.  The `transferFrom` method is used for a withdraw workflow, allowing contracts to transfer tokens on your behalf. This can be used for example to allow a contract to transfer tokens on your behalf and\/or to charge fees in sub-currencies. The function SHOULD `throw` unless the `_from` account has deliberately authorized the sender of the message via some mechanism.  *Note* Transfers of 0 values MUST be treated as normal transfers and fire the `Transfer` event.  ``` js function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) ```    #### approve  Allows `_spender` to withdraw from your account multiple times, up to the `_value` amount. If this function is called again it overwrites the current allowance with `_value`.  **NOTE**: To prevent attack vectors like the one [described here](https:\/\/docs.google.com\/document\/d\/1YLPtQxZu1UAvO9cZ1O2RPXBbT0mooh4DYKjA_jp-RLM\/) and discussed [here](https:\/\/github.com\/ethereum\/EIPs\/issues\/20#issuecomment-263524729), clients SHOULD make sure to create user interfaces in such a way that they set the allowance first to `0` before setting it to another value for the same spender. THOUGH The contract itself shouldn't enforce it, to allow backwards compatibility with contracts deployed before  ``` js function approve(address _spender, uint256 _value) public returns (bool success) ```   #### allowance  Returns the amount which `_spender` is still allowed to withdraw from `_owner`.  ``` js function allowance(address _owner, address _spender) public view returns (uint256 remaining) ```    ### Events   #### Transfer  MUST trigger when tokens are transferred, including zero value transfers.  A token contract which creates new tokens SHOULD trigger a Transfer event with the `_from` address set to `0x0` when tokens are created.  ``` js event Transfer(address indexed _from, address indexed _to, uint256 _value) ```    #### Approval  MUST trigger on any successful call to `approve(address _spender, uint256 _value)`.  ``` js event Approval(address indexed _owner, address indexed _spender, uint256 _value) ```    "
+        },
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_erc-20-9650cc2492f1fbae",
+          "text": "## Abstract  The following standard allows for the implementation of a standard API for tokens within smart contracts. This standard provides basic functionality to transfer tokens, as well as allow tokens to be approved so they can be spent by another on-chain third party.   "
+        }
+      ]
+    },
+    {
+      "query": "interface detection supportsInterface",
+      "ms": 7,
+      "hits": [
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_erc-165-e2d92e751b77fb07",
+          "text": "## Implementation  This approach uses a `view` function implementation of `supportsInterface`. The execution cost is 586 gas for any input. But contract initialization requires storing each interface (`SSTORE` is 20,000 gas). The `ERC165MappingImplementation` contract is generic and reusable.  ```solidity pragma solidity ^0.4.20;  import \".\/ERC165.sol\";  contract ERC165MappingImplementation is ERC165 {     \/\/\/ @dev You must not set element 0xffffffff to true     mapping(bytes4 => bool) internal supportedInterfaces;      function ERC165MappingImplementation() internal {         supportedInterfaces[this.supportsInterface.selector] = true;     }      function supportsInterface(bytes4 interfaceID) external view returns (bool) {         return supportedInterfaces[interfaceID];     } }  interface Simpson {     function is2D() external returns (bool);     function skinColor() external returns (string); }  contract Lisa is ERC165MappingImplementation, Simpson {     function Lisa() public {         supportedInterfaces[this.is2D.selector ^ this.skinColor.selector] = true;     }      function is2D() external returns (bool){}     function skinColor() external returns (string){} } ```  Following is a `pure` function implementation of `supportsInterface`. The worst-case execution cost is 236 gas, but increases linearly with a higher number of supported interfaces.  ```solidity pragma solidity ^0.4.20;  import \".\/ERC165.sol\";  interface Simpson {     function is2D() external returns (bool);     function skinColor() external returns (string); }  contract Homer is ERC165, Simpson {     function supportsInterface(bytes4 interfaceID) external view returns (bool) {         return           interfaceID == this.supportsInterface.selector || \/\/ ERC165           interfaceID == this.is2D.selector                          ^ this.skinColor.selector; \/\/ Simpson     }      function is2D() external returns (bool){}     function skinColor() external returns (string){} } ```  With three or more supported interfaces (including ERC165 itself as a required supported interface), the mapping approach (in every case) costs less gas than the pure approach (at worst case).  "
+        },
+        {
+          "id": "p4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c_erc-165-98f5e335595d6450",
+          "text": "## Specification  ### How Interfaces are Identified  For this standard, an *interface* is a set of [function selectors as defined by the Ethereum ABI](https:\/\/solidity.readthedocs.io\/en\/develop\/abi-spec.html#function-selector). This a subset of [Solidity's concept of interfaces](https:\/\/solidity.readthedocs.io\/en\/develop\/abi-spec.html) and the  `interface` keyword definition which also defines return types, mutability and events.  We define the interface identifier as the XOR of all function selectors in the interface. This code example shows how to calculate an interface identifier:  ```solidity pragma solidity ^0.4.20;  interface Solidity101 {     function hello() external pure;     function world(int) external pure; }  contract Selector {     function calculateSelector() public pure returns (bytes4) {         Solidity101 i;         return i.hello.selector ^ i.world.selector;     } } ```  Note: interfaces do not permit optional functions, therefore, the interface identity will not include them.  ### How a Contract will Publish the Interfaces it Implements  A contract that is compliant with ERC-165 shall implement the following interface (referred as `ERC165.sol`):  ```solidity pragma solidity ^0.4.20;  interface ERC165 {     \/\/\/ @notice Query if a contract implements an interface     \/\/\/ @param interfaceID The interface identifier, as specified in ERC-165     \/\/\/ @dev Interface identification is specified in ERC-165. This function     \/\/\/  uses less than 30,000 gas.     \/\/\/ @return `true` if the contract implements `interfaceID` and     \/\/\/  `interfaceID` is not 0xffffffff, `false` otherwise     function supportsInterface(bytes4 interfaceID) external view returns (bool); } ```  The interface identifier for this interface is `0x01ffc9a7`. You can calculate this by running `bytes4(keccak256('supportsInterface(bytes4)'));` or using the `Selector` contract above.  Therefore the implementing contract will have a `supportsInterface` function that returns:  - `true` when `interfaceID` is `0x01ffc9a7` (EIP165 interface) - `false` when `interfaceID` is `0xffffffff` - `true` for any other `interfaceID` this contract implements - `false` for any other `interfaceID`  This function must return a bool and use at most 30,000 gas.  Implementation note, there are several logical ways to implement this function. Please see the example implementations and the discussion on gas usage.  ### How to Detect if a Contract Implements ERC-165  1. The source contract makes a `STATICCALL` to the destination address with input data: `0x01ffc9a701ffc9a700000000000000000000000000000000000000000000000000000000` and gas 30,000. This corresponds to `contract.supportsInterface(0x01ffc9a7)`. 2. If the call fails or return false, the destination contract does not implement ERC-165. 3. If the call returns true, a second call is made with input data `0x01ffc9a7ffffffff00000000000000000000000000000000000000000000000000000000`. 4. If the second call fails or returns true, the destination contract does not implement ERC-165. 5. Otherwise it implements ERC-165.  ### How to Detect if a Contract Implements any Given Interface  1. If you are not sure if the contract implements ERC-165, use the above procedure to confirm. 2. If it does not implement ERC-165, then you will have to see what methods it uses the old-fashioned way. 3. If it implements ERC-165 then just call `supportsInterface(interfaceID)` to determine if it implements an interface you can use.  "
+        }
+      ]
+    }
+  ],
+  "inspections": []
+}

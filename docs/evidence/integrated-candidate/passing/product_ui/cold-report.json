@@ -1,0 +1,12 @@
+{
+  "environment": "emulator-5560; API35 Android runtime, not physical acceptance",
+  "mode": "restart-20261002T011904Z",
+  "font_scale": 2,
+  "saved_source_id": 54,
+  "status": "PASS",
+  "checks": [
+    "Bookmark and note survive process death",
+    "Cold source identity retained",
+    "Screenshot cold-reader"
+  ]
+}

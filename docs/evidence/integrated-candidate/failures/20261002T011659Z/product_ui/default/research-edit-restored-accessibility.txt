@@ -1,0 +1,60 @@
+android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+ android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+  android.widget.FrameLayout text=null description=null bounds=Rect(0, 63 - 1080, 2274) clickable=false visible=true
+   android.widget.LinearLayout text=null description=null bounds=Rect(0, 63 - 1080, 2274) clickable=false visible=true
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 63 - 1080, 211) clickable=false visible=true
+     android.widget.TextView text=PocketLore description=null bounds=Rect(63, 80 - 792, 193) clickable=false visible=true
+     android.widget.TextView text=Offline description=null bounds=Rect(792, 87 - 912, 186) clickable=false visible=true
+     android.widget.ImageButton text=null description=Settings bounds=Rect(912, 74 - 1038, 200) clickable=true visible=true
+    android.widget.FrameLayout text=null description=null bounds=Rect(0, 211 - 1080, 2059) clickable=false visible=true
+     android.widget.ScrollView text=null description=null bounds=Rect(0, 211 - 1080, 2059) clickable=false visible=true
+      android.widget.LinearLayout text=null description=null bounds=Rect(0, 211 - 1080, 2059) clickable=false visible=true
+       android.widget.LinearLayout text=null description=null bounds=Rect(63, 253 - 1017, 735) clickable=false visible=true
+        android.widget.TextView text=A little curiosity.
+A deeper understanding. description=null bounds=Rect(63, 253 - 1017, 636) clickable=false visible=true
+        android.widget.TextView text=Your offline research notebook description=null bounds=Rect(63, 636 - 1017, 735) clickable=false visible=true
+       android.widget.LinearLayout text=null description=null bounds=Rect(63, 788 - 1017, 1613) clickable=false visible=true
+        android.widget.TextView text=Your question description=null bounds=Rect(116, 830 - 964, 929) clickable=false visible=true
+        android.widget.EditText text=How does groundwater move? description=Research question bounds=Rect(116, 929 - 964, 1117) clickable=true visible=true
+        android.widget.Button text=Research offline  → description=null bounds=Rect(116, 1149 - 964, 1275) clickable=true visible=true
+        android.widget.Button text=Research brief · source quotations description=null bounds=Rect(116, 1286 - 964, 1412) clickable=true visible=true
+        android.widget.Button text=Photo text and speech input description=null bounds=Rect(116, 1434 - 964, 1560) clickable=true visible=true
+       android.widget.LinearLayout text=null description=null bounds=Rect(63, 1655 - 1017, 1929) clickable=false visible=true
+        android.widget.Button text=Cancel inference or import description=Cancel current operation bounds=Rect(63, 1655 - 1017, 1781) clickable=true visible=true
+        android.widget.Button text=Cancel research brief description=null bounds=Rect(63, 1792 - 1017, 1918) clickable=true visible=true
+       android.widget.TextView text=Edit your question, then research again description=null bounds=Rect(63, 1929 - 1017, 2028) clickable=false visible=true
+       android.widget.LinearLayout text=null description=null bounds=Rect(63, 2028 - 1017, 2059) clickable=false visible=true
+        android.widget.TextView text=On your bookshelf description=null bounds=Rect(63, 2028 - 1017, 2059) clickable=false visible=true
+        android.widget.Button text=null description=english reference 2026 10 01. Active collection · Edition details bounds=Rect(63, 2147 - 1017, 2059) clickable=true visible=false
+         android.widget.TextView text=english reference 2026 10 01 description=null bounds=Rect(63, 2179 - 1017, 2059) clickable=false visible=false
+         android.widget.TextView text=Active collection · Edition details description=null bounds=Rect(63, 2292 - 1017, 2059) clickable=false visible=false
+        android.view.View text=null description=null bounds=Rect(63, 2423 - 1017, 2059) clickable=false visible=false
+        android.widget.Button text=null description=science supplement 2026 10 01 v1. Active collection · Edition details bounds=Rect(63, 2426 - 1017, 2059) clickable=true visible=false
+         android.widget.TextView text=science supplement 2026 10 01 v1 description=null bounds=Rect(63, 2458 - 1017, 2059) clickable=false visible=false
+         android.widget.TextView text=Active collection · Edition details description=null bounds=Rect(63, 2571 - 1017, 2059) clickable=false visible=false
+        android.view.View text=null description=null bounds=Rect(63, 2702 - 1017, 2059) clickable=false visible=false
+        android.widget.Button text=null description=broad reference rendered 20261001 v2. Active collection · Edition details bounds=Rect(63, 2705 - 1017, 2059) clickable=true visible=false
+         android.widget.TextView text=broad reference rendered 20261001 v2 description=null bounds=Rect(63, 2737 - 1017, 2059) clickable=false visible=false
+         android.widget.TextView text=Active collection · Edition details description=null bounds=Rect(63, 2850 - 1017, 2059) clickable=false visible=false
+        android.view.View text=null description=null bounds=Rect(63, 2981 - 1017, 2059) clickable=false visible=false
+       android.widget.LinearLayout text=null description=null bounds=Rect(63, 2984 - 1017, 2059) clickable=false visible=false
+        android.widget.TextView text=Pick up where you left off description=null bounds=Rect(63, 2984 - 1017, 2059) clickable=false visible=false
+        android.widget.Button text=null description=What is groundwater?. Oct 2 · 03:17 · Research bounds=Rect(63, 3103 - 1017, 2059) clickable=true visible=false
+         android.widget.TextView text=What is groundwater? description=null bounds=Rect(63, 3135 - 1017, 2059) clickable=false visible=false
+         android.widget.TextView text=Oct 2 · 03:17 · Research description=null bounds=Rect(63, 3248 - 1017, 2059) clickable=false visible=false
+        android.view.View text=null description=null bounds=Rect(63, 3379 - 1017, 2059) clickable=false visible=false
+        android.widget.Button text=null description=What is my blood sodium result?. Oct 2 · 02:04 · Research bounds=Rect(63, 3382 - 1017, 2059) clickable=true visible=false
+         android.widget.TextView text=What is my blood sodium result? description=null bounds=Rect(63, 3414 - 1017, 2059) clickable=false visible=false
+         android.widget.TextView text=Oct 2 · 02:04 · Research description=null bounds=Rect(63, 3527 - 1017, 2059) clickable=false visible=false
+        android.view.View text=null description=null bounds=Rect(63, 3658 - 1017, 2059) clickable=false visible=false
+        android.widget.Button text=null description=What is groundwater?. Oct 2 · 02:03 · Research bounds=Rect(63, 3661 - 1017, 2059) clickable=true visible=false
+         android.widget.TextView text=What is groundwater? description=null bounds=Rect(63, 3693 - 1017, 2059) clickable=false visible=false
+         android.widget.TextView text=Oct 2 · 02:03 · Research description=null bounds=Rect(63, 3806 - 1017, 2059) clickable=false visible=false
+        android.view.View text=null description=null bounds=Rect(63, 3937 - 1017, 2059) clickable=false visible=false
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 2059 - 1080, 2274) clickable=false visible=true
+     android.widget.LinearLayout text=null description=null bounds=Rect(32, 2080 - 1048, 2263) clickable=false visible=true
+      android.widget.Button text=Research description=Research, selected bounds=Rect(37, 2080 - 281, 2263) clickable=true visible=true
+      android.widget.Button text=Library description=Library bounds=Rect(291, 2080 - 535, 2263) clickable=true visible=true
+      android.widget.Button text=Explore description=Explore bounds=Rect(545, 2080 - 789, 2263) clickable=true visible=true
+      android.widget.Button text=Saved description=Saved bounds=Rect(799, 2080 - 1043, 2263) clickable=true visible=true
+ android.view.View text=null description=null bounds=Rect(0, 2274 - 1080, 2400) clickable=false visible=true

@@ -20,16 +20,20 @@ def verify(out):
   assert reports and all(r['status']=='PASS' for r in reports.values())
  docs=json.loads((out/'documents/results.json').read_text());assert {'personal_library_return_does_not_infer','library_import_reloads_retained_research'}.issubset(docs['checks'])
  attachments=json.loads((out/'attachments/results.json').read_text());assert {f'edited_recognition_is_question_{i}' for i in (3,4)}.issubset(attachments['checks']);assert {f'recognition_not_submitted_or_evidence_{i}' for i in (3,4)}.issubset(attachments['checks'])
- model=json.loads((out/'model_management/select.json').read_text());assert model['generation_performed'] is False and 'unverified_token_output' not in model;assert 'Actual JNI load failure reloads previous model and preserves selection' in model['checks']
- assert json.loads((out/'alignment.json').read_text())['valid']
+ model=json.loads((out/'model_management/select.json').read_text());assert model['generation_performed'] is False and 'unverified_token_output' not in model;assert model['native_resources'][1]==0,'Unexpected live generation context';assert 'Actual JNI load failure reloads previous model and preserves selection' in model['checks']
+ alignment=json.loads((out/'alignment.json').read_text());assert alignment['valid'] and alignment['apk_sha256']==candidate
  samples=[json.loads(x) for x in (out/'storage-samples.jsonl').read_text().splitlines()];assert all(any(s['serial']==serial and s.get('logical_bytes',0)>0 and s.get('allocated_bytes',0)>0 for s in samples) for serial in ('emulator-5560','emulator-5562'))
  for serial in ('emulator-5560','emulator-5562'):
   assert (out/(serial+'-assets-before.txt')).read_bytes()==(out/(serial+'-assets-after.txt')).read_bytes()
   assert (out/(serial+'-selection-before.txt')).read_bytes()==(out/(serial+'-selection-after.txt')).read_bytes()
+  assert (out/(serial+'-assets-after.txt')).read_text().split()[0]=='74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db'
+ assert (out/'storage-audit').is_dir(),'Missing current storage/recognition audit'
  if (out/'storage-audit').is_dir():
   pins=json.loads((ROOT/'tools/attachments/models.json').read_text());expected={v['sha256'] for v in pins.values()}
   for serial in ('emulator-5560','emulator-5562'):
    assert {line.split()[0] for line in (out/'storage-audit'/(serial+'-recognition-hashes.txt')).read_text().splitlines()}==expected
+   package_bytes=int((out/'storage-audit'/(serial+'-package-allocated.txt')).read_text().split()[0])*1024
+   assert max(s['allocated_bytes']+s.get('test_provider_allocated_bytes',0)+package_bytes for s in samples if s['serial']==serial and 'allocated_bytes' in s)<=50_000_000_000
  return manifest
 
 def main():
@@ -51,6 +55,7 @@ def main():
     record={'time_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'serial':serial,'lane':lane_name}
     for flag,key in [('b','logical_bytes'),('k','allocated_bytes')]:
      p=subprocess.run([ADB,'-s',serial,'shell','run-as','org.pocketlore.app','du','-s'+flag,'.'],stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=30)
+     if p.returncode!=0:record[key+'_error']=p.stdout.decode(errors='replace')
      if p.returncode==0:
       try:record[key]=int(p.stdout.split()[0])*(1024 if flag=='k' else 1)
       except ValueError:record[key+'_error']=p.stdout.decode(errors='replace')
@@ -59,6 +64,7 @@ def main():
     with lock:
      with (out/'storage-samples.jsonl').open('a') as f:f.write(json.dumps(record)+'\n')
    stop.wait(3)
+ if reuse and (reuse/'storage-samples.jsonl').is_file():shutil.copyfile(reuse/'storage-samples.jsonl',out/'storage-samples.jsonl')
  sampler=threading.Thread(target=sample);sampler.start();lanes=[]
  try:
   for name,script,folder in LANES:
@@ -92,7 +98,7 @@ def main():
   adb(serial,['shell','run-as','org.pocketlore.app','cat','files/pack-library/catalog.json','files/scale-library/catalog.json'],serial+'-catalogs.txt');adb(serial,['shell','run-as','org.pocketlore.app','sh','-c',"'if test -f files/model-selection; then cat files/model-selection; else echo legacy-model.gguf; fi'"],serial+'-selection-after.txt')
   adb(serial,['shell','dumpsys','meminfo','org.pocketlore.app'],serial+'-memory.txt')
  storage_dir=pathlib.Path(run(['python3','tools/evaluation/integrated-candidate/storage_snapshot.py'],'storage-audit.log').decode().strip());shutil.copytree(storage_dir,out/'storage-audit')
- manifest={'status':'PASS','apk_sha256':candidate,'apk_bytes':apk.stat().st_size,'lanes':lanes,'files':{str(p.relative_to(out)):sha(p) for p in sorted(out.rglob('*')) if p.is_file()}}
+ manifest={'reused_storage_samples_from':str(reuse) if reuse else None,'status':'PASS','apk_sha256':candidate,'apk_bytes':apk.stat().st_size,'lanes':lanes,'files':{str(p.relative_to(out)):sha(p) for p in sorted(out.rglob('*')) if p.is_file()}}
  (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n');verify(out)
  # Mutate only disposable copies of actual raw reports, never canonical evidence.
  with tempfile.TemporaryDirectory(dir=ROOT/'downloads/integrated-candidate') as tmp:

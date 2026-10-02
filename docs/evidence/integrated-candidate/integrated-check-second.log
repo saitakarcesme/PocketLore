@@ -1,0 +1,9 @@
+/home/isa/Projects/PocketLore/downloads/integrated-candidate/20261002T011608Z
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/integrated-candidate/check.py", line 94, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/integrated-candidate/check.py", line 66, in main
+    assert r.returncode==0,('Behavioral lane failed',name,str(source))
+           ^^^^^^^^^^^^^^^
+AssertionError: ('Behavioral lane failed', 'product_ui', '/home/isa/Projects/PocketLore/downloads/product-ui/runs/20261002T011622Z')

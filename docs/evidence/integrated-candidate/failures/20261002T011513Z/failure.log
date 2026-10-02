@@ -1,0 +1,15 @@
+/home/isa/Projects/PocketLore/downloads/integrated-candidate/20261002T011513Z
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/integrated-candidate/check.py", line 91, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/integrated-candidate/check.py", line 38, in main
+    adb(serial,['shell','getprop'],serial+'-properties.txt');adb(serial,['shell','run-as','org.pocketlore.app','sha256sum']+assets,serial+'-assets-before.txt')
+                                                             ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/integrated-candidate/check.py", line 35, in adb
+    def adb(serial,args,name):return run([ADB,'-s',serial]+args,name)
+                                     ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/integrated-candidate/check.py", line 34, in run
+    r=subprocess.run(list(map(str,cmd)),cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=timeout);(out/name).write_bytes(r.stdout);assert r.returncode==0,(name,r.stdout[-2000:]);return r.stdout
+                                                                                                                                                          ^^^^^^^^^^^^^^^
+AssertionError: ('emulator-5562-assets-before.txt', b'sha256sum: files/model-selection: No such file or directory\n74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db  files/model.gguf\n2c62828dd71f5135a80009efca243d64f537785ac4c4f33fb3c0d1bdd8e24766  files/pack-library/catalog.json\ne9a8a0de79a9feab531f978e357be30868f67697adccdadc5c7219780343a957  files/scale-library/catalog.json\n')
