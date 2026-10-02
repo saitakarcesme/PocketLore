@@ -26,7 +26,7 @@ abstract class NotebookActivity extends Activity {
         if(operation==null||!(operation.getParent() instanceof android.view.ViewGroup))return;
         android.view.ViewGroup parent=(android.view.ViewGroup)operation.getParent();
         if(cancelExport==null||cancelExport.getParent()!=parent){
-            cancelExport=new android.widget.Button(this);cancelExport.setText("Cancel export");cancelExport.setMinHeight(ReaderUi.dp(this,48));
+            cancelExport=new android.widget.Button(this);cancelExport.setText("Cancel export");ReaderUi.styleButton(this,cancelExport,false);
             cancelExport.setOnClickListener(v->cancelExport());parent.addView(cancelExport,parent.indexOfChild(operation)+1);
         }
         cancelExport.setVisibility(visible?android.view.View.VISIBLE:android.view.View.GONE);

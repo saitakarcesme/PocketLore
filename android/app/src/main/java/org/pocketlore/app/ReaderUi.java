@@ -45,6 +45,7 @@ final class ReaderUi {
     }
     static void styleButton(Activity a,Button b,boolean primary){
         b.setBackground(surface(a,primary?TEAL:Color.TRANSPARENT,12,false));b.setBackgroundTintList(null);b.setTextColor(primary?NAVY:TEAL);b.setPadding(dp(a,12),dp(a,10),dp(a,12),dp(a,10));
+        b.setSingleLine(false);b.setMaxLines(Integer.MAX_VALUE);b.setEllipsize(null);b.setHorizontallyScrolling(false);
         b.setStateListAnimator(null);b.setElevation(0);b.setMinHeight(dp(a,48));b.setMinWidth(dp(a,48));b.setAllCaps(false);b.setGravity(android.view.Gravity.CENTER_VERTICAL|android.view.Gravity.START);b.setTextSize(16);
     }
     static void card(Activity a, View view) {view.setBackground(surface(a,Color.rgb(238,238,229),16,false));view.setPadding(dp(a,20),dp(a,16),dp(a,20),dp(a,16));}
@@ -85,7 +86,7 @@ final class ReaderUi {
         TextView offline=text(a,"Offline",16);offline.setTextColor(TEAL);bar.addView(offline);
         android.widget.ImageButton settings=new android.widget.ImageButton(a);settings.setImageDrawable(new Icon("Settings"));settings.setPadding(dp(a,13),dp(a,13),dp(a,13),dp(a,13));settings.setContentDescription("Settings");settings.setBackground(surface(a,Color.TRANSPARENT,24,false));bar.addView(settings,new LinearLayout.LayoutParams(dp(a,48),dp(a,48)));settings.setOnClickListener(v->{if(a instanceof MainActivity)((MainActivity)a).showSettings();else a.startActivity(new android.content.Intent(a,MainActivity.class).addFlags(android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP|android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP).putExtra("settings",true));});root.addView(bar);
         LinearLayout nav=new LinearLayout(a);nav.setOrientation(1);nav.setTag("destination-nav");nav.setPadding(dp(a,12),dp(a,8),dp(a,12),dp(a,4));
-        String[] names={"Research","Library","Explore","Saved"};int columns=a.getResources().getConfiguration().fontScale>1.5?2:4;
+        String[] names={"Research","Library","Explore","Saved"};int columns=a.getResources().getConfiguration().screenWidthDp>=600?4:(a.getResources().getConfiguration().fontScale>1.2?2:4);
         LinearLayout row=null;for(int n=0;n<names.length;n++){if(n%columns==0){row=new LinearLayout(a);nav.addView(row);}String name=names[n];Button b=new Button(a);b.setText(name);styleButton(a,b,false);b.setGravity(android.view.Gravity.CENTER);Icon icon=new Icon(name);icon.setBounds(0,0,dp(a,22),dp(a,22));b.setCompoundDrawables(null,icon,null,null);b.setCompoundDrawablePadding(dp(a,6));b.setBackground(surface(a,name.equals(selected)||name.equals("Explore")&&selected.equals("Places")?0xFFE1E9DD:Color.TRANSPARENT,16,false));b.setSelected(name.equals(selected));b.setContentDescription(name+(b.isSelected()?", selected":""));b.setOnClickListener(v->navigate(a,name));LinearLayout.LayoutParams np=new LinearLayout.LayoutParams(0,-2,1);np.setMargins(dp(a,2),0,dp(a,2),0);row.addView(b,np);}
         root.addView(nav);return root;
     }
