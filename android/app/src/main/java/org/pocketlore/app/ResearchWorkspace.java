@@ -43,10 +43,6 @@ public final class ResearchWorkspace {
             ResearchEngine.Result evidence=scope==EvidenceAvailability.Scope.REFERENCE?engine.sourceResearch(part,stop):new ResearchEngine.Result(Collections.emptyList(),Collections.emptySet(),"");
             ResearchBrief.Brief selected=ResearchBrief.create(part,evidence,stop);
             text.append("Subquestion ").append(sections.size()+1).append(" (your input, not a source claim):\n").append(part).append("\n");
-            if(!evidence.collectionCandidates.isEmpty()){
-                text.append("Selected collection availability (candidate counts, not verified answers):\n");
-                for(Map.Entry<String,Integer> entry:evidence.collectionCandidates.entrySet())text.append(entry.getKey()).append(": ").append(entry.getValue()).append(entry.getValue()==0?" — no matching admitted passage":" candidates").append("\n");
-            }
             List<ResearchBrief.Quote> quotes=new ArrayList<>();
             if(scope!=EvidenceAvailability.Scope.REFERENCE)text.append("Unknown — ").append(EvidenceAvailability.reason(scope)).append("\n");
             else {
@@ -61,6 +57,14 @@ public final class ResearchWorkspace {
                 if(quotes.isEmpty())text.append("Unknown — no admissible relevant passage selected from active collections. No answer inferred.\n");
                 else text.append("\nCoverage not verified: inspect whether these excerpts answer every part, condition and premise of this subquestion.\n");
                 if(!evidence.missingTerms.isEmpty())text.append("Unmatched query terms (not a factual judgment): ").append(String.join(", ",new TreeSet<>(evidence.missingTerms))).append("\n");
+            }
+            if(!evidence.collectionCandidates.isEmpty()){
+                text.append("\nSelected collections — matching passages, not verified answers:\n");
+                for(Map.Entry<String,Integer> entry:evidence.collectionCandidates.entrySet()){
+                    String key=entry.getKey(),label=key.replace("Collection: ","");int marker=label.indexOf(" · Edition SHA-256: ");
+                    if(marker>=0){String hash=label.substring(marker+20);label=label.substring(0,marker);if(label.startsWith("personal-"))label="Personal collection";else label=label.replace('-',' ');label+=" · "+hash.substring(0,Math.min(12,hash.length()));}
+                    text.append(label).append(": ").append(entry.getValue()).append(entry.getValue()==0?" — no match":" candidates").append("\n");
+                }
             }
             sections.add(new Section(part,scope,quotes,evidence.missingTerms));omitted+=selected.omitted;text.append("\n");
         }
