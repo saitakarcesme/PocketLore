@@ -16,7 +16,14 @@ def verify(out,current=True):
  m=json.loads((out/'manifest.json').read_text());files={p.name:p.read_bytes() for p in out.iterdir() if p.is_file()}
  for n,h in m['files'].items():assert sha(files[n])==h,n
  src=json.loads(files['source-inputs.json']);assert sha(files['source-inputs.json'])==m['source_hash'];assert src['inputs']==m['inputs_after']
- if current:assert inputs()==src['inputs'],'Current build inputs differ from tested candidate'
+ if current:
+  actual=inputs();expected=src['inputs'];changed={n for n in set(actual)|set(expected) if actual.get(n)!=expected.get(n)}
+  if changed:
+   # Evidence-only audit amendment: no application, fixture, build or extraction change.
+   amendment=json.loads((ROOT/'docs/evidence/general-research/audit-amendment.json').read_text())
+   assert set(amendment['changed_inputs'])=={'tools/evaluation/general-research/check.py'},'Only the offline checker amendment is permitted'
+   assert changed==set(amendment['changed_inputs']),'Current build inputs differ from tested candidate'
+   for n,pair in amendment['changed_inputs'].items():assert expected[n]==pair['before'] and actual[n]==pair['after'],n
  for name in ['boot','font','rotation','retained']:assert files[name+'-before.txt']==files[name+'-after.txt'],name
  for pkg in ['app','test']:assert files['installed-'+pkg+'.txt'].decode().split()[0]==m['apks'][pkg]['sha256'];assert files['final-'+pkg+'.txt'].decode().split()[0]==m['apks'][pkg]['sha256']
  for mode in ['install','restart']:
@@ -87,6 +94,11 @@ def device():
  return out
 
 def audit():
+ proof=ROOT/'docs/evidence/general-research/source-packet/verify.py'
+ amendment=json.loads((ROOT/'docs/evidence/general-research/audit-amendment.json').read_text())
+ assert sha(proof.read_bytes())==amendment['source_validator_sha256']
+ assert sha((proof.parent/'manifest.json').read_bytes())==amendment['source_manifest_sha256']
+ spec=importlib.util.spec_from_file_location('source_packet_proof',proof);module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);module.check()
  candidate=json.loads(FINAL.read_text());out=pathlib.Path(candidate['original_run']);m=verify(out)
  assert sha((out/'manifest.json').read_bytes())==candidate['manifest_sha256']
  build(PACK);assert sha(PACK.read_bytes())==m['pack_sha256']

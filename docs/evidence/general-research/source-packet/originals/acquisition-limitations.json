@@ -1,0 +1,10 @@
+{
+  "stopped_wikipedia_parse": "HTTP429 at additional revision; no repeated parse call",
+  "terms_and_cc_refresh": "HTTP403; exact existing independent handoff terms/license bytes reused and checked",
+  "openstax": "Three current repository licenses observed CC BY-NC-SA4.0; content excluded, no downstream grant inferred",
+  "metadata_first_request": "Raw initial API response retained; no response headers captured for that first request, not manufactured later",
+  "warning_exclusions": [
+    "Printing press: AI-generated/under construction",
+    "Cellular respiration: disputed/misleading"
+  ]
+}
