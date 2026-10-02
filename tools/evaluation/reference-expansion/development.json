@@ -1,0 +1,839 @@
+{
+  "schema": 1,
+  "classification": "PUBLIC DEVELOPMENT ONLY; builder-visible and not unseen or held out",
+  "selection_sha256": "21dab3107d7267b7a4ec79eeba32d7677cff087ecc5a354746a65779086bc29a",
+  "source_packet_sha256": "abbb800f0c837f401cb9c9d0f3ccf836e191c9f06d797917ef7678833ee392bc",
+  "protocol": "One fixed run on the admitted edition, no seed/prompt/model inference; record every miss and excluded-source obligation. Source review may exclude candidates; never rewrite expectations to erase a miss. Literal bindings do not grade relevance/completeness. No cases or labels used in runtime routing.",
+  "cases": [
+    {
+      "id": "dev-01-literal",
+      "family": "Astronomy",
+      "kind": "literal",
+      "question": "What activities are part of amateur astronomy?",
+      "absent": false,
+      "expected": "Activities and possible citizen-science contribution, without claiming every amateur does research.",
+      "source_obligations": [
+        {
+          "page_id": 748,
+          "revision": 1368244598,
+          "html_sha256": "e13ec0086bddd42c53a35b7378ff1cabe7a3607aef9174ddde1b6ab20cc2d7cd",
+          "span_sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36"
+        }
+      ]
+    },
+    {
+      "id": "dev-01-paraphrase",
+      "family": "Astronomy",
+      "kind": "paraphrase",
+      "question": "How can hobby astronomers contribute to citizen science?",
+      "absent": false,
+      "expected": "Activities and possible citizen-science contribution, without claiming every amateur does research.",
+      "source_obligations": [
+        {
+          "page_id": 748,
+          "revision": 1368244598,
+          "html_sha256": "e13ec0086bddd42c53a35b7378ff1cabe7a3607aef9174ddde1b6ab20cc2d7cd",
+          "span_sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36"
+        }
+      ]
+    },
+    {
+      "id": "dev-02-literal",
+      "family": "Chemistry",
+      "kind": "literal",
+      "question": "What is an acid?",
+      "absent": false,
+      "expected": "Both stated acid concepts with their distinct scope.",
+      "source_obligations": [
+        {
+          "page_id": 656,
+          "revision": 1375977233,
+          "html_sha256": "895a9a34bf9fccc3a0bdefd7f867abc29c74545d0b5029bd2704c7bf4b020a5b",
+          "span_sha256": "2a3ab5a6febd856800526f562a50d6669a3e60e117a2d6ec297afea09e7e6e1c"
+        }
+      ]
+    },
+    {
+      "id": "dev-02-paraphrase",
+      "family": "Chemistry",
+      "kind": "paraphrase",
+      "question": "How can an acid interact with a proton or electron pair?",
+      "absent": false,
+      "expected": "Both stated acid concepts with their distinct scope.",
+      "source_obligations": [
+        {
+          "page_id": 656,
+          "revision": 1375977233,
+          "html_sha256": "895a9a34bf9fccc3a0bdefd7f867abc29c74545d0b5029bd2704c7bf4b020a5b",
+          "span_sha256": "2a3ab5a6febd856800526f562a50d6669a3e60e117a2d6ec297afea09e7e6e1c"
+        }
+      ]
+    },
+    {
+      "id": "dev-03-literal",
+      "family": "Physics",
+      "kind": "literal",
+      "question": "How does adiabatic cooling affect moist air?",
+      "absent": false,
+      "expected": "Saturation and latent-heat conditions preserved; no invented weather forecast.",
+      "source_obligations": [
+        {
+          "page_id": 1419,
+          "revision": 1376273575,
+          "html_sha256": "ae02f170e2d8d1496a083cb421ebbe4e77196d7d7ce56b11630a898b8f65c5d8",
+          "span_sha256": "711786880f3ca804c2c7c8ddb33569a6f974c4701c4fbb2ae95cb7312abf8c13"
+        }
+      ]
+    },
+    {
+      "id": "dev-03-paraphrase",
+      "family": "Physics",
+      "kind": "paraphrase",
+      "question": "Why does precipitation change cooling during pseudo-adiabatic expansion?",
+      "absent": false,
+      "expected": "Saturation and latent-heat conditions preserved; no invented weather forecast.",
+      "source_obligations": [
+        {
+          "page_id": 1419,
+          "revision": 1376273575,
+          "html_sha256": "ae02f170e2d8d1496a083cb421ebbe4e77196d7d7ce56b11630a898b8f65c5d8",
+          "span_sha256": "711786880f3ca804c2c7c8ddb33569a6f974c4701c4fbb2ae95cb7312abf8c13"
+        }
+      ]
+    },
+    {
+      "id": "dev-04-literal",
+      "family": "Cell and molecular biology",
+      "kind": "literal",
+      "question": "What distinguishes bacterial cell structure?",
+      "absent": false,
+      "expected": "Organized structures and limited shared characteristics; do not infer every feature unique.",
+      "source_obligations": [
+        {
+          "page_id": 4209093,
+          "revision": 1377492458,
+          "html_sha256": "7521d9f81d2557d6847b888f7cb0a3655cb7e3483b85973750102da21901c543",
+          "span_sha256": "a7e7da1ae0109b8c37d3ff2fc8f9c637b9be1fc9b257f9cb34d07027c1431e0d"
+        }
+      ]
+    },
+    {
+      "id": "dev-04-paraphrase",
+      "family": "Cell and molecular biology",
+      "kind": "paraphrase",
+      "question": "Are features of bacterial cells always shared by archaea and eukaryotes?",
+      "absent": false,
+      "expected": "Organized structures and limited shared characteristics; do not infer every feature unique.",
+      "source_obligations": [
+        {
+          "page_id": 4209093,
+          "revision": 1377492458,
+          "html_sha256": "7521d9f81d2557d6847b888f7cb0a3655cb7e3483b85973750102da21901c543",
+          "span_sha256": "a7e7da1ae0109b8c37d3ff2fc8f9c637b9be1fc9b257f9cb34d07027c1431e0d"
+        }
+      ]
+    },
+    {
+      "id": "dev-05-literal",
+      "family": "Ecology and evolution",
+      "kind": "literal",
+      "question": "What can trigger adaptive radiation?",
+      "absent": false,
+      "expected": "Potential, population and selection conditions; not guaranteed causation.",
+      "source_obligations": [
+        {
+          "page_id": 1909,
+          "revision": 1343089429,
+          "html_sha256": "dbd0b13c11d27a385476b00a98ce945e483546d1693555c659e492d7d647d4ed",
+          "span_sha256": "e8c7e81d2ca945d81bfc5d0ec09bccf802475a94a37fc327d4e9925255f8b271"
+        }
+      ]
+    },
+    {
+      "id": "dev-05-paraphrase",
+      "family": "Ecology and evolution",
+      "kind": "paraphrase",
+      "question": "How can ecological opportunity increase phenotypic diversity?",
+      "absent": false,
+      "expected": "Potential, population and selection conditions; not guaranteed causation.",
+      "source_obligations": [
+        {
+          "page_id": 1909,
+          "revision": 1343089429,
+          "html_sha256": "dbd0b13c11d27a385476b00a98ce945e483546d1693555c659e492d7d647d4ed",
+          "span_sha256": "e8c7e81d2ca945d81bfc5d0ec09bccf802475a94a37fc327d4e9925255f8b271"
+        }
+      ]
+    },
+    {
+      "id": "dev-06-literal",
+      "family": "Arithmetic and elementary algebra",
+      "kind": "literal",
+      "question": "What does the modulus of a real number measure?",
+      "absent": false,
+      "expected": "Nonnegative magnitude, examples and conditions; preserve TeX.",
+      "source_obligations": [
+        {
+          "page_id": 991,
+          "revision": 1371476443,
+          "html_sha256": "1b5b90205309a1aacae26e9df0c49089d2a01bd6f609b2a97f31972737872d51",
+          "span_sha256": "b62dfff2ee9e6bd1fe6ec743120b21da110d8e4fb871a5b02ec9507a3f0e41e9"
+        }
+      ]
+    },
+    {
+      "id": "dev-06-paraphrase",
+      "family": "Arithmetic and elementary algebra",
+      "kind": "paraphrase",
+      "question": "Does ignoring a real number’s sign mean its magnitude becomes negative?",
+      "absent": false,
+      "expected": "Nonnegative magnitude, examples and conditions; preserve TeX.",
+      "source_obligations": [
+        {
+          "page_id": 991,
+          "revision": 1371476443,
+          "html_sha256": "1b5b90205309a1aacae26e9df0c49089d2a01bd6f609b2a97f31972737872d51",
+          "span_sha256": "b62dfff2ee9e6bd1fe6ec743120b21da110d8e4fb871a5b02ec9507a3f0e41e9"
+        }
+      ]
+    },
+    {
+      "id": "dev-07-literal",
+      "family": "Geometry and mathematical analysis",
+      "kind": "literal",
+      "question": "What is analytic geometry?",
+      "absent": false,
+      "expected": "Coordinate-system distinction only; no unsupported superiority.",
+      "source_obligations": [
+        {
+          "page_id": 2202,
+          "revision": 1373603189,
+          "html_sha256": "b4c85b9edda4a2e419edbae9140fa7ff75f1ee266d514b3d6e0c50755243af2e",
+          "span_sha256": "6e910008a473caff0df6029d130927a4bfbf1b9e2f5b34c11362bd84d0883bc9"
+        }
+      ]
+    },
+    {
+      "id": "dev-07-paraphrase",
+      "family": "Geometry and mathematical analysis",
+      "kind": "paraphrase",
+      "question": "How does coordinate geometry differ from synthetic geometry?",
+      "absent": false,
+      "expected": "Coordinate-system distinction only; no unsupported superiority.",
+      "source_obligations": [
+        {
+          "page_id": 2202,
+          "revision": 1373603189,
+          "html_sha256": "b4c85b9edda4a2e419edbae9140fa7ff75f1ee266d514b3d6e0c50755243af2e",
+          "span_sha256": "6e910008a473caff0df6029d130927a4bfbf1b9e2f5b34c11362bd84d0883bc9"
+        }
+      ]
+    },
+    {
+      "id": "dev-08-literal",
+      "family": "Algorithms and data structures",
+      "kind": "literal",
+      "question": "What does analysis of algorithms measure?",
+      "absent": false,
+      "expected": "Time/storage complexity and best/worst/average distinction.",
+      "source_obligations": [
+        {
+          "page_id": 2230,
+          "revision": 1365706079,
+          "html_sha256": "f6bc8707b5fd1f82c9ec3dcb32e511fff6593b4744f4b40e806588bd6493af53",
+          "span_sha256": "492adbb8071247af0bd7a0b2f65e73a807004ca5e06a613e072a0e5267a35bfb"
+        }
+      ]
+    },
+    {
+      "id": "dev-08-paraphrase",
+      "family": "Algorithms and data structures",
+      "kind": "paraphrase",
+      "question": "Why can algorithms have different behavior on inputs of the same size?",
+      "absent": false,
+      "expected": "Time/storage complexity and best/worst/average distinction.",
+      "source_obligations": [
+        {
+          "page_id": 2230,
+          "revision": 1365706079,
+          "html_sha256": "f6bc8707b5fd1f82c9ec3dcb32e511fff6593b4744f4b40e806588bd6493af53",
+          "span_sha256": "492adbb8071247af0bd7a0b2f65e73a807004ca5e06a613e072a0e5267a35bfb"
+        }
+      ]
+    },
+    {
+      "id": "dev-09-literal",
+      "family": "Programming and languages",
+      "kind": "literal",
+      "question": "What language features does Ada support?",
+      "absent": false,
+      "expected": "Listed language and compile-time properties; retain dated standard qualifier.",
+      "source_obligations": [
+        {
+          "page_id": 1242,
+          "revision": 1365106242,
+          "html_sha256": "ff95f9af70fc822bdcbdfe5e03296e38f2343e98b3ab04e6408d2b9fe9161ba2",
+          "span_sha256": "3c756fc915d6b14c7041da4a3ee1d7d5ea7df68b2bde22130c92d9b8cd698a50"
+        }
+      ]
+    },
+    {
+      "id": "dev-09-paraphrase",
+      "family": "Programming and languages",
+      "kind": "paraphrase",
+      "question": "How does the Ada compiler aim to improve code safety?",
+      "absent": false,
+      "expected": "Listed language and compile-time properties; retain dated standard qualifier.",
+      "source_obligations": [
+        {
+          "page_id": 1242,
+          "revision": 1365106242,
+          "html_sha256": "ff95f9af70fc822bdcbdfe5e03296e38f2343e98b3ab04e6408d2b9fe9161ba2",
+          "span_sha256": "3c756fc915d6b14c7041da4a3ee1d7d5ea7df68b2bde22130c92d9b8cd698a50"
+        }
+      ]
+    },
+    {
+      "id": "dev-10-literal",
+      "family": "Computer systems and security",
+      "kind": "literal",
+      "question": "What is a block cipher?",
+      "absent": false,
+      "expected": "Fixed-length blocks and deterministic operation; no claim all encryption uses blocks.",
+      "source_obligations": [
+        {
+          "page_id": 4594,
+          "revision": 1376267143,
+          "html_sha256": "89c11c680d0cc08349f08726bbbeb8bc855d2ca5d005d4b3c913bbcc48b989f3",
+          "span_sha256": "7b9795ec1468d18db8e415a370520557ad776d500ce2af8e8102977b41ddb92b"
+        }
+      ]
+    },
+    {
+      "id": "dev-10-paraphrase",
+      "family": "Computer systems and security",
+      "kind": "paraphrase",
+      "question": "How does block encryption organize groups of bits?",
+      "absent": false,
+      "expected": "Fixed-length blocks and deterministic operation; no claim all encryption uses blocks.",
+      "source_obligations": [
+        {
+          "page_id": 4594,
+          "revision": 1376267143,
+          "html_sha256": "89c11c680d0cc08349f08726bbbeb8bc855d2ca5d005d4b3c913bbcc48b989f3",
+          "span_sha256": "7b9795ec1468d18db8e415a370520557ad776d500ce2af8e8102977b41ddb92b"
+        }
+      ]
+    },
+    {
+      "id": "dev-11-literal",
+      "family": "Civics and institutions",
+      "kind": "literal",
+      "question": "What is a constitution?",
+      "absent": false,
+      "expected": "Principles/precedents and governance scope; not current legal advice.",
+      "source_obligations": [
+        {
+          "page_id": 5253,
+          "revision": 1377322873,
+          "html_sha256": "a3cee3772790c85b88e0f751ec670511352339351756c791e161fa46d2a782d8",
+          "span_sha256": "961c40c10e71969cd3e7835b9d86a4d30597d7be9d3e77ecf6167f8930d7d15a"
+        }
+      ]
+    },
+    {
+      "id": "dev-11-paraphrase",
+      "family": "Civics and institutions",
+      "kind": "paraphrase",
+      "question": "What establishes the fundamental legal basis of a polity?",
+      "absent": false,
+      "expected": "Principles/precedents and governance scope; not current legal advice.",
+      "source_obligations": [
+        {
+          "page_id": 5253,
+          "revision": 1377322873,
+          "html_sha256": "a3cee3772790c85b88e0f751ec670511352339351756c791e161fa46d2a782d8",
+          "span_sha256": "961c40c10e71969cd3e7835b9d86a4d30597d7be9d3e77ecf6167f8930d7d15a"
+        }
+      ]
+    },
+    {
+      "id": "dev-12-literal",
+      "family": "Ancient history",
+      "kind": "literal",
+      "question": "When did ancient Egyptian power reach its pinnacle?",
+      "absent": false,
+      "expected": "New Kingdom and explicitly different end-date definitions, no hidden certainty.",
+      "source_obligations": [
+        {
+          "page_id": 874,
+          "revision": 1376471813,
+          "html_sha256": "38d096fff05991d00a91b3f38f72f7972b8a5fa179d59bace24264ba90f595de",
+          "span_sha256": "a71bce3bb1b3f96c36ab88c2022c5278f8166af602554149ed10015db37ce25c"
+        }
+      ]
+    },
+    {
+      "id": "dev-12-paraphrase",
+      "family": "Ancient history",
+      "kind": "paraphrase",
+      "question": "Is there just one definition for the end of ancient Egypt?",
+      "absent": false,
+      "expected": "New Kingdom and explicitly different end-date definitions, no hidden certainty.",
+      "source_obligations": [
+        {
+          "page_id": 874,
+          "revision": 1376471813,
+          "html_sha256": "38d096fff05991d00a91b3f38f72f7972b8a5fa179d59bace24264ba90f595de",
+          "span_sha256": "a71bce3bb1b3f96c36ab88c2022c5278f8166af602554149ed10015db37ce25c"
+        }
+      ]
+    },
+    {
+      "id": "dev-13-literal",
+      "family": "Physical geography",
+      "kind": "literal",
+      "question": "How does the Amazon River compare by water discharge?",
+      "absent": false,
+      "expected": "Distinguish discharge and length; retain dispute with Nile.",
+      "source_obligations": [
+        {
+          "page_id": 1701,
+          "revision": 1376437983,
+          "html_sha256": "458fa88b003270037222a2486c89f87f977cdcb32991efc92110072cde46afa5",
+          "span_sha256": "031bba805bcade8cc9f42b57b31e61b8356b1a0d5425fd90f44b45ccf1597c30"
+        }
+      ]
+    },
+    {
+      "id": "dev-13-paraphrase",
+      "family": "Physical geography",
+      "kind": "paraphrase",
+      "question": "Is the world’s longest river designation undisputed?",
+      "absent": false,
+      "expected": "Distinguish discharge and length; retain dispute with Nile.",
+      "source_obligations": [
+        {
+          "page_id": 1701,
+          "revision": 1376437983,
+          "html_sha256": "458fa88b003270037222a2486c89f87f977cdcb32991efc92110072cde46afa5",
+          "span_sha256": "031bba805bcade8cc9f42b57b31e61b8356b1a0d5425fd90f44b45ccf1597c30"
+        }
+      ]
+    },
+    {
+      "id": "dev-14-literal",
+      "family": "Food preservation and preparation",
+      "kind": "literal",
+      "question": "What processes does food preservation slow?",
+      "absent": false,
+      "expected": "Microorganism growth, oxidation/deterioration and potential waste benefits.",
+      "source_obligations": [
+        {
+          "page_id": 10834,
+          "revision": 1324600990,
+          "html_sha256": "d0c8b60e6179843e2957f5a8a8d44d4504174fe536b4c1778fda2869d3cb6c61",
+          "span_sha256": "02052cad906920e99dc6e3d5d79f96e36e9542f2ff0169acc86a08ed8a188f5e"
+        }
+      ]
+    },
+    {
+      "id": "dev-14-paraphrase",
+      "family": "Food preservation and preparation",
+      "kind": "paraphrase",
+      "question": "How can preserving food reduce waste?",
+      "absent": false,
+      "expected": "Microorganism growth, oxidation/deterioration and potential waste benefits.",
+      "source_obligations": [
+        {
+          "page_id": 10834,
+          "revision": 1324600990,
+          "html_sha256": "d0c8b60e6179843e2957f5a8a8d44d4504174fe536b4c1778fda2869d3cb6c61",
+          "span_sha256": "02052cad906920e99dc6e3d5d79f96e36e9542f2ff0169acc86a08ed8a188f5e"
+        }
+      ]
+    },
+    {
+      "id": "dev-15-literal",
+      "family": "Gardening and soil management",
+      "kind": "literal",
+      "question": "What is mulch used for?",
+      "absent": false,
+      "expected": "Moisture, soil health, weeds and appearance; do not add guaranteed outcomes.",
+      "source_obligations": [
+        {
+          "page_id": 432174,
+          "revision": 1376736622,
+          "html_sha256": "f01f8576dad738c820c6ecee05ecbbe287eb54a4983671747c1180532135cc39",
+          "span_sha256": "c4ba2176e40b85a35ced2267de4f7162e0a72a0734c5e0627f796b5734c675e5"
+        }
+      ]
+    },
+    {
+      "id": "dev-15-paraphrase",
+      "family": "Gardening and soil management",
+      "kind": "paraphrase",
+      "question": "Why put a layer of material on the soil surface?",
+      "absent": false,
+      "expected": "Moisture, soil health, weeds and appearance; do not add guaranteed outcomes.",
+      "source_obligations": [
+        {
+          "page_id": 432174,
+          "revision": 1376736622,
+          "html_sha256": "f01f8576dad738c820c6ecee05ecbbe287eb54a4983671747c1180532135cc39",
+          "span_sha256": "c4ba2176e40b85a35ced2267de4f7162e0a72a0734c5e0627f796b5734c675e5"
+        }
+      ]
+    },
+    {
+      "id": "dev-16-literal",
+      "family": "Textile crafts",
+      "kind": "literal",
+      "question": "How did the sewing machine change garment production?",
+      "absent": false,
+      "expected": "Historical development and continued hand sewing, no implied present counts.",
+      "source_obligations": [
+        {
+          "page_id": 92295,
+          "revision": 1375554016,
+          "html_sha256": "908b854008831d8c53ddea0022d32d5fa1e8d5c2b83c8f01a7b3b314ffc7a1c6",
+          "span_sha256": "5fd3273546cae8c811d3e1f5c47a82e212f187c65c2677d5834af02583e5361a"
+        }
+      ]
+    },
+    {
+      "id": "dev-16-paraphrase",
+      "family": "Textile crafts",
+      "kind": "paraphrase",
+      "question": "Did hand sewing disappear after mechanized stitching?",
+      "absent": false,
+      "expected": "Historical development and continued hand sewing, no implied present counts.",
+      "source_obligations": [
+        {
+          "page_id": 92295,
+          "revision": 1375554016,
+          "html_sha256": "908b854008831d8c53ddea0022d32d5fa1e8d5c2b83c8f01a7b3b314ffc7a1c6",
+          "span_sha256": "5fd3273546cae8c811d3e1f5c47a82e212f187c65c2677d5834af02583e5361a"
+        }
+      ]
+    },
+    {
+      "id": "dev-17-literal",
+      "family": "Woodworking and joining",
+      "kind": "literal",
+      "question": "What activities are included in woodworking?",
+      "absent": false,
+      "expected": "Only listed skills; no inferred instructions.",
+      "source_obligations": [
+        {
+          "page_id": 33118,
+          "revision": 1376194336,
+          "html_sha256": "2dd166891270a1dbc4585baf2295cdffeac6c53299ac4741dd8c9b05514f8dfd",
+          "span_sha256": "03f5413b0e2eacdf0abbc46eadada0c9e4ef9d84f371555918e6592bde3feb2c"
+        }
+      ]
+    },
+    {
+      "id": "dev-17-paraphrase",
+      "family": "Woodworking and joining",
+      "kind": "paraphrase",
+      "question": "Does making items from wood include carving and furniture making?",
+      "absent": false,
+      "expected": "Only listed skills; no inferred instructions.",
+      "source_obligations": [
+        {
+          "page_id": 33118,
+          "revision": 1376194336,
+          "html_sha256": "2dd166891270a1dbc4585baf2295cdffeac6c53299ac4741dd8c9b05514f8dfd",
+          "span_sha256": "03f5413b0e2eacdf0abbc46eadada0c9e4ef9d84f371555918e6592bde3feb2c"
+        }
+      ]
+    },
+    {
+      "id": "dev-18-literal",
+      "family": "Measurement and workshop tools",
+      "kind": "literal",
+      "question": "What dimensions can calipers measure?",
+      "absent": false,
+      "expected": "Linear dimensions and holes; no precision specification invented.",
+      "source_obligations": [
+        {
+          "page_id": 1635762,
+          "revision": 1376010151,
+          "html_sha256": "e694d07f57818ef1cdb0aaa3bf2254d2420a28710cb843f1f924301da6e7e395",
+          "span_sha256": "eaa02dd749142edc4a57752c212c874751fcca14e0aaa9bf46488b55421cb727"
+        }
+      ]
+    },
+    {
+      "id": "dev-18-paraphrase",
+      "family": "Measurement and workshop tools",
+      "kind": "paraphrase",
+      "question": "Which instrument measures an object’s width or a hole’s depth?",
+      "absent": false,
+      "expected": "Linear dimensions and holes; no precision specification invented.",
+      "source_obligations": [
+        {
+          "page_id": 1635762,
+          "revision": 1376010151,
+          "html_sha256": "e694d07f57818ef1cdb0aaa3bf2254d2420a28710cb843f1f924301da6e7e395",
+          "span_sha256": "eaa02dd749142edc4a57752c212c874751fcca14e0aaa9bf46488b55421cb727"
+        }
+      ]
+    },
+    {
+      "id": "dev-19-literal",
+      "family": "Building energy and safety",
+      "kind": "literal",
+      "question": "What is building insulation for?",
+      "absent": false,
+      "expected": "Thermal primary use and acoustic/fire/impact distinctions, not installation advice.",
+      "source_obligations": [
+        {
+          "page_id": 6900318,
+          "revision": 1375683714,
+          "html_sha256": "ba349df242e94cb9ac22b80975f0a19a7823d2b45d1ecfd19ec7e3659a3a31c1",
+          "span_sha256": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328"
+        }
+      ]
+    },
+    {
+      "id": "dev-19-paraphrase",
+      "family": "Building energy and safety",
+      "kind": "paraphrase",
+      "question": "Is insulation in buildings only for controlling thermal energy?",
+      "absent": false,
+      "expected": "Thermal primary use and acoustic/fire/impact distinctions, not installation advice.",
+      "source_obligations": [
+        {
+          "page_id": 6900318,
+          "revision": 1375683714,
+          "html_sha256": "ba349df242e94cb9ac22b80975f0a19a7823d2b45d1ecfd19ec7e3659a3a31c1",
+          "span_sha256": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328"
+        }
+      ]
+    },
+    {
+      "id": "dev-20-literal",
+      "family": "Travel and navigation",
+      "kind": "literal",
+      "question": "What is orienteering?",
+      "absent": false,
+      "expected": "Sport and navigation method; no route generated.",
+      "source_obligations": [
+        {
+          "page_id": 22520,
+          "revision": 1375936233,
+          "html_sha256": "cb4d064046c323b79603e2c8ae5bdfdf3b7cbdcbb8a30bc84fab86bf00e34cc7",
+          "span_sha256": "025d619b36355953772a9f511f08c828d1956e0ece0fb7511f4f5218474afc12"
+        }
+      ]
+    },
+    {
+      "id": "dev-20-paraphrase",
+      "family": "Travel and navigation",
+      "kind": "paraphrase",
+      "question": "How do participants navigate unfamiliar terrain with a map and compass?",
+      "absent": false,
+      "expected": "Sport and navigation method; no route generated.",
+      "source_obligations": [
+        {
+          "page_id": 22520,
+          "revision": 1375936233,
+          "html_sha256": "cb4d064046c323b79603e2c8ae5bdfdf3b7cbdcbb8a30bc84fab86bf00e34cc7",
+          "span_sha256": "025d619b36355953772a9f511f08c828d1956e0ece0fb7511f4f5218474afc12"
+        }
+      ]
+    },
+    {
+      "id": "dev-multipart-1",
+      "family": "Astronomy / Civics and institutions",
+      "kind": "multipart",
+      "question": "What activities are part of amateur astronomy?; What is a constitution?",
+      "absent": false,
+      "expected": "Address both independently with source labels; do not infer a causal relationship or verdict.",
+      "source_obligations": [
+        {
+          "page_id": 748,
+          "revision": 1368244598,
+          "html_sha256": "e13ec0086bddd42c53a35b7378ff1cabe7a3607aef9174ddde1b6ab20cc2d7cd",
+          "span_sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36"
+        },
+        {
+          "page_id": 5253,
+          "revision": 1377322873,
+          "html_sha256": "a3cee3772790c85b88e0f751ec670511352339351756c791e161fa46d2a782d8",
+          "span_sha256": "961c40c10e71969cd3e7835b9d86a4d30597d7be9d3e77ecf6167f8930d7d15a"
+        }
+      ]
+    },
+    {
+      "id": "dev-multipart-2",
+      "family": "Algorithms and data structures / Computer systems and security",
+      "kind": "multipart",
+      "question": "What does analysis of algorithms measure?; What is a block cipher?",
+      "absent": false,
+      "expected": "Address both independently with source labels; do not infer a causal relationship or verdict.",
+      "source_obligations": [
+        {
+          "page_id": 2230,
+          "revision": 1365706079,
+          "html_sha256": "f6bc8707b5fd1f82c9ec3dcb32e511fff6593b4744f4b40e806588bd6493af53",
+          "span_sha256": "492adbb8071247af0bd7a0b2f65e73a807004ca5e06a613e072a0e5267a35bfb"
+        },
+        {
+          "page_id": 4594,
+          "revision": 1376267143,
+          "html_sha256": "89c11c680d0cc08349f08726bbbeb8bc855d2ca5d005d4b3c913bbcc48b989f3",
+          "span_sha256": "7b9795ec1468d18db8e415a370520557ad776d500ce2af8e8102977b41ddb92b"
+        }
+      ]
+    },
+    {
+      "id": "dev-multipart-3",
+      "family": "Gardening and soil management / Building energy and safety",
+      "kind": "multipart",
+      "question": "What is mulch used for?; What is building insulation for?",
+      "absent": false,
+      "expected": "Address both independently with source labels; do not infer a causal relationship or verdict.",
+      "source_obligations": [
+        {
+          "page_id": 432174,
+          "revision": 1376736622,
+          "html_sha256": "f01f8576dad738c820c6ecee05ecbbe287eb54a4983671747c1180532135cc39",
+          "span_sha256": "c4ba2176e40b85a35ced2267de4f7162e0a72a0734c5e0627f796b5734c675e5"
+        },
+        {
+          "page_id": 6900318,
+          "revision": 1375683714,
+          "html_sha256": "ba349df242e94cb9ac22b80975f0a19a7823d2b45d1ecfd19ec7e3659a3a31c1",
+          "span_sha256": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328"
+        }
+      ]
+    },
+    {
+      "id": "dev-multipart-4",
+      "family": "Food preservation and preparation / Travel and navigation",
+      "kind": "multipart",
+      "question": "What processes does food preservation slow?; What is orienteering?",
+      "absent": false,
+      "expected": "Address both independently with source labels; do not infer a causal relationship or verdict.",
+      "source_obligations": [
+        {
+          "page_id": 10834,
+          "revision": 1324600990,
+          "html_sha256": "d0c8b60e6179843e2957f5a8a8d44d4504174fe536b4c1778fda2869d3cb6c61",
+          "span_sha256": "02052cad906920e99dc6e3d5d79f96e36e9542f2ff0169acc86a08ed8a188f5e"
+        },
+        {
+          "page_id": 22520,
+          "revision": 1375936233,
+          "html_sha256": "cb4d064046c323b79603e2c8ae5bdfdf3b7cbdcbb8a30bc84fab86bf00e34cc7",
+          "span_sha256": "025d619b36355953772a9f511f08c828d1956e0ece0fb7511f4f5218474afc12"
+        }
+      ]
+    },
+    {
+      "id": "dev-absent-1",
+      "family": "Unavailable evidence controls",
+      "kind": "absent",
+      "question": "What is my passport application status?",
+      "absent": true,
+      "expected": "No attributed quotation offered as evidence for this unavailable fact.",
+      "source_obligations": []
+    },
+    {
+      "id": "dev-absent-2",
+      "family": "Unavailable evidence controls",
+      "kind": "absent",
+      "question": "Which orienteering events are open today?",
+      "absent": true,
+      "expected": "No attributed quotation offered as evidence for this unavailable fact.",
+      "source_obligations": []
+    },
+    {
+      "id": "dev-absent-3",
+      "family": "Unavailable evidence controls",
+      "kind": "absent",
+      "question": "Predict the next supernova date.",
+      "absent": true,
+      "expected": "No attributed quotation offered as evidence for this unavailable fact.",
+      "source_obligations": []
+    },
+    {
+      "id": "dev-absent-4",
+      "family": "Unavailable evidence controls",
+      "kind": "absent",
+      "question": "What is the orbital period of the imaginary planet Zorvax-480?",
+      "absent": true,
+      "expected": "No attributed quotation offered as evidence for this unavailable fact.",
+      "source_obligations": []
+    },
+    {
+      "id": "dev-absent-5",
+      "family": "Unavailable evidence controls",
+      "kind": "absent",
+      "question": "What are the latest visa fees for Australia?",
+      "absent": true,
+      "expected": "No attributed quotation offered as evidence for this unavailable fact.",
+      "source_obligations": []
+    },
+    {
+      "id": "dev-absent-6",
+      "family": "Unavailable evidence controls",
+      "kind": "absent",
+      "question": "What is our soil test result?",
+      "absent": true,
+      "expected": "No attributed quotation offered as evidence for this unavailable fact.",
+      "source_obligations": []
+    },
+    {
+      "id": "dev-premise-1",
+      "family": "Astronomy",
+      "kind": "misleading-premise",
+      "question": "Why must every amateur astronomer perform scientific research?",
+      "absent": false,
+      "expected": "Do not endorse the false premise; a dated exact passage may expose the qualification, otherwise show Unknown.",
+      "source_obligations": [
+        {
+          "page_id": 748,
+          "revision": 1368244598,
+          "html_sha256": "e13ec0086bddd42c53a35b7378ff1cabe7a3607aef9174ddde1b6ab20cc2d7cd",
+          "span_sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36"
+        }
+      ]
+    },
+    {
+      "id": "dev-premise-2",
+      "family": "Food preservation and preparation",
+      "kind": "misleading-premise",
+      "question": "Why does food preservation guarantee that food never decomposes?",
+      "absent": false,
+      "expected": "Do not endorse the false premise; a dated exact passage may expose the qualification, otherwise show Unknown.",
+      "source_obligations": [
+        {
+          "page_id": 10834,
+          "revision": 1324600990,
+          "html_sha256": "d0c8b60e6179843e2957f5a8a8d44d4504174fe536b4c1778fda2869d3cb6c61",
+          "span_sha256": "02052cad906920e99dc6e3d5d79f96e36e9542f2ff0169acc86a08ed8a188f5e"
+        }
+      ]
+    },
+    {
+      "id": "dev-premise-3",
+      "family": "Physical geography",
+      "kind": "misleading-premise",
+      "question": "Why is the Amazon undisputedly the longest river?",
+      "absent": false,
+      "expected": "Do not endorse the false premise; a dated exact passage may expose the qualification, otherwise show Unknown.",
+      "source_obligations": [
+        {
+          "page_id": 1701,
+          "revision": 1376437983,
+          "html_sha256": "458fa88b003270037222a2486c89f87f977cdcb32991efc92110072cde46afa5",
+          "span_sha256": "031bba805bcade8cc9f42b57b31e61b8356b1a0d5425fd90f44b45ccf1597c30"
+        }
+      ]
+    }
+  ]
+}
