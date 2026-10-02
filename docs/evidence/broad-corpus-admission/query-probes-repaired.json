@@ -1,0 +1,275 @@
+{
+  "source_freeze_sha256": "9e14533a0f12368f8383855b1d5eef0a73db031fe302732cd435c0eb1bfe500e",
+  "scope": "16 systematic first-shard public title probes after source freeze; lexical lookup only, not paraphrase or unseen evaluation",
+  "results": [
+    {
+      "query": "\"Politics of Brazil\"",
+      "expected_source_identity": 3633,
+      "elapsed_ms": 0.5078130052424967,
+      "raw_results": [
+        {
+          "title": "Politics of Brazil",
+          "text": "The 26 Brazilian ''states'' are semi-autonomous self-governing entities organized with complete administration branches, relative financial independence and their own set of symbols, similar to those owned by the country itself. Despite their relative autonomy they all have the same model of administration, as set by the Federal Constitution.",
+          "doc": 3633
+        },
+        {
+          "title": "Politics of Brazil",
+          "text": "Each of the 26 state governors must achieve more than 50% of the vote, including a second round run-off between the top two candidates if necessary. In contrast to the federal level, state legislatures are unicameral, although the deputies are elected through similar means, involving an open-list system in which the state serves as one constituency. State level elections occur at the same time as those for the presidency and Congress. In 2002, candidates from eight different parties won the gubernatorial contest while 28 parties are represented in the country's state legislatures. The last set of elections took place in 2006.",
+          "doc": 3633
+        },
+        {
+          "title": "Politics of Brazil",
+          "text": "Brazil has no clear distinction between ''towns'' and ''cities'' (in effect, the Portuguese word ''cidade'' means both). The only possible difference is regarding the municipalities that have a court of first instance and those that do not. The former are called ''Sedes de Comarca'' (seats of a ''comarca'', which is the territory under the rule of that court). Other than that, only size and importance differs one from another.",
+          "doc": 3633
+        },
+        {
+          "title": "Politics of Brazil",
+          "text": "The municipality (''munic\u00edpio'') is a territory comprising one urban area, the ''sede'' (seat), from which it takes the name, and several other minor urban or rural areas, the ''distritos'' (districts). The seat of a municipality must be the most populous urban area within it; when another urban area grows too much it usually splits from the original municipality to form another one.",
+          "doc": 3633
+        }
+      ],
+      "expected_source_found": true,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"Bartolomeo Ammannati\"",
+      "expected_source_identity": 4091,
+      "elapsed_ms": 0.11907800217159092,
+      "raw_results": [],
+      "expected_source_found": false,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"Politics of the Czech Republic\"",
+      "expected_source_identity": 5848,
+      "elapsed_ms": 0.292120996164158,
+      "raw_results": [
+        {
+          "title": "Politics of the Czech Republic",
+          "text": "The president is also the commander in chief of the Armed Forces and ratifies all domestic laws and international agreements.",
+          "doc": 5848
+        },
+        {
+          "title": "Politics of the Czech Republic",
+          "text": "The Czech court system recognizes four categories of courts and the Constitutional Court, which stands outside of the court system.",
+          "doc": 5848
+        }
+      ],
+      "expected_source_found": true,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"Fortified wine\"",
+      "expected_source_identity": 10998,
+      "elapsed_ms": 0.13370098895393312,
+      "raw_results": [
+        {
+          "title": "Fortified wine",
+          "text": "A vin de liqueur is a sweet fortified style of French wine that is fortified by adding brandy to unfermented grape must. The term vin de liqueur is also used by the European Union to refer to all fortified wines. Vins de liqueur take greater flavour from the added brandy but are also sweeter than vin doux.",
+          "doc": 10998
+        }
+      ],
+      "expected_source_found": true,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"Garbage in, garbage out\"",
+      "expected_source_identity": 12823,
+      "elapsed_ms": 0.16101097571663558,
+      "raw_results": [],
+      "expected_source_found": false,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"Kangol\"",
+      "expected_source_identity": 16989,
+      "elapsed_ms": 0.06223598029464483,
+      "raw_results": [],
+      "expected_source_found": false,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"Morihei Ueshiba\"",
+      "expected_source_identity": 20069,
+      "elapsed_ms": 0.14417999773286283,
+      "raw_results": [
+        {
+          "title": "Morihei Ueshiba",
+          "text": "After Ueshiba's death, aikido continued to be promulgated by his students (many of whom became noted martial artists in their own right). It is now practiced around the world.",
+          "doc": 20069
+        },
+        {
+          "title": "Morihei Ueshiba",
+          "text": "His second experience occurred in 1940 when engaged in the ritual purification process of ''misogi''.",
+          "doc": 20069
+        }
+      ],
+      "expected_source_found": true,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"Neurology\"",
+      "expected_source_identity": 21226,
+      "elapsed_ms": 0.06687999120913446,
+      "raw_results": [
+        {
+          "title": "Neurology",
+          "text": "Also, many nonmedical doctors, those with doctoral degrees (usually PhDs) in subjects such as biology and chemistry, study and research the nervous system. Working in laboratories in universities, hospitals, and private companies, these neuroscientists perform clinical and laboratory experiments and tests to learn more about the nervous system and find cures or new treatments for diseases and disorders.",
+          "doc": 21226
+        }
+      ],
+      "expected_source_found": true,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"Nile\"",
+      "expected_source_identity": 21244,
+      "elapsed_ms": 0.05319999763742089,
+      "raw_results": [
+        {
+          "title": "West Nile fever",
+          "text": "If cases of suspected West Nile virus infection, sera should be collected on both the acute and\nconvalescent phases of the illness.  Convalescent specimens should be collected 2\u20133 weeks after acute specimens.",
+          "doc": 37796
+        }
+      ],
+      "expected_source_found": false,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"Ozone\"",
+      "expected_source_identity": 22718,
+      "elapsed_ms": 0.06070101517252624,
+      "raw_results": [
+        {
+          "title": "Ozone",
+          "text": "The following mechanism allows to explain the rate law of the ozone decomposition observed experimentally, and also it allows to determine the reaction orders with respect to ozone and oxygen, with which the overall reaction order will be determined.",
+          "doc": 22718
+        },
+        {
+          "title": "Ozone",
+          "text": "These three reactions are central in the use of ozone-based well-water treatment.",
+          "doc": 22718
+        },
+        {
+          "title": "Ozone",
+          "text": "On the high wavelength side, the Hartley band transitions to the so-called Huggins band, which falls off rapidly until disappearing by ~360&nbsp;nm. Above 400&nbsp;nm, extending well out into the NIR, are the Chappius and Wulf bands. There, unstructured absorption bands are useful for detecting high ambient concentrations of ozone, but are so weak that they do not have much practical effect.",
+          "doc": 22718
+        },
+        {
+          "title": "Ozone",
+          "text": "There are additional absorption bands in the far UV, which increase slowly from 200&nbsp;nm down to reaching a maximum at ~120&nbsp;nm.",
+          "doc": 22718
+        }
+      ],
+      "expected_source_found": true,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"Quaestor\"",
+      "expected_source_identity": 25225,
+      "elapsed_ms": 0.06381500861607492,
+      "raw_results": [],
+      "expected_source_found": false,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"Memorials and services for the September 11 attacks\"",
+      "expected_source_identity": 28047,
+      "elapsed_ms": 0.3870390064548701,
+      "raw_results": [
+        {
+          "title": "Memorials and services for the September 11 attacks",
+          "text": "Ever since its dedication, and thanks to the present-day Mayor of Nissoria Dott. Armando Glorioso and Dott. Alberto Lunetta who continues this important event,  a representation of both American and Italian military personnel from the nearby Military base NAS Sigonella comes to visit and annually commemorate along with all local Italian Authorities, Dignitaries and citizens who truly will never forget this tragic event.",
+          "doc": 28047
+        },
+        {
+          "title": "Memorials and services for the September 11 attacks",
+          "text": "The 9/11 National Remembrance Flag was designed by Stephan and Joanne Galvin soon after September 11, 2001. They wanted to do something to help and were inspired by a neighbor's POW/MIA flag. They wanted to sell the flag so people would remember the September 11 attacks and in order to raise money for relief efforts. The blue represents the colors of the state flags that were involved in the attacks. The black represents sorrow for innocent lives lost. The four stars stand for the four planes that crashed and the lives lost, both in the crash and in the rescue efforts, as well as the survivors. The blue star is a representation of American Airlines Flight 77 and the Pentagon. The two white stars represent American Airlines Flight 11 and United Airlines flight 175, as well as the twin towers. The red star stands for United Flight 93 that crashed in Shanksville, Pennsylvania and all those who sacrifice their lives to protect the innocent. The colors of the stars represent the American flag. The four stars are touching each other and the blue parts of the flag in order to symbolize the unity of the people of the United States.",
+          "doc": 28047
+        },
+        {
+          "title": "Memorials and services for the September 11 attacks",
+          "text": "The Remembrance Flag has a white background with large, black Roman numerals IX/XI in the center and four black stars across the top. The IX/XI are the Roman numerals for 9/11. The four stars represent World Trade Center North, World Trade Center South, the Pentagon, and Shanksville, PA.",
+          "doc": 28047
+        }
+      ],
+      "expected_source_found": true,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"Valve\"",
+      "expected_source_identity": 32754,
+      "elapsed_ms": 0.06957800360396504,
+      "raw_results": [
+        {
+          "title": "Valve",
+          "text": "A common use of the term ''valve'' refers to the poppet valves found in the vast majority of modern internal combustion engines, such as those in most fossil-fuel\u2013powered vehicles, which are used to control the intake of the fuel\u2013air mixture and allow exhaust gas venting.",
+          "doc": 32754
+        },
+        {
+          "title": "Valve",
+          "text": "The main parts of the most usual type of valve are the body and the bonnet. These two parts form the casing that holds the fluid going through the valve.",
+          "doc": 32754
+        },
+        {
+          "title": "Valve",
+          "text": "A closed soft seated valve is much less liable to leak when shut while hard seated valves are more durable. Gate, globe, and check valves are usually hard seated while butterfly, ball, plug, and diaphragm valves are usually soft seated.",
+          "doc": 32754
+        },
+        {
+          "title": "Valve",
+          "text": "Valves whose disc is between the seat and the stem and where the stem moves in a direction into the valve to shut it are ''normally-seated'' or ''front seated''. Valves whose seat is between the disc and the stem and where the stem moves in a direction out of the valve to shut it are ''reverse-seated'' or ''back seated''. These terms don't apply to valves with no stem or valves using rotors.",
+          "doc": 32754
+        }
+      ],
+      "expected_source_found": true,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"AD 5\"",
+      "expected_source_identity": 35184,
+      "elapsed_ms": 0.12938902364112437,
+      "raw_results": [],
+      "expected_source_found": false,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"813\"",
+      "expected_source_identity": 35475,
+      "elapsed_ms": 0.04274799721315503,
+      "raw_results": [],
+      "expected_source_found": false,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    },
+    {
+      "query": "\"Active laser medium\"",
+      "expected_source_identity": 40692,
+      "elapsed_ms": 0.17530200420878828,
+      "raw_results": [
+        {
+          "title": "Active laser medium",
+          "text": "The rate of transitions of an active center from the ground state to the excited state can be expressed as",
+          "doc": 40692
+        }
+      ],
+      "expected_source_found": true,
+      "route": "HOST_PENDING_SOURCE_DISCOVERY_ONLY",
+      "supported_research_answer": false
+    }
+  ]
+}
