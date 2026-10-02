@@ -1,0 +1,1571 @@
+{
+  "classification": "Immutable input inventory; originals retained on rig at explicit paths, not copied into Git or treated as installed bytes",
+  "files": [
+    {
+      "path": "docs/evidence/reference-coverage-expansion/source-review.json",
+      "sha256": "987d9b904c49afaf42f7529a1ba3b1a94dd713c0764ea6a529c494e4dea0f568",
+      "bytes": 1682793
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1014.html",
+      "sha256": "add3b6e825b004571d9ff31b1708184bcdf0e59acf3c9c1dfd49d6e120302616",
+      "bytes": 568975
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1014.json",
+      "sha256": "4c65d061d43384a6c72092a5ca00d92f7d0af3f15d09ec277e1858ef9289e51e",
+      "bytes": 192
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/106001.html",
+      "sha256": "4fd089526a4317fd5f328140693a87b352f9edbc8cb41f50b06eeaeb5b170791",
+      "bytes": 612194
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/106001.json",
+      "sha256": "90a6384e2e8f5d153b231427d30b93144e5423568cc6a91ec0062329cd638a71",
+      "bytes": 180
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/10834.html",
+      "sha256": "d0c8b60e6179843e2957f5a8a8d44d4504174fe536b4c1778fda2869d3cb6c61",
+      "bytes": 393009
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/10834.json",
+      "sha256": "943a8856121a95da5c912fa366e0c6aa05bac93c9b5310f7d090991fecad0e81",
+      "bytes": 188
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/113266.html",
+      "sha256": "34683f894de18e4f459397f58182746bda4eb9f3fd635d17b2db6365ed2b4099",
+      "bytes": 227453
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/113266.json",
+      "sha256": "077f05c5537e1cf07f5a4cd2993ed5ee0f1e3dfcd9f5d259df9d4be313a45aed",
+      "bytes": 180
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1206.html",
+      "sha256": "ebb4f0a587098abff0294d62611758e59e3946d79b2cca88625b3164a9a5d757",
+      "bytes": 670505
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1206.json",
+      "sha256": "043ab44714daa2394480b3e0f79b68ffab0fd3803fe75b9823fb69b9b98d5c81",
+      "bytes": 183
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1239.html",
+      "sha256": "36e80c4a1e9f16f2d500ff249361d96e5c09063d53a4454dfb4e374e1bf1d01e",
+      "bytes": 1237669
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1239.json",
+      "sha256": "99e45c16bcec45a707a1604a04e98254b97ebff75b2c4cd5d23b478402edce37",
+      "bytes": 175
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1242.html",
+      "sha256": "ff95f9af70fc822bdcbdfe5e03296e38f2343e98b3ab04e6408d2b9fe9161ba2",
+      "bytes": 485817
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1242.json",
+      "sha256": "1f4937b76e36cfdbe6f8eb58c79d222b974d5c333e0bdd3e0b609ee10f0ec021",
+      "bytes": 195
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1274.html",
+      "sha256": "681d7c45bf74909a42161216246c0f3659f7c684f46054f2075c758bd33b8af5",
+      "bytes": 234928
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1274.json",
+      "sha256": "7a09a115a4a2d677d8cab327e58bc8f6d2bff611cfd0a14b11f89a0905c83d49",
+      "bytes": 192
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1274922.html",
+      "sha256": "4a089df385dffaea7a1669add44dc871a63459a4a5db269a1b2e1514622522d4",
+      "bytes": 146743
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1274922.json",
+      "sha256": "5486b826c1b7623ba30a48e76d55ebdd964f85a51bc23296f873d9c58e73cfe8",
+      "bytes": 186
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1327.html",
+      "sha256": "e41a50a6dd4d2dd64bf77871790503933823c8ac8732f3e0724323ca4bd6fc5f",
+      "bytes": 312475
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1327.json",
+      "sha256": "623d9c5cfd9606134c98ce6d46bb580bd4124a0591159b9308198bcd65726b8b",
+      "bytes": 181
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1368.html",
+      "sha256": "ff465be8d42b16bac522892d2ab69a82d7e799f5fa02c26eff33b7d407084b54",
+      "bytes": 519439
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1368.json",
+      "sha256": "687e18eb3c802ea411ad39bff9e2ac41fa5d5988400b18e34a821654356b2e19",
+      "bytes": 186
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1419.html",
+      "sha256": "ae02f170e2d8d1496a083cb421ebbe4e77196d7d7ce56b11630a898b8f65c5d8",
+      "bytes": 513757
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1419.json",
+      "sha256": "a4f89313ca2e3e630afe3bd8fb93245f7bcd3f5a218a8a670396f7a11837c598",
+      "bytes": 186
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1451.html",
+      "sha256": "695ec53bc4192d32282e7642af79071ee97a7908f370cfa45e921436b1437255",
+      "bytes": 770558
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1451.json",
+      "sha256": "c423a1f5982cbff33474279646724fd9901f7313d10fd43ed40d0186d08ed77e",
+      "bytes": 199
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1453.html",
+      "sha256": "f31e5b092277c8b6a17fbb858dbc76f8e32ec7f661328641d6b10c751ab0c7db",
+      "bytes": 361711
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1453.json",
+      "sha256": "c44f1195888d4abcdcab3bc64ef6c4a2c1fff79ae55a658ead7d786e8a517c17",
+      "bytes": 178
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/14779725.html",
+      "sha256": "48249c16fccf05c7ad05d5e5e42860211a7e5b71d139c3708d8ef3d4d3e35286",
+      "bytes": 476753
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/14779725.json",
+      "sha256": "b4dfcfa3c3ee5116003b5a02572b649b1354ea2f11c013262ae57ece2e01e6b4",
+      "bytes": 194
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/155739.html",
+      "sha256": "2af549df5f250c96fef7f048a43b6279db081b6c4f5ddb9ea39503d8dc9e4a8d",
+      "bytes": 678748
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/155739.json",
+      "sha256": "93dee0ef9310bfc20ba43a631e5d6ba35fe6aa60ff58aaecd3944337817b1d04",
+      "bytes": 196
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1566.html",
+      "sha256": "c7c6373a36b60bbdd678102706bba3f7607b062d1d3de61696918f675ad53af1",
+      "bytes": 881800
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1566.json",
+      "sha256": "2ba89e697620968d0a15cb90e10e0f711aec870880edcea29644ff925c8b902b",
+      "bytes": 188
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/158573.html",
+      "sha256": "d9b58012d1dbf950f3a2779fd49ba8df78013614746fbc161ebca15ecd37ddf8",
+      "bytes": 166418
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/158573.json",
+      "sha256": "903a958d8d1345e3f0eb363b41663622f2d1a7ff2ccf62e556d020039996c339",
+      "bytes": 184
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1632568.html",
+      "sha256": "e6ef80a515697ed5a355954f5c6c071d22240ef9bdcc367ff444419f3ce3402c",
+      "bytes": 200310
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1632568.json",
+      "sha256": "5fd11f32824660ff01a3aef74cbd30ed0c8b52f2484c4925a20d4641e9432cf1",
+      "bytes": 182
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1635762.html",
+      "sha256": "e694d07f57818ef1cdb0aaa3bf2254d2420a28710cb843f1f924301da6e7e395",
+      "bytes": 311781
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1635762.json",
+      "sha256": "5aad02165f66619099e0799167c11c8414209189e5c77acce926d6e9dae00d06",
+      "bytes": 183
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/16622.html",
+      "sha256": "6eed6d091a01d390c08873bfd7306605735701492968adb3190c134b9df0040d",
+      "bytes": 592334
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/16622.json",
+      "sha256": "a2864b37c408032da5b8bf527f56615c3b3b9c415cebf70f023cee79ec40f799",
+      "bytes": 179
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1701.html",
+      "sha256": "458fa88b003270037222a2486c89f87f977cdcb32991efc92110072cde46afa5",
+      "bytes": 1473703
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1701.json",
+      "sha256": "2fd8b34a430f41e76bd1b9ff2ea330db5a5bcbba916937d8269ec0b564dcff11",
+      "bytes": 181
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1750.html",
+      "sha256": "82134bbf3446f1d3f3e4c28315ae6eb87d8dc105ec1dcea67e7951ff1e0c39f1",
+      "bytes": 501012
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1750.json",
+      "sha256": "5be56e3bd69de3c370f58bc944b9c56efc8a14a3d90be9d1d38e05fd430d6066",
+      "bytes": 184
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/189274.html",
+      "sha256": "b553c44bebfeed3e5a8ca55d171f4e1981a347c35c717b262ac271d40ae1f53a",
+      "bytes": 299858
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/189274.json",
+      "sha256": "2ddb0d375ea56ab915d599a1871c695f667084c4c192f47779786f38d2dfe82d",
+      "bytes": 182
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1909.html",
+      "sha256": "dbd0b13c11d27a385476b00a98ce945e483546d1693555c659e492d7d647d4ed",
+      "bytes": 335252
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1909.json",
+      "sha256": "c98346e9ed504833ae4d0d58326438fda85c06a50c6049bd9d8e64cf514bd6d0",
+      "bytes": 187
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/192013.html",
+      "sha256": "e933fe1fda227200d091366ba358729e04d65e7f3e036c9e54d5128b0b7f2560",
+      "bytes": 345601
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/192013.json",
+      "sha256": "357898c013a825fa3d4bb8cbc91fb42d9f1ad0dbe98d724d3834d8cfde9219f5",
+      "bytes": 176
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/194603.html",
+      "sha256": "d16435edb0f4ccd3cd5ad7bdcf20371e984c81be0444dabaaa13ff48f0ab2735",
+      "bytes": 266247
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/194603.json",
+      "sha256": "94297243ffde9722e063b06f9861868b40eb297b777f6693d095471b52cc3262",
+      "bytes": 184
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1962.html",
+      "sha256": "d738631b909e0e40a5fa896cefdd11c5752e61acca51c973db8026ee9b3df07f",
+      "bytes": 538710
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/1962.json",
+      "sha256": "216ac68be975d117df6056b8ea70f89d49f2cd14c95e31fb1c6fdd0d7b19030d",
+      "bytes": 187
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/198153.html",
+      "sha256": "0409f5935ca47cf25ba319529f420c724ac88e6be360f60b6abd0f8e16cfbb64",
+      "bytes": 318291
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/198153.json",
+      "sha256": "3efb9486403c748a0e6c2d7c811c27f813f55d7b01b3622f6fc590e1344b27b3",
+      "bytes": 180
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2037.html",
+      "sha256": "be207b3b7fc2af54d59f54654b84a497f9b859c770b20184484b0d7599b35374",
+      "bytes": 376110
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2037.json",
+      "sha256": "378a25c04c8943b276d3376a9af6b6a9ab46e960b2921bc82d2b51eacc58d16d",
+      "bytes": 182
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/205126.html",
+      "sha256": "7bb528f04408d4101a8a081e3f87262e30cc491096aba7214f84e07b01033ec8",
+      "bytes": 318207
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/205126.json",
+      "sha256": "9c5a79daaf605205795b45223794f6be5fc3a624477fb8d0ce1192e46c212e95",
+      "bytes": 178
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2052.html",
+      "sha256": "9c5891137ac5ceb7ea79430f931e4c385f4761c8103174b7eb81ae719904e101",
+      "bytes": 243747
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2052.json",
+      "sha256": "ada578c4784dd4b1aa5031908b4b62cc14642d69a6c845f7cf1dfaf37cd4bba9",
+      "bytes": 191
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/20691673.html",
+      "sha256": "f8b9cfad0e167edd12c217a3227186edbcd6f0ff087849a46e9da94e91f86718",
+      "bytes": 518307
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/20691673.json",
+      "sha256": "bd3685d3d75a63de7f9a191fb0ab30dc50da8e1c8de97986150e19c6236ada9f",
+      "bytes": 182
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2085.html",
+      "sha256": "5a423303b61d66f412e8bcddbad954962b6ef9de141aa8abc647865f15a672ae",
+      "bytes": 1229065
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2085.json",
+      "sha256": "41d03c7a6f432e1ab0e2467670ea783c6a9610258c77fc0a9e63683939bd79d3",
+      "bytes": 176
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/21291.html",
+      "sha256": "61002d15439d5736ead98436dc7e3bf0a094c0faf74ea677b15b09117ec5a286",
+      "bytes": 306284
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/21291.json",
+      "sha256": "b30510656597088d10659ac997f1400b4248dad7d48dc7be3cd3d8828f1e7a00",
+      "bytes": 186
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2202.html",
+      "sha256": "b4c85b9edda4a2e419edbae9140fa7ff75f1ee266d514b3d6e0c50755243af2e",
+      "bytes": 498382
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2202.json",
+      "sha256": "a897e77e0faf2e7c4e32977f9666b6d575ec257dc9b703edb096d037bb30a549",
+      "bytes": 186
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2230.html",
+      "sha256": "f6bc8707b5fd1f82c9ec3dcb32e511fff6593b4744f4b40e806588bd6493af53",
+      "bytes": 275697
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2230.json",
+      "sha256": "4157f0b67a9142810b8f4744e9af72e1fe10effab3ed540d7b4144cffd45d081",
+      "bytes": 191
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/22520.html",
+      "sha256": "cb4d064046c323b79603e2c8ae5bdfdf3b7cbdcbb8a30bc84fab86bf00e34cc7",
+      "bytes": 448208
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/22520.json",
+      "sha256": "cb3ace8b18e0e4204a0e29a4bea2f404ed334c2d39f6d09117c7707917f867bd",
+      "bytes": 183
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2259607.html",
+      "sha256": "7b97c1e3d8c57b6ed72850853cb62988debe99a2d149714624318c2f739ef47e",
+      "bytes": 499333
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2259607.json",
+      "sha256": "a413ddeb36cc45a6c7e1d46dac14267fb84c86015615bd507d55162dd4bccd33",
+      "bytes": 183
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/23311.html",
+      "sha256": "0a9874cef422ade90ffa747428b84f702a3ab24e09ceea0987df7f48334137ca",
+      "bytes": 412360
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/23311.json",
+      "sha256": "df2808c2156e76eab50a96d840e367f971af4997442e7ab3fe29761b2dfaca9d",
+      "bytes": 185
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/235255.html",
+      "sha256": "a583a5a782532e3b4e8067b014cb2de982f40da084e93628bba1667ca39ac606",
+      "bytes": 259892
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/235255.json",
+      "sha256": "36a83496cf28ed3398694103dd10a404876922fc66aeb4d1f504b30ebc3366ec",
+      "bytes": 179
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2362.html",
+      "sha256": "7548e748f8d7ca9fb9c0e2e26fe96369a6c94a911e665f95a78325e211c99cc0",
+      "bytes": 984738
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2362.json",
+      "sha256": "819e2b1921ca1d8c6445f662391a0d6ff5f8839643467e2a29c8aade58c01f12",
+      "bytes": 177
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2408.html",
+      "sha256": "6b8b63d557ebc4f0f55527b8a2bf975141c4312bd64c4d0d59321664e7efb833",
+      "bytes": 476654
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2408.json",
+      "sha256": "f17643808ce9104ae5030ad11a5d5705ace3627d0fc0f1afeb7fa9bbb6b48fe1",
+      "bytes": 189
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2440463.html",
+      "sha256": "dc9ea417f5efece6091572b9736e29203e56715c53c58a1b532a7ee2a1c1b559",
+      "bytes": 46646
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2440463.json",
+      "sha256": "b0007989f44396ea8f93ec8f2f1fae83441b78c5c8bf28bca65b1caf7b0cb3b9",
+      "bytes": 178
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/25203.html",
+      "sha256": "0e8cf53a35a17c6c275a6f915fe98052a8c34d1fe7feca6a34e53737a6147127",
+      "bytes": 337748
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/25203.json",
+      "sha256": "f21e63b98dc5c762b40bb20fd12f3c185231d6f9e924697e1089ad2926ae7978",
+      "bytes": 179
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/25476.html",
+      "sha256": "c4788e056f0689b38b8656fd66a476e25e6d747cea1e4750f6e81e10b9c8bdff",
+      "bytes": 180199
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/25476.json",
+      "sha256": "f189da2052d1c7f8d5ce0793be4fb900ab21af9620f8908020c5f277f652e2a8",
+      "bytes": 191
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2624.html",
+      "sha256": "a65d399f9c99ec90991b42d3f6d9f66198ae84b021a6c81be52e5665506b4182",
+      "bytes": 454737
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2624.json",
+      "sha256": "d35843384d31673f05a5792d5b11a9699a89be843bf11071c9c236088c02bdaf",
+      "bytes": 188
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/265822.html",
+      "sha256": "adc4fe6a3093185ece32b5338f1b7375a1a471f90694e492e36fdf5d4a63c92a",
+      "bytes": 360689
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/265822.json",
+      "sha256": "fa30fd3c6175f27904428e3e1ec927d1e297653f894d04343b27cea81f236e7d",
+      "bytes": 183
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2703.html",
+      "sha256": "3288fdc237ae379b82725fe9517636a249ffd33c16b6023ebfb65d92352f15f4",
+      "bytes": 452657
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2703.json",
+      "sha256": "bc3cabadc6ae610a92f72e7548244424c3ce0f582838dac7ad5cd5b582fb974e",
+      "bytes": 191
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2763.html",
+      "sha256": "2869a89d1e276c632f6eba0963ddce6acd75d13654fc4d01fc34a107bd9a6f8e",
+      "bytes": 397150
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2763.json",
+      "sha256": "a23dc487df0ff5a6614e02e7214ae02a3d21fd43ce02779f9367cebfb90c7342",
+      "bytes": 175
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2787.html",
+      "sha256": "8540974e173bc9b6ade8b8a55e755e358407ea7a98483645df67e6586b26d69c",
+      "bytes": 966705
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/2787.json",
+      "sha256": "214afd3370741c443da2e8b6a1496b1d4d3f264b89ebdc34529e050cd4786ac0",
+      "bytes": 181
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/3038.html",
+      "sha256": "3988e080571f5bcc91a3db54c06796b0395aa354b51940fe2651aecd6100343a",
+      "bytes": 458111
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/3038.json",
+      "sha256": "4536750583a5a9f69cc2e4a8a6fc0550476f87fccbd8b85865cebd0b95affdb5",
+      "bytes": 192
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/3067.html",
+      "sha256": "c264356e8771019ce48ff12fe08d28358a7f03dc99155c726fcb6e3c3274501b",
+      "bytes": 419944
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/3067.json",
+      "sha256": "2953da9547fa77f8387a4ba5562098ed1fb7cd2e6c8565526a1b53107ac90480",
+      "bytes": 178
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/3118.html",
+      "sha256": "3275454d6b69df6a90237348b9886919f43224353b766a431ce4a1fd1b30ac58",
+      "bytes": 1361923
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/3118.json",
+      "sha256": "67efe3ef6e71eb67951d861180234078081ac296ac5119ba82785ad4c9ad3de1",
+      "bytes": 179
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/33118.html",
+      "sha256": "2dd166891270a1dbc4585baf2295cdffeac6c53299ac4741dd8c9b05514f8dfd",
+      "bytes": 391465
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/33118.json",
+      "sha256": "58afa61e0f46b6634293d238e433a3e8177567543fd685d0048435b2acffb42d",
+      "bytes": 182
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/341287.html",
+      "sha256": "9f1a92d797d86b67e3571b68aab4143a0470eecfc5507ffad24a067fddeb8fd2",
+      "bytes": 491993
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/341287.json",
+      "sha256": "a575f07f67eaf0c3bc176990878746faf585551cb6fc450d004c8750fec94430",
+      "bytes": 187
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/352353.html",
+      "sha256": "237ac3ac820462afdcce1217f13b9774fe8259f9813f60a8730ac792f84e00df",
+      "bytes": 221030
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/352353.json",
+      "sha256": "d1deaeb2f38319185cbc764db96b987a5b7389101e98a87ca7dadcafbdc38a5e",
+      "bytes": 185
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/3989.html",
+      "sha256": "b07aa742a5c956775ac110ad79ae5086f0d4374a734061914175bde70b285a67",
+      "bytes": 1671373
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/3989.json",
+      "sha256": "45bacc7c9efd8adcc5c21359cbf122f7833f99302c2beade8c39a704f4b05bab",
+      "bytes": 181
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/400975.html",
+      "sha256": "4e1f1d1d506bd0c01346b95e274003ba17551cddd497e944dea09b096dc75dc3",
+      "bytes": 290984
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/400975.json",
+      "sha256": "eec1e644d1b3e2999029726b16a754fb7346ad1eaf9be51c2ad79bc7cf8bbddb",
+      "bytes": 182
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4015.html",
+      "sha256": "6c81ba121b12a2274d5a40111e3c705f754cc65e430b6f72591e93970ddb1a67",
+      "bytes": 606223
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4015.json",
+      "sha256": "2818eeeeea9027e4fb17d731a38f168f0c833c33123d4c69713ad1996bd2b578",
+      "bytes": 174
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4062253.html",
+      "sha256": "0caa5e78e4bcf462c4750209c14e2b0ddaeda83cd88a5233b25e4fe87ae6606e",
+      "bytes": 210991
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4062253.json",
+      "sha256": "c55342d3dd18107b403421e3efe52f7885144fd929949dabe76825a79914dc7b",
+      "bytes": 196
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4101.html",
+      "sha256": "752ce9a3499facddd9f0ce124aa706d84dcf56122a764bfdf50328f1f766e087",
+      "bytes": 489856
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4101.json",
+      "sha256": "2e72de8ba7d9077bd46fe4b7ba82f679772fcfbc19f08a7d3f8df9012e556166",
+      "bytes": 196
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4107.html",
+      "sha256": "7ef8eedbd314de9dd75555cc79430d99a129c4ebd6b459ef13e7842208c34d5e",
+      "bytes": 243357
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4107.json",
+      "sha256": "2e1cb12cc2a32b883b442e9c98dbb8675c6defd9ee327de1466003a23793c6e8",
+      "bytes": 191
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4109042.html",
+      "sha256": "50e6ffda0b142cd01bcc1ba17fa59f7516077c045f880969a7ce8c248628dc57",
+      "bytes": 527524
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4109042.json",
+      "sha256": "59bba37fd3d611c565e2c0c49dd3bd8cc396d981973dde2bdda75fa890f69283",
+      "bytes": 189
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4122592.html",
+      "sha256": "0297403a19941f02717114b302874aa5d199c49caf6a5253a7a4bf9f06e969e8",
+      "bytes": 755619
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4122592.json",
+      "sha256": "0f5fc849b0f4a9d51f5510b34a02753290f81bb14f92b16b72ff7120102118c2",
+      "bytes": 191
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4135664.html",
+      "sha256": "b2f1c74b7f38049bad0a44c15e1022e161a02b0a47273fb6f7acd207057eeae2",
+      "bytes": 251600
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4135664.json",
+      "sha256": "10cc64c4a8fb414d885538ac21ac49681ff7ccb3217bc03a85fc8a18bf5af263",
+      "bytes": 200
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4135999.html",
+      "sha256": "173c818663ad35991aaa2b7babac8f60bafca2ae1be4a95707f26018a30fe3c5",
+      "bytes": 625874
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4135999.json",
+      "sha256": "64b8f37035f11a33e5f2096ef73b676cb9b2ea9dce0055a0c82cb2a8031d39a2",
+      "bytes": 192
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4148213.html",
+      "sha256": "9f2a4d6a5c1e5fbbc62c897c182565ca96dde1115a8495681ab6b0cd37b473d2",
+      "bytes": 1089053
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4148213.json",
+      "sha256": "81250667867f7f53f6bd0c5a5a2dae0c2fdc6b8cb7864d5d51e8b32a08e3874d",
+      "bytes": 196
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4183.html",
+      "sha256": "abfc20c4bba2eef1509ea949892d231654c7d4756d8d983466b2238476186197",
+      "bytes": 1258529
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4183.json",
+      "sha256": "bcd76c3120ec563c5d6b7d3b0705bc8e18386e96e3bc432974bbd52d503b7bf3",
+      "bytes": 175
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4185.html",
+      "sha256": "e94fffcf06912dcb61ebee8cee5c6f59a9348c95647a8dd9c978049f82ed91fb",
+      "bytes": 774143
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4185.json",
+      "sha256": "e5fb6462ecf5c13586a5178a344d0e33b7d1a93a1eb07481d7a2187892d6bf1e",
+      "bytes": 182
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4189740.html",
+      "sha256": "1aa323b2f133dbe2c8148d95ec787b5e18493c8e88bef5ff824c073a880356e7",
+      "bytes": 731903
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4189740.json",
+      "sha256": "4f2f77bb859e46593a2856d23701048ccca2da315ab6d4b4cc9eb697f3ec479e",
+      "bytes": 206
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4209093.html",
+      "sha256": "7521d9f81d2557d6847b888f7cb0a3655cb7e3483b85973750102da21901c543",
+      "bytes": 281113
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4209093.json",
+      "sha256": "0db9eaf07df82817c824c231c068306432f7762dcfe9b31af4bbe8da422b7c8e",
+      "bytes": 199
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4230.html",
+      "sha256": "918d95f7079bbaaaa2dd54281ccad3fb879244ad49173817618b78a6ba7bbc18",
+      "bytes": 1011199
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4230.json",
+      "sha256": "066b9f716481ade1db3c21bf959bf7bb9845a5a116277f435afb6ae0c1f933cf",
+      "bytes": 183
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4243487.html",
+      "sha256": "0e7b38c023647b7ffde69e067e5eb10c53091b932bc45e2095c605e000c8ff1f",
+      "bytes": 249187
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4243487.json",
+      "sha256": "ddb326881925c799bb028e14a7287ef592547b013e9bb2a5a7554b14bce7d6bb",
+      "bytes": 205
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4246080.html",
+      "sha256": "cfd9dd06f1e326ad20aa6e34b15ea9b384052c283cf3245069ec9ec97e2aa789",
+      "bytes": 455304
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4246080.json",
+      "sha256": "cc155e7d626a292c98c9da74aef33e9026cce367f357c5857962044be4da4626",
+      "bytes": 192
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4250553.html",
+      "sha256": "89a1839d9f6c391f3d647926615c259af5ef453bf2250fa2c1ad6469080c4f0a",
+      "bytes": 844201
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4250553.json",
+      "sha256": "786b2c2efb1bdeda2e16b5fc21e47a8327fdf2d37165ed84c31a9620fd8df35c",
+      "bytes": 179
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4266.html",
+      "sha256": "7950da5998ef73ac0f7b35c35c79e313701547eb80942d3f9befebba3b3ed697",
+      "bytes": 750369
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4266.json",
+      "sha256": "ca543679052adccf94edadc5facb1eafc471b24465f807a56e3792e4873eef93",
+      "bytes": 182
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4298756.html",
+      "sha256": "8e7b7d7e841d67950e981705d3a7d0d9eeb35088e5dd1adcc3cfbafe404b6475",
+      "bytes": 466084
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4298756.json",
+      "sha256": "243db3d88330035bd74356c797792c64e9351c9ac9c3aa678a3c5283ec6c4cdb",
+      "bytes": 194
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4319616.html",
+      "sha256": "0e1f9106c03cf418b50b2cb5620ce72d231593d1287ff49cfcab82976fc7f2a3",
+      "bytes": 208685
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4319616.json",
+      "sha256": "e25a5545fd23a0719bd4a1fc941189fd88dcc8fe6fa57298e2d07ca42fb1bbb8",
+      "bytes": 195
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4320.html",
+      "sha256": "4e5031be6b1e3dd3431f3c9bbe80cb2e558007d76247824346cad6b28918764a",
+      "bytes": 345759
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4320.json",
+      "sha256": "4c9e60e492948f1bababb6fb9bc21585b797af9659734abbcc96a68c28242121",
+      "bytes": 187
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4321.html",
+      "sha256": "00ef4adbdf2ffe8d66db93769f741892e682f5e25a19574a682a52d93003e565",
+      "bytes": 350415
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4321.json",
+      "sha256": "4558d8fe3f75ab1483805728b9ff5d4d955ae7dd1694ee325b791ae4c72d91be",
+      "bytes": 180
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/432174.html",
+      "sha256": "f01f8576dad738c820c6ecee05ecbbe287eb54a4983671747c1180532135cc39",
+      "bytes": 283721
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/432174.json",
+      "sha256": "518088fc94b4f41b4d08123affe761cb78e77c686362e3ddfebd1ff8adc8a817",
+      "bytes": 178
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4342970.html",
+      "sha256": "670e17d452fd4f0b298d899d5c91120bdfc884a96233d682caadcb711837b4e5",
+      "bytes": 233142
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4342970.json",
+      "sha256": "3e0aff596636bb2ef293b590780169a8a41d9d150ba9e2d27c17ecfa0e03c327",
+      "bytes": 196
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/43935.html",
+      "sha256": "2c71c43e159a3d3be670cd8e28bac6ad19e1be58080afbd79f1c2580f7ec2793",
+      "bytes": 244207
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/43935.json",
+      "sha256": "987f6d9094531dd37a862e255aed9e2cbea3a2d6673c9d395f49a0a4dae7db69",
+      "bytes": 190
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4416073.html",
+      "sha256": "1c9d01d0ef9b1edb3d2a8bc8a3457d8cabf9fcc9f48a6b992d7d4c81d07ac277",
+      "bytes": 907033
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4416073.json",
+      "sha256": "92f57c6b11161cfdbd6da5707b6aa740f70aa92eae6b33b789b6ea92ef16ece5",
+      "bytes": 195
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4447229.html",
+      "sha256": "5d675bceb1158e0bd693875cb62dccfa3f5ec392ff373cabb7db9912afbce417",
+      "bytes": 747365
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4447229.json",
+      "sha256": "e6771edbfc1018b1c197c84ab202bf740bc2d13ef0e804120a1b72be0e62da58",
+      "bytes": 199
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4460.html",
+      "sha256": "149031e21042ad1f2da0f08638bc8474928d6dd95eecf720449036011fbc501e",
+      "bytes": 236713
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4460.json",
+      "sha256": "cc3e21f5aafd89b7b166fbe4c8e4fdbfd5f72100ac467013936329fc75a9a4ee",
+      "bytes": 190
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4474.html",
+      "sha256": "0ed0ac488613eaa35af049afcdfc19962b8726f23ceb369f090e02ca8031dbc4",
+      "bytes": 874642
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4474.json",
+      "sha256": "438da47db211c96849d3178067372b9d2858e730708df5d5183f1846dd8f5719",
+      "bytes": 198
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4518.html",
+      "sha256": "3afc6b9826604ad0c7e362cc0a809fe3a3c56839cab2bd7e446f0a0098f6786e",
+      "bytes": 1011405
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4518.json",
+      "sha256": "c7b91a46307096b22c1990c4a9e12184340031e21c38857e07e484d53ddef2ee",
+      "bytes": 175
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4594.html",
+      "sha256": "89c11c680d0cc08349f08726bbbeb8bc855d2ca5d005d4b3c913bbcc48b989f3",
+      "bytes": 453530
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4594.json",
+      "sha256": "26237e90322c294049fdf04d8ec671553f73b9136b708ac7a17846dc00c0942c",
+      "bytes": 181
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4620.html",
+      "sha256": "01e3ad096d2e5d33b185497b77159300da366c875f6c1d0b4d07255a4dff3d4c",
+      "bytes": 800775
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4620.json",
+      "sha256": "b9db70231c4ae84d5969fce58ce06c89d12e358d808ed1bc52d3356423280637",
+      "bytes": 179
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4627888.html",
+      "sha256": "7d0d4f19265dc971924bc44c5bc5fd771b0a45ac1c361ed594a396b93d32d481",
+      "bytes": 334880
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4627888.json",
+      "sha256": "b7de7e9aea2b1d3de28d5c43562ff29ff86cb08d22657646354b6fe988a2005a",
+      "bytes": 190
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/46470.html",
+      "sha256": "4f449a29f93d7483863b047eb1af20147b1d12b234f3ff1453b2a1e6f1139f89",
+      "bytes": 343497
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/46470.json",
+      "sha256": "7e95f35fffea98e05e973add0683cf8c43ee04dce72f20823645241b543021eb",
+      "bytes": 184
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4650.html",
+      "sha256": "f182a727c2ced9a5d77453c54f59063b618b5a3f2c103eb483126620509031d9",
+      "bytes": 1565553
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4650.json",
+      "sha256": "016869f88f6c926647c413026bb93e3f06eeb45dfafae5755f94f35aa48217ab",
+      "bytes": 179
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4651.html",
+      "sha256": "62c2ff08715fb61daeffd75d63de63c6fd3ec8ea7e8f8de0fd30ec5f3a544751",
+      "bytes": 819727
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4651.json",
+      "sha256": "ba3c80b22bc2d924d0d95e93fbcc675ab4d6fff5c7b56946defba0e84ef9a89b",
+      "bytes": 179
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4668.html",
+      "sha256": "3820925d579454dbc3c3d8f54f95521e7a78143b354e18738797eb7fb0f8376d",
+      "bytes": 1014100
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4668.json",
+      "sha256": "3dd9b6a2139040a659c9902db5b426f2f4b9b7be3fbd2949646a862c70857efc",
+      "bytes": 189
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4674.html",
+      "sha256": "5cca621609fcaa44907a1238448a7bba25a6dcdf228f3ed0954e277fd5115b87",
+      "bytes": 379177
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4674.json",
+      "sha256": "c55773cff06eee01d062ce3e384a67ce09ce82c313c83947e2f25b2c20f7db4c",
+      "bytes": 175
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4677.html",
+      "sha256": "31b574bed90df9f7cc264820e730dcc206c63baf42735d621e12f9e99dde6e97",
+      "bytes": 692151
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4677.json",
+      "sha256": "ed9febe6c54090cd0a78b81612cc4b0fa232260560d1627ce13de349f2d9371e",
+      "bytes": 185
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4689778.html",
+      "sha256": "a5fdc12b8f48197f96a709a2d4639cde455033db2aa6a8fe0fa0c9047bba7991",
+      "bytes": 52331
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4689778.json",
+      "sha256": "6e16aab373df5ba7447a2449fe55739281f01d4d2dd2fe02b29131779030361d",
+      "bytes": 192
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4700.html",
+      "sha256": "a59cdb716a16184e6114fd18bbef43b88c1772d1bafee7df6072ce71770c617b",
+      "bytes": 1018592
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4700.json",
+      "sha256": "e4a7fd64dde69bafed227373e30c4af81534ceaff5f5f679b2e7d51237a478e7",
+      "bytes": 184
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4764218.html",
+      "sha256": "eea12825cddf164fdb4612c13cb00e62bba763eaf55263695b2c69f475c0b5c0",
+      "bytes": 185200
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4764218.json",
+      "sha256": "953653ea52ab730e1c5e863839355f3e849256df17c38878907b55109a25d69b",
+      "bytes": 189
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4802.html",
+      "sha256": "2b5e650717626806b046dbb529968c24fd25446c6eef2f68d368d0ac6f7375e9",
+      "bytes": 487397
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4802.json",
+      "sha256": "84f99afc85b71919c54651f06b26f6cce459e275fbd25bbff9ddf905bf66fd1d",
+      "bytes": 174
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4831.html",
+      "sha256": "36e1ce900e05b095937ac4021b2034a290ef94b9c6a617812ec82e6a742bd3d3",
+      "bytes": 556801
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4831.json",
+      "sha256": "c730e9aaf31602e1fde9e8a89d025cba5063c07abf5ee826b394fa37612382b7",
+      "bytes": 179
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4917.html",
+      "sha256": "5068aa9567e58e15915163f57fc437a169d555ad8eecb784b2421706759598b4",
+      "bytes": 605127
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/4917.json",
+      "sha256": "12a8bfa6cb24bd2e55509ab3b5b3fc6ffda7e29fdaf23c46cd5a590d328359e8",
+      "bytes": 178
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5176.html",
+      "sha256": "d98089e3908982ab36e6323fa2e5d2ef756b506b98fad11a0cddf3bbb6c94f0b",
+      "bytes": 817025
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5176.json",
+      "sha256": "3ec26df2d47517afa16c0d9c219a4ed829be7d7ab3ca51651b5a006d74f27a5e",
+      "bytes": 177
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/51970.html",
+      "sha256": "7776dfc823b285c0cba06dae5e1ad3e7b2cc497df777ac943cf727f864c43f28",
+      "bytes": 696164
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/51970.json",
+      "sha256": "0dd82432dc797c3ddc376d7bb739289e0e90eca7776c48cef65fe00c68f6ae5b",
+      "bytes": 178
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5244.html",
+      "sha256": "2dfdea5e0a0e12c8e057d5b76fa26f1be0c510a44d6c3c7d724fe3d7f6c690f9",
+      "bytes": 182930
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5244.json",
+      "sha256": "1bf6b6e2a2041a6257b033fe71054a3b73cc8783acd4aa288d6c753c6420bf78",
+      "bytes": 175
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5253.html",
+      "sha256": "a3cee3772790c85b88e0f751ec670511352339351756c791e161fa46d2a782d8",
+      "bytes": 782187
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5253.json",
+      "sha256": "63441278401415d3ee5811ff150208cf7ac9de552d34de8cd0c7ec7b589ad22a",
+      "bytes": 181
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5259.html",
+      "sha256": "8df8cd50706365fc21c5e9ebcbf62d3bf9472562661d38b9f93f0c304c5f6ea2",
+      "bytes": 337374
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5259.json",
+      "sha256": "97c4bbf7a284ca3eb73b93e69c302f371f1ce29766ad167a26be04798f6e25a8",
+      "bytes": 183
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5300.html",
+      "sha256": "061609ef5e9acdda6b47a87aa791c5eb3d96505472a7118bfa669423d61a83fd",
+      "bytes": 428349
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5300.json",
+      "sha256": "f53d69f58eb6a3f6d409823b52d397c53591f25020682297d7559bb527f2ab37",
+      "bytes": 190
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5306.html",
+      "sha256": "d0d409af6260de09a0f886baa00d5af4e9b1172432b36b07475636b2d039afb8",
+      "bytes": 463652
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5306.json",
+      "sha256": "9d3cb5097c839b6b9bdd5f9b9a829b125f0a19284e927ebd340e788c36b0f2a1",
+      "bytes": 189
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5311.html",
+      "sha256": "863ae70e0a65253df45525f2df0e92ac84cfaaae10404537b3b35b0dd5a27171",
+      "bytes": 424138
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5311.json",
+      "sha256": "e88965d18bd111999add141b13ca729615fb71a50a11038b2dcb3abbb1e97dd4",
+      "bytes": 189
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/533423.html",
+      "sha256": "2a85159c496e1916773af1f0c8def6623d57daf9770b02d30660add34e0172a2",
+      "bytes": 596435
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/533423.json",
+      "sha256": "5aa7acf27e0b19e8f01a9cac08ed81ff19e286444893a40013303bc1b53ea472",
+      "bytes": 192
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5348805.html",
+      "sha256": "210af4de6ed3a3d5f07f54ae44ab18e86e3942527e428970f833b1f883194d7e",
+      "bytes": 138533
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5348805.json",
+      "sha256": "14695332e6025350c4c9ea222f17c183afd84a9bd34417dab994186cbcbe915f",
+      "bytes": 193
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5378.html",
+      "sha256": "727ba5f44c0bb52553384c2e022e14c790702e1b19787f5cffedad0b61c03aeb",
+      "bytes": 632120
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5378.json",
+      "sha256": "bfcbfe47f8744cbff5329e4da4a4b31e96965fe75bc246571882dd3d8c5c1f10",
+      "bytes": 187
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5649.html",
+      "sha256": "01f9caba9b9c51dad471d8b41bc7666e4b74987ef5662687e00364f099efb6d8",
+      "bytes": 519170
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5649.json",
+      "sha256": "ae104d9d548ed9db3e17f7ade6aad009ae60fb42f15c639bf966ce55fe46717a",
+      "bytes": 192
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/569180.html",
+      "sha256": "ed4dfaea8aba680dc37dd515950fab32c72b3e571330cb4f01882ff26fc43dd1",
+      "bytes": 167880
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/569180.json",
+      "sha256": "244df6ccff06b6125db938eaa6b73184b8b220cdd35f3a05667e2092397f6838",
+      "bytes": 190
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5739.html",
+      "sha256": "7c935572cd3e8e55ce11e6ea5fe2c4937e7f4fef5c1b3d1eb84e3f7e8bcf1767",
+      "bytes": 480109
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5739.json",
+      "sha256": "302afff0133278b8a4705c83f9c62d7e0142e055d099cfdf6c83c3c7c022b219",
+      "bytes": 177
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5749.html",
+      "sha256": "0c876f4b7506fd1e4c3e7260154a80823fddfa94c966096af2e536ecf6564c58",
+      "bytes": 204809
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5749.json",
+      "sha256": "84d6e66267996773d9d135096783f4032bca41bc1a871e7bbef4f3dd81645967",
+      "bytes": 177
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5826.html",
+      "sha256": "9e3da33b78d02a3848cd2b07a633e644ab9a18ec71ee05900eddf8193922160f",
+      "bytes": 1054498
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5826.json",
+      "sha256": "bff4cd8dacd4e9c6c2aba920faf6213da3528adf759b766943bebfe978dd5426",
+      "bytes": 183
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5865.html",
+      "sha256": "509f938c51389d4d3a2d446a1ce8a7753c1530bbcbf437b712bed78387460684",
+      "bytes": 861280
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5865.json",
+      "sha256": "c61d54e4d0df136257fe1755258b4fcbf97bd132538e6934b6dceefbda882714",
+      "bytes": 186
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5894781.html",
+      "sha256": "d429ecb9bb58dd6b1bae54127351a2af043fba6bc40ed87ab179be8642828f52",
+      "bytes": 232553
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5894781.json",
+      "sha256": "a30c09f026501fa255bee6af75fcf7de2c07f3f42f15b0179a46b426e70611df",
+      "bytes": 195
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5930652.html",
+      "sha256": "d594e965f05f48c4ea889b5a5e37a0e32cf7e9ab46616c2e17cb4ffb97c29eac",
+      "bytes": 242394
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/5930652.json",
+      "sha256": "5696bc556181ffb1265b164b15e8fa7a3e880ce1fb5225159dccc97206b2c27a",
+      "bytes": 197
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/6073894.html",
+      "sha256": "1c27edccf2d9a673a667d474a15cd649fb1ab2938b332ce40738cd659c5057a5",
+      "bytes": 517296
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/6073894.json",
+      "sha256": "6646d9623452bc83046c22a14a08d12f0d5a9a3c12fb7d9cc81353a4473ff1b2",
+      "bytes": 187
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/633.html",
+      "sha256": "5d1150477de1b161f7112bfe96db2dddb375b0d6db48860c7ed6f97a58116b16",
+      "bytes": 1096851
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/633.json",
+      "sha256": "939641034a05b8aad6b5db6fab31515853a886b7bdcafea1a202a04e53b08085",
+      "bytes": 176
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/639.html",
+      "sha256": "1a665163320036c0addce8b16ad9ae7534b9242e9794584f310651996eb4ff22",
+      "bytes": 631737
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/639.json",
+      "sha256": "1b69c1488b553633703f9d038b202936416a17a6d3cce7292436567be1e8e9ee",
+      "bytes": 177
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/656.html",
+      "sha256": "895a9a34bf9fccc3a0bdefd7f867abc29c74545d0b5029bd2704c7bf4b020a5b",
+      "bytes": 369892
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/656.json",
+      "sha256": "ba088ea0dff4a62426b79039f9e19579e5973e8b8e92d192f20d8dd35cb59f35",
+      "bytes": 175
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/6900318.html",
+      "sha256": "ba349df242e94cb9ac22b80975f0a19a7823d2b45d1ecfd19ec7e3659a3a31c1",
+      "bytes": 455381
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/6900318.json",
+      "sha256": "35727baa638845198d2c1a39e49427355bf3b005ec9a9bcbfd1e9849bd40c6c1",
+      "bytes": 194
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/698.html",
+      "sha256": "40e7480510e7c9ca6cbf3aa261871f7b9079c0d2e47257d2768f6d743480ff31",
+      "bytes": 875071
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/698.json",
+      "sha256": "e4628d1429bd9d1bdb87b5f514f6f4aa80de619e2bca238c428984cf6d003d8f",
+      "bytes": 181
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/7330660.html",
+      "sha256": "9869995d72f24899af035ff82f30229cb7430423cc446b0a6155ce80921b1183",
+      "bytes": 250920
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/7330660.json",
+      "sha256": "d360491cabe13e86d4f20f607d6b47a595b71c1d003ca6e372a8755b1cf7461e",
+      "bytes": 199
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/7424.html",
+      "sha256": "9988170c62a0ec144b5512918bb6f3341d94d12f9c46c74e6a8a77cb3f720ad8",
+      "bytes": 488112
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/7424.json",
+      "sha256": "b619c1b9159db6571afc09b121e94d215aece09f600285f97d51f932006cda42",
+      "bytes": 176
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/748.html",
+      "sha256": "e13ec0086bddd42c53a35b7378ff1cabe7a3607aef9174ddde1b6ab20cc2d7cd",
+      "bytes": 338856
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/748.json",
+      "sha256": "641bf149cda33b2bd443184573885d004376b5e5974f234c8a55bb2f9d0b3f52",
+      "bytes": 184
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/757254.html",
+      "sha256": "800d97512bebffe085d9a1c40ba5b330495b2694fff6f0148fbab4493fcb066f",
+      "bytes": 233318
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/757254.json",
+      "sha256": "d497ecd1614f2c51dcb67155dad062e29cc51f4a9fb14cd2b43cdd39db4cf021",
+      "bytes": 188
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/7655739.html",
+      "sha256": "1a70f042495b8d515965451fd5c2915a7fb85eaf14627a682bf3d8ff7360b230",
+      "bytes": 221259
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/7655739.json",
+      "sha256": "27c1416436d7ed5c2c8c1ab8e9dff990ddb56d624e0cb13aba9cb0ead369c8e4",
+      "bytes": 194
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/78241963.html",
+      "sha256": "99c17057557ca48c032b845a1816db9615fbf7a8278d9b13f51ba605f192795c",
+      "bytes": 60997
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/78241963.json",
+      "sha256": "7e3263dd39f5908e8f847edcc9dea7b2b8822938ed9b7558f31c6e183975cb19",
+      "bytes": 193
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/8208783.html",
+      "sha256": "616797f9ccfe4b9b42425cfe8379f3e227e29b56955e0c2faa3999e033e439bc",
+      "bytes": 102520
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/8208783.json",
+      "sha256": "0d22353907b6bed55884000196fd342b8477b55790ebb50fc322da6f67f40dc7",
+      "bytes": 191
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/874.html",
+      "sha256": "38d096fff05991d00a91b3f38f72f7972b8a5fa179d59bace24264ba90f595de",
+      "bytes": 1398177
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/874.json",
+      "sha256": "5253de4e5d21beb462e2000f7b1c407f70a9251e4c47df857dbd0f2f718387a6",
+      "bytes": 180
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/92295.html",
+      "sha256": "908b854008831d8c53ddea0022d32d5fa1e8d5c2b83c8f01a7b3b314ffc7a1c6",
+      "bytes": 329836
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/92295.json",
+      "sha256": "4f6c169179772bf006c7624c77ae39f42d345910e9ce60e73649514462f75177",
+      "bytes": 177
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/991.html",
+      "sha256": "1b5b90205309a1aacae26e9df0c49089d2a01bd6f609b2a97f31972737872d51",
+      "bytes": 490507
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/991.json",
+      "sha256": "821fcd2889fc822f280a3b0e8b750531c6807f9724f19219cda7c4f62a886df1",
+      "bytes": 185
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/9996.html",
+      "sha256": "13d37b0e94ffe81ec8aeca1f0b00ff65aab013bd8d5e276e415c7736120fbb6c",
+      "bytes": 536226
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/9996.json",
+      "sha256": "ee4872b2e9e9791ffe4716df0cd4ecf818e04487dcf881a3c7d3f4eec845df0c",
+      "bytes": 179
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-0.json",
+      "sha256": "6da105c0d7f3780e117feddaaf50566c09d4784080862e40f7cf59252bef1e93",
+      "bytes": 3722
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-100.json",
+      "sha256": "06954de6660e8360a75c5a472bb239ea1f3431b848bf9b839c73e882b527334d",
+      "bytes": 7409
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-1000.json",
+      "sha256": "e2e2d84f3a1aa786f7b7f500aaeadf41c17595a7cbef72927a5e91615dc27ec1",
+      "bytes": 8298
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-1050.json",
+      "sha256": "582cbb3f497175caf501c406986ba8b4fdaea74cec0532b027832640290adfef",
+      "bytes": 4516
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-150.json",
+      "sha256": "aac4175364756acfde1b882991bb2f020e37931b1c1f2066c1d070e5c09e6490",
+      "bytes": 7377
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-200.json",
+      "sha256": "5bd04483b79bb244305642769228e0bba0ad1aea5b2cc6c3562d93ff332fcf01",
+      "bytes": 7393
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-250.json",
+      "sha256": "13b76b4dd5aaa8e917a0072ef7050ab643829fc8e3f2d6a76561c231606a205d",
+      "bytes": 7343
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-300.json",
+      "sha256": "4263895a2d08541f1b10823d0968f1c79eb35341970d8b70372b4ed11851765f",
+      "bytes": 7306
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-350.json",
+      "sha256": "4b19069bc94fde1c2b85fa4ae1b086d8b9529defe9b337441f83398d44e9cb33",
+      "bytes": 7391
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-400.json",
+      "sha256": "4b0c799eed63cc5acb1e7bb19bb777bcb2a5cca6a3c7f33cdaa15427aed512c7",
+      "bytes": 7495
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-450.json",
+      "sha256": "2b23598d6bde1cd82a407697ace9258aad179645f3f20be880bcc6c52703a63d",
+      "bytes": 8035
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-50.json",
+      "sha256": "0b6ab4e7103d5d7532c8a6afdc666fe0142599158074183c4f10b8289a41d1d5",
+      "bytes": 5926
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-500.json",
+      "sha256": "99e1cfd987023a7ca3f8640b3881fc82f02dfe688a4ebe2e020c5a95cc4f89e7",
+      "bytes": 8092
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-550.json",
+      "sha256": "02b9d2a912eae7331df3a42a195f8c9711bbd36805fc87e2e1276836fabfceef",
+      "bytes": 8240
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-600.json",
+      "sha256": "5057aad2d068454afbc108d0c18130630d52b256afc7d22c917625cd1eb59ed3",
+      "bytes": 8182
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-650.json",
+      "sha256": "7e892f3d3af78c9690bd4fa119eb06dc810ba73dd0cbdd3467089d24a5079138",
+      "bytes": 8190
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-700.json",
+      "sha256": "7d42e050a3395291a91368e1a5c5e732a45fc38ee545dd2a09ba68c2399d7482",
+      "bytes": 8066
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-750.json",
+      "sha256": "25d7b8caf43e34964f5a630e5e94841c501397c5e463114e06e7a559bd2fc646",
+      "bytes": 8151
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-800.json",
+      "sha256": "2b16b254df5974d4bc3a68e2c7d444947cef57c687cf2c2c280c9e446845c0d5",
+      "bytes": 8051
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-850.json",
+      "sha256": "dad32e32d98da8f1dbda27afcc68aa7b9280d6a2dc6e0683f4c9abc262a44921",
+      "bytes": 8104
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-900.json",
+      "sha256": "a8ff0c2b851a8b50ba752839b71d4b199f2017548aee2bb706db292404df2c1b",
+      "bytes": 8045
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/batch-950.json",
+      "sha256": "75c3a7c5c500f441973c9760687f633baf181b9115617a1f5eb755f93c05c7b9",
+      "bytes": 8113
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/receipts.jsonl",
+      "sha256": "6590c6bad67d12ae580eb5a1bf40cf07aee10b2608a64d39ba1f0a5d975b8299",
+      "bytes": 379686
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/replacement-batch-0.json",
+      "sha256": "aa62f64e8d42a9a73206ff1aaf30a7e13c4f1c91118e8f289c00a4c52dc691a9",
+      "bytes": 3683
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/replacement-batch-25.json",
+      "sha256": "4dd7282fbc4f0d92c6048f1e50f91a0a85e5121e07296ab003c4c54c0bef5c75",
+      "bytes": 3736
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/replacement-batch-50.json",
+      "sha256": "9dbab0dc3e0caad8db3f0a151db1f39a018eba8ea045ee1ffeff7987ee77ae89",
+      "bytes": 3773
+    },
+    {
+      "path": "downloads/broad-reference/html-v2/replacement-batch-75.json",
+      "sha256": "fdd69166f094178180000e9232ecdd5f2928fe27c5f193006ccdb3afcd7f0668",
+      "bytes": 3684
+    },
+    {
+      "path": "downloads/general-research/acquisition/CC-BY-SA-4.0.txt",
+      "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5",
+      "bytes": 20138
+    },
+    {
+      "path": "downloads/general-research/acquisition/wikimedia-terms.html.text.txt",
+      "sha256": "28f6b42828956417aefa1bcaa2512778738f8f4113154eddaedb27809103f729",
+      "bytes": 53193
+    },
+    {
+      "path": "downloads/reference-expansion/source-packet.json",
+      "sha256": "abbb800f0c837f401cb9c9d0f3ccf836e191c9f06d797917ef7678833ee392bc",
+      "bytes": 2093351
+    },
+    {
+      "path": "tools/packs/reference-expansion/selection.json",
+      "sha256": "21dab3107d7267b7a4ec79eeba32d7677cff087ecc5a354746a65779086bc29a",
+      "bytes": 72874
+    }
+  ],
+  "original_source_bytes": 73824999,
+  "candidate_source_documents": 140,
+  "admitted_documents": 120,
+  "admitted_paragraphs": 120,
+  "subject_families": 20,
+  "source_review_sha256": "987d9b904c49afaf42f7529a1ba3b1a94dd713c0764ea6a529c494e4dea0f568"
+}

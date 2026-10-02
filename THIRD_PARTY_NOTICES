@@ -292,3 +292,25 @@ Structures, NIST: https://xlinux.nist.gov/dads/HTML/algorithm.html .
 Media and separately quoted material are excluded. Printing press and Cellular
 respiration were rejected for captured source warnings. This does not clear
 other bulk Wikipedia data or the separately limited GeoNames source review.
+
+Task 480 bounded reference expansion (separate from task 470)
+----------------------------------------------------------
+The development edition reference-expansion-2026-10-02-v1 selects one complete
+paragraph from each of 120 Wikipedia articles across 20 subject families.
+Wikipedia contributors retain attribution through exact article/revision and
+contributor-history URLs. The selected transformed text is offered under
+Creative Commons Attribution-ShareAlike 4.0 International, with full offline
+license text in the pack and source reader; no additional restrictions apply.
+Changes comprise paragraph selection, HTML/entity/whitespace transformation,
+and explicit preservation of source TeX and super/subscripts. No media or linked
+external works are included. Article footnotes remain original text, not app
+citation identifiers. Item-specific credits and limitations are retained in
+source-review.json and the pack; this is not clearance of the browse-only bulk
+corpus or a claim of generated factual support. Twenty candidate documents and
+all later candidate paragraphs remain excluded or unresolved.
+Exact source, revision, acquisition, license and transformation evidence:
+docs/evidence/reference-coverage-expansion/source-artifacts.json and
+source-review.json; original response bytes remain at their pinned rig paths.
+License: https://creativecommons.org/licenses/by-sa/4.0/
+Publisher terms: https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use
+Current Android installation and independent unseen evaluation are pending.

@@ -1,0 +1,20 @@
+[
+  {
+    "command": [
+      "bash",
+      "tools/evaluation/check_general_research_product.sh"
+    ],
+    "returncode": 1,
+    "elapsed_seconds": 0.8151394300221,
+    "log": "downloads/reference-expansion/required-checks-current/check-0.log"
+  },
+  {
+    "command": [
+      "bash",
+      "tools/evaluation/check_reference_coverage_expansion.sh"
+    ],
+    "returncode": 1,
+    "elapsed_seconds": 0.8149227399844676,
+    "log": "downloads/reference-expansion/required-checks-current/check-1.log"
+  }
+]
