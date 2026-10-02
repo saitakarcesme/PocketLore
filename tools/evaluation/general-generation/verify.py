@@ -43,6 +43,12 @@ assert len(negative)==4
 print(json.dumps({'artifact_behavior':'PASS','negative_controls':negative,'scope':'host development; no semantic approval inferred'}))
 # Required check must not pass because safe withholding hides missing usefulness or Android qualification.
 review=json.loads((P/'support-review.json').read_text()) if (P/'support-review.json').exists() else {}
+
+if review:
+ assert review['status']=='COMPLETE_SUPPLEMENTAL_REVIEW_PRODUCT_NOT_QUALIFIED'
+ for name,model in review['models'].items():
+  assert len(model['cases'])==12
+  for case in model['cases']:assert sha(R/case['raw_path'])==case['raw_file_sha256']
 gates={'independent_review_present':bool(review),'selected_model_android_jni_ui':False,'general_runtime_support_verifier_qualified':False,'current_complete_distribution_measured':False}
 print(json.dumps({'product_gates':gates,'status':'FAIL','reason':'Host draft feasibility is not a qualified general supported Android answer path'}))
 sys.exit(1)
