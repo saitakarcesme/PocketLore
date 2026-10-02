@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/docs/evidence/general-research/source-packet/verify.py", line 59, in <module>
+    if __name__=='__main__':check()
+                            ~~~~~^^
+  File "/home/isa/Projects/PocketLore/docs/evidence/general-research/source-packet/verify.py", line 39, in check
+    result=validate()
+  File "/home/isa/Projects/PocketLore/docs/evidence/general-research/source-packet/verify.py", line 22, in validate
+    oldcache=prepare.CACHE;oldbuild=build.CACHE
+                                    ^^^^^^^^^^^
+AttributeError: module 'build' has no attribute 'CACHE'

@@ -1,0 +1,11 @@
+{
+  "reason": "Evidence-only source packet audit added after missing-original-bytes criticism; application/build/extraction/fixtures remain byte-identical to the preserved Android run. No device replay or new quality measurement.",
+  "changed_inputs": {
+    "tools/evaluation/general-research/check.py": {
+      "before": "e3fe03396c4ae58bba12d29a7739faf385a9fd09ceb5eaad3dff9531b3501427",
+      "after": "f7900b29f050855e284fed6ab630b278c53eaf94ae6391c2adc7c8c0b7774201"
+    }
+  },
+  "source_validator_sha256": "c8e284a6fa374a6f24b1fb6cca122904e7364c805a7bdde72c6a5cebd026b437",
+  "source_manifest_sha256": "2c2252e827b14f38bd9cc6e6ce595aaeb4ebc955919afbef24a56985b1c936e4"
+}
