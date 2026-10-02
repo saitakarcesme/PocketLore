@@ -1,0 +1,16 @@
+{
+  "protocol": "CF-01 task420 public development v1; frozen before implementation",
+  "environment": "Host JVM virtual byte snapshots for huge limits; temporary real files only for bounded lifecycle",
+  "target_bytes": 45000000000,
+  "hard_bytes": 50000000000,
+  "free_reserve_bytes": 268435456,
+  "cases": [
+    {"id":"available-boundary","peak":4096,"available":268439552,"expect":"exact passes; one byte less refuses"},
+    {"id":"target-boundary","measured":44999995904,"peak":4096,"expect":"exact 45GB passes; one byte more refuses target"},
+    {"id":"hard-boundary","measured":49999995905,"peak":4096,"expect":"above 50GB refuses hard; unknown and overflow refuse"},
+    {"id":"concurrent","measured":0,"available":268443648,"peak_each":8192,"expect":"two simultaneous callers: only one live reservation; retry after release passes"},
+    {"id":"release","peak":8192,"expect":"real copy cancellation and injected read failure delete stage and release; double close does not subtract twice"},
+    {"id":"rollback-retry","peak":8192,"expect":"retained selected fixture unchanged after malformed GGUF and interrupted staging; same-process valid GGUF staging retry and atomic promotion succeed"}
+  ],
+  "limits": "No disk filling; no model inference; fixture GGUF magic is not a real model or runtime compatibility proof. No whole-device or provider accounting claim."
+}
