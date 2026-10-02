@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Offline validation of original source bodies; no device or network work."""
-import hashlib, importlib.util, json, pathlib, sys, tempfile
+import base64, hashlib, importlib.util, json, pathlib, sys, tempfile
 ROOT=pathlib.Path(__file__).resolve().parents[4]
 BASE=pathlib.Path(__file__).resolve().parent
 sha=lambda b:hashlib.sha256(b).hexdigest()
@@ -11,6 +11,10 @@ def validate(base=BASE):
     for item in manifest['files']:
         p=base/item['file'];data=p.read_bytes()
         assert p.resolve().is_relative_to(base.resolve())
+        if item.get('encoding')=='base64':
+            assert len(data)==item['transport_bytes'] and sha(data)==item['transport_sha256'],item['file']
+            data=base64.b64decode(b''.join(data.splitlines()),validate=True)
+        else:assert 'encoding' not in item
         assert len(data)==item['bytes'] and sha(data)==item['sha256'],item['file']
     historical={x['path']:x for x in json.loads((ROOT/'docs/evidence/general-research/original-artifacts.json').read_text())}
     for item in manifest['files']:
@@ -42,6 +46,7 @@ def check():
     # Virtual copies link immutable files; replace/unlink only task-owned temporary paths.
     rejected=[]
     targets=['originals/1376037819.json','originals/wiki-current.json','originals/CC-BY-SA-4.0.txt','originals/1376037819-footer.html','originals/1376037819-history.html']
+    targets += [x['file'] for x in json.loads((BASE/'manifest.json').read_text())['files'] if x.get('encoding')=='base64']
     for target in targets:
         for mode in ['missing','changed']:
             with tempfile.TemporaryDirectory() as temp:

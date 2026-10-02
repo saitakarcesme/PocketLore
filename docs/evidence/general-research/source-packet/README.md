@@ -50,3 +50,13 @@ remain attached to the selected adaptation. Partial50-entry histories, excluded
 warning-bearing articles, unreviewed bulk rights and later unseen/physical tests
 remain limits. The packet enables independent inspection; hashes do not establish
 rights, truth, relevance or complete useful answers by themselves.
+
+Repair2 transport: the three excluded OpenStax license observations use `.base64`
+ASCII transport because textual patch delivery normalized their original CRLF to
+LF. `encoding`, `transport_bytes` and `transport_sha256` identify stored bytes;
+`bytes` and `sha256` still identify the exact decoded original, including all429
+CRLF pairs. This is lossless encoding, not license normalization or a changed
+rights disposition. The validator rejects altered/missing transport and checks
+both transport and decoded hashes. All other original bodies remain unencoded.
+`../repair-2/verify_text_transport.py` validates a fresh committed snapshot after
+CRLF-to-LF textual transport without any ignored acquisition cache.

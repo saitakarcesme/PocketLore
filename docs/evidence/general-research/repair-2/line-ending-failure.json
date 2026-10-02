@@ -1,0 +1,33 @@
+{
+  "failed_checkpoint": "615e530d56fbaa394edaeca91cc616904807c4ae",
+  "failure": "Textual patch normalization loses CR bytes; LF bytes cannot satisfy the original manifest.",
+  "records": [
+    {
+      "file": "osbooks-biology-bundle-LICENSE",
+      "original_bytes": 21442,
+      "original_sha256": "ab1a44bbba58252630134574d7b2534813339240eb645825ffcc2487dbe8114a",
+      "crlf_pairs": 429,
+      "lf_transport_bytes": 21013,
+      "lf_transport_sha256": "8e63d319b3d085a7571278ea3033d713131ac0d330b87cf9ac854e05ee44229d",
+      "same_hash": false
+    },
+    {
+      "file": "osbooks-chemistry-bundle-LICENSE",
+      "original_bytes": 21442,
+      "original_sha256": "ab1a44bbba58252630134574d7b2534813339240eb645825ffcc2487dbe8114a",
+      "crlf_pairs": 429,
+      "lf_transport_bytes": 21013,
+      "lf_transport_sha256": "8e63d319b3d085a7571278ea3033d713131ac0d330b87cf9ac854e05ee44229d",
+      "same_hash": false
+    },
+    {
+      "file": "osbooks-principles-economics-bundle-LICENSE",
+      "original_bytes": 21442,
+      "original_sha256": "ab1a44bbba58252630134574d7b2534813339240eb645825ffcc2487dbe8114a",
+      "crlf_pairs": 429,
+      "lf_transport_bytes": 21013,
+      "lf_transport_sha256": "8e63d319b3d085a7571278ea3033d713131ac0d330b87cf9ac854e05ee44229d",
+      "same_hash": false
+    }
+  ]
+}

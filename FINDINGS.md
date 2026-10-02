@@ -410,3 +410,7 @@ Existing5560 actual UI/import/rollback/cancel/source-reader/restart checks pass 
 ## Task 460 repair 1 — original evidence delivery
 
 The failed79b8e4e packet's original source/license/footer/history bytes were not available in committed evidence despite local hash receipts. The repair includes the unchanged bounded originals and an offline extraction/rebuild validator with ten missing/changed-source controls. Client HTTP headers remain outside Git in labelled receipt projections. A standalone module collision found by independent review was fixed with module identity assertions; its raw failure is retained. Only the offline checker has an explicit hash-bound audit amendment; application/build/fixtures remain identical to the measured candidate. Required build and audit pass;12/24 is unchanged historical development usefulness, not a new Android run, broad rights approval, generated success or physical acceptance.
+
+## Task460 repair2 — exact bytes across textual patch delivery
+
+Three excluded OpenStax license observations had429CRLF pairs each; canonical textual patch delivery converted them toLF and broke original-byte hashes despite local Git blobs being intact. The repair uses explicit base64 transport with separate encoded/decoded hashes and keeps original source hashes unchanged. Missing/changed controls include all three licenses, and a fresh LF-normalized Git snapshot validates without downloads. No app/corpus/quality/rights expansion or device replay is part of this fix; earlier failures remain preserved.
