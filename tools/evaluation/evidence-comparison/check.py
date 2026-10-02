@@ -20,7 +20,7 @@ def verify(d):
  for pkg,info in m['apks'].items():
   for when in ['installed','final']:assert d[when+'-'+pkg+'.txt'].decode().split()[0]==info['sha256']
  r=json.loads(d['first.json']);required={'saved_creates_grid','ui_exact_selected_quote','exact_source_reader_identity','recreation_retains_quote_note','portable_gap_identity_offsets','export_retry_exact_bytes','clear_unknown_gap','research_record_denied','six_dimension_limit','corrupt_literal_gap','corrupt_hash_gap','stale_offset_gap','missing_source_gap','split_surrogate_denied','blocked_export_cancelled'};assert required<=set(r['checks'])
- cold=json.loads(d['cold.json']);assert {'cold_store_exact_export','cold_note_retained','original_notebook_records_retained'}<=set(cold['checks'])
+ cold=json.loads(d['cold.json']);assert {'cold_store_exact_export','cold_note_retained','cold_persisted_quote_bindings','saved_comparison_reopened','original_notebook_records_retained'}<=set(cold['checks'])
  for name in ['manual-grid','unknown-grid','cold-grid']:
   assert d[name+'.png'].startswith(b'\x89PNG') and len(d[name+'.png'])>10000
   assert b'clickable=true' in d[name+'-accessibility.txt']
