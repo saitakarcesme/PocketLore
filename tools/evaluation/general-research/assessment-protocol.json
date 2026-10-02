@@ -1,0 +1,13 @@
+{
+  "frozen_before_first_execution": true,
+  "minimum_complete_useful_source_briefs": 12,
+  "population": 24,
+  "unsupported_attributed_claims": 0,
+  "absent_questions": [
+    "g22",
+    "g23",
+    "g24"
+  ],
+  "definition": "Independent inspection of final literal quotations against exact sources and all requested obligations; citation formatting and retrieval counts alone are insufficient. Excluded-source cases remain in denominator. Partial source coverage is reported separately; no generated-success credit.",
+  "artifact_gate": "Exact final rendered hashes and fixed original-run identities; missing, changed, stale or new source inputs fail until fresh review. No threshold search or repeated generation."
+}
