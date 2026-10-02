@@ -61,7 +61,12 @@ def main():
    for ext in ['.png','.txt']:run(ADB+['exec-out','run-as','org.pocketlore.app','cat','files/accessible-check-'+id+'/'+name+ext],name+ext)
  finally:
   shell(['cat','/proc/sys/kernel/random/boot_id'],'boot-after.txt')
-  for setting,name in [('font_scale','font'),('user_rotation','rotation'),('accelerometer_rotation','auto-rotation')]:shell(['settings','get','system',setting],name+'-after.txt')
+  for setting,name in [('font_scale','font'),('user_rotation','rotation'),('accelerometer_rotation','auto-rotation')]:
+   observed=shell(['settings','get','system',setting],name+'-observed-after.txt');original=(out/(name+'-before.txt')).read_bytes().strip().decode()
+   if observed.strip().decode()!=original:
+    command=['settings','delete','system',setting] if original=='null' else ['settings','put','system',setting,original]
+    shell(command,name+'-recovery.txt')
+   shell(['settings','get','system',setting],name+'-after.txt')
   retain('after');disk('after')
  for pkg in apks:installed(pkg,'final')
  m={'run_id':id,'serial':'emulator-5560','source_hash':source_hash,'sources_after':sources(),'apks':apks,'files':{p.name:sha(p.read_bytes()) for p in out.iterdir() if p.is_file()}}
