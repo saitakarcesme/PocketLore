@@ -18,7 +18,7 @@ def verify(d):
  assert json.loads(d['runtime.txt.command.json'])['returncode']==0
  for pkg,info in m['apks'].items():
   for when in ['installed','final']:assert d[when+'-'+pkg+'.txt'].decode().split()[0]==info['sha256']
- assert len(r['states'])==66 and len(set(r['states']))==66
+ assert len(r['states'])==72 and len(set(r['states']))==72
  assert all(x['ratio']>=4.5 for x in r['contrast'])
  for name in r['states']:
   assert d[name+'.png'].startswith(b'\x89PNG') and len(d[name+'.png'])>10000

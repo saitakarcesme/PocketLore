@@ -44,7 +44,9 @@ final class ReaderUi {
         android.graphics.drawable.StateListDrawable states=new android.graphics.drawable.StateListDrawable();states.addState(new int[]{android.R.attr.state_focused},focus);states.addState(new int[]{},normal);
         return new android.graphics.drawable.RippleDrawable(android.content.res.ColorStateList.valueOf(0x22245B43),states,null);
     }
+    static void revealFocus(View view){for(android.view.ViewParent p=view.getParent();p!=null;p=p.getParent())if(p instanceof ScrollView){ScrollView scroll=(ScrollView)p;android.graphics.Rect r=new android.graphics.Rect(0,0,view.getWidth(),view.getHeight());scroll.offsetDescendantRectToMyCoords(view,r);int top=scroll.getScrollY()+scroll.getPaddingTop(),bottom=scroll.getScrollY()+scroll.getHeight()-scroll.getPaddingBottom();if(r.bottom>bottom)scroll.scrollBy(0,r.bottom-bottom);else if(r.top<top)scroll.scrollBy(0,r.top-top);break;}}
     static void styleButton(Activity a,Button b,boolean primary){
+        b.setOnFocusChangeListener((v,focused)->{if(focused)v.post(()->{if(v.hasFocus())revealFocus(v);});});
         b.setBackground(surface(a,primary?TEAL:Color.TRANSPARENT,12,false));b.setBackgroundTintList(null);b.setTextColor(primary?NAVY:TEAL);b.setPadding(dp(a,12),dp(a,10),dp(a,12),dp(a,10));
         b.setSingleLine(false);b.setMaxLines(Integer.MAX_VALUE);b.setEllipsize(null);b.setHorizontallyScrolling(false);
         b.setStateListAnimator(null);b.setElevation(0);b.setMinHeight(dp(a,48));b.setMinWidth(dp(a,48));b.setAllCaps(false);b.setGravity(android.view.Gravity.CENTER_VERTICAL|android.view.Gravity.START);b.setTextSize(16);
@@ -91,7 +93,7 @@ final class ReaderUi {
         LinearLayout row=null;for(int n=0;n<names.length;n++){if(n%columns==0){row=new LinearLayout(a);nav.addView(row);}String name=names[n];Button b=new Button(a);b.setText(name);styleButton(a,b,false);b.setGravity(android.view.Gravity.CENTER);Icon icon=new Icon(name);icon.setBounds(0,0,dp(a,22),dp(a,22));b.setCompoundDrawables(null,icon,null,null);b.setCompoundDrawablePadding(dp(a,6));b.setBackground(surface(a,name.equals(selected)||name.equals("Explore")&&selected.equals("Places")?0xFFE1E9DD:Color.TRANSPARENT,16,false));b.setSelected(name.equals(selected));b.setContentDescription(name+(b.isSelected()?", selected":""));b.setOnClickListener(v->navigate(a,name));LinearLayout.LayoutParams np=new LinearLayout.LayoutParams(0,-2,1);np.setMargins(dp(a,2),0,dp(a,2),0);row.addView(b,np);}
         root.addView(nav);return root;
     }
-    static void screen(Activity a,LinearLayout page,String selected){LinearLayout root=shell(a,selected);ScrollView scroll=new ScrollView(a);scroll.setFillViewport(true);scroll.addView(page);root.addView(scroll,1,new LinearLayout.LayoutParams(-1,0,1));}
+    static void screen(Activity a,LinearLayout page,String selected){LinearLayout root=shell(a,selected);ScrollView scroll=new ScrollView(a);scroll.setSmoothScrollingEnabled(false);scroll.setFillViewport(true);scroll.addView(page);root.addView(scroll,1,new LinearLayout.LayoutParams(-1,0,1));}
     static void openSource(Activity a,String title,String detail,String provenance){
         NotebookActivity.IO.execute(()->{try(NotebookStore store=new NotebookStore(a)){long id=store.add("source",title,"",detail,provenance,false);a.runOnUiThread(()->{if(!a.isDestroyed())a.startActivity(new android.content.Intent(a,SourceReaderActivity.class).putExtra("record",id));});}
             catch(Exception e){a.runOnUiThread(()->new android.app.AlertDialog.Builder(a).setMessage("Could not save source history: "+e.getMessage()).setPositiveButton("Read without saving",(d,w)->reader(a,title,detail)).setNegativeButton("Close",null).show());}});
