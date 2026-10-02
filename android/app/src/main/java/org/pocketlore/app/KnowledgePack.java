@@ -119,11 +119,11 @@ public final class KnowledgePack {
                     String originalHash=field(p,"source_span_sha256");
                     require(originalHash.matches("[0-9a-f]{64}"),"Invalid original span hash");
                     originalSpans.put(citation,new String[]{Long.toString(finish-start),originalHash});
-                    provenance.put(citation,provenance.get(citation)+"\nOriginal Markdown UTF-16 range: ["+start+", "+finish+")\nOriginal span SHA-256: "+originalHash+"\n"+field(m,"transformation"));
+                    provenance.put(citation,provenance.get(citation)+"\n"+(d.has("source_text_format")?"Source text ("+field(d,"source_text_format")+")":"Original Markdown")+" UTF-16 range: ["+start+", "+finish+")\nOriginal span SHA-256: "+originalHash+"\n"+field(m,"transformation"));
                 }
                 if(d.has("license_text")) {
                     String legal=d.getString("license_text");
-                    require(!legal.trim().isEmpty() && legal.length()<=16000,"Invalid offline license text");
+                    require(!legal.trim().isEmpty() && legal.length()<=24000,"Invalid offline license text");
                     provenance.put(citation,provenance.get(citation)+"\nRights basis: "+field(d,"rights_basis")+"\nRights limits: "+field(d,"rights_disposition")+"\nOffline license text:\n"+legal);
                 }
                 documentKeys.put(citation,url+"\n"+field(d,"raw_sha256"));
