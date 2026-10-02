@@ -1,0 +1,32 @@
+/home/isa/Projects/PocketLore/downloads/modern-integrated/20261002T021019Z-6f678acc
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 80, in main
+    instrument('ModernIntegratedInstrumentation','native-cards-recognition','files/modern-'+run_id)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 59, in instrument
+    names=shell(['run-as',PKG,'ls',remote],folder+'/files.txt').decode().splitlines()
+          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 45, in shell
+    def shell(args,name):return run(ADB+['shell']+args,name)
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 44, in run
+    p.write_bytes(r.stdout);pathlib.Path(str(p)+'.command.json').write_text(json.dumps({'returncode':r.returncode,'elapsed_seconds':time.monotonic()-start}));assert r.returncode==0,(name,r.returncode,out);return r.stdout
+                                                                                                                                                                     ^^^^^^^^^^^^^^^
+AssertionError: ('native-cards-recognition/files.txt', 255, PosixPath('/home/isa/Projects/PocketLore/downloads/modern-integrated/20261002T021019Z-6f678acc'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 119, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 86, in main
+    finally:shell(['settings','delete','system','font_scale'] if font=='null' else ['settings','put','system','font_scale',font],'font-restored.txt')
+            ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 45, in shell
+    def shell(args,name):return run(ADB+['shell']+args,name)
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 44, in run
+    p.write_bytes(r.stdout);pathlib.Path(str(p)+'.command.json').write_text(json.dumps({'returncode':r.returncode,'elapsed_seconds':time.monotonic()-start}));assert r.returncode==0,(name,r.returncode,out);return r.stdout
+                                                                                                                                                                     ^^^^^^^^^^^^^^^
+AssertionError: ('font-restored.txt', 1, PosixPath('/home/isa/Projects/PocketLore/downloads/modern-integrated/20261002T021019Z-6f678acc'))
