@@ -1,0 +1,194 @@
+{
+  "receipt-tests.txt": {
+    "bytes": 101,
+    "sha256": "33060fd73862c5e1af97335504d5b45211fce6d229657f556d8deceeadc52ce4"
+  },
+  "receipt-tests.txt.command.json": {
+    "bytes": 57,
+    "sha256": "027a6c41f349cfb17499ae8a1c5d7895b6c5ee29736c9ac4ea3a50d84e481aa2"
+  },
+  "state.txt": {
+    "bytes": 7,
+    "sha256": "c98373c1abef78070f6beef6b4ae4fbf3de348dac280195c7f93441920584af9"
+  },
+  "state.txt.command.json": {
+    "bytes": 59,
+    "sha256": "a043d56cc86530a12d3332e933ca325c9211893ccca12182226de1e12d69759e"
+  },
+  "boot.txt": {
+    "bytes": 2,
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  "boot.txt.command.json": {
+    "bytes": 58,
+    "sha256": "2bd14d5468ca533b39d7140f9bc269caf73bf32626dbe4fefc95801553b73d46"
+  },
+  "sdk.txt": {
+    "bytes": 3,
+    "sha256": "b58a3da5fde2680191877ec88a1aa7d06927cc3b30cdf0d0db8c39b488891576"
+  },
+  "sdk.txt.command.json": {
+    "bytes": 58,
+    "sha256": "b3cd411c765a337b603e94a9e652b61e09ed6bc26e955026f4b1181f888c37da"
+  },
+  "pages.txt": {
+    "bytes": 6,
+    "sha256": "33f50728129313570f6b953c08b559d9cb5f673e981e647cee4dc10d6cd48e99"
+  },
+  "pages.txt.command.json": {
+    "bytes": 58,
+    "sha256": "03cae1e113d98876c7b0ddc753b116dbbb285b1dd914933f250c94d70e9d00ee"
+  },
+  "properties.txt": {
+    "bytes": 26166,
+    "sha256": "db903c95bc9b88208bdfccfc7613649f7edd65ef18dc048e9f36baaa4341fe68"
+  },
+  "properties.txt.command.json": {
+    "bytes": 56,
+    "sha256": "a4572e98b36dc97aa2233b798c3b388bafd473af7a5e35ed33f5ba8604215573"
+  },
+  "package-before.txt": {
+    "bytes": 5053,
+    "sha256": "0b45128e11c6df8c7027b91967236010a85027d39f997bf8bf25725c9c9fe2c6"
+  },
+  "package-before.txt.command.json": {
+    "bytes": 58,
+    "sha256": "633bbed3c6ca62cd4f0420697c9d604809cffd849aed3e5cecae4057be9b4486"
+  },
+  "assets-before.txt": {
+    "bytes": 334,
+    "sha256": "85847d4c6aba89dea14b6cfa03b17f2bdf9d94ccfa19b0e85078ecc830ff5acd"
+  },
+  "assets-before.txt.command.json": {
+    "bytes": 56,
+    "sha256": "d336873522ec18ba5992f556b0539671a9ae935d350a7a71488e8af333f2ba74"
+  },
+  "allocated-before.txt": {
+    "bytes": 9,
+    "sha256": "082f8742b8bc873a601b987acf6ba657cfc7a55389c4238a4504dfff8c91165d"
+  },
+  "allocated-before.txt.command.json": {
+    "bytes": 58,
+    "sha256": "eb769b6d3c1e2db20a505aa78af0ec9ffdb333de1f6d1e9bd8f47f9d4c99d026"
+  },
+  "logical-before.txt": {
+    "bytes": 12,
+    "sha256": "2c4c1d4e0749bef8cfd4c65848275051a772a9abdb72850508ddfa88f04d6b94"
+  },
+  "logical-before.txt.command.json": {
+    "bytes": 57,
+    "sha256": "baf2987ce593e31fdca432eb2fafc56d4902c23bb48989d66bc439e3c33eccd1"
+  },
+  "df-before.txt": {
+    "bytes": 122,
+    "sha256": "86337f8f69e5170ae6347cdf9f94b27c87f763e28dea9bb6829b0127f4a122a0"
+  },
+  "df-before.txt.command.json": {
+    "bytes": 58,
+    "sha256": "1640e59fa028dc328b25403c6965472c8a9a0420fa39a3dbd67180ed3ac7e52f"
+  },
+  "build.log": {
+    "bytes": 32364,
+    "sha256": "991d6e9750b0c5bab2af06dee9147898ba51254643ae314dd70e22198f3ecba2"
+  },
+  "build.log.command.json": {
+    "bytes": 56,
+    "sha256": "094b0d714bce0aa70d42e1cf80aa9d0faa95f67a0ec1815655e836ccd5747b4e"
+  },
+  "native.json": {
+    "bytes": 5062,
+    "sha256": "fba0f61ed35434f41cecffe41347defcdfa679dd151a7eb4bc0e9749dcb0b4b4"
+  },
+  "native.json.command.json": {
+    "bytes": 57,
+    "sha256": "cedae3cb11656ff3b9ed2d800c6ca2fd6e67af9ee3611241e2ced11251a38855"
+  },
+  "zipalign.txt": {
+    "bytes": 2236,
+    "sha256": "25e65d984e576618c4e3288a22325f71b04ede7323f24308ce10b7c7187c6d92"
+  },
+  "zipalign.txt.command.json": {
+    "bytes": 58,
+    "sha256": "72b2a664990e1d00733979e428659edf77aa0be29e6d6e2dd22ec5310f44473a"
+  },
+  "permissions.txt": {
+    "bytes": 214,
+    "sha256": "ad96613200a24b502da5652d9881880414e4655f443537a9ec1225bf1bc2e559"
+  },
+  "permissions.txt.command.json": {
+    "bytes": 59,
+    "sha256": "8c90a15129d4634e35aaa449884ebf0627aa3d124e08a9c831a8c0ea57eb28c1"
+  },
+  "install-app-debug.apk.txt": {
+    "bytes": 36,
+    "sha256": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7"
+  },
+  "install-app-debug.apk.txt.command.json": {
+    "bytes": 57,
+    "sha256": "22a387ce76af59c540f1235f8a3aff8adccdc5baf13f66aeb939933048086c28"
+  },
+  "install-app-debug-androidTest.apk.txt": {
+    "bytes": 36,
+    "sha256": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7"
+  },
+  "install-app-debug-androidTest.apk.txt.command.json": {
+    "bytes": 57,
+    "sha256": "d24712e0411b43531df6bc489ec6bcf0a20ad3b7920018d010720d3222d12fdd"
+  },
+  "registered-tests.txt": {
+    "bytes": 343,
+    "sha256": "ac4a503022f164d9bb95457843ca212980fcdf74ebbe7251ed8a7ee55f7daae9"
+  },
+  "registered-tests.txt.command.json": {
+    "bytes": 57,
+    "sha256": "66bbb9f322ba139208ae533fc854a4bdd294b483e079ac2061f36cf74f748c5f"
+  },
+  "font-before.txt": {
+    "bytes": 4,
+    "sha256": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+  },
+  "font-before.txt.command.json": {
+    "bytes": 57,
+    "sha256": "b0325796176c6530da54712710ee6e3bd476b75bebeb23145c7b05755d762905"
+  },
+  "font-restored.txt": {
+    "bytes": 20,
+    "sha256": "a7d0391f2b9ecc7dc302d6ca042251f413b26e1f1ee29d396e7db3df0701640f"
+  },
+  "font-restored.txt.command.json": {
+    "bytes": 59,
+    "sha256": "04f66f6cb27be93a2dfbfbae9131c7d7259323febd9cd22a9ddc44ae96ec4e0b"
+  },
+  "native-cards-recognition/runtime.txt": {
+    "bytes": 3431,
+    "sha256": "26b9ce1a8b2ac4579979e925c1b4a75344679dc0f100c0405307d294fd1d9ee8"
+  },
+  "native-cards-recognition/runtime.txt.command.json": {
+    "bytes": 56,
+    "sha256": "e49ae43f2cc0fee51a5dd781f0424671c1bbd71440919881f11c5c2bec937104"
+  },
+  "native-cards-recognition/files.txt": {
+    "bytes": 128,
+    "sha256": "dec4910e7bf6b6ec10cbb102171ff39b1161d471b97b5a6f87b044cff8fb45b1"
+  },
+  "native-cards-recognition/files.txt.command.json": {
+    "bytes": 57,
+    "sha256": "e61c979b7a91d7a9125061adafd38f59a1c0bb2b98a5773ec447be55b88e22f1"
+  },
+  "native-cards-recognition/city-292223.md": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "native-cards-recognition/city-292223.md.command.json": {
+    "bytes": 55,
+    "sha256": "3175a20f3822893fef932a4baf524e0a1c967e849a4241680355fa0a12fbc648"
+  },
+  "native-cards-recognition/city-292223.png": {
+    "bytes": 22,
+    "sha256": "4be638bde642b088a4bdd4b24186451522d04388f3e0e28ba5ba745a391f01c8"
+  },
+  "native-cards-recognition/city-292223.png.command.json": {
+    "bytes": 61,
+    "sha256": "fe4c22df0cbf5e7c596e48c02e68bea303043473fbfcb3102209bcf02e46c82a"
+  }
+}

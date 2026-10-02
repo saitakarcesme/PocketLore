@@ -1,0 +1,123 @@
+{
+  "apk_sha256": "9c71a32dbc2deac3d650c6849a335379bd2b005c1516437c613bcd0fcff7dd70",
+  "apk_bytes": 22702878,
+  "test_apk_sha256": "71c2b4f8d8d24bdbcf016e952a48ab58281eb60288fac5df3637b4fb19021542",
+  "entries": {
+    "assets/dc-monuments-manifest.json": {
+      "bytes": 1029,
+      "sha256": "56856c60ada031a65911dcd2f26d89bbb23f4ac1fc6b69d06bbff11ffb60d5fa"
+    },
+    "assets/dc-monuments.tsv": {
+      "bytes": 9855,
+      "sha256": "2240dbd96698266eb27a3f892e346b2e2154c186c097f8ebf79d3f8ede086a8e"
+    },
+    "assets/licenses/answer-model-notice.txt": {
+      "bytes": 567,
+      "sha256": "9d79291db5e14170605e50f436ae99f10ce9e7389ab6184e66d5c78a34c4d374"
+    },
+    "assets/licenses/attachments/leptonica.txt": {
+      "bytes": 1521,
+      "sha256": "87829abb5bbb00b55a107365da89e9a33f86c4250169e5a1e5588505be7d5806"
+    },
+    "assets/licenses/attachments/ndk-cpufeatures.txt": {
+      "bytes": 577,
+      "sha256": "c870d52f42a8f93023b99a85fe68d02637d6b04e5f35bbcd7f98759adb4e4d49"
+    },
+    "assets/licenses/attachments/tessdata-fast.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "assets/licenses/attachments/tesseract.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "assets/licenses/attachments/whisper-model.txt": {
+      "bytes": 1063,
+      "sha256": "b5d65a59060e68c4ff940e1eddfa6f94b2d68fdf58ed7f4dd57721c997e35e9d"
+    },
+    "assets/licenses/attachments/whisper.txt": {
+      "bytes": 1078,
+      "sha256": "e562a2ddfaf8280537795ac5ecd34e3012b6582a147ef69ba6a6a5c08c84757d"
+    },
+    "assets/licenses/llama.cpp.txt": {
+      "bytes": 1078,
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+    },
+    "assets/licenses/ndk-r27c-sysroot-NOTICE.txt": {
+      "bytes": 501406,
+      "sha256": "d5f5557f82bc42ce657d0513ba9a7d0c55e64eb99d4998994d92f2b5c2b1fb3c"
+    },
+    "assets/licenses/ndk-r27c-toolchain-NOTICE.txt": {
+      "bytes": 806124,
+      "sha256": "cbe3237be53c0a819f8df6aac5358fdee848eee3b6571b4e2ca20767ebd7465e"
+    },
+    "assets/licenses/qwen2.5-Apache-2.0.txt": {
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    "assets/licenses/smoke-model-Apache-2.0.txt": {
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "assets/licenses/sqlite.txt": {
+      "bytes": 1553,
+      "sha256": "9de843cf4a8c5230019b23f4b5565ca4add12257084211ced7ec52fdcf8e8651"
+    },
+    "assets/licenses/synthesis-model-Apache-2.0.txt": {
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    "assets/licenses/synthesis-model-notice.txt": {
+      "bytes": 681,
+      "sha256": "c4e92009450a020a87f15bfcf896f7bcb7006312f01e0c82f65d495908336dd1"
+    },
+    "assets/licenses/synthesis-qwen3-Apache-2.0.txt": {
+      "bytes": 11544,
+      "sha256": "5de36594c10839788a8c589443a8ef9d8b8d17c65a1b5807206ae037fc36c6bd"
+    },
+    "assets/licenses/synthesis-qwen3-notice.txt": {
+      "bytes": 486,
+      "sha256": "23c8c78dbde2e46aeb736a4fe764cf5157275548033edc82577049f9b6f09c52"
+    },
+    "assets/licenses/travel-wikidata-notice.txt": {
+      "bytes": 1087,
+      "sha256": "0ceb3cdba284583b407112bc7deca6af201cdfd3c230ba70d1c557cc6dc23e53"
+    },
+    "assets/reviewed-cities.json": {
+      "bytes": 60163,
+      "sha256": "abebbc64ad13392c8079b2f7312e9b914331240aaebd45426a1f167bd30eaa62"
+    },
+    "assets/water-science.tsv": {
+      "bytes": 5380,
+      "sha256": "a39d54b412f469086bd1ee96425245e36f446ac1a77b0b5730c60e5603084492"
+    },
+    "classes.dex": {
+      "bytes": 452992,
+      "sha256": "6d535d21e05421d34d729fe939833b6bb2fbc66bf6ac308110bdb298ff3b32de"
+    },
+    "lib/arm64-v8a/libpocketlore.so": {
+      "bytes": 5598088,
+      "sha256": "09e453a05f084e41dd1084f306f4cae264895e181fe5d953d09b514e3d22230a"
+    },
+    "lib/arm64-v8a/libpocketlore_attachments.so": {
+      "bytes": 3271872,
+      "sha256": "093561c7a72855b833aaf85aa8bdba664bb37e99c25f8d78ed7c8faace40ca0b"
+    },
+    "lib/arm64-v8a/libpocketlore_index.so": {
+      "bytes": 1848880,
+      "sha256": "9ea023c19fb4e55fc1d01de21796995dbbd2bd8ad046c9c90849e315bc80b699"
+    },
+    "lib/x86_64/libpocketlore.so": {
+      "bytes": 6077720,
+      "sha256": "941637a0c50c4b8648387c85834430eb0660a8c19ef26ee41698b72a0892afcb"
+    },
+    "lib/x86_64/libpocketlore_attachments.so": {
+      "bytes": 3623768,
+      "sha256": "74ef9b1934de55622de961ecb4b75583f9c71698286496c67c21fd2e87979b70"
+    },
+    "lib/x86_64/libpocketlore_index.so": {
+      "bytes": 1847336,
+      "sha256": "7a43b08d8323a1aefe970cacc0a9cd81fad7673feaec9b01ec813bdfbdad6602"
+    }
+  }
+}
