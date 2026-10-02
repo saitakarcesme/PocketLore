@@ -4,7 +4,7 @@ import java.io.*;import java.nio.file.*;import java.util.*;import java.util.conc
 
 /** Tiny invocation-owned fixtures; no native load, inference or recognition. */
 public final class StorageMeterInstrumentation extends Instrumentation {
- Bundle args;File fixture;JSONObject report=new JSONObject();JSONArray checks=new JSONArray();
+ Bundle args;File fixture;boolean owned;JSONObject report=new JSONObject();JSONArray checks=new JSONArray();
  interface Action{void run()throws Exception;}
  void ok(boolean b,String name){if(!b)throw new AssertionError(name);checks.put(name);}
  void reject(Action a,String name)throws Exception{try{a.run();}catch(IOException e){checks.put(name);return;}throw new AssertionError(name);}
@@ -34,13 +34,15 @@ public final class StorageMeterInstrumentation extends Instrumentation {
  public void onStart(){boolean pass=false;try{
   String id=args.getString("run_id");if(id==null||!id.matches("[A-Za-z0-9-]+"))throw new IOException("Invalid invocation");report.put("run_id",id).put("source_manifest_sha256",args.getString("source_manifest_sha256")).put("sdk",Build.VERSION.SDK_INT).put("page_size",Os.sysconf(android.system.OsConstants._SC_PAGESIZE));
   ok(getTargetContext().getApplicationContext() instanceof StorageApplication,"actual_storage_application_started");ok(held()==0,"startup_zero_reservations");
-  fixture=new File(getTargetContext().getFilesDir(),"storage-meter-"+id);ok(fixture.mkdir(),"fresh_owned_fixture");
+  fixture=new File(getTargetContext().getFilesDir(),"storage-meter-"+id);owned=fixture.mkdir();ok(owned,"fresh_owned_fixture");
   reconcile("before");File stage=new File(fixture,"model.partial"),kept=new File(fixture,"kept.gguf");Files.write(kept.toPath(),"GGUFretained fixture".getBytes());byte[] retained=Files.readAllBytes(kept.toPath());
   byte[] data=new byte[8192];data[0]='G';data[1]='G';data[2]='U';data[3]='F';
   AtomicBoolean observed=new AtomicBoolean();InputStream inspected=new ByteArrayInputStream(data){public synchronized int read(byte[] b,int o,int n){if(pos>0&&!observed.getAndSet(true))try{ok(held()==ResourceStorage.stagePeak(data.length),"during_copy_reservation_held");reconcile("during");}catch(Exception e){throw new RuntimeException(e);}return super.read(b,o,Math.min(n,4096));}};
   ModelImport.copy(inspected,stage,data.length,fixture.getUsableSpace(),()->false);ok(held()==0,"copy_success_release");ok(Arrays.equals(retained,Files.readAllBytes(kept.toPath())),"selected_fixture_retained");
-  Files.createLink(new File(fixture,"hardlink").toPath(),stage.toPath());reconcile("hardlink");
-  File bad=new File(fixture,"unknown-link");Files.createSymbolicLink(bad.toPath(),kept.toPath());try{reject(()->meter(),"unknown_symlink_denied");}finally{Files.delete(bad.toPath());}
+  try{Files.createLink(new File(fixture,"hardlink").toPath(),stage.toPath());report.put("hardlink_creation","supported");}catch(java.nio.file.AccessDeniedException e){report.put("hardlink_creation","denied by Android; alias-inode revisit tested separately");}
+  java.lang.reflect.Method measure=StorageApplication.class.getDeclaredMethod("measure",File.class,Set.class,int[].class,File.class);measure.setAccessible(true);Set<String> seen=new HashSet<>();int[] count={0};File nativeDir=new File(getTargetContext().getApplicationInfo().nativeLibraryDir).getCanonicalFile();long first=(long)measure.invoke(null,stage,seen,count,nativeDir);long repeated=(long)measure.invoke(null,new File(fixture,"./model.partial"),seen,count,nativeDir);ok(first>=8192&&repeated==0,"actual_inode_revisit_deduplicated");reconcile("dedup");
+  try{measure.invoke(null,new File(fixture,"missing"),new HashSet<String>(),new int[]{0},nativeDir);throw new AssertionError("Missing path accepted");}catch(java.lang.reflect.InvocationTargetException e){ok(e.getCause() instanceof android.system.ErrnoException,"missing_path_measurement_fails");}
+  File bad=new File(fixture,"unknown-link");try{Files.createSymbolicLink(bad.toPath(),kept.toPath());try{reject(()->meter(),"unknown_symlink_denied");}finally{Files.delete(bad.toPath());}}catch(java.nio.file.AccessDeniedException e){report.put("symlink_fixture","Android denies link creation; missing-path failure separately observed");}
   // Exact same measured process meter, no virtual disk override or real large allocation.
   long available=fixture.getUsableSpace();long used=meter();long budget=Math.min(available-ResourceStorage.RESERVE_BYTES,ResourceStorage.TARGET_BYTES-used)-1024*1024;ok(budget>0,"bounded_reservation_allowance");
   CountDownLatch start=new CountDownLatch(1),attempted=new CountDownLatch(2),release=new CountDownLatch(1);AtomicInteger admitted=new AtomicInteger(),denied=new AtomicInteger();AtomicReference<Throwable> error=new AtomicReference<>();
@@ -55,7 +57,7 @@ public final class StorageMeterInstrumentation extends Instrumentation {
   reject(()->AttachmentAssets.install(fixture,false,new ByteArrayInputStream(new byte[8]),()->false),"optional_invalid_asset_denied");ok(!AttachmentAssets.file(fixture,false).exists()&&held()==0,"optional_failure_release");
   reconcile("after");ok(Arrays.equals(retained,Files.readAllBytes(kept.toPath())),"retained_fixture_final");pass=true;
  }catch(Throwable e){try{report.put("error",android.util.Log.getStackTraceString(e));}catch(Exception ignored){}}
- finally{try{if(fixture!=null&&fixture.exists())remove(fixture);ok(fixture!=null&&!fixture.exists(),"owned_fixture_removed");ok(held()==0,"final_zero_reservations");}catch(Throwable e){pass=false;try{report.put("cleanup_error",e.toString());}catch(Exception ignored){}}
+ finally{try{if(owned&&fixture.exists())remove(fixture);ok(owned&&!fixture.exists(),"owned_fixture_removed");ok(held()==0,"final_zero_reservations");}catch(Throwable e){pass=false;try{report.put("cleanup_error",e.toString());}catch(Exception ignored){}}
   try{report.put("checks",checks).put("status",pass?"PASS":"FAIL");Bundle result=new Bundle();result.putString("storage_receipt",report.toString());finish(pass?Activity.RESULT_OK:Activity.RESULT_CANCELED,result);}catch(Exception e){finish(Activity.RESULT_CANCELED,new Bundle());}}
  }
 }
