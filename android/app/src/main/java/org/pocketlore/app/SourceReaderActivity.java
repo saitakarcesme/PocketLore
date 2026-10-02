@@ -10,13 +10,13 @@ import java.util.*;
 /** Full-screen, locally persisted source/result reading, separate from inference. */
 public final class SourceReaderActivity extends NotebookActivity {
     long recordId,compareId; NotebookStore.Entry entry,other;
-    LinearLayout body; ScrollView scroll; TextView content; EditText note;
+    LinearLayout body; android.widget.FrameLayout readerRoot; ScrollView scroll; TextView content; EditText note;
     boolean cream; int readingSize; String draft;
     @Override public void onCreate(Bundle state){super.onCreate(state);
         recordId=getIntent().getLongExtra("record",-1);compareId=getIntent().getLongExtra("compare",-1);
         cream=getPreferences(0).getBoolean("cream",true);readingSize=getPreferences(0).getInt("size",18);
         if(state!=null)draft=state.getString("note");
-        body=ReaderUi.column(this);scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.addView(body);setContentView(scroll);ReaderUi.insets(this,scroll);
+        body=ReaderUi.column(this);scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.addView(body);readerRoot=new android.widget.FrameLayout(this);readerRoot.addView(scroll,new android.widget.FrameLayout.LayoutParams(-1,-1));setContentView(readerRoot);ReaderUi.insets(this,readerRoot);
         ReaderUi.button(this,body,"Close reader",this::finish);operation=ReaderUi.text(this,"Opening saved snapshot…",16);ReaderUi.status(operation);body.addView(operation);
         work(()->{try(NotebookStore store=new NotebookStore(this)){entry=store.get(recordId);String expected=getIntent().getStringExtra("snapshot_hash");if(expected!=null&&!ComparisonStore.identity(entry).equals(expected))throw new java.io.IOException("Unknown — saved source snapshot changed");if(compareId!=-1)other=store.get(compareId);}runOnUiThread(()->{if(!isDestroyed()){render();scroll.post(()->scroll.scrollTo(0,state!=null?state.getInt("scroll",0):getPreferences(0).getInt("position-"+recordId+"-"+compareId,0)));}});});
     }
@@ -45,7 +45,7 @@ public final class SourceReaderActivity extends NotebookActivity {
         colors(body);applyTheme();
     }
     private String readingText(NotebookStore.Entry e){return (e.question.isEmpty()?"":"Question\n"+e.question+"\n")+e.body+"\n\nSource and coverage\n"+e.provenance+"\n\nCaptured on this device: "+android.text.format.DateFormat.format("yyyy-MM-dd HH:mm",e.created)+"\nCapture time is not the source publication date.";}
-    private void applyTheme(){ReaderUi.barAppearance(this,cream);scroll.setBackgroundColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);getWindow().setStatusBarColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);getWindow().setNavigationBarColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);getWindow().getDecorView().setSystemUiVisibility(cream?View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR|View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR:0);}
+    private void applyTheme(){ReaderUi.barAppearance(this,cream);scroll.setBackgroundColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);readerRoot.setBackgroundColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);getWindow().setStatusBarColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);getWindow().setNavigationBarColor(cream?ReaderUi.NAVY:ReaderUi.CREAM);getWindow().getDecorView().setSystemUiVisibility(cream?View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR|View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR:0);}
     private List<NotebookStore.Entry> current(){if(note!=null)entry.note=note.getText().toString();return other==null?Collections.singletonList(entry):Arrays.asList(entry,other);}
     private void colors(View v){
         if(v instanceof TextView){TextView t=(TextView)v;t.setTextColor(cream?ReaderUi.CREAM:ReaderUi.NAVY);t.setHintTextColor(cream?Color.rgb(23,95,88):Color.rgb(188,203,211));}
