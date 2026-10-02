@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/model-management/check.py", line 64, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/model-management/check.py", line 39, in main
+    report=run(ADB+['exec-out','run-as',PKG,'cat','files/model-management-import.json'],'import.json');assert json.loads(report)['status']=='PASS',report
+                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: b'{\n  "mode": "import",\n  "runtime": "llama.cpp bb4caa7540188872173c44d161602d9271386413; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads=2; model-budget=2147483648; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5\\/256, seed=42",\n  "status": "FAIL",\n  "error": "java.lang.AssertionError: Pinned provider import loads before selection\\n\\tat org.pocketlore.app.ModelManagementInstrumentation.ok(ModelManagementInstrumentation.java:7)\\n\\tat org.pocketlore.app.ModelManagementInstrumentation.onStart(ModelManagementInstrumentation.java:24)\\n\\tat android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)\\n",\n  "checks": [\n    "Demo baseline begins selected",\n    "Actual saved JNI model loads",\n    "Catalog control is reachable",\n    "Changed identity rejected",\n    "Hard joint budget rejects transaction",\n    "Target exceedance is distinct from hard cap",\n    "Cancelled stage removed"\n  ]\n}'

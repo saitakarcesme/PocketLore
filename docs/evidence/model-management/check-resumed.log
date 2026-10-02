@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/model-management/check.py", line 71, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/model-management/check.py", line 55, in main
+    after=run(ADB+['shell','run-as',PKG,'sha256sum']+preserved,'saved-after.txt');assert before==after
+                                                     ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'preserved' where it is not associated with a value

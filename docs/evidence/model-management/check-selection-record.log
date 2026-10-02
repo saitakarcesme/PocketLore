@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/model-management/check.py", line 64, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/model-management/check.py", line 45, in main
+    run(ADB+['shell','du','-k','/data/user/0/'+PKG],'disk-with-optional.txt')
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/model-management/check.py", line 22, in run
+    p=subprocess.run(list(map(str,cmd)),cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=timeout);(out/name).write_bytes(p.stdout);assert p.returncode==0,(name,p.stdout[-2000:].decode(errors='replace'));return p.stdout
+                                                                                                                                                          ^^^^^^^^^^^^^^^
+AssertionError: ('disk-with-optional.txt', 'du: /data/user/0/org.pocketlore.app: Permission denied\n')
