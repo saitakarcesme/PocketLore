@@ -1,5 +1,5 @@
 """Serial real Android import/selection; exact assets and behavioral receipts, no network."""
-import hashlib,json,pathlib,subprocess,time,sys
+import hashlib,json,pathlib,subprocess,time,sys,os
 ROOT=pathlib.Path(__file__).resolve().parents[3]
 ADB=['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb','-s','emulator-5560']
 PKG='org.pocketlore.app'
@@ -15,7 +15,9 @@ def verify(folder):
   report=json.loads((folder/(mode+'.json')).read_text());assert report['status']=='PASS',report
  selected=json.loads((folder/'select.json').read_text())
  assert 'Actual JNI load failure reloads previous model and preserves selection' in selected['checks']
- assert selected['unverified_token_output'] is not None
+ if r.get('no_generation'):
+  assert selected['generation_performed'] is False and 'unverified_token_output' not in selected
+ else:assert selected['unverified_token_output'] is not None
  return r
 
 def main():
@@ -52,13 +54,13 @@ def main():
   stream(optional,PKG,destination,'optional-transfer.txt')
  else:assert run(ADB+['shell','run-as',PKG,'sha256sum',destination],'resumed-optional-hash.txt').decode().split()[0]==pin['sha256']
  run(ADB+['shell','run-as',PKG,'du','-k','.'],'disk-with-optional.txt')
- run(ADB+['shell','am','instrument','-w','-e','mode','select',PKG+'.test/'+PKG+'.ModelManagementInstrumentation'],'select-runtime.txt')
+ run(ADB+['shell','am','instrument','-w','-e','no_generation','true' if os.environ.get('POCKETLORE_NO_GENERATION')=='1' else 'false','-e','mode','select',PKG+'.test/'+PKG+'.ModelManagementInstrumentation'],'select-runtime.txt')
  report=run(ADB+['exec-out','run-as',PKG,'cat','files/model-management-select.json'],'select.json');assert json.loads(report)['status']=='PASS',report
  after=run(ADB+['shell','run-as',PKG,'sha256sum']+preserved,'saved-after.txt');assert before==after
  run(ADB+['shell','dumpsys','package',PKG],'package.txt');assert 'android.permission.INTERNET' not in (out/'package.txt').read_text()
  run(ADB+['shell','df','-k','/data'],'disk-after.txt')
  path=run(ADB+['shell','pm','path',PKG],'installed-path.txt').decode().strip().removeprefix('package:');actual=run(ADB+['shell','sha256sum',path],'installed-hash.txt').decode().split()[0];assert actual==sha(apk)
- r={'status':'PASS','environment':'API35 x86_64 emulator-5560, not phone/quality acceptance','apk_sha256':actual,'apk_bytes':apk.stat().st_size,'test_apk_sha256':sha(test),'protocol_sha256':sha(ROOT/'tools/evaluation/model-management/protocol.json'),'baseline_sha256':sha(baseline),'optional_sha256':pin['sha256'],'hashes':{p.name:sha(p) for p in out.iterdir() if p.is_file()}}
+ r={'no_generation':os.environ.get('POCKETLORE_NO_GENERATION')=='1','status':'PASS','environment':'API35 x86_64 emulator-5560, not phone/quality acceptance','apk_sha256':actual,'apk_bytes':apk.stat().st_size,'test_apk_sha256':sha(test),'protocol_sha256':sha(ROOT/'tools/evaluation/model-management/protocol.json'),'baseline_sha256':sha(baseline),'optional_sha256':pin['sha256'],'hashes':{p.name:sha(p) for p in out.iterdir() if p.is_file()}}
  (out/'receipt.json').write_text(json.dumps(r,indent=2)+'\n');verify(out)
  original=(out/'select.json').read_bytes()
  try:
