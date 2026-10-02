@@ -1,0 +1,136 @@
+{
+  "edition": "ethereum-technical-2026-10-02-v1",
+  "acquired": "2026-10-02",
+  "documents": [
+    {
+      "id": "eip-155",
+      "repo": "EIPs",
+      "path": "EIPS/eip-155.md",
+      "revision": "c304610716ce55e457333e1d09074e4acb54c66f",
+      "revision_date": "2026-10-01T23:41:39Z",
+      "raw_sha256": "3c208813585d8fca67a92d908ece47402f87a18a14f1b20ee5ebcb3e702dcc9c",
+      "title": "Simple replay attack protection",
+      "author": "Vitalik Buterin (@vbuterin)",
+      "created": "2016-10-14",
+      "status": "Final",
+      "license_sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "rights_basis": "Pinned repository CC0 license; no article-specific waiver",
+      "rights_disposition": "Selected authored Markdown only; linked material and media not acquired or licensed by this review"
+    },
+    {
+      "id": "eip-196",
+      "repo": "EIPs",
+      "path": "EIPS/eip-196.md",
+      "revision": "c304610716ce55e457333e1d09074e4acb54c66f",
+      "revision_date": "2026-10-01T23:41:39Z",
+      "raw_sha256": "e9ad74874f464972427337230930acb506689e2cafddba5d037a800974ef0612",
+      "title": "Precompiled contracts for addition and scalar multiplication on the elliptic curve alt_bn128",
+      "author": "Christian Reitwiessner <chris@ethereum.org>",
+      "created": "2017-02-02",
+      "status": "Final",
+      "license_sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "rights_basis": "Explicit article CC0 waiver and pinned repository license",
+      "rights_disposition": "Selected authored Markdown only; linked material and media not acquired or licensed by this review"
+    },
+    {
+      "id": "eip-197",
+      "repo": "EIPs",
+      "path": "EIPS/eip-197.md",
+      "revision": "c304610716ce55e457333e1d09074e4acb54c66f",
+      "revision_date": "2026-10-01T23:41:39Z",
+      "raw_sha256": "96355ab680ea8fae76e05c69009e30bd0ec87f352bec9312515b1cbabc6fe89d",
+      "title": "Precompiled contracts for optimal ate pairing check on the elliptic curve alt_bn128",
+      "author": "Vitalik Buterin <vitalik@ethereum.org>, Christian Reitwiessner <chris@ethereum.org>",
+      "created": "2017-02-06",
+      "status": "Final",
+      "license_sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "rights_basis": "Explicit article CC0 waiver and pinned repository license",
+      "rights_disposition": "Selected authored Markdown only; linked material and media not acquired or licensed by this review"
+    },
+    {
+      "id": "eip-198",
+      "repo": "EIPs",
+      "path": "EIPS/eip-198.md",
+      "revision": "c304610716ce55e457333e1d09074e4acb54c66f",
+      "revision_date": "2026-10-01T23:41:39Z",
+      "raw_sha256": "7f38172445a27c0f77d820d00be954f54ac76710ba522adfdfb8982cfb233418",
+      "title": "Big integer modular exponentiation",
+      "author": "Vitalik Buterin (@vbuterin)",
+      "created": "2017-01-30",
+      "status": "Final",
+      "license_sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "rights_basis": "Explicit article CC0 waiver and pinned repository license",
+      "rights_disposition": "Selected authored Markdown only; linked material and media not acquired or licensed by this review"
+    },
+    {
+      "id": "eip-712",
+      "repo": "EIPs",
+      "path": "EIPS/eip-712.md",
+      "revision": "c304610716ce55e457333e1d09074e4acb54c66f",
+      "revision_date": "2026-10-01T23:41:39Z",
+      "raw_sha256": "459086f5a0b2d6a0ac4e404faebf3660a49aa4b1712711521093380689f02304",
+      "title": "Typed structured data hashing and signing",
+      "author": "Remco Bloemen (@Recmo), Leonid Logvinov (@LogvinovLeon), Jacob Evans (@dekz)",
+      "created": "2017-09-12",
+      "status": "Final",
+      "license_sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "rights_basis": "Explicit article CC0 waiver and pinned repository license",
+      "rights_disposition": "Selected authored Markdown only; linked material and media not acquired or licensed by this review"
+    },
+    {
+      "id": "eip-2028",
+      "repo": "EIPs",
+      "path": "EIPS/eip-2028.md",
+      "revision": "c304610716ce55e457333e1d09074e4acb54c66f",
+      "revision_date": "2026-10-01T23:41:39Z",
+      "raw_sha256": "765afb0a066eb847eccaa02726cefa2995f1b6a0e13564936219eed1a8123e88",
+      "title": "Transaction data gas cost reduction",
+      "author": "Alexey Akhunov (@AlexeyAkhunov), Eli Ben Sasson <eli@starkware.co>, Tom Brand <tom@starkware.co>, Louis Guthmann <louis@starkware.co>, Avihu Levy <avihu@starkware.co>",
+      "created": "2019-05-03",
+      "status": "Final",
+      "license_sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "rights_basis": "Explicit article CC0 waiver and pinned repository license",
+      "rights_disposition": "Selected authored Markdown only; linked material and media not acquired or licensed by this review"
+    },
+    {
+      "id": "erc-20",
+      "repo": "ERCs",
+      "path": "ERCS/erc-20.md",
+      "revision": "583335b7912e51b1ea515bb662532dd29b27e786",
+      "revision_date": "2026-10-01T12:35:40Z",
+      "raw_sha256": "50d0bdc535ed8987ac5c124cb5f9c39606806c97e909aae66ef4b747dd9c93dd",
+      "title": "Token Standard",
+      "author": "Fabian Vogelsteller <fabian@ethereum.org>, Vitalik Buterin <vitalik.buterin@ethereum.org>",
+      "created": "2015-11-19",
+      "status": "Final",
+      "license_sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "rights_basis": "Explicit article CC0 waiver and pinned repository license",
+      "rights_disposition": "Selected authored Markdown only; linked material and media not acquired or licensed by this review"
+    },
+    {
+      "id": "erc-165",
+      "repo": "ERCs",
+      "path": "ERCS/erc-165.md",
+      "revision": "583335b7912e51b1ea515bb662532dd29b27e786",
+      "revision_date": "2026-10-01T12:35:40Z",
+      "raw_sha256": "f431a42854927b82c309060d017c5bd4f61abf8dc4679e466369e698a2d52396",
+      "title": "Standard Interface Detection",
+      "author": "Christian Reitwie\u00dfner <chris@ethereum.org>, Nick Johnson <nick@ethereum.org>, Fabian Vogelsteller <fabian@lukso.network>, Jordi Baylina <jordi@baylina.cat>, Konrad Feldmeier <konrad.feldmeier@brainbot.com>, William Entriken <github.com@phor.net>",
+      "created": "2018-01-23",
+      "status": "Final",
+      "license_sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "rights_basis": "Explicit article CC0 waiver and pinned repository license",
+      "rights_disposition": "Selected authored Markdown only; linked material and media not acquired or licensed by this review"
+    }
+  ],
+  "excluded": [
+    {
+      "path": "ethereum/consensus-specs/ssz/simple-serialize.md",
+      "reason": "HTTP 404 at pinned revision; no source bytes included"
+    },
+    {
+      "source": "NIST and ethereum.org",
+      "reason": "Not acquired or cleared in this bounded edition"
+    }
+  ]
+}

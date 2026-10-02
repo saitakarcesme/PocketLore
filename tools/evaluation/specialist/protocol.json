@@ -1,0 +1,50 @@
+{
+  "scope": "Frozen public development retrieval, not generated answers or unseen generalization",
+  "queries": [
+    {
+      "query": "replay protection",
+      "document": "eip-155"
+    },
+    {
+      "query": "elliptic curve scalar multiplication",
+      "document": "eip-196"
+    },
+    {
+      "query": "pairing check",
+      "document": "eip-197"
+    },
+    {
+      "query": "modular exponentiation",
+      "document": "eip-198"
+    },
+    {
+      "query": "typed structured data hashing signing",
+      "document": "eip-712"
+    },
+    {
+      "query": "calldata gas cost",
+      "document": "eip-2028"
+    },
+    {
+      "query": "token allowance transferFrom",
+      "document": "erc-20"
+    },
+    {
+      "query": "interface detection supportsInterface",
+      "document": "erc-165"
+    }
+  ],
+  "absent": [
+    "Zqxv380NoSuchEvidence"
+  ],
+  "checks": [
+    "exact raw bytes and licenses",
+    "deterministic build",
+    "formula and code characters preserved",
+    "Android import reload selection export",
+    "all source inspections",
+    "corrupt rights payload and missing input rejection",
+    "cancel rollback",
+    "installed bytes and PSS"
+  ]
+}

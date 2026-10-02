@@ -98,7 +98,7 @@ public final class KnowledgePack {
         require(id.matches("[a-z0-9-]{1,80}"),"Invalid pack ID");
         require(hash(files.get("passages.tsv")).equals(field(m,"passages_sha256")),"Passage payload hash mismatch");
         Map<String,String> provenance=new HashMap<>(),documentKeys=new HashMap<>();
-        Map<String,String[]> expected=new HashMap<>(); Set<String> documentIds=new HashSet<>();
+        Map<String,String[]> expected=new HashMap<>(); Map<String,String[]> originalSpans=new HashMap<>(); Set<String> documentIds=new HashSet<>();
         JSONArray docs=m.getJSONArray("documents"); require(docs.length()>0 && docs.length()<=1000,"Document count out of range");
         for(int i=0;i<docs.length();i++) {
             JSONObject d=docs.getJSONObject(i);String did=field(d,"id");
@@ -113,6 +113,19 @@ public final class KnowledgePack {
                 JSONObject p=passages.getJSONObject(j);String digest=field(p,"sha256"), citation=field(p,"id");
                 require(digest.matches("[0-9a-f]{64}") && citation.equals(did+"-"+digest.substring(0,16)),"Invalid stable citation ID");
                 provenance.put(citation,"Original citation: "+citation+"\nSource document ID: "+did+"\nSource SHA-256: "+field(d,"raw_sha256")+"\nPassage SHA-256: "+digest);
+                if(p.has("source_utf16_start") || p.has("source_utf16_end")) {
+                    long start=p.getLong("source_utf16_start"), finish=p.getLong("source_utf16_end");
+                    require(start>=0 && finish>start && finish-start<=20000,"Invalid original source span");
+                    String originalHash=field(p,"source_span_sha256");
+                    require(originalHash.matches("[0-9a-f]{64}"),"Invalid original span hash");
+                    originalSpans.put(citation,new String[]{Long.toString(finish-start),originalHash});
+                    provenance.put(citation,provenance.get(citation)+"\nOriginal Markdown UTF-16 range: ["+start+", "+finish+")\nOriginal span SHA-256: "+originalHash+"\n"+field(m,"transformation"));
+                }
+                if(d.has("license_text")) {
+                    String legal=d.getString("license_text");
+                    require(!legal.trim().isEmpty() && legal.length()<=16000,"Invalid offline license text");
+                    provenance.put(citation,provenance.get(citation)+"\nRights basis: "+field(d,"rights_basis")+"\nRights limits: "+field(d,"rights_disposition")+"\nOffline license text:\n"+legal);
+                }
                 documentKeys.put(citation,url+"\n"+field(d,"raw_sha256"));
                 require(expected.put(citation,new String[]{title,url,date,rights,digest})==null,"Duplicate citation");
                 require(expected.size()<=20000,"Too many passages");
@@ -126,6 +139,10 @@ public final class KnowledgePack {
             for(int j=1;j<=4;j++) require(r[j].equals(e[j-1]),"Provenance does not match manifest");
             require(!r[5].trim().isEmpty() && r[5].length()<=20000 && !r[5].matches("(?s).*[\\p{Cntrl}].*"),"Invalid passage text");
             require(hash(r[5].getBytes(StandardCharsets.UTF_8)).equals(e[4]),"Passage hash mismatch");
+            if(originalSpans.containsKey(r[0])) {
+                String[] span=originalSpans.get(r[0]);String original=r[5].replace('\u2028','\n').replace('\u2409','\t');
+                require(original.length()==Long.parseLong(span[0]) && hash(original.getBytes(StandardCharsets.UTF_8)).equals(span[1]),"Original Markdown span mismatch");
+            }
             verifiedRows.add(r);
         }
         return new KnowledgePack(index?new ResearchEngine(new StringReader(text)):null,id,warning,hash(archive),verifiedRows,provenance,documentKeys,archive.length,total,files.get("manifest.json").length,docs.length());
