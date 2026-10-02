@@ -1,0 +1,12 @@
+{
+  "reason": "Independent source inspection found 11/24 complete useful briefs, including an exact-title subquestion whose opening definition was omitted.",
+  "design": "For an exact normalized article-title lookup, prefer the first eligible passage in source order before combined truncation; apply to all titles, brief retrieval only.",
+  "unchanged": [
+    "24 frozen questions and source bytes",
+    "rights exclusions",
+    "12/24 usefulness threshold",
+    "availability protections",
+    "no generated success credit"
+  ],
+  "preserved_review": "docs/evidence/general-research/quality-review-first.json"
+}
