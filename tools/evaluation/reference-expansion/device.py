@@ -13,11 +13,12 @@ def inputs():
  names=subprocess.check_output(['git','ls-files','android','tools'],cwd=ROOT).decode().splitlines()
  return {n:sha((ROOT/n).read_bytes()) for n in names if (ROOT/n).is_file()}
 def device(lease_path):
- lease=json.loads(pathlib.Path(lease_path).read_text());assert lease.get("task_id") in {"480-expand-reviewed-reference-coverage-20261002a","480-expand-reviewed-reference-coverage-20261002a-repair-1","480-expand-reviewed-reference-coverage-20261002a-repair-2","480-expand-reviewed-reference-coverage-20261002a-strategy-change"} and lease.get("serial")=="emulator-5564" and lease.get("exclusive") is True,"A new coordinator-issued exclusive task480/5564 lease is required"
- assert lease.get("expires_epoch",0)>time.time(),"Lease has expired"
+ lease_file=pathlib.Path(lease_path);lease_bytes=lease_file.read_bytes();lease=json.loads(lease_bytes)
+ assert lease.get('device')=='emulator-5564' and lease.get('owner')=='canonical-builder' and lease.get('previous_evaluator')=='completed','Coordinator builder ownership required'
+ assert lease.get('granted_at') and lease.get('release') and '481' in lease.get('scope',''),'Task481 scope required'
  out=ROOT/'downloads/reference-expansion'/('run-'+time.strftime('%Y%m%dT%H%M%SZ',time.gmtime())+'-'+uuid.uuid4().hex[:6]);out.mkdir();globals()["CURRENT_OUT"]=out;print(out,flush=True)
  def run(cmd,name,timeout=300,data=None,allow_failure=False):
-  if list(map(str,cmd[:3]))==ADB:assert lease['expires_epoch']>time.time(),'Exclusive lease expired; do not continue device commands'
+  if list(map(str,cmd[:3]))==ADB:assert lease_file.read_bytes()==lease_bytes,'Coordinator lease changed; stop device commands'
   raw,receipt=capture(cmd,out/name,cwd=ROOT,timeout=timeout,data=data)
   if not allow_failure:assert receipt['returncode']==0 and not receipt['timed_out'],(name,receipt,raw[-1000:])
   return raw
