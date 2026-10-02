@@ -198,6 +198,16 @@ public final class ResearchEngine {
     public Result sourceResearch(String question){
         Result result=disk==null?research(question):disk.sourceResearch(question);
         List<Hit> eligible=new ArrayList<>();for(Hit h:result.hits)if(!h.passage.collectionProvenance.contains("Generation disabled:"))eligible.add(h);
+        // Exact title requests start with the first eligible source paragraph, not a later
+        // paragraph that repeats the title more often. This is relevance, not support.
+        if(disk==null){
+            Set<String> query=new HashSet<>(rankTerms(question)),seen=new HashSet<>();
+            for(Passage p:passages)if(!query.isEmpty()&&query.equals(new HashSet<>(rankTerms(p.title)))
+                    && !p.collectionProvenance.contains("Generation disabled:")&&seen.add(p.url)){
+                eligible.removeIf(h->h.passage.id.equals(p.id));
+                eligible.add(0,new Hit(p,10000));
+            }
+        }
         return new Result(eligible,result.missingTerms,result.answer,result.candidatesScored);
     }
     public Result research(String question) {
