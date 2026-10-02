@@ -1,0 +1,29 @@
+android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+ android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+  android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+   android.widget.ScrollView text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+     android.widget.Button text=Close reader description=null bounds=Rect(72, 0 - 1208, -568) clickable=true visible=false
+     android.widget.TextView text=Infiltration and groundwater recharge description=null bounds=Rect(72, 0 - 1208, -281) clickable=false visible=false
+     android.widget.TextView text=Source snapshot · Offline description=null bounds=Rect(72, 0 - 1208, -168) clickable=false visible=false
+     android.widget.Button text=Reading options description=null bounds=Rect(72, 0 - 1208, -12) clickable=true visible=false
+     android.widget.TextView text=Export cancelled. Saved records are unchanged. description=null bounds=Rect(72, 0 - 1208, 113) clickable=false visible=false
+     android.widget.TextView text=Some water that infiltrates will remain in the shallow soil layer, where it will gradually move vertically and horizontally through the soil and subsurface material. Some of the water may infiltrate deeper, recharging groundwater aquifers. If the aquifers are porous enough to allow water to move freely through it, people can drill wells into the aquifer and use the water for their purposes. Water may travel long distances or remain in groundwater storage for long periods before returning to the surface or seeping into other water bodies, such as streams and the oceans.
+
+Source document: Infiltration and groundwater recharge
+https://www.usgs.gov/water-science-school/science/infiltration-and-water-cycle
+Source date / retrieval: 2026-09-30
+Rights: USGS-authored text; U.S. public domain
+Citation: [water-04]
+
+Source and coverage
+Bundled water-science passage. Verbatim USGS paragraph with whitespace normalized; limited coverage, not a complete publication.
+
+Captured on this device: 2026-10-02 04:33
+Capture time is not the source publication date. description=null bounds=Rect(72, 113 - 1208, 2856) clickable=false visible=true
+     android.widget.Button text=Bookmarked · Remove bookmark description=null bounds=Rect(72, 4665 - 1208, 2856) clickable=true visible=false
+     android.widget.TextView text=Personal note description=null bounds=Rect(72, 4821 - 1208, 2856) clickable=false visible=false
+     android.widget.EditText text=UI verification note: retain the source date and citation identity when exporting this offline source. description=Personal note bounds=Rect(72, 4934 - 1208, 2856) clickable=true visible=false
+     android.widget.Button text=Save note description=null bounds=Rect(72, 5208 - 1208, 2856) clickable=true visible=false
+     android.widget.Button text=Export snapshot description=null bounds=Rect(72, 5376 - 1208, 2856) clickable=true visible=false
+     android.widget.Button text=Share snapshot description=null bounds=Rect(72, 5544 - 1208, 2856) clickable=true visible=false
