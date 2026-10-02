@@ -1,0 +1,17 @@
+{
+  "classification": "Local collector regression only; no Android execution",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tools/evaluation/reference-expansion",
+    "-p",
+    "test_capture.py"
+  ],
+  "exit_code": 0,
+  "log_sha256": "336e6e0c2f965296c1906b520e9d46bd62e58ec42a876fd4667c0a7b2514e69d",
+  "device_commands": 0,
+  "required_android_checks": "Not rerun: exclusive device lease unresolved; previous incomplete results preserved"
+}

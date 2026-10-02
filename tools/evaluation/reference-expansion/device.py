@@ -6,21 +6,21 @@ ADB=['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb','-s','emulator-5
 sys.path.insert(0,str(ROOT/'tools/packs/reference-expansion'))
 from build import build,sha
 from verify import verify_run
+from capture import capture
 PACK=ROOT/'downloads/reference-expansion/reference-expansion.plpack'
 CURRENT_OUT=None
 def inputs():
  names=subprocess.check_output(['git','ls-files','android','tools'],cwd=ROOT).decode().splitlines()
  return {n:sha((ROOT/n).read_bytes()) for n in names if (ROOT/n).is_file()}
 def device(lease_path):
- lease=json.loads(pathlib.Path(lease_path).read_text());assert lease.get("task_id") in {"480-expand-reviewed-reference-coverage-20261002a","480-expand-reviewed-reference-coverage-20261002a-repair-1","480-expand-reviewed-reference-coverage-20261002a-repair-2"} and lease.get("serial")=="emulator-5564" and lease.get("exclusive") is True,"A new coordinator-issued exclusive task480/5564 lease is required"
+ lease=json.loads(pathlib.Path(lease_path).read_text());assert lease.get("task_id") in {"480-expand-reviewed-reference-coverage-20261002a","480-expand-reviewed-reference-coverage-20261002a-repair-1","480-expand-reviewed-reference-coverage-20261002a-repair-2","480-expand-reviewed-reference-coverage-20261002a-strategy-change"} and lease.get("serial")=="emulator-5564" and lease.get("exclusive") is True,"A new coordinator-issued exclusive task480/5564 lease is required"
  assert lease.get("expires_epoch",0)>time.time(),"Lease has expired"
  out=ROOT/'downloads/reference-expansion'/('run-'+time.strftime('%Y%m%dT%H%M%SZ',time.gmtime())+'-'+uuid.uuid4().hex[:6]);out.mkdir();globals()["CURRENT_OUT"]=out;print(out,flush=True)
- def run(cmd,name,timeout=300,data=None):
-  start=time.monotonic()
+ def run(cmd,name,timeout=300,data=None,allow_failure=False):
   if list(map(str,cmd[:3]))==ADB:assert lease['expires_epoch']>time.time(),'Exclusive lease expired; do not continue device commands'
-  try:r=subprocess.run([str(x) for x in cmd],cwd=ROOT,input=data,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=timeout)
-  except subprocess.TimeoutExpired as e:(out/name).write_bytes(e.stdout or b'');(out/(name+'.command.json')).write_text(json.dumps({'returncode':-1,'timeout':timeout}));raise
-  (out/name).write_bytes(r.stdout);(out/(name+'.command.json')).write_text(json.dumps({'command':list(map(str,cmd)),'returncode':r.returncode,'elapsed_seconds':time.monotonic()-start}));assert r.returncode==0,(name,r.stdout[-1000:]);return r.stdout
+  raw,receipt=capture(cmd,out/name,cwd=ROOT,timeout=timeout,data=data)
+  if not allow_failure:assert receipt['returncode']==0 and not receipt['timed_out'],(name,receipt,raw[-1000:])
+  return raw
  def shell(cmd,name):return run(ADB+['shell',*cmd],name)
  build(PACK);src={'commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT).decode().strip(),'inputs':inputs(),'workers':2,'gradle_heap':'2GiB; not measured total peak','model_env_sha256':sha((ROOT/'tools/answers/model.env').read_bytes())}
  (out/'source-inputs.json').write_text(json.dumps(src,sort_keys=True,indent=2)+'\n');source_hash=sha((out/'source-inputs.json').read_bytes())
@@ -70,10 +70,12 @@ def device(lease_path):
  try:
   for mode in ['install','restart']:
    if mode=='restart':shell(['am','force-stop','org.pocketlore.app'],'cold-stop.txt')
-   run(ADB+['shell','am','instrument','-w','-e','run_id',out.name,'-e','source_hash',source_hash,'-e','mode',mode,'org.pocketlore.app.test/org.pocketlore.app.ReferenceExpansionInstrumentation'],'runtime-'+mode+'.txt',600)
+   run(ADB+['shell','am','instrument','-w','-e','run_id',out.name,'-e','source_hash',source_hash,'-e','mode',mode,'org.pocketlore.app.test/org.pocketlore.app.ReferenceExpansionInstrumentation'],'runtime-'+mode+'.txt',600,allow_failure=True)
    raw=run(ADB+['exec-out','run-as','org.pocketlore.app','cat',directory+'/'+mode+'.json'],mode+'.json');report=json.loads(raw)
    for screen in report['screens']:
     for ext in ['.png','.txt']:run(ADB+['exec-out','run-as','org.pocketlore.app','cat',directory+'/'+screen+ext],screen+ext)
+   command=json.loads((out/('runtime-'+mode+'.txt.command.json')).read_text())
+   assert command['returncode']==0 and not command['timed_out'],command
    assert report['status']=='PASS',report.get('error')
  finally:
   for cmd,name in [(['cat','/proc/sys/kernel/random/boot_id'],'boot-after.txt'),(['settings','get','system','font_scale'],'font-after.txt'),(['settings','get','system','user_rotation'],'rotation-after.txt')]:shell(cmd,name)
