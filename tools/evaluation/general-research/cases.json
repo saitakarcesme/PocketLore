@@ -1,0 +1,437 @@
+[
+  {
+    "id": "g01",
+    "question": "How does photosynthesis convert light energy into chemical energy?",
+    "expected": "Explain conversion and storage with literal source scope.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Photosynthesis",
+        "revision": 1371284103,
+        "allowed_span_sha256": [
+          "b1dee4dd48bae46cde860b8d712b26cff698bb4cf46770f83929c25f09258ddb",
+          "37e8e2a9687e22ac4b7f1445e246cfd4c8114bdd3a5c5d924f348557dbf5391e",
+          "ab18cdfbfe3bdedc5a83e1a5a39e08d64c654b02931247d304861dee3f515709",
+          "0621c4cf59213871934e7112dde1e1328362b19c4aa3402e7556a80f863e36bd"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g02",
+    "question": "How do chlorophyll pigments and light-dependent reactions produce oxygen?",
+    "expected": "Retain pigment location and water/electron conditions.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Photosynthesis",
+        "revision": 1371284103,
+        "allowed_span_sha256": [
+          "b1dee4dd48bae46cde860b8d712b26cff698bb4cf46770f83929c25f09258ddb",
+          "37e8e2a9687e22ac4b7f1445e246cfd4c8114bdd3a5c5d924f348557dbf5391e",
+          "ab18cdfbfe3bdedc5a83e1a5a39e08d64c654b02931247d304861dee3f515709",
+          "0621c4cf59213871934e7112dde1e1328362b19c4aa3402e7556a80f863e36bd"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g03",
+    "question": "What do ATP and NADPH do in the Calvin cycle?",
+    "expected": "Identify light-independent carbohydrate production, not a generated chain.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Photosynthesis",
+        "revision": 1371284103,
+        "allowed_span_sha256": [
+          "b1dee4dd48bae46cde860b8d712b26cff698bb4cf46770f83929c25f09258ddb",
+          "37e8e2a9687e22ac4b7f1445e246cfd4c8114bdd3a5c5d924f348557dbf5391e",
+          "ab18cdfbfe3bdedc5a83e1a5a39e08d64c654b02931247d304861dee3f515709",
+          "0621c4cf59213871934e7112dde1e1328362b19c4aa3402e7556a80f863e36bd"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g04",
+    "question": "How does cellular respiration transfer energy from nutrients to ATP?",
+    "expected": "Energy transfer and electron acceptor, not energy creation.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Cellular respiration",
+        "revision": 1370896130,
+        "allowed_span_sha256": [
+          "c6c5d6f8b50a1138dd0bd603c7bc268c3743fb953322a76c3b417fde9694d038",
+          "e5bdea4a345e9f0d13206b76feeddec81c4ebfb185c0d5543cfd98312bda05fe",
+          "0a105afdca3f7753dae47c3435acdacb4608e7b2dea8e370df74fc354a5d5981",
+          "24c4dc7b25b357e18a579ebd9743cc00f597b3daa521802bfea09236d06f3052"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g05",
+    "question": "Compare aerobic and anaerobic cellular respiration with fermentation.",
+    "expected": "Retain external-acceptor distinction; no equation of anaerobic respiration with fermentation.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Cellular respiration",
+        "revision": 1370896130,
+        "allowed_span_sha256": [
+          "c6c5d6f8b50a1138dd0bd603c7bc268c3743fb953322a76c3b417fde9694d038",
+          "e5bdea4a345e9f0d13206b76feeddec81c4ebfb185c0d5543cfd98312bda05fe",
+          "0a105afdca3f7753dae47c3435acdacb4608e7b2dea8e370df74fc354a5d5981",
+          "24c4dc7b25b357e18a579ebd9743cc00f597b3daa521802bfea09236d06f3052"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g06",
+    "question": "Why are respiration reactions catabolic?",
+    "expected": "Breakdown and ATP production; retain controlled-release context.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Cellular respiration",
+        "revision": 1370896130,
+        "allowed_span_sha256": [
+          "c6c5d6f8b50a1138dd0bd603c7bc268c3743fb953322a76c3b417fde9694d038",
+          "e5bdea4a345e9f0d13206b76feeddec81c4ebfb185c0d5543cfd98312bda05fe",
+          "0a105afdca3f7753dae47c3435acdacb4608e7b2dea8e370df74fc354a5d5981",
+          "24c4dc7b25b357e18a579ebd9743cc00f597b3daa521802bfea09236d06f3052"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g07",
+    "question": "How does inflation reduce purchasing power?",
+    "expected": "General price level and unit currency; not a current rate.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Inflation",
+        "revision": 1377062796,
+        "allowed_span_sha256": [
+          "319d2ee5c39785f66055301b45d050d0acb3549770e08ebc4022fa9f73376660",
+          "f35c528864bd50c39042590a5f6b5c61ee4b995573373bc1e49210e1a9e2e04c",
+          "e92880c8eea773b908848c008e52fbe6475b5de908add4287dc7616f7003d1f9",
+          "c0e0f81934b4891a2ff3818f627ab711f3a44c8b99edbdae59af4d28591ab3f9"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g08",
+    "question": "What is the difference between inflation and deflation?",
+    "expected": "Opposite general-price movement.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Inflation",
+        "revision": 1377062796,
+        "allowed_span_sha256": [
+          "319d2ee5c39785f66055301b45d050d0acb3549770e08ebc4022fa9f73376660",
+          "f35c528864bd50c39042590a5f6b5c61ee4b995573373bc1e49210e1a9e2e04c",
+          "e92880c8eea773b908848c008e52fbe6475b5de908add4287dc7616f7003d1f9",
+          "c0e0f81934b4891a2ff3818f627ab711f3a44c8b99edbdae59af4d28591ab3f9"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g09",
+    "question": "What factors can change inflation?",
+    "expected": "Demand, supply, money and expectations as described, no monocausal inference.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Inflation",
+        "revision": 1377062796,
+        "allowed_span_sha256": [
+          "319d2ee5c39785f66055301b45d050d0acb3549770e08ebc4022fa9f73376660",
+          "f35c528864bd50c39042590a5f6b5c61ee4b995573373bc1e49210e1a9e2e04c",
+          "e92880c8eea773b908848c008e52fbe6475b5de908add4287dc7616f7003d1f9",
+          "c0e0f81934b4891a2ff3818f627ab711f3a44c8b99edbdae59af4d28591ab3f9"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g10",
+    "question": "How does longitude specify an east-west position?",
+    "expected": "Angular coordinates, prime meridian and sign.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Longitude",
+        "revision": 1375296534,
+        "allowed_span_sha256": [
+          "2a97a92f71de97d1f81f850e3688656b2b003130d67191a4670008e6eb7fed66",
+          "15a84975634aa452ffeb51f3db485a5c5eccd73f0b9ca1563323d523b59bcdae",
+          "87fa4f8a9cc3f868f9c2f8cb0ea1bc96d0ece47c470eec8949d7ba710797626d",
+          "f680f3f5086f519fa4fd514028bea267ac9deda6edbb3c1ac9330ed914d44c19"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g11",
+    "question": "Why does a difference of 15 degrees longitude correspond to one hour?",
+    "expected": "Earth rotation and local-time scope, not legal time zones.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Longitude",
+        "revision": 1375296534,
+        "allowed_span_sha256": [
+          "2a97a92f71de97d1f81f850e3688656b2b003130d67191a4670008e6eb7fed66",
+          "15a84975634aa452ffeb51f3db485a5c5eccd73f0b9ca1563323d523b59bcdae",
+          "87fa4f8a9cc3f868f9c2f8cb0ea1bc96d0ece47c470eec8949d7ba710797626d",
+          "f680f3f5086f519fa4fd514028bea267ac9deda6edbb3c1ac9330ed914d44c19"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g12",
+    "question": "What distinguishes longitude from latitude?",
+    "expected": "East-west versus north-south coordinate scope.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Longitude",
+        "revision": 1375296534,
+        "allowed_span_sha256": [
+          "2a97a92f71de97d1f81f850e3688656b2b003130d67191a4670008e6eb7fed66",
+          "15a84975634aa452ffeb51f3db485a5c5eccd73f0b9ca1563323d523b59bcdae",
+          "87fa4f8a9cc3f868f9c2f8cb0ea1bc96d0ece47c470eec8949d7ba710797626d",
+          "f680f3f5086f519fa4fd514028bea267ac9deda6edbb3c1ac9330ed914d44c19"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g13",
+    "question": "What is an algorithm and why must it terminate?",
+    "expected": "Definition includes finite termination, not proof arbitrary programs terminate.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Algorithm",
+        "revision": 1376037819,
+        "allowed_span_sha256": [
+          "317f59cb1573d5a4ed19f22b319bedbcfddfb3f61c7bf77198a43050d45ec609",
+          "1f96200f876bb4500d73db4b5a3e8b55e495e2dc8c2aa3d60364c256b37ea3a4"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g14",
+    "question": "How do randomized algorithms use inputs?",
+    "expected": "Random input versus deterministic transitions.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Algorithm",
+        "revision": 1376037819,
+        "allowed_span_sha256": [
+          "317f59cb1573d5a4ed19f22b319bedbcfddfb3f61c7bf77198a43050d45ec609",
+          "1f96200f876bb4500d73db4b5a3e8b55e495e2dc8c2aa3d60364c256b37ea3a4"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g15",
+    "question": "What does habeas corpus determine about detention?",
+    "expected": "Lawfulness review, not an individual legal outcome.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Habeas corpus",
+        "revision": 1376671430,
+        "allowed_span_sha256": [
+          "59a64c4d3811a65d8a6bb936f22238ab1da8eb97d9f122b8c432ac658aac1fa6",
+          "956932b42b39f92ca0d12003271d4721f6772a8da06054c6fe57550a2bf56cac"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g16",
+    "question": "What limitations can apply to habeas corpus during a state of emergency?",
+    "expected": "Some-country suspensions, not universal absence of rights.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Habeas corpus",
+        "revision": 1376671430,
+        "allowed_span_sha256": [
+          "59a64c4d3811a65d8a6bb936f22238ab1da8eb97d9f122b8c432ac658aac1fa6",
+          "956932b42b39f92ca0d12003271d4721f6772a8da06054c6fe57550a2bf56cac"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g17",
+    "question": "How do convection and subduction contribute to plate motion?",
+    "expected": "Density and mantle scope, debate preserved.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Plate tectonics",
+        "revision": 1376119468,
+        "allowed_span_sha256": [
+          "9af3f15e968000d7c2d6141ba5ed6f781b55cec0f672770c3bedd7e642117d60",
+          "94ac967bff710438148618c5f9e67a201d2a833ae75f083f9d1f3a6113daa12b",
+          "7af23591a8cc38f244c01580e7cc221b51f89bc65428d70d6d2282af407401d0"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g18",
+    "question": "How do solar modules produce direct current from sunlight?",
+    "expected": "Cells, modules, arrays and inverter distinction.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Solar cell",
+        "revision": 1375385313,
+        "allowed_span_sha256": [
+          "c36d9893b18e511d7d805ab74a3bcf68d1df4d233cc8ffb51558d65d0770785e",
+          "887fbde5e72713c402cd9694e449d98d6cd9418410430e4dae1f475b979a3221",
+          "6e676d53e2648c639faba48b71919b48d4dff0205b0dd4dc0e558bfad179f048"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g19",
+    "question": "How do printing presses transfer ink?",
+    "expected": "Pressure transfer, no universal invention claim.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Printing press",
+        "revision": 1377510723,
+        "allowed_span_sha256": [
+          "a865eb3938708dfffa2407dce1a2a0fcccda1962c8d79d60a40f31dc42647f55",
+          "69d751ece96fa99d6abeb6bcd787a72ed9f00ba2412003b2edb7cb2103b3cad4"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g20",
+    "question": "How does photosynthesis store chemical energy?; How does cellular respiration transfer energy to ATP?",
+    "expected": "Both obligations covered independently; no newly inferred combined causal claim.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Photosynthesis",
+        "revision": 1371284103,
+        "allowed_span_sha256": [
+          "b1dee4dd48bae46cde860b8d712b26cff698bb4cf46770f83929c25f09258ddb",
+          "37e8e2a9687e22ac4b7f1445e246cfd4c8114bdd3a5c5d924f348557dbf5391e",
+          "ab18cdfbfe3bdedc5a83e1a5a39e08d64c654b02931247d304861dee3f515709",
+          "0621c4cf59213871934e7112dde1e1328362b19c4aa3402e7556a80f863e36bd"
+        ]
+      },
+      {
+        "title": "Cellular respiration",
+        "revision": 1370896130,
+        "allowed_span_sha256": [
+          "c6c5d6f8b50a1138dd0bd603c7bc268c3743fb953322a76c3b417fde9694d038",
+          "e5bdea4a345e9f0d13206b76feeddec81c4ebfb185c0d5543cfd98312bda05fe",
+          "0a105afdca3f7753dae47c3435acdacb4608e7b2dea8e370df74fc354a5d5981",
+          "24c4dc7b25b357e18a579ebd9743cc00f597b3daa521802bfea09236d06f3052"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g21",
+    "question": "What is longitude?; What is an algorithm?",
+    "expected": "Separate geography/computing sources and source identities.",
+    "absent": false,
+    "source_obligations": [
+      {
+        "title": "Longitude",
+        "revision": 1375296534,
+        "allowed_span_sha256": [
+          "2a97a92f71de97d1f81f850e3688656b2b003130d67191a4670008e6eb7fed66",
+          "15a84975634aa452ffeb51f3db485a5c5eccd73f0b9ca1563323d523b59bcdae",
+          "87fa4f8a9cc3f868f9c2f8cb0ea1bc96d0ece47c470eec8949d7ba710797626d",
+          "f680f3f5086f519fa4fd514028bea267ac9deda6edbb3c1ac9330ed914d44c19"
+        ]
+      },
+      {
+        "title": "Algorithm",
+        "revision": 1376037819,
+        "allowed_span_sha256": [
+          "317f59cb1573d5a4ed19f22b319bedbcfddfb3f61c7bf77198a43050d45ec609",
+          "1f96200f876bb4500d73db4b5a3e8b55e495e2dc8c2aa3d60364c256b37ea3a4"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g22",
+    "question": "What is the current inflation rate today?",
+    "expected": "ABSENT live rate; zero quotations.",
+    "absent": true,
+    "source_obligations": [
+      {
+        "title": "Inflation",
+        "revision": 1377062796,
+        "allowed_span_sha256": [
+          "319d2ee5c39785f66055301b45d050d0acb3549770e08ebc4022fa9f73376660",
+          "f35c528864bd50c39042590a5f6b5c61ee4b995573373bc1e49210e1a9e2e04c",
+          "e92880c8eea773b908848c008e52fbe6475b5de908add4287dc7616f7003d1f9",
+          "c0e0f81934b4891a2ff3818f627ab711f3a44c8b99edbdae59af4d28591ab3f9"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g23",
+    "question": "What does my detention record say?",
+    "expected": "ABSENT personal record; zero quotations.",
+    "absent": true,
+    "source_obligations": [
+      {
+        "title": "Habeas corpus",
+        "revision": 1376671430,
+        "allowed_span_sha256": [
+          "59a64c4d3811a65d8a6bb936f22238ab1da8eb97d9f122b8c432ac658aac1fa6",
+          "956932b42b39f92ca0d12003271d4721f6772a8da06054c6fe57550a2bf56cac"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g24",
+    "question": "When will the next earthquake occur?; Explain quuxzorbium antimatter cultivation.",
+    "expected": "ABSENT future event and invented topic; zero quotations.",
+    "absent": true,
+    "source_obligations": [
+      {
+        "title": "Plate tectonics",
+        "revision": 1376119468,
+        "allowed_span_sha256": [
+          "9af3f15e968000d7c2d6141ba5ed6f781b55cec0f672770c3bedd7e642117d60",
+          "94ac967bff710438148618c5f9e67a201d2a833ae75f083f9d1f3a6113daa12b",
+          "7af23591a8cc38f244c01580e7cc221b51f89bc65428d70d6d2282af407401d0"
+        ]
+      }
+    ]
+  }
+]
