@@ -16,7 +16,8 @@ public final class StorageMeterInstrumentation extends Instrumentation {
   if(new File(a.nativeLibraryDir).exists())roots.add(new File(a.nativeLibraryDir).getCanonicalPath());if(a.splitSourceDirs!=null)roots.addAll(Arrays.asList(a.splitSourceDirs));
   Set<String> seen=new HashSet<>();long logical=0,allocated=0,covered=0;JSONArray rows=new JSONArray();
   for(String root:roots){
-   String command="run-as org.pocketlore.app /system/bin/find '"+root.replace("'","'\\''")+"' -exec /system/bin/stat -c '%d %i %s %b' {} +; echo EXIT:$?";
+   if(!root.matches("[A-Za-z0-9_./=+~-]+"))throw new IOException("Unexpected measured root path");
+   String command="/system/bin/sh -c 'run-as org.pocketlore.app /system/bin/find "+root+" -exec /system/bin/stat -c \"%d %i %s %b\" {} +; echo EXIT:$?'";
    boolean ended=false;
    try(ParcelFileDescriptor fd=getUiAutomation().executeShellCommand(command);BufferedReader reader=new BufferedReader(new InputStreamReader(new FileInputStream(fd.getFileDescriptor())))){
     String line;while((line=reader.readLine())!=null){
