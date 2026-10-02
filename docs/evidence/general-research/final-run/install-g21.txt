@@ -1,0 +1,66 @@
+android.widget.FrameLayout null null Rect(0, 0 - 1080, 2400)
+android.widget.LinearLayout null null Rect(0, 0 - 1080, 2400)
+android.widget.FrameLayout null null Rect(0, 0 - 1080, 2400)
+android.widget.LinearLayout null null Rect(0, 0 - 1080, 2400)
+android.widget.LinearLayout null null Rect(0, 63 - 1080, 211)
+android.widget.TextView PocketLore null Rect(63, 80 - 792, 193)
+android.widget.TextView Offline null Rect(792, 87 - 912, 186)
+android.widget.ImageButton null Settings Rect(912, 74 - 1038, 200)
+android.widget.FrameLayout null null Rect(0, 211 - 1080, 2059)
+android.widget.ScrollView null null Rect(0, 211 - 1080, 2059)
+android.widget.LinearLayout null null Rect(0, 211 - 1080, 2059)
+android.widget.TextView What is longitude?; What is an algorithm? null Rect(63, 253 - 1017, 494)
+android.widget.Button Edit question null Rect(63, 505 - 1017, 631)
+android.widget.TextView 2 subquestions · 4 source quotations · inspect coverage gaps · no generated answer null Rect(63, 642 - 1017, 802)
+android.widget.TextView Source-backed research brief · exact quotations
+Not generated. Tap quotations for the source and license.
+
+Subquestion 1 (your input, not a source claim):
+What is longitude?
+
+Source: Longitude
+Exact quotation:
+“Longitude (/ˈlɒndʒɪtjuːd/, AU and UK also /ˈlɒŋɡɪ-/)[1][2] is a geographic coordinate that specifies the east-west position of a point on the surface of the Earth, or another celestial body. It is an angular measurement, usually expressed in degrees and denoted by the Greek letter lambda (λ). Meridians are imaginary semicircular lines running from pole to pole that connect points with the same longitude. The prime meridian defines 0° longitude; by convention the International Reference Meridian for the Earth passes near the Royal Observatory in Greenwich, south-east London on the island of Great Britain. Positive longitudes are east of the prime meridian, and negative ones are west.”
+Snapshot: Revision 1375296534 at 2026-09-17T00:07:53Z; retrieved 2026-10-02
+Attribution / rights: Wikipedia contributors, Longitude; article https://en.wikipedia.org/?curid=17617; contributor history https://en.wikipedia.org/w/index.php?curid=17617&action=history; CC BY-SA 4.0; selected modified text also CC BY-SA 4.0; no added restrictions; https://creativecommons.org/licenses/by-sa/4.0/
+Citation: [p10bb8878270ac7b7aa65036a5fd71007c34b3721bc269ce77544d542f0f27656_primary-wiki-17617-2a97a92f71de97d1]
+
+Source: Longitude
+Exact quotation:
+“Longitude is generally given using the geodetic normal or the gravity direction. The astronomical longitude can differ slightly from the ordinary longitude because of vertical deflection, small variations in Earth's gravitational field (see astronomical latitude).”
+Snapshot: Revision 1375296534 at 2026-09-17T00:07:53Z; retrieved 2026-10-02
+Attribution / rights: Wikipedia contributors, Longitude; article https://en.wikipedia.org/?curid=17617; contributor history https://en.wikipedia.org/w/index.php?curid=17617&action=history; CC BY-SA 4.0; selected modified text also CC BY-SA 4.0; no added restrictions; https://creativecommons.org/licenses/by-sa/4.0/
+Citation: [p10bb8878270ac7b7aa65036a5fd71007c34b3721bc269ce77544d542f0f27656_primary-wiki-17617-f680f3f5086f519f]
+
+Coverage not verified: inspect whether these excerpts answer every part, condition and premise of this subquestion.
+
+Subquestion 2 (your input, not a source claim):
+What is an algorithm?
+
+Source: Algorithm
+Exact quotation:
+“In mathematics and computer science, an algorithm (/ˈælɡərɪðəm/ ^(ⓘ)) is any well-defined set of instructions that when followed terminates after a finite number of steps that comprise a solution to a given computational problem. Advanced algorithms may utilize loops and involve many conditionals that decide the next step based on the inputs provided, resulting in long sequences of steps before halting, but all algorithms terminate by definition.[1]”
+Snapshot: Revision 1376037819 at 2026-09-21T17:18:33Z; retrieved 2026-10-02
+Attribution / rights: Wikipedia contributors, Algorithm; article https://en.wikipedia.org/?curid=775; contributor history https://en.wikipedia.org/w/index.php?curid=775&action=history; This article incorporates public domain material from Paul E. Black. "algorithm". Dictionary of Algorithms and Data Structures. NIST.; CC BY-SA 4.0; selected modified text also CC BY-SA 4.0; no added restrictions; https://creativecommons.org/licenses/by-sa/4.0/
+Citation: [p10bb8878270ac7b7aa65036a5fd71007c34b3721bc269ce77544d542f0f27656_primary-wiki-775-317f59cb1573d5a4]
+
+Source: Algorithm
+Exact quotation:
+“As an effective method, an algorithm can be expressed within both a finite amount of space and time[3] and in a well-defined formal language[4] for calculating a function.[5] Starting from an initial state and input, a computation occurs at each step, eventually producing output[6] and terminating. Randomized algorithms incorporate random inputs which can be used to simulate non-deterministic output even though the transitions between states are deterministic.[7]”
+Snapshot: Revision 1376037819 at 2026-09-21T17:18:33Z; retrieved 2026-10-02
+Attribution / rights: Wikipedia contributors, Algorithm; article https://en.wikipedia.org/?curid=775; contributor history https://en.wikipedia.org/w/index.php?curid=775&action=history; This article incorporates public domain material from Paul E. Black. "algorithm". Dictionary of Algorithms and Data Structures. NIST.; CC BY-SA 4.0; selected modified text also CC BY-SA 4.0; no added restrictions; https://creativecommons.org/licenses/by-sa/4.0/
+Citation: [p10bb8878270ac7b7aa65036a5fd71007c34b3721bc269ce77544d542f0f27656_primary-wiki-775-1f96200f876bb450]
+
+Coverage not verified: inspect whether these excerpts answer every part, condition and premise of this subquestion.
+
+Comparison / connection gap: no relationship between sections, causal chain, verdict, live status or personal result has been inferred. Any unanswered part remains Unknown.
+ null Rect(63, 802 - 1017, 2059)
+android.widget.LinearLayout null null Rect(63, 13094 - 1017, 2059)
+android.widget.TextView Source brief saved to your notebook null Rect(63, 13094 - 1017, 2059)
+android.widget.LinearLayout null null Rect(0, 2059 - 1080, 2274)
+android.widget.LinearLayout null null Rect(32, 2080 - 1048, 2263)
+android.widget.Button Research Research, selected Rect(37, 2080 - 281, 2263)
+android.widget.Button Library Library Rect(291, 2080 - 535, 2263)
+android.widget.Button Explore Explore Rect(545, 2080 - 789, 2263)
+android.widget.Button Saved Saved Rect(799, 2080 - 1043, 2263)
+android.view.View null null Rect(0, 2274 - 1080, 2400)

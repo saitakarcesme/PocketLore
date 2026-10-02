@@ -1,0 +1,1 @@
+{"command": ["bash", "tools/android-build.sh", "assembleDebug", "assembleDebugAndroidTest", "-I", "/home/isa/Projects/PocketLore/tools/evaluation/general-research/source.gradle", "-PpocketloreTestRunner=org.pocketlore.app.GeneralResearchInstrumentation"], "returncode": 0, "elapsed_seconds": 12.295747555996059}
