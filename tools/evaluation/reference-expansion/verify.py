@@ -3,6 +3,29 @@
 import copy,hashlib,json,pathlib,sys,tempfile,shutil,zipfile
 ROOT=pathlib.Path(__file__).resolve().parents[3];HERE=pathlib.Path(__file__).parent
 sha=lambda data:hashlib.sha256(data).hexdigest()
+def verify_storage(samples,pack_bytes):
+ # Recompute independent stat observations with inode deduplication. These are
+ # bounded snapshots, not a continuous peak or whole-device accounting.
+ for phase in ['before','during','after']:
+  row=samples[phase];seen={}
+  for raw in row['stat_rows']:
+   dev,inode,size,blocks=map(int,raw.split())
+   assert min(dev,inode,size,blocks)>=0
+   key=(dev,inode);value=(size,blocks*512)
+   assert key not in seen or seen[key]==value,'Conflicting inode samples'
+   seen[key]=value
+  assert seen and len(seen)==row['unique_inodes']
+  assert sum(x[0] for x in seen.values())==row['logical']
+  assert sum(x[1] for x in seen.values())==row['allocated']
+  assert sum(max(x) for x in seen.values())==row['covered']
+  assert row['meter']==row['covered'],'Independent stat/meter disagreement'
+ assert samples['before']['reserved']==samples['after']['reserved']==0
+ assert samples['during']['reserved']==pack_bytes+2*256*1024*1024+17*1024*1024
+ copied=samples['during']['copied_bytes_before_next_read']
+ assert 65536<=copied<=pack_bytes
+ assert samples['during']['logical']-samples['before']['logical']>=copied
+ assert samples['after']['logical']==samples['before']['logical'],'Repeat import left staging bytes'
+
 def verify_run(out):
  m=json.loads((out/'manifest.json').read_text());assert m['serial']=='emulator-5564'
  for name,digest in m['files'].items():
@@ -45,7 +68,9 @@ def verify_run(out):
  for suffix in ['before','staged','after']:
   assert int((out/('logical-'+suffix+'.txt')).read_text().split()[0])>0
   assert int((out/('allocated-'+suffix+'.txt')).read_text().split()[0])>0
- for name in ['provider-logical-staged.txt','provider-allocated-staged.txt']:assert int((out/name).read_text().split()[0])>0
+ for phase in ['before','staged','after']:
+  for kind in ['logical','allocated']:assert int((out/('provider-'+kind+'-'+phase+'.txt')).read_text().split()[0])>0
+ verify_storage(install['storage_lifecycle'],pack.stat().st_size)
  return m
 
 def main():

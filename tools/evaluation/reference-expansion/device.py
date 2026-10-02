@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Explicit task480/5564 lease required; never chooses another device or starts services."""
-import json,hashlib,pathlib,subprocess,time,uuid,sys,zipfile
+import json,hashlib,pathlib,subprocess,time,uuid,sys,zipfile,shutil
 ROOT=pathlib.Path(__file__).resolve().parents[3];HERE=pathlib.Path(__file__).parent
 ADB=['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb','-s','emulator-5564']
 sys.path.insert(0,str(ROOT/'tools/packs/reference-expansion'))
@@ -12,7 +12,7 @@ def inputs():
  names=subprocess.check_output(['git','ls-files','android','tools'],cwd=ROOT).decode().splitlines()
  return {n:sha((ROOT/n).read_bytes()) for n in names if (ROOT/n).is_file()}
 def device(lease_path):
- lease=json.loads(pathlib.Path(lease_path).read_text());assert lease.get("task_id")=="480-expand-reviewed-reference-coverage-20261002a" and lease.get("serial")=="emulator-5564" and lease.get("exclusive") is True,"A new coordinator-issued exclusive task480/5564 lease is required"
+ lease=json.loads(pathlib.Path(lease_path).read_text());assert lease.get("task_id") in {"480-expand-reviewed-reference-coverage-20261002a","480-expand-reviewed-reference-coverage-20261002a-repair-1"} and lease.get("serial")=="emulator-5564" and lease.get("exclusive") is True,"A new coordinator-issued exclusive task480/5564 lease is required"
  assert lease.get("expires_epoch",0)>time.time(),"Lease has expired"
  out=ROOT/'downloads/reference-expansion'/('run-'+time.strftime('%Y%m%dT%H%M%SZ',time.gmtime())+'-'+uuid.uuid4().hex[:6]);out.mkdir();globals()["CURRENT_OUT"]=out;print(out,flush=True)
  def run(cmd,name,timeout=300,data=None):
@@ -27,17 +27,17 @@ def device(lease_path):
  run(['bash','tools/android-build.sh','assembleDebug','assembleDebugAndroidTest','-I',HERE/'source.gradle','-PpocketloreTestRunner=org.pocketlore.app.ReferenceExpansionInstrumentation'],'build.log')
  apks={}
  for key,suffix in [('app','debug/app-debug.apk'),('test','androidTest/debug/app-debug-androidTest.apk')]:
-  p=ROOT/'android/app/build/outputs/apk'/suffix;apks[key]={'path':str(p),'bytes':p.stat().st_size,'sha256':sha(p.read_bytes())}
+  p=ROOT/'android/app/build/outputs/apk'/suffix;binary=out/'binaries';binary.mkdir(exist_ok=True);saved=binary/p.name;shutil.copyfile(p,saved);apks[key]={'path':str(saved),'bytes':saved.stat().st_size,'sha256':sha(saved.read_bytes())}
  def installed(when):
   for key in apks:
    package='org.pocketlore.app'+('.test' if key=='test' else '');path=shell(['pm','path',package],when+'-path-'+key+'.txt').decode().strip().removeprefix('package:');assert path.startswith('/data/app/') and '\n' not in path;shell(['sha256sum',path],when+'-'+key+'.txt')
  def retained(label):
-  cmd='for p in files/model.gguf files/model-selection files/model-library files/scale-library files/attachment-assets; do if [ -e "$p" ]; then find "$p" -type f -exec sha256sum {} \\; ; else echo ABSENT:$p; fi; done | sort'
+  cmd='for p in files/model.gguf files/model-selection files/model-library files/scale-library files/attachment-assets files/page-size-test/model.gguf; do if [ -e "$p" ]; then find "$p" -type f -exec sha256sum {} \\; ; else echo ABSENT:$p; fi; done | sort'
   shell(['run-as','org.pocketlore.app','sh','-c',"'"+cmd+"'"],'retained-'+label+'.txt')
  for cmd,name in [(['getprop','ro.build.version.sdk'],'api.txt'),(['getconf','PAGE_SIZE'],'pages.txt'),(['cat','/proc/sys/kernel/random/boot_id'],'boot-before.txt'),(['settings','get','system','font_scale'],'font-before.txt'),(['settings','get','system','user_rotation'],'rotation-before.txt')]:shell(cmd,name)
  assert (out/'api.txt').read_text().strip()=='37' and (out/'pages.txt').read_text().strip()=='16384'
  (out/'lease.json').write_text(json.dumps(lease,sort_keys=True)+'\n')
- installed('before');retained('before');shell(['run-as','org.pocketlore.app','du','-sb','.'],'logical-before.txt');shell(['run-as','org.pocketlore.app','du','-sk','.'],'allocated-before.txt')
+ installed('before');retained('before');shell(['run-as','org.pocketlore.app','du','-sb','.'],'logical-before.txt');shell(['run-as','org.pocketlore.app','du','-sk','.'],'allocated-before.txt');shell(['run-as','org.pocketlore.app.test','du','-sb','.'],'provider-logical-before.txt');shell(['run-as','org.pocketlore.app.test','du','-sk','.'],'provider-allocated-before.txt')
  for key,info in apks.items():
   owned='/data/local/tmp/reference480-'+out.name+'-'+key+'.apk'
   run(ADB+['push',info['path'],owned],'stage-'+key+'.txt');assert shell(['sha256sum',owned],'stage-'+key+'-hash.txt').decode().split()[0]==info['sha256']
@@ -77,7 +77,7 @@ def device(lease_path):
    assert report['status']=='PASS',report.get('error')
  finally:
   for cmd,name in [(['cat','/proc/sys/kernel/random/boot_id'],'boot-after.txt'),(['settings','get','system','font_scale'],'font-after.txt'),(['settings','get','system','user_rotation'],'rotation-after.txt')]:shell(cmd,name)
-  retained('after');shell(['run-as','org.pocketlore.app','du','-sb','.'],'logical-after.txt');shell(['run-as','org.pocketlore.app','du','-sk','.'],'allocated-after.txt');installed('final')
+  retained('after');shell(['run-as','org.pocketlore.app','du','-sb','.'],'logical-after.txt');shell(['run-as','org.pocketlore.app','du','-sk','.'],'allocated-after.txt');installed('final');shell(['run-as','org.pocketlore.app.test','du','-sb','.'],'provider-logical-after.txt');shell(['run-as','org.pocketlore.app.test','du','-sk','.'],'provider-allocated-after.txt')
  m={'run_id':out.name,'serial':'emulator-5564','source_hash':source_hash,'inputs_after':inputs(),'apks':apks,'pack_sha256':sha(PACK.read_bytes()),'pack_bytes':PACK.stat().st_size,'files':{p.name:sha(p.read_bytes()) for p in out.iterdir() if p.is_file() and p.suffix!='.plpack'}};(out/'manifest.json').write_text(json.dumps(m,indent=2)+'\n');verify_run(out)
  print('Behavior PASS; source-quality review remains separate:',out)
  return out
