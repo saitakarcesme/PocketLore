@@ -15,8 +15,17 @@ public final class StorageMeterInstrumentation extends Instrumentation {
   android.content.pm.ApplicationInfo a=getTargetContext().getApplicationInfo();List<String> roots=new ArrayList<>(Arrays.asList(a.dataDir,a.sourceDir));
   if(new File(a.nativeLibraryDir).exists())roots.add(new File(a.nativeLibraryDir).getCanonicalPath());if(a.splitSourceDirs!=null)roots.addAll(Arrays.asList(a.splitSourceDirs));
   Set<String> seen=new HashSet<>();long logical=0,allocated=0,covered=0;JSONArray rows=new JSONArray();
-  for(String root:roots){java.lang.Process p=new ProcessBuilder("/system/bin/sh","-c","find \"$1\" -exec stat -c '%d %i %s %b' {} +","meter",root).redirectErrorStream(true).start();
-   try(BufferedReader reader=new BufferedReader(new InputStreamReader(p.getInputStream()))){String line;while((line=reader.readLine())!=null){String[] x=line.trim().split(" +");if(x.length!=4)throw new IOException("Independent stat failed: "+line);long size=Long.parseLong(x[2]),blocks=Long.parseLong(x[3])*512;rows.put(line);if(seen.add(x[0]+":"+x[1])){logical+=size;allocated+=blocks;covered+=Math.max(size,blocks);}}}if(p.waitFor()!=0)throw new IOException("Independent find/stat failed");}
+  for(String root:roots){
+   String command="run-as org.pocketlore.app /system/bin/find '"+root.replace("'","'\\''")+"' -exec /system/bin/stat -c '%d %i %s %b' {} +; echo EXIT:$?";
+   boolean ended=false;
+   try(ParcelFileDescriptor fd=getUiAutomation().executeShellCommand(command);BufferedReader reader=new BufferedReader(new InputStreamReader(new FileInputStream(fd.getFileDescriptor())))){
+    String line;while((line=reader.readLine())!=null){
+     if(line.startsWith("EXIT:")){if(!line.equals("EXIT:0"))throw new IOException("Independent stat transport: "+line);ended=true;continue;}
+     String[] x=line.trim().split(" +");if(x.length!=4||!line.matches("[0-9 ]+"))throw new IOException("Independent stat failed: "+line);
+     long size=Long.parseLong(x[2]),blocks=Long.parseLong(x[3])*512;rows.put(line);if(seen.add(x[0]+":"+x[1])){logical+=size;allocated+=blocks;covered+=Math.max(size,blocks);}
+    }
+   }if(!ended)throw new IOException("Independent stat completion absent");
+  }
   return new JSONObject().put("logical",logical).put("allocated",allocated).put("covered",covered).put("unique_inodes",seen.size()).put("stat_rows",rows);
  }
  void reconcile(String name)throws Exception{long before=meter();JSONObject observed=external();long after=meter();ok(before==after&&after==observed.getLong("covered"),name+"_independent_stat_exact");report.put(name,observed.put("meter",after));}

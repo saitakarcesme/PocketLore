@@ -1,5 +1,5 @@
 """Explicit5560 bounded meter observation, with immutable inputs and transport identities."""
-import copy,hashlib,json,pathlib,subprocess,time,uuid
+import copy,hashlib,json,pathlib,re,subprocess,time,uuid
 ROOT=pathlib.Path(__file__).resolve().parents[3]
 ADB=['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb','-s','emulator-5560']
 def sha(b):return hashlib.sha256(b).hexdigest()
@@ -14,6 +14,7 @@ def verify(data):
  assert m['serial']=='emulator-5560' and int(data['sdk.txt'])==r['sdk'] and int(data['pages.txt'])==r['page_size']
  assert data['boot-before.txt']==data['boot-after.txt'] and data['font-before.txt']==data['font-after.txt']
  assert data['retained-before.txt']==data['retained-after.txt']
+ for line in data['retained-before.txt'].decode().splitlines():assert re.fullmatch(r'[0-9a-f]{64}  .+|ABSENT:(files|shared_prefs|databases)',line),line
  for name,pin in m['files'].items():assert sha(data[name])==pin,name
  for name,raw in data.items():
   if name.endswith('.command.json'):assert json.loads(raw)['returncode']==0,name
@@ -60,7 +61,8 @@ def main():
  for pkg in apks:installed(pkg,'before')
  def retain(label):
   # Hash persistent owned files only; no content or model bytes leave Android.
-  shell(['run-as','org.pocketlore.app','sh','-c',"'find files shared_prefs databases -type f -exec sha256sum {} \\; 2>/dev/null | sort'"],'retained-'+label+'.txt')
+  command="for d in files shared_prefs databases; do if [ -d \"$d\" ]; then /system/bin/find \"$d\" -type f -exec /system/bin/sha256sum {} \\; ; else echo ABSENT:$d; fi; done | sort"
+  shell(['run-as','org.pocketlore.app','sh','-c',"'"+command+"'"],'retained-'+label+'.txt')
  retain('before')
  for pkg,item in apks.items():run(ADB+['install','--no-incremental','-r',item['path']],'install-'+pkg+'.txt');installed(pkg,'installed')
  raw=run(ADB+['shell','am','instrument','-r','-w','-e','run_id',run_id,'-e','source_manifest_sha256',source_hash,'org.pocketlore.app.test/org.pocketlore.app.StorageMeterInstrumentation'],'runtime.txt')
