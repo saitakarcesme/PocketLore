@@ -21,11 +21,12 @@ final class ReaderUi {
     }
     static void heading(TextView t) { t.setAccessibilityHeading(true); }
     static void status(TextView t) { t.setAccessibilityLiveRegion(View.ACCESSIBILITY_LIVE_REGION_POLITE); }
+    static void barAppearance(Activity a,boolean light){if(android.os.Build.VERSION.SDK_INT>=30){int mask=android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS|android.view.WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS;a.getWindow().getInsetsController().setSystemBarsAppearance(light?mask:0,mask);}}
     static void insets(Activity a, View root) {
         if(android.os.Build.VERSION.SDK_INT>=30)a.getWindow().setDecorFitsSystemWindows(false);
         root.setBackgroundColor(NAVY);a.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR|View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR);
         a.getWindow().setStatusBarColor(NAVY);a.getWindow().setNavigationBarColor(NAVY);
-        root.setOnApplyWindowInsetsListener((v,i)->{
+        barAppearance(a,true);root.setOnApplyWindowInsetsListener((v,i)->{
             if(android.os.Build.VERSION.SDK_INT>=30){android.graphics.Insets b=i.getInsets(WindowInsets.Type.systemBars()|WindowInsets.Type.ime());v.setPadding(b.left,b.top,b.right,b.bottom);View navigation=v.findViewWithTag("destination-nav");if(navigation!=null)navigation.setVisibility(i.isVisible(WindowInsets.Type.ime())?View.GONE:View.VISIBLE);}
             else v.setPadding(i.getSystemWindowInsetLeft(),i.getSystemWindowInsetTop(),i.getSystemWindowInsetRight(),i.getSystemWindowInsetBottom());
             return i;
