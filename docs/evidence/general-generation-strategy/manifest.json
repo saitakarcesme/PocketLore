@@ -1,0 +1,36 @@
+{
+  "implementation_commit": "284048548b000b28cdccc62c5a1e9f674de1e89f",
+  "classification": "Structural contract validated; general generated product gate FAIL",
+  "checks": {
+    "bash tools/android-build.sh": {
+      "exit": 0,
+      "raw": "build-repaired.log"
+    },
+    "bash tools/evaluation/check_general_generation.sh": {
+      "exit": 1,
+      "raw": "required-check-repaired.log"
+    }
+  },
+  "apk_sha256": "fa01827a920aa9db5a6e112c4b7557a88c3f8b3818b7312d24822cd826734a00",
+  "new_android_execution": false,
+  "new_model_inference": false,
+  "sha256": {
+    "docs/evidence/general-generation-strategy/contract-first.log": "7477f810d42d7f4d10dfad467b101b494a8e0463d0542ac95b49de095251fc6e",
+    "docs/evidence/general-generation-strategy/contract-second.log": "0544a7f3e44d9dab0c72afd1359bbb8d9e9918f6363f3be429febb0a03d3e0a5",
+    "docs/evidence/general-generation-strategy/contract-final.log": "64a4ebdf55e020d6c67aff5bcec59ba7a83b36025d61d2de81c779b55f30ac39",
+    "docs/evidence/general-generation-strategy/build.log": "6481b0365036e1445279ad691be503cc0b7d3f8de541055a4605dc035da2c9da",
+    "docs/evidence/general-generation-strategy/required-check.log": "a491e579ceffb903ab3811fc053fdba98a7953fd039fcf5b981121f36a693080",
+    "docs/evidence/general-generation-strategy/split-citation-red.log": "39dd4e020f9d64e478d6c8ed030a01ff594cecd85468c5f686600e29a7b721b6",
+    "docs/evidence/general-generation-strategy/contract-repaired.log": "433dfe72886716c53f2bf7d5360d7952ac318b12cc3469db5cf6b2cf86a8511d",
+    "docs/evidence/general-generation-strategy/build-repaired.log": "4eca30c5aa7617ff636231cf47671954d11515ebea37306463e753995ba43b8d",
+    "docs/evidence/general-generation-strategy/required-check-repaired.log": "ca1899a9addb79733208381461b72fcfe5d3a80e440917eea0924d75534e4f88",
+    "docs/evidence/general-generation-strategy/initial-independent-critic.txt": "b060dd1956912ddc554e0d282840b70e55cfe22fdf96a0751b2c0031a99e5d28",
+    "docs/evidence/general-generation-strategy/final-independent-critic.txt": "c6575ea06ac01e71a424cfa9e7fa97b1a598530fec6959746ef1b7ef3dd9c001",
+    "android/app/src/main/java/org/pocketlore/app/ReviewedAnswerVerifier.java": "cc41c169bfce8f6e39412f00b15e6e490507bda665a8936fb45efb9c7024225c",
+    "tools/evaluation/review-bound-generation/Behavior.java": "5e294205a8aeadbfc831cc7b71eb629f48b8022c6097c3b96a7448a0d93f25aa",
+    "tools/evaluation/review-bound-generation/check.py": "0a04f28035ace1c535c1be6e96e1f510946d11e2b11b499f1b06a847bfec61e9",
+    "tools/evaluation/check_general_generation.sh": "d9ae8eb73684e5017994afee3a7078b134ea1f045d8703bafb2fde609c757cb2",
+    "docs/evidence/500-general-grounded-generation-strategy-change.md": "59c3453a128e90a680be54de76f15083f0fbbe8633cd7b024ce88b04d6d49b88",
+    "docs/evidence/general-grounded-generation.md": "173172d383b29d68c996409fe5b6a064c2caa009cf0c1cecc7ba321be84456d6"
+  }
+}

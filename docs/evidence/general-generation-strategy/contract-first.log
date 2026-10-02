@@ -1,0 +1,34 @@
+PASS exact constructed binding, not semantic proof
+PASS untrusted authority
+PASS changed draft
+PASS changed question
+PASS changed source field 0
+PASS changed source field 1
+PASS changed source field 2
+PASS changed source field 3
+PASS changed source field 4
+PASS changed source field 5
+PASS changed collection revision
+PASS changed license bytes
+PASS incomplete obligation
+PASS absent is not useful answer
+PASS unreviewed tail
+PASS unreviewed prefix
+PASS overlap
+PASS missing source
+PASS invalid source offset
+PASS split source surrogate pair
+PASS unsupported full draft
+PASS nonfactual cannot certify answer
+Exception in thread "main" java.lang.AssertionError: whitespace-only evidence
+	at org.pocketlore.app.Behavior.result(Behavior.java:15)
+	at org.pocketlore.app.Behavior.rejects(Behavior.java:16)
+	at org.pocketlore.app.Behavior.main(Behavior.java:36)
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/review-bound-generation/check.py", line 7, in <module>
+    subprocess.run([J/'java','-Xmx128m','-cp',tmp,'org.pocketlore.app.Behavior'],check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '[PosixPath('/home/isa/Android/atlas-toolchain/jdk/bin/java'), '-Xmx128m', '-cp', '/tmp/tmpetothvhz', 'org.pocketlore.app.Behavior']' returned non-zero exit status 1.
