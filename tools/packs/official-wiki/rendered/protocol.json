@@ -1,0 +1,13 @@
+{
+ "version":1,
+ "source":"https://dumps.wikimedia.org/other/enterprise_html/runs/20250320/enwiki-NS0-20250320-ENTERPRISE-HTML.json.tar.gz",
+ "archive_bytes":140267048582,
+ "archive_md5":"2276dbb8db3bc93eabc90a505117e373",
+ "range_start":0,"range_end_inclusive":67108863,
+ "reason":"Bounded official rendered-source feasibility without per-article requests or reconstructing missing templates",
+ "historical_date":"2025-03-20",
+ "scope":"Prefix pilot, not full archive checksum validation, not broad admission or current content",
+ "limits":{"expanded_bytes":1500000000,"record_bytes":16000000,"workers":1,"address_space_bytes":2147483648},
+ "selection":"Every complete record in declared prefix, no question/title filtering; questions only after source freeze",
+ "preservation":"Original compressed response bytes, headers, complete JSON records, exact revision/license fields, HTML and plain source text; incomplete trailing record excluded with failure retained"
+}
