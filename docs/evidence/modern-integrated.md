@@ -1,51 +1,64 @@
-# Modern integrated Android compatibility — task400
+# Modern integrated Android compatibility — task400 repair1
 
-**Required build passes; the dedicated API37 integrated check fails.** Native load/recovery and narrow source-card/absent-recognition behavior have real partial evidence, but default/large-font editorial navigation and personal-document interactions remain unverified on5564. No failed invocation is promoted by a recovered PASS report. The candidate application is byte-identical to accepted390; only test/evaluation code changed.
+**The required Android build and fresh dedicated API37 integrated check pass.** The accepted390 application remains byte-identical; repairs are in test transport/registration, absent-catalog restoration and validation. All earlier failures, including missing installed code, remain preserved. Emulator evidence is not phone, generated-answer, full-capacity or release acceptance.
 
-## Exact candidate and environment
+## Candidate and data-preserving recovery
 
-- APK: `9c71a32dbc2deac3d650c6849a335379bd2b005c1516437c613bcd0fcff7dd70`,22,702,878 bytes. DEX/native/bundled-source hashes and test APK identity: [candidate.json](modern-integrated/host-checks/candidate.json).
-- Existing emulator-5564: Android17/API37, x86_64, process/libc page size16,384; fingerprint `google/sdk_gphone16k_x86_64/emu64xa16k:17/CP41.260828.004.A7/16296984:userdebug/dev-keys`.
-- Actual initial `/data`:65,871,612KiB total. The subset has the resident task305 model at `files/page-size-test/model.gguf`,491,400,032 bytes, SHA256 `74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db`. Production model-selection, installed pack/bulk catalogs, OCR and speech assets were absent. No corpus/model/optional-asset transfer was performed.
-- The permitted `runtime/modern-android/state.json` was read; its old unaligned delivery APK and task305-pending description are historical, not current candidate evidence.305 and390 receipts were inspected, not relabeled as400 execution.
+APK SHA256: `9c71a32dbc2deac3d650c6849a335379bd2b005c1516437c613bcd0fcff7dd70`,22,702,878 bytes. Actual installed hash equals the built hash. DEX/native/bundled-asset identities remain in [candidate.json](modern-integrated/host-checks/candidate.json); fresh test-APK identity and all run artifacts are pinned in [manifest.json](modern-integrated/repair1/passing/manifest.json).
 
-## Implemented bounded checker
+The repair started from the current task checkpoint, recovering failed50e2fd5 changes without switching/resetting/pushing.5564 was booted at API37/page16384 but its retained package record had `pkg=null` and pointed to a missing APK. The builder performed a normal `adb install --no-incremental -r`, with no uninstall, clear-data, emulator restart or service change. App ID10230 was preserved; the existing491,400,032-byte task305 model still matched SHA256 `74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db`, and prior task files remained accessible. Exact commands, exit codes and outputs are under [recovery/preflight](modern-integrated/repair1/recovery/preflight/). This restores package accessibility; it does not establish the cause of the earlier missing code or device losses.
 
-`bash tools/evaluation/check_modern_integrated.sh` binds only5564 and shares the existing task305 serial lock. It verifies actual boot/API/page size, exact accepted APK, ELF LOAD/RELRO/ZIP16KB, package compatibility state and installed hash; captures baseline/final assets/storage; builds three explicitly registered instrumentation runners; uses raw instrumentation completion, zero transport exit and fresh report IDs. It never changes canonical serial defaults.
+A fresh preflight then caught an incorrectly quoted `stat` format argument. That failure is preserved; quoting is corrected. The checker verifies all three instrumentation registrations and runs UI/documents before the resident native test. All six expected report paths and both cold-restart results are required, with exact invocation ID, transport exit0 and raw `INSTRUMENTATION_CODE: -1`. No recovered report substitutes for failed transport.
 
-Accepted ProductUiInstrumentation and DocumentsInstrumentation are reused with dynamic API labels and invocation IDs. Documents can now restore an initially absent catalog after removing only test-created imports. The default/large-font UI, blocked SAF cancellation/retry, cold restart and personal Library-return/search assertions remain intact. New ModernIntegratedInstrumentation performs no generation call: it tests precancelled load, reset/load, cancel/reset/close/reload, exact reviewed six-field projection/source-reader/provider export, and missing optional engines. It does not claim nearby-index lookup on this subset. Final APK/asset/corruption controls fail closed; complete-run changed/missing/rehashed-identity mutations remain pending because the run never reached them.
+## Actual required execution
 
-Three independent host tests consume the actual initial failed bytes: a PASS JSON without transport completion is rejected; nonzero/timeout/crashed transport cannot be replaced by a raw success marker; a report cannot be rebound to another invocation. Actual built ELF/APK mutation tests reject changed LOAD/RELRO, missing native libraries, ZIP misalignment/compression and the historical unaligned APK. These host passes do not satisfy device integration.
+```
+bash tools/android-build.sh
+bash tools/evaluation/check_modern_integrated.sh
+```
 
-## Preserved runs and actual failures
+Both completed with exit0. Fresh run: `downloads/modern-integrated/20261002T022111Z-c63af576`; no prior device report was reused. The serial suite took approximately114 seconds from timestamped creation to final manifest (filesystem timing, not a latency benchmark). Read-only verification of the final stricter receipt checks also passes:
 
-All raw text reports, transport exit/timing metadata and build logs are under [failures](modern-integrated/failures/). Each directory contains a hash inventory including screenshots retained in the corresponding ignored `downloads/modern-integrated/<run>/` directory. No APK/model/binary payload is committed.
+```
+bash tools/evaluation/check_modern_integrated.sh downloads/modern-integrated/20261002T022111Z-c63af576
+```
 
-| Run | Observed result |
+Environment: existing emulator-5564, Android17/API37, x86_64, libc page16,384; fingerprint `google/sdk_gphone16k_x86_64/emu64xa16k:17/CP41.260828.004.A7/16296984:userdebug/dev-keys`. Actual package manager reports `pageSizeCompat=0`; final UI dump has no compatibility warning. Current ARM64 and x86_64 LOAD/RELRO and APK ZIP16KB checks pass; only x86_64 executed.5560/5562 and their corpora were untouched.
+
+| Fresh phase | Observed behavior |
 | --- | --- |
-| `20261002T020922Z-0fb6e277` | Native/card/absent-recognition report PASS; formatted `am instrument` output omitted the completion code. Whole invocation failed; corrected to raw `-r` output. |
-| `20261002T021019Z-6f678acc` | Raw native instrumentation returned0 and completion-1;5564 went offline during report collection. Whole run failed, and attempted font restoration also reported offline. No font mutation had yet occurred. |
-| `20261002T021246Z-6a5578b4` | Native/card/provider-export report and transport pass. UI invocation failed because Gradle replaced the first manifest instrumentation entry. Explicitly listing the default runner first fixes this; a registration preflight was added. |
-| `20261002T021331Z-462767aa` | All three runners registered; native report again returned completion-1, but5564 disappeared during screenshot collection. Whole run failed. |
-| `20261002T021503Z-6d28c1c4` | After5564 reappeared, preflight failed: `run-as: unknown package: org.pocketlore.app`. Package manager shows `pkg=null`; `pm path` returns no installed path. UI-first order was prepared to isolate independent checks, but could not start. |
+| Default UI |108 checks: actual keyboard/Back, Settings return, edit/recreation preservation, model-unloaded research, source reader, bookmarks/notes, share/picker, blocked provider cancellation/retry and Activity destruction |
+| Large UI |108 checks at actual font_scale2.0, with screenshots/accessibility nodes; original1.0 preference restored |
+| Cold reader |3 checks: saved bookmark, note and source identity survive force-stop/relaunch |
+| Personal documents |83 checks: actual Library import→return→Citrine search, model explicitly unloaded/no invocation, provenance/UTF16 offsets, real quoted-CSV/JSON/text-PDF/TXT/MD handling, integrity/error/cancellation, portable export/reimport and exact live-catalog rollback |
+| Cold documents |7 retained test collections reopen and search; initially absent live catalog restored to absence |
+| Native/cards/recognition |57 checks: real pinned resident-model load/cancel/reset/close/reload with no generation; three reviewed six-field cards in actual reader and real provider exports; absent-engine/no-microphone/cancellation behavior |
 
-No emulator was restarted, wiped or uninstalled by the builder; no service/GPU/global configuration changed. No cause is inferred for transport loss or package-manager state. The user was asked whether another coordinator action owns5564; device mutations stopped rather than reinstalling over unexplained state. Final raw inventory/package/path observations are in [host-checks](modern-integrated/host-checks/). Resolving serial ownership and providing a stable installed5564 environment is the concrete external dependency; no change to5560/5562 or protected inference is requested.
+Notebook blocked-write cancellation measured113ms(default) and68ms(large). Personal provider read cancellation measured73.537ms; blocked document export10.225ms. These are bounded public fixture observations, not arbitrary-provider guarantees. Source/Notebook access remained usable during blocked export; retry bytes match exactly.
 
-## Partial measured behavior, not whole-gate success
+Raw reports/text/accessibility nodes are committed in [repair1/passing](modern-integrated/repair1/passing/). Screenshots remain in the ignored fresh run directory and are SHA-pinned in the manifest; default/large keyboard and document-result screenshots were visually inspected. The large-font layout uses substantially more vertical scrolling; node/control checks do not establish human or TalkBack usability. The document screenshot visibly labels extractive fallback with no loaded model, not generated research. Source-dialog fields/offsets are asserted separately by the real instrumentation.
 
-The third run's actual report records a precancelled native load throwing `IllegalStateException: Cancelled`, followed by load376.094ms and close/reload372.340ms; loaded PSS76,589KiB and native heap46,063,008 bytes. Load has zero generation contexts, and final close releases session/context state. These are load-time emulator samples, not generation/KV/phone working-set peaks. No model generation or research inference ran.
+## Identity, memory and subset storage
 
-That run opened all three approved GeoNames card projections in the actual source reader, kept exact six-field UTF16 spans, attribution/license/unknown-agency limitations, and exported the exact portable bytes through a real provider. Screenshots visibly label saved extractive metadata, not reasoning/current observations. Original raw-row/city-index matching was not exercised because the installed city index is absent. Absent OCR explicitly fails; absent speech leaves typing available without starting the microphone; cancellation clears input. Present-asset recognition was unavailable and is not claimed.
+Before/after hashes and explicit ABSENT states are identical: production `model.gguf`, model-selection, installed small/bulk catalogs and optional OCR/speech assets are absent; the resident task305 model remains intact at `page-size-test/model.gguf`. No model/corpus/optional asset was downloaded or transferred. Only documented small personal fixtures were provisioned into test-owned directories. Model load does not promote the fixture to production selection.
 
-Before the fourth attempt, actual app-tree logical bytes were528,939,778 and allocated bytes531,435,520 (518,980KiB). Adding the22,702,878-byte candidate APK gives551,642,656 logical bytes for this snapshot, excluding test APK/provider/package allocation and shared Android overhead. No complete post-run total, continuous peak or full inventory budget is established: final package identity is unresolved. Earlier303/390 full-corpus capacities and API35 observations are not transplanted to5564.
+Native observations: precancelled load throws `IllegalStateException: Cancelled`; reset/load470.941ms, cancel/reset/close/reload392.357ms. Loaded PSS75,673KiB, native heap46,032,416 bytes; zero generation contexts and released final native session/context state. There is no generate call in the modern native instrumentation. Document-phase sampled PSS peak94,655KiB; sampled test-root disk peak242,738 bytes. These are emulator point/periodic observations, not combined generation/KV or whole-process absolute peaks.
 
-## Checks and release gaps
+| Snapshot | Before | After |
+| --- | ---: | ---: |
+| Logical app tree |528,997,254 |540,224,096 |
+| Allocated app tree, KiB×1024 |531,521,536 |543,629,312 |
+| Logical app tree plus APK |551,700,132 |562,926,974 |
+| Allocated app tree plus APK blocks |554,217,472 |566,325,248 |
 
-- `bash tools/android-build.sh`: PASS, recorded initial required build; final dedicated test compilation also PASS.
-- `bash tools/evaluation/check_modern_integrated.sh`: FAIL as above; not waived.
-- Receipt regressions:3 PASS. Real current native artifact mutation checks: PASS.
-- Default/large-font keyboard/Back/edit restoration, Notebook blocked-export interaction, cold restart and actual personal import/search/export on API37 remain pending. Existing API35 successes are not substitutes.
-- Current installed APK identity, post-run asset retention/storage, compatibility-dialog absence and final lifecycle receipts remain unresolved after package-manager failure.
-- Optional recognition with installed assets, full-capacity API37, native ARM64/physical Android/GrapheneOS, TalkBack/human acceptance, unseen answer quality, source-rights clearance and competitive/release acceptance remain open.
+Byte totals include retained test reports/screenshots inside app data; they exclude test-APK/provider storage and shared system overhead. They are measured subset snapshots, not a whole-device peak or a replacement for303/390 full-inventory evidence. `/data` reports65,871,612KiB total, but nominal capacity is not installed-corpus proof. No full31-shard transfer/update or physical memory claim is made. Gradle2workers/2GiB heap is configured, not measured total build memory.
 
-Two Gradle workers/2GiB heap are configured, not measured total compilation peak. No new models, downloads, inference, corpus expansion, private holdout, main advancement or publication occurred. Independent criticism of frozen checkpoint `18687277bebf2b11d2092858cc14e181f6488e34` confirms only partial behavior and unresolved gates; its exact English result is in [independent-review.json](modern-integrated/independent-review.json). This is agent criticism, not canonical runner review or human acceptance. This report does not claim completion or acceptance.
+The reviewed GeoNames outputs preserve only IDs292223/292672/292968 and six approved fields, exact offsets, dates, credit, offline license and unknown-agency/as-is limitations. They are saved extractive metadata, not generated reasoning, current observations, routing or venue evidence. Underlying city-index lookup/raw-row matching was unavailable on this subset; prior360 source-review scope is not expanded. Optional OCR/speech assets were absent, so recognition success and microphone-grant capture are not claimed. Android reports location/audio permissions ungranted; missing speech starts no microphone and typing remains available.
+
+## Failures, integrity and remaining gates
+
+The [initial failed report](modern-integrated/initial-failed-report.md) and [original raw failures](modern-integrated/failures/) preserve missing completion, misregistered runner, device loss and missing package observations. The new [failed preflight](modern-integrated/repair1/failed-preflight/) remains separate from success. The cause of prior device/code loss remains unknown.
+
+Three host regressions reject actual formatted-only completion, failed/timeout transport and stale run IDs. On the fresh run, actual report deletion/mutation, stale invocation and changed installed identity (even with recomputed receipt hash) were rejected. Current ELF/APK mutation tests reject misalignment, missing/compressed libraries and historical unaligned binaries. Original immutable evidence was not edited. [SHA256SUMS](modern-integrated/repair1/SHA256SUMS) pins new committed text receipts.
+
+This closes the bounded emulator subset interaction checks only. Physical ARM64 Android/GrapheneOS, TalkBack/human review, full-capacity API37, present-asset recognition, long-duration stability, generated-answer quality/unseen generalization, bulk-source rights and external release acceptance remain open. No network research/inference, new model generation, protected inference changes, global preferences, publication or main advancement occurred. Independent criticism of the frozen repair is recorded separately; builder checks are not canonical acceptance.
