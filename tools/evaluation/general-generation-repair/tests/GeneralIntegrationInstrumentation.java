@@ -11,7 +11,7 @@ public final class GeneralIntegrationInstrumentation extends Instrumentation {
  end=SystemClock.elapsedRealtime()+30000;while(a.latestAnswer()==null&&SystemClock.elapsedRealtime()<end)Thread.sleep(50);
  AnswerEngine.Outcome o=a.latestAnswer();if(o==null||o.kind!=AnswerEngine.Kind.ABSTAINED||o.invokedModel||!o.text.contains("independent whole-answer support verification"))throw new AssertionError("Missing fail-closed general path");
  File dir=new File(getTargetContext().getFilesDir(),"general-generation-repair/"+run);dir.mkdirs();org.json.JSONObject report=new JSONObject().put("run_id",run).put("source_hash",source).put("status","PASS").put("scope","Actual API37 research control reaches general unavailable-verifier route; no model inference or selected-model proof").put("kind",o.kind.name()).put("invoked_model",o.invokedModel).put("visible_text",o.text).put("api",Build.VERSION.SDK_INT);
- Files.writeString(new File(dir,"report.json").toPath(),report.toString(2));try(OutputStream out=new FileOutputStream(new File(dir,"screen.png"))){if(!getUiAutomation().takeScreenshot().compress(android.graphics.Bitmap.CompressFormat.PNG,100,out))throw new AssertionError("screenshot");}
+ Files.write(new File(dir,"report.json").toPath(),report.toString(2).getBytes(java.nio.charset.StandardCharsets.UTF_8));try(OutputStream out=new FileOutputStream(new File(dir,"screen.png"))){if(!getUiAutomation().takeScreenshot().compress(android.graphics.Bitmap.CompressFormat.PNG,100,out))throw new AssertionError("screenshot");}
  result.putString("status","PASS");finish(-1,result);
  }catch(Throwable e){result.putString("failure",e.toString());finish(1,result);}}
 }
