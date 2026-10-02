@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "classification": "Constructed public development source-snapshot fixtures; not corpus facts or generated-answer evidence",
+  "cases": [
+    {
+      "id": "water",
+      "sources": [
+        {
+          "title": "Water note A",
+          "body": "Water boils at 100 °C at standard atmospheric pressure.",
+          "sha256": "5f2d4476a1340e4dd9c10e84600607cbc0ac3552ca02eb49031888047e1af084"
+        },
+        {
+          "title": "Water note B",
+          "body": "At lower pressure, the boiling temperature decreases.",
+          "sha256": "b46dd726fe3bc9096778c9dcc676216098e9cc5c2a60516fff9853a69dad225a"
+        }
+      ],
+      "dimensions": [
+        "Condition",
+        "Temperature"
+      ],
+      "expectation": "All cells initially Unknown; only selected exact spans admitted; missing/stale/hash/offset binding yields Unknown gap; source records unchanged."
+    },
+    {
+      "id": "travel",
+      "sources": [
+        {
+          "title": "Guide A",
+          "body": "The garden was open on Saturdays in the 2023 guide.",
+          "sha256": "01b2ca2921b5931500b7ba371903ca348f72cc200963afe6c6b87ae0712caf22"
+        },
+        {
+          "title": "Guide B",
+          "body": "The 2024 guide lists an accessible east entrance.",
+          "sha256": "1e35b99d89a28901f1e2e3e5bba9eb203f967439e7b272728880aff73b8859db"
+        }
+      ],
+      "dimensions": [
+        "Date",
+        "Access",
+        "Current hours"
+      ],
+      "expectation": "All cells initially Unknown; only selected exact spans admitted; missing/stale/hash/offset binding yields Unknown gap; source records unchanged."
+    },
+    {
+      "id": "unicode",
+      "sources": [
+        {
+          "title": "Math note A",
+          "body": "A 🧭 label precedes the formula x² + y² = r².",
+          "sha256": "ff36b75648cb6ecf6e959129150da4670dfac6810c962e30f1edf4cd683cfad6"
+        },
+        {
+          "title": "Math note B",
+          "body": "The ratio is stated as 5:1 in this fixture.",
+          "sha256": "40202044af620fa0885c9452c786ba0f2372e2f269fb938cfc0dec895b1c2f93"
+        }
+      ],
+      "dimensions": [
+        "Notation",
+        "Ratio"
+      ],
+      "expectation": "All cells initially Unknown; only selected exact spans admitted; missing/stale/hash/offset binding yields Unknown gap; source records unchanged."
+    }
+  ]
+}

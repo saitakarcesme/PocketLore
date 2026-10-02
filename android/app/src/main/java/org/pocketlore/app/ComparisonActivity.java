@@ -1,0 +1,42 @@
+package org.pocketlore.app;
+import android.app.*;import android.content.*;import android.os.Bundle;import android.view.*;import android.widget.*;import org.json.*;import java.util.*;
+
+/** A manual two-subject grid. No generator, automatic quote selection or factual verdict. */
+public final class ComparisonActivity extends NotebookActivity {
+ JSONObject data;LinearLayout page;ComparisonStore store;TextView quoteText;EditText note;boolean busy;long renderEpoch;
+ @Override public void onCreate(Bundle state){super.onCreate(state);store=new ComparisonStore(this);page=ReaderUi.column(this);ReaderUi.screen(this,page,"Saved");operation=ReaderUi.text(this,"Opening manual comparison…",16);page.addView(operation);
+  String saved=state==null?null:state.getString("comparison");work(()->{JSONObject loaded=saved!=null?new JSONObject(saved):getIntent().hasExtra("comparison")?store.load(getIntent().getStringExtra("comparison")):store.create(getIntent().getLongExtra("left",-1),getIntent().getLongExtra("right",-1));if(saved==null&&!getIntent().hasExtra("comparison"))store.save(loaded);runOnUiThread(()->{data=loaded;render();});});
+ }
+ @Override public void onSaveInstanceState(Bundle b){super.onSaveInstanceState(b);if(data!=null){try{if(note!=null)data.put("note",note.getText().toString());b.putString("comparison",data.toString());}catch(Exception ignored){}}}
+ interface Change{void apply()throws Exception;}
+ void change(Change edit){if(busy){message("Saving comparison; try again shortly.");return;}try{if(note!=null)data.put("note",note.getText().toString());edit.apply();JSONObject snapshot=new JSONObject(data.toString());busy=true;work(()->{try{store.save(snapshot);runOnUiThread(()->{busy=false;render();message("Comparison saved. Manual quotes are not synthesized answers.");});}catch(Exception e){runOnUiThread(()->{busy=false;message("Not saved: "+e.getMessage());});}});}catch(Exception e){message(e.getMessage());}}
+ void prompt(String title,String initial,java.util.function.Consumer<String> done){EditText edit=new EditText(this);edit.setText(initial);edit.setContentDescription(title);edit.setFilters(new android.text.InputFilter[]{new android.text.InputFilter.LengthFilter(80)});new AlertDialog.Builder(this).setTitle(title).setView(edit).setNegativeButton("Cancel",null).setPositiveButton("Save",(d,w)->done.accept(edit.getText().toString())).show();}
+ void render(){if(isDestroyed()||data==null)return;try{
+  page.removeAllViews();ReaderUi.title(this,page,data.getString("title"),"Manual extractive grid · No synthesis or verdict. Labels and notes are personal input; quotes do not establish relevance or completeness.");operation=ReaderUi.text(this,"Unknown means no valid quote is selected.",16);ReaderUi.status(operation);page.addView(operation);
+  ReaderUi.button(this,page,"Rename comparison",()->prompt("Comparison title",data.optString("title"),s->change(()->data.put("title",ComparisonStore.label(s)))));
+  JSONArray subjects=data.getJSONArray("subjects"),rows=data.getJSONArray("dimensions");
+  for(int j=0;j<2;j++){final int side=j;JSONObject subject=subjects.getJSONObject(j);ReaderUi.button(this,page,"Rename subject "+(j+1)+": "+subject.getString("label"),()->prompt("Subject label (personal input)",subject.optString("label"),s->change(()->subject.put("label",ComparisonStore.label(s)))));}
+  ReaderUi.button(this,page,"Swap subjects",()->change(()->ComparisonStore.swap(data)));
+  ReaderUi.button(this,page,"Add dimension",()->prompt("Dimension name (maximum six)","",s->change(()->ComparisonStore.addDimension(data,s))));
+  for(int i=0;i<rows.length();i++){final int index=i;JSONObject row=rows.getJSONObject(i);LinearLayout card=ReaderUi.column(this);ReaderUi.card(this,card);page.addView(card);TextView title=ReaderUi.text(this,row.getString("name"),22);ReaderUi.heading(title);card.addView(title);
+   ReaderUi.button(this,card,"Rename dimension "+(i+1),()->prompt("Dimension name",row.optString("name"),s->change(()->row.put("name",ComparisonStore.label(s)))));
+   if(i>0)ReaderUi.button(this,card,"Move dimension "+(i+1)+" up",()->change(()->ComparisonStore.move(data,index,-1)));
+   if(i+1<rows.length())ReaderUi.button(this,card,"Move dimension "+(i+1)+" down",()->change(()->ComparisonStore.move(data,index,1)));
+   for(int j=0;j<2;j++){final int side=j;JSONObject subject=subjects.getJSONObject(j);String label=subject.getString("label");card.addView(ReaderUi.text(this,label+" (personal label)",18));Object value=row.getJSONArray("cells").get(j);TextView evidence=ReaderUi.text(this,store.cell(subject,value),16);evidence.setTextIsSelectable(true);card.addView(evidence);
+    ReaderUi.button(this,card,"Choose quote "+(i+1)+" / "+(j+1),()->choose(row,side));
+    ReaderUi.button(this,card,"Clear cell "+(i+1)+" / "+(j+1),()->change(()->row.getJSONArray("cells").put(side,JSONObject.NULL)));
+    if(!store.cell(subject,value).startsWith("Unknown"))ReaderUi.button(this,card,"Open source "+(i+1)+" / "+(j+1),()->openSource(subject));
+   }
+   ReaderUi.button(this,card,"Remove dimension "+(i+1),()->new AlertDialog.Builder(this).setTitle("Remove dimension and its selected quotes?").setNegativeButton("Keep",null).setPositiveButton("Remove",(d,w)->change(()->rows.remove(index))).show());
+  }
+  note=new EditText(this);ReaderUi.label(this,page,note,"Personal note (not source evidence)");note.setText(data.getString("note"));note.setMinLines(2);note.setFilters(new android.text.InputFilter[]{new android.text.InputFilter.LengthFilter(2000)});page.addView(note);ReaderUi.button(this,page,"Save comparison note",()->change(()->data.put("note",note.getText().toString())));
+  ReaderUi.button(this,page,"Remove comparison",()->new AlertDialog.Builder(this).setTitle("Remove this manual comparison?").setMessage("Source snapshots and notebook notes remain unchanged.").setNegativeButton("Keep",null).setPositiveButton("Remove",(d,w)->work(()->{store.remove(data.getString("id"));runOnUiThread(this::finish);})).show());
+  ReaderUi.button(this,page,"Export comparison",()->exportComparison(false));ReaderUi.button(this,page,"Share comparison",()->exportComparison(true));
+ }catch(Exception e){message("Comparison unavailable: "+e.getMessage());}}
+ void openSource(JSONObject subject){try{startActivity(new Intent(this,SourceReaderActivity.class).putExtra("record",subject.getLong("record")).putExtra("snapshot_hash",subject.getString("hash")));}catch(Exception e){message("Unknown — source link unavailable");}}
+ void choose(JSONObject row,int side){try{JSONObject subject=data.getJSONArray("subjects").getJSONObject(side);work(()->{try{NotebookStore.Entry source=store.source(subject);runOnUiThread(()->{
+   LinearLayout box=ReaderUi.column(this);box.addView(ReaderUi.text(this,"Long-press and select 1–1200 characters in the exact snapshot below, then Use selection. Nothing is assigned automatically.",16));quoteText=ReaderUi.text(this,"",16);quoteText.setText(source.body,TextView.BufferType.SPANNABLE);quoteText.setTextIsSelectable(true);quoteText.setContentDescription("Exact source text for manual quote selection");ScrollView scroll=new ScrollView(this);scroll.addView(quoteText);box.addView(scroll,new LinearLayout.LayoutParams(-1,ReaderUi.dp(this,250)));
+   AlertDialog dialog=new AlertDialog.Builder(this).setTitle(source.title).setView(box).setNegativeButton("Cancel",null).setPositiveButton("Use selection",null).create();dialog.setOnShowListener(v->dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(b->{try{int a=quoteText.getSelectionStart(),z=quoteText.getSelectionEnd();JSONObject binding=store.bind(subject,Math.min(a,z),Math.max(a,z));change(()->row.getJSONArray("cells").put(side,binding));dialog.dismiss();}catch(Exception e){Toast.makeText(this,e.getMessage(),Toast.LENGTH_LONG).show();}}));dialog.show();
+  });}catch(Exception e){runOnUiThread(()->message("Unknown — source unavailable: "+e.getMessage()));}});}catch(Exception e){message(e.getMessage());}}
+ void exportComparison(boolean share){if(data==null||busy)return;try{JSONObject snapshot=new JSONObject(data.toString());work(()->{NotebookStore.Entry e=new NotebookStore.Entry();e.title=snapshot.getString("title");e.kind="manual extractive comparison";e.created=System.currentTimeMillis();e.question="";e.body=store.portable(snapshot);e.provenance="Exact saved source snapshots only; rights and relevance are not newly verified. Unknown gaps are retained.";e.note="";runOnUiThread(()->export(Collections.singletonList(e),share));});}catch(Exception e){message(e.getMessage());}}
+}

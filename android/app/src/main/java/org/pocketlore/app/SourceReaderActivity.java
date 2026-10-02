@@ -18,7 +18,7 @@ public final class SourceReaderActivity extends NotebookActivity {
         if(state!=null)draft=state.getString("note");
         body=ReaderUi.column(this);scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.addView(body);setContentView(scroll);ReaderUi.insets(this,scroll);
         ReaderUi.button(this,body,"Close reader",this::finish);operation=ReaderUi.text(this,"Opening saved snapshot…",16);ReaderUi.status(operation);body.addView(operation);
-        work(()->{try(NotebookStore store=new NotebookStore(this)){entry=store.get(recordId);if(compareId!=-1)other=store.get(compareId);}runOnUiThread(()->{if(!isDestroyed()){render();scroll.post(()->scroll.scrollTo(0,state!=null?state.getInt("scroll",0):getPreferences(0).getInt("position-"+recordId+"-"+compareId,0)));}});});
+        work(()->{try(NotebookStore store=new NotebookStore(this)){entry=store.get(recordId);String expected=getIntent().getStringExtra("snapshot_hash");if(expected!=null&&!ComparisonStore.identity(entry).equals(expected))throw new java.io.IOException("Unknown — saved source snapshot changed");if(compareId!=-1)other=store.get(compareId);}runOnUiThread(()->{if(!isDestroyed()){render();scroll.post(()->scroll.scrollTo(0,state!=null?state.getInt("scroll",0):getPreferences(0).getInt("position-"+recordId+"-"+compareId,0)));}});});
     }
     void render(){
         body.removeAllViews();ReaderUi.button(this,body,"Close reader",this::finish);
