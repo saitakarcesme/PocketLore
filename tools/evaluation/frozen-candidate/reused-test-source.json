@@ -1,0 +1,12 @@
+{
+  "origin": "4e5652009485a86b80e04415cbce740b36472db7",
+  "scope": "Only public instrumentation/helpers, no failed product source integration",
+  "originals": {
+    "android/app/src/androidTest/java/org/pocketlore/app/DeviceEvidence.java": "d42ed596be1e0eb9667dafb69e2dd2ff48abdb82a95f2b72ac086096e1d75cb7",
+    "tools/evaluation/product-ui/tests/ProductUiInstrumentation.java": "d9e849343d4ef50370868b0fda4a3bbd0e01ac877f9315e53473e291a09f5935",
+    "tools/evaluation/product-ui/tests/NotebookStallProvider.java": "afe071da7669514def2ffe7bfd226a35ee52d97d4fd7aeef41c7b144da88166a",
+    "tools/evaluation/documents/tests/DocumentsInstrumentation.java": "07d450bdcac4c7c42f9bee0541bc14839c4b56c00343f11133243626ad3dff3c",
+    "tools/evaluation/documents/tests/PersonalFixtureProvider.java": "16465b74e22d82f9424d92de445f6bf07c66d09770f6978ae0acddea4febea35",
+    "tools/evaluation/modern-integrated/tests/ModernIntegratedInstrumentation.java": "e344558058e2a356e3061abd832af46e560a40dcca45d0d95292125fd7d510eb"
+  }
+}

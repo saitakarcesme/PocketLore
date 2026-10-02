@@ -1,0 +1,24 @@
+{
+  "task": "470",
+  "accepted_source": "ebd8d36",
+  "serial": "emulator-5564",
+  "population": "Previously published development UI/source fixtures only, no private or independent questions",
+  "phases": [
+    "default UI",
+    "large UI",
+    "cold UI",
+    "personal import/export",
+    "cold personal reopen",
+    "native load/cancel/reset/reload and reviewed city cards",
+    "reviewed pack import/source/cold and warm brief timing"
+  ],
+  "timing": "Process-cold means app force-stop only, not OS disk-cache flush. Warm means same Activity/index. Report retrieval/brief time separately from native load; no generated token or quality comparison.",
+  "budget": "Actual5564 subset and read-only5562 full inventory measured separately. Worst-case shard replacement projection must include retained old objects plus largest incoming object and reserve; not a new peak measurement.",
+  "limits": {
+    "gradle_workers": 2,
+    "gradle_heap_gib": 2,
+    "inference": false,
+    "downloads": false
+  },
+  "failed_run_policy": "Persist every command and complete phase stream before validation; finally capture device state even after failures; never replace an invocation."
+}
