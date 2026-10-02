@@ -1,0 +1,17 @@
+F.
+======================================================================
+FAIL: test_deduplicated_valid_sample (test_storage_receipts.StorageReceiptTest.test_deduplicated_valid_sample)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/reference-expansion/test_storage_receipts.py", line 22, in test_deduplicated_valid_sample
+    verify_storage(self.fixture(),501453)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/reference-expansion/verify.py", line 18, in verify_storage
+    assert sum(x[0] for x in seen.values())==row['logical']
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=1)

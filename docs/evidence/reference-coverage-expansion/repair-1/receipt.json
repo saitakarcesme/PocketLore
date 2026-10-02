@@ -1,0 +1,57 @@
+{
+  "status": "incomplete",
+  "device_commands_executed": false,
+  "reason": "New exclusive emulator-5564 lease not received",
+  "files": {
+    "build-corrected.log": {
+      "original_path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/repair-1/build-corrected.log",
+      "sha256": "2ac8b698a0d44701433641b9781f34de9f2fe3bde5202b2b5ae5fd5eeaf6799b",
+      "bytes": 32375
+    },
+    "build.log": {
+      "original_path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/repair-1/build.log",
+      "sha256": "f32d637543fa1c8b5df07fc175638b872fbba84956675fc9b9a6787238ee20c5",
+      "bytes": 35300
+    },
+    "checks.json": {
+      "original_path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/repair-1/checks.json",
+      "sha256": "387c6268dac1b03de519061c31336a2baeebace780a298f21f66050e515c0fa7",
+      "bytes": 822
+    },
+    "required-build.log": {
+      "original_path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/repair-1/required-build.log",
+      "sha256": "dedd9a53248f2a84ac59a0dcafbed656887e46db62f44b6fa68329cb5a187c59",
+      "bytes": 30584
+    },
+    "required-expansion.log": {
+      "original_path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/repair-1/required-expansion.log",
+      "sha256": "aa27a9efb682bbdf64517ddc8a4cbce7b777b70dab46b42669e3df0c46c62ab8",
+      "bytes": 969
+    },
+    "required-general.log": {
+      "original_path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/repair-1/required-general.log",
+      "sha256": "aa27a9efb682bbdf64517ddc8a4cbce7b777b70dab46b42669e3df0c46c62ab8",
+      "bytes": 969
+    },
+    "storage-validator-corrected.log": {
+      "original_path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/repair-1/storage-validator-corrected.log",
+      "sha256": "a6707d4eff38012da33ddc34bc6dc076a3b17151cfc9aef223c8790cbe64c3da",
+      "bytes": 100
+    },
+    "storage-validator.log": {
+      "original_path": "/home/isa/Projects/PocketLore/downloads/reference-expansion/repair-1/storage-validator.log",
+      "sha256": "827ff57d7d9c29899cc17e0f3c7c5e326536ec5e3dc0249c1613d23e584b4e10",
+      "bytes": 884
+    },
+    "android/app/build/outputs/apk/debug/app-debug.apk": {
+      "sha256": "21a6efc62c73f28871619bb4806f264a4dbd1c9e663a9256506972ab353341f5",
+      "bytes": 22719262,
+      "classification": "Compilation only, no task480 installation"
+    },
+    "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk": {
+      "sha256": "6379782b7c7e1a378029d12b681b06f6e1b79a842ec97ecac3e0c4cb3f5f9199",
+      "bytes": 437086,
+      "classification": "Compilation only, no task480 installation"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "command": [
+      "bash",
+      "tools/android-build.sh"
+    ],
+    "exit_code": 0,
+    "log": "downloads/reference-expansion/repair-1/required-build.log",
+    "sha256": "dedd9a53248f2a84ac59a0dcafbed656887e46db62f44b6fa68329cb5a187c59"
+  },
+  {
+    "command": [
+      "bash",
+      "tools/evaluation/check_general_research_product.sh"
+    ],
+    "exit_code": 1,
+    "log": "downloads/reference-expansion/repair-1/required-general.log",
+    "sha256": "aa27a9efb682bbdf64517ddc8a4cbce7b777b70dab46b42669e3df0c46c62ab8"
+  },
+  {
+    "command": [
+      "bash",
+      "tools/evaluation/check_reference_coverage_expansion.sh"
+    ],
+    "exit_code": 1,
+    "log": "downloads/reference-expansion/repair-1/required-expansion.log",
+    "sha256": "aa27a9efb682bbdf64517ddc8a4cbce7b777b70dab46b42669e3df0c46c62ab8"
+  }
+]

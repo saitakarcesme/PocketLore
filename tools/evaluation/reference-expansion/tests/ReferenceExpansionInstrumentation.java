@@ -12,13 +12,51 @@ public final class ReferenceExpansionInstrumentation extends Instrumentation {
  void reject(Runnable r,String name){try{r.run();}catch(IllegalArgumentException|java.util.concurrent.CancellationException e){ok(true,name);return;}throw new AssertionError(name);}
  boolean clickNode(android.view.accessibility.AccessibilityNodeInfo n,String label){if(n==null)return false;if(label.contentEquals(n.getText()==null?"":n.getText())&&n.isClickable())return n.performAction(android.view.accessibility.AccessibilityNodeInfo.ACTION_CLICK);for(int i=0;i<n.getChildCount();i++)if(clickNode(n.getChild(i),label))return true;return false;}
  void tap(String label)throws Exception{long end=SystemClock.elapsedRealtime()+10000;while(SystemClock.elapsedRealtime()<end){if(clickNode(getUiAutomation().getRootInActiveWindow(),label)){waitForIdleSync();return;}Thread.sleep(50);}throw new AssertionError("Missing actionable control: "+label);}
+ static long meter()throws Exception{try(ResourceStorage.Reservation r=ResourceStorage.reserve(0)){return r.projectedBytes-held();}}
+ static long held()throws Exception{java.lang.reflect.Field f=ResourceStorage.class.getDeclaredField("appLedger");f.setAccessible(true);return ((ResourceStorage.Ledger)f.get(null)).reservedBytes();}
+ JSONObject external()throws Exception{
+  android.content.pm.ApplicationInfo a=getTargetContext().getApplicationInfo();List<String> roots=new ArrayList<>(Arrays.asList(a.dataDir,a.sourceDir));
+  if(new File(a.nativeLibraryDir).exists())roots.add(new File(a.nativeLibraryDir).getCanonicalPath());if(a.splitSourceDirs!=null)roots.addAll(Arrays.asList(a.splitSourceDirs));
+  Set<String> seen=new HashSet<>();long logical=0,allocated=0,covered=0;JSONArray rows=new JSONArray();
+  // Independent executable observations, without shell parsing or UiAutomation teardown.
+  for(String root:roots){
+   List<String> paths=new ArrayList<>();try(java.util.stream.Stream<java.nio.file.Path> walk=Files.walk(java.nio.file.Path.of(root))){Iterator<java.nio.file.Path> iterator=walk.iterator();while(iterator.hasNext()){if(paths.size()>=200000)throw new IOException("Independent traversal bound");paths.add(iterator.next().toString());}}
+   for(int offset=0;offset<paths.size();offset+=64){
+    List<String> command=new ArrayList<>(Arrays.asList("/system/bin/stat","-c","%d %i %s %b"));command.addAll(paths.subList(offset,Math.min(offset+64,paths.size())));
+    java.lang.Process process=new ProcessBuilder(command).redirectErrorStream(true).start();
+    try(BufferedReader reader=new BufferedReader(new InputStreamReader(process.getInputStream()))){String line;while((line=reader.readLine())!=null){
+     String[] x=line.trim().split(" +");if(x.length!=4||!line.matches("[0-9 ]+"))throw new IOException("Independent stat failed: "+line);
+     long size=Long.parseLong(x[2]),blocks=Long.parseLong(x[3])*512;rows.put(line);if(seen.add(x[0]+":"+x[1])){logical+=size;allocated+=blocks;covered+=Math.max(size,blocks);}
+    }}if(process.waitFor()!=0)throw new IOException("Independent stat process failed");
+   }
+  }
+  return new JSONObject().put("logical",logical).put("allocated",allocated).put("covered",covered).put("unique_inodes",seen.size()).put("stat_rows",rows);
+ }
+ void measurePackLifecycle(PackLibrary library,File pack,File catalog)throws Exception {
+  byte[] saved=bytes(catalog);JSONObject measurements=new JSONObject();
+  ok(held()==0,"initial staging reservation released");measurements.put("before",external().put("reserved",held()).put("meter",meter()));
+  final boolean[] sampled={false};final long[] count={0};
+  try(InputStream original=new FileInputStream(pack);InputStream observed=new FilterInputStream(original){
+   @Override public int read(byte[] b,int off,int len)throws IOException{
+    if(count[0]>=65536&&!sampled[0]){sampled[0]=true;try{
+     long reserved=held();ok(reserved==ResourceStorage.stagePeak(pack.length()+2L*BroadPack.MAX_DATABASE+16L*1024*1024),"real pack stage reservation held");
+     measurements.put("during",external().put("reserved",reserved).put("meter",meter()).put("copied_bytes_before_next_read",count[0]));
+    }catch(Exception e){throw new IOException("Stage observation failed",e);}}
+    int n=super.read(b,off,Math.min(len,65536));if(n>0)count[0]+=n;return n;
+   }
+  }){library.install(observed,()->false,pack.length());}
+  ok(sampled[0]&&held()==0,"real pack staging sampled and released");
+  measurements.put("after",external().put("reserved",held()).put("meter",meter()));
+  ok(Arrays.equals(saved,bytes(catalog)),"measured repeat import retains exact catalog");
+  report.put("storage_lifecycle",measurements);
+ }
  public void onStart(){Bundle result=new Bundle();try{
   dir=new File(getTargetContext().getFilesDir(),"reference-expansion-"+run);ok(dir.isDirectory(),"owned run directory");report.put("run_id",run).put("source_hash",source).put("mode",mode);
   File files=getTargetContext().getFilesDir();PackLibrary lib=new PackLibrary(files);PackLibrary.Snapshot before=lib.load();Set<String> oldHashes=new HashSet<>();for(PackLibrary.Entry e:before.entries){oldHashes.add(e.hash);ok(!e.active||e.hash.equals("10bb8878270ac7b7aa65036a5fd71007c34b3721bc269ce77544d542f0f27656")||e.id.equals("reference-expansion-2026-10-02-v1"),"only known public reference editions active; do not search unrelated user data");}
   File pack=new File(dir,"valid.plpack");String hash=KnowledgePack.hash(bytes(pack));report.put("pack_sha256",hash);
   long began=SystemClock.elapsedRealtime();PackLibrary.Snapshot installed;
   main=(MainActivity)startActivitySync(new Intent(getTargetContext(),MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-  runOnMainSync(()->((NativePanel)field(main,"nativePanel")).lowMemory());await(main::resourceIdle,"model explicitly unloaded");
+  runOnMainSync(()->((NativePanel)field(main,"nativePanel")).lowMemory());await(main::resourceIdle,"model explicitly unloaded");await(()->!(Boolean)field(main,"importing")&&((Button)field(main,"briefButton")).isEnabled(),"initial library ready before import");
   if(mode.equals("install")){
    byte[] prior=bytes(new File(files,"pack-library/catalog.json"));
    android.net.Uri uri=android.net.Uri.parse("content://org.pocketlore.fixture.reference/"+run+"/valid.plpack");
@@ -30,6 +68,7 @@ public final class ReferenceExpansionInstrumentation extends Instrumentation {
   installed=lib.load();
   report.put("import_or_reload_ms",SystemClock.elapsedRealtime()-began);ok(installed.entries.stream().anyMatch(e->e.hash.equals(hash)&&e.active),"real reviewed edition active");for(String h:oldHashes)ok(installed.entries.stream().anyMatch(e->e.hash.equals(h)),"retained prior collection");
   byte[] catalog=bytes(new File(files,"pack-library/catalog.json"));
+  if(mode.equals("install"))measurePackLifecycle(lib,pack,new File(files,"pack-library/catalog.json"));
   if(mode.equals("install")){
    for(String name:new String[]{"corrupt","rights","offset","identity","license","source-text","fractional-offset","missing-binding","trailing-text"}){boolean denied=false;try(InputStream in=new FileInputStream(new File(dir,name+".plpack"))){lib.install(in,()->false);}catch(Exception e){denied=true;}ok(denied&&Arrays.equals(catalog,bytes(new File(files,"pack-library/catalog.json"))),"real import rollback "+name);}
    boolean cancelled=false;try(InputStream in=new FileInputStream(pack)){lib.install(in,()->true);}catch(InterruptedIOException e){cancelled=true;}ok(cancelled&&Arrays.equals(catalog,bytes(new File(files,"pack-library/catalog.json"))),"cancelled import retains catalog");
