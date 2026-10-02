@@ -1,0 +1,66 @@
+{
+  "required-build.log": {
+    "bytes": 30585,
+    "sha256": "fda90f4eada2de2fb3b51d044455302ed5503b05d154512aa569d7a7dc9335e8"
+  },
+  "required-check-1.log": {
+    "bytes": 1746,
+    "sha256": "0938b1fe2a1d5ebcb30782a6c5de1e598c0f885a3eba97adfcc76de8ff9bd995"
+  },
+  "required-check-2.log": {
+    "bytes": 282,
+    "sha256": "94bd4befc0509d1ff0a4282888b548675cfae8f6a397be5d874183ad119e2d59"
+  },
+  "final-verification.log": {
+    "bytes": 35,
+    "sha256": "1a69771b118a2329d43c33a569db73de0b0b04168224ee1a93f63edf5e279b7e"
+  },
+  "preflight/package-before.txt": {
+    "bytes": 2394,
+    "sha256": "5192cba0965108eee4b9a06f00594b4ea5fc847900aeac28d593fd631c9bc023"
+  },
+  "preflight/code-before.txt": {
+    "bytes": 37,
+    "sha256": "dba55d6b3dbd532cf13ffa4481294012aa2be82d7b35b0d8bc4ac913ab310352"
+  },
+  "preflight/missing-code.txt": {
+    "bytes": 121,
+    "sha256": "65f5d3b13380279e1f544c1312360b1217d54c4af3c0ef16d368ce66be95014c"
+  },
+  "preflight/missing-code.json": {
+    "bytes": 260,
+    "sha256": "6a56d8be191d28df44171842b7c0e6ae38305b61b71f9b919d0d8fd33254ecbe"
+  },
+  "preflight/restore-install.txt": {
+    "bytes": 36,
+    "sha256": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7"
+  },
+  "preflight/restore-install.json": {
+    "bytes": 235,
+    "sha256": "c368055f7ed6212a029ba96db1270bc4f4420a3314820ecd0161229a4c2e4334"
+  },
+  "preflight/package-restored.txt": {
+    "bytes": 4134,
+    "sha256": "1e340e3bc978a4d7053936bb03ea3bc4d6999fe0dcd417fc62efb94718e60f8d"
+  },
+  "preflight/package-restored.json": {
+    "bytes": 198,
+    "sha256": "b7b99ea13509d3c6fcfc9d4a1621fd1cc2071ac624a7e01a4d92dbe2374620e4"
+  },
+  "preflight/retained-assets.txt": {
+    "bytes": 929,
+    "sha256": "0801f6941eddc9e67c40fc89db41abc94956ef384abd3c97ea1ec1c0a82cdc30"
+  },
+  "preflight/retained-assets.json": {
+    "bytes": 278,
+    "sha256": "bc291627fb31b8138a67e9006d9a3ddb29e271e35c318b0e302b9b1990612266"
+  },
+  "preflight/installed.txt": {
+    "bytes": 98,
+    "sha256": "4fd63986c40dd0f34861b963093db3c29d674823e4de00b6b738fcf6f9a7dc4b"
+  },
+  "preflight/installed.json": {
+    "bytes": 191,
+    "sha256": "22987e09dc001985826e48d0ec809989b7f9985a282ba997ede33cb300e92ef0"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "receipt-tests.txt": {
+    "bytes": 101,
+    "sha256": "921b60a7fd52e978fbb551cacd29df2d6708879400278e1fcc70fceeb0c6f8e0"
+  },
+  "receipt-tests.txt.command.json": {
+    "bytes": 57,
+    "sha256": "5e6ee73d4c7ac22647225955ed1c93cd8967c91f1219b871257b84bd1166fbe3"
+  },
+  "state.txt": {
+    "bytes": 7,
+    "sha256": "c98373c1abef78070f6beef6b4ae4fbf3de348dac280195c7f93441920584af9"
+  },
+  "state.txt.command.json": {
+    "bytes": 58,
+    "sha256": "c6bac472aa36ae8e60b695ed3fc5d529dba16725a3ee77ae0b272bfcac652e01"
+  },
+  "boot.txt": {
+    "bytes": 2,
+    "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+  },
+  "boot.txt.command.json": {
+    "bytes": 58,
+    "sha256": "3378488adb89b19d0e33eb6a90c6241945d16bfe85d5876626d84ca595bf7e2f"
+  },
+  "sdk.txt": {
+    "bytes": 3,
+    "sha256": "b58a3da5fde2680191877ec88a1aa7d06927cc3b30cdf0d0db8c39b488891576"
+  },
+  "sdk.txt.command.json": {
+    "bytes": 58,
+    "sha256": "3e60f298d9cf8625f0e39508e05366bc27e7c5d19a57903092e02cb29eb130fa"
+  },
+  "pages.txt": {
+    "bytes": 6,
+    "sha256": "33f50728129313570f6b953c08b559d9cb5f673e981e647cee4dc10d6cd48e99"
+  },
+  "pages.txt.command.json": {
+    "bytes": 58,
+    "sha256": "a9c3b3e418a3cca940ad5136dd146511fcf279ffaf3c9cc154167b34b704c05e"
+  },
+  "properties.txt": {
+    "bytes": 26196,
+    "sha256": "36d86d2477e622cacd23db50280b5617808b38e65bfcbf960904485031c66bd7"
+  },
+  "properties.txt.command.json": {
+    "bytes": 58,
+    "sha256": "386f5f3baba97c0b4a77eefd27f44c43c9d0886f9c9bab3cda8ece7e145fefdd"
+  },
+  "package-before.txt": {
+    "bytes": 4134,
+    "sha256": "cc472015bed642c3d070601a9571c6cbc4e56078d5e87411332dd40a95792431"
+  },
+  "package-before.txt.command.json": {
+    "bytes": 58,
+    "sha256": "e622f31e840fb595bdad79a5bbfa16c29367d6cef361b6c3e28cd7bf04bdfb91"
+  },
+  "assets-before.txt": {
+    "bytes": 334,
+    "sha256": "85847d4c6aba89dea14b6cfa03b17f2bdf9d94ccfa19b0e85078ecc830ff5acd"
+  },
+  "assets-before.txt.command.json": {
+    "bytes": 55,
+    "sha256": "5ce8f9e15d901ab5bd572550f7b416294a1948d5416a46726c3407a6feecfc7c"
+  },
+  "allocated-before.txt": {
+    "bytes": 9,
+    "sha256": "953967f40312e097408a135f3f2952a65ac2bf2378722fa22a450ff79221ef3d"
+  },
+  "allocated-before.txt.command.json": {
+    "bytes": 57,
+    "sha256": "e05e1730496823bd6d7ab4d70c1304884434dbac38adbb6b4206f8bc09181f56"
+  },
+  "logical-before.txt": {
+    "bytes": 12,
+    "sha256": "cd4472658c19b0b65276bc0cfa7a26918973a69ff9a027140612b8c5071dcbcf"
+  },
+  "logical-before.txt.command.json": {
+    "bytes": 57,
+    "sha256": "7f5c4b593c874ca5322a44c88285dac605894871cb3694e5a31c4a1c88f49135"
+  },
+  "df-before.txt": {
+    "bytes": 122,
+    "sha256": "29104d11f8ddcd800e269e33a09a28b1136f1993a0793440aebdcba3f00cb079"
+  },
+  "df-before.txt.command.json": {
+    "bytes": 57,
+    "sha256": "33a48b21262ff3fd759535030f949f1efcefd4128dfcb1cfa0727dd682931972"
+  },
+  "apk-path-before.txt": {
+    "bytes": 98,
+    "sha256": "4fd63986c40dd0f34861b963093db3c29d674823e4de00b6b738fcf6f9a7dc4b"
+  },
+  "apk-path-before.txt.command.json": {
+    "bytes": 57,
+    "sha256": "2cafe789d4c39e82ccbe42c2175a2c3443c3acec87292a63457672132dd21b0a"
+  },
+  "apk-hash-before.txt": {
+    "bytes": 156,
+    "sha256": "fed7b30b70c61bfed915dac750796119b5c87817fd32aee9a73a1ed328979fe5"
+  },
+  "apk-hash-before.txt.command.json": {
+    "bytes": 58,
+    "sha256": "9dc6836e0984508d9efc9d5724f5be7a119a793cd9bd195a5ee4a515425e269b"
+  },
+  "apk-size-before.txt": {
+    "bytes": 47,
+    "sha256": "f29dec50461c43fd1757c541535ede8260dd791f64846f1974e78623eb61a34f"
+  },
+  "apk-size-before.txt.command.json": {
+    "bytes": 58,
+    "sha256": "d9e062fdb8967517f1cef7a9ef6a318b8be4db7a8e2ac82b74d11b9e3226b75b"
+  }
+}

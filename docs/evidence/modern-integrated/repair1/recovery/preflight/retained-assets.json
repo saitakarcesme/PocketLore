@@ -1,0 +1,1 @@
+{"command": ["/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb", "-s", "emulator-5564", "shell", "run-as", "org.pocketlore.app", "sh", "-c", "'id; sha256sum files/page-size-test/model.gguf; ls files; du -sk .; du -sb .' "], "returncode": 0, "seconds": 1.519076579992543}
