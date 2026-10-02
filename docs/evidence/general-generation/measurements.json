@@ -1,0 +1,52 @@
+{
+  "qwen3-4b": {
+    "first_token_ms": {
+      "median": 9526.034317,
+      "nearest_rank_p95": 14069.041
+    },
+    "total_ms": {
+      "median": 20653.096866,
+      "nearest_rank_p95": 44717.149213
+    },
+    "tokens": {
+      "median": 133.5,
+      "nearest_rank_p95": 360
+    },
+    "rss_peak_bytes": 4940734464,
+    "swap_peak_bytes": 0,
+    "load_ms": 1117.089649,
+    "native_peaks": [
+      1,
+      1,
+      4242363904,
+      603979776,
+      80413184
+    ],
+    "context_tokens_max": 936
+  },
+  "qwen25-7b": {
+    "first_token_ms": {
+      "median": 15748.593728,
+      "nearest_rank_p95": 20149.989918
+    },
+    "total_ms": {
+      "median": 30273.955063,
+      "nearest_rank_p95": 46258.831492
+    },
+    "tokens": {
+      "median": 108.5,
+      "nearest_rank_p95": 227
+    },
+    "rss_peak_bytes": 7983595520,
+    "swap_peak_bytes": 0,
+    "load_ms": 2607.071887,
+    "native_peaks": [
+      1,
+      1,
+      7798468608,
+      234881024,
+      81527296
+    ],
+    "context_tokens_max": 932
+  }
+}
