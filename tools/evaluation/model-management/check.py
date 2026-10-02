@@ -13,7 +13,9 @@ def verify(folder):
  for name,h in r['hashes'].items():assert sha(folder/name)==h,name
  for mode in ['import','select']:
   report=json.loads((folder/(mode+'.json')).read_text());assert report['status']=='PASS',report
- assert json.loads((folder/'select.json').read_text())['unverified_token_output'] is not None
+ selected=json.loads((folder/'select.json').read_text())
+ assert 'Actual JNI load failure reloads previous model and preserves selection' in selected['checks']
+ assert selected['unverified_token_output'] is not None
  return r
 
 def main():
@@ -27,9 +29,9 @@ def main():
   (out/label).write_bytes(p.stdout);assert p.returncode==0,(label,p.stdout)
  baseline=ROOT/'downloads/answers/model/qwen2.5-0.5b-instruct-q4_k_m.gguf';optional=ROOT/'downloads/synthesis/model/qwen2.5-1.5b-instruct-q4_k_m.gguf'
  assert sha(baseline)=='74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db';pin=json.loads((ROOT/'tools/evaluation/model-capability/qwen25.json').read_text());assert sha(optional)==pin['sha256']
+ preserved=['files/model.gguf','files/pack-library/catalog.json','files/attachment-assets/tessdata/eng.traineddata','files/attachment-assets/ggml-tiny.en.bin']
  if not resume:
   run(ADB+['get-state'],'device.txt');run(ADB+['shell','getprop'],'properties.txt');run(ADB+['shell','df','-k','/data'],'disk-before.txt')
-  preserved=['files/model.gguf','files/pack-library/catalog.json','files/attachment-assets/tessdata/eng.traineddata','files/attachment-assets/ggml-tiny.en.bin']
   before=run(ADB+['shell','run-as',PKG,'sha256sum']+preserved,'saved-before.txt')
   run(['bash','tools/android-build.sh','assembleDebug','assembleDebugAndroidTest','-I',ROOT/'tools/evaluation/model-management/source.gradle','-PpocketloreTestRunner=org.pocketlore.app.ModelManagementInstrumentation'],'build.log')
   apk=ROOT/'android/app/build/outputs/apk/debug/app-debug.apk';test=ROOT/'android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk'

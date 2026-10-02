@@ -332,3 +332,7 @@ The [personal-document report](evidence/documents.md) records passing build and7
 ## Task310 integrated UI and export repair
 
 [Current evidence](evidence/product-ui-integration.md) records exact APK812c2dd1…, passing default/large-font UI and personal-document checks, retained native/assets identity and real blocked export isolation/cancellation. Provider-open/regular-file stalls can still hold the single export worker; partial destination cleanup depends on the provider. Further provider coverage requires distinct adversarial providers, not another unchanged pipe run. Exact-candidate API37/physical ARM64/GrapheneOS, TalkBack/human review, full-capacity update/release inventory and unseen answer evaluation remain separate open gates; earlier task303 capacity or lane screenshots do not validate this APK.
+
+## Task350 model selection
+
+[Model-management evidence](evidence/model-management.md) records passing pinned import/selection and actual JNI-failure rollback on5560. Optional1.5B execution is runtime smoke only;1.7B remains unmeasured here. Next distinct work is frozen source-supported quality/independent evaluation plus physical/ARM64 and API37 resource qualification before promoting any optional model. Recompute the full31-shard candidate and import/update envelope for this APK; the measured4.33GB5560 subset is not the earlier full-capacity candidate. Provider-open/FUSE stalls, external browser/picker coverage and final signing/reproduction remain separate gates.

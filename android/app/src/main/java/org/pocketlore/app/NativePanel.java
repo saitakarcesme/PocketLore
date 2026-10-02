@@ -78,11 +78,17 @@ final class NativePanel {
             File file=library.object(spec);if(!file.isFile())throw new IOException("Not installed. Import the exact pinned GGUF first.");
             if(library.verify(file,()->cancelled||stopped)!=spec)throw new IOException("Model identity mismatch");
             ModelCatalog.admit(SharedShardUpdate.uniqueBytes(new File(activity.getApplicationInfo().dataDir))+new File(activity.getApplicationInfo().sourceDir).length(),0,activity.getFilesDir().getUsableSpace());
+            loadSelection(file,library,spec);
+        }catch(Exception|OutOfMemoryError e){release();restorePrevious("Selection failed: "+e.getMessage());}finally{done();}});
+    }
+    /** Called after identity/admission verification. Also exposes the native failure boundary to instrumentation. */
+    boolean loadSelection(File file,ModelCatalog library,ModelCatalog.Spec spec){
+        try {
             release();session=NativeRuntime.create();if(cancelled||stopped)NativeRuntime.cancel(session);
             NativeRuntime.load(session,file.getAbsolutePath().getBytes(StandardCharsets.UTF_8));
             if(cancelled||stopped)throw new IOException("Selection cancelled");
-            library.activate(spec,()->cancelled||stopped);showState("Selected: "+spec.description()+"\n"+NativeRuntime.identity());
-        }catch(Exception|OutOfMemoryError e){release();restorePrevious("Selection failed: "+e.getMessage());}finally{done();}});
+            library.activate(spec,()->cancelled||stopped);showState("Selected: "+spec.description()+"\n"+NativeRuntime.identity());return true;
+        }catch(Exception|OutOfMemoryError e){release();restorePrevious("Native selection failed: "+e.getMessage());return false;}
     }
     private void restorePrevious(String reason){
         if(session!=0){showState(reason+" · Previous selection remains loaded.");return;}
