@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "task": "task500 repair",
+  "scope": "Supplemental independent source and existing artifact review; canonical acceptance separate",
+  "source_commit": "bca0fc157359ca248f09367d53db58263f27576c",
+  "source_sha256": {
+    "android/app/src/main/java/org/pocketlore/app/GroundedGeneration.java": "46da4d94653b0638099977534cdc1e8208feda3fcc370dcb4ce3052f87459405",
+    "android/app/src/main/java/org/pocketlore/app/NativePanel.java": "baea81214b48b9c78f92eb6c25a2e88fae6a7f2a689ea66257179dc98aa6239c",
+    "android/app/src/main/java/org/pocketlore/app/GeneralGroundedAnswer.java": "899921c62f3f63c5dcccc9b84f9937075e74d57349e12f87fb1a6b5098e7ecac",
+    "tools/evaluation/general-generation-repair/IntegrationBehavior.java": "2ed3b98cb1f005a2c4c99aafcb5ad8fb1bf80aabd7d1c422c18661978f957fb9",
+    "tools/evaluation/general-generation-repair/protocol.json": "f4c084cf9caf3a20343e1e6194c51afee4adb04fb18ae31061e7ea4075866d1b",
+    "tools/evaluation/general-generation-repair/tests/GeneralIntegrationInstrumentation.java": "c9311b2a44887636ab9682e4787b9be129908da15de7d7dac1819eb43e815770"
+  },
+  "raw_sha256": {
+    "docs/evidence/general-generation-repair/run-20261002T140616Z-f281e6/source.json": "a82cc8ec53e7643dc6d2328de9075f27e77e1d37f26b74b34e8c296b8728cd47",
+    "docs/evidence/general-generation-repair/run-20261002T140616Z-f281e6/seal.json": "292f1c5539a2c86f2f25dcb2071c2af8dbf19797b4b6885b72cc6c6f4a9358ed",
+    "docs/evidence/general-generation-repair/run-20261002T140616Z-f281e6/report.json": "e81755be11f28efc9a3e013317c9fc84a4e8752638d89d67459cc9ac0f15710b",
+    "docs/evidence/general-generation-repair/run-20261002T140616Z-f281e6/screen.png": "6541e47bdf8ed0065512ca2b42cc5c14602e465695b233a4545955807f530703",
+    "docs/evidence/general-generation-repair/run-20261002T140616Z-f281e6/instrumentation.txt": "9dc8e21bd565f2438620ffa4bd31fd37d79607137106ef46fa5728e386db3d6d",
+    "docs/evidence/general-generation-repair/behavior.log": "5451a484da22610ef5da2e81984f3e40c1885391ac4bb52eef07a9a6fe9dcc95",
+    "docs/evidence/general-generation-repair/device-verification.log": "cb07af257b4f7d5400c93572452e1667f2fff4e6d7e46769a7c97e6f83908bf5",
+    "docs/evidence/general-generation-repair/required-build.log": "1b56b84d6c8d5b4b6e6c70e6db670bbd1cdcd69b5b0b53f23841289766f21218",
+    "docs/evidence/general-generation-repair/required-check.log": "e8540fdd49c4d1f2866b291c6ef23d2463951cf6e9856196470af6c9d0920c27",
+    "docs/evidence/general-generation-repair/HANDOFF.json": "286a5cb048439b40f49d682fff1eb7c34975fd8e9c0b92b7a5a175794ca48463"
+  },
+  "recorded_executed_source_hashes_match": true,
+  "seal_files_match": true,
+  "ui_receipt": {
+    "run_id": "run-20261002T140616Z-f281e6",
+    "source_hash": "a82cc8ec53e7643dc6d2328de9075f27e77e1d37f26b74b34e8c296b8728cd47",
+    "status": "PASS",
+    "scope": "Actual API37 research control reaches general unavailable-verifier route; no model inference or selected-model proof",
+    "kind": "ABSTAINED",
+    "invoked_model": false,
+    "visible_text": "General generated answers are unavailable: independent whole-answer support verification is not qualified. Use the separately labeled source-backed research brief to inspect evidence.",
+    "api": 37
+  },
+  "screenshot_inspection": "Visible Abstained status and entire unavailable-verifier explanation match receipt; separately labeled source excerpt cards below are retrieval evidence, not partial generated prose",
+  "production_route": {
+    "verifier": "GroundedGeneration.UNAVAILABLE hardcoded in NativePanel answer wiring",
+    "verifier_qualified": false,
+    "generation_invoked": false,
+    "visible_generated_or_partial_draft": false,
+    "reason": "Verifier qualification checked before evidence allocation, token counting or generator invocation",
+    "native_caveat": "NativePanel can reset an existing runtime session before orchestration; no claim of zero JNI interaction, only zero generation in this route"
+  },
+  "whole_answer_publication": {
+    "inspection": "Streaming chunks buffer internally; rejected/cancelled/failed outputs retain raw diagnostics in Outcome.rawDraft and render only Outcome.text",
+    "no_tail_trimming": true,
+    "approval_boundary": "Only explicit qualified verifier with empty rejection after structural checks can produce GENERATED; UI cancellation and epoch guards run before display",
+    "semantic_qualification": "No supplied production verifier; test verifier returns canned decisions and proves no source entailment",
+    "future_integration_limit": "Interface qualified flag and rejection contract require independent qualification; passing synthetic controls must never authorize a production verifier"
+  },
+  "synthetic_controls": {
+    "reported_pass_count": 13,
+    "log": "behavior.log",
+    "reviewed_controls": [
+      "Unavailable verifier prevents generator calls",
+      "Cancellation before generation prevents invocation",
+      "Synthetic acceptance resolves typed source identity",
+      "Rejected compound draft retained raw but wholly withheld from visible answer",
+      "Cancellation after verifier prevents publication",
+      "Mid-generation cancellation retains raw diagnostic partial only",
+      "Unknown token count prevents generation",
+      "Context pressure removes complete final paragraph",
+      "Unavailable citation index rejects draft",
+      "Generation-disabled collection prevents invocation",
+      "Generator exception contained",
+      "Retry after exception succeeds with synthetic verifier",
+      "Conflicting source identity prevents invocation"
+    ],
+    "semantic_evaluation": false,
+    "android_execution": false,
+    "coverage_limit": "Source inspection supports full draft/context passed to verifier, but constant test verifier does not assert its complete received contents or evaluate any clause"
+  },
+  "checks": {
+    "required_build": "Existing log BUILD SUCCESSFUL",
+    "device_artifacts": "Existing offline verifier log PASS; actual API37 UI abstention only",
+    "required_product_check": "FAIL retained",
+    "open_gates": [
+      "Selected model Android JNI and useful UI generation",
+      "Qualified general runtime whole-answer support verifier",
+      "Current complete distribution measurement"
+    ]
+  },
+  "limitations": [
+    "API37 emulator and synthetic host controls; no physical Android or GrapheneOS acceptance",
+    "Actual UI case proves absent-verifier denial, not generation, support, model identity, throughput or quality",
+    "No new devices, inference, tests or private material accessed by reviewer",
+    "Historical 4B/7B quality failures remain unchanged; repaired wiring cannot qualify them",
+    "No semantic claims inferred from synthetic verifier approval or structural citation validity"
+  ],
+  "verdict": "Bounded fail-closed wiring and denial presentation supported; general supported-generation product gate remains FAIL"
+}
