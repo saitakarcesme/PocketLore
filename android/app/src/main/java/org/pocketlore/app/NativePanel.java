@@ -186,18 +186,11 @@ final class NativePanel {
         output.setText("Preparing an offline answer…"); answerStatus.setText("Checking retrieved evidence…");
         worker.execute(() -> {
             try {
-            AnswerEngine.Outcome result = AnswerEngine.answer(question, evidence,
+            AnswerEngine.Outcome result = GroundedGeneration.answer(question, evidence,
                 id == 0 ? null : new AnswerEngine.Generator() {
-                    public int run(byte[] prompt,int limit,NativeRuntime.Sink sink) { return NativeRuntime.generateChat(id,EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt,limit,sink); }
-                    public int runWithSources(byte[] prompt,int limit,NativeRuntime.Sink sink,int sources,boolean combined) {return NativeRuntime.generateClaims(id,EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt,limit,sink,sources,combined);}
-                    public int countTokens(byte[] prompt) { return NativeRuntime.countChatTokens(id,EvidencePrompt.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt); }
-                },
-                text -> activity.runOnUiThread(() -> {
-                    if (!stopped && !cancelled && epoch == answerEpoch) {
-                        answerStatus.setText("Generating locally · Citation checks pending");
-                        output.setText("Unverified partial draft\n" + text);
-                    }
-                }), () -> cancelled || stopped);
+                    public int run(byte[] prompt,int limit,NativeRuntime.Sink sink) { return NativeRuntime.generateChat(id,GeneralGroundedAnswer.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt,limit,sink); }
+                    public int countTokens(byte[] prompt) { return NativeRuntime.countChatTokens(id,GeneralGroundedAnswer.SYSTEM.getBytes(StandardCharsets.UTF_8),prompt); }
+                }, GroundedGeneration.UNAVAILABLE, () -> cancelled || stopped);
             activity.runOnUiThread(() -> {
                 if (stopped || epoch != answerEpoch) return;
                 // A click can arrive after native completion but before this UI callback.
