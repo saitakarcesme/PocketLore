@@ -1,0 +1,39 @@
+android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+ android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+  android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+   android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 156 - 1280, 324) clickable=false visible=true
+     android.widget.TextView text=PocketLore description=null bounds=Rect(72, 175 - 950, 304) clickable=false visible=true
+     android.widget.TextView text=Offline description=null bounds=Rect(950, 183 - 1088, 296) clickable=false visible=true
+     android.widget.ImageButton text=null description=Settings bounds=Rect(1088, 168 - 1232, 312) clickable=true visible=true
+    android.widget.ScrollView text=null description=null bounds=Rect(0, 324 - 1280, 2539) clickable=false visible=true
+     android.widget.LinearLayout text=null description=null bounds=Rect(0, 324 - 1280, 2539) clickable=false visible=true
+      android.widget.TextView text=Explore description=null bounds=Rect(72, 372 - 1208, 545) clickable=false visible=true
+      android.widget.TextView text=Search installed place records. description=null bounds=Rect(72, 545 - 1208, 658) clickable=false visible=true
+      android.widget.TextView text=No matching cities in active installed Places collections. description=null bounds=Rect(72, 658 - 1208, 856) clickable=false visible=true
+      android.widget.LinearLayout text=null description=null bounds=Rect(72, 856 - 1208, 2539) clickable=false visible=true
+       android.widget.TextView text=City name description=null bounds=Rect(72, 856 - 1208, 969) clickable=false visible=true
+       android.widget.EditText text=NoSuchCityForUiVerification description=City name bounds=Rect(72, 969 - 1208, 1137) clickable=true visible=true
+       android.widget.TextView text=Source category (optional) description=null bounds=Rect(72, 1137 - 1208, 1250) clickable=false visible=true
+       android.widget.EditText text=Optional source category, e.g. museum description=Source category (optional) bounds=Rect(72, 1250 - 1208, 1418) clickable=true visible=true
+       android.widget.TextView text=Straight-line radius (km) description=null bounds=Rect(72, 1418 - 1208, 1531) clickable=false visible=true
+       android.widget.EditText text=1 description=Straight-line radius (km) bounds=Rect(72, 1531 - 1208, 1699) clickable=true visible=true
+       android.widget.Button text=Find city description=null bounds=Rect(72, 1711 - 1208, 1855) clickable=true visible=true
+       android.widget.TextView text=Latitude description=null bounds=Rect(72, 1867 - 1208, 1980) clickable=false visible=true
+       android.widget.EditText text=Latitude, −90 to 90 description=Latitude bounds=Rect(72, 1980 - 1208, 2148) clickable=true visible=true
+       android.widget.TextView text=Longitude description=null bounds=Rect(72, 2148 - 1208, 2261) clickable=false visible=true
+       android.widget.EditText text=Longitude, −180 to 180 description=Longitude bounds=Rect(72, 2261 - 1208, 2429) clickable=true visible=true
+       android.widget.Spinner text=null description=Diet evidence filter bounds=Rect(72, 2429 - 1208, 2539) clickable=true visible=true
+        android.widget.CheckedTextView text=Any diet · unknown allowed description=null bounds=Rect(72, 2429 - 1064, 2539) clickable=false visible=true
+       android.widget.Button text=Find nearby from coordinates description=null bounds=Rect(72, 2585 - 1208, 2539) clickable=true visible=false
+       android.widget.Button text=Use GPS once description=null bounds=Rect(72, 2753 - 1208, 2539) clickable=true visible=false
+      android.widget.LinearLayout text=null description=null bounds=Rect(72, 2909 - 1208, 2539) clickable=false visible=false
+      android.widget.Button text=Collection storage & licenses description=null bounds=Rect(72, 2921 - 1208, 2539) clickable=true visible=false
+      android.widget.TextView text=Hours and diet suitability are unknown. Routing is unavailable. Distances are straight-line, not travel routes. description=null bounds=Rect(72, 3077 - 1208, 2539) clickable=false visible=false
+      android.widget.Button text=Regional travel & tools description=null bounds=Rect(72, 3364 - 1208, 2539) clickable=true visible=false
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 2539 - 1280, 2784) clickable=false visible=true
+     android.widget.LinearLayout text=null description=null bounds=Rect(36, 2563 - 1244, 2772) clickable=false visible=true
+      android.widget.Button text=Research description=Research bounds=Rect(42, 2563 - 332, 2772) clickable=true visible=true
+      android.widget.Button text=Library description=Library bounds=Rect(344, 2563 - 634, 2772) clickable=true visible=true
+      android.widget.Button text=Explore description=Explore, selected bounds=Rect(646, 2563 - 936, 2772) clickable=true visible=true
+      android.widget.Button text=Saved description=Saved bounds=Rect(948, 2563 - 1238, 2772) clickable=true visible=true

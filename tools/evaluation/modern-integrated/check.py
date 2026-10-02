@@ -1,5 +1,5 @@
 """Explicit API37 subset compatibility; no model generation or shared serial defaults."""
-import copy,hashlib,json,pathlib,subprocess,sys,time,uuid
+import copy,hashlib,io,json,pathlib,subprocess,sys,tarfile,time,uuid
 ROOT=pathlib.Path(__file__).resolve().parents[3]
 ADB=['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb','-s','emulator-5564']
 PKG='org.pocketlore.app'
@@ -13,6 +13,16 @@ def validate(report,run_id):
 def validate_transport(raw,metadata):
  assert metadata.get("returncode")==0 and "timeout_seconds" not in metadata,"Failed transport"
  assert "INSTRUMENTATION_CODE: -1" in raw and "Process crashed" not in raw,"Instrumentation completion missing"
+def unpack(raw,destination):
+ with tarfile.open(fileobj=io.BytesIO(raw),mode='r:') as archive:
+  total=0
+  for item in archive:
+   name=item.name.removeprefix('./')
+   if item.isdir() and name in ('','.') :continue
+   assert item.isfile() and '/' not in name and name not in ('','.','..'),'Unsafe evidence member'
+   total+=item.size;assert total<=64*1024*1024,'Evidence bundle exceeds64MiB'
+   assert pathlib.Path(name).suffix in ('.json','.png','.txt','.md'),'Unexpected evidence member'
+   (destination/name).write_bytes(archive.extractfile(item).read())
 def verify(out):
  m=json.loads((out/'manifest.json').read_text());assert m['serial']=='emulator-5564' and m['sdk']==37 and m['page_size']==16384
  for name,pin in m['files'].items():assert sha(out/name)==pin,'Missing or changed '+name
@@ -21,6 +31,8 @@ def verify(out):
   r=json.loads((out/lane['file']).read_text());validate(r,m['run_id'])
   transport=(out/lane['transport']).read_text()
   c=json.loads((out/(lane['transport']+'.command.json')).read_text());validate_transport(transport,c)
+ assert (out/'boot-id-before.txt').read_bytes()==(out/'boot-id-after.txt').read_bytes(),'Device rebooted during check'
+ assert (out/'font-final-value.txt').read_text().strip()==(out/'font-before.txt').read_text().strip(),'Font not restored'
  assert (out/'installed-hash.txt').read_text().split()[0]==m['apk_sha256']
  assert (out/'assets-before.txt').read_bytes()==(out/'assets-after.txt').read_bytes(),'Saved asset identity changed'
  modern=json.loads((out/'native-cards-recognition/report.json').read_text());assert modern['generation_performed'] is False and modern['page_size']==16384 and modern['sdk']==37
@@ -57,17 +69,23 @@ def main():
   app_path=shell(['pm','path',PKG],'apk-path-'+label+'.txt').decode().strip().removeprefix('package:');shell(['sha256sum',app_path],'apk-hash-'+label+'.txt')
   shell(['stat','-c',"'%s %b'",app_path],'apk-size-'+label+'.txt')
   shell(['dumpsys','meminfo',PKG],'meminfo-'+label+'.txt')
- def instrument(cls,folder,remote,extra=()):
+ def instrument(cls,folder,remote,extra=(),restore=None):
   log=folder+'/runtime.txt';failure=None
   try:
    value=run(ADB+['shell','am','instrument','-r','-w','-e','run_id',run_id,*extra,PKG+'.test/'+PKG+'.'+cls],log)
    validate_transport(value.decode(),json.loads((out/(log+'.command.json')).read_text()))
   except Exception as e:failure=e
+  if restore is not None:
+   try:restore()
+   except Exception as e:
+    if failure is None:failure=e
   # Diagnostics are retained on transport failure; never substitute a recovered PASS.
   try:
    names=shell(['run-as',PKG,'ls',remote],folder+'/files.txt').decode().splitlines()
-   for name in names:
-    if name.endswith(('.json','.png','.txt','.md')):run(ADB+['exec-out','run-as',PKG,'cat',remote+'/'+name],folder+'/'+name)
+   names=[n for n in names if pathlib.Path(n).suffix in ('.json','.png','.txt','.md')]
+   assert names and all('/' not in n and not n.startswith('-') for n in names)
+   raw=run(ADB+['exec-out','run-as',PKG,'tar','-cf','-','-C',remote,*names],folder+'/bundle.tar')
+   unpack(raw,out/folder)
   finally:
    if failure:raise failure
   filename='report.json'
@@ -78,7 +96,7 @@ def main():
  assert shell(['getprop','sys.boot_completed'],'boot.txt').strip()==b'1'
  assert shell(['getprop','ro.build.version.sdk'],'sdk.txt').strip()==b'37'
  assert shell(['getconf','PAGE_SIZE'],'pages.txt').strip()==b'16384'
- shell(['getprop'],'properties.txt');shell(['dumpsys','package',PKG],'package-before.txt');capture_assets('before')
+ shell(['cat','/proc/sys/kernel/random/boot_id'],'boot-id-before.txt');shell(['getprop'],'properties.txt');shell(['dumpsys','package',PKG],'package-before.txt');capture_assets('before')
  run(['bash','tools/android-build.sh','assembleDebug','assembleDebugAndroidTest','-I',ROOT/'tools/evaluation/modern-integrated/source.gradle','-PpocketloreTestRunner=org.pocketlore.app.ModernIntegratedInstrumentation'],'build.log')
  apk=ROOT/'android/app/build/outputs/apk/debug/app-debug.apk';test=ROOT/'android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk';apk_hash=sha(apk)
  assert apk_hash=='9c71a32dbc2deac3d650c6849a335379bd2b005c1516437c613bcd0fcff7dd70','Accepted390 application identity changed'
@@ -89,13 +107,16 @@ def main():
  registrations=shell(['pm','list','instrumentation'],'registered-tests.txt').decode()
  assert all(PKG+'.test/'+PKG+'.'+name in registrations for name in ['ModernIntegratedInstrumentation','ProductUiInstrumentation','DocumentsInstrumentation']),'Required instrumentation not registered'
  font=shell(['settings','get','system','font_scale'],'font-before.txt').decode().strip()
+ def restore_font(name):
+  shell(['settings','delete','system','font_scale'] if font=='null' else ['settings','put','system','font_scale',font],name+'.txt')
+  actual=shell(['settings','get','system','font_scale'],name+'-value.txt').decode().strip();assert actual==font,'Font restoration readback failed'
  try:
   for label,scale in [('default','1.0'),('large','2.0')]:
    shell(['settings','put','system','font_scale',scale],'font-'+label+'.txt');mode=run_id+'-'+label
-   instrument('ProductUiInstrumentation',label,'files/product-ui-'+mode,['-e','mode',mode])
+   instrument('ProductUiInstrumentation',label,'files/product-ui-'+mode,['-e','mode',mode],lambda:restore_font('font-'+label+'-restored'))
   shell(['am','force-stop',PKG],'cold-stop.txt');mode='restart-'+run_id
   instrument('ProductUiInstrumentation','cold','files/product-ui-'+mode,['-e','mode',mode])
- finally:shell(['settings','delete','system','font_scale'] if font=='null' else ['settings','put','system','font_scale',font],'font-restored.txt')
+ finally:restore_font('font-final')
  fixtures=ROOT/'downloads/documents-fixtures';spec=json.loads((ROOT/'docs/evidence/documents/fixtures.json').read_text())
  for package,folder in [(PKG,'files/documents-input'),(PKG+'.test','files')]:
   shell(['run-as',package,'mkdir','-p',folder],'mkdir-'+package+'.txt')
@@ -106,6 +127,7 @@ def main():
  shell(['am','force-stop',PKG],'documents-cold-stop.txt')
  instrument('DocumentsInstrumentation','documents-cold','files/'+directory,['-e','directory',directory,'-e','phase','restart'])
  instrument('ModernIntegratedInstrumentation','native-cards-recognition','files/modern-'+run_id)
+ shell(['cat','/proc/sys/kernel/random/boot_id'],'boot-id-after.txt')
  capture_assets('after');shell(['dumpsys','package',PKG],'package-after.txt');shell(['dumpsys','meminfo',PKG],'memory-after.txt')
  path=shell(['pm','path',PKG],'installed-path.txt').decode().strip().removeprefix('package:');shell(['sha256sum',path],'installed-hash.txt')
  shell(['am','start','-W','-n',PKG+'/.MainActivity'],'final-launch.txt');shell(['uiautomator','dump','/sdcard/modern-integrated.xml'],'ui-dump.txt');run(ADB+['exec-out','cat','/sdcard/modern-integrated.xml'],'ui.xml');run(ADB+['exec-out','screencap','-p'],'final.png')

@@ -20,4 +20,21 @@ class Receipts(unittest.TestCase):
   with self.assertRaises(AssertionError):check.validate(r,'another-invocation')
   changed=dict(r,status='FAIL')
   with self.assertRaises(AssertionError):check.validate(changed,r['run_id'])
+
+class EvidenceBundle(unittest.TestCase):
+ def test_safe_report_and_unsafe_path(self):
+  import io,tarfile,tempfile
+  payload=(EVIDENCE/'20261002T020922Z-0fb6e277/native-cards-recognition/report.json').read_bytes()
+  for name,allowed in [('report.json',True),('../outside.json',False),('model.gguf',False)]:
+   raw=io.BytesIO()
+   with tarfile.open(fileobj=raw,mode='w') as t:
+    entry=tarfile.TarInfo(name);entry.size=len(payload);t.addfile(entry,io.BytesIO(payload))
+   with tempfile.TemporaryDirectory() as d:
+    if allowed:
+     check.unpack(raw.getvalue(),pathlib.Path(d));self.assertEqual((pathlib.Path(d)/name).read_bytes(),payload)
+    else:
+     with self.assertRaises(AssertionError):check.unpack(raw.getvalue(),pathlib.Path(d))
+ def test_truncated_archive_rejected(self):
+  with self.assertRaises(Exception):check.unpack(b'broken tar',pathlib.Path('/tmp'))
+
 if __name__=='__main__':unittest.main()
