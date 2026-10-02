@@ -1,0 +1,873 @@
+{
+  "schema": 1,
+  "task": "task500",
+  "scope": "Supplemental independent public-development source review; canonical critic owns acceptance",
+  "run": "downloads/general-generation/run-20261002T134119Z",
+  "status": "COMPLETE_SUPPLEMENTAL_REVIEW_PRODUCT_NOT_QUALIFIED",
+  "production_qualification": false,
+  "production_route": "WITHHELD for every case regardless of reviewer judgment",
+  "definitions": {
+    "supported": "Every material factual assertion supported by supplied paragraphs, preserving qualifications; plausible outside knowledge insufficient",
+    "complete": "All requested parts and explicit false premises correctly addressed without material contradiction or omitted qualifier",
+    "useful_as_a_supported_complete_answer": "Supported, complete and correctly attributed; educational usefulness counted separately from safe absent controls",
+    "absent_correctness": "Correctly declines unsupported personal or current observation; not applicable for educational cases",
+    "citation_correct": "Correct supplied-source attribution and usable alias syntax for factual claims; absence finding without invented facts can be correct despite no citation"
+  },
+  "frozen_inputs": {
+    "tools/evaluation/general-generation/protocol.json": "df9b9f1611dd5eb77f3070c479f1417168c7f450562f51abe892ce7965e2b4e3",
+    "tools/evaluation/general-generation/sources.json": "c590d4ad9927fc75942e34be3161099444b6cc2f73f28d964880ebda85efd986",
+    "downloads/reference-expansion/reference-expansion.plpack": "61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135",
+    "downloads/general-generation/run-20261002T134119Z/manifest.json": "d9e81181550a67ca1212161d62d2b93378246b52560b4918c25c29473c3a8112",
+    "docs/evidence/general-generation/HANDOFF.json": "5a6c42951a930005b086c9949fb518febd290d0a1ae4e53d2e82ce776d24eb18"
+  },
+  "source_identity": "All 12 source rows match exact archived ID, title, pinned URL, date, license and complete paragraph",
+  "source_text_sha256": {
+    "reference-2259607-e908bb7063551eeb": "e908bb7063551eeb072ea3097dca0c2a155f4ed82934fa5828dfbca546341112",
+    "reference-158573-7383bbc6df68b49d": "7383bbc6df68b49d89d6c873b1541bd1e074f4666842617c7765fa795f527d4c",
+    "reference-432174-c4ba2176e40b85a3": "c4ba2176e40b85a35ced2267de4f7162e0a72a0734c5e0627f796b5734c675e5",
+    "reference-46470-5d9b9cd87b755893": "5d9b9cd87b75589360f47906f2e089b485caec5079b9bb64f47dea6d27900b96",
+    "reference-5739-86ff3287ece77838": "86ff3287ece77838eb6128ee6d3337cfac459467492051d744c614a12acf66e3",
+    "reference-1368-bb237b999458543d": "bb237b999458543d08e5cc945400737c2a8856e3c643294bfdd1d7d4ec340dae",
+    "reference-5253-961c40c10e71969c": "961c40c10e71969cd3e7835b9d86a4d30597d7be9d3e77ecf6167f8930d7d15a",
+    "reference-5649-5784165f2f880683": "5784165f2f880683ebc76b1d36dc87622ba687f19013cce12c180c7e474850e4",
+    "reference-991-b62dfff2ee9e6bd1": "b62dfff2ee9e6bd1fe6ec743120b21da110d8e4fb871a5b02ec9507a3f0e41e9",
+    "reference-5826-2d21e4a4384605b3": "2d21e4a4384605b3ff081440e29f274293b7bfd81995f59c216d70441a7ddf16",
+    "reference-6900318-7c6fe4f31766ac60": "7c6fe4f31766ac60530d1dc1f65a6200b0654719f0cf6c69dc45c0f41f6c6328",
+    "reference-7655739-6b17719b6e5462c5": "6b17719b6e5462c567c6d80ab7f9685925d075b0f741e5267b4dbd20c642b70e"
+  },
+  "models": {
+    "qwen3-4b": {
+      "model_identity": {
+        "repo": "Qwen/Qwen3-4B-GGUF",
+        "revision": "bc640142c66e1fdd12af0bd68f40445458f3869b",
+        "filename": "Qwen3-4B-Q4_K_M.gguf",
+        "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+        "bytes": 2497280256,
+        "license": "apache-2.0",
+        "base_repo": "Qwen/Qwen3-4B",
+        "base_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+        "license_url": "https://huggingface.co/Qwen/Qwen3-4B/resolve/1cfa9a7208912126459214e8b04321603b3df60c/LICENSE",
+        "source_url": "https://huggingface.co/Qwen/Qwen3-4B-GGUF/resolve/bc640142c66e1fdd12af0bd68f40445458f3869b/Qwen3-4B-Q4_K_M.gguf"
+      },
+      "cases": [
+        {
+          "id": "g01",
+          "question": "Explain how pickling and food drying inhibit spoilage, and identify the different role of water in each method.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen3-4b/g01.json",
+          "raw_file_sha256": "8b587089b504269a3b46ec40b3e68c1600f3fc9cb6feec49dd83b2954aee9ab8",
+          "raw_text_sha256": "7d8aa4d482e95f0a32909fc63daa4098166e1403f89131b6ff4058055d05282f",
+          "prompt_sha256": "0c4c4a68717d6d13cbeac0f84e90c5e79f449d28a7db04702863a4315c3709ca",
+          "source_aliases": {
+            "S1": "reference-2259607-e908bb7063551eeb",
+            "S2": "reference-158573-7383bbc6df68b49d"
+          },
+          "supported": false,
+          "complete": false,
+          "useful_as_a_supported_complete_answer": false,
+          "usefulness": "Mechanisms broadly explained, but qualification loss prevents dependable complete answer",
+          "supported_clause_groups": [
+            "Acidic pH, salt, enzymes and microorganism inhibition: S1",
+            "Fermentation conditions and example salted vegetables: S1",
+            "Drying removes water and listed methods: S2"
+          ],
+          "specific_errors": [
+            {
+              "claim": "In pickling, water plays a role ... being drawn out ... create a brine",
+              "error": "Omits S1 sufficient-moisture condition for dry-salt brine and does not distinguish vinegar pickles; examples narrow the sentence somewhat but the water comparison remains underqualified"
+            },
+            {
+              "claim": "absence of water prevents the growth of spoilage organisms",
+              "error": "S2 states removal inhibits growth, not complete absence or unconditional prevention"
+            }
+          ],
+          "absent_correctness": null,
+          "citation_assessment": "Only S1/S2 aliases; source location labels do not certify whole-prose support",
+          "self_gap_marker_assessment": "GAPS none is not evidence of complete support",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "citation_correct": true,
+          "structural_screen_failure": "",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen3-4b/g01.json"
+        },
+        {
+          "id": "g02",
+          "question": "Does the supplied evidence establish that pickled vegetables must be completely sterile? Explain and distinguish this from drying.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen3-4b/g02.json",
+          "raw_file_sha256": "353d0a3aed7f5e9e33d9d9c26b3a67d7659b6b86326e107926cbc5c1f8b30e32",
+          "raw_text_sha256": "e0d1c07e2faae3f4b12d6b655e6061bdbb2f204fd2dc41b07e040b0591b6733b",
+          "prompt_sha256": "dfde17adced68d35f1474485463feafaf7743131531f2da515c29ed961fc5502",
+          "source_aliases": {
+            "S1": "reference-2259607-e908bb7063551eeb",
+            "S2": "reference-158573-7383bbc6df68b49d"
+          },
+          "supported": true,
+          "complete": true,
+          "useful_as_a_supported_complete_answer": true,
+          "usefulness": "Directly corrects sterility premise and contrasts water removal",
+          "supported_clause_groups": [
+            "Pickling need not be completely sterile and conditions govern dominant microorganisms: S1",
+            "Drying inhibits bacteria, yeast and mold by water removal: S2"
+          ],
+          "specific_errors": [],
+          "absent_correctness": null,
+          "citation_assessment": "Only S1/S2 aliases; source location labels do not certify whole-prose support",
+          "self_gap_marker_assessment": "GAPS none is not evidence of complete support",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "citation_correct": true,
+          "structural_screen_failure": "",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen3-4b/g02.json"
+        },
+        {
+          "id": "g03",
+          "question": "Compare soil covering with changing crops over successive seasons: what is done and which stated benefits overlap?",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen3-4b/g03.json",
+          "raw_file_sha256": "424cc0d7395022180707b7bf40ccd181632d2c1d11d223b089959bf8809d8075",
+          "raw_text_sha256": "9a1f51637ea3e8393897cf39bcfe592799c293360ef9ab69abf9921d345c6091",
+          "prompt_sha256": "5f138528dac1fba4410f5ac16ee9444c85296564679f523c23fdda70f5b5608d",
+          "source_aliases": {
+            "S1": "reference-432174-c4ba2176e40b85a3",
+            "S2": "reference-46470-5d9b9cd87b755893"
+          },
+          "supported": false,
+          "complete": false,
+          "useful_as_a_supported_complete_answer": false,
+          "usefulness": "Accurate practice descriptions followed by unsupported overlap and mechanism",
+          "supported_clause_groups": [
+            "Mulch placement and four stated benefits: S1",
+            "Rotation sequence and nutrient, pest, weed, resistance benefits: S2",
+            "Shared weed reduction: both"
+          ],
+          "specific_errors": [
+            {
+              "claim": "overlap ... improvement of soil health; Both practices contribute to ... health and fertility",
+              "error": "S2 states reduced reliance on one nutrient set; shared health/fertility benefit exceeds supplied wording and is not marked inference"
+            },
+            {
+              "claim": "soil covering focuses on physical protection",
+              "error": "Physical protection is not a stated S1 purpose"
+            }
+          ],
+          "absent_correctness": null,
+          "citation_assessment": "Only S1/S2 aliases; source location labels do not certify whole-prose support",
+          "self_gap_marker_assessment": "GAPS none is not evidence of complete support",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "citation_correct": true,
+          "structural_screen_failure": "",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen3-4b/g03.json"
+        },
+        {
+          "id": "g04",
+          "question": "Why might a gardener use both mulch and crop rotation? Separate the stated purposes from any untested combined effect.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen3-4b/g04.json",
+          "raw_file_sha256": "f03f6b3c6dcdb2e37170d15a83f0dfb93776bed2eba7df2cbf7795185b35ae91",
+          "raw_text_sha256": "0a806da53b5bfe6f2d9582b2e00d8811257c3c42e16b75fc122ef41e94b394a7",
+          "prompt_sha256": "4de2437bbe3db3604c5085b24a5045e2a3a0996e07618c7d7312599110c15c39",
+          "source_aliases": {
+            "S1": "reference-432174-c4ba2176e40b85a3",
+            "S2": "reference-46470-5d9b9cd87b755893"
+          },
+          "supported": true,
+          "complete": true,
+          "useful_as_a_supported_complete_answer": true,
+          "usefulness": "Stated purposes separated from untested combination",
+          "supported_clause_groups": [
+            "All mulch purposes: S1",
+            "All rotation purposes: S2",
+            "No combined-effect experiment supplied: inspection of both"
+          ],
+          "specific_errors": [],
+          "absent_correctness": null,
+          "citation_assessment": "Only S1/S2 aliases; source location labels do not certify whole-prose support",
+          "self_gap_marker_assessment": "GAPS none is not evidence of complete support",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "citation_correct": true,
+          "structural_screen_failure": "",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen3-4b/g04.json"
+        },
+        {
+          "id": "g05",
+          "question": "Explain cross-compilation and why assembly instructions are closely tied to an architecture. Does the excerpt say assembly is always exactly one statement per instruction?",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen3-4b/g05.json",
+          "raw_file_sha256": "7f1c8b60074e9029a1b5caad94ea5f2e73b91d34d333b8cb9aebedaa9f7c99e7",
+          "raw_text_sha256": "7a02ad1f140ed3c99848923a79600c642145998a3389bf70c9d8ca55fe1e3e03",
+          "prompt_sha256": "76b46db641f2ac37f90dd889f237b41f1d038c20e80ec0459bbfd4c5f7b2f12b",
+          "source_aliases": {
+            "S1": "reference-5739-86ff3287ece77838",
+            "S2": "reference-1368-bb237b999458543d"
+          },
+          "supported": false,
+          "complete": false,
+          "useful_as_a_supported_complete_answer": false,
+          "usefulness": "Critical contradictory answer to the explicit always premise",
+          "supported_clause_groups": [
+            "Different target CPU or OS: S1",
+            "Strong machine-code correspondence and usual mapping with listed exceptions: S2"
+          ],
+          "specific_errors": [
+            {
+              "claim": "The excerpt does say that assembly is always exactly one statement per instruction",
+              "error": "Direct contradiction of S2 usually; following usually/exceptions sentences do not repair contradictory affirmative verdict"
+            },
+            {
+              "claim": "target platform that may not have a compiler available",
+              "error": "Target compiler unavailability not in S1"
+            }
+          ],
+          "absent_correctness": null,
+          "citation_assessment": "Only S1/S2 aliases; source location labels do not certify whole-prose support",
+          "self_gap_marker_assessment": "GAPS none is not evidence of complete support",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "citation_correct": true,
+          "structural_screen_failure": "",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen3-4b/g05.json"
+        },
+        {
+          "id": "g06",
+          "question": "Contrast a temporary compiler used to build a better compiler with a compiler targeting another operating system.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen3-4b/g06.json",
+          "raw_file_sha256": "777cb1f32205a160bac8b729280501074ed9d9df0bbbb2f54746a92262f041c8",
+          "raw_text_sha256": "ef182d6411c3ca7699dd0e67c5fb0db4dd2adf0fbb09ecc06bea69734eb0421b",
+          "prompt_sha256": "06f2e161ffd326fd10e5816c2da084df3423f500f4e160ceb4aba5b123117d41",
+          "source_aliases": {
+            "S1": "reference-5739-86ff3287ece77838",
+            "S2": "reference-1368-bb237b999458543d"
+          },
+          "supported": false,
+          "complete": false,
+          "useful_as_a_supported_complete_answer": false,
+          "usefulness": "Basic distinction useful but final categorical definition loses often qualifier",
+          "supported_clause_groups": [
+            "Cross target definition: S1",
+            "Temporary bootstrap purpose in question: S1"
+          ],
+          "specific_errors": [
+            {
+              "claim": "a bootstrap compiler is a temporary tool for building a more robust compiler",
+              "error": "S1 says often temporary and more permanent or better optimized; final categorical temporary and robust wording strengthens source"
+            }
+          ],
+          "absent_correctness": null,
+          "citation_assessment": "Only S1/S2 aliases; source location labels do not certify whole-prose support",
+          "self_gap_marker_assessment": "GAPS none is not evidence of complete support",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "citation_correct": true,
+          "structural_screen_failure": "",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen3-4b/g06.json"
+        },
+        {
+          "id": "g07",
+          "question": "Explain the relationship between a constitution and the limits on a constitutional monarch, and contrast an absolute monarch.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen3-4b/g07.json",
+          "raw_file_sha256": "07c5eb7a812d928f6eb361fd880f3abdb6a3b1caab0fedbddef3fe8e2762442c",
+          "raw_text_sha256": "6949136af2b18faf56e75e84267f8f7f6b3b403cc0c1a5a8cb87501105050282",
+          "prompt_sha256": "cce7ab4c140ef82ed8fe2957efedd6572d37df2d9ca8c9d82df775a6020849fa",
+          "source_aliases": {
+            "S1": "reference-5253-961c40c10e71969c",
+            "S2": "reference-5649-5784165f2f880683"
+          },
+          "supported": true,
+          "complete": true,
+          "useful_as_a_supported_complete_answer": true,
+          "usefulness": "Concise constitution-to-limits explanation and sole-decision contrast",
+          "supported_clause_groups": [
+            "Constitution legal framework and governance: S1",
+            "Monarch within constitutional limits and contrast with sole decision-maker: S2"
+          ],
+          "specific_errors": [],
+          "absent_correctness": null,
+          "citation_assessment": "Only S1/S2 aliases; source location labels do not certify whole-prose support",
+          "self_gap_marker_assessment": "GAPS none is not evidence of complete support",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "citation_correct": true,
+          "structural_screen_failure": "",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen3-4b/g07.json"
+        },
+        {
+          "id": "g08",
+          "question": "Explain why absolute value ignores the sign of a real number, and distinguish that concept from the real and imaginary parts of a complex number.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen3-4b/g08.json",
+          "raw_file_sha256": "db16bad5e3e8eaaca552152d872963c15d215eb3287dc7ada10e5816597e2b51",
+          "raw_text_sha256": "35f5af77daee7a39056856169add1d213266a682222ddcbd8937cc850b48a8f9",
+          "prompt_sha256": "37c9562adffbaad3351830cbddd9d70a3df52aee3bdc9e5e8538469190d50b18",
+          "source_aliases": {
+            "S1": "reference-991-b62dfff2ee9e6bd1",
+            "S2": "reference-5826-2d21e4a4384605b3"
+          },
+          "supported": false,
+          "complete": true,
+          "useful_as_a_supported_complete_answer": false,
+          "usefulness": "Core definitions complete but adds uncited geometry outside supplied evidence",
+          "supported_clause_groups": [
+            "Real absolute-value formula, nonnegativity, examples and distance: S1",
+            "a+bi, real a and b, i squared=-1 and part labels: S2"
+          ],
+          "specific_errors": [
+            {
+              "claim": "complex plane ... real axis ... imaginary axis",
+              "error": "Geometric plane and axis interpretation absent from the single S2 paragraph; plausible external knowledge cannot establish supplied-source support"
+            }
+          ],
+          "absent_correctness": null,
+          "citation_assessment": "Only S1/S2 aliases; source location labels do not certify whole-prose support",
+          "self_gap_marker_assessment": "GAPS none is not evidence of complete support",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "citation_correct": true,
+          "structural_screen_failure": "",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen3-4b/g08.json"
+        },
+        {
+          "id": "g09",
+          "question": "Compare reducing heat flow through a building envelope with exchanging indoor and outdoor air without mechanical systems.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen3-4b/g09.json",
+          "raw_file_sha256": "370762684a64a7efd9db332253e208157fd7cba62c13c90ee4dfbb2066013286",
+          "raw_text_sha256": "1ed78a5e5b3c9646637b619045aa81367e116f2340b947d58feedd5fbc83cdb9",
+          "prompt_sha256": "51c8480b9753980018d95eaec4dd1ee28c0f31cae78f119df231fbd1a8cfb0b4",
+          "source_aliases": {
+            "S1": "reference-6900318-7c6fe4f31766ac60",
+            "S2": "reference-7655739-6b17719b6e5462c5"
+          },
+          "supported": false,
+          "complete": true,
+          "useful_as_a_supported_complete_answer": false,
+          "usefulness": "Core comparison present but adds effects not evidenced here",
+          "supported_clause_groups": [
+            "Building-envelope reduction of thermal flow: S1",
+            "Passive air exchange without mechanical systems using natural pressure: S2"
+          ],
+          "specific_errors": [
+            {
+              "claim": "maintaining indoor temperatures and reducing energy consumption for heating or cooling",
+              "error": "These performance effects are not stated in S1 and are asserted without qualifications"
+            },
+            {
+              "claim": "other focuses on air quality",
+              "error": "S2 defines air exchange and pressure forces, not an air-quality result or purpose"
+            }
+          ],
+          "absent_correctness": null,
+          "citation_assessment": "Only S1/S2 aliases; source location labels do not certify whole-prose support",
+          "self_gap_marker_assessment": "GAPS none is not evidence of complete support",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "citation_correct": true,
+          "structural_screen_failure": "",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen3-4b/g09.json"
+        },
+        {
+          "id": "g10",
+          "question": "Is all building insulation exclusively thermal, and does passive ventilation require a mechanical fan? Explain both premises.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen3-4b/g10.json",
+          "raw_file_sha256": "fd4e3e55733cf69ff63b4bb2ac9d3289f1d4b1b05f44c8061385b7f58cd3918f",
+          "raw_text_sha256": "af78f7438bbd74d6f4e5d47bedfdd6a0fc67d68bc3dad23a8a101873afd91229",
+          "prompt_sha256": "03c8102a91ba9671c78ec29f62a61d9ead88ee23e90e36ee0682877531a3d96f",
+          "source_aliases": {
+            "S1": "reference-6900318-7c6fe4f31766ac60",
+            "S2": "reference-7655739-6b17719b6e5462c5"
+          },
+          "supported": true,
+          "complete": true,
+          "useful_as_a_supported_complete_answer": true,
+          "usefulness": "Both false premises explicitly corrected",
+          "supported_clause_groups": [
+            "Thermal majority plus acoustic, fire and impact uses: S1",
+            "Passive ventilation without fan/mechanical system and natural pressure: S2"
+          ],
+          "specific_errors": [],
+          "absent_correctness": null,
+          "citation_assessment": "Only S1/S2 aliases; source location labels do not certify whole-prose support",
+          "self_gap_marker_assessment": "GAPS none is not evidence of complete support",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "citation_correct": true,
+          "structural_screen_failure": "",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen3-4b/g10.json"
+        },
+        {
+          "id": "g11",
+          "question": "What was the measured yield of my garden yesterday after using mulch and crop rotation?",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen3-4b/g11.json",
+          "raw_file_sha256": "b3d7d4e7df365e9c61aeb35543df301869a31c1eedf8d359b38704f42f0921d4",
+          "raw_text_sha256": "a8d34aa30c220b6394faa3890688a0eedd705bccda07cf1ea9f67f94f57c3192",
+          "prompt_sha256": "d9ea588453ff8690f8dd8570c0ca8729a51c890819b4af1659c8258b3ae661e5",
+          "source_aliases": {
+            "S1": "reference-432174-c4ba2176e40b85a3",
+            "S2": "reference-46470-5d9b9cd87b755893"
+          },
+          "supported": true,
+          "complete": true,
+          "useful_as_a_supported_complete_answer": true,
+          "usefulness": "Correctly withholds personal dated garden measurement",
+          "supported_clause_groups": [
+            "Neither paragraph includes personal garden yield or measurements: direct source inspection"
+          ],
+          "specific_errors": [],
+          "absent_correctness": true,
+          "citation_assessment": "Only S1/S2 aliases; source location labels do not certify whole-prose support",
+          "self_gap_marker_assessment": "GAPS none is not evidence of complete support; personal measured yield remains unavailable despite GAPS none",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "citation_correct": true,
+          "structural_screen_failure": "",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen3-4b/g11.json"
+        },
+        {
+          "id": "g12",
+          "question": "What is the current indoor temperature and exact heating bill of my home?",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen3-4b/g12.json",
+          "raw_file_sha256": "2b84293f4addd9ed4e603e03e821b5896375e089d045506eb5da9544a9668ff8",
+          "raw_text_sha256": "def6a212bbdd407e580260895a38b41f945d08b249dc952fd170009bc756e144",
+          "prompt_sha256": "adbb8d68596b0258360dc94f87ae1f4aed4781c25cb291fd7119ed1c6f4d5faf",
+          "source_aliases": {
+            "S1": "reference-6900318-7c6fe4f31766ac60",
+            "S2": "reference-7655739-6b17719b6e5462c5"
+          },
+          "supported": true,
+          "complete": true,
+          "useful_as_a_supported_complete_answer": true,
+          "usefulness": "Correctly withholds both personal/live values",
+          "supported_clause_groups": [
+            "Neither paragraph supplies home temperature or bill: direct source inspection"
+          ],
+          "specific_errors": [],
+          "absent_correctness": true,
+          "citation_assessment": "Only S1/S2 aliases; source location labels do not certify whole-prose support",
+          "self_gap_marker_assessment": "GAPS none is not evidence of complete support",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "citation_correct": true,
+          "structural_screen_failure": "",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen3-4b/g12.json"
+        }
+      ],
+      "receipt_sha256": "355ecbee9bcfeaf7be18e9cddcf87df920469c2d2aba598aef413412a5c5ad30",
+      "counts": {
+        "educational_cases": 10,
+        "educational_supported": 4,
+        "educational_supported_complete_citation_correct": 4,
+        "absent_controls": 2,
+        "absent_controls_correct": 2,
+        "all_production_withheld": 12
+      }
+    },
+    "qwen25-7b": {
+      "model_identity": {
+        "id": "qwen25-7b",
+        "repo": "bartowski/Qwen2.5-7B-Instruct-GGUF",
+        "revision": "8911e8a47f92bac19d6f5c64a2e2095bd2f7d031",
+        "base_repo": "Qwen/Qwen2.5-7B-Instruct",
+        "base_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "filename": "Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+        "bytes": 4683074240,
+        "sha256": "65b8fcd92af6b4fefa935c625d1ac27ea29dcb6ee14589c55a8f115ceaaa1423",
+        "license": "apache-2.0",
+        "path": "downloads/scale-model-quality/models/Qwen2.5-7B-Instruct-Q4_K_M.gguf"
+      },
+      "cases": [
+        {
+          "id": "g01",
+          "question": "Explain how pickling and food drying inhibit spoilage, and identify the different role of water in each method.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen25-7b/g01.json",
+          "raw_file_sha256": "d9a62da13cffedb0874f40de79a2d0b334d13b6909997f038e66d2b1c88bb122",
+          "raw_text_sha256": "a06ede938038953eca44d966dc60558e5a61a2162eab7b0b8a9dc984f38be075",
+          "prompt_sha256": "0c4c4a68717d6d13cbeac0f84e90c5e79f449d28a7db04702863a4315c3709ca",
+          "source_aliases": {
+            "S1": "reference-2259607-e908bb7063551eeb",
+            "S2": "reference-158573-7383bbc6df68b49d"
+          },
+          "supported": false,
+          "complete": false,
+          "citation_correct": true,
+          "useful_as_a_supported_complete_answer": false,
+          "usefulness": "Basic comparison compromised by enzyme error and missing pickling-water explanation",
+          "supported_clause_groups": [
+            "Acidic/salty pickling, pH, duration, additives and nonsterility: S1",
+            "Drying water removal, organisms, historical use and methods: S2"
+          ],
+          "specific_errors": [
+            {
+              "claim": "prevents the growth of enzymes and micro-organisms",
+              "error": "S1 prevents enzymes from working; it does not describe enzymes as growing"
+            },
+            {
+              "claim": "determine ... preservation effectiveness",
+              "error": "S1 attributes microorganism dominance and flavor to conditions; effectiveness is an added outcome"
+            },
+            {
+              "claim": "GAPS: none",
+              "error": "Requested pickling-water role and sufficient-moisture condition for dry-salt brine entirely omitted"
+            }
+          ],
+          "absent_correctness": null,
+          "citation_assessment": "Source-aligned aliases where factual support exists; labels cannot repair unsupported prose",
+          "self_gap_marker_assessment": "GAPS none cannot certify support",
+          "structural_screen_failure": "",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen25-7b/g01.json"
+        },
+        {
+          "id": "g02",
+          "question": "Does the supplied evidence establish that pickled vegetables must be completely sterile? Explain and distinguish this from drying.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen25-7b/g02.json",
+          "raw_file_sha256": "4359c2b1bd42e5513b225afe091e2b419744ed7642d225f44207f92b189242e8",
+          "raw_text_sha256": "21c6bf30ea8c05082e94e381bcd34af48442a6bb46ddb5951a4e661371328abe",
+          "prompt_sha256": "dfde17adced68d35f1474485463feafaf7743131531f2da515c29ed961fc5502",
+          "source_aliases": {
+            "S1": "reference-2259607-e908bb7063551eeb",
+            "S2": "reference-158573-7383bbc6df68b49d"
+          },
+          "supported": true,
+          "complete": true,
+          "citation_correct": true,
+          "useful_as_a_supported_complete_answer": true,
+          "usefulness": "Correct sterility rejection and water-removal contrast",
+          "supported_clause_groups": [
+            "Pickling need not be sterile; stated conditions and flavor: S1",
+            "Drying inhibits listed organisms through water removal: S2"
+          ],
+          "specific_errors": [],
+          "absent_correctness": null,
+          "citation_assessment": "Source-aligned aliases where factual support exists; labels cannot repair unsupported prose",
+          "self_gap_marker_assessment": "GAPS none cannot certify support",
+          "structural_screen_failure": "",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen25-7b/g02.json"
+        },
+        {
+          "id": "g03",
+          "question": "Compare soil covering with changing crops over successive seasons: what is done and which stated benefits overlap?",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen25-7b/g03.json",
+          "raw_file_sha256": "67056bdd327f6995fe1e5494d520aadbb6547b5580e2022d84412d809ba75a55",
+          "raw_text_sha256": "fbe5516a41f39277613e79162b622cf2a9e230bb3d6cf7563d2fd0998ac15162",
+          "prompt_sha256": "5f138528dac1fba4410f5ac16ee9444c85296564679f523c23fdda70f5b5608d",
+          "source_aliases": {
+            "S1": "reference-432174-c4ba2176e40b85a3",
+            "S2": "reference-46470-5d9b9cd87b755893"
+          },
+          "supported": false,
+          "complete": false,
+          "citation_correct": false,
+          "useful_as_a_supported_complete_answer": false,
+          "usefulness": "Accurate definitions followed by unsupported shared benefit",
+          "supported_clause_groups": [
+            "Mulch placement and stated benefits: S1",
+            "Rotation sequence and nutrient, pest and weed benefits: S2",
+            "Shared weed management: both"
+          ],
+          "specific_errors": [
+            {
+              "claim": "both practices aim to improve soil health",
+              "error": "S2 nutrient reliance does not certify broader shared soil-health benefit"
+            },
+            {
+              "claim": "[[S1], [S2]]",
+              "error": "Malformed combined citation syntax; neither is a valid individual exact alias in that sentence"
+            }
+          ],
+          "absent_correctness": null,
+          "citation_assessment": "Citation defect separately recorded; necessary support-location criterion not met",
+          "self_gap_marker_assessment": "GAPS none cannot certify support",
+          "structural_screen_failure": "",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen25-7b/g03.json"
+        },
+        {
+          "id": "g04",
+          "question": "Why might a gardener use both mulch and crop rotation? Separate the stated purposes from any untested combined effect.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen25-7b/g04.json",
+          "raw_file_sha256": "cbe1d8656b3cd2bbd13d85c02ac715e08ef7f3e296b5a99d50716e1b6cc3460f",
+          "raw_text_sha256": "4a657c382164f23f075237014345b697d4649e60259169834401f1add3aedbba",
+          "prompt_sha256": "4de2437bbe3db3604c5085b24a5045e2a3a0996e07618c7d7312599110c15c39",
+          "source_aliases": {
+            "S1": "reference-432174-c4ba2176e40b85a3",
+            "S2": "reference-46470-5d9b9cd87b755893"
+          },
+          "supported": true,
+          "complete": true,
+          "citation_correct": true,
+          "useful_as_a_supported_complete_answer": true,
+          "usefulness": "Distinct benefits with explicit absence of combined-effect evidence",
+          "supported_clause_groups": [
+            "All mulch purposes: S1",
+            "Rotation nutrient, pest, weed and resistance purposes: S2",
+            "No combined-effect result supplied: direct inspection"
+          ],
+          "specific_errors": [],
+          "absent_correctness": null,
+          "citation_assessment": "Source-aligned aliases where factual support exists; labels cannot repair unsupported prose",
+          "self_gap_marker_assessment": "GAPS none cannot certify support",
+          "structural_screen_failure": "",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen25-7b/g04.json"
+        },
+        {
+          "id": "g05",
+          "question": "Explain cross-compilation and why assembly instructions are closely tied to an architecture. Does the excerpt say assembly is always exactly one statement per instruction?",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen25-7b/g05.json",
+          "raw_file_sha256": "78a2280dede640274e84e2a8a388ccd14f442ca79cbd0e6fdaabe73af2895045",
+          "raw_text_sha256": "834f17ba8db5d5d440e6a48e7451a94911280e715c2fbb343eda325b921156a2",
+          "prompt_sha256": "76b46db641f2ac37f90dd889f237b41f1d038c20e80ec0459bbfd4c5f7b2f12b",
+          "source_aliases": {
+            "S1": "reference-5739-86ff3287ece77838",
+            "S2": "reference-1368-bb237b999458543d"
+          },
+          "supported": true,
+          "complete": true,
+          "citation_correct": false,
+          "useful_as_a_supported_complete_answer": false,
+          "usefulness": "Correct substantive explanation; wrong citation for cross-compilation",
+          "supported_clause_groups": [
+            "Different host and target CPU/OS: S1",
+            "Assembly correspondence, usual mapping and exceptions: S2"
+          ],
+          "specific_errors": [
+            {
+              "claim": "Cross-compilation ... different type of computer or operating system ... [[S2]]",
+              "error": "Only S2 citations occur; cross-compilation is in S1 and S2 contains assembly only"
+            }
+          ],
+          "absent_correctness": null,
+          "citation_assessment": "Citation defect separately recorded; necessary support-location criterion not met",
+          "self_gap_marker_assessment": "GAPS none cannot certify support",
+          "structural_screen_failure": "",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen25-7b/g05.json"
+        },
+        {
+          "id": "g06",
+          "question": "Contrast a temporary compiler used to build a better compiler with a compiler targeting another operating system.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen25-7b/g06.json",
+          "raw_file_sha256": "94cf898cb6a22ac87c6830815ca8e9f2700d2411e9e0caf317275c263bef79c2",
+          "raw_text_sha256": "37fec4cc59b94511444feb271507602fe7b37e7018b9ad96bbbafb23443b9b7a",
+          "prompt_sha256": "06f2e161ffd326fd10e5816c2da084df3423f500f4e160ceb4aba5b123117d41",
+          "source_aliases": {
+            "S1": "reference-5739-86ff3287ece77838",
+            "S2": "reference-1368-bb237b999458543d"
+          },
+          "supported": true,
+          "complete": true,
+          "citation_correct": true,
+          "useful_as_a_supported_complete_answer": true,
+          "usefulness": "Accurate temporary-versus-cross-target purpose",
+          "supported_clause_groups": [
+            "Temporary compiler in question builds better/permanent compiler: S1",
+            "Cross-compiler target differs from host CPU/OS: S1"
+          ],
+          "specific_errors": [],
+          "absent_correctness": null,
+          "citation_assessment": "Source-aligned aliases where factual support exists; labels cannot repair unsupported prose",
+          "self_gap_marker_assessment": "GAPS none cannot certify support",
+          "structural_screen_failure": "",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen25-7b/g06.json"
+        },
+        {
+          "id": "g07",
+          "question": "Explain the relationship between a constitution and the limits on a constitutional monarch, and contrast an absolute monarch.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen25-7b/g07.json",
+          "raw_file_sha256": "a6c1c2cbbef9c06bab2768285122bfbc652b31693b60c074c793287e82dd458d",
+          "raw_text_sha256": "66fa5046bba691db5fcd37fbb163fa71d3969cfb22bfee4fbf292b84ceba1648",
+          "prompt_sha256": "cce7ab4c140ef82ed8fe2957efedd6572d37df2d9ca8c9d82df775a6020849fa",
+          "source_aliases": {
+            "S1": "reference-5253-961c40c10e71969c",
+            "S2": "reference-5649-5784165f2f880683"
+          },
+          "supported": false,
+          "complete": true,
+          "citation_correct": true,
+          "useful_as_a_supported_complete_answer": false,
+          "usefulness": "Core relationship complete; absolute claim overbroad",
+          "supported_clause_groups": [
+            "Constitution principles or precedents and governance: S1",
+            "Constitutional limits, shared decisions and absolute sole decision-maker: S2"
+          ],
+          "specific_errors": [
+            {
+              "claim": "unrestricted power of an absolute monarch",
+              "error": "Unqualified unrestricted power exceeds source-local sole-decision and constitutional-limits comparison"
+            }
+          ],
+          "absent_correctness": null,
+          "citation_assessment": "Source-aligned aliases where factual support exists; labels cannot repair unsupported prose",
+          "self_gap_marker_assessment": "GAPS none cannot certify support",
+          "structural_screen_failure": "",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen25-7b/g07.json"
+        },
+        {
+          "id": "g08",
+          "question": "Explain why absolute value ignores the sign of a real number, and distinguish that concept from the real and imaginary parts of a complex number.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen25-7b/g08.json",
+          "raw_file_sha256": "26740b2908410169757609fcd3e56f5d296eb2ed744654362e99de72c284fee0",
+          "raw_text_sha256": "7bc4bc3b12b2c50cf3d3f8a51b2e81a14e2c21d8205598461f5b52f995623b82",
+          "prompt_sha256": "37c9562adffbaad3351830cbddd9d70a3df52aee3bdc9e5e8538469190d50b18",
+          "source_aliases": {
+            "S1": "reference-991-b62dfff2ee9e6bd1",
+            "S2": "reference-5826-2d21e4a4384605b3"
+          },
+          "supported": true,
+          "complete": true,
+          "citation_correct": true,
+          "useful_as_a_supported_complete_answer": true,
+          "usefulness": "Grounded magnitude-versus-component distinction",
+          "supported_clause_groups": [
+            "Real magnitude, distance and examples: S1",
+            "a+bi, a/b parts and i squared=-1: S2"
+          ],
+          "specific_errors": [],
+          "absent_correctness": null,
+          "citation_assessment": "Source-aligned aliases where factual support exists; labels cannot repair unsupported prose",
+          "self_gap_marker_assessment": "GAPS none cannot certify support",
+          "structural_screen_failure": "",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen25-7b/g08.json"
+        },
+        {
+          "id": "g09",
+          "question": "Compare reducing heat flow through a building envelope with exchanging indoor and outdoor air without mechanical systems.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen25-7b/g09.json",
+          "raw_file_sha256": "8bf773e9bb493bfdc2513b5d052d7bd48f9b3e58c9d2da9da97bfdfc093f5a9c",
+          "raw_text_sha256": "66fd56bb8beef159051f394f15c904a35376a0e80179365980ad84b476e4693a",
+          "prompt_sha256": "51c8480b9753980018d95eaec4dd1ee28c0f31cae78f119df231fbd1a8cfb0b4",
+          "source_aliases": {
+            "S1": "reference-6900318-7c6fe4f31766ac60",
+            "S2": "reference-7655739-6b17719b6e5462c5"
+          },
+          "supported": true,
+          "complete": false,
+          "citation_correct": true,
+          "useful_as_a_supported_complete_answer": false,
+          "usefulness": "Grounded short comparison omits stated pressure mechanism",
+          "supported_clause_groups": [
+            "Building-envelope thermal flow reduction: S1",
+            "Passive exchange without mechanical systems, using natural forces: S2"
+          ],
+          "specific_errors": [
+            {
+              "claim": "relies on natural forces to supply and remove air",
+              "error": "Pressure differences omitted despite explicit protocol expectation"
+            }
+          ],
+          "absent_correctness": null,
+          "citation_assessment": "Source-aligned aliases where factual support exists; labels cannot repair unsupported prose",
+          "self_gap_marker_assessment": "GAPS none cannot certify support",
+          "structural_screen_failure": "",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen25-7b/g09.json"
+        },
+        {
+          "id": "g10",
+          "question": "Is all building insulation exclusively thermal, and does passive ventilation require a mechanical fan? Explain both premises.",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen25-7b/g10.json",
+          "raw_file_sha256": "bbc17c64a89244366ad100420ffe22049bd81ee760ff16a7c4580dd3835caa2c",
+          "raw_text_sha256": "a241501a2f1b052fcb8a13a0c5ec5bca02552ffb7754cd2fd6bd6cf95677e17e",
+          "prompt_sha256": "03c8102a91ba9671c78ec29f62a61d9ead88ee23e90e36ee0682877531a3d96f",
+          "source_aliases": {
+            "S1": "reference-6900318-7c6fe4f31766ac60",
+            "S2": "reference-7655739-6b17719b6e5462c5"
+          },
+          "supported": true,
+          "complete": true,
+          "citation_correct": true,
+          "useful_as_a_supported_complete_answer": true,
+          "usefulness": "Both premises corrected using stated definitions",
+          "supported_clause_groups": [
+            "Thermal, acoustic, fire, impact and multiple functions: S1",
+            "No mechanical system; natural pressure differences and external air: S2"
+          ],
+          "specific_errors": [],
+          "absent_correctness": null,
+          "citation_assessment": "Source-aligned aliases where factual support exists; labels cannot repair unsupported prose",
+          "self_gap_marker_assessment": "GAPS none cannot certify support",
+          "structural_screen_failure": "",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen25-7b/g10.json"
+        },
+        {
+          "id": "g11",
+          "question": "What was the measured yield of my garden yesterday after using mulch and crop rotation?",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen25-7b/g11.json",
+          "raw_file_sha256": "cd9ab6de8152fea4d46b4e0baebee0d73db3dfb6763a8662ce376bda28410534",
+          "raw_text_sha256": "9a78add7ba0fcdc0024821a553bf14ca335e2cba8b6f0e2fb171cf044bdc9443",
+          "prompt_sha256": "d9ea588453ff8690f8dd8570c0ca8729a51c890819b4af1659c8258b3ae661e5",
+          "source_aliases": {
+            "S1": "reference-432174-c4ba2176e40b85a3",
+            "S2": "reference-46470-5d9b9cd87b755893"
+          },
+          "supported": true,
+          "complete": true,
+          "citation_correct": true,
+          "useful_as_a_supported_complete_answer": true,
+          "usefulness": "Correctly withholds personal observation; structural source-binding screen fails",
+          "supported_clause_groups": [
+            "Neither passage has personal garden yield: direct inspection"
+          ],
+          "specific_errors": [],
+          "absent_correctness": true,
+          "citation_assessment": "Source-aligned aliases where factual support exists; labels cannot repair unsupported prose",
+          "self_gap_marker_assessment": "GAPS none cannot certify support; personal/current values remain unavailable despite GAPS none",
+          "structural_screen_failure": "No source bindings; abstention is not generated success",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen25-7b/g11.json"
+        },
+        {
+          "id": "g12",
+          "question": "What is the current indoor temperature and exact heating bill of my home?",
+          "raw_path": "downloads/general-generation/run-20261002T134119Z/qwen25-7b/g12.json",
+          "raw_file_sha256": "9ffb40c6d70f44644f67ad33e50512a70df71450a59e6b3d98f757d620b7aae9",
+          "raw_text_sha256": "2cec4fcc8153bf31d4e31a88ffa66904ef877f71c3d5324045abc75157c840d9",
+          "prompt_sha256": "adbb8d68596b0258360dc94f87ae1f4aed4781c25cb291fd7119ed1c6f4d5faf",
+          "source_aliases": {
+            "S1": "reference-6900318-7c6fe4f31766ac60",
+            "S2": "reference-7655739-6b17719b6e5462c5"
+          },
+          "supported": true,
+          "complete": true,
+          "citation_correct": true,
+          "useful_as_a_supported_complete_answer": true,
+          "usefulness": "Correctly declines both personal/live values",
+          "supported_clause_groups": [
+            "Insulation and ventilation topics: S1/S2",
+            "Neither has actual home temperature or exact bill: direct inspection"
+          ],
+          "specific_errors": [],
+          "absent_correctness": true,
+          "citation_assessment": "Source-aligned aliases where factual support exists; labels cannot repair unsupported prose",
+          "self_gap_marker_assessment": "GAPS none cannot certify support; personal/current values remain unavailable despite GAPS none",
+          "structural_screen_failure": "",
+          "production_route": "WITHHELD_PENDING_INDEPENDENT_ENTAILMENT_AND_COMPLETENESS",
+          "preserved_raw_path": "docs/evidence/general-generation/run-20261002T134119Z/qwen25-7b/g12.json"
+        }
+      ],
+      "receipt_sha256": "d415e7a1073a4f61a73cf3c84f8376e367f270e2002463047889df984d3e7e3a",
+      "counts": {
+        "educational_cases": 10,
+        "educational_supported": 7,
+        "educational_supported_complete_citation_correct": 5,
+        "absent_controls": 2,
+        "absent_controls_correct": 2,
+        "all_production_withheld": 12
+      }
+    }
+  },
+  "limitations": [
+    "Host CPU oracle excerpts, not Android product flow or physical hardware",
+    "Public development questions and source pairs selected for this screen; no unseen holdout or independent product comparison",
+    "Reviewer model judgments, not human acceptance or an operational entailment verifier",
+    "No generated retries, edits, inference or device execution by reviewer",
+    "Structural citation checks, same-model GAPS claims and NLI do not establish support",
+    "All raw outputs preserved; no automatic publication",
+    "Conservative source-local review; unsupported additions are not automatically false in the world",
+    "7B g07 overbreadth concerns unrestricted wording; constitutional-versus-absolute distinction itself is supported",
+    "No runtime semantic verifier, selected-model Android flow or full current distribution measurement established"
+  ],
+  "verdict": "Neither model establishes a qualified general supported Android answer route; individual passing development drafts do not qualify publication",
+  "comparison_limit": "Descriptive counts on identical public oracle paragraphs only; no significance, unseen generalization or competitive-superiority inference",
+  "critical_observations": [
+    "4B g05 explicitly affirms always while the source says usually; later exceptions do not cure that contradiction",
+    "7B g01 substitutes enzyme growth for enzyme activity and omits pickling-water explanation",
+    "Both models g03 expand source-limited crop-rotation claims into shared soil-health benefits",
+    "7B g05 corrects substantive assembly premise but cites the wrong source for cross-compilation",
+    "Both models correctly decline both absent personal/current controls; these are not useful educational-generation successes",
+    "7B g11 has explicit structural failure No source bindings; abstention is not generated success, despite correct semantic absence response"
+  ],
+  "provisional_host_choice": {
+    "selected": null,
+    "reason": "Five versus four fully supported, complete, correctly attributed educational drafts on ten public oracle cases is insufficient for a reliable model preference; both retain material failures",
+    "future_selection_scope": "Any host candidate selection requires separate resource and broader frozen quality evidence; no production choice from this review"
+  }
+}
