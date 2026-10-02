@@ -1,0 +1,5 @@
+{
+  "reviewed_commit": "b2f7d65da740485e95830047dcd9146e06e22802",
+  "reviewer": "independent product_ui_review agent",
+  "visible_result": "Streamed UI reports and font restoration are preserved, but failed cold transport and changed boot identity leave the full gate failing; reboot causation remains unproven, and later identity checks cannot establish same-run retention."
+}
