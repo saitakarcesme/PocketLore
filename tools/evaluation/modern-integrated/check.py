@@ -16,6 +16,7 @@ def validate_transport(raw,metadata):
 def verify(out):
  m=json.loads((out/'manifest.json').read_text());assert m['serial']=='emulator-5564' and m['sdk']==37 and m['page_size']==16384
  for name,pin in m['files'].items():assert sha(out/name)==pin,'Missing or changed '+name
+ assert {x['file'] for x in m['reports']}=={'default/report.json','large/report.json','cold/report.json','documents/results.json','documents-cold/restart.json','native-cards-recognition/report.json'}
  for lane in m['reports']:
   r=json.loads((out/lane['file']).read_text());validate(r,m['run_id'])
   transport=(out/lane['transport']).read_text()
@@ -31,6 +32,8 @@ def verify(out):
   assert (out/f'{label}/research-keyboard.png').stat().st_size>10000 and 'EditText' in (out/f'{label}/research-keyboard-accessibility.txt').read_text()
  d=json.loads((out/'documents/results.json').read_text());assert d['api']==37
  assert {'live_catalog_restored_exactly','personal_library_return_does_not_infer','actual_source_dialog_offsets_owner_exact_text','blocked_export_cancelled'}.issubset(d['checks'])
+ cold=json.loads((out/'cold/report.json').read_text());assert 'Bookmark and note survive process death' in cold['checks']
+ reopened=json.loads((out/'documents-cold/restart.json').read_text());assert reopened['api']==37 and reopened['retained_collections']==7
  assert 'pageSizeCompat=0' in (out/'package-after.txt').read_text()
  assert 'App compatibility' not in (out/'ui.xml').read_text()
  assert 'android.permission.INTERNET' not in (out/'permissions.txt').read_text()
@@ -52,7 +55,7 @@ def main():
   shell(['run-as',PKG,'sh','-c',"'"+command+"'"],'assets-'+label+'.txt')
   shell(['run-as',PKG,'du','-sk','.'],'allocated-'+label+'.txt');shell(['run-as',PKG,'du','-sb','.'],'logical-'+label+'.txt');shell(['df','-k','/data'],'df-'+label+'.txt')
   app_path=shell(['pm','path',PKG],'apk-path-'+label+'.txt').decode().strip().removeprefix('package:');shell(['sha256sum',app_path],'apk-hash-'+label+'.txt')
-  shell(['stat','-c','%s %b',app_path],'apk-size-'+label+'.txt')
+  shell(['stat','-c',"'%s %b'",app_path],'apk-size-'+label+'.txt')
   shell(['dumpsys','meminfo',PKG],'meminfo-'+label+'.txt')
  def instrument(cls,folder,remote,extra=()):
   log=folder+'/runtime.txt';failure=None
