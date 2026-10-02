@@ -1,0 +1,125 @@
+{
+  "utc": "2026-10-02T14:55:38.335885+00:00",
+  "scope": "Read-only API37 environment observation; no installation, admission or research-flow proof",
+  "lease_sha256": "007fc33aee1491784805b69d75ad489a64491e810dfc3320b71ec93f027a82c6",
+  "observations": [
+    {
+      "name": "state",
+      "command": [
+        "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5564",
+        "get-state"
+      ],
+      "exit": 0,
+      "sha256": "c98373c1abef78070f6beef6b4ae4fbf3de348dac280195c7f93441920584af9",
+      "output": "device\n"
+    },
+    {
+      "name": "boot",
+      "command": [
+        "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5564",
+        "shell",
+        "cat",
+        "/proc/sys/kernel/random/boot_id"
+      ],
+      "exit": 0,
+      "sha256": "3bb20bf033dd95745938dfab19789872adb32d89d4b9cc2b8e3f7915b0b0b9b6",
+      "output": "5a5b64be-c87e-45b5-b766-58f8d826fc83\n"
+    },
+    {
+      "name": "api",
+      "command": [
+        "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5564",
+        "shell",
+        "getprop",
+        "ro.build.version.sdk"
+      ],
+      "exit": 0,
+      "sha256": "b58a3da5fde2680191877ec88a1aa7d06927cc3b30cdf0d0db8c39b488891576",
+      "output": "37\n"
+    },
+    {
+      "name": "page",
+      "command": [
+        "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5564",
+        "shell",
+        "getconf",
+        "PAGE_SIZE"
+      ],
+      "exit": 0,
+      "sha256": "33f50728129313570f6b953c08b559d9cb5f673e981e647cee4dc10d6cd48e99",
+      "output": "16384\n"
+    },
+    {
+      "name": "disk",
+      "command": [
+        "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5564",
+        "shell",
+        "df",
+        "-k",
+        "/data"
+      ],
+      "exit": 0,
+      "sha256": "92ce8aeb7c5c688d7e91769741130cc931aa5fe5c0e898e7cc2bbf99fbced578",
+      "output": "Filesystem      1K-blocks    Used Available Use% Mounted on\n/dev/block/dm-6  65871612 2084580  63639576   4% /data/user/0\n"
+    },
+    {
+      "name": "package",
+      "command": [
+        "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5564",
+        "shell",
+        "pm",
+        "path",
+        "org.pocketlore.app"
+      ],
+      "exit": 0,
+      "sha256": "3ec0619996ea0769be8428d2170442e1a4c6acb760da270df44f9502512b8861",
+      "output": "package:/data/app/~~aKEtsGH9v-OYOKBC3CPodQ==/org.pocketlore.app-i9Urnut_srfFU36Jz9Z68w==/base.apk\n"
+    },
+    {
+      "name": "app-storage",
+      "command": [
+        "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5564",
+        "shell",
+        "run-as",
+        "org.pocketlore.app",
+        "du",
+        "-sk",
+        "files",
+        "cache"
+      ],
+      "exit": 0,
+      "sha256": "0a4c23f1e3efbb5c778ec739be0d5f60f69d7da1eaf392aff2f4ff54140053ca",
+      "output": "618432\tfiles\n552\tcache\n"
+    },
+    {
+      "name": "font",
+      "command": [
+        "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+        "-s",
+        "emulator-5564",
+        "shell",
+        "settings",
+        "get",
+        "system",
+        "font_scale"
+      ],
+      "exit": 0,
+      "sha256": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf",
+      "output": "1.0\n"
+    }
+  ]
+}

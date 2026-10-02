@@ -1,0 +1,91 @@
+{
+  "counts": {
+    "pages": 27352,
+    "redirect": 6233,
+    "indexed_documents": 20918,
+    "candidate_plain_spans": 22060,
+    "non_article_namespace": 201
+  },
+  "admitted_research_documents": 0,
+  "expanded_bytes": 1131261020,
+  "index_bytes": 424202240,
+  "elapsed_s": 65.924756213004,
+  "max_rss_kib": 49528,
+  "scope": "Host primary-source index, not installed Android or broad rights clearance",
+  "pin": {
+    "size": 299727245,
+    "url": "https://dumps.wikimedia.org/enwiki/20260901/enwiki-20260901-pages-articles-multistream1.xml-p1p41242.bz2",
+    "md5": "145cf08d3232cf26652d6bbcf100a7b1",
+    "sha1": "a97f62049996fd3d3ba03e6fc9593b2695b5b441",
+    "name": "enwiki-20260901-pages-articles-multistream1.xml-p1p41242.bz2",
+    "edition": "enwiki-20260901",
+    "status_sha256": "66d367145245742d278ef5278df6e9000b51ae7628e71919b90e5ade754add2f",
+    "scope": "First contiguous official page-ID shard; no title/query selection; not full inventory"
+  },
+  "partitions": {
+    "12": {
+      "count": 1311,
+      "representative_id": 21244
+    },
+    "7": {
+      "count": 1269,
+      "representative_id": 12823
+    },
+    "2": {
+      "count": 1293,
+      "representative_id": 32754
+    },
+    "15": {
+      "count": 1290,
+      "representative_id": 28047
+    },
+    "1": {
+      "count": 1289,
+      "representative_id": 3633
+    },
+    "3": {
+      "count": 1322,
+      "representative_id": 35475
+    },
+    "4": {
+      "count": 1311,
+      "representative_id": 40692
+    },
+    "5": {
+      "count": 1329,
+      "representative_id": 20069
+    },
+    "10": {
+      "count": 1305,
+      "representative_id": 21226
+    },
+    "14": {
+      "count": 1329,
+      "representative_id": 22718
+    },
+    "0": {
+      "count": 1314,
+      "representative_id": 35184
+    },
+    "8": {
+      "count": 1296,
+      "representative_id": 5848
+    },
+    "6": {
+      "count": 1303,
+      "representative_id": 10998
+    },
+    "9": {
+      "count": 1324,
+      "representative_id": 25225
+    },
+    "13": {
+      "count": 1324,
+      "representative_id": 16989
+    },
+    "11": {
+      "count": 1309,
+      "representative_id": 4091
+    }
+  }
+}

@@ -1,5 +1,9 @@
 # Release gaps
 
+## Task510 broad admission remains incomplete
+
+The official first-shard primary index contains20,918 revisions, but zero new research-admitted documents. Source-specific notice/template resolution and complete formula/qualifier evidence units remain needed before full-partition policy review, Android research import/navigation and current complete45/50GB update measurements. No inaccessible external dependency is claimed: original official bytes are reachable. [Evidence](evidence/broad-corpus-admission.md) preserves raw failures, direct terms and systematic original XML packets; the tiny accepted subset is not broad coverage.
+
 ## Current brief review-record status
 
 [The bounded review-record repair](evidence/general-source-backed-research-brief.md) binds the user-supplied independent statement to unchanged checkpoint65dd1bb application and source/output identities. Build and required brief check now pass; at least12/24 useful source-supported original briefs are independently supported in aggregate, while20/24 remains the builder assessment. No individual independent grades or product acceptance are inferred. Old failing/pending logs remain historical below. Broad phrasing, generated answers, unseen evaluation, physical devices and final release gates remain open; no new inference or Android code change was needed.
