@@ -1,0 +1,26 @@
+{
+  "stage": "Public development verification experiment, not same-model self-approval or product qualification",
+  "generator": "Preserved Qwen3 4B task500 drafts only; no regeneration",
+  "generator_run": "downloads/general-generation/run-20261002T134119Z/qwen3-4b",
+  "verifier_pin": "tools/evaluation/scale-model-quality/qwen25-7b.json",
+  "verifier_relationship": "Qwen2.5 7B is a separately trained artifact from Qwen3 4B, but shares the Qwen organization/family; this is not independent human or canonical criticism",
+  "context_tokens": 4096,
+  "output_tokens": 512,
+  "threads": 6,
+  "parallel_inference": 1,
+  "virtual_address_limit_bytes": 12000000000,
+  "rss_stop_bytes": 11000000000,
+  "timeout_seconds": 1800,
+  "decoding": "One greedy generateChat call per preserved draft/probe, no prompt/threshold/seed search",
+  "rule": "Only exact first-line VERDICT: SUPPORTED_COMPLETE can become a provisional host candidate; truncation/error/unknown verdict fails closed. Source reviewer must still inspect every candidate. ABSENT never counts as generated usefulness.",
+  "acceptance": "Zero unsupported provisional candidates, all absent controls classified absent or rejected, retain useful supported answers; no automatically qualified deployment from this public experiment",
+  "source_freeze": "tools/evaluation/general-generation/sources.json",
+  "probes": [
+    {"id":"p01","pair":2,"question":"Is assembly always exactly one statement per machine instruction?","draft":"No. Assembly usually has one statement per machine code instruction, while constants, comments, directives, labels and macros are also supported [[S2]]. GAPS: none.","expected":"SUPPORTED_COMPLETE","classification":"Constructed positive false-premise correction, not corpus text"},
+    {"id":"p02","pair":2,"question":"Is assembly always exactly one statement per machine instruction?","draft":"Yes. Assembly always has exactly one statement per machine code instruction [[S2]]. GAPS: none.","expected":"REJECT","classification":"Constructed counterfactual absolute qualifier"},
+    {"id":"p03","pair":5,"question":"How does passive ventilation exchange air?","draft":"Passive ventilation exchanges air without mechanical systems, with external air flowing indoors because of pressure differences arising from natural forces [[S2]]. GAPS: none.","expected":"SUPPORTED_COMPLETE","classification":"Constructed supported paraphrase"},
+    {"id":"p04","pair":5,"question":"How does passive ventilation exchange air?","draft":"Passive ventilation exchanges air without mechanical systems because of natural pressure differences [[S2]]. It guarantees a 30 percent reduction in heating bills [[S1]]. GAPS: none.","expected":"REJECT","classification":"Constructed unsupported factual tail and numeric claim"},
+    {"id":"p05","pair":4,"question":"What equation defines the imaginary unit in the excerpt?","draft":"The imaginary unit satisfies i squared equals minus one [[S2]]. GAPS: none.","expected":"SUPPORTED_COMPLETE","classification":"Constructed supported formula paraphrase"},
+    {"id":"p06","pair":4,"question":"What equation defines the imaginary unit in the excerpt?","draft":"The imaginary unit satisfies i squared equals positive one [[S2]]. GAPS: none.","expected":"REJECT","classification":"Constructed formula sign contradiction"}
+  ]
+}
