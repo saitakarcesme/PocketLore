@@ -1,0 +1,23 @@
+{
+  "run_id": "run-20261002T124854Z-2063ab",
+  "source_hash": "e7b00c736deaabab8af1cff03198002a6a88a0f52ba1dbb2b3624f4470ee3648",
+  "mode": "install",
+  "pack_sha256": "61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135",
+  "status": "FAIL",
+  "error": "java.lang.AssertionError: actual provider Activity import completed\n\tat org.pocketlore.app.ReferenceExpansionInstrumentation.ok(ReferenceExpansionInstrumentation.java:5)\n\tat org.pocketlore.app.ReferenceExpansionInstrumentation.await(ReferenceExpansionInstrumentation.java:6)\n\tat org.pocketlore.app.ReferenceExpansionInstrumentation.onStart(ReferenceExpansionInstrumentation.java:66)\n\tat android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2701)\n",
+  "failure_ui_status": "Memory pressure or manual unload · Releasing local model",
+  "failure_answer": "Unverified draft discarded to release memory. Saved sources and model remain on disk.",
+  "failure_pack_status": "Pack rejected; previous library retained. Invalid metadata type: rights_disposition",
+  "outputs": [],
+  "checks": [
+    "owned run directory",
+    "only known public reference editions active; do not search unrelated user data",
+    "model explicitly unloaded",
+    "initial library ready before import",
+    "picker confirmation cancel retains catalog",
+    "screenshot failure"
+  ],
+  "screens": [
+    "install-failure"
+  ]
+}
