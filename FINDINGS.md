@@ -432,3 +432,7 @@ Recovered the120-document/20-family edition and frozen public results without re
 ### Task480 repair-2 — recovered, awaiting exclusive device ownership
 
 Recovered the exact failed repair-1 tree and allowed the collector to recognize repair-2 leases without weakening ownership/expiry validation. No new exclusive5564lease is available in the authorized runtime state; actual Android execution remains blocked. No repeated matrix, acquisition, device command or behavioral pass claim. The existing incomplete HANDOFF and prior failed receipts are preserved.
+
+### Task480 strategy change — preserve failed transport evidence; ownership still external
+
+Wrote the failure analysis before changing the collector. Failed instrumentation transport now preserves raw command evidence and permits retrieval of the actual phase report before failing. Four local subprocess controls pass. No new exclusive5564lease has arrived; actual installation, source-output, storage and behavioral validation remain blocked. No source/case regeneration or device access occurred; the incomplete HANDOFF and historical failures remain unchanged.
