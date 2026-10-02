@@ -1,0 +1,23 @@
+{
+  "handoff_sha256": "03388b4678a24a4984d6b3718907d4da2b501cfadfedc5b269e902d48387310c",
+  "proposal_sha256": "5e6498f1727af08e3cefae329440d9c9dbdb365d5db8722727eb62dd8f8694ad",
+  "manifest_entries_verified": 103,
+  "payload": {
+    "sha256": "abebbc64ad13392c8079b2f7312e9b914331240aaebd45426a1f167bd30eaa62",
+    "bytes": 60163,
+    "records": [
+      292223,
+      292672,
+      292968
+    ],
+    "fields": [
+      "geonameid",
+      "name",
+      "latitude",
+      "longitude",
+      "country_code",
+      "modification_date"
+    ]
+  },
+  "scope": "Three records; six fields; no full row or alternate name payload"
+}

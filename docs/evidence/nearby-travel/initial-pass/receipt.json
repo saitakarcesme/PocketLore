@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "apk_sha256": "c9c1a59a7fa987df540fd6ef32e2fb1bd17e1901e8587fc8da44140f00592e68",
+  "apk_bytes": 22702878,
+  "payload": {
+    "sha256": "abebbc64ad13392c8079b2f7312e9b914331240aaebd45426a1f167bd30eaa62",
+    "bytes": 60163,
+    "records": [
+      292223,
+      292672,
+      292968
+    ],
+    "fields": [
+      "geonameid",
+      "name",
+      "latitude",
+      "longitude",
+      "country_code",
+      "modification_date"
+    ]
+  },
+  "environment": "API35 x86_64 emulator-5560, no physical GPS fix or phone qualification",
+  "checks": 68,
+  "files": {
+    "build.log": "cba8d383f88b26bb0eded6e949bb3668cc7a9a4413bc1bd449ecba7d5969b231",
+    "before.txt": "46fb900f990242a3237662c65e676a7ea718d9d4ad05759c60099decb8a85f17",
+    "install-app-debug.apk.txt": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+    "install-app-debug-androidTest.apk.txt": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+    "runtime.txt": "610cc27e4d3418a93fe24876019652e6d09c160c2194160e0b6c33d05a46e744",
+    "report.json": "cddaef2223ed88a9d1ed315211b031008b14a6e70240fd2f2c163eb20eafae28",
+    "city-export-292223.md": "f701047445143c5cc28cb74e5c1918d025c3caccdf61482980c524720a87471f",
+    "city-export-292672.md": "ad7f2fcbe6b8b367dabf9a0a04a8a33dfc928d9c83ba43742c88bc1c1e4c9b2e",
+    "city-export-292968.md": "f68fa1c94719ff9ab5163e7c9c9d394f934484e24f446ef70728574f55d078ea",
+    "after.txt": "46fb900f990242a3237662c65e676a7ea718d9d4ad05759c60099decb8a85f17",
+    "package.txt": "1fc6820eb85c1e343a523873bb674772985c305fb8151255872dfca1b3f7e8f6",
+    "installed.txt": "f3efe56d0870d9e1d215e06279b091b5cd4e74c6524ecdc8652888a88de6518b",
+    "installed-hash.txt": "4799ff7638c815c833afe8d4f2d7179145d21903fb2c101a288e0b31c11ee813"
+  }
+}

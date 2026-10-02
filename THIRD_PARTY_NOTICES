@@ -243,3 +243,20 @@ The supplemental real-photo test uses Dmitry Novoklimov's 2008 Red octagonal
 stop sign photograph, CC0-1.0, Commons description revision1215001130.
 Original and whole-frame resized bytes remain ignored; exact attribution,
 transformation and hashes are in docs/evidence/attachments/photo-supplement.json.
+
+Task360 bounded GeoNames source cards
+-----------------------------------
+GeoNames, https://www.geonames.org/ ; CC BY 4.0,
+https://creativecommons.org/licenses/by/4.0/ . Only records292223,292672,
+292968 and geonameid/name/latitude/longitude/country_code/modification_date
+are projected from the independently reviewed cities500 archive SHA256
+4ba815404241c08ca40a5dcdcfe35dee4ae51bb848bfff2c01d8ad35507ae232.
+The 2026-10-01 acquisition date is distinct from each source modification
+date and unknown upstream archive release date. Exact values are selected
+without transliteration or numeric reformatting; only indexing removed LF.
+GeoNames provides data as is without warranty of accuracy, timeliness or
+completeness. No endorsement or originating agency is inferred. Offline
+legal code and per-record notices accompany android/app/src/main/assets/
+reviewed-cities.json. Complete rows and unreviewed alternate names are not
+part of this new payload or its display/export routes. This narrow review
+is not corpus-wide distribution or generated-answer clearance.

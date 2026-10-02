@@ -375,11 +375,7 @@ Consolidate compiler generated dependencies of target pocketlore
 > Task :app:processDebugManifest UP-TO-DATE
 > Task :app:processDebugManifestForPackage UP-TO-DATE
 > Task :app:processDebugResources UP-TO-DATE
-
 > Task :app:compileDebugJavaWithJavac
-Note: /home/isa/Projects/PocketLore/android/app/src/main/java/org/pocketlore/app/ReaderUi.java uses or overrides a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-
 > Task :app:mergeDebugShaders UP-TO-DATE
 > Task :app:compileDebugShaders NO-SOURCE
 > Task :app:generateDebugAssets UP-TO-DATE
@@ -408,16 +404,9 @@ Note: Recompile with -Xlint:deprecation for details.
 > Task :app:mapDebugAndroidTestSourceSetPaths UP-TO-DATE
 > Task :app:generateDebugAndroidTestResources UP-TO-DATE
 > Task :app:mergeDebugAndroidTestResources UP-TO-DATE
-> Task :app:processDebugAndroidTestManifest
-> Task :app:processDebugAndroidTestResources
-> Task :app:packageDebug
-> Task :app:createDebugApkListingFileRedirect UP-TO-DATE
-> Task :app:assembleDebug
-
+> Task :app:processDebugAndroidTestManifest UP-TO-DATE
+> Task :app:processDebugAndroidTestResources UP-TO-DATE
 > Task :app:compileDebugAndroidTestJavaWithJavac
-Note: Some input files use or override a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-
 > Task :app:mergeDebugAndroidTestShaders UP-TO-DATE
 > Task :app:compileDebugAndroidTestShaders NO-SOURCE
 > Task :app:generateDebugAndroidTestAssets UP-TO-DATE
@@ -431,6 +420,9 @@ Note: Recompile with -Xlint:deprecation for details.
 > Task :app:checkDebugAndroidTestDuplicateClasses UP-TO-DATE
 > Task :app:mergeExtDexDebugAndroidTest UP-TO-DATE
 > Task :app:mergeLibDexDebugAndroidTest UP-TO-DATE
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleDebug
 > Task :app:mergeDebugAndroidTestJniLibFolders UP-TO-DATE
 > Task :app:mergeDebugAndroidTestNativeLibs NO-SOURCE
 > Task :app:stripDebugAndroidTestDebugSymbols NO-SOURCE
@@ -449,6 +441,6 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 12s
-65 actionable tasks: 16 executed, 49 up-to-date
-Final debug APK SHA-256: eb2cb54d19f8cba12cb3758b1e60b8397c176cfb58247d54f467664fdfa26c46
+BUILD SUCCESSFUL in 11s
+65 actionable tasks: 14 executed, 51 up-to-date
+Final debug APK SHA-256: c9c1a59a7fa987df540fd6ef32e2fb1bd17e1901e8587fc8da44140f00592e68

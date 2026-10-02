@@ -13,8 +13,8 @@ for name in protected:
     assert before==path.read_bytes(),name+' changed outside UI scope'
     checks.append(name+' byte-identical to base')
 manifest=ET.parse(root/'android/app/src/main/AndroidManifest.xml').getroot()
-assert {p.attrib['{http://schemas.android.com/apk/res/android}name'] for p in manifest.findall('uses-permission')}=={'android.permission.RECORD_AUDIO'}
-checks.append('Only existing optional microphone permission retained; no INTERNET')
+assert {p.attrib['{http://schemas.android.com/apk/res/android}name'] for p in manifest.findall('uses-permission')}=={'android.permission.RECORD_AUDIO','android.permission.ACCESS_FINE_LOCATION','android.permission.ACCESS_COARSE_LOCATION'}
+checks.append('Optional microphone and task360 foreground GPS only; no INTERNET or background location')
 styles=ET.parse(root/'android/app/src/main/res/values/styles.xml').getroot()
 for name,minimum in [('ReaderButton',48),('ReaderInput',56)]:
     style=next(s for s in styles if s.attrib['name']==name)

@@ -1,0 +1,33 @@
+# Offline nearby travel — task360
+
+Implementation is bounded to offline browsing and dated source inspection. It adds manual latitude/longitude search, optional one-shot platform GPS, explicit saved dietary-tag filtering and nearby dated regional descriptions. No model inference, new bulk download or new index is used; no INTERNET, GMS or background-location permission is added. Final build/check results are recorded below once completed; this is not physical-device or competitive acceptance.
+
+## Source handoff and product boundaries
+
+The source-review HANDOFF SHA-25603388b4678a24a4984d6b3718907d4da2b501cfadfedc5b269e902d48387310c, corrected proposal SHA-2565e6498f1727af08e3cefae329440d9c9dbdb365d5db8722727eb62dd8f8694ad and all103 frozen file-manifest entries were verified before use. The existing independent source review was consumed, not repeated. The product projection is60,163 bytes, SHA-256abebbc64ad13392c8079b2f7312e9b914331240aaebd45426a1f167bd30eaa62, below200,000 bytes.
+
+Only GeoNames records292223/292672/292968 and six approved fields are included: geonameid, name, latitude, longitude, country_code and modification_date. The payload omits raw rows, alternate names and every other source-data field. Runtime binding checks exact record identity, stored-row hash, original LF-terminated row hash and every half-open UTF-16 slice/hash, including correspondence with indexed coordinates, name, date and country code. Original archive and row hashes, extraction labels, acquisition dates, unknown upstream date/agency, GeoNames attribution, as-is disclaimer and offline CC BY4.0 legal text remain visible. Whole payload integrity binds the receipt, attribution and license. A denied card does not disable ordinary city/place lookup.
+
+Each approved field opens the existing source reader with only that field's source slice and provenance/license; the full card contains the six fields. Saved snapshots and portable notebook exports retain the same limited projection and are explicitly extractive metadata, never generated reasoning. Coordinates are source points, not boundaries, entrances, routing or a current observation. Zero venues still retain the card and six field controls.
+
+The eight Wikipedia candidates stay rejected and task302 stays blocked. Neither this payload nor exact hashes grant broader rights or semantic clearance. The competitor source-backed matrix was read from its actual `repo/output` path: its63 capabilities/25 proposals are planning inventory, its critic remains rework with11 unsupported claim locators, and its acquisition violation and unresolved Git snapshot identity remain unresolved. No competitor source, code, branding or assets were copied; no comparator was executed.
+
+## Travel behavior and limitations
+
+Manual input validates finite latitude/longitude and a positive straight-line radius up to100km. City names still resolve to indexed candidates for explicit selection rather than an inferred municipal region. Nearby records retain source-specific identities and are not merged into purported unique venues by matching names. Results are bounded; distances ignore paths, barriers, elevation and travel time.
+
+GPS is requested only after a button press, through Android LocationManager GPS_PROVIDER. It has no network provider, no background tracking, a30-second timeout and a120-second fix-age check; age and accuracy are displayed before the user chooses to search. Permission denial, disabled GPS and timeout disclose manual fallback. Leaving the Activity or starting a manual search removes location updates; late callbacks are ignored. No physical GPS fix is established by the emulator tests.
+
+Diet filtering requires a literal saved `tags["diet:vegan"]` or `tags["diet:vegetarian"]` value of `yes`; names and categories never imply dietary suitability. Missing tags remain unknown. The current global edition has no newly established positive dietary coverage, and the positive parser fixture is explicitly constructed test data, not a restaurant claim. Current hours are unknown and routing is unavailable. Existing licensed DC source descriptions retain dates/revisions and stale/current-access warnings; these are limited regional reference descriptions, not comprehensive travel guides.
+
+No native/runtime/model/answer policy changes occurred. Build limits remain two Gradle workers and2GiB heap; this is configuration, not a total-process peak measurement. The handoff projection needs no inference, download or indexing. Updated emulator reader/data measurements do not replace final full31-shard candidate/update or physical12GB/50GB qualification.
+
+## Measured result
+
+Both required commands pass. [Behavioral receipt](nearby-travel/passing/receipt.json), [raw report including every rendered card](nearby-travel/passing/report.json), [build log](nearby-travel/build-required.log) and portable exports are preserved. Current installed APK SHA-256 **1cebd776bfbf1d935ae9d690bc060b630c18c6679e533b8a50680f4317a9fc5a**. The final run contains98 assertions and unchanged hashes for model, model selection, small-pack catalog and bulk catalog. The first68-check pass and initial compile failure remain historical evidence.
+
+All three reviewed cities resolve through the actual installed SQLite reader, produce exact six-field cards in the real SourceReaderActivity and serialize through the existing notebook portable representation without complete rows or unreviewed fields. Runtime negatives cover changed receipt, row, identity and field offset, missing credit/license, absent city, invalid coordinates and absent dietary tags. Permission-denial callback/manual fallback is exercised; a physical fix and system-permission-dialog journey are not claimed.
+
+Frozen museum/1km queries return zero candidates for Dubai, Abu Dhabi, Sharjah, London and Sydney on the **installed shard subset**, and30 source records for Mexico City in8,510ms; each returned distance satisfies the requested radius. Other measured query times were1–12ms. Zero results do not establish that a city lacks museums. Manual DC coordinates produce23 dated regional descriptions and no global nearby candidates. Current global diet coverage remains unknown; there is no invented positive venue.
+
+Observed process PSS is94,521KiB and unique app-data bytes3,209,541,692 after the run. APK bytes are separately recorded in the receipt. These are snapshot observations including retained app/test content, not peak import/update memory, a full inventory or physical-phone measurements. No new corpus/index/model bytes were installed. The small reviewed payload increases APK/data evidence storage; final full-candidate budget and distribution identity must be revalidated separately.

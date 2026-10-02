@@ -336,3 +336,7 @@ The [personal-document report](evidence/documents.md) records passing build and7
 ## Task350 model selection
 
 [Model-management evidence](evidence/model-management.md) records passing pinned import/selection and actual JNI-failure rollback on5560. Optional1.5B execution is runtime smoke only;1.7B remains unmeasured here. Next distinct work is frozen source-supported quality/independent evaluation plus physical/ARM64 and API37 resource qualification before promoting any optional model. Recompute the full31-shard candidate and import/update envelope for this APK; the measured4.33GB5560 subset is not the earlier full-capacity candidate. Provider-open/FUSE stalls, external browser/picker coverage and final signing/reproduction remain separate gates.
+
+## Task360 nearby travel
+
+[Evidence](evidence/nearby-travel.md) establishes bounded manual/GPS-interface behavior and three reviewed extractive city cards on5560. Physical GPS fix/permission-dialog behavior, energy and precise/approximate fixes need device measurement. Positive real dietary-tag coverage remains unestablished; source acquisition/review would be required before expanding it. The regional descriptions are DC-only, global subset misses remain, and Mexico City query latency is8.51s. Final full-inventory APK/update budget, source-rights expansion, unseen quality and physical/GrapheneOS acceptance remain open; task302 is not resolved by city metadata.
