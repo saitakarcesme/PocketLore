@@ -1,0 +1,446 @@
+{
+  "run_id": "run-20261002T055037Z-ca95bd",
+  "review_scope": "Independent exact final-output source review; public development Android emulator evidence, not generated-answer, holdout, legal or physical-device acceptance.",
+  "bindings": {
+    "install_sha256": "57b4e1dc355f18603028a871a87db82ca326178c19a5c55075cd4482b099b5ed",
+    "restart_sha256": "3039cf844aea4d5ace081a3d6a5d88f2b621e4413f0248921b27e69dcb8204fe",
+    "manifest_sha256": "31173040bbd9069e0850cf29788ae6082d90d21fa8771abf45751104caf1099e",
+    "cases_sha256": "64cf9d39d0bb014a49041037643ca0de335e1f2032a04c5e21c67b762707e6b8",
+    "assessment_protocol_sha256": "3943297901b1ba0df79ec7e5c242c81d7ca2c316dea32162a1b62b4d9406ded3",
+    "review_packet_sha256": "b5824bc56fd2b25995ed4ec4e8b1988d67a559b302ca6ae888263860183dcccf"
+  },
+  "verification": "All25 final quote texts match reviewed exact spans and UTF16 display slices; titles, revision URLs/dates, contributor histories and citation ID suffixes match; six warned spans absent; five selected manifest-bound output/transport/image files verify; restart g01 text unchanged. All24 baseline rendered strings are byte-identical to prior run. Recorded metadata hashes retained, not reconstructed from omitted collectionProvenance.",
+  "cases": {
+    "g01": {
+      "id": "g01",
+      "question": "How does photosynthesis convert light energy into chemical energy?",
+      "rendered_sha256": "04b66d7686cca0ae01a672d424c25f4ba04203ce1d1ed09a90545c5dc4be4b70",
+      "baseline_rendered_sha256": "8c69e1f4d6b4ec84ede28ce924b0e07a86478aa6d7ba1013574d6c85717f980b",
+      "unsupported_attributed_claims": 0,
+      "relevance": "direct",
+      "complete_useful_source_brief": true,
+      "baseline_complete_useful_source_brief": true,
+      "rationale": "Light absorption, water splitting, ATP/NADPH and storage in organic bonds are covered by complete scoped paragraphs; baseline contains the same two paragraphs.",
+      "quoted_span_sha256": [
+        "b1dee4dd48bae46cde860b8d712b26cff698bb4cf46770f83929c25f09258ddb",
+        "37e8e2a9687e22ac4b7f1445e246cfd4c8114bdd3a5c5d924f348557dbf5391e"
+      ],
+      "recorded_metadata_hashes": [
+        "259082a3e086b98d3b5ad45e9eb367a503af0b8d83a2b693a07a2fdf53511243",
+        "e65625e36bf80f903bcbe93cd0497c2a97d74d92aa39a8ff42755e4e3328c3fe"
+      ]
+    },
+    "g02": {
+      "id": "g02",
+      "question": "How do chlorophyll pigments and light-dependent reactions produce oxygen?",
+      "rendered_sha256": "e61bad3dd2f1dd02e4000cc521a044f77d9739d8e97d6e53e47a58be11476c06",
+      "baseline_rendered_sha256": "0d2692af2913d77885531393cf0b03ebbfd8199a09049a3ede1b14b3f7799ebb",
+      "unsupported_attributed_claims": 0,
+      "relevance": "direct_with_context",
+      "complete_useful_source_brief": true,
+      "baseline_complete_useful_source_brief": true,
+      "rationale": "Pigment locations and water/electron oxygen-production conditions are explicit; Calvin-cycle paragraph adds context; baseline also adds a tangential solar-cell paragraph but covers the obligation.",
+      "quoted_span_sha256": [
+        "37e8e2a9687e22ac4b7f1445e246cfd4c8114bdd3a5c5d924f348557dbf5391e",
+        "ab18cdfbfe3bdedc5a83e1a5a39e08d64c654b02931247d304861dee3f515709"
+      ],
+      "recorded_metadata_hashes": [
+        "e65625e36bf80f903bcbe93cd0497c2a97d74d92aa39a8ff42755e4e3328c3fe",
+        "58ee43d10dd60abec1a4ad627928c915978e478aa9803175be49d6464ae3cbd5"
+      ]
+    },
+    "g03": {
+      "id": "g03",
+      "question": "What do ATP and NADPH do in the Calvin cycle?",
+      "rendered_sha256": "1e9e3614e12460d7c77b9dcf06a4c3d2ee952664ca8893567754e4f8efa7b4b4",
+      "baseline_rendered_sha256": "aaedb9e7d5f365216f039a937bf5cdd165dd6aa7be80e15f500808adb53d0c0b",
+      "unsupported_attributed_claims": 0,
+      "relevance": "direct_with_context",
+      "complete_useful_source_brief": true,
+      "baseline_complete_useful_source_brief": true,
+      "rationale": "Calvin-cycle paragraph states ATP/NADPH reduce compounds for carbohydrate production and retains organism scope; baseline alone contains that sufficient paragraph.",
+      "quoted_span_sha256": [
+        "ab18cdfbfe3bdedc5a83e1a5a39e08d64c654b02931247d304861dee3f515709",
+        "37e8e2a9687e22ac4b7f1445e246cfd4c8114bdd3a5c5d924f348557dbf5391e"
+      ],
+      "recorded_metadata_hashes": [
+        "58ee43d10dd60abec1a4ad627928c915978e478aa9803175be49d6464ae3cbd5",
+        "e65625e36bf80f903bcbe93cd0497c2a97d74d92aa39a8ff42755e4e3328c3fe"
+      ]
+    },
+    "g04": {
+      "id": "g04",
+      "question": "How does cellular respiration transfer energy from nutrients to ATP?",
+      "rendered_sha256": "a6abd954ce86ff8d4dbbe9325519e352248c0ddcf55ab2e416fd119e38f0db9a",
+      "baseline_rendered_sha256": "69f872222b6982f0c2fe06994ed0d0ecd139346941698b2a24174abd946d4486",
+      "unsupported_attributed_claims": 0,
+      "relevance": "none_withheld",
+      "complete_useful_source_brief": false,
+      "baseline_complete_useful_source_brief": false,
+      "rationale": "No quotation supplies nutrient-to-ATP transfer; excluded disputed respiration source stays excluded; baseline likewise withholds.",
+      "quoted_span_sha256": [],
+      "recorded_metadata_hashes": []
+    },
+    "g05": {
+      "id": "g05",
+      "question": "Compare aerobic and anaerobic cellular respiration with fermentation.",
+      "rendered_sha256": "ce32c35f84bf4270984d91db54866f757492e342e304924130dd3af3581d18a5",
+      "baseline_rendered_sha256": "f3c2916bb62707cf41c605d232103e55bf966847af37f4dfc03c162c88c80362",
+      "unsupported_attributed_claims": 0,
+      "relevance": "none_withheld",
+      "complete_useful_source_brief": false,
+      "baseline_complete_useful_source_brief": false,
+      "rationale": "No aerobic/anaerobic/fermentation comparison is provided; source exclusion is respected; baseline also incomplete.",
+      "quoted_span_sha256": [],
+      "recorded_metadata_hashes": []
+    },
+    "g06": {
+      "id": "g06",
+      "question": "Why are respiration reactions catabolic?",
+      "rendered_sha256": "6b338da7679147fb5b9925c2fd8f0db120f93a8dad87ed41cbfa9b3228416e4a",
+      "baseline_rendered_sha256": "50c046cc822a86e416823a1b7364b2844912cb1f85479108640b1e49710bb2ec",
+      "unsupported_attributed_claims": 0,
+      "relevance": "none_withheld",
+      "complete_useful_source_brief": false,
+      "baseline_complete_useful_source_brief": false,
+      "rationale": "Catabolic breakdown and controlled release are unanswered; source exclusion is respected; baseline also incomplete.",
+      "quoted_span_sha256": [],
+      "recorded_metadata_hashes": []
+    },
+    "g07": {
+      "id": "g07",
+      "question": "How does inflation reduce purchasing power?",
+      "rendered_sha256": "b58884c48ba4ef08cce7c7d57e21ccf985443ab5d97176a09040ebe09fd1a3a9",
+      "baseline_rendered_sha256": "b8145dadb063d0681877724eebdfea7bd94fa9bf89ed6a48032641452b51601c",
+      "unsupported_attributed_claims": 0,
+      "relevance": "direct_with_context",
+      "complete_useful_source_brief": true,
+      "baseline_complete_useful_source_brief": true,
+      "rationale": "General-price rise and reduced goods per currency unit are explicit; broader effects are extra context; baseline is equally sufficient.",
+      "quoted_span_sha256": [
+        "e92880c8eea773b908848c008e52fbe6475b5de908add4287dc7616f7003d1f9",
+        "319d2ee5c39785f66055301b45d050d0acb3549770e08ebc4022fa9f73376660"
+      ],
+      "recorded_metadata_hashes": [
+        "a037ac65f965bcce40c9e08f002572f1de4f621dbdd35488ad5d5ec7197966cd",
+        "2b039eba04c8016e79ce2e2dc43b824ca5d118bda383dbb9df0c87f53a33d7c9"
+      ]
+    },
+    "g08": {
+      "id": "g08",
+      "question": "What is the difference between inflation and deflation?",
+      "rendered_sha256": "fa0265777b0e737a5b3e4799fd2e7c412c1200a788e676cb87eb121e4c0a7e9c",
+      "baseline_rendered_sha256": "9713f09c435349e38504b597aeec99b884b149ca154700d8a4384beb3f7b61a8",
+      "unsupported_attributed_claims": 0,
+      "relevance": "none_false_rejection",
+      "complete_useful_source_brief": false,
+      "baseline_complete_useful_source_brief": false,
+      "rationale": "Admitted Inflation paragraph1 explicitly contrasts inflation and deflation, but both outputs withhold over unmatched differenc; source availability does not count as delivered usefulness.",
+      "quoted_span_sha256": [],
+      "recorded_metadata_hashes": []
+    },
+    "g09": {
+      "id": "g09",
+      "question": "What factors can change inflation?",
+      "rendered_sha256": "f8953b434215a7808e1b8583ced74f4031cb6e1920c6253231fd53e3df837139",
+      "baseline_rendered_sha256": "c33d59a5f39f50bdd7468b386f1072c8b03eefd5e80107fa1ae6d4f6e25c54db",
+      "unsupported_attributed_claims": 0,
+      "relevance": "direct_with_context",
+      "complete_useful_source_brief": true,
+      "baseline_complete_useful_source_brief": true,
+      "rationale": "Money supply, demand, supply, interest rates and expectations are preserved without monocausal assertion; baseline covers the same factors.",
+      "quoted_span_sha256": [
+        "f35c528864bd50c39042590a5f6b5c61ee4b995573373bc1e49210e1a9e2e04c",
+        "319d2ee5c39785f66055301b45d050d0acb3549770e08ebc4022fa9f73376660"
+      ],
+      "recorded_metadata_hashes": [
+        "8f786016326db4e9d01d810d0dcd683d09516d977645848b8fc9d371a1f46514",
+        "2b039eba04c8016e79ce2e2dc43b824ca5d118bda383dbb9df0c87f53a33d7c9"
+      ]
+    },
+    "g10": {
+      "id": "g10",
+      "question": "How does longitude specify an east-west position?",
+      "rendered_sha256": "a3dc16b422302287d13f9be0ddef1e576b8c1be805b6a861ab1e573235a5c964",
+      "baseline_rendered_sha256": "b442da7a945f2fbd56a3f3eda0532b40a6abe4c6bda29d0dc261598336dce3f7",
+      "unsupported_attributed_claims": 0,
+      "relevance": "direct",
+      "complete_useful_source_brief": true,
+      "baseline_complete_useful_source_brief": true,
+      "rationale": "East-west angular coordinate, prime meridian and positive/negative signs are covered; baseline adds time context but is also complete.",
+      "quoted_span_sha256": [
+        "2a97a92f71de97d1f81f850e3688656b2b003130d67191a4670008e6eb7fed66"
+      ],
+      "recorded_metadata_hashes": [
+        "77c0251807e608885a0176582ee6cfc0a71729f04d9a49e0315d85613b0f69d3"
+      ]
+    },
+    "g11": {
+      "id": "g11",
+      "question": "Why does a difference of 15 degrees longitude correspond to one hour?",
+      "rendered_sha256": "d82305a03ed8a233416dc3140c64fe4e41c27dcff36ffdc557b6e1324d3fce55",
+      "baseline_rendered_sha256": "9277c8f96bf6baa43e0fc16340e0bac9d84be9ab943527e6b3b96d7df092f0ee",
+      "unsupported_attributed_claims": 0,
+      "relevance": "direct",
+      "complete_useful_source_brief": true,
+      "baseline_complete_useful_source_brief": true,
+      "rationale": "Earth rotation, solar position and fifteen-degree/one-hour local-time relation are explicit, without civil-time-zone generalization; baseline also complete.",
+      "quoted_span_sha256": [
+        "15a84975634aa452ffeb51f3db485a5c5eccd73f0b9ca1563323d523b59bcdae"
+      ],
+      "recorded_metadata_hashes": [
+        "08835ff7165a31e110151dd5b31d4ebfe1a03c3be74f9737a56934a5514870b5"
+      ]
+    },
+    "g12": {
+      "id": "g12",
+      "question": "What distinguishes longitude from latitude?",
+      "rendered_sha256": "57a266f0f1a663da2f88ca149c2038e793ce2c90feb77f2f35833e422ae4a103",
+      "baseline_rendered_sha256": "f57c37cd4f2a78c4d00916047166480d4a84c91d63ad6e56f8ca1a662cca09ce",
+      "unsupported_attributed_claims": 0,
+      "relevance": "none_false_rejection",
+      "complete_useful_source_brief": false,
+      "baseline_complete_useful_source_brief": false,
+      "rationale": "Admitted longitude paragraphs1 and3 contain the distinction but no quotations are delivered because distinguish is unmatched; both outputs fail completeness.",
+      "quoted_span_sha256": [],
+      "recorded_metadata_hashes": []
+    },
+    "g13": {
+      "id": "g13",
+      "question": "What is an algorithm and why must it terminate?",
+      "rendered_sha256": "d994194de1e3ad9a84749f3b24716f0dad074f56c9098f2a118ac174952ac87e",
+      "baseline_rendered_sha256": "31d7b1ec676628bdc83c0ea7a8e730935bc99229ee37e624443dd53898cba041",
+      "unsupported_attributed_claims": 0,
+      "relevance": "direct",
+      "complete_useful_source_brief": true,
+      "baseline_complete_useful_source_brief": true,
+      "rationale": "Finite termination is explicitly definitional with computing-problem scope; neither output claims arbitrary programs terminate; baseline paragraph1 is sufficient.",
+      "quoted_span_sha256": [
+        "317f59cb1573d5a4ed19f22b319bedbcfddfb3f61c7bf77198a43050d45ec609",
+        "1f96200f876bb4500d73db4b5a3e8b55e495e2dc8c2aa3d60364c256b37ea3a4"
+      ],
+      "recorded_metadata_hashes": [
+        "50df3a8458056b1bb9afb1145e043e8a5692be6ebadff23efb4df727f956498c",
+        "57988f4eeb4fc30d10b12f542e74fb7a58f9706e1a5963af3aae38b6e4406a73"
+      ]
+    },
+    "g14": {
+      "id": "g14",
+      "question": "How do randomized algorithms use inputs?",
+      "rendered_sha256": "2f8371f04221b399929e5c97e627890bc6dad21345a89c5a7498808527bdb0c9",
+      "baseline_rendered_sha256": "56b11a251e50a2e6ace66650fd804f6d83f36800d577bd2a8cb8d6f0dca9567f",
+      "unsupported_attributed_claims": 0,
+      "relevance": "direct_with_context",
+      "complete_useful_source_brief": true,
+      "baseline_complete_useful_source_brief": true,
+      "rationale": "Random input versus deterministic transitions is explicit; baseline has the same relevant paragraph without the additional definition.",
+      "quoted_span_sha256": [
+        "1f96200f876bb4500d73db4b5a3e8b55e495e2dc8c2aa3d60364c256b37ea3a4",
+        "317f59cb1573d5a4ed19f22b319bedbcfddfb3f61c7bf77198a43050d45ec609"
+      ],
+      "recorded_metadata_hashes": [
+        "57988f4eeb4fc30d10b12f542e74fb7a58f9706e1a5963af3aae38b6e4406a73",
+        "50df3a8458056b1bb9afb1145e043e8a5692be6ebadff23efb4df727f956498c"
+      ]
+    },
+    "g15": {
+      "id": "g15",
+      "question": "What does habeas corpus determine about detention?",
+      "rendered_sha256": "24b117c09ffe5468438a7409a679d16d4f3feaff97307d7b2c4c1b54ef4d3ba8",
+      "baseline_rendered_sha256": "522c76790d4746293e03e107b0b5db6e1c9dea08103fa5579a6265e1ab330bf5",
+      "unsupported_attributed_claims": 0,
+      "relevance": "direct_with_context",
+      "complete_useful_source_brief": true,
+      "baseline_complete_useful_source_brief": true,
+      "rationale": "Court review of detention lawfulness is explicit, with historical suspension context; no individual legal result is asserted; baseline also complete.",
+      "quoted_span_sha256": [
+        "59a64c4d3811a65d8a6bb936f22238ab1da8eb97d9f122b8c432ac658aac1fa6",
+        "956932b42b39f92ca0d12003271d4721f6772a8da06054c6fe57550a2bf56cac"
+      ],
+      "recorded_metadata_hashes": [
+        "5b9bb171a74660157a254c8efbdfe7adaaebe8663220b2fd4a034aa892951f58",
+        "47445633e494670a75ee3487e7072afcc8e15de2c4fd305986f865371bcf6e1e"
+      ]
+    },
+    "g16": {
+      "id": "g16",
+      "question": "What limitations can apply to habeas corpus during a state of emergency?",
+      "rendered_sha256": "adb09bf650f1689ea44d75bcf31a79ba036f84d1e1a1acf389cca9e1fdecf121",
+      "baseline_rendered_sha256": "6af37dc020a0178efd22d388a99baa28c41abc68b8760e2206381a41b49273fa",
+      "unsupported_attributed_claims": 0,
+      "relevance": "none_false_rejection",
+      "complete_useful_source_brief": false,
+      "baseline_complete_useful_source_brief": false,
+      "rationale": "Admitted Habeas corpus paragraph2 explicitly supplies some-country emergency suspensions, but apply blocks both outputs; unanswered despite available source.",
+      "quoted_span_sha256": [],
+      "recorded_metadata_hashes": []
+    },
+    "g17": {
+      "id": "g17",
+      "question": "How do convection and subduction contribute to plate motion?",
+      "rendered_sha256": "774bf64a4e479a322369dc5a770d397039d682bed1dd6d39274f82775b0fc8d4",
+      "baseline_rendered_sha256": "00c2c2d253803fe76f5ba936e7fae30f0eb2f6a107e2fc49573d991c668d3b63",
+      "unsupported_attributed_claims": 0,
+      "relevance": "direct",
+      "complete_useful_source_brief": true,
+      "baseline_complete_useful_source_brief": true,
+      "rationale": "Density-driven mantle convection, ridge cooling and subduction are explained with disputed-factor caveat retained; baseline is complete but adds irrelevant core-magnetism text.",
+      "quoted_span_sha256": [
+        "7af23591a8cc38f244c01580e7cc221b51f89bc65428d70d6d2282af407401d0"
+      ],
+      "recorded_metadata_hashes": [
+        "f5435127922dea2acf3a11ac1ef17dd98acd3441beeccab5a43f5a4f0757e9be"
+      ]
+    },
+    "g18": {
+      "id": "g18",
+      "question": "How do solar modules produce direct current from sunlight?",
+      "rendered_sha256": "8e367300574764912de7377a2aa5aeb642c792d51d86cbbb112587aa79147f53",
+      "baseline_rendered_sha256": "b48327d65752103fa013b4f0bc1d9fab2e7d986a2f01b1a7031e99f3aa5e9313",
+      "unsupported_attributed_claims": 0,
+      "relevance": "none_false_current_rejection",
+      "complete_useful_source_brief": false,
+      "baseline_complete_useful_source_brief": false,
+      "rationale": "Direct current is an electrical noun, not a current-status request; both outputs falsely classify CURRENT and withhold the admitted cells/modules/arrays/inverter paragraph.",
+      "quoted_span_sha256": [],
+      "recorded_metadata_hashes": []
+    },
+    "g19": {
+      "id": "g19",
+      "question": "How do printing presses transfer ink?",
+      "rendered_sha256": "1df143ff29d3d8212cf6c3bf5fa42661028bb544cf584cace681478bfc02cdf5",
+      "baseline_rendered_sha256": "b04ad1d42d337d6336c3856351b0815845eef4e7b662d25826ffb38d915f2fbc",
+      "unsupported_attributed_claims": 0,
+      "relevance": "none_withheld",
+      "complete_useful_source_brief": false,
+      "baseline_complete_useful_source_brief": false,
+      "rationale": "No pressure/ink-transfer explanation is delivered; excluded AI-warning printing source stays excluded; baseline also incomplete.",
+      "quoted_span_sha256": [],
+      "recorded_metadata_hashes": []
+    },
+    "g20": {
+      "id": "g20",
+      "question": "How does photosynthesis store chemical energy?; How does cellular respiration transfer energy to ATP?",
+      "rendered_sha256": "1e566a5d6e6452382e0e17b86cfc51355b5db3296a49a3084cc7d52d867f92fd",
+      "baseline_rendered_sha256": "c2f2a78f44b79c255babc95ddf0f0e9c6e4f9ceedd295740bf5337413d9d7f31",
+      "unsupported_attributed_claims": 0,
+      "relevance": "partial",
+      "complete_useful_source_brief": false,
+      "baseline_complete_useful_source_brief": false,
+      "rationale": "Photosynthesis storage is covered, with tangential historical magnitude context, but respiration-to-ATP subquestion is withheld; baseline supplies neither obligation.",
+      "quoted_span_sha256": [
+        "b1dee4dd48bae46cde860b8d712b26cff698bb4cf46770f83929c25f09258ddb",
+        "0621c4cf59213871934e7112dde1e1328362b19c4aa3402e7556a80f863e36bd"
+      ],
+      "recorded_metadata_hashes": [
+        "259082a3e086b98d3b5ad45e9eb367a503af0b8d83a2b693a07a2fdf53511243",
+        "237b671813064bede1448ba397d2d79f23a4eb52e1f0dd11d87f4f681a580c53"
+      ]
+    },
+    "g21": {
+      "id": "g21",
+      "question": "What is longitude?; What is an algorithm?",
+      "rendered_sha256": "208b96babd886587b3816ce223c49142ec359d26ef3f6f40d546f053a0c5c957",
+      "baseline_rendered_sha256": "a330469bc16f263b05c096925e92aa96078a56a8b831ed59ba73140d3a7dacb3",
+      "unsupported_attributed_claims": 0,
+      "relevance": "direct_with_context",
+      "complete_useful_source_brief": true,
+      "baseline_complete_useful_source_brief": false,
+      "rationale": "Longitude opening paragraph now defines east-west angular position, prime meridian and signs; Algorithm opening paragraph defines finite instructions; independent subquestions are both covered without inferred cross-topic relation; baseline still has no quotes.",
+      "quoted_span_sha256": [
+        "2a97a92f71de97d1f81f850e3688656b2b003130d67191a4670008e6eb7fed66",
+        "f680f3f5086f519fa4fd514028bea267ac9deda6edbb3c1ac9330ed914d44c19",
+        "317f59cb1573d5a4ed19f22b319bedbcfddfb3f61c7bf77198a43050d45ec609",
+        "1f96200f876bb4500d73db4b5a3e8b55e495e2dc8c2aa3d60364c256b37ea3a4"
+      ],
+      "recorded_metadata_hashes": [
+        "77c0251807e608885a0176582ee6cfc0a71729f04d9a49e0315d85613b0f69d3",
+        "a311fa8d1b4d28a1fd6daa2f0e4c218992d6f24f3ee05944bad12e2e76d218d9",
+        "50df3a8458056b1bb9afb1145e043e8a5692be6ebadff23efb4df727f956498c",
+        "57988f4eeb4fc30d10b12f542e74fb7a58f9706e1a5963af3aae38b6e4406a73"
+      ]
+    },
+    "g22": {
+      "id": "g22",
+      "question": "What is the current inflation rate today?",
+      "rendered_sha256": "5a2cf78378b73326acd77ecca2de5b734e9ffa3b9c3486a478fba67980d8f5e8",
+      "baseline_rendered_sha256": "40eadf2466a22f5ac1ff8b204c664bdc7310fe07a18c85b2a62e86ae4f52a28e",
+      "unsupported_attributed_claims": 0,
+      "relevance": "appropriate_abstention",
+      "complete_useful_source_brief": false,
+      "baseline_complete_useful_source_brief": false,
+      "rationale": "Correctly withholds unsupported live inflation rate with zero quotes in both outputs; abstention success is separate from a complete useful source brief.",
+      "quoted_span_sha256": [],
+      "recorded_metadata_hashes": []
+    },
+    "g23": {
+      "id": "g23",
+      "question": "What does my detention record say?",
+      "rendered_sha256": "2b4b4da7f1803764f5276f9123b31d4fb1fff6d237989ddfe44ef9fad6b0312a",
+      "baseline_rendered_sha256": "2e1a144171e1b733f5e436309d2b82c49e8e254a69851c36523e61fc79c46a14",
+      "unsupported_attributed_claims": 0,
+      "relevance": "appropriate_abstention",
+      "complete_useful_source_brief": false,
+      "baseline_complete_useful_source_brief": false,
+      "rationale": "Correctly withholds unavailable personal detention record with zero quotes in both outputs; no source-brief success credit.",
+      "quoted_span_sha256": [],
+      "recorded_metadata_hashes": []
+    },
+    "g24": {
+      "id": "g24",
+      "question": "When will the next earthquake occur?; Explain quuxzorbium antimatter cultivation.",
+      "rendered_sha256": "09a6e4538d50eb9e8ed83bbc3dd67dfda48b996deebf2f6b820627d9f709a934",
+      "baseline_rendered_sha256": "31ac9462c36d0106ecb83009bf2eceb5d04e176ddbc67a9ab58410d12e4bb120",
+      "unsupported_attributed_claims": 0,
+      "relevance": "appropriate_abstention",
+      "complete_useful_source_brief": false,
+      "baseline_complete_useful_source_brief": false,
+      "rationale": "Both future earthquake and invented-topic obligations are explicitly unanswered without quotes; baseline withholds the whole request under prediction scope; correct abstention is not source-brief completeness.",
+      "quoted_span_sha256": [],
+      "recorded_metadata_hashes": []
+    }
+  },
+  "summary": {
+    "population": 24,
+    "unsupported_attributed_claims": 0,
+    "complete_useful_source_briefs": 12,
+    "baseline_complete_useful_source_briefs": 11,
+    "minimum_required": 12,
+    "quality_gate_passed": true,
+    "absent_control_zero_quote_cases": [
+      "g22",
+      "g23",
+      "g24"
+    ],
+    "correct_abstention_not_counted_as_complete_brief": true
+  },
+  "critic_sentence": "Continue: twelve of twenty-four public-development briefs now satisfy the frozen usefulness threshold versus eleven baseline briefs, with supported quotations and correct absence controls; remaining omissions and false current-status rejection persist.",
+  "comparison": {
+    "prior_review_path": "/tmp/task460-quality-review.json",
+    "prior_review_sha256": "b97aafb4c864be544ef623ce45e3b364f9685f08d09f4c62a5fae489405b633d",
+    "prior_run_id": "run-20261002T054131Z-118ca6",
+    "prior_complete": 11,
+    "changed_case_grades": [
+      "g21"
+    ],
+    "all_other_case_grades_unchanged": true,
+    "baseline_rendered_all_unchanged": true,
+    "qualification": "This measured source-brief threshold was reached after a declared post-result change on the same public development cases; it is not fresh holdout evidence or competitive superiority."
+  },
+  "source_diff_review": {
+    "commit": "2091cd9b599497e751ca1e7f180e5c950f9d1caf",
+    "finding": "The ten-line sourceResearch addition compares nonempty sets of generic rankTerms(question) and rankTerms(title), selects first eligible passage per URL in passage order, and boosts it to10000; no case IDs, named topics or source-specific rules occur in the addition.",
+    "limits": "Applied only when disk==null; this run does not establish equivalent disk-backed behavior. Normalized term-set equality is not literal title-string equality. The synthetic score can influence downstream relative relevance thresholds; no broader robustness claim follows.",
+    "amendment_sha256": "f9f13cccd6aadb43fffa8cfc7bb11fb5d597dd0b4286e3d79fb657cbfe3a0c5c"
+  },
+  "visual_review": {
+    "artifact": "install-source-reader.png",
+    "sha256": "f5d8b9284bca051bee9d399f0fdcfa3b5a3594af393b3653b8cdee5b55cca004",
+    "finding": "Captured focused reader displays Photosynthesis title, Offline snapshot label, Close reader and Reading options, followed by readable opening selected paragraph at enlarged type; viewport continues below its bottom without horizontal clipping.",
+    "limit": "Screenshot shows only the first viewport, not the full paragraph or lower attribution panel; machine-bound output/source evidence supplies the complete text. Emulator screenshot is not physical-device acceptance."
+  },
+  "normalization": {
+    "operation": "List of cases keyed by unchanged id; no assessment changes",
+    "original_sha256": "a926e475f8abb26c89a49a2cabf98226e19867c2b98fb194750dec9726644875"
+  }
+}
