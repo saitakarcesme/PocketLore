@@ -260,3 +260,21 @@ legal code and per-record notices accompany android/app/src/main/assets/
 reviewed-cities.json. Complete rows and unreviewed alternate names are not
 part of this new payload or its display/export routes. This narrow review
 is not corpus-wide distribution or generated-answer clearance.
+
+Task 380 optional Ethereum technical edition
+------------------------------------------
+Eight complete EIP/ERC Markdown documents (155, 196, 197, 198, 712, 2028,
+ERC20 and ERC165) are pinned item-by-item in tools/packs/specialist/sources.lock.json.
+EIPs revision c304610716ce55e457333e1d09074e4acb54c66f and ERCs revision
+583335b7912e51b1ea515bb662532dd29b27e786 each supply CC0 1.0 Universal;
+full pinned legal text is in docs/licenses/ethereum-cc0.txt and every pack
+source inspection. Seven documents explicitly waive rights via CC0; EIP155
+uses the repository license rather than an article-specific waiver.
+Original named authors, creation dates, snapshot status, immutable URLs,
+raw and passage hashes, and exact original UTF-16 ranges are retained.
+Markdown LF/TAB encoding is reversible; no formula/code tokens are removed.
+Linked papers, code repositories and media have separate rights and are not
+acquired or redistributed by this edition. CC0 does not waive patent or
+trademark rights and provides no warranty. This is a dated reference edition,
+not current-network advice, deployed-model qualification or corpus-wide clearance.
+Consensus SSZ (failed source path), ethereum.org and NIST are not included.

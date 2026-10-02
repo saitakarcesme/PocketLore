@@ -1,0 +1,12 @@
+{
+  "observations": "Builder-recorded acquisition failures; not a fabricated HTTP response receipt",
+  "excluded_url": "https://raw.githubusercontent.com/ethereum/consensus-specs/889a389f9f95d2aba52aedf233217f370772dd3d/ssz/simple-serialize.md",
+  "failure": "HTTP Error 404: Not Found",
+  "eips_license_probe": "https://github.com/ethereum/EIPs/blob/master/LICENSE returned404; actual pinned LICENSE.md acquired and hashed",
+  "no_bytes_or_rights_claimed_for": [
+    "consensus SSZ",
+    "NIST",
+    "ethereum.org",
+    "linked media and third-party references"
+  ]
+}
