@@ -64,6 +64,7 @@ public final class PackLibrary {
         long bytes=0,expanded=0,manifests=0,docs=0,chars=0,tokens=0,provenanceChars=0;
         long broadBytes=0;int broadDocs=0,broadCount=0;List<ResearchEngine> diskEngines=new ArrayList<>();
         Set<String> documents=new HashSet<>();Map<String,String[]> rows=new LinkedHashMap<>();Map<String,StringBuilder> provenance=new HashMap<>();
+        Map<String,String> offlineLicenses=new HashMap<>(),sharedLegal=new HashMap<>();
         for(Entry entry:entries){if(cancel.getAsBoolean()||Thread.currentThread().isInterrupted())throw new InterruptedIOException("Library operation cancelled");
             File savedArchive=new File(directory,entry.hash+".plpack");
             if(incoming==null||!incoming.sha256.equals(entry.hash))if(BroadPack.isBroad(savedArchive)){
@@ -84,6 +85,8 @@ public final class PackLibrary {
                 String key=KnowledgePack.hash((p.documentKeys.get(row[0])+"\n"+String.join("\t",Arrays.copyOfRange(row,1,6))).getBytes(StandardCharsets.UTF_8));
                 String source="Collection: "+p.id+"\nEdition SHA-256: "+p.sha256+"\n"+p.provenance.get(row[0])+"\nEdition notice (may describe an older app version): "+p.warning+"\nThis app retains imported collections; Choose collections controls which are searched.";
                 provenanceChars+=source.length();require(provenanceChars<=MAX_TEXT,"Active provenance metadata limit exceeded");
+                String legal=p.offlineLicenses.get(row[0]);
+                if(legal!=null){String canonical=sharedLegal.get(legal);if(canonical==null){sharedLegal.put(legal,legal);canonical=legal;provenanceChars+=legal.length();require(provenanceChars<=MAX_TEXT,"Active shared license metadata limit exceeded");}offlineLicenses.put(key,canonical);}
                 if(rows.containsKey(key)){provenance.get(key).append("\n\nAlso retained in:\n").append(source);continue;}
                 chars+=row[5].length();tokens+=ResearchEngine.tokenize(row[1]+" "+row[5]).size();
                 admit(bytes,expanded,manifests,docs,entries.size(),rows.size()+1,chars,tokens);
@@ -97,7 +100,7 @@ public final class PackLibrary {
         // as live index memory. Admission still fails if the reserve is unavailable.
         if(available<estimate+32L*1024*1024){System.gc();available=runtime.maxMemory()-(runtime.totalMemory()-runtime.freeMemory());}
         admitHeap(estimate,available);
-        List<ResearchEngine.Passage> passages=new ArrayList<>();for(String key:rows.keySet())passages.add(new ResearchEngine.Passage(rows.get(key),provenance.get(key).toString()));
+        List<ResearchEngine.Passage> passages=new ArrayList<>();for(String key:rows.keySet())passages.add(new ResearchEngine.Passage(rows.get(key),provenance.get(key).toString(),offlineLicenses.getOrDefault(key,"")));
         ResearchEngine small=new ResearchEngine(passages);if(diskEngines.isEmpty())return new Snapshot(new ArrayList<>(entries),small,documents.size(),bytes);
         diskEngines.add(small);return new Snapshot(new ArrayList<>(entries),ResearchEngine.combined(diskEngines),documents.size()+broadDocs,bytes+broadBytes);
     }
