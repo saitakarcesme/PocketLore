@@ -16,11 +16,19 @@ import java.util.Set;
 
 /** Immutable inverted BM25 index. Ranking expansion never establishes answer support. */
 public final class ResearchEngine {
-    interface DiskProvider { Result research(String question); int size(); }
+    interface DiskProvider { Result research(String question); int size(); default Result sourceResearch(String question){return research(question);} }
     private DiskProvider disk;
     ResearchEngine(DiskProvider provider){disk=provider;}
     static ResearchEngine combined(List<ResearchEngine> engines){return new ResearchEngine(new DiskProvider(){
         public int size(){int total=0;for(ResearchEngine e:engines)total+=e.size();return total;}
+        public Result sourceResearch(String q){
+            List<Hit> hits=new ArrayList<>();int candidates=0;
+            for(ResearchEngine e:engines){Result r=e.sourceResearch(q);for(Hit h:r.hits)hits.add(new Hit(h.passage,rankScore(q,h.passage)+h.score*.01));candidates+=r.candidatesScored;}
+            Set<String> missing=new TreeSet<>(rankTerms(q)),present=new HashSet<>();
+            for(Hit h:hits)present.addAll(rankTerms(h.passage.title+" "+h.passage.text));missing.removeAll(present);
+            if(!missing.isEmpty())hits.clear();
+            return new Result(diverse(hits),missing,"Eligible reference candidates only; not verified support",candidates);
+        }
         public Result research(String q){List<Hit> hits=new ArrayList<>();int candidates=0;for(ResearchEngine e:engines){Result r=e.research(q);for(Hit h:r.hits)hits.add(new Hit(h.passage,rankScore(q,h.passage)+h.score*0.01));candidates+=r.candidatesScored;}
             // Missing query vocabulary is a conservative retrieval veto, never entailment.
             Set<String> missing=new HashSet<>(rankTerms(q)),present=new HashSet<>();
@@ -186,6 +194,12 @@ public final class ResearchEngine {
     public int size() { return disk==null?passages.size():disk.size(); }
     /** Counts describe logical index payload, not JVM object allocation or serialized storage. */
     public long[] resourceCounts(){if(disk!=null)return new long[]{disk.size(),-1,-1,-1};long postings=0,characters=0;for(List<Posting> list:index.values())postings+=list.size();for(Passage p:passages)characters+=p.text.length();return new long[]{passages.size(),index.size(),postings,characters};}
+    /** Brief-only exclusion precedes combined truncation; generation and browse ranking are unchanged. */
+    public Result sourceResearch(String question){
+        Result result=disk==null?research(question):disk.sourceResearch(question);
+        List<Hit> eligible=new ArrayList<>();for(Hit h:result.hits)if(!h.passage.collectionProvenance.contains("Generation disabled:"))eligible.add(h);
+        return new Result(eligible,result.missingTerms,result.answer,result.candidatesScored);
+    }
     public Result research(String question) {
         if(disk!=null)return disk.research(question);
         Set<String> terms = new HashSet<>(tokenize(question));

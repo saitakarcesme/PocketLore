@@ -28,6 +28,11 @@ public final class ResearchWorkspace {
         if(parts.size()>MAX_PARTS)throw new IllegalArgumentException("Use at most six subquestions, separated by new lines or semicolons");
         return parts;
     }
+    // Relevance heuristic only; this does not establish entailment, completeness or truth.
+    private static boolean topical(String question,ResearchEngine.Passage passage){
+        Set<String> requested=EvidenceAvailability.terms(question),found=EvidenceAvailability.terms(passage.title+" "+passage.text);
+        found.retainAll(requested);return !requested.isEmpty()&&found.size()*2>=requested.size();
+    }
     private static void check(BooleanSupplier stop){if(stop.getAsBoolean()||Thread.currentThread().isInterrupted())throw new java.util.concurrent.CancellationException("Research cancelled; no partial brief saved");}
     public static Result create(String question,ResearchEngine engine,BooleanSupplier stop){
         List<String> parts=plan(question);List<Section> sections=new ArrayList<>();List<ResearchBrief.Quote> all=new ArrayList<>();
@@ -35,7 +40,7 @@ public final class ResearchWorkspace {
         int units=0,omitted=0;
         for(String part:parts){
             check(stop);EvidenceAvailability.Scope scope=EvidenceAvailability.scope(part);
-            ResearchEngine.Result evidence=scope==EvidenceAvailability.Scope.REFERENCE?engine.research(part):new ResearchEngine.Result(Collections.emptyList(),Collections.emptySet(),"");
+            ResearchEngine.Result evidence=scope==EvidenceAvailability.Scope.REFERENCE?engine.sourceResearch(part):new ResearchEngine.Result(Collections.emptyList(),Collections.emptySet(),"");
             ResearchBrief.Brief selected=ResearchBrief.create(part,evidence,stop);
             text.append("Subquestion ").append(sections.size()+1).append(" (your input, not a source claim):\n").append(part).append("\n");
             List<ResearchBrief.Quote> quotes=new ArrayList<>();
@@ -43,7 +48,7 @@ public final class ResearchWorkspace {
             else {
                 for(ResearchBrief.Quote candidate:selected.quotes){
                     check(stop);ResearchEngine.Passage p=candidate.source;candidate.verify(p);
-                    if(quotes.size()==MAX_QUOTES_PER_PART||p.text.length()>MAX_QUOTE_UNITS-units){omitted++;continue;}
+                    if(!topical(part,p)||quotes.size()==MAX_QUOTES_PER_PART||p.text.length()>MAX_QUOTE_UNITS-units){omitted++;continue;}
                     // Full paragraph and its qualifiers survive; article footnotes are never parsed as app IDs.
                     text.append("\nSource: ").append(p.title).append("\nSnapshot: ").append(p.sourceDate).append("\nAttribution / rights: ").append(p.license).append("\nExact quotation [").append(p.id).append("]:\n“");
                     int start=text.length();text.append(p.text);int end=text.length();text.append("”\n");
