@@ -1,0 +1,31 @@
+/home/isa/Projects/PocketLore/downloads/modern-integrated/20261002T021246Z-6a5578b4
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 62, in instrument
+    names=shell(['run-as',PKG,'ls',remote],folder+'/files.txt').decode().splitlines()
+          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 48, in shell
+    def shell(args,name):return run(ADB+['shell']+args,name)
+                                ~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 47, in run
+    p.write_bytes(r.stdout);pathlib.Path(str(p)+'.command.json').write_text(json.dumps({'returncode':r.returncode,'elapsed_seconds':time.monotonic()-start}));assert r.returncode==0,(name,r.returncode,out);return r.stdout
+                                                                                                                                                                     ^^^^^^^^^^^^^^^
+AssertionError: ('default/files.txt', 1, PosixPath('/home/isa/Projects/PocketLore/downloads/modern-integrated/20261002T021246Z-6a5578b4'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 133, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 88, in main
+    instrument('ProductUiInstrumentation',label,'files/product-ui-'+mode,['-e','mode',mode])
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 66, in instrument
+    if failure:raise failure
+               ^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 57, in instrument
+    value=run(ADB+['shell','am','instrument','-r','-w','-e','run_id',run_id,*extra,PKG+'.test/'+PKG+'.'+cls],log)
+  File "/home/isa/Projects/PocketLore/tools/evaluation/modern-integrated/check.py", line 47, in run
+    p.write_bytes(r.stdout);pathlib.Path(str(p)+'.command.json').write_text(json.dumps({'returncode':r.returncode,'elapsed_seconds':time.monotonic()-start}));assert r.returncode==0,(name,r.returncode,out);return r.stdout
+                                                                                                                                                                     ^^^^^^^^^^^^^^^
+AssertionError: ('default/runtime.txt', 1, PosixPath('/home/isa/Projects/PocketLore/downloads/modern-integrated/20261002T021246Z-6a5578b4'))
