@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"><application>
+<provider android:name="org.pocketlore.app.NotebookStallProvider" android:authorities="org.pocketlore.fixture.notebook" android:exported="true" />
+<provider android:name="org.pocketlore.app.PersonalFixtureProvider" android:authorities="org.pocketlore.fixture.personal" android:exported="true" android:grantUriPermissions="true" />
+</application>
+<instrumentation android:name="org.pocketlore.app.ModernIntegratedInstrumentation" android:targetPackage="org.pocketlore.app" />
+<instrumentation android:name="org.pocketlore.app.ProductUiInstrumentation" android:targetPackage="org.pocketlore.app" />
+<instrumentation android:name="org.pocketlore.app.DocumentsInstrumentation" android:targetPackage="org.pocketlore.app" />
+</manifest>
