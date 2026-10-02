@@ -51,6 +51,9 @@ def main():
   command="for p in files/model.gguf files/model-selection files/pack-library/catalog.json files/scale-library/catalog.json files/page-size-test/model.gguf files/attachment-assets/tessdata/eng.traineddata files/attachment-assets/ggml-tiny.en.bin; do if [ -f \"$p\" ]; then sha256sum \"$p\"; else echo ABSENT:$p; fi; done"
   shell(['run-as',PKG,'sh','-c',"'"+command+"'"],'assets-'+label+'.txt')
   shell(['run-as',PKG,'du','-sk','.'],'allocated-'+label+'.txt');shell(['run-as',PKG,'du','-sb','.'],'logical-'+label+'.txt');shell(['df','-k','/data'],'df-'+label+'.txt')
+  app_path=shell(['pm','path',PKG],'apk-path-'+label+'.txt').decode().strip().removeprefix('package:');shell(['sha256sum',app_path],'apk-hash-'+label+'.txt')
+  shell(['stat','-c','%s %b',app_path],'apk-size-'+label+'.txt')
+  shell(['dumpsys','meminfo',PKG],'meminfo-'+label+'.txt')
  def instrument(cls,folder,remote,extra=()):
   log=folder+'/runtime.txt';failure=None
   try:
@@ -80,9 +83,10 @@ def main():
  run(['/home/isa/Android/atlas-toolchain/sdk/build-tools/35.0.0/zipalign','-c','-P','16','-v','4',apk],'zipalign.txt')
  run(['/home/isa/Android/atlas-toolchain/sdk/build-tools/35.0.0/aapt','dump','permissions',apk],'permissions.txt')
  for p in [apk,test]:run(ADB+['install','--no-incremental','-r',p],'install-'+p.name+'.txt')
+ registrations=shell(['pm','list','instrumentation'],'registered-tests.txt').decode()
+ assert all(PKG+'.test/'+PKG+'.'+name in registrations for name in ['ModernIntegratedInstrumentation','ProductUiInstrumentation','DocumentsInstrumentation']),'Required instrumentation not registered'
  font=shell(['settings','get','system','font_scale'],'font-before.txt').decode().strip()
  try:
-  instrument('ModernIntegratedInstrumentation','native-cards-recognition','files/modern-'+run_id)
   for label,scale in [('default','1.0'),('large','2.0')]:
    shell(['settings','put','system','font_scale',scale],'font-'+label+'.txt');mode=run_id+'-'+label
    instrument('ProductUiInstrumentation',label,'files/product-ui-'+mode,['-e','mode',mode])
@@ -98,6 +102,7 @@ def main():
  instrument('DocumentsInstrumentation','documents','files/'+directory,['-e','directory',directory])
  shell(['am','force-stop',PKG],'documents-cold-stop.txt')
  instrument('DocumentsInstrumentation','documents-cold','files/'+directory,['-e','directory',directory,'-e','phase','restart'])
+ instrument('ModernIntegratedInstrumentation','native-cards-recognition','files/modern-'+run_id)
  capture_assets('after');shell(['dumpsys','package',PKG],'package-after.txt');shell(['dumpsys','meminfo',PKG],'memory-after.txt')
  path=shell(['pm','path',PKG],'installed-path.txt').decode().strip().removeprefix('package:');shell(['sha256sum',path],'installed-hash.txt')
  shell(['am','start','-W','-n',PKG+'/.MainActivity'],'final-launch.txt');shell(['uiautomator','dump','/sdcard/modern-integrated.xml'],'ui-dump.txt');run(ADB+['exec-out','cat','/sdcard/modern-integrated.xml'],'ui.xml');run(ADB+['exec-out','screencap','-p'],'final.png')
