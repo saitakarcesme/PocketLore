@@ -1,0 +1,6 @@
+{
+  "failure": "Instrument invocation returned nonzero with empty stdout; original wrapper did not record return code or pull its device report",
+  "recovered_device_report": "Unbound PASS; not accepted as evidence for failed invocation",
+  "cause": "Unknown; no timeout/OOM/service cause inferred",
+  "repair": "Unique run binding, returncode/duration/timeout metadata, diagnostic capture on failure; failed command remains fatal"
+}

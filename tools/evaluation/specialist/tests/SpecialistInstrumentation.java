@@ -1,12 +1,12 @@
 package org.pocketlore.app;
 import android.app.*;import android.content.*;import android.os.*;import java.io.*;import java.nio.file.*;import java.nio.charset.StandardCharsets;import java.util.*;import org.json.*;
 public final class SpecialistInstrumentation extends Instrumentation {
- JSONObject report=new JSONObject();JSONArray checks=new JSONArray(),queries=new JSONArray(),inspections=new JSONArray();String mode;File dir;Activity activity;
+ JSONObject report=new JSONObject();JSONArray checks=new JSONArray(),queries=new JSONArray(),inspections=new JSONArray();String mode,runId;File dir;Activity activity;
  void ok(boolean b,String s){if(!b)throw new AssertionError(s);checks.put(s);}
  byte[] bytes(File f)throws Exception{return Files.readAllBytes(f.toPath());}
- public void onCreate(Bundle b){super.onCreate(b);mode=b.getString("mode","install");start();}
+ public void onCreate(Bundle b){super.onCreate(b);mode=b.getString("mode","install");runId=b.getString("run_id","unbound");start();}
  public void onStart(){Bundle result=new Bundle();try{
-  File files=getTargetContext().getFilesDir();dir=new File(files,"specialist-tests");PackLibrary lib=new PackLibrary(files);File archive=new File(dir,"valid.plpack");String hash=KnowledgePack.hash(bytes(archive));PackLibrary.Snapshot before=lib.load();Set<String> active=new HashSet<>();for(PackLibrary.Entry e:before.entries)if(e.active)active.add(e.hash);
+  report.put("run_id",runId);File files=getTargetContext().getFilesDir();dir=new File(files,"specialist-tests");PackLibrary lib=new PackLibrary(files);File archive=new File(dir,"valid.plpack");String hash=KnowledgePack.hash(bytes(archive));PackLibrary.Snapshot before=lib.load();Set<String> active=new HashSet<>();for(PackLibrary.Entry e:before.entries)if(e.active)active.add(e.hash);
   long begin=SystemClock.elapsedRealtime();PackLibrary.Snapshot installed;
   if(mode.equals("install")){try(InputStream in=new FileInputStream(archive)){installed=lib.install(in,()->false);}}else installed=lib.load();
   report.put("import_or_reload_ms",SystemClock.elapsedRealtime()-begin).put("pack_sha256",hash);ok(installed.entries.stream().anyMatch(e->e.hash.equals(hash)&&e.active),"Pinned edition installed and active "+mode);ok(installed.distinctDocuments>=before.distinctDocuments,"Prior document collection retained");
@@ -18,7 +18,7 @@ public final class SpecialistInstrumentation extends Instrumentation {
    ByteArrayOutputStream out=new ByteArrayOutputStream();lib.exportCollection(hash,out,()->false);ok(Arrays.equals(out.toByteArray(),bytes(archive)),"Portable export preserves exact archive");
    ok(new File(files,"pack-library").listFiles((d,n)->n.endsWith(".partial")).length==0,"No import stages remain");
   }
-  report.put("rejections",rejects);JSONObject protocol=new JSONObject(new String(bytes(new File(dir,"protocol.json")),StandardCharsets.UTF_8));
+  report.put("rejections",rejects);report.put("run_id",runId);JSONObject protocol=new JSONObject(new String(bytes(new File(dir,"protocol.json")),StandardCharsets.UTF_8));
   activity=startActivitySync(new Intent(getTargetContext(),ScaleActivity.class).putExtra("section","Library").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));waitForIdleSync();
   for(int i=0;i<protocol.getJSONArray("queries").length();i++){
    JSONObject c=protocol.getJSONArray("queries").getJSONObject(i);String q=c.getString("query");long start=SystemClock.elapsedRealtime();ResearchEngine.Result r=installed.engine.research(q);JSONArray hits=new JSONArray();ResearchEngine.Hit selected=null;

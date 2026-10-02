@@ -2,10 +2,19 @@
 import pathlib,subprocess,json,hashlib,time,sys,zipfile,copy,tempfile,shutil
 ROOT=pathlib.Path(__file__).resolve().parents[3];sys.path.insert(0,str(ROOT/'tools/packs/specialist'));from build import build,LOCK,CACHE,sha
 ADB=['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb','-s','emulator-5562']
+def verify_report(report,run_id,pack_hash):
+ assert report.get('run_id')==run_id,'Stale or unbound device report'
+ assert report['status']=='PASS',report.get('error')
+ assert report['pack_sha256']==pack_hash
+
 def main():
  out=ROOT/'downloads/specialist'/time.strftime('run-%Y%m%dT%H%M%SZ',time.gmtime());out.mkdir(parents=True)
  def run(cmd,name,timeout=360,input=None):
-  r=subprocess.run(list(map(str,cmd)),cwd=ROOT,input=input,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=timeout);(out/name).write_bytes(r.stdout);assert r.returncode==0,(name,r.stdout[-2000:]);return r.stdout
+  start=time.monotonic()
+  try:r=subprocess.run(list(map(str,cmd)),cwd=ROOT,input=input,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=timeout)
+  except subprocess.TimeoutExpired as e:
+   (out/name).write_bytes(e.stdout or b'');(out/(name+'.command.json')).write_text(json.dumps({'timeout_seconds':timeout,'elapsed_seconds':time.monotonic()-start})+'\n');raise
+  (out/name).write_bytes(r.stdout);(out/(name+'.command.json')).write_text(json.dumps({'returncode':r.returncode,'elapsed_seconds':time.monotonic()-start})+'\n');assert r.returncode==0,(name,r.returncode,r.stdout[-2000:]);return r.stdout
  pack=out/'valid.plpack';m=build(pack);repeat=out/'repeat.plpack';build(repeat);assert pack.read_bytes()==repeat.read_bytes();assert len(m['documents'])==8
  with zipfile.ZipFile(pack) as z:files={n:z.read(n) for n in z.namelist()}
  rows={r.split('\t')[0]:r.split('\t')[5] for r in files['passages.tsv'].decode().split('\n') if r};lock=json.loads(LOCK.read_text())
@@ -42,11 +51,23 @@ def main():
   run(ADB+['shell','run-as','org.pocketlore.app','sh','-c',"'cat > files/specialist-tests/"+path.name+"'"],'provision-'+path.name+'.txt',input=path.read_bytes())
  for mode in ['install','restart']:
   run(ADB+['shell','am','force-stop','org.pocketlore.app'],'stop-'+mode+'.txt')
-  run(ADB+['shell','am','instrument','-w','-e','mode',mode,'org.pocketlore.app.test/org.pocketlore.app.SpecialistInstrumentation'],'runtime-'+mode+'.txt',600)
-  raw=run(ADB+['exec-out','run-as','org.pocketlore.app','cat','files/specialist-tests/'+mode+'.json'],mode+'.json');r=json.loads(raw);assert r['status']=='PASS',r.get('error');assert r['pack_sha256']==sha(pack.read_bytes())
+  try:run(ADB+['shell','am','instrument','-w','-e','mode',mode,'-e','run_id',out.name,'org.pocketlore.app.test/org.pocketlore.app.SpecialistInstrumentation'],'runtime-'+mode+'.txt',600)
+  except (AssertionError,subprocess.TimeoutExpired):
+   # Preserve diagnostic bytes even after transport failure; never turn these into a pass.
+   diagnostic=subprocess.run(ADB+['exec-out','run-as','org.pocketlore.app','cat','files/specialist-tests/'+mode+'.json'],stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=30)
+   (out/('failed-device-'+mode+'.json')).write_bytes(diagnostic.stdout)
+   (out/('failed-device-'+mode+'-capture.json')).write_text(json.dumps({'returncode':diagnostic.returncode,'expected_run_id':out.name,'diagnostic_only':True})+'\n')
+   raise
+  raw=run(ADB+['exec-out','run-as','org.pocketlore.app','cat','files/specialist-tests/'+mode+'.json'],mode+'.json');r=json.loads(raw);verify_report(r,out.name,sha(pack.read_bytes()))
  after=run(ADB+['shell','run-as','org.pocketlore.app','sha256sum','files/model.gguf','files/scale-library/catalog.json'],'after.txt');assert before==after
  package=run(ADB+['shell','dumpsys','package','org.pocketlore.app'],'package.txt');assert b'android.permission.INTERNET' not in package
  apk=ROOT/'android/app/build/outputs/apk/debug/app-debug.apk';path=run(ADB+['shell','pm','path','org.pocketlore.app'],'installed.txt').decode().strip().removeprefix('package:');installed=run(ADB+['shell','sha256sum',path],'installed-hash.txt').decode().split()[0];assert installed==sha(apk.read_bytes())
- receipt={'status':'PASS','apk_sha256':installed,'apk_bytes':apk.stat().st_size,'pack_sha256':sha(pack.read_bytes()),'pack_bytes':pack.stat().st_size,'environment':'API35 x86_64 emulator-5562; full existing 31-shard catalog preserved; no model inference or phone qualification','files':{p.name:sha(p.read_bytes()) for p in out.iterdir() if p.is_file() and p.suffix!='.plpack'}}
+ receipt={'run_id':out.name,'status':'PASS','apk_sha256':installed,'apk_bytes':apk.stat().st_size,'pack_sha256':sha(pack.read_bytes()),'pack_bytes':pack.stat().st_size,'environment':'API35 x86_64 emulator-5562; full existing 31-shard catalog preserved; no model inference or phone qualification','files':{p.name:sha(p.read_bytes()) for p in out.iterdir() if p.is_file() and p.suffix!='.plpack'}}
+ # Actual successful report bytes must not validate for another or missing run identity.
+ for altered in [dict(r,run_id='different-run'),{k:v for k,v in r.items() if k!='run_id'},dict(r,pack_sha256='0'*64)]:
+  try:verify_report(altered,out.name,sha(pack.read_bytes()))
+  except AssertionError:pass
+  else:raise AssertionError('Stale/unbound/changed report admitted')
+ (out/'binding-controls.json').write_text(json.dumps({'different_run':'rejected','missing_run':'rejected','changed_pack':'rejected'})+'\n')
  (out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps({'status':'PASS','output':str(out)}))
 if __name__=='__main__':main()

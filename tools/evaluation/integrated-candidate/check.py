@@ -18,6 +18,8 @@ def verify(out):
   assert (p/'integrated-installed-hash.txt').read_text().split()[0]==candidate
   reports={name:json.loads((p/name).read_text()) for name in lane['reports']}
   assert reports and all(r['status']=='PASS' for r in reports.values())
+ specialist=json.loads((out/'specialist/receipt.json').read_text());assert specialist.get('run_id'),'Missing specialist run binding'
+ for mode in ('install','restart'):assert json.loads((out/('specialist/'+mode+'.json')).read_text()).get('run_id')==specialist['run_id'],'Stale specialist report'
  docs=json.loads((out/'documents/results.json').read_text());assert {'personal_library_return_does_not_infer','library_import_reloads_retained_research'}.issubset(docs['checks'])
  attachments=json.loads((out/'attachments/results.json').read_text());assert {f'edited_recognition_is_question_{i}' for i in (3,4)}.issubset(attachments['checks']);assert {f'recognition_not_submitted_or_evidence_{i}' for i in (3,4)}.issubset(attachments['checks'])
  model=json.loads((out/'model_management/select.json').read_text());assert model['generation_performed'] is False and 'unverified_token_output' not in model;assert model['native_resources'][1]==0,'Unexpected live generation context';assert 'Actual JNI load failure reloads previous model and preserves selection' in model['checks']
