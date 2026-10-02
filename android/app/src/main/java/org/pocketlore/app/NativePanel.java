@@ -47,7 +47,7 @@ final class NativePanel {
             .setMessage("Unload and delete the app's saved GGUF. The original file remains. Offline source retrieval remains available.")
             .setNegativeButton("Keep",null).setPositiveButton("Remove",(d,w)->{
                 if(busy||stopped)return;
-                setBusy(true);worker.execute(()->{try{release();Files.deleteIfExists(new File(activity.getFilesDir(),"model.gguf").toPath());ImportRecovery.finish(activity.getFilesDir(),"model");showState("Saved model removed. Source retrieval remains available.");}
+                setBusy(true);worker.execute(()->{try{release();new ModelCatalog(activity.getFilesDir()).removeActive();ImportRecovery.finish(activity.getFilesDir(),"model");showState("Saved model removed. Source retrieval remains available.");}
                     catch(Exception error){showState("Model removal failed: "+error.getMessage());}finally{done();}});
             }).show());
         Button profile=new Button(activity);profile.setText("Model compatibility and limits");layout.addView(profile);
@@ -86,17 +86,17 @@ final class NativePanel {
     }
     private void restorePrevious(String reason){
         if(session!=0){showState(reason+" · Previous selection remains loaded.");return;}
-        File previous=new File(activity.getFilesDir(),"model.gguf");
+        File previous;try{previous=new ModelCatalog(activity.getFilesDir()).active;}catch(IOException e){showState(reason+" · Cannot read saved selection: "+e.getMessage());return;}
         if(!cancelled&&!stopped&&!memorySuspended&&previous.isFile())try{session=NativeRuntime.create();NativeRuntime.load(session,previous.getAbsolutePath().getBytes(StandardCharsets.UTF_8));showState(reason+" · Previous saved model reloaded; SHA-256 "+BroadPack.hash(previous));return;}catch(Exception|OutOfMemoryError e){release();reason+=" · Previous model reload failed: "+e.getMessage();}
         showState(reason+" · Previous selection retained on disk; reload when memory is available.");
     }
     void reloadSaved() {
         if(busy || stopped || session!=0)return;
-        File saved=new File(activity.getFilesDir(),"model.gguf");
+        File saved;try{saved=new ModelCatalog(activity.getFilesDir()).active;}catch(IOException e){state.setText("Saved selection unavailable: "+e.getMessage());return;}
         if(!saved.isFile()){state.setText(ImportRecovery.pending(activity.getFilesDir(),"model")?"Previous model import interrupted or failed. Select the original GGUF to restart verification.":"No saved model. Import a local GGUF first.");return;}
         memorySuspended=false;cancelled=false;setBusy(true);state.setText("Loading saved local model…");
         worker.execute(()->{
-            try{if(stopped || memorySuspended)return;session=NativeRuntime.create();if(cancelled || stopped || memorySuspended)NativeRuntime.cancel(session);NativeRuntime.load(session,saved.getAbsolutePath().getBytes(StandardCharsets.UTF_8));if(cancelled || stopped || memorySuspended){release();return;}String hash=BroadPack.hash(saved);String label;try{label=ModelCatalog.identify(hash,saved.length()).name;}catch(IOException unknown){label="Legacy model outside pinned catalog; not qualified";}showState("Current model: "+label+" · "+saved.length()+" bytes · SHA-256 "+hash+"\n"+NativeRuntime.identity());}
+            try{if(stopped || memorySuspended)return;if(new File(activity.getFilesDir(),"model-selection").exists())new ModelCatalog(activity.getFilesDir()).verify(saved,()->cancelled||stopped);session=NativeRuntime.create();if(cancelled || stopped || memorySuspended)NativeRuntime.cancel(session);NativeRuntime.load(session,saved.getAbsolutePath().getBytes(StandardCharsets.UTF_8));if(cancelled || stopped || memorySuspended){release();return;}String hash=BroadPack.hash(saved);String label;try{label=ModelCatalog.identify(hash,saved.length()).name;}catch(IOException unknown){label="Legacy model outside pinned catalog; not qualified";}showState("Current model: "+label+" · "+saved.length()+" bytes · SHA-256 "+hash+"\n"+NativeRuntime.identity());}
             catch(Exception | OutOfMemoryError error){release();showState("Saved model could not load; retry with a smaller model: "+error.getMessage());}
             finally{done();}
         });
