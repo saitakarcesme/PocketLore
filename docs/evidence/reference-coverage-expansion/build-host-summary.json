@@ -1,0 +1,33 @@
+{
+  "classification": "Host build/public development only; NOT installed candidate",
+  "artifacts": {
+    "app": {
+      "path": "android/app/build/outputs/apk/debug/app-debug.apk",
+      "sha256": "21a6efc62c73f28871619bb4806f264a4dbd1c9e663a9256506972ab353341f5",
+      "bytes": 22719262
+    },
+    "test": {
+      "path": "android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "sha256": "b8ab30b9c9096ed356c15c7dda4307723f13c8370173997d86563cdb941a2721",
+      "bytes": 430874
+    },
+    "pack": {
+      "path": "downloads/reference-expansion/reference-expansion.plpack",
+      "sha256": "61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135",
+      "bytes": 501453
+    }
+  },
+  "host_run": "downloads/reference-expansion/host-20261002T120622Z-88748f",
+  "host_cases": 53,
+  "host_query_ms": {
+    "p50": 1.468835,
+    "p95_nearest_rank": 7.433141,
+    "definition": "One serial pass over53different public questions in one JVM after opening the index; not repeated-query/cold-device/first-token timing"
+  },
+  "host_child_maxrss_kib": 93568,
+  "host_index_open_ns": 20117846,
+  "device_run": null,
+  "exclusive_5564_lease": "not received",
+  "generation": false,
+  "original470preserved": true
+}

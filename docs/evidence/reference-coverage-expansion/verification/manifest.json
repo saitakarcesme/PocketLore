@@ -1,0 +1,92 @@
+[
+  {
+    "original": "downloads/reference-expansion/build-initial.log",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/0-build-initial.log",
+    "sha256": "bc886130dc9e37b4b62443b17aac2d2186f0131823b62721d932842159a0fc88",
+    "bytes": 30552
+  },
+  {
+    "original": "downloads/reference-expansion/build-shared-license.log",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/1-build-shared-license.log",
+    "sha256": "41211a057dafb3d380a026c752c1aec7732b5da991a21c9156b1be190bf0fcd6",
+    "bytes": 30664
+  },
+  {
+    "original": "downloads/reference-expansion/build-tests.log",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/2-build-tests.log",
+    "sha256": "55123327c5c398ca42fb82d4e2e95ce3750ae17af3ab6195c0599fc6e297e1f8",
+    "bytes": 715
+  },
+  {
+    "original": "downloads/reference-expansion/build-tests-corrected.log",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/3-build-tests-corrected.log",
+    "sha256": "f8999e4ceb1f647fd607f972b8eb2fbcdfef87d11ea7a4f0b7b4fcd564b099fc",
+    "bytes": 32433
+  },
+  {
+    "original": "downloads/reference-expansion/build-export-tests.log",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/4-build-export-tests.log",
+    "sha256": "bb572110ad5af234acaf06c00b93322f2a82f831e59bb08bf50cb86de157d22b",
+    "bytes": 32354
+  },
+  {
+    "original": "downloads/reference-expansion/source-validation.json",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/5-source-validation.json",
+    "sha256": "48bc01be27a002de62ced463f6a1eb8e744e467ed4bbbe4162bebbe15f38dcd1",
+    "bytes": 616
+  },
+  {
+    "original": "downloads/reference-expansion/source-validation-complete.json",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/6-source-validation-complete.json",
+    "sha256": "48bc01be27a002de62ced463f6a1eb8e744e467ed4bbbe4162bebbe15f38dcd1",
+    "bytes": 616
+  },
+  {
+    "original": "downloads/reference-expansion/host-audit.json",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/7-host-audit.json",
+    "sha256": "d40131a397251daae469d04f23eeab38698b268eaeb392ea5b552c2fa892e7f9",
+    "bytes": 295
+  },
+  {
+    "original": "downloads/reference-expansion/required-checks/check-0.log",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/8-check-0.log",
+    "sha256": "435f2d5bc175f666dce33f35aa1b0223535fd37a43d9391324a02c198ace664b",
+    "bytes": 30584
+  },
+  {
+    "original": "downloads/reference-expansion/required-checks/receipts.json",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/9-receipts.json",
+    "sha256": "168dd25992c682d9d69018a2e06e34bf3f4a1ecf1e66bcef02f0683923dee7ec",
+    "bytes": 702
+  },
+  {
+    "original": "downloads/reference-expansion/required-checks/check-1.log",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/10-check-1.log",
+    "sha256": "4823e0c16f02618a4b609f6a6502086ed8e2eeb7e5ff6f6f20075dcc1fb39cbe",
+    "bytes": 1824
+  },
+  {
+    "original": "downloads/reference-expansion/required-checks/check-2.log",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/11-check-2.log",
+    "sha256": "1ed528eadbb130bb304664bbcbfdd7eb1d8628d62d8c90d3d37628eb0dfc8091",
+    "bytes": 968
+  },
+  {
+    "original": "downloads/reference-expansion/required-checks-current/check-0.log",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/12-check-0.log",
+    "sha256": "68878631f55d6a9a40bc8b893588b6e5ea0039eb40a777f9829327249cc45cf0",
+    "bytes": 968
+  },
+  {
+    "original": "downloads/reference-expansion/required-checks-current/check-1.log",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/13-check-1.log",
+    "sha256": "68878631f55d6a9a40bc8b893588b6e5ea0039eb40a777f9829327249cc45cf0",
+    "bytes": 968
+  },
+  {
+    "original": "downloads/reference-expansion/required-checks-current/receipts.json",
+    "copy": "docs/evidence/reference-coverage-expansion/verification/14-receipts.json",
+    "sha256": "f2829e6d6aa63e4a6b94988fe55e7b77ad8238e18062b053881ba30530091666",
+    "bytes": 502
+  }
+]

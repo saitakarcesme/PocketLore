@@ -1,0 +1,29 @@
+[
+  {
+    "command": [
+      "bash",
+      "tools/android-build.sh"
+    ],
+    "returncode": 0,
+    "elapsed_seconds": 10.080238855007337,
+    "log": "downloads/reference-expansion/required-checks/check-0.log"
+  },
+  {
+    "command": [
+      "bash",
+      "tools/evaluation/check_general_research_product.sh"
+    ],
+    "returncode": 1,
+    "elapsed_seconds": 1.1159192439808976,
+    "log": "downloads/reference-expansion/required-checks/check-1.log"
+  },
+  {
+    "command": [
+      "bash",
+      "tools/evaluation/check_reference_coverage_expansion.sh"
+    ],
+    "returncode": 1,
+    "elapsed_seconds": 0.7651668570179027,
+    "log": "downloads/reference-expansion/required-checks/check-2.log"
+  }
+]

@@ -60,11 +60,12 @@ public final class ResearchEngine {
 
     public static final class Passage {
         public final String id, title, url, sourceDate, license, text;
-        public final String collectionProvenance;
+        public final String collectionProvenance, offlineLicense;
         final List<String> terms;
         Passage(String[] row) {this(row, "Bundled starter source");}
-        Passage(String[] row,String provenance) {
-            collectionProvenance=provenance;
+        Passage(String[] row,String provenance) {this(row,provenance,"");}
+        Passage(String[] row,String provenance,String legal) {
+            collectionProvenance=provenance;offlineLicense=legal;
             id = row[0]; title = row[1]; url = row[2]; sourceDate = row[3];
             license = row[4]; text = row[5]; terms = tokenize(title + " " + text);
         }
