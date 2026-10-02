@@ -7,7 +7,7 @@ public final class GeneralResearchInstrumentation extends Instrumentation {
  static Object field(Object o,String name){try{java.lang.reflect.Field f=o.getClass().getDeclaredField(name);f.setAccessible(true);return f.get(o);}catch(Exception e){throw new RuntimeException(e);}}
  byte[] bytes(File f)throws Exception{return Files.readAllBytes(f.toPath());}
  public void onCreate(Bundle b){run=b.getString("run_id");source=b.getString("source_hash");mode=b.getString("mode","install");start();}
- void capture(String name)throws Exception{Bitmap b=getUiAutomation().takeScreenshot();try(OutputStream o=new FileOutputStream(new File(dir,mode+"-"+name+".png"))){ok(b.compress(Bitmap.CompressFormat.PNG,100,o),"screenshot "+name);}StringBuilder nodes=new StringBuilder();nodes(getUiAutomation().getRootInActiveWindow(),nodes);Files.writeString(new File(dir,mode+"-"+name+".txt").toPath(),nodes.toString());screens.put(mode+"-"+name);}
+ void capture(String name)throws Exception{Bitmap b=getUiAutomation().takeScreenshot();try(OutputStream o=new FileOutputStream(new File(dir,mode+"-"+name+".png"))){ok(b.compress(Bitmap.CompressFormat.PNG,100,o),"screenshot "+name);}StringBuilder nodes=new StringBuilder();nodes(getUiAutomation().getRootInActiveWindow(),nodes);Files.write(new File(dir,mode+"-"+name+".txt").toPath(),nodes.toString().getBytes(StandardCharsets.UTF_8));screens.put(mode+"-"+name);}
  void nodes(android.view.accessibility.AccessibilityNodeInfo n,StringBuilder out){if(n==null)return;android.graphics.Rect b=new android.graphics.Rect();n.getBoundsInScreen(b);out.append(n.getClassName()).append(' ').append(n.getText()).append(' ').append(n.getContentDescription()).append(' ').append(b).append('\n');for(int i=0;i<n.getChildCount();i++)nodes(n.getChild(i),out);}
  void reject(Runnable r,String name){try{r.run();}catch(IllegalArgumentException|java.util.concurrent.CancellationException e){ok(true,name);return;}throw new AssertionError(name);}
  public void onStart(){Bundle result=new Bundle();try{
@@ -31,7 +31,7 @@ public final class GeneralResearchInstrumentation extends Instrumentation {
   reject(()->bound.verify(null),"missing source binding");reject(()->bound.verify(new ResearchEngine.Passage(new String[]{p.id,p.title,p.url,p.sourceDate,p.license,p.text+" fabricated tail"},p.collectionProvenance)),"changed factual tail binding");
   reject(()->bound.verify(new ResearchEngine.Passage(new String[]{"other-edition",p.title,p.url,p.sourceDate,p.license,p.text},p.collectionProvenance)),"changed namespace binding");
   main=(MainActivity)startActivitySync(new Intent(getTargetContext(),MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));runOnMainSync(()->((NativePanel)field(main,"nativePanel")).lowMemory());await(main::resourceIdle,"unloaded research ready");ok(!main.modelReady(),"no loaded model required");
-  JSONArray cases=new JSONArray(Files.readString(new File(dir,"cases.json").toPath()));
+  JSONArray cases=new JSONArray(new String(bytes(new File(dir,"cases.json")),StandardCharsets.UTF_8));
   for(int i=0;i<cases.length();i++){
    if(mode.equals("restart")&&i>0)break;
    JSONObject c=cases.getJSONObject(i);String q=c.getString("question");
@@ -51,5 +51,5 @@ public final class GeneralResearchInstrumentation extends Instrumentation {
   }
   Debug.MemoryInfo memory=new Debug.MemoryInfo();Debug.getMemoryInfo(memory);report.put("pss_kib",memory.getTotalPss()).put("app_logical_bytes",SharedShardUpdate.uniqueBytes(new File(getTargetContext().getApplicationInfo().dataDir))).put("collections",installed.entries.size()).put("documents",installed.distinctDocuments).put("passages",installed.engine.size()).put("status","PASS");
  }catch(Throwable e){try{report.put("status","FAIL").put("error",android.util.Log.getStackTraceString(e));}catch(Exception ignored){}}
- finally{if(main!=null)runOnMainSync(main::finish);try{report.put("outputs",outputs).put("checks",checks).put("screens",screens);Files.writeString(new File(dir,mode+".json").toPath(),report.toString(2));result.putString("receipt",new JSONObject().put("status",report.optString("status")).put("run_id",run).put("source_hash",source).put("mode",mode).put("report_sha256",KnowledgePack.hash(bytes(new File(dir,mode+".json")))).toString());}catch(Exception e){result.putString("error",e.toString());}finish(report.optString("status").equals("PASS")?-1:1,result);}}
+ finally{if(main!=null)runOnMainSync(main::finish);try{report.put("outputs",outputs).put("checks",checks).put("screens",screens);Files.write(new File(dir,mode+".json").toPath(),report.toString(2).getBytes(StandardCharsets.UTF_8));result.putString("receipt",new JSONObject().put("status",report.optString("status")).put("run_id",run).put("source_hash",source).put("mode",mode).put("report_sha256",KnowledgePack.hash(bytes(new File(dir,mode+".json")))).toString());}catch(Exception e){result.putString("error",e.toString());}finish(report.optString("status").equals("PASS")?-1:1,result);}}
 }
