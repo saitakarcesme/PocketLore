@@ -1,0 +1,162 @@
+android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+ android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+  android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+   android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+    android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+     android.view.ViewGroup text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+      androidx.drawerlayout.widget.DrawerLayout text=null description=null bounds=Rect(0, 63 - 1080, 2400) clickable=false visible=true
+       android.widget.ScrollView text=null description=null bounds=Rect(0, 63 - 1080, 2400) clickable=false visible=true
+        android.widget.LinearLayout text=null description=null bounds=Rect(0, 63 - 1080, 473) clickable=false visible=true
+         android.widget.FrameLayout text=null description=null bounds=Rect(0, 63 - 1080, 473) clickable=false visible=true
+          android.widget.ScrollView text=null description=null bounds=Rect(0, 63 - 1080, 473) clickable=false visible=true
+           android.widget.LinearLayout text=null description=null bounds=Rect(0, 189 - 1080, 473) clickable=false visible=true
+            androidx.recyclerview.widget.RecyclerView text=null description=null bounds=Rect(0, 189 - 1080, 315) clickable=false visible=true
+             android.widget.LinearLayout text=null description=null bounds=Rect(0, 189 - 288, 315) clickable=false visible=true
+              android.widget.TextView text=Downloads description=null bounds=Rect(0, 189 - 288, 315) clickable=false visible=true
+            android.widget.HorizontalScrollView text=null description=null bounds=Rect(0, 315 - 1080, 315) clickable=false visible=false
+             android.widget.FrameLayout text=null description=null bounds=Rect(0, 315 - 0, 315) clickable=false visible=false
+            android.widget.LinearLayout text=null description=null bounds=Rect(63, 315 - 1017, 473) clickable=false visible=true
+             android.widget.TextView text=Files in Downloads description=null bounds=Rect(63, 315 - 890, 473) clickable=false visible=true
+             androidx.appcompat.widget.LinearLayoutCompat text=null description=null bounds=Rect(890, 331 - 1017, 457) clickable=false visible=true
+              android.widget.Button text=null description=List view bounds=Rect(890, 331 - 1017, 457) clickable=true visible=true
+          android.view.ViewGroup text=null description=null bounds=Rect(0, 63 - 1080, 189) clickable=false visible=true
+           android.widget.ImageButton text=null description=Show roots bounds=Rect(0, 63 - 147, 189) clickable=true visible=true
+           android.widget.TextView text=Downloads description=null bounds=Rect(189, 90 - 453, 161) clickable=false visible=true
+           androidx.appcompat.widget.LinearLayoutCompat text=null description=null bounds=Rect(827, 63 - 1080, 189) clickable=false visible=true
+            android.widget.Button text=null description=New folder bounds=Rect(827, 63 - 954, 189) clickable=true visible=true
+            android.widget.ImageView text=null description=More options bounds=Rect(954, 63 - 1080, 189) clickable=true visible=true
+        android.widget.FrameLayout text=null description=null bounds=Rect(0, 63 - 1080, 2400) clickable=false visible=true
+         android.widget.FrameLayout text=null description=null bounds=Rect(0, 63 - 1080, 2400) clickable=false visible=true
+         android.widget.FrameLayout text=null description=null bounds=Rect(0, 63 - 1080, 2400) clickable=false visible=true
+          android.widget.LinearLayout text=null description=null bounds=Rect(0, 63 - 1080, 2400) clickable=false visible=true
+           android.view.ViewGroup text=null description=null bounds=Rect(0, 63 - 1080, 2400) clickable=false visible=true
+            android.widget.GridView text=null description=null bounds=Rect(0, 63 - 1080, 2400) clickable=false visible=true
+             androidx.cardview.widget.CardView text=null description=null bounds=Rect(64, 484 - 529, 1085) clickable=true visible=true
+              android.view.View text=null description=null bounds=Rect(64, 484 - 529, 1085) clickable=false visible=true
+              androidx.cardview.widget.CardView text=null description=null bounds=Rect(64, 484 - 529, 1085) clickable=false visible=true
+               android.widget.RelativeLayout text=null description=null bounds=Rect(64, 484 - 529, 1085) clickable=false visible=true
+                android.widget.FrameLayout text=null description=null bounds=Rect(64, 484 - 529, 949) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(64, 484 - 529, 949) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(244, 664 - 349, 769) clickable=false visible=true
+                android.widget.LinearLayout text=null description=null bounds=Rect(64, 949 - 529, 1085) clickable=false visible=true
+                 android.widget.FrameLayout text=null description=null bounds=Rect(64, 949 - 196, 1085) clickable=false visible=true
+                  android.widget.ImageView text=null description=null bounds=Rect(96, 977 - 175, 1056) clickable=false visible=true
+                  android.widget.ImageView text=null description=null bounds=Rect(96, 977 - 175, 1056) clickable=false visible=false
+                 android.widget.RelativeLayout text=null description=null bounds=Rect(196, 949 - 529, 1085) clickable=false visible=true
+                  android.widget.TextView text=PocketLore-1790904981381.md description=null bounds=Rect(196, 970 - 497, 1021) clickable=false visible=true
+                  android.widget.TextView text=1.48 kB description=null bounds=Rect(196, 1021 - 302, 1064) clickable=false visible=true
+                  android.widget.TextView text=3:36 AM description=null bounds=Rect(313, 1021 - 432, 1064) clickable=false visible=true
+             androidx.cardview.widget.CardView text=null description=null bounds=Rect(551, 484 - 1016, 1085) clickable=true visible=true
+              android.view.View text=null description=null bounds=Rect(551, 484 - 1016, 1085) clickable=false visible=true
+              androidx.cardview.widget.CardView text=null description=null bounds=Rect(551, 484 - 1016, 1085) clickable=false visible=true
+               android.widget.RelativeLayout text=null description=null bounds=Rect(551, 484 - 1016, 1085) clickable=false visible=true
+                android.widget.FrameLayout text=null description=null bounds=Rect(551, 484 - 1016, 949) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(551, 484 - 1016, 949) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(731, 664 - 836, 769) clickable=false visible=true
+                android.widget.LinearLayout text=null description=null bounds=Rect(551, 949 - 1016, 1085) clickable=false visible=true
+                 android.widget.FrameLayout text=null description=null bounds=Rect(551, 949 - 683, 1085) clickable=false visible=true
+                  android.widget.ImageView text=null description=null bounds=Rect(583, 977 - 662, 1056) clickable=false visible=true
+                  android.widget.ImageView text=null description=null bounds=Rect(583, 977 - 662, 1056) clickable=false visible=false
+                 android.widget.RelativeLayout text=null description=null bounds=Rect(683, 949 - 1016, 1085) clickable=false visible=true
+                  android.widget.TextView text=PocketLore-1790904937947.md description=null bounds=Rect(683, 970 - 984, 1021) clickable=false visible=true
+                  android.widget.TextView text=1.48 kB description=null bounds=Rect(683, 1021 - 789, 1064) clickable=false visible=true
+                  android.widget.TextView text=3:35 AM description=null bounds=Rect(800, 1021 - 919, 1064) clickable=false visible=true
+             androidx.cardview.widget.CardView text=null description=null bounds=Rect(64, 1107 - 529, 1708) clickable=true visible=true
+              android.view.View text=null description=null bounds=Rect(64, 1107 - 529, 1708) clickable=false visible=true
+              androidx.cardview.widget.CardView text=null description=null bounds=Rect(64, 1107 - 529, 1708) clickable=false visible=true
+               android.widget.RelativeLayout text=null description=null bounds=Rect(64, 1107 - 529, 1708) clickable=false visible=true
+                android.widget.FrameLayout text=null description=null bounds=Rect(64, 1107 - 529, 1572) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(64, 1107 - 529, 1572) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(244, 1287 - 349, 1392) clickable=false visible=true
+                android.widget.LinearLayout text=null description=null bounds=Rect(64, 1572 - 529, 1708) clickable=false visible=true
+                 android.widget.FrameLayout text=null description=null bounds=Rect(64, 1572 - 196, 1708) clickable=false visible=true
+                  android.widget.ImageView text=null description=null bounds=Rect(96, 1600 - 175, 1679) clickable=false visible=true
+                  android.widget.ImageView text=null description=null bounds=Rect(96, 1600 - 175, 1679) clickable=false visible=false
+                 android.widget.RelativeLayout text=null description=null bounds=Rect(196, 1572 - 529, 1708) clickable=false visible=true
+                  android.widget.TextView text=PocketLore-1790904032731.md description=null bounds=Rect(196, 1593 - 497, 1644) clickable=false visible=true
+                  android.widget.TextView text=1.48 kB description=null bounds=Rect(196, 1644 - 302, 1687) clickable=false visible=true
+                  android.widget.TextView text=3:20 AM description=null bounds=Rect(313, 1644 - 432, 1687) clickable=false visible=true
+             androidx.cardview.widget.CardView text=null description=null bounds=Rect(551, 1107 - 1016, 1708) clickable=true visible=true
+              android.view.View text=null description=null bounds=Rect(551, 1107 - 1016, 1708) clickable=false visible=true
+              androidx.cardview.widget.CardView text=null description=null bounds=Rect(551, 1107 - 1016, 1708) clickable=false visible=true
+               android.widget.RelativeLayout text=null description=null bounds=Rect(551, 1107 - 1016, 1708) clickable=false visible=true
+                android.widget.FrameLayout text=null description=null bounds=Rect(551, 1107 - 1016, 1572) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(551, 1107 - 1016, 1572) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(731, 1287 - 836, 1392) clickable=false visible=true
+                android.widget.LinearLayout text=null description=null bounds=Rect(551, 1572 - 1016, 1708) clickable=false visible=true
+                 android.widget.FrameLayout text=null description=null bounds=Rect(551, 1572 - 683, 1708) clickable=false visible=true
+                  android.widget.ImageView text=null description=null bounds=Rect(583, 1600 - 662, 1679) clickable=false visible=true
+                  android.widget.ImageView text=null description=null bounds=Rect(583, 1600 - 662, 1679) clickable=false visible=false
+                 android.widget.RelativeLayout text=null description=null bounds=Rect(683, 1572 - 1016, 1708) clickable=false visible=true
+                  android.widget.TextView text=PocketLore-1790903988664.md description=null bounds=Rect(683, 1593 - 984, 1644) clickable=false visible=true
+                  android.widget.TextView text=1.48 kB description=null bounds=Rect(683, 1644 - 789, 1687) clickable=false visible=true
+                  android.widget.TextView text=3:19 AM description=null bounds=Rect(800, 1644 - 919, 1687) clickable=false visible=true
+             androidx.cardview.widget.CardView text=null description=null bounds=Rect(64, 1730 - 529, 2331) clickable=true visible=true
+              android.view.View text=null description=null bounds=Rect(64, 1730 - 529, 2331) clickable=false visible=true
+              androidx.cardview.widget.CardView text=null description=null bounds=Rect(64, 1730 - 529, 2331) clickable=false visible=true
+               android.widget.RelativeLayout text=null description=null bounds=Rect(64, 1730 - 529, 2331) clickable=false visible=true
+                android.widget.FrameLayout text=null description=null bounds=Rect(64, 1730 - 529, 2195) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(64, 1730 - 529, 2195) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(244, 1910 - 349, 2015) clickable=false visible=true
+                android.widget.LinearLayout text=null description=null bounds=Rect(64, 2195 - 529, 2331) clickable=false visible=true
+                 android.widget.FrameLayout text=null description=null bounds=Rect(64, 2195 - 196, 2331) clickable=false visible=true
+                  android.widget.ImageView text=null description=null bounds=Rect(96, 2223 - 175, 2302) clickable=false visible=true
+                  android.widget.ImageView text=null description=null bounds=Rect(96, 2223 - 175, 2302) clickable=false visible=false
+                 android.widget.RelativeLayout text=null description=null bounds=Rect(196, 2195 - 529, 2331) clickable=false visible=true
+                  android.widget.TextView text=PocketLore-1790899457731.md description=null bounds=Rect(196, 2216 - 497, 2267) clickable=false visible=true
+                  android.widget.TextView text=1.48 kB description=null bounds=Rect(196, 2267 - 302, 2310) clickable=false visible=true
+                  android.widget.TextView text=2:04 AM description=null bounds=Rect(313, 2267 - 432, 2310) clickable=false visible=true
+             androidx.cardview.widget.CardView text=null description=null bounds=Rect(551, 1730 - 1016, 2331) clickable=true visible=true
+              android.view.View text=null description=null bounds=Rect(551, 1730 - 1016, 2331) clickable=false visible=true
+              androidx.cardview.widget.CardView text=null description=null bounds=Rect(551, 1730 - 1016, 2331) clickable=false visible=true
+               android.widget.RelativeLayout text=null description=null bounds=Rect(551, 1730 - 1016, 2331) clickable=false visible=true
+                android.widget.FrameLayout text=null description=null bounds=Rect(551, 1730 - 1016, 2195) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(551, 1730 - 1016, 2195) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(731, 1910 - 836, 2015) clickable=false visible=true
+                android.widget.LinearLayout text=null description=null bounds=Rect(551, 2195 - 1016, 2331) clickable=false visible=true
+                 android.widget.FrameLayout text=null description=null bounds=Rect(551, 2195 - 683, 2331) clickable=false visible=true
+                  android.widget.ImageView text=null description=null bounds=Rect(583, 2223 - 662, 2302) clickable=false visible=true
+                  android.widget.ImageView text=null description=null bounds=Rect(583, 2223 - 662, 2302) clickable=false visible=false
+                 android.widget.RelativeLayout text=null description=null bounds=Rect(683, 2195 - 1016, 2331) clickable=false visible=true
+                  android.widget.TextView text=PocketLore-1790899415315.md description=null bounds=Rect(683, 2216 - 984, 2267) clickable=false visible=true
+                  android.widget.TextView text=1.48 kB description=null bounds=Rect(683, 2267 - 789, 2310) clickable=false visible=true
+                  android.widget.TextView text=2:03 AM description=null bounds=Rect(800, 2267 - 919, 2310) clickable=false visible=true
+             androidx.cardview.widget.CardView text=null description=null bounds=Rect(64, 2353 - 529, 2400) clickable=true visible=true
+              android.view.View text=null description=null bounds=Rect(64, 2353 - 529, 2400) clickable=false visible=true
+              androidx.cardview.widget.CardView text=null description=null bounds=Rect(64, 2353 - 529, 2400) clickable=false visible=true
+               android.widget.RelativeLayout text=null description=null bounds=Rect(64, 2353 - 529, 2400) clickable=false visible=true
+                android.widget.FrameLayout text=null description=null bounds=Rect(64, 2353 - 529, 2400) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(64, 2353 - 529, 2400) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(244, 2533 - 349, 2400) clickable=false visible=false
+                android.widget.LinearLayout text=null description=null bounds=Rect(64, 2684 - 529, 2400) clickable=false visible=false
+                 android.widget.FrameLayout text=null description=null bounds=Rect(64, 2684 - 196, 2400) clickable=false visible=false
+                  android.widget.ImageView text=null description=null bounds=Rect(96, 2684 - 175, 2400) clickable=false visible=false
+                  android.widget.ImageView text=null description=null bounds=Rect(96, 2684 - 175, 2400) clickable=false visible=false
+                 android.widget.RelativeLayout text=null description=null bounds=Rect(196, 2684 - 529, 2400) clickable=false visible=false
+                  android.widget.TextView text=PocketLore-1790898806047.md description=null bounds=Rect(196, 2684 - 497, 2400) clickable=false visible=false
+                  android.widget.TextView text=1.48 kB description=null bounds=Rect(196, 2684 - 302, 2400) clickable=false visible=false
+                  android.widget.TextView text=1:53 AM description=null bounds=Rect(313, 2684 - 432, 2400) clickable=false visible=false
+             androidx.cardview.widget.CardView text=null description=null bounds=Rect(551, 2353 - 1016, 2400) clickable=true visible=true
+              android.view.View text=null description=null bounds=Rect(551, 2353 - 1016, 2400) clickable=false visible=true
+              androidx.cardview.widget.CardView text=null description=null bounds=Rect(551, 2353 - 1016, 2400) clickable=false visible=true
+               android.widget.RelativeLayout text=null description=null bounds=Rect(551, 2353 - 1016, 2400) clickable=false visible=true
+                android.widget.FrameLayout text=null description=null bounds=Rect(551, 2353 - 1016, 2400) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(551, 2353 - 1016, 2400) clickable=false visible=true
+                 android.widget.ImageView text=null description=null bounds=Rect(731, 2533 - 836, 2400) clickable=false visible=false
+                android.widget.LinearLayout text=null description=null bounds=Rect(551, 2684 - 1016, 2400) clickable=false visible=false
+                 android.widget.FrameLayout text=null description=null bounds=Rect(551, 2684 - 683, 2400) clickable=false visible=false
+                  android.widget.ImageView text=null description=null bounds=Rect(583, 2684 - 662, 2400) clickable=false visible=false
+                  android.widget.ImageView text=null description=null bounds=Rect(583, 2684 - 662, 2400) clickable=false visible=false
+                 android.widget.RelativeLayout text=null description=null bounds=Rect(683, 2684 - 1016, 2400) clickable=false visible=false
+                  android.widget.TextView text=PocketLore-1790898763814.md description=null bounds=Rect(683, 2684 - 984, 2400) clickable=false visible=false
+                  android.widget.TextView text=1.48 kB description=null bounds=Rect(683, 2684 - 789, 2400) clickable=false visible=false
+                  android.widget.TextView text=1:52 AM description=null bounds=Rect(800, 2684 - 919, 2400) clickable=false visible=false
+         android.view.View text=null description=null bounds=Rect(0, 63 - 32, 2400) clickable=false visible=true
+        android.view.ViewGroup text=null description=null bounds=Rect(0, 2148 - 1080, 2400) clickable=false visible=true
+         android.widget.LinearLayout text=null description=null bounds=Rect(0, 2148 - 1080, 2274) clickable=false visible=true
+          android.widget.FrameLayout text=null description=null bounds=Rect(42, 2158 - 147, 2263) clickable=false visible=true
+           android.widget.ImageView text=null description=null bounds=Rect(42, 2158 - 105, 2263) clickable=false visible=true
+          android.widget.EditText text=PocketLore-1790905481664.md description=null bounds=Rect(189, 2152 - 801, 2270) clickable=true visible=true
+          android.widget.FrameLayout text=null description=null bounds=Rect(801, 2148 - 1054, 2274) clickable=false visible=true
+           android.widget.Button text=SAVE description=null bounds=Rect(812, 2148 - 1043, 2274) clickable=true visible=true
+ android.view.View text=null description=null bounds=Rect(0, 2274 - 1080, 2400) clickable=false visible=true

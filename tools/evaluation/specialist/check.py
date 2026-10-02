@@ -54,7 +54,9 @@ def main():
   run(ADB+['shell','run-as','org.pocketlore.app','sh','-c',"'cat > files/specialist-tests/"+path.name+"'"],'provision-'+path.name+'.txt',input=path.read_bytes())
  for mode in ['install','restart']:
   run(ADB+['shell','am','force-stop','org.pocketlore.app'],'stop-'+mode+'.txt')
-  try:run(ADB+['shell','am','instrument','-w','-e','mode',mode,'-e','run_id',out.name,'org.pocketlore.app.test/org.pocketlore.app.SpecialistInstrumentation'],'runtime-'+mode+'.txt',600)
+  try:
+   instrumentation=run(ADB+['shell','am','instrument','-w','-e','mode',mode,'-e','run_id',out.name,'org.pocketlore.app.test/org.pocketlore.app.SpecialistInstrumentation'],'runtime-'+mode+'.txt',600)
+   assert b'INSTRUMENTATION_CODE: -1' in instrumentation,'Instrumentation did not complete successfully'
   except (AssertionError,subprocess.TimeoutExpired):
    # Preserve diagnostic bytes even after transport failure; never turn these into a pass.
    diagnostic=subprocess.run(ADB+['exec-out','run-as','org.pocketlore.app','cat','files/specialist-tests/'+mode+'.json'],stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=30)
