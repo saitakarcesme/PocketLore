@@ -13,7 +13,7 @@ public final class AttachmentsInstrumentation extends Instrumentation{
  void questionHandoff()throws Exception{
   main(()->activity.finish());activity=null;
   MainActivity parent=(MainActivity)startActivitySync(new Intent(getTargetContext(),MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-  try{NativePanel panel=(NativePanel)field(parent,"nativePanel");main(panel::lowMemory);await(()->parent.resourceIdle(),"handoff_model_unloaded");
+  try{NativePanel panel=(NativePanel)field(parent,"nativePanel");main(panel::lowMemory);await(()->parent.resourceIdle(),"handoff_model_unloaded");report.put("handoff_initial_importing",field(parent,"importing")).put("handoff_initial_engine_missing",field(parent,"engine")==null);await(()->!(boolean)field(parent,"importing")&&field(parent,"engine")!=null&&parent.hasWindowFocus(),"handoff_library_and_parent_ready");
    for(int code:new int[]{3,4}){
     ActivityMonitor monitor=addMonitor(AttachmentsActivity.class.getName(),null,false);
     main(()->{parent.showResearch();Button edit=find(parent.getWindow().getDecorView(),"Edit question");if(edit!=null&&edit.isShown())edit.performClick();Button button=find(parent.getWindow().getDecorView(),"Photo text and speech input");if(button==null||!button.isShown()||!button.isEnabled())throw new AssertionError("Attachment control unavailable");button.performClick();});
