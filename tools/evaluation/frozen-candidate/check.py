@@ -24,7 +24,20 @@ def verify(frozen):
  assert frozen['profile']['mode']=='source_brief' and frozen['profile']['generated_quality']=='not measured'
  assert frozen['profile']['production_model_selected'] is False
  budget=json.loads(pathlib.Path(frozen['budget_path']).read_text())
- assert budget['verified_shards']==31 and budget['hard_fits'] and budget['target_fits']
+ ledger=pathlib.Path(frozen['budget_path']).parent
+ hashes={line.split()[1]:line.split()[0] for line in (ledger/'emulator-5562-current-hashes.txt').read_text().splitlines()}
+ sizes={line.split(',',2)[2]:int(line.split(',',2)[0]) for line in (ledger/'emulator-5562-objects.txt').read_text().splitlines()}
+ shards=[]
+ for filename in ['wiki-manifest.json','places-manifest.json']:
+  edition=json.loads((ledger/filename).read_text())
+  for obj in edition['files']:
+   path='files/scale-library/objects/'+obj['sha256'];assert hashes[path]==obj['sha256'] and sizes[path]==obj['bytes']
+  for shard in edition['shards']:shards.append(sum(o['bytes'] for o in edition['files'] if o['path']==shard or o['path'].startswith(shard+'/')))
+ retained=int((ledger/'emulator-5562-logical.txt').read_text().split()[0])
+ peak=retained+m['apk_bytes']+2*max(shards)+1048576+134217728
+ assert len(shards)==31 and min(shards)>0 and budget['verified_shards']==31
+ assert peak==budget['projected_same_size_shard_update_peak'] and peak<=45000000000 and peak<=50000000000
+ assert budget['current_app_logical_bytes']==retained
  warm=json.loads((out/'brief-warm/install.json').read_text())
  assert [x['id'] for x in warm['outputs']]==['g01','g21','g24']+['g01']*5
  assert all(not x['generated'] for x in warm['outputs']) and not warm['outputs'][2]['quotes']
