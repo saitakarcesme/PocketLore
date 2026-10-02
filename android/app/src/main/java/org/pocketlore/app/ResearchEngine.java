@@ -18,8 +18,9 @@ import java.util.Set;
 public final class ResearchEngine {
     interface DiskProvider { Result research(String question); int size(); default Result sourceResearch(String question){return research(question);} }
     private DiskProvider disk;
+    private List<ResearchEngine> children;
     ResearchEngine(DiskProvider provider){disk=provider;}
-    static ResearchEngine combined(List<ResearchEngine> engines){return new ResearchEngine(new DiskProvider(){
+    static ResearchEngine combined(List<ResearchEngine> engines){ResearchEngine combined=new ResearchEngine(new DiskProvider(){
         public int size(){int total=0;for(ResearchEngine e:engines)total+=e.size();return total;}
         public Result sourceResearch(String q){
             List<Hit> hits=new ArrayList<>();int candidates=0;
@@ -37,7 +38,7 @@ public final class ResearchEngine {
             hits=diverse(hits);
             return new Result(hits,missing,hits.isEmpty()?"No supporting passage in active collections.":"Retrieved sources only; inspect their dates, scope and rights. No generated answer inferred.",candidates);}
 
-    });}
+    });combined.children=Collections.unmodifiableList(new ArrayList<>(engines));return combined;}
 
     /** Shared bounded ranking; exact titles outrank longer titles containing the same words. */
     static double rankScore(String q,Passage p){
@@ -52,6 +53,9 @@ public final class ResearchEngine {
     /** First select distinct documents, then at most one additional passage per document. */
     static List<Hit> diverse(List<Hit> input){
         input.sort(Comparator.comparingDouble((Hit h)->h.score).reversed().thenComparing(h->h.passage.id));
+        Map<String,Hit> unique=new java.util.LinkedHashMap<>();
+        for(Hit h:input){Hit prior=unique.putIfAbsent(h.passage.id,h);if(prior!=null && (!prior.passage.text.equals(h.passage.text)||!prior.passage.url.equals(h.passage.url)||!prior.passage.collectionProvenance.equals(h.passage.collectionProvenance)))throw new IllegalArgumentException("Conflicting source citation identity");}
+        input=new ArrayList<>(unique.values());
         List<Hit> out=new ArrayList<>();Set<String> docs=new java.util.LinkedHashSet<>();
         for(Hit h:input)if(docs.add(h.passage.url)){out.add(h);if(out.size()==4)return out;}
         for(String url:docs)for(Hit h:input)if(h.passage.url.equals(url)&&!out.contains(h)){out.add(h);break;}
@@ -80,10 +84,15 @@ public final class ResearchEngine {
         public final Set<String> missingTerms;
         public final String answer;
         public final int candidatesScored;
+        public final Map<String,Integer> collectionCandidates;
         Result(List<Hit> hits, Set<String> missingTerms, String answer) {
             this(hits, missingTerms, answer, 0);
         }
         Result(List<Hit> hits, Set<String> missingTerms, String answer, int candidatesScored) {
+            this(hits,missingTerms,answer,candidatesScored,Collections.emptyMap());
+        }
+        Result(List<Hit> hits,Set<String> missingTerms,String answer,int candidatesScored,Map<String,Integer> availability){
+            collectionCandidates=Collections.unmodifiableMap(new java.util.TreeMap<>(availability));
             this.candidatesScored = candidatesScored;
             this.hits = Collections.unmodifiableList(hits);
             this.missingTerms = Collections.unmodifiableSet(missingTerms);
@@ -196,22 +205,38 @@ public final class ResearchEngine {
     /** Counts describe logical index payload, not JVM object allocation or serialized storage. */
     public long[] resourceCounts(){if(disk!=null)return new long[]{disk.size(),-1,-1,-1};long postings=0,characters=0;for(List<Posting> list:index.values())postings+=list.size();for(Passage p:passages)characters+=p.text.length();return new long[]{passages.size(),index.size(),postings,characters};}
     /** Brief-only exclusion precedes combined truncation; generation and browse ranking are unchanged. */
-    public Result sourceResearch(String question){
-        Result result=disk==null?research(question):disk.sourceResearch(question);
-        List<Hit> eligible=new ArrayList<>();for(Hit h:result.hits)if(!h.passage.collectionProvenance.contains("Generation disabled:"))eligible.add(h);
-        // Exact title requests start with the first eligible source paragraph, not a later
-        // paragraph that repeats the title more often. This is relevance, not support.
-        if(disk==null){
-            Set<String> query=new HashSet<>(rankTerms(question)),seen=new HashSet<>();
-            for(Passage p:passages)if(!query.isEmpty()&&query.equals(new HashSet<>(rankTerms(p.title)))
-                    && !p.collectionProvenance.contains("Generation disabled:")&&seen.add(p.url)){
-                eligible.removeIf(h->h.passage.id.equals(p.id));
-                eligible.add(0,new Hit(p,10000));
-            }
+    public Result sourceResearch(String question){return sourceResearch(question,()->false);}
+    private static void cancelled(java.util.function.BooleanSupplier stop){if(stop.getAsBoolean()||Thread.currentThread().isInterrupted())throw new java.util.concurrent.CancellationException("Research cancelled");}
+    public Result sourceResearch(String question,java.util.function.BooleanSupplier stop){
+        cancelled(stop);
+        if(children!=null){
+            List<Hit> hits=new ArrayList<>();Map<String,Integer> counts=new java.util.TreeMap<>();int scored=0;
+            Set<String> missing=new java.util.TreeSet<>(rankTerms(question)),present=new HashSet<>();
+            for(ResearchEngine child:children){cancelled(stop);Result r=child.sourceResearch(question,stop);hits.addAll(r.hits);counts.putAll(r.collectionCandidates);scored+=r.candidatesScored;}
+            for(Hit h:hits)present.addAll(rankTerms(h.passage.title+" "+h.passage.text));missing.removeAll(present);
+            cancelled(stop);return new Result(diverse(hits),missing,"Selected admitted source candidates",scored,counts);
         }
-        return new Result(eligible,result.missingTerms,result.answer,result.candidatesScored);
+        if(disk!=null){Result r=disk.sourceResearch(question);cancelled(stop);List<Hit> safe=new ArrayList<>();for(Hit h:r.hits){cancelled(stop);if(!h.passage.collectionProvenance.contains("Generation disabled:"))safe.add(h);}return new Result(safe,r.missingTerms,r.answer,r.candidatesScored); }
+        Result pool=research(question,stop,false);
+        Map<String,List<Hit>> groups=new java.util.TreeMap<>();
+        for(Passage p:passages){cancelled(stop);for(String key:collections(p))groups.putIfAbsent(key,new ArrayList<>());}
+        for(Hit h:pool.hits){cancelled(stop);if(!h.passage.collectionProvenance.contains("Generation disabled:"))for(String key:collections(h.passage))groups.get(key).add(new Hit(h.passage,rankScore(question,h.passage)));}
+        List<Hit> candidates=new ArrayList<>();Map<String,Integer> availability=new java.util.TreeMap<>();
+        for(Map.Entry<String,List<Hit>> entry:groups.entrySet()){
+            cancelled(stop);availability.put(entry.getKey(),entry.getValue().size());candidates.addAll(diverse(entry.getValue()));
+        }
+        List<Hit> merged=diverse(candidates);cancelled(stop);
+        return new Result(merged,pool.missingTerms,"Source candidates only; relevance does not establish support",pool.candidatesScored,availability);
     }
-    public Result research(String question) {
+    private static List<String> collections(Passage p){
+        List<String> result=new ArrayList<>();String[] lines=p.collectionProvenance.split("\n");
+        for(int i=0;i<lines.length;i++)if(lines[i].startsWith("Collection: "))result.add(lines[i]+(i+1<lines.length&&lines[i+1].startsWith("Edition SHA-256: ")?" · "+lines[i+1]:""));
+        if(result.isEmpty())result.add("Bundled or disk reference source");
+        return result;
+    }
+    public Result research(String question) {return research(question,()->false,true);}
+    private Result research(String question,java.util.function.BooleanSupplier stop,boolean truncate) {
+        cancelled(stop);
         if(disk!=null)return disk.research(question);
         Set<String> terms = new HashSet<>(tokenize(question));
         Set<String> missing = new java.util.TreeSet<>(terms);
@@ -223,13 +248,14 @@ public final class ResearchEngine {
             for(String expansion:EXPANSIONS.getOrDefault(term,Collections.emptyList()))query.putIfAbsent(expansion,0.7);
         Map<Integer,Double> scores=new HashMap<>();
         for(Map.Entry<String,Double> term:query.entrySet()) {
-            for(Posting posting:index.getOrDefault(term.getKey(),Collections.emptyList()))
-                scores.merge(posting.passage,term.getValue()*posting.contribution,Double::sum);
+            cancelled(stop);
+            for(Posting posting:index.getOrDefault(term.getKey(),Collections.emptyList())) {cancelled(stop);
+                scores.merge(posting.passage,term.getValue()*posting.contribution,Double::sum);}
         }
         List<Hit> hits = new ArrayList<>();
         for(Map.Entry<Integer,Double> score:scores.entrySet())hits.add(new Hit(passages.get(score.getKey()),score.getValue()));
         hits.sort(Comparator.comparingDouble((Hit h) -> h.score).reversed().thenComparing(h -> h.passage.id));
-        if (hits.size() > 4) hits = new ArrayList<>(hits.subList(0, 4));
+        if (truncate && hits.size() > 4) hits = new ArrayList<>(hits.subList(0, 4));
         StringBuilder answer = new StringBuilder();
         if (hits.isEmpty()) {
             answer.append("No supporting passage in this installed pack. Try another question or import a broader knowledge pack. No answer has been inferred.");

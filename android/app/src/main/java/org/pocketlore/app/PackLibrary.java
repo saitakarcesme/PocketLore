@@ -65,7 +65,8 @@ public final class PackLibrary {
         long broadBytes=0;int broadDocs=0,broadCount=0;List<ResearchEngine> diskEngines=new ArrayList<>();
         Set<String> documents=new HashSet<>();Map<String,String[]> rows=new LinkedHashMap<>();Map<String,StringBuilder> provenance=new HashMap<>();
         Map<String,String> offlineLicenses=new HashMap<>(),sharedLegal=new HashMap<>();
-        for(Entry entry:entries){if(cancel.getAsBoolean()||Thread.currentThread().isInterrupted())throw new InterruptedIOException("Library operation cancelled");
+        List<Entry> ordered=new ArrayList<>(entries);ordered.sort(Comparator.comparing(e->e.hash));
+        for(Entry entry:ordered){if(cancel.getAsBoolean()||Thread.currentThread().isInterrupted())throw new InterruptedIOException("Library operation cancelled");
             File savedArchive=new File(directory,entry.hash+".plpack");
             if(incoming==null||!incoming.sha256.equals(entry.hash))if(BroadPack.isBroad(savedArchive)){
                 require(++broadCount<=1&&entries.size()<=MAX_COLLECTIONS,"Only one bounded broad edition can be retained");

@@ -40,9 +40,13 @@ public final class ResearchWorkspace {
         int units=0,omitted=0;
         for(String part:parts){
             check(stop);EvidenceAvailability.Scope scope=EvidenceAvailability.scope(part);
-            ResearchEngine.Result evidence=scope==EvidenceAvailability.Scope.REFERENCE?engine.sourceResearch(part):new ResearchEngine.Result(Collections.emptyList(),Collections.emptySet(),"");
+            ResearchEngine.Result evidence=scope==EvidenceAvailability.Scope.REFERENCE?engine.sourceResearch(part,stop):new ResearchEngine.Result(Collections.emptyList(),Collections.emptySet(),"");
             ResearchBrief.Brief selected=ResearchBrief.create(part,evidence,stop);
             text.append("Subquestion ").append(sections.size()+1).append(" (your input, not a source claim):\n").append(part).append("\n");
+            if(!evidence.collectionCandidates.isEmpty()){
+                text.append("Selected collection availability (candidate counts, not verified answers):\n");
+                for(Map.Entry<String,Integer> entry:evidence.collectionCandidates.entrySet())text.append(entry.getKey()).append(": ").append(entry.getValue()).append(entry.getValue()==0?" — no matching admitted passage":" candidates").append("\n");
+            }
             List<ResearchBrief.Quote> quotes=new ArrayList<>();
             if(scope!=EvidenceAvailability.Scope.REFERENCE)text.append("Unknown — ").append(EvidenceAvailability.reason(scope)).append("\n");
             else {
