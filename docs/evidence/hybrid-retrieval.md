@@ -44,3 +44,5 @@ Unique app data after the final run is41,701,310,876 bytes; plus this APK is41,7
 ## Remaining gates
 
 No embedding asset, new license or global preference is introduced. A semantic retrieval experiment would need separate immutable model/license pins, frozen matched relevance judgments and an installed resource comparison; similarity alone cannot certify support. Full candidate import/APK-update temporary peaks, simultaneous model/reader peak, physical ARM64/GrapheneOS, sustained thermal behavior, unseen relevance/answer comparisons and human acceptance remain open. Bulk sources remain browse-only. This measured cache improvement is not task302 source clearance or rival superiority.
+
+[Independent criticism](hybrid-retrieval/independent-review.json) of checkpoint803798c found no blocking defect under the stated immutable-collection assumption. It leaves semantic quality and physical combined-memory acceptance unproven; canonical promotion and human acceptance remain separate.
