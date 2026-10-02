@@ -114,7 +114,12 @@ def main():
  run(['/home/isa/Android/atlas-toolchain/sdk/build-tools/35.0.0/zipalign','-c','-P','16','-v','4',apk],'zipalign.txt')
  run(['/home/isa/Android/atlas-toolchain/sdk/build-tools/35.0.0/aapt','dump','permissions',apk],'permissions.txt')
  (out/'build-artifacts.json').write_text(json.dumps({'app':{'sha256':sha(apk),'bytes':apk.stat().st_size},'test':{'sha256':sha(test),'bytes':test.stat().st_size},'source_manifest_sha256':sha(out/'source-inputs.json')},indent=2)+'\n')
- for p in [apk,test]:run(ADB+['install','--no-incremental','-r',p],'install-'+p.name+'.txt')
+ for p in [apk,test]:
+  remote='/data/local/tmp/pocketlore-freeze-'+run_id+'-'+p.name
+  run(ADB+['push',p,remote],'stage-'+p.name+'.txt')
+  assert shell(['sha256sum',remote],'staged-'+p.name+'-hash.txt').decode().split()[0]==sha(p)
+  shell(['pm','install','-r',remote],'install-'+p.name+'.txt')
+  shell(['rm',remote],'remove-stage-'+p.name+'.txt')
  for package in [PKG,PKG+'.test']:
   path=shell(['pm','path',package],'installed-'+package+'-path.txt').decode().strip().removeprefix('package:');shell(['sha256sum',path],'installed-'+package+'-hash.txt')
  registrations=shell(['pm','list','instrumentation'],'registered-tests.txt').decode()
