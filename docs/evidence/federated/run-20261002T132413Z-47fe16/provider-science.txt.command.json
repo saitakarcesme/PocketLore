@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5564",
+    "shell",
+    "run-as",
+    "org.pocketlore.app.test",
+    "sh",
+    "-c",
+    "'cat > files/reference-expansion-run-20261002T132413Z-47fe16/science.plpack'"
+  ],
+  "timeout_seconds": 300,
+  "returncode": 0,
+  "timed_out": false,
+  "elapsed_seconds": 0.019436345988651738
+}

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5564",
+    "exec-out",
+    "run-as",
+    "org.pocketlore.app",
+    "cat",
+    "files/federated-run-20261002T131258Z-5aa735/install-federated.png"
+  ],
+  "timeout_seconds": 300,
+  "returncode": 0,
+  "timed_out": false,
+  "elapsed_seconds": 0.03846498599159531
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "bash",
+    "tools/android-build.sh",
+    "assembleDebug",
+    "assembleDebugAndroidTest",
+    "-I",
+    "/home/isa/Projects/PocketLore/tools/evaluation/federated/source.gradle",
+    "-PpocketloreTestRunner=org.pocketlore.app.FederatedInstrumentation"
+  ],
+  "timeout_seconds": 300,
+  "returncode": 0,
+  "timed_out": false,
+  "elapsed_seconds": 14.277085640991572
+}

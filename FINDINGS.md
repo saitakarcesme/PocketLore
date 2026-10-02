@@ -444,3 +444,7 @@ The explicit coordinator lease enabled real5564testing. Two failed invocations e
 ### Task481 repair-1 — raw evidence packet omission repaired
 
 The prior committed packet omitted observations that the passing scripts read from ignored run directories. Added363original sealed non-payload receipts across the passing and two failed runs, including installed/final APK hashes, device continuity and storage. A packet-local validator now exercises the actual copied records plus four missing/changed controls; all three required checks pass. No device or quality rerun occurred, and canonical acceptance remains separate.
+
+### Task490 — admitted federated source briefs
+
+Existing small packs were already combined; the implemented gap repair adds per-collection candidate selection/availability, deterministic edition ownership and duplicate rejection, and cancellation inside lexical retrieval. Actual API37 requests search reviewed/science/personal sources together, preserve typed quote offsets, survive cold restart and reject deleted/disabled/colliding sources. The new baseline is the same controller restricted to one edition, not a historical binary. Preserve reader-race, unsolicited boot-change and notebook-full failures; final exact source reading uses the existing unsaved fallback without deleting records. Required build/check pass; excerpt completeness, synchronous disk interruption, full-capacity/physical/rights/generated quality and unseen comparison remain open. See federated-research.md.

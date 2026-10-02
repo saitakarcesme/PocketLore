@@ -1,0 +1,24 @@
+{
+  "source_commit": "a3c108d05c712fdfb44a13bf61a50437d196955e",
+  "checks": [
+    {
+      "command": [
+        "bash",
+        "tools/android-build.sh"
+      ],
+      "exit_code": 0,
+      "log": "required-readable-build.log",
+      "sha256": "c66831ab6a2d8c0d24c0ad23bc08a9a339de6b7b5225e6b74f66cf198ff772ac"
+    },
+    {
+      "command": [
+        "bash",
+        "tools/evaluation/check_federated_research.sh"
+      ],
+      "exit_code": 0,
+      "log": "required-readable-check.log",
+      "sha256": "b5f5916b8de224dab61c288a3bb503439965d0e442bbf48b8a0ee2601deb0c0e"
+    }
+  ],
+  "classification": "bounded emulator development; canonical review pending"
+}

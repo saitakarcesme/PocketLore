@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5564",
+    "shell",
+    "sha256sum",
+    "/data/app/~~3ATFeIQf_q3wvEHbg3bC9Q==/org.pocketlore.app.test-p3xSZ1jygXMK7KNiM2mcLw==/base.apk"
+  ],
+  "timeout_seconds": 300,
+  "returncode": 0,
+  "timed_out": false,
+  "elapsed_seconds": 0.010774475988000631
+}

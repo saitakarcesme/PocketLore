@@ -1,0 +1,20 @@
+[
+  {
+    "command": [
+      "bash",
+      "tools/android-build.sh"
+    ],
+    "exit_code": 0,
+    "log": "required-final-build.log",
+    "sha256": "ccea33399f5f11756d88b99888ccb9db18450e92464c2b605819317909f04937"
+  },
+  {
+    "command": [
+      "bash",
+      "tools/evaluation/check_federated_research.sh"
+    ],
+    "exit_code": 0,
+    "log": "required-final-check.log",
+    "sha256": "9b08d97cb08b94e03d079654bf0463b521b5f4d0bc041500637d6769d352154c"
+  }
+]

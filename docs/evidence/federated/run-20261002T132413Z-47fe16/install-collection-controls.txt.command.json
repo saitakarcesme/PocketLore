@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5564",
+    "exec-out",
+    "run-as",
+    "org.pocketlore.app",
+    "cat",
+    "files/federated-run-20261002T132413Z-47fe16/install-collection-controls.txt"
+  ],
+  "timeout_seconds": 300,
+  "returncode": 0,
+  "timed_out": false,
+  "elapsed_seconds": 0.0247547090111766
+}

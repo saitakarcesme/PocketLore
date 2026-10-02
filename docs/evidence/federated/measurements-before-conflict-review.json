@@ -1,0 +1,128 @@
+{
+  "install": {
+    "documents": 136,
+    "passages": 167,
+    "pss_kib": 86261,
+    "reader_route": "existing unsaved reader; notebook full",
+    "times_ms": [
+      99.856588,
+      80.473034,
+      73.63194,
+      77.320585,
+      42.367691,
+      48.286273,
+      48.365979,
+      78.524388
+    ],
+    "median_ms": 75.47626249999999,
+    "nearest_rank_p95_ms": 99.856588,
+    "baseline_quote_counts": [
+      3,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "federated_quote_counts": [
+      4,
+      2,
+      2,
+      3,
+      1,
+      0,
+      0,
+      0
+    ],
+    "catalog": [
+      {
+        "id": "reviewed-reference-2026-10-02-v1",
+        "hash": "10bb8878270ac7b7aa65036a5fd71007c34b3721bc269ce77544d542f0f27656",
+        "active": true
+      },
+      {
+        "id": "reference-expansion-2026-10-02-v1",
+        "hash": "61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135",
+        "active": true
+      },
+      {
+        "id": "personal-5a8bb4b3fbc26216d8138ebf",
+        "hash": "bc11baaf36f8bbe13d400ba6146a160dc8f319559e31e32f1d96d88fc9d86cf3",
+        "active": true
+      },
+      {
+        "id": "science-supplement-2026-10-01-v1",
+        "hash": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274",
+        "active": true
+      }
+    ]
+  },
+  "restart": {
+    "documents": 136,
+    "passages": 167,
+    "pss_kib": 91198,
+    "reader_route": "existing unsaved reader; notebook full",
+    "times_ms": [
+      101.908562,
+      83.691096,
+      80.424636,
+      71.97776,
+      45.386022,
+      50.417111,
+      49.383665,
+      49.020591
+    ],
+    "median_ms": 61.1974355,
+    "nearest_rank_p95_ms": 101.908562,
+    "baseline_quote_counts": [
+      3,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "federated_quote_counts": [
+      4,
+      2,
+      2,
+      3,
+      1,
+      0,
+      0,
+      0
+    ],
+    "catalog": [
+      {
+        "id": "reviewed-reference-2026-10-02-v1",
+        "hash": "10bb8878270ac7b7aa65036a5fd71007c34b3721bc269ce77544d542f0f27656",
+        "active": true
+      },
+      {
+        "id": "reference-expansion-2026-10-02-v1",
+        "hash": "61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135",
+        "active": true
+      },
+      {
+        "id": "personal-5a8bb4b3fbc26216d8138ebf",
+        "hash": "bc11baaf36f8bbe13d400ba6146a160dc8f319559e31e32f1d96d88fc9d86cf3",
+        "active": true
+      },
+      {
+        "id": "science-supplement-2026-10-01-v1",
+        "hash": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274",
+        "active": true
+      }
+    ]
+  },
+  "before-logical": "621170079\t.",
+  "before-allocated": "614528\t.",
+  "final-logical": "623668462\t.",
+  "final-allocated": "617088\t.",
+  "before-boot": "5a5b64be-c87e-45b5-b766-58f8d826fc83",
+  "final-boot": "5a5b64be-c87e-45b5-b766-58f8d826fc83"
+}

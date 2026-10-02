@@ -1,0 +1,377 @@
+{
+  "schema": 1,
+  "task": "task490",
+  "review": "Supplemental independent public-development source and feature inspection",
+  "reviewed_commit": "15860bd07207256ffde4d11cca721ffb003842a6",
+  "diff_base": "ea36f5b",
+  "run": "downloads/federated/run-20261002T132413Z-47fe16",
+  "recorded_source_commit": "10750100cf625c57acb75db7f382d63692050375",
+  "recorded_source_sha256": "118064e0766f0c7c1aa6f7f04aaa1c0670553388034958c3bffba4786cd37933",
+  "recorded_input_differences_against_final_commit": [],
+  "manifest_file_hashes": "All matched by read-only inspection",
+  "status": "BOUNDED_SOURCE_BRIEF_EVIDENCE_WITH_LIMITATIONS",
+  "canonical_acceptance": false,
+  "raw_sha256": {
+    "tools/evaluation/federated/development.json": "2d85c756a1e6756b192afe9ef41088da1482275e7ca2b11e62897413499213c8",
+    "downloads/reference-expansion/reference-expansion.plpack": "61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135",
+    "downloads/science/science-supplement-2026-10-01-v1.plpack": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274",
+    "constructed_fixture_utf8": "5a8bb4b3fbc26216d8138ebf1e9e23e8c8fe8b0d454fec12557da26a6d4177f6",
+    "downloads/federated/run-20261002T132413Z-47fe16/install.json": "59478c452db620d0a1f7b9eeb82aa131ce481c9173e4f0382bdb6bddc8becfc2",
+    "downloads/federated/run-20261002T132413Z-47fe16/restart.json": "2e3c2731831acce2a6e6b008369938c30faf2f7b7aa4da5c3edca43867c401bf",
+    "downloads/federated/run-20261002T132413Z-47fe16/source.json": "118064e0766f0c7c1aa6f7f04aaa1c0670553388034958c3bffba4786cd37933",
+    "downloads/federated/run-20261002T132413Z-47fe16/manifest.json": "8f101ae0ceff108b14a0de26bbd7842c5780278089fb90b7e879f150c2b08386",
+    "downloads/federated/run-20261002T132413Z-47fe16/seal.json": "28fe973d1d94286e8d1a741b3f8997ddd399e96f71e176b6aef436bc4471f34c",
+    "downloads/federated/run-20261002T132413Z-47fe16/install-raw.txt": "a948983a31b90047c944f3318ceb4b8bff802ae12c52a3ced1e0eb5bef006321",
+    "downloads/federated/run-20261002T132413Z-47fe16/restart-raw.txt": "e461b2ef348776fe4157a0208202d86450884173406e8ad1257d68073ec49532",
+    "downloads/federated/run-20261002T132413Z-47fe16/install-federated.txt": "32859ea92bcd6a311d639a7544ecdf7797a61ea87d5956db35ab72c5957a2e9a",
+    "downloads/federated/run-20261002T132413Z-47fe16/restart-federated.txt": "32859ea92bcd6a311d639a7544ecdf7797a61ea87d5956db35ab72c5957a2e9a",
+    "downloads/federated/run-20261002T132413Z-47fe16/install-reader.txt": "1d1d65d2c355ef9d6a62c544ade3c768621500b00878fbe8cc7391396d7ba041",
+    "downloads/federated/run-20261002T132413Z-47fe16/restart-reader.txt": "1d1d65d2c355ef9d6a62c544ade3c768621500b00878fbe8cc7391396d7ba041",
+    "tools/evaluation/federated/conflict-control.json": "67620c930bc57c5823103502104ded68e4bfa5fb62164e2c185856f10ea163ce"
+  },
+  "pack_member_sha256": {
+    "61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135": {
+      "manifest.json": "5ce9c4af56bfb1728bfaaaee369478113c77cc1ac41b302d761934b1cf140d9b",
+      "passages.tsv": "39641a794670e07923a5441572ae60ee0b47648c32ca9dda59aa4b462bb60ed3"
+    },
+    "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274": {
+      "manifest.json": "ccc62053ac6fc87ff1c93d0376916d27c3186932c2435ecfee32987a082bd7f9",
+      "passages.tsv": "6ab91528c96adb59a6e373ac3b0114809b2bcea1d4c42abfeb6e221d45234e49"
+    }
+  },
+  "catalog": [
+    {
+      "id": "reviewed-reference-2026-10-02-v1",
+      "hash": "10bb8878270ac7b7aa65036a5fd71007c34b3721bc269ce77544d542f0f27656",
+      "active": true
+    },
+    {
+      "id": "reference-expansion-2026-10-02-v1",
+      "hash": "61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135",
+      "active": true
+    },
+    {
+      "id": "personal-5a8bb4b3fbc26216d8138ebf",
+      "hash": "bc11baaf36f8bbe13d400ba6146a160dc8f319559e31e32f1d96d88fc9d86cf3",
+      "active": true
+    },
+    {
+      "id": "science-supplement-2026-10-01-v1",
+      "hash": "c69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274",
+      "active": true
+    }
+  ],
+  "cases": [
+    {
+      "case": 1,
+      "question": "Amateur astronomy; What is DNA?; Observing notebook",
+      "assessment": {
+        "baseline": "Astronomy definition; tangential bacteriophage and gene passages for DNA; notebook Unknown",
+        "federated": "Same astronomy definition; direct DNA definition plus chromosome packaging; complete constructed notebook",
+        "relevance": "Improved introductory DNA and notebook coverage",
+        "completeness": "No cross-topic relationship or synthesized explanation; extra chromosome quotation not necessary for DNA definition",
+        "unknowns": "No forecast or authenticated personal result established"
+      },
+      "federated_quotes": [
+        {
+          "id": "p61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135_reference-748-84ae02af7b59ffd5",
+          "passage_sha256": "84ae02af7b59ffd5b69ef38567aa0ef72fedde4ae01902de9a1c25cf48a52f36",
+          "source_raw_sha256": "e13ec0086bddd42c53a35b7378ff1cabe7a3607aef9174ddde1b6ab20cc2d7cd",
+          "title": "Amateur astronomy",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1368244598",
+          "snapshot": "Revision 1368244598 at 2026-08-07T22:44:45Z; retrieved 2026-10-01",
+          "literal_archive_and_manifest_identity": "MATCH"
+        },
+        {
+          "id": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-dna-0215cec38b4684c9",
+          "passage_sha256": "0215cec38b4684c94119dbab1f5c3d258abd44d9da8d161aa4cf8ccf4ac169b7",
+          "source_raw_sha256": "1f0193db0802d6484c0a33b5fcc88ebeda65cfecf3213b32087eb04f9e2ef90e",
+          "title": "Deoxyribonucleic Acid (DNA) Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Deoxyribonucleic-Acid-Fact-Sheet",
+          "snapshot": "2020-08-24 page updated; retrieved 2026-10-01",
+          "literal_archive_and_manifest_identity": "MATCH"
+        },
+        {
+          "id": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-chromosomes-1c53684112e2a81e",
+          "passage_sha256": "1c53684112e2a81eb93db54c8965742428acaf6183e315a5ac9ccd7bf158a636",
+          "source_raw_sha256": "083947cbfe1b78aa127ab7621f8b6f88ab1af6dc5c8798a93d4885ca78fa0cdd",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "snapshot": "2020-08-15 page updated; retrieved 2026-10-01",
+          "literal_archive_and_manifest_identity": "MATCH"
+        },
+        {
+          "id": "pbc11baaf36f8bbe13d400ba6146a160dc8f319559e31e32f1d96d88fc9d86cf3_d5a8bb4b3fbc26216-0-177",
+          "passage_sha256": "5a8bb4b3fbc26216d8138ebf1e9e23e8c8fe8b0d454fec12557da26a6d4177f6",
+          "title": "Observing notebook.txt · Text UTF-16 0–177",
+          "literal_fixture_identity": "MATCH",
+          "authority": "Constructed public-development fixture only",
+          "personal_archive_bytes": "Not available in requested packet; edition identity observed in report catalog"
+        }
+      ],
+      "baseline_literal_quotes_matched": 3,
+      "baseline_sha256": "92d2f850f149d9e88ec6c0891a1d69b912c9051de02003fce4501352a21ad130",
+      "federated_rendered_sha256": "a6f21e02ff383196b9d3e48737b4f28bd4ca466d1a9d15acd05946bec2c16004",
+      "install_restart_rendered_and_baseline": "IDENTICAL",
+      "generated": false
+    },
+    {
+      "case": 2,
+      "question": "What causes earthquakes?; Black hole",
+      "assessment": {
+        "baseline": "Earthquake cause Unknown; introductory black-hole paragraph",
+        "federated": "Direct fault-slip explanation plus same black-hole paragraph",
+        "relevance": "Direct cause excerpt added",
+        "completeness": "Introductory earthquake mechanism only; no relation between subjects requested or established",
+        "unknowns": "No exhaustive earthquake-cause taxonomy or independent factual verification"
+      },
+      "federated_quotes": [
+        {
+          "id": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-earthquakes-8702c21b891d6d23",
+          "passage_sha256": "8702c21b891d6d2365dda891b8d21693c75a6c600ad7fccbd776523eeb55f0af",
+          "source_raw_sha256": "79eb59a783fa605669df1330a379638e0a3a45b4ed2451a5b7679cfc3b405a72",
+          "title": "What is an earthquake and what causes them to happen?",
+          "url": "https://www.usgs.gov/faqs/what-earthquake-and-what-causes-them-happen",
+          "snapshot": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "literal_archive_and_manifest_identity": "MATCH"
+        },
+        {
+          "id": "p61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135_reference-4650-bb9235964781750b",
+          "passage_sha256": "bb9235964781750b872ea8fe5672d629e3cc8874f794ccdac5c05165303402f0",
+          "source_raw_sha256": "f182a727c2ced9a5d77453c54f59063b618b5a3f2c103eb483126620509031d9",
+          "title": "Black hole",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1377553102",
+          "snapshot": "Revision 1377553102 at 2026-09-30T00:07:55Z; retrieved 2026-10-01",
+          "literal_archive_and_manifest_identity": "MATCH"
+        }
+      ],
+      "baseline_literal_quotes_matched": 1,
+      "baseline_sha256": "54fe2e6d9dcfba571485a7bfb6b7ccc7ee270c94c730001182da5d9a21095197",
+      "federated_rendered_sha256": "84e369b83083cc72253a460b23e83e72a749def04a9ff48f0d5de3101dd8f092",
+      "install_restart_rendered_and_baseline": "IDENTICAL",
+      "generated": false
+    },
+    {
+      "case": 3,
+      "question": "What is the difference between magma and lava?; Acid",
+      "assessment": {
+        "baseline": "Magma/lava distinction Unknown; acid definition",
+        "federated": "Direct underground/surface molten-rock distinction plus same acid definition",
+        "relevance": "Direct source-written comparison added",
+        "completeness": "Requested basic distinction present as a quotation; no model comparison or synthesis",
+        "unknowns": "No application to specific volcano conditions"
+      },
+      "federated_quotes": [
+        {
+          "id": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-magma-b214c1cb4647b3fc",
+          "passage_sha256": "b214c1cb4647b3fc44c29dbccb9c86a3de82ac1f5d0fee16c31b23f9f8732831",
+          "source_raw_sha256": "5c292ab4a524ed1b37e978cfa3f77d047b3e0ea9b4f89e05b2a45b17db19eba3",
+          "title": "What is the difference between magma and lava?",
+          "url": "https://www.usgs.gov/faqs/what-difference-between-magma-and-lava",
+          "snapshot": "Publication/update date not stated for selected article; snapshot 2026-10-01; retrieved 2026-10-01",
+          "literal_archive_and_manifest_identity": "MATCH"
+        },
+        {
+          "id": "p61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135_reference-656-2a3ab5a6febd8568",
+          "passage_sha256": "2a3ab5a6febd856800526f562a50d6669a3e60e117a2d6ec297afea09e7e6e1c",
+          "source_raw_sha256": "895a9a34bf9fccc3a0bdefd7f867abc29c74545d0b5029bd2704c7bf4b020a5b",
+          "title": "Acid",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1375977233",
+          "snapshot": "Revision 1375977233 at 2026-09-21T06:18:24Z; retrieved 2026-10-01",
+          "literal_archive_and_manifest_identity": "MATCH"
+        }
+      ],
+      "baseline_literal_quotes_matched": 1,
+      "baseline_sha256": "4c611307e80e264821c7c14713312980ffa11c78970aa290c7c59c0b9a9d2427",
+      "federated_rendered_sha256": "ceedd8034329a587dd6f02dcd37c5a556e0c4c5872edc0f00cf051ff80bbcecf",
+      "install_restart_rendered_and_baseline": "IDENTICAL",
+      "generated": false
+    },
+    {
+      "case": 4,
+      "question": "Chromosomes; Chemical equilibrium",
+      "assessment": {
+        "baseline": "Chromosomes Unknown; chemical equilibrium definition",
+        "federated": "Chromosome packaging and etymology plus same equilibrium definition",
+        "relevance": "Useful partial chromosome context; low-priority etymology",
+        "completeness": "Available chromosome introductory definition omitted: science-chromosomes-bd1bb41122a2e2eb",
+        "unknowns": "Broad title query completeness unresolved; available foundational context omitted"
+      },
+      "federated_quotes": [
+        {
+          "id": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-chromosomes-1c53684112e2a81e",
+          "passage_sha256": "1c53684112e2a81eb93db54c8965742428acaf6183e315a5ac9ccd7bf158a636",
+          "source_raw_sha256": "083947cbfe1b78aa127ab7621f8b6f88ab1af6dc5c8798a93d4885ca78fa0cdd",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "snapshot": "2020-08-15 page updated; retrieved 2026-10-01",
+          "literal_archive_and_manifest_identity": "MATCH"
+        },
+        {
+          "id": "pc69f31299553f4a1168eaa0400129fd5e41f21b4354248a0e2b97a87546ff274_science-chromosomes-8442295081e7aeba",
+          "passage_sha256": "8442295081e7aebaa9a9f5033c66021c1ff60cc7a4f19aa9e7b1c5167c5348d8",
+          "source_raw_sha256": "083947cbfe1b78aa127ab7621f8b6f88ab1af6dc5c8798a93d4885ca78fa0cdd",
+          "title": "Chromosomes Fact Sheet",
+          "url": "https://www.genome.gov/about-genomics/fact-sheets/Chromosomes-Fact-Sheet",
+          "snapshot": "2020-08-15 page updated; retrieved 2026-10-01",
+          "literal_archive_and_manifest_identity": "MATCH"
+        },
+        {
+          "id": "p61a5d472c8dd5445893f0d10565332d2dfea4e0e35557f6bd8c397dda5e8a135_reference-5306-e16ef81fc7cb5d57",
+          "passage_sha256": "e16ef81fc7cb5d57d8af906f33f0cb4fde3edec61e1c23c2f84ceaf0c6780337",
+          "source_raw_sha256": "d0d409af6260de09a0f886baa00d5af4e9b1172432b36b07475636b2d039afb8",
+          "title": "Chemical equilibrium",
+          "url": "https://en.wikipedia.org/w/index.php?oldid=1375011690",
+          "snapshot": "Revision 1375011690 at 2026-09-15T10:46:09Z; retrieved 2026-10-01",
+          "literal_archive_and_manifest_identity": "MATCH"
+        }
+      ],
+      "baseline_literal_quotes_matched": 1,
+      "baseline_sha256": "7dfcd52fab5356911bb99e07b5f306ff131aac12502da064e4173cf0431583b9",
+      "federated_rendered_sha256": "b2a93da65259e1292ca77ca6835292c0283b1451860d0d501957f70dc501c425",
+      "install_restart_rendered_and_baseline": "IDENTICAL",
+      "generated": false
+    },
+    {
+      "case": 5,
+      "question": "Observing notebook",
+      "assessment": {
+        "baseline": "Notebook Unknown",
+        "federated": "Entire 177 UTF-16-unit constructed notebook, including dated rain postponement condition",
+        "relevance": "Exact requested fixture",
+        "completeness": "Both fixture paragraphs retained; conditions compatible rather than contradictory",
+        "unknowns": "No actual weather forecast, real personal record or external scientific authority"
+      },
+      "federated_quotes": [
+        {
+          "id": "pbc11baaf36f8bbe13d400ba6146a160dc8f319559e31e32f1d96d88fc9d86cf3_d5a8bb4b3fbc26216-0-177",
+          "passage_sha256": "5a8bb4b3fbc26216d8138ebf1e9e23e8c8fe8b0d454fec12557da26a6d4177f6",
+          "title": "Observing notebook.txt · Text UTF-16 0–177",
+          "literal_fixture_identity": "MATCH",
+          "authority": "Constructed public-development fixture only",
+          "personal_archive_bytes": "Not available in requested packet; edition identity observed in report catalog"
+        }
+      ],
+      "baseline_literal_quotes_matched": 0,
+      "baseline_sha256": "0874139790430ce4a9caf09ea1407471b7d840c5f6f130685b7daba3e9d2d60d",
+      "federated_rendered_sha256": "7049d03df1d2bcc0038ad06f3dfc9bf2695204e8c41a9a15bb81cf37225870ef",
+      "install_restart_rendered_and_baseline": "IDENTICAL",
+      "generated": false
+    },
+    {
+      "case": 6,
+      "question": "What is my DNA test result?",
+      "assessment": {
+        "baseline": "Personal result Unknown; no quotation",
+        "federated": "Identical personal result Unknown; no quotation",
+        "relevance": "Appropriate evidence absence for this fixture",
+        "completeness": "No invented DNA result",
+        "unknowns": "Authenticated personal DNA record absent"
+      },
+      "federated_quotes": [],
+      "baseline_literal_quotes_matched": 0,
+      "baseline_sha256": "4651be78d06194a9ffd74e7ef7ac6069be74275f176f57127db1f3b01cb4771f",
+      "federated_rendered_sha256": "4651be78d06194a9ffd74e7ef7ac6069be74275f176f57127db1f3b01cb4771f",
+      "install_restart_rendered_and_baseline": "IDENTICAL",
+      "generated": false
+    },
+    {
+      "case": 7,
+      "question": "Are observatories open right now?",
+      "assessment": {
+        "baseline": "Live observatory status Unknown; no quotation",
+        "federated": "Identical live status Unknown; no quotation",
+        "relevance": "Appropriate dated-source scope boundary",
+        "completeness": "No invented opening status",
+        "unknowns": "Live status unavailable offline from these dated packs"
+      },
+      "federated_quotes": [],
+      "baseline_literal_quotes_matched": 0,
+      "baseline_sha256": "94118e070239a55dab7c0a258cb339a2c9d88a89d8b5ad2a36d16fe508385aa2",
+      "federated_rendered_sha256": "94118e070239a55dab7c0a258cb339a2c9d88a89d8b5ad2a36d16fe508385aa2",
+      "install_restart_rendered_and_baseline": "IDENTICAL",
+      "generated": false
+    },
+    {
+      "case": 8,
+      "question": "Quantum taxi availability on Mars",
+      "assessment": {
+        "baseline": "No admissible relevant passage; availability, mars, taxi unmatched",
+        "federated": "No admissible relevant passage; availability, taxi unmatched; extra candidate count only",
+        "relevance": "Appropriate withholding despite lexical Mars match",
+        "completeness": "No speculative service claim",
+        "unknowns": "Quantum taxi availability unsupported"
+      },
+      "federated_quotes": [],
+      "baseline_literal_quotes_matched": 0,
+      "baseline_sha256": "9c8491c437e201def208cd1168a1e492ff08a33ea7a7f12af29b542bf7f849c7",
+      "federated_rendered_sha256": "e3f549965a0b26e819eaebaed9f615596edefa6c88d94e177e8e8875e3d85283",
+      "install_restart_rendered_and_baseline": "IDENTICAL",
+      "generated": false
+    }
+  ],
+  "code_inspection": {
+    "determinism": "PackLibrary sorts archive hashes; sourceResearch groups and counts use TreeMap; diverse ranks score descending then full citation ID",
+    "deduplication": "PackLibrary combines same document identity and displayed metadata, retaining all collection provenance; diverse suppresses identical qualified IDs and rejects text, URL or provenance conflicts",
+    "deduplication_limit": "diverse conflict check does not compare title, date or attribution fields; synthetic identity-conflict control varies text, URL and provenance together",
+    "selection": "Per-collection four-hit diversity before global four-hit diversity; at most two passages per URL; no guarantee every collection contributes a quotation",
+    "cancellation": "Workspace passes cancellation into in-memory retrieval, postings and collection loops; retry observed in supplied instrumentation",
+    "cancellation_limit": "DiskProvider retrieval receives no stop supplier; polling occurs after provider returns; sorting and diverse loops do not poll",
+    "scope": "Changed source-brief ranking and availability reporting; no generation or synthesis demonstrated",
+    "controls": "Deletion uses isolated library; ID collision and duplicate provenance checks use constructed Passage objects rather than colliding archive imports; selection persistence compared across force-stop restart",
+    "conflict_limit": "New constructed conflicting same-session requirements preserved without verdict; no automatic conflict detection, real-source temporal adjudication or contradiction resolution"
+  },
+  "critical_gaps": [
+    "No useful generated explanation, synthesis or reasoning established by source quotations",
+    "Chromosome selection omits available introductory definition",
+    "Physical Android and GrapheneOS acceptance remains open"
+  ],
+  "limitations": [
+    "Existing API37 emulator artifacts only; no new device execution or inference",
+    "Eight frozen public-development questions; no unseen holdout or tuning review",
+    "Single-pack baseline produced by same controller with expanded pack only; not an independent product comparison",
+    "Source identity verified against exact local pack bytes and embedded manifests; original publisher HTML not independently reacquired or fact-checked",
+    "Personal fixture explicitly constructed; raw personal archive absent from requested run packet",
+    "Reader exercise covers first quotation and existing unsaved-reader route with full notebook; not every quotation or saved-reader persistence",
+    "Runtime cancellation evidence synthetic supplier threshold; no maximum latency bound",
+    "Supplemental agent review; neither human acceptance nor canonical task acceptance",
+    "Conflict follow-up uses synthetic Passage objects and a controller render; no corpus ingestion or Activity conflict UI exercise"
+  ],
+  "preserved_initial_review": {
+    "docs/evidence/federated/source-review-initial.json": "fe100e9c2f3a3475c3af179901f69a05adeed87e0f32381758e203332a1cb538",
+    "docs/evidence/federated/critic-initial.txt": "9f1d44992f1c5da76a5beab2018dc914baf351c8c3e191607c6cdf57fb0f7666"
+  },
+  "original_eight_case_equivalence": {
+    "previous_run": "downloads/federated/run-20261002T131839Z-df7bf2",
+    "install": "All questions, rendered briefs, quotation records, baselines and generated flags identical",
+    "restart": "All questions, rendered briefs, quotation records, baselines and generated flags identical",
+    "timings_and_pss": "New observations; not required or expected to be identical"
+  },
+  "constructed_conflict_followup": {
+    "protocol": "tools/evaluation/federated/conflict-control.json",
+    "protocol_sha256": "67620c930bc57c5823103502104ded68e4bfa5fb62164e2c185856f10ea163ce",
+    "protocol_commit": "10750100cf625c57acb75db7f382d63692050375",
+    "status": "Both mutually incompatible same-session weather requirements retained as exact quotations with distinct identities and no reconciled verdict",
+    "question": "Condition",
+    "sources": [
+      {
+        "id": "paaa_same",
+        "text": "As of 2026-10-02, clear weather is required for the observing session.",
+        "sha256": "2e7ae983d2d41154ee604d1d5ef9dcaef46b077c13db03039fbff0f0c63a1126",
+        "snapshot_metadata": "2025"
+      },
+      {
+        "id": "pbbb_same",
+        "text": "As of 2026-10-02, rain is required for the same observing session.",
+        "sha256": "3c07ef4de1d6cada39d1c66df196305b6b8da783b3de6c46b5895dce98378eaf",
+        "snapshot_metadata": "2026"
+      }
+    ],
+    "rendered_sha256": "6d53c9a1f5ccc30d2c855550e2e849fae131e7a93548779c13bb0a357e6ec4fe",
+    "install_restart": "IDENTICAL",
+    "execution_path": "ResearchWorkspace controller called inside instrumentation, not demonstrated through Activity UI",
+    "authority": "Constructed public regression only; no real observing or weather claim",
+    "qualification": "Initial compatible-condition finding retained in initial review; this narrow follow-up establishes preservation, not automatic contradiction detection or resolution",
+    "metadata_limit": "Synthetic source A retains Snapshot 2025 metadata despite an as-of 2026-10-02 sentence; artificial metadata must not be interpreted as chronology evidence"
+  }
+}

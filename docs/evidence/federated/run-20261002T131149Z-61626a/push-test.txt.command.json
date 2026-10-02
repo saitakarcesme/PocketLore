@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5564",
+    "push",
+    "/home/isa/Projects/PocketLore/downloads/federated/run-20261002T131149Z-61626a/binaries/app-debug-androidTest.apk",
+    "/data/local/tmp/federated-run-20261002T131149Z-61626a-test.apk"
+  ],
+  "timeout_seconds": 300,
+  "returncode": 0,
+  "timed_out": false,
+  "elapsed_seconds": 0.005285018996801227
+}

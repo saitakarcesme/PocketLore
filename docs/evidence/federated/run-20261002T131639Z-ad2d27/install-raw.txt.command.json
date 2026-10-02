@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5564",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-e",
+    "run_id",
+    "run-20261002T131639Z-ad2d27",
+    "-e",
+    "source_hash",
+    "394babe1c17e6a3639273d2c9d4aef0f120867873f660ec0e5ec221e2f804182",
+    "-e",
+    "mode",
+    "install",
+    "org.pocketlore.app.test/org.pocketlore.app.FederatedInstrumentation"
+  ],
+  "timeout_seconds": 300,
+  "returncode": 0,
+  "timed_out": false,
+  "elapsed_seconds": 6.977473070990527
+}

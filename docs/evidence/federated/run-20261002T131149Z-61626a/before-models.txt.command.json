@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5564",
+    "shell",
+    "run-as",
+    "org.pocketlore.app",
+    "sh",
+    "-c",
+    "'for p in files/model.gguf files/model-selection files/page-size-test/model.gguf; do if [ -f \"$p\" ]; then sha256sum \"$p\"; else echo ABSENT:$p; fi; done'"
+  ],
+  "timeout_seconds": 300,
+  "returncode": 0,
+  "timed_out": false,
+  "elapsed_seconds": 0.9994266490102746
+}
