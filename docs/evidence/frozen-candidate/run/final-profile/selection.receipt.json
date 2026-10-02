@@ -1,0 +1,11 @@
+{
+  "command": [
+    "run-as",
+    "org.pocketlore.app",
+    "sh",
+    "-c",
+    "'if test -f files/model-selection; then cat files/model-selection; else echo ABSENT; fi'"
+  ],
+  "exit": 0,
+  "sha256": "ede4663fa9a5e8031704705268edde90aae07273f42b7b7274db7b317a40b001"
+}

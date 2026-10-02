@@ -1,0 +1,432 @@
+{
+  "run_id": "20261002T062652Z-80f3ac33",
+  "environment": "Android emulator; no phone or generated-answer qualification",
+  "api": 37,
+  "fingerprint": "google\/sdk_gphone16k_x86_64\/emu64xa16k:17\/CP41.260828.004.A7\/16296984:userdebug\/dev-keys",
+  "identities": {
+    "notes.txt": {
+      "archive_sha256": "f789b61bf3b3f93889e37e88bafcbb05484709258508deb9f82d40f4501f6c1b",
+      "archive_bytes": 956,
+      "original_sha256": "f23d9ffa8123bab9a6aa173b56869a6a06f59b636f708b2619245a53a0514418",
+      "passages": 1
+    },
+    "notes.md": {
+      "archive_sha256": "edd1a9b790e507a517d9961b45503889ae13140893ce658530058ffeca94ae3c",
+      "archive_bytes": 954,
+      "original_sha256": "1dec1ffaf764993505712df0589b97874f0c14cd2eeae3c0d5ad8ed61874f3b8",
+      "passages": 1
+    },
+    "quoted.csv": {
+      "archive_sha256": "d03e0b1a02db74753011a33398fe9db0b772e672a0fe003e045457efdff98dc4",
+      "archive_bytes": 1174,
+      "original_sha256": "971246abce0dd9a291c3c5d89c796260a0d5a089c51807604e57e4bae2e361b8",
+      "passages": 3
+    },
+    "nested.json": {
+      "archive_sha256": "934ce9bdcf7a7c008fd8088c9149c82e46dc2f9a8ef1de388c7ecb7bef772496",
+      "archive_bytes": 1206,
+      "original_sha256": "f0b8f8879b8e0f7f6542bda83bf6d7111a9a1b3bc0b156f5e0edfe4dbae2d651",
+      "passages": 4
+    },
+    "text.pdf": {
+      "archive_sha256": "b3da92473dfacac11a797ffb8aee0bbd4a346ad8a9e7b40fa137bb88a98988ca",
+      "archive_bytes": 1830,
+      "original_sha256": "93db970e47c489d00be50342b4745ba3858d8e7b16c89e312b3b0394cd2878ab",
+      "passages": 1
+    }
+  },
+  "corrupt_original.bin_rejected": "java.io.IOException: Personal document integrity failure",
+  "corrupt_text.txt_rejected": "java.io.IOException: Personal document integrity failure",
+  "truncated_directory_rejected": "java.util.zip.ZipException: zip END header not found",
+  "cancel_before_read": "java.io.InterruptedIOException: Document operation cancelled",
+  "cancel_during_copy": "java.io.InterruptedIOException: Document operation cancelled",
+  "cancel_library_transaction": "java.io.InterruptedIOException: Import cancelled",
+  "cancel_export": "java.io.InterruptedIOException: Document operation cancelled",
+  "reject_empty.pdf": "java.io.IOException: PDF has no extractable text; empty or scanned\/image-only PDFs need external OCR (not provided)",
+  "reject_scanned.pdf": "java.io.IOException: PDF has no extractable text; empty or scanned\/image-only PDFs need external OCR (not provided)",
+  "reject_password.pdf": "java.io.IOException: Password-protected PDF cannot be imported; provide an unlocked local copy",
+  "malformed_csv_36": "java.io.IOException: Unclosed quoted CSV field",
+  "malformed_csv_37": "java.io.IOException: CSV rows have inconsistent field counts",
+  "malformed_csv_38": "java.io.IOException: Quote inside unquoted CSV field",
+  "malformed_json_39": "java.io.IOException: Invalid JSON punctuation",
+  "malformed_json_40": "java.io.IOException: Duplicate JSON key",
+  "malformed_json_41": "java.io.IOException: Invalid JSON value",
+  "malformed_json_42": "java.io.IOException: Invalid JSON Unicode surrogate",
+  "malformed_json_43": "java.io.IOException: Invalid JSON Unicode escape",
+  "malformed_json_44": "java.io.IOException: JSON nesting exceeds32",
+  "invalid_utf8_rejected": "java.nio.charset.MalformedInputException: Input length = 1",
+  "input_limit_rejected": "java.io.IOException: Document exceeds size limit",
+  "ninth_collection_rejected": "java.io.IOException: Combined collection storage limit exceeded",
+  "forged_pdf_text_with_recomputed_hashes_rejected": "java.io.IOException: Stored PDF text differs from local extraction; original retained by sender",
+  "export_cancel_ms": 10.719947,
+  "provider_cancel_ms": 52.986655,
+  "peak_fixture_disk_sampled_bytes": 243700,
+  "final_fixture_disk_bytes": 243700,
+  "timings": [
+    {
+      "operation": "extract_install_notes.txt",
+      "ms": 87.504333,
+      "stored_archive_bytes": 956
+    },
+    {
+      "operation": "extract_install_notes.md",
+      "ms": 80.67335,
+      "stored_archive_bytes": 1910
+    },
+    {
+      "operation": "extract_install_quoted.csv",
+      "ms": 75.300283,
+      "stored_archive_bytes": 3084
+    },
+    {
+      "operation": "extract_install_nested.json",
+      "ms": 56.135369,
+      "stored_archive_bytes": 4290
+    },
+    {
+      "operation": "extract_install_text.pdf",
+      "ms": 125.528437,
+      "stored_archive_bytes": 6120
+    }
+  ],
+  "memory": [
+    {
+      "elapsed_ms": 360952,
+      "pss_kib": 18522,
+      "java_bytes": 3649184,
+      "native_bytes": 6513680
+    },
+    {
+      "elapsed_ms": 361016,
+      "pss_kib": 21280,
+      "java_bytes": 5518208,
+      "native_bytes": 6648256
+    },
+    {
+      "elapsed_ms": 361083,
+      "pss_kib": 23961,
+      "java_bytes": 7992960,
+      "native_bytes": 6791984
+    },
+    {
+      "elapsed_ms": 361148,
+      "pss_kib": 27228,
+      "java_bytes": 10272832,
+      "native_bytes": 7050640
+    },
+    {
+      "elapsed_ms": 361211,
+      "pss_kib": 31186,
+      "java_bytes": 13929504,
+      "native_bytes": 7449472
+    },
+    {
+      "elapsed_ms": 361276,
+      "pss_kib": 35928,
+      "java_bytes": 17193456,
+      "native_bytes": 7773568
+    },
+    {
+      "elapsed_ms": 361347,
+      "pss_kib": 41029,
+      "java_bytes": 17556032,
+      "native_bytes": 8017056
+    },
+    {
+      "elapsed_ms": 361407,
+      "pss_kib": 48050,
+      "java_bytes": 24038464,
+      "native_bytes": 9562016
+    },
+    {
+      "elapsed_ms": 361466,
+      "pss_kib": 55854,
+      "java_bytes": 31317056,
+      "native_bytes": 10447680
+    },
+    {
+      "elapsed_ms": 361530,
+      "pss_kib": 63038,
+      "java_bytes": 46997056,
+      "native_bytes": 10803552
+    },
+    {
+      "elapsed_ms": 361589,
+      "pss_kib": 78826,
+      "java_bytes": 54375488,
+      "native_bytes": 11706432
+    },
+    {
+      "elapsed_ms": 361650,
+      "pss_kib": 87278,
+      "java_bytes": 61950272,
+      "native_bytes": 12864864
+    },
+    {
+      "elapsed_ms": 361712,
+      "pss_kib": 95682,
+      "java_bytes": 69626176,
+      "native_bytes": 14252832
+    },
+    {
+      "elapsed_ms": 361771,
+      "pss_kib": 97222,
+      "java_bytes": 69904704,
+      "native_bytes": 14269248
+    },
+    {
+      "elapsed_ms": 361833,
+      "pss_kib": 99505,
+      "java_bytes": 71792624,
+      "native_bytes": 14492080
+    },
+    {
+      "elapsed_ms": 361897,
+      "pss_kib": 98243,
+      "java_bytes": 71792624,
+      "native_bytes": 14492080
+    },
+    {
+      "elapsed_ms": 361957,
+      "pss_kib": 98263,
+      "java_bytes": 71825392,
+      "native_bytes": 14492080
+    },
+    {
+      "elapsed_ms": 362104,
+      "pss_kib": 99881,
+      "java_bytes": 72359776,
+      "native_bytes": 19884480
+    },
+    {
+      "elapsed_ms": 362195,
+      "pss_kib": 107398,
+      "java_bytes": 72785760,
+      "native_bytes": 20127216
+    },
+    {
+      "elapsed_ms": 362286,
+      "pss_kib": 115456,
+      "java_bytes": 76369312,
+      "native_bytes": 25764400
+    },
+    {
+      "elapsed_ms": 362385,
+      "pss_kib": 117672,
+      "java_bytes": 76631456,
+      "native_bytes": 28272512
+    },
+    {
+      "elapsed_ms": 362450,
+      "pss_kib": 118798,
+      "java_bytes": 76631456,
+      "native_bytes": 28284384
+    },
+    {
+      "elapsed_ms": 362513,
+      "pss_kib": 119610,
+      "java_bytes": 76664224,
+      "native_bytes": 28287648
+    },
+    {
+      "elapsed_ms": 362581,
+      "pss_kib": 120202,
+      "java_bytes": 76664224,
+      "native_bytes": 28283568
+    },
+    {
+      "elapsed_ms": 362645,
+      "pss_kib": 122801,
+      "java_bytes": 76696992,
+      "native_bytes": 28278496
+    },
+    {
+      "elapsed_ms": 362706,
+      "pss_kib": 123509,
+      "java_bytes": 76696992,
+      "native_bytes": 28274384
+    },
+    {
+      "elapsed_ms": 362768,
+      "pss_kib": 124233,
+      "java_bytes": 76729760,
+      "native_bytes": 28266032
+    },
+    {
+      "elapsed_ms": 362847,
+      "pss_kib": 119088,
+      "java_bytes": 77537296,
+      "native_bytes": 28698880
+    },
+    {
+      "elapsed_ms": 362937,
+      "pss_kib": 55978,
+      "java_bytes": 4753568,
+      "native_bytes": 22756992
+    },
+    {
+      "elapsed_ms": 363002,
+      "pss_kib": 58488,
+      "java_bytes": 5900448,
+      "native_bytes": 23029984
+    },
+    {
+      "elapsed_ms": 363064,
+      "pss_kib": 58001,
+      "java_bytes": 6424736,
+      "native_bytes": 23166800
+    },
+    {
+      "elapsed_ms": 363127,
+      "pss_kib": 59208,
+      "java_bytes": 4049920,
+      "native_bytes": 23126928
+    },
+    {
+      "elapsed_ms": 363196,
+      "pss_kib": 60880,
+      "java_bytes": 5068016,
+      "native_bytes": 23682176
+    },
+    {
+      "elapsed_ms": 363267,
+      "pss_kib": 57086,
+      "java_bytes": 5676000,
+      "native_bytes": 23920320
+    },
+    {
+      "elapsed_ms": 363337,
+      "pss_kib": 59609,
+      "java_bytes": 6986720,
+      "native_bytes": 23351968
+    },
+    {
+      "elapsed_ms": 363401,
+      "pss_kib": 59717,
+      "java_bytes": 7085024,
+      "native_bytes": 23522480
+    },
+    {
+      "elapsed_ms": 363465,
+      "pss_kib": 61591,
+      "java_bytes": 8608736,
+      "native_bytes": 24794976
+    },
+    {
+      "elapsed_ms": 363528,
+      "pss_kib": 58436,
+      "java_bytes": 6180432,
+      "native_bytes": 24172224
+    },
+    {
+      "elapsed_ms": 363599,
+      "pss_kib": 59685,
+      "java_bytes": 6540880,
+      "native_bytes": 25196880
+    },
+    {
+      "elapsed_ms": 363667,
+      "pss_kib": 71973,
+      "java_bytes": 4308464,
+      "native_bytes": 39960480
+    },
+    {
+      "elapsed_ms": 363738,
+      "pss_kib": 72017,
+      "java_bytes": 4341232,
+      "native_bytes": 39986080
+    },
+    {
+      "elapsed_ms": 363786,
+      "pss_kib": 72721,
+      "java_bytes": 4702192,
+      "native_bytes": 39442608
+    }
+  ],
+  "checks": [
+    "indexed_notes.txt",
+    "provenance_notes.txt_df23d9ffa8123bab9-0-65",
+    "indexed_notes.md",
+    "provenance_notes.md_d1dec1ffaf7649935-0-73",
+    "indexed_quoted.csv",
+    "provenance_quoted.csv_d971246abce0dd9a2-0-22",
+    "provenance_quoted.csv_d971246abce0dd9a2-24-77",
+    "provenance_quoted.csv_d971246abce0dd9a2-79-93",
+    "quoted_csv_exact_multiline_record",
+    "indexed_nested.json",
+    "provenance_nested.json_df0b8f8879b8e0f7f-20-32",
+    "provenance_nested.json_df0b8f8879b8e0f7f-41-42",
+    "provenance_nested.json_df0b8f8879b8e0f7f-55-67",
+    "provenance_nested.json_df0b8f8879b8e0f7f-76-80",
+    "json_pointer_exact_values",
+    "indexed_text.pdf",
+    "provenance_text.pdf_d93db970e47c489d0-0-48",
+    "real_pdf_text_page_location",
+    "five_searchable_documents",
+    "json_retrieval",
+    "pdf_retrieval",
+    "disabled_sources_excluded_after_catalog_reopen",
+    "portable_export_exact_bytes",
+    "portable_reimport_identity_and_search",
+    "corrupt_original.bin_rejected",
+    "corrupt_text.txt_rejected",
+    "truncated_directory_rejected",
+    "cancel_before_read",
+    "cancel_during_copy",
+    "cancel_library_transaction",
+    "cancel_export",
+    "failed_imports_catalog_unchanged",
+    "isolated_model_sentinel_unchanged",
+    "reject_empty.pdf",
+    "reject_scanned.pdf",
+    "reject_password.pdf",
+    "malformed_csv_36",
+    "malformed_csv_37",
+    "malformed_csv_38",
+    "malformed_json_39",
+    "malformed_json_40",
+    "malformed_json_41",
+    "malformed_json_42",
+    "malformed_json_43",
+    "malformed_json_44",
+    "invalid_utf8_rejected",
+    "input_limit_rejected",
+    "ninth_collection_rejected",
+    "delete_removes_owned_archive",
+    "no_import_staging_left",
+    "forged_pdf_text_with_recomputed_hashes_rejected",
+    "transaction_copy_started",
+    "second_library_waits_for_transaction",
+    "waiting_transaction_interruptible",
+    "concurrent_import_load_complete",
+    "concurrent_cleanup_preserves_committed_archive",
+    "export_pipe_opened",
+    "export_pipe_write_blocked",
+    "blocked_export_cancelled",
+    "retained_research_ready_before_library_import",
+    "actual_library_navigation",
+    "actual_library_personal_route",
+    "provider_read_blocked",
+    "cancel_button_unblocks_provider_read",
+    "provider_cancel_under_1500ms",
+    "same_activity_import_retry",
+    "actual_activity_import_success",
+    "actual_catalog_entry_added",
+    "activity_recreated",
+    "pending_export_and_owner_survive_recreation",
+    "actual_activity_export_finished",
+    "actual_provider_export_hash",
+    "main_library_loaded",
+    "library_import_reloads_retained_research",
+    "retrieval_only_model_unloaded",
+    "personal_search_has_no_model",
+    "main_search_finished",
+    "personal_retrieval_route_finished",
+    "personal_library_return_does_not_infer",
+    "source_dialog_accessibility_ready",
+    "actual_source_dialog_offsets_owner_exact_text",
+    "initially_empty_catalog_restored",
+    "live_catalog_restored_exactly"
+  ],
+  "status": "PASS"
+}

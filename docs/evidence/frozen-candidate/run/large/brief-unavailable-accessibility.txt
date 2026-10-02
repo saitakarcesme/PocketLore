@@ -1,0 +1,32 @@
+android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+ android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+  android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+   android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 156 - 1280, 366) clickable=false visible=true
+     android.widget.TextView text=PocketLore description=null bounds=Rect(72, 168 - 847, 354) clickable=false visible=true
+     android.widget.TextView text=Offline description=null bounds=Rect(847, 181 - 1088, 341) clickable=false visible=true
+     android.widget.ImageButton text=null description=Settings bounds=Rect(1088, 189 - 1232, 333) clickable=true visible=true
+    android.widget.FrameLayout text=null description=null bounds=Rect(0, 366 - 1280, 2236) clickable=false visible=true
+     android.widget.ScrollView text=null description=null bounds=Rect(0, 366 - 1280, 2236) clickable=false visible=true
+      android.widget.LinearLayout text=null description=null bounds=Rect(0, 366 - 1280, 2236) clickable=false visible=true
+       android.widget.TextView text=What is my blood sodium result? description=null bounds=Rect(72, 414 - 1208, 760) clickable=false visible=true
+       android.widget.Button text=Edit question description=null bounds=Rect(72, 772 - 1208, 944) clickable=true visible=true
+       android.widget.TextView text=1 subquestions · 0 source quotations · inspect coverage gaps · no generated answer description=null bounds=Rect(72, 956 - 1208, 1349) clickable=false visible=true
+       android.widget.TextView text=Source-backed research brief · exact quotations
+Not generated. Tap quotations for the source and license.
+
+Subquestion 1 (your input, not a source claim):
+What is my blood sodium result?
+Unknown — Personal evidence unavailable: these public reference collections do not contain an authenticated record for you.
+
+Comparison / connection gap: no relationship between sections, causal chain, verdict, live status or personal result has been inferred. Any unanswered part remains Unknown.
+ description=null bounds=Rect(72, 1349 - 1208, 2236) clickable=false visible=true
+       android.widget.LinearLayout text=null description=null bounds=Rect(72, 4946 - 1208, 2236) clickable=false visible=false
+       android.widget.TextView text=Source brief saved to your notebook description=null bounds=Rect(72, 4946 - 1208, 2236) clickable=false visible=false
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 2236 - 1280, 2784) clickable=false visible=true
+     android.widget.LinearLayout text=null description=null bounds=Rect(36, 2260 - 1244, 2516) clickable=false visible=true
+      android.widget.Button text=Research description=Research, selected bounds=Rect(42, 2260 - 634, 2516) clickable=true visible=true
+      android.widget.Button text=Library description=Library bounds=Rect(646, 2260 - 1238, 2516) clickable=true visible=true
+     android.widget.LinearLayout text=null description=null bounds=Rect(36, 2516 - 1244, 2772) clickable=false visible=true
+      android.widget.Button text=Explore description=Explore bounds=Rect(42, 2516 - 634, 2772) clickable=true visible=true
+      android.widget.Button text=Saved description=Saved bounds=Rect(646, 2516 - 1238, 2772) clickable=true visible=true

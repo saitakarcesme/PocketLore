@@ -1,0 +1,1 @@
+{"serial": "emulator-5562", "command": ["run-as", "org.pocketlore.app", "sh", "-c", "'find files/model-library -type f -exec stat -c %s,%b,%n {} \\;'"], "exit": 1, "start_unix": 1790922138.9770575, "seconds": 0.016908645629882812, "sha256": "6443cbd0b710f5b60b629ec533570119f25c1e2dc72024022979cbfa8f49cfb3"}

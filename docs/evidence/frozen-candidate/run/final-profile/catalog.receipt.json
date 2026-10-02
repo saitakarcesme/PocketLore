@@ -1,0 +1,10 @@
+{
+  "command": [
+    "run-as",
+    "org.pocketlore.app",
+    "cat",
+    "files/pack-library/catalog.json"
+  ],
+  "exit": 0,
+  "sha256": "15db1767d7ff0e1367eb201a794a1e6dbc8fc730c986d40eecc91f4789463191"
+}

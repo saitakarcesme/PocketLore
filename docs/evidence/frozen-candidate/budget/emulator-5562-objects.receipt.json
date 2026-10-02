@@ -1,0 +1,1 @@
+{"serial": "emulator-5562", "command": ["run-as", "org.pocketlore.app", "sh", "-c", "'find files/scale-library -type f -exec stat -c %s,%b,%n {} \\;'"], "exit": 0, "start_unix": 1790922138.2882783, "seconds": 0.6887080669403076, "sha256": "e0eaeea76a102e21e599cefe783db109cd890fc224615a77a655ff3b5436b049"}

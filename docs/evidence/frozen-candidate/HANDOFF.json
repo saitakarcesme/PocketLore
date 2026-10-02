@@ -1,0 +1,32 @@
+{
+  "freeze_id": "pocketlore-470-source-brief-api37-v1",
+  "candidate_apk_sha256": "f2477590f1b6d3829b9aa857e0514f81fdfda33f235834c1775ea28219232860",
+  "source_manifest_sha256": "33e6006592c776493bff441bca7b869dace5a63f30afed979ba2f753e4e149b0",
+  "profile": {
+    "mode": "source_brief",
+    "generated_quality": "not measured",
+    "production_model_selected": false,
+    "resident_load_test_model_sha256": "74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",
+    "corpus": "Bundled USGS and reviewed-reference-2026-10-02-v1 only; full bulk inventory absent on5564",
+    "corpus_sha256": "10bb8878270ac7b7aa65036a5fd71007c34b3721bc269ce77544d542f0f27656",
+    "native_context": 2048,
+    "threads": 2,
+    "question_utf16": 2048,
+    "explicit_parts_max": 6,
+    "quotes_per_part_max": 2,
+    "quote_units_max": 12288,
+    "configuration": "All prompts, retrieval settings, gates and native sources are exact hashed Android inputs; no inference performed"
+  },
+  "artifact": "docs/evidence/frozen-candidate/freeze.json",
+  "comparison_protocol_sha256": "aa73e8be1e278e0922c44377ba224209167a0912eac21dc5c0dfc1eee6c64472",
+  "allowed_evaluation": "Independent unseen source-brief utility on exact installed reference profile; separately match named runnable rival versions and budgets. Do not count quotes as generated success.",
+  "blocked_evaluation": [
+    "Full-corpus API37 installation not present",
+    "Selected production generated-answer arm not configured/measured on5564",
+    "Network isolation and GMS-absent environment not attested",
+    "Physical Android/GrapheneOS and human/TalkBack acceptance",
+    "Current full candidate update peak not directly measured"
+  ],
+  "question_owner": "Separate independent evaluator; builder did not access private question set",
+  "rule": "Any model/selection/prompt/corpus/retrieval change requires a new identity/profile; keep development and unseen results separate. No tuning and reuse of exposed held-out failures as final evidence."
+}

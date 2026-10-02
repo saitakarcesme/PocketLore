@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5562",
+    "shell",
+    "run-as",
+    "org.pocketlore.app",
+    "sh",
+    "-c",
+    "'find files/scale-library -type f -exec sha256sum {} \\;' "
+  ],
+  "exit": 0,
+  "seconds": 97.23790884017944,
+  "start": 1790922249.6251965,
+  "sha256": "2b34be2f4286aa5b231104e3b021dfdab64680d23f395db54134cb7ce5a11450"
+}

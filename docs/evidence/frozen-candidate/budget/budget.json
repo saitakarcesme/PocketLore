@@ -1,0 +1,176 @@
+{
+  "scope": "Read-only current full inventory on5562, not API37 installation",
+  "shards": [
+    {
+      "kind": "places",
+      "shard": "compact-00.sqlite",
+      "bytes": 1051631616
+    },
+    {
+      "kind": "places",
+      "shard": "compact-01.sqlite",
+      "bytes": 1090920448
+    },
+    {
+      "kind": "places",
+      "shard": "compact-02.sqlite",
+      "bytes": 1116266496
+    },
+    {
+      "kind": "places",
+      "shard": "compact-03.sqlite",
+      "bytes": 1124253696
+    },
+    {
+      "kind": "places",
+      "shard": "compact-04.sqlite",
+      "bytes": 1049038848
+    },
+    {
+      "kind": "places",
+      "shard": "compact-05.sqlite",
+      "bytes": 1060511744
+    },
+    {
+      "kind": "places",
+      "shard": "compact-06.sqlite",
+      "bytes": 1100140544
+    },
+    {
+      "kind": "places",
+      "shard": "compact-07.sqlite",
+      "bytes": 1099370496
+    },
+    {
+      "kind": "places",
+      "shard": "compact-08.sqlite",
+      "bytes": 1026146304
+    },
+    {
+      "kind": "places",
+      "shard": "compact-09.sqlite",
+      "bytes": 982323200
+    },
+    {
+      "kind": "places",
+      "shard": "compact-10.sqlite",
+      "bytes": 998559744
+    },
+    {
+      "kind": "places",
+      "shard": "compact-11.sqlite",
+      "bytes": 995172352
+    },
+    {
+      "kind": "places",
+      "shard": "compact-12.sqlite",
+      "bytes": 1031241728
+    },
+    {
+      "kind": "places",
+      "shard": "compact-13.sqlite",
+      "bytes": 1010851840
+    },
+    {
+      "kind": "places",
+      "shard": "compact-14.sqlite",
+      "bytes": 1048158208
+    },
+    {
+      "kind": "places",
+      "shard": "compact-15.sqlite",
+      "bytes": 1033113600
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00000",
+      "bytes": 1424097682
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00001",
+      "bytes": 1461531928
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00002",
+      "bytes": 1444693131
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00003",
+      "bytes": 1516530506
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00004",
+      "bytes": 1448682576
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00005",
+      "bytes": 1453588289
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00006",
+      "bytes": 1408494247
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00007",
+      "bytes": 1416182291
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00008",
+      "bytes": 1429897688
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00009",
+      "bytes": 1403915781
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00010",
+      "bytes": 1412379839
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00011",
+      "bytes": 1406465592
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00012",
+      "bytes": 1430198662
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00013",
+      "bytes": 1357498510
+    },
+    {
+      "kind": "wiki",
+      "shard": "000_00014",
+      "bytes": 1435313764
+    }
+  ],
+  "verified_shards": 31,
+  "current_app_logical_bytes": 41703269863,
+  "current_app_allocated_bytes": 41706029056,
+  "candidate_apk_bytes": 22719262,
+  "largest_current_shard": {
+    "kind": "wiki",
+    "shard": "000_00003",
+    "bytes": 1516530506
+  },
+  "projected_same_size_shard_update_peak": 44894316441,
+  "formula": "app retained + candidate APK + 2*largest current shard + 1MiB metadata +128MiB update reserve",
+  "target_bytes": 45000000000,
+  "hard_bytes": 50000000000,
+  "target_fits": true,
+  "hard_fits": true,
+  "limitations": "Projection, not measured current update peak. New shard growth, package-manager overhead, provider duplication, test/user assets and simultaneous imports require separate admission; unbounded future update has no finite guarantee."
+}

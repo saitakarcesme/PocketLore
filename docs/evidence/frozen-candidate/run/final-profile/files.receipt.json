@@ -1,0 +1,11 @@
+{
+  "command": [
+    "run-as",
+    "org.pocketlore.app",
+    "sh",
+    "-c",
+    "'find files/pack-library files/model-library -type f -exec sha256sum {} \\;'"
+  ],
+  "exit": 0,
+  "sha256": "c183b76a4f8e37c5e52f5b2254207a348f3bbf9f547944421b6b7c16963c736d"
+}

@@ -1,0 +1,35 @@
+android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+ android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+  android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+   android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1280, 2856) clickable=false visible=true
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 156 - 1280, 366) clickable=false visible=true
+     android.widget.TextView text=PocketLore description=null bounds=Rect(72, 168 - 847, 354) clickable=false visible=true
+     android.widget.TextView text=Offline description=null bounds=Rect(847, 181 - 1088, 341) clickable=false visible=true
+     android.widget.ImageButton text=null description=Settings bounds=Rect(1088, 189 - 1232, 333) clickable=true visible=true
+    android.widget.ScrollView text=null description=null bounds=Rect(0, 366 - 1280, 2236) clickable=false visible=true
+     android.widget.LinearLayout text=null description=null bounds=Rect(0, 366 - 1280, 2236) clickable=false visible=true
+      android.widget.TextView text=Library description=null bounds=Rect(72, 414 - 1208, 618) clickable=false visible=true
+      android.widget.TextView text=Read the sources. Keep what matters. description=null bounds=Rect(72, 618 - 1208, 895) clickable=false visible=true
+      android.widget.TextView text=2 source matches · Open to read description=null bounds=Rect(72, 895 - 1208, 1186) clickable=false visible=true
+      android.widget.Button text=Personal documents and collection export description=null bounds=Rect(72, 1198 - 1208, 1469) clickable=true visible=true
+      android.widget.LinearLayout text=null description=null bounds=Rect(72, 1481 - 1208, 2021) clickable=false visible=true
+       android.widget.TextView text=Knowledge topic description=null bounds=Rect(72, 1481 - 1208, 1641) clickable=false visible=true
+       android.widget.EditText text=groundwater description=Knowledge topic bounds=Rect(72, 1641 - 1208, 1825) clickable=true visible=true
+       android.widget.Button text=Search reference description=null bounds=Rect(72, 1837 - 1208, 2009) clickable=true visible=true
+      android.widget.LinearLayout text=null description=null bounds=Rect(72, 2021 - 1208, 2236) clickable=false visible=true
+       android.widget.Button text=null description=Infiltration and groundwater recharge. USGS · Bundled source bounds=Rect(72, 2021 - 1208, 2236) clickable=true visible=true
+        android.widget.TextView text=Infiltration and groundwater recharge description=null bounds=Rect(72, 2057 - 1208, 2236) clickable=false visible=true
+        android.widget.TextView text=USGS · Bundled source description=null bounds=Rect(72, 2381 - 1208, 2236) clickable=false visible=false
+       android.view.View text=null description=null bounds=Rect(72, 2577 - 1208, 2236) clickable=false visible=false
+       android.widget.Button text=null description=Aquifer recharge times. USGS · Bundled source bounds=Rect(72, 2580 - 1208, 2236) clickable=true visible=false
+        android.widget.TextView text=Aquifer recharge times description=null bounds=Rect(72, 2616 - 1208, 2236) clickable=false visible=false
+        android.widget.TextView text=USGS · Bundled source description=null bounds=Rect(72, 2800 - 1208, 2236) clickable=false visible=false
+       android.view.View text=null description=null bounds=Rect(72, 2996 - 1208, 2236) clickable=false visible=false
+      android.widget.Button text=Collection storage & licenses description=null bounds=Rect(72, 3011 - 1208, 2236) clickable=true visible=false
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 2236 - 1280, 2784) clickable=false visible=true
+     android.widget.LinearLayout text=null description=null bounds=Rect(36, 2260 - 1244, 2516) clickable=false visible=true
+      android.widget.Button text=Research description=Research bounds=Rect(42, 2260 - 634, 2516) clickable=true visible=true
+      android.widget.Button text=Library description=Library, selected bounds=Rect(646, 2260 - 1238, 2516) clickable=true visible=true
+     android.widget.LinearLayout text=null description=null bounds=Rect(36, 2516 - 1244, 2772) clickable=false visible=true
+      android.widget.Button text=Explore description=Explore bounds=Rect(42, 2516 - 634, 2772) clickable=true visible=true
+      android.widget.Button text=Saved description=Saved bounds=Rect(646, 2516 - 1238, 2772) clickable=true visible=true
