@@ -1,0 +1,14 @@
+{
+  "environment": "Android API37 emulator; not physical acceptance",
+  "run_id": "20261002T023305Z-ce6da5b0",
+  "sdk": 37,
+  "mode": "restart-20261002T023305Z-ce6da5b0",
+  "font_scale": 1,
+  "saved_source_id": 55,
+  "status": "PASS",
+  "checks": [
+    "Bookmark and note survive process death",
+    "Cold source identity retained",
+    "Screenshot cold-reader"
+  ]
+}

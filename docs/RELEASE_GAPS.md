@@ -364,3 +364,7 @@ The exact accepted390 APK builds and passes actual native16KB artifact checks. P
 ## Task400 repair1 supersedes the immediate subset blocker
 
 A normal data-preserving replacement install restores the accepted APK on5564 with original UID/model bytes intact. The fresh API37/16KB six-phase check passes including navigation, SAF cancellation/retry, personal Library-return search, cold persistence, native load/cancel/reuse without generation and final exact identity/retention. This resolves the bounded subset package/accessibility-to-tests gate, not the unexplained earlier device/code loss or long-run reliability. Current modern-installed subset snapshots are documented separately; full-capacity API37, installed-asset recognition, physical ARM64/GrapheneOS, TalkBack/human review, unseen quality, rights and final release remain open. Do not reuse303/390 full-capacity numbers as400 measurements.
+
+## Task400 repair2 freshness and restoration evidence
+
+Fresh API37 run20261002T023305Z-ce6da5b0 passes all six required phases with original font readbacks and unchanged boot ID. Failed subsequent repair1 receipts remain separate. Bounded batch collection reduces transport calls and restores font before collection; this does not prove the unexplained emulator instability cannot recur. Physical, full-capacity API37, present-asset recognition, TalkBack/human, quality/rights and release gates remain open; no old capacity measurements substitute for the new subset snapshot.
