@@ -1,0 +1,29 @@
+{
+  "historical_source": "docs/evidence/full-scale-android-capacity.md",
+  "historical_document_sha256": "cccf663d9d89ef95c578e930104db98ed66b24d2da1314abe37526063927d44c",
+  "target": 45000000000,
+  "hard": 50000000000,
+  "rows": [
+    {
+      "candidate": "4B",
+      "weights_bytes": 2497280256,
+      "historical_full_install_replacing_baseline": 43634482592,
+      "historical_update_allowance_replacing_baseline": 46802091891,
+      "historical_update_allowance_plus_one_new_model_stage": 47293491923,
+      "status": "Planning arithmetic only, excludes subsequent changed assets/app/provider overhead; not a measured current installation"
+    },
+    {
+      "candidate": "7B",
+      "weights_bytes": 4683074240,
+      "historical_full_install_replacing_baseline": 45820276576,
+      "historical_update_allowance_replacing_baseline": 48987885875,
+      "historical_update_allowance_plus_one_new_model_stage": 49479285907,
+      "status": "Planning arithmetic only, excludes subsequent changed assets/app/provider overhead; not a measured current installation"
+    }
+  ],
+  "unknowns": [
+    "Current complete installed inventory is not measured on API37 subset",
+    "Provider and concurrent shard/model update copies must be reserved serially",
+    "No coverage removed; old development models are not part of proposed device distribution"
+  ]
+}
