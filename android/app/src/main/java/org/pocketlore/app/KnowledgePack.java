@@ -128,6 +128,16 @@ public final class KnowledgePack {
                 legal=license.getString("text");
                 require(hash(legal.getBytes(StandardCharsets.UTF_8)).equals(field(license,"sha256")) && field(license,"url").equals(field(d,"license_url")),"Offline license identity mismatch");
             } else if(d.has("license_text")) legal=d.getString("license_text");
+            String disposition=null;
+            if(legal!=null) {
+                if(schema==2) {
+                    Object value=d.get("rights_disposition");require(value instanceof JSONArray,"Rights limitations must be a list");
+                    JSONArray limits=(JSONArray)value;require(limits.length()>0&&limits.length()<=32,"Rights limitation count out of range");
+                    StringBuilder joined=new StringBuilder();
+                    for(int k=0;k<limits.length();k++){Object item=limits.get(k);require(item instanceof String && !((String)item).trim().isEmpty() && ((String)item).length()<=2048,"Invalid rights limitation");if(k>0)joined.append("\n");joined.append((String)item);}
+                    disposition=joined.toString();
+                } else disposition=field(d,"rights_disposition");
+            }
             JSONArray passages=d.getJSONArray("passages");require(passages.length()>0,"Empty document");
             long previousFinish=-2;
             for(int j=0;j<passages.length();j++) {
@@ -156,7 +166,7 @@ public final class KnowledgePack {
                 if(schema==2) require(p.has("source_utf16_start") && p.has("source_utf16_end"),"Missing source paragraph binding");
                 if(legal!=null) {
                     require(!legal.trim().isEmpty() && legal.length()<=24000,"Invalid offline license text");
-                    provenance.put(citation,provenance.get(citation)+"\nRights basis: "+field(d,"rights_basis")+"\nRights limits: "+field(d,"rights_disposition")+(schema==2?"\nOffline license SHA-256: "+hash(legal.getBytes(StandardCharsets.UTF_8)):"\nOffline license text:\n"+legal));
+                    provenance.put(citation,provenance.get(citation)+"\nRights basis: "+field(d,"rights_basis")+"\nRights limits: "+disposition+(schema==2?"\nOffline license SHA-256: "+hash(legal.getBytes(StandardCharsets.UTF_8)):"\nOffline license text:\n"+legal));
                     if(schema==2) offlineLicenses.put(citation,legal);
                 }
                 documentKeys.put(citation,url+"\n"+field(d,"raw_sha256"));
