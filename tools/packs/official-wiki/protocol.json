@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "edition": "enwiki-20260901",
+  "partition": "First contiguous official multistream XML shard p1p41242; selected before any new question and without title selection",
+  "scope": "Primary revision/provenance repair pilot, not 1.25 million admitted full articles or 2–3 million target",
+  "source": "Wikimedia official dump metadata and published SHA1 plus acquired SHA256",
+  "raw_retention": "Original compressed archive retained; each decoded revision text has exact SHA1, SHA256 and compressed storage; no FineWiki text substituted",
+  "limits": {"workers": 1, "sqlite_cache_kib": 8192, "record_utf8_bytes": 4000000, "expanded_archive_bytes": 4000000000},
+  "rights": "Article URL is permitted attribution; preserve history/revision URLs and bundled license; all unreviewed additional attribution/quotation/template dispositions remain pending, never automatically research-admitted",
+  "audit": "All page/revision/text identities and SHA1 checked; deterministic minimum SHA256(page ID) representative per 16 partitions, not convenient named articles; fixtures do not certify corpus-wide rights",
+  "mapping": "Exact unchanged plain paragraphs only, UTF16 source offsets, no template/math stripping; markup-bearing paragraphs remain original raw source and excluded from candidate projection",
+  "research_admission": "No automatic clearance from official origin, hash, source count, keyword filter or sample review"
+}
