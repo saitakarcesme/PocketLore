@@ -1,0 +1,21 @@
+{
+  "mode": "import",
+  "runtime": "llama.cpp bb4caa7540188872173c44d161602d9271386413; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads=2; model-budget=2147483648; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5\/256, seed=42",
+  "import_state": "Selected: Qwen2.5 0.5B Q4_K_M · demo baseline\n491400032 bytes · Apache-2.0\nSHA-256 74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db\nRevision 9217f5db79a29953eb74d5343926648285ec7e67\nExperimental generation; no phone or independent quality qualification. Native admission still applies.\nTransaction budget: 4494066322 bytes\nllama.cpp bb4caa7540188872173c44d161602d9271386413; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads=2; model-budget=2147483648; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5\/256, seed=42",
+  "app_data_unique_bytes": 3220127823,
+  "pss_kib": 587542,
+  "status": "PASS",
+  "checks": [
+    "Demo baseline begins selected",
+    "Actual saved JNI model loads",
+    "Catalog control is reachable",
+    "Changed identity rejected",
+    "Hard joint budget rejects transaction",
+    "Target exceedance is distinct from hard cap",
+    "Cancelled stage removed",
+    "Pinned provider import loads before selection",
+    "Import retains exact baseline identity",
+    "Active selection record uses retained object without duplicate bytes",
+    "Final saved model identity preserved"
+  ]
+}

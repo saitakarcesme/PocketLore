@@ -1,0 +1,29 @@
+android.widget.FrameLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+ android.widget.LinearLayout text=null description=null bounds=Rect(0, 0 - 1080, 2400) clickable=false visible=true
+  android.widget.FrameLayout text=null description=null bounds=Rect(0, 63 - 1080, 2274) clickable=false visible=true
+   android.widget.LinearLayout text=null description=null bounds=Rect(0, 63 - 1080, 2274) clickable=false visible=true
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 63 - 1080, 248) clickable=false visible=true
+     android.widget.TextView text=PocketLore description=null bounds=Rect(63, 74 - 703, 237) clickable=false visible=true
+     android.widget.TextView text=Offline description=null bounds=Rect(703, 85 - 912, 225) clickable=false visible=true
+     android.widget.ImageButton text=null description=Settings bounds=Rect(912, 92 - 1038, 218) clickable=true visible=true
+    android.widget.FrameLayout text=null description=null bounds=Rect(0, 248 - 1080, 1794) clickable=false visible=true
+     android.widget.ScrollView text=null description=null bounds=Rect(0, 248 - 1080, 1794) clickable=false visible=true
+      android.widget.LinearLayout text=null description=null bounds=Rect(0, 248 - 1080, 1794) clickable=false visible=true
+       android.widget.TextView text=What is my blood sodium result? description=null bounds=Rect(63, 290 - 1017, 593) clickable=false visible=true
+       android.widget.Button text=Edit question description=null bounds=Rect(63, 604 - 1017, 754) clickable=true visible=true
+       android.widget.TextView text=Personal evidence unavailable: these public reference collections do not contain an authenticated record for you. description=null bounds=Rect(63, 765 - 1017, 1310) clickable=false visible=true
+       android.widget.TextView text=Evidence unavailable · no answer inferred
+Personal evidence unavailable: these public reference collections do not contain an authenticated record for you.
+No quotations selected. If your request also includes a general reference question, ask that part separately; it has not been answered here.
+Your question (not a source assertion):
+What is my blood sodium result? description=null bounds=Rect(63, 1310 - 1017, 1794) clickable=false visible=true
+       android.widget.LinearLayout text=null description=null bounds=Rect(63, 3666 - 1017, 1794) clickable=false visible=false
+       android.widget.TextView text=Source brief saved to your notebook description=null bounds=Rect(63, 3666 - 1017, 1794) clickable=false visible=false
+    android.widget.LinearLayout text=null description=null bounds=Rect(0, 1794 - 1080, 2274) clickable=false visible=true
+     android.widget.LinearLayout text=null description=null bounds=Rect(32, 1815 - 1048, 2039) clickable=false visible=true
+      android.widget.Button text=Research description=Research, selected bounds=Rect(37, 1815 - 535, 2039) clickable=true visible=true
+      android.widget.Button text=Library description=Library bounds=Rect(545, 1815 - 1043, 2039) clickable=true visible=true
+     android.widget.LinearLayout text=null description=null bounds=Rect(32, 2039 - 1048, 2263) clickable=false visible=true
+      android.widget.Button text=Explore description=Explore bounds=Rect(37, 2039 - 535, 2263) clickable=true visible=true
+      android.widget.Button text=Saved description=Saved bounds=Rect(545, 2039 - 1043, 2263) clickable=true visible=true
+ android.view.View text=null description=null bounds=Rect(0, 2274 - 1080, 2400) clickable=false visible=true

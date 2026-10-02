@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/attachments/check.py", line 53, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/attachments/check.py", line 48, in main
+    assert report['status']=='PASS' and b'ATTACHMENTS_PASS' in log,f'{out}: {report.get("error")}'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: /home/isa/Projects/PocketLore/downloads/attachments/runs/20261002T012248Z: java.lang.AssertionError: actual_question_attachment_route_3
+	at org.pocketlore.app.AttachmentsInstrumentation.ok(AttachmentsInstrumentation.java:5)
+	at org.pocketlore.app.AttachmentsInstrumentation.questionHandoff(AttachmentsInstrumentation.java:20)
+	at org.pocketlore.app.AttachmentsInstrumentation.onStart(AttachmentsInstrumentation.java:40)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2594)
+

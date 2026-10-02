@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "apk_sha256": "9c71a32dbc2deac3d650c6849a335379bd2b005c1516437c613bcd0fcff7dd70",
+  "apk_bytes": 22702878,
+  "pack_sha256": "4b54e378952e3479fdd82a8b56e74a7f850e05a69e08aa80941e90962d660e1c",
+  "pack_bytes": 194793,
+  "environment": "API35 x86_64 emulator-5562; full existing 31-shard catalog preserved; no model inference or phone qualification",
+  "files": {
+    "host.json": "7d25b875951e6724f76da6ba4b191da5e91b95f5c585ab00ec88193ad533a98d",
+    "build.log": "82836c22e83745e181628d9e41e40ac4d2b8663aae4ba8e09cb35dc80c591f70",
+    "before.txt": "1f1d75ae8ade5a257612c596a989e4c8e70b16ca14803fc7f0b70d9ac23605b0",
+    "properties.txt": "4b4fdf083e1ff1a2eeb1a377424a0ded1e787865f9b31f3b79c48a9952c0662d",
+    "disk-before.txt": "1d73ba059d8a1af174d0f211c574933c72af45bcfe298a04ffee2231e7fa26ec",
+    "install-app-debug.apk.txt": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+    "install-app-debug-androidTest.apk.txt": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+    "mkdir.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-valid.plpack.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-corrupt.plpack.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-rights.plpack.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-span.plpack.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "provision-protocol.json.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stop-install.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime-install.txt": "c2d699e03de6b551da512ecaececb8d50a39461c373e98a262c4fc780f043598",
+    "install.json": "f951cbd754212c44f526a550974f12a26d66a1e381c131b3423d6289a0ad0e0d",
+    "stop-restart.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime-restart.txt": "369e1f060fdb7292a260136801661f946256f7afe766329c5b60506f3b86f1ca",
+    "restart.json": "d96af2b8f27967471976f71216e83a0b38950c096ca31b53e821255abf13230d",
+    "after.txt": "1f1d75ae8ade5a257612c596a989e4c8e70b16ca14803fc7f0b70d9ac23605b0",
+    "package.txt": "82ac2c7b714cb34e3e1e33a7a511a8d9346cc412bb73464f67fa72c5da60d085",
+    "installed.txt": "fd17a0122783a1ba39ad95875156169340e73b6f946e9b71e53405960fb0c4aa",
+    "installed-hash.txt": "bc9be92658be265841f9486dcf34a154a3f07d079268fac9450d131c35bac93f"
+  }
+}
