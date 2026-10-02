@@ -28,11 +28,13 @@ public final class GroundedGeneration {
             check(stop);
             if(verifier==null||!verifier.qualified())return outcome(AnswerEngine.Kind.ABSTAINED,"General generated answers are unavailable: independent whole-answer support verification is not qualified. Use the separately labeled source-backed research brief to inspect evidence.","","Independent support verification unavailable","",false,0,start);
             if(EvidenceAvailability.scope(question)!=EvidenceAvailability.Scope.REFERENCE)return outcome(AnswerEngine.Kind.ABSTAINED,"Unknown — "+EvidenceAvailability.reason(EvidenceAvailability.scope(question)),"","Requested evidence is unavailable","",false,0,start);
-            List<ResearchEngine.Passage> sources=new ArrayList<>();Set<String> ids=new HashSet<>();int units=0;
+            List<ResearchEngine.Passage> sources=new ArrayList<>();Map<String,ResearchEngine.Passage> ids=new HashMap<>();int units=0;
             for(ResearchEngine.Hit hit:evidence.hits){
                 check(stop);ResearchEngine.Passage p=hit.passage;
                 if(p.collectionProvenance.contains("Generation disabled:"))return outcome(AnswerEngine.Kind.ABSTAINED,"This source collection is not admitted for generated answers. Inspect its source-review limitations.","","Source review required","",false,0,start);
-                if(ids.add(p.id)&&sources.size()<8&&p.text.length()<=12000-units){sources.add(p);units+=p.text.length();}
+                ResearchEngine.Passage previous=ids.putIfAbsent(p.id,p);
+                if(previous!=null&&(!previous.text.equals(p.text)||!previous.url.equals(p.url)||!previous.sourceDate.equals(p.sourceDate)||!previous.license.equals(p.license)||!previous.collectionProvenance.equals(p.collectionProvenance)))throw new IllegalArgumentException("Conflicting source identity");
+                if(previous==null&&sources.size()<8&&p.text.length()<=12000-units){sources.add(p);units+=p.text.length();}
             }
             if(sources.isEmpty()||generator==null)return outcome(AnswerEngine.Kind.ABSTAINED,"No admitted evidence or local model is available. No generated answer was inferred.","","Missing evidence or model","",false,0,start);
             GeneralGroundedAnswer.Context context=GeneralGroundedAnswer.supplied(question,sources);

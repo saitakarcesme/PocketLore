@@ -31,6 +31,7 @@ public final class IntegrationBehavior {
   g=new Gen();g.draft="Unavailable source [[S9]]. GAPS: none";o=GroundedGeneration.answer("Explain the fixture condition",e,g,verifier(""),()->false);require(o.kind==AnswerEngine.Kind.ABSTAINED,"bad citation");
   g=new Gen();o=GroundedGeneration.answer("Explain the fixture condition",evidence(source("bulk","Unreviewed", "Generation disabled: rights unreviewed")),g,verifier(""),()->false);require(g.calls==0&&o.kind==AnswerEngine.Kind.ABSTAINED,"rights bypass");
   g.fail=true;o=GroundedGeneration.answer("Explain the fixture condition",e,g,verifier(""),()->false);require(o.kind==AnswerEngine.Kind.ABSTAINED,"exception");g.fail=false;o=GroundedGeneration.answer("Explain the fixture condition",e,g,verifier(""),()->false);require(o.kind==AnswerEngine.Kind.GENERATED,"retry");
-  System.out.println("PASS: 12 integration/lifecycle controls; test verifier is synthetic and establishes no entailment or Android execution");
+  g=new Gen();o=GroundedGeneration.answer("Explain the fixture condition",evidence(e.hits.get(0).passage,source("edition-a_doc","Conflicting replacement","Reviewed fixture")),g,verifier(""),()->false);require(g.calls==0&&o.kind==AnswerEngine.Kind.ABSTAINED,"identity conflict");
+  System.out.println("PASS: 13 integration/lifecycle controls; test verifier is synthetic and establishes no entailment or Android execution");
  }
 }
