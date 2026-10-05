@@ -1,0 +1,28 @@
+{
+  "observed_at": 1791240831.4720263,
+  "checkpoint": "d961c612926f0b28357e0606f58ecf380c1c5d14",
+  "immutable_source_hashes": {
+    "tools/packs/official-wiki/rendered/ingest.py": "8e41af7ae48211fa9b2234f10174a33c2bb4bd332f84a33d068a84672d14838b",
+    "tools/packs/official-wiki/rendered/build.py": "552345d0e1ae72834b616b8fca4cf4d039605fda75820e8d7169c62ab20acd65",
+    "tools/packs/official-wiki/rendered/section_extract.py": "f252b93bdce547e08d90b3b815d6ee9840acef762bbe8acb38b95811adb256bb"
+  },
+  "findings": [
+    {
+      "file": "tools/packs/official-wiki/rendered/ingest.py",
+      "issue": "Frozen-prefix-only ingestion stops at 1.5GB expanded records and declares archive incomplete; it is not a whole-source input route."
+    },
+    {
+      "file": "tools/packs/official-wiki/rendered/build.py",
+      "issue": "Build asserts CC-BY-SA-3.0 and stamps source-license=3.0 globally, although actual partial complete-source input contains mostly 4.0 metadata; a general full-source replacement must preserve exact license identity."
+    },
+    {
+      "file": "tools/packs/official-wiki/rendered/section_extract.py",
+      "issue": "Section extractor already accepts exact 3.0/4.0 identifiers and URI bindings; preserve this check rather than relaxing or inventing license claims."
+    },
+    {
+      "file": "tools/packs/official-wiki/rendered/build.py",
+      "issue": "Current producer duplicates body in documents, passages and FTS; full-corpus storage and update peak must be measured, and streaming ledger validation and Android reader/import bounds assessed before claims."
+    }
+  ],
+  "scope": "Investigation only; failed checkpoint remains unaccepted and canonical builder owns product edits"
+}

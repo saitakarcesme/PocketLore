@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "format": "pocketlore-compact-article-v1",
+  "frozen_sequence_ceiling": 2411299,
+  "engineering_ranges": [
+    [
+      0,
+      5999
+    ],
+    [
+      0,
+      11999
+    ]
+  ],
+  "selection": "All committed original sequences in each declared inclusive range; no title, query, rank or expected-answer selection. Latest revision by numeric revision ID per page, timestamp then record SHA as deterministic ties. Conflicting same page/revision bytes quarantine page. Invalid latest records never revive older eligibility.",
+  "rights": "Preserve exact singleton CC-BY-SA-3.0 or CC-BY-SA-4.0 identifier and URI; unknown or additional licenses/notices quarantined. Metadata is not independent rights approval.",
+  "transform": "One compressed article capsule contains complete original HTML, visible projection, UTF16 origin mappings, complete metadata, headings and retained exclusion reasons. Body stored once, passage rows offsets only, contentless FTS4 article postings without stored body. Active/media content omitted only from projection with recorded reasons; full HTML retained inert, not browser-executable. Unknown/table/math/quotation transformations quarantine research eligibility.",
+  "admission": "Always false for engineering prefix; no promotion API. Full source readiness, independent rights review, distinct eligible breadth, Android import and complete distribution/update measurement required separately.",
+  "bounds": {
+    "raw_record_bytes": 16000000,
+    "html_utf8_bytes": 4000000,
+    "rendered_utf8_bytes": 4000000,
+    "mapping_segments": 50000,
+    "sqlite_cache_kib": 8192,
+    "reader_candidates": 20,
+    "passage_utf16_target": 1600,
+    "process_address_space_bytes": 536870912
+  },
+  "fixtures": [
+    "mixed exact 3.0/4.0 and mismatched URI",
+    "duplicate page/revision and late revision, including unsafe newest",
+    "changed original hash, truncated compressed blob and changed index",
+    "astral characters and entities with UTF16 quote reconstruction",
+    "math annotation, heading, reference, table and unknown-element safety",
+    "oversized record/HTML, partial source promotion denial"
+  ],
+  "source_contracts": {
+    "source-full-readiness-contract.json": "9356d8ab58cecff5d0faf1a4914022568ef922a0df6789c807b54aa0d96b8de1",
+    "source-prefix-metadata-census-278695.json": "8b218febda85a99d80940c1d744dafefe44eda26c906ce930da6c4490ee68828",
+    "source-admission-scale-investigation/investigation.json": "0832c7e322e0e20ea0eb38f2ae42071b7246fa35304f23b67a222f221b230fe5"
+  }
+}

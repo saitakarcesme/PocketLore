@@ -1,0 +1,28 @@
+{
+  "status": "PROVISIONAL_PARTIAL_ORIGINAL_METADATA_CENSUS",
+  "observed_at": 1791240747.9582927,
+  "sequence_ceiling": 278695,
+  "records": 278696,
+  "distinct_page_identifiers": 278528,
+  "distinct_revision_identifiers": 278696,
+  "missing_page": 0,
+  "missing_revision": 0,
+  "missing_title": 0,
+  "invalid_metadata": 0,
+  "raw_record_bytes": 25877806004,
+  "compressed_record_blob_bytes": 4770024274,
+  "oversized_originals": 0,
+  "license_metadata_distribution": [
+    {
+      "exact_metadata": "[{\"name\": \"Creative Commons Attribution Share Alike 3.0 Unported\", \"identifier\": \"CC-BY-SA-3.0\", \"url\": \"https://creativecommons.org/licenses/by-sa/3.0/\"}]",
+      "records": 25369
+    },
+    {
+      "exact_metadata": "[{\"name\": \"Creative Commons Attribution-ShareAlike License 4.0\", \"identifier\": \"CC-BY-SA-4.0\", \"url\": \"https://creativecommons.org/licenses/by-sa/4.0/\"}]",
+      "records": 253327
+    }
+  ],
+  "full_archive_identity_verified": false,
+  "source_admission_established": false,
+  "limitations": "A single consistent committed prefix snapshot, not complete archive or source/rights admission; licensing metadata is observed rather than independently proven"
+}
