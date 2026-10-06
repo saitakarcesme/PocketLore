@@ -13,7 +13,7 @@ for sig in [signal.SIGTERM,signal.SIGINT]:signal.signal(sig,cancel)
 def available():
  raw=pathlib.Path('/proc/meminfo').read_text();check.need(int(next(x.split()[1] for x in raw.splitlines() if x.startswith('MemAvailable:')))*1024>=11*1024**3,'host-available');return raw
 def synthetic():
- out=BASE/'synthetic-v3';out.mkdir(exist_ok=False);before=check.freeze();A.atomic(out/'freeze.json',before);oracle=fixtures.create(out/'inputs');results=[];raw={};source=A.filehash(out/'inputs/valid.bz2')
+ out=BASE/'synthetic-v4';out.mkdir(exist_ok=False);before=check.freeze();A.atomic(out/'freeze.json',before);oracle=fixtures.create(out/'inputs');results=[];raw={};source=A.filehash(out/'inputs/valid.bz2')
  def run(name,fixture='valid',expected=None,**kwargs):
   p=out/'inputs'/f'{fixture}.bz2';v=A.version(p);r=A.build(p,out/name,A.filehash(p),**kwargs);check.need(v==A.version(p),'fixture-mutated');raw[name]=r
   if expected:check.need(r['status']=='FAILED' and any(expected in e for e in r['errors']),name+' expected '+expected)
@@ -26,7 +26,17 @@ def synthetic():
   hits=reader.search(query);check.need(bool(hits)==(query!='absentliteral'),'query-oracle')
   for h in hits:reader.resolve(h)
  emoji=reader.search('😀')[0];check.need([emoji['start_utf16'],emoji['end_utf16']]==oracle['emoji_utf16_range'],'independent-UTF16')
- exported=reader.export(ident,out/'export');check.need((out/'export/original.wikitext').read_bytes()==oracle['text'].encode(),'export-bytes');reader.close()
+ search_query='otherwise no.';flow_hits=reader.search(search_query)
+ exported=reader.export(ident,out/'prefix-export');check.need((out/'prefix-export/original.wikitext').read_bytes()==oracle['text'].encode(),'export-bytes');reader.close()
+ flow={'query':search_query,'hits':flow_hits,'inspection':{k:v for k,v in record.items() if k!='text'},'export':exported};check.validate_flow(r,flow,out/'positive')
+ flow_controls=[]
+ for name,guard,edit in [('flow-export','export-binding',lambda m:m['export'].update(sha256='0'*64)),('flow-inspection','inspection-binding',lambda m:m['inspection'].update(title='Changed')),('flow-hit','search-binding',lambda m:m['hits'][0].update(start_utf16=0))]:
+  check.validate_flow(r,flow,out/'positive');m=copy.deepcopy(flow);edit(m)
+  try:check.validate_flow(r,m,out/'positive');raise AssertionError('accepted '+name)
+  except ValueError as e:check.need(str(e)==guard,'flow-guard');flow_controls.append({'name':name,'expected_guard':guard,'actual_guard':str(e),'mutated':m})
+ other=copy.deepcopy(r);other['output_sha256']='0'*64
+ try:check.validate_flow(other,flow,out/'positive');raise AssertionError('accepted receipt substitution')
+ except ValueError as e:check.need(str(e)=='capsule-receipt','capsule-guard');flow_controls.append({'name':'receipt-substitution','expected_guard':'capsule-receipt','actual_guard':str(e),'mutated_receipt':other})
  rr=A.Reader(out/'positive',source);check.need(rr.inspect(ident)['text']==oracle['text'],'reopen');rr.close();results.extend([{'name':x,'actual':'PASS'} for x in ['exact-original','UTF16','query-source','export-bytes','reopen']])
  run('split','multistream',limits={'chunk':1});run('missing-and-model')
  for name,expected in [('nested-id','unsupported-page-layout'),('duplicate-contributor','duplicate-contributor-field'),('duplicate-redirect','duplicate-redirect'),('conflict','revision-conflict'),('doctype','doctype'),('malformed','mismatched tag'),('truncated','truncated-bzip'),('trailing-truncated-member','junk after document element'),('namespace','xml-namespace'),('oversized','field-bound'),('deep','xml-depth'),('missing-id','numeric-id')]:run(name,name,expected)
@@ -59,14 +69,23 @@ def synthetic():
  try:rd.resolve(bad);raise AssertionError('accepted split surrogate')
  except A.Refused as e:check.need(str(e)=='hit-surrogate','range guard');results.append({'name':'surrogate-boundary','actual_guard':str(e)})
  finally:rd.close()
- check.need(check.freeze()==before,'source-mutated');summary={'status':'PASS','directory':str(out.relative_to(ROOT)),'sources_before':before,'sources_after':check.freeze(),'controls':results,'mutations':mutations,'raw_receipts':raw,'oracle':oracle,'storage_new_bytes':sum(p.stat().st_size for p in out.rglob('*') if p.is_file())};check.need(summary['storage_new_bytes']<=64*1024**2,'synthetic-output-budget');A.atomic(BASE/'synthetic.json',summary)
+ check.need(check.freeze()==before,'source-mutated');summary={'status':'PASS','directory':str(out.relative_to(ROOT)),'sources_before':before,'sources_after':check.freeze(),'controls':results,'mutations':mutations,'flow':flow,'flow_controls':flow_controls,'raw_receipts':raw,'oracle':oracle,'storage_new_bytes':sum(p.stat().st_size for p in out.rglob('*') if p.is_file())}
+ check.coverage(summary);summary['coverage_controls']=[]
+ for name,key,mode in [('omitted-control','controls','omit'),('duplicate-control','controls','duplicate'),('omitted-mutations','mutations','empty'),('omitted-flow','flow_controls','empty')]:
+  check.coverage(summary);m=copy.deepcopy(summary)
+  if mode=='omit':m[key]=m[key][1:]
+  elif mode=='duplicate':m[key].append(m[key][0])
+  else:m[key]=[]
+  try:check.coverage(m);raise AssertionError('coverage mutation accepted')
+  except ValueError as e:check.need(str(e)=='coverage-'+key,'coverage-guard');summary['coverage_controls'].append({'name':name,'guard':str(e)})
+ check.need(summary['storage_new_bytes']<=64*1024**2,'synthetic-output-budget');A.atomic(BASE/'synthetic.json',summary)
  print(json.dumps({'status':'PASS','controls':len(results),'mutations':len(mutations),'bytes':summary['storage_new_bytes']}))
 def prefix():
  before=check.freeze();s=json.loads((BASE/'synthetic.json').read_text());check.need(s['status']=='PASS' and s['sources_before']==before,'synthetic-before-prefix');check.need(json.loads((BASE/'build.json').read_text())['exit']==0,'build-before-prefix')
- preflight={'sources':before,'meminfo':available(),'archive_stat':A.version(ARCHIVE),'expected_sha256_from_acquisition':IDENTITY,'hash_scope':'No full archive hash: only bounded compressed read prefix','limits':A.LIMITS,'task':'541-current-wikipedia-xml-source-adapter','pid':os.getpid(),'start_ns':time.monotonic_ns()}
+ preflight={'executable':{'path':sys.executable,'version':A.version(sys.executable),'sha256':A.filehash(sys.executable)},'source_versions':{p:A.version(ROOT/p) for p in check.INPUTS},'sources':before,'meminfo':available(),'archive_stat':A.version(ARCHIVE),'expected_sha256_from_acquisition':IDENTITY,'hash_scope':'No full archive hash: only bounded compressed read prefix','limits':A.LIMITS,'task':'541-current-wikipedia-xml-source-adapter','pid':os.getpid(),'start_ns':time.monotonic_ns()}
  with open(BASE/'prefix-attempt.json','x') as f:json.dump(preflight,f)
  r=A.build(ARCHIVE,BASE/'prefix',IDENTITY,provisional=True,expected={'size':26899580121,'inode':4272766,'device':57},cancel=lambda:CANCEL)
- A.atomic(BASE/'prefix-sources-after.json',check.freeze());check.need(check.freeze()==before,'post-prefix-source');check.rawcheck(r,IDENTITY);check.need(r['status']=='PROVISIONAL_PREFIX','prefix-state')
+ A.atomic(BASE/'prefix-runtime-after.json',{'executable':{'path':sys.executable,'version':A.version(sys.executable),'sha256':A.filehash(sys.executable)},'source_versions':{p:A.version(ROOT/p) for p in check.INPUTS}});A.atomic(BASE/'prefix-sources-after.json',check.freeze());check.need(check.freeze()==before,'post-prefix-source');check.rawcheck(r,IDENTITY);check.need(r['status']=='PROVISIONAL_PREFIX','prefix-state')
  rd=A.Reader(BASE/'prefix',IDENTITY)
  try:
   ident=rd.db.execute("SELECT stable_id FROM records WHERE disposition='inspection-only' ORDER BY page,revision LIMIT 1").fetchone()[0];ins=rd.inspect(ident);query=ins['text'][:min(32,len(ins['text']))];hits=rd.search(query);[rd.resolve(h) for h in hits];ex=rd.export(ident,BASE/'prefix-export');flow={'query_rule':'first 32 Unicode scalars of first page/revision original; identity plumbing only, not answer evaluation','query':query,'hits':hits,'inspection':{k:v for k,v in ins.items() if k!='text'},'export':ex};A.atomic(BASE/'prefix-flow.json',flow)

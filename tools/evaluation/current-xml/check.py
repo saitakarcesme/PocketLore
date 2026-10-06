@@ -43,19 +43,81 @@ def envelope(path):
 def verify_envelope(e):
  b=zlib.decompress(base64.b64decode(e['zlib_base64']));need(len(b)==e['bytes'] and A.sha(b)==e['sha256'],'envelope');return b
 
+CONTROL_NAMES={'positive','exact-original','UTF16','query-source','export-bytes','reopen','split','missing-and-model','nested-id','duplicate-contributor','duplicate-redirect','conflict','doctype','malformed','truncated','trailing-truncated-member','namespace','oversized','deep','missing-id','bomb','page-bound','cancel','mid-cancel','deadline','partial','source-collision-rollback','database-schema','database-rights','database-count','database-format','surrogate-boundary'}
+MUTATION_NAMES={'wrong-input','wrong-version','wrong-pid','wrong-offset','wrong-format','promotion','wrong-count','wrong-phase','wrong-startticks'}
+FLOW_NAMES={'flow-export','flow-inspection','flow-hit','receipt-substitution'}
+def coverage(s):
+ for key,expected in [('controls',CONTROL_NAMES),('mutations',MUTATION_NAMES),('flow_controls',FLOW_NAMES)]:
+  names=[x['name'] for x in s[key]];need(len(names)==len(set(names)) and set(names)==expected,'coverage-'+key)
+ required_raw={'positive','split','missing-and-model','nested-id','duplicate-contributor','duplicate-redirect','conflict','doctype','malformed','truncated','trailing-truncated-member','namespace','oversized','deep','missing-id','bomb','page-bound','cancel','mid-cancel','deadline','partial'}
+ need(set(s['raw_receipts'])==required_raw,'coverage-raw')
+ return True
+
+def validate_synthetic(s,raw):
+ need(s['sources_before']==s['sources_after']==freeze(),'synthetic-source')
+ need(s['status']=='PASS','synthetic');coverage(s)
+ baseline=s['raw_receipts']['positive'];source=s['oracle']['files']['valid']['sha256'];rawcheck(baseline,source)
+ for c in s['controls']:
+  if c['name'] not in s['raw_receipts']:continue
+  r=s['raw_receipts'][c['name']]
+  if c.get('expected')=='success':rawcheck(r,r['source_id'])
+  else:need(r['status']=='FAILED' and any(c['expected'] in x for x in r['errors']),'negative-outcome')
+ for m in s['mutations']:
+  rawcheck(baseline,source)
+  key=str(pathlib.Path(s['directory']).relative_to('downloads/current-xml-541')/(m['name']+'.mutation.json'))
+  changed=json.loads(verify_envelope(raw[key]));need(A.sha(A.canonical(changed))==m['mutated_sha256'] and A.sha(A.canonical(baseline))==m['base_sha256'],'mutation-hash')
+  try:rawcheck(changed,source)
+  except ValueError as e:need(str(e)==m['expected_guard']==m['actual_guard'],'mutation-guard')
+  else:raise ValueError('mutation-accepted')
+ for name,identity in s['oracle']['files'].items():
+  path=ROOT/s['directory']/'inputs'/(name+'.bz2');need(path.stat().st_size==identity['bytes'] and A.filehash(path)==identity['sha256'],'fixture-input')
+ validate_flow(baseline,s['flow'],ROOT/s['directory']/'positive')
+ for c in s['flow_controls']:
+  validate_flow(baseline,s['flow'],ROOT/s['directory']/'positive')
+  try:validate_flow(c.get('mutated_receipt',baseline),c.get('mutated',s['flow']),ROOT/s['directory']/'positive')
+  except ValueError as e:need(str(e)==c['expected_guard']==c['actual_guard'],'flow-mutation-guard')
+  else:raise ValueError('flow-mutation-accepted')
+ need({c['name'] for c in s['coverage_controls']}=={'omitted-control','duplicate-control','omitted-mutations','omitted-flow'},'coverage-controls')
+ for c in s['coverage_controls']:
+  coverage(s);m=copy.deepcopy(s)
+  if c['name']=='omitted-control':m['controls']=m['controls'][1:]
+  elif c['name']=='duplicate-control':m['controls'].append(m['controls'][0])
+  elif c['name']=='omitted-mutations':m['mutations']=[]
+  else:m['flow_controls']=[]
+  try:coverage(m)
+  except ValueError as e:need(str(e)==c['guard'],'coverage-mutation-guard')
+  else:raise ValueError('coverage-mutation-accepted')
+ return True
+
+def validate_flow(r,flow,path,raw=None):
+ need(json.loads((path/'receipt.json').read_text())==r,'capsule-receipt')
+ reader=A.Reader(path,r['source_id'])
+ try:
+  need(flow is not None and flow['hits'],'flow')
+  inspected=reader.inspect(flow['inspection']['id']);need({k:v for k,v in inspected.items() if k!='text'}==flow['inspection'],'inspection-binding')
+  need(reader.search(flow['query'])==flow['hits'],'search-binding')
+  for hit in flow['hits']:reader.resolve(hit)
+  export=path.parent/'prefix-export'/'original.wikitext';actual=export.read_bytes();need(len(actual)<=A.LIMITS['text'] and actual==inspected['text'].encode() and A.sha(actual)==flow['export']['sha256']==inspected['text_sha256'],'export-binding')
+  need(json.loads((export.parent/'metadata.json').read_text())==flow['inspection'],'export-metadata')
+  if raw is not None:need(verify_envelope(raw['prefix-export/original.wikitext'])==actual,'export-envelope')
+ finally:reader.close()
+ return True
+
 def validate_packet(p,current=True):
  need(set(p['sources_before'])==set(INPUTS) and p['sources_before']==p['sources_after'],'source-set')
  if current:need(p['sources_before']==freeze(),'current-source')
+ need(set(p['source_content'])==set(INPUTS),'source-content')
+ for name,e in p['source_content'].items():need(A.sha(verify_envelope(e))==p['sources_before'][name],'source-content')
  for name,e in p['raw'].items():verify_envelope(e)
- s=json.loads(verify_envelope(p['raw']['synthetic.json']));need(s['status']=='PASS' and len(s['controls'])>=20,'synthetic')
+ s=json.loads(verify_envelope(p['raw']['synthetic.json']));validate_synthetic(s,p['raw'])
  r=json.loads(verify_envelope(p['raw']['prefix/receipt.json']));rawcheck(r,'3fd026adce2a54ec7a2583c9047bcd8e632e67bad62b0b46ea4b685657d18f31')
  need(r['source_before']['size']==26899580121 and r['source_before']['inode']==4272766 and r['source_before']['device']==57 and r['status']=='PROVISIONAL_PREFIX','actual-archive')
+ attempt=json.loads(verify_envelope(p['raw']['prefix-attempt.json']));need(attempt['sources']==p['sources_before'] and attempt['archive_stat']==r['source_before'],'attempt-binding')
+ need(json.loads(verify_envelope(p['raw']['prefix-sources-after.json']))==p['sources_after'],'post-source')
+ after=json.loads(verify_envelope(p['raw']['prefix-runtime-after.json']));need(after['executable']==attempt['executable'] and after['source_versions']==attempt['source_versions'],'runtime-stability')
+ need(attempt['executable']['sha256']==A.filehash(sys.executable),'runtime-executable')
  need(p['build']['exit']==0 and p['build']['apk_sha256']==A.filehash(ROOT/p['build']['apk']),'build')
- reader=A.Reader(ROOT/p['prefix_path'],r['source_id'])
- try:
-  for hit in p['prefix_flow']['hits']:reader.resolve(hit)
-  need(p['prefix_flow']['hits'] and p['prefix_flow']['export']['sha256']==p['prefix_flow']['inspection']['text_sha256'],'flow')
- finally:reader.close()
+ validate_flow(r,p['prefix_flow'],ROOT/p['prefix_path'],p['raw'])
  return True
 
 def main():
