@@ -512,3 +512,9 @@ Recovered failed 8f261e2 source lineage. Added externally pinned shard/source/co
 Recovered77748c2; inline-units-v1 fixes frozen cross-inline phrase/AND and metadata-title misses without persisting repeated ancestor text. Current bounded host checks pass (11 authored queries,5 genuine context queries,18 negatives); Android build passes, runtime remains terminal/unexecuted. Actual18-input index grows188416B; no whole-profile projection. Old failures and empty-block/legacy-context corrections retained. URL attribution alternatives do not require complete contributor histories; additional notices/rights/support remain unresolved. Full source/kernel/model/Android/physical gates unchanged.
 
 Task532 verifies same-process owned mappings of the exact retained model via held descriptor/hash/version, live fd/mount/VMA identity and independent byte oracles;19 live controls and11 corrupt-receipt controls pass, with48MiB payload and one full hash, while historical531 attribution/generation and all Android/full-profile gates remain open.
+
+## Native lifecycle repair 2: evidence and build identity
+
+Recovered the native lifecycle implementation selectively from c4615b2 without generated build files. That parent passed its build but failed canonical lifecycle validation; its earlier passing prose is not acceptance. The old model/fixture receipts and canonical negative packet remain preserved.
+
+An isolated Git fixture reproduced enclosing-repository contamination in both upstream metadata generators. The derived archive now explicitly identifies pinned bb4caa754 plus its modified derivation digest. Lossless collection precedes validation and retains original receipt bytes on failed checks. Linked reproducibility and a fresh bounded tensor-window observation are pending at this checkpoint; no full model execution or Android runtime qualification follows.

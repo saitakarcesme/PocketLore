@@ -24,7 +24,7 @@ def main():
  identity=apply(source,'bb4caa7540188872173c44d161602d9271386413','f'*64)
  # apply replaces common build-info too; retain the fixture's observation suffix.
  fixed=observe('fixed-first');(out/'note').write_text('dirty');dirty=observe('fixed-dirty');commit('third');later=observe('fixed-later');assert fixed['value']==dirty['value']==later['value'] and identity in fixed['value']
- from check import collect_runs,atomic_packet
+ from check import collect_runs,atomic_packet,collect_logs
  inputs=out/'receipts';inputs.mkdir()
  for name in ['fixture','model']:
   p=inputs/(name+'.json');p.write_text(json.dumps({'kind':name,'original':'retained'}));(inputs/(name+'-receipt-path.txt')).write_text(str(p))
@@ -32,8 +32,12 @@ def main():
  target=out/'review.json';positive={'runs':runs,'original_receipts':originals,'status':'PASS'};atomic_packet(target,positive);positive_hash=sha(target)
  failure={'runs':runs,'original_receipts':originals,'status':'FAIL','failure':'engineered binary/source mismatch'};atomic_packet(target,failure)
  assert json.loads(target.read_text())['runs']['model']==runs['model'] and (out/'observations'/(positive_hash+'.json')).exists()
- (inputs/'fixture.json').write_text('corrupt');r,o,e=collect_runs(inputs,['fixture','model']);assert 'fixture' in e and r['model']==runs['model'] and o['model']==originals['model']
+ (inputs/'fixture.json').write_bytes(b'\xff\x00corrupt');r,o,e=collect_runs(inputs,['fixture','model']);assert 'fixture' in e and r['model']==runs['model'] and o['model']==originals['model']
+ import base64
+ assert base64.b64decode(o['fixture']['base64'])==b'\xff\x00corrupt'
+ # A real read failure on an owned symlink is retained separately, not thrown.
+ logs=out/'logs';logs.mkdir();(logs/'unreadable').symlink_to('/proc/1/mem');collected,failed=collect_logs(logs);assert 'unreadable' in failed
  (inputs/'model-receipt-path.txt').write_text(str(inputs/'absent'));r,o,e=collect_runs(inputs,['fixture','model']);assert 'model' in e
- packet={'status':'PASS_METADATA_AND_FINALIZATION_CONTROLS','old_first':first,'old_second':second,'fixed':fixed,'dirty':dirty,'later':later,'positive_preserved_sha256':positive_hash,'finalization_cases':['binary/source failure retains both','malformed fixture retains model','missing model refused'],'source':{p:sha(ROOT/p) for p in ['tools/runtime/sparse/build_identity.py','tools/evaluation/native-cache/check.py',str(pathlib.Path(__file__).relative_to(ROOT))]}}
+ packet={'status':'PASS_METADATA_AND_FINALIZATION_CONTROLS','old_first':first,'old_second':second,'fixed':fixed,'dirty':dirty,'later':later,'positive_preserved_sha256':positive_hash,'finalization_cases':['binary/source failure retains both','malformed fixture retains model','missing model refused','non-UTF8 original preserved','unreadable log retained'],'source':{p:sha(ROOT/p) for p in ['tools/runtime/sparse/build_identity.py','tools/evaluation/native-cache/check.py',str(pathlib.Path(__file__).relative_to(ROOT))]}}
  (BASE/'metadata-controls.json').write_text(json.dumps(packet,indent=2));print(packet['status'])
 if __name__=='__main__':main()

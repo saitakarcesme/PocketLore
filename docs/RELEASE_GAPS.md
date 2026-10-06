@@ -446,3 +446,7 @@ Recovered failed 8f261e2 source lineage. Added externally pinned shard/source/co
 The new versioned query index and typed source opening pass bounded public host controls and compile with the Android source tree. New indexing still needs revised dedicated-kernel scale measurements and Android consumption/roundtrip qualification; v1 exports retain their old inspection schema. Exact URL/license preservation is tested, while imported attribution/modifications/nontext/quotation rights and semantic eligibility remain unresolved. Complete contributor histories are not independently mandatory under the retained primary attribution correction. No full50GB/12GB, physical or unseen competitive claim follows.
 
 Task532 is a bounded serial host mapping/cache helper only: map_files stat remainsEPERM, foreign/old native mappings are not adopted, and small-range eviction observations do not establish an all-expert working set, generation performance, Android behavior or full12GB/50GB admission; no generated CMake artifacts are tracked.
+
+## Native lifecycle repair 2
+
+The c4615b2 canonical native lifecycle check failed despite a successful build. Repair 2 addresses deterministic modified-build metadata and lossless raw evidence finalization. Current validation is pending. The terminal emulator remains untouched; full generation, Android JNI/UI behavior, physical resources and the complete installed/update profile remain unqualified.

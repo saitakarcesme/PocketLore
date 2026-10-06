@@ -2,7 +2,7 @@
 import hashlib,json,os,pathlib,re,subprocess
 ROOT=pathlib.Path(__file__).resolve().parents[3]
 SOURCES=[
- 'tools/runtime/sparse/build_identity.py','tools/evaluation/native-cache/reproducibility.py',
+ 'tools/runtime/sparse/build_identity.py','tools/evaluation/native-cache/reproducibility.py','tools/evaluation/native-cache/build_receipts.py',
  'tools/runtime/sparse/binding.py','tools/runtime/sparse/derive.py','tools/runtime/sparse/prepare_native.py','tools/runtime/sparse/identity.json','tools/runtime/sparse/lazy-mmap.patch','tools/runtime/pins.env',
  'tools/runtime/sparse/native/pocketlore-owned.h','tools/runtime/sparse/native/pocketlore-sha.c','tools/runtime/sparse/native_controls.cpp','tools/runtime/sparse/host.cpp','tools/runtime/sparse/profile.h','tools/runtime/sparse/CMakeLists.txt',
  'tools/android-build.sh','tools/release/finalize_apk.py','tools/release/debug-signing.gradle','android/app/build.gradle','android/build.gradle','android/settings.gradle','android/gradle.properties','android/app/src/main/AndroidManifest.xml','android/app/src/main/cpp/resource_budget.h',

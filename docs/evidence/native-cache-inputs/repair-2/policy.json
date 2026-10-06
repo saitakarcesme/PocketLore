@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "source_layout_sha256": "f3df04234df7dfada6c9feb9baea3960710df146d6db54571a1859c3a12f8199",
   "selection_rule": "First stored tensor, first 16KiB-aligned interior offset, fixed four-MiB window; no query or performance selection",
   "tensor": {
@@ -33,5 +33,7 @@
     "numeric PID/raw status/stat/startticks/namespace chronology binding",
     "incomplete source set or altered binary/raw mapping fails",
     "host x86_64 and Android AArch64/x86_64 ELF machine/alignment/packaging"
-  ]
+  ],
+  "task": "533-native-owned-mapping-and-cache-lifecycle-repair-2",
+  "budget_scope": "One new repair2 attempt; prior 532/533/repair1 guards and payload counters remain immutable"
 }

@@ -1,5 +1,5 @@
 """Current-code native lifecycle gate. No model execution or historical credit."""
-import copy,json,pathlib,re,struct,subprocess,sys,time,zipfile,os,hashlib
+import copy,json,pathlib,re,struct,subprocess,sys,time,zipfile,os,hashlib,base64
 from contract import ROOT,SOURCES,BINARIES,identity,sha,source_contract,process_stat,status_pid,sample_identity,elf_machine
 from run import BASE
 POLICY=ROOT/'docs/evidence/native-cache-inputs/repair-2/policy.json'
@@ -91,7 +91,7 @@ def mutations(base):
   v=x['samples'][0]['stat'];at=v.rfind(')')+2;parts=v[at:].split();parts[19]=str(int(parts[19])+1);x['samples'][0]['stat']=v[:at]+' '.join(parts)
  def change_region(x):
   a=json.loads(x['raw']['native-resident.json']);a['regions'][0]['offset']+=4096;x['raw']['native-resident.json']=json.dumps(a)
- changes=[('empty-source',lambda x:x['frozen']['source'].clear()),('missing-source',lambda x:x['frozen']['source'].pop(SOURCES[0])),('changed-source',lambda x:x['frozen']['source'][SOURCES[0]].update(sha256='0'*64)),('missing-binary',lambda x:x['frozen']['binary'].pop(BINARIES[0])),('numeric-pid',lambda x:x['samples'][0].update(pid=999999)),('raw-pid',raw_status),('raw-startticks',raw_start),('missing-status',lambda x:x['samples'][0].pop('status')),('missing-namespace',lambda x:x['samples'][0].pop('namespaces')),('reversed-time',lambda x:x['samples'][0].update(monotonic_ns=x['end_ns']+1)),('missing-window',lambda x:x.update(samples=[])),('wrong-offset',change_region),('unreaped',lambda x:x.update(cleanup=[])),('failed-execution',lambda x:x.update(exit=7))]
+ changes=[('changed-binary',lambda x:x['frozen']['binary'][BINARIES[0]].update(sha256='0'*64)),('empty-source',lambda x:x['frozen']['source'].clear()),('missing-source',lambda x:x['frozen']['source'].pop(SOURCES[0])),('changed-source',lambda x:x['frozen']['source'][SOURCES[0]].update(sha256='0'*64)),('missing-binary',lambda x:x['frozen']['binary'].pop(BINARIES[0])),('numeric-pid',lambda x:x['samples'][0].update(pid=999999)),('raw-pid',raw_status),('raw-startticks',raw_start),('missing-status',lambda x:x['samples'][0].pop('status')),('missing-namespace',lambda x:x['samples'][0].pop('namespaces')),('reversed-time',lambda x:x['samples'][0].update(monotonic_ns=x['end_ns']+1)),('missing-window',lambda x:x.update(samples=[])),('wrong-offset',change_region),('unreaped',lambda x:x.update(cleanup=[])),('failed-execution',lambda x:x.update(exit=7))]
  outcomes=[]
  for name,mutate in changes:
   d=copy.deepcopy(base);mutate(d)
@@ -128,10 +128,21 @@ def collect_runs(base, names):
  for name in names:
   try:
    p=pathlib.Path((base/(name+'-receipt-path.txt')).read_text());raw=p.read_bytes()
-   originals[name]={'path':str(p),'sha256':hashlib.sha256(raw).hexdigest(),'text':raw.decode()}
+   originals[name]={'path':str(p),'sha256':hashlib.sha256(raw).hexdigest(),'base64':base64.b64encode(raw).decode('ascii')}
    runs[name]=json.loads(raw)
   except Exception as e:errors[name]=type(e).__name__+': '+str(e)
  return runs,originals,errors
+
+def collect_logs(directory):
+ logs={};errors={}
+ try:paths=sorted(directory.glob('*'))
+ except Exception as e:return logs,{'directory':repr(e)}
+ for p in paths:
+  try:
+   if not p.is_file():continue
+   raw=p.read_bytes();logs[p.name]={'sha256':hashlib.sha256(raw).hexdigest(),'base64':base64.b64encode(raw).decode('ascii')}
+  except Exception as e:errors[p.name]=repr(e)
+ return logs,errors
 
 def atomic_packet(destination, packet):
  raw=json.dumps(packet,indent=2).encode()
@@ -144,15 +155,37 @@ def atomic_packet(destination, packet):
  with temp.open('wb') as f:f.write(raw);f.flush();os.fsync(f.fileno())
  os.replace(temp,destination)
 
+def evaluate_runs(packet,names):
+ assert not packet['collection_errors'],packet['collection_errors']
+ assert set(packet['runs'])==set(names)
+ for name in names:
+  r=packet['runs'][name];validate(r);packet.setdefault('mutations',{})[name]=mutations(r)
+
+def finalization_controls(packet):
+ # Genuine current-code positives are copied; neither their files nor the model
+ # are changed. Both failures take the same evaluation/finalization functions.
+ results=[];directory=BASE/'finalization-controls';directory.mkdir(exist_ok=True)
+ for kind in ['source','binary']:
+  trial=copy.deepcopy({k:packet[k] for k in ['runs','original_receipts','collection_errors']})
+  field=SOURCES[0] if kind=='source' else BINARIES[0]
+  trial['runs']['fixture']['frozen'][kind][field]['sha256']='0'*64
+  try:evaluate_runs(trial,['fixture','model'])
+  except (AssertionError,KeyError,ValueError) as e:trial['failure']=repr(e);trial['status']='FAIL'
+  else:raise AssertionError('Engineered tamper accepted')
+  destination=directory/(kind+'.json');atomic_packet(destination,trial)
+  observed=json.loads(destination.read_text())
+  assert observed['runs']['model']==packet['runs']['model']
+  assert observed['original_receipts']==packet['original_receipts']
+  results.append({'tamper':kind,'refused':True,'model_retained':True,'packet_sha256':sha(destination)})
+ return results
+
 def main(fixture_only=False):
  packet={'status':'FAIL','inference':False,'android_execution':False,'source_admission':False,'started_ns':time.monotonic_ns()};error=None
  names=['fixture'] if fixture_only else ['fixture','model']
  packet['runs'],packet['original_receipts'],packet['collection_errors']=collect_runs(BASE,names)
  try:
-  assert not packet['collection_errors'],packet['collection_errors']
-  assert set(packet['runs'])==set(names)
-  for name in names:
-   r=packet['runs'][name];validate(r);packet.setdefault('mutations',{})[name]=mutations(r)
+  evaluate_runs(packet,names)
+  if not fixture_only:packet['error_finalization_controls']=finalization_controls(packet)
   packet['artifacts']=artifacts(packet['runs']['fixture']['frozen']['source_path']);packet['controls']=json.loads(pathlib.Path((BASE/'controls-path.txt').read_text()).read_text());assert packet['controls']['status']=='PRE_SAMPLE_CONTROLS_PASS'
   packet['reproducibility']=json.loads((BASE/'reproducibility.json').read_text());assert packet['reproducibility']['status']=='PASS'
   for n,h in packet['reproducibility']['native_hashes'].items():assert sha(ROOT/n)==h,n
@@ -164,7 +197,9 @@ def main(fixture_only=False):
  except Exception as e:error=type(e).__name__+': '+str(e);packet['failure']=error
  finally:
   packet['finished_ns']=time.monotonic_ns();packet['checker_source']={'sha256':sha(pathlib.Path(__file__)),'text':pathlib.Path(__file__).read_text()}
-  packet['build_receipts']={p.name:{'sha256':sha(p),'text':p.read_text()} for p in sorted((BASE/'logs').glob('*')) if p.is_file()}
+  packet['build_receipts'],packet['log_errors']=collect_logs(BASE/'logs')
+  if packet['log_errors']:
+   error=(error or '')+' Evidence log collection failed';packet['failure']=error;packet['status']='FAIL'
   packet['stdout']=packet['status']+(' '+error if error else '')+'\n';packet['exit']=1 if error else 0
   destination=BASE/'fixture-check.json' if fixture_only else ROOT/'docs/evidence/native-cache-lifecycle-review.json'
   # Preserve the previous canonical packet before changing the current view.
