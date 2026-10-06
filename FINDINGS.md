@@ -474,3 +474,7 @@ Runtime523 repair2 update: required build/check now pass on actual5564, run mate
 ## Task523 material loaded-window repair: terminal host failure
 
 Timestamped synchronous loaded-memory sampling and automatic self-contained final receipt freezing are implemented; corrected build and packet privacy/integrity controls pass. Actual run20261006T025314Z fails after source opening with transport255 and a parent-confirmed native RenderThread/gfxstream SEGV. Restart=no remains; no VM restart or data deletion. New loaded-window measurements and post-crash201/inventory continuity are unproven. Earlier bounded passes remain historical. A supervised material renderer mitigation using identical preserved images is required before current Android qualification; full model/source/physical/unseen gates remain open.
+
+## Task523 strategy-change bounded recovery
+
+After the parent-reviewed single SwiftShader launch on preserved images, final run20261006T031136Z passes build/runtime gates with exact renderer/PID/Invocation witnesses,201 unchanged schema2 records and1404 precrash protected files. Timestamped synchronous memory coverage succeeds:13 loaded samples, RSS peak2,683,097,088 and kernel HWM2,696,638,464bytes, zero tokens. Raw116-entry final packet is self-contained. Sustained renderer stability, generation, full-distribution/update, physical and unseen acceptance remain open; prior terminal failures are not erased.
