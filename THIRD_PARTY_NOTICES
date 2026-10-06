@@ -323,3 +323,11 @@ llama.cpp bb4caa7540188872173c44d161602d9271386413/vendor/hash/sha256:
 public-domain code from Wei Dai's Crypto++ library. Symbols are locally prefixed;
 no cryptographic algorithm changes are made. The diagnostic mapping derivation
 retains llama.cpp's existing MIT notice and does not alter the shared checkout.
+
+Task541's CC0 authored synthetic XML/wikitext fixtures are engineering controls.
+The separate current XML adapter uses installed Python standard-library bzip2,
+Expat and SQLite interfaces without adding a downloaded parser dependency.
+The bounded official enwiki October2026 archive prefix retains source/page/revision,
+contributor and acquisition identities with unknown/unreviewed rights; no blanket
+license conversion, rendered-content equivalence or redistribution clearance is
+asserted. Original markup and attribution metadata remain inspectable in exports.

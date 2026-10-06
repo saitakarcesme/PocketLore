@@ -468,3 +468,7 @@ Marker-only auxiliary cache checks are replaced by current raw process/descripto
 ## Task539 bounded semantic contracts
 
 Current synthetic receipts now reject contradictory kernel events, duplicate pressure pages and missing verified-owner phases with named guards and independently reconstructible counterexamples. Build and checker pass; retained failed collections remain inspectable. No model/device execution occurred. Full-source, useful-generation, physical12GB/noGMS, complete50GB distribution/update and unseen comparative gates remain open; details are in [the task539 evidence](evidence/cache-semantic-repair.md).
+
+### Task 541: current XML source preparation only
+
+Host bounded MediaWiki XML/wikitext ingestion/search/original inspection/export now passes synthetic and one 256-page provisional-prefix check, plus Android compilation. Full-archive XML integrity, census/latest revisions, rights/context eligibility, rendered fidelity and corpus-scale indexed Android import/reader remain unqualified. The 4,804,608-byte sample database is not a full 50GB installed/update budget projection. Device/runtime, complete-source admission, 12GB physical/no-GMS behavior, useful generated answers and unseen matched rivalry gates remain open. The terminal emulator and all model/source assets were preserved without new device/model activity.
