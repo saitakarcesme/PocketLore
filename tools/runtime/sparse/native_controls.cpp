@@ -1,16 +1,19 @@
 // Native algorithm controls, never model loading or generation.
 #include "pocketlore-owned.h"
 #include "scalar.h"
+#include "aux_trace.h"
 #include "llama-mmap.h"
 #include <iostream>
 #include <atomic>
 #include <thread>
 using namespace pocketlore_owned;
-static void denied(const char *name,std::function<void()> action){bool refused=false;try{action();}catch(const std::exception&e){refused=true;std::cout<<"{\"control\":"<<escape(name)<<",\"refused\":true,\"reason\":"<<escape(e.what())<<"}\n";}require(refused,"Negative control unexpectedly succeeded");}
+static void denied(const char *name,std::function<void()> action){auxiliary_trace::refusal(name,action);}
+
 int main(int argc,char**argv){try{
- require(argc==6,"path SHA size output-prefix offset required");std::string path=argv[1];uint64_t bytes=std::stoull(argv[3]);std::atomic<bool> cancelled{false};
+ require(argc==6,"path SHA size output-prefix offset required");auxiliary_trace::begin(argv[4]);std::string path=argv[1];uint64_t bytes=std::stoull(argv[3]);std::atomic<bool> cancelled{false};
  auto observe=[&](){std::ofstream log(std::string(argv[4])+"-hash-status.txt",std::ios::app);log<<std::chrono::steady_clock::now().time_since_epoch().count()<<" PID "<<getpid()<<"\n"<<text("/proc/self/status")<<text("/proc/self/cgroup");};
  auto f=File::open(argv[1],argv[2],bytes,false,[&]{return cancelled.load();},300,observe);
+ auxiliary_trace::owner=f;auxiliary_trace::record("verified","complete");
  const size_t window=4*1024*1024;const size_t offset=std::stoull(argv[5]);require(bytes>=window,"Control needs four MiB");
  denied("unaligned",[&]{Scope s(f,window,1);});
  denied("oversized",[&]{Scope s(f,129*1024*1024);});
@@ -69,5 +72,6 @@ int main(int argc,char**argv){try{
  denied("renamed",[&]{f->verify();});
  }
 
+ auxiliary_trace::record("teardown","complete");
  std::cout<<"{\"status\":\"NATIVE_CONTROLS_PASS\",\"inference\":false}\n";return 0;
  }catch(const std::exception&e){std::cerr<<e.what()<<"\n";return 1;}}

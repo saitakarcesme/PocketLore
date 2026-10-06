@@ -23,7 +23,7 @@ def collect(out,prefix,raw):
 def main():
  if sys.argv[1]=='freeze':freeze();return 0
  f=json.loads((O/'frozen-v2.json').read_text());r={'frozen':f,'inputs':{},'runs':{},'errors':[],'model_access':False}
- with (O/'attempt.json').open('x') as g:json.dump({'frozen':identity(O/'frozen-v2.json'),'task':f['policy']['task']},g)
+ with (O/'attempt.json').open('x') as g:json.dump({'frozen':identity(O/'frozen-v2.json'),'task':'538-native-cache-auxiliary-raw-evidence-contract'},g)
  try:
   source_check(f['source']);r['preflight']=owned.preflight()
   bad=O/'collection-control';bad.mkdir();(bad/'stdout.log').write_bytes(b'\xff\x00');(bad/'none-unreadable.json').mkdir();control={};collect(bad,bad/'none',control);r['collection_control']=control;assert len(control['collection_errors'])==2 and control['raw_bytes']['stdout.log']['base64']=='/wA='
@@ -32,17 +32,28 @@ def main():
   for name in ['force','retain','no-progress','mincore-failure','advice-failure','tail','remap']:
    inp=r['inputs']['force' if name=='force' else 'retain'];out=O/('run-'+name);prefix=O/name
    exe=R/BINARIES[-1];assert identity(exe)==f['binary'][BINARIES[-1]]
+   pre_source=sources();assert pre_source==f['source'];pre_input=version(inp['path'])
    raw=owned.execute([str(exe),inp['path'],inp['sha256'],name,str(prefix)],out,45);r['runs'][name]=raw;atomic(O/'runs.json',r)
    collect(out,prefix,raw)
+   raw['pre_source']=pre_source;raw['pre_input']=pre_input
    raw['post_input']=version(inp['path']);raw['post_source']=sources();atomic(O/'runs.json',r)
    assert raw['exit']==0 and not raw.get('failure') and not raw['collection_errors'] and raw['post_input']==inp['version'] and raw['post_source']==f['source'],name
-  fault=fixture(O/'fault.bin',67108864);x=owned.execute([str(R/BINARIES[-2]),fault['path'],fault['sha256'],'negative',str(O/'fault-negative')],O/'fault-run',30)
-  r['fault_controls']={'run':x,'stdout':(O/'fault-run/stdout.log').read_text(),'input':fault};assert x['exit']==0 and not x.get('failure')
-  # Prior actual ownership/scalar/async/teardown controls, current linked code.
-  small=fixture(O/'lifecycle.bin',4194304);raw=owned.execute([str(R/BINARIES[0]),small['path'],small['sha256'],'4194304',str(O/'lifecycle'),'0'],O/'lifecycle-run',30)
-  r['lifecycle']={'run':raw,'stdout':(O/'lifecycle-run/stdout.log').read_text(),'input':small};assert raw['exit']==0 and not raw.get('failure')
+  def auxiliary(name,argv,inp=None,seconds=30,inject=False):
+   out=O/(name+'-run');prefix=O/name
+   pre={'source':sources(),'executable':identity(pathlib.Path(argv[0])),'input':inp,'derivation':f['derivation'],'configuration':f['configuration']}
+   x=owned.execute(argv,out,seconds,inject);r[name]={'run':x,'input':inp,'pre':pre};atomic(O/'runs.json',r)
+   collect(out,prefix,x)
+   postpath=pathlib.Path(inp['path']) if inp else None
+   if postpath and not postpath.exists():postpath=pathlib.Path(str(postpath)+'.retained-renamed')
+   r[name]['post']={'source':sources(),'executable':identity(pathlib.Path(argv[0])),'input':identity(postpath) if postpath else None,'derivation':identity(pathlib.Path(f['source_path']).parent/'native-manifest.json',True),'configuration':{p:identity(R/p,True) for p in f['configuration']}}
+   r[name]['stdout']=x.get('stdout','');atomic(O/'runs.json',r)
+  fault=fixture(O/'fault.bin',67108864)
+  auxiliary('fault_controls',[str(R/BINARIES[-2]),fault['path'],fault['sha256'],'negative',str(O/'fault_controls')],fault)
+  small=fixture(O/'lifecycle.bin',4194304)
+  auxiliary('lifecycle',[str(R/BINARIES[0]),small['path'],small['sha256'],'4194304',str(O/'lifecycle'),'0'],small)
   for name,code,seconds,inject in [('hung','import signal,time;signal.signal(signal.SIGTERM,signal.SIG_IGN);time.sleep(30)',.3,False),('read-error','import time;time.sleep(30)',2,True)]:
-   x=owned.execute([sys.executable,'-c',code],O/name,seconds,inject);r[name]=x;assert x['cleanup'][-1]['action']=='REAPED' and not pathlib.Path('/proc/'+str(x['pid'])).exists()
+   auxiliary(name,[sys.executable,'-c',code],None,seconds,inject)
+
  except Exception as e:r['errors'].append(type(e).__name__+': '+str(e))
  finally:atomic(O/'runs.json',r)
  print(json.dumps({'errors':r['errors'],'runs':list(r['runs'])}));return int(bool(r['errors']))

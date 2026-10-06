@@ -40,7 +40,7 @@ def reap(proc,start,events,pidfd=None):
  assert proc.poll() is not None
  events.append({'action':'REAPED','pid':proc.pid,'exit':proc.returncode,'monotonic_ns':time.monotonic_ns()})
 def execute(argv,out,seconds=330,inject_read_error=False,inject_start_error=False,inject_after_error=False):
- out.mkdir(parents=True,exist_ok=False);report={'argv':argv,'start_ns':time.monotonic_ns(),'samples':[],'cleanup':[]};proc=None;start=None;pidfd=None
+ out.mkdir(parents=True,exist_ok=False);report={'limits':{'wall_seconds':seconds,'log_bytes':4194304,'samples':1000,'sample_bytes':33554432},'argv':argv,'start_ns':time.monotonic_ns(),'samples':[],'cleanup':[]};proc=None;start=None;pidfd=None
  # The caller has frozen all source/derivation inputs. Bind the actual executable
  # independently here before spawn and retain its held stat/hash after all cleanup.
  executable=pathlib.Path(argv[0])
@@ -63,6 +63,10 @@ def execute(argv,out,seconds=330,inject_read_error=False,inject_start_error=Fals
      prefix=pathlib.Path(argv[4]);s['phase']='hash-or-setup'
      if pathlib.Path(str(prefix)+'-resident.json').exists():s['phase']='resident-observation-present'
      if pathlib.Path(str(prefix)+'-released.json').exists():s['phase']='release-observation-present'
+    if len(report['samples'])>=1000:raise RuntimeError('Sample count bound')
+    if (out/'stdout.log').stat().st_size>4194304:raise RuntimeError('Combined stream bound')
+    if sum(len(json.dumps(x)) for x in report['samples'])+len(json.dumps(s))>33554432:raise RuntimeError('Sample byte bound')
+    if int(s['memory.swap.current'])!=0:raise RuntimeError('Swap stop')
     report['samples'].append(s)
     (out/'progress.json').write_text(json.dumps(report))
     if inject_read_error:raise OSError('Engineered observation read failure')

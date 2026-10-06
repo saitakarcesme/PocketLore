@@ -2,6 +2,7 @@
 #include "pocketlore-owned.h"
 #include "llama-mmap.h"
 #include "scalar.h"
+#include "aux_trace.h"
 #include <iostream>
 #include <sys/prctl.h>
 #include <linux/seccomp.h>
@@ -26,7 +27,8 @@ static void snapshot(const std::string&p,std::shared_ptr<File>owner,void*address
 int main(int argc,char**argv){try{
  require(argc==5,"fixture hash mode prefix required");struct stat s{};require(stat(argv[1],&s)==0&&s.st_size==size&&sysconf(_SC_PAGESIZE)==4096,"Fixed synthetic fixture required");
  std::string mode=argv[3],prefix=argv[4];require(mode=="remap"||mode=="tail"||mode=="force"||mode=="retain"||mode=="no-progress"||mode=="mincore-failure"||mode=="advice-failure","Invalid fixture mode");
- bool cancelled=false;auto owner=File::open(argv[1],argv[2],size,false,[&]{return cancelled;},30,[](){},FaultPolicy::Random);
+ auxiliary_trace::begin(prefix);bool cancelled=false;auto owner=File::open(argv[1],argv[2],size,false,[&]{return cancelled;},30,[](){},FaultPolicy::Random);
+ auxiliary_trace::owner=owner;auxiliary_trace::record("verified","complete");
  if(mode!="force")owner->enable_budgeted_cache(8388608);
  llama_file file(argv[1],"rb");std::unique_ptr<llama_mmap>map;{Scope scope(owner,mode=="tail"?size-1056:size);map.reset(new llama_mmap(&file,0,false));}
  auto address=(volatile unsigned char*)map->addr();snapshot(prefix+"-cold.json",owner,map->addr());
@@ -34,15 +36,15 @@ int main(int argc,char**argv){try{
   {auto use=owner->use();for(size_t i=0;i<16777216;++i)require(address[i]==byte(i),"Remap byte oracle");}owner->advise();
   std::cout<<"{\"before_remap\":"<<owner->cache_observation()<<"}\n";map.reset();{Scope scope(owner,4194304);map.reset(new llama_mmap(&file,0,false));}
   address=(volatile unsigned char*)map->addr();{auto use=owner->use();for(size_t i=0;i<4194304;++i)require(address[i]==byte(i),"Remapped byte oracle");}owner->advise();
-  std::cout<<"{\"remapped\":"<<owner->observation()<<",\"cache\":"<<owner->cache_observation()<<"}\n";return 0;
+  std::cout<<"{\"remapped\":"<<owner->observation()<<",\"cache\":"<<owner->cache_observation()<<"}\n";map.reset();auxiliary_trace::record("teardown","complete");return 0;
  }
  if(mode=="tail"){
   {auto use=owner->use();for(size_t i=0;i<16777216;++i)require(address[i]==byte(i),"Tail byte oracle");require(address[size-1057]==byte(size-1057),"Tail boundary byte");}
-  owner->advise();snapshot(prefix+"-tail.json",owner,map->addr());std::cout<<"{\"tail_bytes\":"<<size-1056<<",\"cache\":"<<owner->cache_observation()<<"}\n";return 0;
+  owner->advise();snapshot(prefix+"-tail.json",owner,map->addr());std::cout<<"{\"tail_bytes\":"<<size-1056<<",\"cache\":"<<owner->cache_observation()<<"}\n";map.reset();auxiliary_trace::record("teardown","complete");return 0;
  }
  if(mode!="force"&&mode!="retain"){
   {auto use=owner->use();for(size_t i=0;i<16777216;++i)require(address[i]==byte(i),"Negative byte oracle");}
-  inject(mode);bool failed=false;try{owner->advise();}catch(const std::exception&e){failed=true;std::cout<<"{\"expected_refusal\":"<<escape(mode)<<",\"reason\":"<<escape(e.what())<<",\"cache\":"<<owner->cache_observation()<<"}\n";}require(failed,"Injected policy failure passed");return 0;
+  snapshot(prefix+"-before-injection.json",owner,map->addr());inject(mode);auxiliary_trace::record("seccomp","installed",mode);bool failed=false;try{owner->advise();}catch(const std::exception&e){failed=true;auxiliary_trace::record(mode,"refused",e.what());std::cout<<"{\"expected_refusal\":"<<escape(mode)<<",\"reason\":"<<escape(e.what())<<",\"cache\":"<<owner->cache_observation()<<"}\n";}require(failed,"Injected policy failure passed");map.reset();auxiliary_trace::record("teardown","complete");return 0;
  }
  const size_t offsets[]={0,0,4194304,0,16777216,16777216};const size_t lengths[]={4194304,4194304,12582912,4194304,16777216,4194304};
  for(int step=0;step<6;++step){
@@ -51,5 +53,5 @@ int main(int argc,char**argv){try{
   auto end=clock_ns();getrusage(RUSAGE_SELF,&b);require(rc==0,"Scalar failure");snapshot(prefix+"-"+std::to_string(step)+"-after.json",owner,map->addr());
   std::cout<<"{\"step\":"<<step<<",\"offset\":"<<offsets[step]<<",\"bytes\":"<<lengths[step]<<",\"sum\":"<<sum<<",\"start_ns\":"<<start<<",\"end_ns\":"<<end<<",\"major_faults\":"<<b.ru_majflt-a.ru_majflt<<",\"minor_faults\":"<<b.ru_minflt-a.ru_minflt<<",\"cpu_us\":"<<(b.ru_utime.tv_sec-a.ru_utime.tv_sec+b.ru_stime.tv_sec-a.ru_stime.tv_sec)*1000000LL+b.ru_utime.tv_usec-a.ru_utime.tv_usec+b.ru_stime.tv_usec-a.ru_stime.tv_usec<<"}\n";
  }
- map.reset();std::cout<<"{\"released\":true,\"owner\":"<<owner->observation()<<"}\n";return 0;
+ map.reset();std::cout<<"{\"released\":true,\"owner\":"<<owner->observation()<<"}\n";map.reset();auxiliary_trace::record("teardown","complete");return 0;
  }catch(const std::exception&e){std::cerr<<"REFUSED "<<e.what()<<"\n";return 1;}}

@@ -75,9 +75,8 @@ def validate(r,current=True):
   assert any(x.get('released') and x['owner']['regions']==[] for x in lines)
  assert metrics['retain'][1]['before_cached']==1024 and metrics['force'][1]['before_cached']==0
  assert metrics['retain'][4]['cache']['cursor']!=metrics['retain'][5]['cache']['cursor']
- for key in ['wrong-inode','wrong-hash','wrong-size','unaligned','partial-map','deadline','cancelled','async-reader','alias-mapping','deferred-destructor-observation','scalar-exception']:assert key in r['lifecycle']['stdout']
- for key in ['fadvise-kernel-failure','madvise-kernel-failure','double-owner','writable-inherited','dedicated-reuse-offset']:assert key in r['fault_controls']['stdout']
- for n in ['hung','read-error']:assert r[n]['cleanup'][-1]['action']=='REAPED'
+ from auxiliary import validate_aux
+ metrics['auxiliary']=validate_aux(r)
  return metrics
 
 def main():
@@ -91,8 +90,11 @@ def main():
   spec=importlib.util.spec_from_file_location('linked_native',R/'tools/evaluation/native-cache/check.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);p['linked']=m.artifacts(r['frozen']['source_path'])
   from contract import elf_machine
   assert elf_machine(R/BINARIES[-1])==62;p['new_executable']=identity(R/BINARIES[-1])
+  from auxiliary import mutations
+  p['auxiliary_mutations']=mutations(r)
   negatives=[]
   for n in ['source','binary','pid','startticks','budget','mincore','byte','failed','missing','policy','namespace','mount','stat']:
+   validate(r) # The unchanged positive must pass before each corruption.
    b=copy.deepcopy(r);run=b['runs']['retain']
    if n=='source':b['frozen']['source']={}
    elif n=='binary':b['frozen']['binary'][BINARIES[-1]]['sha256']='0'*64
@@ -122,6 +124,6 @@ def main():
    raise AssertionError('Mutation passed '+n)
   p['negative_controls']=negatives;assert not p['errors'];p['status']='PASS_BOUNDED_SYNTHETIC_REUSE_ONLY'
  except Exception as e:p['errors'].append(type(e).__name__+': '+str(e))
- finally:p['exit']=int(bool(p['errors']));p['stdout']=p['status']+'\n';atomic(O/'check.json',p);atomic(R/'docs/evidence/weight-cache-reuse-review.json',p);print(p['stdout'],end='')
+ finally:p['exit']=int(bool(p['errors']));p['stdout']=p['status']+'\n';atomic(O/'check.json',p);atomic(R/'docs/evidence/cache-auxiliary-contract-review.json',p);print(p['stdout'],end='')
  return p['exit']
 if __name__=='__main__':raise SystemExit(main())

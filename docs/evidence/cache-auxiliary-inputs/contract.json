@@ -1,0 +1,11 @@
+{
+ "task":"538-native-cache-auxiliary-raw-evidence-contract",
+ "model_access":false,
+ "new_fixture_bytes":138412032,
+ "stream":"stdout_and_stderr_combined_by_supervisor",
+ "process_only":["hung","read-error"],
+ "trace":"ordered begin/refused pairs with exact native exception, live stat/status/namespace and held-fd smaps; child seccomp setup and exact refusal",
+ "limits":{"per_file":134217728,"total":268435456,"retention":8388608,"chunk":1048576,"passes":2,"eviction_seconds":5,"bookkeeping":4194304},
+ "patterns":"Unchanged 537 phases and deterministic byte formula; no outcome-dependent adjustment",
+ "limitations":"Synthetic controls only. Kernel advice is advisory; mincore is shared original-file cache, not exclusive charges. No model or Android runtime qualification."
+}
