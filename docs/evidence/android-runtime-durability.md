@@ -12,7 +12,7 @@ Current retained app/test data plus APK logical bytes total8,318,106,177. Actual
 
 Twenty-two mutations of actual final receipts reject memory-window/peak/PID, package/source/provider/model/schema/row/budget, witness and boot faults; three additional recovery controls reject host-renderer, prior InvocationID and missing PID. Offline packet controls reject disguised SQLite disclosure and changed frozen source bytes. Constructed controls are not factual Android successes. The first SwiftShader run also passed but preceded the explicit backend/invocation guard; final evidence does not rely on that omission.
 
-Independent review follows this exact packet. Sustained renderer stability, actual general generation/root500/510/530, full current distribution/update peaks, physical ARM64/GrapheneOS, source rights, unseen matched comparisons and human release remain open. No builder VM restart/service change, protected5560/5562 access, inference, data deletion, push or main advancement occurred.
+Independent review ofe7a36e7: “Verified source, artifacts, SwiftShader witnesses and loaded-window samples support bounded zero-token recovery with retained rows/assets; sustained stability, inference resources, full-distribution capacity, answer quality and physical acceptance remain unproven.” Sustained renderer stability, actual general generation/root500/510/530, full current distribution/update peaks, physical ARM64/GrapheneOS, source rights, unseen matched comparisons and human release remain open. No builder VM restart/service change, protected5560/5562 access, inference, data deletion, push or main advancement occurred.
 
 ---
 

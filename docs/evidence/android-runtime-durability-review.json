@@ -754,5 +754,10 @@
     }
   },
   "database_policy": "Raw SQLite excluded; original row oracle, independently extracted current row hashes and full file inventories included.",
-  "limits": "Zero-token emulator load only; sustained renderer, generation, full distribution and physical gates open."
+  "limits": "Zero-token emulator load only; sustained renderer, generation, full distribution and physical gates open.",
+  "independent_review": {
+    "checkpoint": "e7a36e7",
+    "reviewer": "product_ui_review",
+    "conclusion": "Verified source, artifacts, SwiftShader witnesses and loaded-window samples support bounded zero-token recovery with retained rows/assets; sustained stability, inference resources, full-distribution capacity, answer quality and physical acceptance remain unproven."
+  }
 }
