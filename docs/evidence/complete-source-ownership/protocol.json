@@ -1,0 +1,23 @@
+{
+  "frozen_before_repair": true,
+  "current_commit": "0a04947ef55832c0239d30238e171ba5f54ca869",
+  "current_production_sha256": "c0cd1766b6cda2c125bc2631e88ced8701d159734fb1099bdc1d5a6689a88dad",
+  "review_production_sha256": "a29e6ebdac44b509dc6acf77893df2bab8f615b153aadb9ed44b05349cec3d9a",
+  "reconciliation": "Current canonical already holds flock across run; batch append-before-limit remains. Prove actual process ownership without replacing working lock.",
+  "bounds": {
+    "rows": 64,
+    "ordinary_compressed_bytes": 8388608,
+    "singleton_compressed_max": 16777216,
+    "pending_blob_bytes": 0,
+    "source_snapshot": "Metadata lengths first; materialize only admitted rows in one short snapshot; close before return/exception."
+  },
+  "controls": [
+    "pre-fix independent two-row overshoot",
+    "live owner during ingest/wait/index rejects resume with identical output and continues",
+    "two fresh starts exactly one owner",
+    "actual SIGTERM/SIGXCPU release and explicit resume; complete/finalization replay denied",
+    "exact/under/over8MiB, two rows, singleton through16MiB, larger refusal then later sequence",
+    "independent WAL checkpoint after boundary and exception",
+    "original safety and6k/12k binding checks remain"
+  ]
+}

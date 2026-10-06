@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Single-writer bounded source producer. Never grants source admission."""
-import argparse, datetime, fcntl, hashlib, json, math, os, resource, signal, sqlite3
+import argparse, datetime, hashlib, json, math, os, resource, signal, sqlite3
 import stat, sys, time, uuid, zlib
 from pathlib import Path
 import compact as c
@@ -104,41 +104,20 @@ def verify_long_limits(limits):
 def row_binding(row):
     return c.sha(c.canonical(list(row[:10]))+(c.sha(row[10]).encode() if row[10] is not None else b'oversized'))
 
-BATCH_MAX=8*1024**2
-SINGLETON_MAX=16*1024**2
-
-def read_batch(stage,start,ceiling,guard,rows=64,byte_limit=BATCH_MAX):
-    """Detached ordinary batch <=8MiB, or one explicit <=16MiB singleton.
-
-    Length-only lookahead never materializes an unselected pending blob. Larger
-    blobs return a counted metadata-only refusal; the original stays in stage.
-    """
-    c.require(0<rows<=64 and 0<byte_limit<=BATCH_MAX,'batch policy bound')
+def read_batch(stage,start,ceiling,guard,rows=64,byte_limit=8*1024**2):
+    """No source transaction/cursor survives return; transform only after close."""
     db=sqlite3.connect('file:'+str(stage)+'?mode=ro',uri=True,timeout=.2)
+    db.execute('PRAGMA cache_size=-2048');db.set_progress_handler(guard.progress,1000)
+    sql='SELECT * FROM records WHERE sequence>=? AND sequence<=?';args=[start,ceiling]
+    if db.execute("SELECT 1 FROM sqlite_master WHERE name='oversized'").fetchone():
+        sql+=" UNION ALL SELECT sequence,member,member_offset,raw_bytes,raw_sha256,NULL,NULL,NULL,NULL,'oversized original',NULL FROM oversized WHERE sequence>=? AND sequence<=?";args.extend([start,ceiling])
+    sql+=' ORDER BY sequence LIMIT ?';args.append(rows);batch=[];size=0
     try:
-        db.execute('PRAGMA cache_size=-2048');db.execute('PRAGMA temp_store=FILE')
-        db.set_progress_handler(guard.progress,1000);db.execute('BEGIN')
-        fields='sequence,member,member_offset,raw_bytes,raw_sha256,page,revision,title,license_json,metadata_error,length(original_zlib)'
-        sql='SELECT '+fields+' FROM records WHERE sequence>=? AND sequence<=?';args=[start,ceiling]
-        if db.execute("SELECT 1 FROM sqlite_master WHERE name='oversized'").fetchone():
-            sql+=" UNION ALL SELECT sequence,member,member_offset,raw_bytes,raw_sha256,NULL,NULL,NULL,NULL,'oversized original',NULL FROM oversized WHERE sequence>=? AND sequence<=?";args.extend([start,ceiling])
-        sql+=' ORDER BY sequence LIMIT ?';args.append(rows);batch=[];size=0
-        for header in db.execute(sql,args):
-            guard.check();length=header[10]
-            if length is not None and length>SINGLETON_MAX:
-                row=tuple(header[:9])+('compressed singleton refused: '+str(length)+' bytes; '+str(header[9] or ''),None)
-            elif length is None:
-                row=tuple(header[:10])+(None,)
-            else:
-                # Check before SELECTing the blob, including the pending row.
-                if batch and size+length>byte_limit:break
-                blob=db.execute('SELECT original_zlib FROM records WHERE sequence=?',(header[0],)).fetchone()[0]
-                c.require(len(blob)==length,'source snapshot length changed')
-                row=tuple(header[:10])+(blob,)
-            batch.append(row);size+=len(row[10]) if row[10] is not None else 0
+        for row in db.execute(sql,args):
+            guard.check();batch.append(row);size+=len(row[10]) if row[10] else 0
             if size>=byte_limit:break
-        return batch
     finally:db.close()
+    return batch
 
 def phase_receipt(out,state,guard,phase,db=None):
     guard.phase=phase;state['phase']=phase;state['memory']=process_memory();state['storage']=disk_sample(out,db)
@@ -229,13 +208,14 @@ def apply_limits(args):
     resource.setrlimit(resource.RLIMIT_AS,(address,address));os.sched_setaffinity(0,sorted(os.sched_getaffinity(0))[:1])
     return {'cpu_soft_hard_seconds':resource.getrlimit(resource.RLIMIT_CPU),'address_space_limit_bytes':address,'cpu_affinity':sorted(os.sched_getaffinity(0))}
 
-def run_owned(args,guard=None):
+def run(args,guard=None):
     out=Path(args.out);stage=Path(args.stage);out.parent.mkdir(parents=True,exist_ok=True)
     c.require(args.mode in ['short','long'],'mode');c.require(args.seconds>0 and (args.mode=='long' or args.seconds<=180),'short wall limit')
     c.require(args.cutoff<=CUTOFF and args.cutoff>time.time(),'absolute cutoff expired/invalid')
     limits=apply_limits(args)
     guard=guard or Guard(args.seconds,args.cutoff,out.parent)
     code={p.name:c.file_sha(p) for p in [Path(__file__),Path(c.__file__)]}
+    if not args.resume:c.require(not out.exists(),'existing output retained; explicit resume only');out.mkdir()
     owner=out/'owner.json';old=None
     if args.resume:
         old=json.loads((out/'status.json').read_text());owned=json.loads(owner.read_text())
@@ -324,19 +304,6 @@ def run_owned(args,guard=None):
     finally:
         if db:db.close()
         c.Projection=original_projection;guard.close()
-
-def run(args,guard=None):
-    # Hold ownership before any status read/write, across rollback and final hash.
-    out=Path(args.out);out.parent.mkdir(parents=True,exist_ok=True)
-    if not args.resume:
-        c.require(not out.exists(),'existing output retained; explicit resume only');out.mkdir()
-    c.require(out.is_dir(),'resume output missing')
-    fd=os.open(out/'.producer.lock',os.O_CREAT|os.O_RDWR,0o600)
-    try:
-        try:fcntl.flock(fd,fcntl.LOCK_EX|fcntl.LOCK_NB)
-        except BlockingIOError:raise ValueError('owned producer already active; concurrent resume denied')
-        return run_owned(args,guard)
-    finally:os.close(fd)
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--mode',choices=['short','long'],required=True);p.add_argument('--stage',required=True);p.add_argument('--out',required=True);p.add_argument('--ceiling',type=int,default=-1);p.add_argument('--follow',action='store_true');p.add_argument('--seconds',type=int,required=True);p.add_argument('--cutoff',type=float,required=True);p.add_argument('--acquisition');p.add_argument('--stage-status');p.add_argument('--resume',action='store_true');a=p.parse_args()

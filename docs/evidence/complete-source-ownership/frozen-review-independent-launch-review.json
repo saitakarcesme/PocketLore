@@ -1,0 +1,19 @@
+{
+  "at": 1791247727.8054442,
+  "decision": "rework",
+  "manifest_hashes_match": true,
+  "criticism": "The revised producer addresses prior safety defects, but concurrent resume lacks exclusive ownership, the stated batch-byte bound can be exceeded, and failed user-bus preflight prevents the specified launch.",
+  "findings": [
+    "--resume accepts active ingest/wait_source state without flock or live-owner checks and can overwrite owner receipts while first worker is alive",
+    "read_batch appends compressed row before checking8MiB limit; oversize singleton/prior batch exceed declared limit",
+    "Frozen user-bus preflight failed; parent must verify actual bus/cgroup before any launch"
+  ],
+  "improvements": [
+    "Deadline/signal/CPU handling",
+    "WAL snapshot detachment",
+    "Retained recovery and malformed dispositions",
+    "Completion identity checks"
+  ],
+  "source_admission_established": false,
+  "long_job_launched": false
+}

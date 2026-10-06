@@ -1,0 +1,70 @@
+{
+  "created_at": 1791247526.2525651,
+  "origin_packet": "/home/isa/PocketLore-control/evidence/522-complete-source-producer-production-safety/packet-20261006T0050Z",
+  "label_time_not_execution_time": "0050Z is only a directory label; review frozen now",
+  "files": {
+    "production.py": {
+      "bytes": 22392,
+      "sha256": "a29e6ebdac44b509dc6acf77893df2bab8f615b153aadb9ed44b05349cec3d9a"
+    },
+    "compact.py": {
+      "bytes": 24064,
+      "sha256": "3c0632516f55af2fa45855024e133fe3cb11fa5d60a55cdcd96cc58124290d54"
+    },
+    "protocol.json": {
+      "bytes": 1696,
+      "sha256": "49d6028b4aa705a7a82a3885370d049e62e68c0300e695a1d80d1c0736aa4d48"
+    },
+    "launch-spec.json": {
+      "bytes": 2732,
+      "sha256": "fbb6438a6e2ad716366b34e9b5196774dbc505d6b27b0ee059be61603f4accc2"
+    },
+    "constructed-controls.json": {
+      "bytes": 23259,
+      "sha256": "9c645135f56ebf521b76b419f55431cdc7a5053e63c80c8c5afa43d71b7bc9ce"
+    },
+    "original-roundtrips.json": {
+      "bytes": 763358,
+      "sha256": "631870d3925f2430d6a17039e4010d15abeef9bda4bed2400400e5e5e67366ca"
+    },
+    "oracle.json": {
+      "bytes": 389,
+      "sha256": "9ece6cacd0e3cd7e9255e9843f78dfd58c6b21e713f6ea851cf588661a533dfc"
+    },
+    "oracle-v1.log": {
+      "bytes": 359,
+      "sha256": "c13d633e9187455f1cc4510f635a8f35e80005493151dc68c965a8fc502a29f8"
+    },
+    "controls-v4.log": {
+      "bytes": 926,
+      "sha256": "d676f0fb06c032d899cbf38000dc223c1b2d05f61336b43fc81afb10eae032d6"
+    },
+    "user-bus-preflight.log": {
+      "bytes": 75,
+      "sha256": "e3aa172729b728b8445cb3159d76a5916d8d6520341893d4afc1f0691a8f5b5b"
+    },
+    "source-full-readiness-contract.json": {
+      "bytes": 3662,
+      "sha256": "9356d8ab58cecff5d0faf1a4914022568ef922a0df6789c807b54aa0d96b8de1"
+    },
+    "actual-resumed-status.json": {
+      "bytes": 3772,
+      "sha256": "651f325e6d1c1fd457b798d2b91cc6dbaea51511da253b36aae8a5ebdd538264"
+    },
+    "actual-sigxcpu-status.json": {
+      "bytes": 1779,
+      "sha256": "b82c38738ba5040416a5f58b8cc8c76579b44ba5451d6d7cabda17c89942b4f5"
+    },
+    "OBJECTIVE.md": {
+      "bytes": 981,
+      "sha256": "c746259db1b50979831570cc24a0a227c89558058a74406f101a7a6facb1370d"
+    }
+  },
+  "external_index": {
+    "path": "/home/isa/PocketLore-control/evidence/522-complete-source-producer-production-safety/packet-20261006T0050Z/index.sqlite",
+    "bytes": 47538176,
+    "sha256": "a7868426bbc1cb1b7c59fd441d8e782d366a2ed0dec05d0cbbcc516c3f0ebf43"
+  },
+  "source_admission_established": false,
+  "long_job_launched": false
+}
