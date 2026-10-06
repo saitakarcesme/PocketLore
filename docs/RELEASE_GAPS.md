@@ -472,3 +472,7 @@ Current synthetic receipts now reject contradictory kernel events, duplicate pre
 ### Task 541: current XML source preparation only
 
 Host bounded MediaWiki XML/wikitext ingestion/search/original inspection/export now passes synthetic and one 256-page provisional-prefix check, plus Android compilation. Full-archive XML integrity, census/latest revisions, rights/context eligibility, rendered fidelity and corpus-scale indexed Android import/reader remain unqualified. The 4,804,608-byte sample database is not a full 50GB installed/update budget projection. Device/runtime, complete-source admission, 12GB physical/no-GMS behavior, useful generated answers and unseen matched rivalry gates remain open. The terminal emulator and all model/source assets were preserved without new device/model activity.
+
+### Task542: selective host index, not full-source distribution
+
+Bounded exact literal indexing/search/inspection/export passes current host controls and a single256-record immutable-capsule derivation, plus Android compilation. Queries under three scalars are refused explicitly; common queries are slower than the legacy scan, startup/index validation is nontrivial, and measured index storage grew from4.80MB to22.11MB. Exact transient temp/journal peaks and Android runtime integration remain unmeasured. Rights/rendered fidelity/latest census/complete source admission, full45GBtarget50GB provider/temp/update/rollback and12GB physical/no-GMS/useful-generation/unseen-rival gates remain open. No archive/model/device/producer activity was dispatched.

@@ -331,3 +331,9 @@ The bounded official enwiki October2026 archive prefix retains source/page/revis
 contributor and acquisition identities with unknown/unreviewed rights; no blanket
 license conversion, rendered-content equivalence or redistribution clearance is
 asserted. Original markup and attribution metadata remain inspectable in exports.
+
+Task542's deterministic8192-record and functional wikitext fixtures are CC0 authored
+engineering controls. The index uses installed Python/SQLite B-trees without new
+third-party dependencies or tokenizer extensions. It retains task541 source,
+contributor, revision and unknown/unreviewed rights metadata without converting
+licenses, rendering original markup or clearing source redistribution rights.
