@@ -23,3 +23,9 @@ Observed maximum host process RSS was 39,989,248 bytes; maximum measured query d
 ## Explicit remaining gates
 
 Changed producer/index code has no revised 6,000/12,000 dedicated512MiB kernel runs. Complete original/latest/disposition/rights identity, >=1.25M eligible full articles (target2–3M), actual Android v3 query/import/export/restart, full45GBtarget/50GBinstalled-update/12GBdevice, strongest-model quality, physical/no-GMS, thermal, human and evaluator-owned unseen matched comparisons remain unproven. March2025 source freshness is not August2025 equivalence. The terminal emulator and protected201 records were untouched; their postfailure state is unobservable. This bounded task does not replace root500/510/529/530 gates.
+
+## Independent criticism
+
+Checkpoint 5c6bfcb verifies bounded host query-to-source roundtrips, including empty-block separation and long phrases; Android execution, revised scale/kernel evidence, independent rights/support, whole-source readiness, and device-budget acceptance remain unproven.
+
+The run named above is the final local builder observation. The review JSON records the latest required-check invocation and its raw outcomes; an invocation failure must not be replaced by this earlier success.
