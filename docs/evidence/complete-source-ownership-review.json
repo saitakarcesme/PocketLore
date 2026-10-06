@@ -1176,6 +1176,10 @@
     "required-safety.log": {
       "bytes": 1300,
       "sha256": "3a69e9d1653d20a0679cfce8c8d2d4b9483729090d1cc4316fbeed6508565f4e"
+    },
+    "independent-review.txt": {
+      "bytes": 227,
+      "sha256": "4bcc2439d81b7b6e740e577224f1449a1986ec71460e8da5199f1bd9de5290ea"
     }
   },
   "limits": [
@@ -1209,5 +1213,10 @@
       "exit_code": 0,
       "raw_log": "required-ownership.log"
     }
-  ]
+  ],
+  "independent_review": {
+    "checkpoint": "c342bfd377d121e496d00990bd5816998ee663a0",
+    "file": "independent-review.txt",
+    "canonical_acceptance_claimed": false
+  }
 }
