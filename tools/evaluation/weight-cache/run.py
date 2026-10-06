@@ -10,26 +10,30 @@ def fixture(p,size):
   f.flush();os.fsync(f.fileno())
  with p.open('rb') as f:os.posix_fadvise(f.fileno(),0,0,os.POSIX_FADV_DONTNEED)
  return {'path':str(p),'sha256':h.hexdigest(),'version':version(p)}
+def collect(out,prefix,raw):
+ raw['observations']={};raw['raw_bytes']={};raw['collection_errors']=[]
+ for p in [out/'stdout.log',out/'stderr.log']+sorted(prefix.parent.glob(prefix.name+'-*.json')):
+  try:
+   with p.open('rb') as g:b=g.read(4194305)
+   raw['raw_bytes'][p.name]={'sha256':hashlib.sha256(b).hexdigest(),'base64':base64.b64encode(b).decode()};assert len(b)<=4194304
+   if p.name in ['stdout.log','stderr.log']:raw[p.name[:-4]]=b.decode()
+   else:raw['observations'][p.name]=b.decode()
+  except Exception as e:raw['collection_errors'].append(repr(e))
+
 def main():
  if sys.argv[1]=='freeze':freeze();return 0
  f=json.loads((O/'frozen.json').read_text());r={'frozen':f,'inputs':{},'runs':{},'errors':[],'model_access':False}
  with (O/'attempt.json').open('x') as g:json.dump({'frozen':identity(O/'frozen.json'),'task':f['policy']['task']},g)
  try:
   source_check(f['source']);r['preflight']=owned.preflight()
+  bad=O/'collection-control';bad.mkdir();(bad/'stdout.log').write_bytes(b'\xff\x00');(bad/'stderr.log').mkdir();control={};collect(bad,bad/'none',control);r['collection_control']=control;assert len(control['collection_errors'])==2 and control['raw_bytes']['stdout.log']['base64']=='/wA='
   for name in ['force','retain']:r['inputs'][name]=fixture(O/(name+'.bin'),33554432);atomic(O/'runs.json',r)
   assert r['inputs']['force']['sha256']==r['inputs']['retain']['sha256']
   for name in ['force','retain','no-progress','mincore-failure','advice-failure','tail','remap']:
    inp=r['inputs']['force' if name=='force' else 'retain'];out=O/('run-'+name);prefix=O/name
    exe=R/BINARIES[-1];assert identity(exe)==f['binary'][BINARIES[-1]]
    raw=owned.execute([str(exe),inp['path'],inp['sha256'],name,str(prefix)],out,45);r['runs'][name]=raw;atomic(O/'runs.json',r)
-   raw['observations']={};raw['raw_bytes']={};raw['collection_errors']=[]
-   for p in [out/'stdout.log',out/'stderr.log']+sorted(O.glob(name+'-*.json')):
-    try:
-     with p.open('rb') as g:b=g.read(4194305)
-     raw['raw_bytes'][p.name]={'sha256':hashlib.sha256(b).hexdigest(),'base64':base64.b64encode(b).decode()};assert len(b)<=4194304
-     if p.name in ['stdout.log','stderr.log']:raw[p.name[:-4]]=b.decode()
-     else:raw['observations'][p.name]=b.decode()
-    except Exception as e:raw['collection_errors'].append(repr(e))
+   collect(out,prefix,raw)
    raw['post_input']=version(inp['path']);raw['post_source']=sources();atomic(O/'runs.json',r)
    assert raw['exit']==0 and not raw.get('failure') and not raw['collection_errors'] and raw['post_input']==inp['version'] and raw['post_source']==f['source'],name
   fault=fixture(O/'fault.bin',67108864);x=owned.execute([str(R/BINARIES[-2]),fault['path'],fault['sha256'],'negative',str(O/'fault-negative')],O/'fault-run',30)

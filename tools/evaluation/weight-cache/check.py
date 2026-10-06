@@ -13,6 +13,7 @@ def validate(r,current=True):
  q,period=map(int,k['cpu.max'].split());assert 0<q<=period*2 and len(k['affinity_cpus'])<=4
  assert set(r['inputs'])=={'force','retain'} and r['inputs']['force']['sha256']==r['inputs']['retain']['sha256']
  assert set(r['runs'])=={'force','retain','no-progress','mincore-failure','advice-failure','tail','remap'}
+ assert len(r['collection_control']['collection_errors'])==2 and r['collection_control']['raw_bytes']['stdout.log']['base64']=='/wA='
  metrics={}
  for name,run in r['runs'].items():
   inp=r['inputs']['force' if name=='force' else 'retain'];assert run['exit']==0 and not run.get('failure') and not run.get('cleanup_failure') and not run['collection_errors']
@@ -103,6 +104,13 @@ def main():
     elif n=='mount':x['owner']['mount']=x['owner']['mount'].replace(x['owner']['mount'].split()[2],'0:999',1)
     else:x['cache']['failed']=True
     run['observations']['retain-1-after.json']=json.dumps(x)
+   # Rebind altered raw bytes so semantic guards, not only serialization
+   # mismatch, must reject these engineered corrupted observations.
+   for key in list(run['raw_bytes']):
+    if key in ['stdout.log','stderr.log']:text=run[key[:-4]]
+    elif key in run['observations']:text=run['observations'][key]
+    else:continue
+    data=text.encode();run['raw_bytes'][key]={'sha256':hashlib.sha256(data).hexdigest(),'base64':base64.b64encode(data).decode()}
    try:validate(b)
    except Exception as e:negatives.append({'name':n,'refused':True,'error':repr(e)});continue
    raise AssertionError('Mutation passed '+n)
