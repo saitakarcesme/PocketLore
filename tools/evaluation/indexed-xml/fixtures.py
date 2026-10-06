@@ -25,3 +25,13 @@ def expected(A,rows,query,limit=20):
    a=A.units(r[field][:at]);hits.append({'id':r['id'],'field':field,'start_utf16':a,'end_utf16':a+A.units(query),'quote':query,'quote_sha256':A.sha(query.encode()),'source_text_sha256':A.sha(r['text'].encode()),'admission':False});break
   if len(hits)>=limit:break
  return hits
+
+def oracle_rows(count):
+ """Reconstruct the frozen authored strings without creating another input copy."""
+ sid=hashlib.sha256(('CC0-index-fixture-v1-'+str(count)).encode()).hexdigest();rows=[]
+ for i in range(1,count+1):
+  title='Title %05d'%i;body='Common source record %05d. Literal (OR "quoted") {{table|x=2}} <math>a+b</math> 😀éZ.'%i
+  if i==count:body+=' LateNeedleZXQ.'
+  if count<8192:body+='\r\n{|\n! Header !! Value\n| unit || 2\n|}\n<ref>conditional otherwise</ref> {{T|x=1}} Repeat Repeat.';title+=' TitleOnlyNeedle'
+  rows.append({'id':sid+':'+str(i)+':'+str(i+10000),'title':title,'text':body})
+ return rows
