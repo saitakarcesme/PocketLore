@@ -1,5 +1,5 @@
 """Independent raw process, scalar sequence and owned mapping receipt checks."""
-import re,json,hashlib,pathlib
+import re,json,hashlib,pathlib,base64
 from support import R,O,SOURCES,BINARIES,sha,identity,source_check,process_stat,status_pid,sample_identity
 SHA='96b9c0af5c77a4ecaabe3983175112b5ece763261c1ece12b2494b692a70dad7'
 def mapping(a):
@@ -35,8 +35,33 @@ def cpu_sample(raw,ticks):
  fields=raw[raw.rfind(')')+2:].split();assert (int(fields[11])+int(fields[12]))/ticks<=160
  return True
 
+def resource_sample(s,ticks):
+ # Independent of the supervisor's stop branch; malformed success must fail.
+ for key in ['memory.current','memory.peak','memory.swap.current','memory.events','memory.stat','cpu.stat','limits','stat','status','smaps_rollup']:
+  assert key in s and s[key] is not None,key
+ assert 0<int(s['memory.current'])<8053063680
+ assert int(s['memory.peak'])>=int(s['memory.current']) and int(s['memory.swap.current'])==0
+ assert int(re.search(r'^VmSwap:\s+(\d+)',s['status'],re.M)[1])==0
+ cpu_sample(s['stat'],ticks)
+ limits=re.search(r'^Max cpu time\s+(\d+)\s+(\d+)\s+seconds',s['limits'],re.M)
+ assert limits and limits.groups()==('150','160')
+ return True
+
+def policy_observation(a,name):
+ assert a['fault_policy']=='random' and a['dedicated_description'] is True
+ assert a['file_policy_result']==0 and a['mapping_policy_result']==(-1 if name=='verified' else 0)
+ assert int(re.search(r'^flags:\s+(\d+)',a['fdinfo'],re.M)[1],8)&3==0
+ assert int(re.search(r'^ino:\s+(\d+)',a['fdinfo'],re.M)[1])==a['inode']
+ mount_id=int(re.search(r'^mnt_id:\s+(\d+)',a['fdinfo'],re.M)[1]);assert int(a['mount'].split()[0])==mount_id
+ return True
+
 def validate_case(c,f):
  preflight_valid(c['preflight'])
+ for name,v in c['raw_bytes'].items():
+  b=base64.b64decode(v['base64'],validate=True);assert hashlib.sha256(b).hexdigest()==v['sha256'] and not v['truncated']
+  text=c.get(name) if name in ['stdout','stderr'] else c['raw'][name]
+  assert b==text.encode('utf-8'),'Raw receipt disagreement'
+ assert {'stdout','stderr','verified.json','loaded.json','prefill.json','generation.json','completed.json','unmapped.json'}<=set(c['raw_bytes'])
  assert c.get('exit')==0 and not any(c.get(k) for k in ['failure','cleanup_failure','post_identity_failure','collection_errors']),c.get('failure') or c.get('exit')
  assert c['binary_before']==c['binary_after']==f['binary'][BINARIES[1]]
  assert c['post_source']==f['source'] and c['model_before']==c['model_after']==c['parent_fd']['stat']
@@ -52,14 +77,15 @@ def validate_case(c,f):
  count=int(n[1])+int(g[1]);assert begins==[(str(i),'1') for i in range(count)] and ends==[(str(i),'0') for i in range(count)]
  for phase in ['identity_hash','loading','loaded','prefill','generation','completed_hold','context_released','model_released','backend_released','released_after_scope']:assert 'POCKETLORE_PHASE '+phase in text,phase
  previous=0;ns=c['samples'][0]['namespaces'];group=c['samples'][0]['cgroup']
+ assert group.strip()=='0::'+c['preflight']['cgroup'].removeprefix('/sys/fs/cgroup')
  for s in c['samples']:
-  cpu_sample(s['stat'],c['clock_ticks'])
+  resource_sample(s,c['clock_ticks'])
   limits=re.search(r'^Max cpu time\s+(\d+)\s+(\d+)\s+seconds',s['limits'],re.M);assert limits and limits.groups()==('150','160')
   sample_identity(s,c['pid'],c['startticks'],ns);assert s['cgroup']==group and c['start_ns']<=s['monotonic_ns']<=c['end_ns'] and s['monotonic_ns']>previous;previous=s['monotonic_ns'];assert int(s['memory.swap.current'])==0
  phase_chronology({n:json.loads(c['raw'][n+'.json'])['monotonic_ns'] for n in ['verified','loaded','prefill','generation','completed','unmapped']},c['start_ns'],c['end_ns'])
  phase_time=c['start_ns']
  for name in ['verified','loaded','prefill','generation','completed','unmapped']:
-  a=json.loads(c['raw'][name+'.json']);assert a['pid']==c['pid'] and int(a['startticks'])==c['startticks'] and a['sha256']==SHA and a['inode']==c['model_before']['inode'] and a['stat_device']==c['model_before']['device']
+  a=json.loads(c['raw'][name+'.json']);policy_observation(a,name);assert a['pid']==c['pid'] and int(a['startticks'])==c['startticks'] and a['sha256']==SHA and a['inode']==c['model_before']['inode'] and a['stat_device']==c['model_before']['device']
   assert a['namespaces']==''.join(ns[x] for x in ['mnt','pid','user']) and c['start_ns']<a['monotonic_ns']<c['end_ns']
   assert a['monotonic_ns']>phase_time;phase_time=a['monotonic_ns']
   assert status_pid(a['status'])==c['pid']
@@ -69,10 +95,12 @@ def validate_case(c,f):
  return {'tokens':int(g[1]),'prefill_tokens':int(n[1]),'elapsed_seconds':(c['end_ns']-c['start_ns'])/1e9,'aggregate_sample_max':max(int(s['memory.current']) for s in c['samples'])}
 def validate(r):
  source_check(r['frozen']['source']);preflight_valid(r['frozen']['kernel'])
- f=r['frozen'];assert f['policy']==json.loads(f['source']['docs/evidence/strong-scalar-inputs/route.json']['text'])
+ f=r['frozen'];assert set(f['binary'])==set(BINARIES) and set(f['configuration'])=={'downloads/native-cache-build/host/CMakeCache.txt','downloads/native-cache-build/android/arm64-v8a/CMakeCache.txt','downloads/native-cache-build/android/x86_64/CMakeCache.txt'}
+ assert f['policy']==json.loads(f['source']['docs/evidence/strong-random-inputs/route.json']['text'])
  for p,v in f['configuration'].items():assert sha(R/p)==v['sha256']
  manifest=pathlib.Path(f['source_path']).parent/'native-manifest.json';assert sha(manifest)==f['derivation']['sha256']
  for p,h in json.loads(manifest.read_text())['files'].items():assert sha(pathlib.Path(f['source_path'])/p)==h
  assert not r['errors'] and not r['not_run'] and len(r['cases'])==2,'Incomplete screen'
  for p,v in r['frozen']['binary'].items():assert sha(R/p)==v['sha256'],p
+ assert [c['number'] for c in r['cases']]==[1,2],'Missing, duplicated or reordered original probes'
  return [validate_case(c,r['frozen']) for c in r['cases']]

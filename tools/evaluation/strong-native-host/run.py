@@ -34,6 +34,13 @@ def run_case(i,frozen):
      s=owned.live(proc.pid);s['phase']=phase;s['limits']=pathlib.Path(f'/proc/{proc.pid}/limits').read_text()
      if phase!=last_phase or now-last_maps>1_000_000_000:
       s['smaps']=pathlib.Path(f'/proc/{proc.pid}/smaps').read_text();last_maps=now
+      s['owned_fd_live']=[]
+      for entry in pathlib.Path(f'/proc/{proc.pid}/fd').iterdir():
+       try:
+        stat=entry.stat()
+        if stat.st_ino==case['model_before']['inode'] and stat.st_dev==case['model_before']['device']:
+         s['owned_fd_live'].append({'fd':entry.name,'path':os.readlink(entry),'stat':version(entry),'fdinfo':pathlib.Path(f'/proc/{proc.pid}/fdinfo/{entry.name}').read_text()})
+       except FileNotFoundError:pass
      last_phase=phase
     except (FileNotFoundError,ProcessLookupError):
      if proc.poll() is not None:break
@@ -49,7 +56,9 @@ def run_case(i,frozen):
   except Exception as e:case['cleanup_failure']=repr(e)
   if pidfd is not None:os.close(pidfd)
   case['end_ns']=time.monotonic_ns()
-  collect_outputs(out,case)
+  atomic(out/'receipt.json',case)
+  try:collect_outputs(out,case)
+  except Exception as e:case['collection_errors']=[repr(e)];case['failure']='Raw collection failed'
   try:
    case['binary_after']=identity(R/BINARIES[1]);case['post_source']=sources();case['kernel_after']=owned.kernel()
    if 'model_before' in case:case['model_after']=version(MODEL)
@@ -64,7 +73,7 @@ def main():
  if len(sys.argv)>1 and sys.argv[1]=='freeze':freeze();return 0
  frozen=json.loads((O/'frozen.json').read_text());source_check(frozen['source'])
  # Atomic single ownership guard; no resumed/retried case in this task.
- with (O/'screen-attempt.json').open('x') as f:json.dump({'frozen':identity(O/'frozen.json'),'pid':os.getpid(),'time_ns':time.monotonic_ns()},f)
+ with (O/'screen-attempt.json').open('x') as f:json.dump({'task':frozen['policy']['task'],'frozen':identity(O/'frozen.json'),'pid':os.getpid(),'time_ns':time.monotonic_ns()},f)
  report={'frozen':frozen,'cases':[],'not_run':[1,2],'errors':[],'android_execution':False,'product_qualified':False}
  try:
   from validate import validate_case

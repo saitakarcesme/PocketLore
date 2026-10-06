@@ -17,3 +17,7 @@ target_link_libraries(native-cache-controls PRIVATE llama)
 add_executable(fault-policy-controls fault_controls.cpp)
 target_include_directories(fault-policy-controls PRIVATE "${LLAMA_SOURCE}/src")
 target_link_libraries(fault-policy-controls PRIVATE llama)
+
+add_executable(cache-reuse-controls reuse_controls.cpp)
+target_include_directories(cache-reuse-controls PRIVATE "${LLAMA_SOURCE}/src")
+target_link_libraries(cache-reuse-controls PRIVATE llama)

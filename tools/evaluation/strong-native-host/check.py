@@ -10,7 +10,7 @@ def links(source):
 def main():
  result={'status':'HOST_ENGINEERING_INCOMPLETE','errors':[],'android_execution':False,'product_qualified':False,'files':{},'started_ns':time.monotonic_ns()}
  # Freeze ALL attempted cases and the explicit unexecuted denominator first.
- for p in [O/'screen.json',O/'frozen.json',O/'controls-path.txt']+sorted(O.glob('case-*/receipt.json'))+sorted((O/'logs').glob('*')):
+ for p in [O/'screen.json',O/'frozen.json',O/'controls-path.txt']+sorted(O.glob('case-*/receipt.json'))+sorted((O/'logs').glob('*'))+sorted(O.glob('controls-*/*.json'))+sorted(O.glob('controls-*/*/*.log')):
   try:
    if p.is_file():result['files'][str(p.relative_to(R))]=pack(p)
   except Exception as e:result['errors'].append('Collection '+str(p)+': '+repr(e))
@@ -19,9 +19,10 @@ def main():
   controls=pathlib.Path((O/'controls-path.txt').read_text());result['controls']=json.loads(controls.read_text());assert result['controls']['status']=='CURRENT_NATIVE_CONTROLS_PASS' and result['controls']['source']==frozen['source']
   actual=json.loads((O/'screen.json').read_text());result['execution']=actual;result['measurements']=validate(actual)
   negatives=[]
-  for name in ['missing-case','wrong-pid','wrong-start','wrong-source','wrong-binary','missing-generation','wrong-mount','batch32','missing-release']:
+  for name in ['duplicate-case','missing-case','wrong-pid','wrong-start','wrong-source','wrong-binary','missing-generation','wrong-mount','batch32','missing-release','aggregate-cap','missing-resource','swap','policy','cpu','wall']:
    bad=copy.deepcopy(actual);c=bad['cases'][0]
-   if name=='missing-case':bad['cases'].pop()
+   if name=='duplicate-case':bad['cases'][1]=copy.deepcopy(c)
+   elif name=='missing-case':bad['cases'].pop()
    elif name=='wrong-pid':c['samples'][0]['pid']+=1
    elif name=='wrong-start':c['startticks']+=1
    elif name=='wrong-source':bad['frozen']['source']={}
@@ -30,6 +31,13 @@ def main():
    elif name=='wrong-mount':
     a=json.loads(c['raw']['loaded.json']);a['mount']=a['mount'].replace(a['mount'].split()[2],'0:9999',1);c['raw']['loaded.json']=json.dumps(a)
    elif name=='batch32':c['stderr']=c['stderr'].replace('SCALAR_BEGIN 0 1','SCALAR_BEGIN 0 32')
+   elif name=='aggregate-cap':c['samples'][0]['memory.current']='8053063680'
+   elif name=='missing-resource':c['samples'][0].pop('memory.current')
+   elif name=='swap':c['samples'][0]['memory.swap.current']='1'
+   elif name=='wall':c['end_ns']=c['start_ns']+181_000_000_000
+   elif name=='cpu':c['clock_ticks']=1
+   elif name=='policy':
+    a=json.loads(c['raw']['loaded.json']);a['fault_policy']='default';c['raw']['loaded.json']=json.dumps(a)
    else:c['raw'].pop('unmapped.json')
    try:validate(bad)
    except Exception as e:negatives.append({'mutation':name,'refused':True,'error':repr(e)});continue

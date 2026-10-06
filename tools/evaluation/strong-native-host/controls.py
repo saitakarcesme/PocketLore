@@ -3,7 +3,7 @@ import pathlib,json,sys,uuid,importlib.util
 from support import R,O,BINARIES,identity,sources,owned,atomic,collect_outputs
 
 def main():
- out=O/('controls-'+uuid.uuid4().hex[:8]);out.mkdir();results=[];before=sources()
+ out=O/('controls-'+uuid.uuid4().hex[:8]);out.mkdir();results=[];before=sources();atomic(out/'input-freeze.json',{'source':before,'synthetic_only':True})
  bad=out/'collection-fixture';bad.mkdir();(bad/'stdout').mkdir();(bad/'bad.json').write_bytes(b'\xff\x00');case={};collect_outputs(bad,case);assert len(case['collection_errors'])==2 and case['raw_bytes']['bad.json']['base64']=='/wA='
  atomic(bad/'receipt.json',case);results.append({'name':'collection-failure-retention','receipt':case})
  for name,script,deadline,inject in [('hung','import signal,time;signal.signal(signal.SIGTERM,signal.SIG_IGN);time.sleep(30)',.3,False),('read-error','import time;time.sleep(30)',2,True),('exit-error','import sys;sys.exit(7)',2,False)]:
@@ -21,6 +21,9 @@ def main():
  r=owned.execute([str(R/BINARIES[0]),str(fixture),identity(fixture)['sha256'],'4194304',str(out/'native'),'0'],out/'native-process',30)
  raw=(out/'native-process/stdout.log').read_text();assert r['exit']==0 and not r.get('failure')
  for name in ['scalar-order-byte-oracle','scalar-multitoken','scalar-live-reader','scalar-exception','scalar-cancel','deferred-destructor-observation','exception-unmapped','wrong-inode','wrong-hash','deadline','async-reader','alias-mapping']:assert name in raw,name
+ from validator_controls import execute
+ atomic(out/'lifecycle-controls-progress.json',{'source':before,'results':results})
+ results.extend(execute(out))
  assert sources()==before
  results.append({'name':'native-scalar-mmap','execution':r,'stdout':raw,'raw':{p.name:p.read_text() for p in out.glob('native*') if p.is_file()}})
  packet={'status':'CURRENT_NATIVE_CONTROLS_PASS','source':before,'results':results};atomic(out/'receipt.json',packet);(O/'controls-path.txt').write_text(str(out/'receipt.json'));print(packet['status'])

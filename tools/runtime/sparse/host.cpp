@@ -26,7 +26,7 @@ int execute(int argc,char **argv) {
   throw std::runtime_error("Engineered cancellation/expiry before model admission");
  }
 
- if(argc!=5 || std::string(argv[1])!="--exact-sparse-diagnostic" || std::string(argv[3])!=pocketlore_sparse::weights_sha) return 2;
+ if(argc!=5 || (std::string(argv[1])!="--exact-sparse-diagnostic" && std::string(argv[1])!="--exact-sparse-budget-diagnostic") || std::string(argv[3])!=pocketlore_sparse::weights_sha) return 2;
  signal(SIGTERM,stop);signal(SIGINT,stop);signal(SIGXCPU,stop);
  struct stat st{};if(stat(argv[2],&st)||uint64_t(st.st_size)!=pocketlore_sparse::file_bytes)return 3;
  std::ifstream input(argv[4]);std::string prompt((std::istreambuf_iterator<char>(input)),{});
@@ -35,8 +35,9 @@ int execute(int argc,char **argv) {
  auto mp=llama_model_default_params();pocketlore_sparse::Identity id{pocketlore_sparse::file_bytes,argv[3],"qwen35moe",733};
  pocketlore_sparse::configure_experiment(mp,id,cancellation);phase("identity_hash");
  auto owner=pocketlore_owned::File::open(argv[2],argv[3],pocketlore_sparse::file_bytes,true,[]{return cancellation.requested.load();},180,[](){},pocketlore_owned::FaultPolicy::Random);
+ if(std::string(argv[1])=="--exact-sparse-budget-diagnostic")owner->enable_budgeted_cache(2147483648ULL);
  const char *directory=getenv("POCKETLORE_OBSERVATIONS");
- auto observe=[&](const char *name){if(directory){std::ofstream f(std::string(directory)+"/"+name+".json");f<<owner->observation();if(!f)throw std::runtime_error("Observation write failed");}};
+ auto observe=[&](const char *name){if(directory){std::ofstream f(std::string(directory)+"/"+name+".json");f<<owner->observation();std::ofstream cache(std::string(directory)+"/"+name+"-cache.json");cache<<owner->cache_observation();if(!f)throw std::runtime_error("Observation write failed");}};
  observe("verified");phase("loading");
  llama_model *model=nullptr;
  { pocketlore_owned::Scope scope(owner); model=llama_model_load_from_file(argv[2],mp); }

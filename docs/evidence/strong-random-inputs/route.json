@@ -1,0 +1,28 @@
+{
+  "task": "536-exact-model-random-fault-scalar-execution",
+  "parent": "e8eefabcfb0e73092b7fd2e9a61f58cde23204a6",
+  "original_freeze_sha256": "8333619a074f93950999d1319035f578aaaa9dfbd3ef5f38f5a1b8873791a537",
+  "probes": [
+    "0541f16ce94e1450c0e2d55472cec984387a38bad1837d3228149f3d0f731e2c",
+    "d1b56364b533e1a226339c0a6089c2a8f03b73657c461c3030c78d6cfdca13bd"
+  ],
+  "n_ctx": 1024,
+  "n_batch": 1,
+  "n_ubatch": 1,
+  "threads": 2,
+  "max_output_tokens": 128,
+  "sampler": "greedy",
+  "wall_seconds": 180,
+  "cpu_soft_seconds": 150,
+  "cpu_hard_seconds": 160,
+  "aggregate_stop_bytes": 8053063680,
+  "max_stdout_bytes": 1048576,
+  "max_stderr_bytes": 4194304,
+  "max_sample_bytes": 67108864,
+  "max_samples": 2048,
+  "hash_policy": "Exactly one native held-fd streaming full SHA pass per attempted case; no separate Python full hash",
+  "failure_policy": "Stop entire screen on first failure; no retry",
+  "rubric": "Engineering success requires both original probes to generate nonempty complete output with actual scalar decode, ownership, release, identity and resource receipts. Independent source-support inspection remains separate, never model self-approval or product qualification.",
+  "fault_policy": "dedicated POSIX_FADV_RANDOM and owned MADV_RANDOM before mapping access",
+  "historical_route_sha256": "ea984341934f765188d5bdfdcaa187d8ff6a903f8976fff4d5676d27551378dc"
+}

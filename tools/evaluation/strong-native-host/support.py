@@ -1,13 +1,14 @@
 """Current explicit source contract; imports immutable ownership primitives."""
 import sys,pathlib,importlib.util,json,os,hashlib,base64
-R=pathlib.Path(__file__).resolve().parents[3];O=R/'downloads/strong-scalar-534'
+R=pathlib.Path(__file__).resolve().parents[3];O=R/'downloads/strong-random-536'
 sys.path.insert(0,str(R/'tools/evaluation/native-cache'))
 from contract import identity,sha,version,process_stat,status_pid,sample_identity,elf_machine,SOURCES as PARENT_SOURCES,BINARIES
 spec=importlib.util.spec_from_file_location('owned_runner',R/'tools/evaluation/native-cache/run.py');owned=importlib.util.module_from_spec(spec);spec.loader.exec_module(owned)
+BINARIES=list(BINARIES)+['downloads/native-cache-build/host/fault-policy-controls']
 SOURCES=list(PARENT_SOURCES)
-SOURCES+=['tools/runtime/sparse/scalar.h']+['tools/evaluation/strong-native-host/'+n for n in ['support.py','run.py','validate.py','check.py','controls.py','preflight.py']]+['tools/evaluation/check_strong_native_host.sh','docs/evidence/strong-scalar-inputs/route.json','docs/evidence/strong-native-host-fixtures/freeze.json','docs/evidence/strong-native-host-fixtures/probe-1.txt','docs/evidence/strong-native-host-fixtures/probe-2.txt']
+SOURCES+=['tools/runtime/sparse/scalar.h','tools/runtime/sparse/fault_controls.cpp','tools/evaluation/strong-native-host/validator_controls.py']+['tools/evaluation/strong-native-host/'+n for n in ['support.py','run.py','validate.py','check.py','controls.py','preflight.py']]+['tools/evaluation/check_strong_native_host.sh','docs/evidence/strong-random-inputs/route.json','docs/evidence/strong-native-host-fixtures/freeze.json','docs/evidence/strong-native-host-fixtures/probe-1.txt','docs/evidence/strong-native-host-fixtures/probe-2.txt']
 SOURCES=list(dict.fromkeys(SOURCES))
-POLICY=R/'docs/evidence/strong-scalar-inputs/route.json'
+POLICY=R/'docs/evidence/strong-random-inputs/route.json'
 MODEL=owned.MODEL
 
 def sources():return {p:identity(R/p,True) for p in SOURCES}

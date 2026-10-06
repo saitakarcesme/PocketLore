@@ -3,6 +3,7 @@
 #include <sys/mman.h>
 #include <sys/stat.h>
 #include <sys/file.h>
+#include <sys/resource.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <chrono>
@@ -38,6 +39,9 @@ enum class FaultPolicy { Default, Random };
 class File:public std::enable_shared_from_this<File>{
  struct Region {void *address;size_t size;off_t offset;};
  FaultPolicy policy=FaultPolicy::Default;bool dedicated=false;int file_policy_result=-1,mapping_policy_result=-1;
+ uint64_t cache_limit=0,cache_cursor=0;
+ struct CacheAudit {uint64_t before=0,after=0,calls=0,advised=0,start=0,end=0;long major=0,minor=0;bool failed=false;std::string error;} cache_audit;
+ static uint64_t nanos(){return std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now().time_since_epoch()).count();}
  int descriptor=-1;struct stat identity{};pid_t pid;std::string path,digest,mount,fdinfo,ns,start;
  std::mutex mutex;size_t readers=0;bool retiring=false;std::vector<Region> regions;bool full;std::function<bool()> cancel;std::chrono::steady_clock::time_point deadline;
  static std::string start_ticks(){auto s=text("/proc/self/stat");std::istringstream i(s.substr(s.rfind(')')+2));std::string v;for(int n=0;n<20;++n)i>>v;return v;}
@@ -101,9 +105,37 @@ public:
  }
  class Use{std::shared_ptr<File>p;public:explicit Use(std::shared_ptr<File>x):p(x){std::lock_guard<std::mutex>l(p->mutex);p->verify();require(!p->retiring&&!p->regions.empty(),"No live owned mapping for reader");++p->readers;}Use(const Use&)=delete;~Use() noexcept {p->release_reader();}};
  Use use(){return Use(shared_from_this());}
- void advise(){std::lock_guard<std::mutex>l(mutex);verify();require(!retiring&&!readers,"Alias, retiring mapping or async reader still active");const size_t page=sysconf(_SC_PAGESIZE);
-  require(!regions.empty(),"No owned mappings");for(auto&r:regions){inspect_region(r.address,r.size,r.offset);require(r.offset%page==0,"Unaligned file offset");for(size_t off=0;off<r.size;){budget();size_t n=std::min<size_t>(128*1024*1024,r.size-off);require(madvise((char*)r.address+off,n,MADV_DONTNEED)==0,"Targeted mapping advice failed");require(posix_fadvise(descriptor,r.offset+off,n,POSIX_FADV_DONTNEED)==0,"Targeted file advice failed");off+=n;}}
+ // Cache ceilings never change model admission. Configuration precedes mapping.
+ void enable_budgeted_cache(uint64_t bytes){std::lock_guard<std::mutex>l(mutex);verify();
+  require(regions.empty()&&!readers&&!retiring&&dedicated&&policy==FaultPolicy::Random&&file_policy_result==0,"Cache reuse requires dedicated pre-mapping owner");
+  require(bytes && bytes%sysconf(_SC_PAGESIZE)==0 && bytes<=(full?2147483648ULL:8388608ULL) && (!full||exact()),"Unsupported cache budget");cache_limit=bytes;cache_cursor=0;
  }
+ void advise(){std::lock_guard<std::mutex>l(mutex);cache_audit=CacheAudit{};cache_audit.start=nanos();struct rusage before{},after{};getrusage(RUSAGE_SELF,&before);
+  try {
+   verify();require(!retiring&&!readers&&regions.size()==1,"Alias, retiring mapping or async reader still active");
+   const size_t page=sysconf(_SC_PAGESIZE);auto&r=regions[0];inspect_region(r.address,r.size,r.offset);
+   require(r.offset%page==0,"Unaligned file offset");size_t count=(r.size+page-1)/page;
+   require(count<=4194304,"Cache bookkeeping exceeds 4MiB");std::vector<unsigned char> bits(count);
+   auto measure=[&](){budget();require(mincore(r.address,r.size,bits.data())==0,"Cache residency unavailable");uint64_t total=0;for(auto b:bits)total+=(b&1)*page;return total;};
+   auto advice=[&](size_t off,size_t n){budget();require(madvise((char*)r.address+off,n,MADV_DONTNEED)==0,"Targeted mapping advice failed");require(posix_fadvise(descriptor,r.offset+off,n,POSIX_FADV_DONTNEED)==0,"Targeted file advice failed");++cache_audit.calls;cache_audit.advised+=n;};
+   cache_audit.before=measure();cache_audit.after=cache_audit.before;
+   if(!cache_limit){for(size_t off=0;off<r.size;){size_t n=std::min<size_t>(128*1024*1024,r.size-off);advice(off,n);off+=n;}cache_audit.after=measure();}
+   else {
+    require(dedicated&&policy==FaultPolicy::Random&&file_policy_result==0&&mapping_policy_result==0,"Missing readonly random policy");
+    const size_t chunk=1048576;require(r.size%page==0&&chunk%page==0,"Unsupported reuse page geometry");
+    size_t chunks=(r.size+chunk-1)/chunk,visits=0;
+    while(cache_audit.after>cache_limit && visits<2*chunks){
+     require(nanos()-cache_audit.start<5000000000ULL,"Cache eviction wall deadline");budget();size_t off=cache_cursor*chunk,n=std::min(chunk,r.size-off);
+     bool present=false;for(size_t i=off/page;i<(off+n)/page;++i)present|=bits[i]&1;
+     cache_cursor=(cache_cursor+1)%chunks;++visits;
+     if(present){advice(off,n);cache_audit.after=measure();}
+    }
+    cache_audit.after=measure();require(cache_audit.after<=cache_limit,"Cache budget unresolved after bounded passes");
+   }
+  }catch(const std::exception&e){cache_audit.failed=true;cache_audit.error=e.what();cache_audit.end=nanos();getrusage(RUSAGE_SELF,&after);cache_audit.major=after.ru_majflt-before.ru_majflt;cache_audit.minor=after.ru_minflt-before.ru_minflt;throw;}
+  cache_audit.end=nanos();getrusage(RUSAGE_SELF,&after);cache_audit.major=after.ru_majflt-before.ru_majflt;cache_audit.minor=after.ru_minflt-before.ru_minflt;
+ }
+ std::string cache_observation(){std::lock_guard<std::mutex>l(mutex);std::ostringstream o;o<<"{\"policy\":"<<escape(cache_limit?"budgeted-cyclic-v1":"force-drop")<<",\"budget_bytes\":"<<cache_limit<<",\"chunk_bytes\":1048576,\"cursor\":"<<cache_cursor<<",\"before_bytes\":"<<cache_audit.before<<",\"after_bytes\":"<<cache_audit.after<<",\"observed_evicted_bytes\":"<<(cache_audit.before>cache_audit.after?cache_audit.before-cache_audit.after:0)<<",\"advice_calls\":"<<cache_audit.calls<<",\"advised_bytes\":"<<cache_audit.advised<<",\"start_ns\":"<<cache_audit.start<<",\"end_ns\":"<<cache_audit.end<<",\"major_faults\":"<<cache_audit.major<<",\"minor_faults\":"<<cache_audit.minor<<",\"failed\":"<<(cache_audit.failed?"true":"false")<<",\"error\":"<<escape(cache_audit.error)<<"}";return o.str();}
  std::string observation(){std::lock_guard<std::mutex> lock(mutex);verify();std::ostringstream r;r<<"[";bool comma=false;for(auto &v:regions){if(comma)r<<",";comma=true;size_t page=sysconf(_SC_PAGESIZE),count=(v.size+page-1)/page;std::vector<unsigned char> bits(count);require(mincore(v.address,v.size,bits.data())==0,"Cache residency unavailable");size_t present=0;for(auto b:bits)present+=b&1;r<<"{\"address\":"<<(uintptr_t)v.address<<",\"bytes\":"<<v.size<<",\"offset\":"<<v.offset<<",\"page_size\":"<<page<<",\"cache_present_pages\":"<<present<<"}";}r<<"]";std::ostringstream o;o<<"{\"monotonic_ns\":"<<std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now().time_since_epoch()).count()<<",\"regions\":"<<r.str()<<",";o<<"\"fault_policy\":"<<escape(policy==FaultPolicy::Random?"random":"default")<<",\"dedicated_description\":"<<(dedicated?"true":"false")<<",\"file_policy_result\":"<<file_policy_result<<",\"mapping_policy_result\":"<<mapping_policy_result<<",";o<<"\"pid\":"<<pid<<",\"startticks\":"<<escape(start)<<",\"fd\":"<<descriptor<<",\"stat_device\":"<<identity.st_dev<<",\"inode\":"<<identity.st_ino<<",\"bytes\":"<<identity.st_size<<",\"sha256\":"<<escape(digest)<<",\"fdinfo\":"<<escape(fdinfo)<<",\"mount\":"<<escape(mount)<<",\"namespaces\":"<<escape(ns)<<",\"smaps\":"<<escape(text("/proc/self/smaps"))<<",\"status\":"<<escape(text("/proc/self/status"))<<"}";return o.str();}
 };
 // Thread-local loader scope cannot adopt mappings created by another call/thread.
