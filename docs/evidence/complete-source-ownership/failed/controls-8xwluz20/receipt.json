@@ -1,0 +1,198 @@
+{
+  "success": false,
+  "constructed_only": true,
+  "run": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-8xwluz20",
+  "observations": [
+    {
+      "boundary_sizes": [
+        8388608
+      ],
+      "returned_sequences": [
+        0
+      ],
+      "actual_compressed_bytes": 8388608,
+      "checkpoint": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "boundary_sizes": [
+        8388607,
+        1
+      ],
+      "returned_sequences": [
+        0,
+        1
+      ],
+      "actual_compressed_bytes": 8388608,
+      "checkpoint": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "boundary_sizes": [
+        8388607,
+        2
+      ],
+      "returned_sequences": [
+        0
+      ],
+      "actual_compressed_bytes": 8388607,
+      "checkpoint": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "boundary_sizes": [
+        8388609,
+        1
+      ],
+      "returned_sequences": [
+        0
+      ],
+      "actual_compressed_bytes": 8388609,
+      "checkpoint": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "boundary_sizes": [
+        16777216,
+        1
+      ],
+      "returned_sequences": [
+        0
+      ],
+      "actual_compressed_bytes": 16777216,
+      "checkpoint": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "boundary_sizes": [
+        16777217,
+        1
+      ],
+      "returned_sequences": [
+        0,
+        1
+      ],
+      "actual_compressed_bytes": 1,
+      "checkpoint": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "boundary_sizes": [
+        0,
+        8388608,
+        1
+      ],
+      "returned_sequences": [
+        0,
+        1
+      ],
+      "actual_compressed_bytes": 8388608,
+      "checkpoint": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/production.py",
+        "--mode",
+        "short",
+        "--stage",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-8xwluz20/refusal-progress/stage.sqlite",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-8xwluz20/refusal-progress/out",
+        "--ceiling",
+        "1",
+        "--seconds",
+        "30",
+        "--cutoff",
+        "1791248326.0869968"
+      ],
+      "exit": 0,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-8xwluz20/refusal-progress/run.log",
+      "sha256": "e499d595c07dc71a4cd29b2e1f66760b116b40606ef7ae5f575a666f30df0ef3"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/production.py",
+        "--mode",
+        "short",
+        "--stage",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-8xwluz20/ingest-None/stage.sqlite",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-8xwluz20/ingest-None/out",
+        "--ceiling",
+        "1",
+        "--seconds",
+        "30",
+        "--cutoff",
+        "1791248326.0869968",
+        "--resume"
+      ],
+      "exit": 1,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-8xwluz20/ingest-None/competing.log",
+      "sha256": "fda43a4f6805cb9d9a3a3ab6b370d678962dce3a934a62dfa212b35f4b8c81db"
+    }
+  ],
+  "files": {
+    "refusal-progress/run.log": "e499d595c07dc71a4cd29b2e1f66760b116b40606ef7ae5f575a666f30df0ef3",
+    "ingest-None/acquisition.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "ingest-None/stage-status.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "ingest-None/owner.log": "bff5ac03835e0cd2c4d58d875c39ca71cd941b61f8e00daf5d4d400013b61e26",
+    "ingest-None/owner-ready.json": "acec07b35f387bb68a8f89c594b35cff7454f273bb188dbd7a68a0789eed62cc",
+    "ingest-None/competing.log": "fda43a4f6805cb9d9a3a3ab6b370d678962dce3a934a62dfa212b35f4b8c81db",
+    "fresh-race/one.log": "c19a7a7793f16ec467655a2328f521dc47635ce31beed4bbc12180a2c339618b",
+    "fresh-race/two.log": "5e848ce2a33597edadbddd7c0659fa3d8edacf9f64f5559a778974f93a435c0b",
+    "fresh-race/two-ready.json": "c916e5d334ee3e07958299aee0e8b086e2fe85878624f43e789ac5f43a60074a",
+    "fresh-race/out/owner.json": "7b32ca864308cf10c27f91f0bce5326b737eb791e65aefed48374f12420b1618",
+    "fresh-race/out/progress.jsonl": "fb68ff27ffcfe8ef2b668a70f83f09625d6a0c8064114b0311955ad8213a044b",
+    "fresh-race/out/failure-6e402d26e16348ecb2fa9bd3d233691a.json": "c01ebf65d5537ac7b7287d9e64c6b9fb9028635d2c730c491fd2259476090d35",
+    "fresh-race/out/status.json": "c01ebf65d5537ac7b7287d9e64c6b9fb9028635d2c730c491fd2259476090d35",
+    "fresh-race/out/events/event-1791248147243112149.json": "5e769bac04aa6ad7c52c8835376dd8a51e05e10c713beb789963820002c090b9",
+    "fresh-race/out/events/event-1791248147306871822.json": "cecd4e75a17b622680dff06c8222f55a16784e87c56c5805b2a0c28fc0622625",
+    "fresh-race/out/events/event-1791248147337558771.json": "0ef48018256c3554b5986bbcb6e186a1a77b9a3d9e6c2e549393fc023bcd7d56",
+    "ingest-None/out/owner.json": "6d510f84345387adc774e7689362390e6491aca396cdd82caf75638cfb6c1a90",
+    "ingest-None/out/progress.jsonl": "130d1d297f4aa6a0f15b465e7b5058bdb5b7608dc4ed968ca11d21507bc29548",
+    "ingest-None/out/status.json": "ad939faaf6f525d5c06d9ba1e5615d104f424c1c15ad9f024e37fe1f2969d21a",
+    "ingest-None/out/events/event-1791248146995310397.json": "b3823863187ba1d5b497383b668a11b82fe2cb37f8e36f465add9c8ee89605ec",
+    "ingest-None/out/events/event-1791248147057666557.json": "aebaa7c3f3076d22ba0c6c9e68377c46cbd68901892629f292bd1b5059df77bc",
+    "ingest-None/out/events/event-1791248147139036971.json": "b04e2fd7415f534cbf232813ccdb4eb09a4430c48922f604c7bdf9d1785304a9",
+    "ingest-None/out/events/event-1791248147145076700.json": "7b64dd11b18be0897855cb674ffff28f4cab5d1ddf8c13e5f3437f0b7380b7f7",
+    "ingest-None/out/events/event-1791248147159102418.json": "f66bca50d7427962e91315349d9fc169d2940c22d2b973977ced2074996ab7b0",
+    "ingest-None/out/events/event-1791248147165098215.json": "83033a9fa6bc809bd169b59cf70dfa89f5f9224622595b3a3ae254be42dd50b6",
+    "ingest-None/out/events/event-1791248147169883493.json": "a025808eafdf5795e964085548f2c4623cb05c8a32c920d4a74062e2a373bbe0",
+    "ingest-None/out/events/event-1791248147174505294.json": "ad939faaf6f525d5c06d9ba1e5615d104f424c1c15ad9f024e37fe1f2969d21a",
+    "refusal-progress/out/owner.json": "c692432c8f11c87841b049c17e8e45f2ab2ebd053236d9b3bdd2d9788dfe4edc",
+    "refusal-progress/out/progress.jsonl": "f7fb943c8874704b05206057ac4896331124fce47291bb61972a2b65624b37ba",
+    "refusal-progress/out/status.json": "49a5429d4957b751abc7dce75d41ddc773ff61660779ce84adfcea479743768b",
+    "refusal-progress/out/events/event-1791248146823183985.json": "9a1b4f409930ed046f9d57834d22489eedfd74f1dab5156e9fecd4b96e752de6",
+    "refusal-progress/out/events/event-1791248146890874080.json": "b0285eb6b6cca890ab9866d80a21f00f1c6791b048893263f3331d78d27642b5",
+    "refusal-progress/out/events/event-1791248146901107581.json": "d503258cb1641444cafa400b27a122443aee77a778304025d0db679a8a89e6c0",
+    "refusal-progress/out/events/event-1791248146906874292.json": "2125450c8e41d61ebf93fd766fd43a7ef2c6fe39a5973b78e24ad742f79bda61",
+    "refusal-progress/out/events/event-1791248146916072055.json": "a897e9440b2edbba4fae448f79dda2266555ef35f039625573a1bd087e9078e0",
+    "refusal-progress/out/events/event-1791248146920900744.json": "8ddac9cb2283a1e527a3aa716d6335c766c0711d63cba4a421fd26395b739a7a",
+    "refusal-progress/out/events/event-1791248146925678028.json": "4446835744a14daaaa661fc9932ddc2b140b5a03887af68d41f076bf1dae3a6b",
+    "refusal-progress/out/events/event-1791248146930148198.json": "49a5429d4957b751abc7dce75d41ddc773ff61660779ce84adfcea479743768b"
+  }
+}

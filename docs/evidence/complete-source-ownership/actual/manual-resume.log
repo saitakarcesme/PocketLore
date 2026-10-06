@@ -1,0 +1,210 @@
+{
+  "run_id": "667781c5854d40f2863215e2d6fd3071",
+  "status": "PROVISIONAL_COMPLETE",
+  "mode": "short",
+  "pid": 5,
+  "code": {
+    "production.py": "1faa842a3da3ae1c8f4ae1a4ad41d3e8b60ded8872b3ce5ebb3668f3c27daec6",
+    "compact.py": "3c0632516f55af2fa45855024e133fe3cb11fa5d60a55cdcd96cc58124290d54"
+  },
+  "stage": "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite",
+  "ceiling": 5999,
+  "follow": false,
+  "source_admission_established": false,
+  "distribution_ready": false,
+  "resume_ingest_allowed": false,
+  "previous_run": "be73cf5533a9485baabd1739fec4d972",
+  "process_limits": {
+    "cpu_soft_hard_seconds": [
+      181,
+      191
+    ],
+    "address_space_limit_bytes": 402653184,
+    "cpu_affinity": [
+      0
+    ]
+  },
+  "workers": 1,
+  "phase": "complete",
+  "memory": {
+    "VmSize": 55631872,
+    "VmRSS": 44142592,
+    "VmSwap": 0,
+    "ru_maxrss_bytes": 54472704
+  },
+  "storage": {
+    "logical_bytes": 47657010,
+    "allocated_bytes": 47685632,
+    "files": {
+      ".producer.lock": {
+        "logical": 0,
+        "allocated": 0
+      },
+      "owner.json": {
+        "logical": 374,
+        "allocated": 4096
+      },
+      "progress.jsonl": {
+        "logical": 94320,
+        "allocated": 98304
+      },
+      "index.sqlite": {
+        "logical": 47538176,
+        "allocated": 47538176
+      },
+      "failure-be73cf5533a9485baabd1739fec4d972.json": {
+        "logical": 1824,
+        "allocated": 4096
+      },
+      "status.json": {
+        "logical": 3696,
+        "allocated": 4096
+      },
+      "event-1791248201993731344.json": {
+        "logical": 971,
+        "allocated": 4096
+      },
+      "event-1791248202058667096.json": {
+        "logical": 1604,
+        "allocated": 4096
+      },
+      "event-1791248202697647834.json": {
+        "logical": 1373,
+        "allocated": 4096
+      },
+      "event-1791248202704216488.json": {
+        "logical": 1857,
+        "allocated": 4096
+      },
+      "event-1791248253610188430.json": {
+        "logical": 2015,
+        "allocated": 4096
+      },
+      "event-1791248253761718465.json": {
+        "logical": 2292,
+        "allocated": 4096
+      },
+      "event-1791248266275963473.json": {
+        "logical": 2371,
+        "allocated": 4096
+      },
+      "event-1791248270002704292.json": {
+        "logical": 2441,
+        "allocated": 4096
+      },
+      "event-1791248270101219527.json": {
+        "logical": 3696,
+        "allocated": 4096
+      }
+    },
+    "free_host_bytes": 425025576960
+  },
+  "updated_epoch": 1791248270.13625,
+  "cgroup": {
+    "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/pocketlore-runner.service",
+    "memory.max": "max",
+    "memory.swap.max": "max",
+    "memory.current": "1296478208",
+    "memory.peak": "3095171072",
+    "cpu.max": "max 100000",
+    "pids.max": "38092",
+    "pids.current": "114"
+  },
+  "host_memory": {
+    "MemTotal": 33421807616,
+    "MemAvailable": 3377954816
+  },
+  "committed_through": 5999,
+  "chain": "f25162cbae431fc0d1de753cb70dc6f163ef0373df98ce3c797b1c7475a39371",
+  "all_record_bindings_rechecked": 6000,
+  "whole_original_identity_matched": false,
+  "full_source_admission_established": false,
+  "complete_original_coverage_not_rights": false,
+  "archive_receipts": {
+    "acquisition": {},
+    "stage": {}
+  },
+  "counts": {
+    "dispositions": 6000,
+    "latest": 5999,
+    "blocked": 55,
+    "articles": 5944,
+    "passages": 15752
+  },
+  "dispositions": {
+    "excluded": 55,
+    "superseded": 1,
+    "transformed": 5944
+  },
+  "licenses": {
+    "CC-BY-SA-3.0": 5944
+  },
+  "flag_free_not_admitted": 40,
+  "storage_before_hash": {
+    "logical_bytes": 47652059,
+    "allocated_bytes": 47681536,
+    "files": {
+      ".producer.lock": {
+        "logical": 0,
+        "allocated": 0
+      },
+      "owner.json": {
+        "logical": 374,
+        "allocated": 4096
+      },
+      "progress.jsonl": {
+        "logical": 94320,
+        "allocated": 98304
+      },
+      "index.sqlite": {
+        "logical": 47538176,
+        "allocated": 47538176
+      },
+      "failure-be73cf5533a9485baabd1739fec4d972.json": {
+        "logical": 1824,
+        "allocated": 4096
+      },
+      "status.json": {
+        "logical": 2441,
+        "allocated": 4096
+      },
+      "event-1791248201993731344.json": {
+        "logical": 971,
+        "allocated": 4096
+      },
+      "event-1791248202058667096.json": {
+        "logical": 1604,
+        "allocated": 4096
+      },
+      "event-1791248202697647834.json": {
+        "logical": 1373,
+        "allocated": 4096
+      },
+      "event-1791248202704216488.json": {
+        "logical": 1857,
+        "allocated": 4096
+      },
+      "event-1791248253610188430.json": {
+        "logical": 2015,
+        "allocated": 4096
+      },
+      "event-1791248253761718465.json": {
+        "logical": 2292,
+        "allocated": 4096
+      },
+      "event-1791248266275963473.json": {
+        "logical": 2371,
+        "allocated": 4096
+      },
+      "event-1791248270002704292.json": {
+        "logical": 2441,
+        "allocated": 4096
+      }
+    },
+    "free_host_bytes": 425025576960,
+    "page_count": 11606,
+    "freelist_count": 160,
+    "page_size": 4096
+  },
+  "index_sha256": "a7868426bbc1cb1b7c59fd441d8e782d366a2ed0dec05d0cbbcc516c3f0ebf43"
+}

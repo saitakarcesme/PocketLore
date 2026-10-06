@@ -1,0 +1,23 @@
+{
+  "command": [
+    "python3",
+    "tools/packs/complete-source/production.py",
+    "--mode",
+    "short",
+    "--stage",
+    "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite",
+    "--ceiling",
+    "5999",
+    "--seconds",
+    "180",
+    "--cutoff",
+    "1791269964",
+    "--out",
+    "/home/isa/Projects/PocketLore/downloads/complete-source-production-safety/actual-20261006T005641Z/resumed",
+    "--resume"
+  ],
+  "exit": 1,
+  "error": "ValueError: owned producer already active; concurrent resume denied\n",
+  "owner_pid": 5,
+  "owner_still_running": true
+}

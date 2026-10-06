@@ -1,0 +1,14 @@
+{
+  "actual_parent": {
+    "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/pocketlore-runner.service",
+    "memory.max": "max",
+    "memory.swap.max": "max",
+    "memory.current": "1469341696",
+    "memory.peak": "3095171072",
+    "cpu.max": "max 100000",
+    "pids.max": "38092",
+    "pids.current": "110"
+  },
+  "qualifies_long_job": false,
+  "child_created": false
+}

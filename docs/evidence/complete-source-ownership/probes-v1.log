@@ -1,0 +1,38 @@
+test_batch_boundaries (__main__.Tests.test_batch_boundaries) ... ok
+test_real_ownership (__main__.Tests.test_real_ownership) ... FAIL
+test_two_fresh_starts (__main__.Tests.test_two_fresh_starts) ... FAIL
+
+======================================================================
+FAIL: test_real_ownership (__main__.Tests.test_real_ownership)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/packs/complete-source/safety/test_ownership.py", line 58, in test_real_ownership
+    code=owner.wait(timeout=15);self.assertEqual(code,1 if termination else 0)
+                                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_two_fresh_starts (__main__.Tests.test_two_fresh_starts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/packs/complete-source/safety/test_ownership.py", line 76, in test_two_fresh_starts
+    (root/'release').write_text('release');codes=[x.wait(timeout=15) for x in children];self.assertEqual(sorted(codes),[0,1]);observations.append({'two_fresh_exit_codes':codes,'owners':1})
+                                                                                        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [1, 1] != [0, 1]
+
+First differing element 0:
+1
+0
+
+- [1, 1]
+?  ^
+
++ [0, 1]
+?  ^
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.268s
+
+FAILED (failures=2)
+/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-8xwluz20

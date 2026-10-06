@@ -1,0 +1,21 @@
+{
+  "before": {
+    ".producer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owner.json": "183ff31fab7f81a9e86c2db42447f87c2478036d9c859e4d059e341f0957bbbd",
+    "progress.jsonl": "a9de4d7e858bdae1bc0ae39ff359638eef5a270c3e1fc9b3a526a8ea37ca7078",
+    "index.sqlite": "0d2d63428bd8f8319985e2c31fc50fb027e91e5528aac8a045f78d24df3c8594",
+    "status.json": "4d62e7a6897a947d524cd58202a1e0b7ce162d5f1a821dcb91f648afbb59c891",
+    "events/event-1791248281504751568.json": "8aa605c7ce603bcda022b6374ca998a21579eca0b08cfc42515ef43d2a70fca6",
+    "events/event-1791248281580811625.json": "4d62e7a6897a947d524cd58202a1e0b7ce162d5f1a821dcb91f648afbb59c891"
+  },
+  "after": {
+    ".producer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owner.json": "183ff31fab7f81a9e86c2db42447f87c2478036d9c859e4d059e341f0957bbbd",
+    "progress.jsonl": "a9de4d7e858bdae1bc0ae39ff359638eef5a270c3e1fc9b3a526a8ea37ca7078",
+    "index.sqlite": "0d2d63428bd8f8319985e2c31fc50fb027e91e5528aac8a045f78d24df3c8594",
+    "status.json": "4d62e7a6897a947d524cd58202a1e0b7ce162d5f1a821dcb91f648afbb59c891",
+    "events/event-1791248281504751568.json": "8aa605c7ce603bcda022b6374ca998a21579eca0b08cfc42515ef43d2a70fca6",
+    "events/event-1791248281580811625.json": "4d62e7a6897a947d524cd58202a1e0b7ce162d5f1a821dcb91f648afbb59c891"
+  },
+  "owner_alive": true
+}

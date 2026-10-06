@@ -1,0 +1,472 @@
+[
+  {
+    "command": [
+      "python3",
+      "tools/packs/complete-source/production.py",
+      "--mode",
+      "short",
+      "--stage",
+      "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite",
+      "--ceiling",
+      "5999",
+      "--seconds",
+      "180",
+      "--cutoff",
+      "1791269964",
+      "--out",
+      "/home/isa/Projects/PocketLore/downloads/complete-source-production-safety/actual-20261006T005641Z/resumed"
+    ],
+    "pid": 4,
+    "exit": 1,
+    "start": 1791248201.9489753,
+    "end": 1791248202.65292,
+    "signal": "SIGTERM",
+    "signal_delivered": true,
+    "status": {
+      "ceiling": 5999,
+      "cgroup": {
+        "cpu.max": "max 100000",
+        "memory.current": "1295867904",
+        "memory.max": "max",
+        "memory.peak": "3095171072",
+        "memory.swap.max": "max",
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/pocketlore-runner.service",
+        "pids.current": "114",
+        "pids.max": "38092"
+      },
+      "chain": "05199245da1111cb091f17cd46f899a2f00f21eedf66b1f59c6dc473d53c7589",
+      "code": {
+        "compact.py": "3c0632516f55af2fa45855024e133fe3cb11fa5d60a55cdcd96cc58124290d54",
+        "production.py": "1faa842a3da3ae1c8f4ae1a4ad41d3e8b60ded8872b3ce5ebb3668f3c27daec6"
+      },
+      "committed_through": 63,
+      "distribution_ready": false,
+      "error": "signal SIGTERM during ingest",
+      "failed_phase": "ingest",
+      "follow": false,
+      "host_memory": {
+        "MemAvailable": 3393404928,
+        "MemTotal": 33421807616
+      },
+      "memory": {
+        "VmRSS": 29634560,
+        "VmSize": 41443328,
+        "VmSwap": 0,
+        "ru_maxrss_bytes": 30281728
+      },
+      "mode": "short",
+      "phase": "ingest",
+      "pid": 4,
+      "previous_run": null,
+      "process_limits": {
+        "address_space_limit_bytes": 402653184,
+        "cpu_affinity": [
+          0
+        ],
+        "cpu_soft_hard_seconds": [
+          181,
+          191
+        ]
+      },
+      "resume_ingest_allowed": true,
+      "run_id": "be73cf5533a9485baabd1739fec4d972",
+      "source_admission_established": false,
+      "stage": "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite",
+      "status": "STOPPED_RETAINED",
+      "storage": {
+        "allocated_bytes": 458752,
+        "files": {
+          ".producer.lock": {
+            "allocated": 0,
+            "logical": 0
+          },
+          "event-1791248201993731344.json": {
+            "allocated": 4096,
+            "logical": 971
+          },
+          "event-1791248202058667096.json": {
+            "allocated": 4096,
+            "logical": 1604
+          },
+          "index.sqlite": {
+            "allocated": 438272,
+            "logical": 438272
+          },
+          "owner.json": {
+            "allocated": 4096,
+            "logical": 374
+          },
+          "progress.jsonl": {
+            "allocated": 4096,
+            "logical": 356
+          },
+          "status.json": {
+            "allocated": 4096,
+            "logical": 1604
+          }
+        },
+        "free_host_bytes": 425840590848,
+        "freelist_count": 0,
+        "logical_bytes": 443181,
+        "page_count": 107,
+        "page_size": 4096
+      },
+      "updated_epoch": 1791248202.5814507,
+      "workers": 1
+    },
+    "log_sha256": "e10e3d61f53903985ffe1d786eccb81f23ed8210d9099ef24da89dbc305f1b2c"
+  },
+  {
+    "command": [
+      "python3",
+      "tools/packs/complete-source/production.py",
+      "--mode",
+      "short",
+      "--stage",
+      "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite",
+      "--ceiling",
+      "5999",
+      "--seconds",
+      "180",
+      "--cutoff",
+      "1791269964",
+      "--out",
+      "/home/isa/Projects/PocketLore/downloads/complete-source-production-safety/actual-20261006T005641Z/resumed",
+      "--resume"
+    ],
+    "pid": 5,
+    "exit": 0,
+    "start": 1791248202.6531248,
+    "end": 1791248270.2080822,
+    "signal": null,
+    "signal_delivered": false,
+    "status": {
+      "all_record_bindings_rechecked": 6000,
+      "archive_receipts": {
+        "acquisition": {},
+        "stage": {}
+      },
+      "ceiling": 5999,
+      "cgroup": {
+        "cpu.max": "max 100000",
+        "memory.current": "1296478208",
+        "memory.max": "max",
+        "memory.peak": "3095171072",
+        "memory.swap.max": "max",
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/pocketlore-runner.service",
+        "pids.current": "114",
+        "pids.max": "38092"
+      },
+      "chain": "f25162cbae431fc0d1de753cb70dc6f163ef0373df98ce3c797b1c7475a39371",
+      "code": {
+        "compact.py": "3c0632516f55af2fa45855024e133fe3cb11fa5d60a55cdcd96cc58124290d54",
+        "production.py": "1faa842a3da3ae1c8f4ae1a4ad41d3e8b60ded8872b3ce5ebb3668f3c27daec6"
+      },
+      "committed_through": 5999,
+      "complete_original_coverage_not_rights": false,
+      "counts": {
+        "articles": 5944,
+        "blocked": 55,
+        "dispositions": 6000,
+        "latest": 5999,
+        "passages": 15752
+      },
+      "dispositions": {
+        "excluded": 55,
+        "superseded": 1,
+        "transformed": 5944
+      },
+      "distribution_ready": false,
+      "flag_free_not_admitted": 40,
+      "follow": false,
+      "full_source_admission_established": false,
+      "host_memory": {
+        "MemAvailable": 3377954816,
+        "MemTotal": 33421807616
+      },
+      "index_sha256": "a7868426bbc1cb1b7c59fd441d8e782d366a2ed0dec05d0cbbcc516c3f0ebf43",
+      "licenses": {
+        "CC-BY-SA-3.0": 5944
+      },
+      "memory": {
+        "VmRSS": 44142592,
+        "VmSize": 55631872,
+        "VmSwap": 0,
+        "ru_maxrss_bytes": 54472704
+      },
+      "mode": "short",
+      "phase": "complete",
+      "pid": 5,
+      "previous_run": "be73cf5533a9485baabd1739fec4d972",
+      "process_limits": {
+        "address_space_limit_bytes": 402653184,
+        "cpu_affinity": [
+          0
+        ],
+        "cpu_soft_hard_seconds": [
+          181,
+          191
+        ]
+      },
+      "resume_ingest_allowed": false,
+      "run_id": "667781c5854d40f2863215e2d6fd3071",
+      "source_admission_established": false,
+      "stage": "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite",
+      "status": "PROVISIONAL_COMPLETE",
+      "storage": {
+        "allocated_bytes": 47685632,
+        "files": {
+          ".producer.lock": {
+            "allocated": 0,
+            "logical": 0
+          },
+          "event-1791248201993731344.json": {
+            "allocated": 4096,
+            "logical": 971
+          },
+          "event-1791248202058667096.json": {
+            "allocated": 4096,
+            "logical": 1604
+          },
+          "event-1791248202697647834.json": {
+            "allocated": 4096,
+            "logical": 1373
+          },
+          "event-1791248202704216488.json": {
+            "allocated": 4096,
+            "logical": 1857
+          },
+          "event-1791248253610188430.json": {
+            "allocated": 4096,
+            "logical": 2015
+          },
+          "event-1791248253761718465.json": {
+            "allocated": 4096,
+            "logical": 2292
+          },
+          "event-1791248266275963473.json": {
+            "allocated": 4096,
+            "logical": 2371
+          },
+          "event-1791248270002704292.json": {
+            "allocated": 4096,
+            "logical": 2441
+          },
+          "event-1791248270101219527.json": {
+            "allocated": 4096,
+            "logical": 3696
+          },
+          "failure-be73cf5533a9485baabd1739fec4d972.json": {
+            "allocated": 4096,
+            "logical": 1824
+          },
+          "index.sqlite": {
+            "allocated": 47538176,
+            "logical": 47538176
+          },
+          "owner.json": {
+            "allocated": 4096,
+            "logical": 374
+          },
+          "progress.jsonl": {
+            "allocated": 98304,
+            "logical": 94320
+          },
+          "status.json": {
+            "allocated": 4096,
+            "logical": 3696
+          }
+        },
+        "free_host_bytes": 425025576960,
+        "logical_bytes": 47657010
+      },
+      "storage_before_hash": {
+        "allocated_bytes": 47681536,
+        "files": {
+          ".producer.lock": {
+            "allocated": 0,
+            "logical": 0
+          },
+          "event-1791248201993731344.json": {
+            "allocated": 4096,
+            "logical": 971
+          },
+          "event-1791248202058667096.json": {
+            "allocated": 4096,
+            "logical": 1604
+          },
+          "event-1791248202697647834.json": {
+            "allocated": 4096,
+            "logical": 1373
+          },
+          "event-1791248202704216488.json": {
+            "allocated": 4096,
+            "logical": 1857
+          },
+          "event-1791248253610188430.json": {
+            "allocated": 4096,
+            "logical": 2015
+          },
+          "event-1791248253761718465.json": {
+            "allocated": 4096,
+            "logical": 2292
+          },
+          "event-1791248266275963473.json": {
+            "allocated": 4096,
+            "logical": 2371
+          },
+          "event-1791248270002704292.json": {
+            "allocated": 4096,
+            "logical": 2441
+          },
+          "failure-be73cf5533a9485baabd1739fec4d972.json": {
+            "allocated": 4096,
+            "logical": 1824
+          },
+          "index.sqlite": {
+            "allocated": 47538176,
+            "logical": 47538176
+          },
+          "owner.json": {
+            "allocated": 4096,
+            "logical": 374
+          },
+          "progress.jsonl": {
+            "allocated": 98304,
+            "logical": 94320
+          },
+          "status.json": {
+            "allocated": 4096,
+            "logical": 2441
+          }
+        },
+        "free_host_bytes": 425025576960,
+        "freelist_count": 160,
+        "logical_bytes": 47652059,
+        "page_count": 11606,
+        "page_size": 4096
+      },
+      "updated_epoch": 1791248270.13625,
+      "whole_original_identity_matched": false,
+      "workers": 1
+    },
+    "log_sha256": "188ab201a9a6ce5170d21ef5a571378ffea8f33b14f8ab9ccf6e774d8a5e52af"
+  },
+  {
+    "command": [
+      "python3",
+      "tools/packs/complete-source/production.py",
+      "--mode",
+      "short",
+      "--stage",
+      "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite",
+      "--ceiling",
+      "5999",
+      "--seconds",
+      "180",
+      "--cutoff",
+      "1791269964",
+      "--out",
+      "/home/isa/Projects/PocketLore/downloads/complete-source-production-safety/actual-20261006T005641Z/sigxcpu"
+    ],
+    "pid": 7,
+    "exit": 1,
+    "start": 1791248270.209051,
+    "end": 1791248270.9628818,
+    "signal": "SIGXCPU",
+    "signal_delivered": true,
+    "status": {
+      "ceiling": 5999,
+      "cgroup": {
+        "cpu.max": "max 100000",
+        "memory.current": "1207496704",
+        "memory.max": "max",
+        "memory.peak": "3095171072",
+        "memory.swap.max": "max",
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/pocketlore-runner.service",
+        "pids.current": "107",
+        "pids.max": "38092"
+      },
+      "chain": "05199245da1111cb091f17cd46f899a2f00f21eedf66b1f59c6dc473d53c7589",
+      "code": {
+        "compact.py": "3c0632516f55af2fa45855024e133fe3cb11fa5d60a55cdcd96cc58124290d54",
+        "production.py": "1faa842a3da3ae1c8f4ae1a4ad41d3e8b60ded8872b3ce5ebb3668f3c27daec6"
+      },
+      "committed_through": 63,
+      "distribution_ready": false,
+      "error": "signal SIGXCPU during ingest",
+      "failed_phase": "ingest",
+      "follow": false,
+      "host_memory": {
+        "MemAvailable": 3405910016,
+        "MemTotal": 33421807616
+      },
+      "memory": {
+        "VmRSS": 29642752,
+        "VmSize": 41443328,
+        "VmSwap": 0,
+        "ru_maxrss_bytes": 30457856
+      },
+      "mode": "short",
+      "phase": "ingest",
+      "pid": 7,
+      "previous_run": null,
+      "process_limits": {
+        "address_space_limit_bytes": 402653184,
+        "cpu_affinity": [
+          0
+        ],
+        "cpu_soft_hard_seconds": [
+          181,
+          191
+        ]
+      },
+      "resume_ingest_allowed": true,
+      "run_id": "5506046efe7943d89354412caa909866",
+      "source_admission_established": false,
+      "stage": "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite",
+      "status": "STOPPED_RETAINED",
+      "storage": {
+        "allocated_bytes": 458752,
+        "files": {
+          ".producer.lock": {
+            "allocated": 0,
+            "logical": 0
+          },
+          "event-1791248270264314658.json": {
+            "allocated": 4096,
+            "logical": 971
+          },
+          "event-1791248270362391106.json": {
+            "allocated": 4096,
+            "logical": 1604
+          },
+          "index.sqlite": {
+            "allocated": 438272,
+            "logical": 438272
+          },
+          "owner.json": {
+            "allocated": 4096,
+            "logical": 372
+          },
+          "progress.jsonl": {
+            "allocated": 4096,
+            "logical": 355
+          },
+          "status.json": {
+            "allocated": 4096,
+            "logical": 1604
+          }
+        },
+        "free_host_bytes": 425025576960,
+        "freelist_count": 0,
+        "logical_bytes": 443178,
+        "page_count": 107,
+        "page_size": 4096
+      },
+      "updated_epoch": 1791248270.8891115,
+      "workers": 1
+    },
+    "log_sha256": "8b3d2bd4a8130678d40d9f3abd5c173db6bfe58d6e167a6e7a6a730508a71b33"
+  }
+]

@@ -1,0 +1,679 @@
+{
+  "success": true,
+  "constructed_only": true,
+  "run": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul",
+  "observations": [
+    {
+      "boundary_sizes": [
+        8388608
+      ],
+      "returned_sequences": [
+        0
+      ],
+      "actual_compressed_bytes": 8388608,
+      "checkpoint": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "boundary_sizes": [
+        8388607,
+        1
+      ],
+      "returned_sequences": [
+        0,
+        1
+      ],
+      "actual_compressed_bytes": 8388608,
+      "checkpoint": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "boundary_sizes": [
+        8388607,
+        2
+      ],
+      "returned_sequences": [
+        0
+      ],
+      "actual_compressed_bytes": 8388607,
+      "checkpoint": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "boundary_sizes": [
+        8388609,
+        1
+      ],
+      "returned_sequences": [
+        0
+      ],
+      "actual_compressed_bytes": 8388609,
+      "checkpoint": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "boundary_sizes": [
+        16777216,
+        1
+      ],
+      "returned_sequences": [
+        0
+      ],
+      "actual_compressed_bytes": 16777216,
+      "checkpoint": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "boundary_sizes": [
+        16777217,
+        1
+      ],
+      "returned_sequences": [
+        0,
+        1
+      ],
+      "actual_compressed_bytes": 1,
+      "checkpoint": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "boundary_sizes": [
+        0,
+        8388608,
+        1
+      ],
+      "returned_sequences": [
+        0,
+        1
+      ],
+      "actual_compressed_bytes": 8388608,
+      "checkpoint": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/production.py",
+        "--mode",
+        "short",
+        "--stage",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/refusal-progress/stage.sqlite",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/refusal-progress/out",
+        "--ceiling",
+        "1",
+        "--seconds",
+        "30",
+        "--cutoff",
+        "1791248460.1828358"
+      ],
+      "exit": 0,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/refusal-progress/run.log",
+      "sha256": "50fb46852e6c49356bdb9ab3f39a473dca4fb55caf288bfb3e95a4187134398b"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/production.py",
+        "--mode",
+        "short",
+        "--stage",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-None/stage.sqlite",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-None/out",
+        "--ceiling",
+        "1",
+        "--seconds",
+        "30",
+        "--cutoff",
+        "1791248460.1828358",
+        "--resume"
+      ],
+      "exit": 1,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-None/competing.log",
+      "sha256": "fda43a4f6805cb9d9a3a3ab6b370d678962dce3a934a62dfa212b35f4b8c81db"
+    },
+    {
+      "phase": "ingest",
+      "signal": null,
+      "owner_exit": 0,
+      "concurrent_output_bit_identical": true,
+      "owner_alive_after_refusal": true,
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/safety/ownership_probe.py",
+        "--root",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-None",
+        "--phase",
+        "ingest",
+        "--tag",
+        "owner"
+      ],
+      "output_snapshot_sha256": "e7df77f77067c36b3667c894dc78883fffb097a320497949ae75ed4b627e875a"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import fcntl,sys; f=open(sys.argv[1],\"r+\"); fcntl.flock(f,fcntl.LOCK_EX|fcntl.LOCK_NB); print(\"released\")",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-None/out/.producer.lock"
+      ],
+      "exit": 0,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-None/released.log",
+      "sha256": "fdc935e6a3f33abdcfb4f5d7a335d408b2b988e7a5f8411d9f73349d1fab39be"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/production.py",
+        "--mode",
+        "short",
+        "--stage",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/wait_source-15/stage.sqlite",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/wait_source-15/out",
+        "--ceiling",
+        "1",
+        "--seconds",
+        "30",
+        "--cutoff",
+        "1791248460.1828358",
+        "--resume"
+      ],
+      "exit": 1,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/wait_source-15/competing.log",
+      "sha256": "fda43a4f6805cb9d9a3a3ab6b370d678962dce3a934a62dfa212b35f4b8c81db"
+    },
+    {
+      "phase": "wait_source",
+      "signal": "SIGTERM",
+      "owner_exit": 1,
+      "concurrent_output_bit_identical": true,
+      "owner_alive_after_refusal": true,
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/safety/ownership_probe.py",
+        "--root",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/wait_source-15",
+        "--phase",
+        "wait_source",
+        "--tag",
+        "owner"
+      ],
+      "output_snapshot_sha256": "daa975dcbdcfad43601138cf18a63fad194821721f45dd4fca816b5e8e8e62f1"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import fcntl,sys; f=open(sys.argv[1],\"r+\"); fcntl.flock(f,fcntl.LOCK_EX|fcntl.LOCK_NB); print(\"released\")",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/wait_source-15/out/.producer.lock"
+      ],
+      "exit": 0,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/wait_source-15/released.log",
+      "sha256": "fdc935e6a3f33abdcfb4f5d7a335d408b2b988e7a5f8411d9f73349d1fab39be"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/production.py",
+        "--mode",
+        "short",
+        "--stage",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/index-None/stage.sqlite",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/index-None/out",
+        "--ceiling",
+        "1",
+        "--seconds",
+        "30",
+        "--cutoff",
+        "1791248460.1828358",
+        "--resume"
+      ],
+      "exit": 1,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/index-None/competing.log",
+      "sha256": "fda43a4f6805cb9d9a3a3ab6b370d678962dce3a934a62dfa212b35f4b8c81db"
+    },
+    {
+      "phase": "index",
+      "signal": null,
+      "owner_exit": 0,
+      "concurrent_output_bit_identical": true,
+      "owner_alive_after_refusal": true,
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/safety/ownership_probe.py",
+        "--root",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/index-None",
+        "--phase",
+        "index",
+        "--tag",
+        "owner"
+      ],
+      "output_snapshot_sha256": "c1949b0c23184c14b1d4eec9ba5bede422d4992df21851d8d7ae0f6b3b5f3127"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import fcntl,sys; f=open(sys.argv[1],\"r+\"); fcntl.flock(f,fcntl.LOCK_EX|fcntl.LOCK_NB); print(\"released\")",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/index-None/out/.producer.lock"
+      ],
+      "exit": 0,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/index-None/released.log",
+      "sha256": "fdc935e6a3f33abdcfb4f5d7a335d408b2b988e7a5f8411d9f73349d1fab39be"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/production.py",
+        "--mode",
+        "short",
+        "--stage",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/index-None/stage.sqlite",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/index-None/out",
+        "--ceiling",
+        "1",
+        "--seconds",
+        "30",
+        "--cutoff",
+        "1791248460.1828358",
+        "--resume"
+      ],
+      "exit": 1,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/index-None/replay.log",
+      "sha256": "395291e04b6ab7892cda85a9d50bcdccd03f0b5a5f6cc8c360c47e00b063843e"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/production.py",
+        "--mode",
+        "short",
+        "--stage",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-15/stage.sqlite",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-15/out",
+        "--ceiling",
+        "1",
+        "--seconds",
+        "30",
+        "--cutoff",
+        "1791248460.1828358",
+        "--resume"
+      ],
+      "exit": 1,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-15/competing.log",
+      "sha256": "fda43a4f6805cb9d9a3a3ab6b370d678962dce3a934a62dfa212b35f4b8c81db"
+    },
+    {
+      "phase": "ingest",
+      "signal": "SIGTERM",
+      "owner_exit": 1,
+      "concurrent_output_bit_identical": true,
+      "owner_alive_after_refusal": true,
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/safety/ownership_probe.py",
+        "--root",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-15",
+        "--phase",
+        "ingest",
+        "--tag",
+        "owner"
+      ],
+      "output_snapshot_sha256": "a182e0c1d92990209f1b5af1a71c725559aa48d4cce7a806c7b844536a8d5768"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import fcntl,sys; f=open(sys.argv[1],\"r+\"); fcntl.flock(f,fcntl.LOCK_EX|fcntl.LOCK_NB); print(\"released\")",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-15/out/.producer.lock"
+      ],
+      "exit": 0,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-15/released.log",
+      "sha256": "fdc935e6a3f33abdcfb4f5d7a335d408b2b988e7a5f8411d9f73349d1fab39be"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/production.py",
+        "--mode",
+        "short",
+        "--stage",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-15/stage.sqlite",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-15/out",
+        "--ceiling",
+        "1",
+        "--seconds",
+        "30",
+        "--cutoff",
+        "1791248460.1828358",
+        "--resume"
+      ],
+      "exit": 0,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-15/resumed.log",
+      "sha256": "3a7458a6232a509c15f220ffc673437f1275f171a1d7a50e28ee52be636bf868"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/production.py",
+        "--mode",
+        "short",
+        "--stage",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-24/stage.sqlite",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-24/out",
+        "--ceiling",
+        "1",
+        "--seconds",
+        "30",
+        "--cutoff",
+        "1791248460.1828358",
+        "--resume"
+      ],
+      "exit": 1,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-24/competing.log",
+      "sha256": "fda43a4f6805cb9d9a3a3ab6b370d678962dce3a934a62dfa212b35f4b8c81db"
+    },
+    {
+      "phase": "ingest",
+      "signal": "SIGXCPU",
+      "owner_exit": 1,
+      "concurrent_output_bit_identical": true,
+      "owner_alive_after_refusal": true,
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/safety/ownership_probe.py",
+        "--root",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-24",
+        "--phase",
+        "ingest",
+        "--tag",
+        "owner"
+      ],
+      "output_snapshot_sha256": "092b5c8cca78c1998b4316418471e9d5c514005d7fb3d4e0c4d3aecb694cfee8"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import fcntl,sys; f=open(sys.argv[1],\"r+\"); fcntl.flock(f,fcntl.LOCK_EX|fcntl.LOCK_NB); print(\"released\")",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-24/out/.producer.lock"
+      ],
+      "exit": 0,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-24/released.log",
+      "sha256": "fdc935e6a3f33abdcfb4f5d7a335d408b2b988e7a5f8411d9f73349d1fab39be"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/production.py",
+        "--mode",
+        "short",
+        "--stage",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-24/stage.sqlite",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-24/out",
+        "--ceiling",
+        "1",
+        "--seconds",
+        "30",
+        "--cutoff",
+        "1791248460.1828358",
+        "--resume"
+      ],
+      "exit": 0,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/ingest-24/resumed.log",
+      "sha256": "5879166c967ba4948d3289e2fec5b0fa9001c1728021ed15692765378060aa1b"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/production.py",
+        "--mode",
+        "short",
+        "--stage",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/hash-15/stage.sqlite",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/hash-15/out",
+        "--ceiling",
+        "1",
+        "--seconds",
+        "30",
+        "--cutoff",
+        "1791248460.1828358",
+        "--resume"
+      ],
+      "exit": 1,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/hash-15/competing.log",
+      "sha256": "fda43a4f6805cb9d9a3a3ab6b370d678962dce3a934a62dfa212b35f4b8c81db"
+    },
+    {
+      "phase": "hash",
+      "signal": "SIGTERM",
+      "owner_exit": 1,
+      "concurrent_output_bit_identical": true,
+      "owner_alive_after_refusal": true,
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/safety/ownership_probe.py",
+        "--root",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/hash-15",
+        "--phase",
+        "hash",
+        "--tag",
+        "owner"
+      ],
+      "output_snapshot_sha256": "feee72aa43ae13025a3e10b525722c0e16e58fc67e672a0b50511349cf5419e6"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-c",
+        "import fcntl,sys; f=open(sys.argv[1],\"r+\"); fcntl.flock(f,fcntl.LOCK_EX|fcntl.LOCK_NB); print(\"released\")",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/hash-15/out/.producer.lock"
+      ],
+      "exit": 0,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/hash-15/released.log",
+      "sha256": "fdc935e6a3f33abdcfb4f5d7a335d408b2b988e7a5f8411d9f73349d1fab39be"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/isa/Projects/PocketLore/tools/packs/complete-source/production.py",
+        "--mode",
+        "short",
+        "--stage",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/hash-15/stage.sqlite",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/hash-15/out",
+        "--ceiling",
+        "1",
+        "--seconds",
+        "30",
+        "--cutoff",
+        "1791248460.1828358",
+        "--resume"
+      ],
+      "exit": 1,
+      "log": "/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-eqp30vul/hash-15/replay.log",
+      "sha256": "395291e04b6ab7892cda85a9d50bcdccd03f0b5a5f6cc8c360c47e00b063843e"
+    },
+    {
+      "two_fresh_exit_codes": [
+        1,
+        0
+      ],
+      "owners": 1
+    }
+  ],
+  "files": {
+    "refusal-progress/run.log": "50fb46852e6c49356bdb9ab3f39a473dca4fb55caf288bfb3e95a4187134398b",
+    "ingest-None/acquisition.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "ingest-None/stage-status.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "ingest-None/owner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ingest-None/owner-ready.json": "29483f391d61460eaf47cb577535b24513c7a7af6e94ec4c2a857c72dc564bed",
+    "ingest-None/competing.log": "fda43a4f6805cb9d9a3a3ab6b370d678962dce3a934a62dfa212b35f4b8c81db",
+    "ingest-None/lease-snapshots.json": "03d7378a7e0e43b62e5c200970afdd6dd9caf3d8448f8e8c94c422801ea1d030",
+    "ingest-None/released.log": "fdc935e6a3f33abdcfb4f5d7a335d408b2b988e7a5f8411d9f73349d1fab39be",
+    "wait_source-15/acquisition.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "wait_source-15/stage-status.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "wait_source-15/owner.log": "3beab24476e42acb197117a26021add8a4d7b4f042897a71cf4e5f4029716b77",
+    "wait_source-15/owner-ready.json": "3edab7d8c7e7de491af4840f84410343392966cfd7d63d461130041e44c6d503",
+    "wait_source-15/competing.log": "fda43a4f6805cb9d9a3a3ab6b370d678962dce3a934a62dfa212b35f4b8c81db",
+    "wait_source-15/lease-snapshots.json": "7d2de3f128b27ad8c309f1603084ca7ef96f86f97c6f3fd4e182460a9ee2fad0",
+    "wait_source-15/released.log": "fdc935e6a3f33abdcfb4f5d7a335d408b2b988e7a5f8411d9f73349d1fab39be",
+    "index-None/acquisition.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "index-None/stage-status.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "index-None/owner.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "index-None/owner-ready.json": "42df92a0fb0d6743938c754d19177bd13c04a6b135c695616c9e713daa190343",
+    "index-None/competing.log": "fda43a4f6805cb9d9a3a3ab6b370d678962dce3a934a62dfa212b35f4b8c81db",
+    "index-None/lease-snapshots.json": "7e11949f2b3fdb5c03197c556d81e301c1fa59791ece6b599c840b58a5cc1732",
+    "index-None/released.log": "fdc935e6a3f33abdcfb4f5d7a335d408b2b988e7a5f8411d9f73349d1fab39be",
+    "index-None/replay.log": "395291e04b6ab7892cda85a9d50bcdccd03f0b5a5f6cc8c360c47e00b063843e",
+    "ingest-15/acquisition.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "ingest-15/stage-status.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "ingest-15/owner.log": "e10e3d61f53903985ffe1d786eccb81f23ed8210d9099ef24da89dbc305f1b2c",
+    "ingest-15/owner-ready.json": "c7bbc6b24b6e330d727e146756059dc3296c831173e98ca1fd2fbde45786fad7",
+    "ingest-15/competing.log": "fda43a4f6805cb9d9a3a3ab6b370d678962dce3a934a62dfa212b35f4b8c81db",
+    "ingest-15/lease-snapshots.json": "63109cb223038bf0886b52be3fd90f65595e81060536a88935c82b3dc5a25bf9",
+    "ingest-15/released.log": "fdc935e6a3f33abdcfb4f5d7a335d408b2b988e7a5f8411d9f73349d1fab39be",
+    "ingest-15/resumed.log": "3a7458a6232a509c15f220ffc673437f1275f171a1d7a50e28ee52be636bf868",
+    "ingest-24/acquisition.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "ingest-24/stage-status.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "ingest-24/owner.log": "8b3d2bd4a8130678d40d9f3abd5c173db6bfe58d6e167a6e7a6a730508a71b33",
+    "ingest-24/owner-ready.json": "70981cad9b961eb1112eeeec287499b1708de1b65069838818530476241c02da",
+    "ingest-24/competing.log": "fda43a4f6805cb9d9a3a3ab6b370d678962dce3a934a62dfa212b35f4b8c81db",
+    "ingest-24/lease-snapshots.json": "c0de007ab35b6696aae1bd028f7984841b3809e8bd09a37877e9e3967ca56fbe",
+    "ingest-24/released.log": "fdc935e6a3f33abdcfb4f5d7a335d408b2b988e7a5f8411d9f73349d1fab39be",
+    "ingest-24/resumed.log": "5879166c967ba4948d3289e2fec5b0fa9001c1728021ed15692765378060aa1b",
+    "hash-15/acquisition.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "hash-15/stage-status.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "hash-15/owner.log": "d54f1ee0cfc02413ada3a7f2e2c9f5b1e66b9d33aef24f765a63316213534974",
+    "hash-15/owner-ready.json": "8a147f7fc677614352edfa6438ae4d0c4a237d99fa9cfb24b9effa13c90c0a5a",
+    "hash-15/competing.log": "fda43a4f6805cb9d9a3a3ab6b370d678962dce3a934a62dfa212b35f4b8c81db",
+    "hash-15/lease-snapshots.json": "2bf5dcc03e7764b8d1dce463afafb30a3883bda1e451d11ead97c78c7effbe5d",
+    "hash-15/released.log": "fdc935e6a3f33abdcfb4f5d7a335d408b2b988e7a5f8411d9f73349d1fab39be",
+    "hash-15/replay.log": "395291e04b6ab7892cda85a9d50bcdccd03f0b5a5f6cc8c360c47e00b063843e",
+    "fresh-race/one.log": "c19a7a7793f16ec467655a2328f521dc47635ce31beed4bbc12180a2c339618b",
+    "fresh-race/two.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fresh-race/two-ready.json": "a683a97c0f6d0bd4b00f76cb7c7d211c8c56a4ab4ccc17162c6f06e4fbcdbd56",
+    "fresh-race/out/owner.json": "f325d7b0e08ff58f13c81e878d2fdb2b600ea5041b639041b37eae37bee6d788",
+    "fresh-race/out/progress.jsonl": "5bc4323876b5897ad8aa19c6a0e2375fb13c214959c19577b4dd0e940e436b03",
+    "fresh-race/out/status.json": "7d1669da3fbf8b3a53de346fe96003cc7cc915ccb0b852d8c9173726fe46bbc6",
+    "fresh-race/out/events/event-1791248284132715068.json": "722e576d148003b6545dc5ddb57623b99c05d85dd82076e6b51c561852b68e0b",
+    "fresh-race/out/events/event-1791248284214098487.json": "837aac9942d93e5bddb24ccc8fbcac6406dc043af4ae1afc1381fd4b8a65dd69",
+    "fresh-race/out/events/event-1791248284249557914.json": "c8e1dc2e9eac876c17cc34f62ec05ab918f3d7fa547a3e8b5b3fa5d37f2ba18f",
+    "fresh-race/out/events/event-1791248284262726131.json": "b149aad45deb1b22a3625edeed2f2f0726505d9b7d37e774ba1324125c5be490",
+    "fresh-race/out/events/event-1791248284295293551.json": "6137c57c66ff4676c43397bf97734b894d507a469f8c160e17de41a374937124",
+    "fresh-race/out/events/event-1791248284307633427.json": "8759196747aa97e3b6cf06141e353f8935809702053a2c828b6ed9222b940121",
+    "fresh-race/out/events/event-1791248284317851748.json": "f1e840d9000fac3ae5bfd75a62c1bd627844c4d773d63b9a8ff0a4688aa1ebe5",
+    "fresh-race/out/events/event-1791248284329648773.json": "7d1669da3fbf8b3a53de346fe96003cc7cc915ccb0b852d8c9173726fe46bbc6",
+    "hash-15/out/owner.json": "a9002116eeeef34cf6407ef015fa80fa6a31ca2858960542bc3ba2550e4c3c7d",
+    "hash-15/out/progress.jsonl": "688533c859bf221fd25ac9f141fce13cf3ad9f2e1355ff7616279bd62aa3280a",
+    "hash-15/out/failure-a071c0f0ea184a8e916a7659b40176de.json": "d0153fc351bf4a674eac23f1e83f74fbc8ac3010cfdd39966f967bea7999c754",
+    "hash-15/out/status.json": "d0153fc351bf4a674eac23f1e83f74fbc8ac3010cfdd39966f967bea7999c754",
+    "hash-15/out/events/event-1791248283742361115.json": "8edbdaf360594cd8dc7f2d4f72137254f38a7856ba40ef479d662e238fa4a892",
+    "hash-15/out/events/event-1791248283818843494.json": "160cca2be4bba77c014196b59f8c00f0affc9556af3205d276420bd4aef4bc6b",
+    "hash-15/out/events/event-1791248283841530098.json": "5e16cf62222173dc83fdaa2cb71d8f57da28314b4b19f92fb76904b7a1fde842",
+    "hash-15/out/events/event-1791248283854410927.json": "2e62832603ca3a2046cf52ca8c2301d4c054b4746f69eee467c66d4bbfb07622",
+    "hash-15/out/events/event-1791248283886783253.json": "18ff83118da90ce3748fddf58c706cc3bf39b23875c50c8f8505af418184425d",
+    "hash-15/out/events/event-1791248283898867325.json": "32ddc2d001a6f4ca364c846987a8721ca70c3a3e2182dc2dc0984bc9a3cb165d",
+    "hash-15/out/events/event-1791248283908763897.json": "476ca77aa6bacdfd1aee9273f46222175d3d1ff30c2dfe4e6535bdaeb5e96102",
+    "ingest-24/out/owner.json": "73eb114e24174b3d7d6211becbc28cb362193afeb6ce8a9a8b87f80f35e41ce4",
+    "ingest-24/out/progress.jsonl": "0c10a3678d7c58d65325191d5e12f9448f8c0c58a7e0cd52fc53eeac14943e1a",
+    "ingest-24/out/failure-36f1103c4c1a4c3bbda5cd8461aba438.json": "f8ca988e86e0e3f2df7fafaf4126049351b5215b5af58408085db1f66964d6e5",
+    "ingest-24/out/status.json": "2001df3e124443b1fe091059a114185f376f4c5a4d4a934edfaa8dd9e72a53aa",
+    "ingest-24/out/events/event-1791248283310055855.json": "877a07003b11331d7ab1e79bfa4efc8e9414fb4ed1ee6feee7d4b83f726f4f37",
+    "ingest-24/out/events/event-1791248283392443980.json": "6961e3aeeb59a7b01590331f663b1f1e0f1de3d8ebc4dda035410d5a032c07c7",
+    "ingest-24/out/events/event-1791248283537151232.json": "c21c177aeb0477ebfb057dab9dd40a8dedc239caca92f95164214ca5d3a61d68",
+    "ingest-24/out/events/event-1791248283548605191.json": "053082dfad0f018273f4e6cd77a48e05d80f35f41b749057227bee7535915b15",
+    "ingest-24/out/events/event-1791248283572511672.json": "cfef3013fb8b9807d73418b5d7a17acbb644dc7461f577304356e74831e7ce99",
+    "ingest-24/out/events/event-1791248283585822285.json": "11aba1a37105bf4e8dee5a33b097b4b9080845aa6c5c44f2d7d8a0e331022f4b",
+    "ingest-24/out/events/event-1791248283618252003.json": "d2fcebcf0c6296fcaf8aa71b8a183fcee34596b0f87c3455109abcf35abd8c80",
+    "ingest-24/out/events/event-1791248283630618380.json": "8981068ecb35025fbeae92ead3858aaf352cde14798f15389f2c7bbf36ef4b60",
+    "ingest-24/out/events/event-1791248283641332688.json": "4c96a92fb4c26fc0ac2fa899c95d973466c87ae934e17ad52f127956b9f71943",
+    "ingest-24/out/events/event-1791248283653138161.json": "2001df3e124443b1fe091059a114185f376f4c5a4d4a934edfaa8dd9e72a53aa",
+    "ingest-15/out/owner.json": "c5a6097d450a3a025218090d57c68d72efdefd9e83d52312998f76ff3f05ba67",
+    "ingest-15/out/progress.jsonl": "0d34cf715268ea2d76c760787e3bfa3f831c9ec9e12bff54051588f036fff112",
+    "ingest-15/out/failure-fcede8ae349a493585fb593bbff7df0b.json": "78023f397f6df15cdeb74a50edb141be52833be2ba678c1a720df5f3860ffa6a",
+    "ingest-15/out/status.json": "66e880ef85ac2b82bb79158da7370e22471132a7820194e67f35d902192cdcdf",
+    "ingest-15/out/events/event-1791248282895957327.json": "c68091082895210aaf0606960b64e7e2cf5c1cb1fab17da377958e30094bfd4a",
+    "ingest-15/out/events/event-1791248282972595614.json": "0b2c5336439138369d73d37342c5509e783657c08ae753ebfde367fb6417f7f2",
+    "ingest-15/out/events/event-1791248283117365949.json": "e6765d3104b627f7eceb7b073dc2dc1034e0bbb8b6e75fee9616bbc7fcf1241b",
+    "ingest-15/out/events/event-1791248283134377970.json": "2307af8eabe6a78500ad51f88f46dcecfe49d27754d2d757004fe50d6bbb2f53",
+    "ingest-15/out/events/event-1791248283156812554.json": "7437131050aade9d4992aea249cee56c7d149cc8b1c0f5459d2a154160544cab",
+    "ingest-15/out/events/event-1791248283170003756.json": "36a76c8a54dd3be4c673ed133aa7381b025c356ad02e53c25399475915ce5d8c",
+    "ingest-15/out/events/event-1791248283202430912.json": "34b8a440d457b7dec48334dd684a4f8221a5906a89e1c8db7b91969b817a60e1",
+    "ingest-15/out/events/event-1791248283214653099.json": "3936ac644f537eb5aae0e5ab7a90205f64bf1cbae93f8143410300256201c87c",
+    "ingest-15/out/events/event-1791248283225038303.json": "dd14b6463d7224ddb6fda42893c5ab31a8098a5c5a9bde1d4c5bf8b32fc0b52a",
+    "ingest-15/out/events/event-1791248283237022540.json": "66e880ef85ac2b82bb79158da7370e22471132a7820194e67f35d902192cdcdf",
+    "index-None/out/owner.json": "fa80bb522bab2cea2afa1244ba7c726934a992835f798798f11ec8c270aa1a50",
+    "index-None/out/progress.jsonl": "55c90b2db5d6d8a08f95e113263b3784f3931a5e21016464d1efeb4adfd85fe0",
+    "index-None/out/status.json": "e4668023105c2514f367f8f151a32309421ff28f1e47127afde0faffb45cec5a",
+    "index-None/out/events/event-1791248282475427092.json": "71b440fce4dbaa1942ee8b890188f42ebcf45e9923401790f01853b3daf7b7c1",
+    "index-None/out/events/event-1791248282556942114.json": "5a29943cad89990342dee8d92eb0737e87ec27b6a833eb04412659e9ffacc49e",
+    "index-None/out/events/event-1791248282579236458.json": "58b0659458b7f518b977936a722e044c4473ddd9814ebed9248be2b96d0cc8b3",
+    "index-None/out/events/event-1791248282592257838.json": "8bd7637e3938fe296a869c6d8fc0377e74103de71c39fc6a4ecc54d95a7a4aa2",
+    "index-None/out/events/event-1791248282682555370.json": "5709e8b81eeb78fe32bfd72440d7cf3b004c5c20fac66d7bed31bc9585ae1302",
+    "index-None/out/events/event-1791248282694016494.json": "e7352a27fb8fdfa7e0e37ce159d726b17fda31bbaadf390a4ce0e0cf210f3baa",
+    "index-None/out/events/event-1791248282706137717.json": "83b37f8fd2a424056422e1645cf90365931433816c550943c4963f20ed0008bb",
+    "index-None/out/events/event-1791248282716021300.json": "e4668023105c2514f367f8f151a32309421ff28f1e47127afde0faffb45cec5a",
+    "wait_source-15/out/owner.json": "538a5111ffcbefe58580eb259c3dd166002b298e8d1f9c931613219abfa86412",
+    "wait_source-15/out/progress.jsonl": "f62a1d6a85e8f7bceab0d3e9356fa98975da6886036d3dd51862f1d623c9f07d",
+    "wait_source-15/out/failure-8feb874cef1d461abec6545ab85e5a2e.json": "1b34485758a119e2b716e1a40f87c227e97f52d18c0b67786a0fe890c2140957",
+    "wait_source-15/out/status.json": "1b34485758a119e2b716e1a40f87c227e97f52d18c0b67786a0fe890c2140957",
+    "wait_source-15/out/events/event-1791248281890972777.json": "10c7d36e94a4199223c31d7943b26f52181ea94964b26f60f0a2220fca5e6910",
+    "wait_source-15/out/events/event-1791248281969034663.json": "b012ea1be999c39a6f1621576967f6461d67ebbd0affb85063b27ca70e694abd",
+    "wait_source-15/out/events/event-1791248282003279025.json": "d5236b9c6b65e22548e828c006b2f83f85fd33d1192e08d2467260323a29c612",
+    "ingest-None/out/owner.json": "183ff31fab7f81a9e86c2db42447f87c2478036d9c859e4d059e341f0957bbbd",
+    "ingest-None/out/progress.jsonl": "65f82e250dea693a7c8990a1c2ff5be03d92acde7af75e0ffdcd1223d4b5c9b8",
+    "ingest-None/out/status.json": "61c4f7915f8d8d9fce22b63cb91033c56bee0eebe2b4d63133a029d5a84db897",
+    "ingest-None/out/events/event-1791248281504751568.json": "8aa605c7ce603bcda022b6374ca998a21579eca0b08cfc42515ef43d2a70fca6",
+    "ingest-None/out/events/event-1791248281580811625.json": "4d62e7a6897a947d524cd58202a1e0b7ce162d5f1a821dcb91f648afbb59c891",
+    "ingest-None/out/events/event-1791248281667746715.json": "c4854394ccfb6ae80415a9db58311809fe91dd23252f9cf797c30fd7983e9e4c",
+    "ingest-None/out/events/event-1791248281678719789.json": "806cf27234172e99b33ca6dc7b3253874efc5be90300b5f882a10c017392ed3e",
+    "ingest-None/out/events/event-1791248281712359054.json": "7436b2040723371404899bcaf8d346344100158c0e88e52cfd086b08b32dc41c",
+    "ingest-None/out/events/event-1791248281722516818.json": "7da6518cb6e6a0b85c863d196d643f9ed7909017db0f6db8d2fe6e851edecb32",
+    "ingest-None/out/events/event-1791248281741321687.json": "1e89cac39d7725733676d02f19f032eb78e77a02e4751c1aa96154e011d36f7e",
+    "ingest-None/out/events/event-1791248281752715354.json": "61c4f7915f8d8d9fce22b63cb91033c56bee0eebe2b4d63133a029d5a84db897",
+    "refusal-progress/out/owner.json": "dfa8cfe5e966db2ba21a13218f8b9fc540c97874026698c484f267c0fff9fe9c",
+    "refusal-progress/out/progress.jsonl": "e60ecce26d2d3c057d0e5c440746a5384acfb7de61a31977673bbe760ed8a472",
+    "refusal-progress/out/status.json": "d048168e32870ce29f258d9365b5f9e72087262f19d87d644e58cfd6128a5fc6",
+    "refusal-progress/out/events/event-1791248281254112504.json": "4572d7f5366e5df6a1c75c58ca00b5e423472fb37d19445da16557af435e9767",
+    "refusal-progress/out/events/event-1791248281332213235.json": "c0102a007002e85dfacc60c47a84e1356fa506b1e2dffe0fa94b469f001245d1",
+    "refusal-progress/out/events/event-1791248281354353896.json": "d5dedcdfb02eba3f8247b60b0aff3fee7fc890b6d6e35ebdac9880c426b18855",
+    "refusal-progress/out/events/event-1791248281367642991.json": "b4ef7704a6a3c6b7335ffa2a4c50f78ec155f88606fba48adc8ab849fe36bf0f",
+    "refusal-progress/out/events/event-1791248281389345921.json": "42d1c9eb60a273d26792b4028645dda63df8fa75554bd112de2826887970b6df",
+    "refusal-progress/out/events/event-1791248281399447483.json": "98427962ce1e59c3b3db7ab04b346fe1047707af4467c5bdac5caa60347b1402",
+    "refusal-progress/out/events/event-1791248281412538905.json": "7c994f4f527133694f60edc9c49fd0d2527a895ee647c0fae3c54540935a9b53",
+    "refusal-progress/out/events/event-1791248281422812693.json": "d048168e32870ce29f258d9365b5f9e72087262f19d87d644e58cfd6128a5fc6"
+  }
+}

@@ -11,7 +11,16 @@ def validate(report):
  assert report['source_admission_established'] is False and report['long_job_launched'] is False
  for name,d in report['files'].items():
   p=PACKET/name;assert p.is_file() and p.stat().st_size==d['bytes'] and sha(p)==d['sha256'],name
- for name,d in report['executed_sources'].items():assert sha(ROOT/name)==d,name
+ revised=False
+ for name,d in report['executed_sources'].items():
+  if sha(ROOT/name)!=d:
+   # Historical receipts remain bound to their exact executed bytes, not relabeled.
+   assert sha(ROOT/'docs/evidence/complete-source-ownership/accepted-safety-code'/name)==d,name
+   revised=True
+ if revised:
+  from verify_complete_source_ownership import validate_current_bindings
+  validate_current_bindings()
+
  inv=json.loads((PACKET/'actual-lock/invocations.json').read_text());assert len(inv)==3
  for r in inv:
   s=r['status'];assert s['source_admission_established'] is False and s['distribution_ready'] is False

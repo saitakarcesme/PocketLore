@@ -1,0 +1,10 @@
+test_batch_boundaries (__main__.Tests.test_batch_boundaries) ... ok
+test_real_ownership (__main__.Tests.test_real_ownership) ... ok
+test_two_fresh_starts (__main__.Tests.test_two_fresh_starts) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.044s
+
+OK
+/home/isa/Projects/PocketLore/downloads/complete-source-ownership/controls-pi5wxvpm
+{"result": "PASS", "negative_controls": ["missing-record", "changed-hash", "stale-source", "false-admission"], "source_admission_established": false, "long_job_launched": false}
