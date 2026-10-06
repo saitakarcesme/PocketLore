@@ -24,14 +24,20 @@ def freeze_packet(out):
  files={}
  for p in sorted(out.iterdir()):
   if p.is_file() and p.suffix!='.sqlite':
-   b=p.read_bytes();files[p.name]={'sha256':sha(b),'bytes':len(b),'encoding':'base64','content':base64.b64encode(b).decode()}
- manifest=json.loads((out/'source-inputs.json').read_text()) if (out/'source-inputs.json').exists() else {}
- code={p:{'sha256':h,'content':(ROOT/p).read_text()} for p,h in manifest.items() if p.startswith('tools/evaluation/android-runtime-durability/') and (ROOT/p).suffix in ('.py','.java','.json','.xml','.gradle','.cpp')}
+   b=p.read_bytes()
+   if b.startswith(b'SQLite format 3\x00'):
+    files[p.name]={'sha256':sha(b),'bytes':len(b),'withheld':'Protected raw SQLite; row oracle supplied separately'};continue
+   files[p.name]={'sha256':sha(b),'bytes':len(b),'encoding':'base64','content':base64.b64encode(b).decode()}
+ code=json.loads((out/'executed-sources.json').read_text()) if (out/'executed-sources.json').exists() else {}
+ assert all(sha(v['content'].encode())==v['sha256'] for v in code.values()),'Executed source packet corruption'
  builds=ROOT/'docs/evidence/android-runtime-durability/window-build'
  for p in sorted(builds.glob('*')):
   if p.is_file():
    b=p.read_bytes();files['build/'+p.name]={'sha256':sha(b),'bytes':len(b),'encoding':'base64','content':base64.b64encode(b).decode()}
- packet={'task':'523-material-measured-window-final-receipts','run':out.name,'status':'FAIL' if (out/'failure.json').exists() else 'PASS','raw_files':files,'executed_sources':code,'database_policy':'Raw SQLite excluded; original row oracle, independently extracted current row hashes and full file inventories included.','limits':'Zero-token emulator load only; sustained renderer, generation, full distribution and physical gates open.'}
+ historical=ROOT/'docs/evidence/android-runtime-durability/final-validation/material-20261006T025314Z.json'
+ if historical.exists():
+  b=historical.read_bytes();files['historical-failed-window-run.json']={'sha256':sha(b),'bytes':len(b),'encoding':'base64','content':base64.b64encode(b).decode()}
+ packet={'task':'523-material-measured-window-final-receipts','run':out.name,'status':'FAIL' if (out/'failure.json').exists() else 'PASS','checker_exit':1 if (out/'failure.json').exists() else 0,'raw_files':files,'executed_sources':code,'database_policy':'Raw SQLite excluded; original row oracle, independently extracted current row hashes and full file inventories included.','limits':'Zero-token emulator load only; sustained renderer, generation, full distribution and physical gates open.'}
  target=ROOT/'docs/evidence/android-runtime-durability-review.json';tmp=target.with_suffix('.tmp');tmp.write_text(json.dumps(packet,indent=2));os.replace(tmp,target)
  archive=ROOT/'docs/evidence/android-runtime-durability/final-validation';archive.mkdir(exist_ok=True);(archive/(out.name+'.json')).write_bytes(target.read_bytes())
 def assertions(d):
@@ -66,6 +72,10 @@ def main():
  try:
   paths=subprocess.check_output(['git','ls-files','--cached','--others','--exclude-standard','android','tools/evaluation/android-runtime-durability','tools/runtime','tools/android-build.sh'],cwd=ROOT,text=True).splitlines()
   sources={p:sha((ROOT/p).read_bytes()) for p in sorted(set(paths)) if(ROOT/p).is_file()};(out/'source-inputs.json').write_text(json.dumps(sources,sort_keys=True));source_hash=sha((out/'source-inputs.json').read_bytes());(out/'executed-check.py').write_bytes(pathlib.Path(__file__).read_bytes());(out/'executed-witness.py').write_bytes(pathlib.Path(__file__).with_name('witness.py').read_bytes())
+  code={p:{'sha256':h,'content':(ROOT/p).read_text()} for p,h in sources.items() if p.startswith('tools/evaluation/android-runtime-durability/') and (ROOT/p).suffix in ('.py','.java','.json','.xml','.gradle','.cpp')}
+  assert all(sha(v['content'].encode())==v['sha256'] for v in code.values()),'Frozen code hash mismatch'
+  (out/'executed-sources.json').write_text(json.dumps(code,sort_keys=True))
+  cmd('packet-controls',[sys.executable,str(ROOT/'tools/evaluation/android-runtime-durability/material/packet_controls.py')])
   cmd('local-service-unavailable',['systemctl','--user','show','pocketlore-modern-emulator.service','-p','MainPID','-p','Restart','-p','NRestarts'],allow_failure=True)
   before_host=request(out,'before',source_hash,started)
   assert all(sha((ROOT/p).read_bytes())==h for p,h in sources.items()),'Source changed after freeze'
