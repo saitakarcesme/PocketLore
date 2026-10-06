@@ -1,0 +1,89 @@
+{
+  "cause_assessment": {
+    "not_proven": "No controlled random-versus-default cold experiment or per-inode charge attribution exists; file charges include initial unit file cache and unrelated unit members, and samples are not atomic. Readahead/readaround alone, exact expert working set, whole-model first-token fit, or a guaranteed fix is not established.",
+    "proven": "Monitor sampled unit memory.current8460570624B above8053063680B7.5GiB stop and recorded RuntimeError; no memory.max/OOM/OOM-kill event and no sampled unit swap. This is a deliberate aggregate stop, not kernel OOM or process/model-only8.46GB.",
+    "supported_investigation": "Unit file charges7896768512B at stop dwarf anonymous472039424B and processRSS1875922944B; post-reap file charges persist7916621824B while file_mapped86016B. This supports cache-charge pressure across the unit. Frozen header uses MADV_DONTNEED/POSIX_FADV_DONTNEED but no MADV_RANDOM/POSIX_FADV_RANDOM; scalar advice occurs after successful synchronized decode, so charges can grow during the next token before its safe advice boundary."
+  },
+  "checkpoint": "7df3445c50dae524e4a6e7a795bc7d4a52bb63f8",
+  "criticism": "The scalar screen failed during second-token prefill from aggregate memory pressure, with zero output and prompt cleanup; dominant file-cache charges support investigation but do not prove readahead as the sole cause.",
+  "decision": "verified_failure_only",
+  "epoch": 1791291974.770648,
+  "follow_up_prerequisites": [
+    "Implement exact opt-in random-fault advice only for the owned mapping/descriptor and preserve original defaults and model bytes.",
+    "First use bounded synthetic cold-file controls with exact source/binary/ownership/alias/cancel/cleanup identities and host/dualABI links; report flags/results/charged cache versus mapped RSS without treating synthetic savings as model fit.",
+    "No model hash/slice/load/prefill/generation until a separate independently reviewed changed-route contract; preserve first scalar and531 failures and no same-route replay.",
+    "Any future actual screen keeps original prompts, resources and first-failure stop; report per-processRSS/PSS/HWM separately from supervising unit current/lifetime peak and file cache."
+  ],
+  "identity": {
+    "host_binary_sha256": "3ab63ab83374c681f1b8e9d33c9997c4b2f4c9fd281011a1dbf219844ad465f3",
+    "input_manifest_sha256": "1b536fd58a2d8ee72a556f468ace9fc6f84182722a93668b0e5441dd3f3635bf",
+    "model_version": {
+      "ctime_ns": 1791243732322380803,
+      "device": 57,
+      "inode": 4024784,
+      "mtime_ns": 1791243691041287853,
+      "size": 12290628576
+    },
+    "namespace_pid": 5,
+    "namespaces": {
+      "mnt": "mnt:[4026533265]",
+      "pid": "pid:[4026533267]",
+      "user": "user:[4026533268]"
+    },
+    "native_reported_full_fd_sha256": "96b9c0af5c77a4ecaabe3983175112b5ece763261c1ece12b2494b692a70dad7",
+    "source_snapshot_checkpoint": "7df3445c50dae524e4a6e7a795bc7d4a52bb63f8",
+    "startticks": 49053938
+  },
+  "limitations": [
+    "Static e50e244 gap review remains version-specific; this packet has newer run/support/validator and native-cache dependencies, so no stale-gap transfer.",
+    "Frozen source and evidence identity verified; canonical build0/host1/task REWORK are parent terminal context, not newly regraded Android/build execution here.",
+    "No hostPID namespace mapping or external proc liveness test was conducted; child reap is supported by held-pidfd/direct-child code and actual receipt, not a new live probe.",
+    "No generation/source-support, Android/JNI/UI, physical12GB/noGMS/full50GB installed profile or rival quality credit."
+  ],
+  "measurements": {
+    "elapsed_seconds": 43.645899474,
+    "exit": 12,
+    "kernel_memory_max_bytes": 9663676416,
+    "last_aggregate_memory_stat": {
+      "anon": 472039424,
+      "file": 7896768512,
+      "file_mapped": 1763049472,
+      "kernel": 38600704
+    },
+    "last_process_rss_bytes": 1875922944,
+    "observed_process_vmhwm_max_bytes": 2007703552,
+    "post_cleanup_aggregate_lifetime_peak_bytes": 8479965184,
+    "post_cleanup_events": {
+      "high": 0,
+      "low": 0,
+      "max": 0,
+      "oom": 0,
+      "oom_group_kill": 0,
+      "oom_kill": 0,
+      "sock_throttled": 0
+    },
+    "preflight_aggregate_current_bytes": 1786793984,
+    "preflight_aggregate_lifetime_peak_bytes": 2556039168,
+    "sampled_aggregate_current_max_bytes": 8460570624,
+    "sampled_process_rss_max_bytes": 1995083776,
+    "sampled_swap_all_zero": true,
+    "samples": 430,
+    "stdout_bytes": 0,
+    "term_to_reaped_seconds": 0.06344939,
+    "unrun_cases": [
+      2
+    ]
+  },
+  "scope": "Frozen actual534 first scalar failure only; no successful-generation/task/product/device acceptance, model reread, rerun or lifecycle action.",
+  "verified": [
+    "All40 manifest file hashes/lengths match; raw case matches embedded screen case and frozen input matches embedded screen freeze.",
+    "Executable pre/post stat+SHA identity match exact frozen host binary; model pre/post/path-FD versions match; post-source matches frozen source. No new binary/model scan performed.",
+    "430 sampled stat/status rows bind namespace PID5/startticks49053938, stable namespaces/cgroup and strict monotonic case-contained times.",
+    "Embedded base64 stdout/stderr reconstruct exact frozen files; stdout empty SHAe3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855, stderr115383B SHA7f1f4fa3140c68dfa9d6913f4c4bca18ee32e5b5ebc88d16456873debf3f4e90, neither truncated.",
+    "Native loaded/prefill JSON matches embedded raw records, PID/starttick/namespace/file inode4024784/size12290628576/fullhash; mount0:29 authoritative in namespace despite stat_device57. Whole model mapped virtual span and zero cache_present_pages at these observations are not full-execution residency.",
+    "stderr states PREFILL_TOKENS379, SCALAR_BEGIN0/1 and SCALAR_END0/0 then SCALAR_BEGIN1/1; no second successful end or generation phase/output. Thus first one-token prefill completed and second token was interrupted.",
+    "Owned native-cache reap sends held-pidfd TERM then bounded wait with KILL fallback; actual TERM\u2192REAPED exit12 recorded, no KILL needed. Native context/backend/scope-release logs present, followed by cancellation refusal. No successful unmapped/final-native release observation exists; do not promote partial cleanup to successful lifecycle qualification.",
+    "Screen errors retain aggregate stop, not_run=[2], android_execution=false/product_qualified=false."
+  ],
+  "visible_result": "The scalar screen failed during second-token prefill from aggregate memory pressure, with zero output and prompt cleanup; dominant file-cache charges support investigation but do not prove readahead as the sole cause."
+}

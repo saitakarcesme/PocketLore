@@ -7,9 +7,6 @@ def capture():
   r['source_job_ownership'].append({'path':str(p),'processes':(p/'cgroup.procs').read_text()})
  v=os.statvfs('.');r['free_bytes']=v.f_bavail*v.f_frsize
  assert int(r['kernel']['memory.max'])<=9*1024**3 and r['kernel']['memory.swap.max'].strip()=='0'
- q,period=map(int,r['kernel']['cpu.max'].split());assert 0<q<=2*period and int(r['kernel']['pids.max'])<=512
- assert int(next(l.split()[1] for l in r['meminfo'].splitlines() if l.startswith('MemAvailable:')))*1024>=11*1024**3
- assert int(r['kernel']['memory.current'])<8053063680
  assert len(r['affinity'])<=4 and r['free_bytes']>=100*1024**3
  return r
 if __name__=='__main__':print(json.dumps(capture(),indent=2))

@@ -13,3 +13,7 @@ target_include_directories(sparse-host PRIVATE "${LLAMA_SOURCE}/src")
 add_executable(native-cache-controls native_controls.cpp)
 target_include_directories(native-cache-controls PRIVATE "${LLAMA_SOURCE}/src")
 target_link_libraries(native-cache-controls PRIVATE llama)
+
+add_executable(fault-policy-controls fault_controls.cpp)
+target_include_directories(fault-policy-controls PRIVATE "${LLAMA_SOURCE}/src")
+target_link_libraries(fault-policy-controls PRIVATE llama)

@@ -1,0 +1,17 @@
+{
+  "epoch": 1791281901.2631845,
+  "receipt_sha256": "acc6df50c95cd5af63236adaa001d46eb86aaf7a3e876bfb452e6279f506327c",
+  "receipt_source": "/home/isa/Projects/PocketLore/downloads/strong-native-host/execution-20261006T101653Z/receipt.json",
+  "errors": [
+    "RuntimeError: Stopped exact model route after first failed execution"
+  ],
+  "exit": 9,
+  "elapsed_seconds": 6.672863721847534,
+  "stop_reason": "Measured aggregate memory/swap stop",
+  "stdout_empty": true,
+  "last_aggregate_bytes": 8418242560,
+  "observed_peak_bytes": 8473190400,
+  "swap": 0,
+  "kernel_oom_kill": 0,
+  "scope": "Failed first host engineering execution; no generated answer, no Android/device/superiority credit; active native writer remains owner"
+}

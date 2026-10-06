@@ -1,5 +1,6 @@
 // Native algorithm controls, never model loading or generation.
 #include "pocketlore-owned.h"
+#include "scalar.h"
 #include "llama-mmap.h"
 #include <iostream>
 #include <atomic>
@@ -17,6 +18,15 @@ int main(int argc,char**argv){try{
  {
  Scope scope(f,window,offset);llama_file file(argv[1],"rb");llama_mmap map(&file,0,false);
  std::vector<unsigned char> expected(window);require(pread(f->fd(),expected.data(),window,offset)==ssize_t(window),"Short oracle read");
+ if(bytes==4194304){
+  int calls=0,syncs=0;
+  denied("scalar-multitoken",[&]{pocketlore_sparse::scalar_step(f,2,[&]{++calls;return 0;},[&]{++syncs;});});require(calls==0&&syncs==0,"Rejected batch executed");
+  for(int token=0;token<33;++token){int result=pocketlore_sparse::scalar_step(f,1,[&]{require(syncs==calls,"Previous token not synchronized");require(((unsigned char*)map.addr())[token]==expected[token],"Scalar byte oracle");++calls;return 0;},[&]{denied("scalar-live-reader",[&]{f->advise();});++syncs;});require(result==0,"Scalar result changed");}
+  bool synchronized=false;denied("scalar-exception",[&]{pocketlore_sparse::scalar_step(f,1,[]{throw std::runtime_error("Engineered decode exception");return 0;},[&]{synchronized=true;});});require(synchronized,"Exception skipped synchronization");f->advise();
+  cancelled=true;denied("scalar-cancel",[&]{pocketlore_sparse::scalar_step(f,1,[&]{++calls;return 0;},[]{});});cancelled=false;
+  require(calls==33&&syncs==33,"Scalar count/cancellation mismatch");
+  std::cout<<"{\"control\":\"scalar-order-byte-oracle\",\"pass\":true,\"tokens\":33,\"synchronizations\":33}\n";
+ }
  {auto use=f->use();require(memcmp(expected.data(),map.addr(),window)==0,"Mapped bytes differ from pread");}
  f->inspect_region(map.addr(),window,offset);
  {std::ostringstream path;path<<"/proc/self/map_files/"<<std::hex<<(uintptr_t)map.addr()<<"-"<<((uintptr_t)map.addr()+window);struct stat info{};int rc=stat(path.str().c_str(),&info),error=errno;std::ofstream out(std::string(argv[4])+"-map-files.json");out<<"{\"link\":"<<escape(link(path.str()))<<",\"stat_result\":"<<rc<<",\"errno\":"<<error<<"}";}

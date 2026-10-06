@@ -2,6 +2,7 @@
 // Linux/Android diagnostic-only verified descriptor and quiescent cache policy.
 #include <sys/mman.h>
 #include <sys/stat.h>
+#include <sys/file.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <chrono>
@@ -33,8 +34,10 @@ inline std::string link(const std::string &p){char b[8192];auto n=readlink(p.c_s
 inline void require(bool b,const char *s){if(!b)throw std::runtime_error(s);}
 inline std::string escape(const std::string&s){std::ostringstream o;o<<"\"";for(unsigned char c:s){if(c==34||c==92)o<<"\\"<<c;else if(c<32)o<<"\\u"<<std::hex<<std::setw(4)<<std::setfill('0')<<int(c)<<std::dec;else o<<c;}return o.str()+"\"";}
 inline bool same(const struct stat&a,const struct stat&b){return a.st_dev==b.st_dev&&a.st_ino==b.st_ino&&a.st_size==b.st_size&&a.st_mtim.tv_sec==b.st_mtim.tv_sec&&a.st_mtim.tv_nsec==b.st_mtim.tv_nsec&&a.st_ctim.tv_sec==b.st_ctim.tv_sec&&a.st_ctim.tv_nsec==b.st_ctim.tv_nsec&&a.st_nlink==b.st_nlink;}
+enum class FaultPolicy { Default, Random };
 class File:public std::enable_shared_from_this<File>{
  struct Region {void *address;size_t size;off_t offset;};
+ FaultPolicy policy=FaultPolicy::Default;bool dedicated=false;int file_policy_result=-1,mapping_policy_result=-1;
  int descriptor=-1;struct stat identity{};pid_t pid;std::string path,digest,mount,fdinfo,ns,start;
  std::mutex mutex;size_t readers=0;bool retiring=false;std::vector<Region> regions;bool full;std::function<bool()> cancel;std::chrono::steady_clock::time_point deadline;
  static std::string start_ticks(){auto s=text("/proc/self/stat");std::istringstream i(s.substr(s.rfind(')')+2));std::string v;for(int n=0;n<20;++n)i>>v;return v;}
@@ -44,15 +47,28 @@ class File:public std::enable_shared_from_this<File>{
   auto at=fdinfo.find("mnt_id:");require(at!=std::string::npos,"Missing mount ID");std::istringstream id(fdinfo.substr(at+7));std::string mid;id>>mid;std::istringstream lines(text("/proc/self/mountinfo"));for(std::string l;std::getline(lines,l);)if(l.substr(0,l.find(' '))==mid)mount=l;require(!mount.empty(),"Unknown mount");
  }
 public:
- static std::shared_ptr<File> open(const char*path,const std::string&expected,uint64_t size,bool full,std::function<bool()>cancel,int seconds,std::function<void()>observe=[](){}){
+ static std::shared_ptr<File> open(const char*path,const std::string&expected,uint64_t size,bool full,std::function<bool()>cancel,int seconds,std::function<void()>observe=[](){},FaultPolicy policy=FaultPolicy::Default){
   int fd=-1;std::string supplied(path);const std::string prefix="/proc/self/fd/";
-  if(supplied.compare(0,prefix.size(),prefix)==0){auto tail=supplied.substr(prefix.size());require(!tail.empty()&&tail.find_first_not_of("0123456789")==std::string::npos,"Invalid explicit inherited descriptor");int inherited=std::stoi(tail);require((fcntl(inherited,F_GETFL)&O_ACCMODE)==O_RDONLY,"Inherited descriptor is not readonly");fd=fcntl(inherited,F_DUPFD_CLOEXEC,3);}
+  if(supplied.compare(0,prefix.size(),prefix)==0){auto tail=supplied.substr(prefix.size());require(!tail.empty()&&tail.find_first_not_of("0123456789")==std::string::npos,"Invalid explicit inherited descriptor");int inherited=std::stoi(tail);require((fcntl(inherited,F_GETFL)&O_ACCMODE)==O_RDONLY,"Inherited descriptor is not readonly");if(policy==FaultPolicy::Random){
+    // Reopen procfs FD into a NEW open-file description. Never apply file
+    // policy to a dup sharing an unrelated caller's readahead state.
+    struct stat original{},reopened{};require(fstat(inherited,&original)==0,"Missing inherited source");
+    fd=::open(path,O_RDONLY|O_CLOEXEC);if(fd>=0 && (fstat(fd,&reopened)!=0 || !same(original,reopened))){::close(fd);fd=-1;}
+   }else fd=fcntl(inherited,F_DUPFD_CLOEXEC,3);}
   else fd=::open(path,O_RDONLY|O_CLOEXEC|O_NOFOLLOW);
   require(fd>=0,"Cannot open exact original");std::shared_ptr<File> p;
   try{p=std::shared_ptr<File>(new File(fd,full,cancel,seconds));}catch(...){::close(fd);throw;}
+  p->policy=policy;p->dedicated=policy==FaultPolicy::Random;
+  if(p->dedicated)require(flock(fd,LOCK_EX|LOCK_NB)==0,"Dedicated policy owner already active");
   require(uint64_t(p->identity.st_size)==size,"Wrong original length");sha256_t h;pocketlore_sha256_init(&h);std::vector<unsigned char>b(4*1024*1024);
   for(uint64_t off=0;off<size;){p->budget();size_t n=std::min<uint64_t>(b.size(),size-off);ssize_t got=pread(fd,b.data(),n,off);require(got==ssize_t(n),"Short original identity read");pocketlore_sha256_update(&h,b.data(),n);require(posix_fadvise(fd,off,n,POSIX_FADV_DONTNEED)==0,"Identity cache advice failed");off+=n;if(off%(64*1024*1024)==0)observe();}
-  unsigned char out[32];pocketlore_sha256_final(&h,out);std::ostringstream hex;for(auto c:out)hex<<std::hex<<std::setw(2)<<std::setfill('0')<<int(c);p->digest=hex.str();require(p->digest==expected,"Wrong original digest");p->verify();return p;
+  unsigned char out[32];pocketlore_sha256_final(&h,out);std::ostringstream hex;for(auto c:out)hex<<std::hex<<std::setw(2)<<std::setfill('0')<<int(c);p->digest=hex.str();require(p->digest==expected,"Wrong original digest");p->verify();
+  if(policy==FaultPolicy::Random){
+   require(p->dedicated && (!full || p->exact()),"Random policy requires dedicated exact/fixture owner");
+   p->file_policy_result=posix_fadvise(fd,0,0,POSIX_FADV_RANDOM);
+   require(p->file_policy_result==0,"Dedicated POSIX_FADV_RANDOM failed");
+  }
+  return p;
  }
  ~File(){if(descriptor>=0)::close(descriptor);}
  bool exact()const{return identity.st_size==12290628576LL&&digest=="96b9c0af5c77a4ecaabe3983175112b5ece763261c1ece12b2494b692a70dad7";}
@@ -60,7 +76,10 @@ public:
  void verify(){budget();struct stat now{},named{};require(getpid()==pid&&start==start_ticks()&&ns==link("/proc/self/ns/mnt")+link("/proc/self/ns/pid")+link("/proc/self/ns/user"),"Changed namespace/owner");require(fstat(descriptor,&now)==0&&same(now,identity)&&stat(path.c_str(),&named)==0&&same(named,identity)&&link("/proc/self/fd/"+std::to_string(descriptor))==path,"Changed original version/path");}
  void verify_fd(int other){verify();struct stat s{};require(fstat(other,&s)==0&&same(s,identity),"Loader descriptor differs from verified original");}
  void validate_range(size_t n,off_t offset){verify();require(n && offset>=0 && uint64_t(offset)<=uint64_t(identity.st_size) && n<=uint64_t(identity.st_size)-uint64_t(offset) && offset%sysconf(_SC_PAGESIZE)==0 && (full ? exact() : n<=128*1024*1024),"Unsafe mapping range");}
- void register_mapping(void *p,size_t n,off_t offset){std::lock_guard<std::mutex>l(mutex);verify();require(regions.empty()&&!readers&&n&&offset>=0&&uint64_t(offset)+n<=uint64_t(identity.st_size)&&(full||n<=128*1024*1024),"Unsafe mapping registration");retiring=false;regions.push_back({p,n,offset});}
+ void register_mapping(void *p,size_t n,off_t offset){std::lock_guard<std::mutex>l(mutex);verify();require(regions.empty()&&!readers&&n&&offset>=0&&uint64_t(offset)+n<=uint64_t(identity.st_size)&&(full||n<=128*1024*1024),"Unsafe mapping registration");require((uintptr_t)p%sysconf(_SC_PAGESIZE)==0 && offset%sysconf(_SC_PAGESIZE)==0,"Policy mapping alignment");
+  inspect_region(p,n,offset);
+  if(policy==FaultPolicy::Random){require(dedicated && file_policy_result==0,"Missing dedicated random policy");mapping_policy_result=madvise(p,n,MADV_RANDOM);require(mapping_policy_result==0,"Owned MADV_RANDOM failed");}
+  retiring=false;regions.push_back({p,n,offset});}
  void unregister_mapping(void*p){std::lock_guard<std::mutex>l(mutex);require(readers==0,"Cannot release mapping with live readers");for(auto i=regions.begin();i!=regions.end();++i)if(i->address==p){regions.erase(i);return;}throw std::runtime_error("Unknown mapping lifetime");}
  void inspect_region(void*p,size_t n,off_t offset){verify();std::istringstream lines(text("/proc/self/maps"));uintptr_t cursor=(uintptr_t)p,end=cursor+((n+sysconf(_SC_PAGESIZE)-1)/sysconf(_SC_PAGESIZE))*sysconf(_SC_PAGESIZE);std::istringstream mi(mount);std::string a,b,device;mi>>a>>b>>device;unsigned dm,dn;require(sscanf(device.c_str(),"%u:%u",&dm,&dn)==2,"Malformed mount device");
   for(std::string line;std::getline(lines,line);){unsigned long long lo,hi,off,ino;unsigned ma,mn;char perms[5]={};if(sscanf(line.c_str(),"%llx-%llx %4s %llx %x:%x %llu",&lo,&hi,perms,&off,&ma,&mn,&ino)!=7)continue;if(hi<=cursor||lo>=end)continue;require(lo==cursor&&hi<=end&&strcmp(perms,"r--s")==0&&ino==identity.st_ino&&ma==dm&&mn==dn&&off==uint64_t(offset)+lo-(uintptr_t)p,"Unbound partial/alias mapping");cursor=hi;}
@@ -85,7 +104,7 @@ public:
  void advise(){std::lock_guard<std::mutex>l(mutex);verify();require(!retiring&&!readers,"Alias, retiring mapping or async reader still active");const size_t page=sysconf(_SC_PAGESIZE);
   require(!regions.empty(),"No owned mappings");for(auto&r:regions){inspect_region(r.address,r.size,r.offset);require(r.offset%page==0,"Unaligned file offset");for(size_t off=0;off<r.size;){budget();size_t n=std::min<size_t>(128*1024*1024,r.size-off);require(madvise((char*)r.address+off,n,MADV_DONTNEED)==0,"Targeted mapping advice failed");require(posix_fadvise(descriptor,r.offset+off,n,POSIX_FADV_DONTNEED)==0,"Targeted file advice failed");off+=n;}}
  }
- std::string observation(){std::lock_guard<std::mutex> lock(mutex);verify();std::ostringstream r;r<<"[";bool comma=false;for(auto &v:regions){if(comma)r<<",";comma=true;size_t page=sysconf(_SC_PAGESIZE),count=(v.size+page-1)/page;std::vector<unsigned char> bits(count);require(mincore(v.address,v.size,bits.data())==0,"Cache residency unavailable");size_t present=0;for(auto b:bits)present+=b&1;r<<"{\"address\":"<<(uintptr_t)v.address<<",\"bytes\":"<<v.size<<",\"offset\":"<<v.offset<<",\"page_size\":"<<page<<",\"cache_present_pages\":"<<present<<"}";}r<<"]";std::ostringstream o;o<<"{\"monotonic_ns\":"<<std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now().time_since_epoch()).count()<<",\"regions\":"<<r.str()<<",";o<<"\"pid\":"<<pid<<",\"startticks\":"<<escape(start)<<",\"fd\":"<<descriptor<<",\"stat_device\":"<<identity.st_dev<<",\"inode\":"<<identity.st_ino<<",\"bytes\":"<<identity.st_size<<",\"sha256\":"<<escape(digest)<<",\"fdinfo\":"<<escape(fdinfo)<<",\"mount\":"<<escape(mount)<<",\"namespaces\":"<<escape(ns)<<",\"smaps\":"<<escape(text("/proc/self/smaps"))<<",\"status\":"<<escape(text("/proc/self/status"))<<"}";return o.str();}
+ std::string observation(){std::lock_guard<std::mutex> lock(mutex);verify();std::ostringstream r;r<<"[";bool comma=false;for(auto &v:regions){if(comma)r<<",";comma=true;size_t page=sysconf(_SC_PAGESIZE),count=(v.size+page-1)/page;std::vector<unsigned char> bits(count);require(mincore(v.address,v.size,bits.data())==0,"Cache residency unavailable");size_t present=0;for(auto b:bits)present+=b&1;r<<"{\"address\":"<<(uintptr_t)v.address<<",\"bytes\":"<<v.size<<",\"offset\":"<<v.offset<<",\"page_size\":"<<page<<",\"cache_present_pages\":"<<present<<"}";}r<<"]";std::ostringstream o;o<<"{\"monotonic_ns\":"<<std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now().time_since_epoch()).count()<<",\"regions\":"<<r.str()<<",";o<<"\"fault_policy\":"<<escape(policy==FaultPolicy::Random?"random":"default")<<",\"dedicated_description\":"<<(dedicated?"true":"false")<<",\"file_policy_result\":"<<file_policy_result<<",\"mapping_policy_result\":"<<mapping_policy_result<<",";o<<"\"pid\":"<<pid<<",\"startticks\":"<<escape(start)<<",\"fd\":"<<descriptor<<",\"stat_device\":"<<identity.st_dev<<",\"inode\":"<<identity.st_ino<<",\"bytes\":"<<identity.st_size<<",\"sha256\":"<<escape(digest)<<",\"fdinfo\":"<<escape(fdinfo)<<",\"mount\":"<<escape(mount)<<",\"namespaces\":"<<escape(ns)<<",\"smaps\":"<<escape(text("/proc/self/smaps"))<<",\"status\":"<<escape(text("/proc/self/status"))<<"}";return o.str();}
 };
 // Thread-local loader scope cannot adopt mappings created by another call/thread.
 inline thread_local std::shared_ptr<File> active;

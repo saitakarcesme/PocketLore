@@ -1,59 +1,43 @@
-"""Verify actual current linked artifacts and executions, freezing every raw receipt."""
-import base64,copy,hashlib,json,lzma,pathlib,subprocess,time,sys,zipfile
-from validate import validate,sha,R
-O=R/'downloads/strong-native-host';A=R/'docs/evidence/strong-native-host-review.json'
-def frozen(p):
- b=p.read_bytes();return {'path':str(p),'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest(),'encoding':'lzma+base64','data':base64.b64encode(lzma.compress(b,preset=3)).decode()}
-def command(argv):
- p=subprocess.run(argv,capture_output=True,timeout=30);return {'argv':argv,'exit':p.returncode,'stdout':p.stdout.decode(errors='replace'),'stderr':p.stderr.decode(errors='replace')}
-r={'run_id':time.strftime('%Y%m%dT%H%M%SZ',time.gmtime()),'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=R,text=True).strip(),'errors':[],'commands':[],'files':[],'android_executed':False,'product_qualified':False}
-try:
- for name in ['android-build','host-configure','host-build']:assert (O/(name+'.exit')).read_text().strip()=='0',name+' failed'
- source=pathlib.Path(subprocess.check_output([sys.executable,str(R/'tools/runtime/sparse/prepare.py')],text=True).strip());r['derivation']=json.loads((source.parent/'derivation.json').read_text())
- control=O/'gate-native-controls'
- for argv in [['g++','-std=c++17','-I'+str(R/'tools/runtime/sparse'),'-I'+str(R/'android/app/src/main/cpp'),'-I'+str(source/'include'),'-I'+str(source/'ggml/include'),str(R/'tools/evaluation/strong-sparse/native_controls.cpp'),'-o',str(control)],[str(control)],[sys.executable,str(R/'tools/evaluation/strong-sparse/residency_controls.py')]]:
-  c=command(argv);r['commands'].append(c);assert c['exit']==0,'Constructed control failure'
- r['constructed_controls_scope']='13 native identity/budget and 15 residency mutations; not actual-model success or generation'
- readelf='/home/isa/Android/atlas-toolchain/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-readelf'
- apk=R/'android/app/build/outputs/apk/debug/app-debug.apk';r['apk_sha256']=sha(apk);r['native']={}
- with zipfile.ZipFile(apk) as z:
-  for abi in ['arm64-v8a','x86_64']:
-   p=R/f'android/app/build/generated/nativeLibs/{abi}/libpocketlore.so';raw=p.read_bytes();assert z.read(f'lib/{abi}/libpocketlore.so')==raw
-   elf=command([readelf,'-lW','-sW',str(p)]);r['commands'].append(elf);assert elf['exit']==0 and 'pocketlore_sparse_diagnostic_parameters' in elf['stdout']
-   loads=[line.split() for line in elf['stdout'].splitlines() if line.strip().startswith('LOAD')];assert loads and all(int(line[-1],16)>=16384 for line in loads)
-   relro=[line.split() for line in elf['stdout'].splitlines() if line.strip().startswith('GNU_RELRO')];assert relro and all((int(line[2],16)+int(line[5],16))%16384==0 for line in relro)
-   r['native'][abi]={'sha256':sha(p),'bytes':len(raw)}
- r['commands'].append(command(['/home/isa/Android/atlas-toolchain/sdk/build-tools/35.0.0/zipalign','-c','-P','16','4',str(apk)]));assert r['commands'][-1]['exit']==0
- r['commands'].append(command(['ldd',str(O/'host-build/sparse-host')]));assert r['commands'][-1]['exit']==0 and 'not found' not in r['commands'][-1]['stdout']
- execution=sorted(O.glob('execution-*/receipt.json'))[-1];actual=json.loads(execution.read_text());r['execution_sha256']=sha(execution)
- # Negatives mutate real receipts; incomplete baseline remains incomplete, never fabricated positive execution.
- negatives=[]
- for label in ['wrong_model','wrong_binary','missing_cases','missing_loaded_window','wrong_process']:
-  bad=copy.deepcopy(actual)
-  if label=='wrong_model':bad['model']['sha256']='0'*64
-  elif label=='wrong_binary':bad['binary_sha256']='0'*64
-  elif label=='missing_cases':bad['cases']=[]
-  elif label=='missing_loaded_window':
-   for c in bad['cases']:c['samples']=[s for s in c['samples'] if s['phase']!='loaded']
-  else:
-   for c in bad['cases']:
-    if c['samples']:c['samples'][0]['pid']=-1
-  try:validate(bad);denied=False
-  except Exception:denied=True
-  negatives.append({'mutation':label,'rejected':denied,'discriminating_only_if_baseline_passes':True})
- r['negative_controls']=negatives
- r['measurements']=validate(actual);assert all(x['rejected'] for x in negatives)
-except Exception as e:r['errors'].append(type(e).__name__+': '+str(e))
-finally:
- for p in sorted(O.glob('*')):
-  if p.is_file() and p.suffix in ('.json','.stdout','.stderr','.exit'):r['files'].append(frozen(p))
- for p in sorted(O.glob('execution-*/receipt.json')):r['files'].append(frozen(p))
- for folder in ['tools/runtime/sparse','tools/evaluation/strong-native-host','docs/evidence/strong-native-host-fixtures']:
-  for p in sorted((R/folder).glob('*')):
-   if p.is_file():r['files'].append(frozen(p))
- for p in [R/'tools/runtime/build-native.sh',R/'android/app/src/main/cpp/CMakeLists.txt',R/'android/app/src/main/cpp/sparse_link.cpp',R/'android/app/src/main/cpp/resource_budget.h']:r['files'].append(frozen(p))
- provenance=pathlib.Path('/home/isa/PocketLore-control/overnight-20261005/strong-model-identity-research')
- for n in ['identity.json','base-LICENSE','base-config.json','base-README.md','quant-README.md','gguf-tensor-layout.json']:r['files'].append(frozen(provenance/n))
- r['exit']=int(bool(r['errors']));r['classification']='HOST_LINK_AND_EXECUTION_PASS' if not r['errors'] else 'HOST_ENGINEERING_INCOMPLETE';r['open_gates']=['Android JNI/UI execution/publication and cancellation/reuse/restart','Independent explanation/comparison/synthesis entailment and useful answers','Actual aggregate device12GB and complete50GB installation/update/provider/rollback','Physical GrapheneOS/noGMS and independent unseen matched comparison']
- prior=json.loads(A.read_text()) if A.exists() else {'runs':[]};prior['runs'].append(r);A.write_text(json.dumps(prior,indent=2)+'\n')
-print(json.dumps({k:r[k] for k in ['run_id','classification','errors','exit']},indent=2));sys.exit(r['exit'])
+"""Actual scalar generation gate; failed/incomplete execution cannot pass."""
+import base64,copy,hashlib,importlib.util,json,pathlib,sys,time
+from support import R,O,BINARIES,SOURCES,sha,identity,source_check,atomic
+from validate import validate
+
+def pack(p):
+ b=p.read_bytes();return {'sha256':hashlib.sha256(b).hexdigest(),'base64':base64.b64encode(b).decode(),'bytes':len(b)}
+def links(source):
+ spec=importlib.util.spec_from_file_location('parent_native_checker',R/'tools/evaluation/native-cache/check.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m.artifacts(source)
+def main():
+ result={'status':'HOST_ENGINEERING_INCOMPLETE','errors':[],'android_execution':False,'product_qualified':False,'files':{},'started_ns':time.monotonic_ns()}
+ # Freeze ALL attempted cases and the explicit unexecuted denominator first.
+ for p in [O/'screen.json',O/'frozen.json',O/'controls-path.txt']+sorted(O.glob('case-*/receipt.json'))+sorted((O/'logs').glob('*')):
+  try:
+   if p.is_file():result['files'][str(p.relative_to(R))]=pack(p)
+  except Exception as e:result['errors'].append('Collection '+str(p)+': '+repr(e))
+ try:
+  frozen=json.loads((O/'frozen.json').read_text());source_check(frozen['source']);result['linked_artifacts']=links(frozen['source_path'])
+  controls=pathlib.Path((O/'controls-path.txt').read_text());result['controls']=json.loads(controls.read_text());assert result['controls']['status']=='CURRENT_NATIVE_CONTROLS_PASS' and result['controls']['source']==frozen['source']
+  actual=json.loads((O/'screen.json').read_text());result['execution']=actual;result['measurements']=validate(actual)
+  negatives=[]
+  for name in ['missing-case','wrong-pid','wrong-start','wrong-source','wrong-binary','missing-generation','wrong-mount','batch32','missing-release']:
+   bad=copy.deepcopy(actual);c=bad['cases'][0]
+   if name=='missing-case':bad['cases'].pop()
+   elif name=='wrong-pid':c['samples'][0]['pid']+=1
+   elif name=='wrong-start':c['startticks']+=1
+   elif name=='wrong-source':bad['frozen']['source']={}
+   elif name=='wrong-binary':bad['frozen']['binary'][BINARIES[1]]['sha256']='0'*64
+   elif name=='missing-generation':c['stdout']=''
+   elif name=='wrong-mount':
+    a=json.loads(c['raw']['loaded.json']);a['mount']=a['mount'].replace(a['mount'].split()[2],'0:9999',1);c['raw']['loaded.json']=json.dumps(a)
+   elif name=='batch32':c['stderr']=c['stderr'].replace('SCALAR_BEGIN 0 1','SCALAR_BEGIN 0 32')
+   else:c['raw'].pop('unmapped.json')
+   try:validate(bad)
+   except Exception as e:negatives.append({'mutation':name,'refused':True,'error':repr(e)});continue
+   raise AssertionError('Corrupt actual receipt accepted: '+name)
+  result['negative_controls']=negatives;assert not result['errors'];result['status']='PASS_BOUNDED_HOST_GENERATION_ONLY'
+ except Exception as e:result['errors'].append(type(e).__name__+': '+str(e))
+ finally:
+  result['checker']={'sha256':sha(pathlib.Path(__file__)),'text':pathlib.Path(__file__).read_text()};result['finished_ns']=time.monotonic_ns();result['exit']=int(bool(result['errors']));result['stdout']=result['status']+'\n';atomic(O/'current-check.json',result)
+  target=R/'docs/evidence/strong-native-host-review.json';atomic(target,result);print(result['stdout'],end='')
+ return result['exit']
+if __name__=='__main__':raise SystemExit(main())

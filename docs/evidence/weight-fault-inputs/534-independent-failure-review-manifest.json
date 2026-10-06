@@ -1,0 +1,177 @@
+{
+  "checkpoint": "7df3445c50dae524e4a6e7a795bc7d4a52bb63f8",
+  "epoch": 1791291974.7728908,
+  "inputs": {
+    "docs/evidence/strong-native-host.md": {
+      "bytes": 8345,
+      "sha256": "dc92422f2c27917b44cd9f5c1861fd9338cf7b928d0ba347d94962e8fb8a8806"
+    },
+    "docs/evidence/strong-scalar-inputs/route.json": {
+      "bytes": 1116,
+      "sha256": "ea984341934f765188d5bdfdcaa187d8ff6a903f8976fff4d5676d27551378dc"
+    },
+    "input-manifest.json": {
+      "bytes": 6449,
+      "sha256": "1b536fd58a2d8ee72a556f468ace9fc6f84182722a93668b0e5441dd3f3635bf"
+    },
+    "raw/case-1/loaded.json": {
+      "bytes": 44176,
+      "sha256": "550aeb61b65b13043bd7681d1e30cdba62968680c7f0c78a65c7fa99e14f0683"
+    },
+    "raw/case-1/prefill.json": {
+      "bytes": 45928,
+      "sha256": "aea7f37c2675a187f6490c753a46f17eeecff7f594d2127732011f128ad27244"
+    },
+    "raw/case-1/receipt.json": {
+      "bytes": 5631596,
+      "sha256": "12368edf8e3af36229ae3969119f8a4d5966eaf98e9e2ca5c87e7c104ab6807e"
+    },
+    "raw/case-1/stderr": {
+      "bytes": 115383,
+      "sha256": "7f1f4fa3140c68dfa9d6913f4c4bca18ee32e5b5ebc88d16456873debf3f4e90"
+    },
+    "raw/case-1/stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "raw/frozen.json": {
+      "bytes": 1213725,
+      "sha256": "2009c7ce4df70f4e06a66c4a095d2e701e8f8c2cce712baaef9b8c9a70403d2b"
+    },
+    "raw/screen-attempt.json": {
+      "bytes": 256,
+      "sha256": "d1692817bd295624188291db448b12b3ab88d0b2d9d2e9318669e7d53d734ace"
+    },
+    "raw/screen.json": {
+      "bytes": 6889364,
+      "sha256": "e9bf20894825a7678b1d016edc424493e7030b9476f80c91c33c37663fa1b143"
+    },
+    "tools/evaluation/native-cache/build_receipts.py": {
+      "bytes": 1643,
+      "sha256": "76a41421bcc398c5d51e9edff5b52fa88329e4699feaf3d493de218284ef46b5"
+    },
+    "tools/evaluation/native-cache/check.py": {
+      "bytes": 15828,
+      "sha256": "8d6a52f07bb48beba67aa45d27e2a257c0522621aa26587e55691842f1cab5ed"
+    },
+    "tools/evaluation/native-cache/contract.py": {
+      "bytes": 3682,
+      "sha256": "03daabf12645bfae10c116624e550eb2e75addab7ef2c93404c97af71726b96b"
+    },
+    "tools/evaluation/native-cache/controls.py": {
+      "bytes": 6002,
+      "sha256": "f1343c14474af17a84c24a1819b532d43aeb527e6234bc37fb0b16bc4c248b83"
+    },
+    "tools/evaluation/native-cache/reproducibility.py": {
+      "bytes": 4212,
+      "sha256": "9fa868ee7c88bc83a299001774397953a1364306825d49de96f4bc1541143bf4"
+    },
+    "tools/evaluation/native-cache/run.py": {
+      "bytes": 8711,
+      "sha256": "fec204eece248c89af4d30829b445a899715eaa73fb5c320eb0ec7597ecfda6a"
+    },
+    "tools/evaluation/strong-native-host/check.py": {
+      "bytes": 3330,
+      "sha256": "f29850b4257bf2ea887d8bf5cf1df46ec25ff1be330f1e0bb9ac6cc17ff1d75c"
+    },
+    "tools/evaluation/strong-native-host/controls.py": {
+      "bytes": 2580,
+      "sha256": "a6b7805b404d9f1e8b1f83c86ab2068ca7a9df2bc59c803262b01972be94da6c"
+    },
+    "tools/evaluation/strong-native-host/measure.py": {
+      "bytes": 1592,
+      "sha256": "b359dcbb1c99ac31fd65e0feb72e8a3802fdb0d686ca04568ca0451100c26da0"
+    },
+    "tools/evaluation/strong-native-host/preflight.py": {
+      "bytes": 1241,
+      "sha256": "f590dce6dba4d3001abf7a086c9940a95cab9c5b0107865007be2b24af44b13e"
+    },
+    "tools/evaluation/strong-native-host/run.py": {
+      "bytes": 5101,
+      "sha256": "d897d652321341626e90ac1bdd31547e593c3f932c27dc41c7e6038938336a6a"
+    },
+    "tools/evaluation/strong-native-host/support.py": {
+      "bytes": 3457,
+      "sha256": "162f1e97f55a01deb91651af1503091eb40dd2330a56e8e100f75280562279c8"
+    },
+    "tools/evaluation/strong-native-host/validate.py": {
+      "bytes": 5002,
+      "sha256": "ebae4bdad1ed7bad7a479021fcb6e866de8044871f719203f21cd8dd0705687d"
+    },
+    "tools/runtime/sparse/CMakeLists.txt": {
+      "bytes": 840,
+      "sha256": "74eed2e63a436a837b61c45f7880ddd58642aec056a2d09122453669eff5230b"
+    },
+    "tools/runtime/sparse/binding.py": {
+      "bytes": 1998,
+      "sha256": "0de472a80806264c5b2a381fcecd378a20384316181bca7cb183c78210a8d14b"
+    },
+    "tools/runtime/sparse/build_identity.py": {
+      "bytes": 1001,
+      "sha256": "23f8c99925005d50a95d6904e1c69fc66e55e4cb0bd1030f59f9377a8fcc4c4a"
+    },
+    "tools/runtime/sparse/derive.py": {
+      "bytes": 1613,
+      "sha256": "fe5121a09156237ce9241ceb29cd66c45622617b96af99190844f7bf57ae1ef9"
+    },
+    "tools/runtime/sparse/host.cpp": {
+      "bytes": 5210,
+      "sha256": "e3f7a608d70e13d91b74ecd11ea9e978d9caf260b37d4b57d43d24dd96c71157"
+    },
+    "tools/runtime/sparse/identity.json": {
+      "bytes": 610,
+      "sha256": "f4b3f008ce1d1ec601a8425675b9aa0eb02d6dd91c6d7652ae3eaa9f444f4f4b"
+    },
+    "tools/runtime/sparse/inspect_header.py": {
+      "bytes": 3054,
+      "sha256": "26c8dccc62acee8b275e859da6b3964da653742f9b78ee84ccf5b1350aebe18e"
+    },
+    "tools/runtime/sparse/lazy-mmap.patch": {
+      "bytes": 1348,
+      "sha256": "7d2de623ba34d4033c45a540eb9f289d7d0c6a1d4fda92d2361046ae82a012cc"
+    },
+    "tools/runtime/sparse/mapping.py": {
+      "bytes": 7402,
+      "sha256": "4a5acdb816c6b6b66b3cc0fd6e9b6888cce3bf8f0a9de63ecc2b7326b941cfdb"
+    },
+    "tools/runtime/sparse/native/pocketlore-owned.h": {
+      "bytes": 10909,
+      "sha256": "4fd3b2940b653e23e0e4e464541599d07bdb70013241df08b0576beaa8dc1031"
+    },
+    "tools/runtime/sparse/native/pocketlore-sha.c": {
+      "bytes": 311,
+      "sha256": "4117e8f363027349df40ef48ec582300789819b3a8fe955641f91c426e86c86d"
+    },
+    "tools/runtime/sparse/native_controls.cpp": {
+      "bytes": 6566,
+      "sha256": "4bbd7e8fb7af063cabc419962b14dd58250cc775a42aeb127fd5801d2d4059d3"
+    },
+    "tools/runtime/sparse/prepare.py": {
+      "bytes": 685,
+      "sha256": "f50a3461feeaf4557cc40a0295d59727c2e5265543c6a328d68899bfa14eabd9"
+    },
+    "tools/runtime/sparse/prepare_native.py": {
+      "bytes": 3119,
+      "sha256": "a94178cd3ff929734a63abca71694541f3233385fa612d1653ccc9774319384d"
+    },
+    "tools/runtime/sparse/profile.h": {
+      "bytes": 2353,
+      "sha256": "88bb09b4f8d2cd62e02c9030746ba4c04d818b5a7d7d186fccfd040dbfdd21ab"
+    },
+    "tools/runtime/sparse/residency.py": {
+      "bytes": 3368,
+      "sha256": "d70f87ecd2fe412ade69f4d34997a9571747658a2bee00ba54e159f9042f3401"
+    },
+    "tools/runtime/sparse/scalar.h": {
+      "bytes": 635,
+      "sha256": "402664116d6b42247686641702fb88b90cc751865e7406da6fe2dfa5f8759e0c"
+    }
+  },
+  "review": {
+    "independent-failure-review.json": {
+      "bytes": 6770,
+      "sha256": "af178dc048cab22f4d6a07f2767a3550273e4b9d9bdb87c92b3b5350299c9a9a"
+    }
+  },
+  "scope": "Frozen actual534 first scalar failure only; no successful-generation/task/product/device acceptance, model reread, rerun or lifecycle action."
+}

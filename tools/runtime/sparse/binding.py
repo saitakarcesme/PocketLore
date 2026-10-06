@@ -1,6 +1,6 @@
 """Named, length-delimited derivation identities; no mutable source reuse."""
 import hashlib,json,pathlib,subprocess
-NAMES=['tools/runtime/sparse/build_identity.py','tools/runtime/sparse/CMakeLists.txt','tools/runtime/build-native.sh','android/app/src/main/cpp/CMakeLists.txt','tools/runtime/sparse/prepare_native.py','tools/runtime/sparse/derive.py','tools/runtime/sparse/binding.py','tools/runtime/sparse/identity.json','tools/runtime/sparse/lazy-mmap.patch','tools/runtime/pins.env','tools/runtime/sparse/native/pocketlore-owned.h','tools/runtime/sparse/native/pocketlore-sha.c']
+NAMES=['tools/runtime/sparse/fault_controls.cpp','tools/runtime/sparse/scalar.h','tools/runtime/sparse/host.cpp','tools/runtime/sparse/profile.h','tools/runtime/sparse/build_identity.py','tools/runtime/sparse/CMakeLists.txt','tools/runtime/build-native.sh','android/app/src/main/cpp/CMakeLists.txt','tools/runtime/sparse/prepare_native.py','tools/runtime/sparse/derive.py','tools/runtime/sparse/binding.py','tools/runtime/sparse/identity.json','tools/runtime/sparse/lazy-mmap.patch','tools/runtime/pins.env','tools/runtime/sparse/native/pocketlore-owned.h','tools/runtime/sparse/native/pocketlore-sha.c']
 def canonical_key(inputs):
  h=hashlib.sha256()
  for name,value in sorted(inputs.items()):
