@@ -1,0 +1,10 @@
+"""Independent writer/checkpoint probe on an isolated four-original algorithm fixture."""
+import hashlib,importlib.util,json,pathlib,sqlite3,subprocess,sys
+ROOT=pathlib.Path(__file__).resolve().parents[3];P=ROOT/'tools/packs/selected-source/producer.py';spec=importlib.util.spec_from_file_location('p',P);p=importlib.util.module_from_spec(spec);spec.loader.exec_module(p)
+def main(out):
+ out=pathlib.Path(out);out.mkdir();source=ROOT/'downloads/selected-source-production/boundaries-v1/stage.sqlite';stage=out/'stage.sqlite';a=sqlite3.connect('file:'+str(source)+'?mode=ro',uri=True);b=sqlite3.connect(stage);a.backup(b);a.close();b.execute('PRAGMA journal_mode=WAL');b.close();guard=p.safety.Guard(30,1791269964,out);rows=p.headers(stage,0,3,guard);assert len(rows)==4
+ # All parent headers are still materialized, but no read transaction may prevent this separate writer checkpoint.
+ code="import sqlite3,sys,json;d=sqlite3.connect(sys.argv[1],timeout=.1);r=list(d.execute('select * from records where sequence=0').fetchone());r[0]=4;d.execute('insert into records values(?,?,?,?,?,?,?,?,?,?,?)',r);d.commit();result=d.execute('pragma wal_checkpoint(TRUNCATE)').fetchone();print(json.dumps({'checkpoint':result,'count':d.execute('select count(*) from records').fetchone()[0]}));d.close();sys.exit(0 if result==(0,0,0) else 1)"
+ r=subprocess.run(['python3','-c',code,str(stage)],capture_output=True,timeout=10);(out/'writer.stdout').write_bytes(r.stdout);(out/'writer.stderr').write_bytes(r.stderr);assert r.returncode==0;assert len(p.headers(stage,4,4,guard))==1 and rows==p.headers(stage,0,3,guard)
+ report={'status':'PASS','producer_sha256':hashlib.sha256(P.read_bytes()).hexdigest(),'test_sha256':hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest(),'command':['python3','-c',code,str(stage)],'exit':r.returncode,'actual_writer':json.loads(r.stdout),'duplicate_algorithm_fixture_not_corpus':True,'retained_prefix_rows':len(rows),'source_write_scope':'new isolated fixture only; real raw stage untouched'};(out/'snapshot-controls.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
+if __name__=='__main__':main(sys.argv[1])

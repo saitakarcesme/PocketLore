@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "HOST_CONTROLS_PASS_SCALE_PENDING_PARENT_PREFLIGHT_REQUIRED",
+  "status": "ENGINEERING_PREPARATION_ONLY_NOT_LAUNCH_AUTHORIZATION",
   "builder_launch_forbidden": true,
   "code": {
     "tools/packs/selected-source/producer.py": "274021e02c74245ebc7229e3793d72e8429d01394c5d9511f3d9b72a1d2c6aad",
@@ -25,15 +25,19 @@
     "RuntimeMaxSec": 7200,
     "absolute_cutoff_epoch": 1791269964,
     "host_free_reserve": 107374182400,
-    "workers": 1
+    "workers": 1,
+    "work_cutoff_epoch": 1791269954,
+    "cleanup_deadline_epoch": 1791269964,
+    "KillSignal": "SIGTERM",
+    "FinalKillSignal": "SIGKILL"
   },
   "prefix_policy": "Explicit through sequence; detached committed metadata batches; exact PK body fetch; no follow beyond frozen bound; manual resume same configuration/code only; no finalization replay",
   "promotion": "Always denied in engineering producer; complete original identity, final latest/disposition coverage, rights and Android/full budget admission require later independent gate",
   "blocking_controls": [
-    "final 6000 and 12000 source-bound runs",
-    "independent capsule/source/context oracles",
-    "fresh external cgroup qualification",
-    "independent final code review"
+    "Fresh actual parent-owned external cgroup/resource preflight",
+    "Full-size selection availability in declared prefix has not been established",
+    "Storage efficiency requires review; measured 12000-selection index is about 3.118 GB, not a full-distribution fit",
+    "Independent review of final immutable packet"
   ],
   "run_id": "selected-enriched-20261006-prefix6265599",
   "unit": "pocketlore-selected-enriched-20261006-prefix6265599",
@@ -60,7 +64,7 @@
     "--seconds",
     "7200",
     "--cutoff",
-    "1791269964",
+    "1791269954",
     "--out",
     "/home/isa/PocketLore-control/artifacts/selected-enriched-20261006-prefix6265599"
   ],
@@ -71,5 +75,42 @@
     "not_launch_time_proof": true
   },
   "selection_capacity": "Exactly 2000000 distinct selected originals required; failure if observed prefix has fewer. No filler or reduction permitted. Prefix latest is not final source latest.",
-  "frozen_executable_root": "/home/isa/Projects/PocketLore/downloads/selected-source-production/frozen-final-code"
+  "frozen_executable_root": "/home/isa/Projects/PocketLore/downloads/selected-source-production/frozen-final-code",
+  "fresh_parent_requirements": [
+    "Verify every frozen executable hash; canonical mutable source is not the executable",
+    "Check output absent and no competing job/owner; no retry or automatic restart",
+    "Observe actual unit cgroup memory.max<=536870912, memory.swap.max=0, cpu.max<=400%, pids.max<=32",
+    "Observe current MemAvailable and host free bytes>=107374182400 plus bounded write margin",
+    "Record actual unit/InvocationID/PID/cgroup and command, before running the frozen producer",
+    "Require enough remaining wall time; work cutoff 06:59:14Z plus <=10 seconds cleanup, hard stop <=06:59:24Z",
+    "Do not infer overnight completion from one-worker engineering throughput",
+    "Keep provisional output unadmitted; final complete archive/stage/latest/rights/Android/budget gates are unchanged"
+  ],
+  "known_launch_limitations": [
+    "No external production cgroup qualification in builder namespace",
+    "Exact 2000000 selected originals in declared incomplete prefix not established; selection fails closed without filler if insufficient",
+    "Sampled engineering storage does not establish full installed/update fit; parent must not claim a distribution-ready pack",
+    "No prefix extension/config migration is permitted on manual resume; a later complete-source finalizer must explicitly reconcile newer revisions and complete identities"
+  ],
+  "measured_engineering": {
+    "6000": {
+      "run_id": "9bf5b816e7bc4b4d82ed46abe7450f59",
+      "selected": 6000,
+      "inspection_articles": 5771,
+      "independently_eligible_full_articles": 0,
+      "logical_bytes": 1749666101,
+      "peak_process_rss_bytes": 138051584,
+      "index_sha256": "9d107d67c95d431102df38bb0808c743ae0ce191f388876bc183716214fe55cd"
+    },
+    "12000": {
+      "run_id": "f4bbb02491754ee1bf8ac183e2a7006a",
+      "selected": 12000,
+      "inspection_articles": 11671,
+      "independently_eligible_full_articles": 0,
+      "logical_bytes": 3117950596,
+      "peak_process_rss_bytes": 124104704,
+      "index_sha256": "28619a37f157727694c9fbd1d4529cce88b340e1c691c30cc91d0c695baa88b8"
+    }
+  },
+  "production_launch_qualified": false
 }

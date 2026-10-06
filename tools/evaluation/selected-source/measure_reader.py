@@ -26,6 +26,6 @@ def run(out):
  try:r.html_window(page,rev,a,b)
  except (InterruptedError,sqlite3.OperationalError):negatives.append('cancel during window')
  else:raise AssertionError('Window cancellation ignored')
- r.close();report={'status':'PASS','fixture_sha256':hashlib.sha256((ROOT/'docs/evidence/selected-source-production/reader-fixtures.json').read_bytes()).hexdigest(),'reader_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'source_index_sha256':json.loads((out/'status.json').read_text())['index_sha256'],'queries':results,'negative_controls':negatives,'window':{'page':page,'revision':rev,'start16':a,'end16':b,'sha256':hashlib.sha256(window.encode()).hexdigest()},'harness_including_oracle_peak_RSS_bytes':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss*1024,'android_execution':False}
- (out/'reader-measurements.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
+ r.close();report={'executed_harness_sha256':hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest(),'status':'PASS','fixture_sha256':hashlib.sha256((ROOT/'docs/evidence/selected-source-production/reader-fixtures.json').read_bytes()).hexdigest(),'reader_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'source_index_sha256':json.loads((out/'status.json').read_text())['index_sha256'],'queries':results,'negative_controls':negatives,'window':{'page':page,'revision':rev,'start16':a,'end16':b,'sha256':hashlib.sha256(window.encode()).hexdigest()},'harness_including_oracle_peak_RSS_bytes':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss*1024,'android_execution':False}
+ (out/'reader-measurements-v2.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
 if __name__=='__main__':run(sys.argv[1])
