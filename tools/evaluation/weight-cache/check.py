@@ -6,6 +6,8 @@ def validate(r,current=True):
  f=r['frozen'];assert not r['errors'] and set(f['source'])==set(SOURCES) and set(f['binary'])==set(BINARIES)
  if current:
   source_check(f['source'])
+  assert set(f['configuration'])=={'downloads/native-cache-build/host/CMakeCache.txt','downloads/native-cache-build/android/arm64-v8a/CMakeCache.txt','downloads/native-cache-build/android/x86_64/CMakeCache.txt'}
+  for p,v in f['configuration'].items():assert identity(R/p,True)==v
   for p,v in f['binary'].items():assert sha(R/p)==v['sha256'],p
   manifest=pathlib.Path(f['source_path']).parent/'native-manifest.json';assert sha(manifest)==f['derivation']['sha256']
   for p,h in json.loads(manifest.read_text())['files'].items():assert sha(pathlib.Path(f['source_path'])/p)==h
@@ -79,7 +81,7 @@ def validate(r,current=True):
 
 def main():
  p={'status':'FAIL','errors':[],'files':{},'model_access':False,'android_execution':False}
- for file in [O/'runs.json',O/'frozen.json',O/'attempt.json']+sorted((O/'logs').glob('*')):
+ for file in [O/'runs.json',O/'frozen-v2.json',O/'attempt.json']+sorted((O/'logs').glob('*')):
   try:
    b=file.read_bytes();p['files'][str(file.relative_to(R))]={'sha256':hashlib.sha256(b).hexdigest(),'base64':base64.b64encode(b).decode()}
   except Exception as e:p['errors'].append(repr(e))

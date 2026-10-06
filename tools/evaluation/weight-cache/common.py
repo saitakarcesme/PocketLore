@@ -17,7 +17,8 @@ def atomic(p,d):
  with temp.open('wb') as f:f.write(b);f.flush();os.fsync(f.fileno())
  os.replace(temp,p)
 def freeze():
- assert not (O/'frozen.json').exists()
+ assert not (O/'frozen-v2.json').exists()
  src=pathlib.Path((O/'reviewed-source-path.txt').read_text().strip());k=owned.preflight()
  d={'source':sources(),'binary':{p:identity(R/p) for p in BINARIES},'derivation':identity(src.parent/'native-manifest.json',True),'source_path':str(src),'kernel':k,'policy':json.loads((R/'docs/evidence/weight-cache-inputs/policy.json').read_text())}
- atomic(O/'frozen.json',d)
+ d['configuration']={str(p.relative_to(R)):identity(p,True) for p in [R/'downloads/native-cache-build/host/CMakeCache.txt']+[R/f'downloads/native-cache-build/android/{abi}/CMakeCache.txt' for abi in ['arm64-v8a','x86_64']]}
+ atomic(O/'frozen-v2.json',d)

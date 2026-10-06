@@ -22,8 +22,8 @@ def collect(out,prefix,raw):
 
 def main():
  if sys.argv[1]=='freeze':freeze();return 0
- f=json.loads((O/'frozen.json').read_text());r={'frozen':f,'inputs':{},'runs':{},'errors':[],'model_access':False}
- with (O/'attempt.json').open('x') as g:json.dump({'frozen':identity(O/'frozen.json'),'task':f['policy']['task']},g)
+ f=json.loads((O/'frozen-v2.json').read_text());r={'frozen':f,'inputs':{},'runs':{},'errors':[],'model_access':False}
+ with (O/'attempt.json').open('x') as g:json.dump({'frozen':identity(O/'frozen-v2.json'),'task':f['policy']['task']},g)
  try:
   source_check(f['source']);r['preflight']=owned.preflight()
   bad=O/'collection-control';bad.mkdir();(bad/'stdout.log').write_bytes(b'\xff\x00');(bad/'stderr.log').mkdir();control={};collect(bad,bad/'none',control);r['collection_control']=control;assert len(control['collection_errors'])==2 and control['raw_bytes']['stdout.log']['base64']=='/wA='
