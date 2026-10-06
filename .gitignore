@@ -25,3 +25,6 @@ __pycache__/
 /control/
 PocketLore-control/
 .idea/
+
+# Generated native CMake trees must never enter checkpoint evidence.
+/android/native-build/

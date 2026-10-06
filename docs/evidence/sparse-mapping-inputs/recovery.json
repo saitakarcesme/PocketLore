@@ -1,0 +1,76 @@
+{
+  "base": "a15250880712bf4d64cb9d75b7bfdeaba792e9c7",
+  "paths": [
+    {
+      "path": "tools/evaluation/strong-native-host/check.py",
+      "sha256": "45d4aa28d7087b8f4937d754d260749c5c27047e20a5b36ab555c6b72e925cd2",
+      "retained_checkpoint": "608533da01c170faa4fc4b7b56a600b40e5a3c92"
+    },
+    {
+      "path": "tools/evaluation/strong-native-host/measure.py",
+      "sha256": "b359dcbb1c99ac31fd65e0feb72e8a3802fdb0d686ca04568ca0451100c26da0",
+      "retained_checkpoint": "608533da01c170faa4fc4b7b56a600b40e5a3c92"
+    },
+    {
+      "path": "tools/evaluation/strong-native-host/preflight.py",
+      "sha256": "ad696a0ff959c6b867974bad8c43b6e5c9eb24bfa61691eac6ffd99937297697",
+      "retained_checkpoint": "608533da01c170faa4fc4b7b56a600b40e5a3c92"
+    },
+    {
+      "path": "tools/evaluation/strong-native-host/run.py",
+      "sha256": "308fb2e62acd1bf3aaa32aa6a8a5969b16991291da8c0359404411566582fb4b",
+      "retained_checkpoint": "608533da01c170faa4fc4b7b56a600b40e5a3c92"
+    },
+    {
+      "path": "tools/evaluation/strong-native-host/validate.py",
+      "sha256": "9f92cf0793042051126a611e2c91ded07869e98b62fe45a59df8cd84ae19ef06",
+      "retained_checkpoint": "608533da01c170faa4fc4b7b56a600b40e5a3c92"
+    },
+    {
+      "path": "tools/runtime/sparse/CMakeLists.txt",
+      "sha256": "f1ed9e5d06f76770a185e541095ca8e687edd966b7ba766e140ce6dfea602b25",
+      "retained_checkpoint": "608533da01c170faa4fc4b7b56a600b40e5a3c92"
+    },
+    {
+      "path": "tools/runtime/sparse/derive.py",
+      "sha256": "fe5121a09156237ce9241ceb29cd66c45622617b96af99190844f7bf57ae1ef9",
+      "retained_checkpoint": "608533da01c170faa4fc4b7b56a600b40e5a3c92"
+    },
+    {
+      "path": "tools/runtime/sparse/host.cpp",
+      "sha256": "506f85d27cba15c28c49a7da1181e982e4a050fecde78841b8887bcb130d12dc",
+      "retained_checkpoint": "608533da01c170faa4fc4b7b56a600b40e5a3c92"
+    },
+    {
+      "path": "tools/runtime/sparse/identity.json",
+      "sha256": "f4b3f008ce1d1ec601a8425675b9aa0eb02d6dd91c6d7652ae3eaa9f444f4f4b",
+      "retained_checkpoint": "608533da01c170faa4fc4b7b56a600b40e5a3c92"
+    },
+    {
+      "path": "tools/runtime/sparse/inspect_header.py",
+      "sha256": "26c8dccc62acee8b275e859da6b3964da653742f9b78ee84ccf5b1350aebe18e",
+      "retained_checkpoint": "608533da01c170faa4fc4b7b56a600b40e5a3c92"
+    },
+    {
+      "path": "tools/runtime/sparse/lazy-mmap.patch",
+      "sha256": "7d2de623ba34d4033c45a540eb9f289d7d0c6a1d4fda92d2361046ae82a012cc",
+      "retained_checkpoint": "608533da01c170faa4fc4b7b56a600b40e5a3c92"
+    },
+    {
+      "path": "tools/runtime/sparse/prepare.py",
+      "sha256": "f50a3461feeaf4557cc40a0295d59727c2e5265543c6a328d68899bfa14eabd9",
+      "retained_checkpoint": "608533da01c170faa4fc4b7b56a600b40e5a3c92"
+    },
+    {
+      "path": "tools/runtime/sparse/profile.h",
+      "sha256": "88bb09b4f8d2cd62e02c9030746ba4c04d818b5a7d7d186fccfd040dbfdd21ab",
+      "retained_checkpoint": "608533da01c170faa4fc4b7b56a600b40e5a3c92"
+    },
+    {
+      "path": "tools/runtime/sparse/residency.py",
+      "sha256": "d70f87ecd2fe412ade69f4d34997a9571747658a2bee00ba54e159f9042f3401",
+      "retained_checkpoint": "608533da01c170faa4fc4b7b56a600b40e5a3c92"
+    }
+  ],
+  "excluded": "android/native-build; no Android source/build/admission changes"
+}
