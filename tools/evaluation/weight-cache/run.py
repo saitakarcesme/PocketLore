@@ -11,8 +11,8 @@ def fixture(p,size):
  with p.open('rb') as f:os.posix_fadvise(f.fileno(),0,0,os.POSIX_FADV_DONTNEED)
  return {'path':str(p),'sha256':h.hexdigest(),'version':version(p)}
 def collect(out,prefix,raw):
- raw['observations']={};raw['raw_bytes']={};raw['collection_errors']=[]
- for p in [out/'stdout.log',out/'stderr.log']+sorted(prefix.parent.glob(prefix.name+'-*.json')):
+ raw['stream_contract']='stdout_and_stderr_combined_by_supervisor';raw['observations']={};raw['raw_bytes']={};raw['collection_errors']=[]
+ for p in [out/'stdout.log']+sorted(prefix.parent.glob(prefix.name+'-*.json')):
   try:
    with p.open('rb') as g:b=g.read(4194305)
    raw['raw_bytes'][p.name]={'sha256':hashlib.sha256(b).hexdigest(),'base64':base64.b64encode(b).decode()};assert len(b)<=4194304
@@ -26,7 +26,7 @@ def main():
  with (O/'attempt.json').open('x') as g:json.dump({'frozen':identity(O/'frozen-v2.json'),'task':f['policy']['task']},g)
  try:
   source_check(f['source']);r['preflight']=owned.preflight()
-  bad=O/'collection-control';bad.mkdir();(bad/'stdout.log').write_bytes(b'\xff\x00');(bad/'stderr.log').mkdir();control={};collect(bad,bad/'none',control);r['collection_control']=control;assert len(control['collection_errors'])==2 and control['raw_bytes']['stdout.log']['base64']=='/wA='
+  bad=O/'collection-control';bad.mkdir();(bad/'stdout.log').write_bytes(b'\xff\x00');(bad/'none-unreadable.json').mkdir();control={};collect(bad,bad/'none',control);r['collection_control']=control;assert len(control['collection_errors'])==2 and control['raw_bytes']['stdout.log']['base64']=='/wA='
   for name in ['force','retain']:r['inputs'][name]=fixture(O/(name+'.bin'),33554432);atomic(O/'runs.json',r)
   assert r['inputs']['force']['sha256']==r['inputs']['retain']['sha256']
   for name in ['force','retain','no-progress','mincore-failure','advice-failure','tail','remap']:

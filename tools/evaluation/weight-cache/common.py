@@ -1,5 +1,5 @@
 import sys,pathlib,importlib.util,json,hashlib,os
-R=pathlib.Path(__file__).resolve().parents[3];O=R/'downloads/weight-cache-537'
+R=pathlib.Path(__file__).resolve().parents[3];O=R/'downloads/weight-cache-537/collection-repair'
 sys.path.insert(0,str(R/'tools/evaluation/native-cache'))
 from contract import identity,sha,version,process_stat,status_pid,sample_identity,SOURCES as PRIOR,BINARIES as OLD
 spec=importlib.util.spec_from_file_location('owned_runner',R/'tools/evaluation/native-cache/run.py');owned=importlib.util.module_from_spec(spec);spec.loader.exec_module(owned)
@@ -18,7 +18,7 @@ def atomic(p,d):
  os.replace(temp,p)
 def freeze():
  assert not (O/'frozen-v2.json').exists()
- src=pathlib.Path((O/'reviewed-source-path.txt').read_text().strip());k=owned.preflight()
+ src=pathlib.Path((R/'downloads/weight-cache-537/reviewed-source-path.txt').read_text().strip());k=owned.preflight()
  d={'source':sources(),'binary':{p:identity(R/p) for p in BINARIES},'derivation':identity(src.parent/'native-manifest.json',True),'source_path':str(src),'kernel':k,'policy':json.loads((R/'docs/evidence/weight-cache-inputs/policy.json').read_text())}
  d['configuration']={str(p.relative_to(R)):identity(p,True) for p in [R/'downloads/native-cache-build/host/CMakeCache.txt']+[R/f'downloads/native-cache-build/android/{abi}/CMakeCache.txt' for abi in ['arm64-v8a','x86_64']]}
  atomic(O/'frozen-v2.json',d)

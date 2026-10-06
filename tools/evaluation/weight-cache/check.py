@@ -18,7 +18,8 @@ def validate(r,current=True):
  assert len(r['collection_control']['collection_errors'])==2 and r['collection_control']['raw_bytes']['stdout.log']['base64']=='/wA='
  metrics={}
  for name,run in r['runs'].items():
-  inp=r['inputs']['force' if name=='force' else 'retain'];assert run['exit']==0 and not run.get('failure') and not run.get('cleanup_failure') and not run['collection_errors']
+  inp=r['inputs']['force' if name=='force' else 'retain'];assert run['stream_contract']=='stdout_and_stderr_combined_by_supervisor'
+  assert run['exit']==0 and not run.get('failure') and not run.get('cleanup_failure') and not run['collection_errors']
   assert run['post_source']==f['source'] and run['post_input']==inp['version'] and run['executable_before']==run['executable_after']==f['binary'][BINARIES[-1]]
   assert run['cleanup'][-1]['action']=='REAPED' and run['samples']
   assert int(re.search(r'^Pid:\s+(\d+)',run['pidfd_fdinfo'],re.M)[1])==run['pid']
