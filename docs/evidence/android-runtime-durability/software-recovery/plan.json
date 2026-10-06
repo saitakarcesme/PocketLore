@@ -1,0 +1,84 @@
+{
+  "epoch": 1791255514.9056206,
+  "owned_unit": "pocketlore-modern-emulator.service",
+  "terminal_core_pid": 2173729,
+  "core_timestamp_UTC": "2026-10-06T02:54:25Z",
+  "service_terminal_UTC": "2026-10-06T02:55:49Z",
+  "reason": "Actual RenderThread SEGV at gfxstream TextureResize/ColorBufferGl under host graphics; software SwiftShader removes host GPU driver path, but shared gfxstream stability still unproven.",
+  "primary_docs": "https://developer.android.com/studio/run/emulator-acceleration",
+  "installed_gpu_help": "/home/isa/PocketLore-control/overnight-20261005/renderer-repair-20261006T0259Z-gpu_help.txt",
+  "core_info": "/home/isa/PocketLore-control/overnight-20261005/renderer-repair-20261006T0259Z-core.txt",
+  "core_info_sha256": "fe7f6b64887c013a6815599b5e0d668ed6d785c0ea5ac19ed4a8996499192860",
+  "argv": [
+    "/home/isa/PocketLore-control/runtime/modern-android/sdk/emulator/emulator",
+    "-avd",
+    "pocketlore_pixel10pro_api37",
+    "-port",
+    "5564",
+    "-no-window",
+    "-no-audio",
+    "-no-snapshot",
+    "-no-boot-anim",
+    "-gpu",
+    "swiftshader",
+    "-memory",
+    "11264",
+    "-cores",
+    "4"
+  ],
+  "emulator_sha256": "27e9a8cbd545529ba2c1aca973e5bc060f50b36a68d2c03296b0162291a16b83",
+  "same_persistent_image_metadata": {
+    "userdata-qemu.img.qcow2": {
+      "path": "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/userdata-qemu.img.qcow2",
+      "inode": 3246949,
+      "device": 57,
+      "bytes": 18038259712,
+      "mtime_ns": 1791255264813974172
+    },
+    "userdata-qemu.img": {
+      "path": "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/userdata-qemu.img",
+      "inode": 3246918,
+      "device": 57,
+      "bytes": 47382528,
+      "mtime_ns": 1790891433560358921
+    },
+    "cache.img.qcow2": {
+      "path": "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/cache.img.qcow2",
+      "inode": 3246947,
+      "device": 57,
+      "bytes": 196616,
+      "mtime_ns": 1790891433736359517
+    },
+    "encryptionkey.img.qcow2": {
+      "path": "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/encryptionkey.img.qcow2",
+      "inode": 3246950,
+      "device": 57,
+      "bytes": 7405568,
+      "mtime_ns": 1791250124052577720
+    },
+    "config.ini": {
+      "path": "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/config.ini",
+      "inode": 3246831,
+      "device": 57,
+      "bytes": 3616,
+      "mtime_ns": 1790891433076253074,
+      "sha256": "bbf2be0e07dc2b6f35970c1ef9277045011a7ecf70dd27a15352c77510ca9731"
+    }
+  },
+  "same_API": 37,
+  "same_memory_MiB": 11264,
+  "same_cores": 4,
+  "free_disk_bytes": 341681594368,
+  "dropin_sha256": "4535464936e2962e95519dd85fed30936f5aa270e775f385b13b3024667916a6",
+  "automatic_restart": false,
+  "launches_permitted": 1,
+  "no_parent_ADB": true,
+  "no_wipe_reset_snapshot_or_new_AVD": true,
+  "deadline_epoch": 1791270084,
+  "after_launch_requirements": [
+    "Actual backend/start/PID/Invocation/cgroup measured; unchanged images metadata lineage.",
+    "Canonical exclusive writer verifies new guestboot/full exact201 DB and protected assets; prelaunch evidence cannot qualify postlaunch.",
+    "Missing package must be nondestructively diagnosed; no reseed/delete/profile replacement.",
+    "If software renderer terminates again, preserve failure and no automatic/further blind launches."
+  ]
+}

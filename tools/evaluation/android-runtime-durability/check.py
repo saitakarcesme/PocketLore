@@ -34,10 +34,13 @@ def freeze_packet(out):
  for p in sorted(builds.glob('*')):
   if p.is_file():
    b=p.read_bytes();files['build/'+p.name]={'sha256':sha(b),'bytes':len(b),'encoding':'base64','content':base64.b64encode(b).decode()}
+ recovery=ROOT/'docs/evidence/android-runtime-durability/software-recovery'
+ for p in sorted(recovery.glob('*.json')):
+  b=p.read_bytes();files['parent-recovery/'+p.name]={'sha256':sha(b),'bytes':len(b),'encoding':'base64','content':base64.b64encode(b).decode()}
  historical=ROOT/'docs/evidence/android-runtime-durability/final-validation/material-20261006T025314Z.json'
  if historical.exists():
   b=historical.read_bytes();files['historical-failed-window-run.json']={'sha256':sha(b),'bytes':len(b),'encoding':'base64','content':base64.b64encode(b).decode()}
- packet={'task':'523-material-measured-window-final-receipts','run':out.name,'status':'FAIL' if (out/'failure.json').exists() else 'PASS','checker_exit':1 if (out/'failure.json').exists() else 0,'raw_files':files,'executed_sources':code,'database_policy':'Raw SQLite excluded; original row oracle, independently extracted current row hashes and full file inventories included.','limits':'Zero-token emulator load only; sustained renderer, generation, full distribution and physical gates open.'}
+ packet={'task':'523-android-runtime-durability-and-preserved-state-strategy-change','run':out.name,'status':'FAIL' if (out/'failure.json').exists() else 'PASS','checker_exit':1 if (out/'failure.json').exists() else 0,'raw_files':files,'executed_sources':code,'database_policy':'Raw SQLite excluded; original row oracle, independently extracted current row hashes and full file inventories included.','limits':'Zero-token emulator load only; sustained renderer, generation, full distribution and physical gates open.'}
  target=ROOT/'docs/evidence/android-runtime-durability-review.json';tmp=target.with_suffix('.tmp');tmp.write_text(json.dumps(packet,indent=2));os.replace(tmp,target)
  archive=ROOT/'docs/evidence/android-runtime-durability/final-validation';archive.mkdir(exist_ok=True);(archive/(out.name+'.json')).write_bytes(target.read_bytes())
 def assertions(d):
@@ -85,6 +88,11 @@ def main():
   shell('installed-before','sha256sum '+package.removeprefix('package:'));shell('stop-before','am force-stop '+PKG)
   schema_before,rows_before=database('before');wanted=json.loads((ROOT/'tools/evaluation/android-runtime-durability/fixtures/expected.json').read_text())['rows'];assert schema_before==2 and rows_before==wanted,'Protected original data mismatch before install'
   (out/'rows-before.json').write_text(json.dumps(rows_before,sort_keys=True));inv_before=inventory('inventory-before')
+  baseline_bytes=(ROOT/'tools/evaluation/android-runtime-durability/fixtures/precrash-inventory.txt').read_bytes();(out/'precrash-inventory.txt').write_bytes(baseline_bytes)
+  baseline={line.split('  ',1)[1]:line.split('  ',1)[0] for line in baseline_bytes.decode().splitlines()}
+  protected=lambda p:'/cache/' not in p and '/code_cache/' not in p and '/databases/' not in p and not p.endswith('/files/notebook-export.json')
+  differences={p:{'before':h,'after':inv_before.get(p)} for p,h in baseline.items() if protected(p) and inv_before.get(p)!=h}
+  (out/'precrash-reconciliation.json').write_text(json.dumps({'baseline_sha256':sha(baseline_bytes),'protected_count':sum(protected(p) for p in baseline),'differences':differences},indent=2));assert not differences,'Precrash protected asset changed/missing'
   test_inventory_before=shell('test-inventory-before',"su 0 sh -c 'find /data/user/0/org.pocketlore.app.test -type f -exec sha256sum {} \\;'",240);shell('test-storage-before','su 0 du -sb /data/user/0/org.pocketlore.app.test; su 0 du -sk /data/user/0/org.pocketlore.app.test')
   apk=ROOT/'android/app/build/outputs/apk/debug/app-debug.apk';test=ROOT/'android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk';expected=sha(apk.read_bytes());(out/'candidate.json').write_text(json.dumps({'source_hash':source_hash,'apk_sha256':expected,'test_sha256':sha(test.read_bytes()),'source_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'native_libraries':{str(p.relative_to(ROOT)):sha(p.read_bytes()) for p in (ROOT/'android/app/build/generated/nativeLibs').rglob('*.so')}},indent=2))
   cmd('install-main',ADB+['install','--no-incremental','-r',str(apk)],180);cmd('install-test',ADB+['install','--no-incremental','-r',str(test)],180)

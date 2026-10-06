@@ -1,0 +1,27 @@
+{
+  "epoch": 1791255656.0347197,
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "effective": {
+    "Restart": "no",
+    "ExecStart": "{ path=/home/isa/PocketLore-control/runtime/modern-android/sdk/emulator/emulator ; argv[]=/home/isa/PocketLore-control/runtime/modern-android/sdk/emulator/emulator -avd pocketlore_pixel10pro_api37 -port 5564 -no-window -no-audio -no-snapshot -no-boot-anim -gpu swiftshader -memory 11264 -cores 4 ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+    "CPUQuotaPerSecUSec": "4s",
+    "MemoryMax": "15032385536",
+    "TasksMax": "512"
+  },
+  "after": {
+    "ActiveState": "active",
+    "SubState": "running",
+    "InvocationID": "f633960dd0754c36984fee7d3dd460a5",
+    "Restart": "no",
+    "MainPID": "2218269",
+    "NRestarts": "0",
+    "ExecMainStartTimestamp": "Tue 2026-10-06 05:00:56 CEST",
+    "MemoryCurrent": "258048",
+    "MemoryPeak": "262144"
+  },
+  "parent_ADB": false,
+  "same_persistent_images_metadata_verified_prelaunch": true,
+  "scope": "One materially changed software-renderer launch only; new guest preservation and stability still unproven."
+}

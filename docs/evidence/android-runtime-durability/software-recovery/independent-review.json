@@ -1,0 +1,36 @@
+{
+  "decision": "continue",
+  "scope": "Exactly one supervised renderer-only launch, conditional on fresh preflight; no launch performed by reviewer.",
+  "reviewed_at_utc": "2026-10-06T02:59:58.202863+00:00",
+  "criticism": "The single software-renderer launch is materially justified, but shared gfxstream stability and postboot preservation of all 201 records and assets remain unproven and require fresh independent verification.",
+  "input_sha256": {
+    "plan.json": "38c107818eaf7a3cc2097f6d5b9c16465af38dd33895cb2a1befa8c5b911cc57",
+    "proposed-dropin.conf": "4535464936e2962e95519dd85fed30936f5aa270e775f385b13b3024667916a6",
+    "unit-before.txt": "14ca59ac487b3f319c47a9ea3e8455d719009f67385a901a34451f22282d8c9e",
+    "meminfo-before.txt": "20a6e8bfb1deea84770ff42c3b9e96b0b16628f2f381ffc94e5effb272b2f477"
+  },
+  "referenced_sha256": {
+    "/home/isa/PocketLore-control/overnight-20261005/renderer-repair-20261006T0259Z-gpu_help.txt": "2b41d0c256896c5ef239eb26346d65fce2de08275953f3c131d639aedfa69f6f",
+    "/home/isa/PocketLore-control/overnight-20261005/renderer-repair-20261006T0259Z-core.txt": "fe7f6b64887c013a6815599b5e0d668ed6d785c0ea5ac19ed4a8996499192860"
+  },
+  "findings": [
+    "Core matches PID2173729, port5564, host renderer, RenderThread SEGV and gfxstream TextureResize/ColorBufferGl stack; installed GPU help explicitly supports swiftshader for GLES and Vulkan.",
+    "Proposed ExecStart retains AVD, port, memory11264MiB, cores4, no-window/no-audio/no-snapshot/no-boot-anim; Restart=no explicitly remains, while base resource limits and stop timeout are inherited.",
+    "No material blocker to this one launch was identified in the reviewed plan; this is an experimental materially different recovery, not evidence of sustained renderer stability.",
+    "Available memory and free disk are frozen observations, not a reservation or proof of runtime peak compliance; existing MemoryMax14G and fresh measured cgroup remain necessary.",
+    "Persistent-image inode/size metadata and installed emulator identity are plan assertions; this review did not read AVD userdata or independently hash executable/image contents."
+  ],
+  "launch_conditions": [
+    "Immediately before launch, verify old unit has MainPID0, no competing owner of5564, exactly one authorized start, effective GPU swiftshader and Restart=no, and unchanged specified persistent-image lineage without wipe/reset/newAVD.",
+    "Verify the existing independent deadline mechanism remains armed for1791270084; neither this dropin nor the frozen unit-before text independently enforces the plan deadline.",
+    "Record actual backend, executable, PID/start/InvocationID and effective cgroup; leave protected5560/5562 and source jobs untouched.",
+    "Canonical exclusive writer must verify the new guest boot, exact201 rows and protected asset identities before accepting preservation; prior boot receipts cannot qualify the new boot.",
+    "On another terminal renderer failure retain evidence, preserve images and do not automatically or blindly relaunch."
+  ],
+  "not_qualified": [
+    "Restoration or Android acceptance",
+    "Sustained renderer stability",
+    "Whole12GB/50GB profile qualification",
+    "General quality or rival superiority"
+  ]
+}

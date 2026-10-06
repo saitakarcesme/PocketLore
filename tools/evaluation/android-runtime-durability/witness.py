@@ -1,7 +1,7 @@
 """Typed parent observations only; no commands or service mutations are requested."""
 import hashlib,json,pathlib,time,uuid
 UNIT='pocketlore-modern-emulator.service'
-TASK='523-android-runtime-durability-and-preserved-state-material-measured-window-and-final-receipts'
+TASK='523-android-runtime-durability-and-preserved-state-strategy-change'
 REQUESTS=pathlib.Path('/home/isa/PocketLore-control/evidence/android-host-witness-requests')
 def sha(data):return hashlib.sha256(data).hexdigest()
 def validate(request,response,raw_request):
