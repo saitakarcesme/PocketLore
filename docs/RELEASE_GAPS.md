@@ -440,3 +440,7 @@ Implemented external kernel/code/index receipt validation with an actual histori
 ### Selected-source strategy: bounded complete-context inspection
 
 Recovered failed 8f261e2 source lineage. Added externally pinned shard/source/context verification and bounded original UTF16 windows, validated against five independent genuine oracles plus14 refusals. Build passes; full invariant gate remains FAIL for revised kernel-scale execution, rights/eligibility, Android and full distribution. No producer/device/orchestration changes or admission. Phrase-query prerequisite remains separate.
+
+### Coherent-query host preparation (not Android or corpus admission)
+
+The new versioned query index and typed source opening pass bounded public host controls and compile with the Android source tree. New indexing still needs revised dedicated-kernel scale measurements and Android consumption/roundtrip qualification; v1 exports retain their old inspection schema. Exact URL/license preservation is tested, while imported attribution/modifications/nontext/quotation rights and semantic eligibility remain unresolved. Complete contributor histories are not independently mandatory under the retained primary attribution correction. No full50GB/12GB, physical or unseen competitive claim follows.

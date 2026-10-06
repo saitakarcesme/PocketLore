@@ -26,7 +26,12 @@ class InspectionReader:
   required={'texts','contexts','pieces','capsules','articles','search'} if self.v3 else {'contexts','pieces','capsules','articles','search'}
   if not required <= {x[0] for x in self.db.execute('SELECT name FROM sqlite_master')}:self.close();raise ValueError('Incomplete selected source schema')
   if 'fts4' not in self.db.execute("SELECT sql FROM sqlite_master WHERE name='search'").fetchone()[0].lower():self.close();raise ValueError('Unsupported search schema')
-  self.query_units=self.db.execute("SELECT 1 FROM sqlite_master WHERE name='query_contract'").fetchone() is not None
+  names={row[0] for row in self.db.execute('SELECT name FROM sqlite_master')};features={'query_contract','query_units','query_content'}
+  if names & features and not features<=names:self.close();raise ValueError('Incomplete coherent-query schema')
+  self.query_units=features<=names
+  content=self.db.execute("SELECT sql FROM sqlite_master WHERE name='search'").fetchone()[0].replace(' ','').replace('\n','').lower()
+  expected='content=query_content' if self.query_units else ('content=texts' if self.v3 else 'content=contexts')
+  if expected not in content:self.close();raise ValueError('Search content identity mismatch')
   if self.query_units and self.db.execute('SELECT name FROM query_contract').fetchall()!=[('inline-units-v1',)]:self.close();raise ValueError('Unsupported query contract')
  def close(self):self.db.close()
  def check(self):
@@ -58,7 +63,21 @@ class InspectionReader:
   if result and [n[0] for n in result]!=list(range(start,start+len(result))):raise ValueError('Missing node window')
   return result
  def context(self,page,revision,node):
-  self.check();match=node;row=None
+  self.check()
+  if not self.v3:
+   row=self.db.execute('SELECT disposition FROM contexts WHERE page=? AND revision=? AND node=?',(page,revision,node)).fetchone()
+   if not row:raise ValueError('Missing legacy context')
+   chain=[];ancestor=node
+   while ancestor:
+    current=self.nodes(page,revision,ancestor,1)
+    if not current or len(chain)>=65 or (chain and ancestor>=chain[-1][0]):raise ValueError('Invalid legacy context ancestry')
+    chain.append(current[0]);ancestor=current[0][1]
+   tags={n[2] for n in chain};root=chain[0]
+   if tags & {'blockquote','q'}:root=next((n for n in chain if n[2]=='section'),chain[-1])
+   elif 'table' in tags:root=next(n for n in reversed(chain) if n[2]=='table')
+   elif 'math' in tags:root=next((n for n in chain if n[2] in {'p','dd','dt','li','section'}),chain[-1])
+   return {'matched_node':node,'context_node':node,'root':root,'heading':[],'disposition':row[0],'window_units':8192,'legacy_heading_unavailable':True}
+  match=node;row=None
   for depth in range(65):
    row=self.db.execute('SELECT context_root,heading,disposition FROM contexts WHERE page=? AND revision=? AND node=?',(page,revision,node)).fetchone()
    if row:break

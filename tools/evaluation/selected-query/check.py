@@ -1,5 +1,5 @@
 """Frozen public query and original-source engineering controls, not admission."""
-import copy,hashlib,importlib.util,json,pathlib,resource,shutil,sqlite3,subprocess,sys,time,traceback,zlib
+import copy,hashlib,importlib.util,json,pathlib,resource,shutil,sqlite3,subprocess,sys,time,traceback,zipfile,zlib
 ROOT=pathlib.Path(__file__).resolve().parents[3];sys.path.insert(0,str(ROOT/'tools/packs/selected-source'));sys.path.insert(0,str(pathlib.Path(__file__).parent))
 from read import InspectionReader
 from observe import load,Guard,PACKET
@@ -30,7 +30,7 @@ def main(out):
   for seq,raw in enumerate(items):
    x=json.loads(raw);page,rev=x['identifier'],x['version']['identifier'];row=(seq,page,rev,'frozen-public',seq,len(raw),sha(raw),json.dumps(x['license']),x['name'],None);p.transform(d,row,raw,guard);d.execute('INSERT INTO latest VALUES(?,?,?,?,0)',(page,rev,seq,sha(raw)));originals[page]=raw;(out/'originals'/('original-'+str(page)+'.json')).write_bytes(raw)
   d.execute("INSERT INTO search(search) VALUES('rebuild')");d.execute("INSERT INTO search(search) VALUES('integrity-check')");d.commit()
-  result['storage']={'components':dict(d.execute('SELECT name,sum(pgsize) FROM dbstat GROUP BY name')),'canonical_text_bytes':d.execute('SELECT sum(length(CAST(text AS BLOB))) FROM texts').fetchone()[0],'query_units':d.execute('SELECT count(*) FROM query_units').fetchone()[0],'query_unit_columns':[r[1] for r in d.execute('PRAGMA table_info(query_units)')],'originals':len(items),'authored':11,'genuine':7};assert 'text' not in result['storage']['query_unit_columns'];d.close()
+  result['sqlite']={'version':sqlite3.sqlite_version,'compile_options':[row[0] for row in d.execute('PRAGMA compile_options')],'fts_sql':d.execute("SELECT sql FROM sqlite_master WHERE name='search'").fetchone()[0],'query_view_sql':d.execute("SELECT sql FROM sqlite_master WHERE name='query_content'").fetchone()[0]};result['storage']={'components':dict(d.execute('SELECT name,sum(pgsize) FROM dbstat GROUP BY name')),'canonical_text_bytes':d.execute('SELECT sum(length(CAST(text AS BLOB))) FROM texts').fetchone()[0],'query_units':d.execute('SELECT count(*) FROM query_units').fetchone()[0],'query_unit_columns':[r[1] for r in d.execute('PRAGMA table_info(query_units)')],'originals':len(items),'authored':11,'genuine':7};assert 'text' not in result['storage']['query_unit_columns'];d.close()
   index=out/'index.sqlite';pin=sha(index.read_bytes());r=InspectionReader(index,expected_index_sha256=pin);timings=[]
   queries=[(f['page'],q) for f in policy['fixtures'] for q in f['queries']]+[(801,'evidence marker'),(802,'code evidence'),(803,'microscope lens'),(805,'"silver blue green amber"')]
   for page,q in queries:
@@ -69,7 +69,7 @@ def main(out):
   assert ''.join(w['original_html'] for w in r.source_windows(704,9004,start16,start16+2))=='🙂';result['negatives']['split-surrogate']=refused(lambda:list(r.source_windows(704,9004,start16+1,start16+2)))
   result['negatives']['query-bound']=refused(lambda:r.search_hits('a'*257));result['negatives']['malformed-query']=refused(lambda:r.search_hits('"'))
   r.close();cancel=InspectionReader(index,lambda:True);result['negatives']['cancelled-query']=refused(lambda:cancel.search_hits('water'));cancel.close()
-  for label,sql in [('unsupported-query-contract',"UPDATE query_contract SET name='unreviewed'"),('missing-query-table','DROP TABLE query_units')]:
+  for label,sql in [('unsupported-query-contract',"UPDATE query_contract SET name='unreviewed'"),('missing-query-table','DROP TABLE query_units'),('missing-query-contract','DROP TABLE query_contract')]:
    path=out/(label+'.sqlite');shutil.copyfile(index,path);c=sqlite3.connect(path);c.execute(sql);c.commit();c.close()
    def attempt():
     rr=InspectionReader(path,expected_index_sha256=sha(path.read_bytes()))
@@ -77,8 +77,15 @@ def main(out):
     finally:rr.close()
    result['negatives'][label]=refused(attempt)
   result['negatives']['corrupt-index']=refused(lambda:InspectionReader(index,expected_index_sha256='0'*64))
+  legacy_path=BASE/'selected-source-kernel-probe-20261006T045928Z-v2/output/index.sqlite';legacy=InspectionReader(legacy_path,expected_index_sha256='330f42f858ff40d64edf4c8040e9f6fb0d3709f9f659d07f8edb3f50299416c1')
+  legacy_hits=legacy.search('Eleanor');assert legacy_hits
+  legacy_contexts=[legacy.context(h[1],h[2],h[3]) for h in legacy_hits];assert all(c['root'] for c in legacy_contexts);legacy.close();result['legacy_read']={'index_sha256':'330f42f858ff40d64edf4c8040e9f6fb0d3709f9f659d07f8edb3f50299416c1','hits':legacy_hits,'contexts':legacy_contexts,'scope':'Read-only v2 compatibility, no new kernel or producer execution'}
   reopened=InspectionReader(index,expected_index_sha256=pin);assert reopened.search_hits('"New York"')[0]['page']==701;reopened.close()
   receipt=export(index,pin,701,9001,out/'export');assert not receipt['source_admission_established'];result['export']=receipt
+  exported=sqlite3.connect(out/'export/inspection-pack/index.sqlite');metadata=json.loads(exported.execute('SELECT metadata FROM articles WHERE id=701').fetchone()[0]);exported.close();original=json.loads(originals[701]);assert metadata['url']==original['url'] and metadata['license']==original['license'];result['export_attribution']={'url':metadata['url'],'license':metadata['license'],'full_author_history_required':False,'other_rights_unresolved':True}
+  with zipfile.ZipFile(out/'export/inspection-pack/sources.plsource') as archive:
+   license_hashes={name:sha(archive.read(name+'.txt')) for name in receipt['manifest']['licenses']};assert license_hashes==receipt['manifest']['licenses'];result['export_license_bytes']=license_hashes
+  deep=json.loads(originals[701]);deep['article_body']['html']=deep['article_body']['html'].replace('<p>','<p>'+('<span>'*66)).replace('</p>',('</span>'*66)+'</p>');result['negatives']['deep-markup']=refused(lambda:p.structure.inspect(json.dumps(deep).encode()))
   result.update(status='PASS',index_sha256=pin,index_bytes=index.stat().st_size,query_seconds=timings,max_query_seconds=max(timings),source={str(path.relative_to(ROOT)):sha(path.read_bytes()) for path in [ROOT/'tools/packs/selected-source/producer.py',ROOT/'tools/packs/selected-source/read.py',pathlib.Path(__file__)]})
  except BaseException as e:result['error']=type(e).__name__+': '+str(e);result['traceback']=traceback.format_exc()
  finally:

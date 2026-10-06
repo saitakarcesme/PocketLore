@@ -506,3 +506,7 @@ Implemented external kernel/code/index receipt validation with an actual histori
 ### Selected-source strategy: bounded complete-context inspection
 
 Recovered failed 8f261e2 source lineage. Added externally pinned shard/source/context verification and bounded original UTF16 windows, validated against five independent genuine oracles plus14 refusals. Build passes; full invariant gate remains FAIL for revised kernel-scale execution, rights/eligibility, Android and full distribution. No producer/device/orchestration changes or admission. Phrase-query prerequisite remains separate.
+
+### Coherent source query and opening preparation
+
+Recovered77748c2; inline-units-v1 fixes frozen cross-inline phrase/AND and metadata-title misses without persisting repeated ancestor text. Current bounded host checks pass (11 authored queries,5 genuine context queries,18 negatives); Android build passes, runtime remains terminal/unexecuted. Actual18-input index grows188416B; no whole-profile projection. Old failures and empty-block/legacy-context corrections retained. URL attribution alternatives do not require complete contributor histories; additional notices/rights/support remain unresolved. Full source/kernel/model/Android/physical gates unchanged.
