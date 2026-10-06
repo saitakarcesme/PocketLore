@@ -450,3 +450,5 @@ Task532 is a bounded serial host mapping/cache helper only: map_files stat remai
 ## Native lifecycle repair 2
 
 The c4615b2 canonical native lifecycle check failed despite a successful build. Repair 2 addresses deterministic modified-build metadata and lossless raw evidence finalization. Current validation is pending. The terminal emulator remains untouched; full generation, Android JNI/UI behavior, physical resources and the complete installed/update profile remain unqualified.
+
+Repair-2 bounded native validation passed after deterministic derivation and lossless packet repairs. The 4 MiB exact tensor-window result does not qualify full model residency/inference, Android execution, complete distribution or physical/competitive acceptance. Earlier canonical failures remain preserved and are not reclassified.
