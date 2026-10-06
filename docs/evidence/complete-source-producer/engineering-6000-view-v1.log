@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/packs/complete-source/compact.py", line 262, in <module>
+    print(json.dumps(produce(v.stage,v.out,v.ceiling,v.seconds),indent=2))
+                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/packs/complete-source/compact.py", line 220, in produce
+    require(db.execute('PRAGMA integrity_check').fetchone()[0]=='ok','index integrity')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/packs/complete-source/compact.py", line 33, in require
+    if not ok: raise ValueError(msg)
+               ^^^^^^^^^^^^^^^^^^^^^
+ValueError: index integrity

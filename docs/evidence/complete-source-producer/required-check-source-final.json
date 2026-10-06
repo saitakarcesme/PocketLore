@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "bash",
+    "tools/evaluation/check_complete_source_producer.sh"
+  ],
+  "exit_code": 0,
+  "raw_log": "required-check-v3.log",
+  "inputs": {
+    "tools/packs/complete-source/compact.py": "644d84c9f3c639327a92bed08719fe7b6656ab6af52e269a9946e937516b5c9b",
+    "tools/packs/complete-source/test_compact.py": "77da87658571ba44d8d003c7b26711070567b54f7d9db0eeb2759ab1c3397288",
+    "tools/packs/complete-source/test_producer.py": "9fbec7ea5631ecb4f720f60144782fa655941b20f560bdbaf47443bce9b1c34d",
+    "tools/evaluation/check_complete_source_producer.sh": "4d52b041b1283e7583f15602c46ffbf6ae7dbbfd1d5af0eaccca0f8a827b0467",
+    "tools/evaluation/verify_complete_source_producer.py": "4d500fbf0aec38612964391f43de98f53f0f219a156b1e2518e35fcd80607e36",
+    "tools/packs/complete-source/protocol.json": "92d4f90b759359125a6132bfc887748fc7ee08a2d7faa915016ab58ad1846b46"
+  }
+}

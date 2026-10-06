@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "python3",
+    "tools/packs/complete-source/compact.py",
+    "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite",
+    "downloads/complete-source-producer/engineering-6000-projection-v1",
+    "--ceiling",
+    "5999",
+    "--seconds",
+    "180",
+    "--cutoff",
+    "1791269964.0"
+  ],
+  "started_epoch": 1791245184.121817,
+  "ended_epoch": 1791245240.0376115,
+  "returncode": 0,
+  "source_sha256": "0a256128ca6524e91c5a278b58f81e191fc7fd9fd71b52768bf43d74755cc2a6",
+  "resource_scope": "Short engineering test,512MiB RLIMIT_AS,2CPU affinity; cgroup launch unavailable, no long producer launched"
+}

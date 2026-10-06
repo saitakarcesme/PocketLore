@@ -1,0 +1,55 @@
+{
+  "format": "pocketlore-compact-article-v1",
+  "source_admission_established": false,
+  "distribution_ready": false,
+  "status": "ENGINEERING_COMPLETE_PROVISIONAL",
+  "sequence_ceiling": 11999,
+  "source_stage": "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite",
+  "source_scope": "committed provisional range, not full archive",
+  "pid": 4,
+  "preflight": {
+    "memory": {
+      "MemTotal": 33421807616,
+      "MemAvailable": 2821054464
+    },
+    "free_bytes": 457411485696
+  },
+  "counts": {
+    "dispositions": 12000,
+    "latest": 11989,
+    "articles": 11624,
+    "passages": 32759,
+    "candidate_articles_not_admitted": 204
+  },
+  "source_code_sha256": "644d84c9f3c639327a92bed08719fe7b6656ab6af52e269a9946e937516b5c9b",
+  "records": 12000,
+  "original_chain_sha256": "992867c28ef89a08dfa9d43bfb2b85c1e58fabdc8d6dfe3733a7c779b37f39bd",
+  "rss_max_kib": 68276,
+  "disposition_counts": {
+    "duplicate": 3,
+    "excluded": 365,
+    "superseded": 8,
+    "transformed": 11624
+  },
+  "license_counts": {
+    "CC-BY-SA-3.0": 11624
+  },
+  "schema_storage_bytes": {
+    "articles": 71876608,
+    "candidates": 4096,
+    "disposition_page": 208896,
+    "dispositions": 1712128,
+    "latest": 1298432,
+    "passage_page": 393216,
+    "passages": 2785280,
+    "search_config": 4096,
+    "search_data": 12001280,
+    "search_idx": 53248,
+    "sqlite_autoindex_articles_1": 143360,
+    "sqlite_autoindex_passages_1": 471040,
+    "sqlite_schema": 4096
+  },
+  "index_bytes": 90955776,
+  "seconds": 116.26244018104626,
+  "index_sha256": "b7539689c0b37b1a9b43f9c72a136c9c1e166b89b1df704db899a369e9038ebd"
+}

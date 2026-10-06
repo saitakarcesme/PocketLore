@@ -41,7 +41,12 @@ class Transactions(unittest.TestCase):
     def test_capsule_reader_corrupt_missing(self):
         with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[3]/'downloads') as t:
             p=Path(t);self.stage(p/'stage',[record()]);c.produce(p/'stage',p/'out',0,20)
-            r=c.Reader(p/'out');self.assertTrue(r.search('literal'));r.db.close()
+            r=c.Reader(p/'out');self.assertTrue(r.search('literal'))
+            calls=[0]
+            def cancel_during():
+                calls[0]+=1;return calls[0]>=3
+            with self.assertRaises((ValueError,sqlite3.OperationalError)):r.search('literal',cancel_during)
+            self.assertGreaterEqual(calls[0],3);r.db.close()
             with (p/'out/index.sqlite').open('r+b') as f:f.seek(100);f.write(b'corrupt')
             with self.assertRaises(ValueError):c.Reader(p/'out')
             (p/'out/index.sqlite').rename(p/'retained-corrupt.sqlite')

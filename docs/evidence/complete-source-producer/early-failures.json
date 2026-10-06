@@ -1,0 +1,41 @@
+{
+  "scope": "Preserved invocations before final compact run; unit failures below transcribed from actual tool output, not reconstructed successful receipts",
+  "failures": [
+    {
+      "invocation": "engineering-6000-v1",
+      "returncode": 1,
+      "reason": "/usr/bin/time missing; producer not started",
+      "raw_log": "downloads/complete-source-producer/engineering-6000-v1.log"
+    },
+    {
+      "invocation": "engineering-6000-v2",
+      "returncode": 1,
+      "reason": "User scope bus local transport: No data available; producer not started",
+      "raw_log": "downloads/complete-source-producer/engineering-6000-v2.log"
+    },
+    {
+      "invocation": "engineering-6000-bounded",
+      "returncode": 1,
+      "reason": "SQLite contentless FTS4 integrity_check needs content access",
+      "raw_log": "downloads/complete-source-producer/engineering-6000-bounded.log"
+    },
+    {
+      "invocation": "engineering-6000-view-v1",
+      "returncode": 1,
+      "reason": "External-content view lacked rowid alias",
+      "raw_log": "downloads/complete-source-producer/engineering-6000-view-v1.log"
+    },
+    {
+      "invocation": "constructed transaction tests first",
+      "returncode": 1,
+      "reason": "All five errors: /tmp filesystem cannot meet100GiB producer preflight; moved tiny fixtures to ignored project downloads, did not lower reserve",
+      "raw_log": null
+    },
+    {
+      "invocation": "constructed FTS5 transaction tests first",
+      "returncode": 1,
+      "reason": "Three errors: cannot VACUUM from within a transaction; commit integrity-check command before VACUUM",
+      "raw_log": null
+    }
+  ]
+}

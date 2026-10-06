@@ -314,3 +314,5 @@ source-review.json; original response bytes remain at their pinned rig paths.
 License: https://creativecommons.org/licenses/by-sa/4.0/
 Publisher terms: https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use
 Current Android installation and independent unseen evaluation are pending.
+
+Task522 compact-source engineering uses retained official Wikimedia Enterprise HTML originals from the historical2025-03-20 source stream. Per-record CC-BY-SA-3.0 and CC-BY-SA-4.0 identifiers/URIs, article revision/history attribution and original hashes are preserved separately; no blanket license conversion or corpus-wide rights clearance is asserted. Full existing license texts are copied into the bounded review packet. Exact original HTML/JSON remains on the host; compact projection bytes and UTF16 source mappings are modifications, with unsafe/extra-rights cases flagged and source admission disabled. Media rights are not inferred. SQLite FTS5 and Python standard-library facilities are reused; Android routing and redistribution clearance remain unqualified.
