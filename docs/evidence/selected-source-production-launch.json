@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "status": "DRAFT_NOT_LAUNCH_ELIGIBLE",
+  "status": "HOST_CONTROLS_PASS_SCALE_PENDING_PARENT_PREFLIGHT_REQUIRED",
   "builder_launch_forbidden": true,
   "code": {
-    "tools/packs/selected-source/producer.py": "e105ae79dab603854e40e2362f27bc8f5c17beb4df9e41267f7ffe43952562da",
+    "tools/packs/selected-source/producer.py": "274021e02c74245ebc7229e3793d72e8429d01394c5d9511f3d9b72a1d2c6aad",
     "tools/packs/source-structure/produce.py": "5bb1f594c5e932128c6b2a8d52fdb8e52857d4ec3527696c2e310d9a32a6aec3",
     "tools/packs/complete-source/production.py": "1faa842a3da3ae1c8f4ae1a4ad41d3e8b60ded8872b3ce5ebb3668f3c27daec6",
     "tools/packs/complete-source/compact.py": "3c0632516f55af2fa45855024e133fe3cb11fa5d60a55cdcd96cc58124290d54"
@@ -44,7 +44,7 @@
   },
   "command": [
     "python3",
-    "/home/isa/Projects/PocketLore/tools/packs/selected-source/producer.py",
+    "/home/isa/Projects/PocketLore/downloads/selected-source-production/frozen-final-code/tools/packs/selected-source/producer.py",
     "--mode",
     "production",
     "--stage",
@@ -70,5 +70,6 @@
     "free_bytes": 285904961536,
     "not_launch_time_proof": true
   },
-  "selection_capacity": "Exactly 2000000 distinct selected originals required; failure if observed prefix has fewer. No filler or reduction permitted. Prefix latest is not final source latest."
+  "selection_capacity": "Exactly 2000000 distinct selected originals required; failure if observed prefix has fewer. No filler or reduction permitted. Prefix latest is not final source latest.",
+  "frozen_executable_root": "/home/isa/Projects/PocketLore/downloads/selected-source-production/frozen-final-code"
 }

@@ -7,7 +7,7 @@ def audit(out,stage,ranking):
  d=sqlite3.connect('file:'+str(out/'index.sqlite')+'?mode=ro',uri=True);d.execute('pragma cache_size=-2048');d.execute('pragma mmap_size=0');d.execute('pragma temp_store=FILE')
  # Independent SQL window-function choice over original indexed prefix. No producer selector call.
  src=sqlite3.connect('file:'+str(stage)+'?mode=ro',uri=True);src.execute('pragma query_only=on');src.execute('pragma cache_size=-2048');src.execute('pragma mmap_size=0');src.execute('pragma temp_store=FILE');src.execute('ATTACH DATABASE ? AS rank',('file:'+str(ranking)+'?mode=ro&immutable=1',))
- query='''WITH versions AS (SELECT sequence,page,revision,raw_sha256,metadata_error,license_json,title,row_number() OVER(PARTITION BY page ORDER BY revision DESC,sequence ASC) r FROM records WHERE sequence<=?), conflicts AS (SELECT page FROM records WHERE sequence<=? GROUP BY page,revision HAVING count(distinct raw_sha256)>1) SELECT v.page,v.revision,v.sequence,v.raw_sha256,p.views FROM versions v JOIN rank.priority p ON p.id=v.page WHERE r=1 AND p.full=1 AND metadata_error IS NULL AND license_json IS NOT NULL AND title IS NOT NULL AND v.page NOT IN (SELECT page FROM conflicts) ORDER BY p.views DESC,v.page LIMIT ?'''
+ query='''WITH versions AS (SELECT sequence,page,revision,raw_sha256,metadata_error,license_json,title,row_number() OVER(PARTITION BY page ORDER BY revision DESC,sequence ASC) r FROM records WHERE sequence<=?), conflicts AS (SELECT page FROM records WHERE sequence<=? GROUP BY page,revision HAVING count(distinct raw_sha256)>1) SELECT v.page,v.revision,v.sequence,v.raw_sha256,p.views FROM versions v JOIN rank.priority p ON p.id=v.page WHERE r=1 AND p.full=1 AND v.metadata_error IS NULL AND v.license_json IS NOT NULL AND v.title IS NOT NULL AND v.page NOT IN (SELECT page FROM conflicts) ORDER BY p.views DESC,v.page LIMIT ?'''
  expected=src.execute(query,(through,through,count)).fetchall();actual=d.execute('SELECT page,revision,sequence,sha,views FROM selected ORDER BY position').fetchall();assert actual==expected,'Independent general-priority/latest oracle differs'
  assert len(actual)==count and len({r[0] for r in actual})==count
  if through>=99999:
@@ -55,7 +55,12 @@ def audit(out,stage,ranking):
    assert disposition.startswith(('inspection-context:','reconstructible-prose; independent rights/support review pending'))
    for node,tag,start,end in json.loads(scope):assert nodes[node-1][2]==tag and start<=a<=b<=end
   samples.append({'position':position,'sequence':seq,'page':page,'revision':rev,'original_sha256':digest,'html_sha256':sha(source.encode()),'nodes':len(nodes),'license':document['license'],'outcome':outcome})
+ licenses={};refusals={}
+ for (metadata,) in d.execute('SELECT metadata FROM articles'):
+  key=json.loads(metadata)['license'][0]['identifier'];licenses[key]=licenses.get(key,0)+1
+ for (detail,) in d.execute("SELECT detail FROM receipts WHERE outcome='retained-refusal'"):
+  key=json.loads(detail)['error'];refusals[key]=refusals.get(key,0)+1
  src.close();d.close()
- return {'status':'PASS','selected_distinct_originals':count,'prefix_originals':through+1,'independent_selection':'SQL window latest + frozen importance page-ID join, exact order/ties','capsules_verified':pieces,'capsule_uncompressed_bytes':uncompressed,'capsule_compressed_bytes':compressed,'deterministic_source_samples':samples,'source_admission_established':False,'not_full_source_latest':True}
+ return {'status':'PASS','selected_distinct_originals':count,'prefix_originals':through+1,'independent_selection':'SQL window latest + frozen importance page-ID join, exact order/ties','capsules_verified':pieces,'capsule_uncompressed_bytes':uncompressed,'capsule_compressed_bytes':compressed,'deterministic_source_samples':samples,'source_admission_established':False,'not_full_source_latest':True,'license_counts':licenses,'retained_refusal_reasons':refusals,'lead_only_classification':'not independently established; original capsules are not eligible-full-article evidence'}
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('out');p.add_argument('stage');p.add_argument('ranking');a=p.parse_args();result=audit(a.out,a.stage,a.ranking);path=pathlib.Path(a.out)/'independent-oracle.json';path.write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))

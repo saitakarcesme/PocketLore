@@ -46,7 +46,7 @@ def main(out):
  stage=out/'stage.sqlite';s=sqlite3.connect(stage);s.execute('CREATE TABLE records(sequence INTEGER PRIMARY KEY,member TEXT,member_offset INTEGER,raw_bytes INTEGER,raw_sha256 TEXT,page INTEGER,revision INTEGER,title TEXT,license_json TEXT,metadata_error TEXT,original_zlib BLOB)');pages=[]
  for seq,n in enumerate([2956,30000,100000,200000]):
   raw=(OLD/f'original-{n}.json').read_bytes();x=json.loads(raw);pages.append(x['identifier']);s.execute('INSERT INTO records VALUES(?,?,?,?,?,?,?,?,?,?,?)',(seq,'genuine-fixture',n,len(raw),sha(raw),x['identifier'],x['version']['identifier'],x['name'],json.dumps(x['license']),None,zlib.compress(raw)))
- s.commit();s.close();rank=out/'ranking.sqlite';r=sqlite3.connect(rank);r.execute('CREATE TABLE priority(id INTEGER PRIMARY KEY,views INTEGER,full INTEGER)');r.executemany('INSERT INTO priority VALUES(?,?,1)',[(x,10) for x in pages]);r.commit();r.close();ranksha=sha(rank.read_bytes());base=['python3',str(P),'--mode','engineering','--stage',str(stage),'--ranking',str(rank),'--ranking-sha256',ranksha,'--through','3','--count','4','--seconds','30','--cutoff','1791269964']
+ s.commit();s.close();rank=out/'ranking.sqlite';r=sqlite3.connect(rank);r.execute('CREATE TABLE priority(id INTEGER PRIMARY KEY,title TEXT,views INTEGER,full INTEGER)');r.executemany('INSERT INTO priority(id,views,full) VALUES(?,?,1)',[(x,10) for x in pages]);r.commit();r.close();ranksha=sha(rank.read_bytes());base=['python3',str(P),'--mode','engineering','--stage',str(stage),'--ranking',str(rank),'--ranking-sha256',ranksha,'--through','3','--count','4','--seconds','30','--cutoff','1791269964']
  attempts={}
  def run(name,extra=None):
   attempts[name]=attempts.get(name,0)+1;receipt_name=name+'-attempt-'+str(attempts[name])
@@ -82,5 +82,5 @@ def main(out):
  try:p.safety.verify_long_limits(limits)
  except ValueError:rejected=True
  checks.append('actual inherited cgroup sampled; production enforcement '+('unqualified' if rejected else 'bounded'))
- report={'producer_sha256':sha(P.read_bytes()),'status':'PASS','checks':checks,'genuine_extended_examples':examples,'actual_cgroup':limits,'external_production_cgroup_qualified':not rejected,'nonBMP_genuine':False,'fixture_rows_not_corpus':True};(out/'controls.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
+ report={'executed_test_sha256':sha(pathlib.Path(__file__).read_bytes()),'executed_oracle_sha256':sha(pathlib.Path(oracle.__file__).read_bytes()),'producer_sha256':sha(P.read_bytes()),'status':'PASS','checks':checks,'genuine_extended_examples':examples,'actual_cgroup':limits,'external_production_cgroup_qualified':not rejected,'nonBMP_genuine':False,'fixture_rows_not_corpus':True};(out/'controls.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
 if __name__=='__main__':main(pathlib.Path(sys.argv[1]))
