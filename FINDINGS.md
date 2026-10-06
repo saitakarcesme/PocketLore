@@ -510,3 +510,5 @@ Recovered failed 8f261e2 source lineage. Added externally pinned shard/source/co
 ### Coherent source query and opening preparation
 
 Recovered77748c2; inline-units-v1 fixes frozen cross-inline phrase/AND and metadata-title misses without persisting repeated ancestor text. Current bounded host checks pass (11 authored queries,5 genuine context queries,18 negatives); Android build passes, runtime remains terminal/unexecuted. Actual18-input index grows188416B; no whole-profile projection. Old failures and empty-block/legacy-context corrections retained. URL attribution alternatives do not require complete contributor histories; additional notices/rights/support remain unresolved. Full source/kernel/model/Android/physical gates unchanged.
+
+Task532 verifies same-process owned mappings of the exact retained model via held descriptor/hash/version, live fd/mount/VMA identity and independent byte oracles;19 live controls and11 corrupt-receipt controls pass, with48MiB payload and one full hash, while historical531 attribution/generation and all Android/full-profile gates remain open.
