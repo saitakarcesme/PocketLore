@@ -1,0 +1,33 @@
+# Compact article format v1 (engineering contract)
+
+This is a provisional host producer/reader format, not an Android pack. It has no promotion switch. A complete source with an independently verified archive identity, a whole-source revision census, independent rights review, eligible breadth, Android routing, and measured full distribution/update peaks remain prerequisites. Root510 and its thresholds are unchanged.
+
+## Source and edition identities
+
+The append-only stage is opened read-only in a SQLite snapshot. The declared inclusive sequence ceiling must be fully present and contiguous. Each original zlib blob is bounded, decompressed, checked against raw byte count and SHA256, then checked against stage page/revision/title metadata. The ordered identity chain hashes canonical sequence/member/member-offset/length/digest tuples. This binds the consumed prefix, not the original archive. The original host JSON/HTML and all stage bytes remain untouched. Member offsets are uncompressed NDJSON-member byte offsets, not compressed archive offsets.
+
+One `dispositions` row is retained for every consumed original. `latest` selects greatest numeric revision per page, then source timestamp and record digest as ties; conflicting bytes for the same page/revision quarantine the entire page. A newer unsafe record deletes the older candidate. Older revisions and failed transforms remain recorded, never counted as distinct articles. Source metadata dates remain historical; “latest” means within the declared consumed range, not live Wikipedia.
+
+## Storage layout
+
+`articles` contains one compressed JSON capsule per selected transformable page. A capsule contains exact original HTML, all original metadata except the separately stored HTML field, original record/member identities, HTML and text hashes, a visible text projection, heading positions, transformation dispositions, and original-to-rendered UTF16 mapping segments. Full original JSON stays on the host; offline inspection can reconstruct the exact HTML and its hash and inspect retained metadata, but cannot claim byte-identical reconstruction of the original JSON serializer. Contributor credit and article-revision/history links are explicit; a history link is not an offline full contributor-history archive or independent clearance.
+
+`passages` contains only page identity, half-open rendered UTF16 offsets and SHA256. Citation identity must include edition/index digest, page, revision, offsets and passage hash. No article or passage bodies occur in this table. `search` is **FTS4 over an external-content view**, with title/body term postings at article granularity; there is no FTS content copy. The view decompresses the existing article capsule through bounded `capsule_text`; full posting integrity checks can therefore compare against actual content. The host reader uses bounded AND queries, at most12 query tokens and20 article candidates, then selects exact contiguous source slices. This is retrieval, not support verification. Ranking quality and cross-collection Android semantics are not qualified by this engineering test.
+
+During production, `candidates` holds compressed capsules; finalization creates article/index rows and removes candidates before VACUUM. This temporary duplication and VACUUM space are explicit costs, not assumed free. A future sharded Android importer must reserve old shard + new shard + provider/staging bytes, validate before atomic catalog replacement and preserve the previous shard on cancellation/error. This implementation does not claim that Android integration or full-scale update peaks have been measured.
+
+## Projection and safety
+
+Literal data tokens retain exact whitespace and Unicode. Entity decoding has exact source spans. Paragraph/block separators are explicitly synthetic newlines, never factual text. HTML and rendered offsets are half-open UTF16 code units; surrogate-splitting or changed mappings fail reconstruction. Original full HTML remains an **inert source artifact**: an Android reader must not load it into a network-capable/executable WebView.
+
+Headings and references stay in the projection and original source. Math, tables, quotation elements, superscripts/subscripts, unknown elements, malformed nesting, and possible additional-rights notices mark the entire article as requiring review. No mathematical meaning is fabricated from flattened tokens. Active/media nodes are omitted from the visible projection with explicit dispositions, while their exact HTML remains in the capsule. Such records cannot be research candidates. Candidate status is only a conservative transformation signal, never independent rights or support approval.
+
+Exact singleton license identifiers and URIs are validated separately per record: CC-BY-SA-3.0 maps only to its3.0 URI, and4.0 only to4.0. Multiple/unknown/missing licenses or a mismatched URI are excluded. Existing historical3.0 pack/extractor bytes are not overwritten. Existing full license files in `tools/scale/wiki/` must accompany a future distribution; this engineering format does not grant rights for additional material or images.
+
+## Bounds and integrity
+
+Maximum original16MB, HTML4MB UTF8, rendered projection4MB UTF8,50,000 mapping segments,48MB serialized capsule,8MiB SQLite cache and512MiB process address space. Oversized/unparsed records are retained as failures/dispositions; they do not vanish into an eligible count. The consumer fails closed on a sequence gap (including a stage oversized-table gap), rather than falsely claiming complete accounting. The full-source producer needs explicit oversized-table integration before promotion.
+
+The reader verifies the index digest at opening and capsule/text/mapping hashes on article access. Opening digest cost is linear in index bytes and must be measured at full scale. A future immutable shard manifest can amortize that cost only after independently verified import; this prototype does not waive validation. Queries have a SQLite progress cancellation handler and article-level cancellation checks. Current memory is bounded by the largest admitted article, not total corpus size. Full million-row import/read latency, Android FTS4 compatibility, cancellation during decompression and shard replacement are deferred gates.
+
+The first6000-record run failed whole SQLite integrity because contentless FTS4 cannot supply original columns to SQLite3.53.4 virtual-table integrity checking. A one-row reproduction confirmed this; the corrected external-content view stores no additional body. See [official SQLite FTS4 content and integrity documentation](https://www.sqlite.org/fts3.html#the_content_option). Failed original artifacts remain retained.

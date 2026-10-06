@@ -38,5 +38,10 @@
     "source-full-readiness-contract.json": "9356d8ab58cecff5d0faf1a4914022568ef922a0df6789c807b54aa0d96b8de1",
     "source-prefix-metadata-census-278695.json": "8b218febda85a99d80940c1d744dafefe44eda26c906ce930da6c4490ee68828",
     "source-admission-scale-investigation/investigation.json": "0832c7e322e0e20ea0eb38f2ae42071b7246fa35304f23b67a222f221b230fe5"
+  },
+  "execution_revision_1": {
+    "reason": "SQLite3.53.4 integrity_check attempts original content access even for valid contentless FTS4; fresh one-row reproduction fails identically. Preserve failed6000 run.",
+    "design": "FTS4 external-content view decompresses the single capsule on demand; no body duplication, whole-index integrity_check can compare postings against actual source projection. Android needs equivalent bounded capsule_text function before integration.",
+    "unchanged": "Source ranges, selection, rights, mappings and admission gates unchanged."
   }
 }
