@@ -1,0 +1,19 @@
+{
+  "role": "Independent read-only code and receipt critic",
+  "conclusion": "Final linked builds and fixture controls support the repaired ownership implementation, while the failing current-source gate correctly prevents historical metadata-window evidence from qualifying final model lifecycle, generation, working-set fit, or Android execution.",
+  "scope": "Final self-contained packet, exact source, linked builds, fixture controls and failing current-source gate",
+  "retained_findings": [
+    "Load-time reader token prevented mapping registration; removed before probes.",
+    "Inherited descriptor argument rejected by O_NOFOLLOW; explicit readonly descriptor duplication and verification added before probes.",
+    "Nonempty smaps was insufficient; independent address/inode/mount/offset/permission/residency checks added.",
+    "Reader acquisition after unregistration was possible; live-region requirement added under the same mutex after the model sample."
+  ],
+  "reviewed_bindings": {
+    "tools/runtime/sparse/native/pocketlore-owned.h": "13c6ac49be49d0c25c2178a08e954244fef1d6234cba7967b032d3a93f59546f",
+    "tools/runtime/sparse/native_controls.cpp": "3d25086d4258aa970a1bddec7763928b2650b1d225f218b0865f1878858da775",
+    "tools/runtime/sparse/prepare_native.py": "bc5810df03d88f9ca0e18475dcfc0d9eba6d077ef05290162bc69be6376e10c7",
+    "tools/runtime/sparse/host.cpp": "bb80422e75bbac9e56f879d9598a3fa7fa31981af39bad6e7cf2db0c941b17c6",
+    "downloads/native-cache-build/final-logs/final-fixture.log": "26bf3de6bed1c2693763a688f15fdc6bfa92be5417904eb97db75d378afac7b9"
+  },
+  "earlier_conclusion": "The live-region check closes the identified reader-after-unregister gap in final fixture controls, but earlier exact-model evidence predates this repair and cannot qualify current model behavior, generation, or Android execution."
+}

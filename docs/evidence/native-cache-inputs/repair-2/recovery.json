@@ -1,0 +1,19 @@
+{
+  "recovered_from": "c4615b220665376146690779f97589d52e726302",
+  "old_canonical_result": "build 0, lifecycle 1",
+  "old_positive_expected_sha256": "462630915fa3fe06521af6faad96eb1c7e3a8394b09779e81edc706dd2e585dc",
+  "retained_raw": {
+    "model": {
+      "path": "downloads/native-cache-repair-1/model-09fa8fbf/receipt.json",
+      "sha256": "2060f13c48daf77150abea807e9e3b4ebfbad48b98581f643866a80811cd95d2",
+      "bytes": 4802044
+    },
+    "fixture": {
+      "path": "downloads/native-cache-repair-1/fixture-d2e2aafa/receipt.json",
+      "sha256": "5a61266e6e5d2e6cddb3e357ea6ef07d932aa945e59025f52846e8475e658b3b",
+      "bytes": 1197458
+    }
+  },
+  "historical_builder_packet_sha256": "3fe9a67b2dd8cdb35c8816575f4eaf719b7196601821bf9f8a95b8f305e433d8",
+  "exact_original_positive_available": false
+}

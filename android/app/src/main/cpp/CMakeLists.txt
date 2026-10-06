@@ -8,7 +8,7 @@ foreach(flag LLAMA_BUILD_COMMON LLAMA_BUILD_TESTS LLAMA_BUILD_TOOLS LLAMA_BUILD_
 endforeach()
 set(GGML_CPU_ARM_ARCH armv8-a CACHE STRING "" FORCE)
 add_subdirectory("${LLAMA_SOURCE}" llama)
-add_library(pocketlore SHARED runtime.cpp)
+add_library(pocketlore SHARED runtime.cpp sparse_link.cpp)
 target_link_libraries(pocketlore PRIVATE llama)
 target_compile_definitions(pocketlore PRIVATE POCKETLORE_REVISION="${POCKETLORE_REVISION}")
 

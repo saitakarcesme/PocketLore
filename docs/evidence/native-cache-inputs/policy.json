@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "scope": "Native owned mapping and quiescent cache controls; no inference",
+  "model_payload_limit": 67108864,
+  "model_window": 4194304,
+  "model_payload_accounting": "One 4MiB pread oracle and two 4MiB mapped comparisons, conservatively charged 12MiB independently of task532; one fresh full identity hash is separate",
+  "expected": [
+    "byte-equal pread and mapped reads before and after advice",
+    "advice denied with an active asynchronous reader",
+    "nested owner refused",
+    "partial and absent mappings refused",
+    "unaligned and oversized window refused",
+    "cancel and expired deadline refused",
+    "wrong digest and length refused",
+    "renamed original refused",
+    "second alias mapping refused",
+    "unmapping refused while reader lifetime active",
+    "independent raw region inode/mount/offset/readonly identity and RSS/PSS/cache residency reconciliation"
+  ],
+  "cache_boundary": "Only after llama_synchronize and release of the diagnostic driver's reader token; no mid-layer, mid-expert or foreign context eviction",
+  "limitations": [
+    "No general foreign-VMA attribution",
+    "advisory file cache release is not guaranteed",
+    "no full model execution",
+    "Android compilation is not Android execution"
+  ]
+}

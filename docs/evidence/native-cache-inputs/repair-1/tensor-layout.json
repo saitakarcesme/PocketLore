@@ -1,0 +1,7298 @@
+{
+  "observed_at": 1791243993.9161854,
+  "model_sha256": "96b9c0af5c77a4ecaabe3983175112b5ece763261c1ece12b2494b692a70dad7",
+  "model_bytes": 12290628576,
+  "gguf_version": 3,
+  "metadata": {
+    "general.architecture": "qwen35moe",
+    "general.type": "model",
+    "general.sampling.top_k": 20,
+    "general.sampling.top_p": 0.949999988079071,
+    "general.sampling.temp": 1.0,
+    "general.name": "Qwen3.6-35B-A3B",
+    "general.basename": "Qwen3.6-35B-A3B",
+    "general.quantized_by": "Unsloth",
+    "general.size_label": "35B-A3B",
+    "general.license": "apache-2.0",
+    "general.license.link": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B/blob/main/LICENSE",
+    "general.repo_url": "https://huggingface.co/unsloth",
+    "general.base_model.count": 1,
+    "general.base_model.0.name": "Qwen3.6 35B A3B",
+    "general.base_model.0.organization": "Qwen",
+    "general.base_model.0.repo_url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+    "general.tags": {
+      "array_type": 8,
+      "count": 3
+    },
+    "qwen35moe.block_count": 40,
+    "qwen35moe.context_length": 262144,
+    "qwen35moe.embedding_length": 2048,
+    "qwen35moe.attention.head_count": 16,
+    "qwen35moe.attention.head_count_kv": 2,
+    "qwen35moe.rope.dimension_sections": {
+      "array_type": 5,
+      "count": 4
+    },
+    "qwen35moe.rope.freq_base": 10000000.0,
+    "qwen35moe.attention.layer_norm_rms_epsilon": 9.999999974752427e-07,
+    "qwen35moe.expert_count": 256,
+    "qwen35moe.expert_used_count": 8,
+    "qwen35moe.attention.key_length": 256,
+    "qwen35moe.attention.value_length": 256,
+    "qwen35moe.expert_feed_forward_length": 512,
+    "qwen35moe.expert_shared_feed_forward_length": 512,
+    "qwen35moe.ssm.conv_kernel": 4,
+    "qwen35moe.ssm.state_size": 128,
+    "qwen35moe.ssm.group_count": 16,
+    "qwen35moe.ssm.time_step_rank": 32,
+    "qwen35moe.ssm.inner_size": 4096,
+    "qwen35moe.full_attention_interval": 4,
+    "qwen35moe.rope.dimension_count": 64,
+    "general.quantization_version": 2,
+    "general.file_type": 10,
+    "quantize.imatrix.file": "Qwen3.6-35B-A3B-GGUF/imatrix_unsloth.gguf",
+    "quantize.imatrix.dataset": "unsloth_calibration_Qwen3.6-35B-A3B.txt",
+    "quantize.imatrix.entries_count": 510,
+    "quantize.imatrix.chunks_count": 76
+  },
+  "tensor_count": 733,
+  "header_end": 10990035,
+  "data_start": 10990048,
+  "groups": {
+    "other_weights": {
+      "tensor_count": 453,
+      "stored_interval_bytes": 1658997248
+    },
+    "expert_weights": {
+      "tensor_count": 120,
+      "stored_interval_bytes": 10527703040
+    },
+    "shared_expert_weights": {
+      "tensor_count": 160,
+      "stored_interval_bytes": 92938240
+    }
+  },
+  "tensors": [
+    {
+      "name": "output.weight",
+      "dims": [
+        2048,
+        248320
+      ],
+      "ggml_type": 12,
+      "relative_data_offset": 0,
+      "stored_interval_bytes_including_alignment": 286064640
+    },
+    {
+      "name": "output_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 286064640,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "token_embd.weight",
+      "dims": [
+        2048,
+        248320
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 286072832,
+      "stored_interval_bytes_including_alignment": 349634560
+    },
+    {
+      "name": "blk.0.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 635707392,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.0.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 641474560,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.0.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 641482752,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.0.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 653017088,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.0.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 755777536,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.0.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 756637696,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.0.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 834232320,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.0.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 836329472,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.0.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 836337664,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.0.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 837058560,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.0.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 914653184,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.0.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 915374080,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.0.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 915382272,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.0.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 915382400,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.0.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 915644544,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.0.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 915906688,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.0.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 916037760,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.0.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 916037888,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.0.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 916038400,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.1.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 922919680,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.1.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 929800960,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.1.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 929809152,
+      "stored_interval_bytes_including_alignment": 13762560
+    },
+    {
+      "name": "blk.1.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 23,
+      "relative_data_offset": 943571712,
+      "stored_interval_bytes_including_alignment": 142606336
+    },
+    {
+      "name": "blk.1.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 8,
+      "relative_data_offset": 1086178048,
+      "stored_interval_bytes_including_alignment": 1114112
+    },
+    {
+      "name": "blk.1.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 1087292160,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.1.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1190052608,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.1.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1192149760,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.1.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 1192157952,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.1.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 1193018112,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.1.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 1295778560,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.1.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1296638720,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.1.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1296646912,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.1.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1296647040,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.1.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1296909184,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.1.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1297171328,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.1.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1297302400,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.1.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1297302528,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.1.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 1297303040,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.2.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 1304184320,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.2.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1309951488,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.2.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 1309959680,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.2.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 1321494016,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.2.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 1424254464,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.2.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 1425114624,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.2.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1502709248,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.2.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1504806400,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.2.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 1504814592,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.2.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 1505535488,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.2.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 1583130112,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.2.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1583851008,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.2.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1583859200,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.2.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1583859328,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.2.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1584121472,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.2.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1584383616,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.2.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1584514688,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.2.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1584514816,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.2.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 1584515328,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.3.attn_k.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 1591396608,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.3.attn_k_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1592256768,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.3.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1592257792,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.3.attn_output.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 1592265984,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.3.attn_q.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 1598033152,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.3.attn_q_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1609567488,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.3.attn_v.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 1609568512,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.3.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 1610428672,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.3.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 1713189120,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.3.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 1714049280,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.3.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1791643904,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.3.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1793741056,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.3.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 1793749248,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.3.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 1794470144,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.3.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 1872064768,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.3.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1872785664,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.4.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 1872793856,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.4.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 1878561024,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.4.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 1878569216,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.4.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 1890103552,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.4.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 1992864000,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.4.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 1993724160,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.4.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2071318784,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.4.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2073415936,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.4.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 2073424128,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.4.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 2074145024,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.4.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 2151739648,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.4.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2152460544,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.4.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2152468736,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.4.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2152468864,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.4.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2152731008,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.4.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2152993152,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.4.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2153124224,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.4.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2153124352,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.4.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 2153124864,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.5.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 2160006144,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.5.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2165773312,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.5.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 2165781504,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.5.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 2177315840,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.5.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 2280076288,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.5.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 2280936448,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.5.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2358531072,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.5.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2360628224,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.5.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 2360636416,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.5.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 2361357312,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.5.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 2438951936,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.5.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2439672832,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.5.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2439681024,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.5.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2439681152,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.5.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2439943296,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.5.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2440205440,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.5.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2440336512,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.5.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2440336640,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.5.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 2440337152,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.6.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 2447218432,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.6.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2452985600,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.6.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 2452993792,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.6.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 2464528128,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.6.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 2567288576,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.6.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 2568148736,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.6.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2645743360,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.6.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2647840512,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.6.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 2647848704,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.6.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 2648569600,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.6.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 2726164224,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.6.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2726885120,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.6.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2726893312,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.6.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2726893440,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.6.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2727155584,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.6.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2727417728,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.6.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2727548800,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.6.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2727548928,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.6.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 2727549440,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.7.attn_k.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 2734430720,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.7.attn_k_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2735290880,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.7.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2735291904,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.7.attn_output.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 2735300096,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.7.attn_q.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 2741067264,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.7.attn_q_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2752601600,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.7.attn_v.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 2752602624,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.7.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 2753462784,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.7.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 2856223232,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.7.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 2857083392,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.7.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2934678016,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.7.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 2936775168,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.7.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 2936783360,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.7.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 2937504256,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.7.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3015098880,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.7.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3015819776,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.8.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3015827968,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.8.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3021595136,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.8.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3021603328,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.8.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 3033137664,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.8.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 3135898112,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.8.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 3136758272,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.8.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3214352896,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.8.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3216450048,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.8.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3216458240,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.8.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 3217179136,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.8.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3294773760,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.8.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3295494656,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.8.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3295502848,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.8.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3295502976,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.8.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3295765120,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.8.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3296027264,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.8.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3296158336,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.8.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3296158464,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.8.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 3296158976,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.9.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3303040256,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.9.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3308807424,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.9.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3308815616,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.9.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 3320349952,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.9.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 3423110400,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.9.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 3423970560,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.9.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3501565184,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.9.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3503662336,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.9.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3503670528,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.9.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 3504391424,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.9.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3581986048,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.9.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3582706944,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.9.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3582715136,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.9.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3582715264,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.9.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3582977408,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.9.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3583239552,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.9.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3583370624,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.9.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3583370752,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.9.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 3583371264,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.10.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3590252544,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.10.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3596019712,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.10.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3596027904,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.10.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 3607562240,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.10.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 3710322688,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.10.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 3711182848,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.10.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3788777472,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.10.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3790874624,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.10.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3790882816,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.10.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 3791603712,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.10.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3869198336,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.10.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3869919232,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.10.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3869927424,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.10.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3869927552,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.10.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3870189696,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.10.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3870451840,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.10.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3870582912,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.10.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3870583040,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.10.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 3870583552,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.11.attn_k.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 3877464832,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.11.attn_k_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3878324992,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.11.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3878326016,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.11.attn_output.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3878334208,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.11.attn_q.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 3884101376,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.11.attn_q_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 3895635712,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.11.attn_v.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 3895636736,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.11.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 3896496896,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.11.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 3999257344,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.11.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 4000117504,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.11.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4077712128,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.11.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4079809280,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.11.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 4079817472,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.11.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 4080538368,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.11.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 4158132992,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.11.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4158853888,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.12.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 4158862080,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.12.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4164629248,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.12.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 4164637440,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.12.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 4176171776,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.12.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 4278932224,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.12.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 4279792384,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.12.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4357387008,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.12.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4359484160,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.12.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 4359492352,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.12.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 4360213248,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.12.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 4437807872,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.12.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4438528768,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.12.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4438536960,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.12.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4438537088,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.12.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4438799232,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.12.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4439061376,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.12.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4439192448,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.12.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4439192576,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.12.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 4439193088,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.13.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 4446074368,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.13.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4451841536,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.13.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 4451849728,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.13.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 4463384064,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.13.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 4566144512,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.13.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 4567004672,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.13.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4644599296,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.13.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4646696448,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.13.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 4646704640,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.13.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 4647425536,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.13.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 4725020160,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.13.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4725741056,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.13.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4725749248,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.13.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4725749376,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.13.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4726011520,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.13.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4726273664,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.13.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4726404736,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.13.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4726404864,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.13.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 4726405376,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.14.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 4733286656,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.14.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4739053824,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.14.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 4739062016,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.14.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 4750596352,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.14.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 4853356800,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.14.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 4854216960,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.14.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4931811584,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.14.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 4933908736,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.14.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 4933916928,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.14.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 4934637824,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.14.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5012232448,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.14.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5012953344,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.14.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5012961536,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.14.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5012961664,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.14.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5013223808,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.14.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5013485952,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.14.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5013617024,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.14.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5013617152,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.14.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 5013617664,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.15.attn_k.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 5020498944,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.15.attn_k_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5021359104,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.15.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5021360128,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.15.attn_output.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5021368320,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.15.attn_q.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5027135488,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.15.attn_q_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5038669824,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.15.attn_v.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 5038670848,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.15.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 5039531008,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.15.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 5142291456,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.15.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 5143151616,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.15.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5220746240,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.15.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5222843392,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.15.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5222851584,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.15.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 5223572480,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.15.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5301167104,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.15.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5301888000,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.16.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5301896192,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.16.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5307663360,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.16.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5307671552,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.16.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 5319205888,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.16.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 5421966336,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.16.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 5422826496,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.16.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5500421120,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.16.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5502518272,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.16.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5502526464,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.16.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 5503247360,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.16.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5580841984,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.16.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5581562880,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.16.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5581571072,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.16.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5581571200,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.16.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5581833344,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.16.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5582095488,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.16.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5582226560,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.16.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5582226688,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.16.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 5582227200,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.17.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5589108480,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.17.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5594875648,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.17.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5594883840,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.17.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 5606418176,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.17.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 5709178624,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.17.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 5710038784,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.17.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5787633408,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.17.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5789730560,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.17.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5789738752,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.17.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 5790459648,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.17.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5868054272,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.17.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5868775168,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.17.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5868783360,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.17.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5868783488,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.17.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5869045632,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.17.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5869307776,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.17.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5869438848,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.17.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5869438976,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.17.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 5869439488,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.18.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5876320768,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.18.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 5882087936,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.18.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 5882096128,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.18.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 5893630464,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.18.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 5996390912,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.18.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 5997251072,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.18.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6074845696,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.18.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6076942848,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.18.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 6076951040,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.18.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 6077671936,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.18.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 6155266560,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.18.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6155987456,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.18.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6155995648,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.18.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6155995776,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.18.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6156257920,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.18.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6156520064,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.18.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6156651136,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.18.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6156651264,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.18.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 6156651776,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.19.attn_k.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 6163533056,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.19.attn_k_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6164393216,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.19.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6164394240,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.19.attn_output.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 6164402432,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.19.attn_q.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 6170169600,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.19.attn_q_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6181703936,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.19.attn_v.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 6181704960,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.19.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 6182565120,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.19.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 6285325568,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.19.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 6286185728,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.19.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6363780352,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.19.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6365877504,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.19.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 6365885696,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.19.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 6366606592,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.19.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 6444201216,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.19.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6444922112,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.20.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 6444930304,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.20.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6450697472,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.20.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 6450705664,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.20.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 6462240000,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.20.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 6565000448,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.20.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 6565860608,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.20.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6643455232,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.20.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6645552384,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.20.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 6645560576,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.20.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 6646281472,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.20.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 6723876096,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.20.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6724596992,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.20.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6724605184,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.20.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6724605312,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.20.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6724867456,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.20.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6725129600,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.20.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6725260672,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.20.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6725260800,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.20.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 6725261312,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.21.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 6732142592,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.21.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6737909760,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.21.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 6737917952,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.21.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 6749452288,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.21.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 6852212736,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.21.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 6853072896,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.21.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6930667520,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.21.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 6932764672,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.21.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 6932772864,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.21.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 6933493760,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.21.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7011088384,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.21.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7011809280,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.21.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7011817472,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.21.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7011817600,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.21.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7012079744,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.21.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7012341888,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.21.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7012472960,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.21.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7012473088,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.21.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 7012473600,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.22.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7019354880,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.22.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7025122048,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.22.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7025130240,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.22.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 7036664576,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.22.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 7139425024,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.22.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 7140285184,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.22.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7217879808,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.22.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7219976960,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.22.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7219985152,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.22.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 7220706048,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.22.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7298300672,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.22.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7299021568,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.22.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7299029760,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.22.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7299029888,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.22.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7299292032,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.22.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7299554176,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.22.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7299685248,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.22.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7299685376,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.22.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 7299685888,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.23.attn_k.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 7306567168,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.23.attn_k_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7307427328,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.23.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7307428352,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.23.attn_output.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7307436544,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.23.attn_q.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7313203712,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.23.attn_q_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7324738048,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.23.attn_v.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 7324739072,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.23.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 7325599232,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.23.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 7428359680,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.23.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 7429219840,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.23.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7506814464,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.23.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7508911616,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.23.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7508919808,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.23.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 7509640704,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.23.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7587235328,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.23.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7587956224,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.24.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7587964416,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.24.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7593731584,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.24.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7593739776,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.24.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 7605274112,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.24.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 7708034560,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.24.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 7708894720,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.24.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7786489344,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.24.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7788586496,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.24.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7788594688,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.24.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 7789315584,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.24.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7866910208,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.24.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7867631104,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.24.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7867639296,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.24.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7867639424,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.24.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7867901568,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.24.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7868163712,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.24.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7868294784,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.24.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7868294912,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.24.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 7868295424,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.25.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7875176704,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.25.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 7880943872,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.25.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 7880952064,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.25.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 7892486400,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.25.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 7995246848,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.25.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 7996107008,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.25.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8073701632,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.25.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8075798784,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.25.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 8075806976,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.25.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 8076527872,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.25.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 8154122496,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.25.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8154843392,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.25.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8154851584,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.25.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8154851712,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.25.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8155113856,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.25.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8155376000,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.25.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8155507072,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.25.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8155507200,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.25.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 8155507712,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.26.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 8162388992,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.26.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8168156160,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.26.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 8168164352,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.26.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 8179698688,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.26.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 8282459136,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.26.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 8283319296,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.26.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8360913920,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.26.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8363011072,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.26.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 8363019264,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.26.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 8363740160,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.26.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 8441334784,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.26.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8442055680,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.26.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8442063872,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.26.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8442064000,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.26.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8442326144,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.26.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8442588288,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.26.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8442719360,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.26.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8442719488,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.26.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 8442720000,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.27.attn_k.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 8449601280,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.27.attn_k_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8450461440,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.27.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8450462464,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.27.attn_output.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 8450470656,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.27.attn_q.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 8456237824,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.27.attn_q_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8467772160,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.27.attn_v.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 8467773184,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.27.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 8468633344,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.27.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 8571393792,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.27.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 8572253952,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.27.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8649848576,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.27.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8651945728,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.27.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 8651953920,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.27.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 8652674816,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.27.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 8730269440,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.27.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8730990336,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.28.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 8730998528,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.28.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8736765696,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.28.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 8736773888,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.28.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 8748308224,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.28.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 8851068672,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.28.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 8851928832,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.28.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8929523456,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.28.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 8931620608,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.28.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 8931628800,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.28.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 8932349696,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.28.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9009944320,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.28.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9010665216,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.28.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9010673408,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.28.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9010673536,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.28.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9010935680,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.28.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9011197824,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.28.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9011328896,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.28.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9011329024,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.28.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 9011329536,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.29.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9018210816,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.29.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9023977984,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.29.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9023986176,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.29.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 9035520512,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.29.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 9138280960,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.29.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 9139141120,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.29.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9216735744,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.29.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9218832896,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.29.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9218841088,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.29.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 9219561984,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.29.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9297156608,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.29.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9297877504,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.29.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9297885696,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.29.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9297885824,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.29.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9298147968,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.29.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9298410112,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.29.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9298541184,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.29.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9298541312,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.29.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 9298541824,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.30.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9305423104,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.30.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9311190272,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.30.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9311198464,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.30.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 9322732800,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.30.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 9425493248,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.30.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 9426353408,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.30.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9503948032,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.30.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9506045184,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.30.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9506053376,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.30.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 9506774272,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.30.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9584368896,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.30.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9585089792,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.30.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9585097984,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.30.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9585098112,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.30.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9585360256,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.30.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9585622400,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.30.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9585753472,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.30.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9585753600,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.30.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 9585754112,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.31.attn_k.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 9592635392,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.31.attn_k_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9593495552,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.31.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9593496576,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.31.attn_output.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9593504768,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.31.attn_q.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9599271936,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.31.attn_q_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9610806272,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.31.attn_v.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 9610807296,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.31.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 9611667456,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.31.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 9714427904,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.31.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 9715288064,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.31.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9792882688,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.31.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9794979840,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.31.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9794988032,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.31.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 9795708928,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.31.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9873303552,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.31.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9874024448,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.32.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9874032640,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.32.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 9879799808,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.32.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 9879808000,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.32.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 9891342336,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.32.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 9994102784,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.32.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 9994962944,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.32.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10072557568,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.32.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10074654720,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.32.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 10074662912,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.32.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 10075383808,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.32.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 10152978432,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.32.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10153699328,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.32.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10153707520,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.32.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10153707648,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.32.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10153969792,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.32.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10154231936,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.32.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10154363008,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.32.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10154363136,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.32.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 10154363648,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.33.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 10161244928,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.33.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10167012096,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.33.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 10167020288,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.33.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 10178554624,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.33.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 10281315072,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.33.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 10282175232,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.33.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10359769856,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.33.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10361867008,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.33.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 10361875200,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.33.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 10362596096,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.33.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 10440190720,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.33.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10440911616,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.33.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10440919808,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.33.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10440919936,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.33.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10441182080,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.33.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10441444224,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.33.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10441575296,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.33.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10441575424,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.33.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 10441575936,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.34.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 10448457216,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.34.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10454224384,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.34.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 10454232576,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.34.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 23,
+      "relative_data_offset": 10465766912,
+      "stored_interval_bytes_including_alignment": 142606336
+    },
+    {
+      "name": "blk.34.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 10608373248,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.34.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 10609233408,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.34.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10686828032,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.34.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10688925184,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.34.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 10688933376,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.34.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 10689654272,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.34.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 10767248896,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.34.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10767969792,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.34.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10767977984,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.34.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10767978112,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.34.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10768240256,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.34.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10768502400,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.34.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10768633472,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.34.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10768633600,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.34.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 10768634112,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.35.attn_k.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 10775515392,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.35.attn_k_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10776375552,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.35.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10776376576,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.35.attn_output.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 10776384768,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.35.attn_q.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 10782151936,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.35.attn_q_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10793686272,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.35.attn_v.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 10793687296,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.35.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 10794547456,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.35.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 10897307904,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.35.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 10898168064,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.35.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10975762688,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.35.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 10977859840,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.35.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 10977868032,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.35.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 10978588928,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.35.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11056183552,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.35.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11056904448,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.36.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11056912640,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.36.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11062679808,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.36.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11062688000,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.36.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 11074222336,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.36.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 11176982784,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.36.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 11177842944,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.36.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11255437568,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.36.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11257534720,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.36.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11257542912,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.36.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 11258263808,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.36.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11335858432,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.36.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11336579328,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.36.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11336587520,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.36.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11336587648,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.36.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11336849792,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.36.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11337111936,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.36.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11337243008,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.36.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11337243136,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.36.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 11337243648,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.37.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11344124928,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.37.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11349892096,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.37.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11349900288,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.37.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 18,
+      "relative_data_offset": 11361434624,
+      "stored_interval_bytes_including_alignment": 102760448
+    },
+    {
+      "name": "blk.37.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 11464195072,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.37.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 11465055232,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.37.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11542649856,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.37.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11544747008,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.37.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11544755200,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.37.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 11545476096,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.37.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11623070720,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.37.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11623791616,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.37.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11623799808,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.37.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11623799936,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.37.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11624062080,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.37.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11624324224,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.37.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11624455296,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.37.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11624455424,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.37.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 11624455936,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.38.attn_gate.weight",
+      "dims": [
+        2048,
+        4096
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11631337216,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.38.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11637104384,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.38.attn_qkv.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11637112576,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.38.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 23,
+      "relative_data_offset": 11648646912,
+      "stored_interval_bytes_including_alignment": 142606336
+    },
+    {
+      "name": "blk.38.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 11791253248,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.38.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 11792113408,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.38.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11869708032,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.38.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11871805184,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.38.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11871813376,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.38.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 11872534272,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.38.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11950128896,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.38.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11950849792,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.38.ssm_a",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11950857984,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.38.ssm_alpha.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11950858112,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.38.ssm_beta.weight",
+      "dims": [
+        2048,
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11951120256,
+      "stored_interval_bytes_including_alignment": 262144
+    },
+    {
+      "name": "blk.38.ssm_conv1d.weight",
+      "dims": [
+        4,
+        8192
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11951382400,
+      "stored_interval_bytes_including_alignment": 131072
+    },
+    {
+      "name": "blk.38.ssm_dt.bias",
+      "dims": [
+        32
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11951513472,
+      "stored_interval_bytes_including_alignment": 128
+    },
+    {
+      "name": "blk.38.ssm_norm.weight",
+      "dims": [
+        128
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11951513600,
+      "stored_interval_bytes_including_alignment": 512
+    },
+    {
+      "name": "blk.38.ssm_out.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 11951514112,
+      "stored_interval_bytes_including_alignment": 6881280
+    },
+    {
+      "name": "blk.39.attn_k.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 11958395392,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.39.attn_k_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11959255552,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.39.attn_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11959256576,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.39.attn_output.weight",
+      "dims": [
+        4096,
+        2048
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11959264768,
+      "stored_interval_bytes_including_alignment": 5767168
+    },
+    {
+      "name": "blk.39.attn_q.weight",
+      "dims": [
+        2048,
+        8192
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 11965031936,
+      "stored_interval_bytes_including_alignment": 11534336
+    },
+    {
+      "name": "blk.39.attn_q_norm.weight",
+      "dims": [
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 11976566272,
+      "stored_interval_bytes_including_alignment": 1024
+    },
+    {
+      "name": "blk.39.attn_v.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 11976567296,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.39.ffn_down_exps.weight",
+      "dims": [
+        512,
+        2048,
+        256
+      ],
+      "ggml_type": 23,
+      "relative_data_offset": 11977427456,
+      "stored_interval_bytes_including_alignment": 142606336
+    },
+    {
+      "name": "blk.39.ffn_down_shexp.weight",
+      "dims": [
+        512,
+        2048
+      ],
+      "ggml_type": 14,
+      "relative_data_offset": 12120033792,
+      "stored_interval_bytes_including_alignment": 860160
+    },
+    {
+      "name": "blk.39.ffn_gate_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 12120893952,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.39.ffn_gate_inp.weight",
+      "dims": [
+        2048,
+        256
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 12198488576,
+      "stored_interval_bytes_including_alignment": 2097152
+    },
+    {
+      "name": "blk.39.ffn_gate_inp_shexp.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 12200585728,
+      "stored_interval_bytes_including_alignment": 8192
+    },
+    {
+      "name": "blk.39.ffn_gate_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 12200593920,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.39.ffn_up_exps.weight",
+      "dims": [
+        2048,
+        512,
+        256
+      ],
+      "ggml_type": 17,
+      "relative_data_offset": 12201314816,
+      "stored_interval_bytes_including_alignment": 77594624
+    },
+    {
+      "name": "blk.39.ffn_up_shexp.weight",
+      "dims": [
+        2048,
+        512
+      ],
+      "ggml_type": 13,
+      "relative_data_offset": 12278909440,
+      "stored_interval_bytes_including_alignment": 720896
+    },
+    {
+      "name": "blk.39.post_attention_norm.weight",
+      "dims": [
+        2048
+      ],
+      "ggml_type": 0,
+      "relative_data_offset": 12279630336,
+      "stored_interval_bytes_including_alignment": 8192
+    }
+  ],
+  "scope": "Bounded direct GGUF metadata and tensor offset inspection only; no tensor data read, mmap, host model load or inference",
+  "resource_interpretation": "Stored intervals include alignment; no active-expert ratio is a resident-memory guarantee across layers, prompts or token history; full Android allocation/RSS/swap and quality remain unmeasured"
+}

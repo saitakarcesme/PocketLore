@@ -8,3 +8,8 @@ endforeach()
 add_subdirectory("${LLAMA_SOURCE}" llama)
 add_executable(sparse-host host.cpp)
 target_link_libraries(sparse-host PRIVATE llama)
+
+target_include_directories(sparse-host PRIVATE "${LLAMA_SOURCE}/src")
+add_executable(native-cache-controls native_controls.cpp)
+target_include_directories(native-cache-controls PRIVATE "${LLAMA_SOURCE}/src")
+target_link_libraries(native-cache-controls PRIVATE llama)

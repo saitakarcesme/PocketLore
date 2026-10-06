@@ -1,0 +1,31 @@
+{
+  "base": "d73bf832",
+  "retained": "608533da01c170faa4fc4b7b56a600b40e5a3c92",
+  "paths": [
+    {
+      "path": "android/app/src/main/cpp/CMakeLists.txt",
+      "sha256": "bacd8dca817fe5a9e589c1257c2974049171fe9e8ccbfe56aea8839a37307de8"
+    },
+    {
+      "path": "android/app/src/main/cpp/sparse_link.cpp",
+      "sha256": "27a9022d54ead477a0757cc50c1501d5e05207a8b2d543372e960e91dd565bee"
+    },
+    {
+      "path": "tools/runtime/build-native.sh",
+      "sha256": "c6fc822f6c39668ffdf7365fd8e04221f895e3a682d7521730305faf80c92398"
+    },
+    {
+      "path": "docs/evidence/strong-native-host-fixtures/freeze.json",
+      "sha256": "8333619a074f93950999d1319035f578aaaa9dfbd3ef5f38f5a1b8873791a537"
+    },
+    {
+      "path": "docs/evidence/strong-native-host-fixtures/probe-1.txt",
+      "sha256": "0541f16ce94e1450c0e2d55472cec984387a38bad1837d3228149f3d0f731e2c"
+    },
+    {
+      "path": "docs/evidence/strong-native-host-fixtures/probe-2.txt",
+      "sha256": "d1b56364b533e1a226339c0a6089c2a8f03b73657c461c3030c78d6cfdca13bd"
+    }
+  ],
+  "excluded": "android/native-build and acceptance reports"
+}

@@ -316,3 +316,10 @@ Publisher terms: https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use
 Current Android installation and independent unseen evaluation are pending.
 
 Task522 compact-source engineering uses retained official Wikimedia Enterprise HTML originals from the historical2025-03-20 source stream. Per-record CC-BY-SA-3.0 and CC-BY-SA-4.0 identifiers/URIs, article revision/history attribution and original hashes are preserved separately; no blanket license conversion or corpus-wide rights clearance is asserted. Full existing license texts are copied into the bounded review packet. Exact original HTML/JSON remains on the host; compact projection bytes and UTF16 source mappings are modifications, with unsafe/extra-rights cases flagged and source admission disabled. Media rights are not inferred. SQLite FTS5 and Python standard-library facilities are reused; Android routing and redistribution clearance remain unqualified.
+
+Task533 diagnostic native SHA-256 wrapper uses the exact implementation in
+llama.cpp bb4caa7540188872173c44d161602d9271386413/vendor/hash/sha256:
+"2010-06-11 : Igor Pavlov : Public domain". Its source states that it is based on
+public-domain code from Wei Dai's Crypto++ library. Symbols are locally prefixed;
+no cryptographic algorithm changes are made. The diagnostic mapping derivation
+retains llama.cpp's existing MIT notice and does not alter the shared checkout.

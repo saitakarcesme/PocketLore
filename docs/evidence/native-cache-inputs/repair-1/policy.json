@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "source_layout_sha256": "f3df04234df7dfada6c9feb9baea3960710df146d6db54571a1859c3a12f8199",
+  "selection_rule": "First stored tensor, first 16KiB-aligned interior offset, fixed four-MiB window; no query or performance selection",
+  "tensor": {
+    "name": "output.weight",
+    "dims": [
+      2048,
+      248320
+    ],
+    "ggml_type": 12,
+    "relative_data_offset": 0,
+    "stored_interval_bytes_including_alignment": 286064640
+  },
+  "data_start": 10990048,
+  "offset": 10993664,
+  "window": 4194304,
+  "max_model_payload": 67108864,
+  "charged_payload": 12582912,
+  "full_hash_passes": 1,
+  "architecture": "qwen35moe",
+  "tensor_count": 733,
+  "model_bytes": 12290628576,
+  "model_sha256": "96b9c0af5c77a4ecaabe3983175112b5ece763261c1ece12b2494b692a70dad7",
+  "expected": [
+    "pread equals mapped bytes before/after targeted advice",
+    "live-reader and retiring release deny new use",
+    "deferred unmap completes after last reader",
+    "observation serializes against retirement",
+    "cancel and exception cleanup retain no mapped window",
+    "pre-spawn immutable source/executable/derivation binding",
+    "owned timeout/read-error child TERM then KILL and reap",
+    "numeric PID/raw status/stat/startticks/namespace chronology binding",
+    "incomplete source set or altered binary/raw mapping fails",
+    "host x86_64 and Android AArch64/x86_64 ELF machine/alignment/packaging"
+  ]
+}
