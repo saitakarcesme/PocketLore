@@ -57,6 +57,9 @@ def validate(r,current=True):
    line=next(x for x in lines if x.get('step')==i);assert line['offset']==phase['start'] and line['bytes']==phase['bytes'] and line['sum']==phase['bytes']//256*32640
    before,touched,after=[snapshot(f'{name}-{i}-{p}.json') for p in ['before','touched','after']]
    assert before['owner']['monotonic_ns']<line['start_ns']<touched['owner']['monotonic_ns']<line['end_ns']<after['owner']['monotonic_ns']
+   bstat=before['stat'][before['stat'].rfind(')')+2:].split();astat=after['stat'][after['stat'].rfind(')')+2:].split()
+   assert 0<=line['major_faults']<=int(astat[9])-int(bstat[9]) and 0<=line['minor_faults']<=int(astat[7])-int(bstat[7])
+   assert line['cpu_us']>=0
    c=after['cache'];assert not c['failed'] and c['before_bytes']==len(touched['cached_pages'])*4096 and c['after_bytes']==len(after['cached_pages'])*4096 and c['start_ns']>touched['owner']['monotonic_ns'] and c['end_ns']<line['end_ns']
    assert c['observed_evicted_bytes']==max(0,c['before_bytes']-c['after_bytes']) and c['chunk_bytes']==1048576 and 0<=c['cursor']<32
    if name=='retain':
