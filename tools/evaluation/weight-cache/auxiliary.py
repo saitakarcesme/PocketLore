@@ -1,5 +1,5 @@
 """Raw auxiliary contracts. Guard names are independent mutation-test targets."""
-import json,re,base64,hashlib,copy
+import json,re,base64,hashlib,copy,gzip
 from common import R,SOURCES,BINARIES,process_stat,status_pid,sample_identity
 class Refused(AssertionError):pass
 def need(ok,guard):
@@ -7,6 +7,7 @@ def need(ok,guard):
 def envelopes(run):
  need(run.get('stream_contract')=='stdout_and_stderr_combined_by_supervisor','stream')
  need(not run.get('collection_errors') and run.get('raw_bytes'),'collection')
+ need(set(run['raw_bytes'])=={'stdout.log'}|set(run['observations']),'envelope-coverage')
  for key,v in run['raw_bytes'].items():
   b=base64.b64decode(v['base64'],validate=True);need(hashlib.sha256(b).hexdigest()==v['sha256'],'envelope-hash')
   need(b.decode()==(run['stdout'] if key=='stdout.log' else run['observations'][key]),'envelope-content')
@@ -71,6 +72,9 @@ def trace(run,inp):
    need(last<=e['monotonic_ns']<=run['end_ns'],'trace-chronology');last=e['monotonic_ns']
    need(e['namespaces']==ns,'trace-namespace');need(e['cgroup']==run['samples'][0]['cgroup'],'trace-cgroup')
    if pid!=run['pid']:need(int(re.search(r'^PPid:\s+(\d+)',e['status'],re.M)[1])==run['pid'],'child-parent')
+   mapped={'scalar-multitoken','scalar-live-reader','scalar-exception','scalar-cancel','async-reader','alias-mapping','live-lifetime','nested-owner','partial-map','cancelled','retiring-reader','retiring-advice','live-reader-advice','alias','cancel','no-progress','mincore-failure','advice-failure'}
+   requires_map=e['operation'] in mapped or (e['operation']=='seccomp' and pid==run['pid'])
+   if requires_map:need(e['owner_present'] and bool(e.get('owned_smaps')),'mapping-required')
    if e['owner_present']:
     v=inp['version'];
     if e['operation']=='verified':
@@ -81,11 +85,15 @@ def trace(run,inp):
     need(int(re.search(r'^ino:\s+(\d+)',e['fdinfo'],re.M)[1])==e['inode'],'fd-inode')
     mid=re.search(r'^mnt_id:\s+(\d+)',e['fdinfo'],re.M)[1];mount=next((l for l in e['mountinfo'].splitlines() if l.split()[0]==mid),None);need(mount is not None,'owner-mount')
     dev=tuple(map(int,mount.split()[2].split(':')))
+    headers=0
     for line in e['owned_smaps'].splitlines():
      m=re.match(r'^([0-9a-f]+)-([0-9a-f]+) (\S+) ([0-9a-f]+) ([0-9a-f]+):([0-9a-f]+) (\d+)',line)
      if m:
+      headers+=1
       need(m[3]=='r--s','mapping-readonly');need(int(m[7])==e['inode'],'mapping-inode')
       need((int(m[5],16),int(m[6],16))==dev,'mapping-mount');need(int(m[4],16)%4096==0 and int(m[2],16)>int(m[1],16),'mapping-range')
+    need(headers==1 if requires_map else headers<=1,'mapping-header')
+    need(not e['owned_smaps'] or headers==1,'mapping-header')
    else:need('owned_smaps' not in e and 'fdinfo' not in e,'no-fabricated-owner')
  need(run['pid'] in groups,'parent-trace')
  return groups
@@ -105,6 +113,8 @@ def validate_aux(r):
   for key in ['device','inode','size','mtime_ns']:need(post['input']['version'][key]==inp['version'][key],'input-version')
   key=BINARIES[0] if name=='lifecycle' else BINARIES[-2];need(pre['executable']==f['binary'][key],'linked-executable')
   groups=trace(run,inp);events=groups[run['pid']];pairs=[];pending=None
+  need(all(e['operation'] in set(expected)|{'process','verified','teardown'} for e in events),'known-operation')
+  need(events[0]['operation']=='process' and events[0]['outcome']=='begin','process-begin')
   for e in events:
    if e['operation'] not in expected:continue
    if e['outcome']=='begin':need(pending is None,'operation-overlap');pending=e
@@ -112,6 +122,7 @@ def validate_aux(r):
     need(pending is not None and pending['operation']==e['operation'],'operation-pair')
     need(e['outcome']=='refused','refusal-outcome');need(e['reason']==expected[e['operation']],'refusal-reason');pairs.append(e['operation']);pending=None
   need(pending is None and set(pairs)==set(expected),'refusal-denominator')
+  need(pairs==[k for k in expected for _ in range(33 if k=='scalar-live-reader' else 1)],'refusal-order')
   for key in expected:need(pairs.count(key)==(33 if key=='scalar-live-reader' else 1),'refusal-count')
   endings=[e for e in events if e['operation']=='teardown'];need(len(endings)==1 and endings[0]['outcome']=='complete' and endings[0]['owned_smaps']=='','teardown')
   if name=='fault_controls':
@@ -138,7 +149,7 @@ def validate_aux(r):
 def mutations(r):
  """Rebind envelopes for semantic tests; never alter original actual receipts."""
  outcomes=[]
- cases=['pid','startticks','namespace','source','executable','hash','inode','readonly','mount','refusal','reason','phase','teardown','aggregate','swap','reap','exit','deadline','syscall','missing','envelope']
+ cases=['pid','startticks','namespace','source','executable','hash','inode','readonly','mount','refusal','reason','phase','teardown','aggregate','swap','reap','exit','deadline','syscall','missing','missing-mapping','false-owner','junk-mapping','missing-envelope','envelope']
  for case in cases:
   validate_aux(r)
   b=copy.deepcopy(r);p=b['lifecycle'];run=p['run'];target=next(k for k in run['observations'] if '-trace-' in k);events=[json.loads(l) for l in run['observations'][target].splitlines()]
@@ -156,7 +167,7 @@ def mutations(r):
   elif case=='refusal':refusal['outcome']='unexpected-success';guard='refusal-outcome'
   elif case=='reason':refusal['reason']='Unrelated failure';guard='refusal-reason'
   elif case=='phase':events[2]['sequence']=999;guard='operation-sequence'
-  elif case=='teardown':events[-1]['operation']='omitted';guard='teardown'
+  elif case=='teardown':events[-1]['outcome']='missing';guard='teardown'
   elif case=='aggregate':run['samples'][0]['memory.current']='8053063680';guard='aggregate'
   elif case=='swap':run['samples'][0]['memory.swap.current']='4096';guard='swap'
   elif case=='reap':run['cleanup'][-1]['action']='UNREAPED';guard='reaped'
@@ -166,6 +177,13 @@ def mutations(r):
    q=b['fault_controls']['run'];key=next(k for k,v in q['observations'].items() if '"operation":"seccomp"' in v)
    es=[json.loads(l) for l in q['observations'][key].splitlines()];es[-1]['reason']='Wrong exception';q['observations'][key]='\n'.join(json.dumps(e) for e in es)+'\n';guard='syscall-refusal'
   elif case=='missing':run['samples']=[];guard='live-required'
+  elif case=='missing-mapping':
+   next(e for e in events if e['operation']=='scalar-live-reader')['owned_smaps']='';guard='mapping-required'
+  elif case=='false-owner':
+   next(e for e in events if e['operation']=='scalar-live-reader')['owner_present']=False;guard='mapping-required'
+  elif case=='junk-mapping':
+   next(e for e in events if e['operation']=='scalar-live-reader')['owned_smaps']='junk';guard='mapping-header'
+  elif case=='missing-envelope':run['raw_bytes'].pop(target);guard='envelope-coverage'
   elif case=='envelope':run['raw_bytes']['stdout.log']['sha256']='0'*64;guard='envelope-hash'
   run['observations'][target]='\n'.join(json.dumps(e) for e in events)+'\n'
   if case!='envelope':
@@ -182,7 +200,7 @@ def mutations(r):
    need(str(e)==guard,'mutation-wrong-guard:'+case+':'+str(e))
    # Store exact mutations separately from actual raw packet, without duplicating
    # every untouched multi-megabyte sample for each one-field corruption.
-   outcomes.append({'case':case,'expected_guard':guard,'actual_guard':str(e),'positive_revalidated':True,'kind':'envelope' if case=='envelope' else 'semantic','mutated_packet_sha256':hashlib.sha256(json.dumps(b,sort_keys=True).encode()).hexdigest()})
+   outcomes.append({'case':case,'expected_guard':guard,'actual_guard':str(e),'positive_revalidated':True,'kind':'envelope' if case=='envelope' else 'semantic','mutated_packet_sha256':hashlib.sha256(json.dumps(b,sort_keys=True).encode()).hexdigest(),'mutated_packet_gzip_base64':base64.b64encode(gzip.compress(json.dumps(b,sort_keys=True).encode(),mtime=0)).decode()})
    continue
   raise Refused('mutation-accepted:'+case)
  return outcomes

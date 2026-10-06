@@ -40,6 +40,7 @@ def main():
    assert raw['exit']==0 and not raw.get('failure') and not raw['collection_errors'] and raw['post_input']==inp['version'] and raw['post_source']==f['source'],name
   def auxiliary(name,argv,inp=None,seconds=30,inject=False):
    out=O/(name+'-run');prefix=O/name
+   r[name]={'state':'preflight','argv':argv};atomic(O/'runs.json',r)
    pre={'source':sources(),'executable':identity(pathlib.Path(argv[0])),'input':inp,'derivation':f['derivation'],'configuration':f['configuration']}
    x=owned.execute(argv,out,seconds,inject);r[name]={'run':x,'input':inp,'pre':pre};atomic(O/'runs.json',r)
    collect(out,prefix,x)
