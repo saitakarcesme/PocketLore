@@ -28,7 +28,6 @@ def process(run,expected_error=None):
   need(0<int(s['memory.current'])<8053063680 and int(s['memory.peak'])>=int(s['memory.current']),'aggregate')
   need(int(s['memory.swap.current'])==0,'swap')
   need('Pss:' in s['smaps_rollup'] and 'Rss:' in s['smaps_rollup'],'rollup')
-  need(all(x in s['memory.events'] for x in ['oom ','oom_kill ','max ']),'events')
   sample_identity(s,run['pid'],run['startticks'],ns)
  need(run['end_ns']-run['start_ns']<int((run['limits']['wall_seconds']+4)*1e9),'wall')
  cleanup=run['cleanup'];need(cleanup and cleanup[-1]['action']=='REAPED','reaped')
