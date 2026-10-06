@@ -43,5 +43,36 @@
     "reason": "SQLite3.53.4 integrity_check attempts original content access even for valid contentless FTS4; fresh one-row reproduction fails identically. Preserve failed6000 run.",
     "design": "FTS4 external-content view decompresses the single capsule on demand; no body duplication, whole-index integrity_check can compare postings against actual source projection. Android needs equivalent bounded capsule_text function before integration.",
     "unchanged": "Source ranges, selection, rights, mappings and admission gates unchanged."
+  },
+  "storage_revision_2": {
+    "reason": "Measured6000 full-HTML capsules cost125100032B, about21KB per article; projection to millions plus stronger model cannot fit budget.",
+    "design": "Store complete visible projection and exact HTML SHA/UTF16 ranges in product; exact original HTML/JSON remains in independently retained host stage. Offline inspection is complete projection and provenance, NOT original HTML. No change to projection algorithm or source selection.",
+    "fixes": [
+      "quarantine late older-revision conflicts across all observed revisions",
+      "fail entire run for raw-stage metadata mismatch",
+      "preserve article_body sibling metadata",
+      "linear passage decode and per-passage cancellation",
+      "explicit invocation cutoff rather than expired global constant"
+    ],
+    "engineering_runs": [
+      [
+        0,
+        5999
+      ],
+      [
+        0,
+        11999
+      ]
+    ],
+    "actual_mixed_license_samples": [
+      30000,
+      100000,
+      200000
+    ]
+  },
+  "storage_revision_3": {
+    "reason": "Measured projection-only6000 index still81,346,560B; identify postings and mapping duplication before larger run, no article/query selection change.",
+    "design": "Delta-varint original/rendered mapping in capsule; FTS5 external-content article index detail=none,columnsize=0, no positional postings or stored bodies. Host supplies bounded capsule_text function. Android SQLiteFTS5/decoder integration explicitly deferred.",
+    "safety": "Exact reconstructed maps identical; all source bytes retained on host; whole posting/content integrity checked before freeze."
   }
 }

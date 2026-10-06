@@ -3,7 +3,7 @@
 
 This format intentionally has no source-admission or Android routing authority.
 """
-import argparse, array, collections, datetime, hashlib, html, json, os, re
+import argparse, array, base64, collections, datetime, hashlib, html, json, os, re
 import resource, shutil, sqlite3, sys, time, zlib
 from html.parser import HTMLParser
 from pathlib import Path
@@ -121,19 +121,26 @@ def transform(raw,identity):
     require(p.page==str(d['identifier']) and p.revision==str(d['version']['identifier']),'HTML identity mismatch')
     require(d.get('url','').startswith('https://en.wikipedia.org/wiki/'),'source article URL mismatch')
     metadata={k:v for k,v in d.items() if k!='article_body'}
+    metadata['article_body_metadata']={k:v for k,v in d['article_body'].items() if k!='html'}
     metadata['attribution']={'credit':d['name']+' — Wikipedia contributors','revision_url':'https://en.wikipedia.org/w/index.php?oldid='+str(d['version']['identifier']),'history_url':'https://en.wikipedia.org/w/index.php?title='+quote(d['name'].replace(' ','_'))+'&action=history','scope':'Archive metadata and linked contributor history, not a locally complete author list or independent rights clearance'}
-    capsule={'identity':identity,'metadata':metadata,'html':source,'html_sha256':sha(source.encode()),'text':body,'text_sha256':sha(body.encode()),'mapping':p.maps,'headings':p.headings,'dispositions':sorted(p.reasons),'format':FORMAT}
-    validate_capsule(capsule)
+    capsule={'identity':identity,'metadata':metadata,'html_utf16_units':u16(source),'html_sha256':sha(source.encode()),'text':body,'text_sha256':sha(body.encode()),'mapping':p.maps,'headings':p.headings,'dispositions':sorted(p.reasons),'format':FORMAT}
+    validate_capsule(capsule,source)
     return capsule
 
-def validate_capsule(c):
+def validate_capsule(c,source=None):
     require(c['format']==FORMAT,'format');exact_license(c['metadata'])
-    source=c['html'];text=c['text'];require(sha(source.encode())==c['html_sha256'] and sha(text.encode())==c['text_sha256'],'capsule text digest')
+    text=c['text'];require(sha(text.encode())==c['text_sha256'],'capsule text digest')
+    if source is not None:require(sha(source.encode())==c['html_sha256'] and u16(source)==c['html_utf16_units'],'source HTML identity')
     # Encode once: validation is linear in article bytes, not quadratic per segment.
-    hb=source.encode('utf-16-le');tb=text.encode('utf-16-le');last=0
+    hb=source.encode('utf-16-le') if source is not None else None;tb=text.encode('utf-16-le');last=0
     for a,b,x,y,kind in c['mapping']:
-        require(a==last and a<b and 0<=x<=y<=len(hb)//2 and b<=len(tb)//2,'mapping offset/gap')
-        original=hb[2*x:2*y].decode('utf-16-le');rendered=tb[2*a:2*b].decode('utf-16-le')
+        require(a==last and a<b and 0<=x<=y<=c['html_utf16_units'] and b<=len(tb)//2,'mapping offset/gap')
+        rendered=tb[2*a:2*b].decode('utf-16-le')
+        if hb is None:
+            require(kind in {'literal','entity','separator','break'},'unknown transformation')
+            if kind=='separator':require(x==y and rendered=='\n','separator reconstruction')
+            last=b;continue
+        original=hb[2*x:2*y].decode('utf-16-le')
         if kind=='literal':require(rendered==original,'literal reconstruction')
         elif kind=='entity':require(rendered==html.unescape(original),'entity reconstruction')
         elif kind=='separator':require(x==y and rendered=='\n','separator reconstruction')
@@ -141,6 +148,38 @@ def validate_capsule(c):
         else:raise ValueError('unknown mapping transformation')
         last=b
     require(last==len(tb)//2,'incomplete rendered coverage')
+
+def varint(n):
+    require(type(n)==int and 0<=n<=100_000_000,'mapping integer bound')
+    out=bytearray()
+    while n>=128:out.append((n&127)|128);n>>=7
+    out.append(n);return out
+
+def pack_capsule(c):
+    x=dict(c);segments=x.pop('mapping');out=bytearray(varint(len(segments)));last_x=0
+    kinds=['literal','entity','separator','break']
+    for a,b,start,end,kind in segments:
+        require(start>=last_x,'source mapping must be monotonic')
+        for value in [b-a,start-last_x,end-start,kinds.index(kind)]:out.extend(varint(value))
+        last_x=start
+    x['mapping_varint_base64']=base64.b64encode(out).decode('ascii')
+    return canonical(x)
+
+def unpack_capsule(raw):
+    x=json.loads(raw);packed=base64.b64decode(x.pop('mapping_varint_base64'),validate=True);i=0
+    def read():
+        nonlocal i
+        value=0
+        for shift in range(0,35,7):
+            require(i<len(packed),'truncated mapping');b=packed[i];i+=1;value|=(b&127)<<shift
+            if b<128:
+                require(value<=100_000_000,'mapping integer overflow');return value
+        raise ValueError('mapping varint overflow')
+    count=read();require(count<=SEG_MAX,'mapping count bound');segments=[];offset=source=0;kinds=['literal','entity','separator','break']
+    for _ in range(count):
+        length,delta,span,kind=read(),read(),read(),read();require(kind<len(kinds),'mapping kind');source+=delta
+        segments.append([offset,offset+length,source,source+span,kinds[kind]]);offset+=length
+    require(i==len(packed),'mapping trailing bytes');x['mapping']=segments;return x
 
 def passages(text):
     """Bounded contiguous slices; never split a Unicode scalar. No duplicated bodies."""
@@ -161,13 +200,14 @@ CREATE TABLE articles(page INTEGER PRIMARY KEY,revision INTEGER,sequence INTEGER
 CREATE TABLE passages(id INTEGER PRIMARY KEY,page INTEGER,start16 INTEGER,end16 INTEGER,sha256 TEXT,UNIQUE(page,start16));
 CREATE INDEX passage_page ON passages(page);
 CREATE VIEW search_content AS SELECT page AS rowid,page AS docid,title,capsule_text(payload) AS body FROM articles;
-CREATE VIRTUAL TABLE search USING fts4(title,body,content='search_content',tokenize=unicode61);
+CREATE VIRTUAL TABLE search USING fts5(title,body,content='search_content',content_rowid='rowid',detail=none,columnsize=0,tokenize='unicode61');
 PRAGMA user_version=522;
 '''
 
 def choose(c,page,revision,date,digest,seq):
     prev=c.execute('SELECT revision,date,raw_sha256,sequence,conflict FROM latest WHERE page=?',(page,)).fetchone()
-    if prev and revision==prev[0] and digest!=prev[2]:
+    conflict_seen=c.execute('SELECT 1 FROM dispositions WHERE page=? AND revision=? AND raw_sha256<>? LIMIT 1',(page,revision,digest)).fetchone()
+    if conflict_seen or (prev and revision==prev[0] and digest!=prev[2]):
         c.execute('UPDATE latest SET conflict=1 WHERE page=?',(page,));return 'conflicting same revision'
     if prev and (revision,date,digest)<=(prev[0],prev[1],prev[2]):return 'duplicate or older revision'
     conflict=prev[4] if prev else 0
@@ -175,33 +215,46 @@ def choose(c,page,revision,date,digest,seq):
     c.execute('INSERT OR REPLACE INTO latest VALUES(?,?,?,?,?,?)',(page,revision,date,digest,seq,conflict))
     return 'latest'
 
-def produce(stage,out,ceiling,seconds=180):
+def staged_rows(db,ceiling):
+    sql='SELECT * FROM records WHERE sequence<=?'
+    args=[ceiling]
+    if db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='oversized'").fetchone():
+        sql+=" UNION ALL SELECT sequence,member,member_offset,raw_bytes,raw_sha256,NULL,NULL,NULL,NULL,'oversized original retained in archive',NULL FROM oversized WHERE sequence<=?"
+        args.append(ceiling)
+    return db.execute(sql+' ORDER BY sequence',args)
+
+def produce(stage,out,ceiling,seconds=180,cutoff=None):
     require(not out.exists(),'output already exists; retained runs cannot be overwritten')
     require(shutil.disk_usage(out.parent).free>=100*1024**3,'100GiB free-space preflight')
     mem=dict((line.split(':')[0],int(line.split()[1])*1024) for line in Path('/proc/meminfo').read_text().splitlines() if line.startswith(('MemTotal:','MemAvailable:')))
     require(mem['MemAvailable']>=768*1024**2,'host memory preflight')
-    out.mkdir();start=time.monotonic();deadline=min(start+seconds,start+max(0,1791269964-time.time()))
+    out.mkdir();start=time.monotonic();deadline=start+seconds
+    if cutoff is not None:deadline=min(deadline,start+max(0,cutoff-time.time()))
     state={'format':FORMAT,'source_admission_established':False,'distribution_ready':False,'status':'RUNNING','sequence_ceiling':ceiling,'source_stage':str(stage),'source_scope':'committed provisional range, not full archive','pid':os.getpid(),'preflight':{'memory':mem,'free_bytes':shutil.disk_usage(out).free},'counts':{},'source_code_sha256':file_sha(Path(__file__))}
     atomic(out/'receipt.json',state)
-    db=sqlite3.connect(out/'index.sqlite');db.create_function('capsule_text',1,lambda b:json.loads(inflate(b,CAPSULE_MAX))['text'],deterministic=True);db.executescript(SCHEMA)
+    db=sqlite3.connect(out/'index.sqlite');db.create_function('capsule_text',1,lambda b:unpack_capsule(inflate(b,CAPSULE_MAX))['text'],deterministic=True);db.executescript(SCHEMA)
     source=sqlite3.connect('file:'+str(stage)+'?mode=ro',uri=True);source.execute('PRAGMA cache_size=-8192');source.execute('BEGIN')
     original_chain=hashlib.sha256();count=0
     def bound():require(time.monotonic()<deadline,'producer deadline; incomplete retained')
     try:
-        for seq,member,offset,size,digest,page,rev,title,license_json,error,blob in source.execute('SELECT * FROM records WHERE sequence<=? ORDER BY sequence',(ceiling,)):
+        for seq,member,offset,size,digest,page,rev,title,license_json,error,blob in staged_rows(source,ceiling):
             bound();require(seq==count,'source sequence gap including oversized originals; complete accounting required');count+=1
             original_chain.update(canonical([seq,member,offset,size,digest])+b'\n')
             identity={'sequence':seq,'member':member,'member_offset':offset,'raw_bytes':size,'raw_sha256':digest}
+            if blob is None:
+                db.execute('INSERT INTO dispositions VALUES(?,?,?,?,?,?,?,?,?)',(seq,None,None,member,offset,size,digest,'oversized','Original archive range retained; raw bytes not independently decoded by this bounded producer; admission blocked'))
+                state['unverified_oversized_records']=state.get('unverified_oversized_records',0)+1
+                continue
             status='excluded';reason='';capsule=None
             # Metadata choice precedes transformation, so unsafe latest never revives old output.
             require(size<=RAW_MAX,'oversized raw record');raw=inflate(blob,RAW_MAX);require(len(raw)==size and sha(raw)==digest,'original digest mismatch')
+            d=json.loads(raw);require(d.get('identifier')==page and d.get('version',{}).get('identifier')==rev and d.get('name')==title,'stage metadata mismatch')
             try:
-                d=json.loads(raw);require(d.get('identifier')==page and d.get('version',{}).get('identifier')==rev and d.get('name')==title,'stage metadata mismatch')
                 require(type(page)==int and type(rev)==int and page>0 and rev>0,'invalid page/revision')
                 reason=choose(db,page,rev,d.get('date_modified',''),digest,seq)
                 if reason=='latest':
                     db.execute('DELETE FROM candidates WHERE page=?',(page,))
-                    capsule=transform(raw,identity);payload=canonical(capsule);require(len(payload)<=CAPSULE_MAX,'capsule bound')
+                    capsule=transform(raw,identity);payload=pack_capsule(capsule);require(len(payload)<=CAPSULE_MAX,'capsule bound')
                     db.execute('INSERT INTO candidates VALUES(?,?,?)',(page,seq,zlib.compress(payload,6)));status='transformed'
                 else:status='duplicate'
             except (ValueError,KeyError,TypeError,UnicodeError,RecursionError) as e:reason=type(e).__name__+': '+str(e)
@@ -212,11 +265,11 @@ def produce(stage,out,ceiling,seconds=180):
         # Stream latest capsules, create contentless postings, then delete the staging copy.
         pid=0
         for page,seq,blob in db.execute('SELECT c.page,c.sequence,c.payload FROM candidates c JOIN latest l ON c.page=l.page WHERE l.conflict=0 ORDER BY c.page'):
-            bound();cap=json.loads(inflate(blob,CAPSULE_MAX));meta=cap['metadata'];payload=canonical(cap)
+            bound();payload=inflate(blob,CAPSULE_MAX);cap=unpack_capsule(payload);meta=cap['metadata']
             db.execute('INSERT INTO articles VALUES(?,?,?,?,?,?,?,?,?)',(page,meta['version']['identifier'],seq,meta['name'],meta['license'][0]['identifier'],cap['identity']['raw_sha256'],sha(payload),blob,int(not cap['dispositions'])))
-            db.execute('INSERT INTO search(docid,title,body) VALUES(?,?,?)',(page,meta['name'],cap['text']))
+            db.execute('INSERT INTO search(rowid,title,body) VALUES(?,?,?)',(page,meta['name'],cap['text']))
             for a,b,h in passages(cap['text']):pid+=1;db.execute('INSERT INTO passages VALUES(?,?,?,?,?)',(pid,page,a,b,h))
-        db.execute('DELETE FROM candidates');db.commit();bound();db.execute('VACUUM');db.commit()
+        db.execute('DELETE FROM candidates');db.commit();bound();db.execute("INSERT INTO search(search,rank) VALUES('integrity-check',1)");db.commit();db.execute('VACUUM');db.commit()
         require(db.execute('PRAGMA integrity_check').fetchone()[0]=='ok','index integrity')
         state['counts']={t:db.execute('SELECT count(*) FROM '+t).fetchone()[0] for t in ['dispositions','latest','articles','passages']}
         state['counts']['candidate_articles_not_admitted']=db.execute('SELECT count(*) FROM articles WHERE candidate=1').fetchone()[0]
@@ -235,28 +288,28 @@ class Reader:
     def __init__(self,path):
         receipt=json.loads((path/'receipt.json').read_text());require(receipt['status']=='ENGINEERING_COMPLETE_PROVISIONAL' and receipt['source_admission_established'] is False,'not provisional engineering edition')
         require(file_sha(path/'index.sqlite')==receipt['index_sha256'],'index digest mismatch')
-        self.db=sqlite3.connect('file:'+str(path/'index.sqlite')+'?mode=ro',uri=True);self.db.execute('PRAGMA cache_size=-8192');self.db.create_function('capsule_text',1,lambda b:json.loads(inflate(b,CAPSULE_MAX))['text'],deterministic=True)
+        self.db=sqlite3.connect('file:'+str(path/'index.sqlite')+'?mode=ro',uri=True);self.db.execute('PRAGMA cache_size=-8192');self.db.create_function('capsule_text',1,lambda b:unpack_capsule(inflate(b,CAPSULE_MAX))['text'],deterministic=True)
     def article(self,page):
-        r=self.db.execute('SELECT capsule_sha256,payload FROM articles WHERE page=?',(page,)).fetchone();require(r is not None,'missing article');b=inflate(r[1],CAPSULE_MAX);require(sha(b)==r[0],'capsule hash');c=json.loads(b);validate_capsule(c);return c
+        r=self.db.execute('SELECT capsule_sha256,payload FROM articles WHERE page=?',(page,)).fetchone();require(r is not None,'missing article');b=inflate(r[1],CAPSULE_MAX);require(sha(b)==r[0],'capsule hash');c=unpack_capsule(b);validate_capsule(c);return c
     def search(self,query,cancel=lambda:False):
         require(not cancel(),'cancelled');tokens=re.findall(r'\w+',query)[:12]
         if not tokens:return []
         expression=' AND '.join('"'+x.replace('"','')+'"' for x in tokens)
         self.db.set_progress_handler(lambda:1 if cancel() else 0,1000)
-        try:rows=self.db.execute('SELECT docid FROM search WHERE search MATCH ? LIMIT 20',(expression,)).fetchall()
+        try:rows=self.db.execute('SELECT rowid FROM search WHERE search MATCH ? LIMIT 20',(expression,)).fetchall()
         finally:self.db.set_progress_handler(None,0)
         out=[]
         for (page,) in rows:
-            require(not cancel(),'cancelled');c=self.article(page);text=c['text'];pieces=self.db.execute('SELECT start16,end16,sha256 FROM passages WHERE page=?',(page,)).fetchall()
+            require(not cancel(),'cancelled');c=self.article(page);text=c['text'];encoded=text.encode('utf-16-le');pieces=self.db.execute('SELECT start16,end16,sha256 FROM passages WHERE page=?',(page,)).fetchall()
             scored=[]
             for a,b,h in pieces:
-                quote_text=slice16(text,a,b);require(sha(quote_text.encode())==h,'passage digest');score=sum(quote_text.casefold().count(t.casefold()) for t in tokens)
+                require(not cancel(),'cancelled');quote_text=encoded[2*a:2*b].decode('utf-16-le');require(sha(quote_text.encode())==h,'passage digest');score=sum(quote_text.casefold().count(t.casefold()) for t in tokens)
                 scored.append((score,a,b,h,quote_text))
             if scored:
                 _,a,b,h,q=max(scored,key=lambda v:(v[0],-v[1]));out.append({'page':page,'revision':c['metadata']['version']['identifier'],'title':c['metadata']['name'],'start16':a,'end16':b,'sha256':h,'quote':q,'source_admission_established':False})
         return out
 
 if __name__=='__main__':
-    a=argparse.ArgumentParser();a.add_argument('stage',type=Path);a.add_argument('out',type=Path);a.add_argument('--ceiling',type=int,required=True);a.add_argument('--seconds',type=int,default=180);v=a.parse_args()
+    a=argparse.ArgumentParser();a.add_argument('stage',type=Path);a.add_argument('out',type=Path);a.add_argument('--ceiling',type=int,required=True);a.add_argument('--seconds',type=int,default=180);a.add_argument('--cutoff',type=float);v=a.parse_args()
     resource.setrlimit(resource.RLIMIT_AS,(536870912,536870912));resource.setrlimit(resource.RLIMIT_CPU,(300,300));os.sched_setaffinity(0,sorted(os.sched_getaffinity(0))[:2])
-    print(json.dumps(produce(v.stage,v.out,v.ceiling,v.seconds),indent=2))
+    print(json.dumps(produce(v.stage,v.out,v.ceiling,v.seconds,v.cutoff),indent=2))

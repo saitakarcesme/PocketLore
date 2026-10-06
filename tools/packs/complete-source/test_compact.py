@@ -14,15 +14,15 @@ class Controls(unittest.TestCase):
             d=record();d['license']=rows
             with self.assertRaises(ValueError):capsule(d)
     def test_mapping_and_digest(self):
-        x=capsule(record());self.assertIn('😀 & exact',x['text']);c.validate_capsule(x)
+        x=capsule(record());self.assertIn('😀 & exact',x['text']);c.validate_capsule(x,record()['article_body']['html'])
         y=copy.deepcopy(x);y['mapping'][1][2]+=1
-        with self.assertRaises(ValueError):c.validate_capsule(y)
+        with self.assertRaises(ValueError):c.validate_capsule(y,record()['article_body']['html'])
         y=copy.deepcopy(x);y['text']+='forged'
-        with self.assertRaises(ValueError):c.validate_capsule(y)
+        with self.assertRaises(ValueError):c.validate_capsule(y,record()['article_body']['html'])
         with self.assertRaises(ValueError):c.transform(c.canonical(record()),{'raw_sha256':'0'*64})
     def test_unsafe_and_complete(self):
         for t in ['<math><semantics><mi>x</mi><annotation encoding="application/x-tex">\\sqrt[5]{100}</annotation></semantics></math>','<table><tr><td>value</td></tr></table>','<alien>unknown</alien>','Copyright another owner','<script>secret</script>','<blockquote>quoted</blockquote>']:
-            x=capsule(record(text=t));self.assertTrue(x['dispositions']);self.assertIn(t,x['html'])
+            x=capsule(record(text=t));self.assertTrue(x['dispositions']);self.assertEqual(x['html_sha256'],c.sha(record(text=t)['article_body']['html'].encode()))
         x=capsule(record(text='Before <sup>2</sup> after'));self.assertTrue(x['dispositions'])
     def test_bounds(self):
         with self.assertRaises(ValueError):c.inflate(zlib.compress(b'x'*100),99)
@@ -38,18 +38,27 @@ class Controls(unittest.TestCase):
         self.assertEqual(c.choose(db,1,3,'2025','c',3),'latest')
         self.assertEqual(c.choose(db,1,3,'2025','d',4),'conflicting same revision')
         self.assertEqual(db.execute('select conflict from latest').fetchone()[0],1)
+        db.execute("INSERT INTO dispositions VALUES(0,9,2,'m',0,10,'A','superseded','')")
+        c.choose(db,9,3,'2025','B',1)
+        self.assertEqual(c.choose(db,9,2,'2025','C',2),'conflicting same revision')
+        self.assertEqual(db.execute('select conflict from latest where page=9').fetchone()[0],1)
     def test_passage_reconstruction(self):
         text='😀 literal source condition. '*200;spans=c.passages(text)
         self.assertEqual(''.join(c.slice16(text,a,b) for a,b,h in spans),text)
         for a,b,h in spans:self.assertEqual(c.sha(c.slice16(text,a,b).encode()),h)
     def test_posting_integrity(self):
-        db=sqlite3.connect(':memory:');db.create_function('capsule_text',1,lambda b:json.loads(c.inflate(b,c.CAPSULE_MAX))['text']);db.executescript(c.SCHEMA)
-        x=capsule(record());blob=zlib.compress(c.canonical(x))
+        db=sqlite3.connect(':memory:');db.create_function('capsule_text',1,lambda b:c.unpack_capsule(c.inflate(b,c.CAPSULE_MAX))['text']);db.executescript(c.SCHEMA)
+        x=capsule(record());blob=zlib.compress(c.pack_capsule(x))
         db.execute('INSERT INTO articles VALUES(?,?,?,?,?,?,?,?,?)',(1,2,0,'Fixture','CC-BY-SA-3.0','raw','cap',blob,0))
-        db.execute('INSERT INTO search(docid,title,body) VALUES(1,?,?)',('Fixture',x['text']))
+        db.execute('INSERT INTO search(rowid,title,body) VALUES(1,?,?)',('Fixture',x['text']))
         self.assertEqual(db.execute('PRAGMA integrity_check').fetchone()[0],'ok')
         db.execute("UPDATE articles SET title='Changed' WHERE page=1")
-        self.assertNotEqual(db.execute('PRAGMA integrity_check').fetchone()[0],'ok')
+        with self.assertRaises(sqlite3.DatabaseError):db.execute("INSERT INTO search(search,rank) VALUES('integrity-check',1)")
+    def test_mapping_codec(self):
+        x=capsule(record());self.assertEqual(c.unpack_capsule(c.pack_capsule(x)),x)
+        import base64
+        p=json.loads(c.pack_capsule(x));p['mapping_varint_base64']=base64.b64encode(b'\x80'*8).decode()
+        with self.assertRaises(ValueError):c.unpack_capsule(c.canonical(p))
     def test_partial_denied(self):
         with tempfile.TemporaryDirectory() as d:
             p=Path(d);(p/'receipt.json').write_text(json.dumps({'status':'ENGINEERING_COMPLETE_PROVISIONAL','source_admission_established':True}))
