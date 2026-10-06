@@ -1,0 +1,71 @@
+{
+  "independent_manifest_sha256": "723abffde5b3c0a3b5ddd79b5213e46da0858d1125df553b46506f8635cb82f1",
+  "fixtures": [
+    {
+      "id": "inline-phrase",
+      "page": 701,
+      "revision": 9001,
+      "title": "Public inline phrase fixture",
+      "html": "<html about=\"https://example.invalid/revision/9001\"><head><meta property=\"mw:pageId\" content=\"701\"></head><body><h1>Travel context</h1><p>If the road is closed, visit New <b>York</b> only when daylight is available.</p></body></html>",
+      "queries": [
+        "\"New York\"",
+        "New York",
+        "York"
+      ],
+      "expected": "Phrase andAND should match same visible paragraph across inline boundaries, and hit must open enclosing p preserving both conditions."
+    },
+    {
+      "id": "compound-inline",
+      "page": 702,
+      "revision": 9002,
+      "title": "Public compound fixture",
+      "html": "<html about=\"https://example.invalid/revision/9002\"><head><meta property=\"mw:pageId\" content=\"702\"></head><body><p>Moisture inhibits <em>bacterial</em> growth only under the stated conditions.</p></body></html>",
+      "queries": [
+        "Moisture bacterial",
+        "bacterial"
+      ],
+      "expected": "Compound query across inline leaves must match paragraph; returned hit opens p with inhibits andonlyunder qualifiers, no strengthened prevention."
+    },
+    {
+      "id": "title-only",
+      "page": 703,
+      "revision": 9003,
+      "title": "UniqueBeaconTitle",
+      "html": "<html about=\"https://example.invalid/revision/9003\"><head><meta property=\"mw:pageId\" content=\"703\"></head><body><p>This body deliberately omits the metadata title token.</p></body></html>",
+      "queries": [
+        "UniqueBeaconTitle"
+      ],
+      "expected": "Metadata-title query finds article with defined usable enclosing context, rather than requiringtitle duplicatedinsidebody."
+    },
+    {
+      "id": "plain-context",
+      "page": 704,
+      "revision": 9004,
+      "title": "Public plain conditional fixture",
+      "html": "<html about=\"https://example.invalid/revision/9004\"><head><meta property=\"mw:pageId\" content=\"704\"></head><body><p>If the gate is open, proceed; otherwise wait. Caf\u00e9 \u4e2d\u6587 \ud83d\ude42.</p></body></html>",
+      "queries": [
+        "otherwise"
+      ],
+      "expected": "Singleleaf hit opens containing p and exact originalHTML/UTF16 fragment, not missingcontext or isolatedword."
+    }
+  ],
+  "additional_negative_queries": [
+    "\"York New\"",
+    "New bacterial",
+    "UniqueBeam",
+    "Moisture daylight"
+  ],
+  "controls": [
+    "unchanged-source-html",
+    "source-open-conditions",
+    "title-is-metadata-not-fact",
+    "changed-hit",
+    "wrong-revision",
+    "cancelled-query",
+    "unsupported-query-contract",
+    "corrupt-index",
+    "missing-context",
+    "UTF16-surrogate-boundaries"
+  ],
+  "scope": "Public authored algorithm controls plus separate frozen genuine source oracles; no rights/generation admission"
+}

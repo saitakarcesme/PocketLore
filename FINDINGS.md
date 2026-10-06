@@ -490,3 +490,19 @@ The preliminary 6,000-selection run transformed 5,771 originals and retained 229
 The revised producer completes 6,000 and 12,000 distinct general-importance selections from the same frozen 100,000-original prefix, reconstructing 5,771 and 11,671 inspection articles with all 229/329 refusals retained. Both source-bound audits and bounded host reader controls pass; process RSS peaks are 138,051,584 and 124,104,704 bytes. Actual old/new process-exit injection proves the repaired article/receipt atomicity and safe explicit resume. No independently eligible full articles are claimed.
 
 Serialized indexes are 1,749,483,520 and 3,117,662,208 bytes. This footprint does not establish 45/50 GB full-profile fit; body/context duplication requires a separate measured design improvement. A frozen parent launch specification is present but unqualified, with no builder-launched long job. External cgroup enforcement, full-size selection availability, complete source/rights/latest identities and all Android/full-profile/quality/physical/unseen gates remain open. See `docs/evidence/selected-source-production.md` and its self-contained final review JSON; the two nested selections are not 18,000 distinct articles.
+
+### Selected-source invariants, 2026-10-06
+
+The v3 host producer repairs revision-local conflicts and duplicate metadata equivalence, verifies selected duplicate bodies, and stores visible leaf text once with referenced enclosing contexts. Seven genuine frozen originals pass JSON/HTML/UTF16, mixed-license metadata, MathML/conditional-quotation context and actual Java parser controls. A verified article can be packaged through the unchanged strict v1 inspection format; packaging cancellation, replacement and corrupt-capsule controls deny false success. This is host preparation, not Android qualification or independent rights/support approval.
+
+The required invariant checker remains FAIL: revised 6,000/12,000 dedicated-kernel runs are unavailable, the namespace cannot reach the user bus, and inherited memory/swap/CPU are unlimited. Old 274021e scale and tiny-kernel receipts remain historical; none qualify revised code. Current seven-source engineering output has 305 structurally bound contexts and zero independently research-qualified contexts. Root full-source/budget/model/Android/physical/unseen gates remain open; the terminated emulator and protected 201 records were not touched.
+
+Repair 1 recovered the exact invariant implementation from b5d490c onto the checkpoint branch and verified its 593 canonical raw receipts. Fresh build passes; the required checker fails at read-only preflight because revised scale/kernel/rights/Android prerequisites remain absent. The unchanged seven-source suite was not replayed. Existing jobs, terminal emulator, data and acceptance gates were untouched.
+
+### Selected-source invariants repair 2
+
+Implemented external kernel/code/index receipt validation with an actual historical eight-source positive and 17 rejected mutations; no execution credit transfers to current code or 6,000/12,000 runs. Fresh Android build passes; aggregate invariant check remains FAIL for missing revised scale, independent context/rights and Android/full-profile evidence. No device or producer launch occurred.
+
+### Selected-source strategy: bounded complete-context inspection
+
+Recovered failed 8f261e2 source lineage. Added externally pinned shard/source/context verification and bounded original UTF16 windows, validated against five independent genuine oracles plus14 refusals. Build passes; full invariant gate remains FAIL for revised kernel-scale execution, rights/eligibility, Android and full distribution. No producer/device/orchestration changes or admission. Phrase-query prerequisite remains separate.

@@ -80,47 +80,62 @@ def inspect(raw):
  meta.update(history=d['url']+'?action=history',revision_url='https://en.wikipedia.org/w/index.php?oldid='+str(rev),source_admission_established=False,warning='Original source inspection only. No independent rights, factual support or currentness clearance.',projection='Inert structure; original JSON and HTML available offline; unsafe content is not executed.')
  return page,rev,source,rows,meta
 
-def build(inputs,out):
+def build(inputs,out,cancelled=lambda:False):
+ def check():
+  if cancelled():raise InterruptedError('Source packaging cancelled')
+ check()
  out=Path(out);require(not out.exists(),'immutable output already exists');out.mkdir(parents=True);db=sqlite3.connect(out/'index.sqlite');db.execute('PRAGMA user_version=523');db.execute('PRAGMA cache_size=-4096');db.execute('PRAGMA mmap_size=0')
  for sql in SCHEMA:db.execute(sql)
- dispositions=[];latest={}
- # Engineering inputs only: production latest/importance selection is a separate unqualified prerequisite.
- for seq,path in inputs:
-  require(Path(path).stat().st_size<=16000000,'original file bound');raw=Path(path).read_bytes();page=rev=None
-  try:
-   d=json.loads(raw);page=int(d['identifier']);rev=int(d['version']['identifier'])
-   old=latest.get(page)
-   if old and rev<old[0]:outcome='superseded';dispositions.append((seq,page,rev,outcome,sha(raw)));continue
-   if old and rev==old[0]:
-    require(sha(raw)==old[1],'conflicting equal revision');dispositions.append((seq,page,rev,'duplicate',sha(raw)));continue
-   if old:
-    for table in ('nodes','originals','html_chunks'):db.execute('DELETE FROM '+table+' WHERE article=?',(page,))
-    db.execute('DELETE FROM articles WHERE id=?',(page,))
-   latest[page]=(rev,sha(raw))
-   page,rev,source,rows,meta=inspect(raw)
-   db.execute('INSERT INTO articles VALUES(?,?,?,?,?,?,?)',(page,meta['name'],canonical(meta),sha(raw),sha(source.encode()),len(raw),u16(source)))
-   base=db.execute('SELECT coalesce(max(id),0) FROM nodes').fetchone()[0]
-   for n,parent,tag,attrs,a,b,text,kind in rows:db.execute('INSERT INTO nodes VALUES(?,?,?,?,?,?,?,?,?)',(base+n,page,base+parent if parent else 0,tag,attrs,a,b,text,kind))
-   for i in range(0,len(raw),32768):piece=raw[i:i+32768];db.execute('INSERT INTO originals VALUES(?,?,?,?)',(page,i//32768,piece,sha(piece)))
-   offset=0
-   for piece in chunks(source,8192):end=offset+u16(piece);db.execute('INSERT INTO html_chunks VALUES(?,?,?,?,?)',(page,offset,end,piece,sha(piece.encode())));offset=end
-   outcome='inspection-only'
-  except Exception as e:
-   outcome='retained-refusal:'+str(e)
-   if page is not None:
-    for table in ('nodes','originals','html_chunks'):db.execute('DELETE FROM '+table+' WHERE article=?',(page,))
-    db.execute('DELETE FROM articles WHERE id=?',(page,))
-  dispositions.append((seq,page,rev,outcome,sha(raw)));db.execute('INSERT INTO dispositions VALUES(?,?,?,?,?)',dispositions[-1]);db.commit()
- # Retain duplicate/superseded ledger rows too.
- for row in dispositions:db.execute('INSERT OR IGNORE INTO dispositions VALUES(?,?,?,?,?)',row)
- db.execute("INSERT INTO search(search) VALUES('rebuild')");db.commit();require(db.execute('PRAGMA integrity_check').fetchone()[0]=='ok','integrity')
- count=db.execute('SELECT count(*) FROM articles').fetchone()[0];nodes=db.execute('SELECT count(*) FROM nodes').fetchone()[0];schema=db.execute('SELECT name,sql FROM sqlite_master WHERE sql IS NOT NULL ORDER BY name').fetchall();db.close()
- require((out/'index.sqlite').stat().st_size<=67108864,'shard size bound; retained incomplete output');rawdb=(out/'index.sqlite').read_bytes();manifest={'format':FORMAT,'schema_version':523,'source_admission_established':False,'articles':count,'nodes':nodes,'db_bytes':len(rawdb),'db_sha256':sha(rawdb),'schema':schema,'input_records':len(inputs),'dispositions':dispositions,'license_policy':'Exact per-original URI retained; inspection-only, not independent rights clearance','limits':{'db_bytes':67108864,'node_units':4096,'html_window_units':8192,'depth':64},'producer_sha256':sha(Path(__file__).read_bytes()),'licenses':{k:sha((Path(__file__).resolve().parents[2]/'scale/wiki'/ (k+'.txt')).read_bytes()) for k in LICENSES}}
- (out/'manifest.json').write_text(canonical(manifest))
- with zipfile.ZipFile(out/'sources.plsource','w',compression=zipfile.ZIP_DEFLATED) as z:
-  z.write(out/'manifest.json','manifest.json');z.write(out/'index.sqlite','index.sqlite')
-  for k in LICENSES:z.write(Path(__file__).resolve().parents[2]/'scale/wiki'/(k+'.txt'),k+'.txt')
- return manifest
+ try:
+  dispositions=[];latest={}
+  # Engineering inputs only: production latest/importance selection is a separate unqualified prerequisite.
+  for seq,path in inputs:
+   check()
+   require(Path(path).stat().st_size<=16000000,'original file bound');raw=Path(path).read_bytes();page=rev=None
+   try:
+    d=json.loads(raw);page=int(d['identifier']);rev=int(d['version']['identifier'])
+    old=latest.get(page)
+    if old and rev<old[0]:outcome='superseded';dispositions.append((seq,page,rev,outcome,sha(raw)));continue
+    if old and rev==old[0]:
+     require(sha(raw)==old[1],'conflicting equal revision');dispositions.append((seq,page,rev,'duplicate',sha(raw)));continue
+    if old:
+     for table in ('nodes','originals','html_chunks'):db.execute('DELETE FROM '+table+' WHERE article=?',(page,))
+     db.execute('DELETE FROM articles WHERE id=?',(page,))
+    latest[page]=(rev,sha(raw))
+    page,rev,source,rows,meta=inspect(raw)
+    db.execute('INSERT INTO articles VALUES(?,?,?,?,?,?,?)',(page,meta['name'],canonical(meta),sha(raw),sha(source.encode()),len(raw),u16(source)))
+    base=db.execute('SELECT coalesce(max(id),0) FROM nodes').fetchone()[0]
+    for n,parent,tag,attrs,a,b,text,kind in rows:check();db.execute('INSERT INTO nodes VALUES(?,?,?,?,?,?,?,?,?)',(base+n,page,base+parent if parent else 0,tag,attrs,a,b,text,kind))
+    for i in range(0,len(raw),32768):check();piece=raw[i:i+32768];db.execute('INSERT INTO originals VALUES(?,?,?,?)',(page,i//32768,piece,sha(piece)))
+    offset=0
+    for piece in chunks(source,8192):check();end=offset+u16(piece);db.execute('INSERT INTO html_chunks VALUES(?,?,?,?,?)',(page,offset,end,piece,sha(piece.encode())));offset=end
+    outcome='inspection-only'
+   except InterruptedError:db.close();raise
+   except Exception as e:
+    outcome='retained-refusal:'+str(e)
+    if page is not None:
+     for table in ('nodes','originals','html_chunks'):db.execute('DELETE FROM '+table+' WHERE article=?',(page,))
+     db.execute('DELETE FROM articles WHERE id=?',(page,))
+   dispositions.append((seq,page,rev,outcome,sha(raw)));db.execute('INSERT INTO dispositions VALUES(?,?,?,?,?)',dispositions[-1]);db.commit()
+  check()
+  db.set_progress_handler(lambda:1 if cancelled() else 0,1000)
+  # Retain duplicate/superseded ledger rows too.
+  for row in dispositions:db.execute('INSERT OR IGNORE INTO dispositions VALUES(?,?,?,?,?)',row)
+  db.execute("INSERT INTO search(search) VALUES('rebuild')");db.commit();require(db.execute('PRAGMA integrity_check').fetchone()[0]=='ok','integrity')
+  count=db.execute('SELECT count(*) FROM articles').fetchone()[0];nodes=db.execute('SELECT count(*) FROM nodes').fetchone()[0];schema=db.execute('SELECT name,sql FROM sqlite_master WHERE sql IS NOT NULL ORDER BY name').fetchall();db.close()
+  require((out/'index.sqlite').stat().st_size<=67108864,'shard size bound; retained incomplete output');rawdb=(out/'index.sqlite').read_bytes();manifest={'format':FORMAT,'schema_version':523,'source_admission_established':False,'articles':count,'nodes':nodes,'db_bytes':len(rawdb),'db_sha256':sha(rawdb),'schema':schema,'input_records':len(inputs),'dispositions':dispositions,'license_policy':'Exact per-original URI retained; inspection-only, not independent rights clearance','limits':{'db_bytes':67108864,'node_units':4096,'html_window_units':8192,'depth':64},'producer_sha256':sha(Path(__file__).read_bytes()),'licenses':{k:sha((Path(__file__).resolve().parents[2]/'scale/wiki'/ (k+'.txt')).read_bytes()) for k in LICENSES}}
+  (out/'manifest.json').write_text(canonical(manifest))
+  with zipfile.ZipFile(out/'sources.plsource','w',compression=zipfile.ZIP_DEFLATED) as z:
+   files=[(out/'manifest.json','manifest.json'),(out/'index.sqlite','index.sqlite')]+[(Path(__file__).resolve().parents[2]/'scale/wiki'/(k+'.txt'),k+'.txt') for k in LICENSES]
+   for path,name in files:
+    with path.open('rb') as source,z.open(name,'w') as target:
+     while True:
+      check();chunk=source.read(65536)
+      if not chunk:break
+      target.write(chunk)
+  check();return manifest
+ finally:db.close()
+
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--packet',required=True);p.add_argument('--out',required=True);a=p.parse_args();packet=Path(a.packet);m=json.loads((packet/'manifest.json').read_text())
  for n,v in m.items():require(sha((packet/n).read_bytes())==v['sha256'],'input packet changed')

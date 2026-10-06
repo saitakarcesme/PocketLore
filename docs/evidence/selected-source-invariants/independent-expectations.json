@@ -1,0 +1,207 @@
+{
+  "scope": "Frozen independent expected invariants before production selector tuning; illustrative metadata controls, not invented public articles or executed acceptance results.",
+  "revision_cases": [
+    {
+      "case": "valid higher revision replaces blocked lower revision",
+      "rows": [
+        [
+          0,
+          7,
+          100,
+          "a",
+          "parse error"
+        ],
+        [
+          1,
+          7,
+          101,
+          "b",
+          null
+        ]
+      ],
+      "expected": {
+        "revision": 101,
+        "sequence": 1,
+        "sha": "b",
+        "blocked": false
+      },
+      "current": "blocked remains true"
+    },
+    {
+      "case": "higher valid revision supersedes lower same-revision conflict",
+      "rows": [
+        [
+          0,
+          7,
+          100,
+          "a",
+          null
+        ],
+        [
+          1,
+          7,
+          100,
+          "b",
+          null
+        ],
+        [
+          2,
+          7,
+          101,
+          "c",
+          null
+        ]
+      ],
+      "expected": {
+        "revision": 101,
+        "sequence": 2,
+        "sha": "c",
+        "blocked": false
+      },
+      "current": "blocked remains true"
+    },
+    {
+      "case": "highest revision invalid denies fallback",
+      "rows": [
+        [
+          0,
+          7,
+          100,
+          "a",
+          null
+        ],
+        [
+          1,
+          7,
+          101,
+          "b",
+          "parse error"
+        ]
+      ],
+      "expected": {
+        "revision": 101,
+        "blocked": true
+      }
+    },
+    {
+      "case": "same highest revision different hash conflicts",
+      "rows": [
+        [
+          0,
+          7,
+          101,
+          "a",
+          null
+        ],
+        [
+          1,
+          7,
+          101,
+          "b",
+          null
+        ]
+      ],
+      "expected": {
+        "revision": 101,
+        "blocked": true
+      }
+    },
+    {
+      "case": "equal-revision duplicate with inconsistent metadata fails closed",
+      "rows": [
+        [
+          0,
+          7,
+          101,
+          "a",
+          null
+        ],
+        [
+          1,
+          7,
+          101,
+          "a",
+          "parse error"
+        ]
+      ],
+      "expected": {
+        "revision": 101,
+        "blocked": true,
+        "reason": "Metadata disagreement must be resolved or denied"
+      },
+      "current": "second metadata error ignored"
+    },
+    {
+      "case": "older invalid revision cannot poison higher clean revision",
+      "rows": [
+        [
+          0,
+          7,
+          101,
+          "a",
+          null
+        ],
+        [
+          1,
+          7,
+          100,
+          "b",
+          "parse error"
+        ]
+      ],
+      "expected": {
+        "revision": 101,
+        "blocked": false
+      }
+    },
+    {
+      "case": "equal revision and identical metadata/hash duplicate",
+      "rows": [
+        [
+          0,
+          7,
+          101,
+          "a",
+          null
+        ],
+        [
+          1,
+          7,
+          101,
+          "a",
+          null
+        ]
+      ],
+      "expected": {
+        "revision": 101,
+        "sequence": 0,
+        "blocked": false,
+        "reason": "Deterministic first original binding, both dispositions preserved"
+      }
+    }
+  ],
+  "ranking": {
+    "frozen_file": "priority-2000000.sqlite",
+    "expected_receipt_sha": "2f1e6f9171154d2b315188ed421ee6370146a31d5c1aac768d5267c2f953261e",
+    "observed_priority": 6498498,
+    "observed_full": 2000000,
+    "ordering": "views DESC, page id ASC; NULL views last",
+    "requirements": [
+      "Bind exact receipt and live reverified file hash plus immutable file identity before use; receipt/stat agreement alone is not this review rehashing2.644GB.",
+      "Declare whether the target is top2M frozen legacy-eligible IDs intersected with latest original prefix, or topN eligible reconstructed originals using frozen ranking; do not silently backfill or reduce scope.",
+      "Preserve unranked/unavailable/excluded original dispositions and missing-view facts; ranking eligibility from older FineWiki is not new original-source qualification."
+    ]
+  },
+  "dispositions": [
+    "Every sequence through the frozen ceiling has exactly one explicit disposition with immutable member, offset, size, raw SHA and parsed identity or error.",
+    "Records and oversized are separate tables; join or merge their sequence ledgers. Missing/oversized identities cannot establish latest-page coverage and must deny qualification until explicitly resolved.",
+    "All duplicate originals retain provenance; conflicts attach to a page/revision rather than permanently poisoning later valid revisions.",
+    "Only complete verified reconstruction and rights/context gates can create admitted source; metadata-only selected rows remain engineering."
+  ],
+  "lifecycle": [
+    "Bind fixed committed prefix identity and stage inode/schema/producer identity; verify metadata immutability across detached batches and final ledger digest.",
+    "Check absolute cutoff before identity hashing, at each hash chunk and throughout SQL via SQLite progress callback; final join/index/hash/close must remain within externally enforced stop deadlines.",
+    "Acquire exclusive ownership before output creation; refuse active resume and races; retain partial outputs on failure without promotion.",
+    "Require fresh actual cgroup512MiB/swap0/CPU400percent/Tasks32, reserve100GiB and independent deadline before one launch; declarations in plan.json do not prove kernel enforcement."
+  ]
+}

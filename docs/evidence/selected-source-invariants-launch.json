@@ -1,0 +1,148 @@
+{
+  "status": "BLOCKED_PENDING_INDEPENDENT_CURRENT_CODE_KERNEL_SCALE_AND_RIGHTS_REVIEW",
+  "builder_long_launch_forbidden": true,
+  "created_epoch": 1791265471.5790308,
+  "frozen_code_root": "/home/isa/Projects/PocketLore/downloads/selected-source-invariants/frozen-candidate-v2",
+  "code": {
+    "tools/packs/selected-source/producer.py": "feff9992ea969f53ff9df35d8df668bf40e52d8655f8f9a8ded6444a3bbf928e",
+    "tools/packs/selected-source/read.py": "021c230f28adfc302efdf7f1232cd4ff49e1f29e22f2aac19ff5339c9fa8498b",
+    "tools/packs/selected-source/export_article.py": "438ea55f67c771fc3ab7016e314cfd3383dacf34bf7d1b46cd7a5223f5058d75",
+    "tools/packs/source-structure/produce.py": "af213fe284e777a61fa1ad9c3ba71da8784ed9f57682b29f198eec61293a5efe",
+    "tools/packs/complete-source/production.py": "1faa842a3da3ae1c8f4ae1a4ad41d3e8b60ded8872b3ce5ebb3668f3c27daec6",
+    "tools/packs/complete-source/compact.py": "3c0632516f55af2fa45855024e133fe3cb11fa5d60a55cdcd96cc58124290d54"
+  },
+  "format": "pocketlore-selected-structure-v3-provisional",
+  "selection": "Latest valid prefix revision joined by page ID to historical full=1 ranking population; views DESC/page ASC; no replacements for refused bodies. No research qualification from historical flag.",
+  "fixed_prefix_inclusive": 99999,
+  "rank_sha256": "2f1e6f9171154d2b315188ed421ee6370146a31d5c1aac768d5267c2f953261e",
+  "rank_bytes": 2644783104,
+  "short_scale_commands_sequential": [
+    {
+      "name": "selected-v3-6000",
+      "output": "/home/isa/Projects/PocketLore/downloads/selected-source-invariants/parent-v3-6000",
+      "argv": [
+        "python3",
+        "/home/isa/Projects/PocketLore/downloads/selected-source-invariants/frozen-candidate-v2/tools/packs/selected-source/producer.py",
+        "--mode",
+        "production",
+        "--stage",
+        "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite",
+        "--ranking",
+        "/home/isa/PocketLore-control/scale-workers/wiki/priority-2000000.sqlite",
+        "--ranking-sha256",
+        "2f1e6f9171154d2b315188ed421ee6370146a31d5c1aac768d5267c2f953261e",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/selected-source-invariants/parent-v3-6000",
+        "--through",
+        "99999",
+        "--count",
+        "6000",
+        "--seconds",
+        "1800",
+        "--cutoff",
+        "1791269954"
+      ],
+      "run_once": true
+    },
+    {
+      "name": "selected-v3-12000",
+      "output": "/home/isa/Projects/PocketLore/downloads/selected-source-invariants/parent-v3-12000",
+      "argv": [
+        "python3",
+        "/home/isa/Projects/PocketLore/downloads/selected-source-invariants/frozen-candidate-v2/tools/packs/selected-source/producer.py",
+        "--mode",
+        "production",
+        "--stage",
+        "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite",
+        "--ranking",
+        "/home/isa/PocketLore-control/scale-workers/wiki/priority-2000000.sqlite",
+        "--ranking-sha256",
+        "2f1e6f9171154d2b315188ed421ee6370146a31d5c1aac768d5267c2f953261e",
+        "--out",
+        "/home/isa/Projects/PocketLore/downloads/selected-source-invariants/parent-v3-12000",
+        "--through",
+        "99999",
+        "--count",
+        "12000",
+        "--seconds",
+        "1800",
+        "--cutoff",
+        "1791269954"
+      ],
+      "run_once": true
+    }
+  ],
+  "limits": {
+    "coordinators": 1,
+    "workers": 1,
+    "MemoryMax": 536870912,
+    "MemorySwapMax": 0,
+    "CPUQuota": "400%",
+    "TasksMax": 32,
+    "Restart": "no",
+    "RuntimeMaxSec": 1810,
+    "TimeoutStopSec": 10,
+    "KillMode": "control-group",
+    "host_free_reserve_bytes": 107374182400,
+    "work_cutoff_epoch": 1791269954,
+    "cleanup_deadline_epoch": 1791269964
+  },
+  "required_parent_receipts": [
+    "Fresh actual cgroup path, namespace/host PID mapping, memory.max/swap.max/cpu.max/pids.max before/during/after, memory.peak and events, no shared-runner substitution.",
+    "Exact source/rank/input identities, all command stdout/stderr/exit, final files logical/allocated byte inventory, unique owner+flock and retained failure status.",
+    "No automatic retries or adoption of active/finalized outputs. Commands must not start if remaining absolute cutoff cannot accommodate bounded cleanup.",
+    "Independent review of current source and new measured controls before any separate long production launch."
+  ],
+  "existing_tiny_kernel_probe": "274021e only; no execution credit to this code",
+  "current_kernel_preflight": "user bus unavailable; inherited shared limits unlimited",
+  "long_production_command": null,
+  "long_launch_reason": "Current 6000/12000 dedicated kernel proof, representation/storage and independent context/rights qualification are missing; no launch-authorized long command is emitted.",
+  "promotion": {
+    "source_admission_established": false,
+    "whole_source_identity_verified": false,
+    "android_qualified": false,
+    "eligible_full_source_floor": 1250000,
+    "target_full_articles": [
+      2000000,
+      3000000
+    ],
+    "original_bytes": 140267048582,
+    "original_md5": "2276dbb8db3bc93eabc90a505117e373",
+    "source_freshness": "March2025 is older than rival August2025",
+    "combined_installed_update_target_bytes": 45000000000,
+    "combined_hard_cap_bytes": 50000000000,
+    "device_ram_cap_bytes": 12000000000
+  },
+  "repair_1_recovery": {
+    "recovered_from": "b5d490c11ad9131f83593c1d8e5f1262e75b236a",
+    "producer_code_unchanged": true,
+    "launch_authorized": false,
+    "reason": "Fresh preflight still has no current-source scale outputs and no accessible dedicated kernel group; all prior launch and admission gates remain."
+  },
+  "repair_2_external_validation": {
+    "input": "downloads/selected-source-invariants/external-receipts.json",
+    "runs_required": [
+      6000,
+      12000
+    ],
+    "through": 99999,
+    "run_fields": [
+      "count",
+      "through",
+      "packet_root",
+      "manifest_sha256",
+      "index_path"
+    ],
+    "validator_sha256": "a2ff139c7d2c25d607bc1a061b94fd27c76a8faf096b1d627f4fb4b97ec880e4",
+    "scope": "Independently pinned kernel/code/actual index identities only. Independent source/context fidelity, rights and Android remain separate missing gates.",
+    "launch_authorized": false
+  },
+  "strategy_context_inspection": {
+    "reader_sha256": "28127967775ca8273fbe6ae36f7eadecb9902e827e67cc1eb57c1a11c87a4658",
+    "producer_unchanged": true,
+    "externally_pinned_index_required": true,
+    "maximum_verified_shard_bytes": 67108864,
+    "long_launch_authorized": false,
+    "scope": "Bounded host inspection only; separate Android and current producer scale qualification remain absent"
+  }
+}
