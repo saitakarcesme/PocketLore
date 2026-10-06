@@ -1,0 +1,12 @@
+{
+  "args": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5564",
+    "shell",
+    "sha256sum /data/app/~~s48qg9Jxbj8XB6hkD_pTCg==/org.pocketlore.app.test-5EKmE60kZtJQwvsYp0QoBg==/base.apk"
+  ],
+  "exit": 0,
+  "started_epoch": 1791253385.6462286,
+  "finished_epoch": 1791253385.6620324
+}

@@ -1,0 +1,1 @@
+{"command": ["systemctl", "--user", "show", "pocketlore-modern-emulator.service", "-p", "MainPID", "-p", "Restart", "-p", "NRestarts"], "exit": 1}

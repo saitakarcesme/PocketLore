@@ -32,7 +32,7 @@ final class NativePanel {
     NativePanel(Activity activity, LinearLayout layout, LinearLayout actions, TextView output, TextView answerStatus, java.util.function.Consumer<Boolean> busyChanged, java.util.function.Consumer<String> inspectCitation) {
         this.activity = activity; this.output = output; this.answerStatus = answerStatus; this.busyChanged = busyChanged; this.inspectCitation=inspectCitation;
         state = new TextView(activity);
-        state.setText("Experimental local generation · Import a local GGUF (up to 2048 MiB). Small models may give incorrect answers. Inspect the retrieved sources.");
+        state.setText("Experimental local generation · Import a pinned local GGUF (default limit 2048 MiB; exact experimental 4B profile available). Small models may give incorrect answers. Inspect the retrieved sources.");
         layout.addView(state);
         model = new Button(activity); model.setText("Import local GGUF"); model.setContentDescription("Import local model"); layout.addView(model);
         catalog=new Button(activity);catalog.setText("Model catalog and selection");layout.addView(catalog);catalog.setOnClickListener(v->showCatalog());
@@ -52,7 +52,7 @@ final class NativePanel {
             }).show());
         Button profile=new Button(activity);profile.setText("Model compatibility and limits");layout.addView(profile);
         profile.setOnClickListener(v->new AlertDialog.Builder(activity).setTitle("Current bounded CPU profile")
-            .setMessage("GGUF file and native model: at most 2048 MiB. One session; 2048-token context; FP16 KV at most 768 MiB; compute buffers at most 1024 MiB; two CPU threads. Disk reserve: 256 MiB. These component caps do not prove total phone memory safety.\n\n4B, 7–8B and MoE: no measured admission profile is available. File size alone does not establish compatibility. A larger profile requires exact model hash/quantization, device and OS, context, native KV/compute peaks, Java memory, OS reserve and sustained measurements within 12 GB RAM and 50 GB installed assets. Host measurements are not phone proof.")
+            .setMessage("GGUF file and native model: at most 2048 MiB. One session; 2048-token context; FP16 KV at most 768 MiB; compute buffers at most 1024 MiB; two CPU threads. Disk reserve: 256 MiB. These component caps do not prove total phone memory safety.\n\nOnly the exact pinned Qwen3 4B Q4_K_M has an experimental larger-file profile, checked against measured memory and a 1 GiB OS reserve. All other larger models remain denied. General answer quality and physical-device suitability remain unqualified. File size alone does not establish compatibility. A larger profile requires exact model hash/quantization, device and OS, context, native KV/compute peaks, Java memory, OS reserve and sustained measurements within 12 GB RAM and 50 GB installed assets. Host measurements are not phone proof.")
             .setPositiveButton("Close",null).show());
         if(ImportRecovery.pending(activity.getFilesDir(),"model"))state.setText("Previous model import interrupted or failed. Saved model retained; select the original file to restart verification.");
         // Only the serial import worker writes this app-owned staging path.
@@ -136,7 +136,7 @@ final class NativePanel {
         try (Cursor c = activity.getContentResolver().query(uri, new String[]{OpenableColumns.SIZE}, null, null, null)) {
             if (c != null && c.moveToFirst() && !c.isNull(0)) size = c.getLong(0);
         } catch (Exception e) { state.setText("Cannot inspect local file: " + e.getMessage()); return; }
-        if (size < 4 || size > ModelImport.MAX_BYTES) { state.setText("Choose a local GGUF with a known size, at most 2048 MiB."); return; }
+        if (size < 4 || (size > ModelImport.MAX_BYTES && size != PinnedModelProfile.BYTES)) { state.setText("Choose a known-size GGUF within the default limit or the exact pinned 4B profile."); return; }
         final long bytes = size;
         new AlertDialog.Builder(activity).setTitle("Copy model to app storage?")
             .setMessage("Required additional storage: " + bytes + " bytes plus a 256 MiB reserve. Only exact pinned catalog models are admitted. Native load is checked before changing selection. The original and previous saved model remain. Total app assets must fit the 50 GB hard limit (45 GB target).")

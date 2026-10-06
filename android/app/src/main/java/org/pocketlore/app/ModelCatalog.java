@@ -17,7 +17,8 @@ final class ModelCatalog {
     static final Spec[] SPECS={
         new Spec("Qwen2.5 0.5B Q4_K_M · demo baseline","Qwen/Qwen2.5-0.5B-Instruct-GGUF","9217f5db79a29953eb74d5343926648285ec7e67","qwen2.5-0.5b-instruct-q4_k_m.gguf","74a4da8c9fdbcd15bd1f6d01d621410d31c6fc00986f5eb687824e7b93d7a9db",491400032L),
         new Spec("Qwen2.5 1.5B Q4_K_M · optional experiment","Qwen/Qwen2.5-1.5B-Instruct-GGUF","91cad51170dc346986eccefdc2dd33a9da36ead9","qwen2.5-1.5b-instruct-q4_k_m.gguf","6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",1117320736L),
-        new Spec("Qwen3 1.7B Q8_0 · optional experiment","Qwen/Qwen3-1.7B-GGUF","90862c4b9d2787eaed51d12237eafdfe7c5f6077","Qwen3-1.7B-Q8_0.gguf","061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a",1834426016L)
+        new Spec("Qwen3 1.7B Q8_0 · optional experiment","Qwen/Qwen3-1.7B-GGUF","90862c4b9d2787eaed51d12237eafdfe7c5f6077","Qwen3-1.7B-Q8_0.gguf","061b54daade076b5d3362dac252678d17da8c68f07560be70818cace6590cb1a",1834426016L),
+        new Spec("Qwen3 4B Q4_K_M · pinned experimental profile","Qwen/Qwen3-4B-GGUF","bc640142c66e1fdd12af0bd68f40445458f3869b","Qwen3-4B-Q4_K_M.gguf",PinnedModelProfile.SHA256,PinnedModelProfile.BYTES)
     };
     final File files,root,legacy;File active;
     ModelCatalog(File files)throws IOException {
@@ -37,7 +38,7 @@ final class ModelCatalog {
     }
     static Spec identify(String hash,long size)throws IOException {for(Spec s:SPECS)if(s.hash.equals(hash)&&s.bytes==size)return s;throw new IOException("Model is not in the pinned compatible catalog; saved model unchanged");}
     static long admit(long retained,long incoming,long available)throws IOException {
-        if(incoming<0||incoming>ModelImport.MAX_BYTES||retained<0||retained>HARD-2*incoming-ResourceStorage.RESERVE_BYTES)throw new IOException("Model transaction exceeds the 50 GB hard limit including reserve");
+        if(incoming<0||(incoming>ModelImport.MAX_BYTES&&incoming!=PinnedModelProfile.BYTES)||retained<0||retained>HARD-2*incoming-ResourceStorage.RESERVE_BYTES)throw new IOException("Model transaction exceeds the 50 GB hard limit including reserve");
         ResourceStorage.requireSpace(incoming,available);return retained+2*incoming+ResourceStorage.RESERVE_BYTES;
     }
     Spec verify(File file,BooleanSupplier cancel)throws Exception {

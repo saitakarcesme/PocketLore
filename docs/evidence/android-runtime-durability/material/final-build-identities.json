@@ -1,0 +1,16 @@
+{
+  "production": {
+    "sha256": "c02c03899d8b64ee097c5034e6222b618946c0af21cc050f2d2d58e2546b9cee",
+    "bytes": 22768414,
+    "ignored_archive": "downloads/android-runtime-durability/material-build/final-apks/production-c02c03899d8b64ee097c5034e6222b618946c0af21cc050f2d2d58e2546b9cee.apk"
+  },
+  "instrumentation": {
+    "sha256": "4c308e070f4f8c73a7f02642cf616e116c1e53f391f84b977d00db2a1f633bb7",
+    "bytes": 655560,
+    "ignored_archive": "downloads/android-runtime-durability/material-build/final-apks/instrumentation-4c308e070f4f8c73a7f02642cf616e116c1e53f391f84b977d00db2a1f633bb7.apk"
+  },
+  "source_manifest": "downloads/android-runtime-durability/material-20261006T022617Z/source-inputs.json",
+  "source_manifest_sha256": "614ccc535378bedd34a5beb366b405ef6b0f5d1d7403cbb55b45419dd9e02f6d",
+  "build_log_sha256": "7809d8c6c78438b3601561a64fe8aaee0aabbd67ccf2d8cf4ecabda489f586dd",
+  "scope": "Final corrected test APK compiled, not installed/executed; production APK already installed during preceding failed transport invocation."
+}

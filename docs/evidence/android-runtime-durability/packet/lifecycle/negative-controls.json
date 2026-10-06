@@ -1,0 +1,13 @@
+{
+  "constructed_validation_controls_not_device_success": [
+    "package_present",
+    "apk_actual",
+    "boot_after",
+    "rows_after",
+    "catalog_verified",
+    "executed_source_hash",
+    "logical_bytes",
+    "owned_host_process_continuity",
+    "provider_inventory_known"
+  ]
+}

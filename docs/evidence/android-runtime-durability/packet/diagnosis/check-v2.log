@@ -1,0 +1,12 @@
+/home/isa/Projects/PocketLore/downloads/android-runtime-durability/check-20261006T014723Z
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/check.py", line 49, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/check.py", line 48, in main
+    (out/'negative-controls.json').write_text(json.dumps({'constructed_validation_controls_not_device_success':controls},indent=2));assertions(result);print('PASS full runtime durability')
+                                                                                                                                    ~~~~~~~~~~^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/check.py", line 13, in assertions
+    assert d['owned_host_process_continuity'],'host process identity unavailable'
+           ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: host process identity unavailable

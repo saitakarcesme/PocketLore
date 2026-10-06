@@ -1,0 +1,74 @@
+{
+  "at": 1791250122.8420339,
+  "run": "/home/isa/Projects/PocketLore/downloads/notebook-capacity/20261006T012533Z-0c8916",
+  "classification": "progress",
+  "task_accepted": false,
+  "remaining_failure": "Full checker failed collecting cold-production-cold-nodes.txt; terminal checker failure retained, not waived.",
+  "scope": "Actual isolated Android and protected main-package notebook evidence only, not rival or physical superiority.",
+  "isolated-report.json": {
+    "sha256": "e4f6ccdc5a5eb8d59af453d4c8175c775f494f06f55de65e0b64e7a6c8a81347",
+    "status": "PASS",
+    "checks_count": 2488,
+    "checks_tail": [
+      "source-detail screenshot",
+      "return retains selection/filter",
+      "full notebook picker opened",
+      "export-picker screenshot",
+      "full notebook picker cancelled",
+      "new full snapshot prepared after filtering",
+      "filtered UI export is all current records",
+      "stalled export opened",
+      "stalled export cancelled",
+      "no partial success claim",
+      "provider failure returned",
+      "provider failure honest",
+      "provider retry completed",
+      "provider retry exact full export"
+    ],
+    "new_id": null,
+    "original_count": null,
+    "after_count": null,
+    "original_fingerprints_sha256": null,
+    "pss_kib": 61013
+  },
+  "negative-oracle-report.json": {
+    "sha256": "4e157e1aff12deea00e7ce8a97f4cf2c1d67b3367e6a5026fe3c19a8233a93eb",
+    "status": "FAIL",
+    "checks_count": 5,
+    "checks_tail": [
+      "unique evidence directory",
+      "isolated package required",
+      "fixture hash",
+      "isolated fixture database absent",
+      "transactional v1 upgrade"
+    ],
+    "new_id": null,
+    "original_count": null,
+    "after_count": null,
+    "original_fingerprints_sha256": null,
+    "pss_kib": null
+  },
+  "live-report.json": {
+    "sha256": "168f199f160819ba5bb0bfd504ebd7c051544aa1ba9614b09bd4ce5c0add2d1c",
+    "status": "PASS",
+    "checks_count": 11,
+    "checks_tail": [
+      "unique evidence directory",
+      "production package",
+      "protected production has 200 records",
+      "existing real source snapshot",
+      "real save201 source navigation",
+      "new snapshot opened",
+      "literal saved snapshot exact",
+      "production-201 screenshot",
+      "all original IDs/fields byte-identical",
+      "genuine 201st retained record",
+      "reopened source provenance"
+    ],
+    "new_id": 201,
+    "original_count": 200,
+    "after_count": 201,
+    "original_fingerprints_sha256": "376db80455fff488207429ae888f6130466f303b045e3d598453c791e4c328f4",
+    "pss_kib": null
+  }
+}

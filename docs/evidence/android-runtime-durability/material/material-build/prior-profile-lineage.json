@@ -1,0 +1,26 @@
+{
+  "reviewed_commits": [
+    "59cb6e3",
+    "4a70ec1"
+  ],
+  "recovered_runtime_notebook_commit": "b6d70bd",
+  "default_limits_preserved": true,
+  "selected_model_pin_unchanged": true,
+  "optional_AVX_recovery": false,
+  "reason": "Baseline CPU path is sufficient for load-only qualification; stale optional libraries are excluded from packaging, not deleted.",
+  "files": {
+    "tools/evaluation/model-capability/qwen3-4b.json": {
+      "sha256": "bc671035f52e4381e79beffcbe56f49fab3b02212eee7903f08d7378870a957f",
+      "bytes": 601
+    },
+    "tools/evaluation/model-capability/licenses/qwen3-4b-LICENSE.txt": {
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "bytes": 11343
+    },
+    "tools/runtime/pins.env": {
+      "sha256": "1cb0aa2695c803496945dac1e9a3b7fadcf63e33b5b1434dbe70a284b973840a",
+      "bytes": 316
+    }
+  },
+  "quality": "All task500/520 verifier and generation failures remain open. No generated tokens are evaluated."
+}

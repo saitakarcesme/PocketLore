@@ -19,8 +19,8 @@ constexpr uint64_t pocketloreModelBufferLimit = pocketloreModelLimit;
 #endif
 
 // Shared by simulated-buffer preflight and post-allocation accounting.
-inline void requireNativeBudget(uint64_t model,uint64_t kv,uint64_t compute) {
-    if(model>pocketloreModelBufferLimit || kv>805306368ULL || compute>1073741824ULL)
+inline void requireNativeBudget(uint64_t model,uint64_t kv,uint64_t compute,bool pinned=false) {
+    if(model>(pinned?4600000000ULL:pocketloreModelBufferLimit) || kv>805306368ULL || compute>1073741824ULL)
         throw std::runtime_error("Runtime buffers exceed model/KV/compute resource budget; use a smaller model");
 }
 
@@ -29,3 +29,12 @@ constexpr int pocketloreContextTokens=4096, pocketloreOutputTokens=512;
 #else
 constexpr int pocketloreContextTokens=2048, pocketloreOutputTokens=256;
 #endif
+
+// Known-profile components are checked first; all sums then remain far below uint64 overflow.
+inline void requirePinnedMemory(uint64_t model,uint64_t kv,uint64_t compute,uint64_t file,uint64_t available,uint64_t total) {
+    requireNativeBudget(model,kv,compute,true);
+    if(file!=2497280256ULL)throw std::runtime_error("Pinned profile file size mismatch");
+    const uint64_t peak=model+kv+compute+file+536870912ULL;
+    if(total>12000000000ULL||total<peak+1073741824ULL||available<peak+1073741824ULL||peak>12000000000ULL-1073741824ULL)
+        throw std::runtime_error("Pinned profile exceeds measured memory with 1 GiB OS reserve");
+}

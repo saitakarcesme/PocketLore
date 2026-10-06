@@ -1,0 +1,14 @@
+/home/isa/Projects/PocketLore/downloads/android-runtime-durability/check-20261006T014602Z
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/check.py", line 49, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/check.py", line 33, in main
+    raw=cmd(phase,ADB+['shell','am','instrument','-r','-w','-e','run',run,'-e','phase',phase,'-e','source_hash',source_hash,PKG+'.test/org.pocketlore.app.RuntimeDurabilityInstrumentation'],180).decode();line=next((x for x in raw.splitlines() if x.startswith('INSTRUMENTATION_RESULT: receipt=')),None);assert line,'Missing raw receipt';r=json.loads(line.split('=',1)[1]);(out/(phase+'.json')).write_text(json.dumps(r,indent=2));phases.append(r);assert r['status']=='PASS',r.get('error');assert r['run']==run and r['source_hash']==source_hash and r['row_hashes']==wanted
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^^^^^^^^^^^^^^^^^^^
+AssertionError: java.lang.AssertionError: bounded asynchronous completion
+	at org.pocketlore.app.RuntimeDurabilityInstrumentation.check(RuntimeDurabilityInstrumentation.java:6)
+	at org.pocketlore.app.RuntimeDurabilityInstrumentation.await(RuntimeDurabilityInstrumentation.java:7)
+	at org.pocketlore.app.RuntimeDurabilityInstrumentation.onStart(RuntimeDurabilityInstrumentation.java:17)
+	at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:2701)
+

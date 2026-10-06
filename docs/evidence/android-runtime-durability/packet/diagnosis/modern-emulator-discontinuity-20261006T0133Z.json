@@ -1,0 +1,62 @@
+{
+  "at": 1791250387.0328803,
+  "unit": "pocketlore-modern-emulator.service",
+  "pid": 2173729,
+  "unit_definition": "# /home/isa/.config/systemd/user/pocketlore-modern-emulator.service\n[Unit]\nDescription=PocketLore Android 17 Pixel 10 Pro visual and compatibility emulator\n[Service]\nEnvironment=DISPLAY=:0\nEnvironment=WAYLAND_DISPLAY=wayland-1\nEnvironment=XDG_RUNTIME_DIR=/run/user/1000\nType=simple\nEnvironment=ANDROID_HOME=/home/isa/PocketLore-control/runtime/modern-android/sdk\nEnvironment=ANDROID_USER_HOME=/home/isa/PocketLore-control/runtime/modern-android/user\nEnvironment=ANDROID_AVD_HOME=/home/isa/PocketLore-control/runtime/modern-android/user/avd\nExecStart=/home/isa/PocketLore-control/runtime/modern-android/sdk/emulator/emulator -avd pocketlore_pixel10pro_api37 -port 5564 -no-window -no-audio -no-snapshot -no-boot-anim -gpu host -memory 11264 -cores 4\nRestart=on-failure\nRestartSec=15\nMemoryMax=14G\nCPUQuota=400%\nTasksMax=512\nStandardOutput=append:/home/isa/PocketLore-control/runtime/modern-android/emulator.log\nStandardError=append:/home/isa/PocketLore-control/runtime/modern-android/emulator.log\n[Install]\nWantedBy=default.target\n\n# /home/isa/.config/systemd/user/pocketlore-modern-emulator.service.d/overnight-bounded-recovery.conf\n[Unit]\nStartLimitIntervalSec=3600\nStartLimitBurst=3\n[Service]\nRestart=on-failure\nRestartSec=15\nTimeoutStopSec=25\n",
+  "image_fds": [
+    [
+      "8",
+      "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/multiinstance.lock"
+    ],
+    [
+      "104",
+      "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/cache.img.qcow2"
+    ],
+    [
+      "105",
+      "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/cache.img.qcow2"
+    ],
+    [
+      "106",
+      "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/cache.img"
+    ],
+    [
+      "107",
+      "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/cache.img"
+    ],
+    [
+      "108",
+      "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/userdata-qemu.img.qcow2"
+    ],
+    [
+      "109",
+      "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/userdata-qemu.img.qcow2"
+    ],
+    [
+      "110",
+      "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/userdata-qemu.img"
+    ],
+    [
+      "111",
+      "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/userdata-qemu.img"
+    ],
+    [
+      "112",
+      "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/encryptionkey.img.qcow2"
+    ],
+    [
+      "113",
+      "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/encryptionkey.img.qcow2"
+    ],
+    [
+      "114",
+      "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/encryptionkey.img"
+    ],
+    [
+      "115",
+      "/home/isa/PocketLore-control/runtime/modern-android/user/avd/pocketlore_pixel10pro_api37.avd/encryptionkey.img"
+    ]
+  ],
+  "cmdline": "/home/isa/PocketLore-control/runtime/modern-android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -avd pocketlore_pixel10pro_api37 -port 5564 -no-window -no-audio -no-snapshot -no-boot-anim -gpu host -memory 11264 -cores 4 ",
+  "finding": "NRestarts3; main package absent after automatic emulator SEGV restart; investigate overlay durability before reinstall/data restoration or further Android work."
+}

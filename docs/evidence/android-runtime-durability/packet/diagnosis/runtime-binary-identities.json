@@ -1,0 +1,28 @@
+{
+  "qemu/linux-x86_64/qemu-system-x86_64-headless": {
+    "bytes": 24433280,
+    "sha256": "23b788a3b87b3228558924de4cb5477e2818b3b9415d6ce27d6438cf3e462b98"
+  },
+  "lib64/libgfxstream_backend.so": {
+    "bytes": 15726704,
+    "sha256": "56be2b2c9db645d8277893cc7919b16f2862d72f6b98831ac60f334ef08c6d32"
+  },
+  "package.xml": {
+    "bytes": 18597,
+    "sha256": "af0a044e5fc70a53f74dd4f2c528972e38b72a49b8e793f1249c903957e306ec"
+  },
+  "emulator-version.txt": {
+    "exit": 0,
+    "command": [
+      "/home/isa/PocketLore-control/runtime/modern-android/sdk/emulator/emulator",
+      "-version"
+    ]
+  },
+  "emulator-gpu-help.txt": {
+    "exit": 0,
+    "command": [
+      "/home/isa/PocketLore-control/runtime/modern-android/sdk/emulator/emulator",
+      "-help-gpu"
+    ]
+  }
+}

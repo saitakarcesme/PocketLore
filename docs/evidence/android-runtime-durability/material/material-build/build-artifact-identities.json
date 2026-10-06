@@ -1,0 +1,20 @@
+{
+  "production_apk": {
+    "sha256": "c02c03899d8b64ee097c5034e6222b618946c0af21cc050f2d2d58e2546b9cee",
+    "bytes": 22768414
+  },
+  "instrumentation_apk": {
+    "sha256": "d664cb45d75c17c14d05cea2f3a31daa8c7dab4319da035794ad504149754451"
+  },
+  "build_configuration": {
+    "gradle_workers": 2,
+    "gradle_heap": "2GiB",
+    "native_build_jobs": 2,
+    "measured_combined_build_peak": null
+  },
+  "not_claimed": [
+    "physical compatibility",
+    "general answer support",
+    "sustained renderer mitigation"
+  ]
+}

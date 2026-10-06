@@ -1,0 +1,7 @@
+{
+  "status": "FAIL",
+  "error": "Traceback (most recent call last):\n  File \"/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/check.py\", line 38, in main\n    cmd('local-service-unavailable',['systemctl','--user','show','pocketlore-modern-emulator.service','-p','MainPID','-p','Restart','-p','NRestarts'],allow_failure=True)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/witness.py\", line 27, in request\n    reply=response.read_bytes();(out/(phase+'-witness.response.json')).write_bytes(reply);result=json.loads(reply);validate(data,result,raw)\n                                                                                                                   ~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/witness.py\", line 8, in validate\n    assert response['schema']==1 and response['status'] in ('OK','PASS','ok'), 'Witness status'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Witness status\n",
+  "android_start_epoch": null,
+  "android_end_epoch": null,
+  "at": 1791252944.966279
+}

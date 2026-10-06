@@ -1,0 +1,1 @@
+{"command": ["/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb", "-s", "emulator-5564", "shell", "su 0 sh -c 'grep -F org.pocketlore.app /data/system/users/0/package-restrictions.xml'"], "exit": 0, "sha256": "c5755e3d28edc8f93d9cf289567d52fb139fda8881f3efe940518657b44c76aa"}

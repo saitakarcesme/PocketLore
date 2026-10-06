@@ -1,0 +1,11 @@
+{
+  "source_commit": "eb9800c",
+  "reason": "Retained device database is schema2; recover exact previously compiled notebook-compatible source, not schema1 downgrade",
+  "paths": [
+    "android/app/src/main/java/org/pocketlore/app/MainActivity.java",
+    "android/app/src/main/java/org/pocketlore/app/NotebookActivity.java",
+    "android/app/src/main/java/org/pocketlore/app/NotebookShareLease.java",
+    "android/app/src/main/java/org/pocketlore/app/NotebookStore.java",
+    "android/app/src/main/java/org/pocketlore/app/SavedActivity.java"
+  ]
+}

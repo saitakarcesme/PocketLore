@@ -1,0 +1,1 @@
+{"command": ["/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb", "-s", "emulator-5564", "shell", "su 0 sh -c 'find /data/user/0/org.pocketlore.app -type f -exec sha256sum {} \\;'"], "exit": 0, "stderr": ""}

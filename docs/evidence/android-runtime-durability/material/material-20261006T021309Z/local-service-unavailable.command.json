@@ -1,0 +1,17 @@
+{
+  "args": [
+    "systemctl",
+    "--user",
+    "show",
+    "pocketlore-modern-emulator.service",
+    "-p",
+    "MainPID",
+    "-p",
+    "Restart",
+    "-p",
+    "NRestarts"
+  ],
+  "exit": 1,
+  "started_epoch": 1791252789.9442563,
+  "finished_epoch": 1791252789.9467123
+}

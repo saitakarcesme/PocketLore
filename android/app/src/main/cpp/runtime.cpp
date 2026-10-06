@@ -11,6 +11,8 @@
 #include <unordered_map>
 #include <vector>
 #include <sys/stat.h>
+#include <fstream>
+#include <sstream>
 
 namespace {
 std::atomic<int> residentCount{0};
@@ -19,6 +21,7 @@ struct Session {
     std::atomic<bool> cancelled{false};
     std::mutex operation;
     llama_model *model = nullptr;
+    bool pinnedProfile=false;
     ~Session() { if (model) llama_model_free(model); --residentCount; }
 };
 std::mutex registryMutex;
@@ -67,7 +70,7 @@ std::string bytes(JNIEnv *env, jbyteArray value) {
 }
 }
 extern "C" JNIEXPORT jstring JNICALL Java_org_pocketlore_app_NativeRuntime_identity(JNIEnv *env, jclass) {
-    std::string identity="llama.cpp " POCKETLORE_REVISION "; CPU; context="+std::to_string(pocketloreContextTokens)+"; sequences=1; KV=f16; sessions=1; threads="+std::to_string(runtimeThreads())+"; model-budget="+std::to_string(pocketloreModelLimit)+"; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42";
+    std::string identity="llama.cpp " POCKETLORE_REVISION "; CPU; context="+std::to_string(pocketloreContextTokens)+"; sequences=1; KV=f16; sessions=1; threads="+std::to_string(runtimeThreads())+"; model-budget="+std::to_string(pocketloreModelLimit)+"; pinned-4B=exact-SHA/2497280256/model-buffer4600000000/OS-reserve1073741824; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42";
 #if defined(POCKETLORE_HOST_SCREEN) && !defined(__ANDROID__)
     identity+="; HOST SCREEN native CPU ISA; not Android admission";
 #if defined(POCKETLORE_SCALE_BUFFER_V2)
@@ -87,6 +90,9 @@ extern "C" JNIEXPORT jlong JNICALL Java_org_pocketlore_app_NativeRuntime_create(
         return id;
     } catch (const std::exception &e) { fail(env, e); return 0; }
 }
+extern "C" JNIEXPORT jboolean JNICALL Java_org_pocketlore_app_NativeRuntime_cancelled(JNIEnv *env,jclass,jlong id) {
+    try{return get(id)->cancelled.load();}catch(const std::exception &e){fail(env,e);return true;}
+}
 extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_load(JNIEnv *env, jclass, jlong id, jbyteArray path) {
     try {
         auto s = get(id);
@@ -100,7 +106,22 @@ extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_load(JNI
         const auto filename = bytes(env, path);
         if (filename.find('\0') != std::string::npos) throw std::runtime_error("Invalid model path");
         struct stat fileInfo{};
-        if (stat(filename.c_str(), &fileInfo) != 0 || !S_ISREG(fileInfo.st_mode) || fileInfo.st_size < 4 || static_cast<uint64_t>(fileInfo.st_size) > pocketloreModelLimit) throw std::runtime_error("Model file must be regular and within the compiled admission limit");
+        if (stat(filename.c_str(), &fileInfo) != 0 || !S_ISREG(fileInfo.st_mode) || fileInfo.st_size < 4) throw std::runtime_error("Model file must be regular");
+        s->pinnedProfile=false;
+        if(static_cast<uint64_t>(fileInfo.st_size)>pocketloreModelLimit){
+#ifdef __ANDROID__
+            if(fileInfo.st_size!=2497280256LL)throw std::runtime_error("Unknown model exceeds default file admission");
+            auto type=env->FindClass("org/pocketlore/app/NativeRuntime");
+            auto verify=env->GetStaticMethodID(type,"verifyLargeProfile","([BJ)Z");
+            bool verified=verify&&env->CallStaticBooleanMethod(type,verify,path,id);
+            env->DeleteLocalRef(type);
+            if(env->ExceptionCheck())return;
+            if(!verified)throw std::runtime_error("Large model does not match pinned SHA256 profile");
+            s->pinnedProfile=true;
+#else
+            throw std::runtime_error("Model file exceeds compiled admission limit");
+#endif
+        }
         PhaseScope observation(1);
         // The pinned upstream no_alloc model propagates simulated allocation into its context.
         // Metadata/graph bookkeeping still allocates; this is not protection from all OOMs.
@@ -117,7 +138,15 @@ extern "C" JNIEXPORT void JNICALL Java_org_pocketlore_app_NativeRuntime_load(JNI
             uint64_t model=0,kv=0,compute=0;
             for(const auto &entry:llama_get_memory_breakdown(simulated.get())){model+=entry.second.model;kv+=entry.second.context;compute+=entry.second.compute;}
             estimatedModel=model;estimatedKV=kv;estimatedCompute=compute;
-            requireNativeBudget(model,kv,compute);
+            requireNativeBudget(model,kv,compute,s->pinnedProfile);
+#ifdef __ANDROID__
+            if(s->pinnedProfile){
+                std::ifstream info("/proc/meminfo");std::string line;uint64_t available=0,total=0;
+                while(std::getline(info,line)){std::istringstream row(line);std::string key;uint64_t value=0;row>>key>>value;if(key=="MemAvailable:")available=value*1024;if(key=="MemTotal:")total=value*1024;}
+                // Count file mmap AND simulated transformed buffers, KV/compute, app margin.
+                requirePinnedMemory(model,kv,compute,static_cast<uint64_t>(fileInfo.st_size),available,total);
+            }
+#endif
         }
         if(s->cancelled)throw std::runtime_error("Cancelled");
         phase=2;
@@ -183,7 +212,7 @@ static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobje
         if (llama_tokenize(vocab, text.data(), text.size(), tokens.data(), count, true, chat) != count)
             throw std::runtime_error("Tokenization failed");
         PhaseScope observation(3);promptTokens=count;
-        requireNativeBudget(estimatedModel,estimatedKV,estimatedCompute);
+        requireNativeBudget(estimatedModel,estimatedKV,estimatedCompute,s->pinnedProfile);
         auto params = contextParams();
         params.abort_callback = aborted; params.abort_callback_data = s.get();
         using Context = std::unique_ptr<llama_context, decltype(&releaseContext)>;
@@ -195,7 +224,7 @@ static jint generate(JNIEnv *env, jlong id, jbyteArray prompt, jint limit, jobje
         for(const auto &entry:llama_get_memory_breakdown(ctx.get())){modelBytes+=entry.second.model;kvBytes+=entry.second.context;workBytes+=entry.second.compute;}
         modelBufferBytes=modelBytes;contextBytes=kvBytes;computeBytes=workBytes;
         // Retain actual accounting as a second screen after simulated preflight.
-        requireNativeBudget(modelBytes,kvBytes,workBytes);
+        requireNativeBudget(modelBytes,kvBytes,workBytes,s->pinnedProfile);
         using Sampler = std::unique_ptr<llama_sampler, decltype(&llama_sampler_free)>;
         Sampler sampler(nullptr,llama_sampler_free);
         if(sources>0) {
@@ -301,4 +330,17 @@ extern "C" JNIEXPORT jlongArray JNICALL Java_org_pocketlore_app_NativeRuntime_re
 extern "C" JNIEXPORT jlongArray JNICALL Java_org_pocketlore_app_NativeRuntime_operationState(JNIEnv *env,jclass) {
     jlong values[]={phase.load(),static_cast<jlong>(loadCallbacks.load()),static_cast<jlong>(abortCallbacks.load()),static_cast<jlong>(promptTokens.load()),static_cast<jlong>(contextAttempts.load()),static_cast<jlong>(allocationFailures.load()),static_cast<jlong>(estimatedModel.load()),static_cast<jlong>(estimatedKV.load()),static_cast<jlong>(estimatedCompute.load())};
     auto result=env->NewLongArray(9);if(result)env->SetLongArrayRegion(result,0,9,values);return result;
+}
+
+extern "C" JNIEXPORT jstring JNICALL Java_org_pocketlore_app_NativeRuntime_loadedModelIdentity(JNIEnv *env,jclass,jlong id) {
+    try {
+        auto s=get(id);std::lock_guard<std::mutex> lock(s->operation);
+        if(!s->model)throw std::runtime_error("No loaded model");
+        char architecture[128]={},description[256]={},fileType[64]={};
+        llama_model_meta_val_str(s->model,"general.architecture",architecture,sizeof(architecture));
+        llama_model_meta_val_str(s->model,"general.file_type",fileType,sizeof(fileType));
+        llama_model_desc(s->model,description,sizeof(description));
+        const std::string text=std::string("architecture=")+architecture+"; file_type="+fileType+"; description="+description+"; parameters="+std::to_string(llama_model_n_params(s->model))+"; pinned_profile="+(s->pinnedProfile?"true":"false");
+        return env->NewStringUTF(text.c_str());
+    }catch(const std::exception &e){fail(env,e);return nullptr;}
 }

@@ -1,0 +1,38 @@
+{
+  "task": "523-android-runtime-durability-and-preserved-state-material-host-and-model-profile-repair",
+  "frozen_before_implementation": true,
+  "source_recovery": "b6d70bd",
+  "profile_lineage": "59cb6e3, native buffer measurements only; no blanket limits or context changes recovered",
+  "profile": {
+    "hash": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+    "bytes": 2497280256,
+    "default_file_limit_unchanged": 2147483648,
+    "model_buffer_limit": 4600000000,
+    "kv_limit": 805306368,
+    "compute_limit": 1073741824,
+    "context": 2048,
+    "output": 256,
+    "os_reserve": 1073741824,
+    "app_margin": 536870912,
+    "aggregate_limit": 12000000000
+  },
+  "checks": [
+    "before/after external witness exact nonce/source/run and time bracket",
+    "positive pinned catalog/header/full hash load",
+    "cancel during identity or native load and reset/reuse",
+    "native buffer component and measured memory OS reserve",
+    "original201 full fields and schema2 remain unchanged; original200 precrash oracle separate",
+    "actual history/source/export/app restart",
+    "all preexisting private files and preferences inventory retained except declared volatile logs/cache",
+    "negative changed model/hash/profile and unknown/over-cap inputs",
+    "negative witness stale/changed PID/start/Invocation/hostboot/guestboot/source",
+    "negative unavailable provider/source and changed row/schema",
+    "resource and native close counters; no generation"
+  ],
+  "unchanged_failures": [
+    "general generation support",
+    "sustained renderer proof",
+    "full intended corpus and update peaks",
+    "physical/unseen quality"
+  ]
+}

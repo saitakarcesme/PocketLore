@@ -1,0 +1,9 @@
+/home/isa/Projects/PocketLore/downloads/android-runtime-durability/check-20261006T015955Z
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/check.py", line 52, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/check.py", line 24, in main
+    (out/'preflight-failure.json').write_text(json.dumps(failure,indent=2));raise AssertionError(failure['reason'])
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Fresh owned-host identity and Restart=no proof unavailable; stop before repeated UI/lifecycle work

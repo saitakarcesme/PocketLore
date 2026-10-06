@@ -10,6 +10,8 @@ public final class NativeRuntime {
     private NativeRuntime() {}
     public interface Sink { void onToken(byte[] utf8); }
     public static native String identity();
+    /** Observed GGUF metadata of the currently loaded model; no generation. */
+    public static native String loadedModelIdentity(long session);
     /** Diagnostic counts: live lease, live contexts, model/KV/compute buffer bytes for the active context; not process RSS. */
     public static native long[] resourceState();
     /** Read-only diagnostics: phase (0 idle,1 preflight,2 load,3 context,4 prefill,5 decode),
@@ -17,6 +19,12 @@ public final class NativeRuntime {
      * Counters are observations, not synchronization guarantees or process-memory measurements. */
     public static native long[] operationState();
     public static native long create();
+    private static native boolean cancelled(long session);
+    private static boolean verifyLargeProfile(byte[] path,long session)throws Exception {
+        try(ResourceStorage.Reservation accounting=ResourceStorage.reserve(0)){
+            return PinnedModelProfile.verify(new java.io.File(new String(path,java.nio.charset.StandardCharsets.UTF_8)),()->cancelled(session));
+        }
+    }
     public static native void load(long session, byte[] localPath);
     public static native int generate(long session, byte[] prompt, int maxTokens, Sink sink);
     /** Applies the loaded model's supported chat template before generation. */

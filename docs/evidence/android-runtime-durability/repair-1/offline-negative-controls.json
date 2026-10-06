@@ -1,0 +1,67 @@
+{
+  "classification": "Constructed validator controls, not new device or model acceptance",
+  "actual_historical_result_rejected": "host process identity unavailable",
+  "controls": [
+    {
+      "field": "package_present",
+      "rejected": true,
+      "reason": "missing/wrong APK"
+    },
+    {
+      "field": "apk_actual",
+      "rejected": true,
+      "reason": "missing/wrong APK"
+    },
+    {
+      "field": "boot_after",
+      "rejected": true,
+      "reason": "boot discontinuity"
+    },
+    {
+      "field": "rows_after",
+      "rejected": true,
+      "reason": "changed/missing original rows"
+    },
+    {
+      "field": "catalog_verified",
+      "rejected": true,
+      "reason": "source/asset identity"
+    },
+    {
+      "field": "assets_unchanged",
+      "rejected": true,
+      "reason": "source/asset identity"
+    },
+    {
+      "field": "executed_source_hash",
+      "rejected": true,
+      "reason": "source mismatch"
+    },
+    {
+      "field": "logical_bytes",
+      "rejected": true,
+      "reason": "resource cap"
+    },
+    {
+      "field": "guest_ram_bytes",
+      "rejected": true,
+      "reason": "resource cap"
+    },
+    {
+      "field": "owned_host_process_continuity",
+      "rejected": true,
+      "reason": "host process identity unavailable"
+    },
+    {
+      "field": "selected_model_compatible",
+      "rejected": true,
+      "reason": "full development profile unavailable"
+    },
+    {
+      "field": "provider_inventory_known",
+      "rejected": true,
+      "reason": "full development profile unavailable"
+    }
+  ],
+  "exit": 0
+}

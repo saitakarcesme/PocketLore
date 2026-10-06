@@ -1,0 +1,29 @@
+package org.pocketlore.app;
+import android.app.*;import android.os.*;import java.io.*;import java.nio.charset.StandardCharsets;import java.nio.file.*;import java.util.concurrent.atomic.*;import org.json.*;
+/** Real selected-profile load/cancel/reuse, no tokens or selection writes. */
+public class RuntimeAdmissionInstrumentation extends Instrumentation {
+ AtomicBoolean sampling=new AtomicBoolean(false);AtomicLong peakPss=new AtomicLong(),peakRss=new AtomicLong(),samples=new AtomicLong();AtomicReference<String> sampleError=new AtomicReference<>();Thread sampler;
+ void sample(){try{peakPss.accumulateAndGet(Debug.getPss()*1024,Math::max);for(String line:Files.readAllLines(new File("/proc/self/status").toPath()))if(line.startsWith("VmRSS:"))peakRss.accumulateAndGet(Long.parseLong(line.trim().split("\\s+")[1])*1024,Math::max);samples.incrementAndGet();}catch(Exception e){sampleError.set(e.toString());sampling.set(false);}}
+ Bundle args; void check(boolean b,String message){if(!b)throw new AssertionError(message);}
+ public void onCreate(Bundle b){args=b;start();}
+ public void onStart(){JSONObject r=new JSONObject();long session=0;boolean measured=false;try{
+  sampling.set(true);sampler=new Thread(()->{while(sampling.get()){sample();try{Thread.sleep(100);}catch(InterruptedException e){return;}}},"bounded-memory-sampler");sampler.start();
+  File files=getTargetContext().getFilesDir();byte[] before=Files.readAllBytes(new File(files,"model-selection").toPath());String selected=new String(before,StandardCharsets.US_ASCII);check(selected.equals(PinnedModelProfile.SHA256),"Exact retained selection");
+  ModelCatalog c=new ModelCatalog(files);ModelCatalog.Spec spec=c.verify(c.active,()->false);check(spec.hash.equals(selected),"Full catalog hash");
+  r.put("selection",selected).put("model_bytes",c.active.length()).put("runtime_identity",NativeRuntime.identity()).put("catalog_admitted",true);
+  check(!PinnedModelProfile.identity("0"+selected.substring(1),spec.bytes),"Changed hash denied");check(!PinnedModelProfile.identity(selected,spec.bytes+1),"Changed profile bytes denied");
+  try{ModelCatalog.identify("unknown",spec.bytes);throw new AssertionError("Unknown model accepted");}catch(IOException expected){}
+  try{ModelCatalog.admit(50000000000L,spec.bytes,50000000000L);throw new AssertionError("Over-cap accepted");}catch(IOException expected){}
+  r.put("identity_negative_controls",4);
+  session=NativeRuntime.create();final long current=session;byte[] path=c.active.getAbsolutePath().getBytes(StandardCharsets.UTF_8);AtomicReference<Throwable> stopped=new AtomicReference<>();
+  Thread load=new Thread(()->{try{NativeRuntime.load(current,path);}catch(Throwable e){stopped.set(e);}},"bounded-model-load");long start=SystemClock.elapsedRealtime();load.start();long deadline=start+120000;boolean cancelled=false;long[] observed=null;
+  while(load.isAlive()&&SystemClock.elapsedRealtime()<deadline){observed=NativeRuntime.operationState();if(observed[0]==2&&observed[1]>0){NativeRuntime.cancel(current);cancelled=true;break;}Thread.sleep(1);}
+  if(!cancelled)NativeRuntime.cancel(current);load.join(30000);check(!load.isAlive(),"Cancelled worker terminates");check(cancelled&&stopped.get()!=null&&String.valueOf(stopped.get()).contains("Cancelled"),"Real load cancellation");
+  r.put("cancel_phase",new JSONArray(observed)).put("cancel_ms",SystemClock.elapsedRealtime()-start).put("cancel_error",stopped.get().toString());
+  NativeRuntime.reset(session);start=SystemClock.elapsedRealtime();NativeRuntime.load(session,path);r.put("load_ms",SystemClock.elapsedRealtime()-start).put("native_admitted",true).put("budget_estimates",new JSONArray(NativeRuntime.operationState())).put("resources_loaded",new JSONArray(NativeRuntime.resourceState()));
+  String metadata=NativeRuntime.loadedModelIdentity(session);check(metadata.contains("architecture=qwen3;")&&metadata.contains("pinned_profile=true"),"Loaded GGUF profile identity");r.put("loaded_metadata",metadata);
+  r.put("process_status",new String(Files.readAllBytes(new File("/proc/self/status").toPath()),StandardCharsets.UTF_8)).put("guest_memory_loaded",new String(Files.readAllBytes(new File("/proc/meminfo").toPath()),StandardCharsets.UTF_8));
+  NativeRuntime.close(session);session=0;long[] released=NativeRuntime.resourceState();for(long v:released)check(v==0,"Native release counters zero");
+  r.put("selection_unchanged",java.util.Arrays.equals(before,Files.readAllBytes(new File(files,"model-selection").toPath()))).put("resources_after_close",new JSONArray(released)).put("operation_state",new JSONArray(NativeRuntime.operationState()));measured=true;
+ }catch(Throwable e){try{r.put("probe_error",android.util.Log.getStackTraceString(e));}catch(Exception ignored){}}finally{sampling.set(false);if(sampler!=null)try{sampler.join(5000);}catch(InterruptedException ignored){}if(session!=0)NativeRuntime.close(session);try{measured=measured&&sampleError.get()==null&&samples.get()>0&&peakRss.get()>0&&peakPss.get()>0&&(sampler==null||!sampler.isAlive());r.put("sample_error",sampleError.get()==null?JSONObject.NULL:sampleError.get()).put("sample_count",samples.get()).put("sampler_stopped",sampler==null||!sampler.isAlive()).put("sampled_peak_pss_bytes",peakPss.get()).put("sampled_peak_rss_bytes",peakRss.get()).put("sampling_ms",100).put("measurement_complete",measured).put("run",args.getString("run")).put("source_hash",args.getString("source_hash")).put("generated_tokens",0);Bundle out=new Bundle();out.putString("admission_receipt",r.toString());finish(measured?Activity.RESULT_OK:Activity.RESULT_CANCELED,out);}catch(Exception e){finish(Activity.RESULT_CANCELED,new Bundle());}}}
+}

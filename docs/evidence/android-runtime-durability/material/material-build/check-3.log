@@ -1,0 +1,12 @@
+/home/isa/Projects/PocketLore/downloads/android-runtime-durability/material-20261006T022124Z
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/check.py", line 97, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/check.py", line 58, in main
+    raw=cmd('native-admission',ADB+['shell','am','instrument','-r','-w','-e','run',out.name,'-e','source_hash',source_hash,PKG+'.test/org.pocketlore.app.RuntimeAdmissionInstrumentation'],240).decode();admission=json.loads(next(x for x in raw.splitlines() if x.startswith('INSTRUMENTATION_RESULT: admission_receipt=')).split('=',1)[1]);(out/'native-admission.json').write_text(json.dumps(admission,indent=2));assert 'INSTRUMENTATION_CODE: -1' in raw and admission['measurement_complete'],admission
+        ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/check.py", line 27, in cmd
+    (out/(name+'.txt')).write_bytes(raw);(out/(name+'.command.json')).write_text(json.dumps({'args':args,'exit':code,'started_epoch':begin,'finished_epoch':time.time()},indent=2));assert allow_failure or code==0,(name,code);return raw
+                                                                                                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('native-admission', 1)

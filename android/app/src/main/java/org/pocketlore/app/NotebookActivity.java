@@ -33,32 +33,44 @@ abstract class NotebookActivity extends Activity {
     }
     @Override protected void onDestroy(){ExportJob job=exportJob;if(job!=null)job.cancelled.set(true);super.onDestroy();}
 
+    // Only files created by this Activity may be reclaimed; legacy/user files stay untouched.
+    final Set<String> ownedExports=new HashSet<>();
+    void discardOwned(String name){if(name!=null&&ownedExports.remove(name))new File(new File(getCacheDir(),"notebook-exports"),name).delete();}
     String pendingExport;
     void message(String s){if(operation!=null){operation.setVisibility(android.view.View.VISIBLE);operation.setText(s);operation.post(()->operation.requestRectangleOnScreen(new android.graphics.Rect(0,0,operation.getWidth(),operation.getHeight()),false));}}
-    @Override public void onCreate(Bundle state){super.onCreate(state);if(state!=null)pendingExport=state.getString("export");}
-    @Override public void onSaveInstanceState(Bundle b){super.onSaveInstanceState(b);b.putString("export",pendingExport);}
+    @Override public void onCreate(Bundle state){super.onCreate(state);if(state!=null){pendingExport=state.getString("export");ArrayList<String> owned=state.getStringArrayList("ownedExports");if(owned!=null)ownedExports.addAll(owned);}}
+    @Override public void onSaveInstanceState(Bundle b){super.onSaveInstanceState(b);b.putString("export",pendingExport);b.putStringArrayList("ownedExports",new ArrayList<>(ownedExports));}
     interface Task {void run()throws Exception;}
     void work(Task task){IO.execute(()->{try{task.run();}catch(Exception e){runOnUiThread(()->{if(!isDestroyed())message("Could not complete: "+e.getMessage());});}});}
+    interface ExportSource {void write(Writer out,java.util.function.BooleanSupplier cancelled)throws Exception;}
+    void exportNotebook(){prepareExport((out,cancelled)->{try(NotebookStore store=new NotebookStore(this)){store.exportAll(out,cancelled);}},false);}
     void export(List<NotebookStore.Entry> entries,boolean share){
         if(entries.isEmpty()){message("No saved records to export.");return;}
-        message("Preparing local notebook export…");
-        work(()->{
-            File dir=new File(getCacheDir(),"notebook-exports");if(!dir.isDirectory()&&!dir.mkdirs())throw new IOException("Export directory unavailable");
-            File[] old=dir.listFiles();long total=0;if(old!=null)for(File f:old){if(f.lastModified()<System.currentTimeMillis()-86400000L)f.delete();else total+=f.length();}
-            if(total>32L*1024*1024)throw new IOException("Temporary exports exceed 32 MiB; try again after their 24-hour retention period.");
-            File out=new File(dir,"notebook-"+UUID.randomUUID()+".md");
-            try(Writer w=new OutputStreamWriter(new FileOutputStream(out),StandardCharsets.UTF_8)){
-                w.write("# PocketLore notebook\n\nOffline snapshots and personal notes. Source rights and answer limitations remain attached; check them before redistribution.\n\n");
-                long bytes=0;for(NotebookStore.Entry e:entries){String record=e.portable();bytes+=record.getBytes(StandardCharsets.UTF_8).length;if(bytes>16L*1024*1024)throw new IOException("Export exceeds 16 MiB. Export fewer records.");w.write(record);w.write("\n---\n\n");}
-            }catch(Exception e){out.delete();throw e;}
-            runOnUiThread(()->{if(isDestroyed())return;try{
-                if(share){Uri uri=Uri.parse("content://"+getPackageName()+".notebook/"+out.getName());Intent send=new Intent(Intent.ACTION_SEND).setType("text/markdown").putExtra(Intent.EXTRA_STREAM,uri).addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);send.setClipData(ClipData.newRawUri("PocketLore notebook",uri));startActivity(Intent.createChooser(send,"Share notebook snapshot"));message("Choose a recipient in Android. Sharing does not verify source rights.");}
-                else {pendingExport=out.getName();startActivityForResult(new Intent(Intent.ACTION_CREATE_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE).setType("text/markdown").putExtra(Intent.EXTRA_TITLE,"PocketLore-"+System.currentTimeMillis()+".md"),EXPORT_DOCUMENT);message("Choose where to save in Android.");}
+        prepareExport((out,cancelled)->{out.write(NotebookStore.HEADER);long bytes=NotebookStore.HEADER.getBytes(StandardCharsets.UTF_8).length;for(NotebookStore.Entry e:entries)bytes=NotebookStore.writeRecord(out,e,bytes,cancelled);},share);
+    }
+    private void prepareExport(ExportSource source,boolean share){
+        if(exportJob!=null){message("An export is still active. Cancel it or wait before retrying.");return;}
+        ExportJob job=new ExportJob();exportJob=job;message("Preparing a consistent local notebook snapshot…");exportControl(true);
+        IO.execute(()->{
+            File out=null;String error=null;
+            try(ResourceStorage.Reservation ignored=ResourceStorage.reserve(2*NotebookStore.MAX_DB_BYTES+NotebookStore.MAX_EXPORT_BYTES)){
+                File dir=new File(getCacheDir(),"notebook-exports");if(!dir.isDirectory()&&!dir.mkdirs())throw new IOException("Export directory unavailable");
+                NotebookShareLease.expire(dir,System.currentTimeMillis(),job.cancelled::get);
+                long total=0;File[] files=dir.listFiles();if(files==null)throw new IOException("Export storage cannot be measured");for(File f:files)total=Math.addExact(total,f.length());
+                if(total+NotebookStore.MAX_EXPORT_BYTES>64L*1024*1024)throw new IOException("Temporary export budget is 64 MiB. Existing files are retained.");
+                PersonalText.check(job.cancelled::get);out=new File(dir,"notebook-"+UUID.randomUUID()+".md");
+                try(FileOutputStream bytes=new FileOutputStream(out);Writer writer=new OutputStreamWriter(bytes,StandardCharsets.UTF_8)){source.write(writer,job.cancelled::get);writer.flush();PersonalText.check(job.cancelled::get);bytes.getFD().sync();}
+                if(share)NotebookShareLease.record(out,System.currentTimeMillis(),job.cancelled::get);
+            }catch(Exception e){error=job.cancelled.get()?"Export preparation cancelled. Saved records are unchanged.":"Export preparation failed: "+e.getMessage()+". Saved records are unchanged.";if(out!=null)out.delete();}
+            File ready=out;String failure=error;
+            runOnUiThread(()->{if(exportJob==job){exportJob=null;if(!isDestroyed())exportControl(false);}if(isDestroyed()||job.cancelled.get()){if(ready!=null){ready.delete();new File(ready.getPath()+NotebookShareLease.SUFFIX).delete();}if(!isDestroyed())message("Export preparation cancelled. Saved records are unchanged.");return;}if(failure!=null){message(failure);return;}try{
+                if(share){Uri uri=Uri.parse("content://"+getPackageName()+".notebook/"+ready.getName());Intent send=new Intent(Intent.ACTION_SEND).setType("text/markdown").putExtra(Intent.EXTRA_STREAM,uri).addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);send.setClipData(ClipData.newRawUri("PocketLore notebook",uri));startActivity(Intent.createChooser(send,"Share notebook snapshot"));message("Choose a recipient in Android. This temporary share expires after 24 hours. Sharing does not verify source rights.");}
+                else {ownedExports.add(ready.getName());pendingExport=ready.getName();startActivityForResult(new Intent(Intent.ACTION_CREATE_DOCUMENT).addCategory(Intent.CATEGORY_OPENABLE).setType("text/markdown").putExtra(Intent.EXTRA_TITLE,"PocketLore-"+System.currentTimeMillis()+".md"),EXPORT_DOCUMENT);message("Choose where to save in Android.");}
             }catch(ActivityNotFoundException e){message("No compatible document or sharing app is installed. Saved records remain on this device.");}});
         });
     }
     @Override protected void onActivityResult(int request,int result,Intent data){super.onActivityResult(request,result,data);if(request!=EXPORT_DOCUMENT)return;
-        if(result!=RESULT_OK||data==null||data.getData()==null){message("Export cancelled. Saved records are unchanged.");pendingExport=null;return;}
+        if(result!=RESULT_OK||data==null||data.getData()==null){message("Export cancelled. Saved records are unchanged.");discardOwned(pendingExport);pendingExport=null;return;}
         String name=pendingExport;pendingExport=null;Uri uri=data.getData();if(name==null||!name.matches("notebook-[a-f0-9-]+\\.md")){message("Export expired. Prepare the notebook again.");return;}
         writeDocument(new File(new File(getCacheDir(),"notebook-exports"),name),uri);
     }
@@ -73,7 +85,7 @@ abstract class NotebookActivity extends Activity {
                 outcome="Notebook exported. Source metadata and notes are included.";
             }catch(Exception e){outcome=job.cancelled.get()?"Export cancelled. A partial destination may remain; saved records are unchanged.":"Export failed: "+e.getMessage()+". A partial destination may remain; saved records are unchanged.";}
             final String result=outcome;
-            runOnUiThread(()->{if(exportJob==job){exportJob=null;if(!isDestroyed()){exportControl(false);message(result);}}});
+            runOnUiThread(()->{discardOwned(source.getName());if(exportJob==job){exportJob=null;if(!isDestroyed()){exportControl(false);message(result);}}});
         });}catch(RejectedExecutionException e){exportJob=null;exportControl(false);message("Another export is still stopping. Try again after the document provider responds; saved records remain available.");}
     }
 }

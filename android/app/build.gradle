@@ -11,6 +11,8 @@ android {
         versionName '0.1.0-bootstrap'
     }
     sourceSets.main.jniLibs.srcDirs = ['build/generated/nativeLibs']
+    // This candidate uses the baseline runtime; stale optional dispatch builds are not shipped.
+    packaging.jniLibs.excludes += ['**/libpocketlore_avx.so', '**/libpocketlore_cpu.so']
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17

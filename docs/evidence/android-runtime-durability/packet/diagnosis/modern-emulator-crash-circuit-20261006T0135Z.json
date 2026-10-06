@@ -1,0 +1,9 @@
+{
+  "at": 1791250431.3725417,
+  "before": "ActiveState=active\nRestart=on-failure\nMainPID=2173729\nNRestarts=3\n",
+  "after": "ActiveState=active\nRestart=no\nMainPID=2173729\nNRestarts=3\n",
+  "dropin": "/home/isa/.config/systemd/user/pocketlore-modern-emulator.service.d/zz-overnight-crash-circuit.conf",
+  "active_vm_restarted": false,
+  "data_restored_or_deleted": false,
+  "reason": "Three observed SEGV crashes and changed boot/main-package absence require material diagnosis; preserve current VM and prevent blind automatic restarts."
+}

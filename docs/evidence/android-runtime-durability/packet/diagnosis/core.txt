@@ -1,0 +1,729 @@
+           PID: 2116975 (qemu-system-x86)
+           TID: 2117164 (RenderThread)
+           UID: 1000 (isa)
+           GID: 1000 (isa)
+        Signal: 11 (SEGV) si_code: SEGV_MAPERR
+     Timestamp: Tue 2026-10-06 03:26:25 CEST (13min ago)
+  Command Line: /home/isa/PocketLore-control/runtime/modern-android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless -avd pocketlore_pixel10pro_api37 -port 5564 -no-window -no-audio -no-snapshot -no-boot-anim -gpu host -memory 11264 -cores 4
+    Executable: /home/isa/PocketLore-control/runtime/modern-android/sdk/emulator/qemu/linux-x86_64/qemu-system-x86_64-headless
+ Control Group: /user.slice/user-1000.slice/user@1000.service/app.slice/pocketlore-modern-emulator.service
+          Unit: user@1000.service
+     User Unit: pocketlore-modern-emulator.service
+         Slice: user-1000.slice
+     Owner UID: 1000 (isa)
+       Boot ID: bddd3eb9c86c41509ba3893e8d780705
+    Machine ID: 2b4caa6138524ab4b9a5b27ab143bcba
+      Hostname: llmrig
+       Storage: /var/lib/systemd/coredump/core.qemu-system-x86.1000.bddd3eb9c86c41509ba3893e8d780705.2116975.1791249985000000.zst (present)
+  Size on Disk: 6.8G
+       Message: Process 2116975 (qemu-system-x86) of user 1000 dumped core.
+                
+                Module libshadertranslator.so without build-id.
+                Module libncurses.so.6 without build-id.
+                Module libxml2.so.2 without build-id.
+                Module libedit.so.0 without build-id.
+                Module libLLVM.so without build-id.
+                Module libvulkan_lvp.so without build-id.
+                Module libc++.so.1 without build-id.
+                Module libabseil_dll.so without build-id.
+                Module libprotobuf.so.28.4.0 without build-id.
+                Module libc++.so without build-id.
+                Module libtcmalloc_minimal.so.4 without build-id.
+                Stack trace of thread 2117164:
+                #0  0x00007ac46257919d n/a (libc.so.6 + 0x17919d)
+                #1  0x00007ac45b95ba48 _ZN9gfxstream4host2gl13TextureResizeC1Ejj (libgfxstream_backend.so + 0x55ba48)
+                #2  0x00007ac45b940754 _ZN9gfxstream4host2gl13ColorBufferGl6createEPviiNS0_15GfxstreamFormatEjPNS1_13ContextHelperEPNS1_11TextureDrawEbRKNS0_10FeatureSetERNS1_16PixelReadFormatsE (libgfxstream_backend.so + 0x540754)
+                #3  0x00007ac45b94a642 _ZN9gfxstream4host2gl11EmulationGl17createColorBufferEjjNS0_15GfxstreamFormatEj (libgfxstream_backend.so + 0x54a642)
+                #4  0x00007ac45b9106e0 _ZN9gfxstream4host11ColorBuffer4Impl6createEPNS0_2gl11EmulationGlEPNS0_2vk11VkEmulationEjjNS0_15GfxstreamFormatEjPNS_6StreamE (libgfxstream_backend.so + 0x5106e0)
+                #5  0x00007ac45b91199b _ZN9gfxstream4host11ColorBuffer6createEPNS0_2gl11EmulationGlEPNS0_2vk11VkEmulationEjjNS0_15GfxstreamFormatEjPNS_6StreamE (libgfxstream_backend.so + 0x51199b)
+                #6  0x00007ac45b8f51e7 _ZN9gfxstream4host11FrameBuffer4Impl41createColorBufferWithResourceHandleLockedEiiNS0_15GfxstreamFormatEj (libgfxstream_backend.so + 0x4f51e7)
+                #7  0x00007ac45b8f5151 _ZN9gfxstream4host11FrameBuffer4Impl17createColorBufferEiiNS0_15GfxstreamFormatE (libgfxstream_backend.so + 0x4f5151)
+                #8  0x00007ac45c2bb33e _ZN9gfxstream31renderControl_decoder_context_t6decodeEPvmPNS_8IOStreamEP18ChecksumCalculator (libgfxstream_backend.so + 0xebb33e)
+                #9  0x00007ac45b9207f5 _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x5207f5)
+                #10 0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #11 0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #12 0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2116982:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac462497762 pthread_cond_timedwait (libc.so.6 + 0x97762)
+                #3  0x00007ac46399888a _ZNSt3__118condition_variable15__do_timed_waitERNS_11unique_lockINS_5mutexEEENS_6chrono10time_pointINS5_12system_clockENS5_8durationIxNS_5ratioILl1ELl1000000000EEEEEEE (libc++.so + 0xed88a)
+                #4  0x00007ac464e0fa3b _ZN7android11crashreport12HangDetector12workerThreadEv (libandroid-webrtc.so + 0x140fa3b)
+                #5  0x00007ac464e1018a n/a (libandroid-webrtc.so + 0x141018a)
+                #6  0x00007ac46376a9ad _ZN7android4base6Thread11thread_mainEPv (libandroid-emu-metrics.so + 0x56a9ad)
+                #7  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #8  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2116987:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac46251df13 __select (libc.so.6 + 0x11df13)
+                #2  0x000056b781f3ad7a n/a (qemu-system-x86_64-headless + 0x11a2d7a)
+                #3  0x000056b781ec232c n/a (qemu-system-x86_64-headless + 0x112a32c)
+                #4  0x000056b781ec1dc6 n/a (qemu-system-x86_64-headless + 0x1129dc6)
+                #5  0x000056b781ebb019 n/a (qemu-system-x86_64-headless + 0x1123019)
+                #6  0x00007ac46376a9ad _ZN7android4base6Thread11thread_mainEPv (libandroid-emu-metrics.so + 0x56a9ad)
+                #7  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #8  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2116989:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462511365 __poll (libc.so.6 + 0x111365)
+                #2  0x000056b781e5260d n/a (qemu-system-x86_64-headless + 0x10ba60d)
+                #3  0x000056b781e513ce n/a (qemu-system-x86_64-headless + 0x10b93ce)
+                #4  0x000056b781e518ba n/a (qemu-system-x86_64-headless + 0x10b98ba)
+                #5  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #6  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2116976:
+                #0  0x00007ac46251e4ed syscall (libc.so.6 + 0x11e4ed)
+                #1  0x000056b7819b6003 n/a (qemu-system-x86_64-headless + 0xc1e003)
+                #2  0x000056b7819b9f08 n/a (qemu-system-x86_64-headless + 0xc21f08)
+                #3  0x000056b7819b6300 n/a (qemu-system-x86_64-headless + 0xc1e300)
+                #4  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #5  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117038:
+                #0  0x00007ac46251be1d ioctl (libc.so.6 + 0x11be1d)
+                #1  0x000056b7815871cc n/a (qemu-system-x86_64-headless + 0x7ef1cc)
+                #2  0x000056b781586d56 n/a (qemu-system-x86_64-headless + 0x7eed56)
+                #3  0x000056b7815a18f3 n/a (qemu-system-x86_64-headless + 0x8098f3)
+                #4  0x000056b7819b6300 n/a (qemu-system-x86_64-headless + 0xc1e300)
+                #5  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #6  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2116991:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462511365 __poll (libc.so.6 + 0x111365)
+                #2  0x000056b781e5260d n/a (qemu-system-x86_64-headless + 0x10ba60d)
+                #3  0x000056b781e482ec n/a (qemu-system-x86_64-headless + 0x10b02ec)
+                #4  0x000056b781e49bb4 n/a (qemu-system-x86_64-headless + 0x10b1bb4)
+                #5  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #6  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2116975:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac46243e9b4 __sigsuspend (libc.so.6 + 0x3e9b4)
+                #2  0x000056b781adb6a8 n/a (qemu-system-x86_64-headless + 0xd436a8)
+                #3  0x000056b78171e55b n/a (qemu-system-x86_64-headless + 0x98655b)
+                #4  0x00007ac462427781 n/a (libc.so.6 + 0x27781)
+                #5  0x00007ac4624278b9 __libc_start_main (libc.so.6 + 0x278b9)
+                #6  0x000056b781584e69 n/a (qemu-system-x86_64-headless + 0x7ece69)
+                
+                Stack trace of thread 2116992:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac462497762 pthread_cond_timedwait (libc.so.6 + 0x97762)
+                #3  0x00007ac46399888a _ZNSt3__118condition_variable15__do_timed_waitERNS_11unique_lockINS_5mutexEEENS_6chrono10time_pointINS5_12system_clockENS5_8durationIxNS_5ratioILl1ELl1000000000EEEEEEE (libc++.so + 0xed88a)
+                #4  0x00007ac464810303 _ZN7android9emulation17PassiveGpsUpdater5startEv (libandroid-webrtc.so + 0xe10303)
+                #5  0x00007ac464810d36 n/a (libandroid-webrtc.so + 0xe10d36)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117037:
+                #0  0x00007ac46251be1d ioctl (libc.so.6 + 0x11be1d)
+                #1  0x000056b7815871cc n/a (qemu-system-x86_64-headless + 0x7ef1cc)
+                #2  0x000056b781586d56 n/a (qemu-system-x86_64-headless + 0x7eed56)
+                #3  0x000056b7815a18f3 n/a (qemu-system-x86_64-headless + 0x8098f3)
+                #4  0x000056b7819b6300 n/a (qemu-system-x86_64-headless + 0xc1e300)
+                #5  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #6  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2116988:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac462497762 pthread_cond_timedwait (libc.so.6 + 0x97762)
+                #3  0x00007ac46399888a _ZNSt3__118condition_variable15__do_timed_waitERNS_11unique_lockINS_5mutexEEENS_6chrono10time_pointINS5_12system_clockENS5_8durationIxNS_5ratioILl1ELl1000000000EEEEEEE (libc++.so + 0xed88a)
+                #4  0x000056b781e4b839 n/a (qemu-system-x86_64-headless + 0x10b3839)
+                #5  0x000056b781e4b8da n/a (qemu-system-x86_64-headless + 0x10b38da)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2116990:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac46374eb2b _ZN7android4base18MessageChannelBase10beforeReadEv (libandroid-emu-metrics.so + 0x54eb2b)
+                #4  0x000056b781e46e90 n/a (qemu-system-x86_64-headless + 0x10aee90)
+                #5  0x000056b781e49bb4 n/a (qemu-system-x86_64-headless + 0x10b1bb4)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117040:
+                #0  0x00007ac46251be1d ioctl (libc.so.6 + 0x11be1d)
+                #1  0x000056b7815871cc n/a (qemu-system-x86_64-headless + 0x7ef1cc)
+                #2  0x000056b781586d56 n/a (qemu-system-x86_64-headless + 0x7eed56)
+                #3  0x000056b7815a18f3 n/a (qemu-system-x86_64-headless + 0x8098f3)
+                #4  0x000056b7819b6300 n/a (qemu-system-x86_64-headless + 0xc1e300)
+                #5  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #6  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2116993:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac4624e4aed clock_nanosleep (libc.so.6 + 0xe4aed)
+                #2  0x00007ac4624f0f27 __nanosleep (libc.so.6 + 0xf0f27)
+                #3  0x00007ac4625202ea usleep (libc.so.6 + 0x1202ea)
+                #4  0x00007ac46375c382 n/a (libandroid-emu-metrics.so + 0x55c382)
+                #5  0x00007ac46376a9ad _ZN7android4base6Thread11thread_mainEPv (libandroid-emu-metrics.so + 0x56a9ad)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117028:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462511a57 ppoll (libc.so.6 + 0x111a57)
+                #2  0x000056b7819b6bc1 n/a (qemu-system-x86_64-headless + 0xc1ebc1)
+                #3  0x000056b7819aaa98 n/a (qemu-system-x86_64-headless + 0xc12a98)
+                #4  0x000056b78173e8b7 n/a (qemu-system-x86_64-headless + 0x9a68b7)
+                #5  0x000056b78173ad3a n/a (qemu-system-x86_64-headless + 0x9a2d3a)
+                #6  0x000056b78173697e n/a (qemu-system-x86_64-headless + 0x99e97e)
+                #7  0x000056b78171fff4 n/a (qemu-system-x86_64-headless + 0x987ff4)
+                #8  0x000056b781ad8293 n/a (qemu-system-x86_64-headless + 0xd40293)
+                #9  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #10 0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2133582:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45b91c13d _ZN9gfxstream4host17RenderChannelImpl13readFromGuestEPNS_16SmallFixedVectorIcLm512EEEb (libgfxstream_backend.so + 0x51c13d)
+                #4  0x00007ac45b922684 _ZN9gfxstream4host13ChannelStream7readRawEPvPm (libgfxstream_backend.so + 0x522684)
+                #5  0x00007ac45b922abb _ZN9gfxstream4host10ReadBuffer7getDataEPNS_8IOStreamEm (libgfxstream_backend.so + 0x522abb)
+                #6  0x00007ac45b920442 _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x520442)
+                #7  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #8  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #9  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117078:
+                #0  0x00007ac46251e4ed syscall (libc.so.6 + 0x11e4ed)
+                #1  0x00007ac462b09fca _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter9WaitUntilEPNSt3__16atomicIiEEiNS1_13KernelTimeoutE (libabseil_dll.so + 0xa4fca)
+                #2  0x00007ac462b0a02b _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE (libabseil_dll.so + 0xa502b)
+                #3  0x00007ac462b0d5d8 AbslInternalPerThreadSemWait_lts_20240116 (libabseil_dll.so + 0xa85d8)
+                #4  0x00007ac462b08b67 _ZN4absl12lts_202401167CondVar10WaitCommonEPNS0_5MutexENS0_24synchronization_internal13KernelTimeoutE (libabseil_dll.so + 0xa3b67)
+                #5  0x00007ac464f5ab1f _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState4StepEv (libandroid-webrtc.so + 0x155ab1f)
+                #6  0x00007ac464f5a788 _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState10ThreadBodyEv (libandroid-webrtc.so + 0x155a788)
+                #7  0x00007ac464f5adfc n/a (libandroid-webrtc.so + 0x155adfc)
+                #8  0x00007ac46535f73d n/a (libandroid-webrtc.so + 0x195f73d)
+                #9  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #10 0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2169877:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac4624a065b n/a (libc.so.6 + 0xa065b)
+                #3  0x000056b7819b5e4b n/a (qemu-system-x86_64-headless + 0xc1de4b)
+                #4  0x000056b7819bbfe4 n/a (qemu-system-x86_64-headless + 0xc23fe4)
+                #5  0x000056b7819b6300 n/a (qemu-system-x86_64-headless + 0xc1e300)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117006:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac4624e4aed clock_nanosleep (libc.so.6 + 0xe4aed)
+                #2  0x00007ac4624f0f27 __nanosleep (libc.so.6 + 0xf0f27)
+                #3  0x00007ac4625202ea usleep (libc.so.6 + 0x1202ea)
+                #4  0x00007ac45b8f6d35 _ZN9gfxstream4host11FrameBuffer4Impl20cleanupProcGLObjectsEm (libgfxstream_backend.so + 0x4f6d35)
+                #5  0x00007ac45b9198b3 n/a (libgfxstream_backend.so + 0x5198b3)
+                #6  0x00007ac45b919821 n/a (libgfxstream_backend.so + 0x519821)
+                #7  0x00007ac45b919cdb _ZN9gfxstream4base12WorkerThreadINSt3__17variantIJNS_4host12RendererImpl20ProcessCleanupThread21CleanProcessResourcesENS6_4ExitEEEEE10ThreadLoopEv (libgfxstream_backend.so + 0x519cdb)
+                #8  0x00007ac45b919b56 n/a (libgfxstream_backend.so + 0x519b56)
+                #9  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #10 0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117088:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462520cab epoll_wait (libc.so.6 + 0x120cab)
+                #2  0x00007ac464f5fc1a _ZN17grpc_event_engine12experimental12Epoll1Poller11DoEpollWaitENSt3__16chrono8durationIlNS2_5ratioILl1ELl1000000000EEEEE (libandroid-webrtc.so + 0x155fc1a)
+                #3  0x00007ac464f5fdf6 _ZN17grpc_event_engine12experimental12Epoll1Poller4WorkENSt3__16chrono8durationIlNS2_5ratioILl1ELl1000000000EEEEEN4absl12lts_2024011611FunctionRefIFvvEEE (libandroid-webrtc.so + 0x155fdf6)
+                #4  0x00007ac464f46cda _ZN17grpc_event_engine12experimental16PosixEventEngine12PollingCycle18PollerWorkInternalEv (libandroid-webrtc.so + 0x1546cda)
+                #5  0x00007ac464f5b25b _ZN17grpc_event_engine12experimental19SelfDeletingClosure3RunEv (libandroid-webrtc.so + 0x155b25b)
+                #6  0x00007ac464f5a9ab _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState4StepEv (libandroid-webrtc.so + 0x155a9ab)
+                #7  0x00007ac464f5a788 _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState10ThreadBodyEv (libandroid-webrtc.so + 0x155a788)
+                #8  0x00007ac464f5adfc n/a (libandroid-webrtc.so + 0x155adfc)
+                #9  0x00007ac46535f73d n/a (libandroid-webrtc.so + 0x195f73d)
+                #10 0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #11 0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2169625:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac4624a065b n/a (libc.so.6 + 0xa065b)
+                #3  0x000056b7819b5e4b n/a (qemu-system-x86_64-headless + 0xc1de4b)
+                #4  0x000056b7819bbfe4 n/a (qemu-system-x86_64-headless + 0xc23fe4)
+                #5  0x000056b7819b6300 n/a (qemu-system-x86_64-headless + 0xc1e300)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117071:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac462497762 pthread_cond_timedwait (libc.so.6 + 0x97762)
+                #3  0x00007ac464e25cf8 _ZN7android4base8CpuUsage4Impl12workerThreadEv (libandroid-webrtc.so + 0x1425cf8)
+                #4  0x00007ac464e25c1a n/a (libandroid-webrtc.so + 0x1425c1a)
+                #5  0x00007ac46376a9ad _ZN7android4base6Thread11thread_mainEPv (libandroid-emu-metrics.so + 0x56a9ad)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117074:
+                #0  0x00007ac46251e4ed syscall (libc.so.6 + 0x11e4ed)
+                #1  0x00007ac462b09fca _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter9WaitUntilEPNSt3__16atomicIiEEiNS1_13KernelTimeoutE (libabseil_dll.so + 0xa4fca)
+                #2  0x00007ac462b0a02b _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE (libabseil_dll.so + 0xa502b)
+                #3  0x00007ac462b0d5d8 AbslInternalPerThreadSemWait_lts_20240116 (libabseil_dll.so + 0xa85d8)
+                #4  0x00007ac462b08b67 _ZN4absl12lts_202401167CondVar10WaitCommonEPNS0_5MutexENS0_24synchronization_internal13KernelTimeoutE (libabseil_dll.so + 0xa3b67)
+                #5  0x00007ac465360f30 gpr_cv_wait (libandroid-webrtc.so + 0x1960f30)
+                #6  0x00007ac464f83c9b n/a (libandroid-webrtc.so + 0x1583c9b)
+                #7  0x00007ac46535f73d n/a (libandroid-webrtc.so + 0x195f73d)
+                #8  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #9  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117170:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45b91c13d _ZN9gfxstream4host17RenderChannelImpl13readFromGuestEPNS_16SmallFixedVectorIcLm512EEEb (libgfxstream_backend.so + 0x51c13d)
+                #4  0x00007ac45b922684 _ZN9gfxstream4host13ChannelStream7readRawEPvPm (libgfxstream_backend.so + 0x522684)
+                #5  0x00007ac45b922abb _ZN9gfxstream4host10ReadBuffer7getDataEPNS_8IOStreamEm (libgfxstream_backend.so + 0x522abb)
+                #6  0x00007ac45b920442 _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x520442)
+                #7  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #8  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #9  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2173382:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45b920b5b _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x520b5b)
+                #4  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #5  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #6  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2170544:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45b91c13d _ZN9gfxstream4host17RenderChannelImpl13readFromGuestEPNS_16SmallFixedVectorIcLm512EEEb (libgfxstream_backend.so + 0x51c13d)
+                #4  0x00007ac45b922684 _ZN9gfxstream4host13ChannelStream7readRawEPvPm (libgfxstream_backend.so + 0x522684)
+                #5  0x00007ac45b922abb _ZN9gfxstream4host10ReadBuffer7getDataEPNS_8IOStreamEm (libgfxstream_backend.so + 0x522abb)
+                #6  0x00007ac45b920442 _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x520442)
+                #7  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #8  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #9  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117089:
+                #0  0x00007ac46251e4ed syscall (libc.so.6 + 0x11e4ed)
+                #1  0x00007ac462b09fca _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter9WaitUntilEPNSt3__16atomicIiEEiNS1_13KernelTimeoutE (libabseil_dll.so + 0xa4fca)
+                #2  0x00007ac462b0a02b _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE (libabseil_dll.so + 0xa502b)
+                #3  0x00007ac462b0d5d8 AbslInternalPerThreadSemWait_lts_20240116 (libabseil_dll.so + 0xa85d8)
+                #4  0x00007ac462b08b67 _ZN4absl12lts_202401167CondVar10WaitCommonEPNS0_5MutexENS0_24synchronization_internal13KernelTimeoutE (libabseil_dll.so + 0xa3b67)
+                #5  0x00007ac464f5ab1f _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState4StepEv (libandroid-webrtc.so + 0x155ab1f)
+                #6  0x00007ac464f5a788 _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState10ThreadBodyEv (libandroid-webrtc.so + 0x155a788)
+                #7  0x00007ac464f5adfc n/a (libandroid-webrtc.so + 0x155adfc)
+                #8  0x00007ac46535f73d n/a (libandroid-webrtc.so + 0x195f73d)
+                #9  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #10 0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117007:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45c2c0bfb _ZN9gfxstream4base18MessageChannelBase10beforeReadEv (libgfxstream_backend.so + 0xec0bfb)
+                #4  0x00007ac45b924968 n/a (libgfxstream_backend.so + 0x524968)
+                #5  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #6  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2126852:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45b91c13d _ZN9gfxstream4host17RenderChannelImpl13readFromGuestEPNS_16SmallFixedVectorIcLm512EEEb (libgfxstream_backend.so + 0x51c13d)
+                #4  0x00007ac45b922684 _ZN9gfxstream4host13ChannelStream7readRawEPvPm (libgfxstream_backend.so + 0x522684)
+                #5  0x00007ac45b922abb _ZN9gfxstream4host10ReadBuffer7getDataEPNS_8IOStreamEm (libgfxstream_backend.so + 0x522abb)
+                #6  0x00007ac45b920442 _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x520442)
+                #7  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #8  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #9  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117092:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac4639987ff _ZNSt3__118condition_variable4waitERNS_11unique_lockINS_5mutexEEE (libc++.so + 0xed7ff)
+                #4  0x000056b78192fa9b n/a (qemu-system-x86_64-headless + 0xb97a9b)
+                #5  0x000056b781930657 n/a (qemu-system-x86_64-headless + 0xb98657)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117195:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45b91c13d _ZN9gfxstream4host17RenderChannelImpl13readFromGuestEPNS_16SmallFixedVectorIcLm512EEEb (libgfxstream_backend.so + 0x51c13d)
+                #4  0x00007ac45b922684 _ZN9gfxstream4host13ChannelStream7readRawEPvPm (libgfxstream_backend.so + 0x522684)
+                #5  0x00007ac45b922abb _ZN9gfxstream4host10ReadBuffer7getDataEPNS_8IOStreamEm (libgfxstream_backend.so + 0x522abb)
+                #6  0x00007ac45b920442 _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x520442)
+                #7  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #8  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #9  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117096:
+                #0  0x0000000000000000 n/a (n/a + 0x0)
+                #1  0x000056b7815871cc n/a (qemu-system-x86_64-headless + 0x7ef1cc)
+                #2  0x000056b781586d56 n/a (qemu-system-x86_64-headless + 0x7eed56)
+                #3  0x000056b7815a18f3 n/a (qemu-system-x86_64-headless + 0x8098f3)
+                #4  0x000056b7819b6300 n/a (qemu-system-x86_64-headless + 0xc1e300)
+                #5  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #6  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117076:
+                #0  0x00007ac46251e4ed syscall (libc.so.6 + 0x11e4ed)
+                #1  0x00007ac462b09fca _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter9WaitUntilEPNSt3__16atomicIiEEiNS1_13KernelTimeoutE (libabseil_dll.so + 0xa4fca)
+                #2  0x00007ac462b0a02b _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE (libabseil_dll.so + 0xa502b)
+                #3  0x00007ac462b0d5d8 AbslInternalPerThreadSemWait_lts_20240116 (libabseil_dll.so + 0xa85d8)
+                #4  0x00007ac462b08b67 _ZN4absl12lts_202401167CondVar10WaitCommonEPNS0_5MutexENS0_24synchronization_internal13KernelTimeoutE (libabseil_dll.so + 0xa3b67)
+                #5  0x00007ac464f5ab1f _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState4StepEv (libandroid-webrtc.so + 0x155ab1f)
+                #6  0x00007ac464f5a788 _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState10ThreadBodyEv (libandroid-webrtc.so + 0x155a788)
+                #7  0x00007ac464f5adfc n/a (libandroid-webrtc.so + 0x155adfc)
+                #8  0x00007ac46535f73d n/a (libandroid-webrtc.so + 0x195f73d)
+                #9  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #10 0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117009:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac462497762 pthread_cond_timedwait (libc.so.6 + 0x97762)
+                #3  0x00007ac4585f522c n/a (libnvidia-glcore.so.610.57.04 + 0x9f522c)
+                #4  0x00007ac458a45e11 n/a (libnvidia-glcore.so.610.57.04 + 0xe45e11)
+                #5  0x00007ac4585f53e4 n/a (libnvidia-glcore.so.610.57.04 + 0x9f53e4)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117197:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45b91c13d _ZN9gfxstream4host17RenderChannelImpl13readFromGuestEPNS_16SmallFixedVectorIcLm512EEEb (libgfxstream_backend.so + 0x51c13d)
+                #4  0x00007ac45b922684 _ZN9gfxstream4host13ChannelStream7readRawEPvPm (libgfxstream_backend.so + 0x522684)
+                #5  0x00007ac45b922abb _ZN9gfxstream4host10ReadBuffer7getDataEPNS_8IOStreamEm (libgfxstream_backend.so + 0x522abb)
+                #6  0x00007ac45b920442 _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x520442)
+                #7  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #8  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #9  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117080:
+                #0  0x00007ac46251e4ed syscall (libc.so.6 + 0x11e4ed)
+                #1  0x00007ac462b09fca _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter9WaitUntilEPNSt3__16atomicIiEEiNS1_13KernelTimeoutE (libabseil_dll.so + 0xa4fca)
+                #2  0x00007ac462b0a02b _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE (libabseil_dll.so + 0xa502b)
+                #3  0x00007ac462b0d5d8 AbslInternalPerThreadSemWait_lts_20240116 (libabseil_dll.so + 0xa85d8)
+                #4  0x00007ac462b08b67 _ZN4absl12lts_202401167CondVar10WaitCommonEPNS0_5MutexENS0_24synchronization_internal13KernelTimeoutE (libabseil_dll.so + 0xa3b67)
+                #5  0x00007ac464f5ab1f _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState4StepEv (libandroid-webrtc.so + 0x155ab1f)
+                #6  0x00007ac464f5a788 _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState10ThreadBodyEv (libandroid-webrtc.so + 0x155a788)
+                #7  0x00007ac464f5adfc n/a (libandroid-webrtc.so + 0x155adfc)
+                #8  0x00007ac46535f73d n/a (libandroid-webrtc.so + 0x195f73d)
+                #9  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #10 0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117010:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac4585f51cc n/a (libnvidia-glcore.so.610.57.04 + 0x9f51cc)
+                #4  0x00007ac458a4013e n/a (libnvidia-glcore.so.610.57.04 + 0xe4013e)
+                #5  0x00007ac4585f53e4 n/a (libnvidia-glcore.so.610.57.04 + 0x9f53e4)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2167585:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45b91c13d _ZN9gfxstream4host17RenderChannelImpl13readFromGuestEPNS_16SmallFixedVectorIcLm512EEEb (libgfxstream_backend.so + 0x51c13d)
+                #4  0x00007ac45b922684 _ZN9gfxstream4host13ChannelStream7readRawEPvPm (libgfxstream_backend.so + 0x522684)
+                #5  0x00007ac45b922abb _ZN9gfxstream4host10ReadBuffer7getDataEPNS_8IOStreamEm (libgfxstream_backend.so + 0x522abb)
+                #6  0x00007ac45b920442 _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x520442)
+                #7  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #8  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #9  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117081:
+                #0  0x00007ac46251e4ed syscall (libc.so.6 + 0x11e4ed)
+                #1  0x00007ac462b09fca _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter9WaitUntilEPNSt3__16atomicIiEEiNS1_13KernelTimeoutE (libabseil_dll.so + 0xa4fca)
+                #2  0x00007ac462b0a02b _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE (libabseil_dll.so + 0xa502b)
+                #3  0x00007ac462b0d5d8 AbslInternalPerThreadSemWait_lts_20240116 (libabseil_dll.so + 0xa85d8)
+                #4  0x00007ac462b08b67 _ZN4absl12lts_202401167CondVar10WaitCommonEPNS0_5MutexENS0_24synchronization_internal13KernelTimeoutE (libabseil_dll.so + 0xa3b67)
+                #5  0x00007ac464f5ab1f _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState4StepEv (libandroid-webrtc.so + 0x155ab1f)
+                #6  0x00007ac464f5a788 _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState10ThreadBodyEv (libandroid-webrtc.so + 0x155a788)
+                #7  0x00007ac464f5adfc n/a (libandroid-webrtc.so + 0x155adfc)
+                #8  0x00007ac46535f73d n/a (libandroid-webrtc.so + 0x195f73d)
+                #9  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #10 0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117167:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac4639987ff _ZNSt3__118condition_variable4waitERNS_11unique_lockINS_5mutexEEE (libc++.so + 0xed7ff)
+                #4  0x00007ac45c29e2fb n/a (libgfxstream_backend.so + 0xe9e2fb)
+                #5  0x00007ac45c29e527 n/a (libgfxstream_backend.so + 0xe9e527)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2169875:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac4624a065b n/a (libc.so.6 + 0xa065b)
+                #3  0x000056b7819b5e4b n/a (qemu-system-x86_64-headless + 0xc1de4b)
+                #4  0x000056b7819bbfe4 n/a (qemu-system-x86_64-headless + 0xc23fe4)
+                #5  0x000056b7819b6300 n/a (qemu-system-x86_64-headless + 0xc1e300)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2170629:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac4624a065b n/a (libc.so.6 + 0xa065b)
+                #3  0x000056b7819b5e4b n/a (qemu-system-x86_64-headless + 0xc1de4b)
+                #4  0x000056b7819bbfe4 n/a (qemu-system-x86_64-headless + 0xc23fe4)
+                #5  0x000056b7819b6300 n/a (qemu-system-x86_64-headless + 0xc1e300)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117012:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac462497762 pthread_cond_timedwait (libc.so.6 + 0x97762)
+                #3  0x00007ac4585f522c n/a (libnvidia-glcore.so.610.57.04 + 0x9f522c)
+                #4  0x00007ac458a53792 n/a (libnvidia-glcore.so.610.57.04 + 0xe53792)
+                #5  0x00007ac4585f53e4 n/a (libnvidia-glcore.so.610.57.04 + 0x9f53e4)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117176:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45b91c13d _ZN9gfxstream4host17RenderChannelImpl13readFromGuestEPNS_16SmallFixedVectorIcLm512EEEb (libgfxstream_backend.so + 0x51c13d)
+                #4  0x00007ac45b922684 _ZN9gfxstream4host13ChannelStream7readRawEPvPm (libgfxstream_backend.so + 0x522684)
+                #5  0x00007ac45b922abb _ZN9gfxstream4host10ReadBuffer7getDataEPNS_8IOStreamEm (libgfxstream_backend.so + 0x522abb)
+                #6  0x00007ac45b920442 _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x520442)
+                #7  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #8  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #9  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117013:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac462497762 pthread_cond_timedwait (libc.so.6 + 0x97762)
+                #3  0x00007ac4585f522c n/a (libnvidia-glcore.so.610.57.04 + 0x9f522c)
+                #4  0x00007ac458a2c9dd n/a (libnvidia-glcore.so.610.57.04 + 0xe2c9dd)
+                #5  0x00007ac4585f53e4 n/a (libnvidia-glcore.so.610.57.04 + 0x9f53e4)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117178:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45b91c13d _ZN9gfxstream4host17RenderChannelImpl13readFromGuestEPNS_16SmallFixedVectorIcLm512EEEb (libgfxstream_backend.so + 0x51c13d)
+                #4  0x00007ac45b922684 _ZN9gfxstream4host13ChannelStream7readRawEPvPm (libgfxstream_backend.so + 0x522684)
+                #5  0x00007ac45b922abb _ZN9gfxstream4host10ReadBuffer7getDataEPNS_8IOStreamEm (libgfxstream_backend.so + 0x522abb)
+                #6  0x00007ac45b920442 _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x520442)
+                #7  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #8  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #9  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117015:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac462497762 pthread_cond_timedwait (libc.so.6 + 0x97762)
+                #3  0x00007ac4585f522c n/a (libnvidia-glcore.so.610.57.04 + 0x9f522c)
+                #4  0x00007ac458b71e09 n/a (libnvidia-glcore.so.610.57.04 + 0xf71e09)
+                #5  0x00007ac458b54be6 n/a (libnvidia-glcore.so.610.57.04 + 0xf54be6)
+                #6  0x00007ac4585f53e4 n/a (libnvidia-glcore.so.610.57.04 + 0x9f53e4)
+                #7  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #8  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117017:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45b928dbb _ZN9gfxstream4host10SyncThread4mainEv (libgfxstream_backend.so + 0x528dbb)
+                #4  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #5  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #6  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117182:
+                #0  0x00007ac462494efe n/a (libc.so.6 + 0x94efe)
+                #1  0x00007ac46249b9e4 pthread_mutex_lock (libc.so.6 + 0x9b9e4)
+                #2  0x00007ac45b9025b8 _ZN9gfxstream4host11FrameBuffer44getEmulatedEglWindowSurfaceColorBufferHandleEj (libgfxstream_backend.so + 0x5025b8)
+                #3  0x00007ac45b9153b0 n/a (libgfxstream_backend.so + 0x5153b0)
+                #4  0x00007ac45c2bd02c _ZN9gfxstream31renderControl_decoder_context_t6decodeEPvmPNS_8IOStreamEP18ChecksumCalculator (libgfxstream_backend.so + 0xebd02c)
+                #5  0x00007ac45b9207f5 _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x5207f5)
+                #6  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #7  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #8  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2171587:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45b91c13d _ZN9gfxstream4host17RenderChannelImpl13readFromGuestEPNS_16SmallFixedVectorIcLm512EEEb (libgfxstream_backend.so + 0x51c13d)
+                #4  0x00007ac45b922684 _ZN9gfxstream4host13ChannelStream7readRawEPvPm (libgfxstream_backend.so + 0x522684)
+                #5  0x00007ac45b922abb _ZN9gfxstream4host10ReadBuffer7getDataEPNS_8IOStreamEm (libgfxstream_backend.so + 0x522abb)
+                #6  0x00007ac45b920442 _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x520442)
+                #7  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #8  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #9  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117018:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac4639987ff _ZNSt3__118condition_variable4waitERNS_11unique_lockINS_5mutexEEE (libc++.so + 0xed7ff)
+                #4  0x00007ac45b92b9db _ZN9gfxstream4base12WorkerThreadINS0_8OptionalINS0_10ThreadPoolINS_4host10SyncThread7CommandEE7CommandEEEE10ThreadLoopEv (libgfxstream_backend.so + 0x52b9db)
+                #5  0x00007ac45b92b8f6 n/a (libgfxstream_backend.so + 0x52b8f6)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117019:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac4639987ff _ZNSt3__118condition_variable4waitERNS_11unique_lockINS_5mutexEEE (libc++.so + 0xed7ff)
+                #4  0x00007ac45b92b9db _ZN9gfxstream4base12WorkerThreadINS0_8OptionalINS0_10ThreadPoolINS_4host10SyncThread7CommandEE7CommandEEEE10ThreadLoopEv (libgfxstream_backend.so + 0x52b9db)
+                #5  0x00007ac45b92b8f6 n/a (libgfxstream_backend.so + 0x52b8f6)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2173367:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45b91c13d _ZN9gfxstream4host17RenderChannelImpl13readFromGuestEPNS_16SmallFixedVectorIcLm512EEEb (libgfxstream_backend.so + 0x51c13d)
+                #4  0x00007ac45b922684 _ZN9gfxstream4host13ChannelStream7readRawEPvPm (libgfxstream_backend.so + 0x522684)
+                #5  0x00007ac45b922abb _ZN9gfxstream4host10ReadBuffer7getDataEPNS_8IOStreamEm (libgfxstream_backend.so + 0x522abb)
+                #6  0x00007ac45b920442 _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x520442)
+                #7  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #8  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #9  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2173383:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac45b91c13d _ZN9gfxstream4host17RenderChannelImpl13readFromGuestEPNS_16SmallFixedVectorIcLm512EEEb (libgfxstream_backend.so + 0x51c13d)
+                #4  0x00007ac45b922684 _ZN9gfxstream4host13ChannelStream7readRawEPvPm (libgfxstream_backend.so + 0x522684)
+                #5  0x00007ac45b922abb _ZN9gfxstream4host10ReadBuffer7getDataEPNS_8IOStreamEm (libgfxstream_backend.so + 0x522abb)
+                #6  0x00007ac45b920442 _ZN9gfxstream4host12RenderThread4mainEv (libgfxstream_backend.so + 0x520442)
+                #7  0x00007ac45c2c389f _ZN9gfxstream4base6Thread11thread_mainEPv (libgfxstream_backend.so + 0xec389f)
+                #8  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #9  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117020:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac4639987ff _ZNSt3__118condition_variable4waitERNS_11unique_lockINS_5mutexEEE (libc++.so + 0xed7ff)
+                #4  0x00007ac45b92b9db _ZN9gfxstream4base12WorkerThreadINS0_8OptionalINS0_10ThreadPoolINS_4host10SyncThread7CommandEE7CommandEEEE10ThreadLoopEv (libgfxstream_backend.so + 0x52b9db)
+                #5  0x00007ac45b92b8f6 n/a (libgfxstream_backend.so + 0x52b8f6)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117026:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac4624e4aed clock_nanosleep (libc.so.6 + 0xe4aed)
+                #2  0x00007ac45c2c2a24 _ZN9gfxstream4base9sleepToUsEm (libgfxstream_backend.so + 0xec2a24)
+                #3  0x00007ac45b93f9e8 _ZN9gfxstream11VsyncThread10threadFuncEv (libgfxstream_backend.so + 0x53f9e8)
+                #4  0x00007ac45b93fb66 n/a (libgfxstream_backend.so + 0x53fb66)
+                #5  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #6  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117021:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac4639987ff _ZNSt3__118condition_variable4waitERNS_11unique_lockINS_5mutexEEE (libc++.so + 0xed7ff)
+                #4  0x00007ac45b92b9db _ZN9gfxstream4base12WorkerThreadINS0_8OptionalINS0_10ThreadPoolINS_4host10SyncThread7CommandEE7CommandEEEE10ThreadLoopEv (libgfxstream_backend.so + 0x52b9db)
+                #5  0x00007ac45b92b8f6 n/a (libgfxstream_backend.so + 0x52b8f6)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117075:
+                #0  0x00007ac46251e4ed syscall (libc.so.6 + 0x11e4ed)
+                #1  0x00007ac462b09fca _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter9WaitUntilEPNSt3__16atomicIiEEiNS1_13KernelTimeoutE (libabseil_dll.so + 0xa4fca)
+                #2  0x00007ac462b0a02b _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE (libabseil_dll.so + 0xa502b)
+                #3  0x00007ac462b0d5d8 AbslInternalPerThreadSemWait_lts_20240116 (libabseil_dll.so + 0xa85d8)
+                #4  0x00007ac462b08b67 _ZN4absl12lts_202401167CondVar10WaitCommonEPNS0_5MutexENS0_24synchronization_internal13KernelTimeoutE (libabseil_dll.so + 0xa3b67)
+                #5  0x00007ac464f5ab1f _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState4StepEv (libandroid-webrtc.so + 0x155ab1f)
+                #6  0x00007ac464f5a788 _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState10ThreadBodyEv (libandroid-webrtc.so + 0x155a788)
+                #7  0x00007ac464f5adfc n/a (libandroid-webrtc.so + 0x155adfc)
+                #8  0x00007ac46535f73d n/a (libandroid-webrtc.so + 0x195f73d)
+                #9  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #10 0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117029:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462511a57 ppoll (libc.so.6 + 0x111a57)
+                #2  0x000056b7819a1088 n/a (qemu-system-x86_64-headless + 0xc09088)
+                #3  0x000056b7818afc67 n/a (qemu-system-x86_64-headless + 0xb17c67)
+                #4  0x000056b7819b6300 n/a (qemu-system-x86_64-headless + 0xc1e300)
+                #5  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #6  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117035:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac4624e4aed clock_nanosleep (libc.so.6 + 0xe4aed)
+                #2  0x00007ac4624f0f27 __nanosleep (libc.so.6 + 0xf0f27)
+                #3  0x00007ac46399a10b _ZNSt3__111this_thread9sleep_forERKNS_6chrono8durationIxNS_5ratioILl1ELl1000000000EEEEE (libc++.so + 0xef10b)
+                #4  0x000056b7819c613a _ZN7android9emulation12AdbVsockPipe7Service23pollGuestAdbdThreadLoopEv (qemu-system-x86_64-headless + 0xc2e13a)
+                #5  0x000056b7819c88b7 n/a (qemu-system-x86_64-headless + 0xc308b7)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117036:
+                #0  0x00007ac4624a0952 n/a (libc.so.6 + 0xa0952)
+                #1  0x00007ac462494cd9 n/a (libc.so.6 + 0x94cd9)
+                #2  0x00007ac46249754c pthread_cond_wait (libc.so.6 + 0x9754c)
+                #3  0x00007ac4639987ff _ZNSt3__118condition_variable4waitERNS_11unique_lockINS_5mutexEEE (libc++.so + 0xed7ff)
+                #4  0x000056b7819c62db _ZN7android9emulation12AdbVsockPipe7Service22destroyPipesThreadLoopEv (qemu-system-x86_64-headless + 0xc2e2db)
+                #5  0x000056b7819c88b7 n/a (qemu-system-x86_64-headless + 0xc308b7)
+                #6  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #7  0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117077:
+                #0  0x00007ac46251e4ed syscall (libc.so.6 + 0x11e4ed)
+                #1  0x00007ac462b09fca _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter9WaitUntilEPNSt3__16atomicIiEEiNS1_13KernelTimeoutE (libabseil_dll.so + 0xa4fca)
+                #2  0x00007ac462b0a02b _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE (libabseil_dll.so + 0xa502b)
+                #3  0x00007ac462b0d5d8 AbslInternalPerThreadSemWait_lts_20240116 (libabseil_dll.so + 0xa85d8)
+                #4  0x00007ac462b08b67 _ZN4absl12lts_202401167CondVar10WaitCommonEPNS0_5MutexENS0_24synchronization_internal13KernelTimeoutE (libabseil_dll.so + 0xa3b67)
+                #5  0x00007ac464f5ab1f _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState4StepEv (libandroid-webrtc.so + 0x155ab1f)
+                #6  0x00007ac464f5a788 _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState10ThreadBodyEv (libandroid-webrtc.so + 0x155a788)
+                #7  0x00007ac464f5adfc n/a (libandroid-webrtc.so + 0x155adfc)
+                #8  0x00007ac46535f73d n/a (libandroid-webrtc.so + 0x195f73d)
+                #9  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #10 0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117079:
+                #0  0x00007ac46251e4ed syscall (libc.so.6 + 0x11e4ed)
+                #1  0x00007ac462b09fca _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter9WaitUntilEPNSt3__16atomicIiEEiNS1_13KernelTimeoutE (libabseil_dll.so + 0xa4fca)
+                #2  0x00007ac462b0a02b _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE (libabseil_dll.so + 0xa502b)
+                #3  0x00007ac462b0d5d8 AbslInternalPerThreadSemWait_lts_20240116 (libabseil_dll.so + 0xa85d8)
+                #4  0x00007ac462b08b67 _ZN4absl12lts_202401167CondVar10WaitCommonEPNS0_5MutexENS0_24synchronization_internal13KernelTimeoutE (libabseil_dll.so + 0xa3b67)
+                #5  0x00007ac464f5ab1f _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState4StepEv (libandroid-webrtc.so + 0x155ab1f)
+                #6  0x00007ac464f5a788 _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState10ThreadBodyEv (libandroid-webrtc.so + 0x155a788)
+                #7  0x00007ac464f5adfc n/a (libandroid-webrtc.so + 0x155adfc)
+                #8  0x00007ac46535f73d n/a (libandroid-webrtc.so + 0x195f73d)
+                #9  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #10 0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                
+                Stack trace of thread 2117082:
+                #0  0x00007ac46251e4ed syscall (libc.so.6 + 0x11e4ed)
+                #1  0x00007ac462b09fca _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter9WaitUntilEPNSt3__16atomicIiEEiNS1_13KernelTimeoutE (libabseil_dll.so + 0xa4fca)
+                #2  0x00007ac462b0a02b _ZN4absl12lts_2024011624synchronization_internal11FutexWaiter4WaitENS1_13KernelTimeoutE (libabseil_dll.so + 0xa502b)
+                #3  0x00007ac462b0d5d8 AbslInternalPerThreadSemWait_lts_20240116 (libabseil_dll.so + 0xa85d8)
+                #4  0x00007ac462b08b67 _ZN4absl12lts_202401167CondVar10WaitCommonEPNS0_5MutexENS0_24synchronization_internal13KernelTimeoutE (libabseil_dll.so + 0xa3b67)
+                #5  0x00007ac464f5ab1f _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState4StepEv (libandroid-webrtc.so + 0x155ab1f)
+                #6  0x00007ac464f5a788 _ZN17grpc_event_engine12experimental22WorkStealingThreadPool11ThreadState10ThreadBodyEv (libandroid-webrtc.so + 0x155a788)
+                #7  0x00007ac464f5adfc n/a (libandroid-webrtc.so + 0x155adfc)
+                #8  0x00007ac46535f73d n/a (libandroid-webrtc.so + 0x195f73d)
+                #9  0x00007ac4624980a2 n/a (libc.so.6 + 0x980a2)
+                #10 0x00007ac46252080c n/a (libc.so.6 + 0x12080c)
+                ELF object binary architecture: AMD x86-64

@@ -10,7 +10,7 @@ public final class ModelImport {
     public static final long RESERVE_BYTES = ResourceStorage.RESERVE_BYTES;
     public static String copy(InputStream input, File stage, long expected, long available,
                               BooleanSupplier cancelled) throws Exception {
-        if (expected < 4 || expected > MAX_BYTES) throw new IOException("Model size must be known and at most 2048 MiB");
+        if (expected < 4 || (expected > MAX_BYTES && expected != PinnedModelProfile.BYTES)) throw new IOException("Model size must be known and within the default limit or the exact pinned profile");
         ResourceStorage.requireSpace(expected,available);
         try(ResourceStorage.Reservation reservation=ResourceStorage.reserve(ResourceStorage.stagePeak(expected))){
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
@@ -38,6 +38,7 @@ public final class ModelImport {
         }
         StringBuilder hash = new StringBuilder();
         for (byte b : digest.digest()) hash.append(String.format(java.util.Locale.ROOT, "%02x", b & 255));
+        if(expected>MAX_BYTES&&!PinnedModelProfile.identity(hash.toString(),total)){stage.delete();throw new IOException("Large model does not match the exact pinned profile");}
         return hash.toString();
         }
     }

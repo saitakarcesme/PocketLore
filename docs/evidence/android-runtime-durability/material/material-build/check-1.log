@@ -1,0 +1,15 @@
+/home/isa/Projects/PocketLore/downloads/android-runtime-durability/material-20261006T021309Z
+Traceback (most recent call last):
+  File "/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/check.py", line 94, in <module>
+    (out/'negative-controls.json').write_text(json.dumps({'constructed_mutations_of_actual_pass':controls},indent=2));print('PASS bounded owned runtime continuity and exact pinned model profile; sustained stability remains open')
+                          ^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/check.py", line 38, in main
+    cmd('local-service-unavailable',['systemctl','--user','show','pocketlore-modern-emulator.service','-p','MainPID','-p','Restart','-p','NRestarts'],allow_failure=True)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/witness.py", line 27, in request
+    reply=response.read_bytes();(out/(phase+'-witness.response.json')).write_bytes(reply);result=json.loads(reply);validate(data,result,raw)
+                                                                                                                   ~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/isa/Projects/PocketLore/tools/evaluation/android-runtime-durability/witness.py", line 8, in validate
+    assert response['schema']==1 and response['status'] in ('OK','PASS','ok'), 'Witness status'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Witness status

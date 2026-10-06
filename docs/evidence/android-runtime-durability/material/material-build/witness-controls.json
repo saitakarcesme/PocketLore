@@ -1,0 +1,21 @@
+{
+  "classification": "Constructed controls using historical identity only; no current runtime proof",
+  "rejected": [
+    "nonce",
+    "request_sha256",
+    "source_hash",
+    "run_id",
+    "pid",
+    "proc_start_ticks",
+    "argv",
+    "pid-continuity",
+    "proc_start_ticks-continuity",
+    "host_boot_id-continuity",
+    "executable_sha256-continuity",
+    "proc_cgroup-continuity",
+    "InvocationID",
+    "ExecMainStartTimestampMonotonic",
+    "unbracketed"
+  ],
+  "exit": 0
+}
