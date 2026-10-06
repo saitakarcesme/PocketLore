@@ -9,3 +9,7 @@ This repair removes enclosing Git discovery from both ggml and llama build-info 
 Evidence collection now loads both raw inputs before validation and archives complete success/failure observations atomically. Actual historical fixture and model receipts were recovered. The historical builder packet was recovered, but its hash differs from the independently reviewed 462630... packet; that exact positive packet remains unavailable.
 
 No new model sample has run yet. Full model loading, prefill and generation are forbidden here. Native controls and linked builds do not establish Android execution, useful answers, a complete 50 GB distribution, physical-device qualification or superiority.
+
+The metadata controls initially failed because `cmake` was absent from PATH. The installed canonical CMake absolute path corrected that setup error; the original owned fixture and failure fields are retained. No global tooling or environment configuration changed.
+
+Read-only criticism before sampling: Base64-first collection and per-file log error capture close the identified evidence-loss paths; final linked-build reproducibility and exact-model observations remain pending, and inference is outside scope.

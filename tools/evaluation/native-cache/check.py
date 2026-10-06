@@ -155,6 +155,21 @@ def atomic_packet(destination, packet):
  with temp.open('wb') as f:f.write(raw);f.flush();os.fsync(f.fileno())
  os.replace(temp,destination)
 
+def validate_reproducibility(r):
+ assert r['status']=='PASS' and set(r['native_hashes'])==set(BINARIES[:-1])
+ for phase in ['first','second']:
+  assert set(r[phase]['native'])==set(BINARIES[:-1])
+  for name,value in r[phase]['native'].items():
+   assert value['sha256']==r['native_hashes'][name]==sha(ROOT/name),name
+  assert len(r[phase]['configuration'])==3
+  for value in r[phase]['configuration'].values():
+   assert hashlib.sha256(value['text'].encode()).hexdigest()==value['sha256']
+ m=r['metadata_controls'];assert m['old_first']['value']!=m['old_second']['value']
+ assert m['fixed']['value']==m['dirty']['value']==m['later']['value']
+ assert 'bb4caa7540188872173c44d161602d9271386413-pocketlore-' in m['fixed']['value']
+ for name,digest in m['source'].items():assert sha(ROOT/name)==digest,name
+ return True
+
 def evaluate_runs(packet,names):
  assert not packet['collection_errors'],packet['collection_errors']
  assert set(packet['runs'])==set(names)
@@ -187,7 +202,7 @@ def main(fixture_only=False):
   evaluate_runs(packet,names)
   if not fixture_only:packet['error_finalization_controls']=finalization_controls(packet)
   packet['artifacts']=artifacts(packet['runs']['fixture']['frozen']['source_path']);packet['controls']=json.loads(pathlib.Path((BASE/'controls-path.txt').read_text()).read_text());assert packet['controls']['status']=='PRE_SAMPLE_CONTROLS_PASS'
-  packet['reproducibility']=json.loads((BASE/'reproducibility.json').read_text());assert packet['reproducibility']['status']=='PASS'
+  packet['reproducibility']=json.loads((BASE/'reproducibility.json').read_text());validate_reproducibility(packet['reproducibility'])
   for n,h in packet['reproducibility']['native_hashes'].items():assert sha(ROOT/n)==h,n
   src=pathlib.Path(packet['runs']['fixture']['frozen']['source_path']);manifest=src.parent/'native-manifest.json'
   assert identity(manifest,True)==packet['runs']['fixture']['frozen']['derivation']
