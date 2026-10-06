@@ -18,7 +18,7 @@ def main():
   source_check(f['source']);r['preflight']=owned.preflight()
   for name in ['force','retain']:r['inputs'][name]=fixture(O/(name+'.bin'),33554432);atomic(O/'runs.json',r)
   assert r['inputs']['force']['sha256']==r['inputs']['retain']['sha256']
-  for name in ['force','retain','no-progress','mincore-failure','advice-failure','tail']:
+  for name in ['force','retain','no-progress','mincore-failure','advice-failure','tail','remap']:
    inp=r['inputs']['force' if name=='force' else 'retain'];out=O/('run-'+name);prefix=O/name
    exe=R/BINARIES[-1];assert identity(exe)==f['binary'][BINARIES[-1]]
    raw=owned.execute([str(exe),inp['path'],inp['sha256'],name,str(prefix)],out,45);r['runs'][name]=raw;atomic(O/'runs.json',r)
@@ -32,6 +32,8 @@ def main():
     except Exception as e:raw['collection_errors'].append(repr(e))
    raw['post_input']=version(inp['path']);raw['post_source']=sources();atomic(O/'runs.json',r)
    assert raw['exit']==0 and not raw.get('failure') and not raw['collection_errors'] and raw['post_input']==inp['version'] and raw['post_source']==f['source'],name
+  fault=fixture(O/'fault.bin',67108864);x=owned.execute([str(R/BINARIES[-2]),fault['path'],fault['sha256'],'negative',str(O/'fault-negative')],O/'fault-run',30)
+  r['fault_controls']={'run':x,'stdout':(O/'fault-run/stdout.log').read_text(),'input':fault};assert x['exit']==0 and not x.get('failure')
   # Prior actual ownership/scalar/async/teardown controls, current linked code.
   small=fixture(O/'lifecycle.bin',4194304);raw=owned.execute([str(R/BINARIES[0]),small['path'],small['sha256'],'4194304',str(O/'lifecycle'),'0'],O/'lifecycle-run',30)
   r['lifecycle']={'run':raw,'stdout':(O/'lifecycle-run/stdout.log').read_text(),'input':small};assert raw['exit']==0 and not raw.get('failure')

@@ -18,6 +18,6 @@ def atomic(p,d):
  os.replace(temp,p)
 def freeze():
  assert not (O/'frozen.json').exists()
- src=pathlib.Path((O/'source-path.txt').read_text().strip());k=owned.preflight()
+ src=pathlib.Path((O/'final-source-path.txt').read_text().strip());k=owned.preflight()
  d={'source':sources(),'binary':{p:identity(R/p) for p in BINARIES},'derivation':identity(src.parent/'native-manifest.json',True),'source_path':str(src),'kernel':k,'policy':json.loads((R/'docs/evidence/weight-cache-inputs/policy.json').read_text())}
  atomic(O/'frozen.json',d)

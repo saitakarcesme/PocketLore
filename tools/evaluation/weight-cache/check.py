@@ -12,7 +12,7 @@ def validate(r,current=True):
  k=f['kernel'];assert 0<int(k['memory.max'])<=9663676416 and int(k['memory.swap.max'])==0 and int(k['pids.max'])<=512
  q,period=map(int,k['cpu.max'].split());assert 0<q<=period*2 and len(k['affinity_cpus'])<=4
  assert set(r['inputs'])=={'force','retain'} and r['inputs']['force']['sha256']==r['inputs']['retain']['sha256']
- assert set(r['runs'])=={'force','retain','no-progress','mincore-failure','advice-failure','tail'}
+ assert set(r['runs'])=={'force','retain','no-progress','mincore-failure','advice-failure','tail','remap'}
  metrics={}
  for name,run in r['runs'].items():
   inp=r['inputs']['force' if name=='force' else 'retain'];assert run['exit']==0 and not run.get('failure') and not run.get('cleanup_failure') and not run['collection_errors']
@@ -26,6 +26,9 @@ def validate(r,current=True):
    b=base64.b64decode(v['base64'],validate=True);assert hashlib.sha256(b).hexdigest()==v['sha256']
    assert b.decode()==(run[n[:-4]] if n in ['stdout.log','stderr.log'] else run['observations'][n])
   lines=[json.loads(x) for x in run['stdout'].splitlines() if x.startswith('{')]
+  if name=='remap':
+   a=next(x for x in lines if 'before_remap' in x);b=next(x for x in lines if 'remapped' in x);assert a['before_remap']['cursor']>0 and b['cache']['cursor']==0 and b['remapped']['regions'][0]['bytes']==4194304 and not b['cache']['failed']
+   continue
   if name=='tail':
    t=next(x for x in lines if 'tail_bytes' in x);assert t['tail_bytes']==33553376 and not t['cache']['failed'] and t['cache']['after_bytes']<=8388608
    a=json.loads(run['observations']['tail-tail.json']);assert len(a['cached_pages'])*4096==t['cache']['after_bytes'] and a['owner']['regions'][0]['bytes']==33553376
@@ -56,6 +59,7 @@ def validate(r,current=True):
    c=after['cache'];assert not c['failed'] and c['before_bytes']==len(touched['cached_pages'])*4096 and c['after_bytes']==len(after['cached_pages'])*4096 and c['start_ns']>touched['owner']['monotonic_ns'] and c['end_ns']<line['end_ns']
    assert c['observed_evicted_bytes']==max(0,c['before_bytes']-c['after_bytes']) and c['chunk_bytes']==1048576 and 0<=c['cursor']<32
    if name=='retain':
+    assert 0<c['end_ns']-c['start_ns']<5000000000
     assert c['policy']=='budgeted-cyclic-v1' and c['budget_bytes']==8388608 and c['after_bytes']<=8388608 and c['advice_calls']<=64
     if i in [0,1]:assert c['advice_calls']==0 and c['after_bytes']==4194304
     if i in [2,4]:assert c['advice_calls']>0 and c['before_bytes']>8388608 and c['after_bytes']<c['before_bytes']
@@ -65,6 +69,7 @@ def validate(r,current=True):
  assert metrics['retain'][1]['before_cached']==1024 and metrics['force'][1]['before_cached']==0
  assert metrics['retain'][4]['cache']['cursor']!=metrics['retain'][5]['cache']['cursor']
  for key in ['wrong-inode','wrong-hash','wrong-size','unaligned','partial-map','deadline','cancelled','async-reader','alias-mapping','deferred-destructor-observation','scalar-exception']:assert key in r['lifecycle']['stdout']
+ for key in ['fadvise-kernel-failure','madvise-kernel-failure','double-owner','writable-inherited','dedicated-reuse-offset']:assert key in r['fault_controls']['stdout']
  for n in ['hung','read-error']:assert r[n]['cleanup'][-1]['action']=='REAPED'
  return metrics
 
@@ -80,12 +85,14 @@ def main():
   from contract import elf_machine
   assert elf_machine(R/BINARIES[-1])==62;p['new_executable']=identity(R/BINARIES[-1])
   negatives=[]
-  for n in ['source','binary','pid','startticks','budget','mincore','byte','failed','missing','policy']:
+  for n in ['source','binary','pid','startticks','budget','mincore','byte','failed','missing','policy','namespace','mount','stat']:
    b=copy.deepcopy(r);run=b['runs']['retain']
    if n=='source':b['frozen']['source']={}
    elif n=='binary':b['frozen']['binary'][BINARIES[-1]]['sha256']='0'*64
    elif n=='pid':run['pid']+=1
    elif n=='startticks':run['startticks']+=1
+   elif n=='namespace':run['samples'][0]['namespaces']['pid']='pid:[0]'
+   elif n=='stat':run['post_input']['inode']+=1
    elif n=='missing':run['observations'].pop('retain-1-after.json')
    elif n=='byte':run['stdout']=run['stdout'].replace('"bytes":4194304','"bytes":1')
    else:
@@ -93,6 +100,7 @@ def main():
     if n=='budget':x['cache']['budget_bytes']=999999999
     elif n=='mincore':x['cached_pages']=[]
     elif n=='policy':x['owner']['fault_policy']='default'
+    elif n=='mount':x['owner']['mount']=x['owner']['mount'].replace(x['owner']['mount'].split()[2],'0:999',1)
     else:x['cache']['failed']=True
     run['observations']['retain-1-after.json']=json.dumps(x)
    try:validate(b)

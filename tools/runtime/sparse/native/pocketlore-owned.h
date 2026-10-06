@@ -83,7 +83,7 @@ public:
  void register_mapping(void *p,size_t n,off_t offset){std::lock_guard<std::mutex>l(mutex);verify();require(regions.empty()&&!readers&&n&&offset>=0&&uint64_t(offset)+n<=uint64_t(identity.st_size)&&(full||n<=128*1024*1024),"Unsafe mapping registration");require((uintptr_t)p%sysconf(_SC_PAGESIZE)==0 && offset%sysconf(_SC_PAGESIZE)==0,"Policy mapping alignment");
   inspect_region(p,n,offset);
   if(policy==FaultPolicy::Random){require(dedicated && file_policy_result==0,"Missing dedicated random policy");mapping_policy_result=madvise(p,n,MADV_RANDOM);require(mapping_policy_result==0,"Owned MADV_RANDOM failed");}
-  retiring=false;regions.push_back({p,n,offset});}
+  retiring=false;cache_cursor=0;regions.push_back({p,n,offset});}
  void unregister_mapping(void*p){std::lock_guard<std::mutex>l(mutex);require(readers==0,"Cannot release mapping with live readers");for(auto i=regions.begin();i!=regions.end();++i)if(i->address==p){regions.erase(i);return;}throw std::runtime_error("Unknown mapping lifetime");}
  void inspect_region(void*p,size_t n,off_t offset){verify();std::istringstream lines(text("/proc/self/maps"));uintptr_t cursor=(uintptr_t)p,end=cursor+((n+sysconf(_SC_PAGESIZE)-1)/sysconf(_SC_PAGESIZE))*sysconf(_SC_PAGESIZE);std::istringstream mi(mount);std::string a,b,device;mi>>a>>b>>device;unsigned dm,dn;require(sscanf(device.c_str(),"%u:%u",&dm,&dn)==2,"Malformed mount device");
   for(std::string line;std::getline(lines,line);){unsigned long long lo,hi,off,ino;unsigned ma,mn;char perms[5]={};if(sscanf(line.c_str(),"%llx-%llx %4s %llx %x:%x %llu",&lo,&hi,perms,&off,&ma,&mn,&ino)!=7)continue;if(hi<=cursor||lo>=end)continue;require(lo==cursor&&hi<=end&&strcmp(perms,"r--s")==0&&ino==identity.st_ino&&ma==dm&&mn==dn&&off==uint64_t(offset)+lo-(uintptr_t)p,"Unbound partial/alias mapping");cursor=hi;}
@@ -130,7 +130,7 @@ public:
      cache_cursor=(cache_cursor+1)%chunks;++visits;
      if(present){advice(off,n);cache_audit.after=measure();}
     }
-    cache_audit.after=measure();require(cache_audit.after<=cache_limit,"Cache budget unresolved after bounded passes");
+    cache_audit.after=measure();verify();require(nanos()-cache_audit.start<5000000000ULL,"Cache eviction final wall deadline");require(cache_audit.after<=cache_limit,"Cache budget unresolved after bounded passes");
    }
   }catch(const std::exception&e){cache_audit.failed=true;cache_audit.error=e.what();cache_audit.end=nanos();getrusage(RUSAGE_SELF,&after);cache_audit.major=after.ru_majflt-before.ru_majflt;cache_audit.minor=after.ru_minflt-before.ru_minflt;throw;}
   cache_audit.end=nanos();getrusage(RUSAGE_SELF,&after);cache_audit.major=after.ru_majflt-before.ru_majflt;cache_audit.minor=after.ru_minflt-before.ru_minflt;
