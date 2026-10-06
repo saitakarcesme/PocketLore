@@ -14,7 +14,7 @@ Measured current app+test data and APKs total8,288,998,379logical bytes. Data al
 
 The exact source repair was recovered from5131871 onto this checkpoint and bound by7c0da5a. Default generic2GiB file/2048context/256output and KV/compute limits remain; the explicit hash-bound exception is experimental. Build configuration was two native jobs/two Gradle workers/2GiB Gradle heap, not a measured combined build peak. Six packaged native libraries pass16KiB ELF/ZIP checks. No model selection, production model pin, source rights or answer-support policy changes qualify general generation.
 
-Sustained renderer mitigation remains untested despite this passing bounded continuity window. Physical ARM64/GrapheneOS, full-current distribution/update resources, general generation/semantic support, root500/510/530, Notebook full acceptance, source rights, unseen matched comparisons and human release remain open. Independent criticism of this exact packet follows; builder completion is not automatic acceptance.
+Sustained renderer mitigation remains untested despite this passing bounded continuity window. Physical ARM64/GrapheneOS, full-current distribution/update resources, general generation/semantic support, root500/510/530, Notebook full acceptance, source rights, unseen matched comparisons and human release remain open. Independent criticism is recorded below; builder completion is not automatic acceptance.
 
 ---
 
@@ -23,6 +23,8 @@ Sustained renderer mitigation remains untested despite this passing bounded cont
 # Android runtime durability and preserved state
 
 Task 523 runtime recovery is in progress and is not a full durability acceptance. All probes concern the existing API37 emulator-5564; no other emulator, acquisition job, model service or holdout was accessed.
+
+Independent review of checkpoint `ee52ca6`: “Verified source-bound receipts and fresh witnesses support retained-data lifecycle and pinned-model load/cancel/reuse; memory evidence is load-only, leaving inference resources, sustained stability, full-distribution capacity and physical acceptance unproven.”
 
 ## Native crash diagnosis
 
