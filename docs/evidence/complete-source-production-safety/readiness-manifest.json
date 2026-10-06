@@ -1,0 +1,26 @@
+{
+  "at": 1791245929.7669206,
+  "files": {
+    "executed-compact.py": {
+      "source": "/home/isa/Projects/PocketLore/downloads/complete-source-producer/engineering-12000-compact-v1/executed-compact.py",
+      "sha256": "644d84c9f3c639327a92bed08719fe7b6656ab6af52e269a9946e937516b5c9b"
+    },
+    "actual-12000-receipt.json": {
+      "source": "/home/isa/Projects/PocketLore/downloads/complete-source-producer/engineering-12000-compact-v1/receipt.json",
+      "sha256": "11c08857e7262d54fba7de30e80534d8dfc837fefdcaf79d70de4e9fb20b8e68"
+    },
+    "actual-6000-receipt.json": {
+      "source": "/home/isa/Projects/PocketLore/downloads/complete-source-producer/engineering-6000-compact-v1/receipt.json",
+      "sha256": "f5e2832f3c03dc9e4a599c637e43944022eab6a8f8ee3b3054242e1dc6f530bf"
+    },
+    "OBJECTIVE.md": {
+      "source": "/home/isa/PocketLore-control/overnight-20261005/OBJECTIVE.md",
+      "sha256": "72be521e7ebf6b8f7a75361f88ca9ef7e3d4f908a5f37b3fff2461d62eb07b27"
+    },
+    "source-full-readiness-contract.json": {
+      "source": "/home/isa/PocketLore-control/overnight-20261005/source-full-readiness-contract.json",
+      "sha256": "9356d8ab58cecff5d0faf1a4914022568ef922a0df6789c807b54aa0d96b8de1"
+    }
+  },
+  "scope": "Independent static review of exact executed experimental code and actual bounded engineering receipts; no product/source admission or long-launch acceptance"
+}

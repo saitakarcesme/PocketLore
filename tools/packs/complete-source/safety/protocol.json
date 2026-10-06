@@ -1,0 +1,31 @@
+{
+  "task": "522-production-safety",
+  "frozen_before_changes": true,
+  "route": "One sequential coordinator; pool unqualified without aggregate cgroup measurements. No unchanged full corpus rerun.",
+  "actual_input": "Committed original sequences0..5999; exact output comparison with frozen5944-article engineering oracle, plus direct original reconstruction independent of producer mapper.",
+  "boundaries": {
+    "batch_rows": 64,
+    "compressed_batch_bytes": 8388608,
+    "process_address_space": 402653184,
+    "long_cgroup_memory_max": 536870912,
+    "swap_max": 0,
+    "cpu_quota_max_percent": 400,
+    "selected_cpu_percent": 100,
+    "tasks_max": 32,
+    "host_reserve_bytes": 107374182400,
+    "write_margin_bytes": 536870912,
+    "absolute_cutoff": "2026-10-06T06:59:24Z"
+  },
+  "controls": [
+    "actual beyond5000original round trips, sourceHTML/date/license/history and UTF16 quote oracle",
+    "separate-batch late older conflicts and unsafe latest, no stale resurrection",
+    "malformed JSON and staged metadata, unknown original page, retained dispositions",
+    "disk reserve failure before write",
+    "real SIGTERM and SIGXCPU retention; cutoff during parse/FTS/integrity/hash",
+    "growing SQLite writer checkpoint not pinned by source reader during transform",
+    "manual resume of committed ingest boundary; interrupted finalization cannot silently resume",
+    "archive incomplete and all-record accounting incomplete deny completion/promotion",
+    "no candidate/final body duplication or VACUUM; measured page/freelist/journal/temp accounting"
+  ],
+  "admission": "Always false; full source coverage is a separate factual flag and never rights/Android admission."
+}

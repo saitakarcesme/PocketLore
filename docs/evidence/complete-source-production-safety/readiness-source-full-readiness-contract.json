@@ -1,0 +1,33 @@
+{
+  "status": "not_dispatchable_until_whole_source_identity_verified",
+  "repair_of": "510-broad-reviewed-corpus-admission",
+  "material_change": "Complete official original archive and independent consumed-byte-bound raw staging replace the failed 64MiB prefix; repeated prefix, duplicate inflation and narrow-pilot acceptance remain disallowed",
+  "required_source": {
+    "bytes": 140267048582,
+    "md5": "2276dbb8db3bc93eabc90a505117e373",
+    "archive_date": "2025-03-20",
+    "prefix_sha256": "0c8d32996739918b762948bfb674f7ea9f2b164647e3b92bcf54b9a53c3b6a67"
+  },
+  "readiness": [
+    "Producer identity_verified with exact bytes, upstream MD5 and computed SHA256",
+    "Raw stage complete with matching independently consumed original identity, or explicit complete-source validated direct reader",
+    "Historical failures and exact original records remain retained; no unverified partial input counted"
+  ],
+  "admission_requirements": [
+    "At least 1.25 million distinct eligible full encyclopedia articles; target two to three million",
+    "Deterministic published selection and full-source license, revision, source timestamp, title and namespace audit, without development-query selection",
+    "General bounded HTML/math/table transformation preserving original source bytes, exact quote spans and reconstruction; reject unsupported transforms with counted reason",
+    "Durable per-original dispositions and duplicate/exclusion counts; distinct page/revision identities bound to originals",
+    "Actual Android retrieval, source inspection, citations, absent controls, corruption rejection, restart and retention on the current candidate",
+    "Combined installed and update peak <=50GB, target <=45GB; resource measurements include all model, places, specialist and personal assets",
+    "Independent source/rights and product evidence review; physical/no-GMS and unseen matched superiority stay separate unproven gates",
+    "Do not stamp one license over the source corpus: preserve and independently validate each record license identifier and exact URL, including the observed mixed 3.0/4.0 metadata; unknown/missing metadata must get explicit exclusion dispositions",
+    "Multiple revisions are not additional article breadth: use documented deterministic source-date/revision selection or version-aware identities while counting distinct eligible pages exactly once; preserve skipped original revisions and reasons",
+    "Replace the frozen-prefix ingest 1.5GB expansion limit with bounded complete-source processing and retained failure receipts; do not silently relabel the prefix reader",
+    "Generalize builder per-record license metadata while preserving exact identifier/URI validation already implemented by the section extractor; historical 3.0 fixture output must remain reproducible",
+    "Measure full-scale document/passage/FTS duplication, per-original transformation ledger and Android reader/import bounds; material architecture changes must keep byte-bound exact citations and the installed/update budget rather than dropping breadth"
+  ],
+  "schema_observation": "A committed partial snapshot of 278,696 originals contains 25,369 CC-BY-SA-3.0 metadata records and 253,327 CC-BY-SA-4.0 metadata records, 278,528 distinct page identifiers, and 278,696 distinct revision identifiers. This is not full archive or independent licensing eligibility.",
+  "partial_census_evidence": "/home/isa/PocketLore-control/overnight-20261005/source-prefix-metadata-census-278695.json",
+  "prior_producer_scale_investigation": "/home/isa/PocketLore-control/overnight-20261005/source-admission-scale-investigation/investigation.json"
+}

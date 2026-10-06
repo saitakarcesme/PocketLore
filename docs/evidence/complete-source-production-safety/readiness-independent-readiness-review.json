@@ -1,0 +1,19 @@
+{
+  "decision": "rework_before_long_scale_launch",
+  "scope": "Exact frozen engineering prototype and receipts; independent long-scale readiness, not canonical engineering milestone acceptance",
+  "criticism": "The prototype preserves provisional identity and conservative exclusions, but fixed CPU termination, unchecked finalization, pinned staging snapshots and missing fidelity controls block a reliable long-scale launch.",
+  "findings": [
+    "CLI hard-codes RLIMIT_CPU=300 independent of --seconds; default SIGXCPU termination bypasses FAIL_RETAINED",
+    "Deadline checks do not cover FTS integrity, VACUUM, SQLite integrity and whole-index hashing",
+    "Long source read transaction can pin staging WAL while append-only acquisition grows",
+    "Invalid JSON or inconsistent staged metadata can abort outside retained per-record exclusions",
+    "Frozen receipts alone lack independently inspectable original reconstruction, UTF16, conflict and mixed-license test outputs; reader validates capsule without original HTML retrieval"
+  ],
+  "positive_limitations": [
+    "Conservative conflicts prevent unsafe latest revisions reviving older output",
+    "Math/table articles are explicitly unsuitable for research candidacy",
+    "Original bytes externally referenced rather than reconstructed by reader"
+  ],
+  "manifest_hashes_match": true,
+  "observed_at": 1791246254.9262927
+}
