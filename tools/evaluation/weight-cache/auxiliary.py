@@ -112,6 +112,7 @@ def validate_aux(r):
   need(pre['derivation']==post['derivation']==f['derivation'] and pre['configuration']==post['configuration']==f['configuration'],'aux-configuration')
   error={'hung':'Owned child deadline','read-error':'Engineered observation read failure'}.get(name)
   process(run,error)
+  need(run['kernel_before']['group_identity']==f['kernel']['group_identity'],'events-cgroup')
   if expected is None:
    need(packet['input'] is None and post['input'] is None and not run['observations'],'process-only');summary[name]={'mapping':'not expected','exit':run['exit'],'cleanup':run['cleanup']};continue
   inp=packet['input'];need(inp==pre['input'],'input-binding');need(post['input']['sha256']==inp['sha256'],'input-hash')

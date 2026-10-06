@@ -9,14 +9,16 @@ def events(raw):
  for line in raw.splitlines():
   m=re.fullmatch(r'([a-z_]+) ([0-9]+)',line)
   need(m is not None,'events-format');key,value=m.groups()
-  need(key in EVENT_KEYS and key not in out,'events-keys');out[key]=int(value)
+  need(key in EVENT_KEYS and key not in out,'events-keys');need(len(value)<=20 and int(value)<=18446744073709551615,'events-format');out[key]=int(value)
  need(set(out)==EVENT_KEYS,'events-keys');return out
 
-def resource_contract(run):
+def resource_contract(run,expected_group=None):
  need(run.get('event_contract')=='no-new-memory-failure-v1','events-contract')
  need('kernel_before' in run and 'kernel_after' in run,'events-boundaries')
  first,last=run['kernel_before'],run['kernel_after'];identity=first.get('group_identity')
+ for boundary in [first,last]:need(0<int(boundary['memory.current'])<8053063680 and int(boundary['memory.swap.current'])==0,'events-resource-bound')
  need(isinstance(identity,dict) and set(identity)=={'path','device','inode','raw_cgroup'} and identity['inode']>0,'events-cgroup')
+ if expected_group is not None:need(identity==expected_group,'events-cgroup')
  need(identity['path']=='/sys/fs/cgroup'+identity['raw_cgroup'].split('0::')[1].strip(),'events-cgroup')
  previous=events(first.get('memory.events'));baseline=previous.copy();clock=first['observed_ns']
  samples=run['samples']+[last]
@@ -40,7 +42,7 @@ def verified_phase(entries):
  need(e['verified_owner'].get('regions')==[],'verified-state')
  return e
 
-def snapshot(x,run,inp,n,verified):
+def snapshot(x,run,inp,n,verified,min_resident=0):
  need(isinstance(x,dict) and 'owner' in x and 'stat' in x and 'cached_pages' in x,'snapshot-required')
  a=x['owner'];pages=x['cached_pages'];count=(n+4095)//4096
  need(isinstance(pages,list) and all(type(p)==int for p in pages),'pages-type')
@@ -64,6 +66,7 @@ def snapshot(x,run,inp,n,verified):
   need((int(m[5],16),int(m[6],16))==dev and int(m[7])==v['inode'],'snapshot-vma')
   fields={k:int(value)*1024 for k,value in re.findall(r'^(Rss|Pss|Private_Dirty|Anonymous|Swap):\s+(\d+) kB$',block,re.M)}
   need(set(fields)=={'Rss','Pss','Private_Dirty','Anonymous','Swap'},'snapshot-residency')
+  need(fields['Rss']>=min_resident,'pressure-resident')
   need(0<=fields['Pss']<=fields['Rss']<=len(pages)*4096 and fields['Private_Dirty']==fields['Anonymous']==fields['Swap']==0,'snapshot-residency');headers.append(m)
  need(len(headers)==1,'snapshot-vma')
  return a['monotonic_ns']
@@ -79,7 +82,7 @@ def reuse_snapshots(run,inp,name,entries):
  prior=verified['monotonic_ns'];snapshots=[]
  for suffix,n in specs:
   key=name+'-'+suffix+'.json';need(key in run['observations'],'snapshot-required');x=json.loads(run['observations'][key])
-  now=snapshot(x,run,inp,n,verified);need(prior<now<entries[-1]['monotonic_ns'],'snapshot-chronology');prior=now;snapshots.append(x)
+  now=snapshot(x,run,inp,n,verified,16777216 if suffix=='before-injection' else 0);need(prior<now<entries[-1]['monotonic_ns'],'snapshot-chronology');prior=now;snapshots.append(x)
  need(not snapshots[0]['cached_pages'],'snapshot-cold')
  if name not in ['tail','remap']:
   need(set(range(4096))<=set(snapshots[1]['cached_pages']),'pressure-observed')

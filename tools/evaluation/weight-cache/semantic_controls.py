@@ -9,7 +9,7 @@ def alter_snapshot(run,key,change):
 def event_text(raw,key,value):return re.sub(r'^'+key+r' \d+$',key+' '+str(value),raw,flags=re.M)
 def controls(r,validate):
  rows=[]
- cases=[('exact-oom-kill','events-new-failure'),('new-max','events-new-failure'),('event-missing','events-keys'),('event-unknown','events-keys'),('event-negative','events-format'),('event-malformed','events-format'),('event-decrease','events-monotonic'),('event-cgroup','events-cgroup'),('event-before-missing','events-boundaries'),('event-final-failure','events-new-failure'),('exact-duplicate-pressure','pages-unique'),('pressure-out-of-range','pages-range'),('pressure-cardinality','pages-cardinality'),('pressure-missing','snapshot-required'),('pressure-pid','snapshot-pid'),('pressure-vma','snapshot-vma'),('pressure-time','snapshot-chronology'),('tail-duplicate-pages','pages-unique'),('tail-wrong-logical-length','snapshot-range'),('remap-wrong-range','snapshot-range'),('remap-missing-old','snapshot-required'),('remap-cursor','remap-cursor')]
+ cases=[('exact-oom-kill','events-new-failure'),('new-max','events-new-failure'),('event-missing','events-keys'),('event-unknown','events-keys'),('event-negative','events-format'),('event-malformed','events-format'),('event-decrease','events-monotonic'),('event-cgroup','events-cgroup'),('event-before-missing','events-boundaries'),('event-final-failure','events-new-failure'),('exact-duplicate-pressure','pages-unique'),('pressure-out-of-range','pages-range'),('pressure-cardinality','pages-cardinality'),('pressure-missing','snapshot-required'),('pressure-pid','snapshot-pid'),('pressure-vma','snapshot-vma'),('pressure-time','snapshot-chronology'),('pressure-no-touched-rss','pressure-resident'),('tail-duplicate-pages','pages-unique'),('tail-wrong-logical-length','snapshot-range'),('remap-wrong-range','snapshot-range'),('remap-missing-old','snapshot-required'),('remap-cursor','remap-cursor')]
  for family in ['tail','remap','no-progress','mincore-failure','advice-failure','lifecycle','fault_controls']:cases.append(('missing-verified:'+family,'verified-required'))
  cases += [('duplicate-verified','verified-required'),('reordered-verified','verified-order'),('wrong-verified-state','verified-state')]
  for case,guard in cases:
@@ -31,6 +31,7 @@ def controls(r,validate):
   elif case=='pressure-missing':del pressure['observations'][key];del pressure['raw_bytes'][key]
   elif case=='pressure-pid':alter_snapshot(pressure,key,lambda x:x['owner'].update(pid=999999))
   elif case=='pressure-vma':alter_snapshot(pressure,key,lambda x:x['owner'].update(smaps=x['owner']['smaps'].replace('r--s','rw-s')))
+  elif case=='pressure-no-touched-rss':alter_snapshot(pressure,key,lambda x:x['owner'].update(smaps=re.sub(r'^Rss:.*$', 'Rss: 0 kB',x['owner']['smaps'],flags=re.M)))
   elif case=='pressure-time':alter_snapshot(pressure,key,lambda x:x['owner'].update(monotonic_ns=pressure['end_ns']+1))
   elif case=='tail-duplicate-pages':alter_snapshot(tail,'tail-tail.json',lambda x:x['cached_pages'].append(x['cached_pages'][-1]))
   elif case=='tail-wrong-logical-length':alter_snapshot(tail,'tail-tail.json',lambda x:x['owner']['regions'][0].update(bytes=33553375))
