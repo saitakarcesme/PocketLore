@@ -479,3 +479,6 @@ Bounded exact literal indexing/search/inspection/export passes current host cont
 
 
 Task547 closes the two bounded PID/export evidence defects with a source-cleared compact capture and two read-only checks. Historical543–546 failures and storage debt remain retained. Actual Android runtime, full-source rights/coverage, useful generation, physical12GB/whole50GB and comparative gates remain open.
+
+
+Task549 closes host whole-run containment and rebuilt-APK identity gaps for attachment text transport only. Failed548 is retained. Actual photo/speech recognition, original528 ground-truth and50%WER gates, SAF/lifecycle/overall deadlines, physical12GB/whole50GB and rivalry acceptance remain open.

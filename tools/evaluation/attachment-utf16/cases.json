@@ -1,0 +1,120 @@
+{
+  "version": 1,
+  "input_cap": 65536,
+  "unit_cap": 65536,
+  "cstring_scan_cap": 65537,
+  "helper_peak_buffer_bytes": 131072,
+  "rounds": 3,
+  "valid": [
+    {
+      "name": "ascii",
+      "hex": "48656c6c6f2030313233",
+      "units": [
+        72,
+        101,
+        108,
+        108,
+        111,
+        32,
+        48,
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "name": "scripts",
+      "hex": "636166c3a920ce95cebbcebbceb7cebdceb9cebaceac20e4b8ade6968720d8a7d984d8b9d8b1d8a8d98ad8a9",
+      "units": [
+        99,
+        97,
+        102,
+        233,
+        32,
+        917,
+        955,
+        955,
+        951,
+        957,
+        953,
+        954,
+        940,
+        32,
+        20013,
+        25991,
+        32,
+        1575,
+        1604,
+        1593,
+        1585,
+        1576,
+        1610,
+        1577
+      ]
+    },
+    {
+      "name": "supplementary",
+      "hex": "41f09f9880f09090b75a",
+      "units": [
+        65,
+        55357,
+        56832,
+        55297,
+        56375,
+        90
+      ]
+    },
+    {
+      "name": "combining",
+      "hex": "65cc81",
+      "units": [
+        101,
+        769
+      ]
+    },
+    {
+      "name": "lines",
+      "hex": "6f6e650d0a74776f0a0933",
+      "units": [
+        111,
+        110,
+        101,
+        13,
+        10,
+        116,
+        119,
+        111,
+        10,
+        9,
+        51
+      ]
+    },
+    {
+      "name": "empty",
+      "hex": "",
+      "units": []
+    },
+    {
+      "name": "nul",
+      "hex": "610062",
+      "units": [
+        97,
+        0,
+        98
+      ]
+    }
+  ],
+  "invalid": {
+    "truncated2": "c2",
+    "truncated3": "e282",
+    "truncated4": "f09f98",
+    "stray": "80",
+    "continuation": "e228a1",
+    "overlong": "c080",
+    "overlong3": "e08080",
+    "surrogate": "eda080",
+    "above_max": "f4908080"
+  },
+  "boundary": "65536 ASCII bytes succeeds; 65537 refuses; terminated C string at offset65536 succeeds; no terminator through offset65536 refuses; null producer refuses; pending Java exception preserved",
+  "semantics": "Explicit-length NUL preserved; C-string first NUL is producer terminator; no UTF8 replacement; no recognition executed."
+}

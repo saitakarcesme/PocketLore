@@ -545,3 +545,6 @@ A separate bounded trigram/B-tree reader now avoids original-body scans for sele
 
 
 Task547: exact numeric pidfd ownership and independently authored original-export validation are repaired at frozen source 2f51dc04. Parent clearance preceded the sole compact capture; Android build and two immutable read-only checks passed. Earlier543–546 failures remain failed. See docs/evidence/indexed-semantic-final.md; no device/model/product acceptance is claimed.
+
+
+Task549: exact recovered attachment UTF16 transport passed one parent-owned512MiB/no-swap JNI run, full raw ownership/resource checks and13 semantic controls. Android rebuilds retain identical content despite new file versions; pure checker passes. Failed548 remains failed. See docs/evidence/attachment-utf16-contained.md; no Android recognition/photo quality or device acceptance follows.
