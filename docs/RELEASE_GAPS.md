@@ -464,3 +464,7 @@ New opt-in quiescent cyclic policy passes current synthetic/native controls and 
 ## Task538: evidence controls only
 
 Marker-only auxiliary cache checks are replaced by current raw process/descriptor/mapping/refusal/cleanup contracts, with 65 finite corruption controls and reproducible linked artifacts. This does not qualify model execution, useful generation, Android runtime, full-source/50 GB distribution, physical 12 GB/no-GMS or unseen comparative performance. The emulator remains terminal and protected data has no new device observation. See docs/evidence/cache-auxiliary-contract.md for exact measured scope and independent agent criticism.
+
+## Task539 bounded semantic contracts
+
+Current synthetic receipts now reject contradictory kernel events, duplicate pressure pages and missing verified-owner phases with named guards and independently reconstructible counterexamples. Build and checker pass; retained failed collections remain inspectable. No model/device execution occurred. Full-source, useful-generation, physical12GB/noGMS, complete50GB distribution/update and unseen comparative gates remain open; details are in [the task539 evidence](evidence/cache-semantic-repair.md).
