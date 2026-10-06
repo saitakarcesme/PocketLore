@@ -1,0 +1,348 @@
+{
+  "provenance": "CC0 independently authored fixed ZIP structures; no parser-derived expectations",
+  "payload_hex": "536f7572636520636166c3a920f09f99820d0a4f6e6c7920696620736166653b206f746865727769736520776169742e0a",
+  "cases": [
+    {
+      "name": "stored",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/stored.zip",
+      "sha256": "2325cf521ae256e7adb7c45b1a7046495f5c3b6e7e871f3778fc85498a8c3196",
+      "bytes": 165,
+      "accept": true,
+      "cancel": false,
+      "payload_sha256": "413a774cd0f88d761e247ab489ff0b53448c4d9b221781b3a01459fc91ca447f"
+    },
+    {
+      "name": "deflated",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/deflated.zip",
+      "sha256": "d7a622ad7b0616cc4ad459b7190c6ca493d635a4e4be58fb577575b0a05c5f9a",
+      "bytes": 167,
+      "accept": true,
+      "cancel": false,
+      "payload_sha256": "413a774cd0f88d761e247ab489ff0b53448c4d9b221781b3a01459fc91ca447f"
+    },
+    {
+      "name": "signed-descriptor",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/signed-descriptor.zip",
+      "sha256": "84654442b5a47aae1984b60ee448e1fa0ff6add29e3a2d6ad74fe5d461ee85a6",
+      "bytes": 183,
+      "accept": true,
+      "cancel": false,
+      "payload_sha256": "413a774cd0f88d761e247ab489ff0b53448c4d9b221781b3a01459fc91ca447f"
+    },
+    {
+      "name": "unsigned-descriptor",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/unsigned-descriptor.zip",
+      "sha256": "0ec8d9bfc04780fabcd4daa9068f838b1024952b6129d7cc8aa177dd2030a46d",
+      "bytes": 179,
+      "accept": true,
+      "cancel": false,
+      "payload_sha256": "413a774cd0f88d761e247ab489ff0b53448c4d9b221781b3a01459fc91ca447f"
+    },
+    {
+      "name": "comment",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/comment.zip",
+      "sha256": "94c706dd2f5aee4db63200a9b7792d3b77b37089347bc91ce3745d66b75d11e6",
+      "bytes": 181,
+      "accept": true,
+      "cancel": false,
+      "payload_sha256": "413a774cd0f88d761e247ab489ff0b53448c4d9b221781b3a01459fc91ca447f"
+    },
+    {
+      "name": "directory",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/directory.zip",
+      "sha256": "597a729e50a786e4ef2643e61aaa9a6ce36b765bef9235533a7dbdfb82f49598",
+      "bytes": 106,
+      "accept": true,
+      "cancel": false,
+      "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "utf8-name",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/utf8-name.zip",
+      "sha256": "e8ef70a7ad9e22b39e6033175bbbbb96106418ae1e0762289aaf77a2778d3846",
+      "bytes": 165,
+      "accept": true,
+      "cancel": false,
+      "payload_sha256": "413a774cd0f88d761e247ab489ff0b53448c4d9b221781b3a01459fc91ca447f"
+    },
+    {
+      "name": "eocd-trailing",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/eocd-trailing.zip",
+      "sha256": "4d163db536c006a2b15dd9b27ebdb29848bd7ee788305277b12d3d15c68f7b36",
+      "bytes": 166,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "eocd-comment",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/eocd-comment.zip",
+      "sha256": "de69b35278e1faea2ad435e7e0bfde418c0504e9ce2aed7a4f3a220f0755056f",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "disk",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/disk.zip",
+      "sha256": "e4138f3085072f70100650db4fb233c7ecf4a20344cc16d46961711cc5e6bd82",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "zip64-count",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/zip64-count.zip",
+      "sha256": "0f4c623e7acd28caf0b337d164ae7ef0a6c809d88f8cd026d08c3ecfcd88f397",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "central-count",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/central-count.zip",
+      "sha256": "7e23eae828e30338e55e0b9fe534a7dcbfd839b98fcc52a3f421c34c8824e76e",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "central-size",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/central-size.zip",
+      "sha256": "549bd3506a9c1b97d30cb2987c9d34d85c7472b8ecc98d991fd7203d090de973",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "central-offset",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/central-offset.zip",
+      "sha256": "e1fbc177fdc8bcfaab04e70ce6752ee950cb894a1e6f812ab9455eeaefb3b2e8",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "central-crc",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/central-crc.zip",
+      "sha256": "663f673dd313f9b7bc31c4f90b15061ca539f41ade8e74be1ce07eed43603c70",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "central-expanded",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/central-expanded.zip",
+      "sha256": "511583323efbeca21fc3a7a2e7b30d9608b633f23083bc7523e695a1a502c5fc",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "central-compressed",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/central-compressed.zip",
+      "sha256": "ffe636a9b73a4b16109ae570aa70775d41c22b51484eefa94f978827da88558d",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "central-method",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/central-method.zip",
+      "sha256": "24b7162cffa6b4799aed7bf8de7f0c3bd477bdd67ffc9da9d692aacf2d00e7c5",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "central-flags",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/central-flags.zip",
+      "sha256": "8aa8cdb90ddb38041293032ed90a7d50e4a25a24e580389bdacf14c6d83149a1",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "central-name",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/central-name.zip",
+      "sha256": "dffe94dab87148a0fd848d3a82e89c849b4c739f5779f85a682fadd5b02a2622",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "local-offset",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/local-offset.zip",
+      "sha256": "1a861398756955a88a7eb0b78ac849fd3acf5ddc8fd7caea99ddc62f4ffe428d",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "local-name",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/local-name.zip",
+      "sha256": "51f753bb637b6dc75814a646ea5c28c37c365aead0f8c968bc504b129865d2c2",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "local-method",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/local-method.zip",
+      "sha256": "afa95381205aaf2c64d1c77da558278c92470987634457803f94fd3b396cb102",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "local-flags",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/local-flags.zip",
+      "sha256": "dc05328792c3f306e9e14cf6a688c7398ab5d8fd28633318bf80be5d8e62a654",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "local-crc",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/local-crc.zip",
+      "sha256": "88458124b6c763c0573574c9f70f46640d482b4f1a2f8c9163dbccb42dbf0650",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "local-size",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/local-size.zip",
+      "sha256": "af3f261a5d406b3e0889cfd51df0aaf7ff8f348f96ef515a9135e27a199ea8df",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "local-extra-truncated",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/local-extra-truncated.zip",
+      "sha256": "b080efe42bd42ef6f677694a8fc6e4a9376ef515dc701016db6c0d30fc7008e5",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "payload-corrupt",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/payload-corrupt.zip",
+      "sha256": "4ac9eec3cb773b60a2b96d262025647adf20ea6d4300f4a91827ca05968e2b7b",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "truncated",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/truncated.zip",
+      "sha256": "adc821dd054d37417f48726c617a4857cd0510dc08fcc9544e6e8cd3dca43ebc",
+      "bytes": 160,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "zip64-extra",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/zip64-extra.zip",
+      "sha256": "7c9b78c38476a19788dbbb75b4aba3b9fe84eb3625031123f6acab0a6ce4cfd4",
+      "bytes": 169,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "descriptor-crc",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/descriptor-crc.zip",
+      "sha256": "f59e650e5b86a15b79c7e20edbcc731319da86bd236ab168efb20f8e3e8ce0eb",
+      "bytes": 183,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "descriptor-size",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/descriptor-size.zip",
+      "sha256": "40f3da57fbfd671ac188d9af74dcdf95bf9efe264616091cf4576ae2507c0a97",
+      "bytes": 183,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "descriptor-truncated",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/descriptor-truncated.zip",
+      "sha256": "ab999559e7fa597ed2f2d97c6e410a25b5bc1f7a10b8a1db62ea7680f9108d24",
+      "bytes": 182,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "payload-trailing",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/payload-trailing.zip",
+      "sha256": "7dfa4b1130a9a107a7dce12e918b34170ae20854fb0716e692942fe21e05e55a",
+      "bytes": 168,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "duplicate",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/duplicate.zip",
+      "sha256": "c39b90e45ea36b0fe0a9611b91700d227167fde222f652164ab3e9357f7b2be3",
+      "bytes": 220,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "overlap",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/overlap.zip",
+      "sha256": "af919fc77a0840df08f5bc585fca87ec66d01f5edbe929abfdc394053ff82c49",
+      "bytes": 165,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "gap",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/gap.zip",
+      "sha256": "ce783fd094c018deb1fd50d0ba018a73a91e4baceb5f65fd6ac83b784c9e4e7a",
+      "bytes": 166,
+      "accept": false,
+      "cancel": false,
+      "payload_sha256": null
+    },
+    {
+      "name": "cancel",
+      "file": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/central-fixtures/cancel.zip",
+      "sha256": "2325cf521ae256e7adb7c45b1a7046495f5c3b6e7e871f3778fc85498a8c3196",
+      "bytes": 165,
+      "accept": false,
+      "cancel": true,
+      "payload_sha256": null
+    }
+  ]
+}

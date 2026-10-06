@@ -1,0 +1,467 @@
+{
+  "recovered": {
+    "android/app/src/main/java/org/pocketlore/app/DocumentBytes.java": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "e561321660fba1a5bdcfd81919139706e9b1c2cf98136f3159edfe905e297f5b",
+      "bytes": 628
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentFormatPolicy.java": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "b0d1dbc0a3c9a63131360a248b3d54a0d0e1aac17ef35fa70648e465040d2158",
+      "bytes": 992
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentHtml.java": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "0f5d2582dd1f0b5db4b3c89da782aebe1f59c826e536a65831ee44bae9ec4545",
+      "bytes": 16625
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentZip.java": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "73199ee7a988759a1f5fe0dab6375119b9adfcda5d45ed0ae450aaa79a36ff76",
+      "bytes": 6549
+    },
+    "android/app/src/main/java/org/pocketlore/app/PersonalDocuments.java": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "d45624a6351650c10460e3c639b435f25762dc28a02c4e20904650e33a2f1ea1",
+      "bytes": 10901
+    },
+    "android/app/src/main/java/org/pocketlore/app/PersonalDocumentsActivity.java": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "892e5939e7d493434813b9521a99324ec1f3ca009b5786dffb20406f368858c5",
+      "bytes": 6719
+    },
+    "android/app/src/main/java/org/pocketlore/app/StructuredDocuments.java": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "49cf56592dd21bfe8eb1ee743b231ce60fd4a1580eb59727803df5c5d51780bb",
+      "bytes": 18152
+    },
+    "docs/evidence/document-formats/limits.json": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "ddd5070708c38b462e0eb58eb060c7d8e153c06cda001aa3543e8398faad7531",
+      "bytes": 921
+    },
+    "tools/evaluation/check_document_format_source_recovery.sh": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "e1ed6ba7360a2764dc7fc1c4e96bc7644bc144e7d41d14bee6f102e536774ce9",
+      "bytes": 157
+    },
+    "tools/evaluation/check_document_formats.sh": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "53175549b7a6a463a1c455e5cbce3ef3225df40b73c1f84e1538ec98c149f0c2",
+      "bytes": 121
+    },
+    "tools/evaluation/document-format-source-recovery/BatchProbe.java": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "de23454a0d9ad0aa21db27f18d0f127da8195e44bf0f3dcb5191aabb3da5b2a0",
+      "bytes": 3380
+    },
+    "tools/evaluation/document-format-source-recovery/CentralProbe.java": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "f932ed95712a257b3b3d7de8c3f0a14fb71a18bdc57c9c8a61f8431c4b3ef8c5",
+      "bytes": 1683
+    },
+    "tools/evaluation/document-format-source-recovery/accounting-policy.json": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "4986ff23c0c9fb31ba70e4b0fa61bbeef2608f3d5ccc342fd77952c24569e04a",
+      "bytes": 988
+    },
+    "tools/evaluation/document-format-source-recovery/accounting.py": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "58953359ac949c2cec0523513d65ceeddab554f166e79dd99e23d9f6930eaeef",
+      "bytes": 3490
+    },
+    "tools/evaluation/document-format-source-recovery/accounting_controls.py": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "58bf7a138998b5f1446753a997ba9a9e64b80e71c0db75a9265dbc8c7ea86903",
+      "bytes": 3584
+    },
+    "tools/evaluation/document-format-source-recovery/build-inputs-552.json": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "b26bb4dd366369c34673f046b5b0cc15933079c6ba4531eb7dd048b2c80b1919",
+      "bytes": 32409
+    },
+    "tools/evaluation/document-format-source-recovery/build-inputs-553.json": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "2c874cdda0b64261fbce2bac4acd1d24487822e4489db96b34d90c41487652ad",
+      "bytes": 46043
+    },
+    "tools/evaluation/document-format-source-recovery/build-inputs-final.json": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "831d2d3192d7fbe4995f10e89b7f5066eb74082d63a9352b3bc24c3caf26192b",
+      "bytes": 33128
+    },
+    "tools/evaluation/document-format-source-recovery/build-inputs.json": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "c7e3ac8e71262861fe1d91fafdfedc1bb23b1cdd5b77f0a9dab7cc10de706b45",
+      "bytes": 32990
+    },
+    "tools/evaluation/document-format-source-recovery/cases.json": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "908b47070ee74d0460c2ce69dd1a69e0fb1cb7d45b45ab189be4a181829f6704",
+      "bytes": 53768
+    },
+    "tools/evaluation/document-format-source-recovery/cases.tsv": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "f1f30e1218dbbcfae1f53f56b840ed8a69621284f774d0bf5815776ed195c13f",
+      "bytes": 12148
+    },
+    "tools/evaluation/document-format-source-recovery/central-cases.json": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "04c53e598ec1a50839296048f03942ec078e6e14da6a1e6ee3cad8aefe454c84",
+      "bytes": 14024
+    },
+    "tools/evaluation/document-format-source-recovery/central-cases.tsv": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "0ea129666f1c425c3ab659124ceb2ca2ec46a6de155da3ddab43dc5478b7b696",
+      "bytes": 5737
+    },
+    "tools/evaluation/document-format-source-recovery/central-policy.json": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "874999417401853d16a08560ddea38a0471e26b51ca30deca1d4ad3692097cb4",
+      "bytes": 1389
+    },
+    "tools/evaluation/document-format-source-recovery/central_fixtures.py": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "85d91f6326ab2cf0fc130c991e8dfa6a0e206a218e107ceeb2dc89412789481e",
+      "bytes": 4145
+    },
+    "tools/evaluation/document-format-source-recovery/check.py": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "5ea29c594e2ea6de8e95c526c17e353829f2db8995d6ec52301965f4487a01db",
+      "bytes": 9149
+    },
+    "tools/evaluation/document-format-source-recovery/common.py": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "5c19480e3ce97f2a09fbffa0f57c58d5bc74cce80700921f5797ef86e20317a7",
+      "bytes": 5497
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-dynamic-css": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "13cc7f5fc848ada14276f85ae95d2cdfad9be96a55fd2613f4fd74bcc582a307",
+      "bytes": 71
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-hidden-lineends": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "21f4fe487e5e199f22f26103925373decd608eb77c0d099f2517770f9e79fb19",
+      "bytes": 129
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-table-lines": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "566e97c6eacbb8835c685e25d44210e9b9557391b9ee3618b27cf54d25f5166f",
+      "bytes": 2207
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-truncated-central": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "91c27b21bc2c9e0ddf1e2c594cebd2e4777eb2b85054299deb705a21aabbbf16",
+      "bytes": 1558
+    },
+    "tools/evaluation/document-format-source-recovery/recovery.json": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "c31e995ce2cf194fe7db1b4b154ec30ac064b25e453028dde356c595296d9d06",
+      "bytes": 3550
+    },
+    "tools/evaluation/document-format-source-recovery/recovery552.json": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "50fd51d05942f8448507e72ecc4220ef03721f41dc5575aef03aa2bad8925f2a",
+      "bytes": 18476
+    },
+    "tools/evaluation/document-format-source-recovery/recovery553.json": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "39f4143319a9ea97132e6fe1de78cea035a753df5962a67ce63777b8984193c5",
+      "bytes": 18443
+    },
+    "tools/evaluation/document-format-source-recovery/worker.py": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "b962e31c17d294dc664cbf7eba97c1a3207fc19abe7143fed9fa9d02e14443f6",
+      "bytes": 4586
+    },
+    "tools/evaluation/document-formats/AndroidManifest.xml": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "1fbb7c67b384231a203e9f4a437c108f4e2c2698e8e13564911ad8337996146f",
+      "bytes": 454
+    },
+    "tools/evaluation/document-formats/ExtractionProbe.java": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "f882a4baf5ac35641d57c67694e5b57b79116398ea19b474cf2bb3043e1ffe6c",
+      "bytes": 1125
+    },
+    "tools/evaluation/document-formats/FormatPolicyProbe.java": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "3cf7cc6a1513b49c7093a25e52d19098a3587405792b2f378df505912d8f2037",
+      "bytes": 1892
+    },
+    "tools/evaluation/document-formats/build_receipt.py": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "e9ac01cae8d11c3a6a8c668c3eb828cd85fcec52bc9148ba54f4cf6ca2100c9c",
+      "bytes": 2194
+    },
+    "tools/evaluation/document-formats/check.py": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "b5aa44e492473457c1a28b48daee74f396d51557d89f58e0abf5e530202af7ba",
+      "bytes": 5278
+    },
+    "tools/evaluation/document-formats/host_checks.py": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "e17049b20faea794b9733a67875f6a01df0138a015ecfe09d76e5d1fd88db010",
+      "bytes": 14722
+    },
+    "tools/evaluation/document-formats/source.gradle": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "7b2078b442e08e86dd6c2da1bd1bfc3af0b43703db6926689bfc6dd6536bdc1f",
+      "bytes": 346
+    },
+    "tools/evaluation/document-formats/tests/DocumentFormatsInstrumentation.java": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "d3101b0dae3ff823b86ec8d7bc1a95ac38d0d6288c83463b31099dd4eca4d32b",
+      "bytes": 4792
+    },
+    "tools/evaluation/document-formats/tests/FormatFixtureProvider.java": {
+      "commit": "2a2c19f19eff0eaaefce2ffcca0fb387a15bdf5b",
+      "sha256": "2c84e3b7a5302a5d1474f68cf5b4a684c2e91151b139425d6baef77099d2fdf3",
+      "bytes": 3302
+    }
+  },
+  "old553_git_snapshot": {
+    "FINDINGS.md": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "db8a4e68d1b4630d694f3ec87f502cba8ae00fc564dcb6bcd695652b8ed10b4c",
+      "bytes": 132463
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentBytes.java": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "e561321660fba1a5bdcfd81919139706e9b1c2cf98136f3159edfe905e297f5b",
+      "bytes": 628
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentFormatPolicy.java": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "b0d1dbc0a3c9a63131360a248b3d54a0d0e1aac17ef35fa70648e465040d2158",
+      "bytes": 992
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentHtml.java": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "0f5d2582dd1f0b5db4b3c89da782aebe1f59c826e536a65831ee44bae9ec4545",
+      "bytes": 16625
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentZip.java": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "73199ee7a988759a1f5fe0dab6375119b9adfcda5d45ed0ae450aaa79a36ff76",
+      "bytes": 6549
+    },
+    "android/app/src/main/java/org/pocketlore/app/PersonalDocuments.java": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "d45624a6351650c10460e3c639b435f25762dc28a02c4e20904650e33a2f1ea1",
+      "bytes": 10901
+    },
+    "android/app/src/main/java/org/pocketlore/app/PersonalDocumentsActivity.java": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "892e5939e7d493434813b9521a99324ec1f3ca009b5786dffb20406f368858c5",
+      "bytes": 6719
+    },
+    "android/app/src/main/java/org/pocketlore/app/StructuredDocuments.java": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "49cf56592dd21bfe8eb1ee743b231ce60fd4a1580eb59727803df5c5d51780bb",
+      "bytes": 18152
+    },
+    "docs/RELEASE_GAPS.md": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "602ec7d71e79eff6452005ccd40b7caa63d7f3e12dac19fc05679839e28344c9",
+      "bytes": 112883
+    },
+    "docs/evidence/document-format-source-recovery-review.json": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "bbe897901417cceb21c8c060c7b9c6cb04287481d4f49319722ae1512fef9a2c",
+      "bytes": 11502
+    },
+    "docs/evidence/document-format-source-recovery.md": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "e3fa194e0a74d798b617dbd907550911bbbfb693079e08794b4c53ea461d420f",
+      "bytes": 7036
+    },
+    "docs/evidence/document-formats/limits.json": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "ddd5070708c38b462e0eb58eb060c7d8e153c06cda001aa3543e8398faad7531",
+      "bytes": 921
+    },
+    "tools/evaluation/check_document_format_source_recovery.sh": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "e1ed6ba7360a2764dc7fc1c4e96bc7644bc144e7d41d14bee6f102e536774ce9",
+      "bytes": 157
+    },
+    "tools/evaluation/check_document_formats.sh": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "53175549b7a6a463a1c455e5cbce3ef3225df40b73c1f84e1538ec98c149f0c2",
+      "bytes": 121
+    },
+    "tools/evaluation/document-format-source-recovery/BatchProbe.java": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "de23454a0d9ad0aa21db27f18d0f127da8195e44bf0f3dcb5191aabb3da5b2a0",
+      "bytes": 3380
+    },
+    "tools/evaluation/document-format-source-recovery/CentralProbe.java": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "f932ed95712a257b3b3d7de8c3f0a14fb71a18bdc57c9c8a61f8431c4b3ef8c5",
+      "bytes": 1683
+    },
+    "tools/evaluation/document-format-source-recovery/accounting-policy.json": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "4986ff23c0c9fb31ba70e4b0fa61bbeef2608f3d5ccc342fd77952c24569e04a",
+      "bytes": 988
+    },
+    "tools/evaluation/document-format-source-recovery/accounting.py": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "58953359ac949c2cec0523513d65ceeddab554f166e79dd99e23d9f6930eaeef",
+      "bytes": 3490
+    },
+    "tools/evaluation/document-format-source-recovery/accounting_controls.py": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "58bf7a138998b5f1446753a997ba9a9e64b80e71c0db75a9265dbc8c7ea86903",
+      "bytes": 3584
+    },
+    "tools/evaluation/document-format-source-recovery/build-inputs-552.json": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "b26bb4dd366369c34673f046b5b0cc15933079c6ba4531eb7dd048b2c80b1919",
+      "bytes": 32409
+    },
+    "tools/evaluation/document-format-source-recovery/build-inputs-553.json": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "2c874cdda0b64261fbce2bac4acd1d24487822e4489db96b34d90c41487652ad",
+      "bytes": 46043
+    },
+    "tools/evaluation/document-format-source-recovery/build-inputs-final.json": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "831d2d3192d7fbe4995f10e89b7f5066eb74082d63a9352b3bc24c3caf26192b",
+      "bytes": 33128
+    },
+    "tools/evaluation/document-format-source-recovery/build-inputs.json": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "c7e3ac8e71262861fe1d91fafdfedc1bb23b1cdd5b77f0a9dab7cc10de706b45",
+      "bytes": 32990
+    },
+    "tools/evaluation/document-format-source-recovery/cases.json": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "908b47070ee74d0460c2ce69dd1a69e0fb1cb7d45b45ab189be4a181829f6704",
+      "bytes": 53768
+    },
+    "tools/evaluation/document-format-source-recovery/cases.tsv": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "f1f30e1218dbbcfae1f53f56b840ed8a69621284f774d0bf5815776ed195c13f",
+      "bytes": 12148
+    },
+    "tools/evaluation/document-format-source-recovery/central-cases.json": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "04c53e598ec1a50839296048f03942ec078e6e14da6a1e6ee3cad8aefe454c84",
+      "bytes": 14024
+    },
+    "tools/evaluation/document-format-source-recovery/central-cases.tsv": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "0ea129666f1c425c3ab659124ceb2ca2ec46a6de155da3ddab43dc5478b7b696",
+      "bytes": 5737
+    },
+    "tools/evaluation/document-format-source-recovery/central-policy.json": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "874999417401853d16a08560ddea38a0471e26b51ca30deca1d4ad3692097cb4",
+      "bytes": 1389
+    },
+    "tools/evaluation/document-format-source-recovery/central_fixtures.py": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "85d91f6326ab2cf0fc130c991e8dfa6a0e206a218e107ceeb2dc89412789481e",
+      "bytes": 4145
+    },
+    "tools/evaluation/document-format-source-recovery/check.py": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "5ea29c594e2ea6de8e95c526c17e353829f2db8995d6ec52301965f4487a01db",
+      "bytes": 9149
+    },
+    "tools/evaluation/document-format-source-recovery/common.py": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "5c19480e3ce97f2a09fbffa0f57c58d5bc74cce80700921f5797ef86e20317a7",
+      "bytes": 5497
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-dynamic-css": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "13cc7f5fc848ada14276f85ae95d2cdfad9be96a55fd2613f4fd74bcc582a307",
+      "bytes": 71
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-hidden-lineends": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "21f4fe487e5e199f22f26103925373decd608eb77c0d099f2517770f9e79fb19",
+      "bytes": 129
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-table-lines": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "566e97c6eacbb8835c685e25d44210e9b9557391b9ee3618b27cf54d25f5166f",
+      "bytes": 2207
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-truncated-central": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "91c27b21bc2c9e0ddf1e2c594cebd2e4777eb2b85054299deb705a21aabbbf16",
+      "bytes": 1558
+    },
+    "tools/evaluation/document-format-source-recovery/recovery.json": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "c31e995ce2cf194fe7db1b4b154ec30ac064b25e453028dde356c595296d9d06",
+      "bytes": 3550
+    },
+    "tools/evaluation/document-format-source-recovery/recovery552.json": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "50fd51d05942f8448507e72ecc4220ef03721f41dc5575aef03aa2bad8925f2a",
+      "bytes": 18476
+    },
+    "tools/evaluation/document-format-source-recovery/recovery553.json": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "39f4143319a9ea97132e6fe1de78cea035a753df5962a67ce63777b8984193c5",
+      "bytes": 18443
+    },
+    "tools/evaluation/document-format-source-recovery/worker.py": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "b962e31c17d294dc664cbf7eba97c1a3207fc19abe7143fed9fa9d02e14443f6",
+      "bytes": 4586
+    },
+    "tools/evaluation/document-formats/AndroidManifest.xml": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "1fbb7c67b384231a203e9f4a437c108f4e2c2698e8e13564911ad8337996146f",
+      "bytes": 454
+    },
+    "tools/evaluation/document-formats/ExtractionProbe.java": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "f882a4baf5ac35641d57c67694e5b57b79116398ea19b474cf2bb3043e1ffe6c",
+      "bytes": 1125
+    },
+    "tools/evaluation/document-formats/FormatPolicyProbe.java": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "3cf7cc6a1513b49c7093a25e52d19098a3587405792b2f378df505912d8f2037",
+      "bytes": 1892
+    },
+    "tools/evaluation/document-formats/build_receipt.py": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "e9ac01cae8d11c3a6a8c668c3eb828cd85fcec52bc9148ba54f4cf6ca2100c9c",
+      "bytes": 2194
+    },
+    "tools/evaluation/document-formats/check.py": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "b5aa44e492473457c1a28b48daee74f396d51557d89f58e0abf5e530202af7ba",
+      "bytes": 5278
+    },
+    "tools/evaluation/document-formats/host_checks.py": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "e17049b20faea794b9733a67875f6a01df0138a015ecfe09d76e5d1fd88db010",
+      "bytes": 14722
+    },
+    "tools/evaluation/document-formats/source.gradle": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "7b2078b442e08e86dd6c2da1bd1bfc3af0b43703db6926689bfc6dd6536bdc1f",
+      "bytes": 346
+    },
+    "tools/evaluation/document-formats/tests/DocumentFormatsInstrumentation.java": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "d3101b0dae3ff823b86ec8d7bc1a95ac38d0d6288c83463b31099dd4eca4d32b",
+      "bytes": 4792
+    },
+    "tools/evaluation/document-formats/tests/FormatFixtureProvider.java": {
+      "commit": "2024dbd042397ec576a685e130d1a41965e162f2",
+      "sha256": "2c84e3b7a5302a5d1474f68cf5b4a684c2e91151b139425d6baef77099d2fdf3",
+      "bytes": 3302
+    }
+  },
+  "old526_debt": 848523406
+}

@@ -1,0 +1,374 @@
+{
+  "source_anchor": "e597fcc694ce4c7ad21e2361446f290542673b43",
+  "files": {
+    "android/app/src/main/java/org/pocketlore/app/DocumentBytes.java": {
+      "old_sha256": "e561321660fba1a5bdcfd81919139706e9b1c2cf98136f3159edfe905e297f5b",
+      "recovered_sha256": "e561321660fba1a5bdcfd81919139706e9b1c2cf98136f3159edfe905e297f5b",
+      "bytes": 628,
+      "previous_sha256": null
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentFormatPolicy.java": {
+      "old_sha256": "b0d1dbc0a3c9a63131360a248b3d54a0d0e1aac17ef35fa70648e465040d2158",
+      "recovered_sha256": "b0d1dbc0a3c9a63131360a248b3d54a0d0e1aac17ef35fa70648e465040d2158",
+      "bytes": 992,
+      "previous_sha256": null
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentHtml.java": {
+      "old_sha256": "0f5d2582dd1f0b5db4b3c89da782aebe1f59c826e536a65831ee44bae9ec4545",
+      "recovered_sha256": "0f5d2582dd1f0b5db4b3c89da782aebe1f59c826e536a65831ee44bae9ec4545",
+      "bytes": 16625,
+      "previous_sha256": null
+    },
+    "android/app/src/main/java/org/pocketlore/app/PersonalDocuments.java": {
+      "old_sha256": "d45624a6351650c10460e3c639b435f25762dc28a02c4e20904650e33a2f1ea1",
+      "recovered_sha256": "d45624a6351650c10460e3c639b435f25762dc28a02c4e20904650e33a2f1ea1",
+      "bytes": 10901,
+      "previous_sha256": "2b98d50aa6966ef27ba791b772d9415db84573d1f08a9f833f05443268c41fae"
+    },
+    "android/app/src/main/java/org/pocketlore/app/PersonalDocumentsActivity.java": {
+      "old_sha256": "892e5939e7d493434813b9521a99324ec1f3ca009b5786dffb20406f368858c5",
+      "recovered_sha256": "892e5939e7d493434813b9521a99324ec1f3ca009b5786dffb20406f368858c5",
+      "bytes": 6719,
+      "previous_sha256": "a201d27096d36e173293efeff769cf0c8fd6d9d3b453486977236965bebd1f7e"
+    },
+    "android/app/src/main/java/org/pocketlore/app/StructuredDocuments.java": {
+      "old_sha256": "4422381dbe95887c1e21a01b342097a6a294957d05718850f1ee5bd318210748",
+      "recovered_sha256": "4422381dbe95887c1e21a01b342097a6a294957d05718850f1ee5bd318210748",
+      "bytes": 19367,
+      "previous_sha256": null
+    },
+    "docs/evidence/document-formats/limits.json": {
+      "old_sha256": "ddd5070708c38b462e0eb58eb060c7d8e153c06cda001aa3543e8398faad7531",
+      "recovered_sha256": "ddd5070708c38b462e0eb58eb060c7d8e153c06cda001aa3543e8398faad7531",
+      "bytes": 921,
+      "previous_sha256": null
+    },
+    "tools/evaluation/check_document_format_source_recovery.sh": {
+      "old_sha256": "e1ed6ba7360a2764dc7fc1c4e96bc7644bc144e7d41d14bee6f102e536774ce9",
+      "recovered_sha256": "e1ed6ba7360a2764dc7fc1c4e96bc7644bc144e7d41d14bee6f102e536774ce9",
+      "bytes": 157,
+      "previous_sha256": null
+    },
+    "tools/evaluation/check_document_formats.sh": {
+      "old_sha256": "53175549b7a6a463a1c455e5cbce3ef3225df40b73c1f84e1538ec98c149f0c2",
+      "recovered_sha256": "53175549b7a6a463a1c455e5cbce3ef3225df40b73c1f84e1538ec98c149f0c2",
+      "bytes": 121,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-format-source-recovery/BatchProbe.java": {
+      "old_sha256": "de23454a0d9ad0aa21db27f18d0f127da8195e44bf0f3dcb5191aabb3da5b2a0",
+      "recovered_sha256": "de23454a0d9ad0aa21db27f18d0f127da8195e44bf0f3dcb5191aabb3da5b2a0",
+      "bytes": 3380,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-format-source-recovery/build-inputs-final.json": {
+      "old_sha256": "831d2d3192d7fbe4995f10e89b7f5066eb74082d63a9352b3bc24c3caf26192b",
+      "recovered_sha256": "831d2d3192d7fbe4995f10e89b7f5066eb74082d63a9352b3bc24c3caf26192b",
+      "bytes": 33128,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-format-source-recovery/build-inputs.json": {
+      "old_sha256": "c7e3ac8e71262861fe1d91fafdfedc1bb23b1cdd5b77f0a9dab7cc10de706b45",
+      "recovered_sha256": "c7e3ac8e71262861fe1d91fafdfedc1bb23b1cdd5b77f0a9dab7cc10de706b45",
+      "bytes": 32990,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-format-source-recovery/cases.json": {
+      "old_sha256": "908b47070ee74d0460c2ce69dd1a69e0fb1cb7d45b45ab189be4a181829f6704",
+      "recovered_sha256": "908b47070ee74d0460c2ce69dd1a69e0fb1cb7d45b45ab189be4a181829f6704",
+      "bytes": 53768,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-format-source-recovery/cases.tsv": {
+      "old_sha256": "f1f30e1218dbbcfae1f53f56b840ed8a69621284f774d0bf5815776ed195c13f",
+      "recovered_sha256": "f1f30e1218dbbcfae1f53f56b840ed8a69621284f774d0bf5815776ed195c13f",
+      "bytes": 12148,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-format-source-recovery/check.py": {
+      "old_sha256": "c68ea6d2765234696ee8f1d94db6555f859159a0cb6556b9828955e5aa94d02f",
+      "recovered_sha256": "c68ea6d2765234696ee8f1d94db6555f859159a0cb6556b9828955e5aa94d02f",
+      "bytes": 8505,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-format-source-recovery/common.py": {
+      "old_sha256": "f31db55f27904409a2cf7cc89297b20e1e5be51e6195ccd213e8d39d1505fc2b",
+      "recovered_sha256": "f31db55f27904409a2cf7cc89297b20e1e5be51e6195ccd213e8d39d1505fc2b",
+      "bytes": 5867,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-dynamic-css": {
+      "old_sha256": "13cc7f5fc848ada14276f85ae95d2cdfad9be96a55fd2613f4fd74bcc582a307",
+      "recovered_sha256": "13cc7f5fc848ada14276f85ae95d2cdfad9be96a55fd2613f4fd74bcc582a307",
+      "bytes": 71,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-hidden-lineends": {
+      "old_sha256": "21f4fe487e5e199f22f26103925373decd608eb77c0d099f2517770f9e79fb19",
+      "recovered_sha256": "21f4fe487e5e199f22f26103925373decd608eb77c0d099f2517770f9e79fb19",
+      "bytes": 129,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-table-lines": {
+      "old_sha256": "566e97c6eacbb8835c685e25d44210e9b9557391b9ee3618b27cf54d25f5166f",
+      "recovered_sha256": "566e97c6eacbb8835c685e25d44210e9b9557391b9ee3618b27cf54d25f5166f",
+      "bytes": 2207,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-truncated-central": {
+      "old_sha256": "91c27b21bc2c9e0ddf1e2c594cebd2e4777eb2b85054299deb705a21aabbbf16",
+      "recovered_sha256": "91c27b21bc2c9e0ddf1e2c594cebd2e4777eb2b85054299deb705a21aabbbf16",
+      "bytes": 1558,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-format-source-recovery/recovery.json": {
+      "old_sha256": "c31e995ce2cf194fe7db1b4b154ec30ac064b25e453028dde356c595296d9d06",
+      "recovered_sha256": "c31e995ce2cf194fe7db1b4b154ec30ac064b25e453028dde356c595296d9d06",
+      "bytes": 3550,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-format-source-recovery/worker.py": {
+      "old_sha256": "cffe8f297f92b3af145cf8650647c203f7fb5e81e878929746aeb075be5b79a5",
+      "recovered_sha256": "cffe8f297f92b3af145cf8650647c203f7fb5e81e878929746aeb075be5b79a5",
+      "bytes": 4588,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-formats/AndroidManifest.xml": {
+      "old_sha256": "1fbb7c67b384231a203e9f4a437c108f4e2c2698e8e13564911ad8337996146f",
+      "recovered_sha256": "1fbb7c67b384231a203e9f4a437c108f4e2c2698e8e13564911ad8337996146f",
+      "bytes": 454,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-formats/ExtractionProbe.java": {
+      "old_sha256": "f882a4baf5ac35641d57c67694e5b57b79116398ea19b474cf2bb3043e1ffe6c",
+      "recovered_sha256": "f882a4baf5ac35641d57c67694e5b57b79116398ea19b474cf2bb3043e1ffe6c",
+      "bytes": 1125,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-formats/FormatPolicyProbe.java": {
+      "old_sha256": "3cf7cc6a1513b49c7093a25e52d19098a3587405792b2f378df505912d8f2037",
+      "recovered_sha256": "3cf7cc6a1513b49c7093a25e52d19098a3587405792b2f378df505912d8f2037",
+      "bytes": 1892,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-formats/build_receipt.py": {
+      "old_sha256": "e9ac01cae8d11c3a6a8c668c3eb828cd85fcec52bc9148ba54f4cf6ca2100c9c",
+      "recovered_sha256": "e9ac01cae8d11c3a6a8c668c3eb828cd85fcec52bc9148ba54f4cf6ca2100c9c",
+      "bytes": 2194,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-formats/check.py": {
+      "old_sha256": "b5aa44e492473457c1a28b48daee74f396d51557d89f58e0abf5e530202af7ba",
+      "recovered_sha256": "b5aa44e492473457c1a28b48daee74f396d51557d89f58e0abf5e530202af7ba",
+      "bytes": 5278,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-formats/host_checks.py": {
+      "old_sha256": "e17049b20faea794b9733a67875f6a01df0138a015ecfe09d76e5d1fd88db010",
+      "recovered_sha256": "e17049b20faea794b9733a67875f6a01df0138a015ecfe09d76e5d1fd88db010",
+      "bytes": 14722,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-formats/source.gradle": {
+      "old_sha256": "7b2078b442e08e86dd6c2da1bd1bfc3af0b43703db6926689bfc6dd6536bdc1f",
+      "recovered_sha256": "7b2078b442e08e86dd6c2da1bd1bfc3af0b43703db6926689bfc6dd6536bdc1f",
+      "bytes": 346,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-formats/tests/DocumentFormatsInstrumentation.java": {
+      "old_sha256": "d3101b0dae3ff823b86ec8d7bc1a95ac38d0d6288c83463b31099dd4eca4d32b",
+      "recovered_sha256": "d3101b0dae3ff823b86ec8d7bc1a95ac38d0d6288c83463b31099dd4eca4d32b",
+      "bytes": 4792,
+      "previous_sha256": null
+    },
+    "tools/evaluation/document-formats/tests/FormatFixtureProvider.java": {
+      "old_sha256": "2c84e3b7a5302a5d1474f68cf5b4a684c2e91151b139425d6baef77099d2fdf3",
+      "recovered_sha256": "2c84e3b7a5302a5d1474f68cf5b4a684c2e91151b139425d6baef77099d2fdf3",
+      "bytes": 3302,
+      "previous_sha256": null
+    }
+  },
+  "old551_git_snapshot": {
+    "FINDINGS.md": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 132329,
+      "sha256": "dda79ed08e736f906cfd01cb3e47e4045fc076233b7ed2706f860caf587ab5a3"
+    },
+    "THIRD_PARTY_NOTICES": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 26397,
+      "sha256": "70b2ddfc7e6e38e4ca9a55e97dde9c27fbfc9413cdd3e9933084a8a48dcc307e"
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentBytes.java": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 628,
+      "sha256": "e561321660fba1a5bdcfd81919139706e9b1c2cf98136f3159edfe905e297f5b"
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentFormatPolicy.java": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 992,
+      "sha256": "b0d1dbc0a3c9a63131360a248b3d54a0d0e1aac17ef35fa70648e465040d2158"
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentHtml.java": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 16625,
+      "sha256": "0f5d2582dd1f0b5db4b3c89da782aebe1f59c826e536a65831ee44bae9ec4545"
+    },
+    "android/app/src/main/java/org/pocketlore/app/PersonalDocuments.java": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 10901,
+      "sha256": "d45624a6351650c10460e3c639b435f25762dc28a02c4e20904650e33a2f1ea1"
+    },
+    "android/app/src/main/java/org/pocketlore/app/PersonalDocumentsActivity.java": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 6719,
+      "sha256": "892e5939e7d493434813b9521a99324ec1f3ca009b5786dffb20406f368858c5"
+    },
+    "android/app/src/main/java/org/pocketlore/app/StructuredDocuments.java": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 19367,
+      "sha256": "4422381dbe95887c1e21a01b342097a6a294957d05718850f1ee5bd318210748"
+    },
+    "docs/RELEASE_GAPS.md": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 112655,
+      "sha256": "378a6e66bb68147eb72e855acb2fd96aa79f4b392848dbb505287bd9efcef7f2"
+    },
+    "docs/evidence/document-format-source-recovery-review.json": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 7601,
+      "sha256": "8c85ff59bbeb5070b103bce4098caa9426e0fb2bf6f1fd9f609587e15d5a7a4b"
+    },
+    "docs/evidence/document-format-source-recovery.md": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 6225,
+      "sha256": "d46e33492d8ef5aaa4c22b3479875b236d7f50edb88ce0b643634c57f91e118e"
+    },
+    "docs/evidence/document-formats/limits.json": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 921,
+      "sha256": "ddd5070708c38b462e0eb58eb060c7d8e153c06cda001aa3543e8398faad7531"
+    },
+    "tools/evaluation/check_document_format_source_recovery.sh": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 157,
+      "sha256": "e1ed6ba7360a2764dc7fc1c4e96bc7644bc144e7d41d14bee6f102e536774ce9"
+    },
+    "tools/evaluation/check_document_formats.sh": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 121,
+      "sha256": "53175549b7a6a463a1c455e5cbce3ef3225df40b73c1f84e1538ec98c149f0c2"
+    },
+    "tools/evaluation/document-format-source-recovery/BatchProbe.java": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 3380,
+      "sha256": "de23454a0d9ad0aa21db27f18d0f127da8195e44bf0f3dcb5191aabb3da5b2a0"
+    },
+    "tools/evaluation/document-format-source-recovery/build-inputs-final.json": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 33128,
+      "sha256": "831d2d3192d7fbe4995f10e89b7f5066eb74082d63a9352b3bc24c3caf26192b"
+    },
+    "tools/evaluation/document-format-source-recovery/build-inputs.json": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 32990,
+      "sha256": "c7e3ac8e71262861fe1d91fafdfedc1bb23b1cdd5b77f0a9dab7cc10de706b45"
+    },
+    "tools/evaluation/document-format-source-recovery/cases.json": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 53768,
+      "sha256": "908b47070ee74d0460c2ce69dd1a69e0fb1cb7d45b45ab189be4a181829f6704"
+    },
+    "tools/evaluation/document-format-source-recovery/cases.tsv": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 12148,
+      "sha256": "f1f30e1218dbbcfae1f53f56b840ed8a69621284f774d0bf5815776ed195c13f"
+    },
+    "tools/evaluation/document-format-source-recovery/check.py": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 8505,
+      "sha256": "c68ea6d2765234696ee8f1d94db6555f859159a0cb6556b9828955e5aa94d02f"
+    },
+    "tools/evaluation/document-format-source-recovery/common.py": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 5867,
+      "sha256": "f31db55f27904409a2cf7cc89297b20e1e5be51e6195ccd213e8d39d1505fc2b"
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-dynamic-css": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 71,
+      "sha256": "13cc7f5fc848ada14276f85ae95d2cdfad9be96a55fd2613f4fd74bcc582a307"
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-hidden-lineends": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 129,
+      "sha256": "21f4fe487e5e199f22f26103925373decd608eb77c0d099f2517770f9e79fb19"
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-table-lines": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 2207,
+      "sha256": "566e97c6eacbb8835c685e25d44210e9b9557391b9ee3618b27cf54d25f5166f"
+    },
+    "tools/evaluation/document-format-source-recovery/fixtures/new-truncated-central": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 1558,
+      "sha256": "91c27b21bc2c9e0ddf1e2c594cebd2e4777eb2b85054299deb705a21aabbbf16"
+    },
+    "tools/evaluation/document-format-source-recovery/recovery.json": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 3550,
+      "sha256": "c31e995ce2cf194fe7db1b4b154ec30ac064b25e453028dde356c595296d9d06"
+    },
+    "tools/evaluation/document-format-source-recovery/worker.py": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 4588,
+      "sha256": "cffe8f297f92b3af145cf8650647c203f7fb5e81e878929746aeb075be5b79a5"
+    },
+    "tools/evaluation/document-formats/AndroidManifest.xml": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 454,
+      "sha256": "1fbb7c67b384231a203e9f4a437c108f4e2c2698e8e13564911ad8337996146f"
+    },
+    "tools/evaluation/document-formats/ExtractionProbe.java": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 1125,
+      "sha256": "f882a4baf5ac35641d57c67694e5b57b79116398ea19b474cf2bb3043e1ffe6c"
+    },
+    "tools/evaluation/document-formats/FormatPolicyProbe.java": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 1892,
+      "sha256": "3cf7cc6a1513b49c7093a25e52d19098a3587405792b2f378df505912d8f2037"
+    },
+    "tools/evaluation/document-formats/build_receipt.py": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 2194,
+      "sha256": "e9ac01cae8d11c3a6a8c668c3eb828cd85fcec52bc9148ba54f4cf6ca2100c9c"
+    },
+    "tools/evaluation/document-formats/check.py": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 5278,
+      "sha256": "b5aa44e492473457c1a28b48daee74f396d51557d89f58e0abf5e530202af7ba"
+    },
+    "tools/evaluation/document-formats/host_checks.py": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 14722,
+      "sha256": "e17049b20faea794b9733a67875f6a01df0138a015ecfe09d76e5d1fd88db010"
+    },
+    "tools/evaluation/document-formats/source.gradle": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 346,
+      "sha256": "7b2078b442e08e86dd6c2da1bd1bfc3af0b43703db6926689bfc6dd6536bdc1f"
+    },
+    "tools/evaluation/document-formats/tests/DocumentFormatsInstrumentation.java": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 4792,
+      "sha256": "d3101b0dae3ff823b86ec8d7bc1a95ac38d0d6288c83463b31099dd4eca4d32b"
+    },
+    "tools/evaluation/document-formats/tests/FormatFixtureProvider.java": {
+      "commit": "49fdc44f981136dc00eb1d725ce4276d85b94e53",
+      "bytes": 3302,
+      "sha256": "2c84e3b7a5302a5d1474f68cf5b4a684c2e91151b139425d6baef77099d2fdf3"
+    }
+  },
+  "old526_debt": 848523406
+}

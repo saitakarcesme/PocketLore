@@ -1,0 +1,16 @@
+package org.pocketlore.app;
+import android.database.*;import android.os.*;import android.provider.*;import java.io.*;
+/** Test APK only. DocumentsUI can discover six owned read-only public fixtures. */
+public final class FormatFixtureProvider extends DocumentsProvider {
+ static final String[] NAMES={"fixture.docx","fixture.pptx","fixture.odt","fixture.odp","fixture.epub","fixture.html"};
+ static final String[] MIME={"application/vnd.openxmlformats-officedocument.wordprocessingml.document","application/vnd.openxmlformats-officedocument.presentationml.presentation","application/vnd.oasis.opendocument.text","application/vnd.oasis.opendocument.presentation","application/epub+zip","text/html"};
+ public boolean onCreate(){return true;}
+ int index(String id)throws FileNotFoundException{for(int i=0;i<NAMES.length;i++)if(NAMES[i].equals(id))return i;throw new FileNotFoundException("Unknown fixture");}
+ File file(String id)throws FileNotFoundException{index(id);return new File(new File(getContext().getFilesDir(),"format-fixtures"),id);}
+ public Cursor queryRoots(String[] projection){String[] cols=projection==null?new String[]{DocumentsContract.Root.COLUMN_ROOT_ID,DocumentsContract.Root.COLUMN_DOCUMENT_ID,DocumentsContract.Root.COLUMN_TITLE,DocumentsContract.Root.COLUMN_FLAGS,DocumentsContract.Root.COLUMN_MIME_TYPES}:projection;MatrixCursor c=new MatrixCursor(cols);MatrixCursor.RowBuilder r=c.newRow();r.add(DocumentsContract.Root.COLUMN_ROOT_ID,"fixtures");r.add(DocumentsContract.Root.COLUMN_DOCUMENT_ID,"fixtures");r.add(DocumentsContract.Root.COLUMN_TITLE,"PocketLore format fixtures");r.add(DocumentsContract.Root.COLUMN_FLAGS,DocumentsContract.Root.FLAG_LOCAL_ONLY);r.add(DocumentsContract.Root.COLUMN_MIME_TYPES,"*/*");return c;}
+ MatrixCursor cursor(String[] projection){return new MatrixCursor(projection==null?new String[]{DocumentsContract.Document.COLUMN_DOCUMENT_ID,DocumentsContract.Document.COLUMN_DISPLAY_NAME,DocumentsContract.Document.COLUMN_MIME_TYPE,DocumentsContract.Document.COLUMN_SIZE,DocumentsContract.Document.COLUMN_FLAGS}:projection);}
+ void row(MatrixCursor c,String id)throws FileNotFoundException{boolean root=id.equals("fixtures");int i=root?-1:index(id);MatrixCursor.RowBuilder r=c.newRow();r.add(DocumentsContract.Document.COLUMN_DOCUMENT_ID,id);r.add(DocumentsContract.Document.COLUMN_DISPLAY_NAME,root?"PocketLore format fixtures":id);r.add(DocumentsContract.Document.COLUMN_MIME_TYPE,root?DocumentsContract.Document.MIME_TYPE_DIR:MIME[i]);r.add(DocumentsContract.Document.COLUMN_SIZE,root?0:file(id).length());r.add(DocumentsContract.Document.COLUMN_FLAGS,0);}
+ public Cursor queryDocument(String id,String[] p)throws FileNotFoundException{MatrixCursor c=cursor(p);row(c,id);return c;}
+ public Cursor queryChildDocuments(String parent,String[] p,String sort)throws FileNotFoundException{if(!parent.equals("fixtures"))throw new FileNotFoundException();MatrixCursor c=cursor(p);for(String n:NAMES)if(file(n).isFile())row(c,n);return c;}
+ public ParcelFileDescriptor openDocument(String id,String mode,CancellationSignal signal)throws FileNotFoundException{if(!mode.equals("r"))throw new FileNotFoundException("Read-only fixtures");if(signal!=null)signal.throwIfCanceled();return ParcelFileDescriptor.open(file(id),ParcelFileDescriptor.MODE_READ_ONLY);}
+}

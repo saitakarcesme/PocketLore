@@ -548,3 +548,6 @@ Task547: exact numeric pidfd ownership and independently authored original-expor
 
 
 Task549: exact recovered attachment UTF16 transport passed one parent-owned512MiB/no-swap JNI run, full raw ownership/resource checks and13 semantic controls. Android rebuilds retain identical content despite new file versions; pure checker passes. Failed548 remains failed. See docs/evidence/attachment-utf16-contained.md; no Android recognition/photo quality or device acceptance follows.
+
+
+Task554 preserves actual nullable exception class/message/cause receipts without changing production document code or108 authored expectations. One parent-owned512MiB/no-swap run completed all70original+38central cases; Android build and two immutable read-only checks passed. Failed551–553 and526storage debt remain intact; four-root combined accounting and extra reserves remain below8MiB. See docs/evidence/document-format-source-recovery.md for final criticism/accounting. This is host parser evidence only; actual Android picker/import/search/source/reimport/cancel/catalog, physical12GB/whole50GB and rivalry gates remain open.

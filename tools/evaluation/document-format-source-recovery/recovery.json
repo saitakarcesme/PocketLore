@@ -1,0 +1,80 @@
+{
+  "failed_anchor": "82ef0fb3a211bd1e50ad958e64bf24f36f203de5",
+  "files": {
+    "android/app/src/main/java/org/pocketlore/app/DocumentBytes.java": {
+      "sha256": "e561321660fba1a5bdcfd81919139706e9b1c2cf98136f3159edfe905e297f5b",
+      "bytes": 628
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentFormatPolicy.java": {
+      "sha256": "b0d1dbc0a3c9a63131360a248b3d54a0d0e1aac17ef35fa70648e465040d2158",
+      "bytes": 992
+    },
+    "android/app/src/main/java/org/pocketlore/app/DocumentHtml.java": {
+      "sha256": "0f5d2582dd1f0b5db4b3c89da782aebe1f59c826e536a65831ee44bae9ec4545",
+      "bytes": 16625
+    },
+    "android/app/src/main/java/org/pocketlore/app/StructuredDocuments.java": {
+      "sha256": "4422381dbe95887c1e21a01b342097a6a294957d05718850f1ee5bd318210748",
+      "bytes": 19367
+    },
+    "tools/evaluation/document-formats/ExtractionProbe.java": {
+      "sha256": "f882a4baf5ac35641d57c67694e5b57b79116398ea19b474cf2bb3043e1ffe6c",
+      "bytes": 1125
+    },
+    "tools/evaluation/document-formats/FormatPolicyProbe.java": {
+      "sha256": "3cf7cc6a1513b49c7093a25e52d19098a3587405792b2f378df505912d8f2037",
+      "bytes": 1892
+    },
+    "tools/evaluation/document-formats/host_checks.py": {
+      "sha256": "e17049b20faea794b9733a67875f6a01df0138a015ecfe09d76e5d1fd88db010",
+      "bytes": 14722
+    },
+    "tools/evaluation/document-formats/check.py": {
+      "sha256": "b5aa44e492473457c1a28b48daee74f396d51557d89f58e0abf5e530202af7ba",
+      "bytes": 5278
+    },
+    "tools/evaluation/document-formats/build_receipt.py": {
+      "sha256": "e9ac01cae8d11c3a6a8c668c3eb828cd85fcec52bc9148ba54f4cf6ca2100c9c",
+      "bytes": 2194
+    },
+    "tools/evaluation/document-formats/source.gradle": {
+      "sha256": "7b2078b442e08e86dd6c2da1bd1bfc3af0b43703db6926689bfc6dd6536bdc1f",
+      "bytes": 346
+    },
+    "tools/evaluation/document-formats/AndroidManifest.xml": {
+      "sha256": "1fbb7c67b384231a203e9f4a437c108f4e2c2698e8e13564911ad8337996146f",
+      "bytes": 454
+    },
+    "tools/evaluation/document-formats/tests/DocumentFormatsInstrumentation.java": {
+      "sha256": "d3101b0dae3ff823b86ec8d7bc1a95ac38d0d6288c83463b31099dd4eca4d32b",
+      "bytes": 4792
+    },
+    "tools/evaluation/document-formats/tests/FormatFixtureProvider.java": {
+      "sha256": "2c84e3b7a5302a5d1474f68cf5b4a684c2e91151b139425d6baef77099d2fdf3",
+      "bytes": 3302
+    },
+    "tools/evaluation/check_document_formats.sh": {
+      "sha256": "53175549b7a6a463a1c455e5cbce3ef3225df40b73c1f84e1538ec98c149f0c2",
+      "bytes": 121
+    },
+    "docs/evidence/document-formats/limits.json": {
+      "sha256": "ddd5070708c38b462e0eb58eb060c7d8e153c06cda001aa3543e8398faad7531",
+      "bytes": 921
+    }
+  },
+  "merged": {
+    "android/app/src/main/java/org/pocketlore/app/PersonalDocuments.java": {
+      "base_sha256": "2b98d50aa6966ef27ba791b772d9415db84573d1f08a9f833f05443268c41fae",
+      "merged_sha256": "d45624a6351650c10460e3c639b435f25762dc28a02c4e20904650e33a2f1ea1",
+      "patch_sha256": "674fe1f2664f0424c666e02d2c492b721dfe35468b8e299bbe794211a97f5e6c"
+    },
+    "android/app/src/main/java/org/pocketlore/app/PersonalDocumentsActivity.java": {
+      "base_sha256": "a201d27096d36e173293efeff769cf0c8fd6d9d3b453486977236965bebd1f7e",
+      "merged_sha256": "892e5939e7d493434813b9521a99324ec1f3ca009b5786dffb20406f368858c5",
+      "patch_sha256": "75526c3d4e192b59f4639b8e0764aa16627e7a98099dca85ba924b524dc08553"
+    }
+  },
+  "old_failed_bytes": 848523406,
+  "new_cap": 8388608,
+  "parent_reserves": 131072
+}

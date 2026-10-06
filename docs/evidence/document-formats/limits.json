@@ -1,0 +1,20 @@
+{
+  "version": "structured-personal-v1",
+  "input_bytes": 4194304,
+  "entries": 256,
+  "entry_expanded_bytes": 2097152,
+  "aggregate_expanded_bytes": 16777216,
+  "compression_ratio": 100,
+  "output_utf16": 500000,
+  "paragraph_utf16": 20000,
+  "passages": 1000,
+  "depth": 64,
+  "nodes": 100000,
+  "attributes_per_element": 64,
+  "duration_seconds": 20,
+  "policy": "Reject entire import on unsupported or invalid structure/limit; no partial admission; external fetch forbidden; offsets address normalized extracted text, never XML/HTML bytes.",
+  "fixture_policy": "Existing independent six authored archives and exact paragraph oracles frozen before implementation; generated hostile algorithm controls separate.",
+  "css_utf16": 65536,
+  "amendment": "Bounded CSS and entity scanning added after independent algorithm review; tested with new public hostile controls, no historical test credit.",
+  "css_rules": 2048
+}

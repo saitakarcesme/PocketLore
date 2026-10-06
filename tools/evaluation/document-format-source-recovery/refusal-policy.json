@@ -1,0 +1,17 @@
+{
+  "task": "554-lossless-nullable-document-refusal-receipts",
+  "schema": "actual-exception-v1",
+  "max_cause_nodes": 8,
+  "max_message_utf16": 4096,
+  "message": "JSON null for null; exact JSON string including UTF16 escapes otherwise; oversized receipt fails explicitly",
+  "cause_chain": "Actual class and nullable message for each observed Throwable; identity cycle and depth termination explicitly reported",
+  "guards": "Existing exception-type and cancellation predicates unchanged; serialization only after predicates",
+  "accounting_controls": [
+    "full fixed four-root positive",
+    "wrong root refuses",
+    "missing mandatory root refuses",
+    "omitted fourth root refuses",
+    "exact sentinel growth and failure bytes",
+    "unchanged positive after each negative"
+  ]
+}

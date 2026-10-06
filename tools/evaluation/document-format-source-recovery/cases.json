@@ -1,0 +1,1367 @@
+{
+  "license": "Original authored CC0 development controls; not personal user files",
+  "historical_ledger": {
+    "path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/frozen-cases.json",
+    "sha256": "30b22a5d3d053d126439e665c1f0913544e6be9db4dc745c947180851145eb01"
+  },
+  "cases": [
+    {
+      "name": "fixture.docx",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/0-fixture.docx",
+      "input_sha256": "b41e3df3c8f105fbecc94e3e9b9fad3463c059053c5454677f6fcf5ce87c5ada",
+      "input_bytes": 1573,
+      "expected_text_sha256": "d15db8f3152d035d2a43018bc06b6826821af0653066896005fa28295169b53b",
+      "expected_utf16_length": 311,
+      "cancel_after_checks": -1,
+      "independent_spans": [
+        [
+          0,
+          35,
+          "word/document.xml; paragraph 1"
+        ],
+        [
+          36,
+          55,
+          "word/document.xml; paragraph 2"
+        ],
+        [
+          56,
+          121,
+          "word/document.xml; paragraph 3"
+        ],
+        [
+          122,
+          196,
+          "word/document.xml; paragraph 4"
+        ],
+        [
+          197,
+          237,
+          "word/document.xml; paragraph 5"
+        ],
+        [
+          238,
+          311,
+          "word/document.xml; paragraph 6"
+        ]
+      ],
+      "independent_paragraphs": {
+        "location": "word/document.xml ordered w:p",
+        "paragraphs": [
+          "Public authored development control",
+          "English café 中文 🙂.",
+          "If the road is closed, the guide says “wait”; otherwise continue.",
+          "Nested emphasis preserves this qualifier: only when daylight is available.",
+          "Second section — distinct source context",
+          "Do not turn a conditional statement into an unconditional recommendation."
+        ],
+        "utf16_oracles": [
+          {
+            "text": "Public authored development control",
+            "utf16_length": 35,
+            "text_sha256": "7ddc86107154eac2739c028792bb2012ef0163c4f933dcb8768853d41a8f62ea",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "English café 中文 🙂.",
+            "utf16_length": 19,
+            "text_sha256": "3aab53cd32054d4c2e44d8f6991d3a8b0831a93e874d5a14471445321fa68aa7",
+            "emoji_utf16_start": 16
+          },
+          {
+            "text": "If the road is closed, the guide says “wait”; otherwise continue.",
+            "utf16_length": 65,
+            "text_sha256": "dc71d65bc476d99d5c9ff86a6baa0f4e8b20b063a1851df3574e280e2a97ad27",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "Nested emphasis preserves this qualifier: only when daylight is available.",
+            "utf16_length": 74,
+            "text_sha256": "9210d28543d5779a4c1c34dd9adc1ec1bb8b599ee83cfde5b4549cc9ef55c6d0",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "Second section — distinct source context",
+            "utf16_length": 40,
+            "text_sha256": "8392e9b28d6fc722add28494931c8b25aa1a15a7ee3e0a2f241fad2ac3989a6c",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "Do not turn a conditional statement into an unconditional recommendation.",
+            "utf16_length": 73,
+            "text_sha256": "348bc81b0727c88bcebffeae81261c48f3e5da00ea3916c638f3181a826712c1",
+            "emoji_utf16_start": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "fixture.epub",
+      "format": "epub",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/1-fixture.epub",
+      "input_sha256": "db4d53e64ca12efd1dd0494d8d42efd401501d3966d3c101850172d98e21d6f4",
+      "input_bytes": 1890,
+      "expected_text_sha256": "8b54a1d6797db55e1def43d40f7d76c97dcc4ad662791097a96e9ad2252c09c2",
+      "expected_utf16_length": 215,
+      "cancel_after_checks": -1,
+      "independent_spans": [
+        [
+          0,
+          26,
+          "Spine item 1; OEBPS/chapter-two.xhtml; paragraph 1"
+        ],
+        [
+          27,
+          92,
+          "Spine item 1; OEBPS/chapter-two.xhtml; paragraph 2"
+        ],
+        [
+          93,
+          112,
+          "Spine item 1; OEBPS/chapter-two.xhtml; paragraph 3"
+        ],
+        [
+          113,
+          140,
+          "Spine item 2; OEBPS/chapter-one.xhtml; paragraph 1"
+        ],
+        [
+          141,
+          215,
+          "Spine item 2; OEBPS/chapter-one.xhtml; paragraph 2"
+        ]
+      ],
+      "independent_paragraphs": {
+        "spine_order": [
+          {
+            "part": "OEBPS/chapter-two.xhtml",
+            "paragraphs": [
+              "Chapter Two first in spine",
+              "If the road is closed, the guide says “wait”; otherwise continue.",
+              "English café 中文 🙂."
+            ],
+            "utf16_oracles": [
+              {
+                "text": "Chapter Two first in spine",
+                "utf16_length": 26,
+                "text_sha256": "bd1f0d92b914a69f66fe5db763d2356733c68d707a5a0816eb255cd0d915eba8",
+                "emoji_utf16_start": null
+              },
+              {
+                "text": "If the road is closed, the guide says “wait”; otherwise continue.",
+                "utf16_length": 65,
+                "text_sha256": "dc71d65bc476d99d5c9ff86a6baa0f4e8b20b063a1851df3574e280e2a97ad27",
+                "emoji_utf16_start": null
+              },
+              {
+                "text": "English café 中文 🙂.",
+                "utf16_length": 19,
+                "text_sha256": "3aab53cd32054d4c2e44d8f6991d3a8b0831a93e874d5a14471445321fa68aa7",
+                "emoji_utf16_start": 16
+              }
+            ]
+          },
+          {
+            "part": "OEBPS/chapter-one.xhtml",
+            "paragraphs": [
+              "Chapter One second in spine",
+              "Nested emphasis preserves this qualifier: only when daylight is available."
+            ],
+            "utf16_oracles": [
+              {
+                "text": "Chapter One second in spine",
+                "utf16_length": 27,
+                "text_sha256": "9fbd080d44822282b34e4509abd11f49fbf02f151fbaf9f9119c172d694cd532",
+                "emoji_utf16_start": null
+              },
+              {
+                "text": "Nested emphasis preserves this qualifier: only when daylight is available.",
+                "utf16_length": 74,
+                "text_sha256": "9210d28543d5779a4c1c34dd9adc1ec1bb8b599ee83cfde5b4549cc9ef55c6d0",
+                "emoji_utf16_start": null
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "fixture.html",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/2-fixture.html",
+      "input_sha256": "5cb19918791af7e42f1f8eeeee31ca6307d6d6218cbcdf3ac292b64fe95e0166",
+      "input_bytes": 750,
+      "expected_text_sha256": "d15db8f3152d035d2a43018bc06b6826821af0653066896005fa28295169b53b",
+      "expected_utf16_length": 311,
+      "cancel_after_checks": -1,
+      "independent_spans": [
+        [
+          0,
+          35,
+          "HTML body; paragraph 1"
+        ],
+        [
+          36,
+          55,
+          "HTML body; paragraph 2"
+        ],
+        [
+          56,
+          121,
+          "HTML body; paragraph 3"
+        ],
+        [
+          122,
+          196,
+          "HTML body; paragraph 4"
+        ],
+        [
+          197,
+          237,
+          "HTML body; paragraph 5"
+        ],
+        [
+          238,
+          311,
+          "HTML body; paragraph 6"
+        ]
+      ],
+      "independent_paragraphs": {
+        "location": "HTML body section IDs/ordered h1,h2,p; exclude head/script/style",
+        "paragraphs": [
+          "Public authored development control",
+          "English café 中文 🙂.",
+          "If the road is closed, the guide says “wait”; otherwise continue.",
+          "Nested emphasis preserves this qualifier: only when daylight is available.",
+          "Second section — distinct source context",
+          "Do not turn a conditional statement into an unconditional recommendation."
+        ],
+        "utf16_oracles": [
+          {
+            "text": "Public authored development control",
+            "utf16_length": 35,
+            "text_sha256": "7ddc86107154eac2739c028792bb2012ef0163c4f933dcb8768853d41a8f62ea",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "English café 中文 🙂.",
+            "utf16_length": 19,
+            "text_sha256": "3aab53cd32054d4c2e44d8f6991d3a8b0831a93e874d5a14471445321fa68aa7",
+            "emoji_utf16_start": 16
+          },
+          {
+            "text": "If the road is closed, the guide says “wait”; otherwise continue.",
+            "utf16_length": 65,
+            "text_sha256": "dc71d65bc476d99d5c9ff86a6baa0f4e8b20b063a1851df3574e280e2a97ad27",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "Nested emphasis preserves this qualifier: only when daylight is available.",
+            "utf16_length": 74,
+            "text_sha256": "9210d28543d5779a4c1c34dd9adc1ec1bb8b599ee83cfde5b4549cc9ef55c6d0",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "Second section — distinct source context",
+            "utf16_length": 40,
+            "text_sha256": "8392e9b28d6fc722add28494931c8b25aa1a15a7ee3e0a2f241fad2ac3989a6c",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "Do not turn a conditional statement into an unconditional recommendation.",
+            "utf16_length": 73,
+            "text_sha256": "348bc81b0727c88bcebffeae81261c48f3e5da00ea3916c638f3181a826712c1",
+            "emoji_utf16_start": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "fixture.odp",
+      "format": "odp",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/3-fixture.odp",
+      "input_sha256": "cb6b1f6410c0a741b2f1aa6167106489834fa1809d14e9f4a6369ddb6dcd2869",
+      "input_bytes": 14643,
+      "expected_text_sha256": "a84ecedb82bfa95b40a9fb7b78bfc74e44ab00534c906790c24bd33b3c54b9c6",
+      "expected_utf16_length": 268,
+      "cancel_after_checks": -1,
+      "independent_spans": [
+        [
+          0,
+          22,
+          "Slide 1; content.xml; paragraph 1"
+        ],
+        [
+          23,
+          88,
+          "Slide 1; content.xml; paragraph 2"
+        ],
+        [
+          89,
+          138,
+          "Slide 1; content.xml; paragraph 3"
+        ],
+        [
+          139,
+          166,
+          "Slide 2; content.xml; paragraph 1"
+        ],
+        [
+          167,
+          227,
+          "Slide 2; content.xml; paragraph 2"
+        ],
+        [
+          228,
+          268,
+          "Slide 2; content.xml; paragraph 3"
+        ]
+      ],
+      "independent_paragraphs": {
+        "location": "content.xml ordered paragraph nodes",
+        "paragraphs": [
+          "Slide One — café 中文 🙂",
+          "If the road is closed, the guide says “wait”; otherwise continue.",
+          "Nested emphasis: only when daylight is available.",
+          "Slide Two — ordering oracle",
+          "A second slide is not a continuation of the first paragraph.",
+          "Digits: 2026 / 12.50; no inferred units."
+        ],
+        "utf16_oracles": [
+          {
+            "text": "Slide One — café 中文 🙂",
+            "utf16_length": 22,
+            "text_sha256": "20f2efe2b4e4b0914aaf2cc3c526ce458224b40ffb5fc33b56ca524c997fcd1b",
+            "emoji_utf16_start": 20
+          },
+          {
+            "text": "If the road is closed, the guide says “wait”; otherwise continue.",
+            "utf16_length": 65,
+            "text_sha256": "dc71d65bc476d99d5c9ff86a6baa0f4e8b20b063a1851df3574e280e2a97ad27",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "Nested emphasis: only when daylight is available.",
+            "utf16_length": 49,
+            "text_sha256": "6442f1579150de81756afbb929da9aebc10c1930f340259cc8640980deb97c20",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "Slide Two — ordering oracle",
+            "utf16_length": 27,
+            "text_sha256": "8d1bb725e7499f17cca74c10004036ed181b83beeff4889e06976d489eab06b7",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "A second slide is not a continuation of the first paragraph.",
+            "utf16_length": 60,
+            "text_sha256": "8b20c27dd7e733417603e640337603851bbee28e77a06b6546ed7762540b8099",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "Digits: 2026 / 12.50; no inferred units.",
+            "utf16_length": 40,
+            "text_sha256": "1291d765eef42919638026bb065107fc38ba5c40b50db40d8536343bdae17a89",
+            "emoji_utf16_start": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "fixture.odt",
+      "format": "odt",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/4-fixture.odt",
+      "input_sha256": "52cf839d8734d2b5dcfccaed19fbd59ef772e3e79721e08972018543f76e9959",
+      "input_bytes": 7846,
+      "expected_text_sha256": "d15db8f3152d035d2a43018bc06b6826821af0653066896005fa28295169b53b",
+      "expected_utf16_length": 311,
+      "cancel_after_checks": -1,
+      "independent_spans": [
+        [
+          0,
+          35,
+          "content.xml; paragraph 1"
+        ],
+        [
+          36,
+          55,
+          "content.xml; paragraph 2"
+        ],
+        [
+          56,
+          121,
+          "content.xml; paragraph 3"
+        ],
+        [
+          122,
+          196,
+          "content.xml; paragraph 4"
+        ],
+        [
+          197,
+          237,
+          "content.xml; paragraph 5"
+        ],
+        [
+          238,
+          311,
+          "content.xml; paragraph 6"
+        ]
+      ],
+      "independent_paragraphs": {
+        "location": "content.xml ordered paragraph nodes",
+        "paragraphs": [
+          "Public authored development control",
+          "English café 中文 🙂.",
+          "If the road is closed, the guide says “wait”; otherwise continue.",
+          "Nested emphasis preserves this qualifier: only when daylight is available.",
+          "Second section — distinct source context",
+          "Do not turn a conditional statement into an unconditional recommendation."
+        ],
+        "utf16_oracles": [
+          {
+            "text": "Public authored development control",
+            "utf16_length": 35,
+            "text_sha256": "7ddc86107154eac2739c028792bb2012ef0163c4f933dcb8768853d41a8f62ea",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "English café 中文 🙂.",
+            "utf16_length": 19,
+            "text_sha256": "3aab53cd32054d4c2e44d8f6991d3a8b0831a93e874d5a14471445321fa68aa7",
+            "emoji_utf16_start": 16
+          },
+          {
+            "text": "If the road is closed, the guide says “wait”; otherwise continue.",
+            "utf16_length": 65,
+            "text_sha256": "dc71d65bc476d99d5c9ff86a6baa0f4e8b20b063a1851df3574e280e2a97ad27",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "Nested emphasis preserves this qualifier: only when daylight is available.",
+            "utf16_length": 74,
+            "text_sha256": "9210d28543d5779a4c1c34dd9adc1ec1bb8b599ee83cfde5b4549cc9ef55c6d0",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "Second section — distinct source context",
+            "utf16_length": 40,
+            "text_sha256": "8392e9b28d6fc722add28494931c8b25aa1a15a7ee3e0a2f241fad2ac3989a6c",
+            "emoji_utf16_start": null
+          },
+          {
+            "text": "Do not turn a conditional statement into an unconditional recommendation.",
+            "utf16_length": 73,
+            "text_sha256": "348bc81b0727c88bcebffeae81261c48f3e5da00ea3916c638f3181a826712c1",
+            "emoji_utf16_start": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "fixture.pptx",
+      "format": "pptx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/5-fixture.pptx",
+      "input_sha256": "d2be83e2455b237cfc9e8a56843510fe98bd7a854614c2179cdbd5d889ea4d53",
+      "input_bytes": 9775,
+      "expected_text_sha256": "a84ecedb82bfa95b40a9fb7b78bfc74e44ab00534c906790c24bd33b3c54b9c6",
+      "expected_utf16_length": 268,
+      "cancel_after_checks": -1,
+      "independent_spans": [
+        [
+          0,
+          22,
+          "Slide 1; ppt/slides/slide1.xml; paragraph 1"
+        ],
+        [
+          23,
+          88,
+          "Slide 1; ppt/slides/slide1.xml; paragraph 2"
+        ],
+        [
+          89,
+          138,
+          "Slide 1; ppt/slides/slide1.xml; paragraph 3"
+        ],
+        [
+          139,
+          166,
+          "Slide 2; ppt/slides/slide2.xml; paragraph 1"
+        ],
+        [
+          167,
+          227,
+          "Slide 2; ppt/slides/slide2.xml; paragraph 2"
+        ],
+        [
+          228,
+          268,
+          "Slide 2; ppt/slides/slide2.xml; paragraph 3"
+        ]
+      ],
+      "independent_paragraphs": {
+        "slides_in_presentation_relationship_order": [
+          {
+            "part": "ppt/slides/slide1.xml",
+            "paragraphs": [
+              "Slide One — café 中文 🙂",
+              "If the road is closed, the guide says “wait”; otherwise continue.",
+              "Nested emphasis: only when daylight is available."
+            ],
+            "utf16_oracles": [
+              {
+                "text": "Slide One — café 中文 🙂",
+                "utf16_length": 22,
+                "text_sha256": "20f2efe2b4e4b0914aaf2cc3c526ce458224b40ffb5fc33b56ca524c997fcd1b",
+                "emoji_utf16_start": 20
+              },
+              {
+                "text": "If the road is closed, the guide says “wait”; otherwise continue.",
+                "utf16_length": 65,
+                "text_sha256": "dc71d65bc476d99d5c9ff86a6baa0f4e8b20b063a1851df3574e280e2a97ad27",
+                "emoji_utf16_start": null
+              },
+              {
+                "text": "Nested emphasis: only when daylight is available.",
+                "utf16_length": 49,
+                "text_sha256": "6442f1579150de81756afbb929da9aebc10c1930f340259cc8640980deb97c20",
+                "emoji_utf16_start": null
+              }
+            ]
+          },
+          {
+            "part": "ppt/slides/slide2.xml",
+            "paragraphs": [
+              "Slide Two — ordering oracle",
+              "A second slide is not a continuation of the first paragraph.",
+              "Digits: 2026 / 12.50; no inferred units."
+            ],
+            "utf16_oracles": [
+              {
+                "text": "Slide Two — ordering oracle",
+                "utf16_length": 27,
+                "text_sha256": "8d1bb725e7499f17cca74c10004036ed181b83beeff4889e06976d489eab06b7",
+                "emoji_utf16_start": null
+              },
+              {
+                "text": "A second slide is not a continuation of the first paragraph.",
+                "utf16_length": 60,
+                "text_sha256": "8b20c27dd7e733417603e640337603851bbee28e77a06b6546ed7762540b8099",
+                "emoji_utf16_start": null
+              },
+              {
+                "text": "Digits: 2026 / 12.50; no inferred units.",
+                "utf16_length": 40,
+                "text_sha256": "1291d765eef42919638026bb065107fc38ba5c40b50db40d8536343bdae17a89",
+                "emoji_utf16_start": null
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inline-entity-emoji.docx",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/6-inline-entity-emoji.docx",
+      "input_sha256": "7e6d4054293a0f2af996e596d0ce7e0998b35b78667cbfe1771dee1a869adf31",
+      "input_bytes": 2104,
+      "expected_text_sha256": "819160d3bfdf2de6c27af3bb5c9d00bdcad1fa22423f4cae8a1acc114b5fcd34",
+      "expected_utf16_length": 18,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "office-fallback",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/7-office-fallback",
+      "input_sha256": "56080c2403757cb5eea03f63926b90d6b7e7e97a7e41ad523b8b22fb52d58694",
+      "input_bytes": 2296,
+      "expected_text_sha256": "6ff6b443bffd4dcb02c9390a735fd174da2615f8f1eb5a7251a826b2c0453d80",
+      "expected_utf16_length": 13,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "office-missing-fallback",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/8-office-missing-fallback",
+      "input_sha256": "29fb3d0b1bd2b71e8d205c095d9f7f60e7d622f792b43cb9e0d96e97402fc36b",
+      "input_bytes": 2227,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "visible-false-vanish",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/9-visible-false-vanish",
+      "input_sha256": "6af0abffc730198dca877951ad00ab0da4208644e89d71257d986202442b9cca",
+      "input_bytes": 2105,
+      "expected_text_sha256": "8411f5abb4c710b176d8f28c735f55a5f1e1ac648a8a48432ce4c10014a9bb91",
+      "expected_utf16_length": 7,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "hidden-word-run",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/10-hidden-word-run",
+      "input_sha256": "ef5d6802f0e84efeb491e166a5d6da27c7d6176b4442d6174153686c2941fdd4",
+      "input_bytes": 2119,
+      "expected_text_sha256": "8411f5abb4c710b176d8f28c735f55a5f1e1ac648a8a48432ce4c10014a9bb91",
+      "expected_utf16_length": 7,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "wrong-extension",
+      "format": "odt",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/11-wrong-extension",
+      "input_sha256": "b41e3df3c8f105fbecc94e3e9b9fad3463c059053c5454677f6fcf5ce87c5ada",
+      "input_bytes": 1573,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "not-zip",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/12-not-zip",
+      "input_sha256": "def632dce02e8c703fc96a38d11fc810a5c1f78083aebdf9d13a6bd893a87a75",
+      "input_bytes": 9,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "corrupt-zip",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/13-corrupt-zip",
+      "input_sha256": "ec2a88abae30320ac64c7eda78b752ec365d6e0ca2a4500b4a30ecf3a7c59229",
+      "input_bytes": 1543,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "input-over",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/14-input-over",
+      "input_sha256": "8d3d3c04baadfd31cbebf771836900097b5f36cc142b74e40747c7b372beab8b",
+      "input_bytes": 4194305,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "duplicate",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/15-duplicate",
+      "input_sha256": "78ca6b381bece4af003de05bb2c3b2094cdf4e4c28c52ad5514163f1dbd07df0",
+      "input_bytes": 3221,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "traversal",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/16-traversal",
+      "input_sha256": "cb9f96acd08bcbe2a1ea6e0cf2cc230c5106cfd01895f421c89817e6acee0a57",
+      "input_bytes": 2693,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "encrypted-flag",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/17-encrypted-flag",
+      "input_sha256": "96213526503aff2a53917f8e4237f258332dec9af3403958e624cd1399b79ac9",
+      "input_bytes": 1573,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "entry-over",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/18-entry-over",
+      "input_sha256": "4b6c2c96183c87cd11a7d8148d3ed620f119cc60b4445889318595f5a7528736",
+      "input_bytes": 2099833,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "ratio-bomb",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/19-ratio-bomb",
+      "input_sha256": "06ace5ef005c9a101fcfb62819d6d9ee5e0899ccf69e617de65dc78dc6c32dfc",
+      "input_bytes": 3611,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "entries-exact",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/20-entries-exact",
+      "input_sha256": "ef0c925f50ac050d0ab8348a47d25c64944d74daa834816f941dbf65295b4bfb",
+      "input_bytes": 26066,
+      "expected_text_sha256": "d15db8f3152d035d2a43018bc06b6826821af0653066896005fa28295169b53b",
+      "expected_utf16_length": 311,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "entries-over",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/21-entries-over",
+      "input_sha256": "ee41c681238f73edff14d17a3b0561432e9d6dcb2418413980ccd29765790444",
+      "input_bytes": 26160,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "aggregate-over",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/22-aggregate-over",
+      "input_sha256": "a9d7ef7388914aaa0624d0cde8a2f146f3ab10c554002b6a4a05a854ee87b033",
+      "input_bytes": 18882565,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "entry-exact",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/23-entry-exact",
+      "input_sha256": "29e442ed3f6e734343f57780dfcf807bb3a9b5014c56dbef3b111ce43c15c992",
+      "input_bytes": 2099836,
+      "expected_text_sha256": "d15db8f3152d035d2a43018bc06b6826821af0653066896005fa28295169b53b",
+      "expected_utf16_length": 311,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "depth-exact",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/24-depth-exact",
+      "input_sha256": "c641b2598e960918de9049d9babe6eca42b9857097d9332bc146a109fe61b352",
+      "input_bytes": 3656,
+      "expected_text_sha256": "ded32129b05bfc16ce501e654a169960583352cbc974824ed16ce94855904386",
+      "expected_utf16_length": 5,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "depth-over",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/25-depth-over",
+      "input_sha256": "9ea8ac3cf4d545b17805fb4f9761b89a0d6749c004e7fd904afd135222493bf8",
+      "input_bytes": 3683,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "paragraph-exact",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/26-paragraph-exact",
+      "input_sha256": "67c8ef4c17ac0fa2602e12afd5b4029f3e933c424c1dbe4bbe804a1fb7457715",
+      "input_bytes": 22058,
+      "expected_text_sha256": "42e8bc96b8eec8c4e5d503483ba0cb843ce95243c8ca8575ffc69cd25d12c61c",
+      "expected_utf16_length": 20000,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "paragraph-over",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/27-paragraph-over",
+      "input_sha256": "f176a8c7d91234bba4a41a03c01acae30a62a03ab928a0a8cd4cea0935fc9c13",
+      "input_bytes": 22059,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "segments-exact",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/28-segments-exact",
+      "input_sha256": "b97b9623a1290c928d4db948bee59d1f3fb9747fa0f5ebc6ebcadd0ea4a5ed99",
+      "input_bytes": 36025,
+      "expected_text_sha256": "f5222142119fe48fee202c814187929f1224cfadbe5afc98ed422e0587747970",
+      "expected_utf16_length": 1999,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "segments-over",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/29-segments-over",
+      "input_sha256": "8750cbb0054d6c39174ccb0ac7347d6664d16b4b86423511819bd5a34f720fe7",
+      "input_bytes": 36059,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "output-exact",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/30-output-exact",
+      "input_sha256": "973e586a2817939bd79a416f163f19d7d3d639e3cb13475d4e4121b9681d94de",
+      "input_bytes": 502826,
+      "expected_text_sha256": "89dcfe92258ea976d1fc7c771218d737212af64e6ca10db20ad7ad9dfa2d4426",
+      "expected_utf16_length": 500000,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "output-over",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/31-output-over",
+      "input_sha256": "454665d80a543b1e0d2de8763bbd215c4e23ef3471a35830159e80eecefaec8a",
+      "input_bytes": 502860,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "unused-malformed-xml",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/32-unused-malformed-xml",
+      "input_sha256": "c6231db0d4b021aad74f00c1e2cc16f626129bd017816acc5840991bf2831089",
+      "input_bytes": 2704,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "html-wrong-charset",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/33-html-wrong-charset",
+      "input_sha256": "dbf2c1a8433a9effea416cca1e45e166454a7cb3eec70dac70a7fd8dea6fcff8",
+      "input_bytes": 38,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "malformed-xml",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/34-malformed-xml",
+      "input_sha256": "656f7aa698b2797782f21b163c551689185d9936587c8de55f1308cd0f11b0db",
+      "input_bytes": 1884,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "xxe",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/35-xxe",
+      "input_sha256": "931558d062e102e230729cc819c7d1fea118c76382992c6fe4985a29986d4322",
+      "input_bytes": 2100,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "empty-image-only",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/36-empty-image-only",
+      "input_sha256": "aa693cf843c76b7a3d4f5ce77dd24d72e773a0ecc99d62dfb267c23f7a700bfe",
+      "input_bytes": 2031,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "external-main",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/37-external-main",
+      "input_sha256": "fa0be73dcfaa058b2fad9ab25b7b9aaeb8b7d28c9a92a66d96f015a879a86d5f",
+      "input_bytes": 2463,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "epub-missing-idref",
+      "format": "epub",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/38-epub-missing-idref",
+      "input_sha256": "ebb96e5384f1e1c62613e170d7b2ab2addee96e13489bf4e8a7db85f27c468b4",
+      "input_bytes": 2676,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "epub-local-css",
+      "format": "epub",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/39-epub-local-css",
+      "input_sha256": "0fe107d303cf78bfc48f39db34bf260b3061068275f25bf1f4dc03b94959784a",
+      "input_bytes": 2866,
+      "expected_text_sha256": "8b54a1d6797db55e1def43d40f7d76c97dcc4ad662791097a96e9ad2252c09c2",
+      "expected_utf16_length": 215,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "encrypted-epub",
+      "format": "epub",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/40-encrypted-epub",
+      "input_sha256": "6050556cc2b9826f53ca4b1b67a9beca74904ce951ea6173104ab4946130bc7e",
+      "input_bytes": 2807,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "html-hidden",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/41-html-hidden",
+      "input_sha256": "86b9c83af327b68c549e5b8594d7a968f35447578491198a7f212bb16cc43a7f",
+      "input_bytes": 363,
+      "expected_text_sha256": "3448e1cd65ba79077f6e05199ded59ffda0283e0dfc020e621ff546ba2f1dfa7",
+      "expected_utf16_length": 47,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "html-external-style",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/42-html-external-style",
+      "input_sha256": "23f015567d638cba70abc49421171f9d53aba0c05e970ce67673160441d6da33",
+      "input_bytes": 86,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "html-xxe",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/43-html-xxe",
+      "input_sha256": "6310f857fc3231567c64accb10d43a917e4cbd65f5301b8bc2aa1a75b4cb3cd5",
+      "input_bytes": 59,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "html-malformed",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/44-html-malformed",
+      "input_sha256": "122a4b43f98f4a687e61d4c12d01970dd69cb1349922dd887ea450d564ff42c6",
+      "input_bytes": 21,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "html-hidden-only",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/45-html-hidden-only",
+      "input_sha256": "486d201d176f31d497788ef6823645374b10ced52b0aef5be6be9c0befeef7e4",
+      "input_bytes": 20,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "html-complex-css",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/46-html-complex-css",
+      "input_sha256": "01c383b9539b1aae8791bc907b60887a490f4c08c28be2f4b4c0a4b2796c5555",
+      "input_bytes": 55,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "html-length-changing-unicode",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/47-html-length-changing-unicode",
+      "input_sha256": "8b8cd63df4bfb011a69b60fa872bef46044da8ee7dce7b3e8a3528c888d2b714",
+      "input_bytes": 75,
+      "expected_text_sha256": "35c42f570e07aa3b91595133fbeaeb0566018d3b0936dd642d079872eac8233d",
+      "expected_utf16_length": 16,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "html-print-only-css",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/48-html-print-only-css",
+      "input_sha256": "26f5d29cbca307c34d43096518d397bea235dafa7d08664312a2997cc005dd7b",
+      "input_bytes": 135,
+      "expected_text_sha256": "8411f5abb4c710b176d8f28c735f55a5f1e1ac648a8a48432ce4c10014a9bb91",
+      "expected_utf16_length": 7,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "html-zero-opacity",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/49-html-zero-opacity",
+      "input_sha256": "ae22a378c0b1fa03355b320a2e834b25e48f1f8282613d650df5fb3cbe009d63",
+      "input_bytes": 32,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "html-transparent-color",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/50-html-transparent-color",
+      "input_sha256": "bcd8fe74d2f6ddc9d82264e9f56dd633e9d2bd646a8bc9510266ba7aa30057d5",
+      "input_bytes": 39,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "html-unresolved-position",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/51-html-unresolved-position",
+      "input_sha256": "c4487ec41f71383e5b51fe1e4e22dfb09e8d5bb07d18b70070fb69d059e6dced",
+      "input_bytes": 55,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "css-last-declaration",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/52-css-last-declaration",
+      "input_sha256": "49c5cf0fea3e0651a5a1fea7232c80712f7ddb6685dc1251071eeb0340c68b5f",
+      "input_bytes": 50,
+      "expected_text_sha256": "8411f5abb4c710b176d8f28c735f55a5f1e1ac648a8a48432ce4c10014a9bb91",
+      "expected_utf16_length": 7,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "css-cascade",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/53-css-cascade",
+      "input_sha256": "029746fe5b05d2b636168808dbf07d9177cca5c6f7df9b83aa5f1eb2839a003f",
+      "input_bytes": 130,
+      "expected_text_sha256": "8411f5abb4c710b176d8f28c735f55a5f1e1ac648a8a48432ce4c10014a9bb91",
+      "expected_utf16_length": 7,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "css-important",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/54-css-important",
+      "input_sha256": "5cdf7b727d583803da286617042b03ed7b267f5f2881995ebc978041502d39e6",
+      "input_bytes": 100,
+      "expected_text_sha256": "8411f5abb4c710b176d8f28c735f55a5f1e1ac648a8a48432ce4c10014a9bb91",
+      "expected_utf16_length": 7,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "css-visible-descendant",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/55-css-visible-descendant",
+      "input_sha256": "cd2594e5f3f0f0e2c0cb982703cb6fe1ba2f85b41e49b426da35e08a47b6d49c",
+      "input_bytes": 90,
+      "expected_text_sha256": "8411f5abb4c710b176d8f28c735f55a5f1e1ac648a8a48432ce4c10014a9bb91",
+      "expected_utf16_length": 7,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "odf-hidden-section",
+      "format": "odt",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/56-odf-hidden-section",
+      "input_sha256": "e44a57c03d481444811c17bdd6c9a77bf0b1e0da44d8dd74c9ac5aa681f28e5a",
+      "input_bytes": 40567,
+      "expected_text_sha256": "d15db8f3152d035d2a43018bc06b6826821af0653066896005fa28295169b53b",
+      "expected_utf16_length": 311,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "central-method-conflict",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/57-central-method-conflict",
+      "input_sha256": "12741dd18ea4c31cdd51235ad3978e176a2b76be5820878f41f1437fd484abe9",
+      "input_bytes": 2598,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "central-file-directory-conflict",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/58-central-file-directory-conflict",
+      "input_sha256": "c63a7bb456a7a061f1a63544afde89cae5664ad8334bae6c9ea7fbf0a34b8f2d",
+      "input_bytes": 1574,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "nonbreaking-space",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/59-nonbreaking-space",
+      "input_sha256": "a768f55336f26b8e8ed17b49f1cbb09eb249681dcf9c26c9a19f28eac8259c22",
+      "input_bytes": 37,
+      "expected_text_sha256": "9f2889dbd5380b031aa293641939cf1677da2122a3f4a5c5af3d2117da7a0bc2",
+      "expected_utf16_length": 20,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "ampersand-flood",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/60-ampersand-flood",
+      "input_sha256": "5b643d258d02febddbb359c597f66a59a0305cad691069f3f9929477f26399f2",
+      "input_bytes": 4194304,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "ampersand-cancel",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/61-ampersand-cancel",
+      "input_sha256": "5b643d258d02febddbb359c597f66a59a0305cad691069f3f9929477f26399f2",
+      "input_bytes": 4194304,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": 32,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "css-over",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/62-css-over",
+      "input_sha256": "0d1127955147c4953c333ecf6ba2065154cc8ed8f755db1ad577b9ec3433afa9",
+      "input_bytes": 65560,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "cancel-before",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/63-cancel-before",
+      "input_sha256": "b41e3df3c8f105fbecc94e3e9b9fad3463c059053c5454677f6fcf5ce87c5ada",
+      "input_bytes": 1573,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": 0,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "cancel-inflate",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/64-cancel-inflate",
+      "input_sha256": "b41e3df3c8f105fbecc94e3e9b9fad3463c059053c5454677f6fcf5ce87c5ada",
+      "input_bytes": 1573,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": 8,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "cancel-xml",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/downloads/document-formats/20261006T100404Z-7ecf50f8/fixtures/65-cancel-xml",
+      "input_sha256": "b41e3df3c8f105fbecc94e3e9b9fad3463c059053c5454677f6fcf5ce87c5ada",
+      "input_bytes": 1573,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": 100,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "new-table-lines",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/fixtures/new-table-lines",
+      "input_sha256": "566e97c6eacbb8835c685e25d44210e9b9557391b9ee3618b27cf54d25f5166f",
+      "input_bytes": 2207,
+      "expected_text_sha256": "e8db5dc1943e001ad2da920187a202de69a795ee83c971dd78330b009acb215e",
+      "expected_utf16_length": 49,
+      "cancel_after_checks": -1,
+      "independent_spans": [
+        [
+          0,
+          31,
+          "word/document.xml; paragraph 1"
+        ],
+        [
+          32,
+          40,
+          "word/document.xml; paragraph 2"
+        ],
+        [
+          41,
+          49,
+          "word/document.xml; paragraph 3"
+        ]
+      ],
+      "independent_paragraphs": [
+        "A 😀 é 123\nIf ready, continue.",
+        "Cell one",
+        "Cell two"
+      ]
+    },
+    {
+      "name": "new-hidden-lineends",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/fixtures/new-hidden-lineends",
+      "input_sha256": "21f4fe487e5e199f22f26103925373decd608eb77c0d099f2517770f9e79fb19",
+      "input_bytes": 129,
+      "expected_text_sha256": "13697a1c7a8590e36c2c1c290581377b9e4908b666144ff876ce7ff0ae9847c3",
+      "expected_utf16_length": 31,
+      "cancel_after_checks": -1,
+      "independent_spans": [
+        [
+          0,
+          14,
+          "HTML body; paragraph 1"
+        ],
+        [
+          15,
+          31,
+          "HTML body; paragraph 2"
+        ]
+      ],
+      "independent_paragraphs": [
+        "Alpha Beta 123",
+        "Only if \"ready\"."
+      ]
+    },
+    {
+      "name": "new-truncated-central",
+      "format": "docx",
+      "input_path": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/fixtures/new-truncated-central",
+      "input_sha256": "91c27b21bc2c9e0ddf1e2c594cebd2e4777eb2b85054299deb705a21aabbbf16",
+      "input_bytes": 1558,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    },
+    {
+      "name": "new-dynamic-css",
+      "format": "html",
+      "input_path": "/home/isa/Projects/PocketLore/tools/evaluation/document-format-source-recovery/fixtures/new-dynamic-css",
+      "input_sha256": "13cc7f5fc848ada14276f85ae95d2cdfad9be96a55fd2613f4fd74bcc582a307",
+      "input_bytes": 71,
+      "expected_text_sha256": null,
+      "expected_utf16_length": null,
+      "cancel_after_checks": -1,
+      "independent_spans": null,
+      "independent_paragraphs": null
+    }
+  ]
+}

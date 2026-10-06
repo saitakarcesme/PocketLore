@@ -1,0 +1,31 @@
+{
+  "task": "554-lossless-nullable-document-refusal-receipts",
+  "mandatory_roots": [
+    "/home/isa/PocketLore-control/continue-20261006/document-source-recovery",
+    "/home/isa/PocketLore-control/continue-20261006/document-source-accounting",
+    "/home/isa/PocketLore-control/continue-20261006/document-inmemory-central-directory",
+    "/home/isa/PocketLore-control/continue-20261006/document-nullable-refusal-receipts"
+  ],
+  "cap": 8388608,
+  "reserves": [
+    65536,
+    65536
+  ],
+  "controls": [
+    "genuine required roots",
+    "wrong root refuses",
+    "omitted root refuses",
+    "missing mandatory owned fixture root refuses",
+    "nonempty sentinel exact bytes",
+    "file growth exact delta",
+    "failed-review receipt counted",
+    "symlink escape refuses",
+    "negative then unchanged genuine positive",
+    "third root omission refuses",
+    "fourth root omission refuses"
+  ],
+  "sentinel_utf8": "retained-failure\n",
+  "growth_utf8": "growth\n",
+  "failed_review_utf8": "{\"verdict\":\"rework\"}\n",
+  "scope": "Pure accounting only; no parser/JVM; no mutation of retained failure files"
+}

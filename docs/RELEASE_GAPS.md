@@ -482,3 +482,6 @@ Task547 closes the two bounded PID/export evidence defects with a source-cleared
 
 
 Task549 closes host whole-run containment and rebuilt-APK identity gaps for attachment text transport only. Failed548 is retained. Actual photo/speech recognition, original528 ground-truth and50%WER gates, SAF/lifecycle/overall deadlines, physical12GB/whole50GB and rivalry acceptance remain open.
+
+
+Task554 preserves actual nullable exception class/message/cause receipts without changing production document code or108 authored expectations. One parent-owned512MiB/no-swap run completed all70original+38central cases; Android build and two immutable read-only checks passed. Failed551–553 and526storage debt remain intact; four-root combined accounting and extra reserves remain below8MiB. See docs/evidence/document-format-source-recovery.md for final criticism/accounting. This is host parser evidence only; actual Android picker/import/search/source/reimport/cancel/catalog, physical12GB/whole50GB and rivalry gates remain open.
