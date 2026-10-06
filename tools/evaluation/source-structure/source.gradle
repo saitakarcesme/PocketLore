@@ -1,0 +1,7 @@
+gradle.beforeProject { app ->
+ app.plugins.withId('com.android.application') {
+  def base=new File(app.rootProject.projectDir,'../tools/evaluation/source-structure')
+  app.android.sourceSets.androidTest.java.srcDirs += [new File(base,'tests')]
+  if(app.hasProperty('sourceStructureAssets')) app.android.sourceSets.androidTest.assets.srcDirs += [new File(app.property('sourceStructureAssets'))]
+ }
+}

@@ -1,0 +1,16 @@
+package org.pocketlore.app;
+import android.app.*;import android.os.*;import java.io.*;import java.nio.charset.StandardCharsets;import java.nio.file.*;import java.util.*;import org.json.*;
+/** Isolated inspection fixtures only; never inserts sources or records in the user's catalog. */
+public final class SourceStructureInstrumentation extends Instrumentation {
+ Bundle args;JSONArray checks=new JSONArray();void ok(boolean b,String m){if(!b)throw new AssertionError(m);checks.put(m);}
+ public void onCreate(Bundle b){args=b;start();}
+ public void onStart(){JSONObject r=new JSONObject();int result=Activity.RESULT_CANCELED;try{
+  String run=args.getString("run_id");ok(run!=null&&run.matches("[A-Za-z0-9-]+"),"explicit run identity");File dir=new File(getTargetContext().getFilesDir(),"source-structure-test-"+run);ok(dir.mkdir(),"unique isolated directory");String id;
+  try(InputStream in=getContext().getAssets().open("sources.plsource")){id=StructuredSource.install(in,dir,()->false);}r.put("edition",id);
+  try(StructuredSource source=new StructuredSource(dir,id)){ok(source.articles(0,()->false).size()==4,"four genuine inspection-only articles");List<String[]> hits=source.search("Elevation",()->false);ok(!hits.isEmpty(),"Android FTS4 unicode61 query");long article=Long.parseLong(hits.get(0)[0]),node=Long.parseLong(hits.get(0)[1]);StructuredSource.Window w=source.window(article,node,false,()->false);ok(w.text.contains("Elevation")&&w.highlightStart>=0&&w.text.substring(w.highlightStart,w.highlightEnd).equals(hits.get(0)[3]),"exact search highlight");ok(source.metadata(article).contains("CC-BY-SA-4.0"),"exact mixed rights source");ok(source.window(article,w.originalStart,true,()->false).text.contains("Original HTML"),"offline original window");try{source.window(article,node,false,()->true);throw new AssertionError("cancel accepted");}catch(InterruptedIOException expected){checks.put("reader cancellation");}r.put("window",w.text).put("metadata",source.metadata(article));}
+  try(StructuredSource reopened=new StructuredSource(dir,id)){ok(reopened.articles(0,()->false).size()==4,"reopen same immutable edition");}
+  Set<String> old=new TreeSet<>(Arrays.asList(dir.list()));try(InputStream in=getContext().getAssets().open("sources.plsource")){try{StructuredSource.install(in,dir,()->true);throw new AssertionError("cancelled import accepted");}catch(InterruptedIOException expected){checks.put("import cancellation");}}ok(old.equals(new TreeSet<>(Arrays.asList(dir.list()))),"cancelled import retains catalog");
+  byte[] db=Files.readAllBytes(new File(dir,id+".sqlite").toPath());db[db.length/2]^=1;File bad=new File(dir,id+".sqlite");Files.write(bad.toPath(),db);try(StructuredSource ignored=new StructuredSource(dir,id)){throw new AssertionError("changed source accepted");}catch(IOException expected){checks.put("changed source rejected");}
+  r.put("status","PASS").put("run_id",run).put("source_hash",args.getString("source_hash")).put("checks",checks);result=Activity.RESULT_OK;
+ }catch(Throwable e){try{r.put("status","FAIL").put("error",android.util.Log.getStackTraceString(e)).put("checks",checks);}catch(Exception ignored){}}Bundle output=new Bundle();output.putString("source_structure_receipt",r.toString());finish(result,output);}
+}

@@ -1,0 +1,55 @@
+{
+  "format": "pocketlore-structured-source-v1",
+  "status": "engineering only; launch not authorized until measured controls pass",
+  "original_inputs": "/home/isa/PocketLore-control/overnight-20261005/source-reader-prerequisite-review-20261006T0323Z",
+  "input_manifest_sha256": "1d92e3890d276fb9caedfb9e2f65cc83f17bfecbb187a5674bc59924a74663bd",
+  "selection": "existing four preselected locators only for engineering; production requires frozen general importance join and complete latest/disposition index, never query/title selection",
+  "production_launch": null,
+  "launch_blockers": [
+    "immutable full-stage/importance index hashes not yet bound",
+    "new producer cgroup enforcement and scale controls not yet measured",
+    "Android terminal; no actual schema/reader proof",
+    "strict enriched grammar lacks genuine math/quote/nonBMP/long witnesses",
+    "inspection format space amplification not qualified for 1.25M+ articles",
+    "bounded selected index has not been run against real complete stage or tested under cgroup"
+  ],
+  "limits": {
+    "MemoryMax": 536870912,
+    "MemorySwapMax": 0,
+    "CPUQuota": "400%",
+    "TasksMax": 32,
+    "free_reserve_bytes": 107374182400,
+    "absolute_cutoff": "2026-10-06T06:59:24Z",
+    "restart": "no",
+    "workers": 1
+  },
+  "contract": {
+    "offline_original": "exact original JSON bytes retained in bounded byte chunks; original HTML reconstructed from JSON; indexed HTML UTF16 chunks permit bounded inspection",
+    "projection": "inert typed tree with original UTF16 spans, parent relationships, safe attributes, literal/entity leaf text; unknown/unsafe content retained in original but explicitly flagged",
+    "search": "SQLite FTS4 unicode61 external content text nodes, not legacy porter or FTS5",
+    "rights": "exact mixed license identity retained; all engineering records denied answer admission pending independent section/context and rights review",
+    "update": "immutable content-addressed shard, staged reservation archive+index+rollback; no asynchronous product/catalog mutation",
+    "promotion": "always false in this producer; root510 and529 unchanged"
+  },
+  "missing_genuine_coverage": [
+    "MathML",
+    "q/blockquote",
+    "non-BMP",
+    "long article"
+  ],
+  "frozen_before_implementation": true,
+  "frozen_executables": {
+    "tools/packs/source-structure/produce.py": "5bb1f594c5e932128c6b2a8d52fdb8e52857d4ec3527696c2e310d9a32a6aec3",
+    "tools/packs/source-structure/select.py": "ee105a40baef073c8653b7995ff387b88bf8abf912dd05da8e10958b29934540"
+  },
+  "production_selection": {
+    "join": "latest.page = priority.id AND priority.full=1",
+    "rank_receipt": "/home/isa/PocketLore-control/scale-workers/wiki/HANDOFF.json",
+    "declared_priority_sha256": "7e25fd8849992064c1dc9aa39f8a0d0187acf6c26eefed08a0235aa68020336b",
+    "rank_file_reverified": false,
+    "raw_stage": "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals",
+    "source_snapshot_ceiling": null,
+    "current_index_hash": null,
+    "promotion": "denied for any prefix; final original archive/disposition pass required"
+  }
+}

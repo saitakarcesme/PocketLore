@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "status": "DRAFT_NOT_LAUNCH_ELIGIBLE",
+  "builder_launch_forbidden": true,
+  "code": {
+    "tools/packs/selected-source/producer.py": "e105ae79dab603854e40e2362f27bc8f5c17beb4df9e41267f7ffe43952562da",
+    "tools/packs/source-structure/produce.py": "5bb1f594c5e932128c6b2a8d52fdb8e52857d4ec3527696c2e310d9a32a6aec3",
+    "tools/packs/complete-source/production.py": "1faa842a3da3ae1c8f4ae1a4ad41d3e8b60ded8872b3ce5ebb3668f3c27daec6",
+    "tools/packs/complete-source/compact.py": "3c0632516f55af2fa45855024e133fe3cb11fa5d60a55cdcd96cc58124290d54"
+  },
+  "ranking": {
+    "path": "/home/isa/PocketLore-control/scale-workers/wiki/priority-2000000.sqlite",
+    "sha256": "2f1e6f9171154d2b315188ed421ee6370146a31d5c1aac768d5267c2f953261e",
+    "bytes": 2644783104
+  },
+  "output_policy": "New unique parent-owned directory, no sharing with 522; nonblocking flock for entire lifecycle",
+  "limits": {
+    "MemoryMax": 536870912,
+    "MemorySwapMax": 0,
+    "CPUQuota": "400%",
+    "TasksMax": 32,
+    "Restart": "no",
+    "KillMode": "control-group",
+    "TimeoutStopSec": 10,
+    "RuntimeMaxSec": 7200,
+    "absolute_cutoff_epoch": 1791269964,
+    "host_free_reserve": 107374182400,
+    "workers": 1
+  },
+  "prefix_policy": "Explicit through sequence; detached committed metadata batches; exact PK body fetch; no follow beyond frozen bound; manual resume same configuration/code only; no finalization replay",
+  "promotion": "Always denied in engineering producer; complete original identity, final latest/disposition coverage, rights and Android/full budget admission require later independent gate",
+  "blocking_controls": [
+    "final 6000 and 12000 source-bound runs",
+    "independent capsule/source/context oracles",
+    "fresh external cgroup qualification",
+    "independent final code review"
+  ]
+}

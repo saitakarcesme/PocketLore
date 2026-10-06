@@ -1,0 +1,14 @@
+{
+  "selection": "First existing frozen observation plus all three frozen4.0 locator observations, in existing order; selected before opening originals; no questions/title filtering or full scan.",
+  "sequences": [
+    2956,
+    30000,
+    100000,
+    200000
+  ],
+  "frozen_locator_packet_sha256": "631870d3925f2430d6a17039e4010d15abeef9bda4bed2400400e5e5e67366ca",
+  "maximum_raw_bytes_per_record": 16000000,
+  "sqlite_cache_kib": 4096,
+  "mmap": 0,
+  "source_admission_established": false
+}

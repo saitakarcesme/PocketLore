@@ -1,0 +1,77 @@
+{
+  "genuine_revision_pair": [
+    [
+      13409,
+      536013,
+      1226217709,
+      "fc5f108cb8d6c2976fe6e184b87a57c6d78305aa85dbdb29b8d046b3f5a8d0a7",
+      "[{\"name\": \"Creative Commons Attribution Share Alike 3.0 Unported\", \"identifier\": \"CC-BY-SA-3.0\", \"url\": \"https://creativecommons.org/licenses/by-sa/3.0/\"}]"
+    ],
+    [
+      24235,
+      536013,
+      1246411919,
+      "4d466a346a49749eea4ada84b70c56c7c63775883bfaddbccebf679710e89c30",
+      "[{\"name\": \"Creative Commons Attribution Share Alike 3.0 Unported\", \"identifier\": \"CC-BY-SA-3.0\", \"url\": \"https://creativecommons.org/licenses/by-sa/3.0/\"}]"
+    ]
+  ],
+  "expected_latest_sequence": 24235,
+  "expected_page": 536013,
+  "controls": [
+    {
+      "name": "two batches latest",
+      "input_revisions": [
+        1,
+        3,
+        2
+      ],
+      "expected_revision": 3
+    },
+    {
+      "name": "equal revision conflict",
+      "input_hashes": [
+        "a",
+        "b"
+      ],
+      "blocked": true
+    },
+    {
+      "name": "duplicate",
+      "input_hashes": [
+        "a",
+        "a"
+      ],
+      "distinct_pages": 1
+    },
+    {
+      "name": "priority ties",
+      "ids": [
+        30,
+        10,
+        20
+      ],
+      "views": [
+        5,
+        5,
+        7
+      ],
+      "order": [
+        20,
+        10,
+        30
+      ]
+    },
+    {
+      "name": "owner",
+      "second_resume_exit": "nonzero",
+      "owner_files": "unchanged"
+    },
+    {
+      "name": "promotion",
+      "prefix_complete": true,
+      "source_admission_established": false
+    }
+  ],
+  "synthetic_metadata_controls_not_corpus": true,
+  "frozen_before_control_execution": true
+}

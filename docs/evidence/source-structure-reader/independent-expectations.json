@@ -1,0 +1,106 @@
+[
+  {
+    "sequence": 100000,
+    "expectation_type": "same-row header-cell association",
+    "header_text": "Elevation",
+    "expected_cell_visible_text_or_prefix": "2,941 m (9,649 ft)",
+    "original_start16": 6937,
+    "original_end16": 7166,
+    "exact_original_fragment": "<tr><th scope=\"row\" class=\"infobox-label\"><a rel=\"mw:WikiLink\" href=\"./Summit\" title=\"Summit\">Elevation</a></th><td class=\"infobox-data\">2,941<span typeof=\"mw:Entity\"> </span>m (9,649<span typeof=\"mw:Entity\"> </span>ft)</td></tr>",
+    "fragment_sha256": "eb300f6c36f76a48359f4b26bac15094fae85e0e2e5eced5500e25a745290de0",
+    "requirements": "Preserve table identity, nearest row header and cell units; do not turn unrelated navigation tables or attribute/style text into factual evidence."
+  },
+  {
+    "sequence": 100000,
+    "expectation_type": "same-row header-cell association",
+    "header_text": "Prominence",
+    "expected_cell_visible_text_or_prefix": "2,181 m (7,156 ft)",
+    "original_start16": 7166,
+    "original_end16": 7582,
+    "exact_original_fragment": "<tr><th scope=\"row\" class=\"infobox-label\"><a rel=\"mw:WikiLink\" href=\"./Topographic_prominence\" title=\"Topographic prominence\">Prominence</a></th><td class=\"infobox-data\">2,181<span typeof=\"mw:Entity\"> </span>m (7,156<span typeof=\"mw:Entity\"> </span>ft)<br/><small><a rel=\"mw:WikiLink\" href=\"./List_of_Alpine_peaks_by_prominence\" title=\"List of Alpine peaks by prominence\">Ranked 6th in the Alps</a></small></td></tr>",
+    "fragment_sha256": "fc39a411d4cfec3627015ca16f74a0147c05ac66e0b3bf079b474984bf083bab",
+    "requirements": "Preserve table identity, nearest row header and cell units; do not turn unrelated navigation tables or attribute/style text into factual evidence."
+  },
+  {
+    "sequence": 100000,
+    "expectation_type": "reference relation",
+    "reference_id": "cite_note-1",
+    "expected_callout_id": "cite_ref-1",
+    "original_start16": 37807,
+    "original_end16": 42979,
+    "fragment_sha256": "3754b566c3d6c6fca84edae2b349f33c1e2dee4e794f29b0ae5ebb3ce51a5983",
+    "requirements": "Callout href/data-mw body id and bibliography body/backlink remain reconstructible without network loading; citation titles are not independently verified source claims."
+  },
+  {
+    "sequence": 100000,
+    "expectation_type": "reference relation",
+    "reference_id": "cite_note-2",
+    "expected_callout_id": "cite_ref-2",
+    "original_start16": 42980,
+    "original_end16": 43450,
+    "fragment_sha256": "a40fe76742670f399294aaa4ad37a7e3065de2f9e7191c61d74e07f2533be2b5",
+    "requirements": "Callout href/data-mw body id and bibliography body/backlink remain reconstructible without network loading; citation titles are not independently verified source claims."
+  },
+  {
+    "sequence": 200000,
+    "expectation_type": "same-row header-cell association",
+    "header_text": "Author",
+    "expected_cell_visible_text_or_prefix": "Seymour Papert",
+    "original_start16": 6077,
+    "original_end16": 6251,
+    "exact_original_fragment": "<tr><th scope=\"row\" class=\"infobox-label\">Author</th><td class=\"infobox-data\"><a rel=\"mw:WikiLink\" href=\"./Seymour_Papert\" title=\"Seymour Papert\">Seymour Papert</a></td></tr>",
+    "fragment_sha256": "892be8a2bf6d7e009ff9b7d1d2f5470553d702a5dc9e58501aeb6c624f2c6914",
+    "requirements": "Preserve table identity, nearest row header and cell units; do not turn unrelated navigation tables or attribute/style text into factual evidence."
+  },
+  {
+    "sequence": 200000,
+    "expectation_type": "same-row header-cell association",
+    "header_text": "Pages",
+    "expected_cell_visible_text_or_prefix": "238",
+    "original_start16": 7191,
+    "original_end16": 7281,
+    "exact_original_fragment": "<tr><th scope=\"row\" class=\"infobox-label\">Pages</th><td class=\"infobox-data\">238</td></tr>",
+    "fragment_sha256": "fb905466766a475f7d269830549c22802fc95bfa145627b94f44459a8c4e13bd",
+    "requirements": "Preserve table identity, nearest row header and cell units; do not turn unrelated navigation tables or attribute/style text into factual evidence."
+  },
+  {
+    "sequence": 200000,
+    "expectation_type": "same-row header-cell association",
+    "header_text": "Published",
+    "expected_cell_visible_text_or_prefix": "1980 (Harvester Press)",
+    "original_start16": 6836,
+    "original_end16": 6949,
+    "exact_original_fragment": "<tr><th scope=\"row\" class=\"infobox-label\">Published</th><td class=\"infobox-data\">1980 (Harvester Press)</td></tr>",
+    "fragment_sha256": "6765b8dac349c397e1448a8d2317d5dbda2a1fc0e2c221f6a0dc6af3c3aac572",
+    "requirements": "Preserve table identity, nearest row header and cell units; do not turn unrelated navigation tables or attribute/style text into factual evidence."
+  },
+  {
+    "sequence": 200000,
+    "expectation_type": "reference relation",
+    "reference_id": "cite_note-1",
+    "expected_callout_id": "cite_ref-1",
+    "original_start16": 14247,
+    "original_end16": 15766,
+    "fragment_sha256": "1b85592731e1264f9d72b7a3b743f2b5333a7dbbe7c4bec1aa54570ee53c2f47",
+    "requirements": "Callout href/data-mw body id and bibliography body/backlink remain reconstructible without network loading; citation titles are not independently verified source claims."
+  },
+  {
+    "sequence": 200000,
+    "expectation_type": "reference relation",
+    "reference_id": "cite_note-2",
+    "expected_callout_id": "cite_ref-2",
+    "original_start16": 15767,
+    "original_end16": 17513,
+    "fragment_sha256": "d0e25a707115d6be1b829ec84c838f3c09aeb3a879c7e945c3807af3a68f3a7e",
+    "requirements": "Callout href/data-mw body id and bibliography body/backlink remain reconstructible without network loading; citation titles are not independently verified source claims."
+  },
+  {
+    "sequence": 200000,
+    "expectation_type": "table caption scope",
+    "expected_visible_text": "Mindstorms: Children, Computers, and Powerful Ideas ",
+    "original_start16": 4858,
+    "original_end16": 5391,
+    "fragment_sha256": "736c844f2dfeb3a21c111a143409a6937dff10afc85827c64ace8aca1d1e4b7c",
+    "requirements": "Bind caption to containing infobox and its Author/Published/Pages rows, preserving italic semantics as display context."
+  }
+]

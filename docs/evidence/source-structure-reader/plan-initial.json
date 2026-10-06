@@ -1,0 +1,38 @@
+{
+  "format": "pocketlore-structured-source-v1",
+  "status": "engineering only; launch not authorized until measured controls pass",
+  "original_inputs": "/home/isa/PocketLore-control/overnight-20261005/source-reader-prerequisite-review-20261006T0323Z",
+  "input_manifest_sha256": "1d92e3890d276fb9caedfb9e2f65cc83f17bfecbb187a5674bc59924a74663bd",
+  "selection": "existing four preselected locators only for engineering; production requires frozen general importance join and complete latest/disposition index, never query/title selection",
+  "production_launch": null,
+  "launch_blockers": [
+    "immutable full-stage/importance index hashes not yet bound",
+    "new producer cgroup enforcement and scale controls not yet measured",
+    "Android terminal; no actual schema/reader proof"
+  ],
+  "limits": {
+    "MemoryMax": 536870912,
+    "MemorySwapMax": 0,
+    "CPUQuota": "400%",
+    "TasksMax": 32,
+    "free_reserve_bytes": 107374182400,
+    "absolute_cutoff": "2026-10-06T06:59:24Z",
+    "restart": "no",
+    "workers": 1
+  },
+  "contract": {
+    "offline_original": "exact original JSON bytes retained in bounded byte chunks; original HTML reconstructed from JSON; indexed HTML UTF16 chunks permit bounded inspection",
+    "projection": "inert typed tree with original UTF16 spans, parent relationships, safe attributes, literal/entity leaf text; unknown/unsafe content retained in original but explicitly flagged",
+    "search": "SQLite FTS4 unicode61 external content text nodes, not legacy porter or FTS5",
+    "rights": "exact mixed license identity retained; all engineering records denied answer admission pending independent section/context and rights review",
+    "update": "immutable content-addressed shard, staged reservation archive+index+rollback; no asynchronous product/catalog mutation",
+    "promotion": "always false in this producer; root510 and529 unchanged"
+  },
+  "missing_genuine_coverage": [
+    "MathML",
+    "q/blockquote",
+    "non-BMP",
+    "long article"
+  ],
+  "frozen_before_implementation": true
+}

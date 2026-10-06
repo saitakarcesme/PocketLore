@@ -1,0 +1,39 @@
+{
+  "frozen_before_new_producer": true,
+  "phase": "engineering prefix, never source admission",
+  "metadata_prefix_inclusive": 99999,
+  "runs": [
+    6000,
+    12000
+  ],
+  "selection": "Join latest page ID within committed prefix to frozen priority.id where full=1, views DESC then page ASC; no title/question selection; no replacement of refused originals",
+  "source": "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite",
+  "ranking": "/home/isa/PocketLore-control/scale-workers/wiki/priority-2000000.sqlite",
+  "ranking_sha256": "2f1e6f9171154d2b315188ed421ee6370146a31d5c1aac768d5267c2f953261e",
+  "ranking_bytes": 2644783104,
+  "extended_packet_manifest_sha256": "ef5cdc59fdbe5c04ac50a6444c72bc35b961dea833a16cc46126ce70d9e737a8",
+  "original_samples": "Four prior fixed locators plus independently frozen extended structural packet; not production ranking",
+  "controls": [
+    "latest across batches",
+    "same revision conflicting identity",
+    "duplicate not breadth",
+    "metadata/raw identity mismatch",
+    "mixed license exact URI",
+    "stale/missing input",
+    "signal/cancellation",
+    "exclusive owner",
+    "source snapshots closed",
+    "incomplete source promotion denied",
+    "UTF16 genuine context reconstruction"
+  ],
+  "budgets": {
+    "memory_max": 536870912,
+    "memory_swap_max": 0,
+    "cpu_quota_percent": 400,
+    "tasks_max": 32,
+    "reserve_bytes": 107374182400,
+    "cutoff_epoch": 1791269964,
+    "workers": 1
+  },
+  "missing_genuine_nonBMP": true
+}
