@@ -117,16 +117,16 @@ public:
    require(r.offset%page==0,"Unaligned file offset");size_t count=(r.size+page-1)/page;
    require(count<=4194304,"Cache bookkeeping exceeds 4MiB");std::vector<unsigned char> bits(count);
    auto measure=[&](){budget();require(mincore(r.address,r.size,bits.data())==0,"Cache residency unavailable");uint64_t total=0;for(auto b:bits)total+=(b&1)*page;return total;};
-   auto advice=[&](size_t off,size_t n){budget();require(madvise((char*)r.address+off,n,MADV_DONTNEED)==0,"Targeted mapping advice failed");require(posix_fadvise(descriptor,r.offset+off,n,POSIX_FADV_DONTNEED)==0,"Targeted file advice failed");++cache_audit.calls;cache_audit.advised+=n;};
+   auto advice=[&](size_t off,size_t n){budget();require(madvise((char*)r.address+off,n,MADV_DONTNEED)==0,"Targeted mapping advice failed");require(posix_fadvise(descriptor,r.offset+off,cache_limit?((n+page-1)/page)*page:n,POSIX_FADV_DONTNEED)==0,"Targeted file advice failed");++cache_audit.calls;cache_audit.advised+=n;};
    cache_audit.before=measure();cache_audit.after=cache_audit.before;
    if(!cache_limit){for(size_t off=0;off<r.size;){size_t n=std::min<size_t>(128*1024*1024,r.size-off);advice(off,n);off+=n;}cache_audit.after=measure();}
    else {
     require(dedicated&&policy==FaultPolicy::Random&&file_policy_result==0&&mapping_policy_result==0,"Missing readonly random policy");
-    const size_t chunk=1048576;require(r.size%page==0&&chunk%page==0,"Unsupported reuse page geometry");
+    const size_t chunk=1048576;require(chunk%page==0,"Unsupported reuse page geometry");
     size_t chunks=(r.size+chunk-1)/chunk,visits=0;
     while(cache_audit.after>cache_limit && visits<2*chunks){
      require(nanos()-cache_audit.start<5000000000ULL,"Cache eviction wall deadline");budget();size_t off=cache_cursor*chunk,n=std::min(chunk,r.size-off);
-     bool present=false;for(size_t i=off/page;i<(off+n)/page;++i)present|=bits[i]&1;
+     bool present=false;for(size_t i=off/page;i<(off+n+page-1)/page;++i)present|=bits[i]&1;
      cache_cursor=(cache_cursor+1)%chunks;++visits;
      if(present){advice(off,n);cache_audit.after=measure();}
     }

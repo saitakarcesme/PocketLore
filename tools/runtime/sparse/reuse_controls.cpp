@@ -25,11 +25,15 @@ static void snapshot(const std::string&p,std::shared_ptr<File>owner,void*address
 }
 int main(int argc,char**argv){try{
  require(argc==5,"fixture hash mode prefix required");struct stat s{};require(stat(argv[1],&s)==0&&s.st_size==size&&sysconf(_SC_PAGESIZE)==4096,"Fixed synthetic fixture required");
- std::string mode=argv[3],prefix=argv[4];require(mode=="force"||mode=="retain"||mode=="no-progress"||mode=="mincore-failure"||mode=="advice-failure","Invalid fixture mode");
+ std::string mode=argv[3],prefix=argv[4];require(mode=="tail"||mode=="force"||mode=="retain"||mode=="no-progress"||mode=="mincore-failure"||mode=="advice-failure","Invalid fixture mode");
  bool cancelled=false;auto owner=File::open(argv[1],argv[2],size,false,[&]{return cancelled;},30,[](){},FaultPolicy::Random);
  if(mode!="force")owner->enable_budgeted_cache(8388608);
- llama_file file(argv[1],"rb");std::unique_ptr<llama_mmap>map;{Scope scope(owner,size);map.reset(new llama_mmap(&file,0,false));}
+ llama_file file(argv[1],"rb");std::unique_ptr<llama_mmap>map;{Scope scope(owner,mode=="tail"?size-1056:size);map.reset(new llama_mmap(&file,0,false));}
  auto address=(volatile unsigned char*)map->addr();snapshot(prefix+"-cold.json",owner,map->addr());
+ if(mode=="tail"){
+  {auto use=owner->use();for(size_t i=0;i<16777216;++i)require(address[i]==byte(i),"Tail byte oracle");require(address[size-1057]==byte(size-1057),"Tail boundary byte");}
+  owner->advise();snapshot(prefix+"-tail.json",owner,map->addr());std::cout<<"{\"tail_bytes\":"<<size-1056<<",\"cache\":"<<owner->cache_observation()<<"}\n";return 0;
+ }
  if(mode!="force"&&mode!="retain"){
   {auto use=owner->use();for(size_t i=0;i<16777216;++i)require(address[i]==byte(i),"Negative byte oracle");}
   inject(mode);bool failed=false;try{owner->advise();}catch(const std::exception&e){failed=true;std::cout<<"{\"expected_refusal\":"<<escape(mode)<<",\"reason\":"<<escape(e.what())<<",\"cache\":"<<owner->cache_observation()<<"}\n";}require(failed,"Injected policy failure passed");return 0;
