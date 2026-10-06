@@ -91,7 +91,7 @@ def trace(run,inp):
      if m:
       headers+=1
       need(m[3]=='r--s','mapping-readonly');need(int(m[7])==e['inode'],'mapping-inode')
-      need((int(m[5],16),int(m[6],16))==dev,'mapping-mount');need(int(m[4],16)%4096==0 and int(m[2],16)>int(m[1],16),'mapping-range')
+      need((int(m[5],16),int(m[6],16))==dev,'mapping-mount');need(int(m[4],16)==0 and int(m[2],16)-int(m[1],16)==v['size'],'mapping-range')
     need(headers==1 if requires_map else headers<=1,'mapping-header')
     need(not e['owned_smaps'] or headers==1,'mapping-header')
    else:need('owned_smaps' not in e and 'fdinfo' not in e,'no-fabricated-owner')
@@ -115,7 +115,11 @@ def validate_aux(r):
   groups=trace(run,inp);events=groups[run['pid']];pairs=[];pending=None
   need(all(e['operation'] in set(expected)|{'process','verified','teardown'} for e in events),'known-operation')
   need(events[0]['operation']=='process' and events[0]['outcome']=='begin','process-begin')
+  ownership=False
   for e in events:
+   if e['operation']=='verified':ownership=True
+   need(e['owner_present']==ownership,'owner-lifetime')
+   if name=='fault_controls' and e['operation']=='teardown':ownership=False
    if e['operation'] not in expected:continue
    if e['outcome']=='begin':need(pending is None,'operation-overlap');pending=e
    else:
@@ -124,6 +128,12 @@ def validate_aux(r):
   need(pending is None and set(pairs)==set(expected),'refusal-denominator')
   need(pairs==[k for k in expected for _ in range(33 if k=='scalar-live-reader' else 1)],'refusal-order')
   for key in expected:need(pairs.count(key)==(33 if key=='scalar-live-reader' else 1),'refusal-count')
+  positives={x.get('control'):x for x in (json.loads(l) for l in run['stdout'].splitlines() if l.startswith('{')) if x.get('pass')}
+  if name=='lifecycle':
+   need(set(positives)=={'scalar-order-byte-oracle','mapped-pread-after-advice','deferred-destructor-observation','inherited-fd'},'positive-denominator')
+   need(positives['scalar-order-byte-oracle']['tokens']==positives['scalar-order-byte-oracle']['synchronizations']==33,'scalar-count')
+   need(positives['mapped-pread-after-advice']['payload_read_bytes']==12582912,'byte-oracle-count')
+  else:need(set(positives)=={'dedicated-reuse-offset'},'positive-denominator')
   endings=[e for e in events if e['operation']=='teardown'];need(len(endings)==1 and endings[0]['outcome']=='complete' and endings[0]['owned_smaps']=='','teardown')
   if name=='fault_controls':
    children=[g for p,g in groups.items() if p!=run['pid']];need(len(children)==2,'child-count')
@@ -146,10 +156,34 @@ def validate_aux(r):
   summary[name]={'trace_records':len(events),'exit':run['exit']}
  return summary
 
+def mutation_packet(original, changed):
+ """Lossless structural delta; reconstructed bytes must equal the mutant."""
+ edits=[]
+ def walk(a,b,path):
+  if type(a)!=type(b):edits.append({'path':path,'value':b});return
+  if isinstance(a,dict):
+   for k in sorted(set(a)-set(b)):edits.append({'path':path+[k],'delete':True})
+   for k in sorted(b):
+    if k not in a:edits.append({'path':path+[k],'value':b[k]})
+    else:walk(a[k],b[k],path+[k])
+  elif isinstance(a,list) and len(a)==len(b):
+   for i,(x,y) in enumerate(zip(a,b)):walk(x,y,path+[i])
+  elif a!=b:edits.append({'path':path,'value':b})
+ walk(original,changed,[]);rebuilt=copy.deepcopy(original)
+ for edit in edits:
+  parent=rebuilt
+  for key in edit['path'][:-1]:parent=parent[key]
+  key=edit['path'][-1]
+  if edit.get('delete'):del parent[key]
+  else:parent[key]=edit['value']
+ need(rebuilt==changed,'delta-roundtrip')
+ raw=json.dumps(edits,sort_keys=True).encode()
+ return {'format':'structural-delta-v1','base_sha256':hashlib.sha256(json.dumps(original,sort_keys=True).encode()).hexdigest(),'patch_gzip_base64':base64.b64encode(gzip.compress(raw,compresslevel=1,mtime=0)).decode(),'reconstructed_sha256':hashlib.sha256(json.dumps(rebuilt,sort_keys=True).encode()).hexdigest()}
+
 def mutations(r):
  """Rebind envelopes for semantic tests; never alter original actual receipts."""
  outcomes=[]
- cases=['pid','startticks','namespace','source','executable','hash','inode','readonly','mount','refusal','reason','phase','teardown','aggregate','swap','reap','exit','deadline','syscall','missing','missing-mapping','false-owner','junk-mapping','missing-envelope','envelope']
+ cases=['pid','startticks','namespace','source','executable','hash','inode','readonly','mount','refusal','reason','phase','teardown','aggregate','swap','reap','exit','deadline','syscall','missing','missing-mapping','false-owner','junk-mapping','short-mapping','shifted-mapping','positive-count','missing-envelope','envelope']
  for case in cases:
   validate_aux(r)
   b=copy.deepcopy(r);p=b['lifecycle'];run=p['run'];target=next(k for k in run['observations'] if '-trace-' in k);events=[json.loads(l) for l in run['observations'][target].splitlines()]
@@ -183,9 +217,16 @@ def mutations(r):
    next(e for e in events if e['operation']=='scalar-live-reader')['owner_present']=False;guard='mapping-required'
   elif case=='junk-mapping':
    next(e for e in events if e['operation']=='scalar-live-reader')['owned_smaps']='junk';guard='mapping-header'
-  elif case=='missing-envelope':run['raw_bytes'].pop(target);guard='envelope-coverage'
+  elif case in ['short-mapping','shifted-mapping']:
+   e=next(e for e in events if e['operation']=='scalar-live-reader');lines=e['owned_smaps'].splitlines();h=lines[0].split();a,z=h[0].split('-')
+   if case=='short-mapping':h[0]=a+'-'+format(int(z,16)-4096,'x')
+   else:h[2]='00001000'
+   lines[0]=' '.join(h);e['owned_smaps']='\n'.join(lines)+'\n';guard='mapping-range'
+  elif case=='positive-count':run['stdout']=run['stdout'].replace('"tokens":33','"tokens":32');guard='scalar-count'
+  elif case=='missing-envelope' :run['raw_bytes'].pop(target);guard='envelope-coverage'
   elif case=='envelope':run['raw_bytes']['stdout.log']['sha256']='0'*64;guard='envelope-hash'
-  run['observations'][target]='\n'.join(json.dumps(e) for e in events)+'\n'
+  if events!=[json.loads(l) for l in r['lifecycle']['run']['observations'][target].splitlines()]:
+   run['observations'][target]='\n'.join(json.dumps(e) for e in events)+'\n'
   if case!='envelope':
    for name in ['lifecycle','fault_controls']:
     x=b[name]['run']
@@ -200,7 +241,24 @@ def mutations(r):
    need(str(e)==guard,'mutation-wrong-guard:'+case+':'+str(e))
    # Store exact mutations separately from actual raw packet, without duplicating
    # every untouched multi-megabyte sample for each one-field corruption.
-   outcomes.append({'case':case,'expected_guard':guard,'actual_guard':str(e),'positive_revalidated':True,'kind':'envelope' if case=='envelope' else 'semantic','mutated_packet_sha256':hashlib.sha256(json.dumps(b,sort_keys=True).encode()).hexdigest(),'mutated_packet_gzip_base64':base64.b64encode(gzip.compress(json.dumps(b,sort_keys=True).encode(),mtime=0)).decode()})
+   outcomes.append({'case':case,'expected_guard':guard,'actual_guard':str(e),'positive_revalidated':True,'kind':'envelope' if case=='envelope' else 'semantic','mutated_packet_sha256':hashlib.sha256(json.dumps(b,sort_keys=True).encode()).hexdigest(),'mutated_packet':mutation_packet(r,b)})
    continue
   raise Refused('mutation-accepted:'+case)
+ return outcomes
+
+def family_mutations(r):
+ outcomes=[]
+ for family in ['fault_controls','hung','read-error','no-progress','mincore-failure','advice-failure','tail','remap']:
+  for case,guard in [('pid','sample-pid'),('reap','reaped'),('aggregate','aggregate')]:
+   validate_aux(r)
+   b=copy.deepcopy(r);x=b[family]['run'] if family in b else b['runs'][family]
+   if case=='pid':x['samples'][0]['pid']+=1
+   elif case=='reap':x['cleanup'][-1]['action']='MISSING'
+   else:x['samples'][0]['memory.current']='8053063680'
+   try:validate_aux(b)
+   except Refused as e:
+    need(str(e)==guard,'family-wrong-guard:'+family+':'+case+':'+str(e))
+    data=json.dumps(b,sort_keys=True).encode()
+    outcomes.append({'family':family,'case':case,'expected_guard':guard,'actual_guard':str(e),'positive_revalidated':True,'mutated_packet_sha256':hashlib.sha256(data).hexdigest(),'mutated_packet':mutation_packet(r,b)});continue
+   raise Refused('family-mutation-accepted:'+family+':'+case)
  return outcomes

@@ -1,5 +1,5 @@
 """Independent original-byte, live-kernel and budget receipt validation."""
-import json,pathlib,base64,hashlib,copy,re,importlib.util,time
+import json,pathlib,base64,hashlib,copy,re,importlib.util,time,gzip
 from common import R,O,SOURCES,BINARIES,source_check,sha,identity,sample_identity,process_stat,status_pid,atomic
 
 def validate(r,current=True):
@@ -83,15 +83,16 @@ def main():
  p={'status':'FAIL','errors':[],'files':{},'model_access':False,'android_execution':False}
  for file in [O/'runs.json',O/'frozen-v2.json',O/'attempt.json']+sorted((O/'logs').glob('*')):
   try:
-   b=file.read_bytes();p['files'][str(file.relative_to(R))]={'sha256':hashlib.sha256(b).hexdigest(),'base64':base64.b64encode(b).decode()}
+   b=file.read_bytes();p['files'][str(file.relative_to(R))]={'sha256':hashlib.sha256(b).hexdigest(),'encoding':'gzip+base64','gzip_base64':base64.b64encode(gzip.compress(b,compresslevel=1,mtime=0)).decode()}
   except Exception as e:p['errors'].append(repr(e))
  try:
   r=json.loads((O/'runs.json').read_text());p['execution']=r;p['measurements']=validate(r)
   spec=importlib.util.spec_from_file_location('linked_native',R/'tools/evaluation/native-cache/check.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);p['linked']=m.artifacts(r['frozen']['source_path'])
   from contract import elf_machine
   assert elf_machine(R/BINARIES[-1])==62;p['new_executable']=identity(R/BINARIES[-1])
-  from auxiliary import mutations
+  from auxiliary import mutations,family_mutations
   p['auxiliary_mutations']=mutations(r)
+  p['family_mutations']=family_mutations(r)
   negatives=[]
   for n in ['source','binary','pid','startticks','budget','mincore','byte','failed','missing','policy','namespace','mount','stat']:
    validate(r) # The unchanged positive must pass before each corruption.

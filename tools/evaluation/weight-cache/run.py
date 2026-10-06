@@ -3,6 +3,11 @@ import json,pathlib,sys,hashlib,os,base64
 from common import R,O,BINARIES,identity,version,sources,source_check,owned,atomic,freeze
 
 def fixture(p,size):
+ # Preserve the first collection; reuse its readonly deterministic bytes.
+ old=R/'downloads/cache-auxiliary-538'/p.name
+ if p.name in ['force.bin','retain.bin','fault.bin']:
+  original=identity(old);assert original['version']['size']==size
+  return {'path':str(old),'sha256':original['sha256'],'version':original['version']}
  h=hashlib.sha256()
  with p.open('xb') as f:
   for off in range(0,size,1048576):
