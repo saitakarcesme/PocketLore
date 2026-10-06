@@ -292,11 +292,15 @@ class Reader:
     def article(self,page):
         r=self.db.execute('SELECT capsule_sha256,payload FROM articles WHERE page=?',(page,)).fetchone();require(r is not None,'missing article');b=inflate(r[1],CAPSULE_MAX);require(sha(b)==r[0],'capsule hash');c=unpack_capsule(b);validate_capsule(c);return c
     def search(self,query,cancel=lambda:False):
-        require(not cancel(),'cancelled');tokens=re.findall(r'\w+',query)[:12]
+        require(not cancel(),'cancelled');require(isinstance(query,str) and len(query)<=4096,'query length/type bound')
+        tokens=re.findall(r'[^\W_]+',query)[:12]
         if not tokens:return []
         expression=' AND '.join('"'+x.replace('"','')+'"' for x in tokens)
         self.db.set_progress_handler(lambda:1 if cancel() else 0,1000)
         try:rows=self.db.execute('SELECT rowid FROM search WHERE search MATCH ? LIMIT 20',(expression,)).fetchall()
+        except sqlite3.OperationalError as e:
+            if 'phrase queries are not supported' in str(e):raise ValueError('Query tokenization is not supported by this index') from e
+            raise
         finally:self.db.set_progress_handler(None,0)
         out=[]
         for (page,) in rows:

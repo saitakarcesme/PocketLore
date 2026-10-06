@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Offline actual-original reconstruction and compact reader acceptance, not admission."""
 from pathlib import Path
-import base64,collections,hashlib,json,os,resource,sqlite3,sys,tempfile,time,zlib
+import ast,base64,collections,hashlib,json,os,resource,sqlite3,sys,tempfile,time,zlib
 R=Path(__file__).resolve().parents[2];sys.path.insert(0,str(R/'tools/packs/complete-source'))
 import compact as c
 E=R/'docs/evidence/complete-source-producer'
@@ -39,7 +39,10 @@ def main():
     for entry in contract['runs']:
         path=R/entry['path'];receipt=json.loads((path/'receipt.json').read_text())
         c.require(c.file_sha(path/'receipt.json')==entry['receipt_sha256'],'changed receipt')
-        c.require(c.file_sha(path/'executed-compact.py')==receipt['source_code_sha256']==c.file_sha(R/'tools/packs/complete-source/compact.py'),'executed/current producer source mismatch')
+        c.require(c.file_sha(path/'executed-compact.py')==receipt['source_code_sha256'],'executed source mismatch')
+        def producer_tree(p):
+            tree=ast.parse(p.read_text());tree.body=[n for n in tree.body if not (isinstance(n,ast.ClassDef) and n.name=='Reader')];return ast.dump(tree)
+        c.require(producer_tree(path/'executed-compact.py')==producer_tree(R/'tools/packs/complete-source/compact.py'),'producer changed since actual run')
         start=time.monotonic();reader=c.Reader(path);opening=time.monotonic()-start
         src=sqlite3.connect('file:'+receipt['source_stage']+'?mode=ro',uri=True);src.execute('PRAGMA cache_size=-8192')
         chain=hashlib.sha256();seen=0
@@ -74,6 +77,11 @@ def main():
         except ValueError:pass
         else:raise AssertionError('cancellation ignored')
         c.require(not reader.search('zzzznonexistentfixturetoken'),'absent token search')
+        c.require(reader.search('Perry_Robinson')==reader.search('Perry Robinson'),'underscore normalization changed results')
+        reader.search('COVID_19')
+        try:reader.search('x'*4097)
+        except ValueError:pass
+        else:raise AssertionError('unbounded query accepted')
         reports.append({'path':str(path.relative_to(R)),'article_count':total,'opening_seconds':opening,'samples':samples,'queries':queries,'max_rss_kib':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,'source_admission_established':False})
         reader.db.close();src.close()
     mixed=[]

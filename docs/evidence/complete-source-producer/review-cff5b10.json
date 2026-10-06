@@ -11,7 +11,7 @@
       "tools/evaluation/check_complete_source_producer.sh"
     ],
     "exit_code": 0,
-    "raw_receipt": "complete-source-producer/required-check-v4.log"
+    "raw_receipt": "complete-source-producer/required-check-v3.log"
   },
   "evidence_directory": "docs/evidence/complete-source-producer",
   "files": {
@@ -139,10 +139,6 @@
       "bytes": 188318,
       "sha256": "c874a846264b6494bd26b4b8500d9e68fc81724f3a89d814160ede5e9753d91d"
     },
-    "reader-verification-underscore-fixed.json": {
-      "bytes": 188315,
-      "sha256": "356239a1b847e24adad644f98271eda561ffa3d4f815e95d30d1b0afb55a5c6b"
-    },
     "reader-verification.json": {
       "bytes": 188317,
       "sha256": "9322a7c140fc331a57283fcad177265ddc81ad570a49f0395ee590c2b7e6c226"
@@ -150,10 +146,6 @@
     "required-check-source-final.json": {
       "bytes": 886,
       "sha256": "efb49e97b97fd56cd91c8add0ece9751d9f7657b3e531ae3ba5acdf02636af5c"
-    },
-    "required-check-source-underscore-fixed.json": {
-      "bytes": 1043,
-      "sha256": "772bc4e890f8e9631e07a5ede5c260c4d884471fc5b4c493a0741a13f79cce11"
     },
     "required-check-source.json": {
       "bytes": 886,
@@ -182,22 +174,6 @@
     "required-check-v3.log": {
       "bytes": 442,
       "sha256": "8088d39585b65b309866258ea29dfb80973ea3bfc888139c24fcb6548be5fa4d"
-    },
-    "required-check-v4.exit": {
-      "bytes": 2,
-      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
-    },
-    "required-check-v4.log": {
-      "bytes": 442,
-      "sha256": "4dd7f08b6fafe9f85bab1063b28d833bb40f3568a6c43d6566e12bdafe3d28c0"
-    },
-    "review-cff5b10.json": {
-      "bytes": 11139,
-      "sha256": "4cd1cfbd4dd3dcf679610ac21410bd5a7f87da187502baad611bd16d685d6dac"
-    },
-    "review-cff5b10.txt": {
-      "bytes": 251,
-      "sha256": "b32c0958081171e63f383d6052c5d6b741a0032f74dd1cbce7e95ed346c494fe"
     },
     "review-first.txt": {
       "bytes": 236,
@@ -242,14 +218,6 @@
     "transaction-tests-v5.log": {
       "bytes": 104,
       "sha256": "fc5d2e9d661248a49bb95c04e90f0224d89417388dcd4e2306714939bccbf729"
-    },
-    "underscore-red.exit": {
-      "bytes": 2,
-      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
-    },
-    "underscore-red.log": {
-      "bytes": 465,
-      "sha256": "2360ddcbc6d9dbcee02959d8da93c2e8a3e30927127431de337d4113989c338b"
     }
   },
   "immutable_large_artifacts": {
@@ -300,6 +268,5 @@
     "full installed45GB target50GB hard and temporary/update peaks",
     "physical12GB/GrapheneOS and unseen quality"
   ],
-  "job": "No continuing producer; two short engineering invocations completed. Long cgroup launch unavailable; original acquisition/staging untouched.",
-  "reader_revision": "Underscore token boundaries repaired after cff5b10; 4096-character query bound and explicit unsupported-token error. Producer artifacts unchanged; non-Reader AST equivalence and exact source reconstruction required."
+  "job": "No continuing producer; two short engineering invocations completed. Long cgroup launch unavailable; original acquisition/staging untouched."
 }

@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "bash",
+    "tools/evaluation/check_complete_source_producer.sh"
+  ],
+  "exit_code": 0,
+  "raw_log": "required-check-v4.log",
+  "inputs": {
+    "tools/packs/complete-source/compact.py": "3c0632516f55af2fa45855024e133fe3cb11fa5d60a55cdcd96cc58124290d54",
+    "tools/packs/complete-source/test_compact.py": "77da87658571ba44d8d003c7b26711070567b54f7d9db0eeb2759ab1c3397288",
+    "tools/packs/complete-source/test_producer.py": "f73c6e0c52545fb5169c949e0e71a09924d14c79de27616aea46714180cc0d87",
+    "tools/evaluation/check_complete_source_producer.sh": "4d52b041b1283e7583f15602c46ffbf6ae7dbbfd1d5af0eaccca0f8a827b0467",
+    "tools/evaluation/verify_complete_source_producer.py": "1584a11ed14f4a021674952fe4359059a4fd561a722a3d8e8509548983f0d936",
+    "tools/packs/complete-source/protocol.json": "92d4f90b759359125a6132bfc887748fc7ee08a2d7faa915016ab58ad1846b46"
+  },
+  "executed_producer_unchanged": "Non-Reader Python AST exactly matches preserved executed source; current Reader tested against both exact frozen indexes"
+}

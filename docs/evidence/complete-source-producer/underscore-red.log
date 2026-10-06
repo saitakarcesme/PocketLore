@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "/home/isa/Projects/PocketLore/tools/packs/complete-source/compact.py", line 299, in search
+    try:rows=self.db.execute('SELECT rowid FROM search WHERE search MATCH ? LIMIT 20',(expression,)).fetchall()
+             ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: fts5: phrase queries are not supported (detail!=full)
