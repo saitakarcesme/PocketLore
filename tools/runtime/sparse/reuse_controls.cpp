@@ -21,8 +21,8 @@ static void inject(const std::string&mode){
  block(call);if(mode=="no-progress")block(SYS_fadvise64);v.push_back(BPF_STMT(BPF_RET|BPF_K,SECCOMP_RET_ALLOW));
  sock_fprog p{(unsigned short)v.size(),v.data()};require(prctl(PR_SET_NO_NEW_PRIVS,1,0,0,0)==0&&prctl(PR_SET_SECCOMP,SECCOMP_MODE_FILTER,&p)==0,"Fixture seccomp unavailable");
 }
-static void snapshot(const std::string&p,std::shared_ptr<File>owner,void*address){
- std::vector<unsigned char>b(size/4096);require(mincore(address,size,b.data())==0,"Independent mincore failed");std::ofstream f(p);f<<"{\"owner\":"<<owner->observation()<<",\"cache\":"<<owner->cache_observation()<<",\"stat\":"<<escape(text("/proc/self/stat"))<<",\"cached_pages\":[";bool comma=false;for(size_t i=0;i<b.size();++i)if(b[i]&1){if(comma)f<<",";f<<i;comma=true;}f<<"]}";require(bool(f),"Snapshot write failure");
+static void snapshot(const std::string&p,std::shared_ptr<File>owner,void*address,size_t logical=size){
+ std::vector<unsigned char>b((logical+4095)/4096);require(mincore(address,logical,b.data())==0,"Independent mincore failed");std::ofstream f(p);f<<"{\"owner\":"<<owner->observation()<<",\"cache\":"<<owner->cache_observation()<<",\"stat\":"<<escape(text("/proc/self/stat"))<<",\"cached_pages\":[";bool comma=false;for(size_t i=0;i<b.size();++i)if(b[i]&1){if(comma)f<<",";f<<i;comma=true;}f<<"]}";require(bool(f),"Snapshot write failure");
 }
 int main(int argc,char**argv){try{
  require(argc==5,"fixture hash mode prefix required");struct stat s{};require(stat(argv[1],&s)==0&&s.st_size==size&&sysconf(_SC_PAGESIZE)==4096,"Fixed synthetic fixture required");
@@ -34,13 +34,13 @@ int main(int argc,char**argv){try{
  auto address=(volatile unsigned char*)map->addr();snapshot(prefix+"-cold.json",owner,map->addr());
  if(mode=="remap"){
   {auto use=owner->use();for(size_t i=0;i<16777216;++i)require(address[i]==byte(i),"Remap byte oracle");}owner->advise();
-  std::cout<<"{\"before_remap\":"<<owner->cache_observation()<<"}\n";map.reset();{Scope scope(owner,4194304);map.reset(new llama_mmap(&file,0,false));}
+  snapshot(prefix+"-remap-old.json",owner,map->addr());std::cout<<"{\"before_remap\":"<<owner->cache_observation()<<"}\n";map.reset();{Scope scope(owner,4194304);map.reset(new llama_mmap(&file,0,false));}
   address=(volatile unsigned char*)map->addr();{auto use=owner->use();for(size_t i=0;i<4194304;++i)require(address[i]==byte(i),"Remapped byte oracle");}owner->advise();
-  std::cout<<"{\"remapped\":"<<owner->observation()<<",\"cache\":"<<owner->cache_observation()<<"}\n";map.reset();auxiliary_trace::record("teardown","complete");return 0;
+  snapshot(prefix+"-remap-new.json",owner,map->addr(),4194304);std::cout<<"{\"remapped\":"<<owner->observation()<<",\"cache\":"<<owner->cache_observation()<<"}\n";map.reset();auxiliary_trace::record("teardown","complete");return 0;
  }
  if(mode=="tail"){
   {auto use=owner->use();for(size_t i=0;i<16777216;++i)require(address[i]==byte(i),"Tail byte oracle");require(address[size-1057]==byte(size-1057),"Tail boundary byte");}
-  owner->advise();snapshot(prefix+"-tail.json",owner,map->addr());std::cout<<"{\"tail_bytes\":"<<size-1056<<",\"cache\":"<<owner->cache_observation()<<"}\n";map.reset();auxiliary_trace::record("teardown","complete");return 0;
+  owner->advise();snapshot(prefix+"-tail.json",owner,map->addr(),size-1056);std::cout<<"{\"tail_bytes\":"<<size-1056<<",\"cache\":"<<owner->cache_observation()<<"}\n";map.reset();auxiliary_trace::record("teardown","complete");return 0;
  }
  if(mode!="force"&&mode!="retain"){
   {auto use=owner->use();for(size_t i=0;i<16777216;++i)require(address[i]==byte(i),"Negative byte oracle");}

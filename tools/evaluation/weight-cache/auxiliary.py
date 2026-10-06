@@ -42,6 +42,8 @@ def process(run,expected_error=None):
   need(run['exit'] in [-9,-15],'signal-exit')
   if expected_error=='Owned child deadline':need(actions==['TERM','KILL','REAPED'] and run['exit']==-9,'hung-kill')
  envelopes(run)
+ from semantic import resource_contract
+ resource_contract(run)
  return ns
 LIFECYCLE={
  'unaligned':'Unsafe mapping range','oversized':'Unsafe mapping range',
@@ -65,6 +67,9 @@ def trace(run,inp):
  for name,raw in run['observations'].items():
   if '-trace-' not in name:continue
   entries=[json.loads(l) for l in raw.splitlines()];need(entries,'trace-nonempty');pid=entries[0]['pid'];groups[pid]=entries
+  if pid==run['pid']:
+   from semantic import verified_phase
+   verified_phase(entries)
   last=run['start_ns'];ticks=process_stat(entries[0]['stat'])[1]
   for i,e in enumerate(entries):
    need(e['sequence']==i,'operation-sequence');need(e['pid']==pid==status_pid(e['status'])==process_stat(e['stat'])[0],'trace-pid')
@@ -152,7 +157,9 @@ def validate_aux(r):
    lines=[json.loads(l) for l in run['stdout'].splitlines() if l.startswith('{')];failure=next(x for x in lines if x.get('expected_refusal')==name);c=failure['cache']
    need(c['failed'] and c['error']==reason==failure['reason'],'cache-error')
    need(run['start_ns']<=c['start_ns']<c['end_ns']<=run['end_ns'],'cache-failure-time')
-   before=json.loads(run['observations'][name+'-before-injection.json']);need(len(before['cached_pages'])>=4096,'pressure-observed')
+
+  from semantic import reuse_snapshots
+  reuse_snapshots(run,r['inputs']['retain'],name,events)
   summary[name]={'trace_records':len(events),'exit':run['exit']}
  return summary
 

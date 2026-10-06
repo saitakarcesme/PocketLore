@@ -6,7 +6,7 @@ MODEL=pathlib.Path('/home/isa/PocketLore-control/overnight-20261005/strong-model
 def group_path():
  return pathlib.Path('/sys/fs/cgroup')/pathlib.Path('/proc/self/cgroup').read_text().split('0::')[1].strip().lstrip('/')
 def kernel():
- p=group_path();d={n:(p/n).read_text() for n in ['memory.current','memory.peak','memory.max','memory.swap.max','memory.events','memory.stat','memory.swap.current','cpu.max','cpu.stat','pids.max','pids.current']};d['path']=str(p);d['affinity_cpus']=sorted(os.sched_getaffinity(0));d['meminfo']=pathlib.Path('/proc/meminfo').read_text();return d
+ p=group_path();d={n:(p/n).read_text() for n in ['memory.current','memory.peak','memory.max','memory.swap.max','memory.events','memory.stat','memory.swap.current','cpu.max','cpu.stat','pids.max','pids.current']};d['path']=str(p);st=p.stat();d['group_identity']={'path':str(p),'device':st.st_dev,'inode':st.st_ino,'raw_cgroup':pathlib.Path('/proc/self/cgroup').read_text()};d['observed_ns']=time.monotonic_ns();d['affinity_cpus']=sorted(os.sched_getaffinity(0));d['meminfo']=pathlib.Path('/proc/meminfo').read_text();return d
 def preflight():
  d=kernel();assert int(next(l.split()[1] for l in d['meminfo'].splitlines() if l.startswith('MemAvailable:')))*1024>=11*1024**3
  assert int(d['memory.max'])<=9663676416 and int(d['memory.swap.max'])==0 and int(d['pids.max'])<=512
@@ -16,7 +16,7 @@ def preflight():
 def live(pid):
  p=pathlib.Path(f'/proc/{pid}');d={n:(p/n).read_text() for n in ['stat','status','smaps_rollup','cgroup']}
  d.update(pid=pid,monotonic_ns=time.monotonic_ns(),epoch=time.time(),namespaces={n:os.readlink(p/'ns'/n) for n in ['mnt','pid','user']})
- k=kernel();d.update({n:k[n] for n in ['memory.current','memory.peak','memory.events','memory.stat','memory.swap.current','cpu.stat','pids.current']});return d
+ k=kernel();d['group_identity']=k['group_identity'];d['kernel_observed_ns']=k['observed_ns'];d.update({n:k[n] for n in ['memory.current','memory.peak','memory.events','memory.stat','memory.swap.current','cpu.stat','pids.current']});return d
 def reap(proc,start,events,pidfd=None):
  # Popen retains ownership of this direct child, preventing PID reuse before wait.
  if proc.poll() is None:
@@ -45,6 +45,8 @@ def execute(argv,out,seconds=330,inject_read_error=False,inject_start_error=Fals
  # independently here before spawn and retain its held stat/hash after all cleanup.
  executable=pathlib.Path(argv[0])
  try:
+  report['kernel_before']=kernel()
+  report['event_contract']='no-new-memory-failure-v1'
   report['executable_before']=identity(executable)
   with (out/'stdout.log').open('w') as log:
    proc=subprocess.Popen(argv,stdout=log,stderr=subprocess.STDOUT)

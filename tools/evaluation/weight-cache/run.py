@@ -3,11 +3,6 @@ import json,pathlib,sys,hashlib,os,base64
 from common import R,O,BINARIES,identity,version,sources,source_check,owned,atomic,freeze
 
 def fixture(p,size):
- # Preserve the first collection; reuse its readonly deterministic bytes.
- old=R/'downloads/cache-auxiliary-538'/p.name
- if p.name in ['force.bin','retain.bin','fault.bin']:
-  original=identity(old);assert original['version']['size']==size
-  return {'path':str(old),'sha256':original['sha256'],'version':original['version']}
  h=hashlib.sha256()
  with p.open('xb') as f:
   for off in range(0,size,1048576):
@@ -28,7 +23,7 @@ def collect(out,prefix,raw):
 def main():
  if sys.argv[1]=='freeze':freeze();return 0
  f=json.loads((O/'frozen-v2.json').read_text());r={'frozen':f,'inputs':{},'runs':{},'errors':[],'model_access':False}
- with (O/'attempt.json').open('x') as g:json.dump({'frozen':identity(O/'frozen-v2.json'),'task':'538-native-cache-auxiliary-raw-evidence-contract'},g)
+ with (O/'attempt.json').open('x') as g:json.dump({'frozen':identity(O/'frozen-v2.json'),'task':'539-native-cache-semantic-counterexample-repair'},g)
  try:
   source_check(f['source']);r['preflight']=owned.preflight()
   bad=O/'collection-control';bad.mkdir();(bad/'stdout.log').write_bytes(b'\xff\x00');(bad/'none-unreadable.json').mkdir();control={};collect(bad,bad/'none',control);r['collection_control']=control;assert len(control['collection_errors'])==2 and control['raw_bytes']['stdout.log']['base64']=='/wA='

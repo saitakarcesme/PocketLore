@@ -29,6 +29,8 @@ def validate(r,current=True):
   for n,v in run['raw_bytes'].items():
    b=base64.b64decode(v['base64'],validate=True);assert hashlib.sha256(b).hexdigest()==v['sha256']
    assert b.decode()==(run[n[:-4]] if n in ['stdout.log','stderr.log'] else run['observations'][n])
+  from semantic import resource_contract
+  resource_contract(run)
   lines=[json.loads(x) for x in run['stdout'].splitlines() if x.startswith('{')]
   if name=='remap':
    a=next(x for x in lines if 'before_remap' in x);b=next(x for x in lines if 'remapped' in x);assert a['before_remap']['cursor']>0 and b['cache']['cursor']==0 and b['remapped']['regions'][0]['bytes']==4194304 and not b['cache']['failed']
@@ -90,9 +92,14 @@ def main():
   spec=importlib.util.spec_from_file_location('linked_native',R/'tools/evaluation/native-cache/check.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);p['linked']=m.artifacts(r['frozen']['source_path'])
   from contract import elf_machine
   assert elf_machine(R/BINARIES[-1])==62;p['new_executable']=identity(R/BINARIES[-1])
+  from semantic_controls import controls,reconstruct_controls,historical_counter_control
+  p['semantic_controls']=controls(r,validate)
+  p['reconstructed_semantic_controls']=reconstruct_controls(r,p['semantic_controls'],lambda x:validate(x,current=False))
+  p['historical_event_boundary']=historical_counter_control(r,validate)
   from auxiliary import mutations,family_mutations
   p['auxiliary_mutations']=mutations(r)
   p['family_mutations']=family_mutations(r)
+  p['reconstructed_previous_controls']=reconstruct_controls(r,p['auxiliary_mutations']+p['family_mutations'],__import__('auxiliary').validate_aux)
   negatives=[]
   for n in ['source','binary','pid','startticks','budget','mincore','byte','failed','missing','policy','namespace','mount','stat']:
    validate(r) # The unchanged positive must pass before each corruption.
@@ -125,6 +132,6 @@ def main():
    raise AssertionError('Mutation passed '+n)
   p['negative_controls']=negatives;assert not p['errors'];p['status']='PASS_BOUNDED_SYNTHETIC_REUSE_ONLY'
  except Exception as e:p['errors'].append(type(e).__name__+': '+str(e))
- finally:p['exit']=int(bool(p['errors']));p['stdout']=p['status']+'\n';atomic(O/'check.json',p);atomic(R/'docs/evidence/cache-auxiliary-contract-review.json',p);print(p['stdout'],end='')
+ finally:p['exit']=int(bool(p['errors']));p['stdout']=p['status']+'\n';atomic(O/'check.json',p);atomic(R/'docs/evidence/cache-semantic-repair-review.json',p);print(p['stdout'],end='')
  return p['exit']
 if __name__=='__main__':raise SystemExit(main())

@@ -1,0 +1,10 @@
+{
+ "task":"539-native-cache-semantic-counterexample-repair",
+ "model_access":false,
+ "event_keys":["low","high","max","oom","oom_kill","oom_group_kill","sock_throttled"],
+ "event_contract":"Same supervising cgroup before/live/after; unsigned monotonic counters; no new high/max/oom/oom_kill/oom_group_kill. Prior cumulative events are history, not child attribution.",
+ "reuse_ranges":{"cold":33554432,"pressure":33554432,"tail":33553376,"remap_old":33554432,"remap_new":4194304},
+ "offset":0,"page_size":4096,
+ "verified_phase":"Exactly one complete verified-owner event at index 1 after process begin and before any native reuse operation; empty regions before mapping; teardown is reader-free with no mapping.",
+ "limits":"Unchanged 537/538 access pattern and budgets; 132MiB new synthetic files; no model access."
+}
