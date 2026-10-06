@@ -528,3 +528,7 @@ Actual dedicated readonly File/mmap policy now applies POSIX_FADV_RANDOM and MAD
 ## Task537: bounded native cache reuse
 
 New opt-in quiescent cyclic policy passes current synthetic/native controls and linked host/dual-ABI builds. A repeated4MiB range preserves1024 cached pages with zero advice/majorfaults versus1024 majorfaults after force-drop; pressure returns to8MiB and remap/tail/no-progress failures are discriminating. The initial combined-stream collection failure remains preserved. No actual model access or device operation occurred. See docs/evidence/weight-cache-reuse.md and its self-contained raw review packet; full model fit/throughput/generation/Android/source/physical12GB/complete50GB/unseen superiority remain unqualified.
+
+## Task538: auxiliary native raw evidence contracts
+
+Current build and synthetic reuse checker pass with 55 lifecycle refusals, eight fault refusals plus two seccomp children, explicit process-only cleanup, exact mapped ranges and 65 discriminating corruptions. Raw combined streams, kernel identities, current sources and lossless mutation deltas are frozen in docs/evidence/cache-auxiliary-contract-review.json. Six native artifacts reproduce through relinking; independent review remains synthetic-only. All model/device/full-profile/quality/comparative gates remain open; prior failures and 537 evidence are unchanged.

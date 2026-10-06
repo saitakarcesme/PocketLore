@@ -460,3 +460,7 @@ Cold synthetic native controls and linked host/Android artifacts qualify a dedic
 ## Task537: bounded native cache reuse
 
 New opt-in quiescent cyclic policy passes current synthetic/native controls and linked host/dual-ABI builds. A repeated4MiB range preserves1024 cached pages with zero advice/majorfaults versus1024 majorfaults after force-drop; pressure returns to8MiB and remap/tail/no-progress failures are discriminating. The initial combined-stream collection failure remains preserved. No actual model access or device operation occurred. See docs/evidence/weight-cache-reuse.md and its self-contained raw review packet; full model fit/throughput/generation/Android/source/physical12GB/complete50GB/unseen superiority remain unqualified.
+
+## Task538: evidence controls only
+
+Marker-only auxiliary cache checks are replaced by current raw process/descriptor/mapping/refusal/cleanup contracts, with 65 finite corruption controls and reproducible linked artifacts. This does not qualify model execution, useful generation, Android runtime, full-source/50 GB distribution, physical 12 GB/no-GMS or unseen comparative performance. The emulator remains terminal and protected data has no new device observation. See docs/evidence/cache-auxiliary-contract.md for exact measured scope and independent agent criticism.
