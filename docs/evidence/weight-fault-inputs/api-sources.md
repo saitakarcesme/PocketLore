@@ -5,3 +5,5 @@
 - https://www.kernel.org/doc/html/latest/core-api/mm-api.html — readahead populates page cache before explicit demand and may be triggered by reads or faults; filesystem and prior cache state influence it.
 
 These host API descriptions do not establish Android runtime support, model behavior, a sole cause for task534 cache pressure, or a performance guarantee. The synthetic plan is frozen before measurements.
+
+The derivation invokes register_mapping immediately after mmap and before returning from llama_mmap construction. Random setup requires one full owned mapping; its recorded syscall result and namespace-local readonly VMA are later checked against real cache observations. A new procfs reopen, not dup, isolates file-description advice; a fixture proves independent offsets and exclusive ownership. Seccomp is used only inside short-lived synthetic child controls to return actual EPERM from the two policy syscalls, never in the production path or unrelated processes.

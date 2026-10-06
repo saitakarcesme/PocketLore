@@ -1,10 +1,15 @@
 """Discriminating cold native policy receipts; no model/device qualification."""
 import base64,copy,hashlib,importlib.util,json,pathlib,re,time
-from common import R,O,SOURCES,BINARIES,identity,sha,verify_sources,process_stat,status_pid,sample_identity,atomic
+from common import R,O,SOURCES,BINARIES,identity,sha,version,verify_sources,process_stat,status_pid,sample_identity,atomic
 
 def validate(r,current=True):
- f=r['frozen'];assert not r['errors'] and set(r['runs'])=={'default','random','negative'}
- if current:verify_sources(f['source'])
+ f=r['frozen'];k=f['kernel'];assert 0<int(k['memory.max'])<=9663676416 and int(k['memory.swap.max'])==0 and int(k['pids.max'])<=512
+ q,period=map(int,k['cpu.max'].split());assert 0<q<=2*period and len(k['affinity_cpus'])<=4
+ assert not r['errors'] and set(r['runs'])=={'default','random','negative'}
+ if current:
+  verify_sources(f['source'])
+  manifest=pathlib.Path(f['source_path']).parent/'native-manifest.json';assert sha(manifest)==f['derivation']['sha256']
+  for p,h in json.loads(manifest.read_text())['files'].items():assert sha(pathlib.Path(f['source_path'])/p)==h
  assert set(f['source'])==set(SOURCES) and set(f['binary'])==set(BINARIES)
  for p,v in f['binary'].items():
   if current:assert sha(R/p)==v['sha256']
@@ -13,6 +18,9 @@ def validate(r,current=True):
  touched=set(f['policy']['access_pages']);assert len(touched)==16
  results={}
  for name,run in r['runs'].items():
+  v=f['inputs']['default' if name=='negative' else name];assert run['post_input']==v['version']
+  if current:assert version(v['path'])==v['version']
+  assert not run.get('collection_errors')
   assert run['exit']==0 and not run.get('failure') and not run.get('cleanup_failure') and run['post_source']==f['source']
   assert run['executable_before']==run['executable_after']==f['binary']['downloads/native-cache-build/host/fault-policy-controls']
   assert run['cleanup'][-1]['action']=='REAPED' and run['cleanup'][-1]['exit']==0 and run['samples']
@@ -61,12 +69,18 @@ def main():
   actual=json.loads((O/'runs.json').read_text());packet['execution']=actual;packet['measurements']=validate(actual)
   control=json.loads((O/'controls.json').read_text());packet['controls']=control;assert control['status']=='PASS' and control['source']==actual['frozen']['source']
   spec=importlib.util.spec_from_file_location('native_artifacts',R/'tools/evaluation/native-cache/check.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);packet['linked']=m.artifacts(actual['frozen']['source_path'])
+  packet['derived_mmap_source']=(pathlib.Path(actual['frozen']['source_path'])/'src/llama-mmap.cpp').read_text()
+  from contract import elf_machine
+  assert elf_machine(R/'downloads/native-cache-build/host/fault-policy-controls')==62
+  packet['fault_executable']=identity(R/'downloads/native-cache-build/host/fault-policy-controls')
   assert sha(R/'downloads/native-cache-build/host/fault-policy-controls')==actual['frozen']['binary']['downloads/native-cache-build/host/fault-policy-controls']['sha256']
   mutations=[]
-  for name in ['empty-source','binary','pid','startticks','cold','byte-oracle','policy-result','mount','missing-round','no-effect']:
+  for name in ['empty-source','binary','pid','startticks','cold','byte-oracle','policy-result','mount','missing-round','input-version','namespace','no-effect']:
    bad=copy.deepcopy(actual);run=bad['runs']['random']
    if name=='empty-source':bad['frozen']['source']={}
    elif name=='binary':bad['frozen']['binary'][BINARIES[0]]['sha256']='0'*64
+   elif name=='input-version':run['post_input']['inode']+=1
+   elif name=='namespace':run['samples'][0]['namespaces']['pid']='pid:[0]'
    elif name=='pid':run['samples'][0]['pid']+=1
    elif name=='startticks':run['startticks']+=1
    elif name=='byte-oracle':run['stdout']=run['stdout'].replace('"bytes_compared":65536','"bytes_compared":1')

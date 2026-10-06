@@ -36,6 +36,7 @@ def main():
  # The actual retained 534 is validated below when present; never fabricate a
  # successful model receipt to exercise future validators.
  p=R/'docs/evidence/weight-fault-inputs/534-receipt.json'
+ assert p.exists(),'Missing retained actual failure'
  if p.exists():
   actual=json.loads(p.read_text());candidate=actual['cases'][0] if 'cases' in actual else actual
   try:validation.validate_case(candidate,{})

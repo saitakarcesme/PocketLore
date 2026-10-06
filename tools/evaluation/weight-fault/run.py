@@ -1,5 +1,5 @@
 """Fixed synthetic generation and serial native probes. Never opens model assets."""
-import pathlib,json,os,sys,hashlib
+import pathlib,json,os,sys,hashlib,base64
 from common import R,O,BINARIES,identity,version,sources,verify_sources,owned,preflight,atomic,freeze
 
 def inputs():
@@ -24,8 +24,18 @@ def probes():
    v=frozen['inputs']['default' if name=='negative' else name];assert version(v['path'])==v['version']
    out=O/('run-'+name);exe=R/'downloads/native-cache-build/host/fault-policy-controls';assert identity(exe)==frozen['binary'][str(exe.relative_to(R))]
    raw=owned.execute([str(exe),v['path'],v['sha256'],name,str(O/name)],out,90)
-   raw['stdout']=(out/'stdout.log').read_text();raw['observations']={p.name:p.read_text() for p in O.glob(name+'-*.json') if p.is_file()};raw['post_input']=version(v['path']);raw['post_source']=sources()
-   report['runs'][name]=raw;atomic(O/'runs.json',report)
+   # Retain execution first, even if subsequent observation reads fail.
+   report['runs'][name]=raw;raw['collection_errors']=[];raw['observations']={};raw['raw_bytes']={};atomic(O/'runs.json',report)
+   for path in [out/'stdout.log']+list(O.glob(name+'-*.json')):
+    try:
+     with path.open('rb') as f:data=f.read(4194305)
+     raw['raw_bytes'][path.name]={'sha256':hashlib.sha256(data).hexdigest(),'base64':base64.b64encode(data).decode()}
+     assert len(data)<=4194304,'Observation/log limit exceeded'
+     if path.name=='stdout.log':raw['stdout']=data.decode('utf-8')
+     else:raw['observations'][path.name]=data.decode('utf-8')
+    except Exception as e:raw['collection_errors'].append(path.name+': '+repr(e))
+   raw['post_input']=version(v['path']);raw['post_source']=sources();atomic(O/'runs.json',report)
+   assert not raw['collection_errors'],raw['collection_errors']
    assert raw['exit']==0 and not raw.get('failure') and raw['post_input']==v['version'] and raw['post_source']==frozen['source'],name
  except Exception as e:report['errors'].append(type(e).__name__+': '+str(e))
  finally:atomic(O/'runs.json',report)
