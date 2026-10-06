@@ -125,7 +125,7 @@
       "base64": "UEFTU19TWU5USEVUSUNfTkFUSVZFX1BPTElDWV9PTkxZCg=="
     }
   },
-  "start_ns": 492651414311279,
+  "start_ns": 492687316637193,
   "execution": {
     "frozen": {
       "source": {
@@ -5863,10 +5863,10 @@
       "identity": {
         "version": {
           "device": 57,
-          "inode": 4350303,
+          "inode": 4351780,
           "size": 5634368,
-          "mtime_ns": 1791292919389971988,
-          "ctime_ns": 1791292919394816918
+          "mtime_ns": 1791293308599997039,
+          "ctime_ns": 1791293308604569778
         },
         "sha256": "a481109f96ba572170173a4252cbfe2b5145a70b5a4fbe91aad44e21a1ecc8a3"
       },
@@ -5878,10 +5878,10 @@
       "identity": {
         "version": {
           "device": 57,
-          "inode": 4350514,
+          "inode": 4351991,
           "size": 6115592,
-          "mtime_ns": 1791292920149973861,
-          "ctime_ns": 1791292920154524443
+          "mtime_ns": 1791293309319999031,
+          "ctime_ns": 1791293309325569660
         },
         "sha256": "c664317074bfab7504b21a53b60b272b4234f792098dde760862db1b8db6bfa5"
       },
@@ -5892,10 +5892,10 @@
     "android/app/build/outputs/apk/debug/app-debug.apk": {
       "version": {
         "device": 57,
-        "inode": 4350534,
+        "inode": 4352010,
         "size": 22833950,
-        "mtime_ns": 1791292922309979189,
-        "ctime_ns": 1791292922455979550
+        "mtime_ns": 1791293311465004963,
+        "ctime_ns": 1791293311665005517
       },
       "sha256": "a047034450b7ea3ba26e65023ecb17a6d27fabc0ee1801953919e3720cd4bffb"
     }
@@ -5973,7 +5973,7 @@
       "error": "AssertionError('No measured random-policy effect')"
     }
   ],
-  "finished_ns": 492653696738079,
+  "finished_ns": 492689408090963,
   "exit": 0,
   "stdout": "PASS_SYNTHETIC_NATIVE_POLICY_ONLY\n"
 }
