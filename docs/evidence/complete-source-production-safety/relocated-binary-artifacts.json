@@ -1,0 +1,29 @@
+{
+  "reason": "Task-owned review databases retained outside Git; no binary payload staging",
+  "files": [
+    {
+      "former_packet_relative_path": "actual-lock/resumed/index.sqlite",
+      "retained_path": "/home/isa/PocketLore-control/evidence/522-complete-source-producer-production-safety/retained-fixture-databases/actual-lock/resumed/index.sqlite",
+      "sha256": "a7868426bbc1cb1b7c59fd441d8e782d366a2ed0dec05d0cbbcc516c3f0ebf43",
+      "bytes": 47538176
+    },
+    {
+      "former_packet_relative_path": "actual-lock/sigxcpu/index.sqlite",
+      "retained_path": "/home/isa/PocketLore-control/evidence/522-complete-source-producer-production-safety/retained-fixture-databases/actual-lock/sigxcpu/index.sqlite",
+      "sha256": "2f8440cda9d972943ae34c32c04c312e50cfad1a3f37165b15e036d72562d4ec",
+      "bytes": 438272
+    },
+    {
+      "former_packet_relative_path": "actual/resumed/index.sqlite",
+      "retained_path": "/home/isa/PocketLore-control/evidence/522-complete-source-producer-production-safety/retained-fixture-databases/actual/resumed/index.sqlite",
+      "sha256": "a7868426bbc1cb1b7c59fd441d8e782d366a2ed0dec05d0cbbcc516c3f0ebf43",
+      "bytes": 47538176
+    },
+    {
+      "former_packet_relative_path": "actual/sigxcpu/index.sqlite",
+      "retained_path": "/home/isa/PocketLore-control/evidence/522-complete-source-producer-production-safety/retained-fixture-databases/actual/sigxcpu/index.sqlite",
+      "sha256": "2f8440cda9d972943ae34c32c04c312e50cfad1a3f37165b15e036d72562d4ec",
+      "bytes": 438272
+    }
+  ]
+}

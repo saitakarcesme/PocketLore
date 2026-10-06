@@ -1,0 +1,15 @@
+test_cross_batch_conflict_unsafe_malformed (__main__.Cases.test_cross_batch_conflict_unsafe_malformed) ... ok
+test_deadlines_all_phases (__main__.Cases.test_deadlines_all_phases) ... ok
+test_manual_resume_boundary (__main__.Cases.test_manual_resume_boundary) ... ok
+test_no_complete_promotion (__main__.Cases.test_no_complete_promotion) ... ok
+test_original_independent_roundtrip (__main__.Cases.test_original_independent_roundtrip) ... ok
+test_oversized_and_mutated_snapshot (__main__.Cases.test_oversized_and_mutated_snapshot) ... ok
+test_reserve_and_long_external_controls (__main__.Cases.test_reserve_and_long_external_controls) ... ok
+test_source_wal_not_pinned (__main__.Cases.test_source_wal_not_pinned) ... ok
+test_sqlite_progress_and_hash_chunk_cutoff (__main__.Cases.test_sqlite_progress_and_hash_chunk_cutoff) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 4.919s
+
+OK
+{"result": "PASS", "classification": "ENGINEERING_PASS_EXTERNAL_LAUNCH_BLOCKED", "negative_controls": ["changed-hash", "missing-artifact", "false-admission", "stale-code", "wrong-index", "corrupt-original-binding"], "source_admission_established": false, "long_job_launched": false}

@@ -1,0 +1,27 @@
+{
+  "epoch": 1791247685.8793616,
+  "host_memory": {
+    "MemTotal": 33421807616,
+    "MemAvailable": 3298951168,
+    "SwapTotal": 66842615808,
+    "SwapFree": 49878659072
+  },
+  "free_host_bytes": 431753904128,
+  "loadavg": "0.91 0.79 0.72 1/1427 3",
+  "logical_cpus": 16,
+  "scope": "Host snapshot, not phone or child cgroup peak",
+  "source_wal": {
+    "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite": {
+      "logical": 60357787648,
+      "allocated": 60357783552
+    },
+    "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite-wal": {
+      "logical": 679659952,
+      "allocated": 679661568
+    },
+    "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite-shm": {
+      "logical": 1343488,
+      "allocated": 1343488
+    }
+  }
+}

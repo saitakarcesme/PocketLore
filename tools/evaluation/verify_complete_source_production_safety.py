@@ -12,7 +12,7 @@ def validate(report):
  for name,d in report['files'].items():
   p=PACKET/name;assert p.is_file() and p.stat().st_size==d['bytes'] and sha(p)==d['sha256'],name
  for name,d in report['executed_sources'].items():assert sha(ROOT/name)==d,name
- inv=json.loads((PACKET/'actual/invocations.json').read_text());assert len(inv)==3
+ inv=json.loads((PACKET/'actual-lock/invocations.json').read_text());assert len(inv)==3
  for r in inv:
   s=r['status'];assert s['source_admission_established'] is False and s['distribution_ready'] is False
   assert s['code']['production.py']==report['executed_sources']['tools/packs/complete-source/production.py']
@@ -21,6 +21,7 @@ def validate(report):
  for r,sig in [(inv[0],'SIGTERM'),(inv[2],'SIGXCPU')]:
   assert r['signal']==sig and r['signal_delivered'] and sig in r['status']['error']
   assert r['status']['committed_through']>=63 and r['status']['resume_ingest_allowed']
+ lock=json.loads((PACKET/'actual-lock/concurrent-resume.json').read_text());assert lock['exit']==1 and lock['owner_still_running'] and 'already active' in lock['error']
  done=inv[1]['status'];assert done['previous_run']==inv[0]['status']['run_id']
  assert done['status']=='PROVISIONAL_COMPLETE' and done['committed_through']==5999
  assert done['all_record_bindings_rechecked']==6000 and done['counts']['articles']==5944
@@ -38,6 +39,11 @@ def validate(report):
  samples=json.loads((PACKET/'original-roundtrips.json').read_text());assert [inspect(s) for s in samples['samples']]==samples['observations']
  assert len(samples['samples'])==35 and max(s['sequence'] for s in samples['observations'][:32])>5000
  assert set(s['license'] for s in samples['observations'])=={'CC-BY-SA-3.0','CC-BY-SA-4.0'}
+ storage=json.loads((PACKET/'storage-measurements.json').read_text());samples=json.loads((PACKET/'actual-lock/manual-resume-storage-samples.json').read_text())
+ assert len(samples)==storage['sample_count'] and storage['max_journal_logical_bytes']>0
+ assert max(sum(v['allocated'] for v in x['files'].values()) for x in samples)==storage['max_sampled_allocated_bytes']
+ assert storage['final_index_bytes']==index.stat().st_size
+ assert storage['peak_process_rss_bytes']==done['memory']['ru_maxrss_bytes']
  assert report['launch']['blocked_reason']=='User DBus unavailable; no enforced child cgroup launch'
  assert (PACKET/'user-bus-preflight.exit').read_text().strip()=='1'
  assert 'No data available' in (PACKET/'user-bus-preflight.log').read_text()

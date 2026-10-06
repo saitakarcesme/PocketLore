@@ -1,0 +1,1 @@
+At 597fbe6, engineering evidence and blocked-launch reporting are consistent, but resume lacks exclusive run ownership, allowing concurrent writers to race on status and progress despite SQLite transaction locking.

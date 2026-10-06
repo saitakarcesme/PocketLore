@@ -1,0 +1,26 @@
+{
+  "sample_count": 1255,
+  "sampling_seconds": 0.05,
+  "interval_is_requested_not_continuous_peak": true,
+  "max_sampled_logical_bytes": 47745758,
+  "max_sampled_allocated_bytes": 47759360,
+  "max_journal_logical_bytes": 1207088,
+  "final_index_bytes": 47538176,
+  "freelist_bytes": 655360,
+  "final_owned_sample_logical_bytes": 47657005,
+  "final_owned_sample_allocated_bytes": 47685632,
+  "peak_process_rss_bytes": 54317056,
+  "resume_seconds": 63.02742052078247,
+  "files_observed": [
+    ".producer.lock",
+    "failure-a4444788321f46faa26acecd1721007a.json",
+    "index.sqlite",
+    "index.sqlite-journal",
+    "owner.json",
+    "progress.jsonl",
+    "status.json",
+    "status.json.tmp"
+  ],
+  "no_vacuum": true,
+  "source_admission_established": false
+}
