@@ -57,9 +57,14 @@ def execute(argv,out,seconds=330,inject_read_error=False,inject_start_error=Fals
    start=process_stat(pathlib.Path(f'/proc/{proc.pid}/stat').read_text())[1];report.update(pid=proc.pid,startticks=start)
    while proc.poll() is None:
     try:s=live(proc.pid)
-    except (FileNotFoundError,ProcessLookupError):
-     if proc.poll() is not None:break
-     raise
+    except (FileNotFoundError,ProcessLookupError) as error:
+     # procfs can vanish before waitpid reports an exiting direct child.
+     # Preserve the failed read and require bounded confirmation of real exit.
+     terminal={'error':repr(error),'pid':proc.pid,'startticks':start,'monotonic_ns':time.monotonic_ns()}
+     report.setdefault('terminal_reads',[]).append(terminal)
+     try:terminal['confirmed_exit']=proc.wait(timeout=.05)
+     except subprocess.TimeoutExpired:raise error
+     terminal['confirmed_ns']=time.monotonic_ns();break
     s['phase']='running'
     if executable.name=='native-cache-controls':
      prefix=pathlib.Path(argv[4]);s['phase']='hash-or-setup'

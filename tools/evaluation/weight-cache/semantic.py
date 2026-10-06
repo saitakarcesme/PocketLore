@@ -13,6 +13,9 @@ def events(raw):
  need(set(out)==EVENT_KEYS,'events-keys');return out
 
 def resource_contract(run,expected_group=None):
+ for terminal in run.get('terminal_reads',[]):
+  need(terminal['pid']==run['pid'] and terminal['startticks']==run['startticks'] and terminal['confirmed_exit']==run['exit'],'terminal-identity')
+  need(run['start_ns']<=terminal['monotonic_ns']<=terminal['confirmed_ns']<=run['end_ns'] and terminal['confirmed_ns']-terminal['monotonic_ns']<100000000,'terminal-exit')
  need(run.get('event_contract')=='no-new-memory-failure-v1','events-contract')
  need('kernel_before' in run and 'kernel_after' in run,'events-boundaries')
  first,last=run['kernel_before'],run['kernel_after'];identity=first.get('group_identity')
