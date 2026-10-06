@@ -5,6 +5,14 @@ from witness import request,continuity,validate
 ROOT=pathlib.Path(__file__).resolve().parents[3]
 ADB=['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb','-s','emulator-5564'];PKG='org.pocketlore.app'
 def sha(b):return hashlib.sha256(b).hexdigest()
+def recovery_assertions(host,plan,launch):
+ argv=host['argv'];expected=plan['argv']
+ for option in ('-avd','-port','-gpu','-memory','-cores'):
+  assert argv[argv.index(option)+1]==expected[expected.index(option)+1],'Recovery argv '+option
+ assert host['props']['InvocationID']==launch['after']['InvocationID'],'Recovery invocation'
+ assert str(host['pid'])==str(launch['after']['MainPID']),'Recovery PID'
+ assert host['props']['Restart']=='no' and launch['returncode']==0,'Recovery circuit/launch'
+ assert '-no-snapshot' in argv and '-wipe-data' not in argv,'Recovery image flags'
 def memory_assertions(a):
  samples=a['memory_samples'];lo=a['loaded_window_start_ns'];hi=a['loaded_window_end_ns'];pid=a['pid']
  assert hi-lo>=1_000_000_000 and 0<len(samples)<=2400,'missing loaded window'
@@ -34,9 +42,6 @@ def freeze_packet(out):
  for p in sorted(builds.glob('*')):
   if p.is_file():
    b=p.read_bytes();files['build/'+p.name]={'sha256':sha(b),'bytes':len(b),'encoding':'base64','content':base64.b64encode(b).decode()}
- recovery=ROOT/'docs/evidence/android-runtime-durability/software-recovery'
- for p in sorted(recovery.glob('*.json')):
-  b=p.read_bytes();files['parent-recovery/'+p.name]={'sha256':sha(b),'bytes':len(b),'encoding':'base64','content':base64.b64encode(b).decode()}
  historical=ROOT/'docs/evidence/android-runtime-durability/final-validation/material-20261006T025314Z.json'
  if historical.exists():
   b=historical.read_bytes();files['historical-failed-window-run.json']={'sha256':sha(b),'bytes':len(b),'encoding':'base64','content':base64.b64encode(b).decode()}
@@ -74,13 +79,26 @@ def main():
   return {line.split('  ',1)[1]:line.split('  ',1)[0] for line in raw.decode().splitlines()}
  try:
   paths=subprocess.check_output(['git','ls-files','--cached','--others','--exclude-standard','android','tools/evaluation/android-runtime-durability','tools/runtime','tools/android-build.sh'],cwd=ROOT,text=True).splitlines()
+  paths+=['docs/evidence/android-runtime-durability/software-recovery/'+n for n in ('plan.json','launch-result.json','independent-review.json')]
   sources={p:sha((ROOT/p).read_bytes()) for p in sorted(set(paths)) if(ROOT/p).is_file()};(out/'source-inputs.json').write_text(json.dumps(sources,sort_keys=True));source_hash=sha((out/'source-inputs.json').read_bytes());(out/'executed-check.py').write_bytes(pathlib.Path(__file__).read_bytes());(out/'executed-witness.py').write_bytes(pathlib.Path(__file__).with_name('witness.py').read_bytes())
+  for name in ('plan.json','launch-result.json','independent-review.json'):(out/('parent-recovery-'+name)).write_bytes((ROOT/'docs/evidence/android-runtime-durability/software-recovery'/name).read_bytes())
   code={p:{'sha256':h,'content':(ROOT/p).read_text()} for p,h in sources.items() if p.startswith('tools/evaluation/android-runtime-durability/') and (ROOT/p).suffix in ('.py','.java','.json','.xml','.gradle','.cpp')}
   assert all(sha(v['content'].encode())==v['sha256'] for v in code.values()),'Frozen code hash mismatch'
   (out/'executed-sources.json').write_text(json.dumps(code,sort_keys=True))
   cmd('packet-controls',[sys.executable,str(ROOT/'tools/evaluation/android-runtime-durability/material/packet_controls.py')])
   cmd('local-service-unavailable',['systemctl','--user','show','pocketlore-modern-emulator.service','-p','MainPID','-p','Restart','-p','NRestarts'],allow_failure=True)
   before_host=request(out,'before',source_hash,started)
+  plan=json.loads((out/'parent-recovery-plan.json').read_text());launch=json.loads((out/'parent-recovery-launch-result.json').read_text());recovery_assertions(before_host,plan,launch)
+  recovery_controls=[]
+  for field in ('backend','invocation','pid'):
+   bad=copy.deepcopy(before_host)
+   if field=='backend':bad['argv'][bad['argv'].index('-gpu')+1]='host'
+   elif field=='invocation':bad['props']['InvocationID']='previous-terminal-invocation'
+   else:bad['pid']=0
+   try:recovery_assertions(bad,plan,launch)
+   except AssertionError:recovery_controls.append(field)
+   else:raise AssertionError('Recovery negative accepted '+field)
+  (out/'recovery-controls.json').write_text(json.dumps(recovery_controls))
   assert all(sha((ROOT/p).read_bytes())==h for p,h in sources.items()),'Source changed after freeze'
   android_start=time.time()
   before=shell('boot-before','cat /proc/sys/kernel/random/boot_id').decode().strip();shell('environment','getprop ro.build.version.sdk; getconf PAGE_SIZE; settings get system font_scale; settings get system accelerometer_rotation; settings get system user_rotation')
@@ -119,7 +137,7 @@ def main():
   memory=shell('guest-memory','cat /proc/meminfo').decode();ram=int(next(x.split()[1] for x in memory.splitlines() if x.startswith('MemTotal:')))*1024
   size=shell('logical','su 0 du -sb /data/user/0/'+PKG).decode();shell('allocated','su 0 du -sk /data/user/0/'+PKG);shell('disk','df -k /data');provider=shell('providers','dumpsys package '+PKG);actual_after=shell('installed-after','sha256sum '+package.removeprefix('package:')).decode().split()[0];assert actual_after==expected
   shell('environment-after','getprop ro.build.version.sdk; getconf PAGE_SIZE; settings get system font_scale; settings get system accelerometer_rotation; settings get system user_rotation');assert (out/'environment.txt').read_bytes()==(out/'environment-after.txt').read_bytes()
-  android_end=time.time();after_host=request(out,'after',source_hash,started,android_end);owned=continuity(before_host,after_host,android_start,android_end)
+  android_end=time.time();after_host=request(out,'after',source_hash,started,android_end);owned=continuity(before_host,after_host,android_start,android_end);recovery_assertions(after_host,plan,launch)
   result={'run':out.name,'android_start_epoch':android_start,'android_end_epoch':android_end,'package_present':True,'apk_actual':actual_after,'apk_expected':expected,'boot_before':before,'boot_after':after,'rows_before':rows_before,'rows_after':rows_after,'rows_expected':wanted,'schema_before':schema_before,'schema_after':schema_after,'catalog_verified':valid,'assets_unchanged':not protected_changes,'source_hash':source_hash,'executed_source_hash':phases[0]['source_hash'],'phases':phases,'logical_bytes':int(size.split()[0])+int(test_size.split()[0])+apk.stat().st_size+test.stat().st_size,'guest_ram_bytes':ram,'owned_host_process_continuity':owned,'selected_model_compatible':compatible,'provider_inventory_known':b'org.pocketlore.app/.NotebookExportProvider' in provider and b'org.pocketlore.app.notebook' in provider,'admission':admission,'classification':'Bounded current owned lifecycle/profile; sustained renderer, full distribution, physical and quality gates remain open'}
   (out/'result.json').write_text(json.dumps(result,indent=2));assertions(result)
   controls=[]
