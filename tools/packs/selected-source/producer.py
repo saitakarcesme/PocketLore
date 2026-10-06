@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Owned, bounded, provisional selected-source producer. No admission authority."""
-import argparse,fcntl,hashlib,importlib.util,json,math,os,resource,signal,sqlite3,sys,time,uuid,zlib
+import argparse,traceback,fcntl,hashlib,importlib.util,json,math,os,resource,signal,sqlite3,sys,time,uuid,zlib
 from pathlib import Path
 HERE=Path(__file__).resolve();sys.path.insert(0,str(HERE.parents[1]/'complete-source'))
 import production as safety
@@ -53,7 +53,7 @@ def ingest(db,rows):
    if seen is None:db.execute('INSERT INTO revision_bindings VALUES(?,?,?,0)',(page,rev,digest))
    elif conflict:db.execute('UPDATE revision_bindings SET conflict=1 WHERE page=? AND revision=?',(page,rev));db.execute('UPDATE latest SET blocked=1 WHERE page=?',(page,))
    old=db.execute('SELECT revision,sequence,sha,blocked FROM latest WHERE page=?',(page,)).fetchone()
-   if old is None or rev>old[0]:db.execute('INSERT OR REPLACE INTO latest VALUES(?,?,?,?,?)',(page,rev,seq,digest,int(not valid or conflict) or (old[3] if old else 0)))
+   if old is None or rev>old[0]:db.execute('INSERT OR REPLACE INTO latest VALUES(?,?,?,?,?)',(page,rev,seq,digest,int(not valid or bool(db.execute('SELECT 1 FROM revision_bindings WHERE page=? AND conflict=1 LIMIT 1',(page,)).fetchone()))))
    elif rev==old[0]:
     if digest==old[2]:outcome='duplicate-revision'
     else:outcome='conflicting-revision';db.execute('UPDATE latest SET blocked=1 WHERE page=?',(page,))
@@ -149,7 +149,7 @@ def owned(args,out):
   receipt(out,state,guard);require(file_hash(args.ranking,guard)==args.ranking_sha256,'ranking digest mismatch')
   db=sqlite3.connect(out/'index.sqlite',timeout=.5,uri=True);db.execute('PRAGMA cache_size=-2048');db.execute('PRAGMA mmap_size=0');db.execute('PRAGMA temp_store=FILE');db.execute('PRAGMA synchronous=FULL');db.set_progress_handler(guard.progress,1000)
   if not args.resume:db.executescript(SCHEMA);db.commit()
-  guard.phase='metadata';last=db.execute('SELECT last FROM progress').fetchone()[0]
+  guard.phase='metadata';last=db.execute('SELECT last FROM progress').fetchone()[0];receipt(out,state,guard,db)
   # Rebind all already committed metadata on explicit resume; snapshot handles remain short.
   if args.resume:
    for start in range(0,last+1,256):
@@ -191,8 +191,8 @@ def owned(args,out):
   db.close();db=None;guard.phase='hash';receipt(out,state,guard);state['index_sha256']=file_hash(out/'index.sqlite',guard);state['status']='PROVISIONAL_PREFIX_COMPLETE';state['phase']='complete';guard.phase='complete';state['whole_source_identity_verified']=False;state['original_expected']={'bytes':140267048582,'md5':'2276dbb8db3bc93eabc90a505117e373','date':'March2025; older than rival August2025'};receipt(out,state,guard);return state
  except BaseException as e:
   if db is not None:
-   try:db.rollback()
-   except Exception:pass
+   try:db.set_progress_handler(None,0);db.rollback()
+   except BaseException as cleanup_error:state['cleanup_error']=type(cleanup_error).__name__+': '+str(cleanup_error)
   state['status']='STOPPED_RETAINED';state['error']=type(e).__name__+': '+str(e);state['resume_allowed']=guard.phase in ('metadata','materialize');receipt(out,state,guard);raise
  finally:
   if db is not None:db.close()
@@ -200,5 +200,5 @@ def owned(args,out):
 def main():
  p=argparse.ArgumentParser();p.add_argument('--mode',choices=['engineering','production'],required=True);p.add_argument('--stage',required=True);p.add_argument('--ranking',required=True);p.add_argument('--ranking-sha256',required=True);p.add_argument('--out',required=True);p.add_argument('--through',type=int,required=True);p.add_argument('--count',type=int,required=True);p.add_argument('--seconds',type=int,required=True);p.add_argument('--cutoff',type=float,required=True);p.add_argument('--resume',action='store_true');a=p.parse_args()
  try:print(json.dumps(run(a),indent=2));return 0
- except BaseException as e:print(type(e).__name__+': '+str(e),file=sys.stderr);return 1
+ except BaseException as e:traceback.print_exc();return 1
 if __name__=='__main__':sys.exit(main())

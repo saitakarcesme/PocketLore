@@ -416,3 +416,9 @@ Timestamped synchronous loaded-memory sampling and automatic self-contained fina
 ## Task523 strategy-change bounded recovery
 
 After the parent-reviewed single SwiftShader launch on preserved images, final run20261006T031136Z passes build/runtime gates with exact renderer/PID/Invocation witnesses,201 unchanged schema2 records and1404 precrash protected files. Timestamped synchronous memory coverage succeeds:13 loaded samples, RSS peak2,683,097,088 and kernel HWM2,696,638,464bytes, zero tokens. Raw116-entry final packet is self-contained. Sustained renderer stability, generation, full-distribution/update, physical and unseen acceptance remain open; prior terminal failures are not erased.
+
+## 523 selected-source preparation
+
+The selected enriched producer is separate from the running original/staging/522 pipeline and always emits provisional inspection data. Its preliminary storage footprint is substantial; no full-corpus fit is established. Revised scale evidence and independent launch review are pending. The inherited runner cgroup has unlimited memory/CPU/swap, so its bounded process observations do not qualify a long production launch. Parent launch requires fresh actual 512 MiB/swap0/CPU≤400%/Tasks32 enforcement, 100 GiB free reserve and the fixed cutoff. No long job has been launched by this builder.
+
+The v2 host capsule/index contract needs a separately tested Android provider; recovered v1 reader compilation does not prove v2 import/reader behavior. Source rights/support eligibility remains zero pending independent review. Archive completeness, latest/disposition reconciliation, full-source breadth and freshness, complete 45/50 GB resources, strongest-model quality, physical/GrapheneOS and unseen matched comparison remain separate gates.

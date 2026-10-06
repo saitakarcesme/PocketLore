@@ -34,5 +34,41 @@
     "independent capsule/source/context oracles",
     "fresh external cgroup qualification",
     "independent final code review"
-  ]
+  ],
+  "run_id": "selected-enriched-20261006-prefix6265599",
+  "unit": "pocketlore-selected-enriched-20261006-prefix6265599",
+  "observed_prefix": {
+    "through": 6265599,
+    "observed_epoch": 1791261389.0424027,
+    "whole_source_identity_verified": false
+  },
+  "command": [
+    "python3",
+    "/home/isa/Projects/PocketLore/tools/packs/selected-source/producer.py",
+    "--mode",
+    "production",
+    "--stage",
+    "/home/isa/PocketLore-control/overnight-20261005/source-original-staging/run-originals/original-records.sqlite",
+    "--ranking",
+    "/home/isa/PocketLore-control/scale-workers/wiki/priority-2000000.sqlite",
+    "--ranking-sha256",
+    "2f1e6f9171154d2b315188ed421ee6370146a31d5c1aac768d5267c2f953261e",
+    "--through",
+    "6265599",
+    "--count",
+    "2000000",
+    "--seconds",
+    "7200",
+    "--cutoff",
+    "1791269964",
+    "--out",
+    "/home/isa/PocketLore-control/artifacts/selected-enriched-20261006-prefix6265599"
+  ],
+  "immutable_copy_requirement": "Parent must execute a separately frozen directory preserving code relative layout and verify all listed hashes; never use later mutable canonical source. No launch while status is unqualified.",
+  "host_preflight_observation": {
+    "epoch": 1791261389.0424027,
+    "free_bytes": 285904961536,
+    "not_launch_time_proof": true
+  },
+  "selection_capacity": "Exactly 2000000 distinct selected originals required; failure if observed prefix has fewer. No filler or reduction permitted. Prefix latest is not final source latest."
 }

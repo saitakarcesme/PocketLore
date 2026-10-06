@@ -10,7 +10,14 @@ def audit(out,stage,ranking):
  query='''WITH versions AS (SELECT sequence,page,revision,raw_sha256,metadata_error,license_json,title,row_number() OVER(PARTITION BY page ORDER BY revision DESC,sequence ASC) r FROM records WHERE sequence<=?), conflicts AS (SELECT page FROM records WHERE sequence<=? GROUP BY page,revision HAVING count(distinct raw_sha256)>1) SELECT v.page,v.revision,v.sequence,v.raw_sha256,p.views FROM versions v JOIN rank.priority p ON p.id=v.page WHERE r=1 AND p.full=1 AND metadata_error IS NULL AND license_json IS NOT NULL AND title IS NOT NULL AND v.page NOT IN (SELECT page FROM conflicts) ORDER BY p.views DESC,v.page LIMIT ?'''
  expected=src.execute(query,(through,through,count)).fetchall();actual=d.execute('SELECT page,revision,sequence,sha,views FROM selected ORDER BY position').fetchall();assert actual==expected,'Independent general-priority/latest oracle differs'
  assert len(actual)==count and len({r[0] for r in actual})==count
+ if through>=99999:
+  frozen=json.loads((pathlib.Path(__file__).resolve().parents[3]/'docs/evidence/selected-source-production/frozen-controls.json').read_text())
+  for sequence,page,revision,digest,license_text in frozen['genuine_revision_pair']:
+   observed=src.execute('SELECT page,revision,raw_sha256,license_json,original_zlib FROM records WHERE sequence=?',(sequence,)).fetchone();assert observed[:4]==(page,revision,digest,license_text) and sha(zlib.decompress(observed[4]))==digest
+  assert d.execute('SELECT sequence FROM latest WHERE page=?',(frozen['expected_page'],)).fetchone()==(frozen['expected_latest_sequence'],),'Frozen genuine later revision missing'
  assert d.execute('select count(*) from originals').fetchone()[0]==through+1
+ assert d.execute('SELECT count(*) FROM pieces p LEFT JOIN capsules c ON c.sha=p.sha WHERE c.sha IS NULL').fetchone()[0]==0,'Missing capsule'
+ assert d.execute('SELECT count(*) FROM selected s LEFT JOIN receipts r ON r.sequence=s.sequence WHERE r.sequence IS NULL OR r.outcome!=s.outcome OR r.sha!=s.sha').fetchone()[0]==0,'Missing or changed disposition receipt'
  # Check every content-addressed capsule independently; bounded one chunk at a time.
  pieces=0;uncompressed=compressed=0
  for digest,size,blob in d.execute('SELECT sha,bytes,z FROM capsules'):

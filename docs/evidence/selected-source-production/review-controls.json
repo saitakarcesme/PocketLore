@@ -1,0 +1,13 @@
+{
+  "frozen_before_execution": true,
+  "algorithm_fixtures_not_corpus": true,
+  "controls": [
+    {"revisions": [5, 3, 3], "hashes": ["A", "B", "C"], "expected": "page quarantined by older revision conflict"},
+    {"revisions": [1, 2], "metadata_errors": ["invalid older metadata", null], "expected": "latest valid revision selectable; earlier invalid disposition retained"},
+    {"process_exit": "after savepoint release before receipt", "expected": "explicit outer transaction rolls back article"},
+    {"mutation": "context text only", "expected": "independent source oracle rejects"},
+    {"mutation": "HTML piece start only", "expected": "independent coordinate oracle rejects"},
+    {"mutation": "capsule digest only", "expected": "independent digest oracle rejects"},
+    {"signal": "SIGTERM while source is exclusively locked by fixture", "expected": "nonzero retained signal failure, then explicit resume; complete replay denied"}
+  ]
+}
