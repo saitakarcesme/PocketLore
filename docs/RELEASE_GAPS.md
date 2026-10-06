@@ -456,3 +456,7 @@ Repair-2 bounded native validation passed after deterministic derivation and los
 ## Task535 policy preparation only
 
 Cold synthetic native controls and linked host/Android artifacts qualify a dedicated-owned random-fault policy, not real model execution. No weights were opened/advised and the terminal emulator was untouched. The synthetic page-cache reduction does not prove first-token fit, all-expert residency, generation quality/speed or readahead as the sole534 failure cause. Future exact-model execution requires separate review under unchanged7.5GiB stop/9GiB containment; actual Android/UI/noGMS/physical12GB and complete45GB target/50GB assets/update plus full-source/useful-generation/unseen comparative gates remain open.
+
+## Task537: bounded native cache reuse
+
+New opt-in quiescent cyclic policy passes current synthetic/native controls and linked host/dual-ABI builds. A repeated4MiB range preserves1024 cached pages with zero advice/majorfaults versus1024 majorfaults after force-drop; pressure returns to8MiB and remap/tail/no-progress failures are discriminating. The initial combined-stream collection failure remains preserved. No actual model access or device operation occurred. See docs/evidence/weight-cache-reuse.md and its self-contained raw review packet; full model fit/throughput/generation/Android/source/physical12GB/complete50GB/unseen superiority remain unqualified.

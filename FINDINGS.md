@@ -524,3 +524,7 @@ Repair-2 builder validation now passes the required build and bounded native lif
 ## Task535: owned random-fault policy
 
 Actual dedicated readonly File/mmap policy now applies POSIX_FADV_RANDOM and MADV_RANDOM before loader access. Required build and synthetic checker pass; two cold rounds cache16 touched pages versus16384 default pages with byte preservation,12 corrupted-packet refusals and stable host/dual-ABI/APK rebuild hashes. No model/device access occurred. Historical534 remains zero-output/resource-stop failure; sampled aggregate8460570624 differs from postcleanup lifetimepeak8479965184 and processRSS1995083776. See docs/evidence/weight-fault-policy.md for exact current receipts and limitations.
+
+## Task537: bounded native cache reuse
+
+New opt-in quiescent cyclic policy passes current synthetic/native controls and linked host/dual-ABI builds. A repeated4MiB range preserves1024 cached pages with zero advice/majorfaults versus1024 majorfaults after force-drop; pressure returns to8MiB and remap/tail/no-progress failures are discriminating. The initial combined-stream collection failure remains preserved. No actual model access or device operation occurred. See docs/evidence/weight-cache-reuse.md and its self-contained raw review packet; full model fit/throughput/generation/Android/source/physical12GB/complete50GB/unseen superiority remain unqualified.
