@@ -1,9 +1,39 @@
 """Owned API37 continuity, exact retained rows and pinned load. No VM/service mutations."""
+import base64,os
 import pathlib,subprocess,json,hashlib,datetime,sqlite3,sys,copy,time,traceback,importlib.util
 from witness import request,continuity,validate
 ROOT=pathlib.Path(__file__).resolve().parents[3]
 ADB=['/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb','-s','emulator-5564'];PKG='org.pocketlore.app'
 def sha(b):return hashlib.sha256(b).hexdigest()
+def memory_assertions(a):
+ samples=a['memory_samples'];lo=a['loaded_window_start_ns'];hi=a['loaded_window_end_ns'];pid=a['pid']
+ assert hi-lo>=1_000_000_000 and 0<len(samples)<=2400,'missing loaded window'
+ loaded=[x for x in samples if x['phase']=='loaded' and lo<=x['start_ns']<=x['end_ns']<=hi]
+ assert len(loaded)>=5,'absent loaded-window coverage'
+ assert all(x['pid']==pid and x['start_ns']<=x['end_ns'] and 0<x['pss_bytes'] and 0<x['rss_bytes']<=x['hwm_bytes'] for x in samples),'invalid PID/time/units'
+ for x in samples:
+  fields={line.split(':')[0]:line.split(':',1)[1].strip() for line in x['raw_status'].splitlines() if ':' in line}
+  assert int(fields['Pid'])==pid and fields['VmRSS'].endswith(' kB') and fields['VmHWM'].endswith(' kB'),'proc identity/units'
+  assert int(fields['VmRSS'].split()[0])*1024==x['rss_bytes'] and int(fields['VmHWM'].split()[0])*1024==x['hwm_bytes'],'raw status mismatch'
+ assert a['loaded_sync'] in loaded and a['loaded_end'] in loaded,'missing synchronous loaded samples'
+ assert a['sampled_peak_rss_bytes']==max(x['rss_bytes'] for x in samples) and a['sampled_peak_pss_bytes']==max(x['pss_bytes'] for x in samples),'contradictory sampled peaks'
+ assert max(x['hwm_bytes'] for x in samples)+1073741824<12_000_000_000,'kernel HWM cap'
+ assert a['sampled_peak_rss_bytes']>=a['loaded_sync']['rss_bytes'],'synchronous/sample contradiction'
+def freeze_packet(out):
+ # Raw databases contain personal bodies and remain protected; exact per-row oracles and hashes are included.
+ files={}
+ for p in sorted(out.iterdir()):
+  if p.is_file() and p.suffix!='.sqlite':
+   b=p.read_bytes();files[p.name]={'sha256':sha(b),'bytes':len(b),'encoding':'base64','content':base64.b64encode(b).decode()}
+ manifest=json.loads((out/'source-inputs.json').read_text()) if (out/'source-inputs.json').exists() else {}
+ code={p:{'sha256':h,'content':(ROOT/p).read_text()} for p,h in manifest.items() if p.startswith('tools/evaluation/android-runtime-durability/') and (ROOT/p).suffix in ('.py','.java','.json','.xml','.gradle','.cpp')}
+ builds=ROOT/'docs/evidence/android-runtime-durability/window-build'
+ for p in sorted(builds.glob('*')):
+  if p.is_file():
+   b=p.read_bytes();files['build/'+p.name]={'sha256':sha(b),'bytes':len(b),'encoding':'base64','content':base64.b64encode(b).decode()}
+ packet={'task':'523-material-measured-window-final-receipts','run':out.name,'status':'FAIL' if (out/'failure.json').exists() else 'PASS','raw_files':files,'executed_sources':code,'database_policy':'Raw SQLite excluded; original row oracle, independently extracted current row hashes and full file inventories included.','limits':'Zero-token emulator load only; sustained renderer, generation, full distribution and physical gates open.'}
+ target=ROOT/'docs/evidence/android-runtime-durability-review.json';tmp=target.with_suffix('.tmp');tmp.write_text(json.dumps(packet,indent=2));os.replace(tmp,target)
+ archive=ROOT/'docs/evidence/android-runtime-durability/final-validation';archive.mkdir(exist_ok=True);(archive/(out.name+'.json')).write_bytes(target.read_bytes())
 def assertions(d):
  assert d['package_present'] and d['apk_actual']==d['apk_expected'],'missing/wrong APK'
  assert d['boot_before']==d['boot_after'] and d['boot_before'],'boot discontinuity'
@@ -15,6 +45,7 @@ def assertions(d):
  assert d['logical_bytes']<=50_000_000_000 and d['guest_ram_bytes']<=12_000_000_000,'resource cap'
  assert d['owned_host_process_continuity'],'host process identity unavailable'
  assert d['selected_model_compatible'] and d['provider_inventory_known'],'full development profile unavailable'
+ memory_assertions(d['admission'])
  assert d['admission']['sampled_peak_pss_bytes']>0 and 0<d['admission']['sampled_peak_rss_bytes']<12_000_000_000-1073741824,'sampled model memory'
  assert d['admission']['sample_error'] is None and d['admission']['sampler_stopped'] and d['admission']['sample_count']>0,'memory sampler incomplete'
 def main():
@@ -74,6 +105,14 @@ def main():
   result={'run':out.name,'android_start_epoch':android_start,'android_end_epoch':android_end,'package_present':True,'apk_actual':actual_after,'apk_expected':expected,'boot_before':before,'boot_after':after,'rows_before':rows_before,'rows_after':rows_after,'rows_expected':wanted,'schema_before':schema_before,'schema_after':schema_after,'catalog_verified':valid,'assets_unchanged':not protected_changes,'source_hash':source_hash,'executed_source_hash':phases[0]['source_hash'],'phases':phases,'logical_bytes':int(size.split()[0])+int(test_size.split()[0])+apk.stat().st_size+test.stat().st_size,'guest_ram_bytes':ram,'owned_host_process_continuity':owned,'selected_model_compatible':compatible,'provider_inventory_known':b'org.pocketlore.app/.NotebookExportProvider' in provider and b'org.pocketlore.app.notebook' in provider,'admission':admission,'classification':'Bounded current owned lifecycle/profile; sustained renderer, full distribution, physical and quality gates remain open'}
   (out/'result.json').write_text(json.dumps(result,indent=2));assertions(result)
   controls=[]
+  for name in ['missing-window','contradictory-peak','wrong-sample-pid']:
+   bad=copy.deepcopy(admission)
+   if name=='missing-window':bad['loaded_window_end_ns']=bad['loaded_window_start_ns']
+   elif name=='contradictory-peak':bad['sampled_peak_rss_bytes']=1
+   else:bad['memory_samples'][0]['pid']=-1
+   try:memory_assertions(bad)
+   except AssertionError:controls.append(name)
+   else:raise AssertionError('memory negative accepted '+name)
   for field,value in [('package_present',False),('apk_actual','wrong'),('boot_after','changed'),('rows_after',{}),('schema_after',1),('catalog_verified',False),('executed_source_hash','stale'),('logical_bytes',50_000_000_001),('owned_host_process_continuity',False),('provider_inventory_known',False),('selected_model_compatible',False),('rows_expected',{})]:
    bad=copy.deepcopy(result);bad[field]=value
    try:assertions(bad)
@@ -96,4 +135,6 @@ def main():
   (out/'negative-controls.json').write_text(json.dumps({'constructed_mutations_of_actual_pass':controls},indent=2));print('PASS bounded owned runtime continuity and exact pinned model profile; sustained stability remains open')
  except BaseException as e:
   (out/'failure.json').write_text(json.dumps({'status':'FAIL','error':traceback.format_exc(),'android_start_epoch':android_start,'android_end_epoch':android_end,'at':time.time()},indent=2));raise
+ finally:
+  freeze_packet(out)
 if __name__=='__main__':main()

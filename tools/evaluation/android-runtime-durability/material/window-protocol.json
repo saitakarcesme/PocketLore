@@ -1,0 +1,13 @@
+{
+  "scope": "Zero-token selected-model load measurement; original lifecycle gates unchanged",
+  "sample_interval_ms": 100,
+  "maximum_samples": 2400,
+  "loaded_hold_ms": 1200,
+  "required_loaded_samples": 5,
+  "fields": ["PID", "monotonic start/end nanoseconds", "phase", "RSS bytes", "PSS bytes", "kernel HWM bytes"],
+  "synchronous_loaded_samples": 2,
+  "negative_controls": ["missing loaded window", "contradictory sample maximum", "wrong sample PID"],
+  "historical_discrepancy": "Earlier periodic sampling missed synchronous loaded RSS and kernel HWM; earlier measurement_complete cannot qualify loaded-window coverage.",
+  "oracle": "Independently parse emitted sample identities, timestamps, exact maxima, synchronous membership and proc status units; HWM is a process lifetime maximum, not a simultaneous RSS/PSS pair.",
+  "finalization": "Each checker invocation freezes original raw bytes/base64 and SHA256 in the declared review JSON before return, with a distinct archival packet; protected raw SQLite remains uncommitted."
+}

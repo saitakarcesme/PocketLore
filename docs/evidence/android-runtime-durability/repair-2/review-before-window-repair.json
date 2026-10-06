@@ -1,0 +1,711 @@
+{
+  "task": "523-android-runtime-durability-and-preserved-state-repair-2",
+  "status": "PASS_BOUNDED_RUNTIME_GATE",
+  "required_check_exit": 0,
+  "build_exit": 0,
+  "run": "material-20261006T023751Z",
+  "apk_sha256": "c02c03899d8b64ee097c5034e6222b618946c0af21cc050f2d2d58e2546b9cee",
+  "test_apk_sha256": "4c308e070f4f8c73a7f02642cf616e116c1e53f391f84b977d00db2a1f633bb7",
+  "source_hash": "06b2d3a5b6f388f69becfa6af7c2159618564400716e9d3b71fb4ca094ffefd3",
+  "source_commit": "7c0da5a96132eaaea7bc2c4d95672dba59221819",
+  "historical_review": {
+    "path": "docs/evidence/android-runtime-durability/repair-2/historical-review-through-material.json",
+    "sha256": "151cfda295cd7c5c8213aecd9c78d311199c48f0df55cdc3a005a176f4b7fd84",
+    "scope": "All original failed task, repair1 and material reports preserved without rewriting their measurements"
+  },
+  "repair_2": {
+    "packet_root": "docs/evidence/android-runtime-durability/repair-2",
+    "files": {
+      "material-20261006T023751Z/after-witness.request.json": {
+        "sha256": "97f4ec263c53214d11f591b54ef7f7a6063c270c1919ac700f8c984b5a67d5e4",
+        "bytes": 550,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/after-witness.request.json"
+      },
+      "material-20261006T023751Z/after-witness.response.json": {
+        "sha256": "04f5100edf44f44dd239ed678fe1b0547a0a1aa3d27f3796506b0d705f677851",
+        "bytes": 1865,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/after-witness.response.json"
+      },
+      "material-20261006T023751Z/after.command.json": {
+        "sha256": "3e8dd1c2f5add105d9599d57d3d85f478fa022d5c6bf96058b7b9ecec038d585",
+        "bytes": 323,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/after.command.json"
+      },
+      "material-20261006T023751Z/allocated.command.json": {
+        "sha256": "0df8aec932e7416c481315da0c9bc65f0dccd9010234966be7c1113ff8f845e1",
+        "bytes": 266,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/allocated.command.json"
+      },
+      "material-20261006T023751Z/allocated.txt": {
+        "sha256": "63a9226cacd32e0a06e0ddc42fa61ac40f1c84115b3107f9988a4e74b0216795",
+        "bytes": 40,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/allocated.txt"
+      },
+      "material-20261006T023751Z/app-restart-report.json.command.json": {
+        "sha256": "246a4113cdcab6136b4eff278b524e1c611a6f81f5701fdf39569d312659037d",
+        "bytes": 354,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/app-restart-report.json.command.json"
+      },
+      "material-20261006T023751Z/app-restart-report.json.txt": {
+        "sha256": "67d16493198376329d7b836c773e3b3ac4a69231e98d36b533671551ab8849d3",
+        "bytes": 22543,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/app-restart-report.json.txt"
+      },
+      "material-20261006T023751Z/app-restart-source201.png.command.json": {
+        "sha256": "54a31991251e23048c812b61bd546d5e51b674a4b12b711efd5e88f4fffffa06",
+        "bytes": 356,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/app-restart-source201.png.command.json"
+      },
+      "material-20261006T023751Z/app-restart-source201.png.txt": {
+        "sha256": "9a84d457d1c25cdb544fa7e911bb25a53c98505dfa9ecb409746db62cc9d23ff",
+        "bytes": 294508,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/app-restart-source201.png.txt"
+      },
+      "material-20261006T023751Z/app-restart.command.json": {
+        "sha256": "d72e0829b3464af17d00a23421b30881e81178a304f2e85b7390c92b41aea06e",
+        "bytes": 545,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/app-restart.command.json"
+      },
+      "material-20261006T023751Z/app-restart.json": {
+        "sha256": "97d6e27f36f610980e5e433f705538e03dba92f022b41a7fbf122b73404dc0cc",
+        "bytes": 22547,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/app-restart.json"
+      },
+      "material-20261006T023751Z/app-restart.txt": {
+        "sha256": "4b1c3ce60fd1e88c907338c0a44f20932fd493637edf1cc052cdf0934afbbe48",
+        "bytes": 20285,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/app-restart.txt"
+      },
+      "material-20261006T023751Z/app-stop.command.json": {
+        "sha256": "b29c6f7650fbcce3a9d3aa08c4f8e6d1bf76984366d8003f5250f8b5742edd53",
+        "bytes": 257,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/app-stop.command.json"
+      },
+      "material-20261006T023751Z/app-stop.txt": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/app-stop.txt"
+      },
+      "material-20261006T023751Z/before-witness.request.json": {
+        "sha256": "00027be49ad6acaf35fec0a268869a91d3112f76412066c16a8ba546e5e415e4",
+        "bytes": 505,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/before-witness.request.json"
+      },
+      "material-20261006T023751Z/before-witness.response.json": {
+        "sha256": "6adbbe9fdee649e2a0cc4cc4e23db519ac1d46a895dc2714b503656307007b80",
+        "bytes": 1866,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/before-witness.response.json"
+      },
+      "material-20261006T023751Z/before.command.json": {
+        "sha256": "fb371320a34b4cc3b05bc28bc47e14704dbfb17d576211134ba31f734aadbb1e",
+        "bytes": 323,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/before.command.json"
+      },
+      "material-20261006T023751Z/boot-after.command.json": {
+        "sha256": "5246c2610c3408f9cfd0dfddc32c23b627cc20894808e19e9b53d4cdf4126a46",
+        "bytes": 260,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/boot-after.command.json"
+      },
+      "material-20261006T023751Z/boot-after.txt": {
+        "sha256": "7211c570d2889c24d03467467410215caa1794ba9f311eb911564d0c368817a1",
+        "bytes": 37,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/boot-after.txt"
+      },
+      "material-20261006T023751Z/boot-before.command.json": {
+        "sha256": "cd497285119e43a077e68b7749ec07323d5099aac280abf78d1f5a0d8d3d0487",
+        "bytes": 261,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/boot-before.command.json"
+      },
+      "material-20261006T023751Z/boot-before.txt": {
+        "sha256": "7211c570d2889c24d03467467410215caa1794ba9f311eb911564d0c368817a1",
+        "bytes": 37,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/boot-before.txt"
+      },
+      "material-20261006T023751Z/candidate.json": {
+        "sha256": "4a36f14a8d23ed61606f120b726f5090c20007f773b10675f0b0a77d9ece8728",
+        "bytes": 1649,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/candidate.json"
+      },
+      "material-20261006T023751Z/catalog.command.json": {
+        "sha256": "a4f3b9215b1215b4c34d386b49efe890e6b9c4698b9ffa69be7cb2ecbfc6f66b",
+        "bytes": 287,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/catalog.command.json"
+      },
+      "material-20261006T023751Z/catalog.txt": {
+        "sha256": "cf9e1dd31e7e69722c20a52a864c264073fb16e928d27e9e1a82b0c07f7511b7",
+        "bytes": 1046,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/catalog.txt"
+      },
+      "material-20261006T023751Z/disk.command.json": {
+        "sha256": "b2ffe70aced205ebf24c75206ac0a52c23c5fde9e7fe88ba78e4300bd2f18c0e",
+        "bytes": 237,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/disk.command.json"
+      },
+      "material-20261006T023751Z/disk.txt": {
+        "sha256": "9b8aea2be5dba8827ea024e6ddc333e442b64273211e3afd85a9734c1875a8d2",
+        "bytes": 122,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/disk.txt"
+      },
+      "material-20261006T023751Z/environment-after.command.json": {
+        "sha256": "524c609e9193d68f4d71f8e1c1df38383bd74dc1407d977342fcc6d3f80af7f6",
+        "bytes": 383,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/environment-after.command.json"
+      },
+      "material-20261006T023751Z/environment-after.txt": {
+        "sha256": "cb485727362da4fd65507c7c085c7a2b1dfcbd8ac709d1b77e3dbaa76e144e2d",
+        "bytes": 17,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/environment-after.txt"
+      },
+      "material-20261006T023751Z/environment.command.json": {
+        "sha256": "816547cb381ba9461be60ccc44b9adb79492369c1fec1969927630c81e7390b4",
+        "bytes": 384,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/environment.command.json"
+      },
+      "material-20261006T023751Z/environment.txt": {
+        "sha256": "cb485727362da4fd65507c7c085c7a2b1dfcbd8ac709d1b77e3dbaa76e144e2d",
+        "bytes": 17,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/environment.txt"
+      },
+      "material-20261006T023751Z/executed-check.py": {
+        "sha256": "b38c25f3f87ed6b97bd236b0c1d51e159c285087adabb395d5d8bc72df2d1a5f",
+        "bytes": 14185,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/executed-check.py"
+      },
+      "material-20261006T023751Z/executed-witness.py": {
+        "sha256": "dcdc721690f0bf6af790fc5d7ac1993ba9e65909537399d9389131403079672b",
+        "bytes": 3356,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/executed-witness.py"
+      },
+      "material-20261006T023751Z/guest-memory.command.json": {
+        "sha256": "51a37232c25b86d43b60252a60ce62c06866abea6f0505b377db7092f4a3da82",
+        "bytes": 243,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/guest-memory.command.json"
+      },
+      "material-20261006T023751Z/guest-memory.txt": {
+        "sha256": "8b0e0e4da2042396a922999fb0bfbefdc95e5da462fc5254477c8ba9fa527d34",
+        "bytes": 1291,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/guest-memory.txt"
+      },
+      "material-20261006T023751Z/independent-database-bindings.json": {
+        "sha256": "fa1777fbb25fc0953776e17c6eda818f3292ec3b33d62e20a70795aba765315e",
+        "bytes": 32726,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/independent-database-bindings.json"
+      },
+      "material-20261006T023751Z/independent-resource-reconciliation.json": {
+        "sha256": "1dacee263a1cd8d2a7b0936c0a9a4a6075452b5a977cab7e576c3dd0ab0ecce3",
+        "bytes": 938,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/independent-resource-reconciliation.json"
+      },
+      "material-20261006T023751Z/install-main.command.json": {
+        "sha256": "4f134706f8cf02797adac1c2c84191a01a9d8354a34ead77ad3cc5c15c733598",
+        "bytes": 340,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/install-main.command.json"
+      },
+      "material-20261006T023751Z/install-main.txt": {
+        "sha256": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+        "bytes": 36,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/install-main.txt"
+      },
+      "material-20261006T023751Z/install-test.command.json": {
+        "sha256": "936ef39ba8b47bf81f5b93466559edbd65b64e4117cd7420850cb17654d35361",
+        "bytes": 365,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/install-test.command.json"
+      },
+      "material-20261006T023751Z/install-test.txt": {
+        "sha256": "781a31c82430c97897af612ece5e0ca2205e301cb5ff121ce2660541ea5182c7",
+        "bytes": 36,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/install-test.txt"
+      },
+      "material-20261006T023751Z/installed-after.command.json": {
+        "sha256": "06e3ac1ebefefa21ced30344e72e3b6afde8d1d2db10486370a7365bafde2377",
+        "bytes": 325,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/installed-after.command.json"
+      },
+      "material-20261006T023751Z/installed-after.txt": {
+        "sha256": "a8f35d1c6038650380a2ed98b4a10b17b1333bd6280cf5382deca4fb8ea87839",
+        "bytes": 156,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/installed-after.txt"
+      },
+      "material-20261006T023751Z/installed-before.command.json": {
+        "sha256": "dd2b86fcb02a218037e500286fe7a40575128968fbd075e536f55ab6e49ebea5",
+        "bytes": 325,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/installed-before.command.json"
+      },
+      "material-20261006T023751Z/installed-before.txt": {
+        "sha256": "c13960000252cafd4770e25dd72fc0191c6edbf49473596db78c050e9127755a",
+        "bytes": 156,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/installed-before.txt"
+      },
+      "material-20261006T023751Z/installed.command.json": {
+        "sha256": "8d8c90643d3324f38eabaf33ae61c0e13633b77de3a8fc7a439acbc5306b829b",
+        "bytes": 324,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/installed.command.json"
+      },
+      "material-20261006T023751Z/installed.txt": {
+        "sha256": "a8f35d1c6038650380a2ed98b4a10b17b1333bd6280cf5382deca4fb8ea87839",
+        "bytes": 156,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/installed.txt"
+      },
+      "material-20261006T023751Z/inventory-after-sizes.command.json": {
+        "sha256": "a155420d75e348f3371533ebbedfc07e9217c4162e76f69e1f668fe932fd734b",
+        "bytes": 317,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/inventory-after-sizes.command.json"
+      },
+      "material-20261006T023751Z/inventory-after-sizes.txt": {
+        "sha256": "f5e5a152840086276a2342c11f7d87fd753d6131a8bf6360270c9631f53ea20b",
+        "bytes": 162955,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/inventory-after-sizes.txt"
+      },
+      "material-20261006T023751Z/inventory-after.command.json": {
+        "sha256": "8434a9edfc35d9207bc83a0a2d1358dbf83bf8649230b5c1bb4e2c7014c9d64a",
+        "bytes": 306,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/inventory-after.command.json"
+      },
+      "material-20261006T023751Z/inventory-after.txt": {
+        "sha256": "6f73b2efd7fdb006d7dd60790eb9bf32e617074036601b2fa713313487dcb432",
+        "bytes": 246760,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/inventory-after.txt"
+      },
+      "material-20261006T023751Z/inventory-before-sizes.command.json": {
+        "sha256": "3107c85664e1f090193ce5f8a09b436423a2085165303727fe91cfd59159514b",
+        "bytes": 317,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/inventory-before-sizes.command.json"
+      },
+      "material-20261006T023751Z/inventory-before-sizes.txt": {
+        "sha256": "0761f6d07832480acc7f99940936eeadb0a7107649edce3f06144ae0ef4c6651",
+        "bytes": 162246,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/inventory-before-sizes.txt"
+      },
+      "material-20261006T023751Z/inventory-before.command.json": {
+        "sha256": "655e04182af6c6e072198d0d37d7c83881398b07396886dfae7ef8cb90c738aa",
+        "bytes": 305,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/inventory-before.command.json"
+      },
+      "material-20261006T023751Z/inventory-before.txt": {
+        "sha256": "c538c230ffe6f692a52dc0d6ecf6c3177d874597620a1612e7982e355d7bd26c",
+        "bytes": 245721,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/inventory-before.txt"
+      },
+      "material-20261006T023751Z/inventory-changes.json": {
+        "sha256": "c1a52b4a312dfe46ec983abf567863a918794f71846a673c1aa1f6862c4b2cd2",
+        "bytes": 765,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/inventory-changes.json"
+      },
+      "material-20261006T023751Z/local-service-unavailable.command.json": {
+        "sha256": "e509a55031042a5bdf0d8d5211d84d72cfedb5f29b34688e51a3c9196e3c7928",
+        "bytes": 272,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/local-service-unavailable.command.json"
+      },
+      "material-20261006T023751Z/local-service-unavailable.txt": {
+        "sha256": "e3aa172729b728b8445cb3159d76a5916d8d6520341893d4afc1f0691a8f5b5b",
+        "bytes": 75,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/local-service-unavailable.txt"
+      },
+      "material-20261006T023751Z/logical.command.json": {
+        "sha256": "5d6b0c2a6e4d343a95b0000817f5932b9ccf87bad5af405ee399d76c7a6dfea1",
+        "bytes": 268,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/logical.command.json"
+      },
+      "material-20261006T023751Z/logical.txt": {
+        "sha256": "22b5e6cc695ce8e12a046ad977e863102d36576e68382617dcd927a8b9ad7c77",
+        "bytes": 43,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/logical.txt"
+      },
+      "material-20261006T023751Z/native-admission.command.json": {
+        "sha256": "ac714bcf2d4c3da1745c95d884c287d43d8160c60fdd4b4094b97e6fc35d84ca",
+        "bytes": 544,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/native-admission.command.json"
+      },
+      "material-20261006T023751Z/native-admission.json": {
+        "sha256": "a05e40498087ef94ec6b9791da5b9934571072423239c1aa5cc13095a544bcee",
+        "bytes": 4250,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/native-admission.json"
+      },
+      "material-20261006T023751Z/native-admission.txt": {
+        "sha256": "61e56fefc1a6210ddfd4f3a5972f4491cb2d002fe2e2e78854500c3cad573bfd",
+        "bytes": 4010,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/native-admission.txt"
+      },
+      "material-20261006T023751Z/negative-controls.json": {
+        "sha256": "5345ca6f4d9a9bbd8a4931621dc0c925a1e7ac380785fc3dc0968eec8cb2713a",
+        "bytes": 563,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/negative-controls.json"
+      },
+      "material-20261006T023751Z/open-report.json.command.json": {
+        "sha256": "50d91d18f8a443041a76344d1b3e766b9ef7c396621da6497c142379858f7bc7",
+        "bytes": 346,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/open-report.json.command.json"
+      },
+      "material-20261006T023751Z/open-report.json.txt": {
+        "sha256": "774a36ed55ca3de044589bddc33c3d9de628edf6cce6c5e4479db4b96bc7c4d9",
+        "bytes": 22536,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/open-report.json.txt"
+      },
+      "material-20261006T023751Z/open-source201.png.command.json": {
+        "sha256": "739ffc691538483575c4a3f5626878d8055065c9afb00da5acbe49b4f8233746",
+        "bytes": 349,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/open-source201.png.command.json"
+      },
+      "material-20261006T023751Z/open-source201.png.txt": {
+        "sha256": "9a84d457d1c25cdb544fa7e911bb25a53c98505dfa9ecb409746db62cc9d23ff",
+        "bytes": 294508,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/open-source201.png.txt"
+      },
+      "material-20261006T023751Z/open.command.json": {
+        "sha256": "37e4a3634be664a2973a7cff5a7aca2d0b8159bcfc5bd2ecceb082f79d3263f8",
+        "bytes": 539,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/open.command.json"
+      },
+      "material-20261006T023751Z/open.json": {
+        "sha256": "01a87b2a1ae82d393fa6026d892201b6ee37cf15e1f6c205079d0fe784090b36",
+        "bytes": 22540,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/open.json"
+      },
+      "material-20261006T023751Z/open.txt": {
+        "sha256": "9d9e4c19111dc36f1da9b959ee85bf90dfb984308fe4a9640588e34836bb418a",
+        "bytes": 20278,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/open.txt"
+      },
+      "material-20261006T023751Z/package-before.command.json": {
+        "sha256": "537b39f97bc483ce89ccee6957a5eb7d793803a66e4f88d8f4b783917f39e21b",
+        "bytes": 252,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/package-before.command.json"
+      },
+      "material-20261006T023751Z/package-before.txt": {
+        "sha256": "409915e82291ae1a62409ba2a895e609a97030b3306f716cc0cdd38bfbd81ffd",
+        "bytes": 98,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/package-before.txt"
+      },
+      "material-20261006T023751Z/package.command.json": {
+        "sha256": "4066680c18169cf6ea01889d88b58b46075ec84b87c7750741411ec34c766273",
+        "bytes": 251,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/package.command.json"
+      },
+      "material-20261006T023751Z/package.txt": {
+        "sha256": "bdf2fee88374c2ed4f0ae1db31ec3bf38eb9349414cf54b957c4c5f8556aafe6",
+        "bytes": 98,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/package.txt"
+      },
+      "material-20261006T023751Z/providers.command.json": {
+        "sha256": "25ebc8b4871c51c735b66ce4490084c63ed6bceda1c88b1a0857e771566f7f90",
+        "bytes": 260,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/providers.command.json"
+      },
+      "material-20261006T023751Z/providers.txt": {
+        "sha256": "3ac194c954fb2e57cf392c1adc2111df88bacfd4d8395fc75cb20e2ef12c1522",
+        "bytes": 4683,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/providers.txt"
+      },
+      "material-20261006T023751Z/result.json": {
+        "sha256": "c373caebf4857396266b35648d00f70baf1e195dda15dab880af64676362d5f7",
+        "bytes": 101362,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/result.json"
+      },
+      "material-20261006T023751Z/rows-after.json": {
+        "sha256": "0407bf45115d0648850b408360779db85139cb8710390b1b7f9a2c642408954b",
+        "bytes": 14967,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/rows-after.json"
+      },
+      "material-20261006T023751Z/rows-before.json": {
+        "sha256": "0407bf45115d0648850b408360779db85139cb8710390b1b7f9a2c642408954b",
+        "bytes": 14967,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/rows-before.json"
+      },
+      "material-20261006T023751Z/selected-before.command.json": {
+        "sha256": "5a0cb912a0449993071c7f1064c553aaabccc62a4bb73b2ab88fc1e21e8b6cf6",
+        "bytes": 277,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/selected-before.command.json"
+      },
+      "material-20261006T023751Z/selected-before.txt": {
+        "sha256": "e66bdabaabe087e2223e3863be35244883aec71baf87c2394f98966403b19902",
+        "bytes": 64,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/selected-before.txt"
+      },
+      "material-20261006T023751Z/source-inputs.json": {
+        "sha256": "06b2d3a5b6f388f69becfa6af7c2159618564400716e9d3b71fb4ca094ffefd3",
+        "bytes": 18990,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/source-inputs.json"
+      },
+      "material-20261006T023751Z/stop-after.command.json": {
+        "sha256": "1e6e67765cdf0e33cde1844486b2efb6660192ae8857d2641c447eaa0154da89",
+        "bytes": 258,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/stop-after.command.json"
+      },
+      "material-20261006T023751Z/stop-after.txt": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/stop-after.txt"
+      },
+      "material-20261006T023751Z/stop-before.command.json": {
+        "sha256": "57ff6b9ba7cd8520f3c7942f61baad1de93626eff0fceb83595e1520322781aa",
+        "bytes": 258,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/stop-before.command.json"
+      },
+      "material-20261006T023751Z/stop-before.txt": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/stop-before.txt"
+      },
+      "material-20261006T023751Z/stop-model-before.command.json": {
+        "sha256": "e00b821b639cd53959bca5626a5375a168d9c5b31a33e3e4589b2a347129453c",
+        "bytes": 258,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/stop-model-before.command.json"
+      },
+      "material-20261006T023751Z/stop-model-before.txt": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/stop-model-before.txt"
+      },
+      "material-20261006T023751Z/test-hash.command.json": {
+        "sha256": "122df200608457bc3f06e3601b888d60375fd26ba8291e9c18129cc1f7ed2ebc",
+        "bytes": 329,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/test-hash.command.json"
+      },
+      "material-20261006T023751Z/test-hash.txt": {
+        "sha256": "5733729eda030b09a974bb512b54e4afa2253d922c3a49898138bc4c9a6e1cc1",
+        "bytes": 161,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/test-hash.txt"
+      },
+      "material-20261006T023751Z/test-inventory-after.command.json": {
+        "sha256": "000029e6c5d38db3695f417673961eb5e45270372a5ae0d83ab1c91290cfb265",
+        "bytes": 311,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/test-inventory-after.command.json"
+      },
+      "material-20261006T023751Z/test-inventory-after.txt": {
+        "sha256": "7cd2c995f0b09193f716d765899d62f59ab74d6ed2dfb576bb4fb57ef26514c1",
+        "bytes": 3912,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/test-inventory-after.txt"
+      },
+      "material-20261006T023751Z/test-inventory-before.command.json": {
+        "sha256": "7a750fd1b498cce559966ec4750e2de96b13d87db1d1d33d099be79ed1fdc25e",
+        "bytes": 310,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/test-inventory-before.command.json"
+      },
+      "material-20261006T023751Z/test-inventory-before.txt": {
+        "sha256": "7cd2c995f0b09193f716d765899d62f59ab74d6ed2dfb576bb4fb57ef26514c1",
+        "bytes": 3912,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/test-inventory-before.txt"
+      },
+      "material-20261006T023751Z/test-path.command.json": {
+        "sha256": "b3bb0e6647120bf78ffbd947206dd410b797d711da67a291b999b512fce9cb08",
+        "bytes": 255,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/test-path.command.json"
+      },
+      "material-20261006T023751Z/test-path.txt": {
+        "sha256": "4d3ab3056fbe35108929c790ffcfdaca2769bc2bcd816501d9bc08d1311d73db",
+        "bytes": 103,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/test-path.txt"
+      },
+      "material-20261006T023751Z/test-storage-after.command.json": {
+        "sha256": "250533e7599650ce91cf353a987f6520b33b7863fc1e97682db69cc27a6580d5",
+        "bytes": 323,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/test-storage-after.command.json"
+      },
+      "material-20261006T023751Z/test-storage-after.txt": {
+        "sha256": "7c091d1daa6870216adc730faddd5ef7b9ca70e4d5e5d06e835cfb239ce3d78e",
+        "bytes": 93,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/test-storage-after.txt"
+      },
+      "material-20261006T023751Z/test-storage-before.command.json": {
+        "sha256": "04179b67b682043f9709672d422d2eab5b53669c3cd69a10b9524c553c3d04a0",
+        "bytes": 323,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/test-storage-before.command.json"
+      },
+      "material-20261006T023751Z/test-storage-before.txt": {
+        "sha256": "7c091d1daa6870216adc730faddd5ef7b9ca70e4d5e5d06e835cfb239ce3d78e",
+        "bytes": 93,
+        "original": "downloads/android-runtime-durability/material-20261006T023751Z/test-storage-before.txt"
+      },
+      "repair2-build/budget-controls.txt": {
+        "sha256": "858880df6fd40156a86d2b5209486b7f46922fd695f06a96c257cbe082d3ecf6",
+        "bytes": 142,
+        "original": "downloads/android-runtime-durability/repair2-build/budget-controls.txt"
+      },
+      "repair2-build/build.exit": {
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+        "bytes": 2,
+        "original": "downloads/android-runtime-durability/repair2-build/build.exit"
+      },
+      "repair2-build/build.log": {
+        "sha256": "44e20d2a854a58b5dfc5da9bbc3eb480fa8ac9a6d62abd1eb7c689a4bdf92f23",
+        "bytes": 32644,
+        "original": "downloads/android-runtime-durability/repair2-build/build.log"
+      },
+      "repair2-build/check-1.exit": {
+        "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+        "bytes": 2,
+        "original": "downloads/android-runtime-durability/repair2-build/check-1.exit"
+      },
+      "repair2-build/check-1.log": {
+        "sha256": "9a500a7204832163dfcaf6d3f9a5a6bbb223d30db5a81047566d0427b634f8a0",
+        "bytes": 196,
+        "original": "downloads/android-runtime-durability/repair2-build/check-1.log"
+      },
+      "repair2-build/elf-zip.json": {
+        "sha256": "5f1727b0e6c9f1f9263d453c1a4105cd2661b05c1df88b242ffe7cc8057ef26c",
+        "bytes": 5062,
+        "original": "downloads/android-runtime-durability/repair2-build/elf-zip.json"
+      },
+      "repair2-build/witness-controls.json": {
+        "sha256": "ba3ccbb45c7eb776cac059fe5541b28523123b80bdcd7af577d224e8fa581af4",
+        "bytes": 484,
+        "original": "downloads/android-runtime-durability/repair2-build/witness-controls.json"
+      },
+      "repair2-build/zipalign.txt": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "original": "downloads/android-runtime-durability/repair2-build/zipalign.txt"
+      }
+    },
+    "exact201_original_fields_retained": true,
+    "database_before_after_sha256": "e7600511e0e6eb5187ce72cae82ff642b9efa50d1f29e3b0cf1302fd2cdbf39f",
+    "schema": 2,
+    "original200_precrash_oracle": "Preserved prior independent200-row fingerprint; row201 complete precrash fingerprint was never captured, so no retroactive no-loss claim.",
+    "existing_main_file_changes": 0,
+    "existing_test_asset_changes": 0,
+    "new_task_owned_files": 6,
+    "boot": "26574276-0a45-4734-9f67-bb22e9ff4096",
+    "fresh_parent_witness_bracket": true,
+    "actual_selected_profile": {
+      "selection": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+      "model_bytes": 2497280256,
+      "runtime_identity": "llama.cpp bb4caa7540188872173c44d161602d9271386413; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads=2; model-budget=2147483648; pinned-4B=exact-SHA/2497280256/model-buffer4600000000/OS-reserve1073741824; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42",
+      "catalog_admitted": true,
+      "identity_negative_controls": 4,
+      "cancel_phase": [
+        2,
+        157,
+        0,
+        0,
+        0,
+        0,
+        2491323904,
+        301989888,
+        80413184
+      ],
+      "cancel_ms": 5784,
+      "cancel_error": "java.lang.IllegalStateException: Cancelled",
+      "load_ms": 5741,
+      "native_admitted": true,
+      "budget_estimates": [
+        0,
+        399,
+        0,
+        0,
+        0,
+        0,
+        2491323904,
+        301989888,
+        80413184
+      ],
+      "resources_loaded": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "loaded_metadata": "architecture=qwen3; file_type=15; description=qwen3 4B Q4_K - Medium; parameters=4022468096; pinned_profile=true",
+      "process_status": "Name:\t.pocketlore.app\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t30331\nNgid:\t0\nPid:\t30331\nPPid:\t446\nTracerPid:\t0\nUid:\t10230\t10230\t10230\t10230\nGid:\t10230\t10230\t10230\t10230\nFDSize:\t128\nGroups:\t9997 20230 50230 \nKthread:\t0\nVmPeak:\t16609364 kB\nVmSize:\t16595220 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t 2630384 kB\nVmRSS:\t 2616936 kB\nRssAnon:\t  104032 kB\nRssFile:\t 2506744 kB\nRssShmem:\t    6160 kB\nVmData:\t  826800 kB\nVmStk:\t    8180 kB\nVmExe:\t       8 kB\nVmLib:\t  173608 kB\nVmPTE:\t    5920 kB\nVmSwap:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t16\nSigQ:\t0/43772\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080001204\nSigIgn:\t0000000000000001\nSigCgt:\t0000006e400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t0000000000000000\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\tf\nCpus_allowed_list:\t0-3\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t29\nnonvoluntary_ctxt_switches:\t37\n",
+      "guest_memory_loaded": "MemTotal:       11213064 kB\nMemFree:          170524 kB\nMemAvailable:    9138640 kB\nBuffers:           13984 kB\nCached:          9161612 kB\nSwapCached:            0 kB\nActive:           753700 kB\nInactive:        9365936 kB\nActive(anon):     374748 kB\nInactive(anon):   630464 kB\nActive(file):     378952 kB\nInactive(file):  8735472 kB\nUnevictable:       48280 kB\nMlocked:           48280 kB\nSwapTotal:       2102444 kB\nSwapFree:        1629316 kB\nDirty:              1640 kB\nWriteback:             0 kB\nAnonPages:        992360 kB\nMapped:          3388336 kB\nShmem:             14452 kB\nKReclaimable:      85896 kB\nSlab:             280544 kB\nSReclaimable:      85896 kB\nSUnreclaim:       194648 kB\nKernelStack:       41776 kB\nPageTables:       102476 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     7708976 kB\nCommitted_AS:   80746884 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      103120 kB\nVmallocChunk:          0 kB\nPercpu:             7408 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nDirectMap4k:      100184 kB\nDirectMap2M:    11433984 kB\n",
+      "selection_unchanged": true,
+      "resources_after_close": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "operation_state": [
+        0,
+        399,
+        0,
+        0,
+        0,
+        0,
+        2491323904,
+        301989888,
+        80413184
+      ],
+      "sample_error": null,
+      "sample_count": 171,
+      "sampler_stopped": true,
+      "sampled_peak_pss_bytes": 1578049536,
+      "sampled_peak_rss_bytes": 1766912000,
+      "sampling_ms": 100,
+      "measurement_complete": true,
+      "run": "material-20261006T023751Z",
+      "source_hash": "06b2d3a5b6f388f69becfa6af7c2159618564400716e9d3b71fb4ca094ffefd3",
+      "generated_tokens": 0
+    },
+    "resources": {
+      "scope": "Existing API37 retained subset and load-only profile; not inference or full intended distribution",
+      "kernel_process_status": {
+        "VmHWM": 2693513216,
+        "VmRSS": 2679742464,
+        "VmSwap": 0
+      },
+      "kernel_hwm_exceeds_periodic_sample": true,
+      "sampled_peak_rss_bytes": 1766912000,
+      "sampled_peak_pss_bytes": 1578049536,
+      "sample_count": 171,
+      "nominal_sample_interval_ms": 100,
+      "estimated_model_kv_compute_bytes": [
+        2491323904,
+        301989888,
+        80413184
+      ],
+      "conservative_estimate_plus_file_app_margin_os_reserve": 6981619968,
+      "guest_ram_bytes": 11482177536,
+      "logical_app_test_and_apks": 8288998379,
+      "allocated_app_data": 5746946048,
+      "allocated_test_data": 2528362496,
+      "allocated_data_plus_logical_apks": 8298732518,
+      "model_update_two_copy_projection_not_measured_peak": 13551994347,
+      "actual_update_peak_measured": false,
+      "kernel_hwm_plus_os_reserve_fits": true,
+      "generated_tokens": 0
+    },
+    "actual_model_admission": true,
+    "lifecycle_phases": [
+      "open PASS",
+      "app-restart PASS"
+    ],
+    "negative_mutations": {
+      "constructed_mutations_of_actual_pass": [
+        "package_present",
+        "apk_actual",
+        "boot_after",
+        "rows_after",
+        "schema_after",
+        "catalog_verified",
+        "executed_source_hash",
+        "logical_bytes",
+        "owned_host_process_continuity",
+        "provider_inventory_known",
+        "selected_model_compatible",
+        "rows_expected",
+        "witness-pid",
+        "witness-proc_start_ticks",
+        "witness-host_boot_id",
+        "witness-executable_sha256",
+        "witness-InvocationID",
+        "witness-ExecMainStartTimestampMonotonic",
+        "stale-unbracketed-witness"
+      ]
+    },
+    "limits": "Load-only API37 baseline CPU profile; default2GiB/2048/256 remains unchanged; exact pinned4B exception only.",
+    "independent_review": {
+      "reviewed_commit": "ee52ca6",
+      "reviewer": "product_ui_review",
+      "conclusion": "Verified source-bound receipts and fresh witnesses support retained-data lifecycle and pinned-model load/cancel/reuse; memory evidence is load-only, leaving inference resources, sustained stability, full-distribution capacity and physical acceptance unproven."
+    }
+  },
+  "remaining_gates": [
+    "Sustained host renderer stability and a tested mitigation are not established; Restart=no stays intact.",
+    "No generation or physical-device model/context memory qualification; mapped load RSS is not inference peak.",
+    "Current retained subset including test assets is measured, not the full intended corpus/distribution or transactional update peak.",
+    "Historical row201 precrash fingerprint and zero-length auxiliary-file loss attribution remain unknown.",
+    "Notebook full acceptance, root500/510/530, source rights, physical ARM64/GrapheneOS, unseen matched quality and human release remain open."
+  ]
+}
