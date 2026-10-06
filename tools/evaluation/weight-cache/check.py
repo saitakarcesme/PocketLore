@@ -24,7 +24,7 @@ def validate(r,current=True):
   assert run['exit']==0 and not run.get('failure') and not run.get('cleanup_failure') and not run['collection_errors']
   assert run['post_source']==f['source'] and run['post_input']==inp['version'] and run['executable_before']==run['executable_after']==f['binary'][BINARIES[-1]],'run-binding'
   assert run['cleanup'][-1]['action']=='REAPED' and run['samples']
-  assert int(re.search(r'^Pid:\s+(\d+)',run['pidfd_fdinfo'],re.M)[1])==run['pid']
+  assert int(re.search(r'^Pid:\s+(\d+)',run['pidfd_fdinfo'],re.M)[1])==run['pid'],'PID disagreement'
   ns=run['samples'][0]['namespaces'];last=run['start_ns']
   for s in run['samples']:
    sample_identity(s,run['pid'],run['startticks'],ns);assert int(s['memory.swap.current'])==0 and last<=s['monotonic_ns']<=run['end_ns'];last=s['monotonic_ns']
