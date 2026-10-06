@@ -964,6 +964,10 @@
     "user-bus-preflight.log": {
       "bytes": 75,
       "sha256": "e3aa172729b728b8445cb3159d76a5916d8d6520341893d4afc1f0691a8f5b5b"
+    },
+    "independent-review.txt": {
+      "bytes": 215,
+      "sha256": "69c178a24eec0810b31df3be10268933e3ea06f6a6e75b8e123c2c1e2727da24"
     }
   },
   "limitations": [
@@ -990,5 +994,10 @@
       "exit_code": 0,
       "log": "required-safety-lock-v1.log"
     }
-  ]
+  ],
+  "independent_review": {
+    "checkpoint": "0d70424637be6cb3e3db5a290a29d43c8e2c62f6",
+    "file": "independent-review.txt",
+    "scope": "Independent source/evidence review, not canonical acceptance or physical validation"
+  }
 }
