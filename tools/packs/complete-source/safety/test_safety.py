@@ -1,5 +1,5 @@
 """Frozen constructed controls; never counted as factual corpus articles."""
-import argparse, copy, hashlib, html, json, os, signal, sqlite3, subprocess, sys, tempfile, time, unittest, zlib
+import argparse, copy, fcntl, hashlib, html, json, os, signal, sqlite3, subprocess, sys, tempfile, time, unittest, zlib
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import compact as c
@@ -9,6 +9,8 @@ ROOT=Path(__file__).resolve().parents[4]
 BASE=ROOT/'downloads/complete-source-production-safety'
 BASE.mkdir(exist_ok=True)
 RESULTS=[]
+# Constructed tests use a test-only absolute window; production CLI retains its frozen cutoff.
+p.CUTOFF=time.time()+180
 
 def stage(path,docs):
     db=sqlite3.connect(path);db.execute('PRAGMA journal_mode=WAL');db.execute('CREATE TABLE records(sequence INTEGER PRIMARY KEY,member TEXT,member_offset INTEGER,raw_bytes INTEGER,raw_sha256 TEXT,page INTEGER,revision INTEGER,title TEXT,license_json TEXT,metadata_error TEXT,original_zlib BLOB)')
@@ -55,6 +57,29 @@ class Cases(unittest.TestCase):
             g=Expiring(30,time.time()+60,root);g.calls=0
             with self.assertRaises((p.Stopped,sqlite3.OperationalError)):p.run(args(root,6),g)
             s=json.loads((root/'out/status.json').read_text());self.assertEqual(s['status'],'STOPPED_RETAINED');self.assertFalse(s['source_admission_established'])
+    def test_sqlite_progress_and_hash_chunk_cutoff(self):
+        # Expire inside SQLite progress and after one hash chunk, not phase entry.
+        for phase in ['index','fts_integrity','sqlite_integrity']:
+            root=self.root/phase;root.mkdir();stage(root/'stage.sqlite',[record(page=i+1,text='Literal source '*600) for i in range(500)])
+            class ProgressExpiry(p.Guard):
+                def progress(self):
+                    if self.phase==phase:
+                        self.hits+=1;self.deadline=time.monotonic()-1
+                    return super().progress()
+            g=ProgressExpiry(30,time.time()+60,root);g.hits=0
+            with self.assertRaises((p.Stopped,sqlite3.OperationalError)):p.run(args(root,500),g)
+            self.assertGreater(g.hits,0)
+            self.assertFalse(json.loads((root/'out/status.json').read_text())['resume_ingest_allowed'])
+            with self.assertRaises(ValueError):p.run(args(root,500,True))
+        path=self.root/'bounded-hash.bin';path.write_bytes(b'x'*(2*1024*1024))
+        class HashExpiry(p.Guard):
+            def check(self,write=False):
+                self.calls+=1
+                if self.calls==2:self.deadline=time.monotonic()-1
+                super().check(write)
+        g=HashExpiry(30,time.time()+60,self.root);g.calls=0
+        with self.assertRaises(p.Stopped):p.hash_file(path,g)
+        self.assertEqual(g.calls,2)
     def test_oversized_and_mutated_snapshot(self):
         stage(self.root/'stage.sqlite',[record()]);db=sqlite3.connect(self.root/'stage.sqlite');db.execute('CREATE TABLE oversized(sequence INTEGER,member TEXT,member_offset INTEGER,raw_bytes INTEGER,raw_sha256 TEXT)');db.execute("INSERT INTO oversized VALUES(1,'constructed',10,17000000,'retained-unverified')");db.commit();db.close()
         result=p.run(args(self.root,2));self.assertEqual(result['dispositions']['oversized_unverified'],1);self.assertFalse(result['complete_original_coverage_not_rights'])
@@ -93,6 +118,15 @@ class Cases(unittest.TestCase):
         self.assertTrue(p.ready_identity(a,s,3))
         for bad in [{**a,'status':'downloading'},{**a,'bytes':1},{**a,'sha256':'b'*64}]:self.assertFalse(p.ready_identity(bad,s,3))
         self.assertFalse(p.ready_identity(a,s,2))
+    def test_concurrent_resume_ownership(self):
+        stage(self.root/'stage.sqlite',[record()]);out=self.root/'out';out.mkdir()
+        (out/'status.json').write_text('{"status":"RUNNING","phase":"ingest"}')
+        before=(out/'status.json').read_bytes()
+        with (out/'.producer.lock').open('wb') as lock:
+            fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            with self.assertRaisesRegex(ValueError,'already active'):p.run(args(self.root,1,True))
+        self.assertEqual((out/'status.json').read_bytes(),before)
+        self.assertFalse((out/'index.sqlite').exists())
     def test_manual_resume_boundary(self):
         stage(self.root/'stage.sqlite',[record(page=i+1)for i in range(70)])
         class StopSecond(p.Guard):

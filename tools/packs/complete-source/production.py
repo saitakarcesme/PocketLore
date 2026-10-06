@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Single-writer bounded source producer. Never grants source admission."""
-import argparse, datetime, hashlib, json, math, os, resource, signal, sqlite3
+import argparse, datetime, fcntl, hashlib, json, math, os, resource, signal, sqlite3
 import stat, sys, time, uuid, zlib
 from pathlib import Path
 import compact as c
@@ -208,14 +208,13 @@ def apply_limits(args):
     resource.setrlimit(resource.RLIMIT_AS,(address,address));os.sched_setaffinity(0,sorted(os.sched_getaffinity(0))[:1])
     return {'cpu_soft_hard_seconds':resource.getrlimit(resource.RLIMIT_CPU),'address_space_limit_bytes':address,'cpu_affinity':sorted(os.sched_getaffinity(0))}
 
-def run(args,guard=None):
+def run_owned(args,guard=None):
     out=Path(args.out);stage=Path(args.stage);out.parent.mkdir(parents=True,exist_ok=True)
     c.require(args.mode in ['short','long'],'mode');c.require(args.seconds>0 and (args.mode=='long' or args.seconds<=180),'short wall limit')
     c.require(args.cutoff<=CUTOFF and args.cutoff>time.time(),'absolute cutoff expired/invalid')
     limits=apply_limits(args)
     guard=guard or Guard(args.seconds,args.cutoff,out.parent)
     code={p.name:c.file_sha(p) for p in [Path(__file__),Path(c.__file__)]}
-    if not args.resume:c.require(not out.exists(),'existing output retained; explicit resume only');out.mkdir()
     owner=out/'owner.json';old=None
     if args.resume:
         old=json.loads((out/'status.json').read_text());owned=json.loads(owner.read_text())
@@ -304,6 +303,19 @@ def run(args,guard=None):
     finally:
         if db:db.close()
         c.Projection=original_projection;guard.close()
+
+def run(args,guard=None):
+    # Hold ownership before any status read/write, across rollback and final hash.
+    out=Path(args.out);out.parent.mkdir(parents=True,exist_ok=True)
+    if not args.resume:
+        c.require(not out.exists(),'existing output retained; explicit resume only');out.mkdir()
+    c.require(out.is_dir(),'resume output missing')
+    fd=os.open(out/'.producer.lock',os.O_CREAT|os.O_RDWR,0o600)
+    try:
+        try:fcntl.flock(fd,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        except BlockingIOError:raise ValueError('owned producer already active; concurrent resume denied')
+        return run_owned(args,guard)
+    finally:os.close(fd)
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--mode',choices=['short','long'],required=True);p.add_argument('--stage',required=True);p.add_argument('--out',required=True);p.add_argument('--ceiling',type=int,default=-1);p.add_argument('--follow',action='store_true');p.add_argument('--seconds',type=int,required=True);p.add_argument('--cutoff',type=float,required=True);p.add_argument('--acquisition');p.add_argument('--stage-status');p.add_argument('--resume',action='store_true');a=p.parse_args()
