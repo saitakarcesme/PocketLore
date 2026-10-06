@@ -1,0 +1,12 @@
+{
+  "args": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5564",
+    "shell",
+    "getprop ro.build.version.sdk; getconf PAGE_SIZE; settings get system font_scale; settings get system accelerometer_rotation; settings get system user_rotation"
+  ],
+  "exit": 0,
+  "started_epoch": 1791254284.6436253,
+  "finished_epoch": 1791254284.6809695
+}

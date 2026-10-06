@@ -1,3 +1,25 @@
+# Current result: repair2 bounded runtime gate passes
+
+Run `material-20261006T023751Z` passes both required build and full runtime checker on existing emulator5564. Production APK is `c02c03899d8b64ee097c5034e6222b618946c0af21cc050f2d2d58e2546b9cee`; source/checker manifest is `06b2d3a5b6f388f69becfa6af7c2159618564400716e9d3b71fb4ca094ffefd3`. Exact installed production/test/native identities, raw transports and complete decoded receipts are frozen in `android-runtime-durability/repair-2`. Earlier failures below remain historical, not overwritten successes.
+
+Fresh parent before/after witnesses bracket this invocation: PID2173729, kernel start44947262, InvocationID4d53edfbcbb54fe49d78b72531e1c8ff, exact executable/cgroup/host boot and Restart=no agree. Guest boot remains26574276-0a45-4734-9f67-bb22e9ff4096. The local namespace bus failure remains in the packet; no fabricated Boolean, stale witness or service change replaces it. The owned VM was not stopped or rebooted.
+
+The real history/source201/export/SAF-cancel/app-restart phases pass. Independent SQL reconstruction confirms201 complete rows, schema2 and byte-identical before/after database SHAe7600511e0e6eb5187ce72cae82ff642b9efa50d1f29e3b0cf1302fd2cdbf39f. All pre-existing main-private files and test-package assets are hash-identical; six new invocation-owned output files are enumerated. Both portable exports remain3,319,432bytes with SHA9bb4f4169d986998288e0ffd3815aa1d0bfe85686101626c57dc34c7aae197fa. This is continuous retention, not backup reconstruction. Original200 precrash proof remains separate from the current201 oracle; no missing precrash201 fingerprint is invented.
+
+Actual catalog/full-weight/header verification and JNI now accept only the retained2,497,280,256-byte Qwen3-4B Q4_K_M hash7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5. Loaded metadata reports qwen3, file_type15 and4,022,468,096 parameters. A real phase2 load was cancelled (157 load callbacks observed), then the same session was reset and loaded successfully. Cancel probe5.784seconds and reuse load5.741seconds include identity/preflight work; the former is **not** isolated cancellation latency. Close returns all five diagnostic counters to zero, selection is unchanged and generated tokens=0. Four actual Java identity/admission negatives reject changed hash, size/profile, unknown identity and over-cap accounting. Nineteen mutations of the actual successful result/witness reject missing/stale/changed package, rows/schema, source/provider, host identity, budgets and model eligibility; constructed controls are separately labeled.
+
+Resource observations are load-only. Kernel VmHWM is2,693,513,216bytes, loaded VmRSS2,679,742,464 and VmSwap0. The100ms sampler collected171 successful samples, but its peak RSS1,766,912,000 and PSS1,578,049,536 **missed the higher kernel-observed residency**; these sampled values are not the full peak. Native preflight estimates model/KV/compute2,491,323,904/301,989,888/80,413,184bytes. Context buffers were simulated, not generated into. Counting these estimates plus full mmap file,512MiB app margin and1GiB OS reserve yields6,981,619,968bytes. Guest RAM is11,482,177,536bytes. A mapped load does not exercise every inference page or qualify future generation memory.
+
+Measured current app+test data and APKs total8,288,998,379logical bytes. Data allocated bytes plus logical APK lengths total8,298,732,518; package allocation and continuous update peaks are not fully measured. A two-extra-model-copy arithmetic projection is13,551,994,347bytes, **not an observed transaction peak**. The retained subset fits45/50GB; this is not the31-shard intended full distribution. No assets were discarded to fit, and no unchanged old full-capacity receipt is transplanted.
+
+The exact source repair was recovered from5131871 onto this checkpoint and bound by7c0da5a. Default generic2GiB file/2048context/256output and KV/compute limits remain; the explicit hash-bound exception is experimental. Build configuration was two native jobs/two Gradle workers/2GiB Gradle heap, not a measured combined build peak. Six packaged native libraries pass16KiB ELF/ZIP checks. No model selection, production model pin, source rights or answer-support policy changes qualify general generation.
+
+Sustained renderer mitigation remains untested despite this passing bounded continuity window. Physical ARM64/GrapheneOS, full-current distribution/update resources, general generation/semantic support, root500/510/530, Notebook full acceptance, source rights, unseen matched comparisons and human release remain open. Independent criticism of this exact packet follows; builder completion is not automatic acceptance.
+
+---
+
+# Historical runtime recovery and failed repair evidence
+
 # Android runtime durability and preserved state
 
 Task 523 runtime recovery is in progress and is not a full durability acceptance. All probes concern the existing API37 emulator-5564; no other emulator, acquisition job, model service or holdout was accessed.

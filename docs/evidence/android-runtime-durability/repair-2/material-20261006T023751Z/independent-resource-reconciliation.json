@@ -1,0 +1,28 @@
+{
+  "scope": "Existing API37 retained subset and load-only profile; not inference or full intended distribution",
+  "kernel_process_status": {
+    "VmHWM": 2693513216,
+    "VmRSS": 2679742464,
+    "VmSwap": 0
+  },
+  "kernel_hwm_exceeds_periodic_sample": true,
+  "sampled_peak_rss_bytes": 1766912000,
+  "sampled_peak_pss_bytes": 1578049536,
+  "sample_count": 171,
+  "nominal_sample_interval_ms": 100,
+  "estimated_model_kv_compute_bytes": [
+    2491323904,
+    301989888,
+    80413184
+  ],
+  "conservative_estimate_plus_file_app_margin_os_reserve": 6981619968,
+  "guest_ram_bytes": 11482177536,
+  "logical_app_test_and_apks": 8288998379,
+  "allocated_app_data": 5746946048,
+  "allocated_test_data": 2528362496,
+  "allocated_data_plus_logical_apks": 8298732518,
+  "model_update_two_copy_projection_not_measured_peak": 13551994347,
+  "actual_update_peak_measured": false,
+  "kernel_hwm_plus_os_reserve_fits": true,
+  "generated_tokens": 0
+}

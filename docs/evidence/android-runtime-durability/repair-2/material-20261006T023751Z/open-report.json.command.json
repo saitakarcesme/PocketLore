@@ -1,0 +1,15 @@
+{
+  "args": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5564",
+    "exec-out",
+    "run-as",
+    "org.pocketlore.app",
+    "cat",
+    "files/runtime-durability-material-20261006T023751Z-open/report.json"
+  ],
+  "exit": 0,
+  "started_epoch": 1791254322.487335,
+  "finished_epoch": 1791254322.5094259
+}

@@ -1,0 +1,72 @@
+{
+  "selection": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+  "model_bytes": 2497280256,
+  "runtime_identity": "llama.cpp bb4caa7540188872173c44d161602d9271386413; CPU; context=2048; sequences=1; KV=f16; sessions=1; threads=2; model-budget=2147483648; pinned-4B=exact-SHA/2497280256/model-buffer4600000000/OS-reserve1073741824; greedy default; Qwen3 claims: non-thinking, t=0.7, k=20, p=0.8, presence=1.5/256, seed=42",
+  "catalog_admitted": true,
+  "identity_negative_controls": 4,
+  "cancel_phase": [
+    2,
+    157,
+    0,
+    0,
+    0,
+    0,
+    2491323904,
+    301989888,
+    80413184
+  ],
+  "cancel_ms": 5784,
+  "cancel_error": "java.lang.IllegalStateException: Cancelled",
+  "load_ms": 5741,
+  "native_admitted": true,
+  "budget_estimates": [
+    0,
+    399,
+    0,
+    0,
+    0,
+    0,
+    2491323904,
+    301989888,
+    80413184
+  ],
+  "resources_loaded": [
+    1,
+    0,
+    0,
+    0,
+    0
+  ],
+  "loaded_metadata": "architecture=qwen3; file_type=15; description=qwen3 4B Q4_K - Medium; parameters=4022468096; pinned_profile=true",
+  "process_status": "Name:\t.pocketlore.app\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t30331\nNgid:\t0\nPid:\t30331\nPPid:\t446\nTracerPid:\t0\nUid:\t10230\t10230\t10230\t10230\nGid:\t10230\t10230\t10230\t10230\nFDSize:\t128\nGroups:\t9997 20230 50230 \nKthread:\t0\nVmPeak:\t16609364 kB\nVmSize:\t16595220 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVmHWM:\t 2630384 kB\nVmRSS:\t 2616936 kB\nRssAnon:\t  104032 kB\nRssFile:\t 2506744 kB\nRssShmem:\t    6160 kB\nVmData:\t  826800 kB\nVmStk:\t    8180 kB\nVmExe:\t       8 kB\nVmLib:\t  173608 kB\nVmPTE:\t    5920 kB\nVmSwap:\t       0 kB\nCoreDumping:\t0\nTHP_enabled:\t1\nuntag_mask:\t0xffffffffffffffff\nThreads:\t16\nSigQ:\t0/43772\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t0000000080001204\nSigIgn:\t0000000000000001\nSigCgt:\t0000006e400084f8\nCapInh:\t0000000000000000\nCapPrm:\t0000000000000000\nCapEff:\t0000000000000000\nCapBnd:\t0000000000000000\nCapAmb:\t0000000000000000\nNoNewPrivs:\t0\nSeccomp:\t2\nSeccomp_filters:\t1\nSpeculation_Store_Bypass:\tvulnerable\nSpeculationIndirectBranch:\talways enabled\nCpus_allowed:\tf\nCpus_allowed_list:\t0-3\nMems_allowed:\t1\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t29\nnonvoluntary_ctxt_switches:\t37\n",
+  "guest_memory_loaded": "MemTotal:       11213064 kB\nMemFree:          170524 kB\nMemAvailable:    9138640 kB\nBuffers:           13984 kB\nCached:          9161612 kB\nSwapCached:            0 kB\nActive:           753700 kB\nInactive:        9365936 kB\nActive(anon):     374748 kB\nInactive(anon):   630464 kB\nActive(file):     378952 kB\nInactive(file):  8735472 kB\nUnevictable:       48280 kB\nMlocked:           48280 kB\nSwapTotal:       2102444 kB\nSwapFree:        1629316 kB\nDirty:              1640 kB\nWriteback:             0 kB\nAnonPages:        992360 kB\nMapped:          3388336 kB\nShmem:             14452 kB\nKReclaimable:      85896 kB\nSlab:             280544 kB\nSReclaimable:      85896 kB\nSUnreclaim:       194648 kB\nKernelStack:       41776 kB\nPageTables:       102476 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     7708976 kB\nCommitted_AS:   80746884 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      103120 kB\nVmallocChunk:          0 kB\nPercpu:             7408 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nDirectMap4k:      100184 kB\nDirectMap2M:    11433984 kB\n",
+  "selection_unchanged": true,
+  "resources_after_close": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "operation_state": [
+    0,
+    399,
+    0,
+    0,
+    0,
+    0,
+    2491323904,
+    301989888,
+    80413184
+  ],
+  "sample_error": null,
+  "sample_count": 171,
+  "sampler_stopped": true,
+  "sampled_peak_pss_bytes": 1578049536,
+  "sampled_peak_rss_bytes": 1766912000,
+  "sampling_ms": 100,
+  "measurement_complete": true,
+  "run": "material-20261006T023751Z",
+  "source_hash": "06b2d3a5b6f388f69becfa6af7c2159618564400716e9d3b71fb4ca094ffefd3",
+  "generated_tokens": 0
+}

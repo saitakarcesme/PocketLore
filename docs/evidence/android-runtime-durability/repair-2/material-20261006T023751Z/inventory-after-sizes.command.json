@@ -1,0 +1,12 @@
+{
+  "args": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5564",
+    "shell",
+    "su 0 sh -c 'find /data/user/0/org.pocketlore.app -type f -exec stat -c \"%s %b %n\" {} \\;'"
+  ],
+  "exit": 0,
+  "started_epoch": 1791254366.0618875,
+  "finished_epoch": 1791254373.1299508
+}

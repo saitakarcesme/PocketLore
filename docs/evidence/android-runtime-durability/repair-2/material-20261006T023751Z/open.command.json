@@ -1,0 +1,25 @@
+{
+  "args": [
+    "/home/isa/Android/atlas-toolchain/sdk/platform-tools/adb",
+    "-s",
+    "emulator-5564",
+    "shell",
+    "am",
+    "instrument",
+    "-r",
+    "-w",
+    "-e",
+    "run",
+    "material-20261006T023751Z",
+    "-e",
+    "phase",
+    "open",
+    "-e",
+    "source_hash",
+    "06b2d3a5b6f388f69becfa6af7c2159618564400716e9d3b71fb4ca094ffefd3",
+    "org.pocketlore.app.test/org.pocketlore.app.RuntimeDurabilityInstrumentation"
+  ],
+  "exit": 0,
+  "started_epoch": 1791254317.9925892,
+  "finished_epoch": 1791254322.4869027
+}
