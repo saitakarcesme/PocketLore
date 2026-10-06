@@ -156,10 +156,5 @@
     }
   },
   "database_policy": "Raw SQLite excluded; original row oracle, independently extracted current row hashes and full file inventories included.",
-  "limits": "Zero-token emulator load only; sustained renderer, generation, full distribution and physical gates open.",
-  "independent_review": {
-    "source_commit": "025271a",
-    "reviewer": "product_ui_review",
-    "conclusion": "Verified failure receipts exclude SQLite payloads and preserve source identities; the terminal renderer crash interrupted lifecycle collection before profile measurement, so loaded-window resources and current runtime durability remain unqualified."
-  }
+  "limits": "Zero-token emulator load only; sustained renderer, generation, full distribution and physical gates open."
 }
