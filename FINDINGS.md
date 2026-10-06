@@ -542,3 +542,6 @@ The new versioned original-wikitext adapter passed Android compilation and its h
 ### Task542 — indexed original-wikitext literal lookup
 
 A separate bounded trigram/B-tree reader now avoids original-body scans for selective supported literals while preserving accepted541 exact ranges, stable source identities and export. The frozen8192-record host fixture measured rare1 versus8192 decompressions and absent0; frequent queries were slower, and combined reader-open validation cost1.229seconds is separate. One new indexed copy preserved all256 accepted-prefix records byte-for-byte, at22,110,208bytes versus4,804,608bytes original. Android build and current host checker pass; no original archive, model or device was accessed. See `docs/evidence/indexed-xml-search.md` for immutable raw evidence, storage/startup/replay limitations and unchanged full-source/device/model/rival gates.
+
+
+Task547: exact numeric pidfd ownership and independently authored original-export validation are repaired at frozen source 2f51dc04. Parent clearance preceded the sole compact capture; Android build and two immutable read-only checks passed. Earlier543–546 failures remain failed. See docs/evidence/indexed-semantic-final.md; no device/model/product acceptance is claimed.

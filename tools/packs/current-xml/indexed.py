@@ -41,6 +41,22 @@ def build(source,output,cancel=lambda:False,seconds=180):
   receipt['ended_ns']=time.monotonic_ns();receipt['samples'].append(A.sample('closed'));receipt['storage']={p.name:p.stat().st_size for p in out.iterdir() if p.is_file()};A.atomic(out/'index-receipt.json',receipt)
  return receipt
 class Reader(A.Reader):
+ api=A
+ def admit(self,source,source_sha256,index_sha256,seconds=180):
+  A.need(not getattr(self,'_admission',None),'already-admitted')
+  spec=importlib.util.spec_from_file_location('xml_integrity',pathlib.Path(__file__).with_name('integrity.py'));module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+  return module.verify(self,source,source_sha256,index_sha256,seconds)
+ def _require_admission(self):
+  a=getattr(self,'_admission',None);A.need(a is not None,'source-admission-required')
+  for p,fd in zip(a['paths'],a['fds']):A.need(A.version(p)==a['versions'][str(p.resolve())] and A.version('/proc/self/fd/'+str(fd))==a['versions'][str(p.resolve())],'admission-version-changed')
+ def inspect(self,ident):
+  self._require_admission();return super().inspect(ident)
+ def close(self):
+  a=getattr(self,'_admission',None)
+  if a is not None:
+   for fd in a['fds']:os.close(fd)
+   self._admission=None
+  super().close()
  def __init__(self,path,expected_source=None,cancel=lambda:False):
   self.path=pathlib.Path(path);self.cancel=cancel;self.guard=A.Guard(10,cancel);self.receipt=json.loads((self.path/'receipt.json').read_text());ir=json.loads((self.path/'index-receipt.json').read_text());self.index_receipt=ir
   A.need(ir['status']=='BUILT_INSPECTION_ONLY' and not ir['errors'],'index-state');A.need(ir['configuration']==CONFIG and ir['index_format']==FORMAT,'tokenizer');A.need((self.path/'index.sqlite').stat().st_size<=CONFIG['index_max_bytes'],'index-size');self.output_hash=A.filehash(self.path/'index.sqlite');A.need(self.output_hash==ir['output_sha256']==self.receipt['output_sha256'],'index-hash');A.need(ir['input_before']==ir['input_after'] and ir['input_sha256']==ir['input_after_sha256']==self.receipt['parent_output_sha256'],'index-input')
@@ -53,6 +69,7 @@ class Reader(A.Reader):
    expected=list(self.db.execute("SELECT id,stable_id FROM records WHERE disposition='inspection-only' ORDER BY page,revision"));actual=list(self.db.execute('SELECT record_id,stable_id FROM search_order ORDER BY ordinal'));A.need(actual==expected and self.db.execute('SELECT coalesce(max(ordinal),0) FROM search_order').fetchone()[0]==n,'index-order')
   except Exception:self.db.close();raise
  def search(self,query,limit=20,cursor=None):
+  self._require_admission()
   A.need(isinstance(query,str) and 3<=len(query)<=256 and 0<limit<=20,'indexed-query-length');self.guard=A.Guard(10,self.cancel);self.guard.check();qhash=A.sha(query.encode());after=0
   if cursor is not None:
    A.need(set(cursor)=={'ordinal','query_sha256','output_sha256'} and cursor['query_sha256']==qhash and cursor['output_sha256']==self.output_hash and type(cursor['ordinal'])==int and cursor['ordinal']>=0,'cursor');after=cursor['ordinal']
@@ -73,10 +90,12 @@ class Reader(A.Reader):
    if len(hits)>=limit:break
   more=bool(self.db.execute('SELECT 1 FROM postings WHERE term=? AND ordinal>? LIMIT 1',(seed,last)).fetchone());return {'hits':hits,'complete':not more,'cursor':{'ordinal':last,'query_sha256':qhash,'output_sha256':self.output_hash} if more else None,'stats':stats}
 def main():
- p=argparse.ArgumentParser();p.add_argument('command',choices=['build','search','inspect','export']);p.add_argument('source');p.add_argument('value');p.add_argument('destination',nargs='?');a=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('command',choices=['build','search','inspect','export']);p.add_argument('source');p.add_argument('value');p.add_argument('destination',nargs='?');p.add_argument('--original');p.add_argument('--source-sha256');p.add_argument('--index-sha256');a=p.parse_args()
  if a.command=='build':r=build(a.source,a.value);print(json.dumps(r));return int(r['status']!='BUILT_INSPECTION_ONLY')
  r=Reader(a.source)
- try:print(json.dumps(r.search(a.value) if a.command=='search' else r.inspect(a.value) if a.command=='inspect' else r.export(a.value,a.destination),ensure_ascii=False))
+ try:
+  A.need(a.original and a.source_sha256 and a.index_sha256,'source-admission-required');r.admit(a.original,a.source_sha256,a.index_sha256)
+  print(json.dumps(r.search(a.value) if a.command=='search' else r.inspect(a.value) if a.command=='inspect' else r.export(a.value,a.destination),ensure_ascii=False))
  finally:r.close()
  return 0
 if __name__=='__main__':sys.exit(main())

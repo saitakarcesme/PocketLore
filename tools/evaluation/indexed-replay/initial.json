@@ -1,0 +1,771 @@
+{
+  "failed543_debt": 34594225,
+  "failed543_status": "FAILED_32MIB_CAP",
+  "failed544_commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+  "failed544_status": "FAILED_CANONICAL_HISTORICAL_REPLAY",
+  "format": "545-initial-inventory-v1",
+  "initial_new_outputs": 0,
+  "old544_conservative_bytes": 1526872,
+  "old544_files": [
+    {
+      "bytes": 1945,
+      "path": "downloads/indexed-recovery-544/attempt.json",
+      "sha256": "45c34565a06aa5a3fb74bf9ae3bcbd3d7211d2fc54d1b36bed63e7262c288239",
+      "version": {
+        "ctime_ns": 1791312596146084836,
+        "device": 57,
+        "inode": 4446715,
+        "mtime_ns": 1791312596146084836,
+        "size": 1945
+      }
+    },
+    {
+      "bytes": 5650,
+      "path": "downloads/indexed-recovery-544/build-preflight.json",
+      "sha256": "64f27b72a4377878e5d32ea3b99ae1e4ab7eb6f2ab7e5e4880334dc72b621a86",
+      "version": {
+        "ctime_ns": 1791312690143986669,
+        "device": 57,
+        "inode": 4446793,
+        "mtime_ns": 1791312690143612620,
+        "size": 5650
+      }
+    },
+    {
+      "bytes": 1991,
+      "path": "downloads/indexed-recovery-544/build.json",
+      "sha256": "cb509c5c691b335cf050f8881d0eb74f2af3508044894cc81f197d1609753fb4",
+      "version": {
+        "ctime_ns": 1791312702382574943,
+        "device": 57,
+        "inode": 4448118,
+        "mtime_ns": 1791312702382574943,
+        "size": 1991
+      }
+    },
+    {
+      "bytes": 30819,
+      "path": "downloads/indexed-recovery-544/build.log",
+      "sha256": "e36c53db17f63fb234b5be955c7ad96c241b6ed2e9ffc399f06f4cc35a5d249e",
+      "version": {
+        "ctime_ns": 1791312702335023764,
+        "device": 57,
+        "inode": 4446794,
+        "mtime_ns": 1791312702335023764,
+        "size": 30819
+      }
+    },
+    {
+      "bytes": 0,
+      "path": "downloads/indexed-recovery-544/collection-error/stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "version": {
+        "ctime_ns": 1791312690082986484,
+        "device": 57,
+        "inode": 4446791,
+        "mtime_ns": 1791312690082986484,
+        "size": 0
+      }
+    },
+    {
+      "bytes": 0,
+      "path": "downloads/indexed-recovery-544/collection-error/stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "version": {
+        "ctime_ns": 1791312690082986484,
+        "device": 57,
+        "inode": 4446790,
+        "mtime_ns": 1791312690082986484,
+        "size": 0
+      }
+    },
+    {
+      "bytes": 12722,
+      "path": "downloads/indexed-recovery-544/collection-error/worker.json",
+      "sha256": "5e117e46fec11f6a79982ee82934b630033b920c1a8af1bdf1cf483eebc245e0",
+      "version": {
+        "ctime_ns": 1791312690088196212,
+        "device": 57,
+        "inode": 4446792,
+        "mtime_ns": 1791312690088196212,
+        "size": 12722
+      }
+    },
+    {
+      "bytes": 487,
+      "path": "downloads/indexed-recovery-544/corrupt-fragment.json",
+      "sha256": "48bc18eb06c8766003ef11dc3f91622948cc20284d6b1aff80c127b42f39ec8a",
+      "version": {
+        "ctime_ns": 1791312596542701974,
+        "device": 57,
+        "inode": 4446775,
+        "mtime_ns": 1791312596542646010,
+        "size": 487
+      }
+    },
+    {
+      "bytes": 18002,
+      "path": "downloads/indexed-recovery-544/execution.json",
+      "sha256": "2e9e593667f42229c432bb1fa784f077553e386191c2b5de2fabb6c9e3b07c97",
+      "version": {
+        "ctime_ns": 1791312596745702591,
+        "device": 57,
+        "inode": 4446779,
+        "mtime_ns": 1791312596745398035,
+        "size": 18002
+      }
+    },
+    {
+      "bytes": 2601,
+      "path": "downloads/indexed-recovery-544/functional/authored.json",
+      "sha256": "804d86590cee88b3bce84fd44a7df1a2c5a0089ddb2d88e566eb8c62282b76e5",
+      "version": {
+        "ctime_ns": 1791312596182793400,
+        "device": 57,
+        "inode": 4446727,
+        "mtime_ns": 1791312596182793400,
+        "size": 2601
+      }
+    },
+    {
+      "bytes": 39582,
+      "path": "downloads/indexed-recovery-544/functional/cancelled-build/index-receipt.json",
+      "sha256": "d838b38b104e10ad366b6c84e6296e89e0264ca645d3fc9f918e1d928557d23b",
+      "version": {
+        "ctime_ns": 1791312596411261064,
+        "device": 57,
+        "inode": 4446772,
+        "mtime_ns": 1791312596411261064,
+        "size": 39582
+      }
+    },
+    {
+      "bytes": 41339,
+      "path": "downloads/indexed-recovery-544/functional/current/index-receipt.json",
+      "sha256": "2cbc5d7a69c65921a61fce8a5f0361ec0578b3890c4e8fd24b48c60846b44580",
+      "version": {
+        "ctime_ns": 1791312596225701010,
+        "device": 57,
+        "inode": 4446737,
+        "mtime_ns": 1791312596225302205,
+        "size": 41339
+      }
+    },
+    {
+      "bytes": 94208,
+      "path": "downloads/indexed-recovery-544/functional/current/index.sqlite",
+      "sha256": "40cf7edce7281f71074e3f8d0ecb5475f8c7d6fd3c9b8f1d6bd949b438c79e94",
+      "version": {
+        "ctime_ns": 1791312596430701634,
+        "device": 57,
+        "inode": 4446729,
+        "mtime_ns": 1791312596430701634,
+        "size": 94208
+      }
+    },
+    {
+      "bytes": 481,
+      "path": "downloads/indexed-recovery-544/functional/current/receipt.json",
+      "sha256": "5910c1e9cc48ba98dad50bda80cc477718ef18a7ba6d79f9dfbaa1504323f4ee",
+      "version": {
+        "ctime_ns": 1791312596222560678,
+        "device": 57,
+        "inode": 4446736,
+        "mtime_ns": 1791312596222560678,
+        "size": 481
+      }
+    },
+    {
+      "bytes": 41339,
+      "path": "downloads/indexed-recovery-544/functional/mutant-db-extra-posting/index-receipt.json",
+      "sha256": "134b18e778133b176da7a10aa6c8b99e74b483fe293e56041995474475f4802e",
+      "version": {
+        "ctime_ns": 1791312596303120605,
+        "device": 57,
+        "inode": 4446754,
+        "mtime_ns": 1791312596303120605,
+        "size": 41339
+      }
+    },
+    {
+      "bytes": 94208,
+      "path": "downloads/indexed-recovery-544/functional/mutant-db-extra-posting/index.sqlite",
+      "sha256": "1b50daf0f5e1cbdd0055773f3ddc84eb3452d46f497612a6991c4580e835e39c",
+      "version": {
+        "ctime_ns": 1791312596297701229,
+        "device": 57,
+        "inode": 4446748,
+        "mtime_ns": 1791312596297701229,
+        "size": 94208
+      }
+    },
+    {
+      "bytes": 481,
+      "path": "downloads/indexed-recovery-544/functional/mutant-db-extra-posting/receipt.json",
+      "sha256": "9fb9e73644d3ccbaf6ab78e1fc1cc3998f1bc05a36a8d674b5799088285f7719",
+      "version": {
+        "ctime_ns": 1791312596300386022,
+        "device": 57,
+        "inode": 4446753,
+        "mtime_ns": 1791312596300386022,
+        "size": 481
+      }
+    },
+    {
+      "bytes": 41339,
+      "path": "downloads/indexed-recovery-544/functional/mutant-db-missing-gram/index-receipt.json",
+      "sha256": "0e136b8c3abe08307ffdc3b8913b2757e2f5ede575ea88aa18599007256e4c60",
+      "version": {
+        "ctime_ns": 1791312596349030790,
+        "device": 57,
+        "inode": 4446762,
+        "mtime_ns": 1791312596349030790,
+        "size": 41339
+      }
+    },
+    {
+      "bytes": 94208,
+      "path": "downloads/indexed-recovery-544/functional/mutant-db-missing-gram/index.sqlite",
+      "sha256": "7114aa922e0a7e163bd9794bd81719f7d0e6424da7ecdc3b5bca43435fa1a554",
+      "version": {
+        "ctime_ns": 1791312596342701366,
+        "device": 57,
+        "inode": 4446756,
+        "mtime_ns": 1791312596342701366,
+        "size": 94208
+      }
+    },
+    {
+      "bytes": 481,
+      "path": "downloads/indexed-recovery-544/functional/mutant-db-missing-gram/receipt.json",
+      "sha256": "e621f678dbd4bc803abc038b0cadbab9fe60f3b33b803dea84ec0dcda24eaa91",
+      "version": {
+        "ctime_ns": 1791312596346226426,
+        "device": 57,
+        "inode": 4446761,
+        "mtime_ns": 1791312596346226426,
+        "size": 481
+      }
+    },
+    {
+      "bytes": 41339,
+      "path": "downloads/indexed-recovery-544/functional/mutant-db-wrong-record/index-receipt.json",
+      "sha256": "044f72423f357a83f455c4706be0b1aa14129705ebd8dcf29340ccab041ee09e",
+      "version": {
+        "ctime_ns": 1791312596394662231,
+        "device": 57,
+        "inode": 4446770,
+        "mtime_ns": 1791312596394662231,
+        "size": 41339
+      }
+    },
+    {
+      "bytes": 94208,
+      "path": "downloads/indexed-recovery-544/functional/mutant-db-wrong-record/index.sqlite",
+      "sha256": "01dabf7814648b327fa6ee03d39eb63e2190d6de48a87f71065e0adb4560539d",
+      "version": {
+        "ctime_ns": 1791312596388701506,
+        "device": 57,
+        "inode": 4446764,
+        "mtime_ns": 1791312596388701506,
+        "size": 94208
+      }
+    },
+    {
+      "bytes": 481,
+      "path": "downloads/indexed-recovery-544/functional/mutant-db-wrong-record/receipt.json",
+      "sha256": "182dbfed0b5923d7b0486959270f8da23a7e4006ceaf20c155d1cd702e927c03",
+      "version": {
+        "ctime_ns": 1791312596391859004,
+        "device": 57,
+        "inode": 4446769,
+        "mtime_ns": 1791312596391859004,
+        "size": 481
+      }
+    },
+    {
+      "bytes": 235,
+      "path": "downloads/indexed-recovery-544/functional/mutant-hit-missing-hit.json",
+      "sha256": "8a4f62559cefe1336f6b916a06de9f91322fb41ee201c4463eb78afe3615259f",
+      "version": {
+        "ctime_ns": 1791312596268484870,
+        "device": 57,
+        "inode": 4446745,
+        "mtime_ns": 1791312596268484870,
+        "size": 235
+      }
+    },
+    {
+      "bytes": 1258,
+      "path": "downloads/indexed-recovery-544/functional/mutant-hit-shifted-range.json",
+      "sha256": "a2e1ca63654d29a1d7e5653cc003b7e87d0cf0340a59efc69517b07638a7e0f9",
+      "version": {
+        "ctime_ns": 1791312596263112486,
+        "device": 57,
+        "inode": 4446742,
+        "mtime_ns": 1791312596263112486,
+        "size": 1258
+      }
+    },
+    {
+      "bytes": 1258,
+      "path": "downloads/indexed-recovery-544/functional/mutant-hit-source-hash.json",
+      "sha256": "95ddd9d5dd5b1ddfcff83e1a0f0292f5294d7786c98d500a1351794f944f7971",
+      "version": {
+        "ctime_ns": 1791312596261239093,
+        "device": 57,
+        "inode": 4446741,
+        "mtime_ns": 1791312596261239093,
+        "size": 1258
+      }
+    },
+    {
+      "bytes": 2284,
+      "path": "downloads/indexed-recovery-544/functional/mutant-hit-spurious-hit.json",
+      "sha256": "2faa5e7b455a0b30f2fc8cb0f73300eb3853f6be2cc91074432605b198f582ac",
+      "version": {
+        "ctime_ns": 1791312596270460777,
+        "device": 57,
+        "inode": 4446746,
+        "mtime_ns": 1791312596270460777,
+        "size": 2284
+      }
+    },
+    {
+      "bytes": 1261,
+      "path": "downloads/indexed-recovery-544/functional/mutant-hit-wrong-field.json",
+      "sha256": "41f856b7e508a36feaca0496ebc528c692a0aa139a7c0e918bc403bb4a7c047d",
+      "version": {
+        "ctime_ns": 1791312596266651315,
+        "device": 57,
+        "inode": 4446744,
+        "mtime_ns": 1791312596266651315,
+        "size": 1261
+      }
+    },
+    {
+      "bytes": 1258,
+      "path": "downloads/indexed-recovery-544/functional/mutant-hit-wrong-id.json",
+      "sha256": "a9921fb50aba390dcf0d68815da784ce264dfed01d983086a59ff296da4d574d",
+      "version": {
+        "ctime_ns": 1791312596264897338,
+        "device": 57,
+        "inode": 4446743,
+        "mtime_ns": 1791312596264897338,
+        "size": 1258
+      }
+    },
+    {
+      "bytes": 49152,
+      "path": "downloads/indexed-recovery-544/functional/original/index.sqlite",
+      "sha256": "c5c759fba16d266895be83bd495ae314e2917379a83ccdb3b47a56473960d7ee",
+      "version": {
+        "ctime_ns": 1791312596177700864,
+        "device": 57,
+        "inode": 4446718,
+        "mtime_ns": 1791312596177700864,
+        "size": 49152
+      }
+    },
+    {
+      "bytes": 343,
+      "path": "downloads/indexed-recovery-544/functional/original/receipt.json",
+      "sha256": "8db8bbade297ab14f339e9f2585532a6a3fb142c6bb1c56a9aba549874835614",
+      "version": {
+        "ctime_ns": 1791312596181187630,
+        "device": 57,
+        "inode": 4446726,
+        "mtime_ns": 1791312596181187630,
+        "size": 343
+      }
+    },
+    {
+      "bytes": 1170,
+      "path": "downloads/indexed-recovery-544/functional/synthetic-export/metadata.json",
+      "sha256": "152a285b7810f890c55b96bd3fbfd9b4913a4ed8f3e9b03ea4592cb9609b7fe0",
+      "version": {
+        "ctime_ns": 1791312596254907906,
+        "device": 57,
+        "inode": 4446740,
+        "mtime_ns": 1791312596254907906,
+        "size": 1170
+      }
+    },
+    {
+      "bytes": 185,
+      "path": "downloads/indexed-recovery-544/functional/synthetic-export/original.wikitext",
+      "sha256": "56ba89ddcc6ea0b496372671ff496e660269b4be5cd66dc88a14c0f1f2e7ce17",
+      "version": {
+        "ctime_ns": 1791312596254509205,
+        "device": 57,
+        "inode": 4446739,
+        "mtime_ns": 1791312596254509205,
+        "size": 185
+      }
+    },
+    {
+      "bytes": 45848,
+      "path": "downloads/indexed-recovery-544/functional.json",
+      "sha256": "4277feb4ef29716e698173e63d5f277f994e28d8d95fa7922b2529ac16879835",
+      "version": {
+        "ctime_ns": 1791312596433701643,
+        "device": 57,
+        "inode": 4446773,
+        "mtime_ns": 1791312596433444917,
+        "size": 45848
+      }
+    },
+    {
+      "bytes": 0,
+      "path": "downloads/indexed-recovery-544/hung/stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "version": {
+        "ctime_ns": 1791312688658982151,
+        "device": 57,
+        "inode": 4446787,
+        "mtime_ns": 1791312688658982151,
+        "size": 0
+      }
+    },
+    {
+      "bytes": 0,
+      "path": "downloads/indexed-recovery-544/hung/stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "version": {
+        "ctime_ns": 1791312688658982151,
+        "device": 57,
+        "inode": 4446786,
+        "mtime_ns": 1791312688658982151,
+        "size": 0
+      }
+    },
+    {
+      "bytes": 25572,
+      "path": "downloads/indexed-recovery-544/hung/worker.json",
+      "sha256": "5f220e84931a5befc3771f291debe2eb4aab507adc41db7450309a80ff723ecf",
+      "version": {
+        "ctime_ns": 1791312690080986478,
+        "device": 57,
+        "inode": 4446788,
+        "mtime_ns": 1791312690080588606,
+        "size": 25572
+      }
+    },
+    {
+      "bytes": 661,
+      "path": "downloads/indexed-recovery-544/independent-review.json",
+      "sha256": "d97f7a2f19d4fc9c798e86d82f723ac97f78d80f11387891723b5cf06f10c6fa",
+      "version": {
+        "ctime_ns": 1791313182728095593,
+        "device": 57,
+        "inode": 4448199,
+        "mtime_ns": 1791313182723539201,
+        "size": 661
+      }
+    },
+    {
+      "bytes": 5543,
+      "path": "downloads/indexed-recovery-544/preflight.json",
+      "sha256": "7e62d523c94cc04f60a460f0429ab048f6c3dbc6f5f497349017dbd4ae64e333",
+      "version": {
+        "ctime_ns": 1791312596107700652,
+        "device": 57,
+        "inode": 4446711,
+        "mtime_ns": 1791312596107487552,
+        "size": 5543
+      }
+    },
+    {
+      "bytes": 24786,
+      "path": "downloads/indexed-recovery-544/reference-controls.json",
+      "sha256": "980b8664aec0ac8a345f5773d57a330dded9249008b155b4a16693ffcf1eb8cd",
+      "version": {
+        "ctime_ns": 1791312596564702041,
+        "device": 57,
+        "inode": 4446778,
+        "mtime_ns": 1791312596564375410,
+        "size": 24786
+      }
+    },
+    {
+      "bytes": 487,
+      "path": "downloads/indexed-recovery-544/reference-positive.json",
+      "sha256": "c7231011a41a6a9420fcdd244e72b0d806eba7175bba3eeb224617205a7d08a7",
+      "version": {
+        "ctime_ns": 1791312596517125013,
+        "device": 57,
+        "inode": 4446774,
+        "mtime_ns": 1791312596517125013,
+        "size": 487
+      }
+    },
+    {
+      "bytes": 725,
+      "path": "downloads/indexed-recovery-544/supplemental-documents.json",
+      "sha256": "156719bcf40010c489c639939a8339023f2f84e443c5e25130f55e8188b75064",
+      "version": {
+        "ctime_ns": 1791312976378612174,
+        "device": 57,
+        "inode": 4448157,
+        "mtime_ns": 1791312976378074288,
+        "size": 725
+      }
+    },
+    {
+      "bytes": 34,
+      "path": "downloads/indexed-recovery-544/swap-control.json",
+      "sha256": "8ca726f5fdaceb30a1985cea721f7f6fcc81220934728bd0ca9a3ef6c31637e2",
+      "version": {
+        "ctime_ns": 1791312596549032914,
+        "device": 57,
+        "inode": 4446777,
+        "mtime_ns": 1791312596549032914,
+        "size": 34
+      }
+    },
+    {
+      "bytes": 2054,
+      "path": "downloads/indexed-recovery-544/validation.json",
+      "sha256": "3825a18b96714cf18ff39e863b4f2c348fc9da1cd0d6752e37a0d79ed4f37640",
+      "version": {
+        "ctime_ns": 1791313183129354437,
+        "device": 57,
+        "inode": 4448201,
+        "mtime_ns": 1791313183129354437,
+        "size": 2054
+      }
+    },
+    {
+      "bytes": 0,
+      "path": "downloads/indexed-recovery-544/worker/stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "version": {
+        "ctime_ns": 1791312596109572890,
+        "device": 57,
+        "inode": 4446714,
+        "mtime_ns": 1791312596109572890,
+        "size": 0
+      }
+    },
+    {
+      "bytes": 0,
+      "path": "downloads/indexed-recovery-544/worker/stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "version": {
+        "ctime_ns": 1791312596109572890,
+        "device": 57,
+        "inode": 4446713,
+        "mtime_ns": 1791312596109572890,
+        "size": 0
+      }
+    },
+    {
+      "bytes": 32062,
+      "path": "downloads/indexed-recovery-544/worker/worker.json",
+      "sha256": "094379564ade96f11715008d1b1061e71a92ac9171a5fa7ba07f1ca6ee4dbefc",
+      "version": {
+        "ctime_ns": 1791312596776702685,
+        "device": 57,
+        "inode": 4446780,
+        "mtime_ns": 1791312596776443403,
+        "size": 32062
+      }
+    }
+  ],
+  "old544_generated": [
+    {
+      "bytes": 29867,
+      "path": "tools/evaluation/indexed-recovery/__pycache__/check.cpython-314.pyc",
+      "sha256": "9564b72bf79ce4558bc87a6b19dae0e134db85e3906310cb8fe39b92e94a5de5",
+      "version": {
+        "ctime_ns": 1791312405515367773,
+        "device": 57,
+        "inode": 4446623,
+        "mtime_ns": 1791312405515367773,
+        "size": 29867
+      }
+    },
+    {
+      "bytes": 20367,
+      "path": "tools/evaluation/indexed-recovery/__pycache__/contract.cpython-314.pyc",
+      "sha256": "9e9a31d2dbb2b134b750e80e534015d12ce7f962d54655c5072bb37cb6a433d9",
+      "version": {
+        "ctime_ns": 1791312405517470982,
+        "device": 57,
+        "inode": 4446624,
+        "mtime_ns": 1791312405517470982,
+        "size": 20367
+      }
+    },
+    {
+      "bytes": 9600,
+      "path": "tools/evaluation/indexed-recovery/__pycache__/controls.cpython-314.pyc",
+      "sha256": "063f95c4fdb1564378cddb515bfe9e8405648c3e155c7d49da0e236575b94b50",
+      "version": {
+        "ctime_ns": 1791312405518509202,
+        "device": 57,
+        "inode": 4446625,
+        "mtime_ns": 1791312405518509202,
+        "size": 9600
+      }
+    },
+    {
+      "bytes": 3156,
+      "path": "tools/evaluation/indexed-recovery/__pycache__/finalize.cpython-314.pyc",
+      "sha256": "96297384af314cbd3d5497304d2e5c94044d9a1f6f2422dad017d249cf60d9f3",
+      "version": {
+        "ctime_ns": 1791312405519008457,
+        "device": 57,
+        "inode": 4446626,
+        "mtime_ns": 1791312405519008457,
+        "size": 3156
+      }
+    },
+    {
+      "bytes": 14858,
+      "path": "tools/evaluation/indexed-recovery/__pycache__/functional.cpython-314.pyc",
+      "sha256": "1450c6bcc9d5d32035d917d867d486d759555014558fe512bcaa0a753502934b",
+      "version": {
+        "ctime_ns": 1791312405520255384,
+        "device": 57,
+        "inode": 4446627,
+        "mtime_ns": 1791312405520255384,
+        "size": 14858
+      }
+    },
+    {
+      "bytes": 11110,
+      "path": "tools/evaluation/indexed-recovery/__pycache__/owned.cpython-314.pyc",
+      "sha256": "76c7ab020849fd08dcb586afe97db29823c6a43367cf46987fd98ef699e1e5f1",
+      "version": {
+        "ctime_ns": 1791312405521193267,
+        "device": 57,
+        "inode": 4446628,
+        "mtime_ns": 1791312405521193267,
+        "size": 11110
+      }
+    },
+    {
+      "bytes": 5087,
+      "path": "tools/evaluation/indexed-recovery/__pycache__/run.cpython-314.pyc",
+      "sha256": "5f3464ab607cb6e51fa8b8e5f7d2183233169310e6c940a2d8ebb8e451038d30",
+      "version": {
+        "ctime_ns": 1791312405521763301,
+        "device": 57,
+        "inode": 4446629,
+        "mtime_ns": 1791312405521763301,
+        "size": 5087
+      }
+    }
+  ],
+  "old544_git": [
+    {
+      "bytes": 10513,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "tools/evaluation/indexed-recovery/check.py",
+      "sha256": "6adbb92f643012ab768117d81257d66b665e51dc938e2fe3768975061d1464ac"
+    },
+    {
+      "bytes": 7441,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "tools/evaluation/indexed-recovery/contract.py",
+      "sha256": "7488572b7f4165f7df87fab8c09caaaa545446134435aae761f5f220a26646f5"
+    },
+    {
+      "bytes": 3747,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "tools/evaluation/indexed-recovery/controls.py",
+      "sha256": "4bb145d4cfbda8191f211c72a2ee8e61b9d468182430940a306887a44e3975ea"
+    },
+    {
+      "bytes": 1449,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "tools/evaluation/indexed-recovery/finalize.py",
+      "sha256": "c39f985c4afc45de14d837e9bba828f2a6c1456079ca786636076fe10b207736"
+    },
+    {
+      "bytes": 6262,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "tools/evaluation/indexed-recovery/functional.py",
+      "sha256": "5e5afdf242d4607a810ca6bf65616a1522ef843223e2fd902f116ab316b49267"
+    },
+    {
+      "bytes": 133247,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "tools/evaluation/indexed-recovery/historical-manifest.json",
+      "sha256": "05c8db5d07bdd398504e4549ef2532213d5e126e75fec734474c66f151437cfb"
+    },
+    {
+      "bytes": 97803,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "tools/evaluation/indexed-recovery/original-commitments.json",
+      "sha256": "e9ae82a5cda650e3f2a8753e5ed577dc5cb5ab72c65dbcc7d084ecaf96257e66"
+    },
+    {
+      "bytes": 2889,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "tools/evaluation/indexed-recovery/owned.py",
+      "sha256": "15b4184310ce172fbba4819cb8246aafd46eb3bf9901081aab66acef676d625b"
+    },
+    {
+      "bytes": 1930,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "tools/evaluation/indexed-recovery/policy.json",
+      "sha256": "e79e292a01cf44e88eeb2b24fff4d59f43659bad439625edab695858f47a6d14"
+    },
+    {
+      "bytes": 1477,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "tools/evaluation/indexed-recovery/run.py",
+      "sha256": "e4336023696db7ae1d194968d56347daf36862ba4ddf4579c237c34a6c7882ec"
+    },
+    {
+      "bytes": 37402,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "docs/evidence/indexed-integrity-recovery-review.json",
+      "sha256": "bde79b8b25ded660d8cc25e0aaf9c16124383e42f6c4f7539d40b24e86816ce5"
+    },
+    {
+      "bytes": 5652,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "docs/evidence/indexed-integrity-recovery.md",
+      "sha256": "d7e363b78ad7f2fb153f58b3924c102b6f9dcdc8b3076403670f01d651251fc2"
+    },
+    {
+      "bytes": 131704,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "FINDINGS.md",
+      "sha256": "d73b7446be171015a8a3cb53002d26e1b60da2dde01fcad9716e1a8a8c27033c"
+    },
+    {
+      "bytes": 112154,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "docs/RELEASE_GAPS.md",
+      "sha256": "ae93408efeaf2c92b6b0d85dfe67eb4897b92344816821c772ded1e5a6adb887"
+    },
+    {
+      "bytes": 12852,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "tools/packs/current-xml/indexed.py",
+      "sha256": "94aa0dad897892d0285a50b24d600ad2495437e6f75e4fe750af64a5f0bcbc9b"
+    },
+    {
+      "bytes": 5727,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "tools/packs/current-xml/integrity.py",
+      "sha256": "e30097b79dd8a3c4b91a186b8b92255fc2a9eba4982b67e3ee25d3eaf499a511"
+    },
+    {
+      "bytes": 6349,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "tools/packs/current-xml/FORMAT.md",
+      "sha256": "7ebd33036caaab74089afe6bd6e61ff938b993957c0c7e78b69bd43929144f40"
+    },
+    {
+      "bytes": 142,
+      "commit": "a4739d145b2fd92c4f350a25f7d8a014e9ef6fa7",
+      "path": "tools/evaluation/check_indexed_integrity_recovery.sh",
+      "sha256": "3b1271c409a28e7bd127748439732ae44444d39b6bb07bfa2ae61989591382af"
+    }
+  ]
+}

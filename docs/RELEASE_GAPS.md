@@ -476,3 +476,6 @@ Host bounded MediaWiki XML/wikitext ingestion/search/original inspection/export 
 ### Task542: selective host index, not full-source distribution
 
 Bounded exact literal indexing/search/inspection/export passes current host controls and a single256-record immutable-capsule derivation, plus Android compilation. Queries under three scalars are refused explicitly; common queries are slower than the legacy scan, startup/index validation is nontrivial, and measured index storage grew from4.80MB to22.11MB. Exact transient temp/journal peaks and Android runtime integration remain unmeasured. Rights/rendered fidelity/latest census/complete source admission, full45GBtarget50GB provider/temp/update/rollback and12GB physical/no-GMS/useful-generation/unseen-rival gates remain open. No archive/model/device/producer activity was dispatched.
+
+
+Task547 closes the two bounded PID/export evidence defects with a source-cleared compact capture and two read-only checks. Historical543–546 failures and storage debt remain retained. Actual Android runtime, full-source rights/coverage, useful generation, physical12GB/whole50GB and comparative gates remain open.
