@@ -1,0 +1,37 @@
+{
+  "source": "dce54a9db6e08ffd9669b10665deaff6f00f142d",
+  "files": [
+    {
+      "commit": "dce54a9db6e08ffd9669b10665deaff6f00f142d",
+      "path": "android/app/src/main/java/org/pocketlore/places/CompactPlaces.java",
+      "bytes": 8252,
+      "sha256": "37c25fa99c1aff1f3fc2917a67d6d251ae818346152d60c49e7b7a2b789e872a"
+    },
+    {
+      "commit": "dce54a9db6e08ffd9669b10665deaff6f00f142d",
+      "path": "android/app/src/main/java/org/pocketlore/places/PlacesBudget.java",
+      "bytes": 1009,
+      "sha256": "b2cf69b53d3c1ac98532bf7350a68b42295db70df94d845e7cc8518676085dfa"
+    },
+    {
+      "commit": "dce54a9db6e08ffd9669b10665deaff6f00f142d",
+      "path": "android/app/src/main/java/org/pocketlore/app/ScalePlaces.java",
+      "bytes": 3295,
+      "sha256": "d1c831d377a2edbd51767acba8c8174dee207adcb0cd94aefdd9921b23c2382b"
+    },
+    {
+      "commit": "dce54a9db6e08ffd9669b10665deaff6f00f142d",
+      "path": "tools/scale/places/android/CompactPlaces.java",
+      "bytes": 8252,
+      "sha256": "37c25fa99c1aff1f3fc2917a67d6d251ae818346152d60c49e7b7a2b789e872a"
+    },
+    {
+      "commit": "dce54a9db6e08ffd9669b10665deaff6f00f142d",
+      "path": "tools/scale/places/android/PlacesBudget.java",
+      "bytes": 1009,
+      "sha256": "b2cf69b53d3c1ac98532bf7350a68b42295db70df94d845e7cc8518676085dfa"
+    }
+  ],
+  "old_input_bytes": 21817,
+  "scope": "Selective source only after exact diff review; failed525 remains failed."
+}

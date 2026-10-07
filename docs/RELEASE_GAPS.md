@@ -488,3 +488,8 @@ Task554 preserves actual nullable exception class/message/cause receipts without
 
 
 Task557: one original OCR publication/use deadline now spans intake, queue, pinned-asset hashing, bounded lock wait, decode/native work and UI handoff. Parent-cleared frozen helpers passed 29 deadline controls and three original UTF16 rounds under actual 512MiB/no-swap containment (52,387,840B peak); Android build and pure current checker pass. V1/v2 prelaunch accounting/build-receipt refusals remain retained. Blocking provider/decode/initialization is not preempted; original528 photo/WER/Android lifecycle/physical12GB/whole50GB/rival gates remain open. See docs/evidence/ocr-publication-deadline.md.
+
+
+### Task558 nearby identity and deadline helper
+
+Distinct source IDs/ordinals are preserved with deterministic edition/shard identity; one intake budget spans all nearby shards and publication. Current Android build and parent-contained 37-outcome pure helper run passed (205,221,888-byte kernel peak, swap/OOM zero, normal reap). Android SQLite cancellation, full-corpus/source integrity and 2x p95 remain unexecuted; cancellation/error branch isolation and delayed hash/merge proof limitations are explicit in docs/evidence/nearby-identity-budget.md. Failed525 and its thresholds remain unchanged; physical12GB/complete50GB and rival gates stay open.
