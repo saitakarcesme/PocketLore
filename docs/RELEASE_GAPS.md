@@ -485,3 +485,6 @@ Task549 closes host whole-run containment and rebuilt-APK identity gaps for atta
 
 
 Task554 preserves actual nullable exception class/message/cause receipts without changing production document code or108 authored expectations. One parent-owned512MiB/no-swap run completed all70original+38central cases; Android build and two immutable read-only checks passed. Failed551–553 and526storage debt remain intact; four-root combined accounting and extra reserves remain below8MiB. See docs/evidence/document-format-source-recovery.md for final criticism/accounting. This is host parser evidence only; actual Android picker/import/search/source/reimport/cancel/catalog, physical12GB/whole50GB and rivalry gates remain open.
+
+
+Task557: one original OCR publication/use deadline now spans intake, queue, pinned-asset hashing, bounded lock wait, decode/native work and UI handoff. Parent-cleared frozen helpers passed 29 deadline controls and three original UTF16 rounds under actual 512MiB/no-swap containment (52,387,840B peak); Android build and pure current checker pass. V1/v2 prelaunch accounting/build-receipt refusals remain retained. Blocking provider/decode/initialization is not preempted; original528 photo/WER/Android lifecycle/physical12GB/whole50GB/rival gates remain open. See docs/evidence/ocr-publication-deadline.md.

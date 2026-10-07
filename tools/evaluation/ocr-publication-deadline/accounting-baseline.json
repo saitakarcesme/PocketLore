@@ -1,0 +1,318 @@
+{
+  "definition": "Conservative additive retained pre-v3 source/doc versions; actual working files, snapshots and all request/refusal versions counted separately.",
+  "records": [
+    {
+      "commit": "a594149b75728ad39788e28e63365bf2f9336910",
+      "path": "android/app/src/main/java/org/pocketlore/app/AttachmentAssets.java",
+      "bytes": 2740,
+      "sha256": "f195b773d4e1e9f439af53a2c2497d07e7a02489c35bcd0cf838857e52c92145"
+    },
+    {
+      "commit": "a594149b75728ad39788e28e63365bf2f9336910",
+      "path": "android/app/src/main/java/org/pocketlore/app/AttachmentEngine.java",
+      "bytes": 5945,
+      "sha256": "f7218b1ec3a3b806374aaa8c6c9289af2e6775ff233728c683e02c80159c0f49"
+    },
+    {
+      "commit": "a594149b75728ad39788e28e63365bf2f9336910",
+      "path": "android/app/src/main/java/org/pocketlore/app/AttachmentNative.java",
+      "bytes": 721,
+      "sha256": "0981b2b85b533d0b067b60986e8119bef041c7cdb7e4ad1a7f33b92b3f7363ff"
+    },
+    {
+      "commit": "a594149b75728ad39788e28e63365bf2f9336910",
+      "path": "android/app/src/main/java/org/pocketlore/app/AttachmentsActivity.java",
+      "bytes": 9349,
+      "sha256": "c54eb072c241c6c26aba69968d78e540ef288ec31d9f6b4fa6a267914b761e61"
+    },
+    {
+      "commit": "a594149b75728ad39788e28e63365bf2f9336910",
+      "path": "android/app/src/main/java/org/pocketlore/app/OcrDeadline.java",
+      "bytes": 2398,
+      "sha256": "04fd6ae2c89529bd24713101dd0b6b90f1e136fb6960532380d700c78c0c6b39"
+    },
+    {
+      "commit": "a594149b75728ad39788e28e63365bf2f9336910",
+      "path": "android/attachments-native/attachments.cpp",
+      "bytes": 4955,
+      "sha256": "a8e674d22903b9467eb71a6d8809e701b68d858d70f469ea138efb416f76f1fe"
+    },
+    {
+      "commit": "a594149b75728ad39788e28e63365bf2f9336910",
+      "path": "android/attachments-native/ocr_deadline.h",
+      "bytes": 1068,
+      "sha256": "3c5ed7ee6aed17111db469035ef5077b158a5a016a307734238518087a7c2525"
+    },
+    {
+      "commit": "a594149b75728ad39788e28e63365bf2f9336910",
+      "path": "tools/evaluation/check_ocr_publication_deadline.sh",
+      "bytes": 155,
+      "sha256": "6037819805302667914951b34faa784679c21e70fa3cb8dc902bd6063f98d663"
+    },
+    {
+      "commit": "a594149b75728ad39788e28e63365bf2f9336910",
+      "path": "tools/evaluation/ocr-publication-deadline/DeadlineProbe.java",
+      "bytes": 4232,
+      "sha256": "f5eb8342185c9708fb8085ad6e4a8f61a2b059dbfeb98b2359bd551796896388"
+    },
+    {
+      "commit": "a594149b75728ad39788e28e63365bf2f9336910",
+      "path": "tools/evaluation/ocr-publication-deadline/bridge.cpp",
+      "bytes": 489,
+      "sha256": "d9ecc7b17e47f9bfd8dfb64fe23f2a4b2f5f7ab699b87905341ad8c59f70e4be"
+    },
+    {
+      "commit": "a594149b75728ad39788e28e63365bf2f9336910",
+      "path": "tools/evaluation/ocr-publication-deadline/check.py",
+      "bytes": 9044,
+      "sha256": "2b8824fd8319c2bf5fb14bc1853b88399ce62571abd686576d80509c13f7fe62"
+    },
+    {
+      "commit": "a594149b75728ad39788e28e63365bf2f9336910",
+      "path": "tools/evaluation/ocr-publication-deadline/common.py",
+      "bytes": 5829,
+      "sha256": "7594f0b40440bccc3f5aee767b991f582441d369e82df7372968404c26df9622"
+    },
+    {
+      "commit": "a594149b75728ad39788e28e63365bf2f9336910",
+      "path": "tools/evaluation/ocr-publication-deadline/policy.json",
+      "bytes": 1064,
+      "sha256": "5b2bdc4d252f911097b70dc138b59bfbf97023f198ad7cb15085caff1a017200"
+    },
+    {
+      "commit": "a594149b75728ad39788e28e63365bf2f9336910",
+      "path": "tools/evaluation/ocr-publication-deadline/worker.py",
+      "bytes": 4762,
+      "sha256": "e3775ed1dbc05c1a574dbff4ce6bd8fc7140f17676aa08014bb2ae4b6a895848"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "android/app/src/main/java/org/pocketlore/app/AttachmentAssets.java",
+      "bytes": 2740,
+      "sha256": "f195b773d4e1e9f439af53a2c2497d07e7a02489c35bcd0cf838857e52c92145"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "android/app/src/main/java/org/pocketlore/app/AttachmentEngine.java",
+      "bytes": 5945,
+      "sha256": "f7218b1ec3a3b806374aaa8c6c9289af2e6775ff233728c683e02c80159c0f49"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "android/app/src/main/java/org/pocketlore/app/AttachmentNative.java",
+      "bytes": 721,
+      "sha256": "0981b2b85b533d0b067b60986e8119bef041c7cdb7e4ad1a7f33b92b3f7363ff"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "android/app/src/main/java/org/pocketlore/app/AttachmentsActivity.java",
+      "bytes": 9349,
+      "sha256": "c54eb072c241c6c26aba69968d78e540ef288ec31d9f6b4fa6a267914b761e61"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "android/app/src/main/java/org/pocketlore/app/OcrDeadline.java",
+      "bytes": 2398,
+      "sha256": "04fd6ae2c89529bd24713101dd0b6b90f1e136fb6960532380d700c78c0c6b39"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "android/attachments-native/attachments.cpp",
+      "bytes": 4955,
+      "sha256": "a8e674d22903b9467eb71a6d8809e701b68d858d70f469ea138efb416f76f1fe"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "android/attachments-native/ocr_deadline.h",
+      "bytes": 1068,
+      "sha256": "3c5ed7ee6aed17111db469035ef5077b158a5a016a307734238518087a7c2525"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "docs/evidence/ocr-publication-deadline-review.json",
+      "bytes": 163,
+      "sha256": "1ebc396aa328631c65df6986b04850490e2a8011fe56eb5c5956529ca6fbfba4"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "docs/evidence/ocr-publication-deadline.md",
+      "bytes": 2526,
+      "sha256": "ef11ed63859611ae50e9cb33507fa98c3af7d8e4af45849c4a02616a0bd958d5"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "tools/evaluation/check_ocr_publication_deadline.sh",
+      "bytes": 155,
+      "sha256": "6037819805302667914951b34faa784679c21e70fa3cb8dc902bd6063f98d663"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "tools/evaluation/ocr-publication-deadline/DeadlineProbe.java",
+      "bytes": 4288,
+      "sha256": "ea8ab9a4ba115b28edf6b183f54b8c99d2b6ed017de088487cb88c893a1b033b"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "tools/evaluation/ocr-publication-deadline/bridge.cpp",
+      "bytes": 489,
+      "sha256": "d9ecc7b17e47f9bfd8dfb64fe23f2a4b2f5f7ab699b87905341ad8c59f70e4be"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "tools/evaluation/ocr-publication-deadline/build-inputs.json",
+      "bytes": 8745,
+      "sha256": "0beea0fcdd105b393e132d2220fe85e76918565c02f53117804a5d37995e9b5f"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "tools/evaluation/ocr-publication-deadline/check.py",
+      "bytes": 9615,
+      "sha256": "803af86ac52ed0752b531cd8f6d4be47662e0a2cc7b9449e29efef0e71e8c1e3"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "tools/evaluation/ocr-publication-deadline/common.py",
+      "bytes": 5968,
+      "sha256": "28d190a1d8919ce7ccf1b924bdf00f02ea4199f6154c390daa1b5e60e010e93f"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "tools/evaluation/ocr-publication-deadline/policy.json",
+      "bytes": 1090,
+      "sha256": "913ad69804b36eb976ef04361ee4cdf761a36d0ad22c8ac7d8a452439a17fbd2"
+    },
+    {
+      "commit": "4a49bf3604863ffdeb253c8081b6df7962eaa083",
+      "path": "tools/evaluation/ocr-publication-deadline/worker.py",
+      "bytes": 4835,
+      "sha256": "bf74ad58c01fd7943f7b8ef20e1d5aa4374fd7636be74e0a4023dacf6bfe650e"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "android/app/src/main/java/org/pocketlore/app/AttachmentAssets.java",
+      "bytes": 2740,
+      "sha256": "f195b773d4e1e9f439af53a2c2497d07e7a02489c35bcd0cf838857e52c92145"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "android/app/src/main/java/org/pocketlore/app/AttachmentEngine.java",
+      "bytes": 5945,
+      "sha256": "f7218b1ec3a3b806374aaa8c6c9289af2e6775ff233728c683e02c80159c0f49"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "android/app/src/main/java/org/pocketlore/app/AttachmentNative.java",
+      "bytes": 721,
+      "sha256": "0981b2b85b533d0b067b60986e8119bef041c7cdb7e4ad1a7f33b92b3f7363ff"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "android/app/src/main/java/org/pocketlore/app/AttachmentsActivity.java",
+      "bytes": 9349,
+      "sha256": "c54eb072c241c6c26aba69968d78e540ef288ec31d9f6b4fa6a267914b761e61"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "android/app/src/main/java/org/pocketlore/app/OcrDeadline.java",
+      "bytes": 2398,
+      "sha256": "04fd6ae2c89529bd24713101dd0b6b90f1e136fb6960532380d700c78c0c6b39"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "android/attachments-native/attachments.cpp",
+      "bytes": 4955,
+      "sha256": "a8e674d22903b9467eb71a6d8809e701b68d858d70f469ea138efb416f76f1fe"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "android/attachments-native/ocr_deadline.h",
+      "bytes": 1068,
+      "sha256": "3c5ed7ee6aed17111db469035ef5077b158a5a016a307734238518087a7c2525"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "docs/evidence/ocr-publication-deadline-review.json",
+      "bytes": 163,
+      "sha256": "1ebc396aa328631c65df6986b04850490e2a8011fe56eb5c5956529ca6fbfba4"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "docs/evidence/ocr-publication-deadline.md",
+      "bytes": 2526,
+      "sha256": "ef11ed63859611ae50e9cb33507fa98c3af7d8e4af45849c4a02616a0bd958d5"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "tools/evaluation/check_ocr_publication_deadline.sh",
+      "bytes": 155,
+      "sha256": "6037819805302667914951b34faa784679c21e70fa3cb8dc902bd6063f98d663"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "tools/evaluation/ocr-publication-deadline/DeadlineProbe.java",
+      "bytes": 4288,
+      "sha256": "ea8ab9a4ba115b28edf6b183f54b8c99d2b6ed017de088487cb88c893a1b033b"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "tools/evaluation/ocr-publication-deadline/accounting-baseline.json",
+      "bytes": 7971,
+      "sha256": "dff6eac4bed4c39ca0df50bece92e7d60eedbb94defa41a440b110271352e580"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "tools/evaluation/ocr-publication-deadline/accounting-policy.json",
+      "bytes": 518,
+      "sha256": "ad018d38a012c7e3569e4131939fa4b71607ac89ef9f83b39d4a81d23c4e7adb"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "tools/evaluation/ocr-publication-deadline/accounting.py",
+      "bytes": 1033,
+      "sha256": "f4ad16f67bf03527faa16d813b5ddfee0a8570648c5f532e96e41994ef11970d"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "tools/evaluation/ocr-publication-deadline/accounting_controls.py",
+      "bytes": 1640,
+      "sha256": "7f29c77cbcc584b9317aa2daacd600ca3456e1d4b1be356fec4f14147d6bb0b2"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "tools/evaluation/ocr-publication-deadline/bridge.cpp",
+      "bytes": 489,
+      "sha256": "d9ecc7b17e47f9bfd8dfb64fe23f2a4b2f5f7ab699b87905341ad8c59f70e4be"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "tools/evaluation/ocr-publication-deadline/build-inputs.json",
+      "bytes": 8745,
+      "sha256": "0beea0fcdd105b393e132d2220fe85e76918565c02f53117804a5d37995e9b5f"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "tools/evaluation/ocr-publication-deadline/check.py",
+      "bytes": 10993,
+      "sha256": "70160be8898acd8f8a14a97a3c43beb78490173cc1c35ca29d9683fd42655ae0"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "tools/evaluation/ocr-publication-deadline/common.py",
+      "bytes": 6667,
+      "sha256": "39a344098fa482887f5abcfec3a6301c8f129ad8cc83fc2bf1fe136087d0f542"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "tools/evaluation/ocr-publication-deadline/policy.json",
+      "bytes": 1090,
+      "sha256": "913ad69804b36eb976ef04361ee4cdf761a36d0ad22c8ac7d8a452439a17fbd2"
+    },
+    {
+      "commit": "1796517784d942c6849cdc7b173d57c1eeac5343",
+      "path": "tools/evaluation/ocr-publication-deadline/worker.py",
+      "bytes": 4835,
+      "sha256": "bf74ad58c01fd7943f7b8ef20e1d5aa4374fd7636be74e0a4023dacf6bfe650e"
+    }
+  ],
+  "bytes": 196090
+}
